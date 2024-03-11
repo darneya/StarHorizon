@@ -1126,7 +1126,7 @@
     amount: 1
   tileReactions:
   - !type:ExtinguishTileReaction { }
-       - !type:HealthChange
+      - !type:HealthChange
         condition:
         - !type:OrganType
           type: Demon
