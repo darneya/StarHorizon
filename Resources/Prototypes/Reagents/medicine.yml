@@ -1097,6 +1097,9 @@
         conditions:
         - !type:TotalDamage
           max: 50
+        - !type:OrganType
+          type: Demon
+          shouldHave: false
         damage:
           types:
             Blunt: -0.2
@@ -1123,6 +1126,13 @@
     amount: 1
   tileReactions:
   - !type:ExtinguishTileReaction { }
+       - !type:HealthChange
+        condition:
+        - !type:OrganType
+          type: Demon
+        damage:
+          types:
+            Caustic: 0.5
 
 - type: reagent
   id: Pyrazine
