@@ -49,10 +49,6 @@
         time: 10
         type: Remove
 # Horizon start
-      - !type:DrugIntoxication
-        addictionEffect: 0.4
-        toleranceEffect: 0.07
-        drugStrenght: 3
       - !type:AdjustReagent
         probability: 0.6 # Chance of Addiction rising per tick
         conditions:
@@ -221,10 +217,6 @@
         time: 16
         refresh: false
 # Horizon start
-      - !type:DrugIntoxication
-        addictionEffect: 0.1
-        toleranceEffect: 0.07
-        drugStrenght: 3
       - !type:AdjustReagent
         probability: 0.4 # Chance of Addiction rising per tick
         conditions:
@@ -279,10 +271,6 @@
       - !type:Drunk # Headaches and slurring are major symptoms of brain damage, this is close enough
         boozePower: 5
 # Horizon start
-      - !type:DrugIntoxication
-        addictionEffect: 0.7
-        toleranceEffect: 0.02
-        drugStrenght: 3
       - !type:AdjustReagent
         probability: 0.4 # Chance of Addiction rising per tick
         conditions:
@@ -313,10 +301,6 @@
         time: 5
         refresh: false
 # Horizon start
-      - !type:DrugIntoxication
-        addictionEffect: 0.5
-        toleranceEffect: 0.01
-        drugStrenght: 3
       - !type:AdjustReagent
         probability: 0.4 # Chance of Addiction rising per tick
         conditions:
