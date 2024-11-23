@@ -20,4 +20,7 @@
 ## Обслуживание персонала
 <GuideTechDisciplineEmbed Discipline="CivilianServices"/>
 
+## Biochemical
+<GuideTechDisciplineEmbed Discipline="Biochemical"/>
+
 </Document>

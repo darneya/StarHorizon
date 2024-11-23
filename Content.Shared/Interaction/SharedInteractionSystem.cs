@@ -1,4 +1,4 @@
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared._NF.LoggingExtensions;
 using Content.Shared.ActionBlocker;
@@ -1006,6 +1006,9 @@ namespace Content.Shared.Interaction
                 return false;
 
             if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, target))
+                return false;
+
+            if (!_actionBlockerSystem.CanInstrumentInteract(user, used, target)) // 🌟Starlight🌟
                 return false;
 
             if (checkCanUse && !_actionBlockerSystem.CanUseHeldEntity(user, used))
