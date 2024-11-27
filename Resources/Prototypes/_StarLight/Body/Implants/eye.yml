@@ -1,0 +1,84 @@
+- type: entity
+  id: BaseEntityEyeImplant
+  abstract: true
+  parent: [ BaseItem, BaseImplant ]
+  components:
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+  - type: Organ
+  - type: Gibbable
+  - type: FlavorProfile
+    flavors:
+      - people
+
+- type: entity
+  id: EyeImplantWelding
+  name: сварочный имплант
+  description: Защищает глаза от вспышек при сварке.
+  parent: BaseEntityEyeImplant
+  components:
+  - type: Sprite
+    state: eye_implant_welding
+  - type: OrganImplant
+    compsToAdd:
+    - type: EyeProtection
+
+# needs arguments system
+#- type: entity
+#  id: EyeImplantDiagnostic
+#  name: Diagnostic Implant
+#  description: Enables you to see information about mechanisms without diagnostic glasses.
+#  parent: BaseEntityEyeImplant
+#  components:
+#  - type: Sprite
+#    state: eye_implant_diagnostic
+#  - type: OrganImplant
+#    compsToAdd:
+#    - type: ShowHealthBars
+#      damageContainers:
+#      - Inorganic
+#      - Silicon
+
+- type: entity
+  id: EyeImplantMedical
+  name: медицинский имплант
+  description: Позволяет вам видеть информацию о состоянии окружающих.
+  parent: BaseEntityEyeImplant
+  components:
+  - type: Sprite
+    state: eye_implant_medical
+  - type: OrganImplant
+    compsToAdd:
+    - type: ShowHealthBars
+    - type: ShowHealthIcons
+
+- type: entity
+  id: EyeImplantSecurity
+  name: имплант службы безопасности.
+  description: Позволяет вам видеть информацию о должностях окружающих.
+  parent: BaseEntityEyeImplant
+  components:
+  - type: Sprite
+    state: eye_implant_security
+  - type: OrganImplant
+    compsToAdd:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+
+- type: entity
+  id: EyeImplantSyndie
+  name: имплант синдиката
+  description: Позволяет вам видеть информацию о должностях и состоянии окружающих.
+  parent: BaseEntityEyeImplant
+  components:
+  - type: Sprite
+    state: eye_implant_syndicate
+  - type: OrganImplant
+    compsToAdd:
+    - type: ShowHealthBars
+    - type: ShowHealthIcons
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: ShowSyndicateIcons

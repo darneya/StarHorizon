@@ -480,12 +480,12 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         {
             Forced = forced
         };
+
         humanoid.MarkingSet.AddBack(prototype.MarkingCategory, markingObject);
 
         if (sync)
             Dirty(uid, humanoid);
     }
-
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.
     /// </summary>

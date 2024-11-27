@@ -6,7 +6,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryOpenIncision
-  name: Open Incision
+  name: Создание разреза
   components:
   - type: Surgery
     priority: -100
@@ -18,7 +18,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryCloseIncision
-  name: Close Incision
+  name: Закрытие разреза
   components:
   - type: Surgery
     requirement: SurgeryOpenIncision
@@ -31,7 +31,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryOpenRibcage
-  name: Open Ribcage
+  name: Вскрытие грудной клетки
   components:
   - type: Surgery
     requirement: SurgeryOpenIncision
@@ -40,16 +40,16 @@
     - SurgeryStepSawBones
     - SurgeryStepPriseOpenBones
   - type: SurgeryPartCondition
-    parts: 
+    parts:
     - Torso
   - type: Sprite
     sprite: Mobs/Species/Skeleton/parts.rsi
     state: torso_m
-    
+
 - type: entity
   parent: SurgeryBase
   id: SurgeryOpenAbdomen
-  name: Open Abdomen
+  name: Вскрытие живота
   components:
   - type: Surgery
     requirement: SurgeryOpenIncision
@@ -67,7 +67,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryEliminateVocalCordDefects.
-  name: Eliminate vocal cord defects.
+  name: Устранение дефекта голосовых связок
   description: Remove speech defects, accents.
   components:
   - type: Surgery
@@ -78,7 +78,7 @@
     - SurgeryStepSutureIncision
   - type: SurgeryAnyAccentCondition
   - type: SurgeryPartCondition
-    parts: 
+    parts:
     - Head
   - type: Sprite
     sprite: Objects/Fun/Instruments/microphone.rsi
@@ -87,7 +87,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryAmputation
-  name: Amputation
+  name: Ампутация
   description: Surgical removal of a limb.
   components:
   - type: Surgery
@@ -97,7 +97,7 @@
     - SurgeryStepExposeBloodVessels
     - SurgeryAmputationStep
   - type: SurgeryPartCondition
-    parts: 
+    parts:
     - Arm
     - Hand
     - Leg
@@ -109,8 +109,8 @@
 
 - type: entity
   parent: SurgeryBase
-  id: SurgeryLimbAttachment 
-  name: Limb Attachment
+  id: SurgeryLimbAttachment
+  name: Присоединение конечности
   description: Surgical attachment of a limb.
   components:
   - type: Surgery
@@ -131,7 +131,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryExtractLiver
-  name: Extract Liver
+  name: Извлечение печени
   components:
   - type: Surgery
     requirement: SurgeryOpenAbdomen
@@ -148,11 +148,11 @@
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
     state: liver
-    
+
 - type: entity
   parent: SurgeryBase
   id: SurgeryImplantLiver
-  name: Implant Liver
+  name: Имплантация печени
   components:
   - type: Surgery
     requirement: SurgeryOpenAbdomen
@@ -175,7 +175,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryExtractAppendix
-  name: Extract Appendix
+  name: Извлечение аппендикса
   components:
   - type: Surgery
     requirement: SurgeryOpenAbdomen
@@ -196,7 +196,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryExtractKidneys
-  name: Extract Kidneys
+  name: Извлечение почек
   components:
   - type: Surgery
     requirement: SurgeryOpenAbdomen
@@ -219,7 +219,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryImplantKidneys
-  name: Implant Kidneys
+  name: Имплантация почек
   components:
   - type: Surgery
     requirement: SurgeryOpenAbdomen
@@ -244,7 +244,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryExtractStomach
-  name: Extract Stomach
+  name: Извлечение желудка
   components:
   - type: Surgery
     requirement: SurgeryOpenAbdomen
@@ -265,7 +265,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryImplantStomach
-  name: Implant Stomach
+  name: Имплантация желудка
   components:
   - type: Surgery
     requirement: SurgeryOpenAbdomen
@@ -288,7 +288,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryExtractLungs
-  name: Extract Lungs
+  name: Извлечение лёгких
   components:
   - type: Surgery
     requirement: SurgeryOpenRibcage
@@ -311,7 +311,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryImplantLungs
-  name: Implant Lungs
+  name: Имплантация лёгких
   components:
   - type: Surgery
     requirement: SurgeryOpenRibcage
@@ -334,7 +334,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryExtractHeart
-  name: Extract Heart
+  name: Извлечение сердца
   components:
   - type: Surgery
     requirement: SurgeryOpenRibcage
@@ -355,7 +355,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryImplantHeart
-  name: Implant Heart
+  name: Имплантация сердца
   components:
   - type: Surgery
     requirement: SurgeryOpenRibcage
@@ -376,7 +376,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryExtractEyes
-  name: Extract Eyes
+  name: Извлечение глаз
   components:
   - type: Surgery
     requirement: SurgeryOpenIncision
@@ -399,7 +399,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryImplantEyes
-  name: Implant Eyes
+  name: Имплантация глаз
   components:
   - type: Surgery
     requirement: SurgeryOpenIncision
@@ -422,7 +422,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryExtractEyeImplant
-  name: Extract Eye Implant
+  name: Извлечение глазных имплантов
   components:
   - type: Surgery
     requirement: SurgeryOpenIncision
@@ -435,16 +435,16 @@
     - Head
   - type: SurgeryOrganExistCondition
     organ:
-    - type: Implant
+    - type: OrganImplant
   - type: Sprite
-    sprite: _Starlight/Objects/Misc/implants.rsi
+    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: welding_implant
+      - state: eye_implant_welding
 
 - type: entity
   parent: SurgeryBase
   id: SurgeryImplantEyeImplant
-  name: Implant Eye Implant
+  name: Имплантация глазных имплантов
   components:
   - type: Surgery
     requirement: SurgeryOpenIncision
@@ -457,16 +457,16 @@
     - Head
   - type: SurgeryOrganDontExistCondition
     organ:
-    - type: Implant
+    - type: OrganImplant
   - type: Sprite
-    sprite: _Starlight/Objects/Misc/implants.rsi
+    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: welding_implant
+      - state: eye_implant_welding
 #
 - type: entity
   parent: SurgeryBase
   id: SurgeryExtractTongue
-  name: Extract Tongue
+  name: Извлечение языка
   components:
   - type: Surgery
     steps:
@@ -485,7 +485,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryImplantTongue
-  name: Implant Tongue
+  name: Имплантация языка
   components:
   - type: Surgery
     steps:
@@ -505,7 +505,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryExtractBrain
-  name: Extract Brain
+  name: Извлечение мозга
   components:
   - type: Surgery
     requirement: SurgeryOpenIncision
@@ -536,7 +536,7 @@
 - type: entity
   parent: SurgeryBase
   id: SurgeryImplantBrain
-  name: Implant Brain
+  name: Имплантация мозга
   components:
   - type: Surgery
     requirement: SurgeryOpenIncision

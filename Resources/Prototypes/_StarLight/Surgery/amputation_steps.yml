@@ -1,10 +1,10 @@
 ﻿- type: entity
   parent: SurgeryStepBase
   id: SurgeryAmputationStep
-  name: Saw Through Limb
+  name: отпилите конечность
   components:
   - type: SurgeryStep
-    duration: 16 
+    duration: 16
     tools:
     - type: BoneSaw
   - type: Sprite

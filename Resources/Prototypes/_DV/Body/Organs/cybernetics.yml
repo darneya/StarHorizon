@@ -1,0 +1,352 @@
+- type: entity
+  id: OrganBsStomach
+  parent: OrganHumanStomach
+  name: блюспейс желудок
+  description: "Продвинутый блюспейс-желудок, обладающий увеличенной вместимостью. Имеет маркировку BX-100/4/1. Произведён и импортирован корпорацией BioXen."
+  suffix: Aavikko, BioXen
+  components:
+  - type: Sprite
+    sprite: Aavikko/Mobs/Species/Cyberlimbs/organs_bs.rsi
+    state: stomach
+  - type: Item
+    size: Small
+    heldPrefix: stomach
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 100
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: OrganDamage
+    damage:
+      types:
+        Poison: 80
+        Cellular: 10
+        Bloodloss: 20
+        Caustic: 10
+        Radiation: 10
+  - type: Metabolizer
+    maxReagents: 4
+
+- type: entity
+  id: OrganCyberStomach
+  parent: OrganHumanStomach
+  name: кибернетический желудок
+  description: "Кибернетическй желудок с увеличенной продуктивностью. Имеет маркировку BX-60/4/0,5. Чертежи предоставлены Interdyne Pharmaceutics, произведён и импортирован корпорацией BioXen."
+  suffix: Aavikko, BioXen
+  components:
+  - type: Sprite
+    sprite: Aavikko/Mobs/Species/Cyberlimbs/organs_cyber.rsi
+    state: stomach
+  - type: Item
+    size: Small
+    heldPrefix: stomach
+  - type: Stomach
+    updateInterval: 0.5
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 60
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: OrganDamage
+    damage:
+      types:
+        Poison: 80
+        Cellular: 15
+        Bloodloss: 20
+        Caustic: 15
+        Radiation: 10
+  - type: Metabolizer
+    maxReagents: 4
+    updateInterval: 0.5
+
+- type: entity
+  id: OrganBioStomach
+  parent: OrganHumanStomach
+  name: продвинутый желудок
+  description: "Улучшенный биологический желудок с увеличенным числом одновременно усваивающихся реагентов. Чертежи предоставлены Interdyne Pharmaceutics, произведён и импортирован корпорацией BioXen."
+  suffix: Aavikko, BioXen
+  components:
+  - type: Sprite
+    sprite: Aavikko/Mobs/Species/Cyberlimbs/organs_bio.rsi
+    state: stomach
+  - type: Item
+    size: Small
+    heldPrefix: stomach
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 60
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: OrganDamage
+    damage:
+      types:
+        Poison: 120
+        Cellular: 15
+        Bloodloss: 20
+        Caustic: 15
+        Radiation: 10
+  - type: Metabolizer
+    maxReagents: 6
+
+- type: entity
+  id: OrganBsLungs
+  parent: OrganHumanLungs
+  name: блюспейс лёгкие
+  description: "Продвинутые блюспейс-лёгкие, обладающией увеличенной вместимостью. Имеют маркировку BX-500/100/1. Произведены и импортированы корпорацией BioXen."
+  suffix: Aavikko, BioXen
+  components:
+  - type: Sprite
+    sprite: Aavikko/Mobs/Species/Cyberlimbs/organs_bs.rsi
+    layers:
+      - state: lung-l
+      - state: lung-r
+  - type: Metabolizer
+    removeEmpty: true
+    solutionOnBody: false
+    solution: "Lung"
+    metabolizerTypes: [ Human ]
+    groups:
+    - id: Gas
+      rateModifier: 100.0
+  - type: OrganDamage
+    damage:
+      types:
+        Asphyxiation: 120
+        Cellular: 10
+        Bloodloss: 20
+        Radiation: 20
+  - type: SolutionContainerManager
+    solutions:
+      Lung:
+        maxVol: 500.0
+        canReact: false
+
+- type: entity
+  id: OrganCyberLungs
+  parent: OrganHumanLungs
+  name: кибернетические лёгкие
+  description: "Кибернетическе лёгкие, обеспечивающие меньшее замедленное поглощение газов. Имеют маркировку BX-150/50/1. Чертежи предоставлены Interdyne Pharmaceutics, произведены и импортированы корпорацией BioXen."
+  suffix: Aavikko, BioXen
+  components:
+  - type: Sprite
+    sprite: Aavikko/Mobs/Species/Cyberlimbs/organs_cyber.rsi
+    state: lungs
+  - type: Metabolizer
+    removeEmpty: true
+    solutionOnBody: false
+    solution: "Lung"
+    metabolizerTypes: [ Human ]
+    groups:
+    - id: Gas
+      rateModifier: 50.0
+  - type: OrganDamage
+    damage:
+      types:
+        Asphyxiation: 90
+        Cellular: 15
+        Bloodloss: 20
+        Radiation: 25
+  - type: SolutionContainerManager
+    solutions:
+      Lung:
+        maxVol: 150.0
+        canReact: false
+
+- type: entity
+  id: OrganBioLungs
+  parent: OrganHumanLungs
+  name: продвинутые лёгкие
+  description: "Биологические лёгкие с улучшенной системой фильтрации. Имеют маркировку BX-150/100/2. Чертежи предоставлены Interdyne Pharmaceutics, произведены и импортированы корпорацией BioXen."
+  suffix: Aavikko, BioXen
+  components:
+  - type: Sprite
+    sprite: Aavikko/Mobs/Species/Cyberlimbs/organs_bio.rsi
+    state: lungs
+  - type: Metabolizer
+    removeEmpty: true
+    solutionOnBody: false
+    solution: "Lung"
+    metabolizerTypes: [ Plant ]
+    groups:
+    - id: Gas
+      rateModifier: 100.0
+  - type: OrganDamage
+    damage:
+      types:
+        Poison: 15
+        Asphyxiation: 80
+        Cellular: 10
+        Bloodloss: 15
+        Radiation: 20
+  - type: SolutionContainerManager
+    solutions:
+      Lung:
+        maxVol: 150
+        canReact: False
+
+- type: entity
+  id: OrganBsHeart
+  parent: OrganHumanHeart
+  name: блюспейс сердце
+  description: "Продвинутое блюспейс-сердце, обладающией увеличенной вместимостью. Имеют маркировку BX-500/100/1. Произведены и импортированы корпорацией BioXen."
+  suffix: Aavikko, BioXen
+  components:
+  - type: Sprite
+    sprite: Aavikko/Mobs/Species/Cyberlimbs/organs_bs.rsi
+    layers:
+      - state: heart
+  - type: Metabolizer
+    maxReagents: 3
+    metabolizerTypes: [Human]
+    groups:
+    - id: Medicine
+    - id: Poison
+    - id: Narcotic
+  - type: OrganDamage
+    damage:
+      types:
+        Shock: 80
+        Cellular: 10
+        Bloodloss: 20
+        Caustic: 10
+        Radiation: 10
+
+- type: entity
+  id: OrganCyberHeart
+  parent: OrganHumanHeart
+  name: кибернетическое сердце
+  description: "Кибернетическое сердце, лучшего качества, чем его биологический прародитель. Имеют маркировку BX-150/50/1. Чертежи предоставлены Interdyne Pharmaceutics, произведены и импортированы корпорацией BioXen."
+  suffix: Aavikko, BioXen
+  components:
+  - type: Sprite
+    sprite: Aavikko/Mobs/Species/Cyberlimbs/organs_cyber.rsi
+    layers:
+      - state: heart
+  - type: Metabolizer
+    updateInterval: 0.5
+    maxReagents: 4
+    metabolizerTypes: [Human]
+    groups:
+    - id: Medicine
+    - id: Poison
+    - id: Narcotic
+  - type: OrganDamage
+    damage:
+      types:
+        Shock: 80
+        Cellular: 20
+        Bloodloss: 20
+        Caustic: 20
+        Radiation: 20
+
+- type: entity
+  id: OrganBioHeart
+  parent: OrganArachnidHeart
+  name: продвинутые лёгкие
+  description: "Биологические лёгкие с улучшенной системой фильтрации. Имеют маркировку BX-150/100/2. Чертежи предоставлены Interdyne Pharmaceutics, произведены и импортированы корпорацией BioXen."
+  suffix: Aavikko, BioXen
+  components:
+  - type: Sprite
+    sprite: Aavikko/Mobs/Species/Cyberlimbs/organs_bio.rsi
+    layers:
+      - state: heart
+  - type: Metabolizer
+    updateInterval: 1.5
+    maxReagents: 2
+    metabolizerTypes: [Arachnid]
+    groups:
+    - id: Medicine
+    - id: Poison
+    - id: Narcotic
+  - type: OrganDamage
+    damage:
+      types:
+        Shock: 100
+        Cellular: 10
+        Bloodloss: 20
+        Caustic: 10
+        Radiation: 10
+
+
+
+
+
+
+
+
+
+# - type: entity
+#   id: OrganArachnidLiver
+#   parent: [BaseHumanOrgan, BaseOrganLiver]
+#   name: liver
+#   description: "Pairing suggestion: chianti and fava beans."
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: Item
+#     size: Small
+#     heldPrefix: liver
+#   - type: Sprite
+#     state: liver
+#   - type: Metabolizer # The liver metabolizes certain chemicals only, like alcohol.
+#     updateInterval: 1.5
+#     maxReagents: 1
+#     metabolizerTypes: [Animal]
+#     groups:
+#     - id: Alcohol
+#       rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+
+# - type: entity
+#   id: OrganArachnidKidneys
+#   parent: [BaseHumanOrgan, BaseOrganKidneys]
+#   name: kidneys
+#   description: "Filters toxins from the bloodstream."
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: Sprite
+#     layers:
+#       - state: kidney-l
+#       - state: kidney-r
+#   # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
+#   - type: Item
+#     size: Small
+#     heldPrefix: kidneys
+#   - type: Metabolizer
+#     updateInterval: 1.5
+#     maxReagents: 5
+#     metabolizerTypes: [Animal]
+#     removeEmpty: true
+
+# - type: entity
+#   id: OrganArachnidEyes
+#   parent: [BaseArachnidOrgan, BaseOrganEyes]
+#   name: eyes
+#   description: "Two was already too many."
+#   components:
+#   - type: Sprite
+#     layers:
+#       - state: eyeball-l
+#       - state: eyeball-r
+#   - type: Item
+#     size: Small
+#     heldPrefix: eyeballs
+
+# - type: entity
+#   id: OrganArachnidTongue
+#   parent: [BaseArachnidOrgan, BaseOrganTongue]
+#   name: tongue
+#   description: "A fleshy muscle mostly used for lying."
+#   components:
+#   - type: Sprite
+#     state: tongue

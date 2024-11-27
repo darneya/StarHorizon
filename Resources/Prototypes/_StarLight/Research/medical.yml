@@ -2,11 +2,11 @@
 
 - type: technology
   id: SurgeryTech
-  name: research-technology-basic-surgery
+  name: Базовая хирургия
   icon:
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
-  discipline: Biochemical
+  discipline: Medical
   tier: 1
   cost: 4000
   recipeUnlocks:
@@ -20,11 +20,11 @@
 
 - type: technology
   id: CyberLimbsTech
-  name: research-technology-basic-cyberlimbs
+  name: Базовые кибернетические конечности
   icon:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: icon
-  discipline: Biochemical
+  discipline: Medical
   tier: 1
   cost: 4000
   recipeUnlocks:
@@ -39,11 +39,11 @@
 
 - type: technology
   id: SurgeryTechAdvanced
-  name: research-technology-advanced-surgery
+  name: Продвинутая хирургия
   icon:
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: advanced
-  discipline: Biochemical
+  discipline: Medical
   tier: 2
   cost: 7000
   recipeUnlocks:
@@ -55,20 +55,21 @@
     - HemostatAdvanced
   technologyPrerequisites:
   - SurgeryTech
-    
+
 # Tier 2
 
 - type: technology
-  id: CyberOrgansTechAdvanced
-  name: research-technology-advanced-cyberlimbs
+  id: CyberImplantsTech
+  name: Базовые импланты для глаз
   icon:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/organs.rsi
-    state: eyeball-l
-  discipline: Biochemical
+    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+    state: eye_implant_welding
+  discipline: Medical
   tier: 2
   cost: 10000
   recipeUnlocks:
-    - OrganCyberEyesSec
-    - OrganCyberEyesMed
+    - EyeImplantWelding
+    - EyeImplantMedical
+    - EyeImplantSecurity
   technologyPrerequisites:
   - CyberLimbsTech

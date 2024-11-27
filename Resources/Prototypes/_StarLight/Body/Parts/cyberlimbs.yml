@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: PartCyber
   parent: [BaseItem, BasePart]
-  name: "cyber body part"
+  name: "кибернетическая часть тела"
   abstract: true
   components:
   - type: Extractable
@@ -12,7 +12,7 @@
 
 - type: entity
   id: LeftArmCyber
-  name: "left cyber arm"
+  name: "левая кибернетическая рука"
   parent: [PartCyber, BaseLeftArm]
   components:
     - type: BaseLayerId
@@ -26,7 +26,7 @@
 
 - type: entity
   id: RightArmCyber
-  name: "right cyber arm"
+  name: "правая кибернетическая рука"
   parent: [PartCyber, BaseRightArm]
   components:
     - type: BaseLayerId
@@ -40,7 +40,7 @@
 
 - type: entity
   id: LeftHandCyber
-  name: "left cyber hand"
+  name: "левая кибернетическая ладонь"
   parent: [PartCyber, BaseLeftHand]
   components:
     - type: BaseLayerId
@@ -54,7 +54,7 @@
 
 - type: entity
   id: RightHandCyber
-  name: "right cyber hand"
+  name: "правая кибернетическая ладонь"
   parent: [PartCyber, BaseRightHand]
   components:
     - type: BaseLayerId
@@ -68,7 +68,7 @@
 
 - type: entity
   id: LeftLegCyber
-  name: "left cyber leg"
+  name: "левая кибернетическая нога"
   parent: [PartCyber, BaseLeftLeg]
   components:
     - type: BaseLayerId
@@ -82,7 +82,7 @@
 
 - type: entity
   id: RightLegCyber
-  name: "right cyber leg"
+  name: "правая кибернетическая нога"
   parent: [PartCyber, BaseRightLeg]
   components:
     - type: BaseLayerId
@@ -96,7 +96,7 @@
 
 - type: entity
   id: LeftFootCyber
-  name: "left cyber foot"
+  name: "левая кибернетическая ступня"
   parent: [PartCyber, BaseLeftFoot]
   components:
     - type: BaseLayerId
@@ -110,11 +110,11 @@
 
 - type: entity
   id: RightFootCyber
-  name: "right cyber foot"
+  name: "правая кибернетическая ступня"
   parent: [PartCyber, BaseRightFoot]
   components:
     - type: BaseLayerId
-      layer: "CyberRFoot"
+      layer: CyberRFoot
     - type: Sprite
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_foot"
