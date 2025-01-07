@@ -1,6 +1,6 @@
 ﻿using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
-using Content.Shared.Aavikko.Starlight.Medical.Surgery;
+using Content.Shared.Aavikko.Medical.Surgery;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;

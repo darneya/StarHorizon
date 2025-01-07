@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry;
+using Content.Shared.Aavikko.Medical.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
@@ -211,6 +212,16 @@ namespace Content.Shared.Damage
             }
 
             damage = ApplyUniversalAllModifiers(damage);
+            // Aavikko start
+            var finalEv = new DamageBeforeApplyEvent
+            {
+                Damage = damage,
+                Origin = origin
+            };
+            RaiseLocalEvent(uid.Value, finalEv);
+            if (finalEv.Cancelled)
+                return damage;
+            // Aavikko end
 
             // TODO DAMAGE PERFORMANCE
             // Consider using a local private field instead of creating a new dictionary here.
