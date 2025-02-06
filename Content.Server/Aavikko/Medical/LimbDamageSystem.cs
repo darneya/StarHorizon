@@ -43,23 +43,11 @@ public sealed class LimbDamageSystem : EntitySystem
         if (!TryComp<HumanoidAppearanceComponent>(ent, out var appr) || appr.Species == "SlimePerson") return; // SlimePeople are immune to limb damage.
 
         var chance = 0f;
-        foreach (var damage in args.Damage.DamageDict.Where(x => x.Value > 0))
+        foreach (var damage in args.Damage.DamageDict.Where(x => x.Value > 1f))
             switch (damage.Key)
             {
-                case "Blunt":
-                    chance += 0.0005f * damage.Value.Float();
-                    break;
                 case "Slash":
                     chance += 0.005f * damage.Value.Float();
-                    break;
-                case "Piercing":
-                    chance += 0.001f * damage.Value.Float();
-                    break;
-                case "Heat":
-                    chance += 0.002f * damage.Value.Float();
-                    break;
-                case "Cold":
-                    chance += 0.004f * damage.Value.Float();
                     break;
                 case "Caustic":
                     chance += 0.01f * damage.Value.Float();
