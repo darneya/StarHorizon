@@ -12,7 +12,7 @@ pg_host = "database"
 pg_port = 5432
 pg_database = "ss14"
 pg_username = "ss14_user"
-pg_password = "((pg_password))"
+pg_password = "%pg_password%"
 
 [game]
 hostname = "STAR HORIZON"
@@ -110,7 +110,7 @@ enabled = false
 ##### Discord ##################################################################
 
 #[discord]
-#ahelp_webhook = "((ahelp_webhook))"
-#ban_webhook = "((ban_webhook))"
-#round_update_webhook = "((round_update_webhook))"
-#round_end_role = "((round_end_role))"
+#ahelp_webhook = "%ahelp_webhook%"
+#ban_webhook = "%ban_webhook%"
+#round_update_webhook = "%round_update_webhook%"
+#round_end_role = "%round_end_role%"
