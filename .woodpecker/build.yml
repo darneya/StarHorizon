@@ -17,6 +17,6 @@ steps:
     volumes:
       - "/var/lib/star-horizon/woodpecker/storage:/storage"
     commands:
-      - if [[ ! -e /storage/ss14 ]]; then mkdir -p /storage/ss14; fi
+      - bash -c 'if [[ ! -e /storage/ss14 ]]; then mkdir -p /storage/ss14; fi'
       - mv release/SS14.Server_linux-x64.zip /storage/ss14/
       - cp Resources/ConfigPresets/StarHorizon/server_config.toml /storage/ss14/
