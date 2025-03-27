@@ -15,8 +15,21 @@ pg_username = "ss14_user"
 pg_password = "%pg_password%"
 
 [game]
-hostname = "STAR HORIZON"
-desc = "Открытый Бета-тест"
+hostname = "StarHorizon - Горизонт событий [💫] [18+]"
+desc = """
+Добро пожаловать на наш сервер! Мы предлагаем полную свободу выбора!
+
+У нас вы встретите:
+🏢 Отзывчивую и дружелюбную администрацию, креативное комьюнити и массу возможностей для самореализации!
+🏯 Возможность создать свой собственный клан, а впоследствии и фракцию или присоединитесь к уже существующим!
+🩺 Хирургию! А также кибернетические конечности и органы.
+🔬 Ксенобиологию! Вырасти своего ручного ксеноса!
+🤖 Робототехнику! Исследуй и строй железных монстров! Покажи Тиранозавру на экспедиции кто тут Босс!
+🌱 Продвинутую ботанику с новыми видами растений и цветов, а также ферментацию и генетику! Создай свой одуванчик - убийцу!
+👹 А также лучшие Барки! Гав!
+
+Мы рады встрече с тобой, странник!
+"""
 soft_max_players = 100
 lobbyduration = 180
 fallbackpreset = "Extended"
@@ -30,6 +43,7 @@ advertise = false
 
 [server]
 rules_file = "DefaultRuleset"
+lobby_name = "StarHorizon"
 
 [console]
 # Указать CKey игрока, который по-умолчанию и не зависимо ни от чего
@@ -42,6 +56,14 @@ note_fresh_days = 0
 message_wait_time = 1
 new_player_threshold = 180
 afk_time = 180.0
+admins_count_in_playercount = true # отображает админов в счетчике
+
+[interaction]
+rate_limit_announce_admins_delay = -1 # убирает спам о превышении лимитов игроком
+
+[ahelp]
+admin_prefix = true # отображает ранг адмема в АХелп
+admin_prefix_webhook = true
 
 [infolinks]
 discord = "https://discord.starhorizon.ru"
