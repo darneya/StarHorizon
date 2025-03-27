@@ -96,9 +96,9 @@ flavor_text = true
 ##### Metrics ##################################################################
 
 [metrics]
-enabled = false
-#host = "127.0.0.1"
-#port = 9001
+enabled = true
+host = "ss14"
+port = 9001
 #runtime = false
 
 [loki]
