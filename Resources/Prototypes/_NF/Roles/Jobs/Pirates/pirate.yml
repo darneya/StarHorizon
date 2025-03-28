@@ -16,6 +16,7 @@
   icon: "JobIconPirate"
   supervisors: job-supervisors-pirate
   weight: 20
+  whitelisted: true
   displayWeight: 20
   setPreference: true
   access:
