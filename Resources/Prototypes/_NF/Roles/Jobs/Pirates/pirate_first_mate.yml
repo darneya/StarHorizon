@@ -12,7 +12,6 @@
   whitelisted: true
   startingGear: PirateFirstMateNFGear
   alwaysUseSpawner: true
-  whitelisted: true
   hideConsoleVisibility: true
   canBeAntag: true
   icon: "JobIconPirateFirstMate"
