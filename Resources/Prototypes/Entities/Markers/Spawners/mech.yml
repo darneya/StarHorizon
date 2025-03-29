@@ -1,6 +1,6 @@
 - type: entity
   name: Gygax Spawner
-  id: ADTSpawnMechGygax
+  id: SpawnMechGygax
   parent: MarkerBase
   components:
   - type: Sprite
@@ -10,11 +10,11 @@
         state: gygax
   - type: ConditionalSpawner
     prototypes:
-      - ADTMechGygaxBattery
+      - MechGygaxBattery
 
 - type: entity
   name: Dark Gygax Spawner
-  id: ADTSpawnMechDarkGygax
+  id: SpawnMechDarkGygax
   parent: MarkerBase
   components:
   - type: Sprite
@@ -24,11 +24,11 @@
         state: darkgygax
   - type: ConditionalSpawner
     prototypes:
-      - ADTMechDarkGygaxBattery
+      - MechDarkGygaxBattery
 
 - type: entity
   name: Marauder Spawner
-  id: ADTSpawnMechMarauder
+  id: SpawnMechMarauder
   parent: MarkerBase
   components:
   - type: Sprite
@@ -38,11 +38,11 @@
         state: marauder
   - type: ConditionalSpawner
     prototypes:
-      - ADTMechMarauderBattery
+      - MechMarauderBattery
 
 - type: entity
   name: Mauler Spawner
-  id: ADTSpawnMechMauler
+  id: SpawnMechMauler
   parent: MarkerBase
   components:
   - type: Sprite
@@ -52,4 +52,4 @@
         state: mauler
   - type: ConditionalSpawner
     prototypes:
-      - ADTMechMaulerBattery
+      - MechMaulerBattery

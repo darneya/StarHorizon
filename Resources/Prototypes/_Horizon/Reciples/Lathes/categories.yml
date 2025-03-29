@@ -1,19 +1,19 @@
 - type: latheCategory
-  id: ADTMechGygax
+  id: MechGygax
   name: lathe-category-mechs-gygax
 
 - type: latheCategory
-  id: ADTMechOdysseus
+  id: MechOdysseus
   name: lathe-category-mechs-odysseus
 
 - type: latheCategory
-  id: ADTMechClarke
+  id: MechClarke
   name: lathe-category-mechs-clarke
 
 - type: latheCategory
-  id: ADTMechDurand
+  id: MechDurand
   name: lathe-category-mechs-durand
 
 - type: latheCategory
-  id: ADTMechPhazon
+  id: MechPhazon
   name: lathe-category-mechs-phazon
