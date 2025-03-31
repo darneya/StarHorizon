@@ -1,32 +1,32 @@
 <Document>
-  # Felinids
+  # Фелиниды
 
   <Box>
     <GuideEntityEmbed Entity="MobFelinidDummy" Caption=""/>
   </Box>
 
-  Small and mischievous cat-eared people. Being small in itself has lots of upsides and downsides. They can hide inside duffelbags.
+  Маленькие озорные люди с кошачьими ушами. Их небольшой размер имеет как преимущества, так и недостатки. Могут прятаться в дорожных сумках.
 
-  ## Diet
+  ## Питание
 
-  - Can eat raw meat.
-  - Will get poisoned by Theobromine (Chocolate, Tea, Coffee) and Allicin (Onion, Garlic).
+  - Могут есть сырое мясо.
+  - Получают отравление от теобромина (шоколад, чай, кофе) и аллицина (лук, чеснок).
 
-  ## Benefits
+  ## Преимущества
 
-  - They are smaller than Humans, making them harder to hit.
-  - Can fit in duffelbags.
-  - Have the ability to throw up an hairball to get rid of some of the chemicals from their bloodstream.
-  - Able to eat mice and rats after picking them up. This has the benefit of regenerating the hairball ability and feeding them.
-  - Uses their claws to do Slashing damage and Piercing damage.
-  - Can walk completely silently, but only while barefooted.
-  - Immunity to the OwOnavirus disease.
+  - Меньше людей, что делает их сложнее попасть.
+  - Помещаются в дорожные сумки.
+  - Могут отрыгивать шерстяные комки, чтобы вывести часть химикатов из крови.
+  - Могут есть мышей и крыс после поимки. Это восстанавливает способность создавать шерстяные комки и утоляет голод.
+  - Используют когти для нанесения рубящего и колющего урона.
+  - Могут передвигаться совершенно бесшумно, но только босиком.
+  - Иммунитет к болезни OwOnavirus.
 
-  ## Drawbacks
+  ## Недостатки
 
-  - Takes 15% more Blunt, Slash and Piercing damage.
-  - Are easily shoved, pushed and carried around by every other morphotypes due to their small size.
-  - They are weaker and struggle to carry and pull things due to their small size. They are unable to carry an Oni.
-  - They have slightly less stamina than Humans.
+  - Получают на 15% больше урона от дробящих, рубящих и колющих атак.
+  - Их легко толкать и переносить из-за маленького размера.
+  - Слабее других морфотипов - испытывают трудности с переноской и тяжёлыми предметами. Не могут переносить Они.
+  - Имеют немного меньше выносливости, чем люди.
 
 </Document>

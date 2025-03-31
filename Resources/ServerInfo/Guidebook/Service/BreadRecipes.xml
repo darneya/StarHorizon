@@ -1,9 +1,9 @@
 <Document>
 
-# Breads
+  # Батончики и печенье
 
-A fresh loaf of bread is without equal, and breads are often incorporated into other recipes.
+  Популярные угощения, которые можно приготовить из стандартных ингредиентов для угощения коллег.
 
-<GuideMicrowaveGroupEmbed Group="Breads"/>
+  <GuideMicrowaveGroupEmbed Group="BarsAndCookies"/>
 
 </Document>

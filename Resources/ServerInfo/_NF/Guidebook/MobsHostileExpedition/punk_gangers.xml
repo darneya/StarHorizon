@@ -1,108 +1,108 @@
 <Document>
-  # Punks
-  
-  Undesirable squatters in abandoned NT property, these punks wreak havoc, litter the surroundings, indulge in substance abuse, and generally damage property in the name of having a good time.
-  
+  # Панки
+
+  Нежелательные сквоттеры на заброшенной собственности NT, эти панки устраивают хаос, мусорят, злоупотребляют веществами и повреждают имущество ради "хорошего времяпрепровождения".
+
   [bold][color=#a4885c]________________________________________________________________________[/color]
-  
-  # Known Variants
-  # "Punks"
-  
-  "Criminally-inclined individuals", as NT Security documents call them, these are armed with a variety of weapons. These weapons range from makeshift shivs and machined truncheons to rusty pistols and shotguns. Some may be armored, so plan appropriately.
-  
+
+  # Известные разновидности
+  # "Панки"
+
+  "Лица с криминальными наклонностями", как их называют документы безопасности NT, вооружены разнообразным оружием - от самодельных заточек и дубинок до ржавых пистолетов и дробовиков. Некоторые могут носить броню, планируйте соответственно.
+
   <Box>
-  <GuideEntityEmbed Entity="MobPunkGangerMeleeT1" Caption=""/>
+    <GuideEntityEmbed Entity="MobPunkGangerMeleeT1" Caption=""/>
   </Box>
-  - [bold][color=#a4885c]Health thresholds:[/color][/bold] 100 (crit), 140 (death)
-  - [bold][color=#a4885c]Run speed:[/color][/bold] 4.5 m/s[bold][color=#a4885c]*[/color][/bold]
-  - [bold][color=#a4885c]Damage (type):[/color][/bold] 12 [color=red]Blunt[/color]
-  - [bold][color=#a4885c]Damage resistances:[/color][/bold] none
-  - [bold][color=#a4885c]Special abilities:[/color][/bold] none
-  
-  [bold][color=#a4885c]*[/color][/bold] - [italic]an average human can run at 4.5 m/s and walk at 2.5 m/s.[/italic]
-  
+  - [bold][color=#a4885c]Пороги здоровья:[/color][/bold] 100 (крит), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с[bold][color=#a4885c]*[/color][/bold]
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 12 [color=red]Ударный[/color]
+  - [bold][color=#a4885c]Сопротивления:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
+  [bold][color=#a4885c]*[/color][/bold] - [italic]средний человек бегает со скоростью 4.5 м/с и ходит со скоростью 2.5 м/с.[/italic]
+
   [bold][color=#a4885c]________________________________________________________________________[/color]
-  
+
   <Box>
-  <GuideEntityEmbed Entity="MobPunkGangerMeleeT2" Caption=""/>
+    <GuideEntityEmbed Entity="MobPunkGangerMeleeT2" Caption=""/>
   </Box>
-  - [bold][color=#a4885c]Health thresholds:[/color][/bold] 100 (crit), 140 (death)
-  - [bold][color=#a4885c]Run speed:[/color][/bold] 4.5 m/s
-  - [bold][color=#a4885c]Damage (type):[/color][/bold] 16 [color=red]Blunt[/color]
-  - [bold][color=#a4885c]Damage resistances:[/color][/bold] [color=red]Blunt[/color], [color=red]Slash[/color] and [color=yellow]Piercing[/color] 25%; [color=orange]Heat[/color] 20%; [color=orange]Caustic[/color] 10%; [color=orange]Explosion[/color] 10% (punk armor)
-  - [bold][color=#a4885c]Special abilities:[/color][/bold] none
-  
+  - [bold][color=#a4885c]Пороги здоровья:[/color][/bold] 100 (крит), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=red]Ударный[/color]
+  - [bold][color=#a4885c]Сопротивления:[/color][/bold] [color=red]Ударный[/color], [color=red]Режущий[/color] и [color=yellow]Колющий[/color] 25%; [color=orange]Термальный[/color] 20%; [color=orange]Коррозийный[/color] 10%; [color=orange]Взрывной[/color] 10% (броня панков)
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
   [bold][color=#a4885c]________________________________________________________________________[/color]
-  
+
   <Box>
-  <GuideEntityEmbed Entity="MobPunkGangerMeleeT3" Caption=""/>
+    <GuideEntityEmbed Entity="MobPunkGangerMeleeT3" Caption=""/>
   </Box>
-  - [bold][color=#a4885c]Health thresholds:[/color][/bold] 100 (crit), 140 (death)
-  - [bold][color=#a4885c]Run speed:[/color][/bold] 4.5 m/s
-  - [bold][color=#a4885c]Damage (type):[/color][/bold] 18 [color=red]Blunt[/color]
-  - [bold][color=#a4885c]Damage resistances:[/color][/bold] [color=red]Blunt[/color], [color=red]Slash[/color] 10%; [color=yellow]Piercing[/color] 60%; [color=orange]Heat[/color] 10%; [color=orange]Explosion[/color] 20% (punk heavy armor)
-  - [bold][color=#a4885c]Special abilities:[/color][/bold] none
-  
+  - [bold][color=#a4885c]Пороги здоровья:[/color][/bold] 100 (крит), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4.5 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 18 [color=red]Ударный[/color]
+  - [bold][color=#a4885c]Сопротивления:[/color][/bold] [color=red]Ударный[/color], [color=red]Режущий[/color] 10%; [color=yellow]Колющий[/color] 60%; [color=orange]Термальный[/color] 10%; [color=orange]Взрывной[/color] 20% (тяжелая броня панков)
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] нет
+
   [bold][color=#a4885c]________________________________________________________________________[/color]
-  
+
   <Box>
-  <GuideEntityEmbed Entity="MobPunkGangerPistol" Caption=""/>
+    <GuideEntityEmbed Entity="MobPunkGangerPistol" Caption=""/>
   </Box>
-  - [bold][color=#a4885c]Health thresholds:[/color][/bold] 100 (crit), 140 (death)
-  - [bold][color=#a4885c]Run speed:[/color][/bold] 4 m/s
-  - [bold][color=#a4885c]Damage (type):[/color][/bold] 16 [color=yellow]Piercing[/color] (.35 round)
-  - [bold][color=#a4885c]Damage resistances:[/color][/bold] none
-  - [bold][color=#a4885c]Special abilities:[/color][/bold] Shooter (mk 58)
-  
+  - [bold][color=#a4885c]Пороги здоровья:[/color][/bold] 100 (крит), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=yellow]Колющий[/color] (патрон .35)
+  - [bold][color=#a4885c]Сопротивления:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (mk 58)
+
   [bold][color=#a4885c]________________________________________________________________________[/color]
-  
+
   <Box>
-  <GuideEntityEmbed Entity="MobPunkGangerShotgun" Caption=""/>
+    <GuideEntityEmbed Entity="MobPunkGangerShotgun" Caption=""/>
   </Box>
-  - [bold][color=#a4885c]Health thresholds:[/color][/bold] 100 (crit), 140 (death)
-  - [bold][color=#a4885c]Run speed:[/color][/bold] 4 m/s
-  - [bold][color=#a4885c]Damage (type):[/color][/bold] 10-60 [color=yellow]Piercing[/color] (10 per shotgun pellet)
-  - [bold][color=#a4885c]Damage resistances:[/color][/bold] none
-  - [bold][color=#a4885c]Special abilities:[/color][/bold] Shooter (shotgun)
-  
+  - [bold][color=#a4885c]Пороги здоровья:[/color][/bold] 100 (крит), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 10-60 [color=yellow]Колющий[/color] (10 за дробинку)
+  - [bold][color=#a4885c]Сопротивления:[/color][/bold] нет
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (дробовик)
+
   [bold][color=#a4885c]________________________________________________________________________[/color]
-  
+
   <Box>
-  <GuideEntityEmbed Entity="MobPunkGangerSmg" Caption=""/>
+    <GuideEntityEmbed Entity="MobPunkGangerSmg" Caption=""/>
   </Box>
-  - [bold][color=#a4885c]Health thresholds:[/color][/bold] 100 (crit), 140 (death)
-  - [bold][color=#a4885c]Run speed:[/color][/bold] 4 m/s
-  - [bold][color=#a4885c]Damage (type):[/color][/bold] 16 [color=yellow]Piercing[/color] (.35 round)
-  - [bold][color=#a4885c]Damage resistances:[/color][/bold] [color=red]Blunt[/color], [color=red]Slash[/color] and [color=yellow]Piercing[/color] 25%; [color=orange]Heat[/color] 20%; [color=orange]Caustic[/color] 10%; [color=orange]Explosion[/color] 10% (punk armor)
-  - [bold][color=#a4885c]Special abilities:[/color][/bold] Shooter (drozd)
-  
+  - [bold][color=#a4885c]Пороги здоровья:[/color][/bold] 100 (крит), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 16 [color=yellow]Колющий[/color] (патрон .35)
+  - [bold][color=#a4885c]Сопротивления:[/color][/bold] [color=red]Ударный[/color], [color=red]Режущий[/color] и [color=yellow]Колющий[/color] 25%; [color=orange]Термальный[/color] 20%; [color=orange]Коррозийный[/color] 10%; [color=orange]Взрывной[/color] 10% (броня панков)
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (Дрозд)
+
   [bold][color=#a4885c]________________________________________________________________________[/color]
-  
-  # "Punk gang leader"
-  
-  It takes a formidable figure to lead a pack of street trash. These leaders usually wield scavenged SMGs and wear armor taken from unfortunate security forces. Usually high on meth and booze.
-  
+
+  # "Лидер банды панков"
+
+  Чтобы возглавить эту шайку уличного отребья, нужна сильная личность. Эти лидеры обычно вооружены подобранными ПП и носят броню, снятую с неудачливых охранников. Обычно под метом и алкоголем.
+
   <Box>
-  <GuideEntityEmbed Entity="MobPunkGangerLeader" Caption=""/>
+    <GuideEntityEmbed Entity="MobPunkGangerLeader" Caption=""/>
   </Box>
-  - [bold][color=#a4885c]Health thresholds:[/color][/bold] 100 (crit), 140 (death)
-  - [bold][color=#a4885c]Run speed:[/color][/bold] 4 m/s
-  - [bold][color=#a4885c]Damage (type):[/color][/bold] 17 [color=orange]Heat[/color]
-  - [bold][color=#a4885c]Damage resistances:[/color][/bold] [color=red]Blunt[/color], [color=red]Slash[/color] 10%; [color=yellow]Piercing[/color] 60%; [color=orange]Heat[/color] 10%; [color=orange]Explosion[/color] 20% (punk heavy armor)
-  - [bold][color=#a4885c]Special abilities:[/color][/bold] Shooter (laser rifle)
-  
+  - [bold][color=#a4885c]Пороги здоровья:[/color][/bold] 100 (крит), 140 (смерть)
+  - [bold][color=#a4885c]Скорость бега:[/color][/bold] 4 м/с
+  - [bold][color=#a4885c]Урон (тип):[/color][/bold] 17 [color=orange]Термальный[/color]
+  - [bold][color=#a4885c]Сопротивления:[/color][/bold] [color=red]Ударный[/color], [color=red]Режущий[/color] 10%; [color=yellow]Колющий[/color] 60%; [color=orange]Термальный[/color] 10%; [color=orange]Взрывной[/color] 20% (тяжелая броня панков)
+  - [bold][color=#a4885c]Особые способности:[/color][/bold] Стрелок (лазерная винтовка)
+
   [bold][color=#a4885c]________________________________________________________________________[/color]
-  
-  # Mission Objectives
-  ## Elimination
+
+  # Цели миссий
+  ## Уничтожение
   <Box>
-  <GuideEntityEmbed Entity="MobPunkGangerLeader"/>
+    <GuideEntityEmbed Entity="MobPunkGangerLeader"/>
   </Box>
-  Eliminate a large and dangerous creature - a [color=#a4885c]punk gang leader[/color] within given time constraints to earn a monetary reward.
-  
-  ## Destruction
+  Ликвидируйте крупное и опасное существо - [color=#a4885c]лидера банды панков[/color] в установленные сроки, чтобы получить денежное вознаграждение.
+
+  ## Разрушение
   <Box>
-  <GuideEntityEmbed Entity="PunkPartySupplies"/>
+    <GuideEntityEmbed Entity="PunkPartySupplies"/>
   </Box>
-  Destroy a certain number of [color=#a4885c]party supplies[/color] within given time constraints to earn a monetary reward.
+  Уничтожьте указанное количество [color=#a4885c]вечеринок панков[/color] в установленные сроки, чтобы получить денежное вознаграждение.
 </Document>

@@ -1,9 +1,9 @@
 <Document>
 
-# Pastries & Desserts
+  # Выпечка и десерты
 
-A special sweet treat can go a long way to boosting the crew's morale.
+  Вкусное сладкое угощение может значительно поднять боевой дух экипажа.
 
-<GuideMicrowaveGroupEmbed Group="Dessert"/>
+  <GuideMicrowaveGroupEmbed Group="Dessert"/>
 
 </Document>

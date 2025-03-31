@@ -1,191 +1,190 @@
 <Document>
-# Glossary
+  # Глоссарий
 
-This page contains most slang terms you might encounter on the station and throughout the community !
+  Эта страница содержит большинство сленговых терминов, которые вы можете встретить на станции и в сообществе!
 
-# In-Character Slang
+  # Игровой сленг (IC)
 
-These are terms you might encounter in-game.
+  Эти термины могут встретиться вам в игре.
 
-## AOS
-Arrest on sight.
+  ## AOS (Arrest On Sight)
+  Арест при виде.
 
-## AA
-All Access, or an ID which has every access on the station. The captain is the only person who will have this kind of access under normal circumstances.
+  ## AA (All Access)
+  Полный доступ, или ID-карта, имеющая все доступы на станции. В обычных обстоятельствах только капитан обладает таким доступом.
 
-## Atmos
-Short for Atmospherics.
+  ## Atmos
+  Сокращение от "Atmospherics" (Атмосферный отдел).
 
-## Atmosian
-A term for Atmospheric Technicians, or generally anyone who spends most of their time or is particularly skilled with Atmospherics.
+  ## Атмосник
+  Термин для атмосферных техников или тех, кто проводит много времени в Atmospherics или особенно хорошо разбирается в этой системе.
 
-## Bolted
-An airlock that will never change states. It will stay permanently open or permanently closed until it is unbolted. Closed and bolted airlocks have solid red lights.
+  ## Болтинг (Bolted)
+  Шлюз, который не может изменить своё состояние. Он останется навсегда открытым или закрытым, пока его не разболтят. Закрытые и заблокированные шлюзы имеют сплошной красный свет.
 
-## Borg
-Short for cyborgs, player-controlled robots.
+  ## Борг (Borg)
+  Сокращение от "киборг" — управляемые игроками роботы.
 
-## Braindead
-Refers to a user who has disconnected from the game. Disconnected users may still reconnect to the server and assume control of their character again.
+  ## Брейндид (Braindead)
+  Относится к игроку, который отключился от игры. Отключённые игроки могут вернуться и снова взять под контроль своего персонажа.
 
-## Brig
-The main area of the security department. This is where prisoners are brought and held for their punishment. The Warden is in charge of the brig's smooth operation.
+  ## Бриг (Brig)
+  Главная зона отдела безопасности. Здесь содержатся заключённые. Надзиратель отвечает за работу брига.
 
-## Cap
-Short for Captain.
+  ## Кэп (Cap)
+  Сокращение от "Капитан".
 
-## Cargonia
-Reference to cargo declaring independence. Against the rules.
+  ## Каргония (Cargonia)
+  Отсылка к тому, что грузовой отдел объявляет независимость. Нарушает правила.
 
-## CE
-Short for Chief Engineer, the head of the Engineering Department.
+  ## СИ (CE, Chief Engineer)
+  Старший инженер, глава инженерного отдела.
 
-## CentComm/Central Command
-An administrative agency which oversees the Nanotrasen space station you inhabit.
+  ## ЦентКом (CentComm / Central Command)
+  Административное агентство, курирующее станцию Nanotrasen.
 
-## CMO
-Short for Chief Medical Officer, the head of the Medical Department.
+  ## ГВ (CMO, Chief Medical Officer)
+  Главный врач, глава медицинского отдела.
 
-## Crit/Critical
-Refers to the health state at which you fall unconscious and unable to move. While in critical, your health slowly decays until you die, unless you happen to get outside assistance.
+  ## Крит (Crit / Critical)
+  Состояние здоровья, при котором вы падаете без сознания и не можете двигаться. В крите ваше здоровье медленно ухудшается, пока вы не умрёте, если не получите помощь.
 
-## Emag
-  Refers to the Syndicate cryptographic sequencer. "Emagged" usually refers to airlocks or lockers that are bolted open, but also any other device hacked into by an Emag.
+  ## Эмаг (Emag)
+  Синдикатский криптографический дешифратор. "Эмагнутый" обычно относится к шлюзам или шкафчикам, которые заблокированы в открытом состоянии, а также к любым устройствам, взломанным с помощью эмага.
 
-## Emergency Access/EA
-  An airlock that can be opened by anyone, even without access or an ID at all. Airlocks that are set to emergency access have blinking yellow lights.
+  ## Аварийный доступ (EA, Emergency Access)
+  Шлюз, который можно открыть без ID. Шлюзы с аварийным доступом мигают жёлтым светом.
 
-## ERT
-An Emergency Response Team. These may be dispatched by Central Command for a number of purposes.
+  ## ОБР (ERT, Emergency Response Team)
+  Группа экстренного реагирования. Может быть отправлена ЦентКомом для различных целей.
 
-## Flukie
-A portmanteau of "Fluke" and "Nukie" used to (usually derogatorily) refer to a team of Nuclear Operatives who fail their objective. May also appear as "Fluke Ops".
+  ## Флуки (Flukie)
+  Комбинация "Fluke" (неудача) и "Nukie" (ядерные оперативники). Уничижительное название для проваливших задание оперативников. Также может звучать как "Fluke Ops".
 
-## God(s)
-An IC term representing a Server Administrator. CentComm is also sometimes used in this manner.
+  ## Бог(и) (God(s))
+  Внутриигровой термин, обозначающий администратора сервера. Иногда в этом же значении используется "CentComm".
 
-## Greytide/Greyshirt/Tider/Assistant
-Typically utilized to refer to a Passenger due to the color of their standard uniform, though this may be used to negatively refer to other crew members (not only passengers) who act unruly or commit various minor crimes.
+  ## Грейтайдер / Серорубашечник (Greytide / Greyshirt / Tider / Assistant)
+  Обычно относится к пассажиру из-за цвета униформы, но может использоваться в негативном ключе для любого неадекватного члена экипажа.
 
-## HoP
-Short for Head of Personnel, head of the Service Department. Can also refer to the HoP's office, where IDs are given or changed.
+  ## ГП (HoP, Head of Personnel)
+  Глава персонала, начальник сервисного отдела. Также может означать офис ГП, где выдаются или изменяются ID.
 
-## HoS
-Short for Head of Security, head of the Security Department.
+  ## ГБ (HoS, Head of Security)
+  Глава безопасности, начальник СБ.
 
-## Insuls
-Short for Insulated Gloves. These are the yellow gloves most often worn by Engineers. They are offer complete protection from getting electrocuted from shocked things. Vastily more effective than their budget variety.
+  ## Изоляторы (Insuls, Insulated Gloves)
+  Жёлтые перчатки, которые носят инженеры. Полностью защищают от ударов током. Намного эффективнее бюджетных аналогов.
 
-## Jani
-Short for Janitor.
+  ## Уборщик (Jani, Janitor)
+  Сокращение от "уборщик".
 
-## KOS
-Kill on sight. Someone has commited such a serious crime that they are deemed not even worth arresting.
+  ## KOS (Kill On Sight)
+  Убить при виде. Кто-то совершил настолько серьёзное преступление, что его даже не стоит арестовывать.
 
-## Mats
-Materials. Usually steel, plastic, plasteel, glass, silver and gold.
+  ## Маты (Mats, Materials)
+  Материалы. Обычно сталь, пластик, пласталь, стекло, серебро и золото.
 
-## Nanotrasen/NT
-Nanotrasen is the company which owns the space station you inhabit.
+  ## НаноТрейзен (NT, Nanotrasen)
+  Корпорация, владеющая станцией.
 
-## Newkie
-A portmanteau of "New" and "Nukie" used to refer to an inexperienced player in the role of a Nuclear Operative.
+  ## Ньюки (Newkie)
+  Комбинация "New" (новый) и "Nukie" (ядерный оперативник). Относится к неопытному игроку в роли оперативника.
 
-## Nukie
-A slang/shorthand term of a Nuclear Operative. May sometimes also appear as "Nuke Op".
+  ## Нюки (Nukie)
+  Сленговое название ядерного оперативника. Также может звучать как "Nuke Op".
 
-## Perma
-Short for Permanent Brig. This is for the most serious crime and means that a prisoner will never be released. Most stations have a dedicated, separate area of security for the permanent brig.
+  ## Перма (Perma, Permanent Brig)
+  Пожизненный бриг. Для самых серьёзных преступлений — заключённого никогда не выпустят. На многих станциях есть отдельная зона для пермабрига.
 
-## QM
-Short for Quartermaster, the head of the Cargo department.
+  ## КМ (QM, Quartermaster)
+  Квартирмейстер, глава грузового отдела.
 
-## RD
-Short for Research Director, the head of the Science Department.
+  ## НР (RD, Research Director)
+  Научный руководитель, глава научного отдела.
 
-## Robust
-A word used to describe someone who is particularly adept in combat, or endured through a tough fight.
+  ## Робаст (Robust)
+  Тот, кто особенно хорош в бою или выстоял в тяжёлой схватке.
 
-## Salv
-Short for Salvage tech.
+  ## Салв (Salv, Salvage tech)
+  Сокращение от "salvage technician" (техник по утилизации).
 
-## Sci
-Short for Science.
+  ## Научник (Sci, Science)
+  Сокращение от "научный отдел".
 
-## Sec
-Short for Security.
+  ## СБ (Sec, Security)
+  Сокращение от "служба безопасности".
 
-## Secoff
-Short for Security Officer.
+  ## СБшник (Secoff, Security Officer)
+  Офицер безопасности.
 
-## Shift
-In-Character way to refer to rounds.
+  ## Смена (Shift)
+  Внутриигровой способ обозначения раундов.
 
-## Singulo
-A shortening of the Singularity Engine. A Singulo can create infinite power for the station but is very dangerous.
+  ## Сингуло (Singulo)
+  Сокращение от "Singularity Engine" (сингулярность). Может давать бесконечную энергию, но очень опасна.
 
-## Singuloose
-A Singularity that has grownth too much and breached it's containment. It will rip through the station causing massive damage.
+  ## Сингулуз (Singuloose)
+  Сингулярность, которая вырвалась из-под контроля. Разрушает станцию, нанося огромный ущерб.
 
-## Spacing
-An event which causes an area to lose air pressure, i.e. a hull breach.
+  ## Спейсинг (Spacing)
+  Разгерметизация, например, из-за пробоины в корпусе.
 
-## Spess
-An intentional mis-spelling of "Space", sometimes used as a portmanteau of "space" and "mess". May also appear in words such as "Spessmen".
+  ## Спейс (Spess)
+  Намеренное искажение слова "space" (космос). Иногда используется как шутка ("spessmen" вместо "spacemen").
 
-## SSD
-Short for Sudden Sleep Disorder or Space Sleep Disorder. This is an in-character way to refer to a player who has disconnected and is no longer responding.
+  ## SSD (Sudden Sleep Disorder / Space Sleep Disorder)
+  Внезапное космическое расстройство сна. Внутриигровой способ обозначить отключившегося игрока.
 
-## Syndie/Syndi/Syndicate
-A catch-all reference to anyone employed by the Syndicate. This ranges from (suspected) Syndicate Agents to Nuclear Operatives.
+  ## Синди (Syndie / Syndi / Syndicate)
+  Общее название для всех, кто работает на Синдикат — от агентов до ядерных оперативников.
 
-## TC
-A telecrystal, which is a currency used by Syndicate Agents to purchase restricted contraband such as weapons and other illegal equipment.
+  ## ТК (TC, Telecrystal)
+  Телекристалл, валюта, используемая агентами Синдиката для покупки оружия и запрещённого оборудования.
 
-## Wardenloose
-A joke term referencing a Singuloose. A wardenloose is when the Warden is seen outside of the brig.
+  ## Варденлуз (Wardenloose)
+  Шуточный термин по аналогии с "сингулуз". Когда надзиратель покидает бриг.
 
-## Xenoarchaeology
-Study of artifacts, usually performed by science.
+  ## Ксеноархеология (Xenoarchaeology)
+  Изучение артефактов, обычно научным отделом.
 
-# Out-Of-Character Slang
+  # Внеигровой сленг (OOC)
 
-These are terms you should only be using in OOC chat or outside the game.
+  Эти термины следует использовать только в OOC-чате или вне игры.
 
-## Admeme
-An event hosted or caused by an admin.
+  ## Адмим (Admeme)
+  Событие, организованное или вызванное администратором.
 
-## AHelp/Admin Help
-A relay used to report rulebreaking behavior or other issues to administrators.
+  ## AHelp (Admin Help)
+  Запрос помощи администраторам для сообщения о нарушении правил.
 
-## Antag
-Short for Antagonists, which are specifically picked individuals designed to drive the round into chaos.
+  ## Антаг (Antag, Antagonist)
+  Антагонист — игрок, задача которого устроить хаос в раунде.
 
-## Bwoink
-The noise made when an admin-help is received. Pray this isn't a ban.
+  ## Бвуинк (Bwoink)
+  Звук уведомления от администратора. Лучше, чтобы это не был бан.
 
-## Ick Ock
-A phrase usually shouted in OOC when somebody reveals IC current round information, or "in-character, out-of-character".
+  ## ИК ОК (Ick Ock)
+  Фраза, которую кричат в OOC, когда кто-то раскрывает внутриигровую информацию вне роли.
 
-## LOOC/OOC
-Local out-of-character and (global) out-of-character respectively. They are text channels that allow players to talk to other players outside of roleplay. LOOC is enabled during rounds, while OOC is typically only on after the round ends.
+  ## LOOC / OOC
+  Локальный и глобальный внеигровой чат соответственно. LOOC доступен во время раунда, OOC обычно только после его окончания.
 
-## LRP
-Low Roleplay. Servers marked LRP typically have relaxed roleplaying rules.
+  ## LRP (Low Roleplay)
+  Серверы с низким уровнем ролевой игры. Правила по отыгрышу мягче.
 
-## MRP
-Medium Roleplay. Servers marked MRP usually have a decent basis of roleplaying rules and generally require players to act as their character would realistically in a given situation. Less leeway is afforded to behavior such as openly defying Security or your boss.
+  ## MRP (Medium Roleplay)
+  Серверы со средним уровнем ролевой игры. Требуют более реалистичного поведения.
 
-## HRP
-High Roleplay. Servers marked HRP generally have extensive rules on what is and is not constituted while playing a character. You are generally required to act as your character would, have a character backstory, and follow protocol on the station. Some HRP servers may create their own lore or settings to further facilitate the type of server they wish to host.
+  ## HRP (High Roleplay)
+  Серверы с высоким уровнем ролевой игры. Требуют глубокого отыгрыша, бэкстори и следования протоколу.
 
-## Self-Antag
-A term for a player who engages in antagonist-like activity without actually being an antagonist. This encompasses a wide variety of behavior, but is typically used to describe annoying behavior or actions which are greatly detrimental to other players for no purpose. Self-antagonism is a bannable offense. Sometimes used in IC. DO NOT DO THIS.
+  ## Самоантаг (Self-Antag)
+  Игрок, ведущий себя как антагонист, не будучи им. Нарушение правил.
 
-## Upstream
-The baseline version of the game. Any changes to Upstream will "flow" down to all other forks of the game. All official Wizard's Den servers work off of Upstream.
+  ## Апстрим (Upstream)
+  Базовая версия игры. Все изменения в апстриме распространяются на другие форки.
 
-## Validhunter
-A player who hunts down "valids", as in people that are valid to kill, even though this person isn't security.
-
+  ## Валидхантер (Validhunter)
+  Игрок, который охотится на "валидов" (тех, кого можно убить), не будучи СБ.
 </Document>

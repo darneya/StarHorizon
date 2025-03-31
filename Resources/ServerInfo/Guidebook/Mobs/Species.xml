@@ -1,31 +1,31 @@
 <Document>
-  # Species
+  # Расы
 
-  Nanotrasen employs a variety of sapient species.
+  Корпорация NanoTrasen нанимает представителей различных разумных рас.
 
   <Box>
-  <GuideEntityEmbed Entity="MobArachnid" Caption="Arachnid"/>
-  <GuideEntityEmbed Entity="MobDiona" Caption="Diona"/>
-  <GuideEntityEmbed Entity="MobDwarf" Caption="Dwarf"/>
-  <GuideEntityEmbed Entity="MobHuman" Caption="Human"/>
+    <GuideEntityEmbed Entity="MobArachnid" Caption="Арахнид"/>
+    <GuideEntityEmbed Entity="MobDiona" Caption="Диона"/>
+    <GuideEntityEmbed Entity="MobDwarf" Caption="Дварф"/>
+    <GuideEntityEmbed Entity="MobHuman" Caption="Человек"/>
   </Box>
   <Box>
-  <GuideEntityEmbed Entity="MobMoth" Caption="Moth Person"/>
-  <GuideEntityEmbed Entity="MobReptilian" Caption="Reptilian"/>
-  <GuideEntityEmbed Entity="MobSlimePerson" Caption="Slime Person"/>
-  <GuideEntityEmbed Entity="MobVox" Caption="Vox"/>
+    <GuideEntityEmbed Entity="MobMoth" Caption="Мотолюд"/>
+    <GuideEntityEmbed Entity="MobReptilian" Caption="Рептилоид"/>
+    <GuideEntityEmbed Entity="MobSlimePerson" Caption="Слайм"/>
+    <GuideEntityEmbed Entity="MobVox" Caption="Вокс"/>
   </Box>
 
-  # Frontier specific species
+  # Расы Фронтира
   <Box>
-  <GuideEntityEmbed Entity="MobGoblin" Caption="Goblin"/>
+    <GuideEntityEmbed Entity="MobGoblin" Caption="Гоблин"/>
   </Box>
-  # Delta-V specific species
+  # Расы Delta-V
   <Box>
-  <GuideEntityEmbed Entity="MobVulpkanin" Caption="Vulpkanin"/>
-  <GuideEntityEmbed Entity="MobFelinid" Caption="Felinid"/>
-  <GuideEntityEmbed Entity="MobHarpy" Caption="Harpy"/>
-  <GuideEntityEmbed Entity="MobOni" Caption="Oni"/>
+    <GuideEntityEmbed Entity="MobVulpkanin" Caption="Вульпканин"/>
+    <GuideEntityEmbed Entity="MobFelinid" Caption="Фелинид"/>
+    <GuideEntityEmbed Entity="MobHarpy" Caption="Гарпия"/>
+    <GuideEntityEmbed Entity="MobOni" Caption="Они"/>
   </Box>
 
 </Document>

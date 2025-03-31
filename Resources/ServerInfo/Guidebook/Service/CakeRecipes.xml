@@ -1,9 +1,9 @@
 <Document>
 
-# Cakes
+  # Торты
 
-Cakes are a timeless classic, combining fresh ingredients and a delicious tender base to make something that can serve a lot of crewmates.
+  Классика на все времена! Сочетание свежих ингредиентов и нежной основы создаёт угощение, которого хватит на весь экипаж.
 
-<GuideMicrowaveGroupEmbed Group="Cake"/>
+  <GuideMicrowaveGroupEmbed Group="Cake"/>
 
 </Document>
