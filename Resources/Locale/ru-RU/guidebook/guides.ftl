@@ -199,4 +199,3 @@ guide-entry-spacing = Разгерметизации
 guide-entry-atmostools = Инструменты атмоса
 guide-entry-gasses = Газы
 guide-entry-special = Специальные
-guide-entry-cryogenics = Криогеника
