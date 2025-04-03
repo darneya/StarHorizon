@@ -1,13 +1,13 @@
 <Document>
-# 10. Crimes and Fines
+  # 10. Преступления и штрафы
 
-Server rules must be followed, but Space Law can be broken with some considerations.
+  Правила сервера обязательны к соблюдению, но Космический Закон может быть нарушен с учетом следующих условий.
 
-    - Capital crimes should only be committed by antagonists (e.g. pirates, nuclear operatives).
-    - All other crimes require proper roleplay, justification and escalation to be committed as a non-antagonist.
-    - If a silicon is responsible for a crime, the person giving the order is to be charged.
-    - Punishment can compound depending on the number of counts of a single crime and the severity.
-    -- Refer to Space Law for a list of fines, punishments, and limits.
-    - You must wait at least 20 minutes to loot, salvage, or claim an abandoned shuttle.
-    -- This 20 minutes starts from when you confirm it is abandoned.
+  - Капитальные преступления могут совершаться только антагонистами (пиратами, ядерными оперативниками и т.д.).
+  - Все прочие преступления требуют соответствующей ролевой игры, обоснования и эскалации для не-антагонистов.
+  - Если преступление совершено силиконом, ответственность несет отдавший приказ.
+  - Наказание может быть ужесточено в зависимости от количества эпизодов одного преступления и его тяжести.
+  -- Подробный перечень штрафов, наказаний и ограничений смотрите в Космическом Законе.
+  - Перед тем как разграбить, утилизировать или заявить права на брошенный шаттл, необходимо выждать минимум 20 минут.
+  -- Отсчет 20 минут начинается с момента подтверждения, что шаттл действительно брошен.
 </Document>
