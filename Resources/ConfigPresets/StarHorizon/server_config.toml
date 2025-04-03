@@ -131,8 +131,8 @@ enabled = false
 ################################################################################
 ##### Discord ##################################################################
 
-#[discord]
-#ahelp_webhook = "%ahelp_webhook%"
-#ban_webhook = "%ban_webhook%"
-#round_update_webhook = "%round_update_webhook%"
+[discord]
+ahelp_webhook = "%webhook_ahelp%"
+ban_webhook = "%webhook_ban%"
+round_update_webhook = "%webhook_round_update%"
 #round_end_role = "%round_end_role%"
