@@ -70,7 +70,7 @@
   components:
   - type: GameRule
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 600 # 10 min 
+    minimumTimeUntilFirstEvent: 600 # 10 min
     minMaxEventTiming:
       min: 750 # 12.5 min
       max: 930 # 17.5 min
@@ -97,7 +97,7 @@
   - type: StationEvent
     reoccurrenceDelay: 1
     earliestStart: 12
-    minimumPlayers: 25
+    minimumPlayers: 10 # Horizon TempTweak
   - type: MeteorSwarm
 
 - type: entity
@@ -147,7 +147,7 @@
   components:
   - type: StationEvent
     weight: 18
-    minimumPlayers: 15
+    minimumPlayers: 7 # Horizon TempTweak
   - type: MeteorSwarm
     meteors:
       MeteorSmall: 7
@@ -207,7 +207,7 @@
     reoccurrenceDelay: 1
     duration: 1
     earliestStart: 30
-    minimumPlayers: 25
+    minimumPlayers: 10 # Horizon TempTweak
   - type: ImmovableRodRule
     rodPrototypes:
     - id: ImmovableRodKeepTilesStill

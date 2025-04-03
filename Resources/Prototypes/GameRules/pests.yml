@@ -51,7 +51,7 @@
     earliestStart: 15
     weight: 6
     duration: 50
-    minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
+    minimumPlayers: 15 # Horizon TempTweak # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
   - type: VentCrittersRule
     entries:
     - id: MobMouse
@@ -115,7 +115,7 @@
     earliestStart: 15
     weight: 6
     duration: 50
-    minimumPlayers: 30
+    minimumPlayers: 15 # Horizon TempTweak
   - type: VentCrittersRule
     entries:
     - id: MobSnail
