@@ -87,14 +87,8 @@ map_enabled = true
 restart_not_allowed_when_admin_online = false
 
 [shuttle]
-arrivals_planet = false
-arrivals_returns = true
-emergency_early_launch_allowed = true
-emergency_dock_time = 300.0
-emergency_authorize_time = 15.0
-recall_turning_point = 0.1
-auto_call_time = 300
-auto_call_extension_time = 90
+auto_call_time = 1440
+
 
 [rules]
 time = 90.0
