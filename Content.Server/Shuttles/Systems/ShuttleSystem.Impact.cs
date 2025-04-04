@@ -4,7 +4,9 @@ using Robust.Server.GameObjects;
 using Content.Shared.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
+// using Robust.Shared.Physics.Dynamics; // Horizon deletion
 using Robust.Shared.Physics.Events;
+// using Robust.Shared.Player; // Horizon deletion
 using Robust.Shared.Map.Components;
 using Content.Shared.Damage;
 
@@ -12,25 +14,25 @@ namespace Content.Server.Shuttles.Systems;
 
 public sealed partial class ShuttleSystem
 {
-    [Dependency] private readonly MapSystem _mapSys = default!; // StarHorizon
-    [Dependency] private readonly DamageableSystem _damageSys = default!; // StarHorizon
+    [Dependency] private readonly MapSystem _mapSys = default!; // Horizon
+    [Dependency] private readonly DamageableSystem _damageSys = default!; // Horizon
 
     /// <summary>
     /// Minimum velocity difference between 2 bodies for a shuttle "impact" to occur.
     /// </summary>
     private const int MinimumImpactVelocity = 10;
 
-    // StarHorizon: collision damage
+    // Horizon start // collision damage
     /// <summary>
     /// Kinetic energy required to dismantle a single tile
     /// </summary>
-    private const float TileBreakEnergy = 5000;
+    private const float TileBreakEnergy = 10000;
 
     /// <summary>
     /// Kinetic energy required to spawn sparks
     /// </summary>
-    private const float SparkEnergy = 7000;
-    // End StarHorizon
+    private const float SparkEnergy = 14000;
+    // Horizon end
 
     private readonly SoundCollectionSpecifier _shuttleImpactSound = new("ShuttleImpactSound");
 
@@ -41,10 +43,13 @@ public sealed partial class ShuttleSystem
 
     private void OnShuttleCollide(EntityUid uid, ShuttleComponent component, ref StartCollideEvent args)
     {
-        // StarHorizon: change check from "if we're a shuttle" to "both must be grids"
+
+        // if (!HasComp<ShuttleComponent>(args.OtherEntity)) // Horizon deletion
+        // Horizon start // change check from "if we're a shuttle" to "both must be grids"
         if (!TryComp<MapGridComponent>(uid, out var ourGrid) ||
             !TryComp<MapGridComponent>(args.OtherEntity, out var otherGrid))
             return;
+        // Horizon end
 
         var ourBody = args.OurBody;
         var otherBody = args.OtherBody;
@@ -69,12 +74,12 @@ public sealed partial class ShuttleSystem
             return;
         }
 
-        // StarHorizon: ship collisions
+        // Horizon start // ship collisions
         var energy = ourBody.Mass * Math.Pow(jungleDiff, 2) / 2;
         var dir = (ourVelocity.Length() > otherVelocity.Length() ? ourVelocity : -otherVelocity).Normalized();
         ProcessTile(uid, ourGrid, (Vector2i) ourPoint, (float) energy, -dir);
         ProcessTile(args.OtherEntity, otherGrid, (Vector2i) otherPoint, (float) energy, dir);
-        // End StarHorizon
+        // Horizon end
 
         var coordinates = new EntityCoordinates(ourXform.MapUid.Value, args.WorldPoint);
         var volume = MathF.Min(10f, 1f * MathF.Pow(jungleDiff, 0.5f) - 5f);
@@ -83,7 +88,7 @@ public sealed partial class ShuttleSystem
         _audio.PlayPvs(_shuttleImpactSound, coordinates, audioParams);
     }
 
-    // StarHorizon: function to destroy tiles
+    // Horizon start // function to destroy tiles
     private void ProcessTile(EntityUid uid, MapGridComponent grid, Vector2i tile, float energy, Vector2 dir)
     {
         DamageSpecifier damage = new();
@@ -105,5 +110,5 @@ public sealed partial class ShuttleSystem
         if (energy > SparkEnergy)
             SpawnAtPosition("EffectSparks", new EntityCoordinates(uid, tile));
     }
-    // End StarHorizon
+    // Horizon end
 }
