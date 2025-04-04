@@ -48,6 +48,22 @@
         key: Drowsiness
         time: 10
         type: Remove
+# Horizon start
+      - !type:DrugIntoxication
+        addictionEffect: 0.4
+        toleranceEffect: 0.07
+        drugStrenght: 3
+      - !type:AdjustReagent
+        probability: 0.6 # Chance of Addiction rising per tick
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Addictine
+          max: 20 # maximum addiction severity for this reagent
+        - !type:ReagentThreshold
+          min: 0.25
+        reagent: Addictine
+        amount: 0.2
+# Horizon end
     Medicine:
       effects:
       - !type:ResetNarcolepsy
@@ -204,6 +220,22 @@
         type: Add
         time: 16
         refresh: false
+# Horizon start
+      - !type:DrugIntoxication
+        addictionEffect: 0.1
+        toleranceEffect: 0.07
+        drugStrenght: 3
+      - !type:AdjustReagent
+        probability: 0.4 # Chance of Addiction rising per tick
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Addictine
+          max: 20 # maximum addiction severity for this reagent
+        - !type:ReagentThreshold
+          min: 0.25
+        reagent: Addictine
+        amount: 0.2
+# Horizon end
 
 - type: reagent
   id: Nicotine
@@ -246,6 +278,22 @@
         probability: 0.05
       - !type:Drunk # Headaches and slurring are major symptoms of brain damage, this is close enough
         boozePower: 5
+# Horizon start
+      - !type:DrugIntoxication
+        addictionEffect: 0.7
+        toleranceEffect: 0.02
+        drugStrenght: 3
+      - !type:AdjustReagent
+        probability: 0.4 # Chance of Addiction rising per tick
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Addictine
+          max: 20 # maximum addiction severity for this reagent
+        - !type:ReagentThreshold
+          min: 0.25
+        reagent: Addictine
+        amount: 0.2
+# Horizon end
 
 - type: reagent
   id: SpaceDrugs
@@ -264,6 +312,22 @@
         type: Add
         time: 5
         refresh: false
+# Horizon start
+      - !type:DrugIntoxication
+        addictionEffect: 0.5
+        toleranceEffect: 0.01
+        drugStrenght: 3
+      - !type:AdjustReagent
+        probability: 0.4 # Chance of Addiction rising per tick
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Addictine
+          max: 10 # maximum addiction severity for this reagent
+        - !type:ReagentThreshold
+          min: 0.25
+        reagent: Addictine
+        amount: 0.1
+# Horizon end
 
 - type: reagent
   id: Bananadine
