@@ -10,6 +10,13 @@
   description: "An always powered light."
   suffix: Always powered
   components:
+  - type: BloomLightMask # Bluedge
+    lightMasks:
+    - sprite: "_Bluedge/BloomLight/Masks/lightmask_lamp.png"
+      modulate: "#FFFFFF90"
+    - sprite: "_Bluedge/BloomLight/Masks/tube_short.png"
+      modulate: "#FFFFFF80"
+      useShader: false
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -195,6 +202,7 @@
   suffix: Exterior
   parent: Poweredlight
   components:
+  - type: BloomLightMask # Bluedge
   - type: PoweredLight
     hasLampOnSpawn: ExteriorLightTube
   - type: DamageOnInteract
@@ -221,6 +229,7 @@
   suffix: Sodium
   parent: Poweredlight
   components:
+  - type: BloomLightMask # Bluedge
   - type: PoweredLight
     hasLampOnSpawn: SodiumLightTube
   - type: PointLight
@@ -253,6 +262,14 @@
   suffix: Always Powered
   parent: AlwaysPoweredWallLight
   components:
+    # Bluedge start
+    - type: BloomLightMask
+      lightMasks:
+      - sprite: "_Bluedge/BloomLight/Masks/lightmask_lamp.png"
+      - sprite: "_Bluedge/BloomLight/Masks/bulb_short.png"
+        modulate: "#FFE4CEFF"
+        useShader: false
+    # Bluedge end
     - type: AmbientSound
       volume: -15
       range: 2
