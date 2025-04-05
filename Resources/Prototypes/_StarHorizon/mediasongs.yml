@@ -1,0 +1,34 @@
+- type: MediaFile
+  id: TestSong1
+  songName: bear
+  author: Animals
+  soundPath:
+    path: /Audio/Animals/bear.ogg
+
+- type: MediaFile
+  id: TestSong2
+  songName: cat_hiss
+  author: Animals
+  soundPath:
+    path: /Audio/Animals/cat_hiss.ogg
+
+- type: MediaFile
+  id: TestSong3
+  songName: cat_meow
+  author: Animals
+  soundPath:
+    path: /Audio/Animals/cat_meow.ogg
+
+- type: MediaFile
+  id: TestSong4
+  songName: cat_meow2
+  author: Animals
+  soundPath:
+    path: /Audio/Animals/cat_meow2.ogg
+
+- type: MediaFile
+  id: TestSong5
+  songName: cerberus
+  author: Animals
+  soundPath:
+    path: /Audio/Animals/cerberus.ogg
