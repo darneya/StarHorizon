@@ -9,17 +9,16 @@ public sealed partial class GasLeakRuleComponent : Component
 {
     public readonly Gas[] LeakableGases =
     {
-        Gas.Ammonia,
-        // Frontier - Only leak water vapors, not major health risks - PR 641
-//        Gas.Plasma,
-//        Gas.Tritium,
-//        Gas.Frezon,
-        Gas.WaterVapor, // the fog
         // Horizon start
+        Gas.Ammonia,
+        Gas.Plasma,
+        Gas.Tritium,
+        Gas.Frezon,
+        Gas.WaterVapor, // the fog
         Gas.BZ,
         Gas.Hydrogen,
         Gas.Halon
-        // horizon end
+        // Horizon end
     };
 
     /// <summary>
