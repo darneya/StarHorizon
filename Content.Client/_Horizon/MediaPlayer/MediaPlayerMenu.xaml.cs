@@ -224,7 +224,7 @@ public sealed partial class MediaPlayerMenu : FancyWindow
             return;
 
         DurationLabel.Text = _entManager.TryGetComponent(Audio, out AudioComponent? audioComp)
-            ? $@"{TimeSpan.FromSeconds(audioComp.PlaybackPosition):mm\:ss} / {_audioSystem.GetAudioLength(audioComp.FileName):mm\:ss}"
+            ? $@"{TimeSpan.FromSeconds(audioComp.PlaybackPosition):mm\:ss} / {TimeSpan.FromSeconds(PlaybackSlider.MaxValue):mm\:ss}"
             : $"00:00 / 00:00";
 
         if (PlaybackSlider.Grabbed)
@@ -254,9 +254,9 @@ public sealed partial class MediaPlayerMenu : FancyWindow
             var mediaFile = new MediaFile()
             {
                 SongId = file.ID,
-                MusicAuthor = {Text = $"{file.Author}"},
-                MusicName = {Text = $"{file.SongName}"},
-                MusicTimer = {Text = $@"{_audioSystem.GetAudioLength(file.SoundPath.Path):mm\:ss}"},
+                MusicAuthor = { Text = $"{file.Author}" },
+                MusicName = { Text = $"{file.SongName}" },
+                MusicTimer = { Text = $@"{_audioSystem.GetAudioLength(_audioSystem.ResolveSound(file.SoundPath)):mm\:ss}" },
                 FullSongName = $"{Loc.GetString("media-now-playing-message")}: {file.Author} - {file.SongName}",
                 SongPath = file.SoundPath,
             };

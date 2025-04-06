@@ -47,14 +47,14 @@ public sealed class MediaPlayerSystem : SharedMediaPlayerSystem
 
     private void OnAfterAutoHandleState(Entity<MediaPlayerComponent> ent, ref AfterAutoHandleStateEvent args)
     {
-        if(_uiSystem.TryGetOpenUi<MediaPlayerBoundUserInterface>(ent.Owner, MediaPlayerUIKey.Key, out var bui))
+        if (_uiSystem.TryGetOpenUi<MediaPlayerBoundUserInterface>(ent.Owner, MediaPlayerUIKey.Key, out var bui))
             bui.Reload();
     }
 
     private void HandleRepeatMessage(RepeatMessage args)
     {
         var owner = GetEntity(args.Entity);
-        if(_uiSystem.TryGetOpenUi<MediaPlayerBoundUserInterface>(owner, MediaPlayerUIKey.Key, out var bui))
+        if (_uiSystem.TryGetOpenUi<MediaPlayerBoundUserInterface>(owner, MediaPlayerUIKey.Key, out var bui))
             bui.HandleTitleChange(args.Id);
     }
 }

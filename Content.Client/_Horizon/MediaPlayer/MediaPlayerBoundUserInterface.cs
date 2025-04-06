@@ -71,8 +71,12 @@ public sealed class MediaPlayerBoundUserInterface : BoundUserInterface
 
         if (_protoManager.TryIndex(media.SelectedSongId, out var songProto))
         {
-            var length = EntMan.System<AudioSystem>().GetAudioLength(songProto.SoundPath.Path.ToString());
-            _menu.SetSliderLength((float) length.TotalSeconds);
+            var audioSystem = EntMan.System<AudioSystem>();
+            var resolvedSound = audioSystem.ResolveSound(songProto.SoundPath);
+            var length = audioSystem.GetAudioLength(resolvedSound);
+
+            _menu.SetSliderLength((float)length.TotalSeconds);
+
             if (needUpdate)
                 _menu.UpdateState(songProto.ID, media.Repeat, media.Volume);
         }
