@@ -93,7 +93,7 @@
   icon:
     sprite: Structures/Machines/fat_sucker.rsi
     state: display
-  discipline: CivilianServices
+  discipline: Biochemical # Horizon
   tier: 1
   cost: 7500
   recipeUnlocks:
@@ -126,7 +126,7 @@
   icon:
     sprite: Structures/Machines/stasis_bed.rsi
     state: icon
-  discipline: CivilianServices
+  discipline: Biochemical # Horizon
   tier: 2
   cost: 7500
   recipeUnlocks:
@@ -141,7 +141,7 @@
   icon:
     sprite: Mobs/Silicon/chassis.rsi
     state: medical
-  discipline: CivilianServices
+  discipline: Biochemical # Horizon
   tier: 2
   cost: 5000
   recipeUnlocks:
@@ -229,7 +229,7 @@
   icon:
     sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
     state: beakerbluespace
-  discipline: CivilianServices
+  discipline: Biochemical # Horizon
   tier: 3
   cost: 10000
   recipeUnlocks:
