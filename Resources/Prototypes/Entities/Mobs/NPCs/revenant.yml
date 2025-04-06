@@ -82,3 +82,8 @@
   - type: Reactive
     groups:
       Acidic: [Touch]
+  # Horizon start
+  - type: NightVision
+    isToggle: true
+    color: "#DDA0DD"
+  # Horizon end

@@ -121,6 +121,12 @@
     molsPerSecondPerUnitMass: 0.0005
   - type: Speech
     speechVerb: LargeMob
+  # Horizon start
+  - type: NightVision
+    isToggle: true
+    color: "#808080"
+  # Horizon end
+
 
 - type: entity
   name: praetorian

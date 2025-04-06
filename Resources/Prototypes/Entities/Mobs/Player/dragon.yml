@@ -155,6 +155,12 @@
     - DoorBumpOpener
   - type: Puller
     needsHands: false
+  # Horizon start
+  - type: NightVision
+    isToggle: true
+    color: "#DC143C"
+  # Horizon end
+
 
 - type: entity
   parent: BaseMobDragon

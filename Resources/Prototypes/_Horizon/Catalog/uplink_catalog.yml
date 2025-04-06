@@ -1,0 +1,10 @@
+﻿- type: listing
+  id: UplinkNightVision
+  name: Прибор ночного видения синдиката
+  description: Прибор ночного видения для вас и вашей ночной штурмовой группы.
+  icon: { sprite: /Textures/_Horizon/Clothing/Eyes/nvgsynd.rsi, state: icon }
+  productEntity: ClothingEyesVisionSyndicate
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkWearables
