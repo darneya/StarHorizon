@@ -86,6 +86,11 @@
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
     - type: Carriable # DeltaV
+    # Horizon start
+    - type: NightVision
+      isToggle: true
+      color: "#808080"
+    # Horizon end
 
 - type: entity
   parent: BaseMobCarp

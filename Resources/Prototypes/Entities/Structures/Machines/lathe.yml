@@ -225,6 +225,7 @@
     - NFService # Frontier
     - NFScience # Frontier
     - NFPouches # Frontier
+    - NightVisionPack # Horizon
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -427,6 +428,7 @@
     - SecurityAmmo
     - SecurityWeapons
     - SecurityDisablers
+    - NightVisionPack # Horizon
   - type: MaterialStorage
     whitelist:
       tags:

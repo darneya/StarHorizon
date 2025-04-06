@@ -1,0 +1,15 @@
+# Tier 2
+
+- type: technology
+  id: NightVisionTech
+  name: research-technology-nv
+  icon:
+    sprite: _Horizon/Clothing/Eyes/ninjavisor.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ClothingEyesVision
+  - ClothingEyesVisionSec
+  - HorizonBlueprintClothingEyesVision

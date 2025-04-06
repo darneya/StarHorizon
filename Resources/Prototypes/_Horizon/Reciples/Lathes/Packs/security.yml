@@ -1,0 +1,12 @@
+## Static recipes
+## Dynamic recipes
+
+- type: latheRecipePack
+  id: NightVisionPack
+  recipes:
+  - ClothingEyesVision
+
+- type: latheRecipePack
+  id: NightVisionSecPack
+  recipes:
+  - ClothingEyesVisionSec

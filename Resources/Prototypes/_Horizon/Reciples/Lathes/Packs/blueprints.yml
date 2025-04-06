@@ -1,0 +1,9 @@
+- type: latheRecipePack
+  id: HorizonBlueprints
+  recipes:
+  # Engineering
+  # Medical
+  # Experimental
+  # Service
+  # Arsenal
+  - HorizonBlueprintClothingEyesVision
