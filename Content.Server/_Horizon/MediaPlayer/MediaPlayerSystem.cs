@@ -133,6 +133,7 @@ public sealed class MediaPlayerSystem : SharedMediaPlayerSystem
     private void SetMediaVolume(EntityUid uid, MediaPlayerComponent component, ref MediaVolumeMessage args)
     {
         component.Volume = args.Volume;
+        Dirty(uid, component);
 
         if (!Exists(component.AudioStream))
             return;

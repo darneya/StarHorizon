@@ -38,10 +38,6 @@ public sealed partial class MediaPlayerMenu : FancyWindow
         IoCManager.InjectDependencies(this);
         _audioSystem = _entManager.System<AudioSystem>();
 
-        // Don`t have functional
-        //PreviousButton.OnPressed += OnPrevious;
-        //NextButton.OnPressed += OnNext;
-
         DisableButtons();
         CurrentPlaying.Text = _waitText;
         RepeatButton.OnPressed += _ => Repeat();
@@ -72,14 +68,8 @@ public sealed partial class MediaPlayerMenu : FancyWindow
         StopButton.OnButtonDown += OnDown;
         StopButton.OnButtonUp += OnUp;
 
-        PreviousButton.OnButtonDown += OnDown;
-        PreviousButton.OnButtonUp += OnUp;
-
         PlayButton.OnButtonDown += OnDown;
         PlayButton.OnButtonUp += OnUp;
-
-        NextButton.OnButtonDown += OnDown;
-        NextButton.OnButtonUp += OnUp;
 
         VolumeButton.OnButtonDown += OnDown;
         VolumeButton.OnButtonUp += OnUp;
@@ -308,8 +298,6 @@ public sealed partial class MediaPlayerMenu : FancyWindow
         // Enable
         PlayButton.Disabled = false;
         StopButton.Disabled = false;
-        NextButton.Disabled = false;
-        PreviousButton.Disabled = false;
         PlaybackSlider.Disabled = false;
     }
 
@@ -318,8 +306,6 @@ public sealed partial class MediaPlayerMenu : FancyWindow
         // Disable
         PlayButton.Disabled = true;
         StopButton.Disabled = true;
-        NextButton.Disabled = true;
-        PreviousButton.Disabled = true;
         PlaybackSlider.Disabled = true;
     }
 
