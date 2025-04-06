@@ -1,7 +1,7 @@
 - type: entity
   id: MediaPlayer
   name: media player
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: BaseItem
   description: A machine capable of playing a wide variety of tunes. Enjoyment not guaranteed.
   components:
   - type: Item
@@ -9,30 +9,14 @@
     sprite: Structures/Machines/jukebox.rsi # Нужны новые текстуры
   - type: Sprite
     sprite: Structures/Machines/jukebox.rsi # Нужны новые текстуры
-    layers:
-    - state: "off"
-      map: ["enum.JukeboxVisualLayers.Base"]
+    state: "off"
   - type: Transform
   - type: MediaPlayer
   - type: ActivatableUI
     key: enum.MediaPlayerUIKey.Key
-  - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
         enum.MediaPlayerUIKey.Key:
           type: MediaPlayerBoundUserInterface
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.15
-        mask:
-        - MachineMask
-        layer:
-        - MachineLayer
-        density: 200
