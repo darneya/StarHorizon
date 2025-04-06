@@ -53,7 +53,7 @@
   icon:
     sprite: Structures/dispensers.rsi
     state: industrial-working
-  discipline: CivilianServices
+  discipline: Biochemical # Horizon
   tier: 2
   cost: 10000
   recipeUnlocks:
@@ -66,7 +66,7 @@
   icon:
     sprite: _NF/Structures/Machines/medical_assembler.rsi
     state: icon
-  discipline: CivilianServices
+  discipline: Biochemical # Horizon
   tier: 2
   cost: 5000
   recipeUnlocks:

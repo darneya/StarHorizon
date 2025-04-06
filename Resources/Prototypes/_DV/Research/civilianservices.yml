@@ -4,7 +4,7 @@
   icon:
     sprite: Objects/Weapons/Guns/Cannons/syringe_gun.rsi
     state: syringe_gun
-  discipline: CivilianServices
+  discipline: Biochemical # Horizon
   tier: 2
   cost: 10000
   recipeUnlocks:
