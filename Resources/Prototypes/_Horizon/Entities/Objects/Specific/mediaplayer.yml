@@ -6,10 +6,10 @@
   components:
   - type: Item
     size: Small
-    sprite: Structures/Machines/jukebox.rsi # Нужны новые текстуры
+    sprite: _NF/Structures/Wallmounts/memorial_sign.rsi # Нужны новые текстуры
   - type: Sprite
-    sprite: Structures/Machines/jukebox.rsi # Нужны новые текстуры
-    state: "off"
+    sprite: _NF/Structures/Wallmounts/memorial_sign.rsi # Нужны новые текстуры
+    state: memorial
   - type: Transform
   - type: MediaPlayer
   - type: ActivatableUI

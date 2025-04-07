@@ -27,7 +27,7 @@ public sealed partial class MediaPlayerMenu : FancyWindow
     public EntityUid? Audio;
     private sbyte _repeatCounter;
     private sbyte _volumeCounter;
-    private float _volume = -10;
+    private float _volume = -2;
     private MediaFile? _currentMediaFile;
     private readonly string _waitText = Loc.GetString("media-wait-message");
 
@@ -247,7 +247,7 @@ public sealed partial class MediaPlayerMenu : FancyWindow
                 MusicAuthor = { Text = $"{file.Author}" },
                 MusicName = { Text = $"{file.SongName}" },
                 MusicTimer = { Text = $@"{_audioSystem.GetAudioLength(_audioSystem.ResolveSound(file.SoundPath)):mm\:ss}" },
-                FullSongName = $"{Loc.GetString("media-now-playing-message")}: {file.Author} - {file.SongName}",
+                FullSongName = $"{Loc.GetString("media-now-playing-message")}:\n{file.Author} - {file.SongName}",
                 SongPath = file.SoundPath,
             };
             mediaFile.OnPanelClicked += OnSelect;
