@@ -68,9 +68,16 @@
   soundPath:
     path: /Audio/_NF/Jukebox/frontier-arrivals.ogg
 
-- type: jukebox
+- type: MediaFile
   id: PTMinute
   songName: Minute
   author: Patricia Taxxon
   soundPath:
     path: /Audio/_DV/Jukebox/Patricia_Taxxon_-_Minute_-_MONO.ogg
+
+- type: MediaFile
+  id: TihiyOgoniok
+  songName: Тихий огонёк
+  author: Неизвестный автор
+  soundPath:
+    path: /Audio/_Horizon/Tikhijj_ogonjok
