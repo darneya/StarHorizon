@@ -78,6 +78,6 @@
 - type: MediaFile
   id: TihiyOgoniok
   songName: Тихий огонёк
-  author: Неизвестный автор
+  author: Високосный год
   soundPath:
-    path: /Audio/_Horizon/Tikhijj_ogonjok
+    path: /Audio/_Horizon/Jukebox/visokosnyjj-god-tikhijj-ogonek.ogg
