@@ -131,7 +131,7 @@
   - type: Tag
     tags:
     - ForceableFollow
-    - BluespaceAnomalyCore # Aavikko
+    - BluespaceAnomalyCore # Horizon
     - BluespaceCore
 
 - type: entity
@@ -313,7 +313,7 @@
   - type: Tag
     tags:
     - ForceableFollow
-    - BluespaceAnomalyCore # Aavikko
+    - BluespaceAnomalyCore # Horizon
     - BluespaceCore
 
 - type: entity

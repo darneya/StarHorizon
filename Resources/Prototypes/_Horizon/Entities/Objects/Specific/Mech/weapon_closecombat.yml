@@ -6,10 +6,10 @@
   name: механический плазменный меч
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: cc_sword
   - type: Item
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     size: Ginormous
     state: cc_sword
   - type: MeleeWeapon
@@ -31,10 +31,10 @@
   name: механическое плазменное копье
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: cc_spear
   - type: Item
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     size: Ginormous
     state: cc_spear
   - type: MeleeWeapon
@@ -56,10 +56,10 @@
   name: механические плазменные когти
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: cc_claw
   - type: Item
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     size: Ginormous
     state: cc_claw
   - type: MeleeWeapon
@@ -81,10 +81,10 @@
   name: механический плазменный молот
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: cc_hammer
   - type: Item
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     size: Ginormous
     state: cc_hammer
   - type: MeleeWeapon

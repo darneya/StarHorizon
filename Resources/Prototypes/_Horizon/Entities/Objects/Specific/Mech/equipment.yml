@@ -7,7 +7,7 @@
   components:
   - type: Sprite
     netsync: false
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: engi_plasmacutter
   - type: Item
     size: Large
@@ -43,7 +43,7 @@
   description: Стань прочнее!
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: shield_cc
   - type: MechArmor
     modifiers:
@@ -64,7 +64,7 @@
   description: Стань прочнее!
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: shield_proj
   - type: MechArmor
     modifiers:
@@ -83,7 +83,7 @@
   description: Забирает человека, замедляет метаболизм, оставляет его в безопасности.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: medi_sleeper
   - type: MechGrabber
     grabMobs: true
@@ -100,7 +100,7 @@
   description: You are my friend now :3
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: else_humanstealer
   - type: MechGrabber
     grabMobs: true
@@ -116,7 +116,7 @@
   description: medigun
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: medi_syringe_gun
   - type: Gun
     selectedMode: FullAuto
@@ -143,7 +143,7 @@
   description: Просверлит всё! Стены, двери, руду, столы ковры, ваших врагов!
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: mining_drill
   - type: MechDrill
     damage:
@@ -162,7 +162,7 @@
   description: Сильно просверлит всё! Стены, двери, руду, столы ковры, ваших врагов!
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: mining_drill_diamond
   - type: MechDrill
     damage:
@@ -188,7 +188,7 @@
     maxCharge: 3000
     startingCharge: 3000
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: generator_plasma
   - type: BatterySelfRecharger
     autoRecharge: true
@@ -207,7 +207,7 @@
     maxCharge: 5000
     startingCharge: 5000
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: generator_uranium
   - type: BatterySelfRecharger
     autoRecharge: true
@@ -226,7 +226,7 @@
     maxCharge: 10000
     startingCharge: 10000
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: generator_tesla
   - type: BatterySelfRecharger
     autoRecharge: true

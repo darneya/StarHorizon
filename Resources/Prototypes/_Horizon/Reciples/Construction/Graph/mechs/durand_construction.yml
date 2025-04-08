@@ -150,7 +150,7 @@
       - tag: DurandArmor
         name: durand armor plates
         icon:
-          sprite: "Aavikko/Objects/Specific/Mech/durand_construction.rsi"
+          sprite: "_Horizon/Objects/Specific/Mech/durand_construction.rsi"
           state: durand_armor
         completed:
         - !type:VisualizerDataInt

@@ -8,7 +8,7 @@
   - type: Sprite
     drawdepth: Items
     noRot: false
-    sprite: Aavikko/Objects/Specific/Mech/clarke_construction.rsi
+    sprite: _Horizon/Objects/Specific/Mech/clarke_construction.rsi
 
 - type: entity
   id: BaseClarkePartItem
@@ -47,7 +47,7 @@
         whitelist:
           tags:
           - ClarkeHead
-    sprite: Aavikko/Objects/Specific/Mech/clarke_construction.rsi
+    sprite: _Horizon/Objects/Specific/Mech/clarke_construction.rsi
   - type: ContainerContainer
     containers:
       mech-assembly-container: !type:Container
@@ -153,7 +153,7 @@
   - type: Sprite
     drawdepth: Items
     noRot: false
-    sprite: Aavikko/Objects/Specific/Mech/odysseus_construction.rsi
+    sprite: _Horizon/Objects/Specific/Mech/odysseus_construction.rsi
 
 - type: entity
   id: BaseOdysseusPartItem
@@ -192,7 +192,7 @@
         whitelist:
           tags:
           - OdysseusHead
-    sprite: Aavikko/Objects/Specific/Mech/odysseus_construction.rsi
+    sprite: _Horizon/Objects/Specific/Mech/odysseus_construction.rsi
   - type: ContainerContainer
     containers:
       mech-assembly-container: !type:Container
@@ -310,7 +310,7 @@
   - type: Sprite
     drawdepth: Items
     noRot: false
-    sprite: Aavikko/Objects/Specific/Mech/gygax_construction.rsi
+    sprite: _Horizon/Objects/Specific/Mech/gygax_construction.rsi
 
 - type: entity
   id: BaseGygaxPartItem
@@ -349,7 +349,7 @@
         whitelist:
           tags:
           - GygaxHead
-    sprite: Aavikko/Objects/Specific/Mech/gygax_construction.rsi
+    sprite: _Horizon/Objects/Specific/Mech/gygax_construction.rsi
   - type: ContainerContainer
     containers:
       mech-assembly-container: !type:Container
@@ -467,7 +467,7 @@
   - type: Sprite
     drawdepth: Items
     noRot: false
-    sprite: Aavikko/Objects/Specific/Mech/durand_construction.rsi
+    sprite: _Horizon/Objects/Specific/Mech/durand_construction.rsi
 
 - type: entity
   id: BaseDurandPartItem
@@ -506,7 +506,7 @@
         whitelist:
           tags:
           - DurandHead
-    sprite: Aavikko/Objects/Specific/Mech/durand_construction.rsi
+    sprite: _Horizon/Objects/Specific/Mech/durand_construction.rsi
   - type: ContainerContainer
     containers:
       mech-assembly-container: !type:Container
@@ -624,7 +624,7 @@
   - type: Sprite
     drawdepth: Items
     noRot: false
-    sprite: Aavikko/Objects/Specific/Mech/phazon_construction.rsi
+    sprite: _Horizon/Objects/Specific/Mech/phazon_construction.rsi
 
 - type: entity
   id: BasePhazonPartItem
@@ -663,7 +663,7 @@
         whitelist:
           tags:
           - PhazonHead
-    sprite: Aavikko/Objects/Specific/Mech/phazon_construction.rsi
+    sprite: _Horizon/Objects/Specific/Mech/phazon_construction.rsi
   - type: ContainerContainer
     containers:
       mech-assembly-container: !type:Container
@@ -780,7 +780,7 @@
   description: Набор инструментов и модулей для улучшения Рипли (Мк2).
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/modification_kits.rsi
+    sprite: _Horizon/Objects/Specific/Mech/modification_kits.rsi
     state: ripley_mkii
   - type: Tag
     tags:
@@ -793,7 +793,7 @@
   description: Набор инструментов и модулей для улучшения Рипли (Белого).
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/module.rsi
+    sprite: _Horizon/Objects/Specific/Mech/module.rsi
     state: engiupmod
   - type: Item
     size: Small
@@ -964,7 +964,7 @@
   description: Набор инструментов и модулей для улучшения Дюранда (Кукольный домик).
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/module.rsi
+    sprite: _Horizon/Objects/Specific/Mech/module.rsi
     state: combatupmod
   - type: Tag
     tags:
@@ -1009,7 +1009,7 @@
   description: Набор инструментов и модулей для улучшения Одиссея (Гермес).
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/module.rsi
+    sprite: _Horizon/Objects/Specific/Mech/module.rsi
     state: medupmod
   - type: Tag
     tags:
@@ -1034,7 +1034,7 @@
   description: Набор инструментов и модулей для улучшения Фазона (Бланко).
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/module.rsi
+    sprite: _Horizon/Objects/Specific/Mech/module.rsi
     state: sciupmod
   - type: Tag
     tags:
@@ -1077,7 +1077,7 @@
   description: Набор инструментов и модулей для улучшения Харсона (Классика).
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/module.rsi
+    sprite: _Horizon/Objects/Specific/Mech/module.rsi
     state: engiupmod
   - type: Tag
     tags:

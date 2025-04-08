@@ -15,7 +15,7 @@
       state: gygax
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Aavikko/Mecha/mechstep.ogg
+      path: /Audio/_Horizon/Mecha/mechstep.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -89,7 +89,7 @@
       state: clarke
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -157,7 +157,7 @@
       state: durand
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -229,7 +229,7 @@
       state: odysseus
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -292,7 +292,7 @@
       state: phazon
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -365,7 +365,7 @@
       state: marauder
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -538,7 +538,7 @@
       state: mauler
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -631,7 +631,7 @@
       state: ripleymkii
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -691,7 +691,7 @@
   description: "Вы покрасили ваш Рипли в белый? Выглядит достаточно хорошо."
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: ripleyaluminizer
@@ -722,7 +722,7 @@
   description: "Подождите секунду, почему его слоты для снаряжения так опасно искрятся?!"
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: ripleycombat
@@ -753,7 +753,7 @@
   description: "Похож на перегруженный, недостаточно целый Рипли, который подвергся ужасающим повреждениям."
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: ripleyearth
@@ -784,7 +784,7 @@
   description: "Стандартный Рипли со стильными граффити оранжевого пламени."
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: ripleyflamesred
@@ -815,7 +815,7 @@
   description: "Это обычный Рипли, который был настроен так, чтобы выглядеть как мех Кулака Титана."
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: ripleytitan
@@ -846,7 +846,7 @@
   description: "Шахтерский мех своеобразной конструкции, с закрытой кабиной и силовыми установками."
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: ripleyzairjah
@@ -978,7 +978,7 @@
   description: "Устаревший мех службы безопасности. Найти такую модель - настоящее достижение"
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: gygaxgrey
@@ -1111,7 +1111,7 @@
   description: Самый мощный боевой мех из тех, что состоят на вооружении армии СССП. "Слава Космической России!"
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: durdollhouse
@@ -1219,7 +1219,7 @@
   description: "В этот раз вы покрасили Кларка в оранжевый? Выглядит просто замечательно!"
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: clarkeorangey
@@ -1342,7 +1342,7 @@
   description: Сверхпрочный водолазный мех, разработанный и произведённый для узкоспециализированных подводных операций. "Как он здесь оказался?"
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: odysseushermes

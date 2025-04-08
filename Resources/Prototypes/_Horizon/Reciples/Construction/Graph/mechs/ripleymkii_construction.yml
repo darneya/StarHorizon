@@ -16,7 +16,7 @@
       - tag: RipleyMk2ModificationKit
         name: ripley mk2 modification kit
         icon:
-          sprite: "Aavikko/Objects/Specific/Mech/modification_kits.rsi"
+          sprite: "_Horizon/Objects/Specific/Mech/modification_kits.rsi"
           state: "ripley_mkii"
 
       - tool: Prying

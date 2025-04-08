@@ -188,7 +188,7 @@
       - tag: PhazonArmor
         name: phazon armor plates
         icon:
-          sprite: "Aavikko/Objects/Specific/Mech/phazon_construction.rsi"
+          sprite: "_Horizon/Objects/Specific/Mech/phazon_construction.rsi"
           state: phazon_armor
         completed:
         - !type:VisualizerDataInt

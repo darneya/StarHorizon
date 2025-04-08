@@ -87,7 +87,7 @@
   id: KineticModifications
   name: research-technology-kinetic-modifications
   icon:
-    sprite: Aavikko/Objects/Tools/upgrade.rsi
+    sprite: _Horizon/Objects/Tools/upgrade.rsi
     state: display
   discipline: Arsenal
   tier: 2
@@ -192,7 +192,7 @@
   id: GygaxMechPaint
   name: research-technology-mech-gygax-paint
   icon:
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     state: gygaxgrey-open
   discipline: Arsenal
   tier: 3
@@ -210,7 +210,7 @@
   id: ModernCombatMechsPaint
   name: Модернизированные современные боевые мехи
   icon:
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     state: durshire-open
   discipline: Arsenal
   tier: 3

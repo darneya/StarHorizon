@@ -6,7 +6,7 @@
   suffix: Empty
   components:
   - type: Sprite
-    sprite: Aavikko/Structures/Specific/mechlink.rsi
+    sprite: _Horizon/Structures/Specific/mechlink.rsi
     layers:
     - state: mechlink
     drawdepth: SmallMobs

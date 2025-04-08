@@ -8,7 +8,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: kinetic_scatter
   - type: Item
     size: Ginormous
@@ -46,7 +46,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: energy_laser
   - type: Item
     size: Ginormous
@@ -112,7 +112,7 @@
   description: eZ-13 mk2 Heavy pulse rifle
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: energy_pulse
   - type: Gun
     selectedMode: FullAuto
@@ -132,7 +132,7 @@
   description: An experimental weapon that uses concentrated x-ray energy against its target.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: energy_xray
   - type: Gun
     selectedMode: FullAuto
@@ -152,7 +152,7 @@
   description: Disabler "Peacemaker"
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: energy_disabler
   - type: Gun
     selectedMode: FullAuto
@@ -172,7 +172,7 @@
   description: MKI Tesla Cannon
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: energy_tesla
   - type: Gun
     selectedMode: FullAuto
@@ -197,7 +197,7 @@
   description: LBX AC 10 "Scattershot"
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: kinetic_scatter
   - type: Gun
     fireRate: 3
@@ -225,7 +225,7 @@
   description: Ultra AC 2
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: kinetic_minigun
   - type: Gun
     fireRate: 9
@@ -251,7 +251,7 @@
   description: FNX-99 "Hades" Carbine
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: kinetic_carbine
   - type: Gun
     fireRate: 7
@@ -278,7 +278,7 @@
   description: mH21 "Ma Deuce" Heavy Antimaterial RifleAR-
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: kinetic_gauss
   - type: Gun
     fireRate: 1.5
@@ -304,7 +304,7 @@
   description: SGL-6 Grenade Launcher
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: kinetic_grenade
   - type: Gun
     fireRate: 1.5
@@ -333,7 +333,7 @@
   description: Longe range missile pack with increased penetration abilities.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: missile_long
   - type: Gun
     fireRate: 1
@@ -360,7 +360,7 @@
   description: Short range missile rack with frag capacities.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: missile_shortfrag
   - type: Gun
     fireRate: 1
@@ -387,7 +387,7 @@
   description: Short range missile rack with ignition capacities.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: missile_shortflame
   - type: Gun
     fireRate: 1
@@ -416,7 +416,7 @@
   description: PKA, mech version.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: mining_kineticgun
   - type: Gun
     selectedMode: FullAuto
@@ -438,7 +438,7 @@
   description: PKA, mech version, heavy variant.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: mining_kineticgun_heavy
   - type: Gun
     selectedMode: FullAuto

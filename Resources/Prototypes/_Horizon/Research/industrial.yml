@@ -56,7 +56,7 @@
   id: MechGunPKA
   name: research-technology-mech-gun-pka
   icon:
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: mining_kineticgun
   discipline: Industrial
   tier: 2
@@ -73,7 +73,7 @@
   id: ModernReactor
   name: research-technology-mech-reactor
   icon:
-    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: generator_plasma
   discipline: Industrial
   tier: 3
@@ -89,7 +89,7 @@
   id: HarsonTechnology
   name: research-technology-mech-harson
   icon:
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     state: harson-open
   discipline: Industrial
   tier: 3
@@ -115,7 +115,7 @@
   id: RipleyMKIIMechPaint
   name: research-technology-mech-ripley-paint
   icon:
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     state: ripleyzairjah-open
   discipline: Industrial
   tier: 3
@@ -134,7 +134,7 @@
   id: ClarkeMechPaint
   name: research-technology-mech-clarke-paint
   icon:
-    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     state: clarkeorangey-open
   discipline: Industrial
   tier: 3
