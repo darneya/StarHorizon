@@ -14,6 +14,7 @@ using Content.Shared.Speech.Muting;
 using Robust.Shared.Prototypes;
 using Content.Shared.Humanoid;
 using Content.Shared.Aavikko;
+using Content.Shared.Body.Systems;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Interaction.Components;
 
@@ -21,7 +22,7 @@ namespace Content.Server.Aavikko.Medical.Surgery;
 
 public sealed partial class SurgerySystem : SharedSurgerySystem
 {
-    [Dependency] private readonly IComponentFactory _compFactory = default!;
+    [Dependency] private readonly IComponentFactory _compFactory = null!;
 
     private readonly EntProtoId _virtual = "PartVirtual";
     public void InitializeSteps()
@@ -69,8 +70,18 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
     {
         if (args.Tools.Count == 0
             || !(args.Tools.FirstOrDefault() is var organId)
-            || !TryComp<BodyPartComponent>(args.Part, out var bodyPart)
-            || !TryComp<OrganComponent>(organId, out var organComp))
+            || !TryComp<BodyPartComponent>(args.Part, out var bodyPart))
+            return;
+
+        var containerId = SharedBodySystem.GetOrganContainerId(ent.Comp.Slot);
+
+        if (ent.Comp.Slot == "cavity" && _containers.TryGetContainer(args.Part, containerId, out var container))
+        {
+            _containers.Insert(organId, container);
+            return;
+        }
+
+        if (!TryComp<OrganComponent>(organId, out var organComp))
             return;
 
         var part = args.Part;
@@ -78,77 +89,54 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         DelayAccumulator = 0;
         DelayQueue.Enqueue(() =>
         {
-            if (_body.InsertOrgan(part, organId, ent.Comp.Slot, bodyPart, organComp) // todo move to system
-            && TryComp<DamageableComponent>(organId, out var organDamageable)
-            && TryComp<DamageableComponent>(body, out var bodyDamageable))
-            {
-                var ev = new SurgeryOrganInsertCompleted(body, part, organId);
-                RaiseLocalEvent(organId, ref ev);
-
-                if (TryComp<OrganEyesComponent>(organId, out var organEyes)
-                    && TryComp<BlindableComponent>(body, out var blindable))
-                {
-                    _blindable.SetMinDamage((body, blindable), organEyes.MinDamage ?? 0);
-                    _blindable.AdjustEyeDamage((body, blindable), (organEyes.EyeDamage ?? 0) - blindable.MaxDamage);
-                }
-                if (TryComp<OrganTongueComponent>(organId, out var organTongue)
-                    && !organTongue.IsMuted)
-                    RemComp<MutedComponent>(body);
-
-                var change = _damageableSystem.TryChangeDamage(body, organDamageable.Damage, true, false, bodyDamageable);
-                if (change is not null)
-                    _damageableSystem.TryChangeDamage(organId, change.Invert(), true, false, organDamageable);
-            }
+            if (!_body.InsertOrgan(part, organId, ent.Comp.Slot, bodyPart, organComp)) return;
+            var ev = new SurgeryOrganImplantationCompleted(body, part, organId);
+            RaiseLocalEvent(organId, ref ev);
         });
     }
     private void OnStepOrganExtractComplete(Entity<SurgeryStepOrganExtractComponent> ent, ref SurgeryStepEvent args)
     {
-        if (ent.Comp.Organ?.Count != 1) return;
-        var organs = _body.GetPartOrgans(args.Part, Comp<BodyPartComponent>(args.Part));
-        var type = ent.Comp.Organ.Values.First().Component.GetType();
-        foreach (var organ in organs) // todo move to system
-        {
-            if (HasComp(organ.Id, type))
-            {
-                var ev = new SurgeryOrganExtractCompleted(args.Body, args.Part, organ.Id);
-                RaiseLocalEvent(organ.Id, ref ev);
+        if (ent.Comp.Organ?.Count != 1)
+            return;
 
-                if (_body.RemoveOrgan(organ.Id, organ.Component)
-                    && TryComp<OrganDamageComponent>(organ.Id, out var damageRule)
-                    && damageRule.Damage is not null
-                    && TryComp<DamageableComponent>(organ.Id, out var organDamageable)
-                    && TryComp<DamageableComponent>(args.Body, out var bodyDamageable))
-                {
-                    if (TryComp<OrganEyesComponent>(organ.Id, out var organEyes)
-                        && TryComp<BlindableComponent>(args.Body, out var blindable))
-                    {
-                        organEyes.EyeDamage = blindable.EyeDamage;
-                        organEyes.MinDamage = blindable.MinDamage;
-                        _blindable.UpdateIsBlind((args.Body, blindable));
-                    }
-                    if (TryComp<OrganTongueComponent>(organ.Id, out var organTongue))
-                    {
-                        organTongue.IsMuted = HasComp<MutedComponent>(args.Body);
-                        AddComp<MutedComponent>(args.Body);
-                    }
-                    var change = _damageableSystem.TryChangeDamage(args.Body, damageRule.Damage.Invert(), true, false, bodyDamageable);
-                    if (change is not null)
-                        _damageableSystem.TryChangeDamage(organ.Id, change.Invert(), true, false, organDamageable);
-                }
-                return;
+        var type = ent.Comp.Organ.Values.First().Component.GetType();
+        if (ent.Comp.Slot != null && _containers.TryGetContainer(args.Part, SharedBodySystem.GetOrganContainerId(ent.Comp.Slot), out var container))
+        {
+            foreach (var containedEnt in container.ContainedEntities)
+            {
+                if (HasComp(containedEnt, type))
+                    _containers.Remove(containedEnt, container);
             }
+
+            return;
+        }
+
+        var organs = _body.GetPartOrgans(args.Part, Comp<BodyPartComponent>(args.Part));
+        foreach (var organ in organs)
+        {
+            if (!HasComp(organ.Id, type) || !_body.RemoveOrgan(organ.Id, organ.Component)) continue;
+
+            var ev = new SurgeryOrganExtractCompleted(args.Body, args.Part, organ.Id);
+            RaiseLocalEvent(organ.Id, ref ev);
+
+            return;
         }
     }
 
     private void OnRemoveAccent(Entity<SurgeryRemoveAccentComponent> ent, ref SurgeryStepEvent args)
     {
         foreach (var accent in Accents)
+        {
             if (HasComp(args.Body, accent))
                 RemCompDeferred(args.Body, accent);
+        }
     }
 
     private void OnStepEmoteEffectComplete(Entity<SurgeryStepEmoteEffectComponent> ent, ref SurgeryStepEvent args)
-        => _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);
+    {
+        _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);
+    }
+
     private void OnStepSpawnComplete(Entity<SurgeryStepSpawnEffectComponent> ent, ref SurgeryStepEvent args)
     {
         if (TryComp(args.Body, out TransformComponent? xform))
@@ -224,20 +212,20 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if (args.Tools.Count == 0
             || !(args.Tools.FirstOrDefault() is var itemId)
             || !TryComp<BodyPartComponent>(args.Part, out var bodyPart)
-            || !TryComp(itemId, out MetaDataComponent? metada)
+            || !TryComp(itemId, out MetaDataComponent? metaData)
             || TryComp<BodyPartComponent>(itemId, out var _)
             || Prototype(itemId) is not EntityPrototype prototype)
             return;
 
         var marker = EnsureComp<CustomLimbMarkerComponent>(itemId);
 
-        var virtualIteam = Spawn(_virtual);
-        var virtualBodyPart = EnsureComp<BodyPartComponent>(virtualIteam);
-        var virtualMetadata = EnsureComp<MetaDataComponent>(virtualIteam);
-        var virtualCustomLimb = EnsureComp<CustomLimbComponent>(virtualIteam);
-        _metadata.SetEntityName(virtualIteam, metada.EntityName, virtualMetadata);
+        var virtualItem = Spawn(_virtual);
+        var virtualBodyPart = EnsureComp<BodyPartComponent>(virtualItem);
+        var virtualMetadata = EnsureComp<MetaDataComponent>(virtualItem);
+        var virtualCustomLimb = EnsureComp<CustomLimbComponent>(virtualItem);
+        _metadata.SetEntityName(virtualItem, metaData.EntityName, virtualMetadata);
 
-        marker.VirtualPart = virtualIteam;
+        marker.VirtualPart = virtualItem;
         virtualCustomLimb.Item = itemId;
 
         virtualBodyPart.PartType = slot switch
@@ -253,10 +241,10 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             "tail" => BodyPartType.Tail,
             _ => BodyPartType.Other,
         };
-        if (!_body.AttachPart(args.Part, slot, virtualIteam, bodyPart, virtualBodyPart))
+        if (!_body.AttachPart(args.Part, slot, virtualItem, bodyPart, virtualBodyPart))
         {
             args.IsCancelled = true;
-            QueueDel(virtualIteam);
+            QueueDel(virtualItem);
             return;
         }
 
@@ -266,9 +254,9 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             if (layer is null)
                 return;
 
-            var vizualizer = EnsureComp<CustomLimbVisualizerComponent>(args.Body);
-            vizualizer.Layers[layer.Value] = itemId;
-            Dirty(args.Body, vizualizer);
+            var visualizer = EnsureComp<CustomLimbVisualizerComponent>(args.Body);
+            visualizer.Layers[layer.Value] = itemId;
+            Dirty(args.Body, visualizer);
 
         }
         AddItemHand(args.Body, itemId, BodySystem.GetPartSlotContainerId(slot));
@@ -310,13 +298,13 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
                 {
                     RemoveItemHand(args.Body, virtualLimb.Item.Value, BodySystem.GetPartSlotContainerId(slotId));
 
-                    var vizualizer = EnsureComp<CustomLimbVisualizerComponent>(args.Body);
+                    var visualizer = EnsureComp<CustomLimbVisualizerComponent>(args.Body);
 
                     var layer = GetLayer(slotId);
                     if (layer is not null)
                     {
-                        vizualizer.Layers.Remove(layer.Value);
-                        Dirty(args.Body, vizualizer);
+                        visualizer.Layers.Remove(layer.Value);
+                        Dirty(args.Body, visualizer);
                     }
                     QueueDel(args.Part);
                 }
@@ -391,22 +379,25 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
     private void CustomLimbRemoved(Entity<CustomLimbMarkerComponent> ent, ref ComponentRemove args)
     {
-        if (ent.Comp.VirtualPart is null) return;
+        if (ent.Comp.VirtualPart is null)
+            return;
         QueueDel(ent.Comp.VirtualPart.Value);
     }
 
-    public static HumanoidVisualLayers? GetLayer(string slotId) => slotId switch
+    public static HumanoidVisualLayers? GetLayer(string slotId)
     {
-        "left arm" => HumanoidVisualLayers.LArm,
-        "right arm" => HumanoidVisualLayers.RArm,
-        "left hand" => HumanoidVisualLayers.LHand,
-        "right hand" => HumanoidVisualLayers.RHand,
-        "left leg" => HumanoidVisualLayers.LLeg,
-        "right leg" => HumanoidVisualLayers.RLeg,
-        "left foot" => HumanoidVisualLayers.LFoot,
-        "right foot" => HumanoidVisualLayers.RFoot,
-        "tail" => HumanoidVisualLayers.Tail,
-        _ => null,
-    };
-
+        return slotId switch
+        {
+            "left arm" => HumanoidVisualLayers.LArm,
+            "right arm" => HumanoidVisualLayers.RArm,
+            "left hand" => HumanoidVisualLayers.LHand,
+            "right hand" => HumanoidVisualLayers.RHand,
+            "left leg" => HumanoidVisualLayers.LLeg,
+            "right leg" => HumanoidVisualLayers.RLeg,
+            "left foot" => HumanoidVisualLayers.LFoot,
+            "right foot" => HumanoidVisualLayers.RFoot,
+            "tail" => HumanoidVisualLayers.Tail,
+            _ => null,
+        };
+    }
 }

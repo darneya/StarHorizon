@@ -7,4 +7,5 @@ public enum StepInvalidReason
     Armor,
     MissingTool,
     DisabledTool,
+    TooHigh,
 }

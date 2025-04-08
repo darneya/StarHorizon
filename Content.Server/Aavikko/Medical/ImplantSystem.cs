@@ -1,5 +1,5 @@
-﻿using Content.Shared.Aavikko.Medical.Surgery.Steps.Parts;
-using Content.Shared.Starlight.Medical.Surgery.Events;
+﻿using Content.Shared.Aavikko.Medical.Surgery.Events;
+using Content.Shared.Aavikko.Medical.Surgery.Steps.Parts;
 
 namespace Content.Server.Starlight.Medical.Surgery;
 // Based on the RMC14.
@@ -12,12 +12,12 @@ public sealed partial class ImplantSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<OrganImplantComponent, SurgeryOrganInsertCompleted>(OnOrganInsertComplete);
+        SubscribeLocalEvent<OrganImplantComponent, SurgeryOrganImplantationCompleted>(OnOrganInsertComplete);
 
         SubscribeLocalEvent<OrganImplantComponent, SurgeryOrganExtractCompleted>(OnOrganExtractComplete);
     }
 
-    private void OnOrganInsertComplete(Entity<OrganImplantComponent> ent, ref SurgeryOrganInsertCompleted args)
+    private void OnOrganInsertComplete(Entity<OrganImplantComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {
         foreach (var comp in (ent.Comp.AddComp ?? []).Values)
         {

@@ -8,6 +8,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Aavikko.Medical.Surgery.Events;
 using Content.Shared.Aavikko.Medical.Surgery.Effects.Step;
 using System.Linq;
+using Content.Shared.Item;
 using Content.Shared.Item.ItemToggle.Components;
 using Robust.Shared.Random;
 
@@ -194,6 +195,11 @@ public abstract partial class SharedSurgerySystem
                 if (reg.Component is ISurgeryToolComponent toolComp)
                     args.Popup = $"You need enable {toolComp.ToolName} to perform this step!";
 
+                return;
+            }
+            else if (TryComp<SurgeryItemSizeConditionComponent>(ent, out var itemSizeComp) && TryComp<ItemComponent>(tool, out var item) && _item.GetSizePrototype(item.Size) > _item.GetSizePrototype(itemSizeComp.Size))
+            {
+                args.Invalid = StepInvalidReason.TooHigh;
                 return;
             }
 
