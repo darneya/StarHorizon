@@ -213,24 +213,33 @@ public sealed class SurgeryBui : BoundUserInterface
 
         _window.Steps.DisposeAllChildren();
 
-        if (surgery.Comp.Requirement is { } requirementId && _system.GetSingleton(requirementId) is { } requirement)
+        if (surgery.Comp.Requirement is { } requirementIds)
         {
-            var label = new ChoiceControl();
-            label.Button.OnPressed += _ =>
+            foreach (var requirementId in requirementIds)
             {
-                _previousSurgeries.Add(surgeryId);
+                if (_system.GetSingleton(requirementId) is { } requirement &&
+                    _entities.TryGetComponent(_part, out BodyPartComponent? partComp) && partComp.Body is { } body &&
+                    _part is { } part &&
+                    _system.IsSurgeryValid(body, part, requirementId, surgeryId, out _, out _, out _))
+                {
+                    var label = new ChoiceControl();
+                    label.Button.OnPressed += _ =>
+                    {
+                        _previousSurgeries.Add(surgeryId);
+                        if (_entities.TryGetComponent(requirement, out SurgeryComponent? requirementComp))
+                            OnSurgeryPressed((requirement, requirementComp), netPart, requirementId);
+                    };
 
-                if (_entities.TryGetComponent(requirement, out SurgeryComponent? requirementComp))
-                    OnSurgeryPressed((requirement, requirementComp), netPart, requirementId);
-            };
+                    var msg = new FormattedMessage();
+                    var surgeryName = _entities.GetComponent<MetaDataComponent>(requirement).EntityName;
+                    msg.AddMarkupOrThrow($"[bold]Requires: {surgeryName}[/bold]");
+                    label.Set(msg, null);
 
-            var msg = new FormattedMessage();
-            var surgeryName = _entities.GetComponent<MetaDataComponent>(requirement).EntityName;
-            msg.AddMarkupOrThrow($"[bold]Требуется: {surgeryName}[/bold]");
-            label.Set(msg, null);
-
-            _window.Steps.AddChild(label);
-            _window.Steps.AddChild(new HSeparator(Color.FromHex("#4972A1")) { Margin = new Thickness(0, 0, 0, 1) });
+                    _window.Steps.AddChild(label);
+                    _window.Steps.AddChild(
+                        new HSeparator(Color.FromHex("#4972A1")) {Margin = new Thickness(0, 0, 0, 1)});
+                }
+            }
         }
 
         foreach (var stepId in surgery.Comp.Steps)
@@ -367,22 +376,21 @@ public sealed class SurgeryBui : BoundUserInterface
         if (_window == null)
             return;
 
-        if (_system.IsLyingDown(Owner))
-        {
-            _window.DisabledPanel.Visible = false;
-            _window.DisabledPanel.MouseFilter = MouseFilterMode.Ignore;
-            return;
-        }
+        _window.DisabledPanel.Visible = false;
+        _window.DisabledPanel.MouseFilter = MouseFilterMode.Ignore;
+        return;
 
-        _window.DisabledPanel.Visible = true;
-        if (_window.DisabledLabel.GetMessage() is null)
+        if (!_system.IsLyingDown(Owner))
         {
-            var text = new FormattedMessage();
-            text.AddMarkupOrThrow("[color=red][font size=16]Пациента необходимо уложить![/font][/color]");
-            _window.DisabledLabel.SetMessage(text);
+            _window.DisabledPanel.Visible = true;
+            if (_window.DisabledLabel.GetMessage() is null)
+            {
+                var text = new FormattedMessage();
+                text.AddMarkupOrThrow("[color=red][font size=16]They need to be lying down![/font][/color]");
+                _window.DisabledLabel.SetMessage(text);
+            }
+            _window.DisabledPanel.MouseFilter = MouseFilterMode.Stop;
         }
-
-        _window.DisabledPanel.MouseFilter = MouseFilterMode.Stop;
     }
 
     private void View(ViewType type)

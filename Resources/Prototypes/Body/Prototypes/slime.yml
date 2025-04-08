@@ -10,6 +10,7 @@
       organs:
         eyes: OrganHumanEyes
         tongue: OrganHumanTongue
+        eye_implant: null
     torso:
       part: TorsoSlime
       connections:
@@ -18,6 +19,7 @@
       - right leg
       - left leg
       organs:
+        heart: OrganSlimeHeart
         core: SentientSlimeCore
         lungs: OrganSlimeLungs
     right arm:

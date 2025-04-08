@@ -1,4 +1,6 @@
-﻿using Content.Shared.Body.Part;
+﻿using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Humanoid;
+using Content.Shared.Body.Part;
 using System.Linq;
 using Content.Shared.Aavikko.Medical.Surgery.Events;
 using Content.Shared.Aavikko.Medical.Surgery.Effects.Step;

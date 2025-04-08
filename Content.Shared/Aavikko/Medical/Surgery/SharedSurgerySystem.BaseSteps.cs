@@ -139,6 +139,28 @@ public abstract partial class SharedSurgerySystem
 
         RaiseLocalEvent(args.Body, ref args);
 
+        if (args.Invalid != StepInvalidReason.None)
+            return;
+
+        if (_inventory.TryGetContainerSlotEnumerator(args.Body, out var enumerator, args.TargetSlots))
+        {
+            var items = 0f;
+            var total = 0f;
+            while (enumerator.MoveNext(out var con))
+            {
+                total++;
+                if (con.ContainedEntity != null)
+                    items++;
+            }
+
+            if (items > 0)
+            {
+                args.Invalid = StepInvalidReason.Armor;
+                args.Popup = $"You need to take off armor from patient to perform this step!";
+                return;
+            }
+        }
+
         if (args.Invalid != StepInvalidReason.None || ent.Comp.Tools == null)
             return;
 
@@ -213,10 +235,16 @@ public abstract partial class SharedSurgerySystem
 
         requirements.Add(surgery);
 
-        if (surgery.Comp.Requirement is { } requirementId &&
-            GetSingleton(requirementId) is { } requirement &&
-            GetNextStep(body, part, requirement, requirements) is { } requiredNext)
-            return requiredNext;
+        if (surgery.Comp.Requirement is { } requirementsIds)
+        {
+            foreach (var requirementId in requirementsIds)
+            {
+                if (GetSingleton(requirementId) is { } requirement
+                    && GetNextStep(body, part, requirement, requirements) is { } requiredNext
+                    && IsSurgeryValid(body, part, requirementId, requiredNext.Surgery.Comp.Steps[requiredNext.Step], out _, out _, out _))
+                    return requiredNext;
+            }
+        }
 
         if (!TryComp<SurgeryProgressComponent>(part, out var progress))
         {
@@ -233,13 +261,15 @@ public abstract partial class SharedSurgerySystem
 
     public bool PreviousStepsComplete(EntityUid body, EntityUid part, Entity<SurgeryComponent> surgery, EntProtoId step)
     {
-        if (surgery.Comp.Requirement is { } requirement)
+        if (surgery.Comp.Requirement is { } requirements)
         {
-            if (GetSingleton(requirement) is not { } requiredEnt ||
-                !TryComp(requiredEnt, out SurgeryComponent? requiredComp) ||
-                !PreviousStepsComplete(body, part, (requiredEnt, requiredComp), step))
+            foreach (var requirement in requirements)
             {
-                return false;
+                if (GetSingleton(requirement) is not { } requiredEnt
+                    || !TryComp(requiredEnt, out SurgeryComponent? requiredComp)
+                    || !PreviousStepsComplete(body, part, (requiredEnt, requiredComp), step)
+                    && IsSurgeryValid(body, part, requirement, step, out _, out _, out _))
+                    return false;
             }
         }
 
