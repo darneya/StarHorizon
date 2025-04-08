@@ -44,10 +44,6 @@
   - type: OrganDamage
     damage:
       types:
-        Poison: 50
-        Cellular: 10
-        Bloodloss: 10
-        Radiation: 10
         Poison: 25
         Cellular: 5
         Bloodloss: 5
@@ -72,10 +68,6 @@
   - type: OrganDamage
     damage:
       types:
-        Asphyxiation: 130
-        Cellular: 20
-        Bloodloss: 20
-        Radiation: 30
         Asphyxiation: 65
         Cellular: 10
         Bloodloss: 10
@@ -91,11 +83,6 @@
   - type: OrganDamage
     damage:
       types:
-        Shock: 130
-        Cellular: 20
-        Bloodloss: 20
-        Caustic: 20
-        Radiation: 10
         Shock: 65
         Cellular: 10
         Bloodloss: 10
@@ -112,11 +99,6 @@
   - type: OrganDamage
     damage:
       types:
-        Poison: 130
-        Cellular: 20
-        Bloodloss: 20
-        Caustic: 20
-        Radiation: 10
         Poison: 65
         Cellular: 10
         Bloodloss: 10
@@ -133,11 +115,6 @@
   - type: OrganDamage
     damage:
       types:
-        Poison: 110
-        Cellular: 20
-        Bloodloss: 20
-        Caustic: 20
-        Radiation: 30
         Poison: 55
         Cellular: 10
         Bloodloss: 10
@@ -154,12 +131,6 @@
   - type: OrganDamage
     damage:
       types:
-        Poison: 10
-        Cellular: 20
-        Bloodloss: 20
-        Caustic: 20
-        Radiation: 10
-        Cold: 120
         Poison: 5
         Cellular: 10
         Bloodloss: 10
@@ -167,5 +138,4 @@
         Radiation: 5
         Cold: 60
   - type: Damageable
-    damageContainer: Biological
     damageContainer: Biological

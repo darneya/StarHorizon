@@ -172,19 +172,6 @@
   - type: Item
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     storedRotation: 90
-  
-- type: entity
-  name: retractor
-  id: Retractor
-  parent: BaseScissors
-  description: A surgical tool used to hold open incisions.
-  components:
-  - type: Retractor
-  - type: SurgeryTool
-    startSound:
-      path: /Audio/_Starlight/Medical/Surgery/retractor1.ogg
-    endSound:
-      path: /Audio/_Starlight/Medical/Surgery/retractor2.ogg
 
 - type: entity
   name: ретрактор
@@ -335,7 +322,7 @@
     startSound:
       path: /Audio/_Starlight/Medical/Surgery/bone_saw.ogg
   - type: BoneSaw
-  
+
 - type: entity
   name: циркулярная пила
   id: SawElectric
@@ -381,19 +368,6 @@
       path: /Audio/_Starlight/Medical/Surgery/saw.ogg
     endSound:
       path: /Audio/Items/drill_hit.ogg
-
-# BoneGel
-
-- type: entity
-  name: bottle of bone gel
-  id: BoneGel
-  parent: BaseToolSurgery
-  description: A container for bone gel that often needs to be refilled from a specialized machine.
-  components:
-  - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/bone_gel.rsi
-    state: bone-gel
-  - type: BoneGel
 
 # BoneGel
 

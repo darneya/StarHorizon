@@ -5,10 +5,7 @@
 - type: latheCategory
   id: Cyberlimbs
   name: lathe-category-cyberlimbs
-<<<<<<< HEAD
-=======
 
 - type: latheCategory
   id: Implants
   name: lathe-category-implants
->>>>>>> f5b8ba85de (Хирургия и переработка НИО (#57))
