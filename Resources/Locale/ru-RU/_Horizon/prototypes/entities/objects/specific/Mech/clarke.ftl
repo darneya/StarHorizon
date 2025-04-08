@@ -1,25 +1,25 @@
-ent-ADTMechClarke = Кларк
+ent-MechClarke = Кларк
     .desc =  Быстроходный мех для космических пушешествий и планетарных экспедиций.
-ent-ADTMechClarkeBattery = { ent-ADTMechClarke }
+ent-MechClarkeBattery = { ent-MechClarke }
     .suffix = Батарея
-    .desc = { ent-ADTMechClarke.desc }
+    .desc = { ent-MechClarke.desc }
 
-ent-ADTClarkeCentralElectronics = центральный модуль управления Кларка
+ent-ClarkeCentralElectronics = центральный модуль управления Кларка
     .desc = Центр управления электрооборудованием меха Кларк.
-ent-ADTClarkePeripheralsElectronics = модуль управления периферией Кларка
+ent-ClarkePeripheralsElectronics = модуль управления периферией Кларка
     .desc = Система управления электрическими периферийными устройствами меха Кларк.
 
-ent-ADTClarkeHarness = каркас Кларка
+ent-ClarkeHarness = каркас Кларка
     .desc = Ядро меха Кларк.
-ent-ADTClarkeLArm = левая рука Кларка
+ent-ClarkeLArm = левая рука Кларка
     .desc = Левая рука меха Кларк. Устанавливается на шасси меха.
-ent-ADTClarkeLTread = левая гусеница Кларка
+ent-ClarkeLTread = левая гусеница Кларка
     .desc = Левая гусеница меха Кларк. Устанавливается на шасси меха.
-ent-ADTClarkeRTread = правая гусеница Кларка
+ent-ClarkeRTread = правая гусеница Кларка
     .desc = Правая гусеница меха Кларк. Устанавливается на шасси меха.
-ent-ADTClarkeRArm = правая рука Кларка
+ent-ClarkeRArm = правая рука Кларка
     .desc = Правая рука меха Кларк. Устанавливается на шасси меха.
-ent-ADTClarkeChassis = шасси Кларка
+ent-ClarkeChassis = шасси Кларка
     .desc = Незавершённое шасси меха Кларк.
-ent-ADTClarkeHead = голова Кларка
+ent-ClarkeHead = голова Кларка
     .desc = Голова меха Кларк. Устанавливается на шасси меха.

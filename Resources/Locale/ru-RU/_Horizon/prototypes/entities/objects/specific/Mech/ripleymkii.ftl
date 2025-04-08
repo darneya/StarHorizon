@@ -1,8 +1,8 @@
-ent-ADTMechRipleyMk2 = Рипли Mk.2 АВП
+ent-MechRipleyMk2 = Рипли Mk.2 АВП
     .desc =  Универсальный и легкобронированный, Рипли пригодится практически для любого сценария тяжелой работы. АВП означает АВтономный Погрузчик. Эта версия улучшена для работы в космосе и большей защиты.
-ent-ADTMechRipleyMk2Battery = { ent-ADTMechRipleyMk2 }
+ent-MechRipleyMk2Battery = { ent-MechRipleyMk2 }
     .suffix = Батарея
-    .desc = { ent-ADTMechRipleyMk2.desc }
+    .desc = { ent-MechRipleyMk2.desc }
 
-ent-ADTRipleyMk2ModificationKit = комплект модификации Рипли
+ent-RipleyMk2ModificationKit = комплект модификации Рипли
     .desc = Комплект деталей, предназначенный для улучшения Рипли до модификации Mk II - более защищенной и герметичной, но менее мобильной.

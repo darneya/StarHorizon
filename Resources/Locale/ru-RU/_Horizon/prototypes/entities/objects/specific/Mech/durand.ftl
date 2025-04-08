@@ -1,51 +1,51 @@
-ent-ADTMechDurand = Дюранд
+ent-MechDurand = Дюранд
     .desc =  Медленный и крайне мощный боевой мех. Грамотно используя его силу и щит можно полностью раскрыть потенциал этой машины.
-ent-ADTMechDurandBattery = { ent-ADTMechDurand }
+ent-MechDurandBattery = { ent-MechDurand }
     .suffix = Батарея
-    .desc = { ent-ADTMechDurand.desc }
+    .desc = { ent-MechDurand.desc }
 
-ent-ADTDurandCentralElectronics = центральный модуль управления Дюранда
+ent-DurandCentralElectronics = центральный модуль управления Дюранда
     .desc = Центр управления электрооборудованием меха Дюранд.
-ent-ADTDurandPeripheralsElectronics = модуль управления периферией Дюранда
+ent-DurandPeripheralsElectronics = модуль управления периферией Дюранда
     .desc = Система управления электрическими периферийными устройствами меха Дюранд.
 
-ent-ADTDurandHarness = каркас Дюранда
+ent-DurandHarness = каркас Дюранда
     .desc = Ядро меха Дюранд.
-ent-ADTDurandLArm = левая рука Дюранда
+ent-DurandLArm = левая рука Дюранда
     .desc = Левая рука меха Дюранд. Устанавливается на шасси меха.
-ent-ADTDurandLLeg = левая нога Дюранда
+ent-DurandLLeg = левая нога Дюранда
     .desc = Левая нога меха Дюранд. Устанавливается на шасси меха.
-ent-ADTDurandRLeg = правая нога Дюранда
+ent-DurandRLeg = правая нога Дюранда
     .desc = Правая нога меха Дюранд. Устанавливается на шасси меха.
-ent-ADTDurandRArm = правая рука Дюранда
+ent-DurandRArm = правая рука Дюранда
     .desc = Правая рука меха Дюранд. Устанавливается на шасси меха.
-ent-ADTDurandChassis = шасси Дюранда
+ent-DurandChassis = шасси Дюранда
     .desc = Незавершённое шасси меха Дюранд.
-ent-ADTDurandArmorPlates = бронеплиты Дюранда
+ent-DurandArmorPlates = бронеплиты Дюранда
     .desc = Бронеплиты для меха Дюранд. Устанавливается на шасси меха.
-ent-ADTDurandHead = голова Дюранда
+ent-DurandHead = голова Дюранда
     .desc = Голова меха Дюранд. Устанавливается на шасси меха.
 
-ent-ADTMechMarauder = Мародёр
+ent-MechMarauder = Мародёр
     .desc =  Крайне мощный боевой мех. Модификация Дюранда для бойцов ОБР.
-ent-ADTMechMarauderBattery = { ent-ADTMechMarauder }
+ent-MechMarauderBattery = { ent-MechMarauder }
     .suffix = Батарея
-    .desc = { ent-ADTMechMarauder.desc }
+    .desc = { ent-MechMarauder.desc }
 
-ent-ADTMechSeraph = Серафим
+ent-MechSeraph = Серафим
     .desc =  Прочный мех командного типа. Это особая модель, используемая только высокопоставленными военными.
-ent-ADTMechSeraphBattery = { ent-ADTMechSeraph }
+ent-MechSeraphBattery = { ent-MechSeraph }
     .suffix = Батарея
-    .desc = { ent-ADTMechSeraph.desc }
+    .desc = { ent-MechSeraph.desc }
 
-ent-ADTMechDarkGygax = тёмный Гайгэкс
+ent-MechDarkGygax = тёмный Гайгэкс
     .desc =  Лёгкий мех, оформленный в тёмной цветовой схеме. Эта модель, кажется, содержит некоторые модификации.
-ent-ADTMechDarkGygaxBattery = { ent-ADTMechDarkGygax }
+ent-MechDarkGygaxBattery = { ent-MechDarkGygax }
     .suffix = Батарея
-    .desc = { ent-ADTMechDarkGygax.desc }
+    .desc = { ent-MechDarkGygax.desc }
 
-ent-ADTMechMauler = Маулер
+ent-MechMauler = Маулер
     .desc =  Прочный боевой мех тёмного цвета. Затрофеенный Синдикатом Мародёр.
-ent-ADTMechMaulerBattery = { ent-ADTMechMauler }
+ent-MechMaulerBattery = { ent-MechMauler }
     .suffix = Батарея
-    .desc = { ent-ADTMechMauler.desc }
+    .desc = { ent-MechMauler.desc }

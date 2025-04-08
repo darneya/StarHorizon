@@ -1,4 +1,4 @@
-ent-ADTMechWeaponCutter = плазменный резак меха
+ent-MechWeaponCutter = плазменный резак меха
     .desc = Отсекай им конечности.
 
 ent-BulletCutter = снаряд плазменного резака
@@ -27,3 +27,12 @@ ent-MechEquipmentDrill = бур меха
 
 ent-MechEquipmentDiamondDrill = бур меха
     .desc = Просверлит всё! Стены, двери, руду, столы, ковры, ваших врагов!
+
+ent-MechReactorPlasma = плазменный реактор меха
+    .desc = Реактор для меха, работающий на плазме.
+
+ent-MechReactorUranium = урановый реактор меха
+    .desc = Реактор для меха, работающий на плазме.
+
+ent-MechReactorTesla = тесла реактор меха
+    .desc = Реактор для меха, работающий на силе теслы! Даешь тесламобиль!
