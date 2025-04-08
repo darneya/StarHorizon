@@ -42,7 +42,7 @@
     interfaces:
       enum.MechUiKey.Key:
         type: MechBoundUserInterface
-      enum.StorageUiKey.Key: # ADT edit
+      enum.StorageUiKey.Key: # Horizon Mech
         type: StorageBoundUserInterface
   - type: MeleeWeapon
     hidden: true
@@ -86,7 +86,7 @@
       mech-pilot-slot: !type:ContainerSlot
       mech-equipment-container: !type:Container
       mech-battery-slot: !type:ContainerSlot
-      storagebase: !type:Container #ADT edit
+      storagebase: !type:Container # Horizon Mech
         ents: []
   - type: Damageable
     damageContainer: Inorganic
@@ -128,7 +128,7 @@
     footstepSoundCollection:
       path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
-    # ADT start
+    # Horizon Mech start
     modifiers:
       coefficients:
         Blunt: 0.9
@@ -138,9 +138,9 @@
         Structural: 0.7
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentIndustrial
-    # ADT end
+      - MechEquipmentGeneral
+      - MechEquipmentIndustrial
+    # Horizon Mech end
     baseState: ripley
     openState: ripley-open
     brokenState: ripley-broken
@@ -157,10 +157,10 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.25
     baseSprintSpeed: 3.6
-  - type: Storage #ADT edit
+  - type: Storage # Horizon Mech
     grid:
     - 0,0,9,2
-    clickInsert: false 
+    clickInsert: false
 
 - type: entity
   id: MechRipleyBattery
@@ -200,12 +200,12 @@
     pilotWhitelist:
       components:
       - HumanoidAppearance
-    # ADT Start
+    # Horizon Mech start
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentClown
-    # ADT End
+      - MechEquipmentGeneral
+      - MechEquipmentClown
+    # Horizon Mech end
 
 - type: entity
   parent: MechHonker

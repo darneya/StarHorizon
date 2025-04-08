@@ -34,7 +34,7 @@
       item-container: !type:Container
   - type: Tag
     tags:
-      - ADTMechEquipmentGeneral # ADT tweak
+      - MechEquipmentGeneral # Horizon Mech
 
 - type: entity
   id: MechEquipmentGrabberSmall
@@ -83,4 +83,4 @@
     delay: 0.5
   - type: Tag
     tags:
-      - ADTMechEquipmentClown # ADT tweak
+      - MechEquipmentClown # Horizon Mech

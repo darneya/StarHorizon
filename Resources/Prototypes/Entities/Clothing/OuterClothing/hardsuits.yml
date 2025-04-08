@@ -167,7 +167,7 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
-    - ADTHardsuitSalvage  # ADT tweak
+    - HardsuitSalvage  # Horizon Mech
 
 #Goliath Hardsuit
 - type: entity
