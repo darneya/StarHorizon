@@ -1,7 +1,7 @@
 # Gygax
 
 - type: entity
-  id: ADTGygaxCentralElectronics
+  id: GygaxCentralElectronics
   parent: BaseElectronics
   name: gygax central control module
   description: The electrical control center for the gygax mech.
@@ -11,13 +11,13 @@
       state: mainboard
     - type: Tag
       tags:
-      - ADTGygaxCentralControlModule
+      - GygaxCentralControlModule
     - type: GuideHelp
       guides:
       - Robotics
 
 - type: entity
-  id: ADTGygaxPeripheralsElectronics
+  id: GygaxPeripheralsElectronics
   parent: BaseElectronics
   name: gygax peripherals control module
   description: The electrical peripherals control for the gygax mech.
@@ -27,7 +27,7 @@
       state: id_mod
     - type: Tag
       tags:
-      - ADTGygaxPeripheralsControlModule
+      - GygaxPeripheralsControlModule
     - type: GuideHelp
       guides:
       - Robotics
@@ -35,7 +35,7 @@
 #Clarke
 
 - type: entity
-  id: ADTClarkeCentralElectronics
+  id: ClarkeCentralElectronics
   parent: BaseElectronics
   name: clarke central control module
   description: The electrical control center for the clarke mech.
@@ -45,13 +45,13 @@
       state: mainboard
     - type: Tag
       tags:
-      - ADTClarkeCentralControlModule
+      - ClarkeCentralControlModule
     - type: GuideHelp
       guides:
       - Robotics
 
 - type: entity
-  id: ADTClarkePeripheralsElectronics
+  id: ClarkePeripheralsElectronics
   parent: BaseElectronics
   name: clarke peripherals control module
   description: The electrical peripherals control for the clarke mech.
@@ -61,7 +61,7 @@
       state: id_mod
     - type: Tag
       tags:
-      - ADTClarkePeripheralsControlModule
+      - ClarkePeripheralsControlModule
     - type: GuideHelp
       guides:
       - Robotics
@@ -69,7 +69,7 @@
 # Durand
 
 - type: entity
-  id: ADTDurandCentralElectronics
+  id: DurandCentralElectronics
   parent: BaseElectronics
   name: durand central control module
   description: The electrical control center for the durand mech.
@@ -79,13 +79,13 @@
       state: mainboard
     - type: Tag
       tags:
-      - ADTDurandCentralControlModule
+      - DurandCentralControlModule
     - type: GuideHelp
       guides:
       - Robotics
 
 - type: entity
-  id: ADTDurandPeripheralsElectronics
+  id: DurandPeripheralsElectronics
   parent: BaseElectronics
   name: durand peripherals control module
   description: The electrical peripherals control for the durand mech.
@@ -95,7 +95,7 @@
       state: id_mod
     - type: Tag
       tags:
-      - ADTDurandPeripheralsControlModule
+      - DurandPeripheralsControlModule
     - type: GuideHelp
       guides:
       - Robotics
@@ -103,7 +103,7 @@
 # Odysseus
 
 - type: entity
-  id: ADTOdysseusCentralElectronics
+  id: OdysseusCentralElectronics
   parent: BaseElectronics
   name: odysseus central control module
   description: The electrical control center for the odysseus mech.
@@ -113,13 +113,13 @@
       state: mainboard
     - type: Tag
       tags:
-      - ADTOdysseusCentralControlModule
+      - OdysseusCentralControlModule
     - type: GuideHelp
       guides:
       - Robotics
 
 - type: entity
-  id: ADTOdysseusPeripheralsElectronics
+  id: OdysseusPeripheralsElectronics
   parent: BaseElectronics
   name: odysseus peripherals control module
   description: The electrical peripherals control for the odysseus mech.
@@ -129,7 +129,7 @@
       state: id_mod
     - type: Tag
       tags:
-      - ADTOdysseusPeripheralsControlModule
+      - OdysseusPeripheralsControlModule
     - type: GuideHelp
       guides:
       - Robotics
@@ -137,7 +137,7 @@
 # Phazon
 
 - type: entity
-  id: ADTPhazonCentralElectronics
+  id: PhazonCentralElectronics
   parent: BaseElectronics
   name: phazon central control module
   description: The electrical control center for the phazon mech.
@@ -147,13 +147,13 @@
       state: mainboard
     - type: Tag
       tags:
-      - ADTPhazonCentralControlModule
+      - PhazonCentralControlModule
     - type: GuideHelp
       guides:
       - Robotics
 
 - type: entity
-  id: ADTPhazonWeaponControlElectronics
+  id: PhazonWeaponControlElectronics
   parent: BaseElectronics
   name: phazon weapon control and targeting module
   description: The weapon control center for the phazon mech.
@@ -163,13 +163,13 @@
       state: mainboard
     - type: Tag
       tags:
-      - ADTPhazonWeaponControlModule
+      - PhazonWeaponControlModule
     - type: GuideHelp
       guides:
       - Robotics
 
 - type: entity
-  id: ADTPhazonPeripheralsElectronics
+  id: PhazonPeripheralsElectronics
   parent: BaseElectronics
   name: phazon peripherals control module
   description: The electrical peripherals control for the phazon mech.
@@ -179,7 +179,7 @@
       state: id_mod
     - type: Tag
       tags:
-      - ADTPhazonPeripheralsControlModule
+      - PhazonPeripheralsControlModule
     - type: GuideHelp
       guides:
       - Robotics

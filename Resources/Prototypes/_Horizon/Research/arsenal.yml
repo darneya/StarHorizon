@@ -13,3 +13,212 @@
   - ClothingEyesVision
   - ClothingEyesVisionSec
   - HorizonBlueprintClothingEyesVision
+
+- type: technology
+  id: GygaxTechnology
+  name: research-technology-mech-gygax
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: gygax
+  discipline: Arsenal
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - GygaxHarness
+  - GygaxLArm
+  - GygaxRArm
+  - GygaxLLeg
+  - GygaxRLeg
+  - GygaxArmorPlates
+  - GygaxHead
+  - GygaxCentralElectronics
+  - GygaxPeripheralsElectronics
+
+- type: technology
+  id: MechEnergyGunSmallTechnology
+  name: research-technology-mech-energy-gun-small
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_laser
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+    - MechGunLaser
+    - MechGunDisabler
+  technologyPrerequisites:
+  - GygaxTechnology
+
+- type: technology
+  id: MechGunSmallTechnology
+  name: research-technology-mech-gun-small
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_scatter
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - MechGunScattershot
+  - MechGunAutocannonUAC2
+  - BoxAmmoScattershot
+  - BoxAmmoAC2Ultra
+  - MechGunCarbineHades
+  - BoxAmmoHades
+  technologyPrerequisites:
+  - GygaxTechnology
+
+- type: technology
+  id: MechTechnologyArmor
+  name: research-technology-mech-armor
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_abooster_proj
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - MechEquipmentArmorMelee
+  - MechEquipmentArmorRange
+  technologyPrerequisites:
+  - GygaxTechnology
+
+- type: technology
+  id: KineticModifications
+  name: research-technology-kinetic-modifications
+  icon:
+    sprite: Aavikko/Objects/Tools/upgrade.rsi
+    state: display
+  discipline: Arsenal
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - PKAUpgradeDamage
+  - PKAUpgradeRange
+  - PKAUpgradeFireRate
+
+# Tier 3
+
+- type: technology
+  id: DurandTechnology
+  name: research-technology-mech-durand
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: durand
+  discipline: Arsenal
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - DurandHarness
+  - DurandLArm
+  - DurandRArm
+  - DurandLLeg
+  - DurandRLeg
+  - DurandHead
+  - DurandArmorPlates
+  - DurandCentralElectronics
+  - DurandPeripheralsElectronics
+  technologyPrerequisites:
+  - GygaxTechnology
+
+- type: technology
+  id: MechEnergyGunHeavyTechnology
+  name: research-technology-mech-energy-gun-heavy
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_pulse
+  discipline: Arsenal
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - MechGunHeavyLaser
+  - MechGunTeslaCannon
+  technologyPrerequisites:
+  - DurandTechnology
+
+- type: technology
+  id: MechGunHeavyTechnology
+  name: research-technology-mech-gun-heavy
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_missilerack_six
+  discipline: Arsenal
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - MechGunAntiMatterRifle
+  - MechGunGrenade
+  - MechGunMissileLRM6
+  - MechGunMissileSRM8Frag
+  - MechGunMissileSRM8Ignite
+  - BoxAmmoSniper
+  - BoxAmmoGranade
+  technologyPrerequisites:
+  - DurandTechnology
+
+- type: technology
+  id: MechCloseWeaponTechnology
+  name: research-technology-mech-close
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_clamp
+  discipline: Arsenal
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - MechWeaponSword
+  - MechWeaponSpear
+  - MechWeaponClaws
+  - MechWeaponWarhammer
+  technologyPrerequisites:
+  - DurandTechnology
+
+- type: technology
+  id: MechEnergyGunExperimentalTechnology
+  name: research-technology-mech-gun-experimental
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_ion
+  discipline: Arsenal
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - MechGunHeavyPulseRifle
+  - MechGunXRayRifle
+  technologyPrerequisites:
+  - DurandTechnology
+
+- type: technology
+  id: GygaxMechPaint
+  name: research-technology-mech-gygax-paint
+  icon:
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    state: gygaxgrey-open
+  discipline: Arsenal
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - MechGygaxGreyUpgradeKit
+  - MechGygaxMedUpgradeKit
+  - MechGygaxOrangeUpgradeKit
+  - MechGygaxPobedaUpgradeKit
+  - MechGygaxRecitenceUpgradeKit
+  technologyPrerequisites:
+  - GygaxTechnology
+
+- type: technology
+  id: ModernCombatMechsPaint
+  name: Модернизированные современные боевые мехи
+  icon:
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    state: durshire-open
+  discipline: Arsenal
+  tier: 3
+  cost: 25000
+  recipeUnlocks:
+  - MechDurDollhouseUpgradeKit
+  - MechDurExecutorUpgradeKit
+  - MechDurShireUpgradeKit
+  - MechDurUnathiUpgradeKit
+  technologyPrerequisites:
+  - DurandTechnology

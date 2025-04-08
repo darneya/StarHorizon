@@ -1,0 +1,146 @@
+﻿# Tier 2
+
+- type: technology
+  id: RipleyMKIITechnology
+  name: research-technology-mech-ripleymk2
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: ripleymkii-open
+  discipline: Industrial
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - RipleyMk2ModificationKit
+  technologyPrerequisites:
+  - RipleyAPLU
+
+- type: technology
+  id: ClarkeTechnology
+  name: research-technology-mech-clarke
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: clarke
+  discipline: Industrial
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - ClarkeHarness
+  - ClarkeLArm
+  - ClarkeRArm
+  - ClarkeLTread
+  - ClarkeRTread
+  - ClarkeHead
+  - ClarkeCentralElectronics
+  - ClarkePeripheralsElectronics
+  technologyPrerequisites:
+  - RipleyAPLU
+
+- type: technology
+  id: MechTechnologyMining
+  name: research-technology-mech-mining
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_plasmacutter
+  discipline: Industrial
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+    - MechEquipmentDrill
+    - MechEquipmentDiamondDrill
+    - MechWeaponCutter
+    - BoxPlasmaBox
+  technologyPrerequisites:
+  - ClarkeTechnology
+
+- type: technology
+  id: MechGunPKA
+  name: research-technology-mech-gun-pka
+  icon:
+    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    state: mining_kineticgun
+  discipline: Industrial
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - MechGunPKA
+  - MechGunPKAHeavy
+  technologyPrerequisites:
+  - ClarkeTechnology
+
+# Tier 3
+
+- type: technology
+  id: ModernReactor
+  name: research-technology-mech-reactor
+  icon:
+    sprite: Aavikko/Objects/Specific/Mech/equipment.rsi
+    state: generator_plasma
+  discipline: Industrial
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - MechReactorPlasma
+  - MechReactorUranium
+  - MechReactorTesla
+  technologyPrerequisites:
+  - PortableFission
+
+- type: technology
+  id: HarsonTechnology
+  name: research-technology-mech-harson
+  icon:
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    state: harson-open
+  discipline: Industrial
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - MechHarsonUpgradeKit
+  - MechHarsonSpiderUpgradeKit
+  technologyPrerequisites:
+  - ClarkeTechnology
+#  recipeUnlocks: - WIP - кратко - я манал щас пилить меха с нуля, пусть улучшают Кларка
+#  - HarsonHarness
+#  - HarsonLArm
+#  - HarsonRArm
+#  - HarsonLTread
+#  - HarsonRTread
+#  - HarsonHead
+#  - HarsonCentralElectronics
+#  - HarsonPeripheralsElectronics
+#  technologyPrerequisites:
+#  - ClarkeTechnology
+
+- type: technology
+  id: RipleyMKIIMechPaint
+  name: research-technology-mech-ripley-paint
+  icon:
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    state: ripleyzairjah-open
+  discipline: Industrial
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - MechRipleyAluminizerUpgradeKit
+  - MechRipleyCombatUpgradeKit
+  - MechRipleyEarthUpgradeKit
+  - MechRipleyFlamesredUpgradeKit
+  - MechRipleyTitanUpgradeKit
+  - MechRipleyZairjahUpgradeKit
+  technologyPrerequisites:
+  - RipleyMKIITechnology
+
+- type: technology
+  id: ClarkeMechPaint
+  name: research-technology-mech-clarke-paint
+  icon:
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    state: clarkeorangey-open
+  discipline: Industrial
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - MechClarkeOrangeyUpgradeKit
+  - MechClarkeSpiderUpgradeKit
+  technologyPrerequisites:
+  - ClarkeTechnology

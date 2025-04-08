@@ -1,0 +1,80 @@
+# Tier 1
+# Tier 2
+
+- type: technology
+  id: OdysseusTechnology
+  name: research-technology-mech-odysseus
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: odysseus
+  discipline: Biochemical
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+    - OdysseusHarness
+    - OdysseusLArm
+    - OdysseusRArm
+    - OdysseusLLeg
+    - OdysseusRLeg
+    - OdysseusHead
+    - OdysseusCentralElectronics
+    - OdysseusPeripheralsElectronics
+
+- type: technology
+  id: MechTechnologyCarrier
+  name: research-technology-mech-carrier
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_humanstealer
+  discipline: Biochemical
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - MechEquipmentHumanGrabber
+  technologyPrerequisites:
+  - OdysseusTechnology
+
+- type: technology
+  id: MechTechnologySleeper
+  name: research-technology-mech-sleeper
+  icon:
+    sprite: Structures/cryostorage.rsi
+    state: sleeper_0
+  discipline: Biochemical
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+    - MechEquipmentHumanSleeper
+  technologyPrerequisites:
+  - OdysseusTechnology
+
+- type: technology
+  id: MechTechnologyMedigun
+  name: research-technology-mech-medigun
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_medigun
+  discipline: Biochemical
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+    - MechGunMedigun
+  technologyPrerequisites:
+  - OdysseusTechnology
+
+# Tier 3
+
+- type: technology
+  id: OdyssMechPaint
+  name: research-technology-mech-odysseus-paint
+  icon:
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
+    state: odysseusmurdy-open
+  discipline: Biochemical
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - MechOdysseusHermesUpgradeKit
+  - MechOdysseusMurdyUpgradeKit
+  technologyPrerequisites:
+  - OdysseusTechnology

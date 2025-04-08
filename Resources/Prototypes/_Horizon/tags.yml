@@ -1,159 +1,253 @@
-#mech_gygax
+
+# Mech gygax
 
 - type: Tag
-  id: ADTGygaxCentralControlModule
+  id: GygaxCentralControlModule
 
 - type: Tag
-  id: ADTGygaxPeripheralsControlModule
+  id: GygaxPeripheralsControlModule
 
 - type: Tag
-  id: ADTGygaxLArm
+  id: GygaxLArm
 
 - type: Tag
-  id: ADTGygaxLLeg
+  id: GygaxLLeg
 
 - type: Tag
-  id: ADTGygaxRLeg
+  id: GygaxRLeg
 
 - type: Tag
-  id: ADTGygaxRArm
+  id: GygaxRArm
 
 - type: Tag
-  id: ADTGygaxArmor
+  id: GygaxArmor
 
 - type: Tag
-  id: ADTGygaxHead
+  id: GygaxHead
 
-#mech_clarke
-
-- type: Tag
-  id: ADTClarkeCentralControlModule
+# Mech Clarke
 
 - type: Tag
-  id: ADTClarkePeripheralsControlModule
+  id: ClarkeCentralControlModule
 
 - type: Tag
-  id: ADTClarkeLArm
+  id: ClarkePeripheralsControlModule
 
 - type: Tag
-  id: ADTClarkeRArm
+  id: ClarkeLArm
 
 - type: Tag
-  id: ADTClarkeLTread
+  id: ClarkeRArm
 
 - type: Tag
-  id: ADTClarkeRTread
+  id: ClarkeLTread
 
 - type: Tag
-  id: ADTClarkeHead
-
-#mech_durand
+  id: ClarkeRTread
 
 - type: Tag
-  id: ADTDurandCentralControlModule
+  id: ClarkeHead
+
+# Mech durand
 
 - type: Tag
-  id: ADTDurandPeripheralsControlModule
+  id: DurandCentralControlModule
 
 - type: Tag
-  id: ADTDurandLArm
+  id: DurandPeripheralsControlModule
 
 - type: Tag
-  id: ADTDurandLLeg
+  id: DurandLArm
 
 - type: Tag
-  id: ADTDurandRLeg
+  id: DurandLLeg
 
 - type: Tag
-  id: ADTDurandRArm
+  id: DurandRLeg
 
 - type: Tag
-  id: ADTDurandArmor
+  id: DurandRArm
 
 - type: Tag
-  id: ADTDurandHead
-
-#odysseus
+  id: DurandArmor
 
 - type: Tag
-  id: ADTOdysseusCentralControlModule
+  id: DurandHead
+
+# Odysseus
 
 - type: Tag
-  id: ADTOdysseusPeripheralsControlModule
+  id: OdysseusCentralControlModule
 
 - type: Tag
-  id: ADTOdysseusLArm
+  id: OdysseusPeripheralsControlModule
 
 - type: Tag
-  id: ADTOdysseusLLeg
+  id: OdysseusLArm
 
 - type: Tag
-  id: ADTOdysseusRLeg
+  id: OdysseusLLeg
 
 - type: Tag
-  id: ADTOdysseusRArm
+  id: OdysseusRLeg
 
 - type: Tag
-  id: ADTOdysseusArmor
+  id: OdysseusRArm
 
 - type: Tag
-  id: ADTOdysseusHead
-
-#phazon
+  id: OdysseusArmor
 
 - type: Tag
-  id: ADTPhazonCentralControlModule
+  id: OdysseusHead
+
+# Phazon
 
 - type: Tag
-  id: ADTPhazonPeripheralsControlModule
+  id: PhazonCentralControlModule
 
 - type: Tag
-  id: ADTPhazonWeaponControlModule
+  id: PhazonPeripheralsControlModule
 
 - type: Tag
-  id: ADTPhazonLArm
+  id: PhazonWeaponControlModule
 
 - type: Tag
-  id: ADTPhazonLLeg
+  id: PhazonLArm
 
 - type: Tag
-  id: ADTPhazonRLeg
+  id: PhazonLLeg
 
 - type: Tag
-  id: ADTPhazonRArm
+  id: PhazonRLeg
 
 - type: Tag
-  id: ADTPhazonArmor
+  id: PhazonRArm
 
 - type: Tag
-  id: ADTPhazonHead
-
-#ripley_mk2
+  id: PhazonArmor
 
 - type: Tag
-  id: ADTRipleyMk2ModificationKit
+  id: PhazonHead
 
-#mech general
-- type: Tag
-  id: ADTMechEquipmentGeneral
+# Ripley_mk2
 
 - type: Tag
-  id: ADTMechEquipmentMed
+  id: RipleyMk2ModificationKit
+
+# Mech general
 
 - type: Tag
-  id: ADTMechEquipmentService
+  id: MechEquipmentGeneral
 
 - type: Tag
-  id: ADTMechEquipmentIndustrial
+  id: MechEquipmentMed
 
 - type: Tag
-  id: ADTMechEquipmentSec
+  id: MechEquipmentService
 
 - type: Tag
-  id: ADTMechEquipmentClown
+  id: MechEquipmentIndustrial
 
 - type: Tag
-  id: ADTBluespaceAnomalyCore
+  id: MechEquipmentSec
 
 - type: Tag
-  id: ADTHardsuitSalvage
+  id: MechEquipmentClown
+
+- type: Tag
+  id: BluespaceAnomalyCore
+
+- type: Tag
+  id: HardsuitSalvage
+
+# Mech upgrade
+
+- type: Tag
+  id: MechRipleyMk2Upgrade
+
+- type: Tag
+  id: MechRipleyAluminizerUpgrade
+
+- type: Tag
+  id: MechRipleyCombatUpgrade
+
+- type: Tag
+  id: MechRipleyEarthUpgrade
+
+- type: Tag
+  id: MechRipleyFlamesredUpgrade
+
+- type: Tag
+  id: MechRipleyTitanUpgrade
+
+- type: Tag
+  id: MechRipleyZairjahUpgrade
+
+- type: Tag
+  id: MechRipleyFirefighterUpgrade
+
+- type: Tag
+  id: MechRipleyHaulerUpgrade
+
+- type: Tag
+  id: MechRipleyDeathUpgrade
+
+- type: Tag
+  id: MechClarkeOrangeyUpgrade
+
+- type: Tag
+  id: MechClarkeSpiderUpgrade
+
+- type: Tag
+  id: MechDurDollhouseUpgrade
+
+- type: Tag
+  id: MechDurExecutorUpgrade
+
+- type: Tag
+  id: MechDurShireUpgrade
+
+- type: Tag
+  id: MechDurUnathiUpgrade
+
+- type: Tag
+  id: MechOdysseusHermesUpgrade
+
+- type: Tag
+  id: MechOdysseusMurdyUpgrade
+
+- type: Tag
+  id: MechGygaxGreyUpgrade
+
+- type: Tag
+  id: MechGygaxMedUpgrade
+
+- type: Tag
+  id: MechGygaxOrangeUpgrade
+
+- type: Tag
+  id: MechGygaxPobedaUpgrade
+
+- type: Tag
+  id: MechGygaxRecitenceUpgrade
+
+- type: Tag
+  id: MechPhazonBlancoUpgrade
+
+- type: Tag
+  id: MechPhazonImperionUpgrade
+
+- type: Tag
+  id: MechPhazonJanusUpgrade
+
+- type: Tag
+  id: MechPhazonPlazmusUpgrade
+
+- type: Tag
+  id: MechHarsonUpgrade
+
+- type: Tag
+  id: MechHarsonSpiderUpgrade
+
+- type: Tag
+  id: MechReactor

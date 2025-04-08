@@ -1,8 +1,7 @@
-
-#gygax
+# Gygax mech
 
 - type: entity
-  id: ADTMechGygax
+  id: MechGygax
   parent: BaseMech
   name: gygax
   description: Fast and light armored combat mech.
@@ -16,7 +15,7 @@
       state: gygax
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/_Horizon/Mecha/mechstep.ogg
+      path: /Audio/Aavikko/Mecha/mechstep.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -31,14 +30,14 @@
     baseState: gygax
     openState: gygax-open
     brokenState: gygax-broken
-    mechToPilotDamageMultiplier: 0.85
+    mechToPilotDamageMultiplier: 0.2
     pilotWhitelist:
       components:
         - HumanoidAppearance
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentSec
+      - MechEquipmentGeneral
+      - MechEquipmentSec
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.2
@@ -59,10 +58,13 @@
     grid:
     - 0,0,6,3
     clickInsert: false
+  - type: Construction
+    graph: UpgradeMechGygax
+    node: start
 
 - type: entity
-  id: ADTMechGygaxBattery
-  parent: ADTMechGygax
+  id: MechGygaxBattery
+  parent: MechGygax
   suffix: Battery
   components:
   - type: ContainerFill
@@ -70,10 +72,10 @@
       mech-battery-slot:
       - PowerCellHigh
 
-#clarke
+# Clarke mech
 
 - type: entity
-  id: ADTMechClarke
+  id: MechClarke
   parent: BaseMech
   name: clarke
   description: Fast and light armored mech for space miners.
@@ -87,7 +89,7 @@
       state: clarke
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -100,14 +102,14 @@
     baseState: clarke
     openState: clarke-open
     brokenState: clarke-broken
-    mechToPilotDamageMultiplier: 0
+    mechToPilotDamageMultiplier: 0.3
     pilotWhitelist:
       components:
         - HumanoidAppearance
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentIndustrial
+      - MechEquipmentGeneral
+      - MechEquipmentIndustrial
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.2
@@ -124,10 +126,13 @@
     grid:
     - 0,0,9,4
     clickInsert: false
+  - type: Construction
+    graph: UpgradeMechClarke
+    node: start
 
 - type: entity
-  id: ADTMechClarkeBattery
-  parent: ADTMechClarke
+  id: MechClarkeBattery
+  parent: MechClarke
   suffix: Battery
   components:
   - type: ContainerFill
@@ -135,10 +140,10 @@
       mech-battery-slot:
       - PowerCellHigh
 
-#durand
+# Durand mech
 
 - type: entity
-  id: ADTMechDurand
+  id: MechDurand
   parent: BaseMech
   name: Durand
   description: Slow and heavy armored combat mech.
@@ -152,7 +157,7 @@
       state: durand
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/ADT/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -167,14 +172,14 @@
     baseState: durand
     openState: durand-open
     brokenState: durand-broken
-    mechToPilotDamageMultiplier: 0.95
+    mechToPilotDamageMultiplier: 0.1
     pilotWhitelist:
       components:
         - HumanoidAppearance
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentSec
+      - MechEquipmentGeneral
+      - MechEquipmentSec
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.2
@@ -193,10 +198,13 @@
     grid:
     - 0,0,6,3
     clickInsert: false
+  - type: Construction
+    graph: UpgradeMechDurand
+    node: start
 
 - type: entity
-  id: ADTMechDurandBattery
-  parent: ADTMechDurand
+  id: MechDurandBattery
+  parent: MechDurand
   suffix: Battery
   components:
   - type: ContainerFill
@@ -204,10 +212,10 @@
       mech-battery-slot:
       - PowerCellHigh
 
-#odyssey
+# Odysseys mech
 
 - type: entity
-  id: ADTMechOdysseus
+  id: MechOdysseus
   parent: BaseMech
   name: Odysseus
   description: With this mech you can save a lot of life. Or take it.
@@ -221,7 +229,7 @@
       state: odysseus
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/ADT/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -235,14 +243,14 @@
     baseState: odysseus
     openState: odysseus-open
     brokenState: odysseus-broken
-    mechToPilotDamageMultiplier: 0.5
+    mechToPilotDamageMultiplier: 0.4
     pilotWhitelist:
       components:
         - HumanoidAppearance
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentMed
+      - MechEquipmentGeneral
+      - MechEquipmentMed
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.2
@@ -253,10 +261,13 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.2
     baseSprintSpeed: 4.2
+  - type: Construction
+    graph: UpgradeMechOdysseus
+    node: start
 
 - type: entity
-  id: ADTMechOdysseusBattery
-  parent: ADTMechOdysseus
+  id: MechOdysseusBattery
+  parent: MechOdysseus
   suffix: Battery
   components:
   - type: ContainerFill
@@ -264,10 +275,10 @@
       mech-battery-slot:
       - PowerCellHigh
 
-#phazon
+# Phazon mech
 
 - type: entity
-  id: ADTMechPhazon
+  id: MechPhazon
   parent: BaseMech
   name: phazon
   description: Most advanced mech.
@@ -281,7 +292,7 @@
       state: phazon
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/ADT/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -296,14 +307,14 @@
     baseState: phazon
     openState: phazon-open
     brokenState: phazon-broken
-    mechToPilotDamageMultiplier: 0.85
+    mechToPilotDamageMultiplier: 0.3
     pilotWhitelist:
       components:
         - HumanoidAppearance
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentSec
+      - MechEquipmentGeneral
+      - MechEquipmentSec
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.2
@@ -323,78 +334,13 @@
     grid:
     - 0,0,6,3
     clickInsert: false
-
-- type: entity
-  id: ADTMechPhazonBattery
-  parent: ADTMechPhazon
-  suffix: Battery
-  components:
-  - type: ContainerFill
-    containers:
-      mech-battery-slot:
-      - PowerCellHigh
-
-#ripley mkII
-
-- type: entity
-  id: ADTMechRipleyMk2
-  parent: BaseMech
-  name: Ripley Mk2 APLU
-  description: Versatile and lightly armored, the Ripley is useful for almost any heavy work scenario. The "APLU" stands for Autonomous Power Loading Unit.
-  components:
-  - type: Sprite
-    drawdepth: Mobs
-    noRot: true
-    sprite: Objects/Specific/Mech/mecha.rsi
-    layers:
-    - map: [ "enum.MechVisualLayers.Base" ]
-      state: ripleymkii
-  - type: FootstepModifier
-    footstepSoundCollection:
-      path: /Audio/ADT/Mecha/sound_mecha_powerloader_step.ogg
-  - type: Mech
-    modifiers:
-      coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.7
-        Shock: 0.9
-        Structural: 0.75
-        Heat: 0.1
-    maxintegrity: 200
-    baseState: ripleymkii
-    openState: ripleymkii-open
-    brokenState: ripleymkii-broken
-    mechToPilotDamageMultiplier: 0.85
-    pilotWhitelist:
-      components:
-        - HumanoidAppearance
-    equipmentWhitelist:
-      tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentIndustrial
-  - type: MeleeWeapon
-    hidden: true
-    attackRate: 1
-    damage:
-      types:
-        Blunt: 25 #intentionally shit so people realize that going into combat with the ripley is usually a bad idea.
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 2.0
-    baseSprintSpeed: 3.0
   - type: Construction
-    graph: ADTRipleyMkII
-    node: ripley_mkii
-  - type: ExplosionResistance
-    damageCoefficient: 0.4
-  - type: Storage
-    grid:
-    - 0,0,9,2
-    clickInsert: false
+    graph: UpgradeMechPhazon
+    node: start
 
 - type: entity
-  id: ADTMechRipleyMk2Battery
-  parent: ADTMechRipleyMk2
+  id: MechPhazonBattery
+  parent: MechPhazon
   suffix: Battery
   components:
   - type: ContainerFill
@@ -402,11 +348,11 @@
       mech-battery-slot:
       - PowerCellHigh
 
-#Мехи ОБР
+# Мехи ОБР
 
 - type: entity
-  id: ADTMechMarauder
-  parent: ADTMechDurand
+  id: MechMarauder
+  parent: MechDurand
   name: Marauder
   description: Heavy armored combat mech for ERT.
   components:
@@ -419,7 +365,7 @@
       state: marauder
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/ADT/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -434,15 +380,15 @@
     baseState: marauder
     openState: marauder-open
     brokenState: marauder-broken
-    mechToPilotDamageMultiplier: 0.95
+    mechToPilotDamageMultiplier: 0.1
     pilotWhitelist:
       components:
         - HumanoidAppearance
     maxEquipmentAmount: 5
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentSec
+      - MechEquipmentGeneral
+      - MechEquipmentSec
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.5
@@ -463,8 +409,8 @@
     clickInsert: false
 
 - type: entity
-  id: ADTMechMarauderBattery
-  parent: ADTMechMarauder
+  id: MechMarauderBattery
+  parent: MechMarauder
   suffix: Battery
   components:
   - type: ContainerFill
@@ -473,8 +419,8 @@
       - PowerCellHigh
 
 - type: entity
-  id: ADTMechSeraph
-  parent: ADTMechDurand
+  id: MechSeraph
+  parent: MechDurand
   name: Seraph
   description: Heavy armored combat mech for ERT.
   components:
@@ -499,14 +445,14 @@
     baseState: seraph
     openState: seraph-open
     brokenState: seraph-broken
-    mechToPilotDamageMultiplier: 0.95
+    mechToPilotDamageMultiplier: 0.05
     pilotWhitelist:
       components:
         - HumanoidAppearance
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentSec
+      - MechEquipmentGeneral
+      - MechEquipmentSec
     maxEquipmentAmount: 8
   - type: Storage
     grid:
@@ -514,8 +460,8 @@
     clickInsert: false
 
 - type: entity
-  id: ADTMechSeraphBattery
-  parent: ADTMechSeraph
+  id: MechSeraphBattery
+  parent: MechSeraph
   suffix: Battery
   components:
   - type: ContainerFill
@@ -523,11 +469,11 @@
       mech-battery-slot:
       - PowerCellHigh
 
-#Мехи Синдиката
+# Мехи Синдиката
 
 - type: entity
-  id: ADTMechDarkGygax
-  parent: ADTMechGygax
+  id: MechDarkGygax
+  parent: MechGygax
   name: dark gygax
   description: Fast and light armored combat mech.
   components:
@@ -552,14 +498,14 @@
     baseState: darkgygax
     openState: darkgygax-open
     brokenState: darkgygax-broken
-    mechToPilotDamageMultiplier: 0.85
+    mechToPilotDamageMultiplier: 0.2
     pilotWhitelist:
       components:
         - HumanoidAppearance
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentSec
+      - MechEquipmentGeneral
+      - MechEquipmentSec
   - type: AccessReader
     access: [["NuclearOperative"], ["SyndicateAgent"]]
   - type: Storage
@@ -568,8 +514,8 @@
     clickInsert: false
 
 - type: entity
-  id: ADTMechDarkGygaxBattery
-  parent: ADTMechDarkGygax
+  id: MechDarkGygaxBattery
+  parent: MechDarkGygax
   suffix: Battery, filled
   components:
   - type: ContainerFill
@@ -578,8 +524,8 @@
       - PowerCellHigh
 
 - type: entity
-  id: ADTMechMauler
-  parent: ADTMechDurand
+  id: MechMauler
+  parent: MechDurand
   name: Mauler
   description: Heavy armored combat mech for ERT.
   components:
@@ -592,7 +538,7 @@
       state: mauler
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/ADT/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -607,14 +553,14 @@
     baseState: mauler
     openState: mauler-open
     brokenState: mauler-broken
-    mechToPilotDamageMultiplier: 0.95
+    mechToPilotDamageMultiplier: 0.1
     pilotWhitelist:
       components:
         - HumanoidAppearance
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentSec
+      - MechEquipmentGeneral
+      - MechEquipmentSec
     maxEquipmentAmount: 5
   - type: MeleeWeapon
     hidden: true
@@ -636,8 +582,8 @@
     clickInsert: false
 
 - type: entity
-  id: ADTMechMaulerBattery
-  parent: ADTMechMauler
+  id: MechMaulerBattery
+  parent: MechMauler
   suffix: Battery, filled
   components:
   - type: ContainerFill
@@ -658,22 +604,23 @@
     baseState: mauler
     openState: mauler-open
     brokenState: mauler-broken
-    mechToPilotDamageMultiplier: 0.95
+    mechToPilotDamageMultiplier: 0.1
     pilotWhitelist:
       components:
         - HumanoidAppearance
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentSec
+      - MechEquipmentGeneral
+      - MechEquipmentSec
     maxEquipmentAmount: 5
 
-# paddy
+# Ripley mkII mech
+
 - type: entity
-  id: ADTMechpaddy
+  id: MechRipleyMk2
   parent: BaseMech
-  name: Paddy APLU
-  description: The APLU Paddy is a Security variant of Ripley Mk1. Designed for mass detainment it has a special compartment which can hold up to 4 people, to load them into the compartment you must arm it with a Hydraulic Claw which can catch people and handcuff them. Handcuffing them can be disabled so you can use the mech for transporting squad of Security Officers.
+  name: Ripley Mk2 APLU
+  description: Versatile and lightly armored, the Ripley is useful for almost any heavy work scenario. The "APLU" stands for Autonomous Power Loading Unit.
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -681,67 +628,881 @@
     sprite: Objects/Specific/Mech/mecha.rsi
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
-      state: paddy
+      state: ripleymkii
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/ADT/Mecha/mechstep.ogg
+      path: /Audio/Aavikko/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:
         Blunt: 0.6
         Slash: 0.6
-        Piercing: 0.8
-        Shock: 0.8
+        Piercing: 0.7
+        Shock: 0.9
         Structural: 0.75
-        Heat: 0.7
-    maxintegrity: 250
-    baseState: paddy
-    openState: paddy-open
-    brokenState: paddy-broken
+        Heat: 0.1
+    maxintegrity: 200
+    baseState: ripleymkii
+    openState: ripleymkii-open
+    brokenState: ripleymkii-broken
+    mechToPilotDamageMultiplier: 0.4
     pilotWhitelist:
       components:
-        - HumanoidAppearance
+      - HumanoidAppearance
     equipmentWhitelist:
       tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentSec
+      - MechEquipmentGeneral
+      - MechEquipmentIndustrial
   - type: MeleeWeapon
     hidden: true
-    attackRate: 1.2
+    attackRate: 1
     damage:
       types:
-        Blunt: 40 #intentionally shit so people realize that going into combat with the ripley is usually a bad idea.
-        Structural: 15
+        Blunt: 25 #intentionally shit so people realize that going into combat with the ripley is usually a bad idea.
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3.2
-    baseSprintSpeed: 4.2
+    baseWalkSpeed: 2.0
+    baseSprintSpeed: 3.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Storage
+    grid:
+    - 0,0,9,2
+    clickInsert: false
+  - type: Construction
+    graph: UpgradeMechRipleyMk2
+    node: start
 
 - type: entity
-  id: ADTMechpaddyBattery
-  parent: ADTMechpaddy
-  suffix: Battery, filled
+  id: MechRipleyMk2Battery
+  parent: MechRipleyMk2
+  suffix: Battery
   components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+# Ripley upgraded
+
+- type: entity
+  id: MechRipleyMk2Aluminizer
+  parent: MechRipleyMk2
+  name: Белый Рипли
+  description: "Вы покрасили ваш Рипли в белый? Выглядит достаточно хорошо."
+  components:
+  - type: Sprite
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: ripleyaluminizer
   - type: Mech
-    startingEquipment: ["MechEquipmentPuddyGrabber", "ADTMechGunPeacemakerDisabler"]
+    maxintegrity: 250
+    baseState: ripleyaluminizer
+    openState: ripleyaluminizer-open
+    brokenState: ripleyaluminizer-broken
+    mechToPilotDamageMultiplier: 0.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+
+- type: entity
+  id: MechRipleyMk2AluminizerBattery
+  parent: MechRipleyMk2Aluminizer
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechRipleyMk2Combat
+  parent: MechRipleyMk2
+  name: Боевой Рипли
+  description: "Подождите секунду, почему его слоты для снаряжения так опасно искрятся?!"
+  components:
+  - type: Sprite
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: ripleycombat
+  - type: Mech
+    maxintegrity: 250
+    baseState: ripleycombat
+    openState: ripleycombat-open
+    brokenState: ripleycombat-broken
+    mechToPilotDamageMultiplier: 0.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+
+- type: entity
+  id: MechRipleyMk2CombatBattery
+  parent: MechRipleyMk2Combat
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechRipleyMk2Earth
+  parent: MechRipleyMk2
+  name: Ударный Рипли
+  description: "Похож на перегруженный, недостаточно целый Рипли, который подвергся ужасающим повреждениям."
+  components:
+  - type: Sprite
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: ripleyearth
+  - type: Mech
+    maxintegrity: 250
+    baseState: ripleyearth
+    openState: ripleyearth-open
+    brokenState: ripleyearth-broken
+    mechToPilotDamageMultiplier: 0.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+
+- type: entity
+  id: MechRipleyMk2EarthBattery
+  parent: MechRipleyMk2Earth
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechRipleyMk2Flamesred
+  parent: MechRipleyMk2
+  name: Рипли "Поджигатель"
+  description: "Стандартный Рипли со стильными граффити оранжевого пламени."
+  components:
+  - type: Sprite
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: ripleyflamesred
+  - type: Mech
+    maxintegrity: 250
+    baseState: ripleyflamesred
+    openState: ripleyflamesred-open
+    brokenState: ripleyflamesred-broken
+    mechToPilotDamageMultiplier: 0.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+
+- type: entity
+  id: MechRipleyMk2FlamesredBattery
+  parent: MechRipleyMk2Flamesred
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechRipleyMk2Titan
+  parent: MechRipleyMk2
+  name: Рипли "Кулак Титана"
+  description: "Это обычный Рипли, который был настроен так, чтобы выглядеть как мех Кулака Титана."
+  components:
+  - type: Sprite
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: ripleytitan
+  - type: Mech
+    maxintegrity: 250
+    baseState: ripleytitan
+    openState: ripleytitan-open
+    brokenState: ripleytitan-broken
+    mechToPilotDamageMultiplier: 0.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+
+- type: entity
+  id: MechRipleyMk2TitanBattery
+  parent: MechRipleyMk2Titan
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechRipleyMk2Zairjah
+  parent: MechRipleyMk2
+  name: Рипли "Заря"
+  description: "Шахтерский мех своеобразной конструкции, с закрытой кабиной и силовыми установками."
+  components:
+  - type: Sprite
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: ripleyzairjah
+  - type: Mech
+    maxintegrity: 250
+    baseState: ripleyzairjah
+    openState: ripleyzairjah-open
+    brokenState: ripleyzairjah-broken
+    mechToPilotDamageMultiplier: 0.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+
+- type: entity
+  id: MechRipleyMk2ZairjahBattery
+  parent: MechRipleyMk2Zairjah
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechRipleyMk2Firefighter
+  parent: MechRipleyMk2
+  name: Рипли "Огнеборец"
+  description: "Особая модификация Рипли, направленная на борьбу с пожарами."
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: firefighter
+  - type: Mech
+    maxintegrity: 250
+    baseState: firefighter
+    openState: firefighter-open
+    brokenState: firefighter-broken
+    mechToPilotDamageMultiplier: 0.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+
+- type: entity
+  id: MechRipleyMk2FirefighterBattery
+  parent: MechRipleyMk2Firefighter
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechRipleyMk2Hauler
+  parent: MechRipleyMk2
+  name: Грузовой Рипли
+  description: "Особая модификация Рипли, обладающая большей подвижностью."
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: hauler
+  - type: Mech
+    maxintegrity: 200
+    baseState: hauler
+    openState: hauler-open
+    brokenState: hauler-broken
+    mechToPilotDamageMultiplier: 0.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.0
+    baseSprintSpeed: 4.0
+
+- type: entity
+  id: MechRipleyMk2HaulerBattery
+  parent: MechRipleyMk2Hauler
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechRipleyMk2Death
+  parent: MechRipleyMk2
+  name: Зловещий Рипли
+  description: "Особая модификация Рипли, покрашенная в пугающие цвета Эскадрона Смерт..."
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: deathripley
+  - type: Mech
+    maxintegrity: 250
+    baseState: deathripley
+    openState: deathripley-open
+    brokenState: deathripley-broken
+    mechToPilotDamageMultiplier: 0.4
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+
+- type: entity
+  id: MechRipleyMk2DeathBattery
+  parent: MechRipleyMk2Death
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+# Gygax mech upgraded
+
+- type: entity
+  id: MechGygaxGrey
+  parent: MechGygax
+  name: Серый Гигакс
+  description: "Устаревший мех службы безопасности. Найти такую модель - настоящее достижение"
+  components:
+  - type: Sprite
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: gygaxgrey
+  - type: Mech
+    maxintegrity: 250
+    baseState: gygaxgrey
+    openState: gygaxgrey-open
+    brokenState: gygaxgrey-broken
+    mechToPilotDamageMultiplier: 0.2
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4.0
+    baseSprintSpeed: 5.0
+
+- type: entity
+  parent: MechGygaxGrey
+  id: MechGygaxGreyBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechGygaxMed
+  parent: MechGygaxGrey
+  name: Медицинский Гигакс
+  description: "О ЧЕРТ, В ЭТОЙ БОЛЬНИЦЕ ЕСТЬ БОЕВОЙ МЕХ, ОН НАС УБЬЕТ."
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: gygaxmed
+  - type: Mech
+    baseState: gygaxmed
+    openState: gygaxmed-open
+    brokenState: gygaxmed-broken
+
+- type: entity
+  parent: MechGygaxMed
+  id: MechGygaxMedBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechGygaxOrange
+  parent: MechGygaxGrey
+  name: Старый Гигакс
+  description: "Устаревший мех службы безопасности. Найти такую модель - настоящее достижение"
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: gygaxorange
+  - type: Mech
+    baseState: gygaxorange
+    openState: gygaxorange-open
+    brokenState: gygaxorange-broken
+
+- type: entity
+  parent: MechGygaxOrange
+  id: MechGygaxOrangeBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechGygaxPobeda
+  parent: MechGygaxGrey
+  name: Гигакс "Победа"
+  description: "Старый сверхтяжёлый Гигакс, спроектированный и окрашенный в СССП. Слава Космической России!"
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: gygaxpobeda
+  - type: Mech
+    baseState: gygaxpobeda
+    openState: gygaxpobeda-open
+    brokenState: gygaxpobeda-broken
+
+- type: entity
+  parent: MechGygaxPobeda
+  id: MechGygaxPobedaBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechGygaxRecitence
+  parent: MechGygaxGrey
+  name: Скрытый Гигакс
+  description: "Устаревший мех службы безопасности. Найти такую модель - настоящее достижение"
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: gygaxrecitence
+  - type: Mech
+    baseState: gygaxrecitence
+    openState: gygaxrecitence-open
+    brokenState: gygaxrecitence-broken
+
+- type: entity
+  parent: MechGygaxRecitence
+  id: MechGygaxRecitenceBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+# Durand mech upgraded
+
+- type: entity
+  id: MechDurDollhouse
+  parent: MechDurand
+  name: Дюранд "Кукольный Домик"
+  description: Самый мощный боевой мех из тех, что состоят на вооружении армии СССП. "Слава Космической России!"
+  components:
+  - type: Sprite
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: durdollhouse
+  - type: Mech
+    baseState: durdollhouse
+    openState: durdollhouse-open
+    brokenState: durdollhouse-broken
+    maxintegrity: 450
+    mechToPilotDamageMultiplier: 0.1
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.0
+    baseSprintSpeed: 3.0
+
+- type: entity
+  id: MechDurDollhouseBattery
+  parent: MechDurDollhouse
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechDurExecutor
+  parent: MechDurDollhouse
+  name: Дюранд "Палач"
+  description: Дредноут Ордена Палачей, конфигурация с тяжелой огневой поддержкой, созданный для уничтожения зла и еретиков.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: durexecutor
+  - type: Mech
+    baseState: durexecutor
+    openState: durexecutor-open
+    brokenState: durexecutor-broken
+
+- type: entity
+  id: MechDurExecutorBattery
+  parent: MechDurExecutor
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechDurShire
+  parent: MechDurDollhouse
+  name: Дюранд "Граф"
+  description: Невероятно мощная боевая машина, прямо с Межзвездной войны.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: durshire
+  - type: Mech
+    baseState: durshire
+    openState: durshire-open
+    brokenState: durshire-broken
+
+- type: entity
+  id: MechDurShireBattery
+  parent: MechDurShire
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechDurUnathi
+  parent: MechDurDollhouse
+  name: Дюранд "Кхарн"
+  description: "Жизнь за императрицу!"
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: durunathi
+  - type: Mech
+    baseState: durunathi
+    openState: durunathi-open
+    brokenState: durunathi-broken
+
+- type: entity
+  id: MechDurUnathiBattery
+  parent: MechDurUnathi
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+# Clarke mech upgraded
+
+- type: entity
+  id: MechClarkeOrangey
+  parent: MechClarke
+  name: Оранжевый Кларк
+  description: "В этот раз вы покрасили Кларка в оранжевый? Выглядит просто замечательно!"
+  components:
+  - type: Sprite
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: clarkeorangey
+  - type: Mech
+    baseState: clarkeorangey
+    openState: clarkeorangey-open
+    brokenState: clarkeorangey-broken
+    maxintegrity: 250
+    mechToPilotDamageMultiplier: 0.3
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5.0
+    baseSprintSpeed: 6.0
+
+- type: entity
+  parent: MechClarkeOrangey
+  id: MechClarkeOrangeyBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechClarkeSpider
+  parent: MechClarkeOrangey
+  name: Кларк "Паук"
+  description: Тяжелый шахтерский мех, покрытый хитином. "Разве это не скальп гигантского паука на его люке?"
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: clarkespider
+  - type: Mech
+    baseState: clarkespider
+    openState: clarkespider-open
+    brokenState: clarkespider-broken
+    mechToPilotDamageMultiplier: 0.3
+
+- type: entity
+  id: MechClarkeSpiderBattery
+  parent: MechClarkeSpider
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechHarson
+  parent: MechClarkeOrangey
+  name: Харсон
+  description: Более тяжелый вариант шахтерского меха, предназначенный для работы в экстремальных условиях. Обладает в разы большей защитов в обмен на значительное снижение подвижности.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: harson
+  - type: Mech
     modifiers:
       coefficients:
         Blunt: 0.6
         Slash: 0.6
-        Piercing: 0.8
-        Shock: 0.8
-        Structural: 0.75
-        Heat: 0.7
+        Piercing: 0.5
+        Shock: 0.5
+        Structural: 0.3
+    maxintegrity: 500
+    baseState: harson
+    openState: harson-open
+    brokenState: harson-broken
+    mechToPilotDamageMultiplier: 0.2
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.0
+    baseSprintSpeed: 4.0
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+
+- type: entity
+  id: MechHarsonBattery
+  parent: MechHarson
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechHarsonSpider
+  parent: MechHarson
+  name: Харсон Паук
+  description: Более тяжелый вариант шахтерского меха, предназначенный для работы в экстремальных условиях. Обладает в разы большей защитов в обмен на значительное снижение подвижности.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: odysseusmurdy
+  - type: Mech
+    baseState: harsonspider
+    openState: harsonspider-open
+    brokenState: harsonspider-broken
+
+- type: entity
+  id: MechHarsonSpiderBattery
+  parent: MechHarsonSpider
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+# Odysseus mech upgraded
+
+- type: entity
+  id: MechOdysseusHermes
+  parent: MechOdysseus
+  name: Одиссей "Гермес"
+  description: Сверхпрочный водолазный мех, разработанный и произведённый для узкоспециализированных подводных операций. "Как он здесь оказался?"
+  components:
+  - type: Sprite
+    sprite: Aavikko/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: odysseushermes
+  - type: Mech
+    maxintegrity: 130
+    baseState: odysseushermes
+    openState: odysseushermes-open
+    brokenState: odysseushermes-broken
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 4.5
+
+- type: entity
+  parent: MechOdysseusHermes
+  id: MechOdysseusHermesBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechOdysseusMurdy
+  parent: MechOdysseusHermes
+  name: Одиссей "Рипер"
+  description: "О ЧЕРТ, ЭТО ТОЧНО ОТРЯД СМЕРТИ, МЫ ВСЕ... получим плохое лечение?"
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: odysseusmurdy
+  - type: Mech
+    baseState: odysseusmurdy
+    openState: odysseusmurdy-open
+    brokenState: odysseusmurdy-broken
+
+- type: entity
+  parent: MechOdysseusMurdy
+  id: MechOdysseusMurdyBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+# Phazon mech upgraded
+
+- type: entity
+  id: MechPhazonBlanco
+  parent: MechPhazon
+  name: Фазон "Бланко"
+  description: "Потребовалось более шести месяцев работы, чтобы найти идеальные пастельные цвета для этого меха. Вершина красоты!"
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: phazonblanco
+  - type: Mech
     maxintegrity: 250
-    baseState: paddy
-    openState: paddy-open
-    brokenState: paddy-broken
-    pilotWhitelist:
-      components:
-        - HumanoidAppearance
-    equipmentWhitelist:
-      tags:
-      - ADTMechEquipmentGeneral
-      - ADTMechEquipmentSec
+    baseState: phazonblanco
+    openState: phazonblanco-open
+    brokenState: phazonblanco-broken
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5.0
+    baseSprintSpeed: 7.0
+  - type: MechPhaze
+    state: phazonblanco
+    phazingState: "phazonblanco-phase"
+
+- type: entity
+  parent: MechPhazonBlanco
+  id: MechPhazonBlancoBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechPhazonImperion
+  parent: MechPhazonBlanco
+  name: Фазон "Империон"
+  description: "Вершина научных исследований и гордость Nanotrasen, в нём используются передовые технологии bluespace и самые дорогие материалы."
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: phazonimperion
+  - type: Mech
+    baseState: phazonimperion
+    openState: phazonimperion-open
+    brokenState: phazonimperion-broken
+  - type: MechPhaze
+    state: phazonimperion
+    phazingState: "phazonimperion-phase"
+
+- type: entity
+  parent: MechPhazonImperion
+  id: MechPhazonImperionBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechPhazonJanus
+  parent: MechPhazonBlanco
+  name: Фазон "Янус"
+  description: "Вершина научных исследований и гордость Nanotrasen, в нём используются передовые технологии bluespace и самые дорогие материалы."
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: phazonjanus
+  - type: Mech
+    baseState: phazonjanus
+    openState: phazonjanus-open
+    brokenState: phazonjanus-broken
+  - type: MechPhaze
+    state: phazonjanus
+    phazingState: "phazonjanus-phase"
+
+- type: entity
+  parent: MechPhazonJanus
+  id: MechPhazonJanusBattery
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechPhazonPlazmus
+  parent: MechPhazonBlanco
+  name: Фазон "Плазмус"
+  description: "Итак, вы объединили две самые опасные технологии мира в этой штуке?!"
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: phazonplazmus
+  - type: Mech
+    baseState: phazonplazmus
+    openState: phazonplazmus-open
+    brokenState: phazonplazmus-broken
+  - type: MechPhaze
+    state: phazonplazmus
+    phazingState: "phazonplazmus-phase"
+
+- type: entity
+  parent: MechPhazonPlazmus
+  id: MechPhazonPlazmusBattery
+  suffix: Battery
+  components:
   - type: ContainerFill
     containers:
       mech-battery-slot:

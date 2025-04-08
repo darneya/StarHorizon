@@ -6,7 +6,7 @@
   suffix: Empty
   components:
   - type: Sprite
-    sprite: ADT/Structures/Specific/mechlink.rsi
+    sprite: Aavikko/Structures/Specific/mechlink.rsi
     layers:
     - state: mechlink
     drawdepth: SmallMobs
@@ -18,9 +18,9 @@
     key: enum.StoreUiKey.Key
   - type: Store
     categories:
-    - ADTUplinkMechMechs
-    - ADTUplinkMechWeapon
-    - ADTUplinkMechEquipment
+    - UplinkMechMechs
+    - UplinkMechWeapon
+    - UplinkMechEquipment
     balance:
       Telecrystal: 0
     #storeCordsSpawn: true

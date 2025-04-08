@@ -1,25 +1,25 @@
 - type: storeCategory
-  id: ADTUplinkMechMechs
+  id: UplinkMechMechs
   name: экзоскелеты
   priority: 1
 
 - type: storeCategory
-  id: ADTUplinkMechWeapon
+  id: UplinkMechWeapon
   name: вооружение
   priority: 2
 
 - type: storeCategory
-  id: ADTUplinkMechEquipment
+  id: UplinkMechEquipment
   name: снаряжение
   priority: 3
 
 - type: storePreset
-  id: ADTStorePresetUplinkMech
+  id: StorePresetUplinkMech
   storeName: UplinkMech
   categories:
-  - ADTUplinkMechMechs
-  - ADTUplinkMechWeapon
-  - ADTUplinkMechEquipment
+  - UplinkMechMechs
+  - UplinkMechWeapon
+  - UplinkMechEquipment
   currencyWhitelist:
   - Telecrystal
 
@@ -29,21 +29,21 @@
   id: UplinkMechGygax
   name: Гигакс
   description: Быстрый и манёвренный экзоскелет, обладает перегрузкой ножных сервоприводов, создан для быстрого выполнения целей.
-  productEntity: ADTMechDarkGygaxBattery
+  productEntity: MechDarkGygaxBattery
   cost:
     Telecrystal: 60
   categories:
-  - ADTUplinkMechMechs
+  - UplinkMechMechs
 
 - type: listing
   id: UplinkMechMauler
   name: Маулер
   description: Тяжёлый бронированный экзоскелет, обладающий 5-ю слотами
-  productEntity: ADTMechMaulerBattery
+  productEntity: MechMaulerBattery
   cost:
     Telecrystal: 70
   categories:
-  - ADTUplinkMechMechs
+  - UplinkMechMechs
 
 #weapons
 
@@ -51,52 +51,52 @@
   id: UplinkMechTeslaCannon
   name: пушка теслы
   description: Стреляет шариками энергии
-  productEntity: ADTMechGunTeslaCannon
+  productEntity: MechGunTeslaCannon
   cost:
     Telecrystal: 10
   categories:
-  - ADTUplinkMechWeapon
+  - UplinkMechWeapon
 
 - type: listing
   id: UplinkMechScattershot
   name: LBX AC 10 Залп
   description: Тяжёлый навесной дробовик, стреляющий, очевидно дробью.
-  productEntity: ADTMechGunScattershot
+  productEntity: MechGunScattershot
   cost:
     Telecrystal: 48
   categories:
-  - ADTUplinkMechWeapon
+  - UplinkMechWeapon
 
 - type: listing
   id: UplinkMechUltraAC2
   name: AC-2 Ультра
   description: Тяжёлый навесной пулемёт, основа всех основ.
-  productEntity: ADTMechGunUltraAC2
+  productEntity: MechGunAutocannonUAC2
   cost:
     Telecrystal: 42
   categories:
-  - ADTUplinkMechWeapon
+  - UplinkMechWeapon
 
 - type: listing
-  id: UplinkMechGunMHAR21
+  id: UplinkMechGunAntiMatterRifle
   name: mHAR-21 "Ma Deuce"
   description: Поиграть захотелось? Поиграем.
-  productEntity: ADTMechGunMHAR21
+  productEntity: MechGunAntiMatterRifle
   cost:
     Telecrystal: 30
   categories:
-  - ADTUplinkMechWeapon
+  - UplinkMechWeapon
 
 
 - type: listing
-  id: UplinkMechGunSRM8
+  id: UplinkMechGunMissileLRM6
   name: SRM-8
   description: Навесной ракетомёт для борьбы с группами врагов.
-  productEntity: ADTMechGunSRM8
+  productEntity: MechGunMissileLRM6
   cost:
     Telecrystal: 34
   categories:
-  - ADTUplinkMechWeapon
+  - UplinkMechWeapon
 
 #equipment
 
@@ -108,7 +108,7 @@
   cost:
     Telecrystal: 10
   categories:
-  - ADTUplinkMechEquipment
+  - UplinkMechEquipment
 
 #equipment
 
@@ -120,4 +120,4 @@
   cost:
     Telecrystal: 15
   categories:
-  - ADTUplinkMechEquipment
+  - UplinkMechEquipment

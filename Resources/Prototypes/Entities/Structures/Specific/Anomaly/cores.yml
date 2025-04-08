@@ -131,7 +131,8 @@
   - type: Tag
     tags:
     - ForceableFollow
-    - ADTBluespaceAnomalyCore # ADT tweak
+    - BluespaceAnomalyCore # Aavikko
+    - BluespaceCore
 
 - type: entity
   parent: BaseAnomalyCore
@@ -312,7 +313,8 @@
   - type: Tag
     tags:
     - ForceableFollow
-    - ADTBluespaceAnomalyCore # ADT tweak
+    - BluespaceAnomalyCore # Aavikko
+    - BluespaceCore
 
 - type: entity
   parent: BaseAnomalyInertCore

@@ -1,6 +1,6 @@
 - type: entity
   parent: CrateBaseSecure
-  id: ADTCrateMechWeaponSecure
+  id: CrateMechWeaponSecure
   name: secure mech weapon crate
   components:
   - type: Icon
@@ -22,133 +22,177 @@
           collection: MetalBreak
 
 - type: entity
-  id: ADTMechGunImmolatorLaserCrate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunLaserCrate
+  parent: CrateMechWeaponSecure
   name: Immolator Crate
   description: Immolator Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunImmolatorLaser
+      - id: MechGunLaser
         amount: 1
 
 - type: entity
-  id: ADTMechGunSolarisLaserCannonCrate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunHeavyLaserCrate
+  parent: CrateMechWeaponSecure
   name: Solaris Crate
   description: Solaris Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunSolarisLaserCannon
+      - id: MechGunHeavyLaser
         amount: 1
 
 - type: entity
-  id: ADTMechGunHeavyPulseRifleCrate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunHeavyPulseRifleCrate
+  parent: CrateMechWeaponSecure
   name: eZ-13 mk2 Heavy pulse rifle Crate
   description: eZ-13 mk2 Heavy pulse rifle Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunHeavyPulseRifle
+      - id: MechGunHeavyPulseRifle
         amount: 1
 
 - type: entity
-  id: ADTMechGunPeacemakerDisablerCrate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunDisablerCrate
+  parent: CrateMechWeaponSecure
   name: Peacemaker Crate
   description: Peacemaker Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunPeacemakerDisabler
+      - id: MechGunDisabler
         amount: 1
 
 - type: entity
-  id: ADTMechGunTeslaCannonCrate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunTeslaCannonCrate
+  parent: CrateMechWeaponSecure
   name: Tesla Gun Crate
   description: Tesla Gun Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunTeslaCannon
+      - id: MechGunTeslaCannon
         amount: 1
 
 - type: entity
-  id: ADTMechGunScattershotCrate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunScattershotCrate
+  parent: CrateMechWeaponSecure
   name: Scattershot Crate
   description: Scattershot Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunScattershot
+      - id: MechGunScattershot
         amount: 1
 
 - type: entity
-  id: ADTMechGunUltraAC2Crate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunAutocannonUAC2Crate
+  parent: CrateMechWeaponSecure
   name: Ultra AC2 Crate
   description: Ultra AC2 Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunUltraAC2
+      - id: MechGunAutocannonUAC2
         amount: 1
 
 - type: entity
-  id: ADTMechGunFNX99HadesCrate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunCarbineHadesCrate
+  parent: CrateMechWeaponSecure
   name: Hades Crate
   description: Hades Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunFNX99Hades
+      - id: MechGunCarbineHades
         amount: 1
 
 - type: entity
-  id: ADTMechGunMHAR21Crate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunAntiMatterRifleCrate
+  parent: CrateMechWeaponSecure
   name: MHAR21 Crate
   description: MHAR21 Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunMHAR21
+      - id: MechGunAntiMatterRifle
         amount: 1
 
 - type: entity
-  id: ADTMechGunSGL6Crate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunGrenadeCrate
+  parent: CrateMechWeaponSecure
   name: SGL6 Crate
   description: SGL6 Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunSGL6
+      - id: MechGunGrenade
         amount: 1
 
 - type: entity
-  id: ADTMechGunSRM8Crate
-  parent: ADTCrateMechWeaponSecure
+  id: MechGunMissileLRM6Crate
+  parent: CrateMechWeaponSecure
   name: SRM8 Crate
   description: SRM8 Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunSRM8
+      - id: MechGunMissileLRM6
         amount: 1
 
 - type: entity
-  id: ADTMechGunBRM6Crate
-  parent: ADTCrateMechWeaponSecure
-  name: BRM6 Crate
-  description: BRM6 Crate
+  id: MechGunMissileSRM8FragCrate
+  parent: CrateMechWeaponSecure
+  name: SRM8Frag Crate
+  description: SRM8Frag Crate
   components:
   - type: StorageFill
     contents:
-      - id: ADTMechGunBRM6
+      - id: MechGunMissileSRM8Frag
         amount: 1
+
+- type: entity
+  id: MechGunMissileSRM8IgniteCrate
+  parent: CrateMechWeaponSecure
+  name: SRM8Ignite Crate
+  description: SRM8Ignite Crate
+  components:
+  - type: StorageFill
+    contents:
+    - id: MechGunMissileSRM8Ignite
+      amount: 1
+
+- type: entity
+  id: MechGunPKACrate
+  parent: CrateMechWeaponSecure
+  name: PKA Crate
+  description: PKA Crate
+  components:
+  - type: StorageFill
+    contents:
+    - id: MechGunPKA
+      amount: 1
+
+- type: entity
+  id: MechGunPKAHeavyCrate
+  parent: CrateMechWeaponSecure
+  name: PKA Crate
+  description: PKA Crate
+  components:
+  - type: StorageFill
+    contents:
+    - id: MechGunPKAHeavy
+      amount: 1
+
+- type: entity
+  id: MechGunXRayRifleCrate
+  parent: CrateMechWeaponSecure
+  name: Mech Gun XRay Rifle Crate
+  description: Mech Gun XRay Rifle Crate
+  components:
+  - type: StorageFill
+    contents:
+    - id: MechGunXRayRifle
+      amount: 1
