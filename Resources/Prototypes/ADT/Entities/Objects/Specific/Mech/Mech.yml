@@ -16,7 +16,7 @@
       state: gygax
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/ADT/Mecha/mechstep.ogg
+      path: /Audio/_Horizon/Mecha/mechstep.ogg
   - type: Mech
     modifiers:
       coefficients:
@@ -87,7 +87,7 @@
       state: clarke
   - type: FootstepModifier
     footstepSoundCollection:
-      path: /Audio/ADT/Mecha/sound_mecha_powerloader_step.ogg
+      path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
     modifiers:
       coefficients:

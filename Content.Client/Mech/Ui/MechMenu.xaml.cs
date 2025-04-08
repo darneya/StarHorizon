@@ -54,16 +54,16 @@ public sealed partial class MechMenu : FancyWindow
             ("amount", mechComp.MaxEquipmentAmount - mechComp.EquipmentContainer.ContainedEntities.Count));
     }
 
-    public void UpdateEquipmentView(MechBoundUiState state) // ADT Mech UI Fix
+    public void UpdateEquipmentView(MechBoundUiState state) // Horizon Mech
     {
         if (!_ent.TryGetComponent<MechComponent>(_mech, out var mechComp))
             return;
 
-        EquipmentControlContainer.RemoveAllChildren();  // ADT Mech UI Fix start (строка наша)
+        EquipmentControlContainer.RemoveAllChildren();  // Horizon Mech
         var list = state.EquipmentStates.Keys;
         foreach (var item in list)
         {
-            var ent = _ent.GetEntity(item);             // ADT Mech UI Fix end (строка наша)
+            var ent = _ent.GetEntity(item);             // Horizon Mech
             if (!_ent.TryGetComponent<MetaDataComponent>(ent, out var metaData))
                 continue;
 

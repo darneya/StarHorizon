@@ -58,7 +58,7 @@ public sealed partial class MechGrabberComponent : Component
     /// </summary>
     [DataField]
     public EntityWhitelist? Blacklist;
-    // ADT Content Start
+    // Horizon Mech start
     /// <summary>
     /// is it possible to grab a mob?
     /// </summary>
@@ -77,5 +77,5 @@ public sealed partial class MechGrabberComponent : Component
     [DataField("baseResistTime")]
     public float BaseResistTime = 5f;
 
-    // ADT Content End
+    // Horizon Mech end
 }

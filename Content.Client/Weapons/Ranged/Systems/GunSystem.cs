@@ -243,7 +243,7 @@ public sealed partial class GunSystem : SharedGunSystem
                     {
                         SetCartridgeSpent(ent!.Value, cartridge, true);
                         MuzzleFlash(gunUid, cartridge, worldAngle, user);
-                        if (TryComp<MechComponent>(user, out var cmech))    // ADT Mechs
+                        if (TryComp<MechComponent>(user, out var cmech))    // Horizon Mech
                         {
                             Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, cmech.PilotSlot.ContainedEntity);
                             Recoil(cmech.PilotSlot.ContainedEntity, direction, gun.CameraRecoilScalarModified);
@@ -269,7 +269,7 @@ public sealed partial class GunSystem : SharedGunSystem
                     break;
                 case AmmoComponent newAmmo:
                     MuzzleFlash(gunUid, newAmmo, worldAngle, user);
-                    if (TryComp<MechComponent>(user, out var mech)) // ADT Mechs
+                    if (TryComp<MechComponent>(user, out var mech)) // Horizon Mech
                     {
                         Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, mech.PilotSlot.ContainedEntity);
                         Recoil(mech.PilotSlot.ContainedEntity, direction, gun.CameraRecoilScalarModified);
@@ -285,7 +285,7 @@ public sealed partial class GunSystem : SharedGunSystem
                         RemoveShootable(ent.Value);
                     break;
                 case HitscanPrototype:
-                    if (TryComp<MechComponent>(user, out var hmech)) // ADT Mechs
+                    if (TryComp<MechComponent>(user, out var hmech)) // Horizon Mech
                     {
                         Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, hmech.PilotSlot.ContainedEntity);
                         Recoil(hmech.PilotSlot.ContainedEntity, direction, gun.CameraRecoilScalarModified);

@@ -141,14 +141,14 @@ public sealed partial class GunSystem : SharedGunSystem
                     else
                     {
                         userImpulse = false;
-                        // ADT Mech start
+                        // Horizon Mech start
                         if (TryComp<MechComponent>(user, out var cmech))
                         {
                             Audio.PlayPredicted(gun.SoundEmpty, gunUid, cmech.PilotSlot.ContainedEntity);
                         }
                         else
                             Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
-                        // ADT Mech end
+                        // Horizon Mech end
                     }
 
                     // Something like ballistic might want to leave it in the container still
@@ -235,10 +235,10 @@ public sealed partial class GunSystem : SharedGunSystem
                         if (dmg != null)
                             dmg = Damageable.TryChangeDamage(hitEntity, dmg * Damageable.UniversalHitscanDamageModifier, origin: user);
 
-                        // ADT hitscan bloodloss modifiers start
+                        // Horizon Mech start
                         if (hitscan.BloodlossModifier.HasValue)
                             _bloodstream.TryModifyBleedAmount(hitEntity, hitscan.BloodlossModifier.Value);
-                        // ADT bloodloss modifiers end
+                        // Horizon Mech end
 
                         // check null again, as TryChangeDamage returns modified damage values
                         if (dmg != null)
@@ -270,14 +270,14 @@ public sealed partial class GunSystem : SharedGunSystem
                     {
                         FireEffects(fromEffect, hitscan.MaxLength, dir.ToAngle(), hitscan);
                     }
-                    // ADT Mech start
+                    // Horizon Mech start
                     if (TryComp<MechComponent>(user, out var hmech))
                     {
                         Audio.PlayPredicted(gun.SoundEmpty, gunUid, hmech.PilotSlot.ContainedEntity);
                     }
                     else
                         Audio.PlayPredicted(gun.SoundEmpty, gunUid, user);
-                    // ADT Mech end
+                    // Horizon Mech end
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -316,7 +316,7 @@ public sealed partial class GunSystem : SharedGunSystem
             }
 
             MuzzleFlash(gunUid, ammoComp, mapDirection.ToAngle(), user);
-            if (TryComp<MechComponent>(user, out var mech)) // ADT Mech gun fix
+            if (TryComp<MechComponent>(user, out var mech)) // Horizon Mech
                 Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, mech.PilotSlot.ContainedEntity);
             else
                 Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);

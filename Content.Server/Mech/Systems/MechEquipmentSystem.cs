@@ -14,7 +14,7 @@ namespace Content.Server.Mech.Systems;
 /// <summary>
 /// Handles the insertion of mech equipment into mechs.
 /// </summary>
-public sealed class MechEquipmentSystem : SharedMechEquipmentSystem // ADT - Parent changed
+public sealed class MechEquipmentSystem : SharedMechEquipmentSystem // Horizon Mech
 {
     [Dependency] private readonly MechSystem _mech = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
@@ -24,15 +24,15 @@ public sealed class MechEquipmentSystem : SharedMechEquipmentSystem // ADT - Par
     /// <inheritdoc/>
     public override void Initialize()
     {
-        base.Initialize();  // ADT fix I guess?
+        base.Initialize();  // Horizon Mech
 
         SubscribeLocalEvent<MechEquipmentComponent, AfterInteractEvent>(OnUsed);
         SubscribeLocalEvent<MechEquipmentComponent, InsertEquipmentEvent>(OnInsertEquipment);
 
-        // ADT Content start
+        // Horizon Mech start
         SubscribeLocalEvent<MechEquipmentComponent, EntityTerminatingEvent>(OnTerminating);
         SubscribeLocalEvent<MechEquipmentComponent, MechEquipmentUiStateReadyEvent>(OnGetUIState);
-        // ADT Content end
+        // Horizon Mech end
     }
 
     private void OnUsed(EntityUid uid, MechEquipmentComponent component, AfterInteractEvent args)
@@ -77,7 +77,7 @@ public sealed class MechEquipmentSystem : SharedMechEquipmentSystem // ADT - Par
         args.Handled = true;
     }
 
-    // ADT Content start
+    // Horizon Mech start
     private void OnTerminating(EntityUid uid, MechEquipmentComponent comp, ref EntityTerminatingEvent args)
     {
         _mech.UpdateUserInterfaceByEquipment(uid);
@@ -92,5 +92,5 @@ public sealed class MechEquipmentSystem : SharedMechEquipmentSystem // ADT - Par
 
         args.States.Add(GetNetEntity(uid), null);
     }
-    // ADT Content end
+    // Horizon Mech end
 }

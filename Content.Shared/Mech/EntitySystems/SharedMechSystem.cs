@@ -30,7 +30,7 @@ namespace Content.Shared.Mech.EntitySystems;
 /// <summary>
 /// Handles all of the interactions, UI handling, and items shennanigans for <see cref="MechComponent"/>
 /// </summary>
-public abstract partial class SharedMechSystem : EntitySystem   // ADT - partial
+public abstract partial class SharedMechSystem : EntitySystem   // Horizon Mech
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -47,7 +47,7 @@ public abstract partial class SharedMechSystem : EntitySystem   // ADT - partial
     /// <inheritdoc/>
     public override void Initialize()
     {
-        // SubscribeLocalEvent<MechComponent, MechToggleEquipmentEvent>(OnToggleEquipmentAction);// ADT Commented
+        // SubscribeLocalEvent<MechComponent, MechToggleEquipmentEvent>(OnToggleEquipmentAction);// Horizon Mech Commented
         SubscribeLocalEvent<MechComponent, MechEjectPilotEvent>(OnEjectPilotEvent);
         SubscribeLocalEvent<MechComponent, UserActivateInWorldEvent>(RelayInteractionEvent);
         SubscribeLocalEvent<MechComponent, ComponentStartup>(OnStartup);
@@ -60,17 +60,17 @@ public abstract partial class SharedMechSystem : EntitySystem   // ADT - partial
         SubscribeLocalEvent<MechPilotComponent, CanAttackFromContainerEvent>(OnCanAttackFromContainer);
         SubscribeLocalEvent<MechPilotComponent, AttackAttemptEvent>(OnAttackAttempt);
 
-        // ADT Mech start
+        // Horizon Mech start
         SubscribeNetworkEvent<SelectMechEquipmentEvent>(OnMechEquipSelected);
 
         SubscribeLocalEvent<MechComponent, MechGrabberEjectMessage>(ReceiveEquipmentUiMesssages);
         SubscribeLocalEvent<MechComponent, MechSoundboardPlayMessage>(ReceiveEquipmentUiMesssages);
 
         InitializeADT();
-        // ADT Mech end
+        // Horizon Mech end
     }
 
-    // ADT Commented
+    // Horizon Mech commented
     // private void OnToggleEquipmentAction(EntityUid uid, MechComponent component, MechToggleEquipmentEvent args)
     // {
     //     if (args.Handled)
@@ -146,13 +146,13 @@ public abstract partial class SharedMechSystem : EntitySystem   // ADT - partial
         _actions.AddAction(pilot, ref component.MechCycleActionEntity, component.MechCycleAction, mech);
         _actions.AddAction(pilot, ref component.MechUiActionEntity, component.MechUiAction, mech);
         _actions.AddAction(pilot, ref component.MechEjectActionEntity, component.MechEjectAction, mech);
-        // ADT Content start
+        // Horizon Mech start
         _actions.AddAction(pilot, ref component.MechInhaleActionEntity, component.MechInhaleAction, mech);
         _actions.AddAction(pilot, ref component.MechTurnLightsActionEntity, component.MechTurnLightsAction, mech);
 
         var ev = new SetupMechUserEvent(pilot);
         RaiseLocalEvent(mech, ref ev);
-        // ADT Content end
+        // Horizon Mech end
     }
 
     private void RemoveUser(EntityUid mech, EntityUid pilot)
@@ -209,7 +209,7 @@ public abstract partial class SharedMechSystem : EntitySystem   // ADT - partial
         component.CurrentSelectedEquipment = equipmentIndex >= allEquipment.Count
             ? null
             : allEquipment[equipmentIndex];
-        // ADT Content start
+        // Horizon Mech start
         while (TryComp<MechEquipmentComponent>(component.CurrentSelectedEquipment, out var equipment) && equipment.CanBeUsed == false)
         {
             equipmentIndex++;
@@ -217,7 +217,7 @@ public abstract partial class SharedMechSystem : EntitySystem   // ADT - partial
                 ? null
                 : allEquipment[equipmentIndex];
         }
-        // ADT Content end
+        // Horizon Mech end
         var popupString = component.CurrentSelectedEquipment != null
             ? Loc.GetString("mech-equipment-select-popup", ("item", component.CurrentSelectedEquipment))
             : Loc.GetString("mech-equipment-select-none-popup");
@@ -305,7 +305,7 @@ public abstract partial class SharedMechSystem : EntitySystem   // ADT - partial
         if (!Resolve(uid, ref component))
             return false;
 
-        // if (component.Energy + delta < 0)    // ADT Commented
+        // if (component.Energy + delta < 0)    // Horizon Mech Commented
         //     return false;                    // Почему тут стоит эта проверка, если используется Math.Clamp()?
 
         component.Energy = FixedPoint2.Clamp(component.Energy + delta, 0, component.MaxEnergy);
@@ -419,7 +419,7 @@ public abstract partial class SharedMechSystem : EntitySystem   // ADT - partial
         RemoveUser(uid, pilot);
         _container.RemoveEntity(uid, pilot);
         UpdateAppearance(uid, component);
-        // ADT Content start
+        // Horizon Mech start
         if (_net.IsClient && _timing.IsFirstTimePredicted)
         {
             var ev = new CloseMechMenuEvent();
@@ -430,7 +430,7 @@ public abstract partial class SharedMechSystem : EntitySystem   // ADT - partial
         {
             RemComp<ShowHealthBarsComponent>(pilot);
         }
-        // ADT Content end
+        // Horizon Mech end
         return true;
     }
 

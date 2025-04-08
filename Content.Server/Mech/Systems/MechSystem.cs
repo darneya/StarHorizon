@@ -74,18 +74,18 @@ public sealed partial class MechSystem : SharedMechSystem
 
 
         SubscribeLocalEvent<MechPilotComponent, ToolUserAttemptUseEvent>(OnToolUseAttempt);
-        // SubscribeLocalEvent<MechPilotComponent, InhaleLocationEvent>(OnInhale);  // ADT Commented
+        // SubscribeLocalEvent<MechPilotComponent, InhaleLocationEvent>(OnInhale);  // Horizon Mech Commented
         SubscribeLocalEvent<MechPilotComponent, ExhaleLocationEvent>(OnExhale);
         SubscribeLocalEvent<MechPilotComponent, AtmosExposedGetAirEvent>(OnExpose);
 
         SubscribeLocalEvent<MechAirComponent, GetFilterAirEvent>(OnGetFilterAir);
 
         #region Equipment UI message relays
-        // SubscribeLocalEvent<MechComponent, MechGrabberEjectMessage>(ReceiveEquipmentUiMesssages);    // ADT - Moved to Shared
-        // SubscribeLocalEvent<MechComponent, MechSoundboardPlayMessage>(ReceiveEquipmentUiMesssages);  // ADT - Moved to Shared
+        // SubscribeLocalEvent<MechComponent, MechGrabberEjectMessage>(ReceiveEquipmentUiMesssages);    // Horizon Mech - Moved to Shared
+        // SubscribeLocalEvent<MechComponent, MechSoundboardPlayMessage>(ReceiveEquipmentUiMesssages);  // Horizon Mech - Moved to Shared
         #endregion
 
-        InitializeADT();    // ADT tweak
+        InitializeADT();    // Horizon Mech
     }
 
     private void OnMechCanMoveEvent(EntityUid uid, MechComponent component, UpdateCanMoveEvent args)
@@ -170,7 +170,7 @@ public sealed partial class MechSystem : SharedMechSystem
             return;
 
         RemoveEquipment(uid, equip, component);
-        UpdateUserInterface(uid);   // ADT Mech
+        UpdateUserInterface(uid);   // Horizon Mech
     }
 
     private void OnOpenUi(EntityUid uid, MechComponent component, MechOpenUiEvent args)
@@ -250,7 +250,7 @@ public sealed partial class MechSystem : SharedMechSystem
             _popup.PopupEntity(Loc.GetString("mech-no-enter", ("item", uid)), args.User);
             return;
         }
-        // ADT Content start
+        // Horizon Mech start
         if (TryComp<AccessReaderComponent>(uid, out var accesscomponent) && !_accessReader.IsAllowed(args.User, uid, accesscomponent))
         {
             _popup.PopupEntity(Loc.GetString("gateway-access-denied"), args.User);
@@ -258,7 +258,7 @@ public sealed partial class MechSystem : SharedMechSystem
             args.Handled = true;
             return;
         }
-        // ADT Content end
+        // Horizon Mech end
 
         // Frontier - Make AI Attack mechs based on user.
         if (TryComp<MobStateComponent>(args.User, out var _))
@@ -292,13 +292,13 @@ public sealed partial class MechSystem : SharedMechSystem
         var integrity = component.MaxIntegrity - args.Damageable.TotalDamage;
         SetIntegrity(uid, integrity, component);
 
-        // ADT Mech start
+        // Horizon Mech start
         if (component.Integrity <= component.DamageToDesEqi && !component.Broken && _random.Prob(0.5f) && component.CurrentSelectedEquipment != null)
         {
             var ev = new MechEquipmentDestroyedEvent();
             RaiseLocalEvent(uid, ref ev);
         }
-        // ADT Mech end
+        // Horizon Mech end
 
         if (args.DamageIncreased &&
             args.DamageDelta != null &&
@@ -327,7 +327,7 @@ public sealed partial class MechSystem : SharedMechSystem
         UpdateUserInterface(uid, component);
     }
 
-    // ADT Moved to shared
+    // Horizon Mech moved to shared
     // private void ReceiveEquipmentUiMesssages<T>(EntityUid uid, MechComponent component, T args) where T : MechEquipmentUiMessage
     // {
     //     var ev = new MechEquipmentUiMessageRelayEvent(args);
@@ -358,7 +358,7 @@ public sealed partial class MechSystem : SharedMechSystem
         {
             EquipmentStates = ev.States
         };
-        Dirty(uid, component);  // ADT Mech
+        Dirty(uid, component);  // Horizon Mech
 
         _ui.SetUiState(uid, MechUiKey.Key, state);
     }
@@ -431,7 +431,7 @@ public sealed partial class MechSystem : SharedMechSystem
     }
 
     #region Atmos Handling
-    // private void OnInhale(EntityUid uid, MechPilotComponent component, InhaleLocationEvent args) // ADT - Moved to shared
+    // private void OnInhale(EntityUid uid, MechPilotComponent component, InhaleLocationEvent args) // Horizon Mech - Moved to shared
     // {
     //     if (!TryComp<MechComponent>(component.Mech, out var mech) ||
     //         !TryComp<MechAirComponent>(component.Mech, out var mechAir))
@@ -442,7 +442,7 @@ public sealed partial class MechSystem : SharedMechSystem
     //     if (mech.Airtight)
     //         args.Gas = mechAir.Air;
     // }
-    // ADT Commented
+    // Horizon Mech Commented
 
     private void OnExhale(EntityUid uid, MechPilotComponent component, ExhaleLocationEvent args)
     {
@@ -467,7 +467,7 @@ public sealed partial class MechSystem : SharedMechSystem
         if (mech.Airtight && TryComp(component.Mech, out MechAirComponent? air))
         {
             args.Handled = true;
-            args.Gas = mech.Airtight ? air.Air : _atmosphere.GetContainingMixture(component.Mech);  // ADT Tweak
+            args.Gas = mech.Airtight ? air.Air : _atmosphere.GetContainingMixture(component.Mech);  // Horizon Mech
             return;
         }
 

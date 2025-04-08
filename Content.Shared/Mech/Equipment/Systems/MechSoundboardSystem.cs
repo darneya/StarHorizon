@@ -49,6 +49,6 @@ public sealed class MechSoundboardSystem : EntitySystem
             return;
 
         // honk!!!!!
-        _audio.PlayPredicted(comp.Sounds[msg.Sound], uid, GetEntity(args.Pilot));   // ADT Mech predict
+        _audio.PlayPredicted(comp.Sounds[msg.Sound], uid, GetEntity(args.Pilot));   // Horizon Mech
     }
 }

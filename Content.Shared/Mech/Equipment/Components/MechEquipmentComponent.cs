@@ -20,10 +20,10 @@ public sealed partial class MechEquipmentComponent : Component
     /// </summary>
     [ViewVariables] public EntityUid? EquipmentOwner;
 
-    // ADT Content start
+    // Horizon Mech start
     [DataField("canBeUsed")]
     public bool CanBeUsed = true;
-    // ADT Content end
+    // Horizon Mech end
 }
 
 /// <summary>
@@ -56,9 +56,9 @@ public sealed partial class InsertEquipmentEvent : SimpleDoAfterEvent
 {
 }
 
-// ADT Content start
+// Horizon Mech start
 [Serializable, NetSerializable]
 public sealed partial class MechDrillDoAfterEvent : SimpleDoAfterEvent
 {
 }
-// ADT Content end
+// Horizon Mech end

@@ -18,7 +18,7 @@ public sealed partial class MechSystem : SharedMechSystem
 
         SubscribeLocalEvent<MechComponent, AppearanceChangeEvent>(OnAppearanceChanged);
 
-        InitializeADT();    // ADT tweak (да ладно)
+        InitializeADT();    // Horizon Mech
     }
 
     private void OnAppearanceChanged(EntityUid uid, MechComponent component, ref AppearanceChangeEvent args)

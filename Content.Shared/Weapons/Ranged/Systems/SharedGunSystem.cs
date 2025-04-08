@@ -93,7 +93,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         InitializeClothing();
         InitializeContainer();
         InitializeSolution();
-        InitializeMechGun();    // ADT Mech Gun
+        InitializeMechGun();    // Horizon Mech
         // Interactions
         SubscribeLocalEvent<GunComponent, GetVerbsEvent<AlternativeVerb>>(OnAltVerb);
         SubscribeLocalEvent<GunComponent, ExaminedEvent>(OnExamine);
@@ -141,12 +141,12 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (ent != GetEntity(msg.Gun))
             return;
 
-        // ADT Content start
+        // Horizon Mech start
         if (TryComp<MechPilotComponent>(user.Value, out var mechPilot))
         {
             user = mechPilot.Mech;
         }
-        // ADT Content end
+        // Horizon Mech end
 
         gun.ShootCoordinates = GetCoordinates(msg.Coordinates);
         gun.Target = GetEntity(msg.Target);
@@ -183,7 +183,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         gunEntity = default;
         gunComp = null;
 
-        // ADT Content start
+        // Horizon Mech start
         if (TryComp<MechPilotComponent>(entity, out var mechPilot) &&
             TryComp<MechComponent>(mechPilot.Mech, out var mech) &&
             mech.CurrentSelectedEquipment.HasValue &&
@@ -193,7 +193,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             gunComp = mechGun;
             return true;
         }
-        // ADT Content end
+        // Horizon Mech end
 
         if (EntityManager.TryGetComponent(entity, out HandsComponent? hands) &&
             hands.ActiveHandEntity is { } held &&

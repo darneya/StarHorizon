@@ -24,7 +24,7 @@ public sealed partial class MechComponent : Component
     /// <summary>
     /// The maximum amount of damage the mech can take.
     /// </summary>
-    [DataField("maxintegrity"), AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]  // ADT Mech
+    [DataField("maxintegrity"), AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]  // Horizon Mech
     public FixedPoint2 MaxIntegrity = 250;
 
     /// <summary>
@@ -88,7 +88,7 @@ public sealed partial class MechComponent : Component
     /// <summary>
     /// A whitelist for inserting equipment items.
     /// </summary>
-    [DataField("equipmentWhitelist")]   // ADT Mech
+    [DataField("equipmentWhitelist")]   // Horizon Mech
     public EntityWhitelist? EquipmentWhitelist;
 
     [DataField]
@@ -139,7 +139,7 @@ public sealed partial class MechComponent : Component
     [DataField]
     public List<EntProtoId> StartingEquipment = new();
 
-    // ADT Content Start
+    // Horizon Mech start
     /// <summary>
     /// sound if access denied
     /// </summary>
@@ -154,19 +154,19 @@ public sealed partial class MechComponent : Component
     /// sound on entry mech
     /// </summary>
     [DataField("mechentrysound")]
-    public SoundSpecifier MechEntrySound = new SoundPathSpecifier("/Audio/ADT/Mecha/nominal.ogg");
+    public SoundSpecifier MechEntrySound = new SoundPathSpecifier("/Audio/_Horizon/Mecha/nominal.ogg");
     /// <summary>
     /// sound on turn lights
     /// </summary>
     [DataField("mechlightoffsound")]
-    public SoundSpecifier MechLightsOnSound = new SoundPathSpecifier("/Audio/ADT/Mecha/mechlignton.ogg");
+    public SoundSpecifier MechLightsOnSound = new SoundPathSpecifier("/Audio/_Horizon/Mecha/mechlignton.ogg");
     [DataField("mechlightonsound")]
-    public SoundSpecifier MechLightsOffSound = new SoundPathSpecifier("/Audio/ADT/Mecha/mechlightoff.ogg");
+    public SoundSpecifier MechLightsOffSound = new SoundPathSpecifier("/Audio/_Horizon/Mecha/mechlightoff.ogg");
     /// <summary>
     /// sound on destroy equipment
     /// </summary>
     [DataField("mechequipmentdestr")]
-    public SoundSpecifier MechEquipmentDestr = new SoundPathSpecifier("/Audio/ADT/Mecha/weapdestr.ogg");
+    public SoundSpecifier MechEquipmentDestr = new SoundPathSpecifier("/Audio/_Horizon/Mecha/weapdestr.ogg");
 
     /// <summary>
     /// How much "health" the mech need to destroy equipment.
@@ -203,7 +203,7 @@ public sealed partial class MechComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool LightsToggle = false;
-    // ADT Content End
+    // Horizon Mech end
 
     #region Action Prototypes
     [DataField]
@@ -213,10 +213,10 @@ public sealed partial class MechComponent : Component
     [DataField]
     public EntProtoId MechEjectAction = "ActionMechEject";
 
-    // ADT Content Start
+    // Horizon Mech start
     public EntProtoId MechTurnLightsAction = "ActionMechTurnLights";
     public EntProtoId MechInhaleAction = "ActionMechInhale";
-    // ADT Content End
+    // Horizon Mech end
     #endregion
 
     #region Visualizer States
@@ -231,8 +231,8 @@ public sealed partial class MechComponent : Component
     [DataField] public EntityUid? MechCycleActionEntity;
     [DataField] public EntityUid? MechUiActionEntity;
     [DataField] public EntityUid? MechEjectActionEntity;
-    // ADT Content Start
+    // Horizon Mech start
     [DataField] public EntityUid? MechInhaleActionEntity;
     [DataField] public EntityUid? MechTurnLightsActionEntity;
-    // ADT Content End
+    // Horizon Mech end
 }

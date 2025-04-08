@@ -26,7 +26,7 @@ public sealed partial class MechPhazeComponent : Component
     /// The sound played when a mech is entered phaze
     /// </summary>
     [DataField("phazingSound")]
-    public SoundSpecifier PhazingSound = new SoundPathSpecifier("/Audio/ADT/Mecha/mecha_drill.ogg");
+    public SoundSpecifier PhazingSound = new SoundPathSpecifier("/Audio/_Horizon/Mecha/mecha_drill.ogg");
 
     /// <summary>
     /// Имя спрайта из rsi файла, используемого при фазировании

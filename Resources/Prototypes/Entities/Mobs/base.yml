@@ -44,7 +44,7 @@
   - type: RequireProjectileTarget
     active: False
   - type: AnimatedEmotes # goob edit - animated emotes
-  - type: CanEscapeMech # ADT tweak
+  - type: CanEscapeMech # Horizon Mech
 
 - type: entity
   save: false
