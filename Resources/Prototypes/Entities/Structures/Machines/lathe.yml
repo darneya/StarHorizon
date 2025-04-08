@@ -341,6 +341,7 @@
     - BorgModules
     - MechParts
     - MechEquipment
+    - HorizonMechs
   - type: MaterialStorage
     whitelist:
       tags:
