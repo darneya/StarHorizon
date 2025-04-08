@@ -1,6 +1,6 @@
 using Content.Shared.DoAfter;
 
-namespace Content.Server.Aavikko.Mech.Components;
+namespace Content.Server._Horizon.Mech.Components;
 
 /// <summary>
 /// Данный компонент имеют все мобы, он даёт им возможность выбраться из клешни меха.

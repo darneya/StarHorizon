@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Mech;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Aavikko.Mech;
+namespace Content.Shared._Horizon.Mech;
 
 [Serializable, NetSerializable]
 public sealed class MechGunUiState : BoundUserInterfaceState

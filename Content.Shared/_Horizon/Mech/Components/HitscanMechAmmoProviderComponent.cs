@@ -2,7 +2,7 @@ using Content.Shared.Weapons.Ranged;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Aavikko.Weapons.Ranged.Components;
+namespace Content.Shared._Horizon.Weapons.Ranged.Components;
 
 /// <summary>
 /// Позволяет оружию меха стрелять хитсканом.

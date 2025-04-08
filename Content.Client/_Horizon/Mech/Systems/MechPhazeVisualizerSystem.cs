@@ -1,8 +1,8 @@
 using Robust.Client.GameObjects;
 using Content.Shared.Mech.EntitySystems;
-using Content.Shared.Aavikko.Mech.Components;
+using Content.Shared._Horizon.Mech.Components;
 
-namespace Content.Client.Aavikko.Mech;
+namespace Content.Client._Horizon.Mech;
 
 public sealed class MechPhazeVisualizerSystem : EntitySystem
 {

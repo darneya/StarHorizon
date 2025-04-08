@@ -1,9 +1,9 @@
 ﻿using Content.Shared.Mech;
 using Content.Shared.Mech.Components;
 using Content.Shared.Damage;
-using Content.Server.Aavikko.Mech.Equipment.Components;
+using Content.Server._Horizon.Mech.Equipment.Components;
 
-namespace Content.Server.Aavikko.Mech.Equipment.EntitySystems;
+namespace Content.Server._Horizon.Mech.Equipment.EntitySystems;
 
 public sealed class MechArmorSystem : EntitySystem
 {

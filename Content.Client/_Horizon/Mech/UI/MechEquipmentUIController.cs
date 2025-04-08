@@ -5,7 +5,7 @@ using Content.Shared.Mech.Components;
 using Content.Shared.Mech;
 using Robust.Shared.Timing;
 
-namespace Content.Client.Aavikko.Mech.UI;
+namespace Content.Client._Horizon.Mech.UI;
 
 [UsedImplicitly]
 public sealed class MechEquipmentUIController : UIController

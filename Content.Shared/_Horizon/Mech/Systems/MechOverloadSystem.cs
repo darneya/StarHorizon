@@ -3,7 +3,7 @@ using Content.Shared.Mech.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Damage;
-using Content.Shared.Aavikko.Mech.Components;
+using Content.Shared._Horizon.Mech.Components;
 
 namespace Content.Shared.Mech.EntitySystems;
 

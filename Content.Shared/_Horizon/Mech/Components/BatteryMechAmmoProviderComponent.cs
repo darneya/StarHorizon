@@ -2,7 +2,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Shared.Aavikko.Weapons.Ranged.Components;
+namespace Content.Shared._Horizon.Weapons.Ranged.Components;
 
 /// <summary>
 /// Позволяет оружию меха стрелять проджектайлами.

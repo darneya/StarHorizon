@@ -4,7 +4,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Movement.Events;
 using Content.Shared.Resist;
 using Robust.Shared.Containers;
-using Content.Server.Aavikko.Mech.Components;
+using Content.Server._Horizon.Mech.Components;
 using Content.Server.Mech.Equipment.Components;
 
 namespace Content.Server.Resist;

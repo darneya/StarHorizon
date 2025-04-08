@@ -1,7 +1,7 @@
 ﻿using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 
-namespace Content.Server.Aavikko.Mech.Equipment.Components;
+namespace Content.Server._Horizon.Mech.Equipment.Components;
 
 /// <summary>
 /// Снаряжение меха, занимающее один слот и меняющее модификаторы

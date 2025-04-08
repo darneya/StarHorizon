@@ -1,10 +1,10 @@
 ﻿using Content.Client.UserInterface.Fragments;
-using Content.Shared.Aavikko.Mech;
+using Content.Shared._Horizon.Mech;
 using Content.Shared.Mech;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 
-namespace Content.Client.Aavikko.Mech.UI;
+namespace Content.Client._Horizon.Mech.UI;
 
 public sealed partial class MechGunUi : UIFragment
 {

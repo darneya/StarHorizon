@@ -4,7 +4,7 @@ using Robust.Shared.Audio.Components;
 using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 
-namespace Content.Server.Aavikko.Mech.Equipment.Components;
+namespace Content.Server._Horizon.Mech.Equipment.Components;
 
 /// <summary>
 /// Дрель меха. Позволяет эффективно копать руду.

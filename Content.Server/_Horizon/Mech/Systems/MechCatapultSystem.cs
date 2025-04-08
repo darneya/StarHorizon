@@ -3,10 +3,10 @@ using Content.Server.Mech.Systems;
 using Content.Shared.Interaction;
 using Content.Shared.Mech.Components;
 using Content.Shared.Throwing;
-using Content.Shared.Aavikko.Mech.Equipment.Components;
+using Content.Shared._Horizon.Mech.Equipment.Components;
 
 
-namespace Content.Server.Aavikko.Mech.Equipment.EntitySystems;
+namespace Content.Server._Horizon.Mech.Equipment.EntitySystems;
 
 /// <summary>
 /// Handles everything for mech catapult.

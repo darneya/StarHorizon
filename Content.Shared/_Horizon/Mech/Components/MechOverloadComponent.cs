@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 
-namespace Content.Shared.Aavikko.Mech.Components;
+namespace Content.Shared._Horizon.Mech.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class MechOverloadComponent : Component

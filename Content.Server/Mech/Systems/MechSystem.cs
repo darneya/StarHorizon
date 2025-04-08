@@ -31,7 +31,7 @@ using Robust.Server.Audio;
 using Content.Shared.Access.Systems;
 using Content.Shared.Access.Components;
 using Robust.Shared.Random;
-using Content.Shared.Aavikko.Mech;
+using Content.Shared._Horizon.Mech;
 using Content.Shared.Mech.Equipment.Components;
 
 namespace Content.Server.Mech.Systems;

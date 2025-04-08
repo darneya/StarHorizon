@@ -1,5 +1,5 @@
-using Content.Shared.Aavikko.Mech.Equipment.Components;
-using Content.Shared.Aavikko.Weapons.Ranged.Components;
+using Content.Shared._Horizon.Mech.Equipment.Components;
+using Content.Shared._Horizon.Weapons.Ranged.Components;
 using Content.Shared.Mech.Components;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Mech.Equipment.Components;

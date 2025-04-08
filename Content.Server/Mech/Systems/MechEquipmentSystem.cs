@@ -1,7 +1,7 @@
 using Content.Server.Mech.Equipment.Components;
 using Content.Server.Popups;
-using Content.Shared.Aavikko.Mech.EntitySystems;
-using Content.Shared.Aavikko.Weapons.Ranged.Components;
+using Content.Shared._Horizon.Mech.EntitySystems;
+using Content.Shared._Horizon.Weapons.Ranged.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Mech;

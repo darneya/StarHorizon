@@ -1,7 +1,7 @@
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Aavikko.Weapons.Ranged.Components;
+namespace Content.Shared._Horizon.Weapons.Ranged.Components;
 
 /// <summary>
 /// Базовый компонент для провайдера аммуниции меха

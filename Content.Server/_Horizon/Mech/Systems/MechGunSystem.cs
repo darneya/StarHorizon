@@ -8,15 +8,15 @@ using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Random;
 using Content.Shared.Stunnable;
 using Robust.Shared.Containers;
-using Content.Shared.Aavikko.Mech.Equipment.Components;
-using Content.Shared.Aavikko.Weapons.Ranged.Components;
+using Content.Shared._Horizon.Mech.Equipment.Components;
+using Content.Shared._Horizon.Weapons.Ranged.Components;
 using Content.Shared.Mech;
-using Content.Shared.Aavikko.Mech;
+using Content.Shared._Horizon.Mech;
 using Robust.Shared.Timing;
 using Robust.Server.Audio;
-using Content.Server.Aavikko.Mech.Equipment.Components;
+using Content.Server._Horizon.Mech.Equipment.Components;
 
-namespace Content.Server.Aavikko.Mech.Equipment.EntitySystems;
+namespace Content.Server._Horizon.Mech.Equipment.EntitySystems;
 public sealed class MechGunSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;

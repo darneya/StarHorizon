@@ -1,9 +1,9 @@
 using Content.Shared.Actions;
-using Content.Shared.Aavikko.Mech.Components;
+using Content.Shared._Horizon.Mech.Components;
 using Content.Shared.Mech;
 using Content.Shared.Mech.EntitySystems;
 
-namespace Content.Shared.Aavikko.Mech.EntitySystems;
+namespace Content.Shared._Horizon.Mech.EntitySystems;
 
 public abstract class SharedMechEquipmentSystem : EntitySystem
 {

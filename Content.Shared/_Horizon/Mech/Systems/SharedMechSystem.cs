@@ -1,5 +1,5 @@
 using Content.Shared.Mech.Components;
-using Content.Shared.Aavikko.Mech;
+using Content.Shared._Horizon.Mech;
 using Content.Shared.Storage;
 
 namespace Content.Shared.Mech.EntitySystems;

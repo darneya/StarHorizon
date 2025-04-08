@@ -1,4 +1,4 @@
-using Content.Shared.Aavikko.Mech.EntitySystems;
+using Content.Shared._Horizon.Mech.EntitySystems;
 
 
 namespace Content.Client.Mech.Systems;

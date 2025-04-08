@@ -4,7 +4,7 @@ using Content.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using System.Linq;
 using Robust.Shared.Physics;
-using Content.Shared.Aavikko.Mech.Components;
+using Content.Shared._Horizon.Mech.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 

@@ -9,9 +9,9 @@ using Content.Shared.Mech.Equipment.Components;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Components;
-using Content.Server.Aavikko.Mech.Equipment.Components;
+using Content.Server._Horizon.Mech.Equipment.Components;
 
-namespace Content.Server.Aavikko.Mech.Equipment.EntitySystems;
+namespace Content.Server._Horizon.Mech.Equipment.EntitySystems;
 
 /// <summary>
 /// Handles <see cref="MechDrillComponent"/> and all related UI logic

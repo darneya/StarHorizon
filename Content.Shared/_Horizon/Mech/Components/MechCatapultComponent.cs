@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Aavikko.Mech.Equipment.Components;
+namespace Content.Shared._Horizon.Mech.Equipment.Components;
 
 [RegisterComponent, NetworkedComponent]
 //[AutoGenerateComponentState]

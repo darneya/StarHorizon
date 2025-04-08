@@ -9,7 +9,7 @@ using Robust.Shared.Map;
 using Content.Shared.Mech;
 using Content.Shared.Mech.Equipment.Components;
 
-namespace Content.Client.Aavikko.Mech.UI;
+namespace Content.Client._Horizon.Mech.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class MechEquipmentMenu : RadialMenu
