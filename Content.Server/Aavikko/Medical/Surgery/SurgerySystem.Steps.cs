@@ -45,8 +45,13 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
     private void OnStepAttachComplete(Entity<SurgeryStepAttachLimbEffectComponent> ent, ref SurgeryStepEvent args)
     {
-        OnStepAttachLimbComplete(ent, ref args);
-        OnStepAttachItemComplete(ent, ref args);
+        if (GetSingleton(args.SurgeryProto) is not { } surgery
+            || !TryComp<SurgeryLimbSlotConditionComponent>(surgery, out var slotComp))
+            return;
+
+        OnStepAttachLimbComplete(ent, slotComp.Slot, ref args);
+        if (slotComp.Slot != "head")
+            OnStepAttachItemComplete(ent, slotComp.Slot, ref args);
     }
 
     private void OnStepBleedComplete(Entity<SurgeryStepBleedEffectComponent> ent, ref SurgeryStepEvent args)
@@ -149,7 +154,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if (TryComp(args.Body, out TransformComponent? xform))
             SpawnAtPosition(ent.Comp.Entity, xform.Coordinates);
     }
-    private void OnStepAttachLimbComplete(Entity<SurgeryStepAttachLimbEffectComponent> ent, ref SurgeryStepEvent args)
+    private void OnStepAttachLimbComplete(Entity<SurgeryStepAttachLimbEffectComponent> _, string slot, ref SurgeryStepEvent args)
     {
         if (args.Tools.Count == 0
             || !(args.Tools.FirstOrDefault() is var limbId)
@@ -160,14 +165,6 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         var part = args.Part;
         var body = args.Body;
 
-        var slot = limb.PartType switch
-        {
-            BodyPartType.Arm => limb.Symmetry == BodyPartSymmetry.Left ? "left arm" : "right arm",
-            BodyPartType.Hand => limb.Symmetry == BodyPartSymmetry.Left ? "left hand" : "right hand",
-            BodyPartType.Leg => limb.Symmetry == BodyPartSymmetry.Left ? "left leg" : "right leg",
-            BodyPartType.Foot => limb.Symmetry == BodyPartSymmetry.Left ? "left foot" : "right foot",
-            _ => "",
-        };
         if (!_body.AttachPart(part, slot, limbId, bodyPart, limb))
         {
             args.IsCancelled = true;
@@ -222,14 +219,13 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         }
     }
 
-    private void OnStepAttachItemComplete(Entity<SurgeryStepAttachLimbEffectComponent> ent, ref SurgeryStepEvent args)
+    private void OnStepAttachItemComplete(Entity<SurgeryStepAttachLimbEffectComponent> ent, string slot, ref SurgeryStepEvent args)
     {
         if (args.Tools.Count == 0
             || !(args.Tools.FirstOrDefault() is var itemId)
             || !TryComp<BodyPartComponent>(args.Part, out var bodyPart)
             || !TryComp(itemId, out MetaDataComponent? metada)
             || TryComp<BodyPartComponent>(itemId, out var _)
-            || !_body.TryGetFreePartSlot(args.Part, out var slotId, bodyPart)
             || Prototype(itemId) is not EntityPrototype prototype)
             return;
 
@@ -244,7 +240,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         marker.VirtualPart = virtualIteam;
         virtualCustomLimb.Item = itemId;
 
-        virtualBodyPart.PartType = slotId switch
+        virtualBodyPart.PartType = slot switch
         {
             "left arm" => BodyPartType.Arm,
             "right arm" => BodyPartType.Arm,
@@ -257,7 +253,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             "tail" => BodyPartType.Tail,
             _ => BodyPartType.Other,
         };
-        if (!_body.AttachPart(args.Part, slotId, virtualIteam, bodyPart, virtualBodyPart))
+        if (!_body.AttachPart(args.Part, slot, virtualIteam, bodyPart, virtualBodyPart))
         {
             args.IsCancelled = true;
             QueueDel(virtualIteam);
@@ -266,7 +262,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
         if (TryComp<HumanoidAppearanceComponent>(args.Body, out var _)) //todo move to system
         {
-            var layer = GetLayer(slotId);
+            var layer = GetLayer(slot);
             if (layer is null)
                 return;
 
@@ -275,7 +271,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             Dirty(args.Body, vizualizer);
 
         }
-        AddItemHand(args.Body, itemId, BodySystem.GetPartSlotContainerId(slotId));
+        AddItemHand(args.Body, itemId, BodySystem.GetPartSlotContainerId(slot));
     }
 
     private void AddItemHand(EntityUid bodyId, EntityUid itemId, string handId)

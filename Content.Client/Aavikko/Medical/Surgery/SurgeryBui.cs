@@ -361,6 +361,9 @@ public sealed class SurgeryBui : BoundUserInterface
                         case StepInvalidReason.MissingTool:
                             stepName.AddMarkupOrThrow(" [color=red](Отсутствует инструмент)[/color]");
                             break;
+                        case StepInvalidReason.DisabledTool:
+                            stepName.AddMarkupOrThrow(" [color=red](Disabled Tool)[/color]");
+                            break;
                     }
                 }
             }

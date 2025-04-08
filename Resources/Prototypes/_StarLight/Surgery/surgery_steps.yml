@@ -8,7 +8,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepOpenIncisionScalpel
-  name: сделайте надрез
+  name: Cut with a scalpel
   components:
   - type: SurgeryStep
     tools:
@@ -27,7 +27,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepClampBleeders
-  name: зажмите кровоточащие каналы
+  name: Clamp the bleeders
   components:
   - type: SurgeryStep
     tools:
@@ -41,22 +41,8 @@
 
 - type: entity
   parent: SurgeryStepBase
-  id: SurgeryStepRetractSkin
-  name: оттяните кожу
-  components:
-  - type: SurgeryStep
-    tools:
-    - type: Retractor
-    add:
-    - type: SkinRetracted
-  - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scissors.rsi
-    state: retractor
-
-- type: entity
-  parent: SurgeryStepBase
   id: SurgeryStepSawBones
-  name: прорежьте кости
+  name: Saw through bones
   components:
   - type: SurgeryStep
     duration: 5
@@ -70,7 +56,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepPriseOpenBones
-  name: раскройте кости
+  name: Prise the bones open
   components:
   - type: SurgeryStep
     tools:
@@ -82,7 +68,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepCloseBones
-  name: вправьте кости
+  name: Close bones
   components:
   - type: SurgeryStep
     tools:
@@ -94,7 +80,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepMendRibcage
-  name: почините кости
+  name: Mend ribcage
   components:
   - type: SurgeryStep
     tools:
@@ -106,7 +92,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepCloseIncision
-  name: закройте разрез
+  name: Close incision
   components:
   - type: SurgeryStep
     tools:
@@ -124,7 +110,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepCutAbdominalMuscles
-  name: разрежьте мышцы живота
+  name: Cut through abdominal muscles
   components:
   - type: SurgeryStep
     tools:
@@ -137,7 +123,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepRetractAbdominalWalls
-  name: оттяните брюшные стенки
+  name: Retract abdominal walls
   components:
   - type: SurgeryStep
     tools:
@@ -149,7 +135,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepSutureMuscles
-  name: наложите швы
+  name: Suture Abdominal Muscles
   components:
   - type: SurgeryStep
     duration: 4
@@ -162,7 +148,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepRestoreAbdominalWalls
-  name: восстановите брюшные стенки
+  name: Restore Abdominal Walls
   components:
   - type: SurgeryStep
     duration: 3

@@ -1,38 +1,10 @@
 ﻿- type: entity
   parent: SurgeryStepBase
-  id: SurgeryStepExposeNerves
-  name: обнаружьте нервы
-  components:
-  - type: SurgeryStep
-    duration: 4
-    tools:
-    - type: Scalpel
-  - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
-    state: scalpel
-  - type: SurgeryStepEmoteEffect
-
-- type: entity
-  parent: SurgeryStepBase
-  id: SurgeryStepExposeBloodVessels
-  name: обнаружьте кровеносные сосуды
-  components:
-  - type: SurgeryStep
-    duration: 4
-    tools:
-    - type: Scalpel
-  - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
-    state: scalpel
-  - type: SurgeryStepEmoteEffect
-
-- type: entity
-  parent: SurgeryStepBase
   id: SurgeryLimbAttachmentStep
-  name: присоедините конечность
+  name: attach a limb
   components:
   - type: SurgeryStep
-    duration: 4
+    duration: 4 
     tools:
     - type: MetaData
   - type: Sprite
@@ -43,7 +15,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepRejoinNerves
-  name: соедините нервы
+  name: Rejoin Nerves
   components:
   - type: SurgeryStep
     duration: 5
@@ -57,7 +29,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepRejoinBloodVessels
-  name: соедините кровеносные сосуды
+  name: Rejoin Blood Vessels
   components:
   - type: SurgeryStep
     duration: 5
@@ -70,7 +42,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepRestoreCartilage
-  name: восстановите хрящевую ткань
+  name: Restore Cartilage
   components:
   - type: SurgeryStep
     duration: 4

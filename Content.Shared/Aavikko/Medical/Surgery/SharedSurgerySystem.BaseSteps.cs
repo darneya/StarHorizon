@@ -8,11 +8,15 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Aavikko.Medical.Surgery.Events;
 using Content.Shared.Aavikko.Medical.Surgery.Effects.Step;
 using System.Linq;
+using Content.Shared.Item.ItemToggle.Components;
+using Robust.Shared.Random;
 
 namespace Content.Shared.Aavikko.Medical.Surgery;
 
 public abstract partial class SharedSurgerySystem
 {
+    [Dependency] private readonly IRobustRandom _random = default!;
+
     protected float DelayAccumulator = 0f;
     protected readonly Queue<Action> DelayQueue = new();
 
@@ -40,6 +44,13 @@ public abstract partial class SharedSurgerySystem
             Dirty(ent);
             if (args.Target.HasValue && TryComp<BodyPartComponent>(args.Target.Value, out var dirtyPart))
                 Dirty(args.Target.Value, dirtyPart, Comp<MetaDataComponent>(args.Target.Value));
+            return;
+        }
+
+        if (!_random.Prob(args.SuccessRate))
+        {
+            if (_net.IsClient) return;
+            _popup.PopupEntity("Because of a careless tool, your hand shook. You need to start this step all over again!", args.User, PopupType.SmallCaution);
             return;
         }
 
@@ -176,6 +187,15 @@ public abstract partial class SharedSurgerySystem
 
                 return;
             }
+            else if (TryComp<ItemToggleComponent>(tool, out var togglable) && !togglable.Activated)
+            {
+                args.Invalid = StepInvalidReason.DisabledTool;
+
+                if (reg.Component is ISurgeryToolComponent toolComp)
+                    args.Popup = $"You need enable {toolComp.ToolName} to perform this step!";
+
+                return;
+            }
 
             args.ValidTools.Add(tool);
         }
@@ -203,23 +223,30 @@ public abstract partial class SharedSurgerySystem
         }
 
         var duration = stepComp.Duration;
+        var smallestSuccessRate = 1f;
 
         foreach (var tool in validTools)
-            if (TryComp(tool, out SurgeryToolComponent? toolComp))
-            {
-                duration *= toolComp.Speed;
-                if (toolComp.StartSound != null) _audio.PlayPvs(toolComp.StartSound, tool);
-            }
+        {
+            if (!TryComp(tool, out SurgeryToolComponent? toolComp))
+                return;
+
+            duration *= toolComp.Speed;
+            if (toolComp.StartSound != null)
+                _audio.PlayPvs(toolComp.StartSound, tool);
+
+            if (toolComp.SuccessRate < smallestSuccessRate)
+                smallestSuccessRate = toolComp.SuccessRate;
+        }
 
         if (TryComp(body, out TransformComponent? xform))
             _rotateToFace.TryFaceCoordinates(user, _transform.GetMapCoordinates(body, xform).Position);
 
-        var ev = new SurgeryDoAfterEvent(args.Surgery, args.Step);
+        var ev = new SurgeryDoAfterEvent(args.Surgery, args.Step, smallestSuccessRate);
         var doAfter = new DoAfterArgs(EntityManager, user, duration, ev, body, part)
         {
             BreakOnMove = true,
             DuplicateCondition = DuplicateConditions.SameTarget,
-            ForceNet = true
+            ForceNet = true,
         };
         _doAfter.TryStartDoAfter(doAfter);
     }
