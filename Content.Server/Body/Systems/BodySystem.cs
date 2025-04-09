@@ -12,7 +12,7 @@ using Content.Shared.Movement.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using System.Numerics;
-using Content.Server.Aavikko.Medical.Limbs;
+using Content.Server._Horizon.Medical.Limbs;
 
 namespace Content.Server.Body.Systems;
 
@@ -23,7 +23,7 @@ public sealed class BodySystem : SharedBodySystem
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
-    [Dependency] private readonly LimbSystem _limbSystem = default!;// _Horizon
+    [Dependency] private readonly LimbSystem _limbSystem = default!; // _Horizon
 
     public override void Initialize()
     {

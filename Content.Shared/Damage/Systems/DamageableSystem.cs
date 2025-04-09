@@ -1,7 +1,7 @@
 using System.Linq;
+using Content.Shared._Horizon.Medical.Damage;
 using Content.Shared.CCVar;
 using Content.Shared.Chemistry;
-using Content.Shared.Aavikko.Medical.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;

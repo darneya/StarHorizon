@@ -1,4 +1,4 @@
-﻿using Content.Shared.Aavikko.Medical.Limbs;
+﻿using Content.Shared._Horizon.Medical.Limbs;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Robust.Shared.Containers;
