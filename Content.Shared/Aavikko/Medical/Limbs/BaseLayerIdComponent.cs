@@ -10,5 +10,12 @@ namespace Content.Shared.Aavikko;
 public sealed partial class BaseLayerIdComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public string? Layer;
+    public ProtoId<HumanoidSpeciesSpriteLayer>? Layer;
+}
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class BaseLayerIdToggledComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public ProtoId<HumanoidSpeciesSpriteLayer>? Layer;
 }

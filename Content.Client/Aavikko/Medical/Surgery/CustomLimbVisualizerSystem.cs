@@ -25,20 +25,20 @@ public sealed class CustomLimbVisualizerSystem : EntitySystem
 
         var old = ent.Comp.CachedLayers.ToHashSet();
         ent.Comp.CachedLayers.Clear();
-
-        foreach (var item in ent.Comp.Layers)
+        foreach (var (visual, netEnt) in ent.Comp.Layers)
         {
-            if (!item.Value.HasValue || !TryComp<SpriteComponent>(item.Value, out var layerSprite))
+            var entity = GetEntity(netEnt);
+            if (!entity.HasValue || !TryComp<SpriteComponent>(entity, out var layerSprite))
             {
                 if (repeat) Timer.Spawn(TimeSpan.FromMilliseconds(150), () => OnChanged(ent, false));
                 return;
             }
             string? state = null;
-            if (TryComp<ItemComponent>(item.Value, out var itemComp) && itemComp.HeldPrefix is not null)
+            if (TryComp<ItemComponent>(entity, out var itemComp) && itemComp.HeldPrefix is not null)
                 state = $"{itemComp.HeldPrefix}-";
 
             var offset = Vector2.Zero;
-            switch (item.Key)
+            switch (visual)
             {
                 case HumanoidVisualLayers.LArm:
                 case HumanoidVisualLayers.LHand:
@@ -55,7 +55,7 @@ public sealed class CustomLimbVisualizerSystem : EntitySystem
             }
             if (state is null) continue;
 
-            switch (item.Key)
+            switch (visual)
             {
                 case HumanoidVisualLayers.LArm:
                     offset = new Vector2(0, 0.1875f);
@@ -84,12 +84,12 @@ public sealed class CustomLimbVisualizerSystem : EntitySystem
             }
             if (layerSprite?.BaseRSI?.TryGetState(state, out var rsiState) ?? false)
             {
-                var index = sprite.LayerMapReserveBlank($"custom-{item.Key}");
+                var index = sprite.LayerMapReserveBlank($"custom-{visual}");
 
                 sprite.LayerSetState(index, rsiState.StateId, layerSprite.BaseRSI);
                 sprite.LayerSetOffset(index, offset);
                 sprite.LayerSetVisible(index, true);
-                ent.Comp.CachedLayers.Add(item.Key);
+                ent.Comp.CachedLayers.Add(visual);
             }
 
             //if (ent.Comp.Displacements.TryGetValue(item.Key, out var displacementData) && !ent.Comp.CachedLayers.Contains($"{item.Key}-displacement"))

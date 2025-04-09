@@ -30,6 +30,7 @@ public sealed partial class SurgeryPartConditionComponent : Component
     [DataField]
     public List<BodyPartType> Parts = [];
 }
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class SurgerySpeciesConditionComponent : Component
 {
     [DataField]

@@ -18,7 +18,6 @@
         type: SurgeryBui
       enum.VampireMutationUiKey.Key:
         type: VampireMutationBoundUserInterface
-  - type: Absorbable
   - type: Hunger
   - type: Thirst
   - type: Icon

@@ -7,7 +7,7 @@ namespace Content.Shared.Aavikko.Medical.Surgery;
 public sealed partial class CustomLimbVisualizerComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public Dictionary<HumanoidVisualLayers, EntityUid?> Layers = [];
+    public Dictionary<HumanoidVisualLayers, NetEntity?> Layers = [];
 
     [DataField]
     public HashSet<HumanoidVisualLayers> CachedLayers = [];
@@ -20,7 +20,7 @@ public sealed partial class CustomLimbVisualizerComponent : Component
 public sealed partial class CustomLimbComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public EntityUid? Item;
+    public EntityUid Item;
 }
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]

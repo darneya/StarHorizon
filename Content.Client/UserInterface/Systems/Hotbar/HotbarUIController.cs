@@ -9,6 +9,7 @@ using Content.Client.UserInterface.Systems.Storage;
 using Content.Client.UserInterface.Systems.Storage.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
+using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.UserInterface.Systems.Hotbar;
 
@@ -31,11 +32,12 @@ public sealed class HotbarUIController : UIController
         ReloadHotbar();
     }
 
-    public void Setup(HandsContainer handsContainer)
+    public void Setup(HandsContainer handsContainer, HandsContainer FunctionalhandsContainer, BoxContainer storageContainer) // _Horizon
     {
         _inventory = UIManager.GetUIController<InventoryUIController>();
         _hands = UIManager.GetUIController<HandsUIController>();
         _storage = UIManager.GetUIController<StorageUIController>();
+        _hands.RegisterHandContainer(FunctionalhandsContainer);  // _Horizon
         _hands.RegisterHandContainer(handsContainer);
     }
 

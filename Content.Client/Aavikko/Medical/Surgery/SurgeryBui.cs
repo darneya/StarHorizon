@@ -7,6 +7,7 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Control;
 
@@ -17,6 +18,7 @@ public sealed class SurgeryBui : BoundUserInterface
 {
     [Dependency] private readonly IEntityManager _entities = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly IGameTiming _game = default!;
 
     private readonly SurgerySystem _system;
     private readonly HandsSystem _hands;
@@ -36,13 +38,9 @@ public sealed class SurgeryBui : BoundUserInterface
         _system.OnRefresh += UpdateDisabledPanel;
         _hands.OnPlayerItemAdded += OnPlayerItemAdded;
     }
-    private DateTime _lastRefresh = DateTime.UtcNow;
-    private (string k1, EntityUid k2) _throttling = ("", new EntityUid());
     private void OnPlayerItemAdded(string k1, EntityUid k2)
     {
-        if (_throttling.k1.Equals(k1) && _throttling.k2.Equals(k2) && DateTime.UtcNow - _lastRefresh < TimeSpan.FromSeconds(1)) return;
-        _throttling = (k1, k2);
-        _lastRefresh = DateTime.UtcNow;
+        if (!_game.IsFirstTimePredicted) return;
         RefreshUI();
     }
     protected override void Open() => UpdateState(State);

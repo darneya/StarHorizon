@@ -2,11 +2,11 @@
 
 - type: technology
   id: SurgeryTech
-  name: Базовая хирургия
+  name: research-technology-basic-surgery
   icon:
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
-  discipline: Medical
+  discipline: Biochemical
   tier: 1
   cost: 4000
   recipeUnlocks:
@@ -20,11 +20,11 @@
 
 - type: technology
   id: CyberLimbsTech
-  name: Базовые кибернетические конечности
+  name: research-technology-basic-cyberlimbs
   icon:
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
     state: icon
-  discipline: Medical
+  discipline: Biochemical
   tier: 1
   cost: 4000
   recipeUnlocks:
@@ -36,14 +36,16 @@
     - RightLegCyber
     - LeftFootCyber
     - RightFootCyber
+    
+# Tier 2
 
 - type: technology
   id: SurgeryTechAdvanced
-  name: Продвинутая хирургия
+  name: research-technology-advanced-surgery
   icon:
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: advanced
-  discipline: Medical
+  discipline: Biochemical
   tier: 2
   cost: 7000
   recipeUnlocks:
@@ -54,17 +56,15 @@
     - RetractorAdvanced
     - HemostatAdvanced
   technologyPrerequisites:
-  - SurgeryTech
-
-# Tier 2
+    - SurgeryTech
 
 - type: technology
   id: CyberImplantsTech
-  name: Базовые импланты для глаз
+  name: research-technology-basic-eye-implants
   icon:
     sprite: _Starlight/Objects/Specific/Medical/implants.rsi
     state: eye_implant_welding
-  discipline: Medical
+  discipline: Biochemical
   tier: 2
   cost: 10000
   recipeUnlocks:
@@ -72,4 +72,51 @@
     - EyeImplantMedical
     - EyeImplantSecurity
   technologyPrerequisites:
-  - CyberLimbsTech
+    - CyberLimbsTech
+
+# Tier 3
+
+- type: technology
+  id: FunctionalCyberLimbsTech
+  name: research-technology-functional-cyberlimbs
+  icon:
+    sprite: _Starlight/Interface/Actions/actions_cyber.rsi
+    state: cyber-hand-left
+  discipline: Biochemical
+  tier: 3
+  cost: 9320
+  recipeUnlocks:
+    - LeftArmCyberReaper
+    - RightArmCyberReaper
+    - LeftArmCyberMechwright
+    - RightArmCyberMechwright
+  technologyPrerequisites:
+    - CyberLimbsTech
+
+- type: technology
+  id: CyberEyeNightVision
+  name: research-technology-nightvision-eyes
+  icon:
+    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+    state: eyes_night
+  discipline: Biochemical
+  tier: 3
+  cost: 7680
+  recipeUnlocks:
+    - EyeImplantNightVision
+  technologyPrerequisites:
+    - CyberImplantsTech
+  
+- type: technology
+  id: CyberEyeThermalVision
+  name: research-technology-thermalvision-eyes
+  icon:
+    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+    state: eyes_thermal
+  discipline: Biochemical
+  tier: 3
+  cost: 9320
+  recipeUnlocks:
+    - EyeImplantThermal
+  technologyPrerequisites:
+    - CyberEyeNightVision

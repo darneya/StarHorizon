@@ -33,7 +33,7 @@
   materials:
     Steel: 300
     Plastic: 100
-
+    
 - type: latheRecipe
   id: BoneSetterAdvanced
   result: BoneSetterAdvanced
@@ -115,7 +115,7 @@
   materials:
     Plastic: 200
     Steel: 200
-
+      
 - type: latheRecipe
   id: LeftFootCyber
   result: LeftFootCyber
@@ -133,108 +133,50 @@
   materials:
     Plastic: 100
     Steel: 100
-
-#cyberorgans
-
+#
 - type: latheRecipe
-  id: OrganBsStomach
-  result: OrganBsStomach
-  category: Implants
-  completetime: 3
+  id: LeftArmCyberReaper
+  result: LeftArmCyberReaper
+  category: Cyberlimbs
+  completetime: 10
   materials:
-    Plastic: 100
+    Plastic: 550
     Steel: 100
-    Plasma: 250
+    Silver: 450
     Glass: 100
 
 - type: latheRecipe
-  id: OrganCyberStomach
-  result: OrganCyberStomach
-  category: Implants
-  completetime: 3
+  id: RightArmCyberReaper
+  result: RightArmCyberReaper
+  category: Cyberlimbs
+  completetime: 10
   materials:
-    Plastic: 250
+    Plastic: 550
     Steel: 100
-    Plasma: 100
+    Silver: 450
+    Glass: 100
+#
+- type: latheRecipe
+  id: LeftArmCyberMechwright
+  result: LeftArmCyberMechwright
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
     Glass: 100
 
 - type: latheRecipe
-  id: OrganBioStomach
-  result: OrganBioStomach
-  category: Implants
-  completetime: 3
+  id: RightArmCyberMechwright
+  result: RightArmCyberMechwright
+  category: Cyberlimbs
+  completetime: 10
   materials:
-    Plastic: 100
-    Steel: 200
-    Plasma: 100
-    Glass: 200
-
-- type: latheRecipe
-  id: OrganBsLungs
-  result: OrganBsLungs
-  category: Implants
-  completetime: 3
-  materials:
-    Plastic: 100
-    Steel: 100
-    Plasma: 250
+    Plastic: 450
+    Steel: 550
+    Silver: 100
     Glass: 100
-
-- type: latheRecipe
-  id: OrganCyberLungs
-  result: OrganCyberLungs
-  category: Implants
-  completetime: 3
-  materials:
-    Plastic: 250
-    Steel: 100
-    Plasma: 100
-    Glass: 100
-
-- type: latheRecipe
-  id: OrganBioLungs
-  result: OrganBioLungs
-  category: Implants
-  completetime: 3
-  materials:
-    Plastic: 100
-    Steel: 200
-    Plasma: 100
-    Glass: 200
-
-- type: latheRecipe
-  id: OrganBsHeart
-  result: OrganBsHeart
-  category: Implants
-  completetime: 3
-  materials:
-    Plastic: 100
-    Steel: 100
-    Plasma: 250
-    Glass: 100
-
-- type: latheRecipe
-  id: OrganCyberHeart
-  result: OrganCyberHeart
-  category: Implants
-  completetime: 3
-  materials:
-    Plastic: 250
-    Steel: 100
-    Plasma: 100
-    Glass: 100
-
-- type: latheRecipe
-  id: OrganBioHeart
-  result: OrganBioHeart
-  category: Implants
-  completetime: 3
-  materials:
-    Plastic: 100
-    Steel: 200
-    Plasma: 100
-    Glass: 200
-
 # IMPLANTS
 
 # Eye
@@ -259,7 +201,7 @@
     Steel: 200
     Plasma: 300
     Glass: 100
-
+    
 - type: latheRecipe
   id: EyeImplantSecurity
   result: EyeImplantSecurity
@@ -269,3 +211,48 @@
     Steel: 200
     Plasma: 300
     Glass: 150
+
+- type: latheRecipe
+  id: EyeImplantNightVision
+  result: EyeImplantNightVision
+  category: Implants
+  completetime: 5
+  materials:
+    Plastic: 100
+    Steel: 100
+    Gold: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: EyeImplantThermal
+  result: EyeImplantThermal
+  category: Implants
+  completetime: 10
+  materials:
+    Plastic: 200
+    Steel: 100
+    Gold: 300
+    Plasma: 300
+    Glass: 100
+    
+# Automenders
+
+- type: latheRecipe
+  id: AutoMenderBrute
+  result: AutoMenderBrute
+  category: Tools
+  completetime: 4
+  materials:
+    Plastic: 200
+    Steel: 100
+    Silver: 50
+    
+- type: latheRecipe
+  id: AutoMenderBurn
+  result: AutoMenderBurn
+  category: Tools
+  completetime: 4
+  materials:
+    Plastic: 200
+    Steel: 100
+    Silver: 50

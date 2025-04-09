@@ -2,7 +2,6 @@
 using Content.Server.Body.Systems;
 using Content.Server.Chat.Systems;
 using Content.Server.Hands.Systems;
-using Content.Server.Humanoid;
 using Content.Server.Popups;
 using Content.Shared.Aavikko.Medical.Surgery;
 using Content.Shared.Aavikko.Medical.Surgery.Effects.Step;
@@ -22,9 +21,7 @@ namespace Content.Server.Aavikko.Medical.Surgery;
 
 public sealed partial class SurgerySystem : SharedSurgerySystem
 {
-    [Dependency] private readonly HandsSystem _hands = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = default!;
-    [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private readonly HandsSystem _hands = default!; [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
@@ -33,7 +30,6 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly ContainerSystem _containers = default!;
     [Dependency] private readonly BlindableSystem _blindable = default!;
     [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly MetaDataSystem _metadata = default!;
 
     private readonly List<EntProtoId> _surgeries = [];
     public override void Initialize()
@@ -103,7 +99,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
                 if (ev.Cancelled)
                     continue;
             }
-            
+
             surgeries.GetOrNew(GetNetEntity(part)).Add((surgery, ev.Suffix, isCompleted));
         }
     }
