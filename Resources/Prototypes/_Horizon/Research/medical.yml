@@ -27,7 +27,7 @@
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_humanstealer
   discipline: Biochemical
-  tier: 1
+  tier: 2
   cost: 5000
   recipeUnlocks:
   - MechEquipmentHumanGrabber

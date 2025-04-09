@@ -56,6 +56,6 @@
     state: biochemical
   tierPrerequisites:
     1: 0
-    2: 0 # Horizon temp solution
+    2: 0.75
     3: 0.75
 # Horizon end
