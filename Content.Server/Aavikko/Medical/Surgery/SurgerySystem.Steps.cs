@@ -46,7 +46,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             return;
 
         OnStepAttachLimbComplete(ent, slotComp.Slot, ref args);
-        if (slotComp.Slot != "head")
+        if (slotComp.Slot != "head" && args.IsCancelled)
             OnStepAttachItemComplete(ent, slotComp.Slot, ref args);
     }
 
@@ -81,13 +81,13 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
         var part = args.Part;
         var body = args.Body;
-        DelayAccumulator = 0;
-        DelayQueue.Enqueue(() =>
+        if (!_body.InsertOrgan(part, organId, ent.Comp.Slot, bodyPart, organComp))
         {
-            if (!_body.InsertOrgan(part, organId, ent.Comp.Slot, bodyPart, organComp)) return;
-            var ev = new SurgeryOrganImplantationCompleted(body, part, organId);
-            RaiseLocalEvent(organId, ref ev);
-        });
+            args.IsCancelled = true;
+            return;
+        }
+        var ev = new SurgeryOrganImplantationCompleted(body, part, organId);
+        RaiseLocalEvent(organId, ref ev);
     }
     private void OnStepOrganExtractComplete(Entity<SurgeryStepOrganExtractComponent> ent, ref SurgeryStepEvent args)
     {

@@ -35,7 +35,6 @@ public sealed class SurgeryBui : BoundUserInterface
         _system = _entities.System<SurgerySystem>();
         _hands = _entities.System<HandsSystem>();
 
-        _system.OnRefresh += UpdateDisabledPanel;
         _hands.OnPlayerItemAdded += OnPlayerItemAdded;
     }
     private void OnPlayerItemAdded(string k1, EntityUid k2)
@@ -43,7 +42,11 @@ public sealed class SurgeryBui : BoundUserInterface
         if (!_game.IsFirstTimePredicted) return;
         RefreshUI();
     }
-    protected override void Open() => UpdateState(State);
+    protected override void Open()
+    {
+        base.Open();
+        UpdateState(State);
+    }
     protected override void UpdateState(BoundUserInterfaceState? state)
     {
         if (state is SurgeryBuiState s)
@@ -447,7 +450,6 @@ public sealed class SurgeryBui : BoundUserInterface
 
         if (disposing)
             _window?.Dispose();
-        _system.OnRefresh -= UpdateDisabledPanel;
         _hands.OnPlayerItemAdded -= OnPlayerItemAdded;
     }
 }

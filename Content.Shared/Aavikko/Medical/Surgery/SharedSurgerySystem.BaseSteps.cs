@@ -18,9 +18,6 @@ public abstract partial class SharedSurgerySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
 
-    protected float DelayAccumulator = 0f;
-    protected readonly Queue<Action> DelayQueue = new();
-
     private void InitializeSteps()
     {
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryStepCompleteEvent>(OnStepComplete);
@@ -71,9 +68,7 @@ public abstract partial class SharedSurgerySystem
         };
         RaiseLocalEvent(step, ref evComplete);
 
-        if (_net.IsClient) return;
-        DelayAccumulator = 0f;
-        DelayQueue.Enqueue(() => RefreshUI(ent));
+        RefreshUI(ent);
     }
 
     private void OnClearProgressStep(Entity<SurgeryClearProgressComponent> ent, ref SurgeryStepCompleteEvent args)
@@ -223,8 +218,7 @@ public abstract partial class SharedSurgerySystem
         {
             var progress = Comp<SurgeryProgressComponent>(part);
             Dirty(part, progress);
-            DelayAccumulator = 0f;
-            DelayQueue.Enqueue(() => RefreshUI(body));
+            RefreshUI(ent);
             return;
         }
 

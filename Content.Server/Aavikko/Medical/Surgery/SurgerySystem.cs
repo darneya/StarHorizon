@@ -1,17 +1,14 @@
 ﻿using System.Linq;
 using Content.Server.Body.Systems;
 using Content.Server.Chat.Systems;
-using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Shared.Aavikko.Medical.Surgery;
 using Content.Shared.Aavikko.Medical.Surgery.Effects.Step;
 using Content.Shared.Aavikko.Medical.Surgery.Events;
 using Content.Shared.Body.Part;
 using Content.Shared.Damage;
-using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Interaction;
 using Content.Shared.Prototypes;
-using Content.Shared.Tag;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -21,15 +18,13 @@ namespace Content.Server.Aavikko.Medical.Surgery;
 
 public sealed partial class SurgerySystem : SharedSurgerySystem
 {
-    [Dependency] private readonly HandsSystem _hands = default!; [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly ContainerSystem _containers = default!;
-    [Dependency] private readonly BlindableSystem _blindable = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
 
     private readonly List<EntProtoId> _surgeries = [];
     public override void Initialize()
@@ -41,17 +36,6 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
         LoadPrototypes();
-    }
-
-    public override void Update(float frameTime)
-    {
-        DelayAccumulator += frameTime;
-        if (DelayAccumulator > 0.7)
-        {
-            DelayAccumulator = 0;
-            while (DelayQueue.TryDequeue(out var action))
-                action();
-        }
     }
 
     protected override void RefreshUI(EntityUid body)

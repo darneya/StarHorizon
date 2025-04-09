@@ -49,6 +49,12 @@ public sealed partial class SurgeryOrganExistConditionComponent : Component
     public string? Container;
 }
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
+public sealed partial class SurgeryHasCompConditionComponent : Component
+{
+    [DataField]
+    public ComponentRegistry? Component;
+}
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class SurgeryOrganDontExistConditionComponent : Component
 {
     [DataField]

@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Content.Shared.Aavikko.Medical.Surgery.Events;
+﻿using Content.Shared.Aavikko.Medical.Surgery.Events;
 using Content.Shared.Aavikko.Medical.Surgery.Steps.Parts;
 using Content.Shared.Damage;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
-using Content.Shared.Interaction;
 using Content.Shared.Speech.Muting;
-using Robust.Shared.Prototypes;
 
-namespace Content.Server._Starlight.Medical.Surgery;
+namespace Content.Server.Aavikko.Medical.Surgery;
 public sealed partial class SurgeryOrganSystem : EntitySystem
 {
 
