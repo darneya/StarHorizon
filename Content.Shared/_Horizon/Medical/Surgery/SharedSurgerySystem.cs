@@ -48,6 +48,8 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+        SubscribeLocalEvent<SurgeryTargetComponent, BuckledEvent>(OnBuckled);
+        SubscribeLocalEvent<SurgeryTargetComponent, UnbuckledEvent>(UnBuckled);
 
         InitializeSteps();
         InitializeConditions();
@@ -56,6 +58,15 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
         _surgeries.Clear();
+    }
+
+    private void OnBuckled(EntityUid owner, SurgeryTargetComponent comp, BuckledEvent _)
+    {
+        RefreshUI(owner);
+    }
+    private void UnBuckled(EntityUid owner, SurgeryTargetComponent comp, UnbuckledEvent _)
+    {
+        RefreshUI(owner);
     }
 
     public bool IsSurgeryValid(EntityUid body, EntityUid targetPart, EntProtoId surgery, EntProtoId stepId, out Entity<SurgeryComponent> surgeryEnt, out Entity<BodyPartComponent> part, out EntityUid step)

@@ -99,7 +99,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
         if (user == args.Target)
         {
-            _popup.PopupEntity("Вы не можете оперировать сами себя!", user, user);
+            _popup.PopupEntity(Loc.GetString("surgery-cant-operate-yourself"), user, user);
             return;
         }
 

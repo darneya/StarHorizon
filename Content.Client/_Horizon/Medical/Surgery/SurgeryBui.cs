@@ -7,6 +7,7 @@ using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -138,7 +139,7 @@ public sealed class SurgeryBui : BoundUserInterface
             return;
         _window = new SurgeryWindow();
         _window.OnClose += Close;
-        _window.Title = "Хирургия";
+        _window.Title = Loc.GetString("surgery-title");
 
         _window.PartsButton.OnPressed += _ =>
         {
@@ -303,13 +304,13 @@ public sealed class SurgeryBui : BoundUserInterface
 
     private void RefreshUI()
     {
+        UpdateDisabledPanel();
         if (_window == null ||
             !_entities.HasComponent<SurgeryComponent>(_surgery?.Ent) ||
             !_entities.TryGetComponent(_part, out BodyPartComponent? part))
         {
             return;
         }
-
         var next = _system.GetNextStep(Owner, _part.Value, _surgery.Value.Ent);
         var i = 0;
         foreach (var child in _window.Steps.Children)
@@ -356,19 +357,19 @@ public sealed class SurgeryBui : BoundUserInterface
                     switch (reason)
                     {
                         case StepInvalidReason.NeedsOperatingTable:
-                            stepName.AddMarkupOrThrow(" [color=red](Требуется операционный стол)[/color]");
+                            stepName.AddMarkupOrThrow($" [color=red]{Loc.GetString("surgery-need-operation-table")}[/color]");
                             break;
                         case StepInvalidReason.Armor:
-                            stepName.AddMarkupOrThrow(" [color=red](Снимите их броню!)[/color]");
+                            stepName.AddMarkupOrThrow($" [color=red]{Loc.GetString("surgery-take-off-clothing")}[/color]");
                             break;
                         case StepInvalidReason.MissingTool:
-                            stepName.AddMarkupOrThrow(" [color=red](Отсутствует инструмент)[/color]");
+                            stepName.AddMarkupOrThrow($" [color=red]{Loc.GetString("surgery-lost-tool")}[/color]");
                             break;
                         case StepInvalidReason.DisabledTool:
-                            stepName.AddMarkupOrThrow(" [color=red](Disabled Tool)[/color]");
+                            stepName.AddMarkupOrThrow($" [color=red]{Loc.GetString("surgery-disabled-tool")}[/color]");
                             break;
                         case StepInvalidReason.TooHigh:
-                            stepName.AddMarkupOrThrow(" [color=red](Item Too High)[/color]");
+                            stepName.AddMarkupOrThrow($" [color=red]{Loc.GetString("surgery-item-to-high")}[/color]");
                             break;
                     }
                 }
@@ -380,25 +381,28 @@ public sealed class SurgeryBui : BoundUserInterface
         }
     }
 
-    /*
     private void UpdateDisabledPanel()
     {
         if (_window == null)
             return;
 
         if (_system.IsLyingDown(Owner))
+        {
+            _window.DisabledLabel.Visible = false;
+            _window.DisabledPanel.Visible = false;
             return;
+        }
 
         _window.DisabledPanel.Visible = true;
+        _window.DisabledLabel.Visible = true;
         if (_window.DisabledLabel.GetMessage() is null)
         {
             var text = new FormattedMessage();
-            text.AddMarkupOrThrow("[color=red][font size=16]They need to be lying down![/font][/color]");
+            text.AddMarkupOrThrow($"[color=red][font size=16]{Loc.GetString("surgery-lay-down")}[/font][/color]");
             _window.DisabledLabel.SetMessage(text);
         }
-        _window.DisabledPanel.MouseFilter = MouseFilterMode.Stop;
+        _window.DisabledPanel.MouseFilter = Control.MouseFilterMode.Stop;
     }
-    */
 
     private void View(ViewType type)
     {
@@ -419,15 +423,15 @@ public sealed class SurgeryBui : BoundUserInterface
         if (_entities.TryGetComponent(_part, out MetaDataComponent? partMeta) &&
             _entities.TryGetComponent(_surgery?.Ent, out MetaDataComponent? surgeryMeta))
         {
-            _window.Title = $"Хирургия - {partMeta.EntityName}, {surgeryMeta.EntityName}";
+            _window.Title = $"{Loc.GetString("surgery-title")} - {partMeta.EntityName}, {surgeryMeta.EntityName}";
         }
         else if (partMeta != null)
         {
-            _window.Title = $"Хирургия - {partMeta.EntityName}";
+            _window.Title = $"{Loc.GetString("surgery-title")} - {partMeta.EntityName}";
         }
         else
         {
-            _window.Title = "Хирургия";
+            _window.Title = $"{Loc.GetString("surgery-title")}";
         }
     }
 
@@ -435,14 +439,14 @@ public sealed class SurgeryBui : BoundUserInterface
     {
         Parts,
         Surgeries,
-        Steps
+        Steps,
     }
 
     private enum StepStatus
     {
         Next,
         Complete,
-        Incomplete
+        Incomplete,
     }
     protected override void Dispose(bool disposing)
     {

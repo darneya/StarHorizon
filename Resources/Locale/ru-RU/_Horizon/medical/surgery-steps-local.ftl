@@ -1,0 +1,56 @@
+ent-SurgeryStepExposeNerves = Отсоединить нервы
+ent-SurgeryStepExposeBloodVessels = Отсоединить сосуды
+ent-SurgeryStepDeepIncision = Сделать глубокий надрез
+ent-SurgeryStepRetractSkin = Вытянуть кожу
+ent-SurgeryStepRetractMembrane = Вытянуть мембрану
+ent-SurgeryStepCoagulateJellyFlow = Не переводимо
+
+ent-SurgeryOpenIncision = Сделать надрез
+ent-SurgeryOpenIncisionSlime = Сделать надрез
+ent-SurgeryCloseIncision = Закрыть надрез
+ent-SurgeryCloseIncisionSlime = Закрыть надрез
+
+ent-SurgeryOpenRibcage = Открыть грудную клетку
+ent-SurgeryOpenAbdomen = Сделать надрез на животе
+ent-SurgeryEliminateVocalCordDefects = Удалить дефекты речи
+
+ent-SurgeryExtractLiver = Извлечь печень
+ent-SurgeryImplantLiver = Имплантировать печень
+ent-SurgeryExtractAppendix = Извлечь аппендикс
+ent-SurgeryExtractKidneys = Извлечь почки
+ent-SurgeryImplantKidneys = Имплантировать почки
+ent-SurgeryExtractStomach = Извлечь желудок
+ent-SurgeryImplantStomach = Имплантировать желудок
+ent-SurgeryExtractLungs = Извлечь лёгкие
+ent-SurgeryImplantLungs = Имплантировать лёгкие
+ent-SurgeryExtractLungsSlime = Извлечь лёгкие
+ent-SurgeryImplantLungsSlime = Имплантировать лёгкие
+ent-SurgeryExtractHeart = Извлечь сердце
+ent-SurgeryImplantHeart = Имплантировать сердце
+ent-SurgeryExtractHeartSlime = Извлечь сердце
+ent-SurgeryImplantHeartSlime = Имплантировать сердце
+ent-SurgeryExtractEyes = Извлечь глаза
+ent-SurgeryImplantEyes = Имплантировать глаза
+ent-SurgeryExtractEyeImplant = Извлечь глазной имплант
+ent-SurgeryImplantEyeImplant = Имплантировать глазной имплант
+ent-SurgeryExtractTongue = Извлечь язык
+ent-SurgeryImplantTongue = Имплантировать язык
+ent-SurgeryExtractBrain = Извлечь мозг
+ent-SurgeryImplantBrain = Имплантировать мозг
+ent-SurgeryExtractCore = Извлечь ядро
+ent-SurgeryImplantCore = Имплантировать ядро
+ent-SurgeryExtractCavityItem = Не переводимо
+ent-SurgeryImplantCavityItem = Не переводимо
+
+ent-SurgeryStepLocateLiver = Подготовить печень
+ent-SurgeryStepClampLiverVessels = Зажать сосуды печени
+ent-SurgeryStepRemoveLiver = Удалить печень
+ent-SurgeryStepLocateAppendix = Подготовить аппендикс
+ent-SurgeryStepClampAppendix = Зажать сосуды аппендикса
+ent-SurgeryStepRemoveAppendix = Удалить аппендикс
+ent-SurgeryStepLocateKidneys = Подготовить почки
+ent-SurgeryStepClampKidneysVessels = Зажать сосуды почек
+ent-SurgeryStepRemoveKidneys = Удалить почки
+ent-SurgeryStepLocateStomach = Подготовить желудок
+ent-SurgeryStepClampStomachVessels = Зажать сосуды желудка
+ent-SurgeryStepRemoveStomach = Удалить желудок
