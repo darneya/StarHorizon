@@ -1,69 +1,200 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation",
+  "copyright": "https://github.com/GentleButter, *_silver_* by darkrell",
   "size": {
     "x": 32,
     "y": 32
   },
   "states": [
     {
-      "name": "crowbar",
+      "name": "icon",
       "delays": [
         [
           0.3,
-          0.3
+          2.0
         ]
       ]
     },
     {
-      "name": "cutters",
+      "name": "l_arm",
+      "directions": 4,
       "delays": [
         [
-          0.4,
-          0.4,
-          0.2
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
         ]
       ]
     },
     {
-      "name": "indwelder",
+      "name": "l_foot",
+      "directions": 4
+    },
+    {
+      "name": "l_hand",
+      "directions": 4,
       "delays": [
         [
           0.3,
+          2.0
+        ],
+        [
           0.3,
-          0.3
+          2.0
+        ],
+        [
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
         ]
       ]
     },
     {
-      "name": "indwelder-on",
+      "name": "l_leg",
+      "directions": 4,
       "delays": [
         [
-          0.2,
-          0.2
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
         ]
       ]
     },
     {
-      "name": "screwdriver",
+      "name": "r_arm",
+      "directions": 4,
       "delays": [
         [
           0.3,
+          2.0
+        ],
+        [
           0.3,
-          0.3
+          2.0
+        ],
+        [
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
         ]
       ]
     },
     {
-      "name": "wrench",
+      "name": "r_foot",
+      "directions": 4
+    },
+    {
+      "name": "r_hand",
+      "directions": 4,
       "delays": [
         [
           0.3,
+          2.0
+        ],
+        [
           0.3,
-          0.3
+          2.0
+        ],
+        [
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
         ]
       ]
+    },
+    {
+      "name": "r_leg",
+      "directions": 4,
+      "delays": [
+        [
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
+        ],
+        [
+          0.3,
+          2.0
+        ]
+      ]
+    },
+    {
+      "name": "eyes_thermal",
+      "directions": 4
+    },
+    {
+      "name": "eyes_night",
+      "directions": 4
+    },
+    {
+      "name": "l_silver_arm",
+      "directions": 4
+    },
+    {
+      "name": "l_silver_arm_SURG",
+      "directions": 4
+    },
+    {
+      "name": "r_silver_arm",
+      "directions": 4
+    },
+    {
+      "name": "r_silver_arm_SURG",
+      "directions": 4
+    },
+    {
+      "name": "l_steel_arm",
+      "directions": 4
+    },
+    {
+      "name": "l_steel_arm_TOOLS",
+      "directions": 4
+    },
+    {
+      "name": "r_steel_arm",
+      "directions": 4
+    },
+    {
+      "name": "r_steel_arm_TOOLS",
+      "directions": 4
     }
   ]
 }
