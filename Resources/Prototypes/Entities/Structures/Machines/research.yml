@@ -18,7 +18,7 @@
     - Arsenal
     - Experimental
     - CivilianServices
-    - Medical
+    - Biochemical
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: ExtensionCableReceiver
