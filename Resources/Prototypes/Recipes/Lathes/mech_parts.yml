@@ -3,11 +3,12 @@
 - type: latheRecipe
   abstract: true
   id: BaseMechPartRecipe
-  categories:
-  - Mech
+  category: Mech
   completetime: 10
 
 # Recipes
+
+# Horizon Mech start
 
 # Ripley
 - type: latheRecipe
@@ -15,16 +16,15 @@
   id: RipleyHarness
   result: RipleyHarness
   materials:
-    Steel: 1500
-    Glass: 1200
+    Steel: 2200
+    Glass: 400
 
 - type: latheRecipe
   parent: BaseMechPartRecipe
   id: RipleyLArm
   result: RipleyLArm
   materials:
-    Steel: 1000
-    Glass: 750
+    Steel: 800
 
 - type: latheRecipe
   parent: RipleyLArm
@@ -46,8 +46,7 @@
   id: MechEquipmentGrabber
   result: MechEquipmentGrabber
   materials:
-    Steel: 500
-    Plastic: 200
+    Steel: 600
 
 # H.O.N.K.
 - type: latheRecipe
@@ -55,18 +54,17 @@
   id: HonkerHarness
   result: HonkerHarness
   materials:
-    Steel: 3000
-    Glass: 1200
-    Bananium: 500
+    Steel: 2200
+    Glass: 600
+    Bananium: 600
 
 - type: latheRecipe
   parent: BaseMechPartRecipe
   id: HonkerLArm
   result: HonkerLArm
   materials:
-    Steel: 2000
-    Glass: 750
-    Bananium: 250
+    Steel: 600
+    Bananium: 300
 
 - type: latheRecipe
   parent: HonkerLArm
@@ -88,8 +86,8 @@
   id: MechEquipmentHorn
   result: MechEquipmentHorn
   materials:
-    Steel: 500
-    Bananium: 200
+    Steel: 1100
+    Bananium: 600
 
 # HAMTR
 - type: latheRecipe
@@ -97,16 +95,16 @@
   id: HamtrHarness
   result: HamtrHarness
   materials:
-    Steel: 1200
-    Glass: 1000
+    Steel: 600
+    Glass: 500
 
 - type: latheRecipe
   parent: BaseMechPartRecipe
   id: HamtrLArm
   result: HamtrLArm
   materials:
-    Steel: 800
-    Glass: 600
+    Steel: 400
+    Glass: 300
 
 - type: latheRecipe
   parent: HamtrLArm
@@ -140,3 +138,5 @@
   materials:
     Steel: 500
     Glass: 200
+
+# Horizon Mech end
