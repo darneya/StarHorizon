@@ -36,7 +36,7 @@
     - RightLegCyber
     - LeftFootCyber
     - RightFootCyber
-    
+
 # Tier 2
 
 - type: technology
@@ -93,30 +93,30 @@
   technologyPrerequisites:
     - CyberLimbsTech
 
-- type: technology
-  id: CyberEyeNightVision
-  name: research-technology-nightvision-eyes
-  icon:
-    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
-    state: eyes_night
-  discipline: Biochemical
-  tier: 3
-  cost: 7680
-  recipeUnlocks:
-    - EyeImplantNightVision
-  technologyPrerequisites:
-    - CyberImplantsTech
-  
-- type: technology
-  id: CyberEyeThermalVision
-  name: research-technology-thermalvision-eyes
-  icon:
-    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
-    state: eyes_thermal
-  discipline: Biochemical
-  tier: 3
-  cost: 9320
-  recipeUnlocks:
-    - EyeImplantThermal
-  technologyPrerequisites:
-    - CyberEyeNightVision
+#- type: technology
+#  id: CyberEyeNightVision
+#  name: research-technology-nightvision-eyes
+#  icon:
+#    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+#    state: eyes_night
+#  discipline: Biochemical
+#  tier: 3
+#  cost: 7680
+#  recipeUnlocks:
+#    - EyeImplantNightVision
+#  technologyPrerequisites:
+#    - CyberImplantsTech
+#
+#- type: technology
+#  id: CyberEyeThermalVision
+#  name: research-technology-thermalvision-eyes
+#  icon:
+#    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+#    state: eyes_thermal
+#  discipline: Biochemical
+#  tier: 3
+#  cost: 9320
+#  recipeUnlocks:
+#    - EyeImplantThermal
+#  technologyPrerequisites:
+#    - CyberEyeNightVision

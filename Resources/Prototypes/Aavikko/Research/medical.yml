@@ -109,58 +109,58 @@
 #  - SyringeBluespace
 #End fix commit merge
 
-- type: technology
-  id: Hypocivilian
-  name: Технология микроинъекции
-  icon:
-    sprite: Aavikko/Objects/Specific/Medical/civilianhypo.rsi
-    state: hypo
-  discipline: Medical
-  tier: 3
-  cost: 11250
-  recipeUnlocks:
-  - Hypocivilian
-
-- type: technology
-  id: DnaSyringeGun
-  name: Пассивное нагнетание газов
-  icon:
-    sprite: Aavikko/Objects/Weapons/Guns/Others/syringegun.rsi
-    state: base
-  discipline: Medical
-  tier: 3
-  cost: 10000
-  recipeUnlocks:
-  - DnaSyringeGun
-  - SyringeCartridge
-  - SyringeCartridgelvl-1
-  technologyPrerequisites:
-  - Hypocivilian
-
-- type: technology
-  id: SyringeCartridgelvl-2
-  name: Расширение емкости корпуса
-  icon:
-    sprite: Aavikko/Objects/Weapons/Guns/Ammunition/Casings/syringe_cartridge.rsi
-    state: base-2-lvl
-  discipline: Medical
-  tier: 3
-  cost: 7500
-  recipeUnlocks:
-  - SyringeCartridgelvl-2
-  technologyPrerequisites:
-  - DnaSyringeGun
-
-- type: technology
-  id: SyringeCartridgelvl-3
-  name: Оптимизация конструкции капсул
-  icon:
-    sprite: Aavikko/Objects/Weapons/Guns/Ammunition/Casings/syringe_cartridge.rsi
-    state: base-3-lvl
-  discipline: Medical
-  tier: 3
-  cost: 10000
-  recipeUnlocks:
-  - SyringeCartridgelvl-3
-  technologyPrerequisites:
-  - SyringeCartridgelvl-2
+#- type: technology
+#  id: Hypocivilian
+#  name: Технология микроинъекции
+#  icon:
+#    sprite: Aavikko/Objects/Specific/Medical/civilianhypo.rsi
+#    state: hypo
+#  discipline: Medical
+#  tier: 3
+#  cost: 11250
+#  recipeUnlocks:
+#  - Hypocivilian
+#
+#- type: technology
+#  id: DnaSyringeGun
+#  name: Пассивное нагнетание газов
+#  icon:
+#    sprite: Aavikko/Objects/Weapons/Guns/Others/syringegun.rsi
+#    state: base
+#  discipline: Medical
+#  tier: 3
+#  cost: 10000
+#  recipeUnlocks:
+#  - DnaSyringeGun
+#  - SyringeCartridge
+#  - SyringeCartridgelvl-1
+#  technologyPrerequisites:
+#  - Hypocivilian
+#
+#- type: technology
+#  id: SyringeCartridgelvl-2
+#  name: Расширение емкости корпуса
+#  icon:
+#    sprite: Aavikko/Objects/Weapons/Guns/Ammunition/Casings/syringe_cartridge.rsi
+#    state: base-2-lvl
+#  discipline: Medical
+#  tier: 3
+#  cost: 7500
+#  recipeUnlocks:
+#  - SyringeCartridgelvl-2
+#  technologyPrerequisites:
+#  - DnaSyringeGun
+#
+#- type: technology
+#  id: SyringeCartridgelvl-3
+#  name: Оптимизация конструкции капсул
+#  icon:
+#    sprite: Aavikko/Objects/Weapons/Guns/Ammunition/Casings/syringe_cartridge.rsi
+#    state: base-3-lvl
+#  discipline: Medical
+#  tier: 3
+#  cost: 10000
+#  recipeUnlocks:
+#  - SyringeCartridgelvl-3
+#  technologyPrerequisites:
+#  - SyringeCartridgelvl-2

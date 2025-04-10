@@ -33,7 +33,7 @@
   materials:
     Steel: 300
     Plastic: 100
-    
+
 - type: latheRecipe
   id: BoneSetterAdvanced
   result: BoneSetterAdvanced
@@ -115,7 +115,7 @@
   materials:
     Plastic: 200
     Steel: 200
-      
+
 - type: latheRecipe
   id: LeftFootCyber
   result: LeftFootCyber
@@ -201,7 +201,7 @@
     Steel: 200
     Plasma: 300
     Glass: 100
-    
+
 - type: latheRecipe
   id: EyeImplantSecurity
   result: EyeImplantSecurity
@@ -212,29 +212,29 @@
     Plasma: 300
     Glass: 150
 
-- type: latheRecipe
-  id: EyeImplantNightVision
-  result: EyeImplantNightVision
-  category: Implants
-  completetime: 5
-  materials:
-    Plastic: 100
-    Steel: 100
-    Gold: 100
-    Glass: 100
+#- type: latheRecipe
+#  id: EyeImplantNightVision
+#  result: EyeImplantNightVision
+#  category: Implants
+#  completetime: 5
+#  materials:
+#    Plastic: 100
+#    Steel: 100
+#    Gold: 100
+#    Glass: 100
+#
+#- type: latheRecipe
+#  id: EyeImplantThermal
+#  result: EyeImplantThermal
+#  category: Implants
+#  completetime: 10
+#  materials:
+#    Plastic: 200
+#    Steel: 100
+#    Gold: 300
+#    Plasma: 300
+#    Glass: 100
 
-- type: latheRecipe
-  id: EyeImplantThermal
-  result: EyeImplantThermal
-  category: Implants
-  completetime: 10
-  materials:
-    Plastic: 200
-    Steel: 100
-    Gold: 300
-    Plasma: 300
-    Glass: 100
-    
 # Automenders
 
 - type: latheRecipe
@@ -246,7 +246,7 @@
     Plastic: 200
     Steel: 100
     Silver: 50
-    
+
 - type: latheRecipe
   id: AutoMenderBurn
   result: AutoMenderBurn

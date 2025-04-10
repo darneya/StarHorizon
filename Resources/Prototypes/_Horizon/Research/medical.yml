@@ -62,6 +62,60 @@
   technologyPrerequisites:
   - OdysseusTechnology
 
+- type: technology
+  id: CyberOrgansTech
+  name: research-technology-advanced-cyberorgans
+  icon:
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/organs_cyber.rsi
+    state: heart
+  discipline: Biochemical
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - OrganCyberStomach
+  - OrganCyberLungs
+  - OrganCyberHeart
+  - OrganCyberLiver
+  - OrganCyberKidneys
+  technologyPrerequisites:
+  - CyberImplantsTech
+
+- type: technology
+  id: BsOrgansTech
+  name: research-technology-advanced-bsorgans
+  icon:
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/organs_bs.rsi
+    state: heart
+  discipline: Biochemical
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - OrganBsStomach
+  - OrganBsLungs
+  - OrganBsHeart
+  - OrganBsLiver
+  - OrganBsKidneys
+  technologyPrerequisites:
+  - CyberImplantsTech
+
+- type: technology
+  id: BioOrgansTech
+  name: research-technology-advanced-bioorgans
+  icon:
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/organs_bio.rsi
+    state: heart
+  discipline: Biochemical
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - OrganBioStomach
+  - OrganBioLungs
+  - OrganBioHeart
+  - OrganBioLiver
+  - OrganBioKidneys
+  technologyPrerequisites:
+  - CyberImplantsTech
+
 # Tier 3
 
 - type: technology
