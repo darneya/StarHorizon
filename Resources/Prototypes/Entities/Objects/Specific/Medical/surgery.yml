@@ -179,7 +179,7 @@
   parent: BaseScissors
   description: Хирургический инструмент, используемый для удержания разрезов открытыми.
   components:
-  - type: Retractor
+  - type: Retract
   - type: SurgeryTool
     startSound:
       path: /Audio/_Starlight/Medical/Surgery/retractor1.ogg

@@ -6,7 +6,7 @@
   - type: SurgeryStep
     duration: 3
     tools:
-    - type: Retractor
+    - type: Retract
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: retractor

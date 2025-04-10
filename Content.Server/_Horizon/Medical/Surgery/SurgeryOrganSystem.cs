@@ -16,6 +16,7 @@ public sealed partial class SurgeryOrganSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<OrganEyesComponent, SurgeryOrganImplantationCompleted>(OnEyeImplanted);
         SubscribeLocalEvent<DamageableComponent, SurgeryOrganImplantationCompleted>(OnOrganImplanted);
+        SubscribeLocalEvent<OrganTongueComponent, SurgeryOrganImplantationCompleted>(OnTongueImplanted);
 
         SubscribeLocalEvent<OrganEyesComponent, SurgeryOrganExtractCompleted>(OnOrganExtracted);
         SubscribeLocalEvent<OrganTongueComponent, SurgeryOrganExtractCompleted>(OnTongueExtracted);
@@ -35,15 +36,18 @@ public sealed partial class SurgeryOrganSystem : EntitySystem
 
     private void OnTongueExtracted(Entity<OrganTongueComponent> ent, ref SurgeryOrganExtractCompleted args)
     {
-        ent.Comp.IsMuted = HasComp<MutedComponent>(args.Body);
-        AddComp<MutedComponent>(args.Body);
+        if (HasComp<MutedComponent>(args.Body))
+            ent.Comp.IsMuted = true;
+        else
+            AddComp<MutedComponent>(args.Body);
     }
 
     private void OnOrganExtracted(Entity<OrganEyesComponent> ent, ref SurgeryOrganExtractCompleted args)
     {
-        if (!TryComp<BlindableComponent>(args.Body, out var blindable)) return;
+        if (!TryComp<BlindableComponent>(args.Body, out var blindable))
+            return;
 
-        ent.Comp.EyeDamage = blindable.EyeDamage;
+        ent.Comp.EyeDamage = blindable.MaxDamage;
         ent.Comp.MinDamage = blindable.MinDamage;
         _blindable.UpdateIsBlind((args.Body, blindable));
     }
@@ -59,9 +63,16 @@ public sealed partial class SurgeryOrganSystem : EntitySystem
 
     private void OnEyeImplanted(Entity<OrganEyesComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {
-        if (!TryComp<BlindableComponent>(args.Body, out var blindable)) return;
+        if (!TryComp<BlindableComponent>(args.Body, out var blindable))
+            return;
 
         _blindable.SetMinDamage((args.Body, blindable), ent.Comp.MinDamage ?? 0);
         _blindable.AdjustEyeDamage((args.Body, blindable), (ent.Comp.EyeDamage ?? 0) - blindable.MaxDamage);
+    }
+
+    private void OnTongueImplanted(Entity<OrganTongueComponent> ent, ref SurgeryOrganImplantationCompleted args)
+    {
+        if (HasComp<MutedComponent>(args.Body))
+            RemComp<MutedComponent>(args.Body);
     }
 }

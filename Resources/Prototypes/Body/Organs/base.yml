@@ -3,11 +3,13 @@
   abstract: true
   components:
   - type: OrganBrain
+  - type: SurgeryTool
 
 - type: entity
   id: BaseOrganEyes
   abstract: true
   components:
+  - type: SurgeryTool
   - type: OrganEyes
   - type: OrganDamage
     damage:
@@ -24,6 +26,7 @@
   id: BaseOrganTongue
   abstract: true
   components:
+  - type: SurgeryTool
   - type: OrganTongue
   - type: OrganDamage
     damage:
@@ -40,6 +43,7 @@
   id: BaseOrganAppendix
   abstract: true
   components:
+  - type: SurgeryTool
   - type: OrganAppendix
   - type: OrganDamage
     damage:
@@ -55,6 +59,7 @@
   id: BaseOrganEars
   abstract: true
   components:
+  - type: SurgeryTool
   - type: OrganEars
   - type: OrganDamage
   - type: Damageable
@@ -64,6 +69,7 @@
   id: BaseOrganLungs
   abstract: true
   components:
+  - type: SurgeryTool
   - type: OrganLungs
   - type: OrganDamage
     damage:
@@ -79,6 +85,7 @@
   id: BaseOrganHeart
   abstract: true
   components:
+  - type: SurgeryTool
   - type: OrganHeart
   - type: OrganDamage
     damage:
@@ -95,6 +102,7 @@
   id: BaseOrganStomach
   abstract: true
   components:
+  - type: SurgeryTool
   - type: OrganStomach
   - type: OrganDamage
     damage:
@@ -111,6 +119,7 @@
   id: BaseOrganLiver
   abstract: true
   components:
+  - type: SurgeryTool
   - type: OrganLiver
   - type: OrganDamage
     damage:
@@ -127,6 +136,7 @@
   id: BaseOrganKidneys
   abstract: true
   components:
+  - type: SurgeryTool
   - type: OrganKidneys
   - type: OrganDamage
     damage:

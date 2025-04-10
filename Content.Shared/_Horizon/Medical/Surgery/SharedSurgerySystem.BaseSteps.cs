@@ -188,7 +188,7 @@ public abstract partial class SharedSurgerySystem
 
                 return;
             }
-            else if (TryComp<ItemToggleComponent>(tool, out var toggleble) && !toggleble.Activated)
+            else if (TryComp<ItemToggleComponent>(tool, out var toggleable) && !toggleable.Activated)
             {
                 args.Invalid = StepInvalidReason.DisabledTool;
 
