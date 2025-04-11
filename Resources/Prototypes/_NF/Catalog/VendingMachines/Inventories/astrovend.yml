@@ -33,6 +33,7 @@
     ClothingOuterEVASuitPilot: 5
     ClothingOuterHardsuitPilot: 3
     ClothingShoesBootsPilot: 3
+    MediaPlayer: 5 # Horizon
 
 - type: vendingMachineInventory
   id: AstroVendPOIInventory
@@ -69,3 +70,4 @@
     ClothingOuterEVASuitPilot: 5
     ClothingOuterHardsuitPilot: 3
     ClothingShoesBootsPilot: 3
+    MediaPlayer: 4294967295 # Infinite # Horizon
