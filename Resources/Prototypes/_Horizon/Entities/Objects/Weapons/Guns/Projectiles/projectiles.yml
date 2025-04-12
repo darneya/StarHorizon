@@ -87,3 +87,19 @@
         Structural: 20
   - type: TimedDespawn
     lifetime: 0.2
+
+- type: entity
+  id: BulletKineticRailgun
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Blunt: 70
+        Structural: 20
+  - type: GatheringProjectile
+    amount: 40
