@@ -136,7 +136,6 @@
     endSound:
       path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
 
-
 - type: entity
   name: welding tool
   parent: BaseItem

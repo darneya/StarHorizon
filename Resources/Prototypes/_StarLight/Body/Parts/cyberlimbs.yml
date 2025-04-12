@@ -4,6 +4,7 @@
   name: "cyber body part"
   abstract: true
   components:
+  - type: SurgeryTool
   - type: Extractable
     juiceSolution:
       reagents:
@@ -139,7 +140,7 @@
       state: "l_silver_arm"
     - type: LimbWithItems
       action: ActionToggleCyberHandLeft
-      sound: 
+      sound:
         path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
       items:
         - ScalpelCyber
@@ -167,7 +168,7 @@
       state: "r_silver_arm"
     - type: LimbWithItems
       action: ActionToggleCyberHandRight
-      sound: 
+      sound:
         path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
       items:
         - ScalpelCyber
@@ -196,7 +197,7 @@
       state: "l_steel_arm"
     - type: LimbWithItems
       action: ActionToggleCyberHandLeft
-      sound: 
+      sound:
         path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
       items:
         - WrenchCyber
@@ -222,7 +223,7 @@
       state: "r_steel_arm"
     - type: LimbWithItems
       action: ActionToggleCyberHandRight
-      sound: 
+      sound:
         path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
       items:
         - WrenchCyber
