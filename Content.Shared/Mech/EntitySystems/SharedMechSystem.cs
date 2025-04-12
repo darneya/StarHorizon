@@ -21,9 +21,9 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Content.Shared.Mobs.Components; // Frontier
 using Content.Shared.NPC.Components; // Frontier
-using Robust.Shared.Random;
-using Content.Shared.Overlays;
-using Content.Shared.Whitelist;
+using Robust.Shared.Random; // Horizon Mech
+using Content.Shared.Overlays; // Horizon Mech
+using Content.Shared.Whitelist; // Horizon Mech
 
 namespace Content.Shared.Mech.EntitySystems;
 
@@ -32,7 +32,7 @@ namespace Content.Shared.Mech.EntitySystems;
 /// </summary>
 public abstract partial class SharedMechSystem : EntitySystem   // Horizon Mech
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // Horizon Mech
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;

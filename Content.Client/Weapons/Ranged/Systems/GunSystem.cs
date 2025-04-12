@@ -5,7 +5,7 @@ using Content.Client.Items;
 using Content.Client.Weapons.Ranged.Components;
 using Content.Shared.Camera;
 using Content.Shared.CombatMode;
-using Content.Shared.Mech.Components;
+using Content.Shared.Mech.Components; // Horizon Mech
 using Content.Shared.Weapons.Ranged;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
@@ -243,7 +243,8 @@ public sealed partial class GunSystem : SharedGunSystem
                     {
                         SetCartridgeSpent(ent!.Value, cartridge, true);
                         MuzzleFlash(gunUid, cartridge, worldAngle, user);
-                        if (TryComp<MechComponent>(user, out var cmech))    // Horizon Mech
+                        // Horizon Mech start
+                        if (TryComp<MechComponent>(user, out var cmech))
                         {
                             Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, cmech.PilotSlot.ContainedEntity);
                             Recoil(cmech.PilotSlot.ContainedEntity, direction, gun.CameraRecoilScalarModified);
@@ -253,6 +254,7 @@ public sealed partial class GunSystem : SharedGunSystem
                             Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
                             Recoil(user, direction, gun.CameraRecoilScalarModified);
                         }
+                        // Horizon Mech end
                         // TODO: Can't predict entity deletions.
                         //if (cartridge.DeleteOnSpawn)
                         //    Del(cartridge.Owner);
@@ -269,7 +271,8 @@ public sealed partial class GunSystem : SharedGunSystem
                     break;
                 case AmmoComponent newAmmo:
                     MuzzleFlash(gunUid, newAmmo, worldAngle, user);
-                    if (TryComp<MechComponent>(user, out var mech)) // Horizon Mech
+                    // Horizon Mech start
+                    if (TryComp<MechComponent>(user, out var mech))
                     {
                         Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, mech.PilotSlot.ContainedEntity);
                         Recoil(mech.PilotSlot.ContainedEntity, direction, gun.CameraRecoilScalarModified);
@@ -279,13 +282,15 @@ public sealed partial class GunSystem : SharedGunSystem
                         Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
                         Recoil(user, direction, gun.CameraRecoilScalarModified);
                     }
+                    // Horizon Mech end
                     if (IsClientSide(ent!.Value))
                         Del(ent.Value);
                     else
                         RemoveShootable(ent.Value);
                     break;
                 case HitscanPrototype:
-                    if (TryComp<MechComponent>(user, out var hmech)) // Horizon Mech
+                    // Horizon Mech start
+                    if (TryComp<MechComponent>(user, out var hmech))
                     {
                         Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, hmech.PilotSlot.ContainedEntity);
                         Recoil(hmech.PilotSlot.ContainedEntity, direction, gun.CameraRecoilScalarModified);
@@ -295,6 +300,7 @@ public sealed partial class GunSystem : SharedGunSystem
                         Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
                         Recoil(user, direction, gun.CameraRecoilScalarModified);
                     }
+                    // Horizon Mech end
                     break;
             }
         }

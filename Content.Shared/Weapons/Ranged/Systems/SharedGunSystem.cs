@@ -13,7 +13,7 @@ using Content.Shared.Gravity;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Item; // Delta-V: Felinids in duffelbags can't shoot.
-using Content.Shared.Mech.Components;
+using Content.Shared.Mech.Components; // Horizon Mech
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Tag;

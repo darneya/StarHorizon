@@ -3,8 +3,8 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Audio;
-using Content.Shared.Damage;
+using Robust.Shared.Audio; // Horizon Mech
+using Content.Shared.Damage; // Horizon Mech
 
 namespace Content.Shared.Mech.Components;
 

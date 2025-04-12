@@ -7,7 +7,7 @@ using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
 namespace Content.Client.Mech;
 
 /// <inheritdoc/>
-public sealed partial class MechSystem : SharedMechSystem
+public sealed partial class MechSystem : SharedMechSystem // Horizon Mech
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
@@ -26,7 +26,7 @@ public sealed partial class MechSystem : SharedMechSystem
         if (args.Sprite == null)
             return;
 
-        if (!args.Sprite.TryGetLayer((int)MechVisualLayers.Base, out var layer))
+        if (!args.Sprite.TryGetLayer((int)MechVisualLayers.Base, out var layer)) // Horizon Mech
             return;
 
         var state = component.BaseState;
@@ -43,6 +43,6 @@ public sealed partial class MechSystem : SharedMechSystem
         }
 
         layer.SetState(state);
-        args.Sprite.DrawDepth = (int)drawDepth;
+        args.Sprite.DrawDepth = (int)drawDepth; // Horizon Mech
     }
 }

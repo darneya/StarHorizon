@@ -1,13 +1,15 @@
-using Content.Server.Mech.Equipment.Components;
 using Content.Server.Popups;
-using Content.Shared._Horizon.Mech.EntitySystems;
-using Content.Shared._Horizon.Weapons.Ranged.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
-using Content.Shared.Mech;
 using Content.Shared.Mech.Components;
 using Content.Shared.Mech.Equipment.Components;
 using Content.Shared.Whitelist;
+// Horizon Mech start
+using Content.Server.Mech.Equipment.Components;
+using Content.Shared._Horizon.Mech.EntitySystems;
+using Content.Shared._Horizon.Weapons.Ranged.Components;
+using Content.Shared.Mech;
+// Horizon Mech end
 
 namespace Content.Server.Mech.Systems;
 

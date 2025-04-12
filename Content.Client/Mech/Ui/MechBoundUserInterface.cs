@@ -53,7 +53,7 @@ public sealed class MechBoundUserInterface : BoundUserInterface
                 continue;
             foreach (var (attached, estate) in state.EquipmentStates)
             {
-                if (ent == EntMan.GetEntity(attached) &&
+                if (ent == EntMan.GetEntity(attached) && // Horizon Mech
                     estate != null) // Horizon Mech
                     ui.UpdateState(estate);
             }
