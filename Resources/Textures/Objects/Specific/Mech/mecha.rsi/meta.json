@@ -138,6 +138,198 @@
       "name": "phazon-broken"
     },
     {
+      "name": "phazonblanco",
+      "directions": 4
+    },
+    {
+      "name": "phazonblanco-broken"
+    },
+    {
+      "name": "phazonblanco-open"
+    },
+    {
+      "name": "phazonblanco-phase",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "phazonimperion",
+      "directions": 4
+    },
+    {
+      "name": "phazonimperion-open"
+    },
+    {
+      "name": "phazonimperion-broken"
+    },
+    {
+      "name": "phazonimperion-phase",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "phazonjanus",
+      "directions": 4
+    },
+    {
+      "name": "phazonjanus-open"
+    },
+    {
+      "name": "phazonjanus-broken"
+    },
+    {
+      "name": "phazonjanus-phase",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "phazonplazmus",
+      "directions": 4
+    },
+    {
+      "name": "phazonplazmus-open"
+    },
+    {
+      "name": "phazonplazmus-broken"
+    },
+    {
+      "name": "phazonplazmus-phase",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
       "name": "ripley-old",
       "directions": 4
     },

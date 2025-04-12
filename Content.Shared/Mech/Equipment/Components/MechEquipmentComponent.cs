@@ -19,6 +19,11 @@ public sealed partial class MechEquipmentComponent : Component
     /// The mech that the equipment is inside of.
     /// </summary>
     [ViewVariables] public EntityUid? EquipmentOwner;
+
+    // Horizon Mech start
+    [DataField("canBeUsed")]
+    public bool CanBeUsed = true;
+    // Horizon Mech end
 }
 
 /// <summary>
@@ -51,3 +56,9 @@ public sealed partial class InsertEquipmentEvent : SimpleDoAfterEvent
 {
 }
 
+// Horizon Mech start
+[Serializable, NetSerializable]
+public sealed partial class MechDrillDoAfterEvent : SimpleDoAfterEvent
+{
+}
+// Horizon Mech end
