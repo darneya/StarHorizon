@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from https://github.com/vgstation-coders/vgstation13/commit/1dbcf389b0ec6b2c51b002df5fef8dd1519f8068 and remade by RumiTiger",
+  "license": "CLA with hosting restrictions",
+  "copyright": "Made by Malanisa",
   "size": {
     "x": 32,
     "y": 32
@@ -38,7 +38,7 @@
       "name": "stage-6"
     },
     {
-        "name": "pit"
+      "name": "pit"
     }
   ]
 }
