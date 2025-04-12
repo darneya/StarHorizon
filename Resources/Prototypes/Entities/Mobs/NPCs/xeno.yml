@@ -61,15 +61,17 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      80: Dead # Horizon
   - type: SlowOnDamage
     speedModifierThresholds:
-      25: 0.5
+      40: 0.5 # Horizon
   - type: Stamina
     critThreshold: 200
+  # Horizon start
   - type: Bloodstream
-    bloodReagent: FluorosulfuricAcid
+    bloodReagent: XenoidAcidW
     bloodMaxVolume: 650
+  # Horizon end
   - type: MeleeWeapon
     altDisarm: false
     angle: 0
@@ -89,11 +91,14 @@
       Dead:
         Base: dead
   - type: Puller
+  # Horizon start
   - type: Butcherable
-    butcheringType: Spike
+    butcheringType: Knife
     spawned:
     - id: FoodMeatXeno
       amount: 5
+    - id: XenoBioResearchDisk2000
+  # Horizon end
   - type: GhostRole
     allowMovement: true
     allowSpeech: true
@@ -144,12 +149,23 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      150: Dead # Horizon
   - type: Stamina
     critThreshold: 300
+  # Horizon start
+  - type: Bloodstream
+    bloodReagent: XenoidAcidK
+    bloodMaxVolume: 650
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: FoodMeatXeno
+      amount: 5
+    - id: XenoBioResearchDisk5000
+  # Horizon end
   - type: SlowOnDamage
     speedModifierThresholds:
-      50: 0.7
+      75: 0.7 # Horizon
   - type: Fixtures
     fixtures:
       fix1:
@@ -178,10 +194,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Dead
+      120: Dead # Horizon
   - type: SlowOnDamage
     speedModifierThresholds:
-      40: 0.7
+      60: 0.7 # Horizon
   - type: MeleeWeapon
     damage:
       groups:
@@ -216,10 +232,21 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      300: Dead
+      450: Dead # Horizon
+  # Horizon start
+  - type: Bloodstream
+    bloodReagent: XenoidAcidK
+    bloodMaxVolume: 650
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: FoodMeatXeno
+      amount: 5
+    - id: XenoBioResearchDisk10000
+  # Horizon end
   - type: SlowOnDamage
     speedModifierThresholds:
-      150: 0.7
+      250: 0.7 # Horizon
   - type: MovementSpeedModifier
   - type: MeleeWeapon
     damage:
@@ -256,7 +283,12 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      150: Dead # Horizon
+  # Horizon start
+  - type: Bloodstream
+    bloodReagent: XenoidAcidH
+    bloodMaxVolume: 650
+  # Horizon end
   - type: MovementSpeedModifier
     baseSprintSpeed: 4
   - type: MeleeWeapon
@@ -265,7 +297,7 @@
        Brute: 10
   - type: SlowOnDamage
     speedModifierThresholds:
-      50: 0.7
+      75: 0.7 # Horizon
   - type: Fixtures
     fixtures:
       fix1:
@@ -320,7 +352,7 @@
     sprite: Mobs/Aliens/Xenos/rouny.rsi
     offset: 0,0.6
   - type: Butcherable
-    butcheringType: Spike
+    butcheringType: Knife # Horizon
     spawned:
     - id: FoodMeatRouny
       amount: 3
@@ -341,10 +373,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      80: Dead # Horizon
   - type: SlowOnDamage
     speedModifierThresholds:
-      25: 0.7
+      40: 0.7 # Horizon
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
