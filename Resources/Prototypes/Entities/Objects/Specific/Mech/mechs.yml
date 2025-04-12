@@ -161,6 +161,11 @@
     grid:
     - 0,0,9,2
     clickInsert: false
+  # Horizon start
+  - type: Construction
+    graph: UpgradeMechRipley
+    node: start
+  # Horizon end
 
 - type: entity
   id: MechRipleyBattery
