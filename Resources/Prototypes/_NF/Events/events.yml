@@ -124,7 +124,7 @@
     weight: 7
     earliestStart: 15 # Frontier
     duration: 1
-    minimumPlayers: 7 # Horizon TempTweak
+    minimumPlayers: 1 # Horizon TempTweak
   - type: BreakerFlipRule
 
 # - type: entity
@@ -384,7 +384,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
-    minimumPlayers: 7 # Horizon TempTweak
+    minimumPlayers: 1 # Horizon TempTweak
     weight: 5
     duration: 60
   - type: VentClogRule
