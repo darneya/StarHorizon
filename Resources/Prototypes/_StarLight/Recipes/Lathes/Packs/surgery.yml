@@ -1,0 +1,60 @@
+## Dynamic
+
+- type: latheRecipePack
+  id: StarlightSurgeryTools
+  recipes:
+  - BoneSetter
+  - BoneGel
+  - Scalpel
+  - Retractor
+  - Cautery
+  - Saw
+  - Hemostat
+  - Drill
+  - SawAdvanced
+  - ScalpelAdvanced
+  - BoneSetterAdvanced
+  - RetractorAdvanced
+  - HemostatAdvanced
+
+- type: latheRecipePack
+  id: StarlightSurgeryOrgans
+  recipes:
+  - OrganCyberStomach
+  - OrganCyberLungs
+  - OrganCyberHeart
+  - OrganCyberLiver
+  - OrganCyberKidneys
+  - OrganBsStomach
+  - OrganBsLungs
+  - OrganBsHeart
+  - OrganBsLiver
+  - OrganBsKidneys
+  - OrganBioStomach
+  - OrganBioLungs
+  - OrganBioHeart
+  - OrganBioLiver
+  - OrganBioKidneys
+
+- type: latheRecipePack
+  id: StarlightSurgeryLimbs
+  recipes:
+  - LeftArmCyber
+  - RightArmCyber
+  - LeftHandCyber
+  - RightHandCyber
+  - LeftLegCyber
+  - RightLegCyber
+  - LeftFootCyber
+  - RightFootCyber
+  - LeftArmCyberReaper
+  - RightArmCyberReaper
+  - LeftArmCyberMechwright
+  - RightArmCyberMechwright
+
+- type: latheRecipePack
+  id: StarlightSurgeryImplants
+  recipes:
+  - EyeImplantWelding
+  - EyeImplantMedical
+  - EyeImplantSecurity
