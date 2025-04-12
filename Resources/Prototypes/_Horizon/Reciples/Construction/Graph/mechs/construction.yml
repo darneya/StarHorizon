@@ -23,7 +23,7 @@
         - to: upgraded
           completed:
             - !type:SpawnPrototype
-              prototype: MechRipleyAluminizer
+              prototype: MechRipleyMk2Aluminizer
               amount: 1
             - !type:DeleteEntity {}
           steps:
@@ -33,7 +33,7 @@
         - to: upgraded
           completed:
             - !type:SpawnPrototype
-              prototype: MechRipleyCombat
+              prototype: MechRipleyMk2Combat
               amount: 1
             - !type:DeleteEntity {}
           steps:
@@ -43,7 +43,7 @@
         - to: upgraded
           completed:
             - !type:SpawnPrototype
-              prototype: MechRipleyEarth
+              prototype: MechRipleyMk2Earth
               amount: 1
             - !type:DeleteEntity {}
           steps:
@@ -53,7 +53,7 @@
         - to: upgraded
           completed:
             - !type:SpawnPrototype
-              prototype: MechRipleyFlamesred
+              prototype: MechRipleyMk2Flamesred
               amount: 1
             - !type:DeleteEntity {}
           steps:
@@ -63,7 +63,7 @@
         - to: upgraded
           completed:
             - !type:SpawnPrototype
-              prototype: MechRipleyTitan
+              prototype: MechRipleyMk2Titan
               amount: 1
             - !type:DeleteEntity {}
           steps:
@@ -73,7 +73,7 @@
         - to: upgraded
           completed:
             - !type:SpawnPrototype
-              prototype: MechRipleyZairjah
+              prototype: MechRipleyMk2Zairjah
               amount: 1
             - !type:DeleteEntity {}
           steps:
@@ -83,7 +83,7 @@
         - to: upgraded
           completed:
           - !type:SpawnPrototype
-            prototype: MechRipleyFirefighter
+            prototype: MechRipleyMk2Firefighter
             amount: 1
           - !type:DeleteEntity {}
           steps:
@@ -93,7 +93,7 @@
         - to: upgraded
           completed:
           - !type:SpawnPrototype
-            prototype: MechRipleyHauler
+            prototype: MechRipleyMk2Hauler
             amount: 1
           - !type:DeleteEntity {}
           steps:
@@ -103,7 +103,7 @@
         - to: upgraded
           completed:
           - !type:SpawnPrototype
-            prototype: MechRipleyDeath
+            prototype: MechRipleyMk2Death
             amount: 1
           - !type:DeleteEntity {}
           steps:
