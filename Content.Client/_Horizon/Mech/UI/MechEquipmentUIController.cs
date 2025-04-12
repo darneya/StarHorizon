@@ -1,9 +1,7 @@
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Player;
-using Content.Shared.Mech.Components;
 using Content.Shared.Mech;
-using Robust.Shared.Timing;
 
 namespace Content.Client._Horizon.Mech.UI;
 

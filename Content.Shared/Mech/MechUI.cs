@@ -25,7 +25,7 @@ public sealed class MechEquipmentUiMessageRelayEvent : EntityEventArgs
     public MechEquipmentUiMessage Message;
     public NetEntity? Pilot;    // Horizon Mech
 
-    public MechEquipmentUiMessageRelayEvent(MechEquipmentUiMessage message, NetEntity? pilot)
+    public MechEquipmentUiMessageRelayEvent(MechEquipmentUiMessage message, NetEntity? pilot) // Horizon Mech
     {
         Message = message;
         Pilot = pilot;  // Horizon Mech

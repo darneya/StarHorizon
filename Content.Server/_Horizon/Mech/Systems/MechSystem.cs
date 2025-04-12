@@ -2,7 +2,6 @@ using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mech;
 using Content.Shared.Mech.Components;
-using Content.Shared.Mech.EntitySystems;
 using Robust.Server.GameObjects;
 using Content.Server.Emp;
 using Content.Shared.Mech.Equipment.Components;

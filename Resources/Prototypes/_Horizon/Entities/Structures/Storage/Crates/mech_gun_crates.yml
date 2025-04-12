@@ -8,12 +8,12 @@
   - type: Sprite
     sprite: Structures/Storage/Crates/weapon.rsi
   - type: AccessReader
-    access: [["Armory"]]
+    access: [["Frontier"]] # Horizon Temp
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 500
+        damage: 200 # Horizon Temp
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]

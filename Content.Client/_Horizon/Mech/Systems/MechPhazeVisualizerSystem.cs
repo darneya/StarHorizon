@@ -21,12 +21,10 @@ public sealed class MechPhazeVisualizerSystem : EntitySystem
         if (args.Sprite == null)
             return;
 
-        if (_appearance.TryGetData<bool>(uid, MechPhazingVisuals.Phazing, out var phaze, args.Component))
-        {
-            if (phaze)
-                args.Sprite.LayerSetState(0, component.PhazingState);
-            else
-                args.Sprite.LayerSetState(0, component.State);
-        }
+        if (!_appearance.TryGetData<bool>(uid, MechPhazingVisuals.Phazing, out var phaze, args.Component)
+            || !args.Sprite.LayerMapTryGet(MechPhazingVisuals.Phazing, out var layer))
+            return;
+
+        args.Sprite.LayerSetVisible(layer, phaze);
     }
 }

@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Mech;
 using Robust.Shared.Serialization;
 

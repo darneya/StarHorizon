@@ -41,8 +41,8 @@ public sealed partial class GunSystem : SharedGunSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly BloodstreamSystem _bloodstream = default!; // Horizon Mech
+    [Dependency] private readonly EntityLookupSystem _lookup = default!; // Horizon Mech
 
     private const float DamagePitchVariation = 0.05f;
 
@@ -316,10 +316,12 @@ public sealed partial class GunSystem : SharedGunSystem
             }
 
             MuzzleFlash(gunUid, ammoComp, mapDirection.ToAngle(), user);
-            if (TryComp<MechComponent>(user, out var mech)) // Horizon Mech
+            // Horizon Mech start
+            if (TryComp<MechComponent>(user, out var mech))
                 Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, mech.PilotSlot.ContainedEntity);
             else
                 Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
+            // Horizon Mech end
         }
     }
 

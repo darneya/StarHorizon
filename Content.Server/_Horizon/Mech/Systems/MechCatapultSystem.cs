@@ -4,7 +4,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Mech.Components;
 using Content.Shared.Throwing;
 using Content.Shared._Horizon.Mech.Equipment.Components;
-
+using Robust.Shared.Audio;
 
 namespace Content.Server._Horizon.Mech.Equipment.EntitySystems;
 
@@ -33,7 +33,7 @@ public sealed class MechCatapultSystem : EntitySystem
         if (!_mech.TryChangeEnergy(args.User, -50, mech))
             return;
         _throwing.TryThrow(args.User, args.ClickLocation, 4f);
-        _audio.PlayPvs("/Audio/Mecha/mech_shield_deflect.ogg", uid);
+        _audio.PlayPvs(new SoundPathSpecifier("/Audio/Mecha/mech_shield_deflect.ogg"), uid);
         args.Handled = true;
     }
 }
