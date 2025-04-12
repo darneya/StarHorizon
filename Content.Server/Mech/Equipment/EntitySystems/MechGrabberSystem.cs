@@ -19,7 +19,7 @@ using Robust.Shared.Physics.Components;
 using Content.Shared.Whitelist; // Frontier
 using Content.Shared.Buckle.Components; // Frontier
 using Content.Shared.Buckle; // Frontier
-using Content.Server.Body.Systems; // Horizon Mech
+using Content.Server.Body.Systems;
 
 namespace Content.Server.Mech.Equipment.EntitySystems;
 

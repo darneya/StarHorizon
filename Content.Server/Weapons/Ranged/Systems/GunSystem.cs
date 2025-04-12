@@ -26,8 +26,8 @@ using Content.Shared.Interaction; // Frontier
 using Content.Shared.Examine; // Frontier
 using Content.Server.Power.Components;
 using Content.Shared.Power; // Frontier
-using Content.Server.Body.Systems; // Horizon Mech
-using Content.Shared.Mech.Components; // Horizon Mech
+using Content.Server.Body.Systems;
+using Content.Shared.Mech.Components;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 

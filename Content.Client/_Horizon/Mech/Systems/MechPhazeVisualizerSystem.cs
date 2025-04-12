@@ -1,7 +1,6 @@
 using Robust.Client.GameObjects;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared._Horizon.Mech.Components;
-using Content.Shared.Mech;
 
 namespace Content.Client._Horizon.Mech;
 

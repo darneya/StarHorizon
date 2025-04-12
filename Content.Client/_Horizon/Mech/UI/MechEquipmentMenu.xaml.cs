@@ -6,7 +6,6 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
 using Robust.Shared.Map;
-using Content.Shared.Mech;
 using Content.Shared.Mech.Equipment.Components;
 
 namespace Content.Client._Horizon.Mech.UI;

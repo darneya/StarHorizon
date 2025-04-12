@@ -1,7 +1,5 @@
 ﻿using Content.Client.UserInterface.Fragments;
 using Content.Shared._Horizon.Mech;
-using Content.Shared.Mech;
-using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 
 namespace Content.Client._Horizon.Mech.UI;

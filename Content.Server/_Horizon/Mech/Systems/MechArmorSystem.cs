@@ -1,6 +1,5 @@
 ﻿using Content.Shared.Mech;
 using Content.Shared.Mech.Components;
-using Content.Shared.Damage;
 using Content.Server._Horizon.Mech.Equipment.Components;
 
 namespace Content.Server._Horizon.Mech.Equipment.EntitySystems;

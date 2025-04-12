@@ -19,11 +19,9 @@ using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
-using Content.Shared.Mobs.Components; // Frontier
-using Content.Shared.NPC.Components; // Frontier
-using Robust.Shared.Random; // Horizon Mech
-using Content.Shared.Overlays; // Horizon Mech
-using Content.Shared.Whitelist; // Horizon Mech
+using Robust.Shared.Random;
+using Content.Shared.Overlays;
+using Content.Shared.Whitelist;
 
 namespace Content.Shared.Mech.EntitySystems;
 

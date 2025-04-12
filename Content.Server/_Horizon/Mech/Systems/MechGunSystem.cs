@@ -1,5 +1,4 @@
 using Content.Server.Mech.Systems;
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Mech.Components;
 using Content.Shared.Mech.Equipment.Components;
@@ -8,7 +7,6 @@ using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Random;
 using Content.Shared.Stunnable;
 using Robust.Shared.Containers;
-using Content.Shared._Horizon.Mech.Equipment.Components;
 using Content.Shared._Horizon.Weapons.Ranged.Components;
 using Content.Shared.Mech;
 using Content.Shared._Horizon.Mech;

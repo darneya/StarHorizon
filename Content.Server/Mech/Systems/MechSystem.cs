@@ -26,15 +26,10 @@ using Content.Shared.Whitelist;
 using Content.Shared.Mobs.Components; // Frontier
 using Content.Shared.NPC.Components; // Frontier
 using Content.Shared.Mobs; // Frontier
-// Horizon Mech start
-using Content.Server.Emp;
 using Robust.Server.Audio;
 using Content.Shared.Access.Systems;
 using Content.Shared.Access.Components;
 using Robust.Shared.Random;
-using Content.Shared._Horizon.Mech;
-using Content.Shared.Mech.Equipment.Components;
-// Horizon Mech end
 
 namespace Content.Server.Mech.Systems;
 
