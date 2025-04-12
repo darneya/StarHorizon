@@ -290,6 +290,9 @@
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: phazon
+    - map: [ "enum.MechPhazingVisuals.Phazing" ]
+      state: phazon-phase
+      visible: false
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
@@ -1402,6 +1405,8 @@
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: phazonblanco
+    - map: [ "enum.MechPhazingVisuals.Phazing" ]
+      state: phazonblanco-phase
   - type: Mech
     maxintegrity: 250
     baseState: phazonblanco
@@ -1434,6 +1439,8 @@
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: phazonimperion
+    - map: [ "enum.MechPhazingVisuals.Phazing" ]
+      state: phazonimperion-phase
   - type: Mech
     baseState: phazonimperion
     openState: phazonimperion-open
@@ -1462,6 +1469,8 @@
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: phazonjanus
+    - map: [ "enum.MechPhazingVisuals.Phazing" ]
+      state: phazonjanus-phase
   - type: Mech
     baseState: phazonjanus
     openState: phazonjanus-open
@@ -1490,6 +1499,8 @@
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
       state: phazonplazmus
+    - map: [ "enum.MechPhazingVisuals.Phazing" ]
+      state: phazonplazmus-phase
   - type: Mech
     baseState: phazonplazmus
     openState: phazonplazmus-open
