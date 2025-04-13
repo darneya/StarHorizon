@@ -297,7 +297,7 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
-    
+
 # eye implants
 - type: entity
   parent: SurgeryStepBase
@@ -604,7 +604,7 @@
     state: hemostat
 
 # kidneys
-    
+
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepPrepareImplantSiteKidneys
@@ -649,7 +649,7 @@
     state: hemostat
 
 # stomach
-    
+
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepPrepareImplantSiteStomach
@@ -692,7 +692,7 @@
     state: hemostat
 
 # lungs
-    
+
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepPrepareImplantSiteLungs
@@ -735,7 +735,7 @@
     state: hemostat
 
 # heart
-    
+
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepPrepareImplantSiteHeart
@@ -821,7 +821,7 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: hemostat
-    
+
 # eye implants
 
 - type: entity
@@ -1032,23 +1032,6 @@
     state: cautery
   - type: SurgeryClearProgress
 
-- type: entity
-  parent: SurgeryStepBase
-  id: SurgeryStepRemoveEgg
-  name: Remove Egg
-  components:
-  - type: SurgeryStep
-    duration: 5
-    tools:
-    - type: Scalpel
-    bodyRemove:
-    - type: HasEggHolder
-    - type: EggHolder
-  - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
-    state: scalpel
-  - type: SurgeryStepEmoteEffect
-  
 # Cavity
 
 - type: entity
@@ -1079,7 +1062,7 @@
     organ:
     - type: Item
     slot: cavity
-    
+
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepPrepareImplantSiteCavity
