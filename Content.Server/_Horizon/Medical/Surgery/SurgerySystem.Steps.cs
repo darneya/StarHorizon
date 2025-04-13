@@ -1,23 +1,29 @@
 ﻿using System.Linq;
 using Content.Server._Horizon.Medical.Limbs;
-using Content.Shared._Horizon;
-using Content.Shared._Horizon.Medical.Surgery.Components;
 using Content.Shared._Horizon.Medical.Surgery.Events;
+using Content.Shared._Horizon.Medical.Surgery.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
+using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Humanoid;
-using Content.Shared.Body.Systems;
+using Content.Shared._Horizon;
 
 namespace Content.Server._Horizon.Medical.Surgery;
-
-public sealed partial class SurgerySystem
+// Based on the RMC14.
+// https://github.com/RMC-14/RMC-14
+//
+//This file is already overloaded with responsibilities,
+//it’s time to break its functionality into different systems.
+//However, I don’t want to touch the official systems, so I need to come up with extensions for them.
+public sealed partial class SurgerySystem //: SharedSurgerySystem
 {
+    //[Dependency] private readonly IComponentFactory _compFactory = null!;
     [Dependency] private readonly LimbSystem _limbSystem = null!;
     [Dependency] private readonly StarlightEntitySystem _entity = null!;
 
-        public void InitializeSteps()
+    public void InitializeSteps()
     {
         SubscribeLocalEvent<SurgeryStepBleedEffectComponent, SurgeryStepEvent>(OnStepBleedComplete);
         SubscribeLocalEvent<SurgeryClampBleedEffectComponent, SurgeryStepEvent>(OnStepClampBleedComplete);
@@ -54,7 +60,7 @@ public sealed partial class SurgerySystem
         //todo add wound
     }
 
-    private static void OnStepClampBleedComplete(Entity<SurgeryClampBleedEffectComponent> ent, ref SurgeryStepEvent args)
+    private void OnStepClampBleedComplete(Entity<SurgeryClampBleedEffectComponent> ent, ref SurgeryStepEvent args)
     {
         //todo remove wound
     }
@@ -78,11 +84,13 @@ public sealed partial class SurgerySystem
 
         var part = args.Part;
         var body = args.Body;
+
         if (!_body.InsertOrgan(part, organId, ent.Comp.Slot, bodyPart, organComp))
         {
             args.IsCancelled = true;
             return;
         }
+
         var ev = new SurgeryOrganImplantationCompleted(body, part, organId);
         RaiseLocalEvent(organId, ref ev);
     }
@@ -92,6 +100,7 @@ public sealed partial class SurgerySystem
             return;
 
         var type = ent.Comp.Organ.Values.First().Component.GetType();
+
         if (ent.Comp.Slot != null && _containers.TryGetContainer(args.Part, SharedBodySystem.GetOrganContainerId(ent.Comp.Slot), out var container))
         {
             foreach (var containedEnt in container.ContainedEntities)
@@ -109,7 +118,7 @@ public sealed partial class SurgerySystem
             if (!HasComp(organ.Id, type) || !_body.RemoveOrgan(organ.Id, organ.Component))
                 continue;
 
-            var ev = new SurgeryOrganExtractCompleted(args.Body, args.Part, organ.Id);
+            var ev = new SurgeryOrganExtracted(args.Body, args.Part, organ.Id);
             RaiseLocalEvent(organ.Id, ref ev);
 
             return;
@@ -135,6 +144,7 @@ public sealed partial class SurgerySystem
         if (TryComp(args.Body, out TransformComponent? xform))
             SpawnAtPosition(ent.Comp.Entity, xform.Coordinates);
     }
+
     private void OnStepAttachLimbComplete(Entity<SurgeryStepAttachLimbEffectComponent> _, string slot, ref SurgeryStepEvent args)
     {
         args.IsCancelled = args.Tools.Count == 0
@@ -159,7 +169,7 @@ public sealed partial class SurgerySystem
     {
         if (_entity.TryEntity<TransformComponent, HumanoidAppearanceComponent, BodyComponent>(args.Body, out var body)
             && _entity.TryEntity<TransformComponent, MetaDataComponent, BodyPartComponent>(args.Part, out var limb))
-            _limbSystem.Amputatate(body.Value, limb.Value);
+            _limbSystem.Amputate(body.Value, limb.Value);
     }
 
     private void CustomLimbRemoved(Entity<CustomLimbMarkerComponent> ent, ref ComponentRemove args)

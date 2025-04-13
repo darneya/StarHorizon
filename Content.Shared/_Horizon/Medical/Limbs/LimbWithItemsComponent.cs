@@ -13,7 +13,7 @@ public sealed partial class LimbWithItemsComponent : Component, IWithAction
     public List<EntityUid> ItemEntities = [];
 
     [DataField, AutoNetworkedField]
-    public bool EntityIcon { get; set; } = false;
+    public bool EntityIcon { get; set; }
 
     [DataField, AutoNetworkedField]
     public EntProtoId Action { get; set; } = "ActionToggleCyberLimb";

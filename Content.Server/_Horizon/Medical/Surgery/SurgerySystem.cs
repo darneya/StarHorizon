@@ -2,10 +2,10 @@
 using Content.Server.Body.Systems;
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
+using Content.Shared.Body.Part;
 using Content.Shared._Horizon.Medical.Surgery;
 using Content.Shared._Horizon.Medical.Surgery.Components;
 using Content.Shared._Horizon.Medical.Surgery.Events;
-using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Content.Shared.Interaction;
 using Content.Shared.Prototypes;
@@ -15,16 +15,17 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server._Horizon.Medical.Surgery;
-
+// Based on the RMC14.
+// https://github.com/RMC-14/RMC-14
 public sealed partial class SurgerySystem : SharedSurgerySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly ContainerSystem _containers = default!;
+    [Dependency] private readonly BodySystem _body = null!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = null!;
+    [Dependency] private readonly ChatSystem _chat = null!;
+    [Dependency] private readonly IPrototypeManager _prototypes = null!;
+    [Dependency] private readonly PopupSystem _popup = null!;
+    [Dependency] private readonly UserInterfaceSystem _ui = null!;
+    [Dependency] private readonly ContainerSystem _containers = null!;
 
     private readonly List<EntProtoId> _surgeries = [];
     public override void Initialize()
@@ -55,6 +56,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
                 AddSurgeries(part.Id, body, surgeries);
             }
         }
+
         _ui.SetUiState(body, SurgeryUIKey.Key, new SurgeryBuiState() { Choices = surgeries });
     }
 
@@ -70,7 +72,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         {
             if (GetSingleton(surgery) is not { } surgeryEnt
                 || !TryComp(surgeryEnt, out SurgeryComponent? surgeryComp)
-                || (surgeryComp.Requirement.Count() > 0 && !progress.CompletedSurgeries.Any(x => surgeryComp.Requirement.Contains(x))))
+                || (surgeryComp.Requirement.Any() && !progress.CompletedSurgeries.Any(x => surgeryComp.Requirement.Contains(x))))
                 continue;
 
             var ev = new SurgeryValidEvent(body, part);
@@ -80,6 +82,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
                 && !isCompleted)
             {
                 RaiseLocalEvent(surgeryEnt, ref ev);
+
                 if (ev.Cancelled)
                     continue;
             }
@@ -95,7 +98,8 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             !args.CanReach ||
             args.Target == null ||
             _ui.IsUiOpen(user, SurgeryUIKey.Key, user) ||
-            !HasComp<SurgeryTargetComponent>(args.Target)) return;
+            !HasComp<SurgeryTargetComponent>(args.Target))
+            return;
 
         if (user == args.Target)
         {

@@ -1,17 +1,16 @@
 ﻿using Content.Shared.Body.Part;
+using Content.Shared.Humanoid;
 using System.Linq;
 using Content.Shared._Horizon.Medical.Surgery.Components;
 using Content.Shared._Horizon.Medical.Surgery.Events;
-
 using Content.Shared.Body.Systems;
-using Content.Shared.Humanoid;
 
 namespace Content.Shared._Horizon.Medical.Surgery;
-
+// Based on the RMC14.
+// https://github.com/RMC-14/RMC-14
 public abstract partial class SharedSurgerySystem
 {
     protected List<Type> Accents = [];
-    private readonly ISawmill _surgeryWarning = null!;
     private void InitializeConditions()
     {
         Accents = _reflectionManager.FindTypesWithAttribute<RegisterComponentAttribute>()
@@ -26,11 +25,11 @@ public abstract partial class SharedSurgerySystem
         SubscribeLocalEvent<SurgeryAnyLimbSlotConditionComponent, SurgeryValidEvent>(OnAnyLimbSlotConditionValid);
         SubscribeLocalEvent<SurgeryLimbSlotConditionComponent, SurgeryValidEvent>(OnLimbSlotConditionValid);
     }
+
     private void OnOrganDontExistConditionValid(Entity<SurgeryOrganDontExistConditionComponent> ent, ref SurgeryValidEvent args)
     {
         if (ent.Comp.Organ?.Count != 1)
             return;
-
         var type = ent.Comp.Organ.Values.First().Component.GetType();
 
         if (ent.Comp.Container != null)
@@ -39,6 +38,7 @@ public abstract partial class SharedSurgerySystem
             {
                 if (ent.Comp.Container != slotId)
                     continue;
+
                 if (!_containers.TryGetContainer(args.Part, ent.Comp.Container, out var container))
                     continue;
 
@@ -46,7 +46,6 @@ public abstract partial class SharedSurgerySystem
                 {
                     if (!HasComp(containedEnt, type))
                         continue;
-
                     args.Cancelled = true;
                     return;
                 }
@@ -59,40 +58,20 @@ public abstract partial class SharedSurgerySystem
             {
                 if (!HasComp(organ.Id, type))
                     continue;
-
                 args.Cancelled = true;
                 return;
             }
         }
     }
-
-    private void OnSpeciesConditionValid(Entity<SurgerySpeciesConditionComponent> ent, ref SurgeryValidEvent args)
-    {
-        if (!EntityManager.TryGetComponent<HumanoidAppearanceComponent>(args.Body, out var humanoidAppearanceComponent))
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        if (ent.Comp.SpeciesBlacklist.Contains(humanoidAppearanceComponent.Species))
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        if (ent.Comp.SpeciesWhitelist.Count > 0 && !ent.Comp.SpeciesWhitelist.Contains(humanoidAppearanceComponent.Species))
-        {
-            args.Cancelled = true;
-        }
-    }
-
     private void OnOrganExistConditionValid(Entity<SurgeryOrganExistConditionComponent> ent, ref SurgeryValidEvent args)
     {
         if (ent.Comp.Organ?.Count != 1)
             return;
 
         var type = ent.Comp.Organ.Values.First().Component.GetType();
+
         var mainPart = args.Part;
+
         if (TryComp<BodyPartComponent>(args.Body, out _))
             mainPart = args.Body;
 
@@ -128,11 +107,28 @@ public abstract partial class SharedSurgerySystem
 
         if (TryComp<BodyPartComponent>(args.Body, out var itemPart) && itemPart.PartType is var item && !ent.Comp.Parts.Contains(item))
         {
-            _surgeryWarning.Warning("don't have part at part");
+            //Logger.Warning("don't have part at part");
             args.Cancelled = true;
         }
 
         if (CompOrNull<BodyPartComponent>(args.Part)?.PartType is { } part && !ent.Comp.Parts.Contains(part))
+            args.Cancelled = true;
+    }
+    private void OnSpeciesConditionValid(Entity<SurgerySpeciesConditionComponent> ent, ref SurgeryValidEvent args)
+    {
+        if (!EntityManager.TryGetComponent<HumanoidAppearanceComponent>(args.Body, out var humanoidAppearanceComponent))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
+        if (ent.Comp.SpeciesBlacklist.Contains(humanoidAppearanceComponent.Species))
+        {
+            args.Cancelled = true;
+            return;
+        }
+
+        if (ent.Comp.SpeciesWhitelist.Count > 0 && !ent.Comp.SpeciesWhitelist.Contains(humanoidAppearanceComponent.Species))
             args.Cancelled = true;
     }
     private void OnAnyAccentConditionValid(Entity<SurgeryAnyAccentConditionComponent> ent, ref SurgeryValidEvent args)

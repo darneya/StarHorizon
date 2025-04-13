@@ -1,22 +1,22 @@
-﻿using Content.Shared.Body.Part;
+﻿using System.Linq;
+using Content.Shared.Body.Part;
 using Content.Shared.Buckle.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Inventory;
-using Content.Shared.Popups;
-using Robust.Shared.Prototypes;
-using System.Linq;
-using Content.Shared._Horizon.Medical.Surgery.Components;
-using Content.Shared._Horizon.Medical.Surgery.Events;
 using Content.Shared.Item;
 using Content.Shared.Item.ItemToggle.Components;
+using Content.Shared.Popups;
+using Content.Shared._Horizon.Medical.Surgery.Components;
+using Content.Shared._Horizon.Medical.Surgery.Events;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Shared._Horizon.Medical.Surgery;
-
+// Based on the RMC14.
+// https://github.com/RMC-14/RMC-14
 public abstract partial class SharedSurgerySystem
 {
     [Dependency] private readonly IRobustRandom _random = null!;
-
     private void InitializeSteps()
     {
         SubscribeLocalEvent<SurgeryStepComponent, SurgeryStepCompleteEvent>(OnStepComplete);
@@ -92,8 +92,8 @@ public abstract partial class SharedSurgerySystem
         }
         else
         {
-            progress = new SurgeryProgressComponent { CompletedSteps = [$"{args.SurgeryProto}:{args.StepProto}"] };
-            if (!args.IsFinal)
+            progress = new SurgeryProgressComponent { CompletedSteps = [$"{args.SurgeryProto}:{args.StepProto}"]};
+            if(!args.IsFinal)
                 progress.StartedSurgeries.Add(args.SurgeryProto);
             AddComp(args.Part, progress);
         }
@@ -138,7 +138,7 @@ public abstract partial class SharedSurgerySystem
 
         foreach (var reg in (ent.Comp.BodyRemove ?? []).Values)
         {
-            RemComp(args.Body, reg.Component.GetType());
+            RemComp(args.Part, reg.Component.GetType());
         }
     }
 
@@ -159,8 +159,10 @@ public abstract partial class SharedSurgerySystem
         if (_inventory.TryGetContainerSlotEnumerator(args.Body, out var enumerator, args.TargetSlots))
         {
             var items = 0f;
+            //var total = 0f;
             while (enumerator.MoveNext(out var con))
             {
+                //total++;
                 if (con.ContainedEntity != null)
                     items++;
             }
@@ -228,18 +230,19 @@ public abstract partial class SharedSurgerySystem
         }
 
         var duration = stepComp.Duration;
+
         var smallestSuccessRate = 1f;
 
         foreach (var tool in validTools)
         {
             if (!TryComp(tool, out SurgeryToolComponent? toolComp))
-                return;
+                continue;
 
             duration *= toolComp.Speed;
             if (toolComp.StartSound != null)
                 _audio.PlayPvs(toolComp.StartSound, tool);
 
-            if (toolComp.SuccessRate < smallestSuccessRate)
+            if(toolComp.SuccessRate < smallestSuccessRate)
                 smallestSuccessRate = toolComp.SuccessRate;
         }
 
@@ -316,7 +319,7 @@ public abstract partial class SharedSurgerySystem
             if (surgeryStep == step)
                 break;
 
-            if (Prototype(surgery.Owner) is not { } surgeryProto || !IsStepComplete(part, surgeryProto.ID, surgeryStep))
+            if (Prototype(surgery.Owner) is not { } surgeProto || !IsStepComplete(part, surgeProto.ID, surgeryStep))
                 return false;
         }
 
@@ -332,7 +335,7 @@ public abstract partial class SharedSurgerySystem
     {
         var slot = part switch
         {
-            BodyPartType.Head => SlotFlags.HEAD,
+            BodyPartType.Head => SlotFlags.HEAD | SlotFlags.MASK | SlotFlags.EYES,
             BodyPartType.Torso => SlotFlags.OUTERCLOTHING | SlotFlags.INNERCLOTHING,
             BodyPartType.Arm => SlotFlags.OUTERCLOTHING | SlotFlags.INNERCLOTHING,
             BodyPartType.Hand => SlotFlags.GLOVES,

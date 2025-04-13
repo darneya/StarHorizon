@@ -1,7 +1,8 @@
 ﻿using Content.Shared.DoAfter;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-
+// Based on the RMC14.
+// https://github.com/RMC-14/RMC-14
 namespace Content.Shared._Horizon.Medical.Surgery.Events;
 
 [Serializable, NetSerializable]

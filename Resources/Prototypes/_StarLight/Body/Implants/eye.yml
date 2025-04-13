@@ -6,24 +6,24 @@
   - type: Sprite
     sprite: _Starlight/Objects/Specific/Medical/implants.rsi
   - type: Organ
+  - type: EyeImplant
   - type: Gibbable
-  - type: SurgeryTool
   - type: FlavorProfile
     flavors:
       - people
 
 - type: entity
   id: EyeImplantWelding
-  name: сварочный имплант
-  description: Защищает глаза от вспышек при сварке.
+  name: Welding Implant
+  description: Protects eyes from welding flashes.
   parent: BaseEntityEyeImplant
   components:
   - type: Sprite
     state: eye_implant_welding
-  - type: OrganImplant
-    compsToAdd:
+  - type: FunctionalOrgan
+    comps: 
     - type: EyeProtection
-
+    
 # needs arguments system
 #- type: entity
 #  id: EyeImplantDiagnostic
@@ -33,8 +33,8 @@
 #  components:
 #  - type: Sprite
 #    state: eye_implant_diagnostic
-#  - type: OrganImplant
-#    compsToAdd:
+#  - type: FunctionalOrgan
+#    comps: 
 #    - type: ShowHealthBars
 #      damageContainers:
 #      - Inorganic
@@ -42,41 +42,41 @@
 
 - type: entity
   id: EyeImplantMedical
-  name: медицинский имплант
-  description: Позволяет вам видеть информацию о состоянии окружающих.
+  name: Medical Implant
+  description: Enables you to see information about humanoids without medical glasses.
   parent: BaseEntityEyeImplant
   components:
   - type: Sprite
     state: eye_implant_medical
-  - type: OrganImplant
-    compsToAdd:
+  - type: FunctionalOrgan
+    comps: 
     - type: ShowHealthBars
     - type: ShowHealthIcons
-
+    
 - type: entity
   id: EyeImplantSecurity
-  name: имплант службы безопасности.
-  description: Позволяет вам видеть информацию о должностях окружающих.
+  name: Security Implant
+  description: Enables you to see information about station crew without security glasses.
   parent: BaseEntityEyeImplant
   components:
   - type: Sprite
     state: eye_implant_security
-  - type: OrganImplant
-    compsToAdd:
+  - type: FunctionalOrgan
+    comps: 
     - type: ShowJobIcons
     - type: ShowMindShieldIcons
     - type: ShowCriminalRecordIcons
 
 - type: entity
   id: EyeImplantSyndie
-  name: имплант синдиката
-  description: Позволяет вам видеть информацию о должностях и состоянии окружающих.
+  name: Syndie Implant
+  description: Enables you to see information about station crew, humanoids and syndie without any glasses.
   parent: BaseEntityEyeImplant
   components:
   - type: Sprite
     state: eye_implant_syndicate
-  - type: OrganImplant
-    compsToAdd:
+  - type: FunctionalOrgan
+    comps: 
     - type: ShowHealthBars
     - type: ShowHealthIcons
     - type: ShowJobIcons

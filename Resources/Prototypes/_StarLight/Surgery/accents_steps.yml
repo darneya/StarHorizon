@@ -1,12 +1,12 @@
 ﻿- type: entity
   parent: SurgeryStepBase
   id: SurgeryStepExposeVocalCords
-  name: обнажите голосовые связки
+  name: Expose Vocal Cords
   components:
   - type: SurgeryStep
     duration: 3
     tools:
-    - type: Retract
+    - type: Retractor
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: retractor
@@ -14,7 +14,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepAdjustVocalCords
-  name: отрегулируйте голосовые связки
+  name: Adjust Vocal Cords
   components:
   - type: SurgeryStep
     duration: 4
@@ -30,7 +30,7 @@
 - type: entity
   parent: SurgeryStepBase
   id: SurgeryStepSutureIncision
-  name: наложите шов
+  name: Suture Incision
   components:
   - type: SurgeryStep
     duration: 3

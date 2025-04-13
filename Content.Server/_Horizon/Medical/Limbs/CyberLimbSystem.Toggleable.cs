@@ -3,7 +3,7 @@ using Content.Shared.Actions;
 using Content.Shared.Body.Components;
 
 namespace Content.Server._Horizon.Medical.Limbs;
-public sealed partial class CyberLimbSystem : EntitySystem
+public sealed partial class CyberLimbSystem //: EntitySystem
 {
     public void InitializeToggleable()
     {
@@ -13,8 +13,13 @@ public sealed partial class CyberLimbSystem : EntitySystem
     }
 
     private void IWithActionRemoved(Entity<BodyComponent> ent, ref LimbRemovedEvent<IWithAction> args)
-        => _actions.RemoveProvidedActions(ent.Owner, args.Limb);
+    {
+        _actions.RemoveProvidedActions(ent.Owner, args.Limb);
+    }
 
     private void IWithActionAttached(Entity<BodyComponent> ent, ref LimbAttachedEvent<IWithAction> args)
-        => _actions.GrantContainedActions(_slEnt.Entity<ActionsComponent>(ent), _slEnt.Entity<ActionsContainerComponent>(args.Limb));
+    {
+        _actions.GrantContainedActions(_slEnt.Entity<ActionsComponent>(ent),
+            _slEnt.Entity<ActionsContainerComponent>(args.Limb));
+    }
 }

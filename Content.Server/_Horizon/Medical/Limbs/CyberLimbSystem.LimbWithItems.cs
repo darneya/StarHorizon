@@ -9,7 +9,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Horizon.Medical.Limbs;
-public sealed partial class CyberLimbSystem
+public sealed partial class CyberLimbSystem //: EntitySystem
 {
     public void InitializeLimbWithItems()
     {
@@ -57,12 +57,14 @@ public sealed partial class CyberLimbSystem
 
     private void OnLimbWithItemsInit(Entity<LimbWithItemsComponent> limb, ref ComponentInit args)
     {
-        if (limb.Comp.ItemEntities?.Count == limb.Comp.Items.Count) return;
+        if (limb.Comp.ItemEntities.Count == limb.Comp.Items.Count)
+            return;
         var container = _container.EnsureContainer<Container>(limb.Owner, "cyberlimb", out _);
 
         limb.Comp.ItemEntities = [.. limb.Comp.Items.Select(EnsureItem)];
 
         DirtyEntity(limb);
+        return;
 
         EntityUid EnsureItem(EntProtoId proto)
         {

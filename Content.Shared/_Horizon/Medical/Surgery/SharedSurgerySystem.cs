@@ -21,7 +21,8 @@ using Robust.Shared.Reflection;
 using Robust.Shared.Serialization.Manager;
 
 namespace Content.Shared._Horizon.Medical.Surgery;
-
+// Based on the RMC14.
+// https://github.com/RMC-14/RMC-14
 public abstract partial class SharedSurgerySystem : EntitySystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = null!;
@@ -37,6 +38,7 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     [Dependency] private readonly SharedBodySystem _body = null!;
     [Dependency] private readonly IReflectionManager _reflectionManager = null!;
     [Dependency] private readonly ISerializationManager _serialization = null!;
+    //[Dependency] private readonly DamageableSystem _damageableSystem = null!;
     [Dependency] private readonly SharedContainerSystem _containers = null!;
     [Dependency] private readonly InventorySystem _inventory = null!;
     [Dependency] private readonly SharedItemSystem _item = null!;
@@ -48,8 +50,6 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
-        SubscribeLocalEvent<SurgeryTargetComponent, BuckledEvent>(OnBuckled);
-        SubscribeLocalEvent<SurgeryTargetComponent, UnbuckledEvent>(UnBuckled);
 
         InitializeSteps();
         InitializeConditions();
@@ -58,15 +58,6 @@ public abstract partial class SharedSurgerySystem : EntitySystem
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
         _surgeries.Clear();
-    }
-
-    private void OnBuckled(EntityUid owner, SurgeryTargetComponent comp, BuckledEvent _)
-    {
-        RefreshUI(owner);
-    }
-    private void UnBuckled(EntityUid owner, SurgeryTargetComponent comp, UnbuckledEvent _)
-    {
-        RefreshUI(owner);
     }
 
     public bool IsSurgeryValid(EntityUid body, EntityUid targetPart, EntProtoId surgery, EntProtoId stepId, out Entity<SurgeryComponent> surgeryEnt, out Entity<BodyPartComponent> part, out EntityUid step)
@@ -115,11 +106,11 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         // This (for now) assumes that surgery entity data remains unchanged between client
         // and server
         // if it does not you get the bullet
-        if (_surgeries.TryGetValue(surgeryOrStep, out var ent) && !TerminatingOrDeleted(ent))
-            return ent;
-
-        ent = Spawn(surgeryOrStep, MapCoordinates.Nullspace);
-        _surgeries[surgeryOrStep] = ent;
+        if (!_surgeries.TryGetValue(surgeryOrStep, out var ent) || TerminatingOrDeleted(ent))
+        {
+            ent = Spawn(surgeryOrStep, MapCoordinates.Nullspace);
+            _surgeries[surgeryOrStep] = ent;
+        }
 
         return ent;
     }
@@ -137,13 +128,18 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         if (HasComp<ItemComponent>(entity))
             return true;
 
-        if (!TryComp(entity, out BuckleComponent? buckle) ||
-            !TryComp(buckle.BuckledTo, out StrapComponent? strap))
-            return false;
+        if (TryComp(entity, out BuckleComponent? buckle) &&
+            TryComp(buckle.BuckledTo, out StrapComponent? strap))
+        {
+            var rotation = strap.Rotation;
+            if (rotation.GetCardinalDir() is Direction.West or Direction.East)
+                return true;
+        }
 
-        var rotation = strap.Rotation;
-        return rotation.GetCardinalDir() is Direction.West or Direction.East;
+        return false;
     }
 
-    protected virtual void RefreshUI(EntityUid body) { }
+    protected virtual void RefreshUI(EntityUid body)
+    {
+    }
 }

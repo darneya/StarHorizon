@@ -1,6 +1,7 @@
 ﻿using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-
+// Based on the RMC14.
+// https://github.com/RMC-14/RMC-14
 namespace Content.Shared._Horizon.Medical.Surgery.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(SharedSurgerySystem))]

@@ -1,4 +1,4 @@
-﻿using Content.Client.Administration.UI.CustomControls;
+using Content.Client.Administration.UI.CustomControls;
 using Content.Client.Hands.Systems;
 using Content.Shared._Horizon.Medical.Surgery;
 using Content.Shared._Horizon.Medical.Surgery.Components;
@@ -9,10 +9,12 @@ using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Timing;
 
 namespace Content.Client._Horizon.Medical.Surgery;
+// Based on the RMC14 build.
+// https://github.com/RMC-14/RMC-14
 
 [UsedImplicitly]
 public sealed class SurgeryBui : BoundUserInterface
@@ -49,6 +51,7 @@ public sealed class SurgeryBui : BoundUserInterface
         base.Open();
         UpdateState(State);
     }
+
     protected override void UpdateState(BoundUserInterfaceState? state)
     {
         if (state is SurgeryBuiState s)
@@ -82,6 +85,8 @@ public sealed class SurgeryBui : BoundUserInterface
 
         parts.Sort((a, b) =>
         {
+            return GetScore(a) - GetScore(b);
+
             static int GetScore(Entity<BodyPartComponent> part)
                 => part.Comp.PartType switch
                 {
@@ -93,10 +98,8 @@ public sealed class SurgeryBui : BoundUserInterface
                     BodyPartType.Foot => 6,
                     BodyPartType.Tail => 7,
                     BodyPartType.Other => 8,
-                    _ => 0
+                    _ => 0,
                 };
-
-            return GetScore(a) - GetScore(b);
         });
 
         foreach (var part in parts)
@@ -221,28 +224,28 @@ public sealed class SurgeryBui : BoundUserInterface
         {
             foreach (var requirementId in requirementIds)
             {
-                if (_system.GetSingleton(requirementId) is { } requirement &&
-                    _entities.TryGetComponent(_part, out BodyPartComponent? partComp) && partComp.Body is { } body &&
-                    _part is { } part &&
-                    _system.IsSurgeryValid(body, part, requirementId, surgeryId, out _, out _, out _))
+                if (_system.GetSingleton(requirementId) is not { } requirement
+                    || !_entities.TryGetComponent(_part, out BodyPartComponent? partComp)
+                    || partComp.Body is not { } body || _part is not { } part
+                    || !_system.IsSurgeryValid(body, part, requirementId, surgeryId, out _, out _, out _))
+                    continue;
+
+                var label = new ChoiceControl();
+                label.Button.OnPressed += _ =>
                 {
-                    var label = new ChoiceControl();
-                    label.Button.OnPressed += _ =>
-                    {
-                        _previousSurgeries.Add(surgeryId);
-                        if (_entities.TryGetComponent(requirement, out SurgeryComponent? requirementComp))
-                            OnSurgeryPressed((requirement, requirementComp), netPart, requirementId);
-                    };
+                    _previousSurgeries.Add(surgeryId);
 
-                    var msg = new FormattedMessage();
-                    var surgeryName = _entities.GetComponent<MetaDataComponent>(requirement).EntityName;
-                    msg.AddMarkupOrThrow($"[bold]Requires: {surgeryName}[/bold]");
-                    label.Set(msg, null);
+                    if (_entities.TryGetComponent(requirement, out SurgeryComponent? requirementComp))
+                        OnSurgeryPressed((requirement, requirementComp), netPart, requirementId);
+                };
 
-                    _window.Steps.AddChild(label);
-                    _window.Steps.AddChild(
-                        new HSeparator(Color.FromHex("#4972A1")) {Margin = new Thickness(0, 0, 0, 1)});
-                }
+                var msg = new FormattedMessage();
+                var surgeryName = _entities.GetComponent<MetaDataComponent>(requirement).EntityName;
+                msg.AddMarkupOrThrow($"[bold]{Loc.GetString("surgery-required")}: {surgeryName}[/bold]");
+                label.Set(msg, null);
+
+                _window.Steps.AddChild(label);
+                _window.Steps.AddChild(new HSeparator(Color.FromHex("#4972A1")) { Margin = new Thickness(0, 0, 0, 1) });
             }
         }
 
@@ -311,6 +314,7 @@ public sealed class SurgeryBui : BoundUserInterface
         {
             return;
         }
+
         var next = _system.GetNextStep(Owner, _part.Value, _surgery.Value.Ent);
         var i = 0;
         foreach (var child in _window.Steps.Children)
@@ -386,7 +390,7 @@ public sealed class SurgeryBui : BoundUserInterface
         if (_window == null)
             return;
 
-        if (_system.IsLyingDown(Owner))
+        if (!_system.IsLyingDown(Owner))
         {
             _window.DisabledLabel.Visible = false;
             _window.DisabledPanel.Visible = false;
@@ -423,15 +427,15 @@ public sealed class SurgeryBui : BoundUserInterface
         if (_entities.TryGetComponent(_part, out MetaDataComponent? partMeta) &&
             _entities.TryGetComponent(_surgery?.Ent, out MetaDataComponent? surgeryMeta))
         {
-            _window.Title = $"{Loc.GetString("surgery-title")} - {partMeta.EntityName}, {surgeryMeta.EntityName}";
+            _window.Title = $"Surgery - {partMeta.EntityName}, {surgeryMeta.EntityName}";
         }
         else if (partMeta != null)
         {
-            _window.Title = $"{Loc.GetString("surgery-title")} - {partMeta.EntityName}";
+            _window.Title = $"Surgery - {partMeta.EntityName}";
         }
         else
         {
-            _window.Title = $"{Loc.GetString("surgery-title")}";
+            _window.Title = "Surgery";
         }
     }
 

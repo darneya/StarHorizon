@@ -5,6 +5,7 @@ using Content.Shared._Horizon.Medical.Body;
 using Content.Shared._Horizon.Medical.Surgery.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
+using Content.Shared.Body.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction.Components;
@@ -12,12 +13,11 @@ using Robust.Server.Containers;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Horizon.Medical.Limbs;
-public sealed partial class LimbSystem
+public sealed partial class LimbSystem //: SharedLimbSystem
 {
     [Dependency] private readonly ContainerSystem _containers = null!;
     [Dependency] private readonly BodySystem _body = null!;
     [Dependency] private readonly HandsSystem _hands = null!;
-    [Dependency] private readonly IPrototypeManager _prototypes = null!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = null!;
     [Dependency] private readonly MetaDataSystem _metadata = null!;
     [Dependency] private readonly IPrototypeManager _prototype = null!;
@@ -53,15 +53,16 @@ public sealed partial class LimbSystem
             return false;
         }
         AddItemLimb(body, slot, item);
-        AddItemHand(body, item, BodySystem.GetPartSlotContainerId(slot));
+        AddItemHand(body, item, SharedBodySystem.GetPartSlotContainerId(slot));
         return true;
     }
 
-    public void Amputatate(Entity<TransformComponent, HumanoidAppearanceComponent, BodyComponent> body, Entity<TransformComponent, MetaDataComponent, BodyPartComponent> limb)
+    public void Amputate(Entity<TransformComponent, HumanoidAppearanceComponent, BodyComponent> body, Entity<TransformComponent, MetaDataComponent, BodyPartComponent> limb)
     {
         if (!_containers.TryGetContainingContainer((limb.Owner, limb.Comp1, limb.Comp2), out var container)
          || _body.GetParentPartAndSlotOrNull(limb.Owner) is not var (_, slotId)
-         || !_containers.Remove(limb.Owner, container, destination: body.Comp1.Coordinates)) return;
+         || !_containers.Remove(limb.Owner, container, destination: body.Comp1.Coordinates))
+            return;
 
         if (TryComp<CustomLimbComponent>(limb, out var virtualLimb))
             AmputateItemLimb((body, body.Comp1, body.Comp3), limb, slotId, virtualLimb);
@@ -75,20 +76,20 @@ public sealed partial class LimbSystem
     private void AddItemLimb(EntityUid body, string slot, Entity<MetaDataComponent> item)
     {
         var layer = VisualLayers.GetLayer(slot);
-        var vizualizer = EnsureComp<CustomLimbVisualizerComponent>(body);
-        vizualizer.Layers[layer] = GetNetEntity(item.Owner);
-        Dirty(body, vizualizer);
+        var visualizer = EnsureComp<CustomLimbVisualizerComponent>(body);
+        visualizer.Layers[layer] = GetNetEntity(item);
+        Dirty(body, visualizer);
     }
 
     private void AmputateItemLimb(Entity<TransformComponent, BodyComponent> body, Entity<TransformComponent, MetaDataComponent, BodyPartComponent> limb, string slotId, CustomLimbComponent virtualLimb)
     {
-        RemoveItemLimb(body, virtualLimb.Item, BodySystem.GetPartSlotContainerId(slotId));
+        RemoveItemLimb(body, virtualLimb.Item, SharedBodySystem.GetPartSlotContainerId(slotId));
 
-        var vizualizer = EnsureComp<CustomLimbVisualizerComponent>(body);
+        var visualizer = EnsureComp<CustomLimbVisualizerComponent>(body);
 
         var layer = VisualLayers.GetLayer(slotId);
-        vizualizer.Layers.Remove(layer);
-        Dirty(body, vizualizer);
+        visualizer.Layers.Remove(layer);
+        Dirty(body, visualizer);
         QueueDel(limb.Owner);
     }
 
@@ -110,7 +111,8 @@ public sealed partial class LimbSystem
 
     private void RemoveItemLimb(EntityUid bodyId, EntityUid itemId, string handId)
     {
-        if (!bodyId.IsValid() || !itemId.IsValid()) return;
+        if (!bodyId.IsValid() || !itemId.IsValid())
+            return;
 
         if (!TryComp<HandsComponent>(bodyId, out var hands)
             || !_hands.TryGetHand(bodyId, handId, out var hand, hands))

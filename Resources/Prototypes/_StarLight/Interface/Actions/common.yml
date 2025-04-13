@@ -5,7 +5,7 @@
   components:
   - type: InstantAction
     itemIconStyle: BigItem
-    useDelay: 1 
+    useDelay: 1
     event: !type:ToggleLimbEvent
 
 - type: entity
@@ -15,7 +15,7 @@
   components:
   - type: InstantAction
     itemIconStyle: BigItem
-    useDelay: 1 
+    useDelay: 1
     icon:
       sprite: _Starlight/Interface/Actions/actions_cyber.rsi
       state: cyber-hand-left
@@ -28,7 +28,7 @@
   components:
   - type: InstantAction
     itemIconStyle: BigItem
-    useDelay: 1 
+    useDelay: 1
     icon:
       sprite: _Starlight/Interface/Actions/actions_cyber.rsi
       state: cyber-hand-right

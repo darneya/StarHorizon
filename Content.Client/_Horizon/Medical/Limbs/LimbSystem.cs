@@ -2,6 +2,4 @@
 
 namespace Content.Client._Horizon.Medical.Limbs;
 
-public sealed class LimbSystem : SharedLimbSystem
-{
-}
+public sealed class LimbSystem : SharedLimbSystem;

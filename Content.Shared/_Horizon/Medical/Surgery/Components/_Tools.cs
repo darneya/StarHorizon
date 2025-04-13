@@ -1,6 +1,7 @@
 ﻿using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-
+// Based on the RMC14.
+// https://github.com/RMC-14/RMC-14
 namespace Content.Shared._Horizon.Medical.Surgery.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
@@ -26,47 +27,47 @@ public sealed partial class OperatingTableComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class BoneGelComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("BoneGelComponent");
+    public string ToolName => "bone gel";
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class BoneSawComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("BoneSawComponent");
+    public string ToolName => "a bone saw";
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class BoneSetterComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("BoneSetterComponent");
+    public string ToolName => "a bone setter";
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class CauteryComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("CauteryComponent");
+    public string ToolName => "a cautery";
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class HemostatComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("HemostatComponent");
+    public string ToolName => "a hemostat";
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
-public sealed partial class RetractComponent : Component, ISurgeryToolComponent
+public sealed partial class RetractorComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("RetractComponent");
+    public string ToolName => "a retractor";
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class ScalpelComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("ScalpelComponent");
+    public string ToolName => "a scalpel";
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class SurgicalDrillComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => Loc.GetString("SurgicalDrillComponent");
+    public string ToolName => "a surgical drill";
 }

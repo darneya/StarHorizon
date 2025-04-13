@@ -2,7 +2,8 @@
 using Robust.Client.UserInterface.XAML;
 
 namespace Content.Client._Horizon.Medical.Surgery;
-
+// Based on the RMC14.
+// https://github.com/RMC-14/RMC-14
 [GenerateTypedNameReferences]
 public sealed partial class SurgeryStepButton : ChoiceControl
 {
