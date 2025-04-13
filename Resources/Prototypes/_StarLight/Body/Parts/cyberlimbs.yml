@@ -121,7 +121,9 @@
     - type: Icon
       sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_foot"
-#reaper
+
+# Reaper (Surgery)
+
 - type: entity
   id: LeftArmCyberReaper
   name: "left reaper arm"
@@ -178,7 +180,8 @@
         - HemostatCyber
         - BoneSetterCyber
 
-#Mechwright
+# Mechwright (Engineering)
+
 - type: entity
   id: LeftArmCyberMechwright
   name: "left mechwright arm"
@@ -230,3 +233,61 @@
         - CrowbarCyber
         - WirecutterCyber
         - WelderCyber
+
+# Mining (cargo)
+
+- type: entity
+  id: LeftArmCyberCargoMining
+  name: "left mining arm"
+  parent: [PartCyber, BaseLeftArm]
+  components:
+  - type: BaseLayerId
+    layer: CyberLArmSteel
+  - type: BaseLayerIdToggled
+    layer: CyberLArmSteelMechwright
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "l_steel_arm"
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "l_steel_arm"
+  - type: LimbWithItems
+    action: ActionToggleCyberHandLeft
+    sound:
+      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    items:
+    - HandheldGPSBasic
+    - HandHeldMassScannerBorg
+    - RadioHandheldNF
+    - AppraisalTool
+    - MiningDrill
+    - MineralScannerUnpowered
+    - WeaponGrapplingGun
+
+- type: entity
+  id: RightArmCyberCargoMining
+  name: "right cargomining arm"
+  parent: [PartCyber, BaseRightArm]
+  components:
+  - type: BaseLayerId
+    layer: CyberRArmSteel
+  - type: BaseLayerIdToggled
+    layer: CyberRArmSteelMechwright
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "r_steel_arm"
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "r_steel_arm"
+  - type: LimbWithItems
+    action: ActionToggleCyberHandRight
+    sound:
+      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    items:
+    - HandheldGPSBasic
+    - HandHeldMassScannerBorg
+    - RadioHandheldNF
+    - AppraisalTool
+    - MiningDrill
+    - MineralScannerUnpowered
+    - WeaponGrapplingGun

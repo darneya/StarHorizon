@@ -177,6 +177,30 @@
     Steel: 550
     Silver: 100
     Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberCargoMining
+  result: LeftArmCyberCargoMining
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberCargoMining
+  result: RightArmCyberCargoMining
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+
 # IMPLANTS
 
 # Eye

@@ -51,6 +51,8 @@
   - RightArmCyberReaper
   - LeftArmCyberMechwright
   - RightArmCyberMechwright
+  - LeftArmCyberCargoMining
+  - RightArmCyberCargoMining
 
 - type: latheRecipePack
   id: StarlightSurgeryImplants

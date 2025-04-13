@@ -90,6 +90,8 @@
     - RightArmCyberReaper
     - LeftArmCyberMechwright
     - RightArmCyberMechwright
+    - LeftArmCyberCargoMining
+    - RightArmCyberCargoMining
   technologyPrerequisites:
     - CyberLimbsTech
 
