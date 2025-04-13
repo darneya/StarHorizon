@@ -390,7 +390,7 @@ public sealed class SurgeryBui : BoundUserInterface
         if (_window == null)
             return;
 
-        if (!_system.IsLyingDown(Owner))
+        if (_system.IsLyingDown(Owner))
         {
             _window.DisabledLabel.Visible = false;
             _window.DisabledPanel.Visible = false;

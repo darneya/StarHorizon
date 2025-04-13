@@ -29,7 +29,7 @@ public sealed partial class LimbSystem : SharedLimbSystem
             var @base = _prototype.Index(baseLayerStorage.Layer.Value);
             _humanoidAppearanceSystem.SetBaseLayerColor(body, layer.Value, @base.MatchSkin ? body.Comp.SkinColor : Color.White, true, body.Comp);
         }
-        _humanoidAppearanceSystem.SetLayersVisibility(body, layers, true);
+        _humanoidAppearanceSystem.SetLayersVisibility(body, layers, true, true, body.Comp);
     }
     private void RemoveLimbVisual(Entity<TransformComponent, HumanoidAppearanceComponent, BodyComponent> body, Entity<TransformComponent, MetaDataComponent, BodyPartComponent> limb)
     {
