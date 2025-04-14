@@ -234,11 +234,11 @@
         - WirecutterCyber
         - WelderCyber
 
-# Mining (cargo)
+# Astro (mining)
 
 - type: entity
-  id: LeftArmCyberCargoMining
-  name: "left mining arm"
+  id: LeftArmCyberAstro
+  name: "left astro arm"
   parent: [PartCyber, BaseLeftArm]
   components:
   - type: BaseLayerId
@@ -247,10 +247,10 @@
     layer: CyberLArmSteelMechwright
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "l_steel_arm"
+    state: "l_black_arm"
   - type: Icon
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "l_steel_arm"
+    state: "l_black_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandLeft
     sound:
@@ -259,14 +259,13 @@
     - HandheldGPSBasic
     - HandHeldMassScannerBorg
     - RadioHandheldNF
-    - AppraisalTool
-    - MiningDrill
     - MineralScannerUnpowered
-    - WeaponGrapplingGun
+    - Crowbar
+    - MiningDrill
 
 - type: entity
-  id: RightArmCyberCargoMining
-  name: "right cargomining arm"
+  id: RightArmCyberAstro
+  name: "right astro arm"
   parent: [PartCyber, BaseRightArm]
   components:
   - type: BaseLayerId
@@ -275,10 +274,10 @@
     layer: CyberRArmSteelMechwright
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "r_steel_arm"
+    state: "r_black_arm"
   - type: Icon
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "r_steel_arm"
+    state: "r_black_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandRight
     sound:
@@ -287,7 +286,106 @@
     - HandheldGPSBasic
     - HandHeldMassScannerBorg
     - RadioHandheldNF
-    - AppraisalTool
-    - MiningDrill
     - MineralScannerUnpowered
-    - WeaponGrapplingGun
+    - Crowbar
+    - MiningDrill
+
+# Garden (Hydroponics)
+
+- type: entity
+  id: LeftArmCyberGarden
+  name: "left garden arm"
+  parent: [PartCyber, BaseLeftArm]
+  components:
+  - type: BaseLayerId
+    layer: CyberLArmSteel
+  - type: BaseLayerIdToggled
+    layer: CyberLArmSteelMechwright
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "l_green_arm"
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "l_green_arm"
+  - type: LimbWithItems
+    action: ActionToggleCyberHandLeft
+    sound:
+      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    items:
+    - HydroponicsToolMiniHoe
+    - HydroponicsToolClippers
+    - HydroponicsToolScythe
+    - HydroponicsToolSpade
+    - HydroponicsToolHatchet
+
+- type: entity
+  id: RightArmCyberGarden
+  name: "right garden arm"
+  parent: [PartCyber, BaseRightArm]
+  components:
+  - type: BaseLayerId
+    layer: CyberRArmSteel
+  - type: BaseLayerIdToggled
+    layer: CyberRArmSteelMechwright
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "r_green_arm"
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "r_green_arm"
+  - type: LimbWithItems
+    action: ActionToggleCyberHandRight
+    sound:
+      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    items:
+    - HydroponicsToolMiniHoe
+    - HydroponicsToolClippers
+    - HydroponicsToolScythe
+    - HydroponicsToolSpade
+    - HydroponicsToolHatchet
+
+# Lazer (Combat)
+
+- type: entity
+  id: LeftArmCyberLazer
+  name: "left lazer arm"
+  parent: [PartCyber, BaseLeftArm]
+  components:
+  - type: BaseLayerId
+    layer: CyberLArmSteel
+  - type: BaseLayerIdToggled
+    layer: CyberLArmSteelMechwright
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "l_red_arm"
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "l_red_arm"
+  - type: LimbWithItems
+    action: ActionToggleCyberHandLeft
+    sound:
+      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    items:
+    - WeaponAntiqueLaser
+
+- type: entity
+  id: RightArmCyberLazer
+  name: "right lazer arm"
+  parent: [PartCyber, BaseRightArm]
+  components:
+  - type: BaseLayerId
+    layer: CyberRArmSteel
+  - type: BaseLayerIdToggled
+    layer: CyberRArmSteelMechwright
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "r_red_arm"
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "r_red_arm"
+  - type: LimbWithItems
+    action: ActionToggleCyberHandRight
+    sound:
+      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    items:
+    - WeaponAntiqueLaser

@@ -179,8 +179,8 @@
     Glass: 100
 
 - type: latheRecipe
-  id: LeftArmCyberCargoMining
-  result: LeftArmCyberCargoMining
+  id: LeftArmCyberAstro
+  result: LeftArmCyberAstro
   category: Cyberlimbs
   completetime: 10
   materials:
@@ -190,8 +190,8 @@
     Glass: 100
 
 - type: latheRecipe
-  id: RightArmCyberCargoMining
-  result: RightArmCyberCargoMining
+  id: RightArmCyberAstro
+  result: RightArmCyberAstro
   category: Cyberlimbs
   completetime: 10
   materials:
@@ -200,9 +200,29 @@
     Silver: 100
     Glass: 100
 
+- type: latheRecipe
+  id: LeftArmCyberGarden
+  result: LeftArmCyberGarden
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberGarden
+  result: RightArmCyberGarden
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
 
 # IMPLANTS
-
 # Eye
 
 - type: latheRecipe
