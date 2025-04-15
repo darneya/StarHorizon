@@ -43,7 +43,6 @@
     noRot: false
   - type: Pullable
   - type: DamageExaminable
-  - type: SurgeryTool
 
 - type: entity
   name: "storage item"

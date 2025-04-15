@@ -10,13 +10,13 @@
   components:
   - type: OrganEyes
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 5
-        Cellular: 5
-        Bloodloss: 5
-        Radiation: 5
-        Caustic: 5
+        Poison: -5
+        Cellular: -5
+        Bloodloss: -5
+        Radiation: -5
+        Caustic: -5
   - type: Damageable
     damageContainer: Biological
 
@@ -26,13 +26,13 @@
   components:
   - type: OrganTongue
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 5
-        Cellular: 5
-        Bloodloss: 5
-        Radiation: 5
-        Caustic: 5
+        Poison: -5
+        Cellular: -5
+        Bloodloss: -5
+        Radiation: -5
+        Caustic: -5
   - type: Damageable
     damageContainer: Biological
 
@@ -42,12 +42,12 @@
   components:
   - type: OrganAppendix
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 25
-        Cellular: 5
-        Bloodloss: 5
-        Radiation: 5
+        Poison: -25
+        Cellular: -5
+        Bloodloss: -5
+        Radiation: -5
   - type: Damageable
     damageContainer: Biological
 
@@ -66,12 +66,12 @@
   components:
   - type: OrganLungs
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Asphyxiation: 65
-        Cellular: 10
-        Bloodloss: 10
-        Radiation: 15
+        Asphyxiation: -65
+        Cellular: -10
+        Bloodloss: -10
+        Radiation: -15
   - type: Damageable
     damageContainer: Biological
 
@@ -81,13 +81,13 @@
   components:
   - type: OrganHeart
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Shock: 65
-        Cellular: 10
-        Bloodloss: 10
-        Caustic: 10
-        Radiation: 5
+        Shock: -65
+        Cellular: -10
+        Bloodloss: -10
+        Caustic: -10
+        Radiation: -5
   - type: Damageable
     damageContainer: Biological
 
@@ -97,13 +97,13 @@
   components:
   - type: OrganStomach
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 65
-        Cellular: 10
-        Bloodloss: 10
-        Caustic: 10
-        Radiation: 5
+        Poison: -65
+        Cellular: -10
+        Bloodloss: -10
+        Caustic: -10
+        Radiation: -5
   - type: Damageable
     damageContainer: Biological
 
@@ -113,13 +113,13 @@
   components:
   - type: OrganLiver
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 55
-        Cellular: 10
-        Bloodloss: 10
-        Caustic: 10
-        Radiation: 15
+        Poison: -55
+        Cellular: -10
+        Bloodloss: -10
+        Caustic: -10
+        Radiation: -15
   - type: Damageable
     damageContainer: Biological
 
@@ -129,13 +129,13 @@
   components:
   - type: OrganKidneys
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 5
-        Cellular: 10
-        Bloodloss: 10
-        Caustic: 10
-        Radiation: 5
-        Cold: 60
+        Poison: -5
+        Cellular: -10
+        Bloodloss: -10
+        Caustic: -10
+        Radiation: -5
+        Cold: -60
   - type: Damageable
     damageContainer: Biological

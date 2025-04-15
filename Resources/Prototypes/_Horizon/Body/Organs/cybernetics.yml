@@ -21,13 +21,13 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 80
-        Cellular: 10
-        Bloodloss: 20
-        Caustic: 10
-        Radiation: 10
+        Poison: -80
+        Cellular: -10
+        Bloodloss: -20
+        Caustic: -10
+        Radiation: -10
   - type: Metabolizer
     maxReagents: 4
 
@@ -56,7 +56,7 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
         Poison: 80
         Cellular: 15
@@ -90,13 +90,13 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 120
-        Cellular: 15
-        Bloodloss: 20
-        Caustic: 15
-        Radiation: 10
+        Poison: -120
+        Cellular: -15
+        Bloodloss: -20
+        Caustic: -15
+        Radiation: -10
   - type: Metabolizer
     maxReagents: 6
 
@@ -121,12 +121,12 @@
     - id: Gas
       rateModifier: 100.0
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Asphyxiation: 120
-        Cellular: 10
-        Bloodloss: 20
-        Radiation: 20
+        Asphyxiation: -120
+        Cellular: -10
+        Bloodloss: -20
+        Radiation: -20
   - type: SolutionContainerManager
     solutions:
       Lung:
@@ -152,12 +152,12 @@
     - id: Gas
       rateModifier: 50.0
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Asphyxiation: 90
-        Cellular: 15
-        Bloodloss: 20
-        Radiation: 25
+        Asphyxiation: -90
+        Cellular: -15
+        Bloodloss: -20
+        Radiation: -25
   - type: SolutionContainerManager
     solutions:
       Lung:
@@ -183,13 +183,13 @@
     - id: Gas
       rateModifier: 100.0
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 15
-        Asphyxiation: 80
-        Cellular: 10
-        Bloodloss: 15
-        Radiation: 20
+        Poison: -15
+        Asphyxiation: -80
+        Cellular: -10
+        Bloodloss: -15
+        Radiation: -20
   - type: SolutionContainerManager
     solutions:
       Lung:
@@ -215,13 +215,13 @@
     - id: Poison
     - id: Narcotic
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Shock: 80
-        Cellular: 10
-        Bloodloss: 20
-        Caustic: 10
-        Radiation: 10
+        Shock: -80
+        Cellular: -10
+        Bloodloss: -20
+        Caustic: -10
+        Radiation: -10
 
 - type: entity
   id: OrganCyberHeart
@@ -243,13 +243,13 @@
     - id: Poison
     - id: Narcotic
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Shock: 80
-        Cellular: 20
-        Bloodloss: 20
-        Caustic: 20
-        Radiation: 20
+        Shock: -80
+        Cellular: -20
+        Bloodloss: -20
+        Caustic: -20
+        Radiation: -20
 
 - type: entity
   id: OrganBioHeart
@@ -271,13 +271,13 @@
     - id: Poison
     - id: Narcotic
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Shock: 100
-        Cellular: 10
-        Bloodloss: 20
-        Caustic: 10
-        Radiation: 10
+        Shock: -100
+        Cellular: -10
+        Bloodloss: -20
+        Caustic: -10
+        Radiation: -10
 
 - type: entity
   id: OrganBsLiver
@@ -301,13 +301,13 @@
     - id: Alcohol
       rateModifier: 0.1
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 75
-        Cellular: 10
-        Bloodloss: 10
-        Caustic: 10
-        Radiation: 25
+        Poison: -75
+        Cellular: -10
+        Bloodloss: -10
+        Caustic: -10
+        Radiation: -25
 
 - type: entity
   id: OrganCyberLiver
@@ -331,13 +331,13 @@
     - id: Alcohol
       rateModifier: 0.2
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 75
-        Cellular: 10
-        Bloodloss: 10
-        Caustic: 10
-        Radiation: 25
+        Poison: -75
+        Cellular: -10
+        Bloodloss: -10
+        Caustic: -10
+        Radiation: -25
 
 - type: entity
   id: OrganBioLiver
@@ -361,13 +361,13 @@
     - id: Alcohol
       rateModifier: 0.2
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 75
-        Cellular: 10
-        Bloodloss: 10
-        Caustic: 10
-        Radiation: 25
+        Poison: -75
+        Cellular: -10
+        Bloodloss: -10
+        Caustic: -10
+        Radiation: -25
 
 - type: entity
   id: OrganBsKidneys
@@ -390,14 +390,14 @@
     metabolizerTypes: [Human]
     removeEmpty: true
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 5
-        Cellular: 10
-        Bloodloss: 10
-        Caustic: 10
-        Radiation: 5
-        Cold: 100
+        Poison: -5
+        Cellular: -10
+        Bloodloss: -10
+        Caustic: -10
+        Radiation: -5
+        Cold: -100
 
 - type: entity
   id: OrganCyberKidneys
@@ -420,14 +420,14 @@
     metabolizerTypes: [Human]
     removeEmpty: true
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 10
-        Cellular: 15
-        Bloodloss: 15
-        Caustic: 10
-        Radiation: 5
-        Cold: 80
+        Poison: -10
+        Cellular: -15
+        Bloodloss: -15
+        Caustic: -10
+        Radiation: -5
+        Cold: -80
 
 - type: entity
   id: OrganBioKidneys
@@ -450,11 +450,11 @@
     metabolizerTypes: [Arachnid]
     removeEmpty: true
   - type: OrganDamage
-    damage:
+    insertDamage:
       types:
-        Poison: 20
-        Cellular: 10
-        Bloodloss: 10
-        Caustic: 10
-        Radiation: 5
-        Cold: 80
+        Poison: -20
+        Cellular: -10
+        Bloodloss: -10
+        Caustic: -10
+        Radiation: -5
+        Cold: -80
