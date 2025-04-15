@@ -55,10 +55,17 @@
   - RightArmCyberAstro
   - LeftArmCyberGarden
   - RightArmCyberGarden
+  - LeftArmCyberEngi
+  - RightArmCyberEngi
+  - LeftArmCyberAtmos
+  - RightArmCyberAtmos
+  - LeftArmCyberLazer
+  - RightArmCyberLazer
 
 - type: latheRecipePack
   id: StarlightSurgeryImplants
   recipes:
   - EyeImplantWelding
   - EyeImplantMedical
+  - EyeImplantChemical
   - EyeImplantSecurity

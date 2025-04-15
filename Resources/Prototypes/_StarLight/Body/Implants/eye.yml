@@ -21,9 +21,9 @@
   - type: Sprite
     state: eye_implant_welding
   - type: FunctionalOrgan
-    comps: 
+    comps:
     - type: EyeProtection
-    
+
 # needs arguments system
 #- type: entity
 #  id: EyeImplantDiagnostic
@@ -34,7 +34,7 @@
 #  - type: Sprite
 #    state: eye_implant_diagnostic
 #  - type: FunctionalOrgan
-#    comps: 
+#    comps:
 #    - type: ShowHealthBars
 #      damageContainers:
 #      - Inorganic
@@ -49,10 +49,22 @@
   - type: Sprite
     state: eye_implant_medical
   - type: FunctionalOrgan
-    comps: 
+    comps:
     - type: ShowHealthBars
     - type: ShowHealthIcons
-    
+
+- type: entity
+  id: EyeImplantChemical
+  name: Chemical Implant
+  description: Enables you to see information about chemical compound without chemical glasses.
+  parent: BaseEntityEyeImplant
+  components:
+  - type: Sprite
+    state: eye_implant_medical
+  - type: FunctionalOrgan
+    comps:
+    - type: SolutionScanner
+
 - type: entity
   id: EyeImplantSecurity
   name: Security Implant
@@ -62,7 +74,7 @@
   - type: Sprite
     state: eye_implant_security
   - type: FunctionalOrgan
-    comps: 
+    comps:
     - type: ShowJobIcons
     - type: ShowMindShieldIcons
     - type: ShowCriminalRecordIcons
@@ -76,7 +88,7 @@
   - type: Sprite
     state: eye_implant_syndicate
   - type: FunctionalOrgan
-    comps: 
+    comps:
     - type: ShowHealthBars
     - type: ShowHealthIcons
     - type: ShowJobIcons

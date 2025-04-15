@@ -222,6 +222,72 @@
     Silver: 100
     Glass: 100
 
+- type: latheRecipe
+  id: LeftArmCyberLazer
+  result: LeftArmCyberLazer
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberLazer
+  result: RightArmCyberLazer
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberEngi
+  result: LeftArmCyberEngi
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberEngi
+  result: RightArmCyberEngi
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberAtmos
+  result: LeftArmCyberAtmos
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberAtmos
+  result: RightArmCyberAtmos
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
 # IMPLANTS
 # Eye
 
@@ -239,6 +305,16 @@
 - type: latheRecipe
   id: EyeImplantMedical
   result: EyeImplantMedical
+  category: Implants
+  completetime: 4
+  materials:
+    Steel: 200
+    Plasma: 300
+    Glass: 100
+
+- type: latheRecipe
+  id: EyeImplantChemical
+  result: EyeImplantChemical
   category: Implants
   completetime: 4
   materials:
@@ -281,22 +357,22 @@
 
 # Automenders
 
-- type: latheRecipe
-  id: AutoMenderBrute
-  result: AutoMenderBrute
-  category: Tools
-  completetime: 4
-  materials:
-    Plastic: 200
-    Steel: 100
-    Silver: 50
+#- type: latheRecipe
+#  id: AutoMenderBrute
+#  result: AutoMenderBrute
+#  category: Tools
+#  completetime: 4
+#  materials:
+#    Plastic: 200
+#    Steel: 100
+#    Silver: 50
 
-- type: latheRecipe
-  id: AutoMenderBurn
-  result: AutoMenderBurn
-  category: Tools
-  completetime: 4
-  materials:
-    Plastic: 200
-    Steel: 100
-    Silver: 50
+#- type: latheRecipe
+#  id: AutoMenderBurn
+#  result: AutoMenderBurn
+#  category: Tools
+#  completetime: 4
+#  materials:
+#    Plastic: 200
+#    Steel: 100
+#    Silver: 50

@@ -234,6 +234,122 @@
         - WirecutterCyber
         - WelderCyber
 
+# TechPriest (Engineering)
+
+- type: entity
+  id: LeftArmCyberEngi
+  name: "left techpriest arm"
+  parent: [PartCyber, BaseLeftArm]
+  components:
+  - type: BaseLayerId
+    layer: CyberLArmSteel
+  - type: BaseLayerIdToggled
+    layer: CyberLArmSteelMechwright
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "l_steel_arm"
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "l_steel_arm"
+  - type: LimbWithItems
+    action: ActionToggleCyberHandLeft
+    sound:
+      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    items:
+    - Multitool
+    - WelderIndustrial
+    - MaintenanceJack
+    - JawsOfLife
+    - PowerDrill
+    - MaintenanceJack
+
+- type: entity
+  id: RightArmCyberEngi
+  name: "right techpriest arm"
+  parent: [PartCyber, BaseRightArm]
+  components:
+  - type: BaseLayerId
+    layer: CyberRArmSteel
+  - type: BaseLayerIdToggled
+    layer: CyberRArmSteelMechwright
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "r_steel_arm"
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "r_steel_arm"
+  - type: LimbWithItems
+    action: ActionToggleCyberHandRight
+    sound:
+      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    items:
+    - Multitool
+    - WelderIndustrial
+    - MaintenanceJack
+    - JawsOfLife
+    - PowerDrill
+    - MaintenanceJack
+
+# PlasmaScience (Atmossian)
+
+- type: entity
+  id: LeftArmCyberAtmos
+  name: "left plasmascience arm"
+  parent: [PartCyber, BaseLeftArm]
+  components:
+  - type: BaseLayerId
+    layer: CyberLArmSteel
+  - type: BaseLayerIdToggled
+    layer: CyberLArmSteelMechwright
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "l_steel_arm"
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "l_steel_arm"
+  - type: LimbWithItems
+    action: ActionToggleCyberHandLeft
+    sound:
+      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    items:
+    - Multitool
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - MaintenanceJack
+    - GasAnalyzer
+    - GeigerCounter
+
+- type: entity
+  id: RightArmCyberAtmos
+  name: "right plasmascience arm"
+  parent: [PartCyber, BaseRightArm]
+  components:
+  - type: BaseLayerId
+    layer: CyberRArmSteel
+  - type: BaseLayerIdToggled
+    layer: CyberRArmSteelMechwright
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "r_steel_arm"
+  - type: Icon
+    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    state: "r_steel_arm"
+  - type: LimbWithItems
+    action: ActionToggleCyberHandRight
+    sound:
+      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+    items:
+    - Multitool
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - MaintenanceJack
+    - GasAnalyzer
+    - GeigerCounter
+
 # Astro (mining)
 
 - type: entity
@@ -247,10 +363,10 @@
     layer: CyberLArmSteelMechwright
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "l_black_arm"
+    state: "l_steel_arm"
   - type: Icon
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "l_black_arm"
+    state: "l_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandLeft
     sound:
@@ -274,10 +390,10 @@
     layer: CyberRArmSteelMechwright
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "r_black_arm"
+    state: "r_steel_arm"
   - type: Icon
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "r_black_arm"
+    state: "r_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandRight
     sound:
@@ -303,10 +419,10 @@
     layer: CyberLArmSteelMechwright
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "l_green_arm"
+    state: "l_steel_arm"
   - type: Icon
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "l_green_arm"
+    state: "l_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandLeft
     sound:
@@ -329,10 +445,10 @@
     layer: CyberRArmSteelMechwright
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "r_green_arm"
+    state: "r_steel_arm"
   - type: Icon
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "r_green_arm"
+    state: "r_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandRight
     sound:
@@ -357,10 +473,10 @@
     layer: CyberLArmSteelMechwright
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "l_red_arm"
+    state: "l_steel_arm"
   - type: Icon
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "l_red_arm"
+    state: "l_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandLeft
     sound:
@@ -379,10 +495,10 @@
     layer: CyberRArmSteelMechwright
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "r_red_arm"
+    state: "r_steel_arm"
   - type: Icon
     sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
-    state: "r_red_arm"
+    state: "r_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandRight
     sound:

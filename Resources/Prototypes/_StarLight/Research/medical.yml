@@ -71,6 +71,7 @@
     - EyeImplantWelding
     - EyeImplantMedical
     - EyeImplantSecurity
+    - EyeImplantChemical
   technologyPrerequisites:
     - CyberLimbsTech
 
@@ -84,7 +85,7 @@
     state: cyber-hand-left
   discipline: Biochemical
   tier: 3
-  cost: 9320
+  cost: 15000
   recipeUnlocks:
     - LeftArmCyberReaper
     - RightArmCyberReaper
@@ -96,6 +97,40 @@
     - RightArmCyberGarden
   technologyPrerequisites:
     - CyberLimbsTech
+
+- type: technology
+  id: FunctionalCombatLimbsTech
+  name: research-technology-functional-combatlimbs
+  icon:
+    sprite: _Starlight/Interface/Actions/actions_cyber.rsi
+    state: cyber-hand-left
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - LeftArmCyberLazer
+  - RightArmCyberLazer
+  technologyPrerequisites:
+  - CyberLimbsTech
+  - PortableMicrofusionWeaponry
+
+- type: technology
+  id: FunctionalEngineeringLimbsTech
+  name: research-technology-functional-engineeringlimbs
+  icon:
+    sprite: _Starlight/Interface/Actions/actions_cyber.rsi
+    state: cyber-hand-left
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - LeftArmCyberEngi
+  - RightArmCyberEngi
+  - LeftArmCyberAtmos
+  - RightArmCyberAtmos
+  technologyPrerequisites:
+  - CyberLimbsTech
+  - RapidConstruction
 
 #- type: technology
 #  id: CyberEyeNightVision
