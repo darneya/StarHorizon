@@ -65,5 +65,7 @@ public sealed partial class FunctionalOrganComponent : Component
 public sealed partial class OrganDamageComponent : Component
 {
     [DataField]
-    public DamageSpecifier? Damage;
+    public DamageSpecifier? InsertDamage;
+    [DataField]
+    public DamageSpecifier? RemoveDamage;
 }

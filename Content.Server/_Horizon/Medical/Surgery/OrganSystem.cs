@@ -58,23 +58,21 @@ public sealed class OrganSystem : EntitySystem
 
     private void OnOrganImplanted(Entity<DamageableComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {
-        if (!TryComp<DamageableComponent>(args.Body, out var bodyDamageable))
+        if (!TryComp<OrganDamageComponent>(ent.Owner, out var damageRule)
+            || damageRule.InsertDamage is null
+            || !TryComp<DamageableComponent>(args.Body, out var bodyDamageable))
             return;
 
-        var change = _damageableSystem.TryChangeDamage(args.Body, ent.Comp.Damage, true, false, bodyDamageable);
-        if (change is not null)
-            _damageableSystem.TryChangeDamage(ent.Owner, change.Invert(), true, false, ent.Comp);
+        _damageableSystem.TryChangeDamage(args.Body, damageRule.InsertDamage, true, false, bodyDamageable);
     }
     private void OnOrganExtracted(Entity<DamageableComponent> ent, ref SurgeryOrganExtracted args)
     {
         if (!TryComp<OrganDamageComponent>(ent.Owner, out var damageRule)
-         || damageRule.Damage is null
+         || damageRule.RemoveDamage is null
          || !TryComp<DamageableComponent>(args.Body, out var bodyDamageable))
             return;
 
-        var change = _damageableSystem.TryChangeDamage(args.Body, damageRule.Damage.Invert(), true, false, bodyDamageable);
-        if (change is not null)
-            _damageableSystem.TryChangeDamage(ent.Owner, change.Invert(), true, false, ent.Comp);
+        _damageableSystem.TryChangeDamage(args.Body, damageRule.RemoveDamage, true, false, bodyDamageable);
     }
 
     /*
