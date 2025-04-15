@@ -57,7 +57,10 @@ public sealed partial class OrganVisualizationComponent : Component
 public sealed partial class FunctionalOrganComponent : Component
 {
     [DataField("comps")]
-    public ComponentRegistry? Components;
+    public ComponentRegistry? ComponentsToAdd;
+
+    [DataField]
+    public ComponentRegistry? ChangeFields;
 }
 
 

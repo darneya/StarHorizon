@@ -12,7 +12,6 @@ public sealed class OrganSystem : EntitySystem
 
     [Dependency] private readonly BlindableSystem _blindable = null!;
     [Dependency] private readonly DamageableSystem _damageableSystem = null!;
-    [Dependency] private readonly IComponentFactory _compFactory = null!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = null!;
 
     public override void Initialize()
@@ -38,20 +37,14 @@ public sealed class OrganSystem : EntitySystem
 
     private void OnFunctionalOrganImplanted(Entity<FunctionalOrganComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {
-        foreach (var comp in (ent.Comp.Components ?? []).Values)
-        {
-            if (!EntityManager.HasComponent(args.Body, comp.Component.GetType()))
-                EntityManager.AddComponent(args.Body, _compFactory.GetComponent(comp.Component.GetType()));
-        }
+        if (ent.Comp.ComponentsToAdd is not null)
+            EntityManager.AddComponents(args.Body, ent.Comp.ComponentsToAdd);
     }
 
     private void OnFunctionalOrganExtracted(Entity<FunctionalOrganComponent> ent, ref SurgeryOrganExtracted args)
     {
-        foreach (var comp in (ent.Comp.Components ?? []).Values)
-        {
-            if (EntityManager.HasComponent(args.Body, comp.Component.GetType()))
-                EntityManager.RemoveComponent(args.Body, _compFactory.GetComponent(comp.Component.GetType()));
-        }
+        if (ent.Comp.ComponentsToAdd is not null)
+            EntityManager.RemoveComponents(args.Body, ent.Comp.ComponentsToAdd);
     }
 
     //
