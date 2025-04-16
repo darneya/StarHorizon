@@ -22,7 +22,7 @@
   - type: Appearance
   - type: Tag
     tags:
-    - MechEquipmentSec
+    - MechEquipmentSecCC
   - type: MechEquipment
 
 - type: entity
@@ -47,7 +47,7 @@
   - type: Appearance
   - type: Tag
     tags:
-    - MechEquipmentSec
+    - MechEquipmentSecCC
   - type: MechEquipment
 
 - type: entity
@@ -72,7 +72,7 @@
   - type: Appearance
   - type: Tag
     tags:
-    - MechEquipmentSec
+    - MechEquipmentSecCC
   - type: MechEquipment
 
 - type: entity
@@ -100,5 +100,5 @@
     lifetime: 1
   - type: Tag
     tags:
-    - MechEquipmentSec
+    - MechEquipmentSecCC
   - type: MechEquipment

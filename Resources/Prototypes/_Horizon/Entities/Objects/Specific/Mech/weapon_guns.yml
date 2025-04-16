@@ -87,6 +87,9 @@
   - type: HitscanMechAmmoProvider
     proto: RedLaser # Heat 14
     fireCost: 15
+  - type: Tag
+    tags:
+    - MechEquipmentSecLLazer
 
 - type: entity
   name: CH-LC "Solaris" Laser Cannon
@@ -104,6 +107,9 @@
   - type: HitscanMechAmmoProvider
     proto: RedHeavyLaser # Heat 28
     fireCost: 30
+  - type: Tag
+    tags:
+    - MechEquipmentSecHLazer
 
 - type: entity
   name: eZ-13 mk2 Heavy pulse rifle
@@ -124,6 +130,9 @@
   - type: HitscanMechAmmoProvider
     proto: Pulse # Heat 35
     fireCost: 50
+  - type: Tag
+    tags:
+    - MechEquipmentSecExperim
 
 - type: entity
   name: x-ray cannon
@@ -144,6 +153,9 @@
   - type: HitscanMechAmmoProvider
     proto: XrayLaser # Heat: 10 Radiation: 10
     fireCost: 40
+  - type: Tag
+    tags:
+    - MechEquipmentSecExperim
 
 - type: entity
   name: disabler "Peacemaker"
@@ -164,6 +176,9 @@
   - type: BatteryMechAmmoProvider
     proto: BulletDisabler # Stamina 30, Heat 5
     fireCost: 30
+  - type: Tag
+    tags:
+    - MechEquipmentSecLLazer
 
 - type: entity
   name: MKI Tesla Cannon
@@ -187,6 +202,9 @@
   - type: BatteryMechAmmoProvider
     proto: TeslaGunBullet
     fireCost: 100
+  - type: Tag
+    tags:
+    - MechEquipmentSecHLazer
 
 # Огнестрел
 
@@ -217,6 +235,9 @@
     ui: !type:MechGunUi
   - type: StaticPrice
     price: 500
+  - type: Tag
+    tags:
+    - MechEquipmentSecLKinetic
 
 - type: entity
   name: Ultra AC 2
@@ -243,6 +264,9 @@
     reloadTime: 5
   - type: UIFragment
     ui: !type:MechGunUi
+  - type: Tag
+    tags:
+    - MechEquipmentSecLKinetic
 
 - type: entity
   name: FNX-99 "Hades" Carbine
@@ -270,6 +294,9 @@
     reloadTime: 5
   - type: UIFragment
     ui: !type:MechGunUi
+  - type: Tag
+    tags:
+    - MechEquipmentSecLKinetic
 
 - type: entity
   name: mHAR-21 "Ma Deuce" Heavy Antimaterial Rifle
@@ -296,6 +323,9 @@
     ammoType: sniper
   - type: UIFragment
     ui: !type:MechGunUi
+  - type: Tag
+    tags:
+    - MechEquipmentSecHKinetic
 
 - type: entity
   name: SGL-6 Grenade Launcher
@@ -323,6 +353,9 @@
     reloadTime: 5
   - type: UIFragment
     ui: !type:MechGunUi
+  - type: Tag
+    tags:
+    - MechEquipmentSecHKinetic
 
 # Ракетницы
 
@@ -352,6 +385,9 @@
     reloadTime: 5
   - type: UIFragment
     ui: !type:MechGunUi
+  - type: Tag
+    tags:
+    - MechEquipmentSecMissile
 
 - type: entity
   name: SRM-8 Frag Missile Rack
@@ -379,6 +415,9 @@
     reloadTime: 5
   - type: UIFragment
     ui: !type:MechGunUi
+  - type: Tag
+    tags:
+    - MechEquipmentSecMissile
 
 - type: entity
   name: SRM-8 Ignition Missile Rack
@@ -406,6 +445,9 @@
     reloadTime: 5
   - type: UIFragment
     ui: !type:MechGunUi
+  - type: Tag
+    tags:
+    - MechEquipmentSecMissile
 
 # Протокинеты
 
@@ -428,8 +470,7 @@
     fireCost: 3
   - type: Tag
     tags:
-    - MechEquipmentSec
-    - MechEquipmentIndustrial
+    - MechEquipmentSecProt
 
 - type: entity
   name: Mech PKA Heavy
@@ -450,5 +491,4 @@
     fireCost: 5
   - type: Tag
     tags:
-    - MechEquipmentSec
-    - MechEquipmentIndustrial
+    - MechEquipmentSecProt

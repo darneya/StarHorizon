@@ -52,14 +52,15 @@
     maxContents: 4
     grabDelay: 3
     grabEnergyDelta: -20
-  - type: Tag
-    tags:
-    - SmallMech
   - type: UIFragment
     ui: !type:MechGrabberUi
   - type: ContainerContainer
     containers:
       item-container: !type:Container
+  - type: Tag
+    tags:
+    - MechEquipmentGeneral # Horizon Mech
+    - SmallMech
 
 - type: entity
   id: MechEquipmentHorn

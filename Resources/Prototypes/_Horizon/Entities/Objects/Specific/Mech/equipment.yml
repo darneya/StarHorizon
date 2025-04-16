@@ -33,8 +33,7 @@
   - type: MechGun
   - type: Tag
     tags:
-      - MechEquipmentSec
-      - MechEquipmentIndustrial
+      - MechEquipmentMining
 
 - type: entity
   name: противоударная броня меха
@@ -153,7 +152,7 @@
         Piercing: 30
   - type: Tag
     tags:
-      - MechEquipmentIndustrial
+      - MechEquipmentMining
 
 - type: entity
   name: алмазный бур
@@ -173,7 +172,7 @@
     drillSpeedMultilire: 80
   - type: Tag
     tags:
-      - MechEquipmentIndustrial
+      - MechEquipmentMining
 
 - type: entity
   name: plasma reactor
