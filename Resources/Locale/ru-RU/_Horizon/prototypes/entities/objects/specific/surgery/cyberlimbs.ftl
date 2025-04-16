@@ -1,13 +1,13 @@
 ent-PartCyber = кибернетическая часть тела
 
-ent-LeftArmCyber = кибернетическая левая рука
-ent-RightArmCyber = кибернетическая правая рука
-ent-LeftHandCyber = кибернетическая левая кисть
-ent-RightHandCyber = кибернетическая правая кисть
-ent-LeftLegCyber = кибернетическая левая нога
-ent-RightLegCyber = кибернетическая правая нога
-ent-LeftFootCyber = кибернетическая левая стопа
-ent-RightFootCyber = кибернетическая правая стопа
+ent-LeftArmCyber = левая рука (кибер)
+ent-RightArmCyber = правая рука (кибер)
+ent-LeftHandCyber = левая кисть (кибер)
+ent-RightHandCyber = правая кисть (кибер)
+ent-LeftLegCyber = левая нога (кибер)
+ent-RightLegCyber = правая нога (кибер)
+ent-LeftFootCyber = левая стопа (кибер)
+ent-RightFootCyber = правая стопа (кибер)
 
 # Реапер (Хирургия)
 ent-LeftArmCyberReaper = левая рука "Жнец"
@@ -21,17 +21,17 @@ ent-RightArmCyberMechwright = правая рука "Механик"
 ent-LeftArmCyberEngi = левая рука "Техножрец"
 ent-RightArmCyberEngi = правая рука "Техножрец"
 
-# Плазмотехник (Атмосферные системы)
-ent-LeftArmCyberAtmos = левая рука "Плазмотехник"
-ent-RightArmCyberAtmos = правая рука "Плазмотехник"
+# Атмос-техник (Атмосферные системы)
+ent-LeftArmCyberAtmos = левая рука "Атмос-техник"
+ent-RightArmCyberAtmos = правая рука "Атмос-техник"
 
-# Астро (Горное дело)
-ent-LeftArmCyberAstro = левая рука "Астро"
-ent-RightArmCyberAstro = правая рука "Астро"
+# Старатель (Горное дело)
+ent-LeftArmCyberAstro = левая рука "Старатель"
+ent-RightArmCyberAstro = правая рука "Старатель"
 
 # Гидропоник (Ботаника)
-ent-LeftArmCyberGarden = левая рука "Гидропоник"
-ent-RightArmCyberGarden = правая рука "Гидропоник"
+ent-LeftArmCyberGarden = левая рука "Садовник"
+ent-RightArmCyberGarden = правая рука "Садовник"
 
 # Лазер (Боевое)
 ent-LeftArmCyberLazer = левая рука "Лазер"
