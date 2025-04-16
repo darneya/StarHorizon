@@ -58,11 +58,11 @@
   - type: OrganDamage
     insertDamage:
       types:
-        Poison: 80
-        Cellular: 15
-        Bloodloss: 20
-        Caustic: 15
-        Radiation: 10
+        Poison: -80
+        Cellular: -15
+        Bloodloss: -20
+        Caustic: -15
+        Radiation: -10
   - type: Metabolizer
     maxReagents: 4
     updateInterval: 0.5
