@@ -36,3 +36,14 @@ ent-RightArmCyberGarden = правая рука "Гидропоник"
 # Лазер (Боевое)
 ent-LeftArmCyberLazer = левая рука "Лазер"
 ent-RightArmCyberLazer = правая рука "Лазер"
+
+ent-WrenchCyber = гаечный ключ
+    .desc = Обычный инструмент для сборки и разборки. Помни: налево закручивай, направо откручивай.
+ent-ScrewdriverCyber = отвёртка
+    .desc = Промышленный крутящий момент в компактной отвёртке.
+ent-CrowbarCyber = лом
+    .desc = Против него нет приема!
+ent-WirecutterCyber = кусачки
+    .desc = Это убивает провод.
+ent-WelderCyber = сварочный аппарат
+    .desc = Плавит всё, что имеет топливо, не забудьте защитные очки!
