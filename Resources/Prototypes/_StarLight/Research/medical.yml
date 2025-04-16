@@ -22,7 +22,7 @@
   id: CyberLimbsTech
   name: research-technology-basic-cyberlimbs
   icon:
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: icon
   discipline: Biochemical
   tier: 1
@@ -62,7 +62,7 @@
   id: CyberImplantsTech
   name: research-technology-basic-eye-implants
   icon:
-    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     state: eye_implant_welding
   discipline: Biochemical
   tier: 2
@@ -81,7 +81,7 @@
   id: FunctionalCyberLimbsTech
   name: research-technology-functional-cyberlimbs
   icon:
-    sprite: _Starlight/Interface/Actions/actions_cyber.rsi
+    sprite: _Horizon/Interface/Actions/actions_cyber.rsi
     state: cyber-hand-left
   discipline: Biochemical
   tier: 3
@@ -102,7 +102,7 @@
   id: FunctionalCombatLimbsTech
   name: research-technology-functional-combatlimbs
   icon:
-    sprite: _Starlight/Interface/Actions/actions_cyber.rsi
+    sprite: _Horizon/Interface/Actions/actions_cyber.rsi
     state: cyber-hand-left
   discipline: Biochemical
   tier: 3
@@ -118,7 +118,7 @@
   id: FunctionalEngineeringLimbsTech
   name: research-technology-functional-engineeringlimbs
   icon:
-    sprite: _Starlight/Interface/Actions/actions_cyber.rsi
+    sprite: _Horizon/Interface/Actions/actions_cyber.rsi
     state: cyber-hand-left
   discipline: Biochemical
   tier: 3
@@ -136,7 +136,7 @@
 #  id: CyberEyeNightVision
 #  name: research-technology-nightvision-eyes
 #  icon:
-#    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+#    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
 #    state: eyes_night
 #  discipline: Biochemical
 #  tier: 3
@@ -150,7 +150,7 @@
 #  id: CyberEyeThermalVision
 #  name: research-technology-thermalvision-eyes
 #  icon:
-#    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+#    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
 #    state: eyes_thermal
 #  discipline: Biochemical
 #  tier: 3
