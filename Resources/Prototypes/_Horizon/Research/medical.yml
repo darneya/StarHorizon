@@ -1,5 +1,79 @@
 # Tier 1
+
+- type: technology
+  id: SurgeryTech
+  name: research-technology-basic-surgery
+  icon:
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+  discipline: Biochemical
+  tier: 1
+  cost: 4000
+  recipeUnlocks:
+    - BoneSetter
+    - BoneGel
+    - Scalpel
+    - Retractor
+    - Cautery
+    - Saw
+    - Hemostat
+
+- type: technology
+  id: CyberLimbsTech
+  name: research-technology-basic-cyberlimbs
+  icon:
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
+    state: icon
+  discipline: Biochemical
+  tier: 1
+  cost: 4000
+  recipeUnlocks:
+    - LeftArmCyber
+    - RightArmCyber
+    - LeftHandCyber
+    - RightHandCyber
+    - LeftLegCyber
+    - RightLegCyber
+    - LeftFootCyber
+    - RightFootCyber
+
 # Tier 2
+
+- type: technology
+  id: SurgeryTechAdvanced
+  name: research-technology-advanced-surgery
+  icon:
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: advanced
+  discipline: Biochemical
+  tier: 2
+  cost: 7000
+  recipeUnlocks:
+    - Drill
+    - SawAdvanced
+    - ScalpelAdvanced
+    - BoneSetterAdvanced
+    - RetractorAdvanced
+    - HemostatAdvanced
+  technologyPrerequisites:
+    - SurgeryTech
+
+- type: technology
+  id: CyberImplantsTech
+  name: research-technology-basic-eye-implants
+  icon:
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: eye_implant_welding
+  discipline: Biochemical
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+    - EyeImplantWelding
+    - EyeImplantMedical
+    - EyeImplantSecurity
+    - EyeImplantChemical
+  technologyPrerequisites:
+    - CyberLimbsTech
 
 - type: technology
   id: OdysseusTechnology
@@ -117,6 +191,89 @@
   - CyberImplantsTech
 
 # Tier 3
+
+- type: technology
+  id: FunctionalCyberLimbsTech
+  name: research-technology-functional-cyberlimbs
+  icon:
+    sprite: _Horizon/Interface/Actions/actions_cyber.rsi
+    state: cyber-hand-left
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+    - LeftArmCyberReaper
+    - RightArmCyberReaper
+    - LeftArmCyberMechwright
+    - RightArmCyberMechwright
+    - LeftArmCyberAstro
+    - RightArmCyberAstro
+    - LeftArmCyberGarden
+    - RightArmCyberGarden
+  technologyPrerequisites:
+    - CyberLimbsTech
+
+- type: technology
+  id: FunctionalCombatLimbsTech
+  name: research-technology-functional-combatlimbs
+  icon:
+    sprite: _Horizon/Interface/Actions/actions_cyber.rsi
+    state: cyber-hand-left
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - LeftArmCyberLazer
+  - RightArmCyberLazer
+  technologyPrerequisites:
+  - CyberLimbsTech
+  - PortableMicrofusionWeaponry
+
+- type: technology
+  id: FunctionalEngineeringLimbsTech
+  name: research-technology-functional-engineeringlimbs
+  icon:
+    sprite: _Horizon/Interface/Actions/actions_cyber.rsi
+    state: cyber-hand-left
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - LeftArmCyberEngi
+  - RightArmCyberEngi
+  - LeftArmCyberAtmos
+  - RightArmCyberAtmos
+  technologyPrerequisites:
+  - CyberLimbsTech
+  - RapidConstruction
+
+#- type: technology
+#  id: CyberEyeNightVision
+#  name: research-technology-nightvision-eyes
+#  icon:
+#    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+#    state: eyes_night
+#  discipline: Biochemical
+#  tier: 3
+#  cost: 7680
+#  recipeUnlocks:
+#    - EyeImplantNightVision
+#  technologyPrerequisites:
+#    - CyberImplantsTech
+#
+#- type: technology
+#  id: CyberEyeThermalVision
+#  name: research-technology-thermalvision-eyes
+#  icon:
+#    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+#    state: eyes_thermal
+#  discipline: Biochemical
+#  tier: 3
+#  cost: 9320
+#  recipeUnlocks:
+#    - EyeImplantThermal
+#  technologyPrerequisites:
+#    - CyberEyeNightVision
 
 - type: technology
   id: OdyssMechPaint
