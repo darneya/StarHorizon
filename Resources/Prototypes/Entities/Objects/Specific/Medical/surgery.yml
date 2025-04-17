@@ -35,9 +35,9 @@
       path: /Audio/Effects/lightburn.ogg
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/cautery1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/cautery1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/cautery2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/cautery2.ogg
   - type: Cautery
 
 - type: entity
@@ -46,14 +46,14 @@
   parent: Cautery
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
     state: cautery
   - type: SurgeryTool
     speed: 0.5
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/cautery1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/cautery1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/cautery2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/cautery2.ogg
 
 # Drill
 
@@ -81,7 +81,7 @@
     price: 40
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/saw.ogg
+      path: /Audio/_Horizon/Medical/Surgery/saw.ogg
   - type: SurgicalDrill
 
 - type: entity
@@ -90,12 +90,12 @@
   parent: Drill
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
     state: drill
   - type: SurgeryTool
     speed: 0.5
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/saw.ogg
+      path: /Audio/_Horizon/Medical/Surgery/saw.ogg
 
 # Scalpel
 
@@ -132,9 +132,9 @@
   - type: Scalpel
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: кибернетический скальпель
@@ -142,14 +142,14 @@
   parent: Scalpel
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
     state: scalpel
   - type: SurgeryTool
     speed: 0.2
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: заточка
@@ -164,9 +164,9 @@
   - type: SurgeryTool
     speed: 1.4
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: продвинутый скальпель
@@ -185,9 +185,9 @@
   - type: SurgeryTool
     speed: 0.6
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: лазерный скальпель
@@ -204,9 +204,9 @@
   - type: SurgeryTool
     speed: 0.3
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 # Scissors
 - type: entity
@@ -229,9 +229,9 @@
   - type: Retractor
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/retractor1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/retractor1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/retractor2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/retractor2.ogg
 
 - type: entity
   name: продвинутый ретрактор
@@ -247,9 +247,9 @@
   - type: SurgeryTool
     speed: 0.6
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/retractor1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/retractor1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/retractor2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/retractor2.ogg
 
 - type: entity
   name: кибернетический ретрактор
@@ -258,14 +258,14 @@
   description: A surgical tool used to hold open incisions.
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
     state: retractor
   - type: SurgeryTool
     speed: 0.4
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/retractor1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/retractor1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/retractor2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/retractor2.ogg
 
 - type: entity
   name: гемостат
@@ -280,7 +280,7 @@
     storedRotation: 90
   - type: SurgeryTool
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/hemostat1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/hemostat1.ogg
   - type: Hemostat
 
 - type: entity
@@ -294,7 +294,7 @@
   - type: SurgeryTool
     speed: 0.6
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/hemostat1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/hemostat1.ogg
 
 - type: entity
   name: кибернетический гемостат
@@ -303,12 +303,12 @@
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
     state: hemostat
   - type: SurgeryTool
     speed: 0.4
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/hemostat1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/hemostat1.ogg
 
 - type: entity
   name: костоправ
@@ -324,7 +324,7 @@
   - type: BoneSetter
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/bone_setter.ogg
+      path: /Audio/_Horizon/Medical/Surgery/bone_setter.ogg
 
 - type: entity
   name: продвинутый костоправ
@@ -344,7 +344,7 @@
   - type: SurgeryTool
     speed: 0.6
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/bone_setter.ogg
+      path: /Audio/_Horizon/Medical/Surgery/bone_setter.ogg
 
 - type: entity
   name: кибернетический костоправ
@@ -353,12 +353,12 @@
   description: A surgical tool used for setting bones. It also breaks them quite well.
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
     state: bonesetter
   - type: SurgeryTool
     speed: 0.4
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/bone_setter.ogg
+      path: /Audio/_Horizon/Medical/Surgery/bone_setter.ogg
 # Saws
 
 - type: entity
@@ -383,7 +383,7 @@
     - Sawing
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/bone_saw.ogg
+      path: /Audio/_Horizon/Medical/Surgery/bone_saw.ogg
   - type: BoneSaw
 
 # No melee for regular saw because have you ever seen someone use a band saw as a weapon? It's dumb.
@@ -410,7 +410,7 @@
   - type: SurgeryTool
     speed: 0.8
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/bone_saw.ogg
+      path: /Audio/_Horizon/Medical/Surgery/bone_saw.ogg
   - type: BoneSaw
 
 - type: entity
@@ -434,7 +434,7 @@
   - type: SurgeryTool
     speed: 0.5
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/saw.ogg
+      path: /Audio/_Horizon/Medical/Surgery/saw.ogg
     endSound:
       path: /Audio/Items/drill_hit.ogg
 
@@ -455,7 +455,7 @@
   - type: SurgeryTool
     speed: 0.2
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/saw.ogg
+      path: /Audio/_Horizon/Medical/Surgery/saw.ogg
     endSound:
       path: /Audio/Items/drill_hit.ogg
 
@@ -466,14 +466,14 @@
   description: You think you can cut anything with it.
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Specific/Medical/surgery.rsi
+    sprite: _Horizon/Objects/Specific/Medical/surgery.rsi
     state: saw
   - type: Tool
     speedModifier: 0.4
   - type: SurgeryTool
     speed: 0.1
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/saw.ogg
+      path: /Audio/_Horizon/Medical/Surgery/saw.ogg
     endSound:
       path: /Audio/Items/drill_hit.ogg
 

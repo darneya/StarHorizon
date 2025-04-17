@@ -5,7 +5,7 @@
   description: 'A common tool for assembly and disassembly. Remember: lefty latchy, righty removey.'
   components:
   - type: Sprite
-    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    sprite: _Horizon/Objects/Tools/cyberling.rsi
     state: wrench
   - type: MeleeWeapon
     wideAnimationRotation: 135
@@ -38,7 +38,7 @@
     tags:
     - Screwdriver
   - type: Sprite
-    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    sprite: _Horizon/Objects/Tools/cyberling.rsi
     state: screwdriver
   - type: MeleeWeapon
     wideAnimationRotation: -90
@@ -94,7 +94,7 @@
       Steel: 100
   - type: Prying
   - type: Sprite
-    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    sprite: _Horizon/Objects/Tools/cyberling.rsi
     state: crowbar
 
 - type: entity
@@ -111,7 +111,7 @@
     - PlantSampleTaker
     - Wirecutter
   - type: Sprite
-    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    sprite: _Horizon/Objects/Tools/cyberling.rsi
     state: cutters
   - type: MeleeWeapon
     wideAnimationRotation: -90
@@ -131,9 +131,9 @@
   - type: Scalpel
     successRate: 0.35
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 
 - type: entity
@@ -146,7 +146,7 @@
     sound:
       path: /Audio/Items/welder_drop.ogg
   - type: Sprite
-    sprite: _Starlight/Objects/Tools/cyberling.rsi
+    sprite: _Horizon/Objects/Tools/cyberling.rsi
     layers:
     - state: indwelder
     - state: indwelder-on

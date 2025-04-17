@@ -17,7 +17,7 @@
     itemIconStyle: BigItem
     useDelay: 1
     icon:
-      sprite: _Starlight/Interface/Actions/actions_cyber.rsi
+      sprite: _Horizon/Interface/Actions/actions_cyber.rsi
       state: cyber-hand-left
     event: !type:ToggleLimbEvent
 
@@ -30,6 +30,6 @@
     itemIconStyle: BigItem
     useDelay: 1
     icon:
-      sprite: _Starlight/Interface/Actions/actions_cyber.rsi
+      sprite: _Horizon/Interface/Actions/actions_cyber.rsi
       state: cyber-hand-right
     event: !type:ToggleLimbEvent

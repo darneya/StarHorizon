@@ -18,10 +18,10 @@
     - type: BaseLayerId
       layer: CyberLArm
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_arm"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_arm"
 
 - type: entity
@@ -32,10 +32,10 @@
     - type: BaseLayerId
       layer: CyberRArm
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_arm"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_arm"
 
 - type: entity
@@ -46,10 +46,10 @@
     - type: BaseLayerId
       layer: CyberLHand
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_hand"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_hand"
 
 - type: entity
@@ -60,10 +60,10 @@
     - type: BaseLayerId
       layer: CyberRHand
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_hand"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_hand"
 
 - type: entity
@@ -74,10 +74,10 @@
     - type: BaseLayerId
       layer: CyberLLeg
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_leg"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_leg"
 
 - type: entity
@@ -88,10 +88,10 @@
     - type: BaseLayerId
       layer: CyberRLeg
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_leg"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_leg"
 
 - type: entity
@@ -102,10 +102,10 @@
     - type: BaseLayerId
       layer: CyberLFoot
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_foot"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_foot"
 
 - type: entity
@@ -116,10 +116,10 @@
     - type: BaseLayerId
       layer: "CyberRFoot"
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_foot"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_foot"
 
 # Reaper (Surgery)
@@ -134,15 +134,15 @@
     - type: BaseLayerIdToggled
       layer: CyberLArmSilverReaper
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_silver_arm"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_silver_arm"
     - type: LimbWithItems
       action: ActionToggleCyberHandLeft
       sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+        path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
       items:
         - ScalpelCyber
         - RetractorCyber
@@ -162,15 +162,15 @@
     - type: BaseLayerIdToggled
       layer: CyberRArmSilverReaper
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_silver_arm"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_silver_arm"
     - type: LimbWithItems
       action: ActionToggleCyberHandRight
       sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+        path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
       items:
         - ScalpelCyber
         - RetractorCyber
@@ -192,15 +192,15 @@
     - type: BaseLayerIdToggled
       layer: CyberLArmSteelMechwright
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_steel_arm"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "l_steel_arm"
     - type: LimbWithItems
       action: ActionToggleCyberHandLeft
       sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+        path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
       items:
         - WrenchCyber
         - ScrewdriverCyber
@@ -218,15 +218,15 @@
     - type: BaseLayerIdToggled
       layer: CyberRArmSteelMechwright
     - type: Sprite
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_steel_arm"
     - type: Icon
-      sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+      sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
       state: "r_steel_arm"
     - type: LimbWithItems
       action: ActionToggleCyberHandRight
       sound:
-        path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+        path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
       items:
         - WrenchCyber
         - ScrewdriverCyber
@@ -246,15 +246,15 @@
   - type: BaseLayerIdToggled
     layer: CyberLArmSteelMechwright
   - type: Sprite
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "l_steel_arm"
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "l_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandLeft
     sound:
-      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
     - Multitool
     - WelderIndustrial
@@ -273,15 +273,15 @@
   - type: BaseLayerIdToggled
     layer: CyberRArmSteelMechwright
   - type: Sprite
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "r_steel_arm"
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "r_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandRight
     sound:
-      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
     - Multitool
     - WelderIndustrial
@@ -302,15 +302,15 @@
   - type: BaseLayerIdToggled
     layer: CyberLArmSteelMechwright
   - type: Sprite
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "l_steel_arm"
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "l_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandLeft
     sound:
-      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
     - Multitool
     - Crowbar
@@ -331,15 +331,15 @@
   - type: BaseLayerIdToggled
     layer: CyberRArmSteelMechwright
   - type: Sprite
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "r_steel_arm"
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "r_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandRight
     sound:
-      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
     - Multitool
     - Crowbar
@@ -362,15 +362,15 @@
   - type: BaseLayerIdToggled
     layer: CyberLArmSteelMechwright
   - type: Sprite
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "l_steel_arm"
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "l_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandLeft
     sound:
-      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
     - HandheldGPSBasic
     - HandHeldMassScannerBorg
@@ -389,15 +389,15 @@
   - type: BaseLayerIdToggled
     layer: CyberRArmSteelMechwright
   - type: Sprite
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "r_steel_arm"
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "r_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandRight
     sound:
-      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
     - HandheldGPSBasic
     - HandHeldMassScannerBorg
@@ -418,15 +418,15 @@
   - type: BaseLayerIdToggled
     layer: CyberLArmSteelMechwright
   - type: Sprite
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "l_steel_arm"
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "l_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandLeft
     sound:
-      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
     - HydroponicsToolMiniHoe
     - HydroponicsToolClippers
@@ -444,15 +444,15 @@
   - type: BaseLayerIdToggled
     layer: CyberRArmSteelMechwright
   - type: Sprite
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "r_steel_arm"
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "r_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandRight
     sound:
-      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
     - HydroponicsToolMiniHoe
     - HydroponicsToolClippers
@@ -472,15 +472,15 @@
   - type: BaseLayerIdToggled
     layer: CyberLArmSteelMechwright
   - type: Sprite
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "l_steel_arm"
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "l_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandLeft
     sound:
-      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
     - WeaponAntiqueLaser
 
@@ -494,14 +494,14 @@
   - type: BaseLayerIdToggled
     layer: CyberRArmSteelMechwright
   - type: Sprite
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "r_steel_arm"
   - type: Icon
-    sprite: _Starlight/Mobs/Species/Cyberlimbs/parts.rsi
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
     state: "r_steel_arm"
   - type: LimbWithItems
     action: ActionToggleCyberHandRight
     sound:
-      path: /Audio/_Starlight/Medical/Cyber/deploy.ogg
+      path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
     - WeaponAntiqueLaser

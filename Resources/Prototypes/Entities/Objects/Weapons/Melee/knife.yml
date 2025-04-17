@@ -31,9 +31,9 @@
   - type: SurgeryTool
     successRate: 0.9
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: kitchen knife
@@ -220,9 +220,9 @@
   - type: SurgeryTool
     successRate: 0.7
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: reinforced shiv

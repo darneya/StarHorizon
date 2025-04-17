@@ -94,9 +94,9 @@
   - type: SurgeryTool
     successRate: 0.6
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: energy dagger
@@ -165,9 +165,9 @@
   - type: SurgeryTool
     successRate: 0.6
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: pen
@@ -243,9 +243,9 @@
   - type: SurgeryTool
     successRate: 0.6
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   parent: [BaseItem, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
@@ -357,9 +357,9 @@
   - type: SurgeryTool
     successRate: 0.6
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 # Item will look weird in handslot. Will need to adjust handstorage visuals in a future PR
 - type: entity
@@ -427,6 +427,6 @@
   - type: SurgeryTool
     successRate: 0.6
     startSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel1.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Starlight/Medical/Surgery/scalpel2.ogg
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg

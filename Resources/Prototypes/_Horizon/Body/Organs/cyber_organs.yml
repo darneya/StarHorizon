@@ -21,7 +21,7 @@
 #  parent: [OrganCyber, BaseOrganEyes]
 #  components:
 #  - type: Sprite
-#    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+#    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
 #    state: eyes_night
 #  - type: FunctionalOrgan
 #    comps:
@@ -37,7 +37,7 @@
 #  parent: [OrganCyber, BaseOrganEyes]
 #  components:
 #  - type: Sprite
-#    sprite: _Starlight/Objects/Specific/Medical/implants.rsi
+#    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
 #    state: eyes_thermal
 #  - type: FunctionalOrgan
 #    comps:

@@ -10,13 +10,6 @@
   components:
   - type: OrganEyes
   - type: OrganDamage
-    insertDamage:
-      types:
-        Poison: -5
-        Cellular: -5
-        Bloodloss: -5
-        Radiation: -5
-        Caustic: -5
   - type: Damageable
     damageContainer: Biological
 
@@ -26,13 +19,6 @@
   components:
   - type: OrganTongue
   - type: OrganDamage
-    insertDamage:
-      types:
-        Poison: -5
-        Cellular: -5
-        Bloodloss: -5
-        Radiation: -5
-        Caustic: -5
   - type: Damageable
     damageContainer: Biological
 
@@ -42,12 +28,6 @@
   components:
   - type: OrganAppendix
   - type: OrganDamage
-    insertDamage:
-      types:
-        Poison: -25
-        Cellular: -5
-        Bloodloss: -5
-        Radiation: -5
   - type: Damageable
     damageContainer: Biological
 
