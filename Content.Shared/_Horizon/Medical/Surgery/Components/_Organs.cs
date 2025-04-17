@@ -1,4 +1,5 @@
-﻿using Content.Shared.Damage;
+﻿using Content.Shared._Horizon.Mech.Components;
+using Content.Shared.Damage;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.GameStates;
@@ -57,10 +58,13 @@ public sealed partial class OrganVisualizationComponent : Component
 public sealed partial class FunctionalOrganComponent : Component
 {
     [DataField("comps")]
-    public ComponentRegistry? ComponentsToAdd;
+    public ComponentRegistry? Components;
 
-    [DataField]
-    public ComponentRegistry? ChangeFields;
+    [DataField("speed")]
+    public float? IncreasedSpeed;
+
+    [DataField("armor")]
+    public DamageModifierSet? IncreasedArmor;
 }
 
 

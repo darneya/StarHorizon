@@ -1,18 +1,20 @@
-﻿using Content.Server.Humanoid;
+﻿using Content.Server._Horizon.Medical.Limbs;
+using Content.Server.Humanoid;
+using Content.Shared._Horizon.Medical.Surgery.Components;
+using Content.Shared._Horizon.Medical.Surgery.Events;
 using Content.Shared.Damage;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Speech.Muting;
-using Content.Shared._Horizon.Medical.Surgery.Events;
-using Content.Shared._Horizon.Medical.Surgery.Components;
 
 namespace Content.Server._Horizon.Medical.Surgery;
+
 public sealed class OrganSystem : EntitySystem
 {
-
     [Dependency] private readonly BlindableSystem _blindable = null!;
     [Dependency] private readonly DamageableSystem _damageableSystem = null!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = null!;
+    [Dependency] private readonly CyberLimbSystem _cyberLimbSystem = null!;
 
     public override void Initialize()
     {
@@ -37,14 +39,26 @@ public sealed class OrganSystem : EntitySystem
 
     private void OnFunctionalOrganImplanted(Entity<FunctionalOrganComponent> ent, ref SurgeryOrganImplantationCompleted args)
     {
-        if (ent.Comp.ComponentsToAdd is not null)
-            EntityManager.AddComponents(args.Body, ent.Comp.ComponentsToAdd);
+        if (ent.Comp.IncreasedSpeed is not null)
+            _cyberLimbSystem.IncreaseSpeed(args.Body, ent.Comp.IncreasedSpeed.Value);
+
+        if (ent.Comp.IncreasedArmor is not null)
+            _cyberLimbSystem.IncreaseArmor(args.Body, ent.Comp.IncreasedArmor);
+
+        if (ent.Comp.Components is not null)
+            EntityManager.AddComponents(args.Body, ent.Comp.Components, false);
     }
 
     private void OnFunctionalOrganExtracted(Entity<FunctionalOrganComponent> ent, ref SurgeryOrganExtracted args)
     {
-        if (ent.Comp.ComponentsToAdd is not null)
-            EntityManager.RemoveComponents(args.Body, ent.Comp.ComponentsToAdd);
+        if (ent.Comp.IncreasedSpeed is not null)
+            _cyberLimbSystem.IncreaseSpeed(args.Body, ent.Comp.IncreasedSpeed.Value, true);
+
+        if (ent.Comp.IncreasedArmor is not null )
+            _cyberLimbSystem.IncreaseArmor(args.Body, ent.Comp.IncreasedArmor, true);
+
+        if (ent.Comp.Components is not null)
+            EntityManager.RemoveComponents(args.Body, ent.Comp.Components);
     }
 
     //

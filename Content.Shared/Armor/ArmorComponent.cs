@@ -8,14 +8,14 @@ namespace Content.Shared.Armor;
 /// <summary>
 /// Used for clothing that reduces damage when worn.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedArmorSystem))]
+[RegisterComponent, AutoGenerateComponentState, NetworkedComponent, Access(typeof(SharedArmorSystem))] // _Horizon
 public sealed partial class ArmorComponent : Component
 {
     /// <summary>
     /// The damage reduction
     /// </summary>
-    [DataField(required: true)]
-    public DamageModifierSet Modifiers = default!;
+    [DataField(required: true), AutoNetworkedField] // _Horizon
+    public DamageModifierSet Modifiers = null!;
 
     /// <summary>
     /// A multiplier applied to the calculated point value
@@ -23,6 +23,9 @@ public sealed partial class ArmorComponent : Component
     /// </summary>
     [DataField]
     public float PriceMultiplier = 1;
+
+    [DataField, AutoNetworkedField]
+    public bool DoNotShowExamine; // _Horizon
 }
 
 /// <summary>
