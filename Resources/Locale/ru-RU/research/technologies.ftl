@@ -75,8 +75,7 @@ research-technology-basic-surgery = Базовая хирургия
 research-technology-advanced-surgery = Продвинутая хирургия
 
 research-technology-basic-eye-implants = Базовые глазные импланты
-research-technology-nightvision-eyes = Киберглаза ночного зрения
-research-technology-thermalvision-eyes = Киберглаза термального зрения
+research-technology-cyber-night-vision = Имплант ночного зрения
 
 research-technology-basic-cyberlimbs = Базовые кибернетические конечности
 research-technology-functional-cyberlimbs = Функциональные кибернетические конечности

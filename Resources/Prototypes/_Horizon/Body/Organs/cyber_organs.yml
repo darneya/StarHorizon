@@ -25,7 +25,7 @@
 #    state: eyes_night
 #  - type: FunctionalOrgan
 #    comps:
-#    - type: NightVision
+#    - type: PNV
 #  - type: OrganVisualization
 #    layer: Eyes
 #    prototype: CyberEyesNightVision

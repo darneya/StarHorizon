@@ -94,3 +94,19 @@
     - type: ShowMindShieldIcons
     - type: ShowCriminalRecordIcons
     - type: ShowSyndicateIcons
+
+- type: entity
+  id: EyeImplantNight
+  name: Nightvision Implant
+  description: Enables you tu see in the dark without glasses.
+  parent: BaseEntityEyeImplant
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: eyes_night
+  - type: FunctionalOrgan
+    comps:
+    - type: PNV
+  - type: OrganVisualization
+    layer: Eyes
+    prototype: CyberEyesNightVision
