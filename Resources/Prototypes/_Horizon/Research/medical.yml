@@ -72,6 +72,7 @@
     - EyeImplantMedical
     - EyeImplantSecurity
     - EyeImplantChemical
+    - EyeImplantNight
   technologyPrerequisites:
     - CyberLimbsTech
 
@@ -247,33 +248,20 @@
   - CyberLimbsTech
   - RapidConstruction
 
-#- type: technology
-#  id: CyberEyeNightVision
-#  name: research-technology-nightvision-eyes
-#  icon:
-#    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
-#    state: eyes_night
-#  discipline: Biochemical
-#  tier: 3
-#  cost: 7680
-#  recipeUnlocks:
-#    - EyeImplantNightVision
-#  technologyPrerequisites:
-#    - CyberImplantsTech
-#
-#- type: technology
-#  id: CyberEyeThermalVision
-#  name: research-technology-thermalvision-eyes
-#  icon:
-#    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
-#    state: eyes_thermal
-#  discipline: Biochemical
-#  tier: 3
-#  cost: 9320
-#  recipeUnlocks:
-#    - EyeImplantThermal
-#  technologyPrerequisites:
-#    - CyberEyeNightVision
+- type: technology
+  id: CyberImplantsNight
+  name: research-technology-cyber-night-vision
+  icon:
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: eyes_night
+  discipline: Biochemical
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - EyeImplantNight
+  technologyPrerequisites:
+  - CyberImplantsTech
+  - NightVisionTech
 
 - type: technology
   id: OdyssMechPaint

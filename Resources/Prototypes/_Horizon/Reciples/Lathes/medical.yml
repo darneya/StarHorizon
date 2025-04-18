@@ -332,17 +332,17 @@
     Plasma: 300
     Glass: 150
 
-#- type: latheRecipe
-#  id: EyeImplantNightVision
-#  result: EyeImplantNightVision
-#  category: Implants
-#  completetime: 5
-#  materials:
-#    Plastic: 100
-#    Steel: 100
-#    Gold: 100
-#    Glass: 100
-#
+- type: latheRecipe
+  id: EyeImplantNight
+  result: EyeImplantNight
+  category: Implants
+  completetime: 5
+  materials:
+    Plastic: 100
+    Steel: 100
+    Gold: 100
+    Glass: 100
+
 #- type: latheRecipe
 #  id: EyeImplantThermal
 #  result: EyeImplantThermal
