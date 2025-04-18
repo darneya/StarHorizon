@@ -9,6 +9,19 @@ namespace Content.Shared._Horizon.Medical.Surgery.Components;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class EyeImplantComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
+public sealed partial class SkinImplantComponent : Component;
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
+public sealed partial class BoneImplantComponent : Component;
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
+public sealed partial class VesselsImplantComponent : Component;
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
+public sealed partial class BloodPumpImplantComponent : Component;
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
+public sealed partial class HandImplantComponent : Component;
+
+
+
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class OrganBrainComponent : Component;
 [RegisterComponent, NetworkedComponent, Access(typeof(SharedSurgerySystem))]
 public sealed partial class OrganAppendixComponent : Component;
