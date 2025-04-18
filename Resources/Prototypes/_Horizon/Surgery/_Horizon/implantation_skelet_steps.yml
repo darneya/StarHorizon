@@ -166,7 +166,7 @@
     - HorizonUncoverBones
     - HorizonSecureBones
     - HorizonCutBones
-    - HorizonExtractSkinImplant
+    - HorizonExtractBoneImplant
     - HorizonRestoreBones
     - HorizonCloseBoneCage
 

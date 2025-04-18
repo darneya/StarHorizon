@@ -72,7 +72,6 @@
     - EyeImplantMedical
     - EyeImplantSecurity
     - EyeImplantChemical
-    - EyeImplantNight
   technologyPrerequisites:
     - CyberLimbsTech
 
@@ -277,3 +276,53 @@
   - MechOdysseusMurdyUpgradeKit
   technologyPrerequisites:
   - OdysseusTechnology
+
+- type: technology
+  id: ProtectiveImplantsTech
+  name: research-technology-protective-implants
+  icon:
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: bone_implant
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - BoneLightImplant
+  - SubcutaneousArmor
+  - HeatSubcutaneousArmor
+  technologyPrerequisites:
+  - CyberImplantsTech
+
+- type: technology
+  id: AdvProtectiveImplantsTech
+  name: research-technology-adv-protective-implants
+  icon:
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: implant
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - BoneHeavyImplant
+  - UpgradedSubcutaneousArmor
+  - HeatUpgradeSubcutaneousArmor
+  - RadiationSubcutaneousArmor
+  technologyPrerequisites:
+  - ProtectiveImplantsTech
+
+- type: technology
+  id: AdvPerformanceImplantsTech
+  name: research-technology-adv-performance-implants
+  icon:
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: implant
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - BloodFilterImplant
+  - BloodPumpImplant
+  - IzolationHandImplant
+  - VesselsImplant
+  technologyPrerequisites:
+  - ProtectiveImplantsTech

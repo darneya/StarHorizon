@@ -30,6 +30,15 @@
     },
     {
       "name": "eyes_night"
+    },
+    {
+      "name": "bone_implant"
+    },
+    {
+      "name": "skin_implant"
+    },
+    {
+      "name": "implant"
     }
   ]
 }

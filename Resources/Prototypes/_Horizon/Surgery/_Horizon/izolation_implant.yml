@@ -7,11 +7,10 @@
   components:
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Medical/implants.rsi
-    state: eyes_thermal # NEED SPIRTE
+    state: implant
   - type: Organ
   - type: HandImplant
   - type: Gibbable
   - type: FunctionalOrgan
     comps:
     - type: Insulated
-
