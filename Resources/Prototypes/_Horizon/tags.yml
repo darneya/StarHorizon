@@ -140,19 +140,37 @@
   id: MechEquipmentGeneral
 
 - type: Tag
+  id: MechEquipmentClown
+
+- type: Tag
   id: MechEquipmentMed
 
 - type: Tag
-  id: MechEquipmentService
+  id: MechEquipmentSecCC
 
 - type: Tag
-  id: MechEquipmentIndustrial
+  id: MechEquipmentSecProt
 
 - type: Tag
-  id: MechEquipmentSec
+  id: MechEquipmentSecMissile
 
 - type: Tag
-  id: MechEquipmentClown
+  id: MechEquipmentSecLKinetic
+
+- type: Tag
+  id: MechEquipmentSecHKinetic
+
+- type: Tag
+  id: MechEquipmentSecLLazer
+
+- type: Tag
+  id: MechEquipmentSecHLazer
+
+- type: Tag
+  id: MechEquipmentSecExperim
+
+- type: Tag
+  id: MechEquipmentMining
 
 - type: Tag
   id: BluespaceAnomalyCore

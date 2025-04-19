@@ -139,7 +139,7 @@
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentIndustrial
+      - MechEquipmentMining
     # Horizon Mech end
     baseState: ripley
     openState: ripley-open

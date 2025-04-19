@@ -37,7 +37,9 @@
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentSec
+      - MechEquipmentSecCC
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecLLazer
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.2
@@ -46,8 +48,8 @@
         Blunt: 30 #intentionally shit so people realize that going into combat with the ripley is usually a bad idea.
         Structural: 60
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3.5
-    baseSprintSpeed: 4.6
+    baseWalkSpeed: 4.0
+    baseSprintSpeed: 5.0
   - type: MechOverload
     damage:
       types:
@@ -109,7 +111,8 @@
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentIndustrial
+      - MechEquipmentMining
+      - MechEquipmentSecProt
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.2
@@ -179,7 +182,12 @@
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentSec
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecHKinetic
+      - MechEquipmentSecLLazer
+      - MechEquipmentSecHLazer
+      - MechEquipmentSecExperim
+      - MechEquipmentSecMissile
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.2
@@ -299,25 +307,27 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.15
-        Slash: 0.15
-        Piercing: 0.2
-        Heat: 0.2
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.5
         Radiation: 0
         Caustic: 0.1
-        Structural: 0.2
+        Structural: 0.4
     maxintegrity: 200
     baseState: phazon
     openState: phazon-open
     brokenState: phazon-broken
-    mechToPilotDamageMultiplier: 0.3
+    mechToPilotDamageMultiplier: 0.2
     pilotWhitelist:
       components:
         - HumanoidAppearance
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentSec
+      - MechEquipmentSecCC
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecLLazer
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.2
@@ -326,8 +336,8 @@
         Blunt: 30 #intentionally shit so people realize that going into combat with the ripley is usually a bad idea.
         Structural: 60
   - type: MovementSpeedModifier
-    baseWalkSpeed: 4.5
-    baseSprintSpeed: 6.0
+    baseWalkSpeed: 4.0
+    baseSprintSpeed: 5.0
   - type: ExplosionResistance
     damageCoefficient: 0.7
 #  - type: AccessReader
@@ -391,7 +401,13 @@
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentSec
+      - MechEquipmentSecCC
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecHKinetic
+      - MechEquipmentSecLLazer
+      - MechEquipmentSecHLazer
+      - MechEquipmentSecExperim
+      - MechEquipmentSecMissile
   - type: MeleeWeapon
     hidden: true
     attackRate: 1.5
@@ -455,7 +471,13 @@
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentSec
+      - MechEquipmentSecCC
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecHKinetic
+      - MechEquipmentSecLLazer
+      - MechEquipmentSecHLazer
+      - MechEquipmentSecExperim
+      - MechEquipmentSecMissile
     maxEquipmentAmount: 8
   - type: Storage
     grid:
@@ -508,7 +530,9 @@
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentSec
+      - MechEquipmentSecCC
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecLLazer
 #  - type: AccessReader
 #    access: [["NuclearOperative"], ["SyndicateAgent"]]
   - type: Storage
@@ -563,7 +587,12 @@
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentSec
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecHKinetic
+      - MechEquipmentSecLLazer
+      - MechEquipmentSecHLazer
+      - MechEquipmentSecExperim
+      - MechEquipmentSecMissile
     maxEquipmentAmount: 5
   - type: MeleeWeapon
     hidden: true
@@ -614,7 +643,12 @@
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentSec
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecHKinetic
+      - MechEquipmentSecLLazer
+      - MechEquipmentSecHLazer
+      - MechEquipmentSecExperim
+      - MechEquipmentSecMissile
     maxEquipmentAmount: 5
 
 # Ripley mkII mech
@@ -655,7 +689,8 @@
     equipmentWhitelist:
       tags:
       - MechEquipmentGeneral
-      - MechEquipmentIndustrial
+      - MechEquipmentMining
+      - MechEquipmentSecProt
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -992,8 +1027,8 @@
     brokenState: gygaxgrey-broken
     mechToPilotDamageMultiplier: 0.2
   - type: MovementSpeedModifier
-    baseWalkSpeed: 4.0
-    baseSprintSpeed: 5.0
+    baseWalkSpeed: 5.0
+    baseSprintSpeed: 6.0
 
 - type: entity
   parent: MechGygaxGrey
@@ -1413,8 +1448,8 @@
     openState: phazonblanco-open
     brokenState: phazonblanco-broken
   - type: MovementSpeedModifier
-    baseWalkSpeed: 5.0
-    baseSprintSpeed: 7.0
+    baseWalkSpeed: 4.0
+    baseSprintSpeed: 5.0
   - type: MechPhaze
     state: phazonblanco
     phazingState: "phazonblanco-phase"
