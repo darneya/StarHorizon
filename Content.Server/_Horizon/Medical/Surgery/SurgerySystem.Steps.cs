@@ -69,7 +69,10 @@ public sealed partial class SurgerySystem //: SharedSurgerySystem
         if (args.Tools.Count == 0
             || !(args.Tools.FirstOrDefault() is var organId)
             || !TryComp<BodyPartComponent>(args.Part, out var bodyPart))
+        {
+            args.IsCancelled = true;
             return;
+        }
 
         var containerId = SharedBodySystem.GetOrganContainerId(ent.Comp.Slot);
 
@@ -80,7 +83,10 @@ public sealed partial class SurgerySystem //: SharedSurgerySystem
         }
 
         if (!TryComp<OrganComponent>(organId, out var organComp))
+        {
+            args.IsCancelled = true;
             return;
+        }
 
         var part = args.Part;
         var body = args.Body;
