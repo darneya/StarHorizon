@@ -41,8 +41,6 @@
         Pierce: 0.75
 # But only 2 tiers
 
-
-
 # Heat Armor for tier 1 to 3
 - type: entity
   id: HeatSubcutaneousArmor
@@ -74,8 +72,6 @@
         Cold: 0.75
         Heat: 0.75
 # But only 2 tiers
-
-
 
 # Radiation armor ONLY ONEEEE
 - type: entity

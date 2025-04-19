@@ -11,6 +11,8 @@
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
         tongue: OrganHumanTongue
+        eye_implant: null # _Horizon
+        cyberdeka_implant: null # _Horizon
     torso:
       part: TorsoReptilian
       organs:
@@ -19,6 +21,11 @@
         stomach: OrganReptilianStomach
         liver: OrganAnimalLiver
         kidneys: OrganHumanKidneys
+        vessels_implant: null # _Horizon
+        blood_pump_implant: null
+        skin_implant: null # _Horizon
+        bone_implant: null # _Horizon
+        cavity: null # _Starlight
       connections:
       - right arm
       - left arm
@@ -34,8 +41,12 @@
       - left hand
     right hand:
       part: RightHandReptilian
+      organs:
+        hands_implant: null # _Horizon
     left hand:
       part: LeftHandReptilian
+      organs:
+        hands_implant: null # _Horizon
     right leg:
       part: RightLegReptilian
       connections:

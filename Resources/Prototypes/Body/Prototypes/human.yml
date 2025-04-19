@@ -11,7 +11,7 @@
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
         tongue: OrganHumanTongue
-        eye_implant: null # _Starlight
+        eye_implant: null # _Horizon
         cyberdeka_implant: null # _Horizon
     torso:
       part: TorsoHuman
