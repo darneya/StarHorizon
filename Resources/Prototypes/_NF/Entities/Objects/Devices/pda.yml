@@ -305,11 +305,11 @@
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
         !type:String
-        pda-nfdetective
+        pda-detective
   - type: PdaBorderColor
     borderColor: "#774705"
   - type: Icon
-    state: pda-nfdetective
+    state: pda-detective
 
 - type: entity
   parent: BaseSecurityPDA

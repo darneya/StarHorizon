@@ -41,7 +41,6 @@ public sealed class WorldItemSystem : EntitySystem
             layerNumber++;
         }
 
-        Dirty(entity);
         ChangeItemSprite(entity);
     }
 
@@ -55,7 +54,6 @@ public sealed class WorldItemSystem : EntitySystem
             sprite.LayerSetState(layer, state);
         }
 
-        Dirty(entity);
         ChangeItemSprite(entity);
     }
 
@@ -75,7 +73,6 @@ public sealed class WorldItemSystem : EntitySystem
             layerNumber++;
         }
 
-        Dirty(entity);
         ChangeItemSprite(entity);
     }
 
@@ -89,7 +86,6 @@ public sealed class WorldItemSystem : EntitySystem
             sprite.LayerSetState(layer, state);
         }
 
-        Dirty(entity);
         ChangeItemSprite(entity);
     }
 
