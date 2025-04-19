@@ -14,6 +14,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Server._Horizon.Medical.Limbs;
+
 public sealed partial class CyberLimbSystem
 {
     [Dependency] private readonly MovementSpeedModifierSystem _moveSystem = null!;
@@ -22,7 +23,24 @@ public sealed partial class CyberLimbSystem
     private readonly Dictionary<EntityUid, (BaseSpeed, List<float>)> _speedCoefficients = new();
     private readonly Dictionary<EntityUid, List<DamageModifierSet>> _armorCoefficients = new();
 
-    private void InitializeLimbWithItems()
+    private readonly Dictionary<string, float> _armorBlockers = new()
+    {
+        {"Asphyxiation", 1f},
+        {"Bloodloss", 0.5f},
+        {"Blunt", 0.75f},
+        {"Cellular", 1f},
+        {"Caustic", 0.75f},
+        {"Cold", 0.5f},
+        {"Heat", 0.75f},
+        {"Piercing", 0.75f},
+        {"Poison", 0.5f},
+        {"Shock", 0.75f},
+        {"Slash", 0.75f},
+        {"Structural", 1f},
+        {"Holy", 1f},
+    };
+
+private void InitializeLimbWithItems()
     {
         base.Initialize();
         SubscribeLocalEvent<LimbWithItemsComponent, ComponentInit>(OnLimbWithItemsInit);
@@ -163,29 +181,23 @@ public sealed partial class CyberLimbSystem
                 {
                     if (isFirst)
                     {
-                        if (coefficient < 0.75f)
-                            continue;
-
-                        totalResistance.Coefficients[type] = Math.Max(0f, coefficient);
+                        totalResistance.Coefficients[type] = Math.Max(_armorBlockers[type], coefficient);
                         isFirst = false;
                     }
                     else
                     {
                         if (totalResistance.Coefficients.TryAdd(type, coefficient))
                         {
-                            totalResistance.Coefficients[type] = Math.Max(0.75f, totalResistance.Coefficients[type]);
+                            totalResistance.Coefficients[type] = Math.Max(_armorBlockers[type], totalResistance.Coefficients[type]);
                             continue;
                         }
 
                         totalResistance.Coefficients[type] -= 1f - coefficient;
-                        totalResistance.Coefficients[type] = Math.Max(0.75f, totalResistance.Coefficients[type]);
+                        totalResistance.Coefficients[type] = Math.Max(_armorBlockers[type], totalResistance.Coefficients[type]);
                     }
                 }
                 foreach (var (type, reduction) in list.FlatReduction)
                 {
-                    if (totalResistance.FlatReduction[type] + reduction > 5f || reduction > 5f)
-                        continue;
-
                     totalResistance.FlatReduction[type] += Math.Max(0, reduction);
                 }
             }
