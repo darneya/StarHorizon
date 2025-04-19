@@ -49,11 +49,10 @@
     - type: BloodPumpImplant
   - type: SurgeryStepOrganInsert
     slot: blood_pump_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: ...
+      - state: implant
 
 # 5 Also five but extract!
 - type: entity
@@ -67,11 +66,10 @@
     organ:
     - type: Item
     slot: blood_pump_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: ...
+    - state: implant
 
 # 6 Done operation
 - type: entity
@@ -86,7 +84,6 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: hemostat
-
 
 #Operation Insert
 - type: entity
@@ -119,10 +116,10 @@
     organ:
     - type: OrganHeart
     container: heart
-
   - type: Sprite
-    sprite: # NEED SPRITE!
-    state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    layers:
+    - state: implant
 
 #Operation Extract
 - type: entity
@@ -133,7 +130,7 @@
   components:
   - type: Surgery
     requirement:
-    - SurgeryOpenIncision
+    - SurgeryOpenAbdomen
     steps:
     - HorizonLocateHeartPumps
     - HorizonClampGeneralValves
@@ -152,5 +149,6 @@
     - type: BloodPumpImplant
     container: blood_pump_implant
   - type: Sprite
-    sprite: # NEED SPRITE!
-    state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    layers:
+    - state: implant

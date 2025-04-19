@@ -8,16 +8,15 @@
     duration: 10
     tools:
     - type: Scalpel
-
   #- type: SurgeryStepBleedEffect
   #  damage:
   #    types:
   #      Slash: Need to SET?
-
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
   - type: SurgeryStepEmoteEffect
+
 # 2
 - type: entity
   parent: SurgeryStepBase
@@ -31,6 +30,7 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: retractor
+
 # 3
 - type: entity
   parent: SurgeryStepBase
@@ -57,11 +57,11 @@
     - type: SkinImplant
   - type: SurgeryStepOrganInsert
     slot: skin_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: ...
+      - state: skin_implant
+
 # 4 Also four but extract!
 - type: entity
   parent: SurgeryStepBase
@@ -74,11 +74,10 @@
     organ:
     - type: Item
     slot: skin_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: ...
+    - state: skin_implant
 
 # 5 Done operation
 - type: entity
@@ -93,7 +92,6 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
-
 
 #Operation Insert
 - type: entity
@@ -111,7 +109,6 @@
     - HorizonLocalizeVessels
     - HorizonImplantSkinImplant
     - HorizonCloseTheSkinIncision
-
   - type: SurgerySpeciesCondition
     speciesBlacklist:
     - SlimePerson # Не любим слаймолюдов
@@ -122,10 +119,10 @@
     organ:
     - type: SkinImplant
     container: skin_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
-    state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    layers:
+    - state: skin_implant
 
 #Operation Extract
 - type: entity
@@ -136,14 +133,13 @@
   components:
   - type: Surgery
     requirement:
-    - SurgeryOpenIncision
+    - SurgeryOpenAbdomen
     steps:
     - HorizonOpenSkin
     - HorizonWideSkin
     - HorizonLocalizeVessels
     - HorizonExtractSkinImplant
     - HorizonCloseTheSkinIncision
-
   - type: SurgerySpeciesCondition
     speciesBlacklist:
     - SlimePerson  # Всё ещё не любим слаймолюдов
@@ -154,7 +150,7 @@
     organ:
     - type: SkinImplant
     container: skin_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
-    state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    layers:
+    - state: skin_implant

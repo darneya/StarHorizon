@@ -35,9 +35,8 @@
   - type: SurgeryStepOrganInsert
     slot: hands_implant
   - type: Sprite
-    sprite: # NEED SPRITE!
-    layers:
-      - state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: implant
 
 # 4 Also five but extract!
 - type: entity
@@ -51,11 +50,9 @@
     organ:
     - type: Item
     slot: hands_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
-    layers:
-      - state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: implant
 
 # 5 Done operation
 - type: entity
@@ -80,14 +77,13 @@
   components:
   - type: Surgery
     requirement:
-    - SurgeryOpenIncision
+    - SurgeryOpenAbdomen
     steps:
     - HorizonLocateImplantPlace
     - HorizonPreparePlace
     - HorizonStopBloodloss
     - HorizonInsertIzolationImplant
     - HorizonConnectImplantToNerves
-
   - type: SurgerySpeciesCondition
     speciesBlacklist:
     - SlimePerson # Не любим слаймолюдов
@@ -98,10 +94,9 @@
     organ:
     - type: HandImplant
     container: hands_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
-    state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: implant
 
 #Operation Extract
 - type: entity
@@ -112,13 +107,12 @@
   components:
   - type: Surgery
     requirement:
-    - SurgeryOpenIncision
+    - SurgeryOpenAbdomen
     steps:
     - HorizonLocateImplantPlace
     - HorizonPreparePlace
     - HorizonStopBloodloss
     - HorizonExtractIzolationImplant
-
   - type: SurgerySpeciesCondition
     speciesBlacklist:
     - SlimePerson  # Всё ещё не любим слаймолюдов
@@ -129,7 +123,6 @@
     organ:
     - type: HandImplant
     container: hands_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
-    state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: implant

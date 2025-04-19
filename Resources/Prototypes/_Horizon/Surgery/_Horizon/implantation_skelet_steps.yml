@@ -12,6 +12,7 @@
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: setter
   - type: SurgeryStepEmoteEffect
+
 # 2
 - type: entity
   parent: SurgeryStepBase
@@ -25,6 +26,7 @@
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/bone_gel.rsi
     state: bone-gel
+
 # 3
 - type: entity
   parent: SurgeryStepBase
@@ -39,7 +41,6 @@
     damage:
       types:
         Brute: 5
-
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/saw.rsi
     state: saw
@@ -56,11 +57,11 @@
     - type: BoneImplant
   - type: SurgeryStepOrganInsert
     slot: bone_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: ...
+      - state: bone_implant
+
 # 4 Also four but extract!
 - type: entity
   parent: SurgeryStepBase
@@ -73,11 +74,10 @@
     organ:
     - type: Item
     slot: bone_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: ...
+    - state: bone_implant
 
 # 5
 - type: entity
@@ -93,7 +93,6 @@
     damage:
       types:
         Brute: -5 #Heal dealed damage
-
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/bone_gel.rsi
     state: bone-gel
@@ -112,12 +111,9 @@
     damage:
       types:
         Brute: -5 #Heal dealed damage
-
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: setter
-
-
 
 #Operation Insert
 - type: entity
@@ -136,7 +132,6 @@
     - HorizonSetupBonesImplant
     - HorizonRestoreBones
     - HorizonCloseBoneCage
-
   - type: SurgerySpeciesCondition
     speciesBlacklist:
     - SlimePerson # Не любим слаймолюдов
@@ -147,10 +142,10 @@
     organ:
     - type: BoneImplant
     container: bone_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
-    state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    layers:
+    - state: bone_implant
 
 #Operation Extract
 - type: entity
@@ -161,7 +156,7 @@
   components:
   - type: Surgery
     requirement:
-    - SurgeryOpenIncision
+    - SurgeryOpenAbdomen
     steps:
     - HorizonUncoverBones
     - HorizonSecureBones
@@ -169,7 +164,6 @@
     - HorizonExtractBoneImplant
     - HorizonRestoreBones
     - HorizonCloseBoneCage
-
   - type: SurgerySpeciesCondition
     speciesBlacklist:
     - SlimePerson  # Всё ещё не любим слаймолюдов
@@ -180,7 +174,7 @@
     organ:
     - type: BoneImplant
     container: bone_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
-    state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    layers:
+    - state: bone_implant

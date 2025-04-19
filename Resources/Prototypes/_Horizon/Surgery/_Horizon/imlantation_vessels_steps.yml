@@ -74,11 +74,10 @@
     - type: VesselsImplant
   - type: SurgeryStepOrganInsert
     slot: vessels_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: ...
+      - state: implant
 
 # 5 Also five but extract!
 - type: entity
@@ -92,11 +91,10 @@
     organ:
     - type: Item
     slot: vessels_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     layers:
-      - state: ...
+    - state: implant
 
 # 6
 - type: entity
@@ -110,12 +108,9 @@
     damage:
       types:
         Brute: -5 #Heal dealed damage
-
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: setter
-
-
 
 #Operation Insert
 - type: entity
@@ -134,7 +129,6 @@
     - HorizonStopBloodloss
     - HorizonInsertVesselsImplant
     - HorizonConnectVesselsImplant
-
   - type: SurgerySpeciesCondition
     speciesBlacklist:
     - SlimePerson # Не любим слаймолюдов
@@ -145,10 +139,10 @@
     organ:
     - type: VesselsImplant
     container: vessels_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
-    state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    layers:
+    - state: implant
 
 #Operation Extract
 - type: entity
@@ -159,14 +153,13 @@
   components:
   - type: Surgery
     requirement:
-    - SurgeryOpenIncision
+    - SurgeryOpenAbdomen
     steps:
     - HorizonUncoverBones
     - HorizonSecureBones
     - HorizonCutBones
     - HorizonStopBloodloss
     - HorizonExtractVesselsImplant
-
   - type: SurgerySpeciesCondition
     speciesBlacklist:
     - SlimePerson  # Всё ещё не любим слаймолюдов
@@ -177,7 +170,7 @@
     organ:
     - type: VesselsImplant
     container: vessels_implant
-
   - type: Sprite
-    sprite: # NEED SPRITE!
-    state: ...
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    layers:
+    - state: implant
