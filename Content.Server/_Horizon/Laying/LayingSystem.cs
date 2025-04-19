@@ -16,11 +16,11 @@ namespace Content.Server._Horizon.Laying;
 
 public sealed class LayingSystem : EntitySystem
 {
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly SharedGravitySystem _gravity = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly MobStateSystem _mobState = null!;
+    [Dependency] private readonly StandingStateSystem _standing = null!;
+    [Dependency] private readonly SharedGravitySystem _gravity = null!;
+    [Dependency] private readonly MovementSpeedModifierSystem _movement = null!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = null!;
 
     public override void Initialize()
     {
@@ -90,19 +90,16 @@ public sealed class LayingSystem : EntitySystem
         if (!Resolve(uid, ref standing, ref laying))
             return false;
 
-        if (standing.Standing != false)
+        if (standing.Standing)
             return false;
 
         var args = new DoAfterArgs(EntityManager, uid, 2f, new StandingUpDoAfterEvent(), uid)
         {
             BreakOnHandChange = false,
-            RequireCanInteract = false
+            RequireCanInteract = false,
         };
 
-        if (!_doAfter.TryStartDoAfter(args))
-            return false;
-
-        return true;
+        return _doAfter.TryStartDoAfter(args);
     }
 
     private void OnStandingUpComplete(EntityUid uid, LayingComponent component, StandingUpDoAfterEvent args)
@@ -113,7 +110,7 @@ public sealed class LayingSystem : EntitySystem
         if (!TryComp<StandingStateComponent>(uid, out var standing))
             return;
 
-        _standing.Stand(uid, standing, null, force: true);
+        _standing.Stand(uid, standing, force: true);
         _movement.RefreshMovementSpeedModifiers(uid);
     }
 

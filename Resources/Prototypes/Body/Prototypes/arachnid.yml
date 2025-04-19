@@ -10,6 +10,9 @@
       organs:
         brain: OrganHumanBrain
         eyes: OrganArachnidEyes
+        tongue: OrganHumanTongue
+        eye_implant: null # _Horizon
+        cyberdeka_implant: null # _Horizon
     torso:
       part: TorsoArachnid
       organs:
@@ -18,6 +21,11 @@
         stomach: OrganArachnidStomach
         liver: OrganArachnidLiver
         kidneys: OrganArachnidKidneys
+        vessels_implant: null # _Horizon
+        blood_pump_implant: null
+        skin_implant: null # _Horizon
+        bone_implant: null # _Horizon
+        cavity: null # _Starlight
       connections:
       - right arm
       - left arm
@@ -33,8 +41,12 @@
       - left hand
     right hand:
       part: RightHandArachnid
+      organs:
+        hands_implant: null # _Horizon
     left hand:
       part: LeftHandArachnid
+      organs:
+        hands_implant: null # _Horizon
     right leg:
       part: RightLegArachnid
       connections:

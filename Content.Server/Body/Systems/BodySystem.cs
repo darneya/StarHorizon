@@ -12,6 +12,7 @@ using Content.Shared.Movement.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using System.Numerics;
+using Content.Server._Horizon.Medical.Limbs;
 
 namespace Content.Server.Body.Systems;
 
@@ -22,6 +23,7 @@ public sealed class BodySystem : SharedBodySystem
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
+    [Dependency] private readonly LimbSystem _limbSystem = default!; // _Horizon
 
     public override void Initialize()
     {
@@ -67,15 +69,7 @@ public sealed class BodySystem : SharedBodySystem
         base.AddPart(bodyEnt, partEnt, slotId);
 
         if (TryComp<HumanoidAppearanceComponent>(bodyEnt, out var humanoid))
-        {
-            var layer = partEnt.Comp.ToHumanoidLayers();
-            if (layer != null)
-            {
-                var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
-                _humanoidSystem.SetLayersVisibility(
-                    bodyEnt, layers, visible: true, permanent: true, humanoid);
-            }
-        }
+            _limbSystem.AddLimbVisual((bodyEnt, humanoid), partEnt); // _Horizon
     }
 
     protected override void RemovePart(

@@ -226,6 +226,7 @@
     - NFScience # Frontier
     - NFPouches # Frontier
     - NightVisionPack # Horizon
+    - StarlightSurgeryTools # Starlight
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -342,6 +343,7 @@
     - MechParts
     - MechEquipment
     - HorizonMechs # Horizon Mech
+    - StarlightSurgeryLimbs # Starlight
   - type: MaterialStorage
     whitelist:
       tags:
@@ -501,6 +503,10 @@
     - EmptyMedkitsStatic
     - SurgeryStatic
     - NFMedicalStatic # Frontier
+    - StarlightSurgeryTools # Starlight
+    - StarlightSurgeryOrgans # Starlight
+    - StarlightSurgeryLimbs # Starlight
+    - StarlightSurgeryImplants # Starlight
     dynamicPacks:
     - Chemistry
     - SyringeGuns # DeltaV

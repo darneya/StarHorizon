@@ -1,7 +1,11 @@
+using Content.Shared._Horizon.Medical.Surgery.Components;
+using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Rejuvenate;
 using JetBrains.Annotations;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Eye.Blinding.Systems;
 
@@ -9,6 +13,7 @@ public sealed class BlindableSystem : EntitySystem
 {
     [Dependency] private readonly BlurryVisionSystem _blurriness = default!;
     [Dependency] private readonly EyeClosingSystem _eyelids = default!;
+    [Dependency] private readonly SharedBodySystem _bodySystem = null!;
 
     public override void Initialize()
     {
@@ -36,8 +41,15 @@ public sealed class BlindableSystem : EntitySystem
 
         var old = blindable.Comp.IsBlind;
 
+        var forceBlind = false;
+        if (TryComp<BodyComponent>(blindable.Owner, out var comp))
+        {
+            var eyes = _bodySystem.GetBodyOrganEntityComps<OrganEyesComponent>((blindable.Owner, comp));
+            forceBlind = eyes.Count == 0;
+        }
+
         // Don't bother raising an event if the eye is too damaged.
-        if (blindable.Comp.EyeDamage >= blindable.Comp.MaxDamage)
+        if (blindable.Comp.EyeDamage >= blindable.Comp.MaxDamage || forceBlind)
         {
             blindable.Comp.IsBlind = true;
         }

@@ -32,5 +32,6 @@ namespace Content.Shared.Humanoid
         LArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
         RArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
 
+        Other,
     }
 }

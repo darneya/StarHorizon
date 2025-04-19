@@ -1,0 +1,62 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from ss13, resprited by Genok DS:935227728469319690",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "heart"
+      },
+      {
+        "name": "heart-inhand-left"
+      },
+      {
+        "name": "heart-inhand-right"
+      },
+      {
+        "name": "kidney-l"
+      },
+      {
+        "name": "kidney-r"
+      },
+      {
+        "name": "kidneys-inhand-left"
+      },
+      {
+        "name": "kidneys-inhand-right"
+      },
+      {
+        "name": "liver"
+      },
+      {
+        "name": "liver-inhand-left"
+      },
+      {
+        "name": "liver-inhand-right"
+      },
+      {
+        "name": "lung-l"
+      },
+      {
+        "name": "lung-r"
+      },
+      {
+        "name": "lungs-inhand-left"
+      },
+      {
+        "name": "lungs-inhand-right"
+      },
+      {
+        "name": "stomach"
+      },
+      {
+        "name": "stomach-inhand-left"
+      },
+      {
+        "name": "stomach-inhand-right"
+      }
+    ]
+  }

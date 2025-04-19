@@ -88,5 +88,7 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory Pen =
             new("verb-categories-pen", "/Textures/Interface/pencil.png");
+
+        public static readonly VerbCategory Switch = new("verb-categories-switch", "/Textures/Interface/VerbIcons/group.svg.192dpi.png");
     }
 }

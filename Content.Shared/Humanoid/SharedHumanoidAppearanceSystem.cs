@@ -39,7 +39,6 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
     [ValidatePrototypeId<SpeciesPrototype>]
     public const string DefaultSpecies = "Human";
-
     public override void Initialize()
     {
         base.Initialize();
@@ -477,14 +476,16 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             return;
         }
 
-        var markingObject = new Marking(marking, colors);
-        markingObject.Forced = forced;
+        var markingObject = new Marking(marking, colors)
+        {
+            Forced = forced
+        };
+
         humanoid.MarkingSet.AddBack(prototype.MarkingCategory, markingObject);
 
         if (sync)
             Dirty(uid, humanoid);
     }
-
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.
     /// </summary>
