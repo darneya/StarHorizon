@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis; // _Horizon
+﻿using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Body.Components; // _Horizon
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
@@ -22,6 +23,7 @@ public abstract class SharedArmorSystem : EntitySystem
 
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<CoefficientQueryEvent>>(OnCoefficientQuery);
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnDamageModify);
+        SubscribeLocalEvent<ArmorComponent, DamageModifyEvent>(OnBodyDamageModify); // _Horizon
         SubscribeLocalEvent<ArmorComponent, BorgModuleRelayedEvent<DamageModifyEvent>>(OnBorgDamageModify);
         SubscribeLocalEvent<ArmorComponent, GetVerbsEvent<ExamineVerb>>(OnArmorVerbExamine);
     }
@@ -124,5 +126,10 @@ public abstract class SharedArmorSystem : EntitySystem
         Dirty(ent.Owner, ent.Comp);
     }
 
+    private void OnBodyDamageModify(EntityUid uid, ArmorComponent component, DamageModifyEvent args)
+    {
+        if (HasComp<BodyComponent>(uid))
+            args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, component.Modifiers);
+    }
     // _Horizon End`s
 }
