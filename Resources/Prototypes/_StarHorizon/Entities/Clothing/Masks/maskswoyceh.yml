@@ -1,13 +1,13 @@
 - type: entity
-  parent: ClothingMaskGas 
+  parent: ClothingMaskGas
   id: ClothingMaskGasWoyceh
   name: Противогаз Войцеха
   description: Респираторный противогаз, покрывающий левую половину лица. Изготовлен в единичном экземпляре для некоего Воцеха.
   components:
   - type: Sprite
-    sprite: _StarHorizont/Clothing/Masks/gasmaskWoyceh.rsi
+    sprite: _StarHorizon/Clothing/Masks/gasmaskWoyceh.rsi
   - type: Clothing
-    sprite: _StarHorizont/Clothing/Masks/gasmaskWoyceh.rsi
+    sprite: _StarHorizon/Clothing/Masks/gasmaskWoyceh.rsi
   - type: FlashImmunity
   - type: EyeProtection
   - type: Armor

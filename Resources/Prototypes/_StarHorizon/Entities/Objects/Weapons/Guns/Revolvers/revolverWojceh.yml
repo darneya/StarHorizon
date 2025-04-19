@@ -5,9 +5,9 @@
   description: Револьвер Штурмовой, модернезированный под крупнокалиберный винтовочный патрон. Большая пушка, для больших мальчиков.
   components:
   - type: Sprite
-    sprite: _StarHorizont/Objects/Weapons/Guns/Revolvers/rsh-60.rsi
+    sprite: _StarHorizon/Objects/Weapons/Guns/Revolvers/rsh-60.rsi
   - type: Clothing
-    sprite: _StarHorizont/Objects/Weapons/Guns/Revolvers/rsh-60.rsi
+    sprite: _StarHorizon/Objects/Weapons/Guns/Revolvers/rsh-60.rsi
   - type: Gun
     selectedMode: SemiAuto
     fireRate: 2

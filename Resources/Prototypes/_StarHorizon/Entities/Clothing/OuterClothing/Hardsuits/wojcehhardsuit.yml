@@ -1,13 +1,13 @@
 - type: entity
   parent: ClothingOuterEVASuitBase
   id: ClothingOuterHardsuitWoyceh
-  name: Сверхтяжёлый бронескафандр 
-  description: Сверхтяжёлый бронескафандр, созданный неизвестными умельцами по заказу некого Войцеха. 
+  name: Сверхтяжёлый бронескафандр
+  description: Сверхтяжёлый бронескафандр, созданный неизвестными умельцами по заказу некого Войцеха.
   components:
   - type: Sprite
-    sprite: _StarHorizont/Clothing/OuterClothing/Hardsuits/wojciech_hardsuit.rsi
+    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/wojciech_hardsuit.rsi
   - type: Clothing
-    sprite: _StarHorizont/Clothing/OuterClothing/Hardsuits/wojciech_hardsuit.rsi
+    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/wojciech_hardsuit.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000

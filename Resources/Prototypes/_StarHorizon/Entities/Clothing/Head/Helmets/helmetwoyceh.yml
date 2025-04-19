@@ -5,9 +5,9 @@
   description: Тяжёлый шлем от не менее тяжёлого бронескафандра. Он имеет системы защиты глаз и плотной фиксации на шее.
   components:
   - type: Sprite
-    sprite: _StarHorizont/Clothing/Head/Helmets/heve_agent.rsi
+    sprite: _StarHorizon/Clothing/Head/Helmets/heve_agent.rsi
   - type: Clothing
-    sprite: _StarHorizont/Clothing/Head/Helmets/heve_agent.rsi
+    sprite: _StarHorizon/Clothing/Head/Helmets/heve_agent.rsi
   - type: FlashImmunity
   - type: EyeProtection
   - type: Armor

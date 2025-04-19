@@ -5,7 +5,7 @@
   description: Экспериментальный образец грузового экзоскелета. В нём устранены конструктивные недостатки, кардинально снижавшие подвижность.
   components:
   - type: Sprite
-    sprite: _StarHorizont/Clothing/Backpacks/exowoyceh.rsi
+    sprite: _StarHorizon/Clothing/Backpacks/exowoyceh.rsi
   - type: ClothingSpeedModifier
     walkModifier: 1.10
     sprintModifier: 1.30
@@ -15,4 +15,3 @@
     maxItemSize: Huge
     grid:
     - 0,0,9,6
-    
