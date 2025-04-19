@@ -35,7 +35,15 @@
       "name": "stage-5"
     },
     {
-      "name": "stage-6"
+        "name": "stage-6"
+    },
+    {
+      "name": "produce-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "produce-inhand-right",
+      "directions": 4
     }
   ]
 }
