@@ -39,6 +39,19 @@
 
 # Tier 2
 
+- type: technology # _DV Import
+  id: SyringeGun
+  name: research-technology-syringe-gun
+  icon:
+    sprite: Objects/Weapons/Guns/Cannons/syringe_gun.rsi
+    state: syringe_gun
+  discipline: Biochemical # Horizon
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - LauncherSyringe
+  - MiniSyringe
+
 - type: technology
   id: SurgeryTechAdvanced
   name: research-technology-advanced-surgery
@@ -298,7 +311,7 @@
   name: research-technology-adv-protective-implants
   icon:
     sprite: _Horizon/Objects/Specific/Medical/implants.rsi
-    state: implant
+    state: bone_implant
   discipline: Biochemical
   tier: 3
   cost: 15000
