@@ -427,15 +427,15 @@ public sealed class SurgeryBui : BoundUserInterface
         if (_entities.TryGetComponent(_part, out MetaDataComponent? partMeta) &&
             _entities.TryGetComponent(_surgery?.Ent, out MetaDataComponent? surgeryMeta))
         {
-            _window.Title = $"Surgery - {partMeta.EntityName}, {surgeryMeta.EntityName}";
+            _window.Title = $"Хирургия - {partMeta.EntityName}, {surgeryMeta.EntityName}";
         }
         else if (partMeta != null)
         {
-            _window.Title = $"Surgery - {partMeta.EntityName}";
+            _window.Title = $"Хирургия - {partMeta.EntityName}";
         }
         else
         {
-            _window.Title = "Surgery";
+            _window.Title = "Хирургия";
         }
     }
 
