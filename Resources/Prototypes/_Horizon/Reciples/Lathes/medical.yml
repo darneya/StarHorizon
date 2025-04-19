@@ -338,41 +338,94 @@
   category: Implants
   completetime: 5
   materials:
-    Plastic: 100
-    Steel: 100
-    Gold: 100
-    Glass: 100
+    Steel: 200
+    Plasma: 300
+    Glass: 150
 
-#- type: latheRecipe
-#  id: EyeImplantThermal
-#  result: EyeImplantThermal
-#  category: Implants
-#  completetime: 10
-#  materials:
-#    Plastic: 200
-#    Steel: 100
-#    Gold: 300
-#    Plasma: 300
-#    Glass: 100
+- type: latheRecipe
+  id: BoneLightImplant
+  result: BoneLightImplant
+  category: Implants
+  completetime: 5
+  materials:
+    Plastic: 1500
 
-# Automenders
+- type: latheRecipe
+  id: BoneHeavyImplant
+  result: BoneHeavyImplant
+  category: Implants
+  completetime: 5
+  materials:
+    Plasteel: 1500
 
-#- type: latheRecipe
-#  id: AutoMenderBrute
-#  result: AutoMenderBrute
-#  category: Tools
-#  completetime: 4
-#  materials:
-#    Plastic: 200
-#    Steel: 100
-#    Silver: 50
+- type: latheRecipe
+  id: SubcutaneousArmor
+  result: SubcutaneousArmor
+  category: Implants
+  completetime: 5
+  materials:
+    Steel: 1500
 
-#- type: latheRecipe
-#  id: AutoMenderBurn
-#  result: AutoMenderBurn
-#  category: Tools
-#  completetime: 4
-#  materials:
-#    Plastic: 200
-#    Steel: 100
-#    Silver: 50
+- type: latheRecipe
+  id: UpgradedSubcutaneousArmor
+  result: UpgradedSubcutaneousArmor
+  category: Implants
+  completetime: 5
+  materials:
+    Plasteel: 1500
+
+- type: latheRecipe
+  id: HeatSubcutaneousArmor
+  result: HeatSubcutaneousArmor
+  category: Implants
+  completetime: 5
+  materials:
+    Steel: 1500
+
+- type: latheRecipe
+  id: HeatUpgradeSubcutaneousArmor
+  result: HeatUpgradeSubcutaneousArmor
+  category: Implants
+  completetime: 5
+  materials:
+    Plasteel: 1500
+
+- type: latheRecipe
+  id: RadiationSubcutaneousArmor
+  result: RadiationSubcutaneousArmor
+  category: Implants
+  completetime: 5
+  materials:
+    Plasteel: 1500
+
+- type: latheRecipe
+  id: BloodFilterImplant
+  result: BloodFilterImplant
+  category: Implants
+  completetime: 5
+  materials:
+    Plastic: 1500
+
+- type: latheRecipe
+  id: BloodPumpImplant
+  result: BloodPumpImplant
+  category: Implants
+  completetime: 5
+  materials:
+    Plastic: 1500
+
+- type: latheRecipe
+  id: IzolationHandImplant
+  result: IzolationHandImplant
+  category: Implants
+  completetime: 5
+  materials:
+    Plastic: 1500
+
+- type: latheRecipe
+  id: VesselsImplant
+  result: VesselsImplant
+  category: Implants
+  completetime: 5
+  materials:
+    Plastic: 1500

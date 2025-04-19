@@ -16,9 +16,9 @@
   parent: BaseVesselsImplant
   components:
   - type: Sprite
-    state: eyes_thermal # NEED A SPRITE
+    state: implant
   - type: FunctionalOrgan
     armor:
       modifiers:
       coefficients:
-        Bloodloss: 0.90
+        Bloodloss: 0.50

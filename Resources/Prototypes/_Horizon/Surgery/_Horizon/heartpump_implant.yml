@@ -16,7 +16,6 @@
   parent: BaseBloodPumpImplant
   components:
   - type: Sprite
-    state: eyes_thermal # NEED SPRITE
+    state: implant
   - type: FunctionalOrgan
-    speed: 0.05
-
+    speed: 0.1

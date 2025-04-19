@@ -71,7 +71,6 @@
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: hemostat
 
-
 #Operation Insert
 - type: entity
   parent: SurgeryBase

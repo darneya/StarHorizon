@@ -17,10 +17,9 @@
   parent: BaseBloodFilter
   components:
   - type: Sprite
-    state: eyes_thermal # NEED SPIRTE
+    state: implant
   - type: FunctionalOrgan
     armor:
       modifiers:
       coefficients:
-        Poison: 0.90
-
+        Poison: 0.50

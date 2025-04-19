@@ -105,7 +105,6 @@
     - HorizonStopBloodloss
     - HorizonInsertPumpImplant
     - HorizonConnectValvesToHeart
-
   - type: SurgerySpeciesCondition
     speciesBlacklist:
     - SlimePerson # Не любим слаймолюдов
@@ -142,7 +141,6 @@
     - HorizonStopBloodloss
     - HorizonExtractPumpImplant
     - HorizonStopBloodloss
-
   - type: SurgerySpeciesCondition
     speciesBlacklist:
     - SlimePerson  # Всё ещё не любим слаймолюдов
@@ -153,7 +151,6 @@
     organ:
     - type: BloodPumpImplant
     container: blood_pump_implant
-
   - type: Sprite
     sprite: # NEED SPRITE!
     state: ...
