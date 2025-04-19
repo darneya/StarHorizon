@@ -49,8 +49,8 @@
       path: /Audio/Announcements/attention.ogg
     weight: 1
     duration: 35
-    earliestStart: 90
-    minimumPlayers: 10 # Horizon TempTweak
+    earliestStart: 30 # Horizon TempTweak
+    minimumPlayers: 1 # Horizon TempTweak
     reoccurrenceDelay: 480 # 8 hours
   - type: BluespaceCargoRule
     spawnerPrototype: CrateSyndicateSurplusBundle
@@ -63,8 +63,8 @@
   - type: StationEvent
     weight: 8 # Fairly common.
     duration: 35
-    earliestStart: 50
-    minimumPlayers: 10 # Horizon TempTweak
+    earliestStart: 30 # Horizon TempTweak
+    minimumPlayers: 1 # Horizon TempTweak
     reoccurrenceDelay: 50
   - type: RandomFaxRule
     minFaxes: 1
@@ -85,7 +85,7 @@
   components:
   - type: StationEvent
     weight: 100 # Fairly common.
-    minimumPlayers: 5 # Horizon TempTweak
+    minimumPlayers: 1 # Horizon TempTweak
     duration: 35
   - type: RandomFaxRule
     minFaxes: 3

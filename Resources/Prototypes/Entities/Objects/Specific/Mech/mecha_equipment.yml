@@ -32,6 +32,9 @@
   - type: ContainerContainer
     containers:
       item-container: !type:Container
+  - type: Tag
+    tags:
+      - MechEquipmentGeneral # Horizon Mech
 
 - type: entity
   id: MechEquipmentGrabberSmall
@@ -49,14 +52,15 @@
     maxContents: 4
     grabDelay: 3
     grabEnergyDelta: -20
-  - type: Tag
-    tags:
-    - SmallMech
   - type: UIFragment
     ui: !type:MechGrabberUi
   - type: ContainerContainer
     containers:
       item-container: !type:Container
+  - type: Tag
+    tags:
+    - MechEquipmentGeneral # Horizon Mech
+    - SmallMech
 
 - type: entity
   id: MechEquipmentHorn
@@ -78,4 +82,6 @@
     ui: !type:MechSoundboardUi
   - type: UseDelay
     delay: 0.5
-  # TODO: tag as being for H.O.N.K. only!!!
+  - type: Tag
+    tags:
+      - MechEquipmentClown # Horizon Mech

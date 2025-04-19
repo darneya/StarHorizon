@@ -4,13 +4,17 @@ using Content.Shared.Interaction;
 using Content.Shared.Mech.Components;
 using Content.Shared.Mech.Equipment.Components;
 using Content.Shared.Whitelist;
+using Content.Server.Mech.Equipment.Components;
+using Content.Shared._Horizon.Mech.EntitySystems;
+using Content.Shared._Horizon.Weapons.Ranged.Components;
+using Content.Shared.Mech;
 
 namespace Content.Server.Mech.Systems;
 
 /// <summary>
 /// Handles the insertion of mech equipment into mechs.
 /// </summary>
-public sealed class MechEquipmentSystem : EntitySystem
+public sealed class MechEquipmentSystem : SharedMechEquipmentSystem // Horizon Mech
 {
     [Dependency] private readonly MechSystem _mech = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
@@ -20,8 +24,15 @@ public sealed class MechEquipmentSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
+        base.Initialize();  // Horizon Mech
+
         SubscribeLocalEvent<MechEquipmentComponent, AfterInteractEvent>(OnUsed);
         SubscribeLocalEvent<MechEquipmentComponent, InsertEquipmentEvent>(OnInsertEquipment);
+
+        // Horizon Mech start
+        SubscribeLocalEvent<MechEquipmentComponent, EntityTerminatingEvent>(OnTerminating);
+        SubscribeLocalEvent<MechEquipmentComponent, MechEquipmentUiStateReadyEvent>(OnGetUIState);
+        // Horizon Mech end
     }
 
     private void OnUsed(EntityUid uid, MechEquipmentComponent component, AfterInteractEvent args)
@@ -65,4 +76,21 @@ public sealed class MechEquipmentSystem : EntitySystem
 
         args.Handled = true;
     }
+
+    // Horizon Mech start
+    private void OnTerminating(EntityUid uid, MechEquipmentComponent comp, ref EntityTerminatingEvent args)
+    {
+        _mech.UpdateUserInterfaceByEquipment(uid);
+    }
+
+    private void OnGetUIState(EntityUid uid, MechEquipmentComponent component, MechEquipmentUiStateReadyEvent args)
+    {
+        if (HasComp<MechGrabberComponent>(uid)) // Мне лень делать нормальную проверку, как-нибудь потом будет.
+            return;
+        if (HasComp<BallisticMechAmmoProviderComponent>(uid))
+            return;
+
+        args.States.Add(GetNetEntity(uid), null);
+    }
+    // Horizon Mech end
 }

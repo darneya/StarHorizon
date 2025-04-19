@@ -1,11 +1,11 @@
 {
   "version": 1,
+  "license": "CC BY-NC-ND 3.0",
+  "copyright": "Sprites by TheGypsyBaron DS:701266770429739008",
   "size": {
     "x": 32,
     "y": 32
   },
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/faf6db214927874c19b8fa8585d26b5d40de1acc, derelict sprites modified by GoldenCan(GitHub).",
   "states": [
     {
       "name": "clown",
