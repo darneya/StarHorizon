@@ -1,3 +1,4 @@
+using Content.Client._Horizon.WorldItem;
 using Content.Shared.Light;
 using Content.Shared.PDA;
 using Robust.Client.GameObjects;
@@ -6,13 +7,20 @@ namespace Content.Client.PDA;
 
 public sealed class PdaVisualizerSystem : VisualizerSystem<PdaVisualsComponent>
 {
+    [Dependency] private readonly WorldItemSystem _worldItemSystem = null!;
+
     protected override void OnAppearanceChange(EntityUid uid, PdaVisualsComponent comp, ref AppearanceChangeEvent args)
     {
         if (args.Sprite == null)
             return;
 
         if (AppearanceSystem.TryGetData<string>(uid, PdaVisuals.PdaType, out var pdaType, args.Component))
-            args.Sprite.LayerSetState(PdaVisualLayers.Base, pdaType);
+        {
+            if (_worldItemSystem.GetWorldState(uid, out var prefix))
+                args.Sprite.LayerSetState(PdaVisualLayers.Base, pdaType + prefix);
+            else
+                args.Sprite.LayerSetState(PdaVisualLayers.Base, pdaType);
+        }
 
         if (AppearanceSystem.TryGetData<bool>(uid, UnpoweredFlashlightVisuals.LightOn, out var isFlashlightOn, args.Component))
             args.Sprite.LayerSetVisible(PdaVisualLayers.Flashlight, isFlashlightOn);
