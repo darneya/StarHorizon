@@ -102,7 +102,7 @@ public sealed class WorldItemSystem : EntitySystem
             return;
         }
 
-        if (GetWorldState(entity.Owner, out var prefix))
+        if (GetWorldState(entity.Owner, out var prefix, out var _))
         {
             foreach (var (layer, state) in entity.Comp.DefaultSpriteStates)
             {
@@ -128,7 +128,7 @@ public sealed class WorldItemSystem : EntitySystem
             return;
         }
 
-        if (GetWorldState(entity.Owner, out var prefix))
+        if (GetWorldState(entity.Owner, out var prefix, out _))
         {
             foreach (var (layer, state) in entity.Comp.DefaultSpriteStates)
             {
@@ -145,14 +145,16 @@ public sealed class WorldItemSystem : EntitySystem
     }
 
     // ReSharper disable ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
-    public bool GetWorldState(EntityUid uid, [NotNullWhen(true)] out string? prefix)
+    public bool GetWorldState(EntityUid uid, [NotNullWhen(true)] out string? prefix, [NotNullWhen(true)] out Dictionary<int, string>? spriteStates)
     {
         if (!TryComp<WorldItemComponent>(uid, out var worldItem))
         {
             prefix = null;
+            spriteStates = null;
             return false;
         }
 
+        spriteStates = worldItem.DefaultSpriteStates;
         prefix = worldItem.Prefix;
         var transform = Transform(uid);
         if (transform == null)
