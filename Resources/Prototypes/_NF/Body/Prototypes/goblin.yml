@@ -10,6 +10,8 @@
       organs:
         brain: OrganGoblinBrain
         eyes: OrganGoblinEyes
+        eye_implant: null # _Horizon
+        cyberdeka_implant: null # _Horizon
     torso:
       part: TorsoGoblin
       connections:
@@ -23,6 +25,11 @@
         stomach: OrganGoblinStomach
         liver: OrganGoblinLiver
         kidneys: OrganGoblinKidneys
+        vessels_implant: null # _Horizon
+        blood_pump_implant: null
+        skin_implant: null # _Horizon
+        bone_implant: null # _Horizon
+        cavity: null # _Starlight
     right arm:
       part: RightArmGoblin
       connections:
@@ -33,8 +40,12 @@
       - left hand
     right hand:
       part: RightHandGoblin
+      organs:
+        hands_implant: null # _Horizon
     left hand:
       part: LeftHandGoblin
+      organs:
+        hands_implant: null # _Horizon
     right leg:
       part: RightLegGoblin
       connections:

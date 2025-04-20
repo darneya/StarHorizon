@@ -51,6 +51,12 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
                     nodes.Add(new ErrorNode(value, $"Value is not a value data node"));
                     continue;
                 }
+                
+                if (organ.Value == "null" || organ.Value == null)
+                    continue;
+
+                if (organ.Value == "null" || organ.Value == null)
+                    continue;
 
                 if (!prototypes.TryIndex(organ.Value, out EntityPrototype? organPrototype))
                 {
@@ -130,8 +136,8 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
 
         foreach (var (keyNode, valueNode) in slotNodes)
         {
-            var slotId = ((ValueDataNode) keyNode).Value;
-            var slot = ((MappingDataNode) valueNode);
+            var slotId = ((ValueDataNode)keyNode).Value;
+            var slot = (MappingDataNode)valueNode;
 
             string? part = null;
             if (slot.TryGet<ValueDataNode>("part", out var value))
@@ -157,7 +163,7 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
 
                 foreach (var (organKeyNode, organValueNode) in slotOrgansNode)
                 {
-                    organs.Add(((ValueDataNode) organKeyNode).Value, ((ValueDataNode) organValueNode).Value);
+                    organs.Add(((ValueDataNode)organKeyNode).Value, ((ValueDataNode)organValueNode).Value);
                 }
             }
 

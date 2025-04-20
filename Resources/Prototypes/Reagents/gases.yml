@@ -26,6 +26,14 @@
         conditions:
         - !type:OrganType
           type: Plant
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: OrganCyber
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: OrganBio
       # Convert Oxygen into CO2.
       - !type:ModifyLungGas
         conditions:
@@ -80,6 +88,10 @@
         amount: -2.0
     Gas:
       effects:
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: OrganBio
       - !type:HealthChange
         scaleByQuantity: true
         ignoreResistances: true
@@ -87,12 +99,19 @@
           types:
             Poison:
               1
+        conditions:
+        - !type:OrganType
+          type: OrganBio
+          shouldHave: false
       # We need a metabolism effect on reagent removal
       - !type:AdjustAlert
         alertType: Toxins
         conditions:
           - !type:ReagentThreshold
             min: 1.5
+          - !type:OrganType
+            type: OrganBio
+            shouldHave: false
         clear: True
         time: 5
   reactiveEffects:
@@ -126,6 +145,10 @@
             Radiation: 3
     Gas:
       effects:
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: OrganBio
       - !type:HealthChange
         scaleByQuantity: true
         ignoreResistances: true
@@ -133,12 +156,19 @@
           types:
             Radiation:
               1
+        conditions:
+        - !type:OrganType
+          type: OrganBio
+          shouldHave: false
       # We need a metabolism effect on reagent removal
       - !type:AdjustAlert
         alertType: Toxins
         conditions:
           - !type:ReagentThreshold
             min: 1.5
+          - !type:OrganType
+            type: OrganBio
+            shouldHave: false
         clear: True
         time: 5
 
@@ -152,6 +182,14 @@
   metabolisms:
     Gas:
       effects:
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: OrganCyber
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: OrganBio
       - !type:Oxygenate
         conditions:
         - !type:OrganType
@@ -202,6 +240,14 @@
             Cold: 1 # liquid nitrogen is cold
     Gas:
       effects:
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: OrganCyber
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: OrganBio
       - !type:Oxygenate
         conditions:
         - !type:OrganType
@@ -328,7 +374,7 @@
         ignoreResistances: true
         damage:
           types:
-            Cellular: 0.1
+            Cellular: 0.5
       - !type:GenericStatusEffect
         conditions:
         - !type:ReagentThreshold
@@ -433,6 +479,16 @@
   metabolisms:
     Gas:
       effects:
+      - !type:Oxygenate
+        factor: 8
+        conditions:
+        - !type:OrganType
+          type: OrganCyber
+      - !type:Oxygenate
+        factor: 8
+        conditions:
+        - !type:OrganType
+          type: OrganBio
       - !type:Oxygenate
         factor: 8
         conditions:

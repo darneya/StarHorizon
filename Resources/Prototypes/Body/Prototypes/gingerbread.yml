@@ -10,6 +10,9 @@
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
+        tongue: OrganHumanTongue
+        eye_implant: null # _Horizon
+        cyberdeka_implant: null # _Horizon
     torso:
       part: TorsoGingerbread
       connections:
@@ -23,6 +26,11 @@
         stomach: OrganHumanStomach
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
+        vessels_implant: null # _Horizon
+        blood_pump_implant: null
+        skin_implant: null # _Horizon
+        bone_implant: null # _Horizon
+        cavity: null # _Starlight
     right arm:
       part: RightArmGingerbread
       connections:
@@ -33,8 +41,12 @@
       - left hand
     right hand:
       part: RightHandGingerbread
+      organs:
+        hands_implant: null # _Horizon
     left hand:
       part: LeftHandGingerbread
+      organs:
+        hands_implant: null # _Horizon
     right leg:
       part: RightLegGingerbread
       connections:

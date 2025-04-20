@@ -1,4 +1,6 @@
-﻿using Content.Shared.Damage;
+﻿using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Body.Components; // _Horizon
+using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.Silicons.Borgs;
@@ -21,6 +23,7 @@ public abstract class SharedArmorSystem : EntitySystem
 
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<CoefficientQueryEvent>>(OnCoefficientQuery);
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnDamageModify);
+        SubscribeLocalEvent<ArmorComponent, DamageModifyEvent>(OnBodyDamageModify); // _Horizon
         SubscribeLocalEvent<ArmorComponent, BorgModuleRelayedEvent<DamageModifyEvent>>(OnBorgDamageModify);
         SubscribeLocalEvent<ArmorComponent, GetVerbsEvent<ExamineVerb>>(OnArmorVerbExamine);
     }
@@ -51,7 +54,9 @@ public abstract class SharedArmorSystem : EntitySystem
 
     private void OnArmorVerbExamine(EntityUid uid, ArmorComponent component, GetVerbsEvent<ExamineVerb> args)
     {
-        if (!args.CanInteract || !args.CanAccess)
+        if (component.DoNotShowExamine && uid != args.User // _Horizon
+            || !args.CanInteract // _Horizon
+            || !args.CanAccess) // _Horizon
             return;
 
         var examineMarkup = GetArmorExamine(component.Modifiers);
@@ -93,4 +98,38 @@ public abstract class SharedArmorSystem : EntitySystem
 
         return msg;
     }
+
+    // _Horizon Start`s
+
+    [SuppressMessage("Performance", "CA1822:Пометьте члены как статические")]
+    public void ChangeComponentModifiers(Entity<ArmorComponent> ent, DamageModifierSet newModifiers)
+    {
+        // ReSharper disable once NullCoalescingConditionIsAlwaysNotNullAccordingToAPIContract
+        ent.Comp.Modifiers ??= new DamageModifierSet();
+
+        foreach (var (addType, addMod) in newModifiers.Coefficients)
+        {
+            ent.Comp.Modifiers.Coefficients[addType] = addMod;
+        }
+        foreach (var (addType, addMod) in newModifiers.FlatReduction)
+        {
+            ent.Comp.Modifiers.FlatReduction[addType] = addMod;
+        }
+
+        Dirty(ent.Owner, ent.Comp);
+    }
+
+    [SuppressMessage("Performance", "CA1822:Пометьте члены как статические")]
+    public void ChangeExamineState(Entity<ArmorComponent> ent, bool state)
+    {
+        ent.Comp.DoNotShowExamine = state;
+        Dirty(ent.Owner, ent.Comp);
+    }
+
+    private void OnBodyDamageModify(EntityUid uid, ArmorComponent component, DamageModifyEvent args)
+    {
+        if (HasComp<BodyComponent>(uid))
+            args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, component.Modifiers);
+    }
+    // _Horizon End`s
 }
