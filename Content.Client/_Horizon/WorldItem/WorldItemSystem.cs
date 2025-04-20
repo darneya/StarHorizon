@@ -37,7 +37,7 @@ public sealed class WorldItemSystem : EntitySystem
                 continue;
 
             var state = layer.RsiState.Name;
-            entity.Comp.DefaultSpriteStates.Add(layerNumber, state);
+            entity.Comp.DefaultSpriteStates[layerNumber] = state;
             layerNumber++;
         }
 
@@ -69,7 +69,7 @@ public sealed class WorldItemSystem : EntitySystem
                 continue;
 
             var state = layer.RsiState.Name;
-            entity.Comp.DefaultSpriteStates.Add(layerNumber, state);
+            entity.Comp.DefaultSpriteStates[layerNumber] = state;
             layerNumber++;
         }
 
