@@ -54,11 +54,10 @@ public abstract class SharedArmorSystem : EntitySystem
 
     private void OnArmorVerbExamine(EntityUid uid, ArmorComponent component, GetVerbsEvent<ExamineVerb> args)
     {
-        // if (component.DoNotShowExamine && uid != args.User // Horizon Upstream deletion
-        //     || !args.CanInteract // Horizon Upstream deletion
-        //     || !args.CanAccess) // Horizon Upstream deletion
-
-        if (!args.CanInteract || !args.CanAccess || !component.ShowArmorOnExamine)
+        if (component.DoNotShowExamine && uid != args.User // _Horizon Upstream
+            || !args.CanInteract
+            || !args.CanAccess
+            || !component.ShowArmorOnExamine)
             return;
 
         var examineMarkup = GetArmorExamine(component.Modifiers);
@@ -121,12 +120,12 @@ public abstract class SharedArmorSystem : EntitySystem
         Dirty(ent.Owner, ent.Comp);
     }
 
-    // [SuppressMessage("Performance", "CA1822:Пометьте члены как статические")] // Horizon Upstream deletion
-    // public void ChangeExamineState(Entity<ArmorComponent> ent, bool state)
-    // {
-    //     ent.Comp.DoNotShowExamine = state;
-    //     Dirty(ent.Owner, ent.Comp);
-    // }
+     [SuppressMessage("Performance", "CA1822:Пометьте члены как статические")] // Horizon Upstream
+     public void ChangeExamineState(Entity<ArmorComponent> ent, bool state)
+     {
+         ent.Comp.DoNotShowExamine = state;
+         Dirty(ent.Owner, ent.Comp);
+    }
 
     private void OnBodyDamageModify(EntityUid uid, ArmorComponent component, DamageModifyEvent args)
     {
