@@ -180,6 +180,7 @@
   id: ERTMailCarrierIDCard
   name: ERT mail carrier ID card
   components:
+  - type: WorldItem
   - type: IdCard
     jobTitle: job-title-ert-mail-carrier
   - type: Sprite
