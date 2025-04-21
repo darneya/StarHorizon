@@ -82,7 +82,7 @@ public sealed partial class MapScreen : BoxContainer
 
         OnVisibilityChanged += OnVisChange;
 
-        MapFTLButton.OnToggled += FtlPreviewToggled;
+        // MapFTLButton.OnToggled += FtlPreviewToggled;
 
         _ftlStyle = new StyleBoxFlat(Color.LimeGreen);
         FTLBar.ForegroundStyleBoxOverride = _ftlStyle;
@@ -104,88 +104,88 @@ public sealed partial class MapScreen : BoxContainer
         };
     }
 
-    public void UpdateState(ShuttleMapInterfaceState state)
-    {
-        // Only network the accumulator due to ping making the thing fonky.
-        // This should work better with predicting network states as they come in.
-        _beacons = state.Destinations;
-        _exclusions = state.Exclusions;
-        _state = state.FTLState;
-        _ftlTime = state.FTLTime;
-        MapRadar.InFtl = true;
-        MapFTLState.Text = Loc.GetString($"shuttle-console-ftl-state-{_state.ToString()}");
+    // public void UpdateState(ShuttleMapInterfaceState state)
+    // {
+    //     // Only network the accumulator due to ping making the thing fonky.
+    //     // This should work better with predicting network states as they come in.
+    //     _beacons = state.Destinations;
+    //     _exclusions = state.Exclusions;
+    //     _state = state.FTLState;
+    //     _ftlTime = state.FTLTime;
+    //     MapRadar.InFtl = true;
+    //     MapFTLState.Text = Loc.GetString($"shuttle-console-ftl-state-{_state.ToString()}");
 
-        //frontier - we only allow pre-approved vessels to FTL
-        if (!_entManager.HasComponent<ShuttleFTLComponent>(_shuttleEntity))
-        {
-            MapFTLButton.Visible = true;
-        }
-        else
-        {
-            MapFTLButton.Visible = true;
-        }
+    //     //frontier - we only allow pre-approved vessels to FTL
+    //     // if (!_entManager.HasComponent<ShuttleFTLComponent>(_shuttleEntity))
+    //     // {
+    //     //     MapFTLButton.Visible = true;
+    //     // }
+    //     // else
+    //     // {
+    //     //     MapFTLButton.Visible = true;
+    //     // }
 
-        switch (_state)
-        {
-            case FTLState.Available:
-                SetFTLAllowed(true);
-                _ftlStyle.BackgroundColor = Color.FromHex("#80C71F");
-                MapRadar.InFtl = false;
-                break;
-            case FTLState.Starting:
-                SetFTLAllowed(false);
-                _ftlStyle.BackgroundColor = Color.FromHex("#169C9C");
-                break;
-            case FTLState.Travelling:
-                SetFTLAllowed(false);
-                _ftlStyle.BackgroundColor = Color.FromHex("#8932B8");
-                break;
-            case FTLState.Arriving:
-                SetFTLAllowed(false);
-                _ftlStyle.BackgroundColor = Color.FromHex("#F9801D");
-                break;
-            case FTLState.Cooldown:
-                SetFTLAllowed(false);
-                // Scroll to the FTL spot
-                if (_entManager.TryGetComponent(_shuttleEntity, out TransformComponent? shuttleXform))
-                {
-                    var targetOffset = _maps.GetGridPosition(_shuttleEntity.Value);
-                    MapRadar.SetMap(shuttleXform.MapID, targetOffset, recentering: true);
-                }
+    //     switch (_state)
+    //     {
+    //         case FTLState.Available:
+    //             SetFTLAllowed(true);
+    //             _ftlStyle.BackgroundColor = Color.FromHex("#80C71F");
+    //             MapRadar.InFtl = false;
+    //             break;
+    //         case FTLState.Starting:
+    //             SetFTLAllowed(false);
+    //             _ftlStyle.BackgroundColor = Color.FromHex("#169C9C");
+    //             break;
+    //         case FTLState.Travelling:
+    //             SetFTLAllowed(false);
+    //             _ftlStyle.BackgroundColor = Color.FromHex("#8932B8");
+    //             break;
+    //         case FTLState.Arriving:
+    //             SetFTLAllowed(false);
+    //             _ftlStyle.BackgroundColor = Color.FromHex("#F9801D");
+    //             break;
+    //         case FTLState.Cooldown:
+    //             SetFTLAllowed(false);
+    //             // Scroll to the FTL spot
+    //             if (_entManager.TryGetComponent(_shuttleEntity, out TransformComponent? shuttleXform))
+    //             {
+    //                 var targetOffset = _maps.GetGridPosition(_shuttleEntity.Value);
+    //                 MapRadar.SetMap(shuttleXform.MapID, targetOffset, recentering: true);
+    //             }
 
-                _ftlStyle.BackgroundColor = Color.FromHex("#B02E26");
-                MapRadar.InFtl = false;
-                break;
-            // Fallback in case no FTL state or the likes.
-            default:
-                SetFTLAllowed(false);
-                _ftlStyle.BackgroundColor = Color.FromHex("#B02E26");
-                MapRadar.InFtl = false;
-                break;
-        }
+    //             _ftlStyle.BackgroundColor = Color.FromHex("#B02E26");
+    //             MapRadar.InFtl = false;
+    //             break;
+    //         // Fallback in case no FTL state or the likes.
+    //         default:
+    //             SetFTLAllowed(false);
+    //             _ftlStyle.BackgroundColor = Color.FromHex("#B02E26");
+    //             MapRadar.InFtl = false;
+    //             break;
+    //     }
 
-        if (IsFTLBlocked())
-        {
-            MapRebuildButton.Disabled = true;
-            ClearMapObjects();
-        }
-    }
+    //     if (IsFTLBlocked())
+    //     {
+    //         MapRebuildButton.Disabled = true;
+    //         ClearMapObjects();
+    //     }
+    // }
 
-    private void SetFTLAllowed(bool value)
-    {
-        if (value)
-        {
-            MapFTLButton.Disabled = false;
-        }
-        else
-        {
-            // Unselect FTL
-            MapFTLButton.Pressed = false;
-            MapRadar.FtlMode = false;
-            MapRadar.ShowFTLRangeOnly = false;
-            MapFTLButton.Disabled = true;
-        }
-    }
+    // private void SetFTLAllowed(bool value)
+    // {
+    //     if (value)
+    //     {
+    //         MapFTLButton.Disabled = false;
+    //     }
+    //     else
+    //     {
+    //         // Unselect FTL
+    //         MapFTLButton.Pressed = false;
+    //         MapRadar.FtlMode = false;
+    //         MapRadar.ShowFTLRangeOnly = false;
+    //         MapFTLButton.Disabled = true;
+    //     }
+    // }
 
     private void FtlPreviewToggled(BaseButton.ButtonToggledEventArgs obj)
     {
@@ -232,7 +232,7 @@ public sealed partial class MapScreen : BoxContainer
         }
 
         RebuildMapObjects();
-        
+
         // Immediately add all objects to the map instead of queueing them
         foreach (var mapObj in _pendingMapObjects)
         {
