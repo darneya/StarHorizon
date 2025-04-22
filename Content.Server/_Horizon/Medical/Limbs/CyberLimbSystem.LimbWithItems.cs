@@ -211,6 +211,7 @@ private void InitializeLimbWithItems()
 
         var entity = new Entity<ArmorComponent>(target, armor);
         _armorSystem.ChangeComponentModifiers(entity, totalResistance); // Apply All
+        _armorSystem.ChangeExamineState(entity,true);
     }
 }
 

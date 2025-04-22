@@ -235,4 +235,10 @@ public sealed partial class MechComponent : Component
     [DataField] public EntityUid? MechInhaleActionEntity;
     [DataField] public EntityUid? MechTurnLightsActionEntity;
     // Horizon Mech end
+
+    /// <summary>
+    /// Frontier: whether or not the equipment in the mech can be removed.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool CanRemoveEquipment = true;
 }

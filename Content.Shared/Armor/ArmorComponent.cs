@@ -24,8 +24,14 @@ public sealed partial class ArmorComponent : Component
     [DataField]
     public float PriceMultiplier = 1;
 
-    [DataField, AutoNetworkedField]
-    public bool DoNotShowExamine; // _Horizon
+    [DataField, AutoNetworkedField] // Horizon Upstream
+    public bool DoNotShowExamine; // Horizon Upstream
+
+    /// <summary>
+    /// If true, you can examine the armor to see the protection. If false, the verb won't appear.
+    /// </summary>
+    [DataField]
+    public bool ShowArmorOnExamine = true;
 }
 
 /// <summary>

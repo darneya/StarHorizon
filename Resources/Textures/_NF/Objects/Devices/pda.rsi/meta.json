@@ -273,6 +273,17 @@
       "name": "pda-doc"
     },
     {
+      "name": "pda-wizard",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
       "name": "equipped-IDCARD",
       "directions": 4
     }

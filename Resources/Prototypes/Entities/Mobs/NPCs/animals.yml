@@ -248,7 +248,7 @@
     bloodMaxVolume: 100
   - type: EggLayer
     eggSpawn:
-    - id: FoodEgg
+    - id: FoodEggLaid # Frontier: FoodEgg<FoodEggLaid
   - type: ExaminableHunger
   - type: ReplacementAccent
     accent: chicken
@@ -258,6 +258,9 @@
     factions:
     - Passive
     - Chicken # Frontier
+  - type: HTN # Frontier
+    rootTask: # Frontier
+      task: RuminantCompound # Frontier
 
 - type: entity
   parent: MobChicken
@@ -311,7 +314,7 @@
 
 - type: entity
   id: FoodEggChickenFertilized
-  parent: FoodEgg
+  parent: FoodEggLaid # Frontier: FoodEgg<FoodEggLaid
   suffix: Fertilized, Chicken
   components:
   - type: Timer
@@ -472,7 +475,7 @@
     description: ghost-role-information-mothroach-description
     rules: ghost-role-information-freeagent-rules
     mindRoles:
-    - MindRoleGhostRoleFreeAgent
+    - MindRoleGhostRoleFreeAgentHarmless
   - type: Fixtures
     fixtures:
       fix1:
@@ -695,7 +698,7 @@
     bloodMaxVolume: 100
   - type: EggLayer
     eggSpawn:
-    - id: FoodEgg
+    - id: FoodEggLaid # Frontier: FoodEgg<FoodEggLaid
   - type: ExaminableHunger
   - type: ReplacementAccent
     accent: duck
@@ -704,6 +707,9 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: HTN # Frontier
+    rootTask: # Frontier
+      task: RuminantCompound # Frontier
 
 - type: entity
   name: white duck #Quack
@@ -745,7 +751,7 @@
 
 - type: entity
   id: FoodEggDuckFertilized
-  parent: FoodEgg
+  parent: FoodEggLaid # Frontier: FoodEgg<FoodEggLaid
   suffix: Fertilized, Duck
   components:
     - type: Timer
@@ -1676,7 +1682,7 @@
     description: ghost-role-information-mouse-description
     rules: ghost-role-information-freeagent-rules
     mindRoles:
-    - MindRoleGhostRoleFreeAgent
+    - MindRoleGhostRoleFreeAgentHarmless
   - type: GhostTakeoverAvailable
   - type: Speech
     speechSounds: Squeak
