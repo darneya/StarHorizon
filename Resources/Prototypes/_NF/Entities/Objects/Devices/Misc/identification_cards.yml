@@ -3,45 +3,48 @@
   id: MercenaryIDCard
   name: mercenary ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: Mercenary
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: default
     - state: idmercenary
   - type: Clothing
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
 
 - type: entity
   parent: IDCardStandard
   id: PilotIDCard
   name: pilot ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: Pilot
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: default
     - state: idpilot
   - type: Clothing
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
 
 - type: entity
   parent: IDCardStandard
   id: StcIDCard
   name: station traffic controller ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: StationTrafficController
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: silver
     - state: idstationtrafficcontroller
   - type: Clothing
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
   - type: Item
     heldPrefix: silver
 
@@ -50,10 +53,11 @@
   id: PublicAffairsIDCard
   name: public affairs liaison ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: PublicAffairsLiaison
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: nfsd
     - state: idpublicaffairsliaison
@@ -63,15 +67,16 @@
   id: CadetIDCard
   name: NFSD cadet ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: Cadet
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: nfsd
     - state: idnfsdcadet
   - type: Clothing
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
   - type: Item
     heldPrefix: nfsd
 
@@ -80,10 +85,11 @@
   id: DeputyIDCard
   name: NFSD deputy ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: Deputy
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: nfsd
     - state: idnfsddeputy
@@ -93,10 +99,11 @@
   id: BrigmedicNFIDCard
   name: NFSD brigmedic ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: Brigmedic
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: nfsd
     - state: idnfsdbrigmed
@@ -106,10 +113,11 @@
   id: SergeantIDCard
   name: NFSD sergeant ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: SeniorOfficer
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: nfsd
     - state: idnfsdsergeant
@@ -119,10 +127,11 @@
   id: BailiffIDCard
   name: NFSD bailiff ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: Bailiff
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: nfsd
     - state: idnfsdbailiff
@@ -132,10 +141,11 @@
   id: ShriffIDCard
   name: NFSD sheriff ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: Sheriff
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: silver
     - state: idnfsdsheriff
@@ -147,10 +157,11 @@
   id: NFDetectiveIDCard
   name: NFSD detective ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: NFDetective
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: nfsd
     - state: idnfsddetective
@@ -160,6 +171,7 @@
   id: SecurityGuardIDCard
   name: security guard ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: SecurityGuard
 
@@ -168,10 +180,11 @@
   id: ERTMailCarrierIDCard
   name: ERT mail carrier ID card
   components:
+  - type: WorldItem
   - type: IdCard
     jobTitle: job-title-ert-mail-carrier
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: gold
     - state: ert_mailcarrier
@@ -181,6 +194,7 @@
   id: SrIDCard
   name: station representative ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: StationRepresentative
 
@@ -189,10 +203,11 @@
   id: ValetNFIDCard
   name: valet ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: Valet
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: default
     - state: idvalet
@@ -201,6 +216,7 @@
   parent: JanitorIDCard
   id: NFJanitorIDCard
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: NFJanitor
 
@@ -209,10 +225,11 @@
   id: ContractorIDCard
   name: contractor ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: Contractor
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: default
     - state: idcontractor
@@ -224,10 +241,11 @@
   description: Garr, be this wood?
   suffix: Frontier
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: NFPirate
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: pirate
     - state: idpirate
@@ -240,10 +258,11 @@
   name: pirate captain ID card
   description: Ahoy, see how it glistens!
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: NFPirateCaptain
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: pirate
     - state: idpiratecaptain
@@ -253,10 +272,11 @@
   id: NFPirateFirstMateIDCard
   name: pirate first mate ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: NFPirateFirstMate
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: pirate
     - state: idpiratefirstmate
@@ -266,6 +286,7 @@
   id: YipYipIDCard
   name: yip yip ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     name: Yip Yip
 
@@ -274,15 +295,16 @@
   id: DocIDCard
   name: director of care ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     job: DirectorOfCare
   - type: Sprite
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
     layers:
     - state: silver
     - state: idmedicdoc
   - type: Clothing
-    sprite: _NF/Objects/Misc/id_cards.rsi
+    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
   - type: Item
     heldPrefix: medic #temporary to OBSERVE
 
@@ -292,6 +314,7 @@
   id: ClippyIDCard
   name: clippy ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     name: Clippy
 
@@ -300,6 +323,7 @@
   id: ClarpyIDCard
   name: clarpy ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     name: Clarpy
 
@@ -308,5 +332,6 @@
   id: CappyIDCard
   name: cappy ID card
   components:
+  - type: WorldItem
   - type: PresetIdCard
     name: Cappy

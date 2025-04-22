@@ -5,13 +5,14 @@
   name: PDA
   description: Personal Data Assistant.
   components:
+  - type: WorldItem
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
        !type:String
        pda
   - type: Sprite
-    sprite: _NF/Objects/Devices/pda.rsi # Frontier
+    sprite: _Horizon/Objects/Devices/pda.rsi # _Horizon
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
       state: "pda"
@@ -24,7 +25,7 @@
       shader: "unshaded"
       visible: false
   - type: Icon
-    sprite: _NF/Objects/Devices/pda.rsi # Frontier
+    sprite: _Horizon/Objects/Devices/pda.rsi # _Horizon
     state: pda
   - type: Pda
     paiSlot:
