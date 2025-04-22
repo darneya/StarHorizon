@@ -89,8 +89,7 @@
     duration: 12
   - type: SurgeryStepOrganExtract
     organ:
-    - type: Item
-    slot: vessels_implant
+    - type: VesselsImplant
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     layers:

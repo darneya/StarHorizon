@@ -64,8 +64,7 @@
     duration: 12
   - type: SurgeryStepOrganExtract
     organ:
-    - type: Item
-    slot: blood_pump_implant
+    - type: BloodPumpImplant
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Medical/implants.rsi
     layers:

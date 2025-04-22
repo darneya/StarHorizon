@@ -140,9 +140,7 @@ private void InitializeLimbWithItems()
         {
             modifiers = [modifier];
             var baseSpeed = new BaseSpeed(move.BaseWalkSpeed, move.BaseSprintSpeed);
-            _speedCoefficients[target] = (baseSpeed, modifiers);
-            _moveSystem.ChangeBaseSpeed(target, move.BaseWalkSpeed * modifier, move.BaseSprintSpeed * modifier, move.Acceleration);
-            return;
+            oldModifiers = _speedCoefficients[target] = (baseSpeed, modifiers);
         }
 
         var totalCoefficient = 1 + modifiers.Sum();
