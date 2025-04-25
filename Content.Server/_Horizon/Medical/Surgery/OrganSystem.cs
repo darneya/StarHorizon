@@ -108,12 +108,17 @@ public sealed class OrganSystem : EntitySystem
         //if (HasComp<AbductorComponent>(args.Body) || !ent.Comp.IsMuted) Комментировано, потому, что нет генокрада
         if (!ent.Comp.IsMuted)
             return;
+
+        ent.Comp.IsMuted = false;
         RemComp<MutedComponent>(args.Body);
     }
 
     private void OnTongueExtracted(Entity<OrganTongueComponent> ent, ref SurgeryOrganExtracted args)
     {
-        ent.Comp.IsMuted = HasComp<MutedComponent>(args.Body);
+        ent.Comp.IsMuted = true;
+        if (HasComp<MutedComponent>(args.Body))
+            return;
+
         AddComp<MutedComponent>(args.Body);
     }
 
