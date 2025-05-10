@@ -373,9 +373,6 @@
     walkModifier: 0.75
     sprintModifier: 0.75
   - type: HeldSpeedModifier
-  - type: FootstepModifier
-    footstepSoundCollection:
-      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitTacticalMaid
 
