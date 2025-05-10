@@ -124,6 +124,8 @@
   id: AirlockBloodCult
   suffix: Blood Cult
   components:
+  - type: Airlock
+    openUnlitVisible: false
   - type: Sprite
     sprite: _NF/Structures/Specific/BloodCult/airlock.rsi
   - type: Fixtures
