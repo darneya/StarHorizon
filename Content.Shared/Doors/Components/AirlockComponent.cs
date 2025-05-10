@@ -24,7 +24,7 @@ public sealed partial class AirlockComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField, AutoNetworkedField]
     public bool EmergencyAccess = false;
-	
+
     /// <summary>
     /// Sound to play when the airlock emergency access is turned on.
     /// </summary>
@@ -89,7 +89,7 @@ public sealed partial class AirlockComponent : Component
     /// Whether the door lights should be visible.
     /// </summary>
     [DataField]
-    public bool OpenUnlitVisible = false;
+    public bool OpenUnlitVisible = true;
 
     /// <summary>
     /// Whether the door should display emergency access lights.
