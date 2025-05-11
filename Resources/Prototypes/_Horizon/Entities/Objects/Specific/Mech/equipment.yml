@@ -88,6 +88,10 @@
     grabMobs: true
     maxContents: 4
     slowMetabolism: true
+    blacklist:
+      components:
+        - Anomaly
+        - Mech
   - type: Tag
     tags:
       - MechEquipmentMed
