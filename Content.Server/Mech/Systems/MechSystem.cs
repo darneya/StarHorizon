@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Construction.Completions;
 using Content.Server.Mech.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -30,6 +31,9 @@ using Robust.Server.Audio;
 using Content.Shared.Access.Systems;
 using Content.Shared.Access.Components;
 using Robust.Shared.Random;
+using Content.Shared.Mech.Equipment.Components;
+using Content.Shared.Storage;
+using Content.Server._Horizon.Mech.Components;
 
 namespace Content.Server.Mech.Systems;
 
@@ -79,6 +83,8 @@ public sealed partial class MechSystem : SharedMechSystem
 
         SubscribeLocalEvent<MechAirComponent, GetFilterAirEvent>(OnGetFilterAir);
 
+        SubscribeLocalEvent<MechComponentsTransferEvent>(OnMechComponentsTransfer); // Horizon
+
         #region Equipment UI message relays
         // SubscribeLocalEvent<MechComponent, MechGrabberEjectMessage>(ReceiveEquipmentUiMesssages);    // Horizon Mech - Moved to Shared
         // SubscribeLocalEvent<MechComponent, MechSoundboardPlayMessage>(ReceiveEquipmentUiMesssages);  // Horizon Mech - Moved to Shared
@@ -86,6 +92,72 @@ public sealed partial class MechSystem : SharedMechSystem
 
         InitializeADT();    // Horizon Mech
     }
+
+    // Horizon start
+    /// <summary>
+    /// Обработчик события передачи компонентов меха.
+    /// Вставляет сохраненные модули и батарею в последний созданный мех.
+    /// </summary>
+    private void OnMechComponentsTransfer(MechComponentsTransferEvent args)
+    {
+        // Поиск нового меха
+        var mechs = EntityQuery<MechComponent>()
+            .OrderByDescending(m => m.Owner.Id)
+            .Select(m => m.Owner)
+            .ToList();
+
+        if (mechs.Count == 0)
+            return;
+
+        var latestMech = mechs[0];
+
+        if (!TryComp<MechComponent>(latestMech, out var mechComp))
+            return;
+
+        var component = args.Component;
+
+        if (!EntityManager.EntityExists(component))
+        {
+            Log.Error($"OnMechComponentsTransfer: Компонент {component} не существует!");
+            return;
+        }
+
+        // Проверяем, является ли компонент пилотом
+        if (args.IsPilot)
+        {
+            //Log.Debug($"OnMechComponentsTransfer: Переносим пилота {ToPrettyString(component)} в мех {ToPrettyString(latestMech)}");
+            TryInsert(latestMech, component, mechComp);
+        }
+        else if (TryComp<BatteryComponent>(component, out _))
+        {
+            InsertBattery(latestMech, component, mechComp);
+            //Log.Debug($"OnMechComponentsTransfer: Вставлена батарея {ToPrettyString(component)} в {ToPrettyString(latestMech)}");
+        }
+        else if (HasComp<MechEquipmentComponent>(component))
+        {
+            InsertEquipment(latestMech, component, mechComp);
+            //Log.Debug($"OnMechComponentsTransfer: Вставлено оборудование {ToPrettyString(component)} в {ToPrettyString(latestMech)}");
+        }
+        else if (args.IsStorageItem)
+        {
+            // Проверяем, есть ли у нового меха хранилище
+            if (TryComp<StorageComponent>(latestMech, out var storageComp))
+            {
+                // Перемещаем предмет в новое хранилище
+                _container.InsertOrDrop(component, storageComp.Container);
+                //Log.Debug($"OnMechComponentsTransfer: Перемещён предмет {ToPrettyString(component)} в хранилище {ToPrettyString(latestMech)}");
+            }
+            else
+            {
+                // Если у нового меха нет хранилища, выбрасываем предмет на пол
+                Transform(component).Coordinates = Transform(latestMech).Coordinates;
+                //Log.Debug($"OnMechComponentsTransfer: Выброшен предмет {ToPrettyString(component)} на пол, т.к. у нового меха нет хранилища");
+            }
+        }
+
+        UpdateUserInterface(latestMech, mechComp);
+    }
+    // Horizon end
 
     private void OnMechCanMoveEvent(EntityUid uid, MechComponent component, UpdateCanMoveEvent args)
     {
