@@ -3,6 +3,7 @@ using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
 using Content.Shared.Movement.Events;
+using Content.Shared.Silicons.Borgs.Components;
 
 namespace Content.Shared.Interaction;
 
@@ -28,8 +29,20 @@ public partial class SharedInteractionSystem
 
     private void CancelInteractEvent(Entity<BlockMovementComponent> ent, ref InteractionAttemptEvent args)
     {
-        if (ent.Comp.BlockInteraction)
-            args.Cancelled = true;
+        // StarHorizon start
+        if (!ent.Comp.BlockInteraction)
+            return;
+
+        // Фикс бага с взаимодействием мозга
+        if (args.Target != null && HasComp<BorgChassisComponent>(args.Target.Value))
+        {
+            // Если цель - борг, то разрешаем взаимодействие
+            // Это позволит взаимодействовать с боргом - позже в цепочке вызовов проверяется, что игрок держит мозг
+            return;
+        }
+
+        args.Cancelled = true;
+        // StarHorizon end
     }
 
     private void OnMoveAttempt(EntityUid uid, BlockMovementComponent component, UpdateCanMoveEvent args)
