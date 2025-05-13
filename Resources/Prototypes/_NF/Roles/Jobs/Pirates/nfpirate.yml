@@ -16,7 +16,6 @@
   icon: "JobIconNFPirate"
   supervisors: job-supervisors-nf-pirate
   weight: 20
-  whitelisted: true # Horizon TempTweak
   displayWeight: 20
   setPreference: true
   access:
