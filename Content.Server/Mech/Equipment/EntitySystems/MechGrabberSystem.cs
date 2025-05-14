@@ -19,6 +19,9 @@ using Robust.Shared.Physics.Components;
 using Content.Shared.Whitelist; // Frontier
 using Content.Shared.Buckle.Components; // Frontier
 using Content.Shared.Buckle; // Frontier
+using Content.Server.Body.Systems;
+using Content.Shared.Mind.Components; // Frontier
+using Content.Server.Ghost.Roles.Components; // Frontier
 
 namespace Content.Server.Mech.Equipment.EntitySystems;
 
@@ -47,6 +50,8 @@ public sealed class MechGrabberSystem : EntitySystem
 
         SubscribeLocalEvent<MechGrabberComponent, UserActivateInWorldEvent>(OnInteract);
         SubscribeLocalEvent<MechGrabberComponent, GrabberDoAfterEvent>(OnMechGrab);
+
+        SubscribeLocalEvent<MechGrabberComponent, EntityTerminatingEvent>(OnTerminating);   // Horizon Mech
     }
 
     private void OnGrabberMessage(EntityUid uid, MechGrabberComponent component, MechEquipmentUiMessageRelayEvent args)
@@ -88,7 +93,13 @@ public sealed class MechGrabberSystem : EntitySystem
         var xform = Transform(toRemove);
         _transform.AttachToGridOrMap(toRemove, xform);
         var (mechPos, mechRot) = _transform.GetWorldPositionRotation(mechxform);
-
+        // Horizon Mech start
+        if (component.SlowMetabolism)
+        {
+            var metabolicEvent = new ApplyMetabolicMultiplierEvent(toRemove, 0.4f, true);
+            RaiseLocalEvent(toRemove, ref metabolicEvent);
+        }
+        // Horizon Mech end
         var offset = mechPos + mechRot.RotateVec(component.DepositOffset);
         _transform.SetWorldPositionRotation(toRemove, offset, Angle.Zero);
         _mech.UpdateUserInterface(mech);
@@ -137,12 +148,19 @@ public sealed class MechGrabberSystem : EntitySystem
         if (args.Target == args.User || component.DoAfter != null)
             return;
 
-        if (TryComp<PhysicsComponent>(target, out var physics) && physics.BodyType == BodyType.Static ||
-            HasComp<WallMountComponent>(target) ||
-            HasComp<MobStateComponent>(target))
-        {
+        // Horizon Mech start
+        if (TryComp<PhysicsComponent>(target, out var physics) && physics.BodyType == BodyType.Static)
             return;
-        }
+
+        if (HasComp<WallMountComponent>(target))
+            return;
+
+        if (HasComp<MobStateComponent>(target) && !component.GrabMobs)
+            return;
+
+        if (HasComp<MechComponent>(target))
+            return;
+        // Horizon Mech end
 
         if (_whitelist.IsBlacklistPass(component.Blacklist, target)) // Frontier: Blacklist
             return;
@@ -190,7 +208,7 @@ public sealed class MechGrabberSystem : EntitySystem
         if (!_mech.TryChangeEnergy(equipmentComponent.EquipmentOwner.Value, component.GrabEnergyDelta))
             return;
 
-        // Frontier: Remove people from chairs
+        // Frontier: Remove people from chairs and containers
         if (TryComp<StrapComponent>(args.Args.Target, out var strapComp) && strapComp.BuckledEntities != null)
         {
             foreach (var buckleUid in strapComp.BuckledEntities)
@@ -198,11 +216,53 @@ public sealed class MechGrabberSystem : EntitySystem
                 _buckle.Unbuckle(buckleUid, args.Args.User);
             }
         }
-        // End Frontier
+
+        // Remove contained humanoids
+        // TODO: revise condition for "generic player entities"
+        if (TryComp<ContainerManagerComponent>(args.Args.Target, out var containerManager))
+        {
+            EntityCoordinates? coords = null;
+            if (TryComp(equipmentComponent.EquipmentOwner, out TransformComponent? xform))
+                coords = xform.Coordinates;
+
+            List<EntityUid> toRemove = new();
+            foreach (var container in containerManager.Containers)
+            {
+                toRemove.Clear();
+                foreach (var contained in container.Value.ContainedEntities)
+                {
+                    if (HasComp<GhostRoleComponent>(contained)
+                        || TryComp<MindContainerComponent>(contained, out var mindContainer)
+                        && mindContainer.HasMind)
+                    {
+                        toRemove.Add(contained);
+                    }
+                }
+                foreach (var removeUid in toRemove)
+                {
+                    _container.Remove(removeUid, container.Value, destination: coords);
+                }
+            }
+        }
+        // End Frontier: Remove people from chairs and containers
 
         _container.Insert(args.Args.Target.Value, component.ItemContainer);
+        // Horizon Mech start
+        if (component.SlowMetabolism && args.Target.HasValue)
+        {
+            var metabolicEvent = new ApplyMetabolicMultiplierEvent(args.Target.Value, 0.4f, false);
+            RaiseLocalEvent(args.Target.Value, ref metabolicEvent);
+        }
+        // Horizon Mech end
         _mech.UpdateUserInterface(equipmentComponent.EquipmentOwner.Value);
 
         args.Handled = true;
     }
+
+    // Horizon Mech start
+    private void OnTerminating(EntityUid uid, MechGrabberComponent comp, ref EntityTerminatingEvent args)   // Horizon Mech
+    {
+        _container.EmptyContainer(comp.ItemContainer, true);
+    }
+    // Horizon Mech end
 }

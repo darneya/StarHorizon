@@ -42,6 +42,7 @@
     runningState: icon
     staticPacks:
     - NFServiceTechfabDeprecatedStatic
+    - ReportingStatic # DeltaV
     dynamicPacks:
     - NFServiceTechfabDeprecated
   - type: EmagLatheRecipes
@@ -77,6 +78,7 @@
     - NFEngineeringTechfabDeprecatedStatic
     dynamicPacks:
     - NFEngineeringTechfabDeprecated
+    - NightVisionPack # Horizon
 
 - type: entity
   parent: [ BlueprintReceiverBase, BaseLatheLube ]
@@ -107,6 +109,7 @@
     - NFSalvageTechfabDeprecatedStatic
     dynamicPacks:
     - NFSalvageTechfabDeprecated
+    - NightVisionPack # Horizon
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFSalvageTechfabDeprecatedEmag
@@ -137,8 +140,10 @@
     runningState: icon
     staticPacks:
     - NFNfsdTechfabDeprecatedStatic
+    - ReportingStatic # DeltaV
     dynamicPacks:
     - NFNfsdTechfabDeprecated
+    - NightVisionSecPack # Horizon
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFNfsdTechfabDeprecatedEmag
@@ -171,6 +176,7 @@
     - NFMercenaryTechfabDeprecatedStatic
     dynamicPacks:
     - NFMercenaryTechfabDeprecated
+    - NightVisionPack # Horizon
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFMercenaryTechfabDeprecatedEmag
@@ -216,6 +222,7 @@
     - NFHackedMercenaryTechfabDeprecatedStatic
     dynamicPacks:
     - NFHackedMercenaryTechfabDeprecated
+    - NightVisionPack # Horizon
 
 - type: entity
   parent: [BaseStructureDisableToolUse, BaseLathe]
@@ -292,6 +299,7 @@
     - PowerCellsStatic
     dynamicPacks:
     - NFBlueprints
+    - HorizonBlueprints # Horizon
   - type: RequireProjectileTarget
 
 - type: entity

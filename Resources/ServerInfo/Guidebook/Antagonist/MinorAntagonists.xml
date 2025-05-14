@@ -3,6 +3,14 @@
 
   Большинство, если не все, второстепенные антагонисты - это управляемые призраками роли, которые дают мертвецам новые способы устроить хаос на станции. Они возникают в результате случайных событий.
 
+  # Парадоксальный клон
+
+  <Box>
+    <GuideEntityEmbed Entity="ParadoxCloneDummy"/>
+  </Box>
+
+  Идеальная копия случайного члена экипажа, который был заброшен в нашу вселенную пространственно-временной аномалией. Чтобы исправить парадокс и выжить, им нужно найти и убить своего оригинального двойника. У них нет особых способностей, но они имеют идентичный внешний вид, ДНК, отпечатки пальцев, одежду, оборудование и удостоверения личности, что затрудняет определение того, кто является оригиналом, а кто клоном, если вы не знаете хорошо своих коллег по экипажу.
+
   # Ревенант
 
   <Box>
@@ -82,7 +90,7 @@
     <GuideEntityEmbed Entity="MobGiantSpiderAngry" Caption=""/>
   </Box>
 
-  Slimes and spiders have no remarkable features, but will [color=cyan]infest the station[/color] from time to time regardless. Both will give chase and attack anything they see.
-  - Slimes may [bold]deal extra cellular or poison damage[/bold], based upon their color. Water hurts them just as it would hurt a slime person.
-  - Spiders have a venomous bite and can [bold]create webs[/bold] that are hard to move though. Webs are easily destroyed with a blade. They can also pry open airlocks.
+Слизни и пауки не имеют никаких примечательных особенностей, но [color=cyan]заполоняют станцию[/color] время от времени. Оба будут преследовать и атаковать все, что увидят.
+- Слизни могут [bold]наносить дополнительный клеточный или ядовитый урон[/bold] в зависимости от их цвета. Вода причиняет им боль так же, как она причинила бы боль человеку-слизне.
+- У пауков ядовитый укус, и они могут [bold]создавать паутину[/bold], которую трудно сдвинуть. Паутину легко разрушить лезвием. Они также могут взломать воздушные шлюзы.
 </Document>

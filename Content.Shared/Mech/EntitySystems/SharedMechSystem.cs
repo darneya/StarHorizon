@@ -15,21 +15,25 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee;
-using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
+using Robust.Shared.Random;
+using Content.Shared.Overlays;
+using Content.Shared.Whitelist;
 using Content.Shared.Mobs.Components; // Frontier
-using Content.Shared.NPC.Components; // Frontier
+using Content.Shared.NPC.Components;
+using Content.Shared._NF.Mech.Equipment.Events; // Frontier
 
 namespace Content.Shared.Mech.EntitySystems;
 
 /// <summary>
 /// Handles all of the interactions, UI handling, and items shennanigans for <see cref="MechComponent"/>
 /// </summary>
-public abstract class SharedMechSystem : EntitySystem
+public abstract partial class SharedMechSystem : EntitySystem   // Horizon Mech
 {
+    [Dependency] private readonly IRobustRandom _random = default!; // Horizon Mech
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
@@ -41,11 +45,10 @@ public abstract class SharedMechSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<MechComponent, MechToggleEquipmentEvent>(OnToggleEquipmentAction);
+        // SubscribeLocalEvent<MechComponent, MechToggleEquipmentEvent>(OnToggleEquipmentAction);// Horizon Mech Commented
         SubscribeLocalEvent<MechComponent, MechEjectPilotEvent>(OnEjectPilotEvent);
         SubscribeLocalEvent<MechComponent, UserActivateInWorldEvent>(RelayInteractionEvent);
         SubscribeLocalEvent<MechComponent, ComponentStartup>(OnStartup);
@@ -57,15 +60,25 @@ public abstract class SharedMechSystem : EntitySystem
         SubscribeLocalEvent<MechPilotComponent, GetMeleeWeaponEvent>(OnGetMeleeWeapon);
         SubscribeLocalEvent<MechPilotComponent, CanAttackFromContainerEvent>(OnCanAttackFromContainer);
         SubscribeLocalEvent<MechPilotComponent, AttackAttemptEvent>(OnAttackAttempt);
+
+        // Horizon Mech start
+        SubscribeNetworkEvent<SelectMechEquipmentEvent>(OnMechEquipSelected);
+
+        SubscribeLocalEvent<MechComponent, MechGrabberEjectMessage>(ReceiveEquipmentUiMesssages);
+        SubscribeLocalEvent<MechComponent, MechSoundboardPlayMessage>(ReceiveEquipmentUiMesssages);
+
+        InitializeADT();
+        // Horizon Mech end
     }
 
-    private void OnToggleEquipmentAction(EntityUid uid, MechComponent component, MechToggleEquipmentEvent args)
-    {
-        if (args.Handled)
-            return;
-        args.Handled = true;
-        CycleEquipment(uid);
-    }
+    // Horizon Mech commented
+    // private void OnToggleEquipmentAction(EntityUid uid, MechComponent component, MechToggleEquipmentEvent args)
+    // {
+    //     if (args.Handled)
+    //         return;
+    //     args.Handled = true;
+    //     CycleEquipment(uid);
+    // }
 
     private void OnEjectPilotEvent(EntityUid uid, MechComponent component, MechEjectPilotEvent args)
     {
@@ -134,6 +147,15 @@ public abstract class SharedMechSystem : EntitySystem
         _actions.AddAction(pilot, ref component.MechCycleActionEntity, component.MechCycleAction, mech);
         _actions.AddAction(pilot, ref component.MechUiActionEntity, component.MechUiAction, mech);
         _actions.AddAction(pilot, ref component.MechEjectActionEntity, component.MechEjectAction, mech);
+        // Horizon Mech start
+        _actions.AddAction(pilot, ref component.MechInhaleActionEntity, component.MechInhaleAction, mech);
+        _actions.AddAction(pilot, ref component.MechTurnLightsActionEntity, component.MechTurnLightsAction, mech);
+
+        var ev = new SetupMechUserEvent(pilot);
+        RaiseLocalEvent(mech, ref ev);
+        // Horizon Mech end
+
+        RaiseEquipmentEquippedEvent((mech, component), pilot); // Frontier (note: must send pilot separately, not yet in their seat)
     }
 
     private void RemoveUser(EntityUid mech, EntityUid pilot)
@@ -144,6 +166,11 @@ public abstract class SharedMechSystem : EntitySystem
         RemComp<InteractionRelayComponent>(pilot);
 
         _actions.RemoveProvidedActions(pilot, mech);
+
+        // Frontier
+        if (TryComp<MechComponent>(mech, out var mechComp) && mechComp.CurrentSelectedEquipment != null)
+            _actions.RemoveProvidedActions(pilot, mechComp.CurrentSelectedEquipment.Value);
+        // End Frontier
     }
 
     /// <summary>
@@ -158,10 +185,15 @@ public abstract class SharedMechSystem : EntitySystem
 
         TryEject(uid, component);
         var equipment = new List<EntityUid>(component.EquipmentContainer.ContainedEntities);
-        foreach (var ent in equipment)
+        // Frontier: optionally removable equipment
+        if (component.CanRemoveEquipment)
         {
-            RemoveEquipment(uid, ent, component, forced: true);
+            foreach (var ent in equipment)
+            {
+                RemoveEquipment(uid, ent, component, forced: true);
+            }
         }
+        // End Frontier
 
         component.Broken = true;
         UpdateAppearance(uid, component);
@@ -186,17 +218,32 @@ public abstract class SharedMechSystem : EntitySystem
             equipmentIndex = allEquipment.FindIndex(StartIndex);
         }
 
+        // Frontier
+        if (component.PilotSlot.ContainedEntity != null && component.CurrentSelectedEquipment != null)
+            _actions.RemoveProvidedActions(component.PilotSlot.ContainedEntity.Value, component.CurrentSelectedEquipment.Value);
+        // End Frontier
+
         equipmentIndex++;
         component.CurrentSelectedEquipment = equipmentIndex >= allEquipment.Count
             ? null
             : allEquipment[equipmentIndex];
-
+        // Horizon Mech start
+        while (TryComp<MechEquipmentComponent>(component.CurrentSelectedEquipment, out var equipment) && equipment.CanBeUsed == false)
+        {
+            equipmentIndex++;
+            component.CurrentSelectedEquipment = equipmentIndex >= allEquipment.Count
+                ? null
+                : allEquipment[equipmentIndex];
+        }
+        // Horizon Mech end
         var popupString = component.CurrentSelectedEquipment != null
             ? Loc.GetString("mech-equipment-select-popup", ("item", component.CurrentSelectedEquipment))
             : Loc.GetString("mech-equipment-select-none-popup");
 
         if (_net.IsServer)
             _popup.PopupEntity(popupString, uid);
+
+        RaiseEquipmentEquippedEvent((uid, component)); // Frontier
 
         Dirty(uid, component);
     }
@@ -278,8 +325,8 @@ public abstract class SharedMechSystem : EntitySystem
         if (!Resolve(uid, ref component))
             return false;
 
-        if (component.Energy + delta < 0)
-            return false;
+        // if (component.Energy + delta < 0)    // Horizon Mech Commented
+        //     return false;                    // Почему тут стоит эта проверка, если используется Math.Clamp()?
 
         component.Energy = FixedPoint2.Clamp(component.Energy + delta, 0, component.MaxEnergy);
         Dirty(uid, component);
@@ -392,14 +439,18 @@ public abstract class SharedMechSystem : EntitySystem
         RemoveUser(uid, pilot);
         _container.RemoveEntity(uid, pilot);
         UpdateAppearance(uid, component);
+        // Horizon Mech start
+        if (_net.IsClient && _timing.IsFirstTimePredicted)
+        {
+            var ev = new CloseMechMenuEvent();
+            RaiseLocalEvent(pilot, ev);
+        }
 
-        // Frontier - Make NPC AI attack Mechs
-        if (TryComp<MobStateComponent>(uid, out var _))
-            RemComp<MobStateComponent>(uid);
-        if (TryComp<NpcFactionMemberComponent>(uid, out var _))
-            RemComp<NpcFactionMemberComponent>(uid);
-        // Frontier
-
+        if (HasComp<ShowHealthBarsComponent>(pilot))
+        {
+            RemComp<ShowHealthBarsComponent>(pilot);
+        }
+        // Horizon Mech end
         return true;
     }
 
@@ -459,6 +510,20 @@ public abstract class SharedMechSystem : EntitySystem
         args.CanDrop |= !component.Broken && CanInsert(uid, args.Dragged, component);
     }
 
+    // Frontier
+    private void RaiseEquipmentEquippedEvent(Entity<MechComponent> ent, EntityUid? pilot = null)
+    {
+        if (_net.IsServer && ent.Comp.CurrentSelectedEquipment != null)
+        {
+            var ev = new MechEquipmentEquippedAction
+            {
+                Mech = ent,
+                Pilot = pilot ?? ent.Comp.PilotSlot.ContainedEntity
+            };
+            RaiseLocalEvent(ent.Comp.CurrentSelectedEquipment.Value, ev);
+        }
+    }
+    // End Frontier
 }
 
 /// <summary>

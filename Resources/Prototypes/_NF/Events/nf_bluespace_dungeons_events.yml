@@ -14,7 +14,7 @@
     weight: 5
     duration: 1800 # 30 minutes
     maxDuration: 1800 # 30 minutes
-    reoccurrenceDelay: 120 # 2 hours (some variety - at worst, alternates between four dungeon types)
+    reoccurrenceDelay: 40 # 40 minutes (some variety - at worst, alternates between four dungeon types) # Horizon TempTweak
   - type: ActiveRadio
     channels:
     - Supply

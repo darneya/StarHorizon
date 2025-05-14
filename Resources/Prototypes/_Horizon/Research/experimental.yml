@@ -1,0 +1,40 @@
+# Tier 2
+# Tier 3
+
+- type: technology
+  id: PhazonTechnology
+  name: research-technology-mech-phazon
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: phazon
+  discipline: Experimental
+  tier: 3
+  cost: 30000
+  recipeUnlocks:
+  - PhazonHarness
+  - PhazonLArm
+  - PhazonRArm
+  - PhazonLLeg
+  - PhazonRLeg
+  - PhazonHead
+  - PhazonArmorPlates
+  - PhazonCentralElectronics
+  - PhazonPeripheralsElectronics
+  - PhazonWeaponControlElectronics
+
+- type: technology
+  id: PhazonMechPaint
+  name: research-technology-mech-phazon-paint
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: phazonjanus-open
+  discipline: Experimental
+  tier: 3
+  cost: 30000
+  recipeUnlocks:
+  - MechPhazonBlancoUpgradeKit
+  - MechPhazonImperionUpgradeKit
+  - MechPhazonJanusUpgradeKit
+  - MechPhazonPlazmusUpgradeKit
+  technologyPrerequisites:
+  - PhazonTechnology

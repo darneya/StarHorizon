@@ -8,9 +8,6 @@
 ## Промышленность
 <GuideTechDisciplineEmbed Discipline="Industrial"/>
 
-## Биохимия
-<GuideTechDisciplineEmbed Discipline="Biochemical"/>
-
 ## Арсенал
 <GuideTechDisciplineEmbed Discipline="Arsenal"/>
 
@@ -19,5 +16,8 @@
 
 ## Обслуживание персонала
 <GuideTechDisciplineEmbed Discipline="CivilianServices"/>
+
+## Биохимия
+<GuideTechDisciplineEmbed Discipline="Biochemical"/>
 
 </Document>

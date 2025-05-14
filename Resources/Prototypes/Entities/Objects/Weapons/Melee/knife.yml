@@ -27,6 +27,13 @@
       - Slicing
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
+  - type: Scalpel
+  - type: SurgeryTool
+    successRate: 0.9
+    startSound:
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: kitchen knife
@@ -129,7 +136,7 @@
 
 - type: entity
   name: kukri knife
-  parent: [BaseC1Contraband, CombatKnife] # BaseSecurityCargoContraband <BaseC1Contraband
+  parent: [BaseC1Contraband, CombatKnife] # BaseSecurityCargoContraband<BaseC1Contraband
   id: KukriKnife
   description: Professionals have standards. Be polite. Be efficient. Have a plan to kill everyone you meet.
   components:
@@ -210,6 +217,12 @@
     sprite: Objects/Weapons/Melee/shiv.rsi
   - type: DisarmMalus
     malus: 0.225
+  - type: SurgeryTool
+    successRate: 0.7
+    startSound:
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: reinforced shiv

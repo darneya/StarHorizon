@@ -22,7 +22,8 @@ public sealed class HandButton : SlotControl
             HandLocation.Left => "Slots/hand_l",
             HandLocation.Middle => "Slots/hand_m",
             HandLocation.Right => "Slots/hand_r",
-            _ => ButtonTexturePath
+            HandLocation.Functional => "Slots/hand_m",
+            _ => ButtonTexturePath,
         };
     }
 }

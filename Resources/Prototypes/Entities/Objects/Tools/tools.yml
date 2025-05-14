@@ -42,7 +42,14 @@
     materialComposition:
       Steel: 100
   - type: StaticPrice
-    price: 15 # Frontier 30<15
+    price: 30
+  - type: Scalpel
+  - type: SurgeryTool
+    successRate: 0.35
+    startSound:
+      path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
 
 - type: entity
   name: screwdriver
@@ -495,7 +502,7 @@
       - Digging
     speedModifier: 0.5 # Frontier
     useSound:
-      path: /Audio/Nyanotrasen/Items/shovel_dig.ogg
+      path: /Audio/Items/shovel_dig.ogg
   # - type: EarthDigging # Frontier
   - type: Shovel
   - type: ToolTileCompatible # Frontier

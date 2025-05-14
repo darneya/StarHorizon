@@ -1,0 +1,10 @@
+- type: entity
+  parent: NFBaseBlueprintArmory
+  id: HorizonBlueprintClothingEyesVision
+  name: pnv blueprint
+  description: A blueprint with a schematic of a svalinn pistol. It can be inserted into an autolathe or a techfab.
+  suffix: Horizon
+  components:
+  - type: Blueprint
+    providedRecipes:
+    - ClothingEyesVision

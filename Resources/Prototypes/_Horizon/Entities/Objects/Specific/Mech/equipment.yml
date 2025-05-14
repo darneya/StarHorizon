@@ -1,0 +1,232 @@
+
+- type: entity
+  name: плазменный резак
+  parent: BaseItem
+  id: MechWeaponCutter
+  description: Отсекай им конечности.
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: engi_plasmacutter
+  - type: Item
+    size: Large
+  - type: AmmoCounter
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon2.ogg
+    fireRate: 1
+    projectileSpeed: 40
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+  - type: BallisticMechAmmoProvider
+    proto: BulletCutter
+    shots: 40
+    capacity: 40
+    reloadTime: 5
+    ammoType: plasma
+  - type: UIFragment
+    ui: !type:MechGunUi
+  - type: Appearance
+  - type: MechEquipment
+  - type: MechGun
+  - type: Tag
+    tags:
+      - MechEquipmentMining
+
+- type: entity
+  name: противоударная броня меха
+  parent: BaseMechEquipment
+  id: MechEquipmentArmorMelee
+  description: Стань прочнее!
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: shield_cc
+  - type: MechArmor
+    modifiers:
+      coefficients:
+        Blunt: 0.01
+        Slash: 0.01
+        Piercing: 0.3
+        Heat: 0.3
+  - type: MechEquipment
+    canBeUsed: false
+  - type: MechMagazine
+    magazinetype: lightrifle
+
+- type: entity
+  name: противопульная броня меха
+  parent: BaseMechEquipment
+  id: MechEquipmentArmorRange
+  description: Стань прочнее!
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: shield_proj
+  - type: MechArmor
+    modifiers:
+      coefficients:
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.01
+        Heat: 0.01
+  - type: MechEquipment
+    canBeUsed: false
+
+- type: entity
+  name: навесной слипер
+  parent: MechEquipmentGrabber
+  id: MechEquipmentHumanSleeper
+  description: Забирает человека, замедляет метаболизм, оставляет его в безопасности.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: medi_sleeper
+  - type: MechGrabber
+    grabMobs: true
+    maxContents: 4
+    slowMetabolism: true
+  - type: Tag
+    tags:
+      - MechEquipmentMed
+
+- type: entity
+  name: навесной переносчик
+  parent: MechEquipmentGrabber
+  id: MechEquipmentHumanGrabber
+  description: You are my friend now :3
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: else_humanstealer
+  - type: MechGrabber
+    grabMobs: true
+    maxContents: 4
+  - type: Tag
+    tags:
+      - MechEquipmentMed
+
+- type: entity
+  name: medigun
+  parent: BaseMechGunBattery
+  id: MechGunMedigun
+  description: medigun
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: medi_syringe_gun
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: HitscanMechAmmoProvider
+    proto: HealMechGun
+    fireCost: 12
+  - type: Tag
+    tags:
+      - MechEquipmentMed
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 5
+  - type: MechGun
+
+- type: entity
+  name: бур
+  parent: BaseMechEquipment
+  id: MechEquipmentDrill
+  description: Просверлит всё! Стены, двери, руду, столы ковры, ваших врагов!
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: mining_drill
+  - type: MechDrill
+    damage:
+      types:
+        Structural: 70
+        Slash: 30
+        Piercing: 30
+  - type: Tag
+    tags:
+      - MechEquipmentMining
+
+- type: entity
+  name: алмазный бур
+  parent: BaseMechEquipment
+  id: MechEquipmentDiamondDrill
+  description: Сильно просверлит всё! Стены, двери, руду, столы ковры, ваших врагов!
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: mining_drill_diamond
+  - type: MechDrill
+    damage:
+      types:
+        Structural: 80
+        Slash: 40
+        Piercing: 30
+    drillSpeedMultilire: 80
+  - type: Tag
+    tags:
+      - MechEquipmentMining
+
+- type: entity
+  name: plasma reactor
+  description: Plasma reactor for mecha.
+  parent: BaseItem
+  id: MechReactorPlasma
+  components:
+  - type: Tag
+    tags:
+    - MechReactor
+  - type: Battery
+    maxCharge: 3000
+    startingCharge: 3000
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: generator_plasma
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 10
+
+- type: entity
+  name: RITEG reactor
+  description: RITEG reactor for mecha.
+  parent: BaseItem
+  id: MechReactorUranium
+  components:
+  - type: Tag
+    tags:
+    - MechReactor
+  - type: Battery
+    maxCharge: 5000
+    startingCharge: 5000
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: generator_uranium
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 15
+
+- type: entity
+  name: tesla reactor
+  description: Tesla reactor for mecha.
+  parent: BaseItem
+  id: MechReactorTesla
+  components:
+  - type: Tag
+    tags:
+    - MechReactor
+  - type: Battery
+    maxCharge: 10000
+    startingCharge: 10000
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: generator_tesla
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 30

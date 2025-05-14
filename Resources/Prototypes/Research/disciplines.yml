@@ -45,3 +45,17 @@
     1: 0
     2: 0.75
     3: 0.75
+
+# Horizon start
+- type: techDiscipline
+  id: Biochemical
+  name: research-discipline-biochemical
+  color: "#52B4E9"
+  icon:
+    sprite: Interface/Misc/research_disciplines.rsi
+    state: medical
+  tierPrerequisites:
+    1: 0
+    2: 0.75
+    3: 0.75
+# Horizon end

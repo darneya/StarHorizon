@@ -7,7 +7,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Weapons.Ranged;
 
-[Prototype("hitscan")]
+[Prototype]
 public sealed partial class HitscanPrototype : IPrototype, IShootable
 {
     [ViewVariables]
@@ -54,4 +54,10 @@ public sealed partial class HitscanPrototype : IPrototype, IShootable
     /// </summary>
     [DataField("maxLength")]
     public float MaxLength = 20f;
+
+    [DataField]
+    public List<object> TargetEvents = new();   // Horizon Mech
+
+    [DataField]
+    public float? BloodlossModifier = null;   // Horizon Mech
 }

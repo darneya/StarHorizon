@@ -26,6 +26,10 @@ using Content.Shared.Whitelist;
 using Content.Shared.Mobs.Components; // Frontier
 using Content.Shared.NPC.Components; // Frontier
 using Content.Shared.Mobs; // Frontier
+using Robust.Server.Audio;
+using Content.Shared.Access.Systems;
+using Content.Shared.Access.Components;
+using Robust.Shared.Random;
 
 namespace Content.Server.Mech.Systems;
 
@@ -42,6 +46,11 @@ public sealed partial class MechSystem : SharedMechSystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly SharedToolSystem _toolSystem = default!;
+    // Horizon Mech start
+    [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    // Horizon Mech end
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -64,16 +73,18 @@ public sealed partial class MechSystem : SharedMechSystem
 
 
         SubscribeLocalEvent<MechPilotComponent, ToolUserAttemptUseEvent>(OnToolUseAttempt);
-        SubscribeLocalEvent<MechPilotComponent, InhaleLocationEvent>(OnInhale);
+        // SubscribeLocalEvent<MechPilotComponent, InhaleLocationEvent>(OnInhale);  // Horizon Mech Commented
         SubscribeLocalEvent<MechPilotComponent, ExhaleLocationEvent>(OnExhale);
         SubscribeLocalEvent<MechPilotComponent, AtmosExposedGetAirEvent>(OnExpose);
 
         SubscribeLocalEvent<MechAirComponent, GetFilterAirEvent>(OnGetFilterAir);
 
         #region Equipment UI message relays
-        SubscribeLocalEvent<MechComponent, MechGrabberEjectMessage>(ReceiveEquipmentUiMesssages);
-        SubscribeLocalEvent<MechComponent, MechSoundboardPlayMessage>(ReceiveEquipmentUiMesssages);
+        // SubscribeLocalEvent<MechComponent, MechGrabberEjectMessage>(ReceiveEquipmentUiMesssages);    // Horizon Mech - Moved to Shared
+        // SubscribeLocalEvent<MechComponent, MechSoundboardPlayMessage>(ReceiveEquipmentUiMesssages);  // Horizon Mech - Moved to Shared
         #endregion
+
+        InitializeADT();    // Horizon Mech
     }
 
     private void OnMechCanMoveEvent(EntityUid uid, MechComponent component, UpdateCanMoveEvent args)
@@ -149,6 +160,11 @@ public sealed partial class MechSystem : SharedMechSystem
 
     private void OnRemoveEquipmentMessage(EntityUid uid, MechComponent component, MechEquipmentRemoveMessage args)
     {
+        // Frontier: mechs with fixed equipment
+        if (!component.CanRemoveEquipment)
+            return;
+        // End Frontier: mechs with fixed equipment
+
         var equip = GetEntity(args.Equipment);
 
         if (!Exists(equip) || Deleted(equip))
@@ -158,6 +174,7 @@ public sealed partial class MechSystem : SharedMechSystem
             return;
 
         RemoveEquipment(uid, equip, component);
+        UpdateUserInterface(uid);   // Horizon Mech
     }
 
     private void OnOpenUi(EntityUid uid, MechComponent component, MechOpenUiEvent args)
@@ -237,6 +254,15 @@ public sealed partial class MechSystem : SharedMechSystem
             _popup.PopupEntity(Loc.GetString("mech-no-enter", ("item", uid)), args.User);
             return;
         }
+        // Horizon Mech start
+        if (TryComp<AccessReaderComponent>(uid, out var accesscomponent) && !_accessReader.IsAllowed(args.User, uid, accesscomponent))
+        {
+            _popup.PopupEntity(Loc.GetString("gateway-access-denied"), args.User);
+            _audio.PlayPvs(component.AccessDeniedSound, uid);
+            args.Handled = true;
+            return;
+        }
+        // Horizon Mech end
 
         // Frontier - Make AI Attack mechs based on user.
         if (TryComp<MobStateComponent>(args.User, out var _))
@@ -247,7 +273,7 @@ public sealed partial class MechSystem : SharedMechSystem
             if (faction.Factions != null)
                 factionMech.Factions = faction.Factions;
         }
-        // Frontier
+        // End Frontier
 
         TryInsert(uid, args.Args.User, component);
         _actionBlocker.UpdateCanMove(uid);
@@ -269,6 +295,14 @@ public sealed partial class MechSystem : SharedMechSystem
     {
         var integrity = component.MaxIntegrity - args.Damageable.TotalDamage;
         SetIntegrity(uid, integrity, component);
+
+        // Horizon Mech start
+        if (component.Integrity <= component.DamageToDesEqi && !component.Broken && _random.Prob(0.5f) && component.CurrentSelectedEquipment != null)
+        {
+            var ev = new MechEquipmentDestroyedEvent();
+            RaiseLocalEvent(uid, ref ev);
+        }
+        // Horizon Mech end
 
         if (args.DamageIncreased &&
             args.DamageDelta != null &&
@@ -297,18 +331,19 @@ public sealed partial class MechSystem : SharedMechSystem
         UpdateUserInterface(uid, component);
     }
 
-    private void ReceiveEquipmentUiMesssages<T>(EntityUid uid, MechComponent component, T args) where T : MechEquipmentUiMessage
-    {
-        var ev = new MechEquipmentUiMessageRelayEvent(args);
-        var allEquipment = new List<EntityUid>(component.EquipmentContainer.ContainedEntities);
-        var argEquip = GetEntity(args.Equipment);
+    // Horizon Mech moved to shared
+    // private void ReceiveEquipmentUiMesssages<T>(EntityUid uid, MechComponent component, T args) where T : MechEquipmentUiMessage
+    // {
+    //     var ev = new MechEquipmentUiMessageRelayEvent(args);
+    //     var allEquipment = new List<EntityUid>(component.EquipmentContainer.ContainedEntities);
+    //     var argEquip = GetEntity(args.Equipment);
 
-        foreach (var equipment in allEquipment)
-        {
-            if (argEquip == equipment)
-                RaiseLocalEvent(equipment, ev);
-        }
-    }
+    //     foreach (var equipment in allEquipment)
+    //     {
+    //         if (argEquip == equipment)
+    //             RaiseLocalEvent(equipment, ev);
+    //     }
+    // }
 
     public override void UpdateUserInterface(EntityUid uid, MechComponent? component = null)
     {
@@ -327,6 +362,8 @@ public sealed partial class MechSystem : SharedMechSystem
         {
             EquipmentStates = ev.States
         };
+        Dirty(uid, component);  // Horizon Mech
+
         _ui.SetUiState(uid, MechUiKey.Key, state);
     }
 
@@ -398,17 +435,18 @@ public sealed partial class MechSystem : SharedMechSystem
     }
 
     #region Atmos Handling
-    private void OnInhale(EntityUid uid, MechPilotComponent component, InhaleLocationEvent args)
-    {
-        if (!TryComp<MechComponent>(component.Mech, out var mech) ||
-            !TryComp<MechAirComponent>(component.Mech, out var mechAir))
-        {
-            return;
-        }
+    // private void OnInhale(EntityUid uid, MechPilotComponent component, InhaleLocationEvent args) // Horizon Mech - Moved to shared
+    // {
+    //     if (!TryComp<MechComponent>(component.Mech, out var mech) ||
+    //         !TryComp<MechAirComponent>(component.Mech, out var mechAir))
+    //     {
+    //         return;
+    //     }
 
-        if (mech.Airtight)
-            args.Gas = mechAir.Air;
-    }
+    //     if (mech.Airtight)
+    //         args.Gas = mechAir.Air;
+    // }
+    // Horizon Mech Commented
 
     private void OnExhale(EntityUid uid, MechPilotComponent component, ExhaleLocationEvent args)
     {
@@ -433,7 +471,7 @@ public sealed partial class MechSystem : SharedMechSystem
         if (mech.Airtight && TryComp(component.Mech, out MechAirComponent? air))
         {
             args.Handled = true;
-            args.Gas = air.Air;
+            args.Gas = mech.Airtight ? air.Air : _atmosphere.GetContainingMixture(component.Mech);  // Horizon Mech
             return;
         }
 

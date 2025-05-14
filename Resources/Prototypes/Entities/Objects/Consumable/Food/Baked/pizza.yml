@@ -100,6 +100,8 @@
   - type: Sprite
     layers:
     - state: margherita-slice
+  - type: Item
+    heldPrefix: margherita-slice
 
 - type: entity
   name: meat pizza
@@ -138,6 +140,8 @@
   - type: Sprite
     layers:
     - state: meat-slice
+  - type: Item
+    heldPrefix: meat-slice
   - type: Tag
     tags:
     - Meat
@@ -176,6 +180,8 @@
   - type: Sprite
     layers:
     - state: mushroom-slice
+  - type: Item
+    heldPrefix: mushroom-slice
 # Tastes like crust, tomato, cheese, mushroom.
 
 - type: entity
@@ -229,6 +235,8 @@
   - type: Sprite
     layers:
     - state: vegetable-slice
+  - type: Item
+    heldPrefix: vegetable-slice
   - type: SolutionContainerManager
     solutions:
       food:
@@ -601,9 +609,6 @@
           Quantity: 4
         - ReagentId: Uranium
           Quantity: 16
-  # - type: RadiationSource # Frontier
-  #   intensity: 0.1 # Frontier
-  #   slope: 3 # Frontier
 
 - type: entity
   name: slice of spicy rock pizza
@@ -639,9 +644,6 @@
           Quantity: 0.5
         - ReagentId: Uranium
           Quantity: 2
-  # - type: RadiationSource # Frontier
-  #   intensity: 0.1 # Frontier
-  #   slope: 3 # Frontier
 
 # Tastes like crust, tomato, cheese, radiation.
 

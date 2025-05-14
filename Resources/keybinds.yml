@@ -44,6 +44,11 @@ binds:
 - function: Walk
   type: State
   key: Shift
+# Horizon start
+- function: Laying
+  type: State
+  key: U
+# Horizon end
 # Shuttle
 - function: ShuttleStrafeUp
   type: State

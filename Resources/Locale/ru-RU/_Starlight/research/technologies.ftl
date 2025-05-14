@@ -1,0 +1,1 @@
+﻿research-discipline-medical = Медицинская

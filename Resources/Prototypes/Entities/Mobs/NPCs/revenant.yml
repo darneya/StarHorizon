@@ -73,12 +73,17 @@
   - type: RandomMetadata
     nameSegments:
     - The
-    - RevenantType
+    - NamesRevenantType
     - of
-    - RevenantAdjective
-    - RevenantTheme
+    - NamesRevenantAdjective
+    - NamesRevenantTheme
   - type: Speech
     speechVerb: Ghost
   - type: Reactive
     groups:
       Acidic: [Touch]
+  # Horizon start
+  - type: NightVision
+    isToggle: true
+    color: "#DDA0DD"
+  # Horizon end

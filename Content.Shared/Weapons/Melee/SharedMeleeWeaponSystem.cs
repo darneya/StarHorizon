@@ -224,7 +224,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     public float GetAttackRate(EntityUid uid, EntityUid user, MeleeWeaponComponent? component = null)
     {
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false)) // Horizon
             return 0;
 
         var ev = new GetMeleeAttackRateEvent(uid, component.AttackRate, 1, user);
@@ -235,7 +235,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     public FixedPoint2 GetHeavyDamageModifier(EntityUid uid, EntityUid user, MeleeWeaponComponent? component = null)
     {
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false)) // Horizon
             return FixedPoint2.Zero;
 
         var ev = new GetHeavyDamageModifierEvent(uid, component.ClickDamageModifier, 1, user);
@@ -246,7 +246,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
     public bool GetResistanceBypass(EntityUid uid, EntityUid user, MeleeWeaponComponent? component = null)
     {
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false)) // Horizon
             return false;
 
         var ev = new GetMeleeDamageEvent(uid, new(component.Damage * Damageable.UniversalMeleeDamageModifier), new(), user, component.ResistanceBypass);

@@ -191,6 +191,8 @@ public partial class SharedBodySystem
         foreach (var (organSlotId, organProto) in organs)
         {
             var slot = CreateOrganSlot((ent, ent), organSlotId);
+            if (organProto == "null")
+                continue; // _Horizon
             SpawnInContainerOrDrop(organProto, ent, GetOrganContainerId(organSlotId));
 
             if (slot is null)

@@ -1,0 +1,341 @@
+# Tier 1
+
+- type: technology
+  id: SurgeryTech
+  name: research-technology-basic-surgery
+  icon:
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+  discipline: Biochemical
+  tier: 1
+  cost: 4000
+  recipeUnlocks:
+    - BoneSetter
+    - BoneGel
+    - Scalpel
+    - Retractor
+    - Cautery
+    - Saw
+    - Hemostat
+
+- type: technology
+  id: CyberLimbsTech
+  name: research-technology-basic-cyberlimbs
+  icon:
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/parts.rsi
+    state: icon
+  discipline: Biochemical
+  tier: 1
+  cost: 4000
+  recipeUnlocks:
+    - LeftArmCyber
+    - RightArmCyber
+    - LeftHandCyber
+    - RightHandCyber
+    - LeftLegCyber
+    - RightLegCyber
+    - LeftFootCyber
+    - RightFootCyber
+
+# Tier 2
+
+- type: technology # _DV Import
+  id: SyringeGun
+  name: research-technology-syringe-gun
+  icon:
+    sprite: Objects/Weapons/Guns/Cannons/syringe_gun.rsi
+    state: syringe_gun
+  discipline: Biochemical # Horizon
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - LauncherSyringe
+  - MiniSyringe
+
+- type: technology
+  id: SurgeryTechAdvanced
+  name: research-technology-advanced-surgery
+  icon:
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: advanced
+  discipline: Biochemical
+  tier: 2
+  cost: 7000
+  recipeUnlocks:
+    - Drill
+    - SawAdvanced
+    - ScalpelAdvanced
+    - BoneSetterAdvanced
+    - RetractorAdvanced
+    - HemostatAdvanced
+  technologyPrerequisites:
+    - SurgeryTech
+
+- type: technology
+  id: CyberImplantsTech
+  name: research-technology-basic-eye-implants
+  icon:
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: eye_implant_welding
+  discipline: Biochemical
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+    - EyeImplantWelding
+    - EyeImplantMedical
+    - EyeImplantSecurity
+    - EyeImplantChemical
+  technologyPrerequisites:
+    - CyberLimbsTech
+
+- type: technology
+  id: OdysseusTechnology
+  name: research-technology-mech-odysseus
+  icon:
+    sprite: Objects/Specific/Mech/mecha.rsi
+    state: odysseus
+  discipline: Biochemical
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+    - OdysseusHarness
+    - OdysseusLArm
+    - OdysseusRArm
+    - OdysseusLLeg
+    - OdysseusRLeg
+    - OdysseusHead
+    - OdysseusCentralElectronics
+    - OdysseusPeripheralsElectronics
+
+- type: technology
+  id: MechTechnologyCarrier
+  name: research-technology-mech-carrier
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_humanstealer
+  discipline: Biochemical
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - MechEquipmentHumanGrabber
+  technologyPrerequisites:
+  - OdysseusTechnology
+
+- type: technology
+  id: MechTechnologySleeper
+  name: research-technology-mech-sleeper
+  icon:
+    sprite: Structures/cryostorage.rsi
+    state: sleeper_0
+  discipline: Biochemical
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+    - MechEquipmentHumanSleeper
+  technologyPrerequisites:
+  - OdysseusTechnology
+
+- type: technology
+  id: MechTechnologyMedigun
+  name: research-technology-mech-medigun
+  icon:
+    sprite: Objects/Specific/Mech/mecha_equipment.rsi
+    state: mecha_medigun
+  discipline: Biochemical
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+    - MechGunMedigun
+  technologyPrerequisites:
+  - OdysseusTechnology
+
+- type: technology
+  id: CyberOrgansTech
+  name: research-technology-advanced-cyberorgans
+  icon:
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/organs_cyber.rsi
+    state: heart
+  discipline: Biochemical
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - OrganCyberStomach
+  - OrganCyberLungs
+  - OrganCyberHeart
+  - OrganCyberLiver
+  - OrganCyberKidneys
+  technologyPrerequisites:
+  - CyberImplantsTech
+
+- type: technology
+  id: BsOrgansTech
+  name: research-technology-advanced-bsorgans
+  icon:
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/organs_bs.rsi
+    state: heart
+  discipline: Biochemical
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - OrganBsStomach
+  - OrganBsLungs
+  - OrganBsHeart
+  - OrganBsLiver
+  - OrganBsKidneys
+  technologyPrerequisites:
+  - CyberImplantsTech
+
+- type: technology
+  id: BioOrgansTech
+  name: research-technology-advanced-bioorgans
+  icon:
+    sprite: _Horizon/Mobs/Species/Cyberlimbs/organs_bio.rsi
+    state: heart
+  discipline: Biochemical
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - OrganBioStomach
+  - OrganBioLungs
+  - OrganBioHeart
+  - OrganBioLiver
+  - OrganBioKidneys
+  technologyPrerequisites:
+  - CyberImplantsTech
+
+# Tier 3
+
+- type: technology
+  id: FunctionalCyberLimbsTech
+  name: research-technology-functional-cyberlimbs
+  icon:
+    sprite: _Horizon/Interface/Actions/actions_cyber.rsi
+    state: cyber-hand-left
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+    - LeftArmCyberReaper
+    - RightArmCyberReaper
+    - LeftArmCyberMechwright
+    - RightArmCyberMechwright
+    - LeftArmCyberAstro
+    - RightArmCyberAstro
+    - LeftArmCyberGarden
+    - RightArmCyberGarden
+  technologyPrerequisites:
+    - CyberLimbsTech
+
+- type: technology
+  id: FunctionalCombatLimbsTech
+  name: research-technology-functional-combatlimbs
+  icon:
+    sprite: _Horizon/Interface/Actions/actions_cyber.rsi
+    state: cyber-hand-left
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - LeftArmCyberLazer
+  - RightArmCyberLazer
+  technologyPrerequisites:
+  - CyberLimbsTech
+  - PortableMicrofusionWeaponry
+
+- type: technology
+  id: FunctionalEngineeringLimbsTech
+  name: research-technology-functional-engineeringlimbs
+  icon:
+    sprite: _Horizon/Interface/Actions/actions_cyber.rsi
+    state: cyber-hand-left
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - LeftArmCyberEngi
+  - RightArmCyberEngi
+  - LeftArmCyberAtmos
+  - RightArmCyberAtmos
+  technologyPrerequisites:
+  - CyberLimbsTech
+  - RapidConstruction
+
+- type: technology
+  id: CyberImplantsNight
+  name: research-technology-cyber-night-vision
+  icon:
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: eyes_night
+  discipline: Biochemical
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - EyeImplantNight
+  technologyPrerequisites:
+  - CyberImplantsTech
+  - NightVisionTech
+
+- type: technology
+  id: OdyssMechPaint
+  name: research-technology-mech-odysseus-paint
+  icon:
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
+    state: odysseusmurdy-open
+  discipline: Biochemical
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - MechOdysseusHermesUpgradeKit
+  - MechOdysseusMurdyUpgradeKit
+  technologyPrerequisites:
+  - OdysseusTechnology
+
+- type: technology
+  id: ProtectiveImplantsTech
+  name: research-technology-protective-implants
+  icon:
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: bone_implant
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - BoneLightImplant
+  - SubcutaneousArmor
+  - HeatSubcutaneousArmor
+  technologyPrerequisites:
+  - CyberImplantsTech
+
+- type: technology
+  id: AdvProtectiveImplantsTech
+  name: research-technology-adv-protective-implants
+  icon:
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: bone_implant
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - BoneHeavyImplant
+  - UpgradedSubcutaneousArmor
+  - HeatUpgradeSubcutaneousArmor
+  - RadiationSubcutaneousArmor
+  technologyPrerequisites:
+  - ProtectiveImplantsTech
+
+- type: technology
+  id: AdvPerformanceImplantsTech
+  name: research-technology-adv-performance-implants
+  icon:
+    sprite: _Horizon/Objects/Specific/Medical/implants.rsi
+    state: implant
+  discipline: Biochemical
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - BloodFilterImplant
+  - BloodPumpImplant
+  - IzolationHandImplant
+  - VesselsImplant
+  technologyPrerequisites:
+  - ProtectiveImplantsTech

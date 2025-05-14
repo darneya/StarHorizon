@@ -58,4 +58,24 @@ public sealed partial class MechGrabberComponent : Component
     /// </summary>
     [DataField]
     public EntityWhitelist? Blacklist;
+    // Horizon Mech start
+    /// <summary>
+    /// is it possible to grab a mob?
+    /// </summary>
+    [DataField]
+    public bool GrabMobs = false;
+
+    /// <summary>
+    /// is it slow mob's metabolism?
+    /// </summary>
+    [DataField]
+    public bool SlowMetabolism = false;
+
+    /// <summary>
+    /// Time that takes to escape the grabber
+    /// </summary>
+    [DataField("baseResistTime")]
+    public float BaseResistTime = 5f;
+
+    // Horizon Mech end
 }
