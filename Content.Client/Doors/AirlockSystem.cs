@@ -97,7 +97,7 @@ public sealed class AirlockSystem : SharedAirlockSystem
                 || state == DoorState.Opening
                 || state == DoorState.Denying
                 || state == DoorState.Open && comp.OpenUnlitVisible
-                || state == DoorState.Closed) && !boltedVisible && !emergencyLightsVisible;
+                || state == DoorState.Closed && comp.OpenUnlitVisible) && !boltedVisible && !emergencyLightsVisible;
         }
 
         args.Sprite.LayerSetVisible(DoorVisualLayers.BaseUnlit, unlitVisible);

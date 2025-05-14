@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "https://github.com/Citadel-Station-13/Citadel-Station-13-RP/commit/38051f45d3b26bd31f6e292239f43adb36ff01fe lungs and inhands by mubururu_ (github)",
+  "license": "CLA",
+  "copyright": "sprite by TheGypsyBaron",
   "size": {
     "x": 32,
     "y": 32
@@ -48,6 +48,30 @@
     {
       "name": "stomach-inhand-right",
       "directions": 4
+    },
+    {
+      "name": "kidney-l"
+    },
+    {
+      "name": "kidney-r"
+    },
+    {
+      "name": "brain_world"
+    },
+    {
+      "name": "ears_world"
+    },
+    {
+      "name": "eyeballs_world"
+    },
+    {
+      "name": "kidney_world"
+    },
+    {
+      "name": "lungs_world"
+    },
+    {
+      "name": "stomach_world"
     }
   ]
 }
