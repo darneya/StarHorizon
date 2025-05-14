@@ -8,16 +8,16 @@
   },
   "states": [
     {
-      "name": "icon"
+      "name": "crate"
     },
     {
-      "name": "base"
+      "name": "crate_door"
     },
     {
-      "name": "closed"
+      "name": "crate_icon"
     },
     {
-      "name": "open"
+      "name": "crate_open"
     },
     {
       "name": "welded"
