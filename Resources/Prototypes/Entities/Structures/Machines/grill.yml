@@ -37,3 +37,31 @@
           Low: { visible: true, state: low }
           Medium: { visible: true, state: medium }
           High: { visible: true, state: high }
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 190
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Physics
+    bodyType: Static
+  - type: Joint
+    joints: {}
+  - type: Anchorable
+    snap: true
+    limit: OnTop
