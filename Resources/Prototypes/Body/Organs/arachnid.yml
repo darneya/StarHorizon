@@ -59,6 +59,7 @@
   description: "Filters oxygen from an atmosphere... just more greedily."
   components:
   - type: WorldItem
+    overridePrefix: lungs_world
   - type: Sprite
     layers:
       - state: lung-l
@@ -160,6 +161,7 @@
   description: "Two was already too many."
   components:
   - type: WorldItem
+    overridePrefix: eyeballs_world
   - type: Sprite
     layers:
       - state: eyeball-l

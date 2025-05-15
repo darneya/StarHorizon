@@ -43,6 +43,7 @@
   description: "Collects nitrogen, which slime cells use for maintenance."
   components:
   - type: WorldItem
+    overridePrefix: lungs_world
   - type: Sprite
     sprite: Mobs/Species/Slime/organs.rsi
     layers:
