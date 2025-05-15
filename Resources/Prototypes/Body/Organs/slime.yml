@@ -4,6 +4,7 @@
   name: sentient slime core
   description: "The source of incredible, unending gooeyness."
   components:
+    - type: WorldItem
     - type: Sprite
       sprite: Mobs/Species/Slime/organs.rsi
       state: brain-slime
@@ -34,13 +35,14 @@
       size: Small
       heldPrefix: brain
 
-      
+
 - type: entity
   id: OrganSlimeLungs
   parent: [BaseHumanOrgan, BaseOrganLungs]
   name: slime gas sacs
   description: "Collects nitrogen, which slime cells use for maintenance."
   components:
+  - type: WorldItem
   - type: Sprite
     sprite: Mobs/Species/Slime/organs.rsi
     layers:
@@ -73,13 +75,14 @@
   - type: Item
     size: Small
     heldPrefix: lungs
-    
+
 - type: entity
   id: OrganSlimeHeart
   parent: [BaseHumanOrgan, BaseOrganHeart]
   name: slime circulator
   description: "A little circulator what makes the fluid move through the slime body."
   components:
+  - type: WorldItem
   - type: Sprite
     sprite: Mobs/Species/Slime/organs.rsi
     state: heart-on

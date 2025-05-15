@@ -31,6 +31,7 @@
   name: brain
   description: "The central hub of a diona's pseudo-neurological activity, its root-like tendrils search for its former body."
   components:
+  - type: WorldItem
   - type: Item
     size: Small
     heldPrefix: brain
@@ -58,6 +59,7 @@
   name: eyes
   description: "I see you!"
   components:
+  - type: WorldItem
   - type: Sprite
     layers:
       - state: eyeball-l
@@ -69,6 +71,7 @@
   name: stomach
   description: "The diona's equivalent of a stomach, it reeks of asparagus and vinegar."
   components:
+  - type: WorldItem
   - type: Sprite
     state: stomach
   - type: SolutionContainerManager
@@ -104,12 +107,13 @@
   name: lungs
   description: "A spongy mess of slimy, leaf-like structures. Capable of breathing both carbon dioxide and oxygen."
   components:
+  - type: WorldItem
   - type: Sprite
     state: lungs
   - type: Item
     size: Small
     heldPrefix: lungs
-  - type: Lung 
+  - type: Lung
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false
@@ -137,8 +141,9 @@
   name: brain
   description: "The source of incredible, unending intelligence. Honk."
   components:
+  - type: WorldItem
   - type: Brain
-  - type: Nymph # This will make the organs turn into a nymph when they're removed. 
+  - type: Nymph # This will make the organs turn into a nymph when they're removed.
     entityPrototype: OrganDionaNymphBrain
     transferMind: true
 
@@ -149,6 +154,7 @@
   name: stomach
   description: "Gross. This is hard to stomach."
   components:
+  - type: WorldItem
   - type: Nymph
     entityPrototype: OrganDionaNymphStomach
 
@@ -159,6 +165,7 @@
   name: lungs
   description: "Filters oxygen from an atmosphere, which is then sent into the bloodstream to be used as an electron carrier."
   components:
+  - type: WorldItem
   - type: Nymph
     entityPrototype: OrganDionaNymphLungs
 
@@ -171,18 +178,20 @@
   suffix: Brain
   description: Contains the brain of a formerly fully-formed Diona. Killing this would kill the Diona forever. You monster.
   components:
+  - type: WorldItem
   - type: IsDeadIC
   - type: Body
     prototype: AnimalNymphBrain
 
 - type: entity
   id: OrganDionaNymphStomach
-  parent: MobDionaNymphAccent 
+  parent: MobDionaNymphAccent
   categories: [ HideSpawnMenu ]
   name: diona nymph
   suffix: Stomach
-  description: Contains the stomach of a formerly fully-formed Diona. It doesn't taste any better for it. 
+  description: Contains the stomach of a formerly fully-formed Diona. It doesn't taste any better for it.
   components:
+  - type: WorldItem
   - type: IsDeadIC
   - type: Body
     prototype: AnimalNymphStomach
@@ -193,8 +202,9 @@
   categories: [ HideSpawnMenu ]
   name: diona nymph
   suffix: Lungs
-  description: Contains the lungs of a formerly fully-formed Diona. Breathtaking. 
+  description: Contains the lungs of a formerly fully-formed Diona. Breathtaking.
   components:
+  - type: WorldItem
   - type: IsDeadIC
   - type: Body
     prototype: AnimalNymphLungs

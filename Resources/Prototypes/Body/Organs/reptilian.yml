@@ -3,6 +3,7 @@
   parent: [OrganAnimalStomach, BaseOrganStomach]
   categories: [ HideSpawnMenu ]
   components:
+  - type: WorldItem
   - type: Stomach
     # specialDigestible: # Frontier
       # tags: # Frontier
