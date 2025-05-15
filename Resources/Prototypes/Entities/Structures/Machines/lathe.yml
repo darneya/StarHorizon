@@ -504,12 +504,12 @@
     - EmptyMedkitsStatic
     - SurgeryStatic
     - NFMedicalStatic # Frontier
+    dynamicPacks:
+    - Chemistry
     - StarlightSurgeryTools # Starlight
     - StarlightSurgeryOrgans # Starlight
     - StarlightSurgeryLimbs # Starlight
     - StarlightSurgeryImplants # Starlight
-    dynamicPacks:
-    - Chemistry
     - SyringeGuns # DeltaV
     - NFMedical # Frontier
   - type: Machine
