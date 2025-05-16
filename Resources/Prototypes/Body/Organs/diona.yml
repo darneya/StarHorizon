@@ -135,6 +135,41 @@
         maxVol: 100
         canReact: False
 
+# HORIZON START
+- type: entity
+  id: OrganDionaKidneys
+  parent: [BaseDionaOrgan, BaseOrganKidneys]
+  name: почки
+  description: "Фильтруют токсины в крови."
+  components:
+  - type: WorldItem
+    overridePrefix: kidney_world
+  - type: Sprite
+    sprite: Mobs/Species/Diona/organs.rsi
+    layers:
+      - state: kidney-l
+      - state: kidney-r
+  - type: Item
+    size: Small
+    heldPrefix: kidneys
+  # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
+  - type: Metabolizer
+    maxReagents: 5
+    metabolizerTypes: [Diona]
+    removeEmpty: true
+
+- type: entity
+  id: OrganDionaEars
+  parent: [BaseDionaOrgan, BaseOrganEars]
+  name: уши
+  description: "Ухо состоит из трёх частей. Внутренней, средней, и наружной. В нормальных условиях видно только одну."
+  components:
+  - type: WorldItem
+  - type: Sprite
+    sprite: Mobs/Species/Diona/organs.rsi
+    state: ears
+# HORIZON END
+
 # Organs that turn into nymphs on removal
 - type: entity
   id: OrganDionaBrainNymph

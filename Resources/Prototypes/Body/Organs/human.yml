@@ -246,6 +246,7 @@
   description: "Filters toxins from the bloodstream."
   components:
   - type: WorldItem
+    overridePrefix: kidney_world
   - type: Sprite
     layers:
       - state: kidney-l
@@ -258,3 +259,39 @@
     maxReagents: 5
     metabolizerTypes: [Human]
     removeEmpty: true
+
+- type: entity
+  id: OrganHumanMuscle
+  parent: [BaseHumanOrgan]
+  name: muscle
+  description: "Make you move!"
+  components:
+  - type: WorldItem
+  - type: Sprite
+    state: muscle
+  - type: Item
+    size: Small
+
+- type: entity
+  id: OrganHumanNerve
+  parent: [BaseHumanOrgan]
+  name: nerve
+  description: "Do some electrochemical magic."
+  components:
+  - type: WorldItem
+  - type: Sprite
+    state: nerve
+  - type: Item
+    size: Small
+
+- type: entity
+  id: OrganHumanVessel
+  parent: [BaseAnimalOrgan]
+  name: vessel
+  description: "vessel..."
+  components:
+  - type: WorldItem
+  - type: Sprite
+    state: vessel
+  - type: Item
+    size: Small

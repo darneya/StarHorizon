@@ -98,3 +98,96 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
+
+- type: entity
+  id: OrganSlimeEyes
+  parent: [BaseHumanOrgan, BaseOrganEyes]
+  name: eyes
+  description: "I see you!"
+  components:
+  - type: WorldItem
+    overridePrefix: eyeballs_world
+  - type: Sprite
+    sprite: Mobs/Species/Slime/organs.rsi
+    layers:
+      - state: eyeball-l
+      - state: eyeball-r
+  - type: Item
+    size: Small
+    heldPrefix: eyeballs
+
+- type: entity
+  id: OrganSlimeStomach
+  parent: [BaseHumanOrgan, BaseOrganStomach]
+  name: stomach
+  description: "Gross. This is hard to stomach."
+  components:
+  - type: WorldItem
+  - type: Sprite
+    sprite: Mobs/Species/Slime/organs.rsi
+    state: stomach
+  - type: Item
+    size: Small
+    heldPrefix: stomach
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+  - type: Stomach
+  # The stomach metabolizes stuff like foods and drinks.
+  # TODO: Have it work off of the ent's solution container, and move this
+  # to intestines instead.
+  - type: Metabolizer
+    # mm yummy
+    maxReagents: 3
+    metabolizerTypes: [Slime]
+    groups:
+    - id: Food
+    - id: Drink
+
+- type: entity
+  id: OrganSlimeLiver
+  parent: [BaseHumanOrgan, BaseOrganLiver]
+  name: liver
+  description: "Pairing suggestion: chianti and fava beans."
+  components:
+  - type: WorldItem
+  - type: Sprite
+    sprite: Mobs/Species/Slime/organs.rsi
+    state: liver
+  - type: Item
+    size: Small
+    heldPrefix: liver
+  - type: Metabolizer # The liver metabolizes certain chemicals only, like alcohol.
+    maxReagents: 1
+    metabolizerTypes: [Slime]
+    groups:
+    - id: Alcohol
+      rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+
+- type: entity
+  id: OrganSlimeKidneys
+  parent: [BaseHumanOrgan, BaseOrganKidneys]
+  name: kidneys
+  description: "Filters toxins from the bloodstream."
+  components:
+  - type: WorldItem
+    overridePrefix: kidney_world
+  - type: Sprite
+    sprite: Mobs/Species/Slime/organs.rsi
+    layers:
+      - state: kidney-l
+      - state: kidney-r
+  - type: Item
+    size: Small
+    heldPrefix: kidneys
+  # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
+  - type: Metabolizer
+    maxReagents: 5
+    metabolizerTypes: [Slime]
+    removeEmpty: true

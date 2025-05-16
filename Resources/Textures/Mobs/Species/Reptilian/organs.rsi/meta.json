@@ -57,10 +57,7 @@
             "name": "muscle"
         },
         {
-            "name": "lung-l-world"
-        },
-        {
-            "name": "lung-r_world"
+            "name": "lungs_world"
         },
         {
             "name": "brain_world"
