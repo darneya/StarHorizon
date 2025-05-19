@@ -1,7 +1,14 @@
 ui-vote-type-restart = Перезапуск раунда
 ui-vote-type-gamemode = Следующий режим игры
 ui-vote-type-map = Следующая карта
+ui-vote-type-votekick = Голосование за бан
 # Window title of the vote create menu
+
+# Причины для бана
+ui-vote-votekick-type-raiding = Набег
+ui-vote-votekick-type-cheating = Читерство
+ui-vote-votekick-type-spamming = Спам
+
 ui-vote-create-title = Голосование
 # Submit button in the vote create button
 ui-vote-create-button = Запустить

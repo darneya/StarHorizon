@@ -22,3 +22,5 @@ ent-NFPosterContrabandKillerFashion = Da Burkin' Fashion
     .desc = Печатная копия того, что, по всей видимости, является нарисованным от руки плакатом с изображением гоблина в рваной тунике и с копьем.
 ent-NFPosterLegitBahamaMama = Bahama Mama's
     .desc = Поднимите ноги и насладитесь имитацией тропического пляжа в Bahama Mama's.
+ent-NFPosterContrabandGoblinFront = Гоблины, объединяйтесь!
+    .desc = Плакат, призывающий гоблинов объединиться и бороться за свои права.

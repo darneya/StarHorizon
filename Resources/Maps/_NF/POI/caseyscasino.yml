@@ -5519,7 +5519,7 @@ entities:
   - uid: 180
     components:
     - type: MetaData
-      desc: Keep whats in your safe, safe.
+      desc: Храните то, что у вас в сейфе, в безопасности.
       name: winnings safe
     - type: Transform
       anchored: True
