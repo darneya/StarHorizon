@@ -1,5 +1,5 @@
 <Document>
-  # INVESTIGATOR-CLASS RESEARCH SHUTTLE
+  # ИССЛЕДОВАТЕЛЬСКИЙ ШАТТЛ КЛАССА "INVESTIGATOR"
   <Box>
   <GuideEntityEmbed Entity="VariedXenoArtifactItem"/>
   <GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
@@ -9,59 +9,59 @@
   <Box>
   <GuideEntityEmbed Entity="ShuttleMapInvestigator" Caption=""/>
   </Box>
-    [color=#a4885c]Ship Size:[/color] Medium
+    [color=#a4885c]Размер корабля:[/color] Средний
 	
-	[color=#a4885c]Recommended Crew:[/color] 2-3
+	[color=#a4885c]Рекомендуемый экипаж:[/color] 2–3
 	
-	[color=#a4885c]Power Gen Type:[/color] Solar/Plasma
+	[color=#a4885c]Тип генератора энергии:[/color] Солнечный/Плазменный
 	
-	[color=#a4885c]Expeditions:[/color] None
+	[color=#a4885c]Экспедиции:[/color] Отсутствуют
 	
-	[color=#a4885c]IFF Console:[/color] None
+	[color=#a4885c]Консоль IFF:[/color] Отсутствует
 	
-  "A medium research shuttle designed for xenoarcheological studies."
+  "Средний исследовательский шаттл, предназначенный для ксеноархеологических исследований."
     
-  # PREFLIGHT CHECKLIST
+  # КОНТРОЛЬНЫЙ СПИСОК ПЕРЕД ВЫЛЕТОМ
   
-  ## 1. Power supply
+  ## 1. Электропитание
   
-  ## 1.1. Battery units
+  ## 1.1. Батарейные блоки
   <Box>
   <GuideEntityEmbed Entity="SMESBasic"/>
   <GuideEntityEmbed Entity="SubstationBasic"/>
   <GuideEntityEmbed Entity="APCBasic"/>
   </Box>
   
-  - Check that the SMES unit is anchored to the floor.
-  - Check that the substation unit is anchored to the floor.
-  - Check that the APC unit's Main Breaker is toggled on.
-  - Check the APC unit's current Load* (W).
+  - Убедитесь, что блок СМЭС закреплён на полу.
+  - Убедитесь, что подстанция закреплена на полу.
+  - Убедитесь, что главный выключатель блока ЛКП включён.
+  - Проверьте текущую нагрузку блока ЛКП* (Вт).
   
-  ## 1.2. P.A.C.M.A.N. generator units
+  ## 1.2. Генераторы P.A.C.M.A.N.
   <Box>
   <GuideEntityEmbed Entity="PortableGeneratorPacmanShuttle"/>
   <GuideEntityEmbed Entity="SheetPlasma"/>
   </Box>
   
-  - Check that the P.A.C.M.A.N. generator units are anchored to the floor.
-  - Check that the P.A.C.M.A.N. generator units have fuel. For extended flights make sure that you have enough fuel stockpiled to sustain prolonged power generation during flight.
-  - Check that the P.A.C.M.A.N. generator units are set to HV output.
-  - Set Target Power for 15-20** [bold]kW[/bold].
-  - Ensure that P.A.C.M.A.N. generator units are enabled.
+  - Убедитесь, что генераторы P.A.C.M.A.N. закреплены на полу.
+  - Убедитесь, что генераторы заправлены топливом. Для длительных полётов обеспечьте запас топлива.
+  - Убедитесь, что генераторы настроены на HV-выход.
+  - Установите целевую мощность на 15–20** [bold]кВт[/bold].
+  - Убедитесь, что генераторы включены.
   
-  ## 1.3. Solar panels
+  ## 1.3. Солнечные панели
   <Box>
   <GuideEntityEmbed Entity="ComputerSolarControl"/>
   <GuideEntityEmbed Entity="SolarTracker"/>
   <GuideEntityEmbed Entity="SolarPanel"/>
   </Box>
-  - Inspect solar control computer (located at shuttle cockpit).
-  - Adjust panel angular velocity.
-  - Adjust panel angle.
+  - Проверьте консоль управления солнечными панелями (расположен в кабине шаттла).
+  - Отрегулируйте угловую скорость панелей.
+  - Отрегулируйте угол наклона панелей.
   
-  ## 2. Atmospherics
+  ## 2. Атмосфера
   
-  ## 2.1. Distribution Loop
+  ## 2.1. Цикл распределения
   <Box>
   <GuideEntityEmbed Entity="OxygenCanister"/>
   <GuideEntityEmbed Entity="NitrogenCanister"/>
@@ -70,37 +70,37 @@
   <GuideEntityEmbed Entity="GasPressurePump"/>
   </Box>
   
-  - Check that the O2 canister is anchored to connector port.
-  - Check that the N2 canister is anchored to connector port.
-  - Check that the gas mixer is set to the correct mixing ratio (21% Oxygen, 79% Nitrogen).
-  - Check that the gas mixer is set to 101kPa.
-  - Ensure that the gas mixer is enabled.
+  - Убедитесь, что баллон с кислородом закреплён на соединительном порте.
+  - Убедитесь, что баллон с азотом закреплён.
+  - Убедитесь, что газовый миксер настроен на соотношение 21% кислорода и 79% азота.
+  - Установите давление на миксере — 101 кПа.
+  - Убедитесь, что миксер включён.
   
-  ## 2.2. Waste Loop
+  ## 2.2. Цикл отходов
   <Box>
   <GuideEntityEmbed Entity="GasPressurePump"/>
   <GuideEntityEmbed Entity="AirAlarm"/>
   </Box>
     
-  - Ensure that the waste loop pump is enabled.
-  - Disable Auto Mode on the Air Alarm in the Engine Room.
-  - Set the Air Alarm in the Engine Room to Filtering (Wide).
+  - Убедитесь, что насос отходящего цикла включён.
+  - Отключите автоматический режим воздушной сигнализации в машинном отделении.
+  - Установите воздушную сигнализацию на режим фильтрации (Широкий).
   
-  ## 3. Other checks
+  ## 3. Прочие проверки
   <Box>
   <GuideEntityEmbed Entity="Gyroscope"/>
   <GuideEntityEmbed Entity="GravityGeneratorMini"/>
   <GuideEntityEmbed Entity="BlastDoor"/>
   </Box>
   
-  - Check that the gyroscope is anchored, powered, and enabled.
-  - Check that the mini gravity generator is anchored, powered, and enabled.
-  - Check that the blast doors are closed.
+  - Убедитесь, что гироскоп закреплён, запитан и включён.
+  - Убедитесь, что мини-гравитационный генератор закреплён, запитан и включён.
+  - Убедитесь, что противовзрывные двери закрыты.
   
-  ## Sidenotes
+  ## Примечания
   
-  * - Investigator-class research ships are equipped with two APC units that can be used to appraise the ship's total power consumption. An unmodified Investigator-class ship requires 39.6 kW of power to remain operational.
+  * — Шаттлы класса «Investigator» оснащены двумя блоками ЛКП, позволяющими отслеживать общее энергопотребление. В стандартной конфигурации шаттлу необходимо 39,6 кВт для стабильной работы.
   
-  ** - Investigator-class research ships have higher power demand than standard P.A.C.M.A.N. generator unit can provide at optimal settings, however the ship comes equipped with additional P.A.C.M.A.N. generator unit and 67 solar panels that can provide up to 33.5 kW of power under ideal circumstances. Assuming that the solar array will provide a third of its maximum output power, recommended target power output for each P.A.C.M.A.N. generator unit is 15 kW.
+  ** — Энергопотребление превышает возможности одного стандартного генератора P.A.C.M.A.N., однако в комплекте предусмотрены дополнительные генераторы и 67 солнечных панелей, способных производить до 33,5 кВт при идеальных условиях. Учитывая, что солнечные панели в среднем выдают треть от максимальной мощности, рекомендуется установить целевую мощность 15 кВт на каждый генератор.
 
 </Document>
