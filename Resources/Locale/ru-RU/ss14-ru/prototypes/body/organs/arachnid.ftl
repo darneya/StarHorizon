@@ -14,3 +14,7 @@ ent-OrganArachnidEyes = глаза
     .desc = Два - это уже слишком много.
 ent-OrganArachnidTongue = язык
     .desc = Мясистая мышца, используемая в основном для обмана.
+ent-OrganArachnidMuscle = мышца
+    .desc = Приводит в движение вашу тушку.
+ent-OrganArachnidWebGland = паучьи гланды
+    .desc = Выделяет паутину.

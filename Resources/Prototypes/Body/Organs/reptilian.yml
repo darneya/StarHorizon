@@ -4,7 +4,7 @@
   components:
   - type: WorldItem
   - type: Sprite
-    sprite:
+    sprite: Mobs/Species/Reptilian/organs.rsi
   - type: Stomach
     # specialDigestible: # Frontier
       # tags: # Frontier
@@ -170,40 +170,6 @@
   - type: Item
     size: Small
     heldPrefix: heart
-
-- type: entity
-  id: OrganReptilianStomach
-  parent: [BaseAnimalOrgan, BaseOrganStomach]
-  name: stomach
-  description: "Gross. This is hard to stomach."
-  components:
-  - type: WorldItem
-  - type: Sprite
-    sprite: Mobs/Species/Reptilian/organs.rsi
-    state: stomach
-  - type: Item
-    size: Small
-    heldPrefix: stomach
-  - type: SolutionContainerManager
-    solutions:
-      stomach:
-        maxVol: 50
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-  - type: Stomach
-  # The stomach metabolizes stuff like foods and drinks.
-  # TODO: Have it work off of the ent's solution container, and move this
-  # to intestines instead.
-  - type: Metabolizer
-    # mm yummy
-    maxReagents: 3
-    metabolizerTypes: [Animal]
-    groups:
-    - id: Food
-    - id: Drink
 
 - type: entity
   id: OrganReptilianLiver
