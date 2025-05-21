@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Paradise Station",
+  "license": "CLA",
+  "copyright": "resprite by TheGypsybaron",
   "size": {
     "x": 32,
     "y": 32
@@ -24,6 +24,15 @@
     },
     {
       "name": "omni-eyeball-r"
+    },
+    {
+      "name": "eyeball_world"
+    },
+    {
+      "name": "omni-eyeball_world"
+    },
+    {
+      "name": "sec-eyeball_world"
     }
   ]
 }
