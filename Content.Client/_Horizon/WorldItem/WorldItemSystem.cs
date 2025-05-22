@@ -102,8 +102,17 @@ public sealed class WorldItemSystem : EntitySystem
             return;
         }
 
-        if (GetWorldState(entity.Owner, out var prefix, out var _))
+        if (GetWorldState(entity.Owner, out var prefix, out var overridePrefix, out var _))
         {
+            if (overridePrefix != null)
+            {
+                foreach (var (layer, _) in entity.Comp.DefaultSpriteStates)
+                {
+                    sprite.LayerSetState(layer, overridePrefix);
+                }
+                return;
+            }
+
             foreach (var (layer, state) in entity.Comp.DefaultSpriteStates)
             {
                 sprite.LayerSetState(layer, state + prefix);
@@ -128,8 +137,17 @@ public sealed class WorldItemSystem : EntitySystem
             return;
         }
 
-        if (GetWorldState(entity.Owner, out var prefix, out _))
+        if (GetWorldState(entity.Owner, out var prefix, out var overridePrefix, out _))
         {
+            if (overridePrefix != null)
+            {
+                foreach (var (layer, _) in entity.Comp.DefaultSpriteStates)
+                {
+                    sprite.LayerSetState(layer, overridePrefix);
+                }
+                return;
+            }
+
             foreach (var (layer, state) in entity.Comp.DefaultSpriteStates)
             {
                 sprite.LayerSetState(layer, state + prefix);
@@ -145,16 +163,18 @@ public sealed class WorldItemSystem : EntitySystem
     }
 
     // ReSharper disable ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
-    public bool GetWorldState(EntityUid uid, [NotNullWhen(true)] out string? prefix, [NotNullWhen(true)] out Dictionary<int, string>? spriteStates)
+    public bool GetWorldState(EntityUid uid, [NotNullWhen(true)] out string? prefix, out string? overridePrefix, [NotNullWhen(true)] out Dictionary<int, string>? spriteStates)
     {
         if (!TryComp<WorldItemComponent>(uid, out var worldItem))
         {
             prefix = null;
             spriteStates = null;
+            overridePrefix = null;
             return false;
         }
 
         spriteStates = worldItem.DefaultSpriteStates;
+        overridePrefix = worldItem.OverridePrefix;
         prefix = worldItem.Prefix;
         var transform = Transform(uid);
         if (transform == null)

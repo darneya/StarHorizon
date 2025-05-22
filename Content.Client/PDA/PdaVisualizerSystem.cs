@@ -17,7 +17,7 @@ public sealed class PdaVisualizerSystem : VisualizerSystem<PdaVisualsComponent>
         // _HORIZON STARTS
         if (AppearanceSystem.TryGetData<string>(uid, PdaVisuals.PdaType, out var pdaType, args.Component))
         {
-            if (_worldItemSystem.GetWorldState(uid, out var prefix, out _))
+            if (_worldItemSystem.GetWorldState(uid, out var prefix, out _, out _))
                 args.Sprite.LayerSetState(PdaVisualLayers.Base, pdaType + prefix);
             else
                 args.Sprite.LayerSetState(PdaVisualLayers.Base, pdaType);
@@ -29,7 +29,7 @@ public sealed class PdaVisualizerSystem : VisualizerSystem<PdaVisualsComponent>
                 args.Component))
         {
             var layer = args.Sprite.LayerMapGet(PdaVisualLayers.Flashlight);
-            if (_worldItemSystem.GetWorldState(uid, out var prefix, out var defaultStates))
+            if (_worldItemSystem.GetWorldState(uid, out var prefix, out _, out var defaultStates))
             {
                 args.Sprite.LayerSetState(PdaVisualLayers.Flashlight, defaultStates[layer] + prefix);
                 args.Sprite.LayerSetVisible(PdaVisualLayers.Flashlight, isFlashlightOn);
@@ -45,7 +45,7 @@ public sealed class PdaVisualizerSystem : VisualizerSystem<PdaVisualsComponent>
         if (AppearanceSystem.TryGetData<bool>(uid, PdaVisuals.IdCardInserted, out var isCardInserted, args.Component))
         {
             var layer = args.Sprite.LayerMapGet(PdaVisualLayers.IdLight);
-            if (_worldItemSystem.GetWorldState(uid, out var prefix, out var defaultStates))
+            if (_worldItemSystem.GetWorldState(uid, out var prefix, out _, out var defaultStates))
             {
                 args.Sprite.LayerSetState(PdaVisualLayers.IdLight, defaultStates[layer] + prefix);
                 args.Sprite.LayerSetVisible(PdaVisualLayers.IdLight, isCardInserted);

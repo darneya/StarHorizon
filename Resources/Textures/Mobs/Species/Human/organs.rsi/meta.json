@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation and cev-eris at https://github.com/tgstation/tgstation/commit/c4b7f3c41b6742aca260fe60cc358a778ba9b8c8 and https://github.com/discordia-space/CEV-Eris/commit/476e374cea95ff5e8b1603c48342bf700e2cd7af, inhands by mubururu_ (github)",
+  "license": "CLA",
+  "copyright": "sprite by TheGypsyBaron",
   "size": {
     "x": 32,
     "y": 32
@@ -123,6 +123,52 @@
         },
         {
             "name": "vessel"
+        },
+        {
+            "name": "brain_world"
+        },
+        {
+            "name": "ears_world"
+        },
+        {
+            "name": "eyeballs_world"
+        },
+        {
+            "name": "heart-off_world"
+        },
+        {
+            "name": "heart-on_world",
+            "delays": [
+                [
+                    0.6,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "kidney_world"
+        },
+        {
+            "name": "liver_world"
+        },
+        {
+            "name": "lungs_world"
+        },
+        {
+            "name": "muscle_world"
+        },
+        {
+            "name": "nerve_world"
+        },
+        {
+            "name": "stomach_world"
+        },
+        {
+            "name": "tongue_world"
+        },
+        {
+            "name": "vessel_world"
         }
     ]
 }

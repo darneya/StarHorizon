@@ -7,4 +7,7 @@ public sealed partial class WorldItemComponent : Component
 
     [DataField]
     public string Prefix = "_world";
+
+    [DataField]
+    public string? OverridePrefix;
 }
