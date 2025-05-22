@@ -36,10 +36,9 @@
       "name": "heart-on",
       "delays": [
         [
+          0.6,
           0.1,
-          0.1,
-          0.1,
-          0.6
+          0.1
         ]
       ]
     },
@@ -79,6 +78,9 @@
       "name": "kidney-r"
     },
     {
+      "name": "liver"
+    },
+    {
       "name": "brain_world"
     },
     {
@@ -116,10 +118,7 @@
       "name": "web-gland_world"
     },
     {
-        "name": "liver"
-    },
-    {
-        "name": "liver_world"
+      "name": "liver_world"
     }
   ]
 }

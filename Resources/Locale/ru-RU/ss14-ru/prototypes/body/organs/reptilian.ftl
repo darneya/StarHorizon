@@ -1,4 +1,4 @@
-ent-OrganReptilianStomach = { ent-OrganAnimalStomach }
+ent-OrganReptilianStomach = желудок рептилии
     .desc = { ent-OrganAnimalStomach.desc }
 ent-BaseReptilianOrgan = { ent-BaseHumanOrganUnGibbable }
     .desc = { ent-BaseHumanOrganUnGibbable.desc }
@@ -20,5 +20,5 @@ ent-OrganReptilianLiver = печень рептилии
     .desc = Рекомендуется подавать с бобами, под кьянти.
 ent-OrganReptilianKidneys = почки рептилии
     .desc = Выводят токсины из кровеносной системы.
-ent-OrganReptilianMuscle = мышца
+ent-OrganReptilianMuscle = мышцы рептилии
     .desc = Приводит в движение вашу тушку.
