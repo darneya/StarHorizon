@@ -54,6 +54,10 @@
           Quantity: 10
   - type: Produce
     seedId: wheat
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Beer
+  # Horizon Bothany end
   - type: Tag
     tags:
     - Wheat
@@ -76,11 +80,15 @@
           Quantity: 10
   - type: SpawnItemsOnUse
     items:
-      - id: FoodMeatWheat
+    - id: FoodMeatWheat
     sound:
       path: /Audio/Voice/Slime/slime_squish.ogg
   - type: Produce
     seedId: meatwheat
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: WaaaghBeer
+  # Horizon Bothany end
 
 - type: entity
   name: oat bushel
@@ -96,6 +104,10 @@
         reagents:
         - ReagentId: Oats
           Quantity: 10
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Beer
+  # Horizon Bothany end
   - type: Produce
     seedId: oat
   - type: Extractable
@@ -103,6 +115,11 @@
       reagents:
       - ReagentId: MilkOat
         Quantity: 5
+  # Horizon Bothany start
+  - type: Tag
+    tags:
+    - Wheat
+  # Horizon Bothany end
 
 - type: entity
   name: sugarcane
@@ -120,8 +137,17 @@
         reagents:
         - ReagentId: Sugar
           Quantity: 10
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Rum
+  # Horizon Bothany end
   - type: Produce
     seedId: sugarcane
+  # Horizon Bothany start
+  - type: Tag
+    tags:
+    - Wheat
+  # Horizon Bothany end
 
 - type: entity
   name: papercane roll
@@ -148,7 +174,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - peas
+    - peas
   - type: SolutionContainerManager
     solutions:
       food:
@@ -160,6 +186,10 @@
           Quantity: 5
         - ReagentId: Laughter
           Quantity: 5
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineStrong
+  # Horizon Bothany end
   - type: Extractable
     juiceSolution:
       reagents:
@@ -243,6 +273,10 @@
         reagents:
         - ReagentId: Histamine
           Quantity: 3
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Produce
     seedId: nettle
   - type: MeleeChemicalInjector
@@ -251,6 +285,11 @@
     pierceArmor: false
   - type: Extractable
     grindableSolutionName: food
+  # Horizon Bothany start
+  - type: Tag
+    tags:
+    - Herb
+  # Horizon Bothany end
 
 - type: entity
   name: death nettle
@@ -277,6 +316,10 @@
           Quantity: 3
         - ReagentId: FluorosulfuricAcid
           Quantity: 3
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Produce
     seedId: deathNettle
   - type: MeleeChemicalInjector
@@ -285,6 +328,11 @@
     pierceArmor: false
   - type: Extractable
     grindableSolutionName: food
+  # Horizon Bothany start
+  - type: Tag
+    tags:
+    - Herb
+  # Horizon Bothany end
 
 - type: entity
   name: banana
@@ -294,7 +342,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - banana
+    - banana
   - type: Food
     trash:
     - TrashBananaPeel
@@ -307,6 +355,10 @@
           Quantity: 4
         - ReagentId: Vitamin
           Quantity: 2
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: BananaHonk
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/banana.rsi
   - type: Item
@@ -335,8 +387,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - banana
-      - nothing
+    - banana
+    - nothing
   - type: Food
     trash:
     - TrashMimanaPeel
@@ -349,6 +401,10 @@
           Quantity: 5
         - ReagentId: Vitamin
           Quantity: 2
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Silencer
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/mimana.rsi
   - type: Item
@@ -513,6 +569,14 @@
     entries:
       Burger: CarrotBurger
       Taco: Carrot
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  - type: Tag
+    tags:
+    - Carrot
+    - Vegetable
+  # Horizon Bothany end
 
 - type: entity
   name: cabbage
@@ -522,7 +586,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - cabbage
+    - cabbage
   - type: SolutionContainerManager
     solutions:
       food:
@@ -532,6 +596,10 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/cabbage.rsi
   - type: Item
@@ -554,7 +622,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - garlic
+    - garlic
   - type: SolutionContainerManager
     solutions:
       food:
@@ -566,6 +634,10 @@
           Quantity: 4
         - ReagentId: Allicin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/garlic.rsi
   - type: Produce
@@ -586,7 +658,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - sour
+    - sour
   - type: SolutionContainerManager
     solutions:
       food:
@@ -596,6 +668,10 @@
           Quantity: 5
         - ReagentId: Vitamin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/lemon.rsi
   - type: Item
@@ -624,7 +700,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - lemoon
+    - lemoon
   - type: SolutionContainerManager
     solutions:
       food:
@@ -634,6 +710,10 @@
           Quantity: 4
         - ReagentId: Milk
           Quantity: 16
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/lemoon.rsi
   - type: Item
@@ -661,7 +741,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - sour
+    - sour
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/lime.rsi
   - type: Item
@@ -673,6 +753,10 @@
       reagents:
       - ReagentId: JuiceLime
         Quantity: 10
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Tag
     tags:
     - Lime
@@ -690,7 +774,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - orange
+    - orange
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/orange.rsi
   - type: Item
@@ -702,6 +786,10 @@
       reagents:
       - ReagentId: JuiceOrange
         Quantity: 10
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Tag
     tags:
     - Fruit
@@ -718,7 +806,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - truenature
+    - truenature
   - type: SolutionContainerManager
     solutions:
       food:
@@ -745,6 +833,10 @@
       reagents:
       - ReagentId: JuiceOrange
         Quantity: 10
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Tag
     tags:
     - Fruit
@@ -761,7 +853,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - pineapple
+    - pineapple
   - type: SolutionContainerManager
     solutions:
       food:
@@ -773,6 +865,10 @@
           Quantity: 2
         - ReagentId: Water
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/pineapple.rsi
   - type: Item
@@ -799,7 +895,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - potatoes
+    - potatoes
   - type: SolutionContainerManager
     solutions:
       food:
@@ -809,6 +905,10 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Vodka
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/potato.rsi
   - type: Item
@@ -841,7 +941,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - tomato
+    - tomato
   - type: SolutionContainerManager
     solutions:
       food:
@@ -853,6 +953,10 @@
           Quantity: 3
         - ReagentId: Water
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Enzyme
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/tomato.rsi
   - type: Item
@@ -912,6 +1016,10 @@
           Quantity: 15
         - ReagentId: Vitamin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Laughter
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/blue_tomato.rsi
   - type: Item
@@ -961,6 +1069,10 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: BloodyMary
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/blood_tomato.rsi
   - type: Item
@@ -1004,7 +1116,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - eggplant
+    - eggplant
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1014,6 +1126,10 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/eggplant.rsi
   - type: Item
@@ -1033,7 +1149,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - apple
+    - apple
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1043,6 +1159,10 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Sider
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/apple.rsi
   - type: Produce
@@ -1068,8 +1188,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - apple
-      - metallic
+    - apple
+    - metallic
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1081,6 +1201,10 @@
           Quantity: 4
         - ReagentId: DoctorsDelight
           Quantity: 13
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Sider
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/golden_apple.rsi
   - type: Item
@@ -1110,7 +1234,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - chocolate
+    - chocolate
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1122,13 +1246,17 @@
           Quantity: 1
         - ReagentId: CocoaPowder
           Quantity: 1
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: BlueCuracao
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/cocoa.rsi
   - type: Produce
     seedId: cocoa
   - type: SpawnItemsOnUse
     items:
-      - id: FoodCocoaBeans
+    - id: FoodCocoaBeans
     sound:
       path: /Audio/Effects/packetrip.ogg
   - type: Tag
@@ -1143,7 +1271,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - corn
+    - corn
   - type: Food
     trash:
     - FoodCornTrash
@@ -1156,6 +1284,10 @@
           Quantity: 15
         - ReagentId: Nutriment
           Quantity: 5
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Whiskey
+  # Horizon Bothany end
   - type: Tag
     tags:
     - Corn
@@ -1164,12 +1296,16 @@
     sprite: Objects/Specific/Hydroponics/corn.rsi
   - type: Produce
     seedId: corn
+  # Horizon Bothany start
   - type: Extractable
     grindableSolutionName: food
     juiceSolution:
       reagents:
       - ReagentId: Cornoil
-        Quantity: 5
+        Quantity: 3
+      - ReagentId: Enzyme
+        Quantity: 2
+  # Horizon Bothany end
   - type: FoodSequenceElement
     entries:
       Burger: Corn
@@ -1189,7 +1325,7 @@
     size: Tiny
   - type: Tag
     tags:
-      - Trash
+    - Trash
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1206,7 +1342,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - onion
+    - onion
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1218,6 +1354,10 @@
           Quantity: 4
         - ReagentId: Allicin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/onion.rsi
   - type: Item
@@ -1239,7 +1379,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - onion
+    - onion
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1251,6 +1391,10 @@
           Quantity: 4
         - ReagentId: Allicin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/onion_red.rsi
   - type: Item
@@ -1276,6 +1420,10 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 5
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: MushroomBeer
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/chanterelle.rsi
   - type: Item
@@ -1316,7 +1464,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - pineapple
+    - pineapple
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/pineapple.rsi
   - type: Extractable
@@ -1324,6 +1472,10 @@
       reagents:
       - ReagentId: JuicePineapple
         Quantity: 2
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Tag
     tags:
     - Fruit
@@ -1341,7 +1493,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - onion
+    - onion
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/onion.rsi
   - type: SolutionContainerManager
@@ -1355,6 +1507,10 @@
           Quantity: 1
         - ReagentId: Vitamin
           Quantity: 1
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Tag
     tags:
     - Vegetable
@@ -1372,7 +1528,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - onion
+    - onion
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/onion_red.rsi
   - type: SolutionContainerManager
@@ -1386,6 +1542,10 @@
           Quantity: 1
         - ReagentId: Vitamin
           Quantity: 1
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Tag
     tags:
     - Vegetable
@@ -1403,22 +1563,26 @@
   components:
   - type: FlavorProfile
     flavors:
-      - spicy
+    - spicy
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 18
         reagents:
-          - ReagentId: Nutriment
-            Quantity: 4
-          - ReagentId: CapsaicinOil
-            Quantity: 10
-          - ReagentId: Vitamin
-            Quantity: 4
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: CapsaicinOil
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/chili.rsi
   - type: Item
     heldPrefix: produce
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Produce
     seedId: chili
   - type: Tag
@@ -1438,19 +1602,23 @@
   components:
   - type: FlavorProfile
     flavors:
-      - spicy
-      - cold
+    - spicy
+    - cold
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 18
         reagents:
-          - ReagentId: Nutriment
-            Quantity: 4
-          - ReagentId: FrostOil
-            Quantity: 10
-          - ReagentId: Vitamin
-            Quantity: 4
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: FrostOil
+          Quantity: 10
+        - ReagentId: Vitamin
+          Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/chilly.rsi
   - type: Item
@@ -1462,6 +1630,11 @@
       Taco: ChillyPepper
       Burger: ChillyPepper
       Skewer: ChillyPepperSkewer
+  # Horizon Bothany start
+  - type: Tag
+    tags:
+    - Vegetable
+  # Horizon Bothany end
 
 - type: entity
   name: aloe
@@ -1471,7 +1644,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - medicine
+    - medicine
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1481,6 +1654,10 @@
           Quantity: 10
         - ReagentId: Dermaline
           Quantity: 10
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Tequila
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/aloe.rsi
   - type: Item
@@ -1509,7 +1686,7 @@
     quickEquip: false
   - type: FlavorProfile
     flavors:
-      - medicine
+    - medicine
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1519,6 +1696,10 @@
           Quantity: 2
         - ReagentId: Bicaridine
           Quantity: 20
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Vermouth
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/poppy.rsi
   - type: Produce
@@ -1541,7 +1722,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - medicine
+    - medicine
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1551,6 +1732,10 @@
           Quantity: 2
         - ReagentId: Bicaridine
           Quantity: 20
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Vermouth
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/lily.rsi
   - type: Produce
@@ -1573,8 +1758,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - mushroom
-      - medicine
+    - mushroom
+    - medicine
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1584,6 +1769,10 @@
           Quantity: 20
         - ReagentId: Epinephrine
           Quantity: 20
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: MushroomBeer
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/lingzhi.rsi
   - type: Item
@@ -1596,6 +1785,11 @@
     entries:
       Taco: Lingzhi
       Burger: Lingzhi
+  # Horizon Bothany start
+  - type: Tag
+    tags:
+    - Vegetable
+  # Horizon Bothany end
 
 - type: entity
   name: ambrosia vulgaris
@@ -1605,8 +1799,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - leafy
-      - medicine
+    - leafy
+    - medicine
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1622,6 +1816,10 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 2
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/ambrosia_vulgaris.rsi
   - type: Item
@@ -1650,8 +1848,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - leafy
-      - medicine
+    - leafy
+    - medicine
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1665,6 +1863,10 @@
           Quantity: 2
         - ReagentId: Desoxyephedrine
           Quantity: 10
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineStrong
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/ambrosia_deus.rsi
   - type: Item
@@ -1693,7 +1895,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - medicine
+    - medicine
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1701,6 +1903,10 @@
         reagents:
         - ReagentId: Stellibinin
           Quantity: 25
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/galaxythistle.rsi
   - type: Item
@@ -1730,7 +1936,7 @@
     heldPrefix: produce
   - type: FlavorProfile
     flavors:
-      - sharp
+    - sharp
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1777,7 +1983,7 @@
       types:
         Slash: 15
     soundHit:
-        path: /Audio/Weapons/bladeslice.ogg
+      path: /Audio/Weapons/bladeslice.ogg
   - type: Tag
     tags:
     - Galaxythistle
@@ -1785,6 +1991,10 @@
     entries:
       Taco: Glasstle
       Burger: GlasstleBurger
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Razorium
+  # Horizon Bothany end
 
 - type: entity
   name: fly amanita
@@ -1794,7 +2004,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - mushroom
+    - mushroom
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1804,6 +2014,10 @@
           Quantity: 25
         - ReagentId: Nutriment
           Quantity: 5
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: WaaaghBeer
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/fly_amanita.rsi
   - type: Item
@@ -1817,6 +2031,11 @@
     entries:
       Taco: FlyAmanita
       Burger: FlyAmanita
+  # Horizon Bothany start
+  - type: Tag
+    tags:
+    - Vegetable
+  # Horizon Bothany end
 
 - type: entity
   name: gatfruit
@@ -1826,16 +2045,20 @@
   components:
   - type: FlavorProfile
     flavors:
-      - gunpowder
+    - gunpowder
+  # Horizon Bothany start
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 10
         reagents:
-#        - ReagentId: Nutriment # Frontier
-#          Quantity: 5 # Frontier
+        - ReagentId: Nutriment
+          Quantity: 5
         - ReagentId: Sulfur
-          Quantity: 10 # Frontier: 5<10
+          Quantity: 5
+  - type: Fermentation
+    fermentate: FruitWineStrong
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/gatfruit.rsi
   - type: Produce
@@ -1860,16 +2083,18 @@
   components:
   - type: FlavorProfile
     flavors:
-      - plastic
+    - plastic
+  # Horizon Bothany start
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 10
         reagents:
-#        - ReagentId: Nutriment # Frontier
-#          Quantity: 5 # Frontier
+        - ReagentId: Nutriment
+          Quantity: 5
         - ReagentId: Sulfur
-          Quantity: 10 # Frontier: 5<10
+          Quantity: 5
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/capfruit.rsi
   - type: Item
@@ -1887,6 +2112,10 @@
       Taco: Capfruit
       Burger: CapfruitBurger
   - type: BadFood # Frontier: Nope
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineStrong
+  # Horizon Bothany end
 
 - type: entity
   name: capfruit
@@ -1916,8 +2145,17 @@
         reagents:
         - ReagentId: Rice
           Quantity: 10
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Sake
+  # Horizon Bothany end
   - type: Produce
     seedId: rice
+  # Horizon Bothany start
+  - type: Tag
+    tags:
+    - Wheat
+  # Horizon Bothany end
 
 - type: entity
   name: soybeans
@@ -1934,6 +2172,10 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Produce
     seedId: soybeans
   - type: Extractable
@@ -1957,7 +2199,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - violets
+    - violets
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/spacemans_trumpet.rsi
   - type: Item
@@ -1971,6 +2213,10 @@
           Quantity: 1
         - ReagentId: PolypyryliumOligomers
           Quantity: 3
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Produce
     seedId: spacemansTrumpet
   - type: Tag
@@ -2000,6 +2246,10 @@
           Quantity: 5
         - ReagentId: CarpoToxin
           Quantity: 2
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Produce
     seedId: koibean
   - type: Extractable
@@ -2026,7 +2276,7 @@
     heldPrefix: produce
   - type: FlavorProfile
     flavors:
-      - watermelon
+    - watermelon
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2038,6 +2288,10 @@
           Quantity: 5
         - ReagentId: Water
           Quantity: 10
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/watermelon.rsi
   - type: Produce
@@ -2088,7 +2342,7 @@
     size: Tiny
   - type: FlavorProfile
     flavors:
-      - watermelon
+    - watermelon
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/watermelon.rsi
   - type: SolutionContainerManager
@@ -2102,6 +2356,10 @@
           Quantity: 1
         - ReagentId: Water
           Quantity: 2
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Extractable
     juiceSolution:
       reagents:
@@ -2128,8 +2386,8 @@
     heldPrefix: produce
   - type: FlavorProfile
     flavors:
-      - holy
-      - watermelon
+    - holy
+    - watermelon
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2180,6 +2438,10 @@
   - type: Tag
     tags:
     - Fruit
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineStrong
+  # Horizon Bothany end
 
 - type: entity
   name: holymelon slice
@@ -2191,8 +2453,8 @@
     size: Tiny
   - type: FlavorProfile
     flavors:
-      - holy
-      - watermelon
+    - holy
+    - watermelon
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/holymelon.rsi
   - type: SolutionContainerManager
@@ -2220,6 +2482,10 @@
       Burger: HolymelonSliceBurger
       Taco: HolymelonSlice
       Skewer: HolymelonSliceSkewer
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineStrong
+  # Horizon Bothany end
 
 - type: entity
   name: grapes
@@ -2229,7 +2495,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - grape
+    - grape
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2239,6 +2505,10 @@
           Quantity: 5
         - ReagentId: Vitamin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: Wine
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/grape.rsi
   - type: Item
@@ -2262,7 +2532,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - berry
+    - berry
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2272,6 +2542,10 @@
           Quantity: 5
         - ReagentId: Vitamin
           Quantity: 4
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/berries.rsi
   - type: Item
@@ -2299,7 +2573,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - bungo
+    - bungo
   - type: Food
     trash:
     - FoodBungoPit
@@ -2312,6 +2586,10 @@
           Quantity: 10
         - ReagentId: Enzyme
           Quantity: 10
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/bungo.rsi
   - type: Produce
@@ -2350,6 +2628,10 @@
           Quantity: 2
         - ReagentId: Bungotoxin
           Quantity: 5
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Extractable
     grindableSolutionName: food
   - type: Seed
@@ -2365,7 +2647,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - peas
+    - peas
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2375,6 +2657,10 @@
           Quantity: 3
         - ReagentId: Vitamin
           Quantity: 2
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineNormal
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/pea.rsi
   - type: Item
@@ -2397,7 +2683,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - numbingtranquility
+    - numbingtranquility
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2422,6 +2708,10 @@
     entries:
       Taco: WorldPea
       Burger: WorldPeaBurger
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineStrong
+  # Horizon Bothany end
 
 - type: entity
   name: pumpkin
@@ -2434,7 +2724,7 @@
     heldPrefix: produce
   - type: FlavorProfile
     flavors:
-      - pumpkin
+    - pumpkin
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2444,6 +2734,10 @@
           Quantity: 20
         - ReagentId: Vitamin
           Quantity: 5
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineWeak
+  # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/pumpkin.rsi
   - type: Produce
@@ -2484,7 +2778,7 @@
     heldPrefix: produce
   - type: FlavorProfile
     flavors:
-      - bluepumpkin
+    - bluepumpkin
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2523,6 +2817,10 @@
   - type: Tag
     tags:
     - Fruit
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineStrong
+  # Horizon Bothany end
 
 - type: entity
   name: cotton boll
@@ -2534,7 +2832,7 @@
     sprite: Objects/Specific/Hydroponics/cotton.rsi
   - type: FlavorProfile
     flavors:
-      - cotton
+    - cotton
   - type: Food
     requiresSpecialDigestion: true
   - type: SolutionContainerManager
@@ -2564,7 +2862,7 @@
     sprite: Objects/Specific/Hydroponics/pyrotton.rsi
   - type: FlavorProfile
     flavors:
-      - pyrotton
+    - pyrotton
   - type: Food
     requiresSpecialDigestion: true
   - type: SolutionContainerManager
@@ -2596,7 +2894,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - cherry
+    - cherry
   - type: Food
     trash:
     - TrashCherryPit
@@ -2625,6 +2923,10 @@
     entries:
       Taco: Cherry
       Burger: Cherry
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineStrong
+  # Horizon Bothany end
 
 - type: entity
   name: cherry pit
@@ -2663,7 +2965,7 @@
   components:
   - type: FlavorProfile
     flavors:
-      - strange
+    - strange
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/anomaly_berry.rsi
     state: produce
@@ -2692,3 +2994,7 @@
     entries:
       Taco: AnomalyBerry
       Burger: AnomalyBerryBurger
+  # Horizon Bothany start
+  - type: Fermentation
+    fermentate: FruitWineStrong
+  # Horizon Bothany end
