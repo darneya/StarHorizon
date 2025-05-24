@@ -1,10 +1,11 @@
 using Content.Server.Botany.Systems;
 using Content.Shared.Botany.Components;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Content.Server._Horizon.SeedDna.System; // Horizon Bothany
 
 namespace Content.Server.Botany.Components
 {
-    [RegisterComponent, Access(typeof(BotanySystem))]
+    [RegisterComponent, Access(typeof(BotanySystem), typeof(SeedDnaConsoleSystem))] // Horizon Bothany
     public sealed partial class SeedComponent : SharedSeedComponent
     {
         /// <summary>

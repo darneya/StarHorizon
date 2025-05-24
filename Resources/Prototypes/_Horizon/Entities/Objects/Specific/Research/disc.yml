@@ -1,5 +1,21 @@
 - type: entity
   parent: BaseItem
+  id: BotanicDNADisk
+  name: диск с ДНК семян
+  description: Диск предназначен для хранения информации о мутациях в семенах.
+  suffix: Horizon
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: datadisk_hydro
+      map: [ "enum.DamageStateVisualLayers.Base" ]
+    - state: datadisk_label
+    - state: datadisk_gene
+  - type: DnaDisk
+
+- type: entity
+  parent: BaseItem
   id: XenoBioResearchDisk2000
   name: ксеноядро
   description: Странная часть ксеноса, которую можно исследовать для получения очков (2000).

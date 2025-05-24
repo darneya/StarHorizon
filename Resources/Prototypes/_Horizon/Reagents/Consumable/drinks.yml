@@ -107,7 +107,7 @@
       - !type:GenericStatusEffect
         key: StaminaModifier
         component: StaminaModifier
-        time: 1.25    ### Aavikko QWERTY's alcohol Update
+        time: 1.25
         type: Add
       - !type:MovespeedModifier
         walkSpeedModifier: 1.05
@@ -148,7 +148,7 @@
         component: StaminaModifier
         time: 1.24
         type: Add
-      - !type:MovespeedModifier    ### Aavikko QWERTY's alcohol Update
+      - !type:MovespeedModifier
         walkSpeedModifier: 1.05
         sprintSpeedModifier: 1.1
       - !type:AdjustTemperature
@@ -187,7 +187,7 @@
         type: Remove
       - !type:GenericStatusEffect
         key: StaminaModifier
-        component: StaminaModifier    ### Aavikko QWERTY's alcohol Update
+        component: StaminaModifier
         time: 1.25
         type: Add
       - !type:MovespeedModifier
@@ -204,11 +204,11 @@
   name: сгущёнка
   parent: BaseAlcohol
   desc: Самое настоящее засахареное молоко, которое раньше с удовольствием ели. Почему раньше? И сейчас едят.
-  suffix: Aavikko
+  suffix: Horizon
   physicalDesc: густое
   flavor: sweet
   color: "#f7de99"
-  spritePath: Aavikko/Objects/Consumable/Drinks/beerdark.rsi
+  spritePath: _Horizon/Objects/Consumable/Drinks/beerdark.rsi
   metabolisms:
     Drink:
       effects:

@@ -20,6 +20,7 @@
   - NFBlueprintPlantAnalyzerEmpty # Frontier
   - NFBlueprintPlantBagOfHolding # Frontier
   - HydroponicsTrayUpgradeKit # Horizon Bothany
+  - BotanicDNACircuitboard # Horizon Bothany
 
 - type: technology
   id: CritterMechs
