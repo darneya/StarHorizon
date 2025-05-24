@@ -1,91 +1,91 @@
 <Document>
-  # PATHFINDER-CLASS EXPEDITION SHUTTLE
+  # ШАТТЛ ЭКСПЕДИЦИИ КЛАССА PATHFINDER
   <Box>
-  <GuideEntityEmbed Entity="ClothingMaskGasExplorer"/>
-  <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
-  <GuideEntityEmbed Entity="IngotSilver"/>
-  <GuideEntityEmbed Entity="MobRandomCargoCorpse"/>
+    <GuideEntityEmbed Entity="ClothingMaskGasExplorer"/>
+    <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
+    <GuideEntityEmbed Entity="IngotSilver"/>
+    <GuideEntityEmbed Entity="MobRandomCargoCorpse"/>
   </Box>
   <Box>
-  <GuideEntityEmbed Entity="ShuttleMapPathfinder" Caption=""/>
+    <GuideEntityEmbed Entity="ShuttleMapPathfinder" Caption=""/>
   </Box>
-    [color=#a4885c]Ship Size:[/color] Medium
-	
-	[color=#a4885c]Recommended Crew:[/color] 2-4
-	
-	[color=#a4885c]Power Gen Type:[/color] AME
-	
-	[color=#a4885c]Expeditions:[/color] Yes
-	
-	[color=#a4885c]IFF Console:[/color] None
-	
-  "Once a scout ship serving with the Nanotrasen Marine Expeditionary Forces, this now decommissioned expedition capable ship can be yours!"
-    
-  # PREFLIGHT CHECKLIST
+  [color=#a4885c]Размер корабля:[/color] Средний
   
-  ## 1. Power supply
+  [color=#a4885c]Рекомендуемый экипаж:[/color] 2-4
   
-  ## 1.1. Battery units
+  [color=#a4885c]Тип генератора энергии:[/color] ДАМ
+  
+  [color=#a4885c]Экспедиции:[/color] Да
+  
+  [color=#a4885c]Консоль IFF:[/color] Отсутствует
+  
+  "Когда-то шаттл, использовавшийся в составе Экспедиционных Сил NanoTrasen, теперь этот выведенный из эксплуатации корабль с возможностями для экспедиций может стать вашим!"
+  
+  # КОНТРОЛЬНЫЙ СПИСОК ПЕРЕД ВЫЛЕТОМ
+  
+  ## 1. Источник питания
+  
+  ### 1.1. Аккумуляторные модули
   <Box>
-  <GuideEntityEmbed Entity="SMESBasic"/>
-  <GuideEntityEmbed Entity="SubstationWallBasic"/>
-  <GuideEntityEmbed Entity="APCBasic"/>
+    <GuideEntityEmbed Entity="SMESBasic"/>
+    <GuideEntityEmbed Entity="SubstationWallBasic"/>
+    <GuideEntityEmbed Entity="APCBasic"/>
   </Box>
   
-  - Check that the SMES unit is anchored to the floor.
-  - Check that the substation unit is anchored to the floor.
-  - Check that the APC unit's Main Breaker is toggled on.
-  - Check the APC unit's current Load* (W).
+  - Убедитесь, что блок SMES закреплен на полу.
+  - Убедитесь, что блок подстанции закреплен на полу.
+  - Убедитесь, что главный автоматический выключатель блока ЛКП включен.
+  - Проверьте текущее потребление нагрузки* блока ЛКП (Вт).
   
-  ## 1.2. AME generator unit.
+  ### 1.2. Генератор ДАМ
   <Box>
-  <GuideEntityEmbed Entity="AmeController"/>
-  <GuideEntityEmbed Entity="AmeJar"/>
+    <GuideEntityEmbed Entity="AmeController"/>
+    <GuideEntityEmbed Entity="AmeJar"/>
   </Box>
   
-  - Check that the AME core is properly shielded.
-  - Check that the AME controller unit is anchored to the floor.
-  - Check the AME controller unit Fuel Status.
-  - Check the AME controller unit Injection Amount.
-  - Toggle Injection.
+  - Убедитесь, что ядро ДАМ должным образом экранировано.
+  - Убедитесь, что блок управления ДАМ закреплен на полу.
+  - Проверьте статус топлива в блоке управления ДАМ.
+  - Проверьте количество впрыска в блоке управления ДАМ.
+  - Переключите впрыск.
   
-  ## 2. Atmospherics
+ ## 2. Атмосферные системы
   
-  ## 2.1. Distribution Loop
+  ### 2.1. Цикл распределения
   <Box>
-  <GuideEntityEmbed Entity="OxygenCanister"/>
-  <GuideEntityEmbed Entity="NitrogenCanister"/>
-  <GuideEntityEmbed Entity="GasPort"/>
-  <GuideEntityEmbed Entity="GasMixer"/>
-  <GuideEntityEmbed Entity="GasPressurePump"/>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+    <GuideEntityEmbed Entity="NitrogenCanister"/>
+    <GuideEntityEmbed Entity="GasPort"/>
+    <GuideEntityEmbed Entity="GasMixer"/>
+    <GuideEntityEmbed Entity="GasPressurePump"/>
   </Box>
   
-  - Check that the O2 canister is anchored to connector port.
-  - Check that the N2 canister is anchored to connector port.
-  - Check that the gas mixer is set to the correct mixing ratio (21% Oxygen, 79% Nitrogen).
-  - Check that the gas mixer is set to 101kPa.
-  - Enable gas mixer.
+  - Убедитесь, что баллон с кислородом закреплен на порт подключения.
+  - Убедитесь, что баллон с азотом закреплен на порт подключения.
+  - Убедитесь, что газовый смеситель настроен на правильное соотношение (21% кислорода, 79% азота).
+  - Убедитесь, что газовый смеситель настроен на 101 кПа.
+  - Включите газовый смеситель.
   
-  ## 2.2. Waste Loop
+  ### 2.2. Цикл отходов
   <Box>
-  <GuideEntityEmbed Entity="GasPressurePump"/>
+    <GuideEntityEmbed Entity="GasPressurePump"/>
   </Box>
-    
-  - Enable waste loop pump (located at Cargo Bay).
   
-  ## 3. Other checks
+  - Включите насос в цикле отходов (находится в грузовом отсеке).
+  
+  ## 3. Другие проверки
   <Box>
-  <GuideEntityEmbed Entity="Gyroscope"/>
-  <GuideEntityEmbed Entity="GravityGeneratorMini"/>
-  <GuideEntityEmbed Entity="BlastDoor"/>
+    <GuideEntityEmbed Entity="Gyroscope"/>
+    <GuideEntityEmbed Entity="GravityGeneratorMini"/>
+    <GuideEntityEmbed Entity="BlastDoor"/>
   </Box>
   
-  - Check that the gyroscope is anchored, powered, and enabled.
-  - Check that the mini gravity generator is anchored, powered, and enabled.
-  - Check that the blast doors are closed.
+  - Убедитесь, что гироскоп закреплен, работает и включен.
+  - Убедитесь, что мини-гравитационный генератор закреплен, работает и включен.
+  - Убедитесь, что защитные двери закрыты.
   
-  ## Sidenotes
+  ## Примечания
   
-  * - Pathfinder-class expedition shuttles are equipped with two APC units that can be used to appraise the ship's total power consumption. Unmodified Brigand-class ship requires 16.8 kW of power to remain operational.
+  * - Шаттлы класса Pathfinder оснащены двумя блоками ЛКП, которые могут быть использованы для оценки общего потребления энергии кораблем. Не модифицированный корабль класса Brigand требует 16,8 кВт для поддержания работоспособности.
 
 </Document>

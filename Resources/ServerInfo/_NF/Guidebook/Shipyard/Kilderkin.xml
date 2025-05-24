@@ -1,5 +1,5 @@
 <Document>
-  # KILDERKIN-CLASS SERVICE SHUTTLE
+  # СЕРВИСНЫЙ ШАТТЛ КЛАССА "KILDERKIN"
   <Box>
   <GuideEntityEmbed Entity="BoozeDispenser"/>
   <GuideEntityEmbed Entity="SodaDispenser"/>
@@ -9,82 +9,82 @@
   <Box>
   <GuideEntityEmbed Entity="ShuttleMapKilderkin" Caption=""/>
   </Box>
-    [color=#a4885c]Ship Size:[/color] Medium
+    [color=#a4885c]Размер корабля:[/color] Средний
 	
-	[color=#a4885c]Recommended Crew:[/color] 2-4
+	[color=#a4885c]Рекомендуемый экипаж:[/color] 2–4
 	
-	[color=#a4885c]Power Gen Type:[/color] Plasma
+	[color=#a4885c]Тип генератора энергии:[/color] Плазменный
 	
-	[color=#a4885c]Expeditions:[/color] None
+	[color=#a4885c]Экспедиции:[/color] Отсутствуют
 	
-	[color=#a4885c]IFF Console:[/color] None
+	[color=#a4885c]Консоль IFF:[/color] Отсутствует
 	
-  "A medium-sized space bar. In addition to the bar is equipped with hydroponics. Manufactured by Langstad-Voigt Heavy Industries."
+  "Космический бар среднего размера. Помимо бара, шаттл также оснащён системой гидропоники. Производитель: Langstad-Voigt Heavy Industries."
   
-  # PREFLIGHT CHECKLIST
+  # КОНТРОЛЬНЫЙ СПИСОК ПЕРЕД ВЫЛЕТОМ
   
-  ## 1. Power supply
+  ## 1. Электропитание
   
-  ## 1.1. Battery units
+  ## 1.1. Батарейные блоки
   <Box>
   <GuideEntityEmbed Entity="SMESBasic"/>
   <GuideEntityEmbed Entity="SubstationBasic"/>
   <GuideEntityEmbed Entity="APCBasic"/>
   </Box>
   
-  - Check that the SMES unit is anchored to the floor.
-  - Check that the substation unit is anchored to the floor.
-  - Check that the APC unit's Main Breaker is toggled on.
-  - Check the APC unit's current Load* (W).
+  - Убедитесь, что блок СМЭС закреплён на полу.
+  - Убедитесь, что подстанция закреплена на полу.
+  - Убедитесь, что главный выключатель блока ЛКП включён.
+  - Проверьте текущую нагрузку блока ЛКП* (Вт).
   
-  ## 1.2. P.A.C.M.A.N. generator unit
+  ## 1.2. Генераторы P.A.C.M.A.N.
   <Box>
   <GuideEntityEmbed Entity="PortableGeneratorPacmanShuttle"/>
   <GuideEntityEmbed Entity="SheetPlasma"/>
   </Box>
   
-  - Check that P.A.C.M.A.N. generator units are anchored to the floor.
-  - Check that P.A.C.M.A.N. generator units are fueled. For extended flights make sure that you have enough fuel stockpiled to sustain prolonged power generation.
-  - Check that P.A.C.M.A.N. generator units are set to HV output.
-  - Set Target Power to 13** [bold]kW[/bold] on each generator unit.
-  - Start P.A.C.M.A.N. generator units.
+  - Убедитесь, что генераторы P.A.C.M.A.N. закреплены на полу.
+  - Убедитесь, что генераторы заправлены топливом. Для длительных полётов обеспечьте достаточный запас.
+  - Убедитесь, что генераторы настроены на HV-выход.
+  - Установите целевую мощность 13** [bold]кВт[/bold] для каждого генератора.
+  - Запустите генераторы.
   
-  ## 2. Atmospherics
+  ## 2. Атмосфера
   
-  ## 2.1. Distribution Loop
+  ## 2.1. Цикл распределения
   <Box>
   <GuideEntityEmbed Entity="AirCanister"/>
   <GuideEntityEmbed Entity="GasPort"/>
   <GuideEntityEmbed Entity="GasPressurePump"/>
   </Box>
   
-  - Check that the air canister is anchored to connector port.
-  - Check that the distribution pump is set to 101kPa.
-  - Enable the distribution pump.
+  - Убедитесь, что баллон с воздухом закреплён на соединительном порте.
+  - Убедитесь, что насос распределения установлен на 101 кПа.
+  - Включите насос распределения.
   
-  ## 2.2. Waste Loop
+  ## 2.2. Цикл отходов
   <Box>
   <GuideEntityEmbed Entity="GasPressurePump"/>
   <GuideEntityEmbed Entity="AirAlarm"/>
   </Box>
     
-  - Enable waste loop pump.
-  - Disable Auto Mode on the Air Alarm in the Engine Room.
-  - Set the Air Alarm in the Engine Room to Filtering (Wide).
+  - Включите насос отходящего цикла.
+  - Отключите автоматический режим на воздушной сигнализации в машинном отделении.
+  - Установите режим фильтрации (Широкий).
   
-  ## 3. Other checks
+  ## 3. Прочие проверки
   <Box>
   <GuideEntityEmbed Entity="Gyroscope"/>
   <GuideEntityEmbed Entity="GravityGeneratorMini"/>
   </Box>
   
-  - Check that the gyroscope is anchored, powered, and enabled.
-  - Check that the mini gravity generator is anchored, powered, and enabled.
+  - Убедитесь, что гироскоп закреплён, запитан и включён.
+  - Убедитесь, что мини-гравитационный генератор закреплён, запитан и включён.
   
-  ## Sidenotes
+  ## Примечания
   
-  * - Kilderkin-class service ships are equipped with two APC units that can be used to appraise the ship's total power consumption. Unmodified Kilderkin-class ship requires 24.2 kW of power to remain operational.
-  
-  ** - Kilderkin-class service ships have higher power demand than single standard P.A.C.M.A.N. generator unit can provide at optimal settings, however the ship comes equipped with two P.A.C.M.A.N. generator units, recommended target power output for each P.A.C.M.A.N. generator unit is 13 kW.
+  * — Шаттлы класса «Kilderkin» оснащены двумя блоками ЛКП, которые позволяют отслеживать общее энергопотребление корабля. В стандартной конфигурации шаттлу требуется 24,2 кВт для стабильной работы.
+
+  ** — Потребление энергии выше, чем может обеспечить один стандартный генератор P.A.C.M.A.N., но в комплект входит два генератора. Рекомендуется устанавливать целевую мощность 13 кВт на каждый генератор.
 
 </Document>
