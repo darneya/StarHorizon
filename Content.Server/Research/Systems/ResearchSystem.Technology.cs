@@ -154,6 +154,21 @@ public sealed partial class ResearchSystem
         if (technology.Cost > serverComp.Points)
             return false;
 
+        // _Horizon start
+        if (technology.ResearchTargets is not null
+            && serverComp.CurrentResearchItems.Count >= technology.ResearchTargets.Count)
+        {
+            var count = technology.ResearchTargets.Count;
+            foreach (var target in technology.ResearchTargets)
+            {
+                if (serverComp.CurrentResearchItems.Contains(target))
+                    count -= 1;
+            }
+            if (count > 0)
+                return false;
+        }
+        // _Horizon end
+
         return true;
     }
 

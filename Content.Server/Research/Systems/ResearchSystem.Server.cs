@@ -1,6 +1,8 @@
 using System.Linq;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Research.Components;
+using Content.Shared.Storage;
+using Robust.Shared.Containers;
 
 namespace Content.Server.Research.Systems;
 
@@ -11,6 +13,8 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchServerComponent, ComponentStartup>(OnServerStartup);
         SubscribeLocalEvent<ResearchServerComponent, ComponentShutdown>(OnServerShutdown);
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
+        SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnServerItemInsert);
+        SubscribeLocalEvent<ResearchServerComponent, EntGotRemovedFromContainerMessage>(OnServerItemRemove);
     }
 
     private void OnServerStartup(EntityUid uid, ResearchServerComponent component, ComponentStartup args)
@@ -168,5 +172,23 @@ public sealed partial class ResearchSystem
             RaiseLocalEvent(client, ref ev);
         }
         Dirty(uid, component);
+    }
+
+    private void OnServerItemInsert(EntityUid uid,
+        ResearchServerComponent component,
+        EntInsertedIntoContainerMessage args)
+    {
+        var target = MetaData(args.Entity).EntityPrototype?.ID;
+        if (target is not null)
+            component.CurrentResearchItems.Add(target);
+    }
+
+    private void OnServerItemRemove(EntityUid uid,
+        ResearchServerComponent component,
+        EntGotRemovedFromContainerMessage args)
+    {
+        var target = MetaData(args.Entity).EntityPrototype?.ID;
+        if (target is not null)
+            component.CurrentResearchItems.Remove(target);
     }
 }

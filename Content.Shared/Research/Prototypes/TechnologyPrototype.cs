@@ -69,6 +69,9 @@ public sealed partial class TechnologyPrototype : IPrototype
     /// </summary>
     [DataField]
     public IReadOnlyList<GenericUnlock> GenericUnlocks = new List<GenericUnlock>();
+
+    [DataField]
+    public List<string>? ResearchTargets; // _Horizon
 }
 
 [DataDefinition]
