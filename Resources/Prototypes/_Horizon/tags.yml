@@ -270,6 +270,8 @@
 - type: Tag
   id: MechReactor
 
+# Surgery
+
 - type: Tag
   id: SecCyberEyes
 
@@ -278,3 +280,23 @@
 
 - type: Tag
   id: OmniCyberEyes
+
+# Bothany
+
+- type: Tag
+  id: Herb
+
+- type: Tag
+  id: BotanyInstrument
+
+- type: Tag
+  id: AdvHydroTray
+
+- type: Tag
+  id: Fermentator
+
+- type: Tag
+  id: HydroponicsTrayUpgradeKit
+
+- type: Tag
+  id: Barrel

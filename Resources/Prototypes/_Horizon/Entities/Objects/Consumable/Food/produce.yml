@@ -169,7 +169,7 @@
         reagents:
         - ReagentId: Fresium
           Quantity: 5
-        - ReagentId: Frostoil
+        - ReagentId: FrostOil
           Quantity: 10
   - type: Fermentation
     fermentate: FruitWineStrong

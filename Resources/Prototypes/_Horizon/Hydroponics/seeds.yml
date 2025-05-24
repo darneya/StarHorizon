@@ -166,7 +166,7 @@
       Min: 2
       Max: 5
       PotencyDivisor: 30
-    Frostoil:
+    FrostOil:
       Min: 1
       Max: 10
       PotencyDivisor: 10

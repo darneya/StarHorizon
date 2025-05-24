@@ -134,6 +134,38 @@ public sealed class PlantHolderSystem : EntitySystem
             args.PushMarkup(Loc.GetString($"plant-holder-component-nutrient-level-message",
                 ("nutritionLevel", (int)component.NutritionLevel)));
 
+            // Horizon Bothany start
+            if (TryComp<TagComponent>(entity.Owner, out var tagComp))
+                foreach (var tag in tagComp.Tags)
+                    if (Equals(tag.Id, "AdvHydroTray"))
+                    {
+                        if (component.Seed != null)
+                        {
+                            args.PushMarkup(Loc.GetString($"seed-component-plant-waterConsumption-text",
+                                ("waterConsumption", (string)(component.Seed.WaterConsumption).ToString("0.0"))));
+                            args.PushMarkup(Loc.GetString($"seed-component-plant-nutrientConsumption-text",
+                                ("nutrientConsumption", (string)(component.Seed.NutrientConsumption).ToString("0.0"))));
+                            args.PushMarkup(Loc.GetString($"plant-holder-component-age-message",
+                                ("age", (int)component.Age)));
+                            args.PushMarkup(Loc.GetString($"seed-component-plant-potency-text",
+                                ("seedPotency", (float)component.Seed.Potency)));
+                            args.PushMarkup(Loc.GetString($"plant-holder-component-health-message",
+                                ("health", (float)component.Health)));
+                            args.PushMarkup(Loc.GetString($"seed-component-plant-yield-text",
+                                ("seedYield", (float)component.Seed.Yield)));
+                            foreach (var chemical in component.Seed.Chemicals)
+                                args.PushMarkup(Loc.GetString($"seed-component-plant-chemicals-text",
+                                    ("chemicals", (string)chemical.Key)));
+                            foreach (var gas in component.Seed.ConsumeGasses)
+                                args.PushMarkup(Loc.GetString($"seed-component-plant-consumeGasses-text",
+                                    ("consumeGasses", (string)gas.Key.ToString())));
+                            foreach (var gas in component.Seed.ExudeGasses)
+                                args.PushMarkup(Loc.GetString($"seed-component-plant-exudeGasses-text",
+                                    ("exudeGasses", (string)gas.Key.ToString())));
+                        }
+                    }
+            // Horizon Bothany end
+
             if (component.DrawWarnings)
             {
                 if (component.Toxins > 40f)

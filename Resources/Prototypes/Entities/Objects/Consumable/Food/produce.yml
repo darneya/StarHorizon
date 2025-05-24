@@ -537,10 +537,6 @@
   - type: FlavorProfile
     flavors:
       - carrot
-  - type: Tag
-    tags:
-    - Carrot
-    - Vegetable
   - type: SolutionContainerManager
     solutions:
       food:
