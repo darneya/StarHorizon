@@ -1,6 +1,8 @@
+using System.Linq;
 using Content.Shared.Database;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
+using Content.Shared.Storage;
 using JetBrains.Annotations;
 
 namespace Content.Server.Research.Systems;
@@ -78,6 +80,21 @@ public sealed partial class ResearchSystem
 
         if (!CanServerUnlockTechnology(client, prototype, clientDatabase, component))
             return false;
+
+        // _Horizon starts
+        if (prototype.ResearchTargets != null && TryComp<StorageComponent>(serverEnt, out var storageComp))
+        {
+            foreach (var target in prototype.ResearchTargets)
+            {
+                foreach (var (uid, _) in storageComp.StoredItems)
+                {
+                    var toDelete = MetaData(uid).EntityPrototype?.ID;
+                    if (toDelete == target)
+                        _entityManager.DeleteEntity(uid);
+                }
+            }
+        }
+        // _Horizon ends
 
         AddTechnology(serverEnt.Value, prototype);
         TrySetMainDiscipline(prototype, serverEnt.Value);
