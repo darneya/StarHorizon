@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared.Lathe;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
+using Content.Shared.Storage;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -198,6 +199,66 @@ public abstract class SharedResearchSystem : EntitySystem
 
         return description;
     }
+
+    // _Horizon starts
+    public FormattedMessage GetTechNeededItemList(EntityUid? serverUid, TechnologyPrototype technology)
+    {
+        var itemList = new FormattedMessage();
+
+        if (technology.ResearchTargets is null || !TryComp<StorageComponent>(serverUid, out var storage))
+            return itemList;
+
+        itemList.AddMarkupOrThrow(Loc.GetString("research-console-need-items-list"));
+        itemList.PushNewline();
+
+        foreach (var id in technology.ResearchTargets)
+        {
+            var markup = Color.Red;
+            if (TryGetTarget(id, storage))
+                markup = Color.Green;
+
+            itemList.AddMarkupOrThrow(Loc.GetString("research-console-research-target",
+                ("target", PrototypeManager.Index(id).Name),
+                ("markup", markup)));
+            itemList.PushNewline();
+        }
+
+        return itemList;
+    }
+
+    public bool TryGetAllTargets(EntityUid? serverUid, TechnologyPrototype tech)
+    {
+        if (tech.ResearchTargets is null)
+            return true;
+
+        if (!TryComp<StorageComponent>(serverUid, out var storageComp))
+            return false;
+
+        var count = tech.ResearchTargets.Count;
+        foreach (var id in tech.ResearchTargets)
+        {
+            foreach (var (uid, _) in storageComp.StoredItems)
+            {
+                var item = MetaData(uid).EntityPrototype?.ID;
+                if (item == id)
+                    count--;
+            }
+        }
+
+        return count == 0;
+    }
+
+    private bool TryGetTarget(string id, StorageComponent storage)
+    {
+        foreach (var (uid, _) in storage.StoredItems)
+        {
+            var protoId = MetaData(uid).EntityPrototype?.ID;
+            if (protoId == id)
+                return true;
+        }
+        return false;
+    }
+    // _Horizon ends
 
     /// <summary>
     ///     Returns whether a technology is unlocked on this database or not.

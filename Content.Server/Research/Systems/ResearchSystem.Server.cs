@@ -13,8 +13,8 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchServerComponent, ComponentStartup>(OnServerStartup);
         SubscribeLocalEvent<ResearchServerComponent, ComponentShutdown>(OnServerShutdown);
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
-        SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnServerItemInsert);
-        SubscribeLocalEvent<ResearchServerComponent, EntGotRemovedFromContainerMessage>(OnServerItemRemove);
+        SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnServerInsertItem); // _Horizon
+        SubscribeLocalEvent<ResearchServerComponent, EntRemovedFromContainerMessage>(OnServerRemoveItem); // _Horizon
     }
 
     private void OnServerStartup(EntityUid uid, ResearchServerComponent component, ComponentStartup args)
@@ -78,7 +78,10 @@ public sealed partial class ResearchSystem
         SyncClientWithServer(client, clientComponent: clientComponent);
 
         if (dirtyServer)
+        {
             Dirty(server, serverComponent);
+            Dirty(client, clientComponent); // _Horizon
+        }
 
         var ev = new ResearchRegistrationChangedEvent(server);
         RaiseLocalEvent(client, ref ev);
@@ -122,6 +125,7 @@ public sealed partial class ResearchSystem
         if (dirtyServer)
         {
             Dirty(server, serverComponent);
+            Dirty(client, clientComponent); // _Horizon
         }
 
         var ev = new ResearchRegistrationChangedEvent(null);
@@ -174,21 +178,18 @@ public sealed partial class ResearchSystem
         Dirty(uid, component);
     }
 
-    private void OnServerItemInsert(EntityUid uid,
-        ResearchServerComponent component,
-        EntInsertedIntoContainerMessage args)
+    // _Horizon starts
+    // ReSharper disable EnforceForeachStatementBraces
+    private void OnServerInsertItem(EntityUid uid, ResearchServerComponent comp, EntInsertedIntoContainerMessage _)
     {
-        var target = MetaData(args.Entity).EntityPrototype?.ID;
-        if (target is not null)
-            component.CurrentResearchItems.Add(target);
+        foreach (var client in comp.Clients)
+            UpdateClientInterface(client);
     }
 
-    private void OnServerItemRemove(EntityUid uid,
-        ResearchServerComponent component,
-        EntGotRemovedFromContainerMessage args)
+    private void OnServerRemoveItem(EntityUid uid, ResearchServerComponent comp, EntRemovedFromContainerMessage _)
     {
-        var target = MetaData(args.Entity).EntityPrototype?.ID;
-        if (target is not null)
-            component.CurrentResearchItems.Remove(target);
+        foreach (var client in comp.Clients)
+            UpdateClientInterface(client);
     }
+    // _Horizon ends
 }

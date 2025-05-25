@@ -13,7 +13,7 @@ public sealed partial class TechnologyCardControl : Control
 {
     public Action? OnPressed;
 
-    public TechnologyCardControl(TechnologyPrototype technology, IPrototypeManager prototypeManager, SpriteSystem spriteSys, FormattedMessage description, int points, bool hasAccess)
+    public TechnologyCardControl(TechnologyPrototype technology, IPrototypeManager prototypeManager, SpriteSystem spriteSys, FormattedMessage description, FormattedMessage itemList, int points, bool hasAccess, bool haveAllTargets)
     {
         RobustXamlLoader.Load(this);
 
@@ -24,16 +24,19 @@ public sealed partial class TechnologyCardControl : Control
         TechnologyNameLabel.Text = Loc.GetString(technology.Name);
         var message = new FormattedMessage();
         message.AddMarkupOrThrow(Loc.GetString("research-console-tier-discipline-info",
-            ("tier", technology.Tier), ("color", discipline.Color), ("discipline", Loc.GetString(discipline.Name))));
-        TierLabel.SetMessage(message);
+            ("tier", technology.Tier), // _Horizon code design edit starts
+            ("color", discipline.Color),
+            ("discipline", Loc.GetString(discipline.Name)))); // _Horizon code design edit ends
+         TierLabel.SetMessage(message);
         UnlocksLabel.SetMessage(description);
+        TargetLabel.SetMessage(itemList); // _Horizon
 
         TechnologyTexture.Texture = spriteSys.Frame0(technology.Icon);
 
         if (!hasAccess)
             ResearchButton.ToolTip = Loc.GetString("research-console-no-access-popup");
 
-        ResearchButton.Disabled = points < technology.Cost || !hasAccess;
+        ResearchButton.Disabled = points < technology.Cost || !hasAccess || !haveAllTargets; // _Horizon
         ResearchButton.OnPressed += _ => OnPressed?.Invoke();
     }
 }

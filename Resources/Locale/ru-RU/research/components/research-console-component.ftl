@@ -18,3 +18,7 @@ research-console-prereqs-list-start = Требует:
 research-console-prereqs-list-entry = - [color=orchid]{ $text }[/color]
 research-console-no-access-popup = Нет доступа!
 research-console-unlock-technology-radio-broadcast = Исследовано: [bold]{ $technology }[/bold], за [bold]{ $amount }[/bold] очков исследований.
+
+## _Horzion start
+research-console-need-items-list = Для открытия требует:
+research-console-research-target = - [color={$markup}]{$target}[/color]

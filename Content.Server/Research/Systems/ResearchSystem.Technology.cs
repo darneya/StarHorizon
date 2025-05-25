@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Shared.Database;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -83,17 +82,7 @@ public sealed partial class ResearchSystem
 
         // _Horizon starts
         if (prototype.ResearchTargets != null && TryComp<StorageComponent>(serverEnt, out var storageComp))
-        {
-            foreach (var target in prototype.ResearchTargets)
-            {
-                foreach (var (uid, _) in storageComp.StoredItems)
-                {
-                    var toDelete = MetaData(uid).EntityPrototype?.ID;
-                    if (toDelete == target)
-                        _entityManager.DeleteEntity(uid);
-                }
-            }
-        }
+            DeleteTechnologyTargets(serverEnt.Value, storageComp, prototype.ResearchTargets);
         // _Horizon ends
 
         AddTechnology(serverEnt.Value, prototype);
@@ -105,6 +94,25 @@ public sealed partial class ResearchSystem
             $"{ToPrettyString(user):player} unlocked {prototype.ID} (discipline: {prototype.Discipline}, tier: {prototype.Tier}) at {ToPrettyString(client)}, for server {ToPrettyString(serverEnt.Value)}.");
         return true;
     }
+
+	// _Horizon void starts
+    private void DeleteTechnologyTargets(EntityUid serverEnt, StorageComponent storage, List<string> researchTargets, ResearchServerComponent? serverComponent = null)
+    {
+        if (!Resolve(serverEnt, ref serverComponent))
+            return;
+
+        foreach (var target in researchTargets)
+        {
+            foreach (var (uid, _) in storage.StoredItems)
+            {
+                if (MetaData(uid).EntityPrototype?.ID != target)
+                    continue;
+
+                _entityManager.DeleteEntity(uid);
+            }
+        }
+    }
+    // _Horizon void ends
 
     /// <summary>
     ///     Adds a technology to the database without checking if it could be unlocked.
@@ -162,7 +170,7 @@ public sealed partial class ResearchSystem
         if (!Resolve(uid, ref client, ref database, false))
             return false;
 
-        if (!TryGetClientServer(uid, out _, out var serverComp, client))
+        if (!TryGetClientServer(uid, out var server, out var serverComp, client)) // _Horizon if edit
             return false;
 
         if (!IsTechnologyAvailable(database, technology))
@@ -171,22 +179,7 @@ public sealed partial class ResearchSystem
         if (technology.Cost > serverComp.Points)
             return false;
 
-        // _Horizon start
-        if (technology.ResearchTargets is not null
-            && serverComp.CurrentResearchItems.Count >= technology.ResearchTargets.Count)
-        {
-            var count = technology.ResearchTargets.Count;
-            foreach (var target in technology.ResearchTargets)
-            {
-                if (serverComp.CurrentResearchItems.Contains(target))
-                    count -= 1;
-            }
-            if (count > 0)
-                return false;
-        }
-        // _Horizon end
-
-        return true;
+        return TryGetAllTargets(server, technology); // _Horizon return edit
     }
 
     private void OnDatabaseRegistrationChanged(EntityUid uid, TechnologyDatabaseComponent component, ref ResearchRegistrationChangedEvent args)
