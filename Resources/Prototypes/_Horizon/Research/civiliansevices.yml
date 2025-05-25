@@ -1,0 +1,12 @@
+﻿- type: technology
+  id: HydroponicsAdv
+  name: research-technology-advanced-hydroponics
+  icon:
+    sprite: Structures/Machines/seed_extractor.rsi
+    state: seedextractor
+  discipline: CivilianServices
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - HydroponicsTrayUpgradeKit # Horizon Bothany
+  - BotanicDNACircuitboard # Horizon Bothany

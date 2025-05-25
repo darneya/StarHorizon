@@ -18,6 +18,7 @@
     Bucket: 3
     DiseaseSwab: 20
     BoxAgrichem: 1
+    BotanicDNADisk: 20 # Horizon Bothany
     #TO DO:
     #plant analyzer
   contrabandInventory:

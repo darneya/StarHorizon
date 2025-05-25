@@ -15,7 +15,7 @@
     CherrySeeds: 5
     ChiliSeeds: 5
     CocoaSeeds: 3
-    CoffeeSeeds: 5 # Frontier
+    # CoffeeSeeds: 5 # Frontier # Horizon Bothany
     CornSeeds: 5
     CottonSeeds: 5
     CucumberSeeds: 5 # Frontier
@@ -46,6 +46,30 @@
     TowercapSeeds: 5
     WheatSeeds: 5
     WatermelonSeeds: 5
+    # Horizon Bothany start
+    MintPlantSeeds: 5
+    CoffeearabicaSeeds: 5
+    SunflowerSeeds: 5
+    СloveySeeds: 3
+    СlovewSeeds: 3
+    СloverSeeds: 3
+    СlovepSeeds: 3
+    LilypSeeds: 3
+    LilyoSeeds: 3
+    LilybSeeds: 3
+    RosewSeeds: 3
+    RoserSeeds: 3
+    RosepSeeds: 3
+    RoselpSeeds: 3
+    ChamomilerSeeds: 3
+    ChamomilevSeeds: 3
+    TuliplpSeeds: 3
+    TulippSeeds: 3
+    TuliprSeeds: 3
+    TulipySeeds: 3
+    GrapegSeeds: 3
+    GrapebSeeds: 3
+    # Horizon Bothany end
   contrabandInventory:
     TobaccoSeeds: 2
     # FoodSnackSemki: 2 # Frontier
