@@ -250,6 +250,23 @@ public sealed class PlantHolderSystem : EntitySystem
             return;
         }
 
+        // Horizon Bothany start
+
+        if (_tagSystem.HasTag(args.Used, "AdvBotanyInstrument") && component.Harvest == true)
+        {
+            if (component.Seed != null)
+            {
+                Logger.Info($"before YieldMod = {component.YieldMod}");
+                var randomnext = _random.Next(1, 4);
+                Logger.Info($"randomnext={randomnext}");
+                component.YieldMod *= randomnext; // Код, какого хрена от 1 до 3х то?!??!
+                Logger.Info($"after YieldMod = {component.YieldMod}");
+            }
+            DoHarvest(uid, args.User, component);
+        }
+
+        // Horizon Bothany end
+
         if (_tagSystem.HasTag(args.Used, "Hoe"))
         {
             args.Handled = true;

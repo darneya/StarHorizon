@@ -7,3 +7,6 @@
   parent: BaseCircuitboardRecipe
   id: BotanicDNADisk
   result: BotanicDNADisk
+  materials:
+    Steel: 100
+    Glass: 100

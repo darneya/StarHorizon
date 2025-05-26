@@ -1,9 +1,9 @@
 research-discipline-none = Отсутствует
-research-discipline-industrial = Промышленность
+research-discipline-industrial = Индустрия
 research-discipline-biochemical = Биохимия
 research-discipline-arsenal = Арсенал
-research-discipline-experimental = Экспериментальное
-research-discipline-civilian-services = Обслуживание персонала
+research-discipline-experimental = Наука
+research-discipline-civilian-services = Сервис
 research-technology-fulton = Фултоны
 research-technology-salvage-equipment = Снаряжение для утилизации
 research-technology-advanced-powercells = Продвинутые батареи

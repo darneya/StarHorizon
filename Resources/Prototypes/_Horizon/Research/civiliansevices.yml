@@ -9,6 +9,7 @@
   cost: 10000
   recipeUnlocks:
   - HydroponicsTrayUpgradeKit
+  - HydroponicsToolScytheAdv
   technologyPrerequisites:
   - Hydroponics
 
