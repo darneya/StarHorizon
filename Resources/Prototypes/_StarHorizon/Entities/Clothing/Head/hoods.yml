@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterBlueshield
+  categories: [ HideSpawnMenu ]
+  name: капюшон зимней куртки офицера "Синий щит"
+  components:
+  - type: Sprite
+    sprite: StarHorizon/Clothing/Head/Hoods/Coat/hood_blueshield.rsi
+  - type: Clothing
+    sprite: StarHorizon/Clothing/Head/Hoods/Coat/hood_blueshield.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.95
+        Caustic: 0.90
