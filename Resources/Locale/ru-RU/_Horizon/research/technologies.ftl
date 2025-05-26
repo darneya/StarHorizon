@@ -50,4 +50,5 @@ research-technology-advanced-bsorgans = Продвинутые блюспейс 
 research-technology-advanced-bioorgans = Продвинутые бионические органы
 research-technology-advanced-cyberorgans = Продвинутые кибернетические органы
 
-research-technology-advanced-hydroponics = Продвинутая ботаника
+research-technology-adv-hydroponics = Продвинутая ботаника
+research-technology-hydroponics-dna-manip = Манипуляции ДНК растений
