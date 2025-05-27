@@ -4,6 +4,8 @@
   id: HydroponicsToolMiniHoe
   description: It's used for removing weeds or scratching your back.
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: icon_world # Horizon Bothany
   - type: Tag
     tags:
     - Hoe
@@ -26,6 +28,8 @@
   id: HydroponicsToolClippers
   description: A tool used to take samples from plants.
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: icon_world # Horizon Bothany
   - type: Tag
     tags:
     - PlantSampleTaker
@@ -47,6 +51,8 @@
   id: HydroponicsToolScythe
   description: A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow.
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: icon_world # Horizon Bothany
   - type: Sharp
   - type: Sprite
     sprite: Objects/Tools/Hydroponics/scythe.rsi
@@ -71,6 +77,8 @@
   id: HydroponicsToolHatchet
   description: A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood.
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: icon_world # Horizon Bothany
   - type: Tag
     tags:
     - BotanyHatchet
@@ -94,6 +102,8 @@
   id: HydroponicsToolSpade
   description: A small tool for digging and moving dirt.
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: icon_world # Horizon Bothany
   - type: Tag
     tags:
     - BotanyShovel

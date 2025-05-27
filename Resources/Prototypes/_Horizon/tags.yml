@@ -176,6 +176,9 @@
   id: BluespaceAnomalyCore
 
 - type: Tag
+  id: BluespaceCore
+
+- type: Tag
   id: HardsuitSalvage
 
 # Mech upgrade
