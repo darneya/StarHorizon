@@ -256,13 +256,11 @@ public sealed class PlantHolderSystem : EntitySystem
         {
             if (component.Seed != null)
             {
-                Logger.Info($"before YieldMod = {component.YieldMod}");
                 var randomnext = _random.Next(1, 4);
-                Logger.Info($"randomnext={randomnext}");
                 component.YieldMod *= randomnext; // Код, какого хрена от 1 до 3х то?!??!
-                Logger.Info($"after YieldMod = {component.YieldMod}");
             }
             DoHarvest(uid, args.User, component);
+            component.YieldMod = 1;
         }
 
         // Horizon Bothany end
