@@ -263,6 +263,7 @@ public sealed class PlantHolderSystem : EntitySystem
                 Logger.Info($"after YieldMod = {component.YieldMod}");
             }
             DoHarvest(uid, args.User, component);
+            component.YieldMod = 1;
         }
 
         // Horizon Bothany end
