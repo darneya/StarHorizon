@@ -303,3 +303,45 @@
 
 - type: Tag
   id: Barrel
+
+- type: Tag
+  id: chamomiler
+
+- type: Tag
+  id: chamomilev
+
+- type: Tag
+  id: clovep
+
+- type: Tag
+  id: clover
+
+- type: Tag
+  id: clovew
+
+- type: Tag
+  id: clovey
+
+- type: Tag
+  id: roselp
+
+- type: Tag
+  id: rosep
+
+- type: Tag
+  id: roser
+
+- type: Tag
+  id: rosew
+
+- type: Tag
+  id: tuliplp
+
+- type: Tag
+  id: tulipp
+
+- type: Tag
+  id: tulipr
+
+- type: Tag
+  id: tulipy
