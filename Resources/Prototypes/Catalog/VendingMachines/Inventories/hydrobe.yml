@@ -19,5 +19,7 @@
     ClothingHandsGlovesLeather: 3 # Frontier
     ClothingShoesColorBrown: 3 # Frontier
     ClothingShoesBootsWinterHydro: 2 #Delta V: Add departmental winter boots
+    DrinkGlassVaseOne: 10 # Horizon Bothany
+    DrinkGlassVaseTwo: 10 # Horizon Bothany
   contrabandInventory:
     ToyFigurineBotanist: 1
