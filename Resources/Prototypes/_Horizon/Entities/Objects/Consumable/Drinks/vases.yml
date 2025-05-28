@@ -24,7 +24,7 @@
   - type: ItemSlots
     slots:
       item:
-        name: vase-flower-one
+        name: цветок в вазе
         whitelist:
           tags:
           - chamomiler
@@ -127,7 +127,7 @@
   - type: ItemSlots
     slots:
       item:
-        name: vase-flower-two
+        name: цветок в вазе
         whitelist:
           tags:
           - chamomiler
