@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Aavikko.Switchable;
+namespace Content.Shared._Horizon.Switchable;
 
 // Appearance Data key
 [Serializable, NetSerializable]

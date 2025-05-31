@@ -1,0 +1,29 @@
+﻿- type: technology
+  id: HydroponicsAdv
+  name: research-technology-adv-hydroponics
+  icon:
+    sprite: _Horizon/Structures/Hydroponics/containers.rsi
+    state: hydrotray4
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - HydroponicsTrayUpgradeKit
+  - HydroponicsToolScytheAdv
+  technologyPrerequisites:
+  - Hydroponics
+
+- type: technology
+  id: HydroponicsDNAManip
+  name: research-technology-hydroponics-dna-manip
+  icon:
+    sprite: Structures/Machines/seed_extractor.rsi
+    state: seedextractor
+  discipline: CivilianServices
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - BotanicDNADisk
+  - BotanicDNACircuitboard
+  technologyPrerequisites:
+  - HydroponicsAdv

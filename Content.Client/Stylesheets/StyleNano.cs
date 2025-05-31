@@ -1445,6 +1445,13 @@ namespace Content.Client.Stylesheets
                     .Prop(TextureRect.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Nano/ntlogo.svg.png"))
                     .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#757575")),
 
+                // Horizon Bothany start
+                // RatTech
+                Element<TextureRect>().Class("RTLogoDark")
+                    .Prop(TextureRect.StylePropertyTexture, resCache.GetTexture("/Textures/_Horizon/Interface/ratlogo.png"))
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#757575")),
+                // Horizon Bothany end
+
                 Element<TextureRect>().Class("PirateLogoDark") // Frontier
                     .Prop(TextureRect.StylePropertyTexture, resCache.GetTexture("/Textures/_NF/Interface/Pirate/piratelogo.png")) // Frontier
                     .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#757575")), // Frontier

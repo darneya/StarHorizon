@@ -4,8 +4,8 @@
   id: Hydroponics
   name: research-technology-basic-hydroponics
   icon:
-    sprite: Structures/Machines/seed_extractor.rsi
-    state: seedextractor
+    sprite: Structures/Hydroponics/containers.rsi # Horizon Bothany
+    state: hydrotray3 # Horizon Bothany
   discipline: CivilianServices
   tier: 1
   cost: 7500 # Delta Price. 5000 is pre-adjustment.

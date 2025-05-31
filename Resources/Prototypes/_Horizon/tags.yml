@@ -176,6 +176,9 @@
   id: BluespaceAnomalyCore
 
 - type: Tag
+  id: BluespaceCore
+
+- type: Tag
   id: HardsuitSalvage
 
 # Mech upgrade
@@ -270,6 +273,8 @@
 - type: Tag
   id: MechReactor
 
+# Surgery
+
 - type: Tag
   id: SecCyberEyes
 
@@ -278,3 +283,65 @@
 
 - type: Tag
   id: OmniCyberEyes
+
+# Bothany
+
+- type: Tag
+  id: Herb
+
+- type: Tag
+  id: AdvBotanyInstrument
+
+- type: Tag
+  id: AdvHydroTray
+
+- type: Tag
+  id: Fermentator
+
+- type: Tag
+  id: HydroponicsTrayUpgradeKit
+
+- type: Tag
+  id: Barrel
+
+- type: Tag
+  id: chamomiler
+
+- type: Tag
+  id: chamomilev
+
+- type: Tag
+  id: clovep
+
+- type: Tag
+  id: clover
+
+- type: Tag
+  id: clovew
+
+- type: Tag
+  id: clovey
+
+- type: Tag
+  id: roselp
+
+- type: Tag
+  id: rosep
+
+- type: Tag
+  id: roser
+
+- type: Tag
+  id: rosew
+
+- type: Tag
+  id: tuliplp
+
+- type: Tag
+  id: tulipp
+
+- type: Tag
+  id: tulipr
+
+- type: Tag
+  id: tulipy
