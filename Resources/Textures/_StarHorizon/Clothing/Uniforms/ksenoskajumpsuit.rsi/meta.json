@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CLA with hosting restrictions",
-  "copyright": "Made by Kartusr for Lerk",
+  "copyright": "Made by SadBrat3, Lemird",
   "size": {
     "x": 32,
     "y": 32
@@ -11,7 +11,7 @@
       "name": "icon"
     },
     {
-      "name": "equipped-OUTERCLOTHING",
+      "name": "equipped-INNERCLOTHING",
       "directions": 4
     },
     {
