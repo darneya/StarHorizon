@@ -1,6 +1,7 @@
 using Content.Shared.Database;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
+using Content.Shared.Storage;
 using JetBrains.Annotations;
 
 namespace Content.Server.Research.Systems;
@@ -79,6 +80,11 @@ public sealed partial class ResearchSystem
         if (!CanServerUnlockTechnology(client, prototype, clientDatabase, component))
             return false;
 
+        // Horizon start
+        if (prototype.ResearchTargets != null && TryComp<StorageComponent>(serverEnt, out var storageComp))
+            DeleteTechnologyTargets(serverEnt.Value, storageComp, prototype.ResearchTargets);
+        // Horizon end
+
         AddTechnology(serverEnt.Value, prototype);
         TrySetMainDiscipline(prototype, serverEnt.Value);
         ModifyServerPoints(serverEnt.Value, -prototype.Cost);
@@ -88,6 +94,25 @@ public sealed partial class ResearchSystem
             $"{ToPrettyString(user):player} unlocked {prototype.ID} (discipline: {prototype.Discipline}, tier: {prototype.Tier}) at {ToPrettyString(client)}, for server {ToPrettyString(serverEnt.Value)}.");
         return true;
     }
+
+	// Horizon void start
+    private void DeleteTechnologyTargets(EntityUid serverEnt, StorageComponent storage, List<string> researchTargets, ResearchServerComponent? serverComponent = null)
+    {
+        if (!Resolve(serverEnt, ref serverComponent))
+            return;
+
+        foreach (var target in researchTargets)
+        {
+            foreach (var (uid, _) in storage.StoredItems)
+            {
+                if (MetaData(uid).EntityPrototype?.ID != target)
+                    continue;
+
+                _entityManager.DeleteEntity(uid);
+            }
+        }
+    }
+    // Horizon void end
 
     /// <summary>
     ///     Adds a technology to the database without checking if it could be unlocked.
@@ -145,7 +170,7 @@ public sealed partial class ResearchSystem
         if (!Resolve(uid, ref client, ref database, false))
             return false;
 
-        if (!TryGetClientServer(uid, out _, out var serverComp, client))
+        if (!TryGetClientServer(uid, out var server, out var serverComp, client)) // Horizon if edit
             return false;
 
         if (!IsTechnologyAvailable(database, technology))
@@ -154,7 +179,7 @@ public sealed partial class ResearchSystem
         if (technology.Cost > serverComp.Points)
             return false;
 
-        return true;
+        return TryGetAllTargets(server, technology); // Horizon return edit
     }
 
     private void OnDatabaseRegistrationChanged(EntityUid uid, TechnologyDatabaseComponent component, ref ResearchRegistrationChangedEvent args)

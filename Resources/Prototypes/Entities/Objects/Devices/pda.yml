@@ -12,7 +12,7 @@
        !type:String
        pda
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/pda.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/pda.rsi # Horizon
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
       state: "pda"
@@ -25,7 +25,7 @@
       shader: "unshaded"
       visible: false
   - type: Icon
-    sprite: _Horizon/Objects/Devices/pda.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/pda.rsi # Horizon
     state: pda
   - type: Pda
     paiSlot:

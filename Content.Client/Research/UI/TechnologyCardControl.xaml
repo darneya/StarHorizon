@@ -35,7 +35,13 @@
                     </BoxContainer>
                 </BoxContainer>
                 <Control MinHeight="5"></Control>
-                <RichTextLabel Name="UnlocksLabel" HorizontalExpand="True" StyleClasses="LabelSubText"></RichTextLabel>
+                <!-- Horizon starts -->
+                <BoxContainer>
+                    <RichTextLabel Name="UnlocksLabel" HorizontalExpand="True" StyleClasses="LabelSubText" />
+                    <Control HorizontalExpand="True"/>
+                    <RichTextLabel Name="TargetLabel" VerticalAlignment="Top" HorizontalExpand="True" StyleClasses="LabelSubText" />
+                </BoxContainer>
+                <!-- Horizon ends -->
             </BoxContainer>
         </Button>
     </BoxContainer>

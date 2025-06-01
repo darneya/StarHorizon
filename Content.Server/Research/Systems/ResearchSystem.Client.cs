@@ -93,6 +93,7 @@ public sealed partial class ResearchSystem
             GetNFServerIds(uid), serverComponent?.Id ?? -1);
 
         _uiSystem.SetUiState(uid, ResearchClientUiKey.Key, state);
+        Dirty(uid, component); // Horizon dirty add
     }
 
     /// <summary>

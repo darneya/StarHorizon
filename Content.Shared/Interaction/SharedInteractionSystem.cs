@@ -1008,7 +1008,7 @@ namespace Content.Shared.Interaction
             if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, target))
                 return false;
 
-            if (!_actionBlockerSystem.CanInstrumentInteract(user, used, target)) // _Horizon
+            if (!_actionBlockerSystem.CanInstrumentInteract(user, used, target)) // Horizon
                 return false;
 
             if (checkCanUse && !_actionBlockerSystem.CanUseHeldEntity(user, used))

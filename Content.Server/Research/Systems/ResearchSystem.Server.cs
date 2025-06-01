@@ -1,6 +1,8 @@
 using System.Linq;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Research.Components;
+using Content.Shared.Storage;
+using Robust.Shared.Containers;
 
 namespace Content.Server.Research.Systems;
 
@@ -11,6 +13,8 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchServerComponent, ComponentStartup>(OnServerStartup);
         SubscribeLocalEvent<ResearchServerComponent, ComponentShutdown>(OnServerShutdown);
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
+        SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnServerInsertItem); // Horizon
+        SubscribeLocalEvent<ResearchServerComponent, EntRemovedFromContainerMessage>(OnServerRemoveItem); // Horizon
     }
 
     private void OnServerStartup(EntityUid uid, ResearchServerComponent component, ComponentStartup args)
@@ -74,7 +78,10 @@ public sealed partial class ResearchSystem
         SyncClientWithServer(client, clientComponent: clientComponent);
 
         if (dirtyServer)
+        {
             Dirty(server, serverComponent);
+            Dirty(client, clientComponent); // Horizon
+        }
 
         var ev = new ResearchRegistrationChangedEvent(server);
         RaiseLocalEvent(client, ref ev);
@@ -118,6 +125,7 @@ public sealed partial class ResearchSystem
         if (dirtyServer)
         {
             Dirty(server, serverComponent);
+            Dirty(client, clientComponent); // Horizon
         }
 
         var ev = new ResearchRegistrationChangedEvent(null);
@@ -169,4 +177,19 @@ public sealed partial class ResearchSystem
         }
         Dirty(uid, component);
     }
+
+    // Horizon start
+    // ReSharper disable EnforceForeachStatementBraces
+    private void OnServerInsertItem(EntityUid uid, ResearchServerComponent comp, EntInsertedIntoContainerMessage _)
+    {
+        foreach (var client in comp.Clients)
+            UpdateClientInterface(client);
+    }
+
+    private void OnServerRemoveItem(EntityUid uid, ResearchServerComponent comp, EntRemovedFromContainerMessage _)
+    {
+        foreach (var client in comp.Clients)
+            UpdateClientInterface(client);
+    }
+    // Horizon end
 }
