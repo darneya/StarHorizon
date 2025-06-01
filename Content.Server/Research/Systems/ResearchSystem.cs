@@ -24,7 +24,7 @@ namespace Content.Server.Research.Systems
         [Dependency] private readonly RadioSystem _radio = default!;
         [Dependency] private readonly StationSystem _station = default!;
         [Dependency] private readonly EntityLookupSystem _lookup = default!;
-        [Dependency] private readonly IEntityManager _entityManager = null!; // _Horizon
+        [Dependency] private readonly IEntityManager _entityManager = null!; // Horizon
 
         public override void Initialize()
         {

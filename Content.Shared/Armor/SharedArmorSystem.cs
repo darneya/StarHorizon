@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Content.Shared.Body.Components; // _Horizon
+using Content.Shared.Body.Components; // Horizon
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
@@ -23,7 +23,7 @@ public abstract class SharedArmorSystem : EntitySystem
 
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<CoefficientQueryEvent>>(OnCoefficientQuery);
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnDamageModify);
-        SubscribeLocalEvent<ArmorComponent, DamageModifyEvent>(OnBodyDamageModify); // _Horizon
+        SubscribeLocalEvent<ArmorComponent, DamageModifyEvent>(OnBodyDamageModify); // Horizon
         SubscribeLocalEvent<ArmorComponent, BorgModuleRelayedEvent<DamageModifyEvent>>(OnBorgDamageModify);
         SubscribeLocalEvent<ArmorComponent, GetVerbsEvent<ExamineVerb>>(OnArmorVerbExamine);
     }
@@ -54,7 +54,7 @@ public abstract class SharedArmorSystem : EntitySystem
 
     private void OnArmorVerbExamine(EntityUid uid, ArmorComponent component, GetVerbsEvent<ExamineVerb> args)
     {
-        if (component.DoNotShowExamine && uid != args.User // _Horizon Upstream
+        if (component.DoNotShowExamine && uid != args.User // Horizon Upstream
             || !args.CanInteract
             || !args.CanAccess
             || !component.ShowArmorOnExamine)
@@ -100,7 +100,7 @@ public abstract class SharedArmorSystem : EntitySystem
         return msg;
     }
 
-    // _Horizon Start`s
+    // Horizon start
 
     [SuppressMessage("Performance", "CA1822:Пометьте члены как статические")]
     public void ChangeComponentModifiers(Entity<ArmorComponent> ent, DamageModifierSet newModifiers)
@@ -132,5 +132,5 @@ public abstract class SharedArmorSystem : EntitySystem
         if (HasComp<BodyComponent>(uid))
             args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, component.Modifiers);
     }
-    // _Horizon End`s
+    // Horizon end
 }

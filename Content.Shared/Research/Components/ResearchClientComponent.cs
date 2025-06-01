@@ -7,8 +7,8 @@ namespace Content.Shared.Research.Components
     /// This is an entity that is able to connect to a <see cref="ResearchServerComponent"/>
     /// </summary>
     [RegisterComponent]
-    [NetworkedComponent] // _Horizon network component add
-    [AutoGenerateComponentState] // _Horizon network component add
+    [NetworkedComponent] // Horizon network component add
+    [AutoGenerateComponentState] // Horizon network component add
     public sealed partial class ResearchClientComponent : Component
     {
         public bool ConnectedToServer => Server != null;
@@ -17,7 +17,7 @@ namespace Content.Shared.Research.Components
         /// The server the client is connected to
         /// </summary>
         [ViewVariables(VVAccess.ReadOnly)]
-        [AutoNetworkedField] // _Horizon network component add
+        [AutoNetworkedField] // Horizon network component add
         public EntityUid? Server { get; set; }
     }
 

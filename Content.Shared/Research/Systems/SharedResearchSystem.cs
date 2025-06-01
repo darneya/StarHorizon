@@ -200,7 +200,7 @@ public abstract class SharedResearchSystem : EntitySystem
         return description;
     }
 
-    // _Horizon starts
+    // Horizon start
     public FormattedMessage GetTechNeededItemList(EntityUid? serverUid, TechnologyPrototype technology)
     {
         var itemList = new FormattedMessage();
@@ -258,7 +258,7 @@ public abstract class SharedResearchSystem : EntitySystem
         }
         return false;
     }
-    // _Horizon ends
+    // Horizon end
 
     /// <summary>
     ///     Returns whether a technology is unlocked on this database or not.

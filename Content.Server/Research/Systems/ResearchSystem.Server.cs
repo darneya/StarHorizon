@@ -13,8 +13,8 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchServerComponent, ComponentStartup>(OnServerStartup);
         SubscribeLocalEvent<ResearchServerComponent, ComponentShutdown>(OnServerShutdown);
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
-        SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnServerInsertItem); // _Horizon
-        SubscribeLocalEvent<ResearchServerComponent, EntRemovedFromContainerMessage>(OnServerRemoveItem); // _Horizon
+        SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnServerInsertItem); // Horizon
+        SubscribeLocalEvent<ResearchServerComponent, EntRemovedFromContainerMessage>(OnServerRemoveItem); // Horizon
     }
 
     private void OnServerStartup(EntityUid uid, ResearchServerComponent component, ComponentStartup args)
@@ -80,7 +80,7 @@ public sealed partial class ResearchSystem
         if (dirtyServer)
         {
             Dirty(server, serverComponent);
-            Dirty(client, clientComponent); // _Horizon
+            Dirty(client, clientComponent); // Horizon
         }
 
         var ev = new ResearchRegistrationChangedEvent(server);
@@ -125,7 +125,7 @@ public sealed partial class ResearchSystem
         if (dirtyServer)
         {
             Dirty(server, serverComponent);
-            Dirty(client, clientComponent); // _Horizon
+            Dirty(client, clientComponent); // Horizon
         }
 
         var ev = new ResearchRegistrationChangedEvent(null);
@@ -178,7 +178,7 @@ public sealed partial class ResearchSystem
         Dirty(uid, component);
     }
 
-    // _Horizon starts
+    // Horizon start
     // ReSharper disable EnforceForeachStatementBraces
     private void OnServerInsertItem(EntityUid uid, ResearchServerComponent comp, EntInsertedIntoContainerMessage _)
     {
@@ -191,5 +191,5 @@ public sealed partial class ResearchSystem
         foreach (var client in comp.Clients)
             UpdateClientInterface(client);
     }
-    // _Horizon ends
+    // Horizon end
 }

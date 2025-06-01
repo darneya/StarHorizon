@@ -32,12 +32,12 @@ public sealed class HotbarUIController : UIController
         ReloadHotbar();
     }
 
-    public void Setup(HandsContainer handsContainer, HandsContainer FunctionalhandsContainer, BoxContainer storageContainer) // _Horizon
+    public void Setup(HandsContainer handsContainer, HandsContainer FunctionalhandsContainer, BoxContainer storageContainer) // Horizon
     {
         _inventory = UIManager.GetUIController<InventoryUIController>();
         _hands = UIManager.GetUIController<HandsUIController>();
         _storage = UIManager.GetUIController<StorageUIController>();
-        _hands.RegisterHandContainer(FunctionalhandsContainer);  // _Horizon
+        _hands.RegisterHandContainer(FunctionalhandsContainer);  // Horizon
         _hands.RegisterHandContainer(handsContainer);
     }
 

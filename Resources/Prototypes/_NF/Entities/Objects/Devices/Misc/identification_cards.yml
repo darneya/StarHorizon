@@ -7,12 +7,12 @@
   - type: PresetIdCard
     job: Mercenary
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: default
     - state: idmercenary
   - type: Clothing
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
 
 - type: entity
   parent: IDCardStandard
@@ -23,12 +23,12 @@
   - type: PresetIdCard
     job: Pilot
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: default
     - state: idpilot
   - type: Clothing
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
 
 - type: entity
   parent: IDCardStandard
@@ -39,12 +39,12 @@
   - type: PresetIdCard
     job: StationTrafficController
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: silver
     - state: idstationtrafficcontroller
   - type: Clothing
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
   - type: Item
     heldPrefix: silver
 
@@ -57,7 +57,7 @@
   - type: PresetIdCard
     job: PublicAffairsLiaison
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: nfsd
     - state: idpublicaffairsliaison
@@ -71,12 +71,12 @@
   - type: PresetIdCard
     job: Cadet
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: nfsd
     - state: idnfsdcadet
   - type: Clothing
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
   - type: Item
     heldPrefix: nfsd
 
@@ -89,7 +89,7 @@
   - type: PresetIdCard
     job: Deputy
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: nfsd
     - state: idnfsddeputy
@@ -103,7 +103,7 @@
   - type: PresetIdCard
     job: Brigmedic
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: nfsd
     - state: idnfsdbrigmed
@@ -117,7 +117,7 @@
   - type: PresetIdCard
     job: SeniorOfficer
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: nfsd
     - state: idnfsdsergeant
@@ -131,7 +131,7 @@
   - type: PresetIdCard
     job: Bailiff
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: nfsd
     - state: idnfsdbailiff
@@ -145,7 +145,7 @@
   - type: PresetIdCard
     job: Sheriff
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: silver
     - state: idnfsdsheriff
@@ -161,7 +161,7 @@
   - type: PresetIdCard
     job: NFDetective
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: nfsd
     - state: idnfsddetective
@@ -184,7 +184,7 @@
   - type: IdCard
     jobTitle: job-title-ert-mail-carrier
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: gold
     - state: ert_mailcarrier
@@ -207,7 +207,7 @@
   - type: PresetIdCard
     job: Valet
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: default
     - state: idvalet
@@ -229,7 +229,7 @@
   - type: PresetIdCard
     job: Contractor
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: default
     - state: idcontractor
@@ -245,7 +245,7 @@
   - type: PresetIdCard
     job: NFPirate
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: pirate
     - state: idpirate
@@ -262,7 +262,7 @@
   - type: PresetIdCard
     job: NFPirateCaptain
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: pirate
     - state: idpiratecaptain
@@ -276,7 +276,7 @@
   - type: PresetIdCard
     job: NFPirateFirstMate
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: pirate
     - state: idpiratefirstmate
@@ -299,12 +299,12 @@
   - type: PresetIdCard
     job: DirectorOfCare
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
     layers:
     - state: silver
     - state: idmedicdoc
   - type: Clothing
-    sprite: _Horizon/Objects/Devices/idcards.rsi # _Horizon
+    sprite: _Horizon/Objects/Devices/idcards.rsi # Horizon
   - type: Item
     heldPrefix: medic #temporary to OBSERVE
 

@@ -71,7 +71,7 @@ public sealed partial class TechnologyPrototype : IPrototype
     public IReadOnlyList<GenericUnlock> GenericUnlocks = new List<GenericUnlock>();
 
     [DataField]
-    public List<string>? ResearchTargets; // _Horizon
+    public List<string>? ResearchTargets; // Horizon
 }
 
 [DataDefinition]

@@ -59,12 +59,12 @@
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
-      storagebase: !type:Container # _Horizon
-        ents: [] # _Horizon
+      storagebase: !type:Container # Horizon
+        ents: [] # Horizon
   - type: GuideHelp
     guides:
     - Science
-  # _Horizon Starts
+  # Horizon Starts
   - type: Storage
     maxItemSize: Huge
     grid:
@@ -74,7 +74,7 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-  # _Horizon ends
+  # Horizon ends
 
 - type: entity
   id: BaseResearchAndDevelopmentPointSource

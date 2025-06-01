@@ -24,19 +24,19 @@ public sealed partial class TechnologyCardControl : Control
         TechnologyNameLabel.Text = Loc.GetString(technology.Name);
         var message = new FormattedMessage();
         message.AddMarkupOrThrow(Loc.GetString("research-console-tier-discipline-info",
-            ("tier", technology.Tier), // _Horizon code design edit starts
+            ("tier", technology.Tier), // Horizon code design edit starts
             ("color", discipline.Color),
-            ("discipline", Loc.GetString(discipline.Name)))); // _Horizon code design edit ends
+            ("discipline", Loc.GetString(discipline.Name)))); // Horizon code design edit ends
          TierLabel.SetMessage(message);
         UnlocksLabel.SetMessage(description);
-        TargetLabel.SetMessage(itemList); // _Horizon
+        TargetLabel.SetMessage(itemList); // Horizon
 
         TechnologyTexture.Texture = spriteSys.Frame0(technology.Icon);
 
         if (!hasAccess)
             ResearchButton.ToolTip = Loc.GetString("research-console-no-access-popup");
 
-        ResearchButton.Disabled = points < technology.Cost || !hasAccess || !haveAllTargets; // _Horizon
+        ResearchButton.Disabled = points < technology.Cost || !hasAccess || !haveAllTargets; // Horizon
         ResearchButton.OnPressed += _ => OnPressed?.Invoke();
     }
 }
