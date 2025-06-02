@@ -14,6 +14,15 @@
       "name": "id_overlay"
     },
     {
+      "name": "pda"
+    },
+    {
+      "name": "pda_world"
+    },
+    {
+      "name": "id_overlay_world"
+    },
+    {
       "name": "equipped-BELT",
       "directions": 4
     },
