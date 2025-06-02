@@ -1,5 +1,20 @@
 # Felinid Ears
 
+# Horizon start
+
+- type: marking
+  id: BunnyEarsBasic
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Human]
+  sprites:
+  - sprite: Nyanotrasen/Mobs/Customization/bunny_ears.rsi
+    state: ears_bunny_outer
+  - sprite: Nyanotrasen/Mobs/Customization/bunny_ears.rsi
+    state: ears_bunny_inner
+
+# Horizon end
+
 - type: marking
   id: FelinidEarsBasic
   bodyPart: HeadTop
@@ -151,3 +166,16 @@
     state: basic_bow
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_bell
+
+# Horizon start
+
+- type: marking
+  id: BunnyTailBasic
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Human]
+  sprites:
+  - sprite: Nyanotrasen/Mobs/Customization/bunny_ears.rsi
+    state: tail_bunny
+
+# Horizon end

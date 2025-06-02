@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "copyright": "@SadBrat3",
+    "license": "CC-BY-SA-4.0",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ears_bunny_inner",
+            "directions": 4
+        },
+        {
+            "name": "ears_bunny_outer",
+            "directions": 4
+        },
+        {
+            "name": "tail_bunny",
+            "directions": 4
+        }
+    ]
+}
