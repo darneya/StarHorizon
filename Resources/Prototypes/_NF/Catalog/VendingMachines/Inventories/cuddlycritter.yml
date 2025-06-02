@@ -55,6 +55,11 @@
     DiceBag: 6
     PrizeBall: 10
     MysterySpaceBladeBox: 10
+    PlushieLemird: 1 # Horizon
+    PlushieLemirdSchoolGirl: 1 # Horizon
+    PlushieLemird3: 1 # Horizon
+    DakiLemird: 1 # Horizon
+    DakiLemird2: 1 # Horizon
   contrabandInventory:
     PlushieLamp: 3
     CrazyGlue: 1
@@ -67,5 +72,5 @@
     PlushieRGBee: 3
     BalloonCorgi: 2
     NFPlushieBotanist: 3
-    NFPlushieCmo: 3    
+    NFPlushieCmo: 3
     NFPlushieEngineer: 3

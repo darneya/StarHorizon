@@ -404,7 +404,7 @@
     - HEAD
 
 - type: entity
-  parent: BasePlushie
+  parent: PlushieLemird
   id: PlushieLemird3
   name: плюшевая Лемирда
   description: Новая ограниченная серия игрушек Лемирд на отдыхе. Вы буквально чувствуете эту ауру муррчания и хорни!!!
@@ -416,6 +416,8 @@
   - type: Item
     size: Small
     sprite: _StarHorizon/Objects/Fun/plushielemird3.rsi
+  - type: StaticPrice
+    price: 1500
   - type: PointLight
     netsync: false
     radius: 1.5
@@ -594,6 +596,8 @@
   - type: Sprite
     sprite: _StarHorizon/Objects/Fun/dakka.rsi
     state: icon
+  - type: StaticPrice
+    price: 500
   - type: Item
     size: Small
     sprite: _StarHorizon/Objects/Fun/dakka.rsi
@@ -609,6 +613,8 @@
   - type: Sprite
     sprite: _StarHorizon/Objects/Fun/dakka.rsi
     state: icon2
+  - type: StaticPrice
+    price: 500
   - type: Item
     size: Small
     sprite: _StarHorizon/Objects/Fun/dakka.rsi
