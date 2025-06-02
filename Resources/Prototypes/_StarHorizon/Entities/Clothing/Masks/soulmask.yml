@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: SoulСuttingMask
+  name: дьявольская маска
+  description: Она выглядит как обычная маска... Только немного странная...
+  suffix: StarHorizon, катана синдиката
+  components:
+    - type: BreathMask
+    - type: EyeProtection
+      protectionTime: 5
+    - type: Sprite
+      sprite: _StarHorizon/Clothing/Mask/soulmask.rsi
+    - type: Clothing
+      sprite: _StarHorizon/Clothing/Mask/soulmask.rsi
