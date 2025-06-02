@@ -6,6 +6,8 @@ marking-UndergarmentTopSportsbra = Sports Bra
 marking-UndergarmentBottomBoxers = Boxers
 marking-UndergarmentBottomBriefs = Briefs
 marking-UndergarmentBottomSatin = Satin
+marking-UndergarmentBottomDota = Dota
+marking-UndergarmentBottomKitten = Kitten
 
 marking-UndergarmentTopTanktopVox = Tanktop
 marking-UndergarmentTopBinderVox = Binder

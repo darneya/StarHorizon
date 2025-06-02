@@ -1,5 +1,26 @@
 # These options are kept very sparse to not put emphasis on nudity, and to provide a base for players to feel comfortable with.
-# It's unlikely more will be added to upstream for cosmetic reasons. 
+# It's unlikely more will be added to upstream for cosmetic reasons.
+
+# Horizon start
+- type: marking
+  id: UndergarmentBottomDota
+  bodyPart: UndergarmentBottom
+  markingCategory: UndergarmentBottom
+  speciesRestriction: [Human]
+  sprites:
+  - sprite: Mobs/Customization/undergarments.rsi
+    state: dota
+
+- type: marking
+  id: UndergarmentBottomKitten
+  bodyPart: UndergarmentBottom
+  markingCategory: UndergarmentBottom
+  speciesRestriction: [Human]
+  sprites:
+  - sprite: Mobs/Customization/undergarments.rsi
+    state: kitten
+
+# Horizon end
 
 - type: marking
   id: UndergarmentBottomBoxers
