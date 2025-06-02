@@ -3,12 +3,12 @@
   id: ERTJuggernautBeltMercWebbing
   name: РПС ОБР джаггернаута
   description: РПС, предназначенная для использования в военных целях. В комплекте идут трубки, подключающиеся напрямую к носителю, отчего снять снаряжение без хирургического вмешательства становится невозможно. Очень объёмный.
-  suffix: Aavikko, неснимаемый
+  suffix: StarHorizon, неснимаемый
   components:
   - type: Sprite
-    sprite: Aavikko/Clothing/Belt/ertjuggernautbeltmercwebbing.rsi
+    sprite: _StarHorizon/Clothing/Belt/ertjuggernautbeltmercwebbing.rsi
   - type: Clothing
-    sprite: Aavikko/Clothing/Belt/ertjuggernautbeltmercwebbing.rsi
+    sprite: _StarHorizon/Clothing/Belt/ertjuggernautbeltmercwebbing.rsi
   - type: Storage
     grid:
     - 0,0,7,7

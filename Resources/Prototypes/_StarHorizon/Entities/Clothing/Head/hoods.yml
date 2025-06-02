@@ -5,9 +5,9 @@
   name: капюшон зимней куртки офицера "Синий щит"
   components:
   - type: Sprite
-    sprite: StarHorizon/Clothing/Head/Hoods/Coat/hood_blueshield.rsi
+    sprite: _StarHorizon/Clothing/Head/Hoods/Coat/hood_blueshield.rsi
   - type: Clothing
-    sprite: StarHorizon/Clothing/Head/Hoods/Coat/hood_blueshield.rsi
+    sprite: _StarHorizon/Clothing/Head/Hoods/Coat/hood_blueshield.rsi
   - type: Armor
     modifiers:
       coefficients:
