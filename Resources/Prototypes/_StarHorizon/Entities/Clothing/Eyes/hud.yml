@@ -5,9 +5,9 @@
   description: Модные, отдающие синевой очки.
   components:
   - type: Sprite
-    sprite: StarHorizon/Clothing/Eyes/Glasses/blueshieldglasses.rsi
+    sprite: _StarHorizon/Clothing/Eyes/Glasses/blueshieldglasses.rsi
   - type: Clothing
-    sprite: StarHorizon/Clothing/Eyes/Glasses/blueshieldglasses.rsi
+    sprite: _StarHorizon/Clothing/Eyes/Glasses/blueshieldglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5

@@ -57,4 +57,4 @@
   description: Роскошный рюкзак, пахнет деньгами.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/centcom.rsi
+    sprite: _StarHorizon/Clothing/Back/Backpacks/oldcentcom.rsi

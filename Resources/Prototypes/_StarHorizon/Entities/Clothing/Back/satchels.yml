@@ -75,7 +75,7 @@
   description: На страже бюрократической моды.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Satchels/centcom.rsi
+    sprite: _StarHorizon/Clothing/Back/Satchels/oldcentcom.rsi
 
 - type: entity
   parent: [ClothingBackpack, BaseUASContraband]

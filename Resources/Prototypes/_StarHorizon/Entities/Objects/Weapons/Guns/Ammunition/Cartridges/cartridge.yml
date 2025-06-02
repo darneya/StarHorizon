@@ -1,0 +1,86 @@
+- type: entity
+  id: BaseCartridgeMinigunERT.15
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: FloorObjects
+    netsync: false
+  - type: Tag
+    tags:
+    - Cartridge.15
+    - CartridgeMinigunERT.15
+  - type: Item
+    size: Tiny
+  - type: SpaceGarbage
+
+- type: entity
+  id: CartridgeMinigunERT.15
+  name: патрон (.15 мелкокалиберный)
+  suffix: Aavikko
+  parent: BaseCartridgeMinigunERT.15
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - Cartridge.15
+    - CartridgeMinigunERT.15
+  - type: CartridgeAmmo
+    proto: BulletMinigunERT.15
+  - type: Sprite
+    sprite: Aavikko/Objects/Weapons/Guns/Ammunition/Casings/minigunert15bullet.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  id: BaseMinigunERT.15
+  name: патрон (.15 мелкокалиберный)
+  suffix: Aavikko
+  parent: CartridgeMinigunERT.15
+  components:
+  - type: CartridgeAmmo
+    proto: BulletMinigunERT.15
+
+- type: entity
+  id: BulletMinigunERT.15
+  name: патрон (.15 мелкокалиберный)
+  suffix: Aavikko
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 7
+
+- type: entity
+  id: BaseMinigunERT.15.Incendiary
+  name: патрон (.15 зажигательный)
+  suffix: Aavikko
+  parent: CartridgeMinigunERT.15
+  components:
+  - type: CartridgeAmmo
+    proto: BulletMinigunERT.15.Incendiary
+
+- type: entity
+  id: BulletMinigunERT.15.Incendiary
+  name: патрон (.15 зажигательный)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBulletIncendiary
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    state: practice
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+        Heat: 2
+  - type: IgnitionSource
+    ignited: true

@@ -47,4 +47,4 @@
   description: Для транспортировки тысячи бумаг.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/centcom.rsi
+    sprite: _StarHorizon/Clothing/Back/Duffels/oldcentcom.rsi

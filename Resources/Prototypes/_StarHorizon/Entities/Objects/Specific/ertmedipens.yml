@@ -6,10 +6,10 @@
   suffix: StarHorizon
   components:
   - type: Item
-    sprite: __StarHorizon/Objects/Specific/Medical/ertjuggernautmedipen.rsi
+    sprite: _StarHorizon/Objects/Specific/Medical/ertjuggernautmedipen.rsi
     size: Normal
   - type: Sprite
-    sprite: __StarHorizon/Objects/Specific/Medical/ertjuggernautmedipen.rsi
+    sprite: _StarHorizon/Objects/Specific/Medical/ertjuggernautmedipen.rsi
     layers:
     - state: red
       map: [ "enum.SolutionContainerLayers.Fill" ]
