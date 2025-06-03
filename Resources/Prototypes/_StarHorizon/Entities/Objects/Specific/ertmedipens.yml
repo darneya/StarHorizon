@@ -22,7 +22,7 @@
     solutionName: pen
     transferAmount: 250
     injectSound:
-      path: "/Audio/StarHorizon/SoundCollection/ertmedipen/redmedipen.ogg"
+      path: "/Audio/_StarHorizon/SoundCollection/ertmedipen/redmedipen.ogg"
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -77,7 +77,7 @@
     solutionName: pen
     transferAmount: 250
     injectSound:
-      path: "/Audio/StarHorizon/SoundCollection/ertmedipen/orangemedipen.ogg"
+      path: "/Audio/_StarHorizon/SoundCollection/ertmedipen/orangemedipen.ogg"
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -138,7 +138,7 @@
     solutionName: pen
     transferAmount: 100
     injectSound:
-      path: "/Audio/StarHorizon/SoundCollection/ertmedipen/darkgreenmedipen.ogg"
+      path: "/Audio/_StarHorizon/SoundCollection/ertmedipen/darkgreenmedipen.ogg"
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -185,7 +185,7 @@
     solutionName: pen
     transferAmount: 100
     injectSound:
-      path: "/Audio/StarHorizon/SoundCollection/ertmedipen/lightgreenmedipen.ogg"
+      path: "/Audio/_StarHorizon/SoundCollection/ertmedipen/lightgreenmedipen.ogg"
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -230,7 +230,7 @@
     solutionName: pen
     transferAmount: 100
     injectSound:
-      path: "/Audio/StarHorizon/SoundCollection/ertmedipen/brownmedipen.ogg"
+      path: "/Audio/_StarHorizon/SoundCollection/ertmedipen/brownmedipen.ogg"
   - type: SolutionContainerManager
     solutions:
       pen:
