@@ -55,22 +55,41 @@
     DiceBag: 6
     PrizeBall: 10
     MysterySpaceBladeBox: 10
-    PlushieLemird: 1 # Horizon
-    PlushieLemirdSchoolGirl: 1 # Horizon
-    PlushieLemird3: 1 # Horizon
-    DakiLemird: 1 # Horizon
-    DakiLemird2: 1 # Horizon
-  contrabandInventory:
-    PlushieLamp: 3
-    CrazyGlue: 1
-  emaggedInventory:
+    # Horizon start
+    PlushieRoboMechanic: 3
+    PlushieParamedic: 3
+    PlushieChemist: 3
+    PlushieAmmaYakiama: 3
+    PlushiePaintor: 3
+    PlushieSelectionist: 3
+    PlushieCadet: 3
+    PlushieAdv: 3
+    PlushieFelSci: 3
     PlushieJester: 3
     PlushieJanitor: 3
     PlushieMailVulp: 3
     PlushieYarrMoth: 3
     PlushieNuke: 3
+    PlushieNukeMar: 3
+    PlushieNukeCom: 3
+    PlushieNukeMed: 3
+    PlushieNukeJagg: 3
+    PlushieInquizitor: 3
+    PlushieDivers: 3
+    PlushieRD: 3
+    PlushieScientist: 3
+    PlushieGirl: 3
     PlushieRGBee: 3
     BalloonCorgi: 2
     NFPlushieBotanist: 3
     NFPlushieCmo: 3
     NFPlushieEngineer: 3
+    PlushieLemird: 1
+    PlushieLemirdSchoolGirl: 1
+    PlushieLemird3: 1
+    DakiLemird: 1
+    DakiLemird2: 1
+    # Horizon end
+  contrabandInventory:
+    PlushieLamp: 3
+    CrazyGlue: 1
