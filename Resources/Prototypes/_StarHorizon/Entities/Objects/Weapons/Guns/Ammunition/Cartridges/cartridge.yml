@@ -17,7 +17,7 @@
 - type: entity
   id: CartridgeMinigunERT.15
   name: патрон (.15 мелкокалиберный)
-  suffix: Aavikko
+  suffix: StarHorizon
   parent: BaseCartridgeMinigunERT.15
   abstract: true
   categories: [ HideSpawnMenu ]
@@ -29,7 +29,7 @@
   - type: CartridgeAmmo
     proto: BulletMinigunERT.15
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Guns/Ammunition/Casings/minigunert15bullet.rsi
+    sprite: _StarHorizon/Objects/Weapons/Guns/Ammunition/Casings/minigunert15bullet.rsi
     layers:
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]
@@ -41,7 +41,7 @@
 - type: entity
   id: BaseMinigunERT.15
   name: патрон (.15 мелкокалиберный)
-  suffix: Aavikko
+  suffix: StarHorizon
   parent: CartridgeMinigunERT.15
   components:
   - type: CartridgeAmmo
@@ -50,7 +50,7 @@
 - type: entity
   id: BulletMinigunERT.15
   name: патрон (.15 мелкокалиберный)
-  suffix: Aavikko
+  suffix: StarHorizon
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
@@ -62,7 +62,7 @@
 - type: entity
   id: BaseMinigunERT.15.Incendiary
   name: патрон (.15 зажигательный)
-  suffix: Aavikko
+  suffix: _StarHorizon
   parent: CartridgeMinigunERT.15
   components:
   - type: CartridgeAmmo

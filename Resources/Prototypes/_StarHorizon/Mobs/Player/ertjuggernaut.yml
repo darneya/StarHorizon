@@ -34,7 +34,7 @@
 - type: entity
   id: RandomHumanoidSpawnerERTJuggernaut
   name: ОБР джаггернаут
-  suffix: Роль ОБР, Броня EVA, Aavikko
+  suffix: Роль ОБР, Броня EVA, StarHorizon
   components:
     - type: Sprite
       sprite: _StarHorizon/Markers/Jobs/ertjuggernaut.rsi

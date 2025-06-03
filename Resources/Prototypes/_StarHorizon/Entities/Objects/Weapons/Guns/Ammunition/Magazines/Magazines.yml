@@ -19,7 +19,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Guns/Ammunition/Casings/minigun_ert_mag.rsi
+    sprite: _StarHorizon/Objects/Weapons/Guns/Ammunition/Casings/minigun_ert_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -34,7 +34,7 @@
 - type: entity
   id: MagazineMinigunERT15
   name: барабан минигана джаггернаута (.15 мелкокалиберный)
-  suffix: Aavikko
+  suffix: StarHorizon
   parent: BaseMagazinerMinigunERT15
   components:
   - type: BallisticAmmoProvider
@@ -49,7 +49,7 @@
 - type: entity
   id: MagazineMinigunERT15.Incendiary
   name: барабан минигана джаггернаута (.15 зажигательный)
-  suffix: Aavikko
+  suffix: StarHorizon
   parent: BaseMagazinerMinigunERT15
   components:
   - type: BallisticAmmoProvider
