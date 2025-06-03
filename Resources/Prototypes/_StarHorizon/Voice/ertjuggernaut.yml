@@ -10,15 +10,15 @@
 - type: soundCollection
   id: ERTJuggernautSpeech
   files:
-  - /Audio/Aavikko/SoundCollection/ERTJuggernautSpeech/ExosuitSpech1.ogg
-  - /Audio/Aavikko/SoundCollection/ERTJuggernautSpeech/ExosuitSpech2.ogg
-  - /Audio/Aavikko/SoundCollection/ERTJuggernautSpeech/ExosuitSpech3.ogg
-  - /Audio/Aavikko/SoundCollection/ERTJuggernautSpeech/ExosuitSpech4.ogg
-  - /Audio/Aavikko/SoundCollection/ERTJuggernautSpeech/ExosuitSpech5.ogg
-  - /Audio/Aavikko/SoundCollection/ERTJuggernautSpeech/ExosuitSpech6.ogg
+  - /Audio/_StarHorizon/SoundCollection/ERTJuggernautSpeech/ExosuitSpech1.ogg
+  - /Audio/_StarHorizon/SoundCollection/ERTJuggernautSpeech/ExosuitSpech2.ogg
+  - /Audio/_StarHorizon/SoundCollection/ERTJuggernautSpeech/ExosuitSpech3.ogg
+  - /Audio/_StarHorizon/SoundCollection/ERTJuggernautSpeech/ExosuitSpech4.ogg
+  - /Audio/_StarHorizon/SoundCollection/ERTJuggernautSpeech/ExosuitSpech5.ogg
+  - /Audio/_StarHorizon/SoundCollection/ERTJuggernautSpeech/ExosuitSpech6.ogg
 
 - type: soundCollection
   id: ExosuitWalkERT
   files:
-  - /Audio/Aavikko/SoundCollection/ExosuitWalkERT/heavy_exosuit_walk1.ogg
-  - /Audio/Aavikko/SoundCollection/ExosuitWalkERT/heavy_exosuit_walk2.ogg
+  - /Audio/_StarHorizon/SoundCollection/ExosuitWalkERT/heavy_exosuit_walk1.ogg
+  - /Audio/_StarHorizon/SoundCollection/ExosuitWalkERT/heavy_exosuit_walk2.ogg

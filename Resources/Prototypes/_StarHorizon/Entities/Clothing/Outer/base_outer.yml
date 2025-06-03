@@ -9,14 +9,4 @@
       sprite: _StarHorizon/Clothing/Outer/blackhoodie.rsi
     - type: Clothing
       sprite: _StarHorizon/Clothing/Outer/blackhoodie.rsi
-
-# - type: entity
-#   parent: ClothingOuterCoatTrench
-#   id: ClothingOuterCoatTrenchBlack
-#   name: черный тренчкот
-#   description: Комфортный черный тренч.
-#   components:
-#   - type: Sprite
-#     sprite: Aavikko/Clothing/OuterClothing/Coats/trenchcoatb.rsi
-#   - type: Clothing
-#     sprite: Aavikko/Clothing/OuterClothing/Coats/trenchcoatb.rsi
+      
