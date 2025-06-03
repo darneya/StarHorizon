@@ -34,6 +34,8 @@ research-technology-mech-reactor = Экспериментальные реакт
 research-technology-basic-surgery = Базовая хирургия
 research-technology-advanced-surgery = Продвинутая хирургия
 
+research-technology-nekomimi = Технология некомими
+
 research-technology-basic-eye-implants = Базовые глазные импланты
 research-technology-cyber-night-vision = Имплант ночного зрения
 research-technology-protective-implants = Импланты защитного действия
