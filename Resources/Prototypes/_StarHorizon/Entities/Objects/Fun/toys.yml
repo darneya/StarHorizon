@@ -380,6 +380,22 @@
     sprite: _StarHorizon/Objects/Fun/plushiedivers.rsi
 
 - type: entity
+  parent: BasePlushie
+  id: PlushieBunnyx
+  name: плюшевый банникс
+  description: Милый плюшевый кролик.
+  suffix: StarHorizon
+  components:
+    - type: StaticPrice
+      price: 50
+    - type: Sprite
+      sprite: _StarHorizon/Objects/Fun/plushbunnyx.rsi
+      state: icon
+    - type: Item
+      size: Small
+      sprite: _StarHorizon/Objects/Fun/plushbunnyx.rsi
+
+- type: entity
   parent: BaseItem
   id: PlushieLemird
   name: плюшевая Лемирд
