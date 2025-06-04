@@ -206,6 +206,22 @@
 
 - type: entity
   parent: BasePlushie
+  id: PlushieFelFos
+  name: плюшевая фелинидка
+  description: Просто милая фелинидка, которая придушит вас своей милотой.
+  suffix: StarHorizon
+  components:
+  - type: StaticPrice
+    price: 50
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Fun/plushiefelfos.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _StarHorizon/Objects/Fun/plushiefelfos.rsi
+
+- type: entity
+  parent: BasePlushie
   id: PlushieAdv
   name: плюшевый авантюрист
   description: От него веет жаждой приключений и карпами. Еще на 30% мягче!
