@@ -35,6 +35,11 @@
   - OrganBioHeart
   - OrganBioLiver
   - OrganBioKidneys
+  - ClothingHeadHatBunny
+  - ClothingHeadHatCatEars
+  - ClothingHeadHatBunnyEars
+  - ClothingHeadHatDogEars
+  - ClothingHeadHatCatEarsRobot
 
 - type: latheRecipePack
   id: StarlightSurgeryLimbs

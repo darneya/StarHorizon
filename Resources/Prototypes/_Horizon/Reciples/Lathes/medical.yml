@@ -429,3 +429,45 @@
   completetime: 5
   materials:
     Plastic: 1500
+
+# Nekomimis
+
+- type: latheRecipe
+  id: ClothingHeadHatBunny
+  result: ClothingHeadHatBunny
+  category: Cyberlimbs
+  completetime: 5
+  materials:
+    Plastic: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatCatEars
+  result: ClothingHeadHatCatEars
+  category: Cyberlimbs
+  completetime: 5
+  materials:
+    Plastic: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatBunnyEars
+  result: ClothingHeadHatBunnyEars
+  category: Cyberlimbs
+  completetime: 5
+  materials:
+    Plastic: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatDogEars
+  result: ClothingHeadHatDogEars
+  category: Cyberlimbs
+  completetime: 5
+  materials:
+    Plastic: 500
+
+- type: latheRecipe
+  id: ClothingHeadHatCatEarsRobot
+  result: ClothingHeadHatCatEarsRobot
+  category: Cyberlimbs
+  completetime: 5
+  materials:
+    Plastic: 500

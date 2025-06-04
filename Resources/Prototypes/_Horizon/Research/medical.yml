@@ -39,6 +39,24 @@
 
 # Tier 2
 
+- type: technology
+  id: NekomimiTech
+  name: research-technology-nekomimi
+  icon:
+    sprite: Clothing/Head/Misc/bunny.rsi
+    state: icon
+  discipline: Biochemical
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - ClothingHeadHatBunny
+  - ClothingHeadHatCatEars
+  - ClothingHeadHatBunnyEars
+  - ClothingHeadHatDogEars
+  - ClothingHeadHatCatEarsRobot
+  technologyPrerequisites:
+  - CyberLimbsTech
+
 - type: technology # _DV Import
   id: SyringeGun
   name: research-technology-syringe-gun
