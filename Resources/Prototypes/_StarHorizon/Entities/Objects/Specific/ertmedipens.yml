@@ -1,6 +1,48 @@
 - type: entity
+  name: chemical medipen
+  parent: BaseItem
+  description: A sterile injector for rapid administration of drugs to patients. This one can't be refilled.
+  id: ChemicalMedipenERTJugg
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: firstaid
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: Item
+    sprite: Objects/Specific/Medical/medipen.rsi
+    size: Tiny
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 15
+  - type: ExaminableSolution
+    solution: pen
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 15
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: firstaid_empty
+  - type: Tag
+    tags:
+    - Trash
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  - type: SpaceGarbage
+  - type: StaticPrice
+    price: 75 # These are limited supply items.
+  - type: TrashOnSolutionEmpty
+    solution: pen
+
+- type: entity
   name: медипен "Израненный Страж"
-  parent: ChemicalMedipen
+  parent: ChemicalMedipenERTJugg
   id: ERTRedMedipen
   description: Устройство медицинского назначения для поддержания жизни в боевых условиях и лечения большинства видов повреждений.
   suffix: StarHorizon
@@ -55,7 +97,7 @@
 
 - type: entity
   name: медипен "Пламенный Ангел-Хранитель"
-  parent: ChemicalMedipen
+  parent: ChemicalMedipenERTJugg
   id: ERTOrangeMedipen
   description: Устройство медицинского назначения для лечения ожогов и легких повреждений полученных в бою.
   suffix: StarHorizon
@@ -116,7 +158,7 @@
 
 - type: entity
   name: медипен "Антиядный Комплекс"
-  parent: ChemicalMedipen
+  parent: ChemicalMedipenERTJugg
   id: ERTDarkMedipen
   description: Устройство медицинского назначения для лечеия ядов в организме.
   suffix: StarHorizon
@@ -163,7 +205,7 @@
 
 - type: entity
   name: медипен "Атомный Детокс"
-  parent: ChemicalMedipen
+  parent: ChemicalMedipenERTJugg
   id: ERTLightMedipen
   description: Устройство медицинского назначения для лечения повреждённых клеток из за радиационного облочения.
   suffix: StarHorizon
@@ -208,7 +250,7 @@
 
 - type: entity
   name: медипен "Тактический Корм"
-  parent: ChemicalMedipen
+  parent: ChemicalMedipenERTJugg
   id: ERTBrownMedipen
   description: Устройство для быстрого внутривенного питания.
   suffix: StarHorizon
