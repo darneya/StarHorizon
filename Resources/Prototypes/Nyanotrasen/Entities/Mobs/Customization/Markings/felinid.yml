@@ -6,7 +6,7 @@
   id: BunnyEarsBasic
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human]
+  speciesRestriction: [Human,Felinid]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/bunny_ears.rsi
     state: ears_bunny_outer
@@ -173,7 +173,7 @@
   id: BunnyTailBasic
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Human]
+  speciesRestriction: [Human,Felinid]
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/bunny_ears.rsi
     state: tail_bunny

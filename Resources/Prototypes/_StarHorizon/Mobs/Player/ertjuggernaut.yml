@@ -24,8 +24,8 @@
     prototypes: [ ERTJuggernautGearEVA ]
   - type: RandomMetadata
     nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+    - NamesMilitaryFirst
+    - NamesMilitaryLast
   - type: Speech
     speechSounds: JaggernautSpeech
   - type: MindShield
@@ -41,8 +41,8 @@
       state: ertjuggernaut
     - type: RandomMetadata
       nameSegments:
-      - NamesFirstMilitary
-      - NamesLastMilitary
+      - NamesMilitaryFirst
+      - NamesMilitaryLast
     - type: RandomHumanoidSpawner
       settings: ERTJuggernautSettings
     - type: Speech
