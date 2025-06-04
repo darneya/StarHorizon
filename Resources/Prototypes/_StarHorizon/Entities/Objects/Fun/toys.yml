@@ -208,7 +208,7 @@
   parent: BasePlushie
   id: PlushieFelFos
   name: плюшевая фелинидка
-  description: Просто милая фелинидка, которая придушит вас своей милотой.
+  description: Просто милая фелинидка, которой все лень заняться делом.
   suffix: StarHorizon
   components:
   - type: StaticPrice
