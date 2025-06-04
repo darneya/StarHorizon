@@ -1,0 +1,23 @@
+﻿- type: entity
+  parent: Katana
+  id: SoulСuttingKatana
+  name: катана разрезающая душу
+  description: Судя по всему это катана которая имеет странные символы... Возможно её не стоит трогать...
+  suffix: Horizon, катана синдиката.
+  components:
+  - type: SoulCuttingKatana
+  - type: Sprite
+    sprite: _Horizon/Objects/Weapons/Melee/soulkatana.rsi
+  - type: Item
+    size: Normal
+    sprite: _Horizon/Objects/Weapons/Melee/soulkatana.rsi
+  - type: MeleeWeapon
+    attackRate: 1
+    damage:
+      types:
+        Slash: 10
+    soundSwing: /Audio/_Horizon/Weapons/Melee/katanaswipe.ogg
+    soundHit: /Audio/_Horizon/Weapons/Melee/katanahit.ogg
+    wideAnimationRotation: -135
+  - type: Reflect
+    reflectProb: 0.1
