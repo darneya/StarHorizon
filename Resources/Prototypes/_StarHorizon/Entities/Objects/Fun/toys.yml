@@ -397,6 +397,41 @@
 
 - type: entity
   parent: BasePlushie
+  id: PlushieVoomra
+  name: плюшевый Вумра
+  description: Озлобленный. Одинокий. Погладьте его и накормите сыром!
+  components:
+  - type: StaticPrice
+    price: 50
+  - type: Sprite
+    sprite: _Horizon/Objects/Fun/voidtoys.rsi
+    state: plushie_voomra
+  - type: Item
+    size: Small
+    sprite: _Horizon/Objects/Fun/voidtoys.rsi
+    state: plushie_voomra
+  - type: PointLight
+    color: "#8f40ff"
+    radius: 1.5
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieRabbitVoid
+  name: плюшевый кролик
+  description: Очень милое крылатое создание!
+  components:
+  - type: StaticPrice
+    price: 50
+  - type: Sprite
+    sprite: _Horizon/Objects/Fun/voidtoys.rsi
+    state: plushie_rabbit
+  - type: Item
+    size: Small
+    sprite: _Horizon/Objects/Fun/voidtoys.rsi
+    state: plushie_rabbit
+
+- type: entity
+  parent: BasePlushie
   id: PlushieBunnyx
   name: плюшевый банникс
   description: Милый плюшевый кролик.
