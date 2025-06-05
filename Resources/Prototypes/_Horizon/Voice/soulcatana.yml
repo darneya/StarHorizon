@@ -1,0 +1,37 @@
+﻿- type: speechSounds
+  id: SoulCuttingSpech
+  saySound:
+    collection: SoulUserSaySpeech
+  askSound:
+    collection: SoulUserAskSpeech
+  exclaimSound:
+    collection: SoulUserExclaimSpeech
+
+- type: soundCollection
+  id: SoulUserSaySpeech
+  files:
+  - /Audio/_Horizon/SoundCollection/SoulUser/say1.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/say2.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/say3.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/say4.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/say5.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/say6.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/say7.ogg
+
+- type: soundCollection
+  id: SoulUserExclaimSpeech
+  files:
+  - /Audio/_Horizon/SoundCollection/SoulUser/exclaim1.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/exclaim2.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/exclaim3.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/exclaim4.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/exclaim5.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/exclaim6.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/exclaim7.ogg
+
+- type: soundCollection
+  id: SoulUserAskSpeech
+  files:
+  - /Audio/_Horizon/SoundCollection/SoulUser/ask1.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/ask2.ogg
+  - /Audio/_Horizon/SoundCollection/SoulUser/ask3.ogg
