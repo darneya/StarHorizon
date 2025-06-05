@@ -136,7 +136,7 @@ public sealed class MechForkSystem : EntitySystem
             Contents = GetNetEntityList(component.ItemContainer.ContainedEntities.ToList()),
             MaxContents = component.MaxContents
         };
-        args.States.Add(GetNetEntity(uid), state);
+        args.States[GetNetEntity(uid)] = state;
     }
 
     private void OnEquipped(EntityUid uid, MechForkComponent component, MechEquipmentEquippedAction args)
@@ -274,7 +274,7 @@ public sealed class MechForkSystem : EntitySystem
         if (TryComp<ContainerManagerComponent>(args.Args.Target, out var containerManager))
         {
             EntityCoordinates? coords = null;
-            if (TryComp(equipmentComponent.EquipmentOwner, out TransformComponent? xform)) 
+            if (TryComp(equipmentComponent.EquipmentOwner, out TransformComponent? xform))
                 coords = xform.Coordinates;
 
             List<EntityUid> toRemove = new();
