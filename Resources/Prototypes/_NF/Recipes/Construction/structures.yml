@@ -1,11 +1,11 @@
 - type: construction
-  name: reinforced secret door
+  name: усиленная потайная дверь
   id: SolidReinforcedSecretDoorConstruction
   graph: ReinforcedSecretDoorGraph
   startNode: start
   targetNode: ReinforcedSecretDoorNode
   category: construction-category-structures
-  description: A secret door for the wall.
+  description: Потайная дверь, встроенная в стену.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -16,13 +16,13 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: wood secret door
+  name: деревянная потайная дверь
   id: WoodSecretDoorConstruction
   graph: WoodSecretDoorGraph
   startNode: start
   targetNode: WoodSecretDoorNode
   category: construction-category-structures
-  description: A secret door for the wall.
+  description: Потайная дверь, встроенная в стену.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -33,13 +33,13 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: uranium secret door
+  name: урановая потайная дверь
   id: UraniumSecretDoorConstruction
   graph: UraniumSecretDoorGraph
   startNode: start
   targetNode: UraniumSecretDoorNode
   category: construction-category-structures
-  description: A secret door for the wall.
+  description: Потайная дверь, встроенная в стену.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -50,13 +50,13 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: shuttle secret door
+  name: шаттл-потайная дверь
   id: ShuttleSecretDoorConstruction
   graph: ShuttleSecretDoorGraph
   startNode: start
   targetNode: ShuttleSecretDoorNode
   category: construction-category-structures
-  description: A secret door for the wall.
+  description: Потайная дверь, встроенная в стену.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -67,13 +67,13 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: crate storage rack
+  name: стеллаж для ящиков
   id: CrateStorageRackConstruction
   graph: CrateStorageRack
   startNode: start
   targetNode: rack
   category: construction-category-structures
-  description: Capable of storing up to 4 crates at once, needs a power fork to insert or remove crates.
+  description: Вмещает до 4 ящиков одновременно, для загрузки/выгрузки требуется погрузчик.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
