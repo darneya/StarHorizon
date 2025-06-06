@@ -1,8 +1,8 @@
 # Beds
 - type: construction
   id: Mattres
-  name: mattress
-  description: Marginally preferable to sleeping on the floor.
+  name: матрас
+  description: Лучше спать на нём, чем на полу, я полагаю.
   graph: bedNF
   startNode: start
   targetNode: mattress
@@ -18,8 +18,8 @@
 
 - type: construction
   id: PsychBed
-  name: psychologist bed
-  description: An upholstered bed for the psychological care of patients.
+  name: кушетка психолога
+  description: Кровать с мягкой обивкой для оказания психологической помощи пациентам.
   graph: bedNF
   startNode: start
   targetNode: PsychBed
@@ -36,8 +36,8 @@
 # Seat
 - type: construction
   id: BenchSofaMiddle
-  name: sofa (middle)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: диван (cередина)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaMiddleNode
@@ -53,8 +53,8 @@
 
 - type: construction
   id: BenchSofaLeft
-  name: sofa (left)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: диван (лево)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaLeftNode
@@ -70,8 +70,8 @@
 
 - type: construction
   id: BenchSofaRight
-  name: sofa (right)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: диван (право)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaRightNode
@@ -87,8 +87,8 @@
 
 - type: construction
   id: BenchSofaCorner
-  name: sofa (corner)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: диван (угол)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaCornerNode
@@ -104,8 +104,8 @@
 
 - type: construction
   id: BenchSofaCorpMiddle
-  name: grey sofa (middle)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: серый диван (середина)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaCorpMiddleNode
@@ -121,8 +121,8 @@
 
 - type: construction
   id: BenchSofaCorpLeft
-  name: grey sofa (left)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: серый диван (лево)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaCorpLeftNode
@@ -138,8 +138,8 @@
 
 - type: construction
   id: BenchSofaCorpRight
-  name: grey sofa (right)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: серый диван (право)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaCorpRightNode
@@ -155,8 +155,8 @@
 
 - type: construction
   id: BenchSofaCorpCorner
-  name: grey sofa (corner)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: серый диван (угол)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaCorpCornerNode
@@ -172,8 +172,8 @@
 
 - type: construction
   id: BenchSteelMiddle
-  name: steel bench (middle)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: стальная скамейка (middle)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: BenchesGraph
   startNode: start
   targetNode: BenchSteelMiddleNode
@@ -189,8 +189,8 @@
 
 - type: construction
   id: BenchSteelRight
-  name: steel bench (right)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: стальная скамейка (right)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: BenchesGraph
   startNode: start
   targetNode: BenchSteelRightNode
@@ -206,8 +206,8 @@
 
 - type: construction
   id: BenchSteelLeft
-  name: steel bench (left)
-  description: Multiple seats spanning a single object. Truly a marvel of science.
+  name: стальная скамейка (left)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: BenchesGraph
   startNode: start
   targetNode: BenchSteelLeftNode
