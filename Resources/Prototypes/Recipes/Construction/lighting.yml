@@ -54,13 +54,13 @@
   objectType: Item
 
 - type: construction
-  name: black light tube
+  name: черная кристальная лампа-трубка
   id: BlackLight
   graph: BlackLight
   startNode: start
   targetNode: icon
   category: construction-category-utilities
-  description: A high powered light tube containing a black crystal. It won't be very bright.
+  description: Мощная лампа, внутри которой находится маленький цветной кристалл.
   icon: { sprite: Objects/Power/light_tube.rsi, state: normal }
   objectType: Item
 
@@ -142,13 +142,13 @@
   objectType: Item
 
 - type: construction
-  name: black light bulb
+  name: черная кристальная лампочка
   id: BlackLightBulb
   graph: BlackLightBulb
   startNode: start
   targetNode: icon
   category: construction-category-utilities
-  description: A high powered light bulb containing a black crystal. It won't be very bright.
+  description: Яркая лампочка с маленьким цветным кристаллом внутри.
   icon: { sprite: Objects/Power/light_bulb.rsi, state: normal }
   objectType: Item
 
