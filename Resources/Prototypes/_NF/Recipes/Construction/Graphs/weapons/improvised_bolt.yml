@@ -82,7 +82,7 @@
         amount: 1
         doAfter: 0.5
       - tag: Syringe
-        name: Syringe
+        name: шприц # Horizon
         icon:
           sprite: Objects/Specific/Chemistry/syringe.rsi
           state: syringe_base0
@@ -122,7 +122,7 @@
         amount: 1
         doAfter: 0.5
       - tag: ShellShotgun
-        name: Shotgun shell
+        name: патрон для дробовика # Horizon
         icon:
           sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
           state: base
@@ -206,7 +206,7 @@
         amount: 1
         doAfter: 0.5
       - tag: ShellShotgun
-        name: Shotgun shell
+        name: патрон для дробовика # Horizon
         icon:
           sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
           state: base

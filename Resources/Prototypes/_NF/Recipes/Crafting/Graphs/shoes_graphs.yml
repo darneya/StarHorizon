@@ -7,7 +7,7 @@
         - to: whoopiemod
           steps:
             - tag: ClownShoes
-              name: clown shoes
+              name: клоунские туфли # Horizon
               icon:
                 sprite: Clothing/Shoes/Specific/clown.rsi
                 state: icon
@@ -36,7 +36,7 @@
         - to: ketchupmod
           steps:
             - tag: ClownShoes
-              name: clown shoes
+              name: клоунские туфли # Horizon
               icon:
                 sprite: Clothing/Shoes/Specific/clown.rsi
                 state: icon
@@ -59,7 +59,7 @@
         - to: mustarchupmod
           steps:
             - tag: ClownShoes
-              name: clown shoes
+              name: клоунские туфли # Horizon
               icon:
                 sprite: Clothing/Shoes/Specific/clown.rsi
                 state: icon
@@ -88,7 +88,7 @@
         - to: ultimatemod
           steps:
             - tag: ClownShoes
-              name: clown shoes
+              name: клоунские туфли # Horizon
               icon:
                 sprite: Clothing/Shoes/Specific/clown.rsi
                 state: icon

@@ -21,7 +21,7 @@
   startNode: start
   targetNode: ClothingNeckPonchoWebNode
   category: construction-category-clothing
-  description: Как будто вас завернули в кокон, а потом такие: «А давай-ка добавим отверстия для конечностей!» — поздравляем, вы родились заново... и сразу стали иконой моды!
+  description: "Как будто вас завернули в кокон, а потом такие: «А давай-ка добавим отверстия для конечностей!» — поздравляем, вы родились заново... и сразу стали иконой моды!"
   entityWhitelist:
     tags:
     - SpiderCraft
@@ -37,7 +37,7 @@
   startNode: start
   targetNode: ClothingNeckCloakWebNode
   category: construction-category-clothing
-  description: Этот изысканный плащ намекает всем вокруг: вы не просто любите пауков, вы с ними на короткой ноге. Ну или на восьми.
+  description: "Этот изысканный плащ намекает всем вокруг: вы не просто любите пауков, вы с ними на короткой ноге. Ну или на восьми."
   entityWhitelist:
     tags:
     - SpiderCraft

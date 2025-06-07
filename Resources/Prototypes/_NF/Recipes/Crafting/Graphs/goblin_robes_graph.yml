@@ -21,13 +21,13 @@
         - to: ClothingOuterEVASuitGoblinNode
           steps:
             - tag: ClothingRobesGoblin
-              name: goblin traditional robes
+              name: роба гоблина # Horizon
               icon:
                 sprite: _NF/Clothing/OuterClothing/Coats/goblin_robes.rsi
                 state: icon
               doAfter: 10
             - tag: SuitEVA
-              name: EVA suit
+              name: EVA-скафандр # Horizon
               icon:
                 sprite: Clothing/OuterClothing/Suits/eva.rsi
                 state: icon
