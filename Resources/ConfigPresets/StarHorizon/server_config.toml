@@ -33,14 +33,14 @@ lobbyduration = 180
 fallbackpreset = "Extended"
 
 [hub]
-advertise = false
-#tags = "lang:ru,region:eu_e,rp:med"
-#server_url = "ss14://ss14.aavikko.ru:1212"
-## Wizard's Den hub
-#hub_urls = "https://hub.spacestation14.com/"
+advertise = true
+tags = "lang:ru,region:eu_e,rp:med"
+server_url = "ss14://ss14.starhorizon.ru:1212"
+# Wizard's Den hub
+hub_urls = "https://hub.spacestation14.com/"
 
 [server]
-rules_file = "DefaultRuleset"
+rules_file = "FrontierRuleset"
 lobby_name = "StarHorizon"
 
 [console]
