@@ -1,8 +1,8 @@
-# КРОВАТИ
+# Beds
 - type: construction
   id: Mattres
   name: матрас
-  description: Всё же лучше спать на нём, чем на полу.
+  description: Лучше спать на нём, чем на полу, я полагаю.
   graph: bedNF
   startNode: start
   targetNode: mattress
@@ -19,7 +19,7 @@
 - type: construction
   id: PsychBed
   name: кушетка психолога
-  description: Мягкая кушетка для сеансов психологической помощи.
+  description: Кровать с мягкой обивкой для оказания психологической помощи пациентам.
   graph: bedNF
   startNode: start
   targetNode: PsychBed
@@ -33,11 +33,11 @@
   conditions:
     - !type:TileNotBlocked
 
-  # СИДЕНЬЯ
+  # Seat
 - type: construction
   id: BenchSofaMiddle
-  name: диван (середина)
-  description: Несколько сидений в одном объекте. Истинное чудо техники.
+  name: диван (cередина)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaMiddleNode
@@ -53,8 +53,8 @@
 
 - type: construction
   id: BenchSofaLeft
-  name: диван (левая часть)
-  description: Несколько сидений в одном объекте. Истинное чудо техники.
+  name: диван (лево)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaLeftNode
@@ -70,8 +70,8 @@
 
 - type: construction
   id: BenchSofaRight
-  name: диван (правая часть)
-  description: Несколько сидений в одном объекте. Истинное чудо техники.
+  name: диван (право)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaRightNode
@@ -88,7 +88,7 @@
 - type: construction
   id: BenchSofaCorner
   name: диван (угол)
-  description: Несколько сидений в одном объекте. Истинное чудо техники.
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
   graph: SofasGraph
   startNode: start
   targetNode: BenchSofaCornerNode
@@ -102,18 +102,17 @@
   conditions:
     - !type:TileNotBlocked
 
-  # ДЕКОРАЦИИ
 - type: construction
-  id: Bonfire
-  name: костёр
-  description: Что может быть лучше вечера под открытым небом с гитарой и друзьями.
-  graph: FiresGraph
+  id: BenchSofaCorpMiddle
+  name: серый диван (середина)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: SofasGraph
   startNode: start
-  targetNode: BonfireNode
+  targetNode: BenchSofaCorpMiddleNode
   category: construction-category-furniture
   icon:
-    sprite: Structures/Decoration/bonfire.rsi
-    state: bonfire
+    sprite: _EE/Structures/Furniture/Benches/sofa_corp.rsi
+    state: middle
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -121,23 +120,312 @@
     - !type:TileNotBlocked
 
 - type: construction
-  id: Fireplace
-  name: камин
-  description: Уютное место с огнём.
-  graph: FiresGraph
+  id: BenchSofaCorpLeft
+  name: серый диван (лево)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: SofasGraph
   startNode: start
-  targetNode: FireplaceNode
+  targetNode: BenchSofaCorpLeftNode
   category: construction-category-furniture
   icon:
-    sprite: Structures/Decoration/fireplace.rsi
-    state: fireplace
+    sprite: _EE/Structures/Furniture/Benches/sofa_corp.rsi
+    state: left
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
 
-  # СКЛАДСКАЯ МЕБЕЛЬ
+- type: construction
+  id: BenchSofaCorpRight
+  name: серый диван (право)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: SofasGraph
+  startNode: start
+  targetNode: BenchSofaCorpRightNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/sofa_corp.rsi
+    state: right
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchSofaCorpCorner
+  name: серый диван (угол)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: SofasGraph
+  startNode: start
+  targetNode: BenchSofaCorpCornerNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/sofa_corp.rsi
+    state: corner
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchSteelMiddle
+  name: стальная скамейка (середина)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchSteelMiddleNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/steel_bench.rsi
+    state: middle
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchSteelRight
+  name: стальная скамейка (право)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchSteelRightNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/steel_bench.rsi
+    state: right
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchSteelLeft
+  name: стальная скамейка (лево)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchSteelLeftNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/steel_bench.rsi
+    state: left
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchPewMiddle
+  name: церковная скамья (середина)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchPewMiddleNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/pews.rsi
+    state: middle
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchPewRight
+  name: церковная скамья (право)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchPewRightNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/pews.rsi
+    state: right
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchPewLeft
+  name: церковная скамья (лево)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchPewLeftNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/pews.rsi
+    state: left
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchParkMiddle
+  name: парковая скамейка (середина)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchParkMiddleNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/parkbench_wooden.rsi
+    state: middle
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchParkRight
+  name: парковая скамейка (право)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchParkRightNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/parkbench_wooden.rsi
+    state: right
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchParkLeft
+  name: парковая скамейка (лево)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchParkLeftNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/parkbench_wooden.rsi
+    state: left
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchSteelWhiteMiddle
+  name: белая скамейка (середина)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchSteelWhiteMiddleNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/steel_bench_white.rsi
+    state: middle
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchSteelWhiteRight
+  name: белая скамейка (право)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchSteelWhiteRightNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/steel_bench_white.rsi
+    state: right
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchSteelWhiteLeft
+  name: белая скамейка (лево)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchSteelWhiteLeftNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/steel_bench_white.rsi
+    state: left
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchParkBambooMiddle
+  name: бамбуковая парковая скамейка (середина)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchParkBambooMiddleNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/parkbench_bamboo.rsi
+    state: middle
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchParkBambooRight
+  name: бамбуковая парковая скамейка (право)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchParkBambooRightNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/parkbench_bamboo.rsi
+    state: right
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BenchParkBambooLeft
+  name: бамбуковая парковая скамейка (лево)
+  description: Множество мест, объединенных в один объект. Воистину чудо техники.
+  graph: BenchesGraph
+  startNode: start
+  targetNode: BenchParkBambooLeftNode
+  category: construction-category-furniture
+  icon:
+    sprite: _EE/Structures/Furniture/Benches/parkbench_bamboo.rsi
+    state: left
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+  # Storage
 - type: construction
   id: LockerWoodenGeneric
   name: деревянный шкаф
@@ -155,11 +443,712 @@
   conditions:
     - !type:TileNotBlocked
 
-  # СКЛАДНЫЕ СТОЛЫ
+  # Decorations (bonfire, fireplace)
+- type: construction
+  id: Bonfire
+  name: костер
+  description: Что может быть лучше, чем поздний вечер под открытым небом с гитарой и друзьями.
+  graph: FiresGraph
+  startNode: start
+  targetNode: BonfireNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Decoration/bonfire.rsi
+    state: bonfire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: Fireplace
+  name: камин
+  description: Место, где есть огонь. Уютно!
+  graph: FiresGraph
+  startNode: start
+  targetNode: FireplaceNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Decoration/fireplace.rsi
+    state: fireplace
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+  # Banners
+- type: construction
+  id: BannerNanotrasen
+  name: баннер Nanotrasen
+  description: Баннер с логотипом Nanotrasen.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerNanotrasenNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerCargo
+  name: баннер карго
+  description: Баннер с цветами отдела снабжения.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerCargoNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner_cargo
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerEngineering
+  name: баннер инженерного отдела
+  description: Баннер с цветами инженерного отдела.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerEngineeringNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner_engineering
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerMedical
+  name: баннер медицинского отдела
+  description: Баннер с цветами медицинского отдела.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerMedicalNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner_medical
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerScience
+  name: баннер научного отдела
+  description: Баннер с цветами научного отдела.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerScienceNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner_science
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerSecurity
+  name: баннер службы безопасности
+  description: Баннер с цветами службы безопасности.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerSecurityNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner_security
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerBlue
+  name: синий баннер
+  description: Баннер синего цвета.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerBlueNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner-blue
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerRed
+  name: красный баннер
+  description: Баннер красного цвета.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerRedNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner-red
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerYellow
+  name: желтый баннер
+  description: Баннер желтого цвета.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerYellowNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner-yellow
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerGreen
+  name: зеленый баннер
+  description: Баннер зеленого цвета.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerGreenNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner-green
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerRevolution
+  name: баннер революции
+  description: Баннер революции. Вива!
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerRevolutionNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner_revolution
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerSyndicate
+  name: баннер Синдиката
+  description: Баннер, от которого, по замыслу Синдиката, у вас должна возникнуть ненависть к NT.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerSyndicateNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner_syndicate
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerGoblin01
+  name: баннер гоблинов
+  description: Баннер с древним логотипом гоблинов.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerGoblin01
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner_goblin
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: BannerFsb
+  name: баннер FSB
+  description: Баннер с символом корпорации Far Star Biotech.
+  graph: BannersGraph
+  startNode: start
+  targetNode: BannerFsb
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Decoration/banner.rsi
+    state: banner-fsb
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+
+  # Altars
+- type: construction
+  id: AltarToolbox
+  name: алтарь из ящика для инструментов
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarToolboxNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+    state: toolbox
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarConvertMaint
+  name: алтарь техобслуживания
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarConvertMaintNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
+    state: maint
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarConvertBlue
+  name: синий алтарь
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarConvertBlueNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
+    state: blue
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarConvertBurden
+  name: алтарь бремени
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarConvertBurdenNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
+    state: convertaltar
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarConvertYellow
+  name: желтый алтарь
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarConvertYellowNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
+    state: yellow
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarConvertRed
+  name: красный алтарь
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarConvertRedNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
+    state: red
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarConvertWhite
+  name: белый алтарь
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarConvertWhiteNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
+    state: white
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarConvertOrange
+  name: оранжевый алтарь
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarConvertOrangeNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
+    state: orange
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarTechnology
+  name: технологический алтарь
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarTechnologyNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+    state: technology
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarNanotrasen
+  name: алтарь Nanotrasen
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarNanotrasenNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+    state: nanotrasen
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarChaos
+  name: алтарь хаоса
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarChaosNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+    state: chaos
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarDruid
+  name: алтарь друидов
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarDruidNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+    state: druid
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarSpaceChristian
+  name: космо-христианский алтарь
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarSpaceChristianNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+    state: space-christian
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarSatana
+  name: сатанинский алтарь
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarSatanaNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/nanotrasen.rsi
+    state: satana
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarConvertFestival
+  name: праздничный алтарь
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarConvertFestivalNode
+  category: construction-category-furniture
+  icon:
+    sprite: Structures/Furniture/Altars/Gods/convertaltar.rsi
+    state: festival
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: AltarMail
+  name: алтарь почты
+  description: Алтарь Богов.
+  graph: AltarsGraph
+  startNode: start
+  targetNode: AltarMailNode
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Furniture/Altars/Gods/convertaltar.rsi
+    state: mail
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ChairWoodFancyBlack
+  name: изысканный черный стул
+  description: Стул, но изысканный.
+  graph: Seat
+  startNode: start
+  targetNode: chairWoodFancyBlack
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Furniture/chairs.rsi
+    state: wooden_fancy-black
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ChairWoodFancyBlue
+  name: изысканный синий стул
+  description: Стул, но изысканный.
+  graph: Seat
+  startNode: start
+  targetNode: chairWoodFancyBlue
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Furniture/chairs.rsi
+    state: wooden_fancy-blue
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ChairWoodFancyCyan
+  name: изысканный бирюзовый стул
+  description: Стул, но изысканный.
+  graph: Seat
+  startNode: start
+  targetNode: chairWoodFancyCyan
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Furniture/chairs.rsi
+    state: wooden_fancy-cyan
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ChairWoodFancyGreen
+  name: изысканный зеленый стул
+  description: Стул, но изысканный.
+  graph: Seat
+  startNode: start
+  targetNode: chairWoodFancyGreen
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Furniture/chairs.rsi
+    state: wooden_fancy-green
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ChairWoodFancyOrange
+  name: изысканный оранжевый стул
+  description: Стул, но изысканный.
+  graph: Seat
+  startNode: start
+  targetNode: chairWoodFancyOrange
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Furniture/chairs.rsi
+    state: wooden_fancy-orange
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ChairWoodFancyPink
+  name: изысканный розовый стул
+  description: Стул, но изысканный.
+  graph: Seat
+  startNode: start
+  targetNode: chairWoodFancyPink
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Furniture/chairs.rsi
+    state: wooden_fancy-pink
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ChairWoodFancyPurple
+  name: изысканный фиолетовый стул
+  description: Стул, но изысканный.
+  graph: Seat
+  startNode: start
+  targetNode: chairWoodFancyPurple
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Furniture/chairs.rsi
+    state: wooden_fancy-purple
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ChairWoodFancyRed
+  name: изысканный красный стул
+  description: Стул, но изысканный.
+  graph: Seat
+  startNode: start
+  targetNode: chairWoodFancyRed
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Furniture/chairs.rsi
+    state: wooden_fancy-red
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ChairWoodFancyWhite
+  name: изысканный белый стул
+  description: Стул, но изысканный.
+  graph: Seat
+  startNode: start
+  targetNode: chairWoodFancyWhite
+  category: construction-category-furniture
+  icon:
+    sprite: _NF/Structures/Furniture/chairs.rsi
+    state: wooden_fancy-white
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+  # Folding table
 - type: construction
   id: TableFolding
   name: складной стол
-  description: Обычный стол, но складной.
+  description: Стол, но складной.
   graph: TableFoldingGraph
   startNode: start
   targetNode: TableFolding
