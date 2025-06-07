@@ -1,11 +1,11 @@
 - type: construction
-  name: crass knuckles
+  name: грубые кастеты
   id: CrassKnuckles
   graph: GraphWeaponBrassKnucklesWhoopie
   startNode: start
   targetNode: WeaponBrassKnucklesWhoopie
   category: construction-category-weapons
-  description: Questionably silent, questionably deadly.
+  description: Подозрительно тихие, подозрительно смертоносные.
   icon:
     sprite: _NF/Objects/Weapons/Melee/crassknuckles.rsi
     state: icon
