@@ -1,7 +1,7 @@
 - type: radioChannel
   id: Traffic
   name: chat-radio-traffic
-  keycode: 'в' # Horizon
+  keycode: 'т' # Horizon
   frequency: 1022
   color: "#CC6633"
 
