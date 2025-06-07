@@ -27,7 +27,7 @@
       - !type:EntityAnchored {}
       steps:
       - tag: Toolbox
-        name: toolbox (any)
+        name: тулбокс (любой) # Horizon
         store: altar_component
         icon:
           sprite: Objects/Tools/Toolboxes/toolbox_blue.rsi
@@ -42,13 +42,13 @@
       - !type:EntityAnchored {}
       steps:
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle1
         icon:
           sprite: Objects/Misc/candles.rsi
           state: candle-big
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle2
         icon:
           sprite: Objects/Misc/candles.rsi
@@ -63,19 +63,19 @@
       - !type:EntityAnchored {}
       steps:
       - component: FireExtinguisher
-        name: fire extinguisher
+        name: огнетушитель # Horizon
         store: altar_component
         icon:
           sprite: _NF/Objects/Misc/fire_extinguisher.rsi # Frontier
           state: fire_extinguisher_closed
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle1
         icon:
           sprite: Objects/Misc/candles.rsi
           state: candle-big
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle2
         icon:
           sprite: Objects/Misc/candles.rsi
@@ -90,19 +90,19 @@
       - !type:EntityAnchored {}
       steps:
       - component: PriceGun
-        name: appraisal tool
+        name: оценочный инструмент # Horizon
         store: altar_component
         icon:
           sprite: Objects/Tools/appraisal-tool.rsi
           state: icon
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle1
         icon:
           sprite: Objects/Misc/candles.rsi
           state: candle-big
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle2
         icon:
           sprite: Objects/Misc/candles.rsi
@@ -117,19 +117,19 @@
       - !type:EntityAnchored {}
       steps:
       - component: RandomFillSolution
-        name: strange pill
+        name: подозрительная таблетка
         store: altar_component
         icon:
           sprite: Objects/Specific/Chemistry/pills.rsi
           state: pill1
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle1
         icon:
           sprite: Objects/Misc/candles.rsi
           state: candle-big
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle2
         icon:
           sprite: Objects/Misc/candles.rsi
@@ -144,19 +144,19 @@
       - !type:EntityAnchored {}
       steps:
       - tag: Ore
-        name: raw ore (any)
+        name: сырая руда (любая) # Horizon
         store: altar_component
         icon:
           sprite: Objects/Materials/ore.rsi
           state: iron
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle1
         icon:
           sprite: Objects/Misc/candles.rsi
           state: candle-big
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle2
         icon:
           sprite: Objects/Misc/candles.rsi
@@ -171,19 +171,19 @@
       - !type:EntityAnchored {}
       steps:
       - component: Sharp
-        name: sharp melee weapon (any)
+        name: острое оружие ближнего боя (любое) # Horizon
         store: altar_component
         icon:
           sprite: Objects/Weapons/Melee/captain_sabre.rsi
           state: icon
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle1
         icon:
           sprite: Objects/Misc/candles.rsi
           state: candle-big
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle2
         icon:
           sprite: Objects/Misc/candles.rsi
@@ -198,20 +198,20 @@
       - !type:EntityAnchored {}
       steps:
       - tag: CrystalOrange
-        name: orange crystal shard
+        name: оранжевый осколок кристалла # Horizon
         store: altar_component
         icon:
           sprite: Objects/Materials/Shards/crystal.rsi
           state: shard1
           color: "#ff8227"
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle1
         icon:
           sprite: Objects/Misc/candles.rsi
           state: candle-big
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle2
         icon:
           sprite: Objects/Misc/candles.rsi
@@ -220,13 +220,14 @@
         store: altar_cloth
         amount: 3
         doAfter: 2
+
 # Technology
     - to: AltarTechnologyNode
       conditions:
       - !type:EntityAnchored {}
       steps:
       - component: MachineBoard
-        name: machine board (any)
+        name: машинная плата (любая) # Horizon
         store: altar_component
         icon:
           sprite: Objects/Misc/module.rsi
@@ -241,7 +242,7 @@
       - !type:EntityAnchored {}
       steps:
       - component: IdCard
-        name: ID card (any)
+        name: айди карта (любая) # Horizon
         store: altar_component
         icon:
           sprite: Objects/Misc/id_cards.rsi
@@ -256,7 +257,7 @@
       - !type:EntityAnchored {}
       steps:
       - component: Dice
-        name: dice (any)
+        name: кубик (любой) # Horizon
         store: altar_component
         icon:
           sprite: Objects/Fun/dice.rsi
@@ -271,7 +272,7 @@
       - !type:EntityAnchored {}
       steps:
       - component: Seed
-        name: seed (any)
+        name: пакет семян (любой) # Horizon
         store: altar_component
         icon:
           sprite: Objects/Specific/Hydroponics/seeds.rsi
@@ -286,7 +287,7 @@
       - !type:EntityAnchored {}
       steps:
       - component: TabletopGame
-        name: tabletop battlemap (any)
+        name: карта боя (любая) # Horizon
         store: altar_component
         icon:
           sprite: Objects/Fun/Tabletop/Battlemaps/shipbm.rsi
@@ -301,7 +302,7 @@
       - !type:EntityAnchored {}
       steps:
       - component: Instrument
-        name: musical instrument (any)
+        name: музыкальный инструмент (любой) # Horizon
         store: altar_component
         icon:
           sprite: Objects/Fun/Instruments/eguitar.rsi
@@ -316,7 +317,7 @@
       - !type:EntityAnchored {}
       steps:
       - component: Mail
-        name: mail (any)
+        name: письмо (любое) # Horizon
         store: altar_component
         icon:
           sprite: Nyanotrasen/Objects/Specific/Mail/mail.rsi
@@ -337,13 +338,13 @@
           sprite: Objects/Specific/Chapel/bible.rsi
           state: icon
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle1
         icon:
           sprite: Objects/Misc/candles.rsi
           state: candle-big
       - component: ExtinguishOnInteract # Not exclusive to candles I believe, but it's something that narrows down the list
-        name: candle (any)
+        name: свеча (любая) # Horizon
         store: altar_candle2
         icon:
           sprite: Objects/Misc/candles.rsi

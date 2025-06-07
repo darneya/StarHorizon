@@ -1,11 +1,11 @@
 - type: construction
-  name: festive ghost streamers
+  name: праздничные гирлянды-призраки
   id: PaintingGhostHangingConstruction
   graph: PaintingGhostHangingGraph
   startNode: start
   targetNode: PaintingGhostHangingNode
   category: construction-category-misc
-  description: Decorative wall streamers! They look like the people you've lost to the void!
+  description: Декоративные настенные гирлянды! Выглядят как люди, потерянные в пустоте!
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -14,13 +14,13 @@
     state: painting_ghost
 
 - type: construction
-  name: festive bat streamers
+  name: праздничные гирлянды-летучие мыши
   id: PaintingBatHangingConstruction
   graph: PaintingBatHangingGraph
   startNode: start
   targetNode: PaintingBatHangingNode
   category: construction-category-misc
-  description: Decorative wall streamers! Bats are scary and also important pollinators!
+  description: Декоративные настенные гирлянды! Летучие мыши страшные, но и важные опылители!
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -29,17 +29,16 @@
     state: painting_bat
 
 - type: construction
-  name: festive pumpkin streamers
+  name: праздничные гирлянды-тыквы
   id: PaintingPumpkinHangingConstruction
   graph: PaintingPumpkinHangingGraph
   startNode: start
   targetNode: PaintingPumpkinHangingNode
   category: construction-category-misc
-  description: Decorative wall streamers! It's decorative gourd season!
+  description: Декоративные настенные гирлянды! Сезон декоративных тыкв!
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
   icon:
     sprite: _NF/Structures/Wallmounts/paintings_directional.rsi
     state: painting_pumpkin
-

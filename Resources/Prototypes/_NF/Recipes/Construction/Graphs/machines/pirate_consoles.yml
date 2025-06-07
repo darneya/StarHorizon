@@ -8,7 +8,7 @@
     - to: repaired
       steps: &pirateRepairToolboxSteps
       - component: NFPirateToolbox
-        name: pirate repair toolbox
+        name: пиратский ремонтный тулбокс # Horizon
         icon:
           sprite: "Objects/Misc/module.rsi"
           state: "id_mod"

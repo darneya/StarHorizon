@@ -22,7 +22,7 @@
           steps:
             - component: ComputerWallmountBoard
               store: board
-              name: any wallmount computer circuit board
+              name: любая плата настенного компьютера # Horizon
               icon:
                 sprite: "Objects/Misc/module.rsi"
                 state: "id_mod"

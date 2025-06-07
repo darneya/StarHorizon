@@ -24,7 +24,7 @@
           steps:
             - component: ComputerTabletopBoard
               store: board
-              name: any tabletop computer circuit board
+              name: любая плата настенного компьютера # Horizon
               icon:
                 sprite: "Objects/Misc/module.rsi"
                 state: "id_mod"

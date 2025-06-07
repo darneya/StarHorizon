@@ -1,8 +1,8 @@
-#bureaucracy
+# БЮРОКРАТИЯ
 - type: construction
   id: FilingCabinet
-  name: filing cabinet
-  description: A cabinet for all your filing needs.
+  name: картотечный шкаф
+  description: Шкаф для всех ваших документов.
   graph: FilingCabinet
   startNode: start
   targetNode: filingCabinet
@@ -18,8 +18,8 @@
 
 - type: construction
   id: TallCabinet
-  name: tall cabinet
-  description: A cabinet for all your filing needs.
+  name: высокий шкаф
+  description: Шкаф для всех ваших документов.
   graph: FilingCabinet
   startNode: start
   targetNode: tallCabinet
@@ -35,8 +35,8 @@
 
 - type: construction
   id: ChestDrawer
-  name: chest drawer
-  description: A small drawer for all your filing needs, Now with wheels!
+  name: комод на колёсиках
+  description: Небольшой ящик для документов. Теперь с колёсиками!
   graph: FilingCabinet
   startNode: start
   targetNode: chestDrawer
@@ -50,11 +50,11 @@
   conditions:
     - !type:TileNotBlocked
 
-# ItemCabinets
+  # ВИТРИНЫ
 - type: construction
   id: ShowCase
-  name: showcase
-  description: A sturdy showcase for an expensive exhibit.
+  name: витрина
+  description: Прочная витрина для ценных экспонатов.
   graph: GlassBox
   startNode: start
   targetNode: glassBox
@@ -68,12 +68,12 @@
   conditions:
     - !type:TileNotBlocked
 
-# Shelfs
-# Normals
+    # ПОЛКИ
+  # Обычные
 - type: construction
   id: ShelfWood
-  name: wooden shelf
-  description: A convenient place to place, well, anything really.
+  name: деревянная полка
+  description: Удобное место для хранения чего угодно.
   graph: Shelf
   startNode: start
   targetNode: ShelfWood
@@ -88,8 +88,8 @@
 
 - type: construction
   id: ShelfMetal
-  name: metal shelf
-  description: A sturdy place to place, well, anything really.
+  name: металлическая полка
+  description: Прочное место для хранения чего угодно.
   graph: Shelf
   startNode: start
   targetNode: ShelfMetal
@@ -104,8 +104,8 @@
 
 - type: construction
   id: ShelfGlass
-  name: glass shelf
-  description: Just like a normal shelf! But fragile and without the walls!
+  name: стеклянная полка
+  description: Как обычная полка, но хрупкая и без стенок!
   graph: Shelf
   startNode: start
   targetNode: ShelfGlass
@@ -118,11 +118,11 @@
   conditions:
     - !type:WallmountCondition
 
-# Reinforced
+  # Усиленные
 - type: construction
   id: ShelfRWood
-  name: sturdy wooden shelf
-  description: The perfect place to store all your vintage records.
+  name: прочная деревянная полка
+  description: Идеальное место для хранения ваших виниловых пластинок.
   graph: Shelf
   startNode: start
   targetNode: ShelfRWood
@@ -137,8 +137,8 @@
 
 - type: construction
   id: ShelfRMetal
-  name: sturdy metal shelf
-  description: Nice and strong, and keeps your maints loot secure.
+  name: прочная металлическая полка
+  description: Надёжная и крепкая - сохранит ваши трофеи от инженеров.
   graph: Shelf
   startNode: start
   targetNode: ShelfRMetal
@@ -153,8 +153,8 @@
 
 - type: construction
   id: ShelfRGlass
-  name: sturdy glass shelf
-  description: See through, decent strength, shiny plastic case. Whats not to love?
+  name: прочная стеклянная полка
+  description: Прозрачная, достаточно крепкая, с блестящим пластиковым корпусом. Что ещё нужно?
   graph: Shelf
   startNode: start
   targetNode: ShelfRGlass
@@ -167,11 +167,11 @@
   conditions:
     - !type:WallmountCondition
 
-# Departmental
+  # Отделенческие
 - type: construction
   id: ShelfBar
-  name: bar shelf
-  description: A convenient place for all your extra booze, specifically designed to hold more bottles!
+  name: барная полка
+  description: Специально разработана для хранения дополнительных алкогольных напитков - вмещает больше бутылок!
   graph: Shelf
   startNode: start
   targetNode: ShelfBar
@@ -186,8 +186,8 @@
 
 - type: construction
   id: ShelfKitchen
-  name: kitchen shelf
-  description: Holds your knifes, spice, and everything nice!
+  name: кухонная полка
+  description: Для ножей, специй и всего вкусного!
   graph: Shelf
   startNode: start
   targetNode: ShelfKitchen
@@ -202,8 +202,8 @@
 
 - type: construction
   id: ShelfChemistry
-  name: chemical shelf
-  description: Perfect for keeping the most important chemicals safe, and out of the clumsy clowns hands!
+  name: химическая полка
+  description: Идеальна для безопасного хранения важных реактивов подальше от неуклюжих клоунов!
   graph: Shelf
   startNode: start
   targetNode: ShelfChemistry
