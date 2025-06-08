@@ -30,3 +30,25 @@
     Telecrystal: 14
   categories:
   - UplinkWeaponry
+
+- type: listing
+  id: UplinkBarrettBundle
+  name: Набор тяжёлой винтовки
+  description: Крупнокалиберная винтовка, использующая современный калибр .70. Данная винтовка не имеет никаких нюансов, может быть взведена и использована в любой момент. Лучше взять её в обе руки перед выстрелом, поставляется в чехле под гитары с тремя магазинами, и очками в подарок.
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Snipers/barrettm82.rsi, state: base }
+  productEntity: GuitarCaseSyndicate
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkWeaponMakarov
+  name: Макаров
+  description: По-настоящему классическое и надежное огнестрельное оружие, был создан для самообороны и военного использования. Этот компактный пистолет использует патроны калибра 9x18 мм, сочетая в себе простоту, удобство ношения и непревзойденную надежность.
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: base }
+  productEntity: BaseWeaponMakarov
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkWeaponry
