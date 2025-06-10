@@ -2,9 +2,9 @@
   id: DisplacedStencilDraw
   kind: source
   path: "/Textures/Shaders/displacement.swsl"
-  stencil:
-    ref: 1
-    op: Keep
-    func: NotEqual
+  #stencil:
+    #ref: 1
+    #op: Keep
+    #func: NotEqual
   params:
     displacementSize: 127
