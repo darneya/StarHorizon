@@ -8,7 +8,7 @@
 - type: radioChannel
   id: Nfsd
   name: chat-radio-nfsd
-  keycode: 'ы' # Horizon
+  keycode: 'ш' # Horizon
   frequency: 1023
   color: "#7eac69"
 
