@@ -1,12 +1,12 @@
 - type: construction
-  name: glorious order of the frontier, 1st class
+  name: славный орден границы 1-й степени
   id: GloriousOrder
   graph: ClothingNeckMedalGloriousOrder
   startNode: start
   targetNode: GloriousOrder
   category: construction-category-utilities
   objectType: Item
-  description: Surely more medals means more achievements.
+  description: За недвусмысленную предприимчивость и мрачность против неисправимого правдоподобия.
   icon:
     sprite: _NF/Clothing/Neck/Medals/glorious_order.rsi
     state: icon

@@ -1,11 +1,11 @@
 - type: construction
-  name: notice board
+  name: настенная доска объявлений
   id: NoticeBoardNFWallmountedConstruction
   graph: NoticeBoardNFGraph
   startNode: start
   targetNode: NoticeBoardNFNode
   category: construction-category-structures
-  description: A wallmounted notice board.
+  description: Настенная доска для размещения объявлений.
   objectType: Structure
   placementMode: SnapgridCenter
   icon:

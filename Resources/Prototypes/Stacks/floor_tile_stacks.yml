@@ -1,636 +1,636 @@
 ﻿- type: stack
   id: FloorTileDark
-  name: dark tile
+  name: тёмная плитка # Horizon
   spawn: FloorTileItemDark
   maxCount: 30
 
 - type: stack
   id: FloorTileDarkDiagonalMini
-  name: dark steel diagonal mini tile
+  name: тёмная стальная диагональная мини плитка # Horizon
   spawn: FloorTileItemDarkDiagonalMini
   maxCount: 30
 
 - type: stack
   id: FloorTileDarkDiagonal
-  name: dark steel diagonal tile
+  name: тёмная стальная диагональная плитка # Horizon
   spawn: FloorTileItemDarkDiagonal
   maxCount: 30
 
 - type: stack
   id: FloorTileDarkHerringbone
-  name: dark steel herringbone
+  name: тёмная стальная плитка ёлочкой # Horizon
   spawn: FloorTileItemDarkHerringbone
   maxCount: 30
 
 - type: stack
   id: FloorTileDarkMini
-  name: dark steel mini tile
+  name: тёмная стальная мини плитка # Horizon
   spawn: FloorTileItemDarkMini
   maxCount: 30
 
 - type: stack
   id: FloorTileDarkMono
-  name: dark steel mono tile
+  name: тёмная стальная моно плита # Horizon
   spawn: FloorTileItemDarkMono
   maxCount: 30
 
 - type: stack
   id: FloorTileDarkPavement
-  name: dark steel pavement
+  name: тёмная стальная тротуарная плитка # Horizon
   spawn: FloorTileItemDarkPavement
   maxCount: 30
 
 - type: stack
   id: FloorTileDarkPavementVertical
-  name: dark steel vertical pavement
+  name: тёмная стальная вертикальная тротуарная плитка # Horizon
   spawn: FloorTileItemDarkPavementVertical
   maxCount: 30
 
 - type: stack
   id: FloorTileDarkOffset
-  name: offset dark steel tile
+  name: тёмная смещёная стальная плитка # Horizon
   spawn: FloorTileItemDarkOffset
   maxCount: 30
 
 - type: stack
   id: FloorTileSteel
-  name: steel tile
+  name: стальная плитка # Horizon
   spawn: FloorTileItemSteel
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelOffset
-  name: offset steel tile
+  name: смещёная стальная плитка # Horizon
   spawn: FloorTileItemSteelOffset
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelDiagonalMini
-  name: steel diagonal mini tile
+  name: стальная диагональная мини плитка # Horizon
   spawn: FloorTileItemSteelDiagonalMini
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelDiagonal
-  name: steel diagonal tile
+  name: стальная диагональная плитка # Horizon
   spawn: FloorTileItemSteelDiagonal
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelHerringbone
-  name: steel herringbone
+  name: стальная плитка ёлочкой # Horizon
   spawn: FloorTileItemSteelHerringbone
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelMini
-  name: steel mini tile
+  name: стальная мини плитка # Horizon
   spawn: FloorTileItemSteelMini
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelMono
-  name: steel mono tile
+  name: стальная моно плита # Horizon
   spawn: FloorTileItemSteelMono
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelPavement
-  name: steel pavement
+  name: стальная тротуарная плитка # Horizon
   spawn: FloorTileItemSteelPavement
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelPavementVertical
-  name: steel vertical pavement
+  name: стальная вертикальная тротуарная плитка # Horizon
   spawn: FloorTileItemSteelPavementVertical
   maxCount: 30
 
 - type: stack
   id: FloorTileWhite
-  name: white tile
+  name: белая плитка # Horizon
   spawn: FloorTileItemWhite
   maxCount: 30
 
 - type: stack
   id: FloorTileWhiteOffset
-  name: offset white steel tile
+  name: смещёная белая стальная плитка # Horizon
   spawn: FloorTileItemWhiteOffset
   maxCount: 30
 
 - type: stack
   id: FloorTileWhiteDiagonalMini
-  name: white steel diagonal mini tile
+  name: белая стальная диагональная мини плитка # Horizon
   spawn: FloorTileItemWhiteDiagonalMini
   maxCount: 30
 
 - type: stack
   id: FloorTileWhiteDiagonal
-  name: white steel diagonal tile
+  name: белая стальная диагональная плитка # Horizon
   spawn: FloorTileItemWhiteDiagonal
   maxCount: 30
 
 - type: stack
   id: FloorTileWhiteHerringbone
-  name: white steel herringbone
+  name: белая стальная плитка ёлочкой # Horizon
   spawn: FloorTileItemWhiteHerringbone
   maxCount: 30
 
 - type: stack
   id: FloorTileWhiteMini
-  name: white steel mini tile
+  name: белая стальная мини плитка # Horizon
   spawn: FloorTileItemWhiteMini
   maxCount: 30
 
 - type: stack
   id: FloorTileWhiteMono
-  name: white steel mono tile
+  name: белая стальная моно плита # Horizon
   spawn: FloorTileItemWhiteMono
   maxCount: 30
 
 - type: stack
   id: FloorTileWhitePavement
-  name: white steel pavement
+  name: белая стальная тротуарная плитка # Horizon
   spawn: FloorTileItemWhitePavement
   maxCount: 30
 
 - type: stack
   id: FloorTileWhitePavementVertical
-  name: white steel vertical pavement
+  name: белая стальная вертикальная тротуарная плитка # Horizon
   spawn: FloorTileItemWhitePavementVertical
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelCheckerDark
-  name: steel dark checker tile
+  name: тёмная стальная плитка шашечками # Horizon
   spawn: FloorTileItemSteelCheckerDark
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelCheckerLight
-  name: steel light checker tile
+  name: светлая стальная плитка шашечками # Horizon
   spawn: FloorTileItemSteelCheckerLight
   maxCount: 30
 
 - type: stack
   id: FloorTileMetalDiamond
-  name: steel tile
+  name: стальная плитка # Horizon
   spawn: FloorTileItemMetalDiamond
   maxCount: 30
 
 - type: stack
   id: FloorTileWood
-  name: wood floor
+  name: деревянный пол # Horizon
   spawn: FloorTileItemWood
   maxCount: 30
 
 - type: stack
   id: FloorTileTechmaint
-  name: techmaint floor
+  name: технический пол # Horizon
   spawn: FloorTileItemTechmaint
   maxCount: 30
 
 - type: stack
   id: FloorTileFreezer
-  name: freezer tile
+  name: плитка морозильника # Horizon
   spawn: FloorTileItemFreezer
   maxCount: 30
 
 - type: stack
   id: FloorTileShowroom
-  name: showroom tile
+  name: плитка выставочного зала # Horizon
   spawn: FloorTileItemShowroom
   maxCount: 30
 
 - type: stack
   id: FloorTileGCircuit
-  name: green-circuit floor
+  name: плитка зелёных микросхем # Horizon
   spawn: FloorTileItemGCircuit
   maxCount: 30
 
 - type: stack
   id: FloorTileGold
-  name: gold floor
+  name: золотая плитка # Horizon
   spawn: FloorTileItemGold
   maxCount: 30
 
 - type: stack
   id: FloorTileMono
-  name: mono tile
+  name: моно плитка # Horizon
   spawn: FloorTileItemMono
   maxCount: 30
 
 - type: stack
   id: FloorTileBrassFilled
-  name: filled brass plate
+  name: заполненная латунная плитка # Horizon
   spawn: FloorTileItemBrassFilled
   maxCount: 30
 
 - type: stack
   id: FloorTileBrassReebe
-  name: smooth brass plate
+  name: гладкая латунная плитка # Horizon
   spawn: FloorTileItemBrassReebe
   maxCount: 30
 
 - type: stack
   id: FloorTileLino
-  name: linoleum floor
+  name: линолеум # Horizon
   spawn: FloorTileItemLino
   maxCount: 30
 
 - type: stack
   id: FloorTileHydro
-  name: hydro tile
+  name: гидро плитка # Horizon
   spawn: FloorTileItemHydro
   maxCount: 30
 
 - type: stack
   id: FloorTileLime
-  name: lime tile
+  name: лаймовая плитка # Horizon
   spawn: FloorTileItemLime
   maxCount: 30
 
 - type: stack
   id: FloorTileDirty
-  name: dirty tile
+  name: грязная плитка # Horizon
   spawn: FloorTileItemDirty
   maxCount: 30
 
 - type: stack
   id: FloorTileStackShuttleWhite
-  name: white shuttle tile
+  name: белый пол шаттла # Horizon
   spawn: FloorTileItemShuttleWhite
   maxCount: 30
 
 - type: stack
   id: FloorTileStackShuttleBlue
-  name: blue shuttle tile
+  name: синий пол шаттла # Horizon
   spawn: FloorTileItemShuttleBlue
   maxCount: 30
 
 - type: stack
   id: FloorTileStackShuttleOrange
-  name: orange shuttle tile
+  name: оранжевый пол шаттла # Horizon
   spawn: FloorTileItemShuttleOrange
   maxCount: 30
 
 - type: stack
   id: FloorTileStackShuttlePurple
-  name: purple shuttle tile
+  name: фиолетовый пол шаттла # Horizon
   spawn: FloorTileItemShuttlePurple
   maxCount: 30
 
 - type: stack
   id: FloorTileStackShuttleRed
-  name: red shuttle tile
+  name: красный пол шаттла # Horizon
   spawn: FloorTileItemShuttleRed
   maxCount: 30
 
 - type: stack
   id: FloorTileStackShuttleGrey
-  name: grey shuttle tile
+  name: серый пол шаттла # Horizon
   spawn: FloorTileItemShuttleGrey
   maxCount: 30
 
 - type: stack
   id: FloorTileStackShuttleBlack
-  name: black shuttle tile
+  name: чёрный пол шаттла # Horizon
   spawn: FloorTileItemShuttleBlack
   maxCount: 30
 
 - type: stack
   id: FloorTileStackEighties
-  name: eighties floor tile
+  name: пол восьмидесятых # Horizon
   spawn: FloorTileItemEighties
   maxCount: 30
 
 - type: stack
   id: FloorTileStackArcadeBlue
-  name: blue arcade tile
+  name: синий пол аркады # Horizon
   spawn: FloorTileItemArcadeBlue
   maxCount: 30
 
 - type: stack
   id: FloorTileStackArcadeBlue2
-  name: blue arcade tile
+  name: синий пол аркады # Horizon
   spawn: FloorTileItemArcadeBlue2
   maxCount: 30
 
 - type: stack
   id: FloorTileStackArcadeRed
-  name: red arcade tile
+  name: красный пол аркады # Horizon
   spawn: FloorTileItemArcadeRed
   maxCount: 30
 
 - type: stack
   id: FloorCarpetRed
-  name: red carpet tile
+  name: красный ковёр # Horizon
   spawn: FloorCarpetItemRed
   maxCount: 30
 
 - type: stack
   id: FloorCarpetBlack
-  name: block carpet tile
+  name: чёрный ковёр # Horizon
   spawn: FloorCarpetItemBlack
   maxCount: 30
 
 - type: stack
   id: FloorCarpetBlue
-  name: blue carpet tile
+  name: синий ковёр # Horizon
   spawn: FloorCarpetItemBlue
   maxCount: 30
 
 - type: stack
   id: FloorCarpetGreen
-  name: green carpet tile
+  name: зелёный ковёр # Horizon
   spawn: FloorCarpetItemGreen
   maxCount: 30
 
 - type: stack
   id: FloorCarpetOrange
-  name: orange carpet tile
+  name: оранжевый ковёр # Horizon
   spawn: FloorCarpetItemOrange
   maxCount: 30
 
 - type: stack
   id: FloorCarpetSkyBlue
-  name: skyblue carpet tile
+  name: голубой ковёр # Horizon
   spawn: FloorCarpetItemSkyBlue
   maxCount: 30
 
 - type: stack
   id: FloorCarpetPurple
-  name: purple carpet tile
+  name: фиолетовый ковёр # Horizon
   spawn: FloorCarpetItemPurple
   maxCount: 30
 
 - type: stack
   id: FloorCarpetPink
-  name: pink carpet tile
+  name: розовый ковёр # Horizon
   spawn: FloorCarpetItemPink
   maxCount: 30
 
 - type: stack
   id: FloorCarpetCyan
-  name: cyan carpet tile
+  name: бирюзовый ковёр # Horizon
   spawn: FloorCarpetItemCyan
   maxCount: 30
 
 - type: stack
   id: FloorCarpetWhite
-  name: white carpet tile
+  name: белый ковёр # Horizon
   spawn: FloorCarpetItemWhite
   maxCount: 30
 
 - type: stack
   id: FloorTileStackCarpetClown
-  name: clown carpet tile
+  name: клоунский ковёр # Horizon
   spawn: FloorTileItemCarpetClown
   maxCount: 30
 
 - type: stack
   id: FloorTileStackCarpetOffice
-  name: office carpet tile
+  name: офисный ковёр # Horizon
   spawn: FloorTileItemCarpetOffice
   maxCount: 30
 
 - type: stack
   id: FloorTileStackBoxing
-  name: boxing ring tile
+  name: пол боксёрского ринга # Horizon
   spawn: FloorTileItemBoxing
   maxCount: 30
 
 - type: stack
   id: FloorTileStackGym
-  name: gym floor tile
+  name: пол спортзала # Horizon
   spawn: FloorTileItemGym
   maxCount: 30
 
 - type: stack
   id: FloorTileElevatorShaft
-  name: elevator shaft tile
+  name: плитка шахты лифта # Horizon
   spawn: FloorTileItemElevatorShaft
   maxCount: 30
 
 - type: stack
   id: FloorTileRockVault
-  name: rock vault tile
+  name: каменная плитка хранилища # Horizon
   spawn: FloorTileItemRockVault
   maxCount: 30
 
 - type: stack
   id: FloorTileBlue
-  name: blue floor tile
+  name: голубая плитка # Horizon
   spawn: FloorTileItemBlue
   maxCount: 30
 
 - type: stack
   id: FloorTileMining
-  name: mining floor tile
+  name: шахтёрская плитка # Horizon
   spawn: FloorTileItemMining
   maxCount: 30
 
 - type: stack
   id: FloorTileMiningDark
-  name: dark mining floor tile
+  name: тёмная шахтёрская плитка # Horizon
   spawn: FloorTileItemMiningDark
   maxCount: 30
 
 - type: stack
   id: FloorTileMiningLight
-  name: light mining floor tile
+  name: светлая шахтёрская плитка # Horizon
   spawn: FloorTileItemMiningLight
   maxCount: 30
 
 - type: stack
   id: FloorTileBar
-  name: item bar floor tile
+  name: барная плитка # Horizon
   spawn: FloorTileItemBar
   maxCount: 30
 
 - type: stack
   id: FloorTileClown
-  name: clown floor tile
+  name: плитка клоуна # Horizon
   spawn: FloorTileItemClown
   maxCount: 30
 
 - type: stack
   id: FloorTileMime
-  name: mime floor tile
+  name: плитка мима # Horizon
   spawn: FloorTileItemMime
   maxCount: 30
 
 - type: stack
   id: FloorTileKitchen
-  name: kitchen floor tile
+  name: кухонная плитка # Horizon
   spawn: FloorTileItemKitchen
   maxCount: 30
 
 - type: stack
   id: FloorTileLaundry
-  name: laundry floor tile
+  name: плитка прачечной # Horizon
   spawn: FloorTileItemLaundry
   maxCount: 30
 
 - type: stack
   id: FloorTileConcrete
-  name: concrete tile
+  name: бетонная плитка # Horizon
   spawn: FloorTileItemGrayConcrete
   maxCount: 30
 
 - type: stack
   id: FloorTileConcreteMono
-  name: concrete mono tile
+  name: бетонная плита # Horizon
   spawn: FloorTileItemConcreteMono
   maxCount: 30
 
 - type: stack
   id: FloorTileConcreteSmooth
-  name: concrete smooth
+  name: бетонный пол # Horizon
   spawn: FloorTileItemConcreteSmooth
   maxCount: 30
 
 - type: stack
   id: FloorTileGrayConcrete
-  name: gray concrete tile
+  name: серая бетонная плитка # Horizon
   spawn: FloorTileItemGrayConcrete
   maxCount: 30
 
 - type: stack
   id: FloorTileGrayConcreteMono
-  name: gray concrete mono tile
+  name: серая бетонная плита # Horizon
   spawn: FloorTileItemGrayConcreteMono
   maxCount: 30
 
 - type: stack
   id: FloorTileGrayConcreteSmooth
-  name: gray concrete smooth
+  name: серый бетонный пол # Horizon
   spawn: FloorTileItemGrayConcreteSmooth
   maxCount: 30
 
 - type: stack
   id: FloorTileOldConcrete
-  name: old concrete tile
+  name: старая бетонная плитка # Horizon
   spawn: FloorTileItemOldConcrete
   maxCount: 30
 
 - type: stack
   id: FloorTileOldConcreteMono
-  name: old concrete mono tile
+  name: старая бетонная плита # Horizon
   spawn: FloorTileItemOldConcreteMono
   maxCount: 30
 
 - type: stack
   id: FloorTileOldConcreteSmooth
-  name: old concrete smooth
+  name: старый бетонный пол # Horizon
   spawn: FloorTileItemOldConcreteSmooth
   maxCount: 30
 
 - type: stack
   id: FloorTileSilver
-  name: silver floor tile
+  name: серебряная плитка # Horizon
   spawn: FloorTileItemSilver
   maxCount: 30
 
 - type: stack
   id: FloorTileBCircuit
-  name: bcircuit floor tile
+  name: плитка голубых микросхем # Horizon
   spawn: FloorTileItemBCircuit
   maxCount: 30
 
 - type: stack
   id: FloorTileRCircuit
-  name: red-circuit floor
+  name: плитка красных микросхем # Horizon
   spawn: FloorTileItemRCircuit
   maxCount: 30
 
 - type: stack
   id: FloorTileGrass
-  name: grass floor tile
+  name: плитка травы # Horizon
   spawn: FloorTileItemGrass
   maxCount: 30
 
 - type: stack
   id: FloorTileGrassJungle
-  name: grass jungle floor tile
+  name: плитка травы джунглей # Horizon
   spawn: FloorTileItemGrassJungle
   maxCount: 30
 
 - type: stack
   id: FloorTileSnow
-  name: snow floor tile
+  name: плитка снега # Horizon
   spawn: FloorTileItemSnow
   maxCount: 30
 
 - type: stack
   id: FloorTileWoodPattern
-  name: wood pattern floor
+  name: деревянный узорчатый пол # Horizon
   spawn: FloorTileItemWoodPattern
   maxCount: 30
 
 - type: stack
   id: FloorTileFlesh
-  name: flesh floor
+  name: пол из плоти # Horizon
   spawn: FloorTileItemFlesh
   maxCount: 30
 
 - type: stack
   id: FloorTileSteelMaint
-  name: steel maint floor
+  name: стальной технический пол # Horizon
   spawn: FloorTileItemSteelMaint
   maxCount: 30
 
 - type: stack
   id: FloorTileGratingMaint
-  name: grating maint floor
+  name: решётчатый технический пол # Horizon
   spawn: FloorTileItemGratingMaint
   maxCount: 30
 
 - type: stack
   id: FloorTileWeb
-  name: web tile
+  name: паутинный пол # Horizon
   spawn: FloorTileItemWeb
   maxCount: 30
 
 # Faux science tiles
 - type: stack
   id: FloorTileAstroGrass
-  name: astro-grass floor
+  name: астро-трава # Horizon
   spawn: FloorTileItemAstroGrass
   maxCount: 30
 
 - type: stack
   id: FloorTileMowedAstroGrass
-  name: mowed astro-grass floor
+  name: астро-газон # Horizon
   spawn: FloorTileItemMowedAstroGrass
   maxCount: 30
 
 - type: stack
   id: FloorTileJungleAstroGrass
-  name: jungle astro-grass floor
+  name: астро-трава джунглей # Horizon
   spawn: FloorTileItemJungleAstroGrass
   maxCount: 30
 
 - type: stack
   id: FloorTileAstroIce
-  name: astro-ice floor
+  name: астро-лёд # Horizon
   spawn: FloorTileItemAstroIce
   maxCount: 30
 
 - type: stack
   id: FloorTileAstroSnow
-  name: astro-snow floor
+  name: астро-снег # Horizon
   spawn: FloorTileItemAstroSnow
   maxCount: 30
 
 - type: stack
   id: FloorTileAstroAsteroidSand
-  name: asteroid astro-sand floor
+  name: астро-песок астероида # Horizon
   spawn: FloorTileItemAstroAsteroidSand
   maxCount: 30
 
 - type: stack
   id: FloorTileWoodLarge
-  name: large wood floor
+  name: большой деревянный пол # Horizon
   spawn: FloorTileItemWoodLarge
   maxCount: 30

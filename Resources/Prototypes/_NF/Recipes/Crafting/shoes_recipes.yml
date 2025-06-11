@@ -1,51 +1,51 @@
 - type: construction
-  name: "Whoopie cushioned clown shoes"
+  name: кремовые клоунские туфли
   id: RecipeClothingShoesClownModWhoopie
   graph: GraphClothingShoesClownModWhoopie
   startNode: start
   targetNode: whoopiemod
   category: construction-category-misc
   objectType: Item
-  description: "Ever wondered how annoyed your crewmates would become if you'd use whoopie cushion with ruthless efficiency? Wonder no more."
+  description: Улучшенние стандартные клоунсфие туфли. Выглядят мягко.
   icon:
     sprite: Clothing/Shoes/Specific/clown.rsi
     state: icon
 
 - type: construction
-  name: "Clown shoes of Ketchup"
+  name: клоунские туфли в кетчупе
   id: RecipeClothingShoesClownModKetchup
   graph: GraphClothingShoesClownModKetchup
   startNode: start
   targetNode: ketchupmod
   category: construction-category-misc
   objectType: Item
-  description: "Ketchup goes in your left shoe. Left."
+  description: Улучшенние стандартные клоунские туфли. Выглядят кисло.
   icon:
     sprite: Clothing/Shoes/Specific/clown.rsi
     state: icon
 
 - type: construction
-  name: "Clown shoes of Mustarchup"
+  name: горчичные клоунские туфли
   id: RecipeClothingShoesClownModMustarchup
   graph: GraphClothingShoesClownModMustarchup
   startNode: start
   targetNode: mustarchupmod
   category: construction-category-misc
   objectType: Item
-  description: "Ketchup goes in your right shoe, mustard - in your left."
+  description: Улучшенние стандартные клоунские туфли. Выглядят остро.
   icon:
     sprite: Clothing/Shoes/Specific/clown.rsi
     state: icon
 
 - type: construction
-  name: "Clown shoes of Power"
+  name: клоунские туфли силы
   id: RecipeClothingShoesClownModUltimate
   graph: GraphClothingShoesClownModUltimate
   startNode: start
   targetNode: ultimatemod
   category: construction-category-misc
   objectType: Item
-  description: "Whoopie cushion goes in the left shoe, ketchup - in the right shoe, your sanity - in a disposal unit."
+  description: Улучшенние стандартные клоунские туфли. Выглядят кисло и остро.
   icon:
     sprite: Clothing/Shoes/Specific/clown.rsi
     state: icon
