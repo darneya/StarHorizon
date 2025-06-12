@@ -19,12 +19,13 @@
     deconstructionTarget: null #Frontier
   - type: Wieldable # Frontier
   # todo: add clothingcomponent with clothingVisuals states using unused texture and animations assets in kinetic_accelerator.rsi
-  # Aavikko start
+  # Horizon start
   - type: UpgradeableGun
+    maxUpgradeCount: 2
     whitelist:
       tags:
       - PKAUpgrade
   - type: ContainerContainer
     containers:
       upgrades: !type:Container
-  # Aavikko end
+  # Horizon end

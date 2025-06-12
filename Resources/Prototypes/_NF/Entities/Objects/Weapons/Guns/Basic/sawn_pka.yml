@@ -29,3 +29,13 @@
     graph: PKASawn
     node: pkasawn
     deconstructionTarget: null
+  # Horizon start
+  - type: UpgradeableGun
+    maxUpgradeCount: 2
+    whitelist:
+      tags:
+      - PKAUpgrade
+  - type: ContainerContainer
+    containers:
+      upgrades: !type:Container
+  # Horizon end
