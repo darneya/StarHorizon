@@ -21,11 +21,11 @@
   - UplinkPointless
 
 - type: listing
-  id: UplinkSoulСuttingKatana
+  id: UplinkCursedKatana
   name: Проклятая катана
   description: Символ безжалостной силы, эта катана была выкована в огне ненависти и предательства. Каждый раз, когда она касается врага, её жажда разрушения лишь усиливается. Используйте её с умом, иначе она может забрать вашу душу.
-  icon: { sprite: /Textures/_Horizon/Objects/Weapons/Melee/soulkatana.rsi, state: icon }
-  productEntity: SoulСuttingKatana
+  icon: { sprite: /Textures/_Horizon/Objects/Weapons/Melee/cursedkatana.rsi, state: icon }
+  productEntity: ClothingBeltCursedKatanaSheathFilled
   cost:
     Telecrystal: 14
   categories:
