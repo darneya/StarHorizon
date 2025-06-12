@@ -363,3 +363,6 @@
 
 - type: Tag
   id: MagazinePistol9x18mm
+
+- type: Tag
+  id: PKAUpgrade

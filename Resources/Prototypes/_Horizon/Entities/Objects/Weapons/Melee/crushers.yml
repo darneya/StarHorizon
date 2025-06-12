@@ -1,5 +1,5 @@
 - type: entity
-  parent: [BaseItem, BaseSecurityCargoContraband]
+  parent: [BaseItem, BaseC1Contraband]
   id: WeaponKineticBase
   abstract: true
   components:
@@ -28,7 +28,7 @@
   - type: DisarmMalus
 
 - type: entity
-  parent: [WeaponKineticBase, BaseSecurityCargoContraband]
+  parent: [WeaponKineticBase, BaseC1Contraband]
   id: WeaponKineticSpear
   name: kinetic spear
   description: A long-ranged melee weapon which trades damage for a two-tile reach, similar to reagent/bone spears.
