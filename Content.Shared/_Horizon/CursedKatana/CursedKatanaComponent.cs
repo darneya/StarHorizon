@@ -3,10 +3,10 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Shared._Horizon.SoulСuttingKatana;
+namespace Content.Shared._Horizon.CursedKatana;
 
-[RegisterComponent]
-public sealed partial class SoulCuttingKatanaComponent : Component
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class CursedKatanaComponent : Component
 {
     [DataField("ownerUid")]
     public EntityUid OwnerUid;
@@ -27,13 +27,27 @@ public sealed partial class SoulCuttingKatanaComponent : Component
     public bool SpeedReduced { get; set; } = false;
 
     [DataField("damageTimer")]
-    public float DamageTimer { get; set; } = 0.7f;
+    public float DamageTimer { get; set; } = 1.0f;
 
     [DataField("damageInterval")]
-    public float DamageInterval { get; set; } = 0.7f;
+    public float DamageInterval { get; set; } = 1.0f;
 
     [DataField("originalDamage")]
     public DamageSpecifier OriginalDamage = new();
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("activateCursedKatanaAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string ActivateCursedKatanaAction = "ActionActivateCursedKatana";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? ActivateCursedKatanaActionEntity;
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("deactivateCursedKatanaAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string DeactivateCursedKatanaAction = "ActionDeactivateCursedKatana";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? DeactivateCursedKatanaActionEntity;
 
     [DataField("oneBlockMessage")]
     public List<string> OneBlockMessage { get; set; } = new()

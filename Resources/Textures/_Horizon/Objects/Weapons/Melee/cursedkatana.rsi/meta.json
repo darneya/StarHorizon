@@ -16,9 +16,6 @@
             ]
         },
         {
-            "name": "icon2"
-        },
-        {
             "name": "inhand-left",
             "directions": 4,
             "delays": [
