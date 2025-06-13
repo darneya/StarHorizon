@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Shared._Horizon.Bark;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Ghost.Roles;
@@ -266,7 +267,8 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts
+                loadouts,
+                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar) // _Horizon
             );
         }
 
@@ -348,6 +350,16 @@ namespace Content.Server.Database
 
                 profile.Loadouts.Add(dz);
             }
+
+            // _Horizon start
+            if (profile.BarkProto == string.Empty || profile.BarkProto is null)
+            {
+                profile.BarkProto = SharedHumanoidAppearanceSystem.DefaultBark;
+            }
+            profile.BarkPitch = humanoid.Bark.Pitch;
+            profile.LowBarkVar = humanoid.Bark.MinVar;
+            profile.HighBarkVar = humanoid.Bark.MaxVar;
+            // _Horizon end
 
             return profile;
         }

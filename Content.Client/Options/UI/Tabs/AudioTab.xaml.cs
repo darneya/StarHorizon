@@ -1,5 +1,6 @@
 using Content.Client.Administration.Managers;
 using Content.Client.Audio;
+using Content.Shared._Horizon.CCVar;
 using Content.Shared._NF.CCVar; // Frontier
 using Content.Shared.CCVar;
 using Robust.Client.Audio;
@@ -33,6 +34,21 @@ public sealed partial class AudioTab : Control
             CVars.MidiVolume,
             SliderVolumeMidi,
             scale: ContentAudioSystem.MidiVolumeMultiplier);
+
+        // _Horizon start
+        Control.AddOptionPercentSlider(
+            HorizonCCVars.BarksVolume,
+            SliderVolumeBarks,
+            scale: ContentAudioSystem.BarksMultiplier);
+
+        Control.AddOptionDropDown<bool>(
+            HorizonCCVars.ReplaceTTSWithBarks,
+            new OptionDropDown(),
+            [
+                new OptionDropDownCVar<bool>.ValueOption(true, Loc.GetString("ui-options-barks-speech")),
+                new OptionDropDownCVar<bool>.ValueOption(false, Loc.GetString("ui-options-tts-speech")),
+            ]);
+        // _Horizon end
 
         Control.AddOptionPercentSlider(
             CCVars.AmbientMusicVolume,

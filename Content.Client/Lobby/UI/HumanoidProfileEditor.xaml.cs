@@ -9,6 +9,7 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._Horizon.CCVar;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -223,6 +224,20 @@ namespace Content.Client.Lobby.UI
                 UpdateHairPickers();
                 OnSkinColorOnValueChanged();
             };
+
+            // _Horizon start
+            #region Voice
+
+            if (configurationManager.GetCVar(HorizonCCVars.BarksEnabled))
+            {
+                BarksContainer.Visible = true;
+                BarksPitchContainer.Visible = true;
+                BarksDelayContainer.Visible = true;
+                InitializeBarks();
+            }
+
+            #endregion
+            // _Horizon End
 
             #region Skin
 
@@ -449,6 +464,7 @@ namespace Content.Client.Lobby.UI
             SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
 
             UpdateSpeciesGuidebookIcon();
+            ReloadPreview(); // _Horizon
             IsDirty = false;
         }
 
@@ -766,6 +782,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateBarkVoicesControls(); // _Horizon
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1253,6 +1270,36 @@ namespace Content.Client.Lobby.UI
                 UpdateSaveButton();
             }
         }
+
+        // _Horizon start
+        private void SetBarkProto(string prototype)
+        {
+            Profile = Profile?.WithBarkProto(prototype);
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkPitch(float pitch)
+        {
+            Profile = Profile?.WithBarkPitch(Math.Clamp(pitch, _cfgManager.GetCVar(HorizonCCVars.BarksMinPitch), _cfgManager.GetCVar(HorizonCCVars.BarksMaxPitch)));
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkMinVariation(float variation)
+        {
+            Profile = Profile?.WithBarkMinVariation(Math.Clamp(variation, _cfgManager.GetCVar(HorizonCCVars.BarksMinDelay), Profile.Bark.MaxVar));
+            ReloadPreview();
+            SetDirty();
+        }
+
+        private void SetBarkMaxVariation(float variation)
+        {
+            Profile = Profile?.WithBarkMaxVariation(Math.Clamp(variation, Profile.Bark.MinVar, _cfgManager.GetCVar(HorizonCCVars.BarksMaxDelay)));
+            ReloadPreview();
+            SetDirty();
+        }
+        // _Horizon end
 
         private void UpdateNameEdit()
         {
