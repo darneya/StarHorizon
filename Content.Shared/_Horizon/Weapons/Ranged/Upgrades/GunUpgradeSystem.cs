@@ -1,4 +1,4 @@
-using Content.Shared.Aavikko.Weapons.Ranged.Upgrades.Components;
+using Content.Shared._Horizon.Weapons.Ranged.Upgrades.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
@@ -11,7 +11,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Aavikko.Weapons.Ranged.Upgrades;
+namespace Content.Shared._Horizon.Weapons.Ranged.Upgrades;
 
 public sealed class GunUpgradeSystem : EntitySystem
 {

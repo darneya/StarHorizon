@@ -7,7 +7,7 @@
     tags:
     - Pickaxe
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_spear.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_spear.rsi
     state: icon
   - type: AmmoCounter
   - type: UseDelayOnShoot
@@ -37,7 +37,7 @@
     tags:
     - Pickaxe
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_spear.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_spear.rsi
     state: icon
   - type: AmmoCounter
   - type: UseDelayOnShoot
@@ -76,7 +76,7 @@
   - type: GunRequiresWield
   - type: Item
     size: Ginormous
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_spear-inhands.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_spear-inhands.rsi
   - type: DisarmMalus
   - type: Wieldable
   - type: PressureDamageModify
@@ -92,7 +92,7 @@
   description: A beefy, two-handed weapon that inflicts knockback and heavier damage than a crusher, but cannot backstab.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_hammer.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_hammer.rsi
     state: icon
   - type: UseDelay
     delay: 1
@@ -116,7 +116,7 @@
         Structural: 50
   - type: Item
     size: Ginormous
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_hammer-inhands.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_hammer-inhands.rsi
   - type: MeleeThrowOnHit
     speed: 5
     lifetime: 0.5
@@ -135,7 +135,7 @@
   description: Unleash your inner edgelord with this two-handed claw small enough to fit in your backpack. Deals a paltry 45 damage on mark detonation, but sports a massive 120 damage backstab bonus.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_claws.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_claws.rsi
     state: icon
   - type: UseDelay
     delay: 1
@@ -160,7 +160,7 @@
   - type: Wieldable
   - type: Item
     size: Normal
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_claws-inhands.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_claws-inhands.rsi
   - type: PressureDamageModify
     additionalDamage:
       types:
@@ -174,7 +174,7 @@
   description: A smaller, one-handed variant of the crusher. Deals about 40 less damage than the PKC, but has a 15% melee block chance.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_machete.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_machete.rsi
     state: icon
   - type: UseDelay
     delay: 1
@@ -190,7 +190,7 @@
     range: 1.6
   - type: Item
     size: Ginormous
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_machete-inhands.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_machete-inhands.rsi
   - type: PressureDamageModify
     additionalDamage:
       types:

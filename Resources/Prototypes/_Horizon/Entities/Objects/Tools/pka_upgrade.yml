@@ -6,7 +6,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Tools/upgrade.rsi
+    sprite: _Horizon/Objects/Tools/upgrade.rsi
   - type: Item
     size: Small
   - type: GunUpgrade

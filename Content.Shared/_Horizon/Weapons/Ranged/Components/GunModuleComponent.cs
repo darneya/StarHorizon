@@ -1,4 +1,4 @@
-namespace Content.Shared.Aavikko.Weapons.Ranged.Components;
+namespace Content.Shared._Horizon.Weapons.Ranged.Components;
 
 [RegisterComponent]
 public sealed partial class GunModuleComponent : Component

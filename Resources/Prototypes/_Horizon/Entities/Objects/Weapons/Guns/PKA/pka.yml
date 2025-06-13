@@ -5,7 +5,7 @@
   description: The Pistol trades base damage, and range, for double mod capacity, making it a truely customizable PKA.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_pistol.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_pistol.rsi
     layers:
     - state: icon
     - state: animation-icon
@@ -20,14 +20,14 @@
     containers:
       upgrades: !type:Container
   - type: Item
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_pistol.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_pistol.rsi
     size: Small
   - type: BasicEntityAmmoProvider
     proto: BulletKineticPistol
     capacity: 1
     count: 1
   - type: Clothing
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_pistol.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_pistol.rsi
     quickEquip: false
     slots:
     - suitStorage
@@ -40,7 +40,7 @@
   description: The Repeater trades mod space and a bit of damage for the ability to fire three shots in rapid succession before needing to recharge, while also doing more damage than base PKA if all three shots are landed.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_repeater.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_repeater.rsi
     layers:
     - state: icon
     - state: animation-icon
@@ -55,7 +55,7 @@
     containers:
       upgrades: !type:Container
   - type: Item
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_repeater.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_repeater.rsi
   - type: BasicEntityAmmoProvider
     proto: BulletKineticRepeater
     capacity: 3
@@ -77,7 +77,7 @@
     rechargeSound:
       path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
   - type: Clothing
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_repeater.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_repeater.rsi
     quickEquip: false
     slots:
     - suitStorage
@@ -90,7 +90,7 @@
   description: The Railgun trades customization, fire rate, and storage capabilities for the ability to fire a high damage shot that penetrates creatures!
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_railgun.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_railgun.rsi
     layers:
     - state: icon
     - state: animation-icon
@@ -105,7 +105,7 @@
     containers:
       upgrades: !type:Container
   - type: Item
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_railgun.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_railgun.rsi
     size: Normal
   - type: BasicEntityAmmoProvider
     proto: BulletKineticRailgun
@@ -121,7 +121,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
   - type: Clothing
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_railgun.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_railgun.rsi
     quickEquip: false
     slots:
     - suitStorage
@@ -134,7 +134,7 @@
   description: The Shotgun fires a short range set of three rounds that does more damage than base PKA if all three shots land. This trades mod capacity and cooldown speed.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_shotgun.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_shotgun.rsi
     layers:
     - state: icon
     - state: animation-icon
@@ -149,14 +149,14 @@
     containers:
       upgrades: !type:Container
   - type: Item
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_shotgun.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_shotgun.rsi
     size: Normal
   - type: BasicEntityAmmoProvider
     proto: BulletKineticShotgunSpread
     capacity: 1
     count: 1
   - type: Clothing
-    sprite: Aavikko/Objects/Weapons/Guns/PKA/kinetic_shotgun.rsi
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_shotgun.rsi
     quickEquip: false
     slots:
     - suitStorage
