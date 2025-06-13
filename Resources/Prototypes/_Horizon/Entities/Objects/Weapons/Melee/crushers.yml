@@ -60,8 +60,8 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 10
         Slash: 5
+        Piercing: 10
     soundHit:
       collection: MetalThud
     angle: 0
@@ -70,9 +70,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2.5
-        Slash: 2.5
-        Structural: 30
+        Piercing: 10
+        Structural: 15
   - type: GunRequiresWield
   - type: Item
     size: Ginormous
@@ -82,8 +81,8 @@
   - type: PressureDamageModify
     additionalDamage:
       types:
-        Blunt: 10
-        Slash: 15
+        Slash: 10
+        Piercing: 10
 
 - type: entity
   parent: WeaponKineticBase
@@ -101,8 +100,7 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 20
-        Slash: 5
+        Blunt: 30
     soundHit:
       collection: MetalThud
     angle: 0
@@ -111,8 +109,7 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2.5
-        Slash: 2.5
+        Blunt: 10
         Structural: 50
   - type: Item
     size: Ginormous
@@ -125,8 +122,7 @@
   - type: PressureDamageModify
     additionalDamage:
       types:
-        Blunt: 10
-        Slash: 15
+        Blunt: 20
 
 - type: entity
   parent: WeaponKineticBase
@@ -153,9 +149,9 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2.5
-        Slash: 2.5
-        Structural: 30
+        Slash: 5
+        Piercing: 5
+        Structural: 15
   - type: GunRequiresWield
   - type: Wieldable
   - type: Item
@@ -164,8 +160,8 @@
   - type: PressureDamageModify
     additionalDamage:
       types:
-        Blunt: 10
-        Slash: 15
+        Slash: 10
+        Piercing: 10
 
 - type: entity
   parent: WeaponKineticBase
@@ -188,11 +184,16 @@
     angle: 0
     animation: WeaponArcThrust
     range: 1.6
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 10
+        Structural: 20
+  - type: Wieldable
   - type: Item
     size: Ginormous
     sprite: _Horizon/Objects/Weapons/Melee/crusher_machete-inhands.rsi
   - type: PressureDamageModify
     additionalDamage:
       types:
-        Blunt: 10
         Slash: 15
