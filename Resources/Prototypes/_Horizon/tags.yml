@@ -378,3 +378,9 @@
 
 - type: Tag
   id: GunUpgradeReloadSpeed
+
+- type: Tag
+  id: HardsuitMaximize
+
+- type: Tag
+  id: HardsuitGoliath

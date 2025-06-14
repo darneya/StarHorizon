@@ -158,8 +158,8 @@
         Radiation: 0.3
         Caustic: 0.7
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.9 # Horizon
+    sprintModifier: 0.8 # Horizon
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSalvage
@@ -195,14 +195,19 @@
         Radiation: 0.3
         Caustic: 0.8
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 0.9 # Horizon
+    sprintModifier: 0.8 # Horizon
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitGoliath
   - type: Construction
     graph: HardsuitGoliath
     node: hardsuitGoliath
+# Horizon start
+  - type: Tag
+    tags:
+    - HardsuitGoliath
+# Horizon end
 
 #Maxim Hardsuit
 - type: entity
@@ -219,8 +224,8 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: ClothingSpeedModifier
-    walkModifier: 1.0
-    sprintModifier: 1.0
+    walkModifier: 0.9 # Horizon
+    sprintModifier: 0.8 # Horizon
   - type: Armor
     modifiers:
       coefficients:
@@ -237,6 +242,14 @@
     coolingCoefficient: 0.001
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaxim
+# Horizon start
+  - type: Construction
+    graph: HardsuitMaximize
+    node: hardsuitMaximize
+  - type: Tag
+    tags:
+    - HardsuitMaximize
+# Horizon end
 
 #Security Hardsuit
 - type: entity
