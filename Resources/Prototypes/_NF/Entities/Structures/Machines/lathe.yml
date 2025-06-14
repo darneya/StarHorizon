@@ -145,7 +145,6 @@
     dynamicPacks:
     - NFNfsdTechfabDeprecated
     - NightVisionSecPack # Horizon
-    - HorizonPKAPack # Horizon
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFNfsdTechfabDeprecatedEmag
@@ -179,7 +178,6 @@
     dynamicPacks:
     - NFMercenaryTechfabDeprecated
     - NightVisionPack # Horizon
-    - HorizonPKAPack # Horizon
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFMercenaryTechfabDeprecatedEmag
@@ -226,7 +224,6 @@
     dynamicPacks:
     - NFHackedMercenaryTechfabDeprecated
     - NightVisionPack # Horizon
-    - HorizonPKAPack # Horizon
 
 - type: entity
   parent: [BaseStructureDisableToolUse, BaseLathe]

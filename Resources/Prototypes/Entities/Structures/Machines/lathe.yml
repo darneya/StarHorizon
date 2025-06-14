@@ -228,7 +228,6 @@
     - NFPouches # Frontier
     - NightVisionPack # Horizon
     - StarlightSurgeryTools # Starlight
-    - HorizonPKAPack # Horizon
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
