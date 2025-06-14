@@ -3,6 +3,7 @@ using System;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    partial class SqliteServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250614181258_EvilBarks")]
+    partial class EvilBarks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -781,7 +784,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("bank_balance");
 
-                    // Horizon start
                     b.Property<float>("BarkPitch")
                         .HasColumnType("REAL")
                         .HasColumnName("bark_pitch");
@@ -790,7 +792,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("bark_proto");
-                    // Horizon end
 
                     b.Property<string>("CharacterName")
                         .IsRequired()
@@ -832,7 +833,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("hair_name");
 
-                    // Horizon start
                     b.Property<float>("HighBarkVar")
                         .HasColumnType("REAL")
                         .HasColumnName("high_bark_var");
@@ -840,7 +840,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<float>("LowBarkVar")
                         .HasColumnType("REAL")
                         .HasColumnName("low_bark_var");
-                    // Horizon end
 
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
