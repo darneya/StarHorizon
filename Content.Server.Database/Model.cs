@@ -406,10 +406,10 @@ namespace Content.Server.Database
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;
         public string Species { get; set; } = null!;
-        public string BarkProto { get; set; } = null!; // _Horizon
-        public float BarkPitch { get; set; } = 1f; // _Horizon
-        public float LowBarkVar { get; set; } = 0.1f; // _Horizon
-        public float HighBarkVar { get; set; } = 0.5f; // _Horizon
+        public string BarkProto { get; set; } = null!; // Horizon
+        public float BarkPitch { get; set; } = 1f; // Horizon
+        public float LowBarkVar { get; set; } = 0.1f; // Horizon
+        public float HighBarkVar { get; set; } = 0.5f; // Horizon
         [Column(TypeName = "jsonb")] public JsonDocument? Markings { get; set; } = null!;
         public string HairName { get; set; } = null!;
         public string HairColor { get; set; } = null!;
