@@ -365,6 +365,9 @@
   id: MagazinePistol9x18mm
 
 - type: Tag
+  id: CursedKatana
+
+- type: Tag
   id: PKAUpgrade
 
 - type: Tag
