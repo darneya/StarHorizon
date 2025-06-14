@@ -50,6 +50,7 @@
       path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
   - type: StaticPrice
     price: 50
+  - type: UniqueAction # HORIZON TWEAK
 
 - type: entity
   name: Deckard

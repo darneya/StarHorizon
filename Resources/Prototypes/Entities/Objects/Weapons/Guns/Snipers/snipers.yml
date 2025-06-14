@@ -40,7 +40,7 @@
 
 - type: entity
   name: Kardashev-Mosin
-  parent: [BaseWeaponSniper, BaseGunWieldable, BaseGunMelee, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added BaseGunMelee
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseGunMelee, BaseC3SyndicateContraband, ADTBaseAttachableHolder] #Horizon Tweak # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband, added BaseGunMelee
   id: WeaponSniperMosin
   description: A weapon for hunting, or endless trench warfare. Uses .30 rifle ammo. Equipped with bayonet. # Frontier: bayonet
   components:
@@ -52,10 +52,23 @@
     pvsIncrease: 0.15 # Frontier
   - type: AltFireMelee # Frontier
     attackType: Light # Frontier
+    #ADT_Tweak START
+  - type: AttachableHolder #ADT_Tweak
+    slots:
+      rmc-aslot-barrel:
+        startingAttachable: ADTMosinBayonet
+        whitelist:
+          tags:
+          - ADTMosinBayonetAttachment
+  - type: AttachableHolderVisuals #ADT_Tweak
+    offsets:
+      rmc-aslot-barrel: 0.59375, 0
+      # rmc-aslot-barrel: 0.59375, -0.15625
+    #ADT_Tweak END
 
 - type: entity
   name: Hristov
-  parent: [BaseWeaponSniper, BaseGunWieldable, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseC3SyndicateContraband, ADTBaseAttachableHolder] #Horizon Tweak # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
   id: WeaponSniperHristov
   description: A portable anti-materiel rifle. Fires armor piercing 14.5mm shells. Uses .60 anti-materiel ammo.
   components:
@@ -84,6 +97,17 @@
   - type: EyeCursorOffset
     maxOffset: 3
     pvsIncrease: 0.3
+    #Horizon Tweak START
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-rail:
+        locked: true
+        startingAttachable: ADTAttachmentHristovScope
+        whitelist:
+            tags:
+            - ADTAttachmentMagneticHarness
+            - ADTAttachmentHristovScope
+    #Horizon Tweak END
 
 - type: entity
   name: musket

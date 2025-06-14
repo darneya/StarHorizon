@@ -46,7 +46,7 @@
 - type: entity
   name: Bulldog
   # Don't parent to BaseWeaponShotgun because it differs significantly
-  parent: [BaseItem, BaseGunWieldable, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseItem, BaseGunWieldable, BaseC3SyndicateContraband, ADTBaseAttachableHolder] # horizon tweak # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
   id: WeaponShotgunBulldog
   description: An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids. Uses .50 shotgun shells.
   components:
@@ -100,6 +100,28 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+    # Horizon TWEAK START
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - ADTAttachmentM90GrenadeLauncher
+          - ADTAttachmentM90UnderbarrelShotgun
+          - ADTAttachmentVerticalGrip
+          - ADTAttachmentLaserSight
+          - SurvivalKnifeAttachment
+      rmc-aslot-rail:
+        whitelist:
+            tags:
+            - ADTAttachmentMagneticHarness
+            - ADTAttachmentReflexSight
+            - ADTAttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.365, -0.1075
+      rmc-aslot-rail: -0.02375, -0.0325
+    # Horizon TWEAK END
 
 - type: entity
   name: double-barreled shotgun
@@ -138,7 +160,7 @@
 
 - type: entity
   name: Enforcer
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC2ContrabandUnredeemable, ADTBaseAttachableHolder] # Horizon tweak # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   id: WeaponShotgunEnforcer
   description: A premium semi-automatic shotgun, featuring an upgraded clip capacity. Uses .50 shotgun shells. # Frontier: no sec reference
   components: # intend for Enforcer to have wider choke for semi-auto function
@@ -152,6 +174,26 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: PirateBountyItem # Frontier
     id: Enforcer # Frontier
+    # Horizon TWEAK START
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - ADTAttachmentVerticalGrip
+          - ADTAttachmentLaserSight
+          - SurvivalKnifeAttachment
+      rmc-aslot-rail:
+        whitelist:
+            tags:
+            - ADTAttachmentMagneticHarness
+            - ADTAttachmentReflexSight
+            - ADTAttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.2875, -0.125
+      rmc-aslot-rail: -0.0375, -0.1575
+    # Horizon TWEAK END
 
 - type: entity
   parent: WeaponShotgunEnforcer
