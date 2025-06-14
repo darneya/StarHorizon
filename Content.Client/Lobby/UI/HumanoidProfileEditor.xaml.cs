@@ -1275,29 +1275,25 @@ namespace Content.Client.Lobby.UI
         private void SetBarkProto(string prototype)
         {
             Profile = Profile?.WithBarkProto(prototype);
-            ReloadPreview();
-            SetDirty();
+            _isDirty = true;
         }
 
         private void SetBarkPitch(float pitch)
         {
             Profile = Profile?.WithBarkPitch(Math.Clamp(pitch, _cfgManager.GetCVar(HorizonCCVars.BarksMinPitch), _cfgManager.GetCVar(HorizonCCVars.BarksMaxPitch)));
-            ReloadPreview();
-            SetDirty();
+            _isDirty = true;
         }
 
         private void SetBarkMinVariation(float variation)
         {
             Profile = Profile?.WithBarkMinVariation(Math.Clamp(variation, _cfgManager.GetCVar(HorizonCCVars.BarksMinDelay), Profile.Bark.MaxVar));
-            ReloadPreview();
-            SetDirty();
+            _isDirty = true;
         }
 
         private void SetBarkMaxVariation(float variation)
         {
             Profile = Profile?.WithBarkMaxVariation(Math.Clamp(variation, Profile.Bark.MinVar, _cfgManager.GetCVar(HorizonCCVars.BarksMaxDelay)));
-            ReloadPreview();
-            SetDirty();
+            _isDirty = true;
         }
         // _Horizon end
 
