@@ -229,6 +229,7 @@
         Piercing: 0.5
         Heat: 0.3
         Radiation: 0.1
+        Caustic: 0.8 # Horizon
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: TemperatureProtection
