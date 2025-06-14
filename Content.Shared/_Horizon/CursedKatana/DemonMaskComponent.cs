@@ -3,16 +3,13 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Speech;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Shared._Horizon.SoulСuttingKatana;
+namespace Content.Shared._Horizon.CursedKatana;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class SoulCuttingMaskComponent : Component
+public sealed partial class DemonMaskComponent : Component
 {
     [DataField("ownerUid")]
     public EntityUid OwnerUid;
-
-    [DataField("maskSealed")]
-    public bool MaskSealed { get; set; } = false;
 
     [DataField("ownerIdentified")]
     public bool OwnerIdentified { get; set; } = false;
@@ -22,9 +19,9 @@ public sealed partial class SoulCuttingMaskComponent : Component
     public ProtoId<SpeechSoundsPrototype>? OriginalSpeechSounds;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("recallKatanaSoulCuttingAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string RecallKatanaSoulCuttingAction = "ActionRecallSoulCuttingKatana";
+    [DataField("recallCursedKatanaAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string RecallCursedKatanaAction = "ActionRecallCursedKatana";
 
     [DataField, AutoNetworkedField]
-    public EntityUid? RecallKatanaActionSoulCuttingEntity;
+    public EntityUid? RecallCursedKatanaActionEntity;
 }
