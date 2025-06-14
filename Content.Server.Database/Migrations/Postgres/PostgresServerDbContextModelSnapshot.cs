@@ -906,28 +906,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("species");
 
-                    // _Horizon start
-                    b.Property<string>("BarkProto")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("bark_proto");
-
-                    b.Property<float>("BarkPitch")
-                        .IsRequired()
-                        .HasColumnType("float4")
-                        .HasColumnName("bark_pitch");
-
-                    b.Property<float>("LowBarkVar")
-                        .IsRequired()
-                        .HasColumnType("float4")
-                        .HasColumnName("low_bark_var");
-
-                    b.Property<float>("HighBarkVar")
-                        .IsRequired()
-                        .HasColumnType("float4")
-                        .HasColumnName("high_bark_var");
-                    // _Horizon end
-
                     b.HasKey("Id")
                         .HasName("PK_profile");
 

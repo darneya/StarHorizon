@@ -858,28 +858,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
 
-                    // _Horizon start
-                    b.Property<string>("BarkProto")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("bark_proto");
-
-                    b.Property<float>("BarkPitch")
-                        .IsRequired()
-                        .HasColumnType("REAL")
-                        .HasColumnName("bark_pitch");
-
-                    b.Property<float>("LowBarkVar")
-                        .IsRequired()
-                        .HasColumnType("REAL")
-                        .HasColumnName("low_bark_var");
-
-                    b.Property<float>("HighBarkVar")
-                        .IsRequired()
-                        .HasColumnType("REAL")
-                        .HasColumnName("high_bark_var");
-                    // _Horizon end
-
                     b.HasKey("Id")
                         .HasName("PK_profile");
 
