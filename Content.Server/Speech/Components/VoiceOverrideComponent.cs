@@ -1,3 +1,4 @@
+using Content.Shared._Horizon.Bark;
 using Content.Shared.Speech;
 using Robust.Shared.Prototypes;
 
@@ -32,4 +33,9 @@ public sealed partial class VoiceOverrideComponent : Component
     /// </summary>
     [DataField]
     public bool Enabled = true;
+
+    // _Horizon start
+    [DataField]
+    public BarkData? Bark;
+    // _Horizon end
 }
