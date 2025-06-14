@@ -13,9 +13,9 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.AddColumn<float>(
                 name: "bark_pitch",
                 table: "profile",
-                type: "real",
+                type: "float4",
                 nullable: false,
-                defaultValue: 0f);
+                defaultValue: 1.0f);
 
             migrationBuilder.AddColumn<string>(
                 name: "bark_proto",
@@ -27,16 +27,16 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.AddColumn<float>(
                 name: "high_bark_var",
                 table: "profile",
-                type: "real",
+                type: "float4",
                 nullable: false,
-                defaultValue: 0f);
+                defaultValue: 0.5f);
 
             migrationBuilder.AddColumn<float>(
                 name: "low_bark_var",
                 table: "profile",
-                type: "real",
+                type: "float4",
                 nullable: false,
-                defaultValue: 0f);
+                defaultValue: 0.1f);
         }
 
         /// <inheritdoc />

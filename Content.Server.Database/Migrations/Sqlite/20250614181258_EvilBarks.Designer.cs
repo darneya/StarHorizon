@@ -785,6 +785,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnName("bank_balance");
 
                     b.Property<float>("BarkPitch")
+                        .IsRequired()
                         .HasColumnType("REAL")
                         .HasColumnName("bark_pitch");
 
@@ -834,10 +835,12 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnName("hair_name");
 
                     b.Property<float>("HighBarkVar")
+                        .IsRequired()
                         .HasColumnType("REAL")
                         .HasColumnName("high_bark_var");
 
                     b.Property<float>("LowBarkVar")
+                        .IsRequired()
                         .HasColumnType("REAL")
                         .HasColumnName("low_bark_var");
 

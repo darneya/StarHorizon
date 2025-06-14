@@ -15,7 +15,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                 table: "profile",
                 type: "REAL",
                 nullable: false,
-                defaultValue: 0f);
+                defaultValue: 1.0f);
 
             migrationBuilder.AddColumn<string>(
                 name: "bark_proto",
@@ -29,14 +29,14 @@ namespace Content.Server.Database.Migrations.Sqlite
                 table: "profile",
                 type: "REAL",
                 nullable: false,
-                defaultValue: 0f);
+                defaultValue: 0.5f);
 
             migrationBuilder.AddColumn<float>(
                 name: "low_bark_var",
                 table: "profile",
                 type: "REAL",
                 nullable: false,
-                defaultValue: 0f);
+                defaultValue: 0.1f);
         }
 
         /// <inheritdoc />

@@ -833,7 +833,8 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnName("bank_balance");
 
                     b.Property<float>("BarkPitch")
-                        .HasColumnType("real")
+                        .IsRequired()
+                        .HasColumnType("float4")
                         .HasColumnName("bark_pitch");
 
                     b.Property<string>("BarkProto")
@@ -882,11 +883,13 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnName("hair_name");
 
                     b.Property<float>("HighBarkVar")
-                        .HasColumnType("real")
+                        .IsRequired()
+                        .HasColumnType("float4")
                         .HasColumnName("high_bark_var");
 
                     b.Property<float>("LowBarkVar")
-                        .HasColumnType("real")
+                        .IsRequired()
+                        .HasColumnType("float4")
                         .HasColumnName("low_bark_var");
 
                     b.Property<JsonDocument>("Markings")
