@@ -353,9 +353,10 @@ namespace Content.Server.Database
 
             // _Horizon start
             if (profile.BarkProto == string.Empty || profile.BarkProto is null)
-            {
                 profile.BarkProto = SharedHumanoidAppearanceSystem.DefaultBark;
-            }
+            else
+                profile.BarkProto = humanoid.Bark.Proto;
+
             profile.BarkPitch = humanoid.Bark.Pitch;
             profile.LowBarkVar = humanoid.Bark.MinVar;
             profile.HighBarkVar = humanoid.Bark.MaxVar;
