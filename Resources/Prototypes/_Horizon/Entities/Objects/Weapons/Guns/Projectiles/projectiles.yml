@@ -99,7 +99,63 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 70
-        Structural: 20
+        Blunt: 60
+        Structural: 40
   - type: GatheringProjectile
     amount: 40
+  - type: TimedDespawn
+    lifetime: 0.35 # Horizon
+
+- type: entity
+  id: BulletKineticPistol
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Blunt: 15
+        Structural: 10
+
+- type: entity
+  id: BulletKineticRepeater
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Blunt: 15
+        Structural: 20
+  - type: TimedDespawn
+    lifetime: 0.18 # Horizon
+
+- type: entity
+  id: BulletKineticShotgunSpread
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: ProjectileSpread
+    proto: BulletKineticShotgunPellet
+    count: 4
+    spread: 10
+
+- type: entity
+  id: BulletKineticShotgunPellet
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Blunt: 15
+        Structural: 20
+  - type: TimedDespawn
+    lifetime: 0.15 # Horizon

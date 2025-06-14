@@ -363,3 +363,24 @@
 
 - type: Tag
   id: MagazinePistol9x18mm
+
+- type: Tag
+  id: CursedKatana
+
+- type: Tag
+  id: PKAUpgrade
+
+- type: Tag
+  id: GunUpgradeDamage
+
+- type: Tag
+  id: GunUpgradeRange
+
+- type: Tag
+  id: GunUpgradeReloadSpeed
+
+- type: Tag
+  id: HardsuitMaximize
+
+- type: Tag
+  id: HardsuitGoliath

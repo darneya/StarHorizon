@@ -214,7 +214,7 @@ namespace Content.Shared.Damage
             }
 
             damage = ApplyUniversalAllModifiers(damage);
-            // _Horizon start
+            // Horizon start
             var finalEv = new DamageBeforeApplyEvent
             {
                 Damage = damage,
@@ -223,7 +223,7 @@ namespace Content.Shared.Damage
             RaiseLocalEvent(uid.Value, finalEv);
             if (finalEv.Cancelled)
                 return damage;
-            // _Horizon end
+            // Horizon end
 
             // TODO DAMAGE PERFORMANCE
             // Consider using a local private field instead of creating a new dictionary here.
