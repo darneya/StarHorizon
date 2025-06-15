@@ -489,6 +489,36 @@
     Glass: 100
 
 - type: latheRecipe
+  id: MechRipleyFirefighterUpgradeKit
+  result: MechRipleyFirefighterUpgradeKit
+  category: Mech
+  completetime: 10
+  materials:
+    Steel: 1100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: MechRipleyHaulerUpgradeKit
+  result: MechRipleyHaulerUpgradeKit
+  category: Mech
+  completetime: 10
+  materials:
+    Steel: 1100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: MechRipleyDeathUpgradeKit
+  result: MechRipleyDeathUpgradeKit
+  category: Mech
+  completetime: 10
+  materials:
+    Steel: 1100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
   id: MechClarkeOrangeyUpgradeKit
   result: MechClarkeOrangeyUpgradeKit
   category: Mech
