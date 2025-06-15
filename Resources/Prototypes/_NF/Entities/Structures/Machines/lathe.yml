@@ -110,6 +110,7 @@
     dynamicPacks:
     - NFSalvageTechfabDeprecated
     - NightVisionPack # Horizon
+    - HorizonPKAPack # Horizon
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFSalvageTechfabDeprecatedEmag

@@ -2,7 +2,7 @@
 
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Aavikko.Weapons.Ranged;
+namespace Content.Shared._Horizon.Weapons.Ranged;
 
 [Serializable, NetSerializable]
 public enum EnergyGunFireModeVisuals : byte

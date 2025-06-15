@@ -1,6 +1,6 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.Aavikko.Weapons.Ranged.Upgrades.Components;
+namespace Content.Shared._Horizon.Weapons.Ranged.Upgrades.Components;
 
 /// <summary>
 /// A <see cref="GunUpgradeComponent"/> for increasing the firerate of a gun.

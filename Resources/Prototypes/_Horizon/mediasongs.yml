@@ -263,3 +263,24 @@
   author: Godsmack
   soundPath:
     path: /Audio/_Horizon/Jukebox/Godsmack-IStandAlone.ogg
+
+- type: MediaFile
+  id: MilIronLotus
+  songName: Iron Lotus
+  author: Mili
+  soundPath:
+    path: /Audio/_Horizon/Jukebox/Mil-IronLotus.ogg
+
+- type: MediaFile
+  id: MilSummoning101
+  songName: Summoning 101
+  author: Mili
+  soundPath:
+    path: /Audio/_Horizon/Jukebox/Mil-Summoning101.ogg
+
+- type: MediaFile
+  id: MilWorldExecuteMe
+  songName: World Execute Me
+  author: Mili
+  soundPath:
+    path: /Audio/_Horizon/Jukebox/Mil-WorldExecuteMe.ogg

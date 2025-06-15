@@ -11,7 +11,7 @@ using System.Linq;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Damage;
 
-namespace Content.Server.Aavikko.PressureDamageModify;
+namespace Content.Server._Horizon.PressureDamageModify;
 
 public sealed partial class PressureDamageModifySystem : EntitySystem
 {

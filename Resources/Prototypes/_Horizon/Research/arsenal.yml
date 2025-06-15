@@ -15,6 +15,57 @@
   - HorizonBlueprintClothingEyesVision
 
 - type: technology
+  id: AdvancedPKAMelee
+  name: research-technology-advancedpkamelee
+  icon:
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_hammer.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - WeaponKineticSpear
+  - WeaponKineticHammer
+  - WeaponKineticClaws
+  - WeaponKineticMachete
+  technologyPrerequisites:
+  - SalvageWeapons
+
+- type: technology
+  id: AdvancedPKARanged
+  name: research-technology-advancedpkaranged
+  icon:
+    sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_railgun.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - WeaponProtoKineticPistol
+  - WeaponProtoKineticRepeater
+  - WeaponProtoKineticRailgun
+  - WeaponProtoKineticShotgun
+  technologyPrerequisites:
+  - SalvageWeapons
+
+- type: technology
+  id: AdvancedPKAModules
+  name: research-technology-advancedpkamodules
+  icon:
+    sprite: _Horizon/Objects/Tools/upgrade.rsi
+    state: display
+  discipline: Arsenal
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - PKAUpgradeDamage
+  - PKAUpgradeRange
+  - PKAUpgradeFireRate
+  - PKAUpgradeLight
+  technologyPrerequisites:
+  - SalvageWeapons
+
+- type: technology
   id: GygaxTechnology
   name: research-technology-mech-gygax
   icon:

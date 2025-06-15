@@ -6,12 +6,12 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Tools/upgrade.rsi
+    sprite: _Horizon/Objects/Tools/upgrade.rsi
   - type: Item
     size: Small
   - type: GunUpgrade
   - type: StaticPrice
-    price: 750
+    price: 1250
   - type: Tag
     tags:
     - PKAUpgrade
@@ -103,4 +103,5 @@
       color: "#ffeead"
       enabled: false
       radius: 4
-
+  - type: GunUpgradeSpeed
+    coefficient: 1

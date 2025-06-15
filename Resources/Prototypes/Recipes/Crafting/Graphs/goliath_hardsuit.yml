@@ -10,7 +10,7 @@
         icon:
           sprite: Clothing/OuterClothing/Hardsuits/spatio.rsi
           state: icon
-        name: spationaut hardsuit
+        name: легкий скафандр утилизатора # Horizon
         doAfter: 10
       - material: Durathread
         amount: 5

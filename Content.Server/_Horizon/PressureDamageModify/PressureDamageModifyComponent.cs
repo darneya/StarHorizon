@@ -1,6 +1,6 @@
 using Content.Shared.Damage;
 
-namespace Content.Server.Aavikko.PressureDamageModify;
+namespace Content.Server._Horizon.PressureDamageModify;
 
 [RegisterComponent]
 public sealed partial class PressureDamageModifyComponent : Component

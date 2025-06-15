@@ -7,7 +7,7 @@
     tags:
     - Pickaxe
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_spear.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_spear.rsi
     state: icon
   - type: AmmoCounter
   - type: UseDelayOnShoot
@@ -37,7 +37,7 @@
     tags:
     - Pickaxe
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_spear.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_spear.rsi
     state: icon
   - type: AmmoCounter
   - type: UseDelayOnShoot
@@ -60,8 +60,8 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 10
         Slash: 5
+        Piercing: 10
     soundHit:
       collection: MetalThud
     angle: 0
@@ -70,20 +70,19 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2.5
-        Slash: 2.5
-        Structural: 30
+        Piercing: 10
+        Structural: 15
   - type: GunRequiresWield
   - type: Item
     size: Ginormous
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_spear-inhands.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_spear-inhands.rsi
   - type: DisarmMalus
   - type: Wieldable
   - type: PressureDamageModify
     additionalDamage:
       types:
-        Blunt: 10
-        Slash: 15
+        Slash: 10
+        Piercing: 10
 
 - type: entity
   parent: WeaponKineticBase
@@ -92,7 +91,7 @@
   description: A beefy, two-handed weapon that inflicts knockback and heavier damage than a crusher, but cannot backstab.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_hammer.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_hammer.rsi
     state: icon
   - type: UseDelay
     delay: 1
@@ -101,8 +100,7 @@
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 20
-        Slash: 5
+        Blunt: 30
     soundHit:
       collection: MetalThud
     angle: 0
@@ -111,12 +109,11 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2.5
-        Slash: 2.5
+        Blunt: 10
         Structural: 50
   - type: Item
     size: Ginormous
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_hammer-inhands.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_hammer-inhands.rsi
   - type: MeleeThrowOnHit
     speed: 5
     lifetime: 0.5
@@ -125,8 +122,7 @@
   - type: PressureDamageModify
     additionalDamage:
       types:
-        Blunt: 10
-        Slash: 15
+        Blunt: 20
 
 - type: entity
   parent: WeaponKineticBase
@@ -135,7 +131,7 @@
   description: Unleash your inner edgelord with this two-handed claw small enough to fit in your backpack. Deals a paltry 45 damage on mark detonation, but sports a massive 120 damage backstab bonus.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_claws.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_claws.rsi
     state: icon
   - type: UseDelay
     delay: 1
@@ -153,19 +149,19 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2.5
-        Slash: 2.5
-        Structural: 30
+        Slash: 5
+        Piercing: 5
+        Structural: 15
   - type: GunRequiresWield
   - type: Wieldable
   - type: Item
     size: Normal
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_claws-inhands.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_claws-inhands.rsi
   - type: PressureDamageModify
     additionalDamage:
       types:
-        Blunt: 10
-        Slash: 15
+        Slash: 10
+        Piercing: 10
 
 - type: entity
   parent: WeaponKineticBase
@@ -174,7 +170,7 @@
   description: A smaller, one-handed variant of the crusher. Deals about 40 less damage than the PKC, but has a 15% melee block chance.
   components:
   - type: Sprite
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_machete.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_machete.rsi
     state: icon
   - type: UseDelay
     delay: 1
@@ -188,11 +184,16 @@
     angle: 0
     animation: WeaponArcThrust
     range: 1.6
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Slash: 10
+        Structural: 20
+  - type: Wieldable
   - type: Item
     size: Ginormous
-    sprite: Aavikko/Objects/Weapons/Melee/crusher_machete-inhands.rsi
+    sprite: _Horizon/Objects/Weapons/Melee/crusher_machete-inhands.rsi
   - type: PressureDamageModify
     additionalDamage:
       types:
-        Blunt: 10
         Slash: 15

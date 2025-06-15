@@ -1,3 +1,4 @@
+using Content.Shared._Horizon.Bark;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Inventory;
@@ -90,6 +91,14 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField]
     public HashSet<HumanoidVisualLayers> HideLayersOnEquip = [HumanoidVisualLayers.Hair];
+
+    // _Horizon start
+    /// <summary>
+    ///     Current voice. Used for correct cloning.
+    /// </summary>
+    [DataField("bark")]
+    public BarkData Bark = new();
+    // _Horizon end
 
     /// <summary>
     ///     Which markings the humanoid defaults to when nudity is toggled off.
