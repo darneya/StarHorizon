@@ -231,13 +231,13 @@ public sealed class AttachableToggleableSystem : EntitySystem
     private void OnGunShot(Entity<AttachableToggleableComponent> attachable, ref AttachableRelayedEvent<GunShotEvent> args)
     {
         CheckUserBreakOnRotate(args.Args.User);
-        CheckUserBreakOnFullRotate(args.Args.User, args.Args.FromCoordinates, args.Args.ToCoordinates);
+        //CheckUserBreakOnFullRotate(args.Args.User, args.Args.FromCoordinates, args.Args.ToCoordinates);
     }
 
     private void OnGunShot(Entity<AttachableToggleableComponent> attachable, ref GunShotEvent args)
     {
         CheckUserBreakOnRotate(args.User);
-        CheckUserBreakOnFullRotate(args.User, args.FromCoordinates, args.ToCoordinates);
+        //CheckUserBreakOnFullRotate(args.User, args.FromCoordinates, args.ToCoordinates);
     }
 
     private void OnAttemptShoot(Entity<AttachableGunPreventShootComponent> gun, ref AttemptShootEvent args)
