@@ -252,7 +252,7 @@
         whitelist:
           tags:
           - ADTAttachmentLaserSight
-          - SurvivalKnifeAttachment
+          #- SurvivalKnifeAttachment
       rmc-aslot-rail:
         whitelist:
             tags:

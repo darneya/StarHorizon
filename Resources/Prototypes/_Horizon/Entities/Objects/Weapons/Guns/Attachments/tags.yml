@@ -2,16 +2,10 @@
   id: ADTAttachmentUnderbarrel
 
 - type: Tag
-  id: ADTAttachmentM90GrenadeLauncher
-
-- type: Tag
-  id: ADTAttachmentM90UnderbarrelShotgun
-
-- type: Tag
   id: ADTAttachmentBarrel
 
-- type: Tag
-  id: SurvivalKnifeAttachment
+#- type: Tag
+#  id: SurvivalKnifeAttachment
 
 - type: Tag
   id: ADTAttachmentRail
@@ -22,8 +16,8 @@
 - type: Tag
   id: ADTAttachmentHristovScope
 
-- type: Tag
-  id: ADTMosinBayonetAttachment
+#- type: Tag
+#  id: ADTMosinBayonetAttachment
 
 - type: Tag
   id: ADTAttachmentT2Miniscope

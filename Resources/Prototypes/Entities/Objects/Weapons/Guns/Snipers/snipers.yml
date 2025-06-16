@@ -52,19 +52,19 @@
     pvsIncrease: 0.15 # Frontier
   - type: AltFireMelee # Frontier
     attackType: Light # Frontier
-    #ADT_Tweak START
-  - type: AttachableHolder #ADT_Tweak
-    slots:
-      rmc-aslot-barrel:
-        startingAttachable: ADTMosinBayonet
-        whitelist:
-          tags:
-          - ADTMosinBayonetAttachment
-  - type: AttachableHolderVisuals #ADT_Tweak
+    #Horizon_Tweak START
+#  - type: AttachableHolder #ADT_Tweak
+#    slots:
+#      rmc-aslot-barrel:
+#        startingAttachable: ADTMosinBayonet
+#        whitelist:
+#          tags:
+#          - ADTMosinBayonetAttachment
+  - type: AttachableHolderVisuals #Horizon_Tweak
     offsets:
       rmc-aslot-barrel: 0.59375, 0
       # rmc-aslot-barrel: 0.59375, -0.15625
-    #ADT_Tweak END
+    #Horizom_Tweak END
 
 - type: entity
   name: Hristov
