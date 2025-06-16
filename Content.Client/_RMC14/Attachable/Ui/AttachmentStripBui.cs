@@ -1,6 +1,6 @@
 using Content.Shared._RMC14.Attachable;
 
-namespace Content.Client.ADT._RMC14.Attachable.Ui;
+namespace Content.Client._RMC14.Attachable.Ui;
 
 public sealed class AttachmentStripBui : BoundUserInterface
 {
