@@ -2,6 +2,12 @@
   id: ADTAttachmentUnderbarrel
 
 - type: Tag
+  id: ADTAttachmentM90GrenadeLauncher
+
+- type: Tag
+  id: ADTAttachmentM90UnderbarrelShotgun
+
+- type: Tag
   id: ADTAttachmentBarrel
 
 #- type: Tag

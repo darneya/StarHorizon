@@ -4,6 +4,7 @@ using Content.Shared.Hands;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Utility;
+using Content.Shared._RMC14.Weapons.Ranged; // Horizon TWEAK
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
@@ -91,6 +92,9 @@ public abstract partial class SharedGunSystem
 
         Audio.PlayPredicted(component.SoundMode, uid, user);
         Popup(Loc.GetString("gun-selected-mode", ("mode", GetLocSelector(fire))), uid, user);
+        var ev = new RMCFireModeChangedEvent(); // Horizon TWEAK
+        RaiseLocalEvent(uid, ref ev); // Horizon TWEAK
+
         Dirty(uid, component);
     }
 

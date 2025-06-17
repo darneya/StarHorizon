@@ -142,6 +142,8 @@
       rmc-aslot-underbarrel:
         whitelist:
           tags:
+          - ADTAttachmentM90GrenadeLauncher
+          - ADTAttachmentM90UnderbarrelShotgun
           - ADTAttachmentVerticalGrip
           - ADTAttachmentLaserSight
 #          - SurvivalKnifeAttachment
@@ -224,6 +226,8 @@
       rmc-aslot-underbarrel:
         whitelist:
           tags:
+          - ADTAttachmentM90GrenadeLauncher
+          - ADTAttachmentM90UnderbarrelShotgun
           - ADTAttachmentVerticalGrip
           - ADTAttachmentLaserSight
 #          - SurvivalKnifeAttachment
