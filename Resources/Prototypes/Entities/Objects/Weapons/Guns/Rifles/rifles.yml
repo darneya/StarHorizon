@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponRifle
-  parent: [BaseItem, BaseGunWieldable, BaseAttachableHolder] # Horizon Attachments 
+  parent: [BaseItem, BaseGunWieldable, BaseAttachableHolder] # Horizon Attachments
   id: BaseWeaponRifle
   description: A rooty tooty point and shooty.
   abstract: true
@@ -70,6 +70,11 @@
         whitelist:
             tags:
             - AttachmentSuppressor
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, 0
+      rmc-aslot-barrel: 0.96875, 0
     # Horizon Attachments end
 
 - type: entity
@@ -122,6 +127,14 @@
   - type: Appearance
   - type: PirateBountyItem # Frontier
     id: AKMS # Frontier
+  # Horizon Attachments start
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, 0
+      rmc-aslot-barrel: 1.0, 0.06
+  # Horizon Attachments end
+
 
 - type: entity
   name: M-90gl

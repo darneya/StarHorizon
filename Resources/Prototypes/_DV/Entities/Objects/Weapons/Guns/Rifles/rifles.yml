@@ -57,6 +57,14 @@
     sprite: _DV/Objects/Weapons/Guns/Rifles/vulcan.rsi
   # - type: StaticPrice # Frontier: overvalued
   #  price: 1300
+  # Horizon Attachments start
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, 0
+      rmc-aslot-barrel: 0.96875, -0.055
+  # Horizon Attachments end
+
 
 - type: entity
   name: ceremonial rifle
@@ -144,3 +152,10 @@
   - type: Appearance
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/Rifles/jackdaw.rsi
+  # Horizon Attachments start
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, 0
+      rmc-aslot-barrel: 0.96875, 0.022
+  # Horizon Attachments end

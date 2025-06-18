@@ -108,6 +108,14 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+  # Horizon Attachments start
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, 0
+      rmc-aslot-barrel: 0.90875, -0.024
+  # Horizon Attachments end
+
 
 - type: entity
   parent: WeaponRifleGestio
