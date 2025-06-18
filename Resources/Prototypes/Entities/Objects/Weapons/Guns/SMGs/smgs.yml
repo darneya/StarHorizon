@@ -1,7 +1,7 @@
 - type: entity
   name: BaseSMG
-  parent: BaseItem
-  id: BaseWeaponSubMachineGun
+  parent: [BaseItem, BaseAttachableHolder] # horizon
+  id: [BaseWeaponSubMachineGun, BaseAttachableHolder] # Horizon
   description: A rooty tooty point and shooty.
   abstract: true
   components:
@@ -57,6 +57,26 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+          # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+          # Horizon Attachments end
 
 - type: entity
   name: Atreides

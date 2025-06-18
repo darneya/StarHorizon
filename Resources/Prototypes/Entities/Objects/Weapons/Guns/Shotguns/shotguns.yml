@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponShotgun
-  parent: BaseItem
+  parent: [BaseItem, BaseAttachableHolder] # horizon
   id: BaseWeaponShotgun
   description: A rooty tooty point and shooty.
   abstract: true
@@ -42,6 +42,22 @@
         ents: []
   - type: StaticPrice
     price: 500
+    # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight 
+          #- SurvivalKnifeAttachment
+      rmc-aslot-rail:
+        whitelist:
+            tags:
+            - AttachmentMagneticHarness
+            - AttachmentReflexSight
+            - AttachmentT2Miniscope
+    # Horizon Attachments end
 
 - type: entity
   name: Bulldog

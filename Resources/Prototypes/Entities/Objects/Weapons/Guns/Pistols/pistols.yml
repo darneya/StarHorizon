@@ -1,6 +1,6 @@
 - type: entity
   name: BasePistol
-  parent: BaseItem
+  parent: [BaseItem, BaseAttachableHolder] # Horizon Attachments 
   id: BaseWeaponPistol
   description: A rooty tooty point and shooty.
   abstract: true
@@ -67,6 +67,18 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+    # Horizon Attachmens start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+    # Horizon Attachments end
 
 - type: entity
   name: viper

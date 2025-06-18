@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponRifle
-  parent: [BaseItem, BaseGunWieldable]
+  parent: [BaseItem, BaseGunWieldable, BaseAttachableHolder] # Horizon Attachments 
   id: BaseWeaponRifle
   description: A rooty tooty point and shooty.
   abstract: true
@@ -50,6 +50,27 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+    # Horizon Attachmens start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+            tags:
+            - AttachmentMagneticHarness
+            - AttachmentReflexSight
+            - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+            tags:
+            - AttachmentSuppressor
+    # Horizon Attachments end
 
 - type: entity
   name: AKMS
