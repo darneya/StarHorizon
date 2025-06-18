@@ -1,19 +1,19 @@
 ## BASE
 - type: entity
   abstract: true
-  parent: ADTAttachableBase
-  id: ADTBarrelAttachmentBase
+  parent: AttachableBase
+  id: BarrelAttachmentBase
   components:
   - type: Sprite
-    sprite: ADT/Objects/Weapons/Guns/Attachments/barrel.rsi
+    sprite: _RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi
   - type: Tag
     tags:
-    - ADTAttachmentBarrel
+    - AttachmentBarrel
 ##
 
 - type: entity
-  parent: ADTBarrelAttachmentBase
-  id: ADTAttachmentSuppressor
+  parent: BarrelAttachmentBase
+  id: AttachmentSuppressor
   name: suppressor
   description: "A small tube with exhaust ports to expel noise and gas.
     Does not completely silence a weapon, but does make it much quieter at the cost of slightly reduced damage."
@@ -24,13 +24,13 @@
     state: suppressor
   - type: Tag
     tags:
-    - ADTAttachmentBarrel
-    - ADTAttachmentSuppressor
+    - AttachmentBarrel
+    - AttachmentSuppressor
   - type: AttachableVisuals
     prefix: suppressor
   - type: AttachableSilencer
     sound:
-      collection: ADTSilencedShoot
+      collection: SilencedShoot
       params:
         maxDistance: 6
   # - type: AttachableWeaponRangedMods Пока не работает
@@ -38,8 +38,8 @@
   #   - damageFalloffAddMult: 0.1
 
 - type: entity
-  parent: ADTBarrelAttachmentBase
-  id: ADTAttachmentAntiLyingWarrior
+  parent: BarrelAttachmentBase
+  id: AttachmentAntiLyingWarrior
   name: Anti Lying Warrior
   description: AntiLyingWarrior
   components:
@@ -47,8 +47,8 @@
     state: antilying
   - type: Tag
     tags:
-    - ADTAttachmentBarrel
-    - ADTAttachmentAntiLyingWarrior
+    - AttachmentBarrel
+    - AttachmentAntiLyingWarrior
   - type: AttachableVisuals
     prefix: antilying
   - type: AttachableAntiLyingWarrior

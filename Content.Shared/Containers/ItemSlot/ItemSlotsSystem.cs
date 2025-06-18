@@ -498,7 +498,7 @@ namespace Content.Shared.Containers.ItemSlots
             return true;
         }
 
-        public static int SortEmpty(ItemSlot a, ItemSlot b) // HORIZON TWEAK: PRIVATE TO PUBLIC
+        public static int SortEmpty(ItemSlot a, ItemSlot b) // Horizon Attachments tweak: private to public
         {
             var aEnt = a.ContainerSlot?.ContainedEntity;
             var bEnt = b.ContainerSlot?.ContainedEntity;

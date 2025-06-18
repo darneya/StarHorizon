@@ -1,13 +1,13 @@
 - type: entity
   name: binoculars
   parent: BaseItem
-  id: ADTBinoculars
+  id: RMCBinoculars
   description: A military-issued pair of binoculars.
   components:
   - type: Item
     size: Small
   - type: Sprite
-    sprite: ADT/Objects/Devices/binoculars.rsi
+    sprite: _RMC14/Objects/Devices/binoculars.rsi
     state: binoculars
   - type: Scope
     useInHand: true

@@ -1,5 +1,5 @@
 - type: entity
-  id: ADTBullet40mmGrenadeBaton
+  id: Bullet40mmGrenadeBaton
   name: baton grenade
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
@@ -19,7 +19,7 @@
     damage: 160
 
 - type: entity
-  id: ADTBullet40mmGrenadeBlast
+  id: Bullet40mmGrenadeBlast
   name: blast grenade
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
@@ -37,7 +37,7 @@
     canCreateVacuum: false
 
 - type: entity
-  id: ADTBullet40mmGrenadeFlash
+  id: Bullet40mmGrenadeFlash
   name: flash grenade
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
@@ -55,7 +55,7 @@
   - type: DeleteOnTrigger
 
 - type: entity
-  id: ADTBullet40mmGrenadeHEAT
+  id: Bullet40mmGrenadeHEAT
   name: heat grenade
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
@@ -81,7 +81,7 @@
       path: /Audio/Effects/gen_hit.ogg
 
 - type: entity
-  id: ADTBullet40mmGrenadeEMP
+  id: Bullet40mmGrenadeEMP
   name: EMP grenade
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
@@ -102,7 +102,7 @@
     energy: 0.5
 
 - type: entity
-  id: ADTBullet40mmGrenadeSmoke
+  id: Bullet40mmGrenadeSmoke
   name: smoke grenade
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
@@ -118,7 +118,7 @@
     sound: /Audio/Items/smoke_grenade_smoke.ogg
 
 - type: entity
-  id: ADTBulletFragRocket
+  id: BulletFragRocket
   name: frag rocket
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
@@ -139,7 +139,7 @@
     energy: 0.5
 
 - type: entity
-  id: ADTBulletBlastRocket
+  id: BulletBlastRocket
   name: blast rocket
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]

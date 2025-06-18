@@ -1,4 +1,4 @@
-using Content.Shared._RMC14.Input;
+using Content.Shared._RMC14.Input; //Horizon Attachments
 using Content.Shared.Input;
 using Robust.Shared.Input;
 
@@ -128,10 +128,10 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.OpenAdminMenu);
             common.AddFunction(ContentKeyFunctions.OpenGuidebook);
 
-            CMFunctions(contexts); // HORIZON TWEAK
+            CMFunctions(contexts); // Horizon Attachments
         }
 
-            // HORIZON TWEAK START:
+            // Horizon Attachments start
         private static void CMFunctions(IInputContextContainer contexts)
         {
             var human = contexts.GetContext("human");
@@ -142,6 +142,6 @@ namespace Content.Client.Input
             human.AddFunction(CMKeyFunctions.RMCFieldStripHeldItem);
             human.AddFunction(CMKeyFunctions.CMUniqueAction);
         }
-    // HORIZON TWEAK END.
+            // Horizon Attachments end
     }
 }

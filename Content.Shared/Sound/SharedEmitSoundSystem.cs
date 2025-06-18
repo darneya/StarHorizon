@@ -142,12 +142,12 @@ public abstract class SharedEmitSoundSystem : EntitySystem
     }
     
     
-// Horizon tweak start
+// Horizon Attachments start
     public void EmitSound(EntityUid uid, BaseEmitSoundComponent component, EntityUid? user = null, bool predict = true)
     {
         TryEmitSound(uid, component, user, predict);
     }
-// Horizon tweak end
+// Horizon Attachments end
 
     protected void TryEmitSound(EntityUid uid, BaseEmitSoundComponent component, EntityUid? user = null, bool predict = true)
     {

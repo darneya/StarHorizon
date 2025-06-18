@@ -4,7 +4,7 @@ using Content.Shared.Hands;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Utility;
-using Content.Shared._RMC14.Weapons.Ranged; // Horizon TWEAK
+using Content.Shared._RMC14.Weapons.Ranged; // Horizon Attachments
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
@@ -71,7 +71,7 @@ public abstract partial class SharedGunSystem
         return modes[(index + 1) % modes.Count];
     }
 
-    public void SelectFire(EntityUid uid, GunComponent component, SelectiveFire fire, EntityUid? user = null) // _Horizon access changed
+    public void SelectFire(EntityUid uid, GunComponent component, SelectiveFire fire, EntityUid? user = null) // Horizon Attachments: private to public
     {
         if (component.SelectedMode == fire)
             return;
@@ -92,8 +92,8 @@ public abstract partial class SharedGunSystem
 
         Audio.PlayPredicted(component.SoundMode, uid, user);
         Popup(Loc.GetString("gun-selected-mode", ("mode", GetLocSelector(fire))), uid, user);
-        var ev = new RMCFireModeChangedEvent(); // Horizon TWEAK
-        RaiseLocalEvent(uid, ref ev); // Horizon TWEAK
+        var ev = new RMCFireModeChangedEvent(); // Horizon Attachments
+        RaiseLocalEvent(uid, ref ev); // Horizon Attachments
 
         Dirty(uid, component);
     }

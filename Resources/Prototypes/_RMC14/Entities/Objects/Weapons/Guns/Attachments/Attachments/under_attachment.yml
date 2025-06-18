@@ -1,19 +1,19 @@
 ## BASE
 - type: entity
   abstract: true
-  parent: ADTAttachableBase
-  id: ADTUnderAttachmentBase
+  parent: AttachableBase
+  id: UnderAttachmentBase
   components:
   - type: Sprite
-    sprite: ADT/Objects/Weapons/Guns/Attachments/under.rsi
+    sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
   - type: Tag
     tags:
-    - ADTAttachmentUnderbarrel
+    - AttachmentUnderbarrel
 ## BASE
 
 - type: entity
-  parent: [ ADTUnderAttachmentBase, ADTAttachableToggleableBase ]
-  id: ADTAttachmentM90GrenadeLauncher
+  parent: [ UnderAttachmentBase, AttachableToggleableBase ]
+  id: AttachmentM90GrenadeLauncher
   name: M90 Grenade Launcher
   description: A weapon-mounted, reloadable grenade launcher.
   components:
@@ -40,7 +40,7 @@
   - type: BallisticAmmoProvider
     whitelist:
       tags:
-        - ADT40mmGrenade
+        - 40mmGrenade
     proto: null
     capacity: 1
     soundInsert:
@@ -66,24 +66,24 @@
     actionName: Switch to the M90 Grenade Launcher
     actionDesc: Switch to using the underbarrel grenade launcher.
     icon:
-      sprite: ADT/Objects/Weapons/Guns/Attachments/under.rsi
+      sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
       state: grenade
     iconActive:
-      sprite: ADT/Objects/Weapons/Guns/Attachments/under.rsi
+      sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
       state: grenade-on
   - type: AttachableVisuals
     redrawOnAppearanceChange: true
   - type: Tag
     tags:
-    - ADTAttachmentUnderbarrel
-    - ADTAttachmentM90GrenadeLauncher
+    - AttachmentUnderbarrel
+    - AttachmentM90GrenadeLauncher
   - type: Item
-    sprite: ADT/Objects/Weapons/Guns/Attachments/under.rsi
+    sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
     storedRotation: -90
 
 - type: entity
-  parent: [ ADTUnderAttachmentBase, ADTAttachableToggleableBase ]
-  id: ADTAttachmentM90UnderbarrelShotgun
+  parent: [ UnderAttachmentBase, AttachableToggleableBase ]
+  id: AttachmentM90UnderbarrelShotgun
   name: M90 underbarrel shotgun
   description: MEOW
   components:
@@ -91,8 +91,8 @@
     state: masterkey
   - type: Tag
     tags:
-    - ADTAttachmentUnderbarrel
-    - ADTAttachmentM90UnderbarrelShotgun
+    - AttachmentUnderbarrel
+    - AttachmentM90UnderbarrelShotgun
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
@@ -126,20 +126,20 @@
     actionName: Switch to the M90 underbarrel shotgun
     actionDesc: Switch to using the underbarrel shotgun.
     icon:
-      sprite: ADT/Objects/Weapons/Guns/Attachments/under.rsi
+      sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
       state: masterkey
     iconActive:
-      sprite: ADT/Objects/Weapons/Guns/Attachments/under.rsi
+      sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
       state: masterkey-on
   - type: AttachableVisuals
   - type: UniqueAction
   - type: Item
-    sprite: ADT/Objects/Weapons/Guns/Attachments/under.rsi
+    sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
     storedRotation: -90
 
 - type: entity
-  parent: ADTUnderAttachmentBase
-  id: ADTAttachmentVerticalGrip
+  parent: UnderAttachmentBase
+  id: AttachmentVerticalGrip
   name: vertical grip
   description: "A vertical foregrip that offers better accuracy, less recoil, and less scatter, especially during burst fire.
     However, it also increases weapon size."
@@ -149,8 +149,8 @@
   - type: AttachableVisuals
   - type: Tag
     tags:
-    - ADTAttachmentUnderbarrel
-    - ADTAttachmentVerticalGrip
+    - AttachmentUnderbarrel
+    - AttachmentVerticalGrip
   - type: AttachableWeaponRangedMods
     modifiers:
     - conditions:
@@ -161,8 +161,8 @@
       burstScatterAddMult: -4
 
 - type: entity
-  parent: ADTUnderAttachmentBase
-  id: ADTAttachmentLaserSight
+  parent: UnderAttachmentBase
+  id: AttachmentLaserSight
   name: laser sight
   description: A laser sight that attaches to the underside of most weapons. Increases accuracy and decreases scatter, especially while one-handed.
   components:
@@ -171,8 +171,8 @@
   - type: AttachableVisuals
   - type: Tag
     tags:
-    - ADTAttachmentUnderbarrel
-    - ADTAttachmentLaserSight
+    - AttachmentUnderbarrel
+    - AttachmentLaserSight
   - type: AttachableWeaponRangedMods
     modifiers:
     - conditions:

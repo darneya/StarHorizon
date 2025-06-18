@@ -75,7 +75,7 @@ public sealed partial class ProjectileComponent : Component
     [DataField]
     public bool OnlyCollideWhenShot = false;
 
-    // Horizon start
+    // Horizon Attachments start
     
     /// <summary>
     ///     Whether this projectile has already damaged an entity.
@@ -91,7 +91,7 @@ public sealed partial class ProjectileComponent : Component
     [DataField, AutoNetworkedField]
     public float? MaxFixedRange;
 
-    // Horizon end
+    // Horizon Attachments end
 
     /// <summary>
     ///     If true, the projectile has hit enough targets and should no longer interact with further collisions pending deletion.
