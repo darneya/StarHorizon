@@ -57,3 +57,7 @@ research-technology-advanced-cyberorgans = Продвинутые киберне
 
 research-technology-adv-hydroponics = Продвинутая ботаника
 research-technology-hydroponics-dna-manip = Манипуляции ДНК растений
+
+research-technology-modules-based = Базовые оружейные модули
+research-technology-modules-extended = Улучшенные оружейные модули
+research-technology-modules-advanced = Продвинутые оружейные модули

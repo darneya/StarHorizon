@@ -1,0 +1,50 @@
+- type: technology
+  id: ArsenalBasicModules
+  name: research-technology-modules-based
+  icon:
+    sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
+    state: tech_basic
+  discipline: Arsenal
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - AttachmentVerticalGrip
+  - AttachmentLaserSight
+  - AttachmentReflexSight
+
+- type: technology
+  id: ArsenalExtendedModules
+  name: research-technology-modules-extended
+  icon:
+    sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
+    state: tech_extented
+  discipline: Arsenal
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - AttachmentMagneticHarness
+  - AttachmentSuppressor
+  - AttachmentAntiLyingWarrior
+  technologyPrerequisites:
+  - ArsenalBasicModules
+
+- type: technology
+  id: ArsenalAdvancedModules
+  name: research-technology-modules-advanced
+  icon:
+    sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
+    state: tech_extented
+  discipline: Arsenal
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - AttachmentT2Miniscope
+  - AttachmentM90UnderbarrelShotgun
+  - AttachmentM90GrenadeLauncher
+  - 40mmGrenadeHEAT
+  - 40mmGrenadeBaton
+  - 40mmGrenadeEMP
+  - 40mmGrenadeFlash
+  - 40mmGrenadeSmoke
+  technologyPrerequisites:
+  - ArsenalExtendedModules
