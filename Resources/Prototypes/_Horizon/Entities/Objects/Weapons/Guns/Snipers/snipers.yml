@@ -63,7 +63,7 @@
 
 - type: entity
   name: Barrett M82
-  parent: BaseSniperBarrettM82
+  parent: [BaseSniperBarrettM82, BaseAttachableHolder] # Horizon
   id: WeaponSniperBarrettM82
   description: Крупнокалиберная винтовка, использующая современный калибр .70. Широко используется и поставляется для отрядов быстрого реагирования. Данная винтовка не имеет никаких нюансов, может быть взведена и использована в любой момент. Лучше взять её в обе руки перед выстрелом.
   suffix: Horizon
@@ -104,3 +104,19 @@
     - Back
   - type: EmitSoundOnLand
     sound: /Audio/_Horizon/Weapons/Guns/Barrettm82/barrettm82_onland.ogg
+  # Horizon Attachment start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-rail:
+        locked: true
+        startingAttachable: AttachmentHristovScope
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentHristovScope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  # Horizon Attachment end
