@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponRifle
-  parent: [BaseItem, BaseGunWieldable, BaseAttachableHolder] # Horizon Attachments
+  parent: [BaseItem, BaseGunWieldable]
   id: BaseWeaponRifle
   description: A rooty tooty point and shooty.
   abstract: true
@@ -50,36 +50,10 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
-    # Horizon Attachmens start
-  - type: AttachableHolder
-    slots:
-      rmc-aslot-underbarrel:
-        whitelist:
-          tags:
-          - AttachmentM90GrenadeLauncher
-          - AttachmentM90UnderbarrelShotgun
-          - AttachmentVerticalGrip
-          - AttachmentLaserSight
-      rmc-aslot-rail:
-        whitelist:
-            tags:
-            - AttachmentMagneticHarness
-            - AttachmentReflexSight
-            - AttachmentT2Miniscope
-      rmc-aslot-barrel:
-        whitelist:
-            tags:
-            - AttachmentSuppressor
-  - type: AttachableHolderVisuals
-    offsets:
-      rmc-aslot-underbarrel: 0.3125, -0.0625
-      rmc-aslot-rail: 0, 0
-      rmc-aslot-barrel: 0.96875, 0
-    # Horizon Attachments end
 
 - type: entity
   name: AKMS
-  parent: [BaseWeaponRifle, BaseC3SyndicateContraband] # Frontier: BaseSecurityContraband<BaseC3SyndicateContraband
+  parent: [BaseWeaponRifle, BaseC3SyndicateContraband, BaseAttachableHolder] # Horizon Attachments # Frontier: BaseSecurityContraband<BaseC3SyndicateContraband
   id: WeaponRifleAk
   description: An iconic weapon of war. Uses .30 rifle ammo. An illegal firearm often used by Syndicate agents.
   components:
@@ -128,6 +102,26 @@
   - type: PirateBountyItem # Frontier
     id: AKMS # Frontier
   # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
   - type: AttachableHolderVisuals
     offsets:
       rmc-aslot-underbarrel: 0.29, 0
@@ -170,6 +164,15 @@
         whitelist:
           tags:
             - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
   # Horizon Attachments start
   - type: AttachableHolder
     slots:
@@ -180,33 +183,23 @@
           - AttachmentM90UnderbarrelShotgun
           - AttachmentVerticalGrip
           - AttachmentLaserSight
-#          - SurvivalKnifeAttachment
       rmc-aslot-rail:
         whitelist:
-            tags:
-            - AttachmentMagneticHarness
-            - AttachmentReflexSight
-            - AttachmentT2Miniscope
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
       rmc-aslot-barrel:
         whitelist:
-            tags:
-            - AttachmentSuppressor
-            - AttachmentAntiLyingWarrior
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
   - type: AttachableHolderVisuals
     offsets:
       rmc-aslot-underbarrel: 0.3125, -0.0625
       rmc-aslot-rail: 0.0, -0.0325
       rmc-aslot-barrel: 0.96875, 0
   # Horizon Attachments end
-  - type: ContainerContainer
-    containers:
-      gun_magazine: !type:ContainerSlot
-      gun_chamber: !type:ContainerSlot
-  - type: MagazineVisuals
-    magState: mag
-    steps: 1
-    zeroVisible: true
-  - type: Appearance
 
 - type: entity
   name: Lecter
@@ -264,7 +257,6 @@
           - AttachmentM90UnderbarrelShotgun
           - AttachmentVerticalGrip
           - AttachmentLaserSight
-#          - SurvivalKnifeAttachment
       rmc-aslot-rail:
         whitelist:
             tags:
