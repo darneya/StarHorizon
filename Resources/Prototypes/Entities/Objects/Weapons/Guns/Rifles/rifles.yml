@@ -130,8 +130,8 @@
   # Horizon Attachments start
   - type: AttachableHolderVisuals
     offsets:
-      rmc-aslot-underbarrel: 0.3125, -0.0625
-      rmc-aslot-rail: 0, 0
+      rmc-aslot-underbarrel: 0.29, 0
+      rmc-aslot-rail: -0.05, 0
       rmc-aslot-barrel: 1.0, 0.06
   # Horizon Attachments end
 
