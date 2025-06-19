@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponShotgun
-  parent: [BaseItem, BaseAttachableHolder] # horizon
+  parent: BaseItem
   id: BaseWeaponShotgun
   description: A rooty tooty point and shooty.
   abstract: true
@@ -42,22 +42,6 @@
         ents: []
   - type: StaticPrice
     price: 500
-    # Horizon Attachments start
-  - type: AttachableHolder
-    slots:
-      rmc-aslot-underbarrel:
-        whitelist:
-          tags:
-          - AttachmentVerticalGrip
-          - AttachmentLaserSight 
-          #- SurvivalKnifeAttachment
-      rmc-aslot-rail:
-        whitelist:
-            tags:
-            - AttachmentMagneticHarness
-            - AttachmentReflexSight
-            - AttachmentT2Miniscope
-    # Horizon Attachments end
 
 - type: entity
   name: Bulldog
@@ -126,13 +110,12 @@
           - AttachmentM90UnderbarrelShotgun
           - AttachmentVerticalGrip
           - AttachmentLaserSight
-          #- SurvivalKnifeAttachment
       rmc-aslot-rail:
         whitelist:
-            tags:
-            - AttachmentMagneticHarness
-            - AttachmentReflexSight
-            - AttachmentT2Miniscope
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
   - type: AttachableHolderVisuals
     offsets:
       rmc-aslot-underbarrel: 0.365, -0.1075
@@ -197,14 +180,13 @@
         whitelist:
           tags:
           - AttachmentVerticalGrip
-          - AttachmentLaserSight 
-          #- SurvivalKnifeAttachment
+          - AttachmentLaserSight
       rmc-aslot-rail:
         whitelist:
-            tags:
-            - AttachmentMagneticHarness
-            - AttachmentReflexSight
-            - AttachmentT2Miniscope
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
   - type: AttachableHolderVisuals
     offsets:
       rmc-aslot-underbarrel: 0.2875, -0.125
@@ -221,7 +203,7 @@
 
 - type: entity
   name: Kammerer
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC2ContrabandUnredeemable, BaseAttachableHolder] # Horizon # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   id: WeaponShotgunKammerer
   description: An old yet faithful design, and a favorite among irregular forces on many worlds. Uses .50 shotgun shells. # Frontier: of<on
   components: # intend for Kammerer to have tighter choke for slower fire rate and/or manual cycling
@@ -240,6 +222,25 @@
   - type: Tag
     tags:
     - WeaponShotgunKammerer
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.2875, -0.125
+      rmc-aslot-rail: -0.0375, -0.1575
+  # Horizon Attachments end
 
 - type: entity
   name: sawn-off shotgun
