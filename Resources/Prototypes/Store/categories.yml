@@ -44,12 +44,12 @@
   name: store-category-ammo
   priority: 1
 
-#Horizon_Tweak-Start
+# Horizon Attachment start
 - type: storeCategory
   id: UplinkAttachments
   name: store-category-attachments
   priority: 2
-#Horizon_Tweak-END
+# Horizon Attachment end
 
 - type: storeCategory
   id: UplinkExplosives
