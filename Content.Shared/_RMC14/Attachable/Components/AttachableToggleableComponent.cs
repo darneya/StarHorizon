@@ -102,10 +102,10 @@ public sealed partial class AttachableToggleableComponent : Component
     public bool AttachedOnly = false;
 
     [DataField, AutoNetworkedField]
-    public SoundSpecifier? ActivateSound = new SoundPathSpecifier("/Audio/_RMC14/Attachments/attachment_activate.ogg");
+    public SoundSpecifier? ActivateSound = new SoundPathSpecifier("/Audio/Weapons/Guns/Cock/shotgun_open.ogg");
 
     [DataField, AutoNetworkedField]
-    public SoundSpecifier? DeactivateSound = new SoundPathSpecifier("/Audio/_RMC14/Attachments/attachment_deactivate.ogg");
+    public SoundSpecifier? DeactivateSound = new SoundPathSpecifier("/Audio/Weapons/Guns/Cock/shotgun_close.ogg");
 
     [DataField, AutoNetworkedField]
     public bool ShowTogglePopup = true;

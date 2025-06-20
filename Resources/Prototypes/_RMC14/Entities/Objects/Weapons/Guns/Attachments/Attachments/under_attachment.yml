@@ -28,12 +28,12 @@
   - type: RMCAmmoEject
     containerID: ballistic-ammo
     ejectSound:
-      path: /Audio/_RMC14/Weapons/Guns/Reload/grenade_insert.ogg
+      path: /Audio/Weapons/Guns/Cock/shotgun_open.ogg
   - type: AmmoCounter
   - type: Gun
     projectileSpeed: 20
     soundGunshot:
-      path: /Audio/_RMC14/Weapons/Guns/Gunshots/gun_ugl.ogg
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
     resetOnHandSelected: false
   - type: RMCSelectiveFire
     baseFireRate: 0.417
@@ -44,7 +44,7 @@
     proto: null
     capacity: 1
     soundInsert:
-      path: /Audio/_RMC14/Weapons/Guns/Reload/grenade_insert.ogg
+      path: /Audio/Weapons/Guns/Cock/shotgun_open.ogg
       params:
         volume: -2
   - type: ShootAtFixedPoint
