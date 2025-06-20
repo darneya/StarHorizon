@@ -68,7 +68,7 @@
 - type: entity
   name: L6 SAW
   id: WeaponLightMachineGunL6
-  parent: [BaseWeaponLightMachineGun, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseWeaponLightMachineGun, BaseC3SyndicateContraband, BaseAttachableHolder] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband # Horizon 
   description: A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. Uses .30 rifle ammo. An illegal firearm often used by Syndicate agents.
   components:
   - type: Sprite
@@ -83,6 +83,19 @@
     steps: 4
     zeroVisible: true
   - type: Appearance
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-rail:
+        whitelist:
+            tags:
+            - AttachmentMagneticHarness
+            - AttachmentReflexSight
+            - AttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-rail: -0.2275, -0.1575
+# Horizon Attachments end
 
 - type: entity
   name: L6C ROW

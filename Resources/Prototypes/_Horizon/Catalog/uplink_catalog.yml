@@ -52,3 +52,81 @@
     Telecrystal: 5
   categories:
   - UplinkWeaponry
+
+- type: listing
+  id: UplinkWeaponAttachmentsBundle
+  name: uplink-attachmentsbundle-name
+  description: uplink-attachmentsbundle-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/under.rsi, state: uplink_modules }
+  productEntity: ClothingBackpackDuffelSyndicateFilledWeaponAttachments
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkAttachments
+
+- type: listing
+  id: UplinkLaserSightAttachment
+  name: uplink-lasersight-name
+  description: uplink-lasersight-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/under.rsi, state: lasersight}
+  productEntity: AttachmentLaserSight
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAttachments
+
+- type: listing
+  id: UplinkSuppressorAttachment
+  name: uplink-suppressor-name
+  description: uplink-suppressor-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi, state: suppressor}
+  productEntity: AttachmentSuppressor
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAttachments
+
+- type: listing
+  id: UplinkAntilyingAttachment
+  name: uplink-attachments-antilying-name
+  description: uplink-attachments-antilying-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi, state: antilying }
+  productEntity: AttachmentAntiLyingWarrior
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAttachments
+
+- type: listing
+  id: UplinkMagneticHarnessAttachment
+  name: uplink-attachments-magneticharness-name
+  description: uplink-attachments-magneticharness-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi, state: magnetic }
+  productEntity: AttachmentMagneticHarness
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAttachments
+
+- type: listing
+  id: UplinkGrenadeLauncherBundle
+  name: uplink-grenade-launcher-bundle-name
+  description: uplink-grenade-launcher-bundle-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Launchers/rocket.rsi, state: base }
+  productEntity: ClothingBackpackDuffelSyndicateFilledGrenadeLauncher
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 20
+  cost:
+    Telecrystal: 25
+  categories:
+  - UplinkWeaponry

@@ -1,0 +1,27 @@
+﻿- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledChinaLikeGrenadeLauncher
+  name: China-Lake bundle
+  description: "An old China-Lake grenade launcher bundled with 11 rounds of various destruction capability."
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponLauncherChinaLake
+    - id: 40mmGrenadeBlast
+      amount: 4
+    - id: 40mmGrenadeHEAT
+      amount: 8
+    - id: 40mmGrenadeSmoke
+      amount: 4
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledWeaponAttachments
+  name: weapon attachments bundle
+  components:
+  - type: StorageFill
+    contents:
+    - id: AttachmentVerticalGrip
+    - id: AttachmentLaserSight
+    - id: AttachmentReflexSight
+    - id: AttachmentT2Miniscope

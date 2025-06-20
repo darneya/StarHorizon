@@ -1,6 +1,6 @@
 - type: entity
   name: Vulcan
-  parent: [BaseWeaponRifle, BaseGunWieldable, BaseC1Contraband] # Frontier: add BaseC1Contraband
+  parent: [BaseWeaponRifle, BaseGunWieldable, BaseC1Contraband, BaseAttachableHolder] # Horizon Attachments # Frontier: add BaseC1Contraband
   id: WeaponRifleVulcan
   description: One of the heaviest small arms to grace Security's armory, this rifle is a modern take on a classic, informally dubbed the "Right Arm of the Free World". Uses .30 rifle ammo.
   components:
@@ -57,6 +57,34 @@
     sprite: _DV/Objects/Weapons/Guns/Rifles/vulcan.rsi
   # - type: StaticPrice # Frontier: overvalued
   #  price: 1300
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.28, -0.07
+      rmc-aslot-rail: -0.1, -0.12
+      rmc-aslot-barrel: 0.96875, -0.055
+  # Horizon Attachments end
+
 
 - type: entity
   name: ceremonial rifle
@@ -144,3 +172,30 @@
   - type: Appearance
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/Rifles/jackdaw.rsi
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.02
+      rmc-aslot-rail: -0.1, -0.04
+      rmc-aslot-barrel: 0.96875, 0.03
+  # Horizon Attachments end

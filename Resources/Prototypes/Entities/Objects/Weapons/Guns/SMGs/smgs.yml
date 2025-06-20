@@ -21,7 +21,7 @@
     fireRate: 8
     burstFireRate: 8
     angleIncrease: 3
-    angleDecay: 16  
+    angleDecay: 16
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -42,7 +42,7 @@
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolSubMachineGun
+          - MagazinePistolSubMachineGun
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -50,7 +50,7 @@
         priority: 1
         whitelist:
           tags:
-            - CartridgePistol
+          - CartridgePistol
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -83,7 +83,7 @@
 
 - type: entity
   name: C-20r submachine gun
-  parent: [BaseWeaponSubMachineGun, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseWeaponSubMachineGun, BaseC3SyndicateContraband, BaseAttachableHolder] # Horizon # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
   id: WeaponSubMachineGunC20r
   description: An illegal firearm that is often used by the infamous nuclear operatives. Uses .35 auto ammo.
   components:
@@ -118,64 +118,108 @@
     steps: 6
     zeroVisible: true
   - type: Appearance
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-rail: -0.0325, -0.0325
+      rmc-aslot-barrel: 0.75, 0
+  # Horizon Attachments end
 
 - type: entity
   name: Drozd
-  parent: [BaseWeaponSubMachineGun, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponSubMachineGun, BaseC2ContrabandUnredeemable, BaseAttachableHolder] # Horizon # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   id: WeaponSubMachineGunDrozd
   description: An excellent fully automatic Heavy SMG. An illegal firearm often used by Syndicate agents.
   components:
-    - type: Sprite
-      sprite: _NF/Objects/Weapons/Guns/SMGs/drozd.rsi # Frontier: add _NF prefix
-      layers:
-        - state: base
-          map: ["enum.GunVisualLayers.Base"]
-        - state: mag-0
-          map: ["enum.GunVisualLayers.Mag"]
-    - type: Clothing
-      sprite: _NF/Objects/Weapons/Guns/SMGs/drozd.rsi # Frontier: add _NF prefix
-    - type: Wieldable
-      unwieldOnUse: false
-    - type: GunWieldBonus
-      minAngle: -19
-      maxAngle: -16
-    - type: Gun
-      minAngle: 21
-      maxAngle: 32
-      fireRate: 6
-      burstFireRate: 12
-      soundGunshot:
-        path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
-      availableModes:
-      - Burst
-      - FullAuto
-      - SemiAuto
-      shotsPerBurst: 3
-      burstCooldown: 0.25
-    - type: ItemSlots
-      slots:
-        gun_magazine:
-          name: Magazine
-          startingItem: MagazinePistolSubMachineGun
-          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
-          priority: 2
-          whitelist:
-            tags:
-              - MagazinePistolSubMachineGun
-          whitelistFailPopup: gun-magazine-whitelist-fail
-        gun_chamber:
-          name: Chamber
-          startingItem: CartridgePistol
-          priority: 1
-          whitelist:
-            tags:
-              - CartridgePistol
-    - type: MagazineVisuals
-      magState: mag
-      steps: 1
-      zeroVisible: true
-    - type: Appearance
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/SMGs/drozd.rsi # Frontier: add _NF prefix
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/SMGs/drozd.rsi # Frontier: add _NF prefix
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -19
+    maxAngle: -16
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 6
+    burstFireRate: 12
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+    availableModes:
+    - Burst
+    - FullAuto
+    - SemiAuto
+    shotsPerBurst: 3
+    burstCooldown: 0.25
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistolSubMachineGun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistolSubMachineGun
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+    # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.28, -0.1250
+      rmc-aslot-rail: -0.0325, -0.0625
+      rmc-aslot-barrel: 0.90625, 0
+    # Horizon Attachment start
 
 - type: entity
   name: WT550
@@ -186,16 +230,16 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
     layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: base-unshaded
-        map: ["enum.GunVisualLayers.BaseUnshaded"]
-        shader: unshaded
-      - state: mag-0
-        map: ["enum.GunVisualLayers.Mag"]
-      - state: mag-unshaded-0
-        map: ["enum.GunVisualLayers.MagUnshaded"]
-        shader: unshaded
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: base-unshaded
+      map: ["enum.GunVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: mag-unshaded-0
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
   - type: Clothing
     sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
   - type: ChamberMagazineAmmoProvider
@@ -205,7 +249,7 @@
     minAngle: 1
     maxAngle: 6
     angleIncrease: 1.5
-    angleDecay: 6  
+    angleDecay: 6
     selectedMode: FullAuto
     shotsPerBurst: 5
     burstCooldown: 0.2
@@ -224,7 +268,7 @@
         priority: 2
         whitelist:
           tags:
-            - MagazinePistolSubMachineGunTopMounted
+          - MagazinePistolSubMachineGunTopMounted
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -232,7 +276,7 @@
         priority: 1
         whitelist:
           tags:
-            - CartridgePistol
+          - CartridgePistol
   - type: MagazineVisuals
     magState: mag
     steps: 6

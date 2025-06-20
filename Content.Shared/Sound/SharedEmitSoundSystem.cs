@@ -140,7 +140,16 @@ public abstract class SharedEmitSoundSystem : EntitySystem
             TryEmitSound(ent, ent.Comp, args.User);
         }
     }
-    protected void TryEmitSound(EntityUid uid, BaseEmitSoundComponent component, EntityUid? user=null, bool predict=true)
+    
+    
+// Horizon Attachments start
+    public void EmitSound(EntityUid uid, BaseEmitSoundComponent component, EntityUid? user = null, bool predict = true)
+    {
+        TryEmitSound(uid, component, user, predict);
+    }
+// Horizon Attachments end
+
+    protected void TryEmitSound(EntityUid uid, BaseEmitSoundComponent component, EntityUid? user = null, bool predict = true)
     {
         if (component.Sound == null)
             return;

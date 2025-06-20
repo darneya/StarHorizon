@@ -55,7 +55,7 @@
 
 - type: entity
   name: Hristov
-  parent: [BaseWeaponSniper, BaseGunWieldable, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseC3SyndicateContraband, BaseAttachableHolder] # Horizon # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
   id: WeaponSniperHristov
   description: A portable anti-materiel rifle. Fires armor piercing 14.5mm shells. Uses .60 anti-materiel ammo.
   components:
@@ -84,6 +84,22 @@
   - type: EyeCursorOffset
     maxOffset: 3
     pvsIncrease: 0.3
+  # Horizon Attachment start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-rail:
+        locked: true
+        startingAttachable: AttachmentHristovScope
+        whitelist:
+            tags:
+            - AttachmentMagneticHarness
+            - AttachmentHristovScope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  # Horizon Attachment end
 
 - type: entity
   name: musket

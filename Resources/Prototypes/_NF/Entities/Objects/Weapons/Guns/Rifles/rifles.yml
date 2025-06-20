@@ -55,7 +55,7 @@
 # Frontier
 - type: entity
   name: Gestio
-  parent: [ BaseWeaponRifle, BaseC1Contraband ]
+  parent: [ BaseWeaponRifle, BaseC1Contraband, BaseAttachableHolder] # Horizon Attachments
   id: WeaponRifleGestio
   description: An old burst-fire rifle made by Silver Industries that never left trials. Accepts low capacity .30 rifle magazines.
   components:
@@ -108,6 +108,34 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.23, -0.045
+      rmc-aslot-rail: -0.1, -0.1
+      rmc-aslot-barrel: 0.90875, -0.024
+  # Horizon Attachments end
+
 
 - type: entity
   parent: WeaponRifleGestio
@@ -135,7 +163,7 @@
             - CartridgeLightRifle
 
 - type: entity
-  parent: [ BaseWeaponRifle, BaseC1Contraband ]
+  parent: [ BaseWeaponRifle, BaseC1Contraband, BaseAttachableHolder] # Horizon Attachments
   id: WeaponRifleNovaliteC1
   name: Novalite C1
   description: A modification to the Lecter from SW LLC, a civilian grade semi-automatic rifle with an internal magazine. Nanotrasen Representatives can not stress how compliant this rifle is. Uses .20 rifle ammo.
@@ -186,6 +214,33 @@
     steps: 1
     zeroVisible: true
   - type: Appearance
+    # Horizon Attachmens start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, 0
+      rmc-aslot-barrel: 0.96875, 0
+    # Horizon Attachments end
 
 - type: entity
   parent: WeaponRifleNovaliteC1

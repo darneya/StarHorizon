@@ -60,9 +60,9 @@
 
 - type: entity
   name: пистолет Макарова
-  parent: WeaponPistol9x18mmMakarova
+  parent: [WeaponPistol9x18mmMakarova, BaseAttachableHolder] # Horizon Attachments
   id: BaseWeaponMakarov
-  description: Макаров Пистолет, по-настоящему классическое и надежное огнестрельное оружие, был создан для самообороны и военного использования. Разработанный в конце 1940-х годов Сергеем Макаровым, этот компактный пистолет использует патроны калибра 9x18 мм, сочетая в себе простоту, удобство ношения и непревзойденную надежность.
+  description: Макаров Пистолет, по-настоящему классическое и надежное огнестрельное оружие, был создан для самообороны и военного использования. Разработанный в конце 1940-х годов Сергеем Макаровым, этот компактный пистолет использует патроны калибра 9x18 мм, сочетая в себе простоту, удобство ношения и непревзойденную надежность. Обладает модицирующимися частями - подствольной частью и стволом.
   suffix: Horizon
   components:
   - type: Sprite
@@ -89,3 +89,20 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+  # Horizon Attachmens start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.12, 0.02
+      rmc-aslot-barrel: 0.80375, 0.125
+  # Horizon Attachments end

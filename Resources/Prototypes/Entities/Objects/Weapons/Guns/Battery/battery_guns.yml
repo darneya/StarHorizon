@@ -244,6 +244,26 @@
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
     fireCost: 62.5
+  
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+          #- SurvivalKnifeAttachment
+      rmc-aslot-rail:
+        whitelist:
+            tags:
+            - AttachmentMagneticHarness
+            - AttachmentReflexSight
+            - AttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.345, -0.125
+      rmc-aslot-rail: -0.1185, -0.0325
+    # Horizon Attachments end
 
 - type: entity
   name: pulse pistol

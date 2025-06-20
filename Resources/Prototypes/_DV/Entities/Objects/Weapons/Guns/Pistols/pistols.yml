@@ -42,6 +42,12 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+  # Horizon Attachments start
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.25, 0.01
+      rmc-aslot-barrel: 1.0, 0.125
+  # Horizon Attachments end
 
 - type: entity
   name: Pollock
@@ -83,3 +89,9 @@
       gun_chamber: !type:ContainerSlot
   # - type: StaticPrice # Frontier: use default value
   #   price: 500
+  # Horizon Attachments start
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.17, -0.02
+      rmc-aslot-barrel: 0.80375, 0.06
+  # Horizon Attachments end

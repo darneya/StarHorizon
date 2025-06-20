@@ -44,50 +44,57 @@
   name: store-category-ammo
   priority: 1
 
+# Horizon Attachment start
+- type: storeCategory
+  id: UplinkAttachments
+  name: store-category-attachments
+  priority: 2
+# Horizon Attachment end
+
 - type: storeCategory
   id: UplinkExplosives
   name: store-category-explosives
-  priority: 2
+  priority: 3
 
 - type: storeCategory
   id: UplinkWearables
   name: store-category-wearables
-  priority: 3
+  priority: 4
 
 - type: storeCategory
   id: UplinkChemicals
   name: store-category-chemicals
-  priority: 4
+  priority: 5
 
 - type: storeCategory
   id: UplinkDeception
   name: store-category-deception
-  priority: 5
+  priority: 6
 
 - type: storeCategory
   id: UplinkDisruption
   name: store-category-disruption
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: UplinkImplants
   name: store-category-implants
-  priority: 7
+  priority: 8
 
 - type: storeCategory
   id: UplinkAllies
   name: store-category-allies
-  priority: 8
+  priority: 9
 
 - type: storeCategory
   id: UplinkJob
   name: store-category-job
-  priority: 9
+  priority: 10
 
 - type: storeCategory
   id: UplinkPointless
   name: store-category-pointless
-  priority: 10
+  priority: 11
 
 #revenant
 - type: storeCategory
