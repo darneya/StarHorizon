@@ -40,7 +40,7 @@
     soundGroups:
       Brute:
         path:
-          "/Audio/Weapons/grille_hit.ogg"
+          "/Audio/_RMC14/Structures/metalhit.ogg"
   - type: Sprite
     sprite: _RMC14/Structures/Walls/Barricades/barricade.rsi
     layers:
@@ -278,7 +278,7 @@
     soundGroups:
       Brute:
         path:
-          "/Audio/Weapons/grille_hit.ogg"
+          "/Audio/_RMC14/Structures/metalhit.ogg"
   - type: Sprite
     sprite: _RMC14/Structures/Walls/Barricades/barricade.rsi
     layers:

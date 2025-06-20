@@ -21,10 +21,10 @@ public sealed partial class BreechLoadedComponent : Component
     public bool Ready;
 
     [DataField, AutoNetworkedField]
-    public SoundSpecifier OpenSound = new SoundPathSpecifier("/Audio/Weapons/Guns/Cock/shotgun_open.ogg", AudioParams.Default.WithVolume(-6.5f));
+    public SoundSpecifier OpenSound = new SoundPathSpecifier("/Audio/_RMC14/Weapons/Guns/Breech/ugl_open.ogg", AudioParams.Default.WithVolume(-6.5f));
 
     [DataField, AutoNetworkedField]
-    public SoundSpecifier CloseSound = new SoundPathSpecifier("/Audio/Weapons/Guns/Cock/shotgun_close.ogg", AudioParams.Default.WithVolume(-6.5f));
+    public SoundSpecifier CloseSound = new SoundPathSpecifier("/Audio/_RMC14/Weapons/Guns/Breech/ugl_close.ogg", AudioParams.Default.WithVolume(-6.5f));
 
     [DataField, AutoNetworkedField]
     public bool ShowBreechOpen = true;
