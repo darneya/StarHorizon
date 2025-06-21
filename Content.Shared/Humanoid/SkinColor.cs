@@ -68,12 +68,14 @@ public static class SkinColor
         return color;
     }
 
+    // Horizon start
     public static Color KatunianSkinTone(int tone)
     {
         tone = Math.Clamp(tone, 0, 50);
         var val = 100.0f - tone;
         return Color.FromHsv(new Vector4(0, 0, val / 100, 1.0f));
     }
+    // Horizon end
 
     /// <summary>
     ///     Gets a human skin tone from a given color.
@@ -102,11 +104,13 @@ public static class SkinColor
         }
     }
 
+    // Horizon start
     public static float KatunianSkinFromColor(Color color)
     {
         var hsv = Color.ToHsv(color);
         return 100 - hsv.Z * 100;
     }
+    // Horizon end
 
     /// <summary>
     ///     Verify if a color is in the human skin tone range.
@@ -270,5 +274,5 @@ public enum HumanoidSkinColor : byte
     Hues,
     VoxFeathers, // Vox feathers are limited to a specific color range
     TintedHues, //This gives a color tint to a humanoid's skin (10% saturation with full hue range).
-    KatunianToned,
+    KatunianToned, //Horizon
 }
