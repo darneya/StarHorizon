@@ -30,7 +30,8 @@ desc = """
 """
 soft_max_players = 100
 lobbyduration = 180
-fallbackpreset = "Extended"
+defaultpreset = "nfpirate"
+fallbackpreset = "nfadventure"
 
 [hub]
 advertise = true
@@ -128,3 +129,9 @@ ahelp_webhook = "%webhook_ahelp%"
 ban_webhook = "%webhook_ban%"
 round_update_webhook = "%webhook_round_update%"
 #round_end_role = "%round_end_role%"
+
+[nf14]
+atmos.allow_map_gas_extraction = true
+
+[events]
+enabled = true
