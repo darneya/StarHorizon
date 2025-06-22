@@ -27,7 +27,7 @@
   icon: { sprite: /Textures/_Horizon/Objects/Weapons/Melee/cursedkatana.rsi, state: icon }
   productEntity: ClothingBeltCursedKatanaSheathFilled
   cost:
-    Telecrystal: 14
+    Telecrystal: 10
   categories:
   - UplinkWeaponry
 
@@ -61,9 +61,9 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledWeaponAttachments
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 1
   cost:
-    Telecrystal: 4
+    Telecrystal: 2
   categories:
   - UplinkAttachments
 
@@ -85,7 +85,7 @@
   icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi, state: suppressor}
   productEntity: AttachmentSuppressor
   cost:
-    Telecrystal: 2
+    Telecrystal: 1
   categories:
   - UplinkAttachments
 
@@ -97,9 +97,9 @@
   productEntity: AttachmentAntiLyingWarrior
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 1
   cost:
-    Telecrystal: 3
+    Telecrystal: 2
   categories:
   - UplinkAttachments
 
@@ -111,9 +111,9 @@
   productEntity: AttachmentMagneticHarness
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 2
+    Telecrystal: 1
   cost:
-    Telecrystal: 3
+    Telecrystal: 2
   categories:
   - UplinkAttachments
 
@@ -125,8 +125,8 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledGrenadeLauncher
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 20
+    Telecrystal: 15
   cost:
-    Telecrystal: 25
+    Telecrystal: 20
   categories:
   - UplinkWeaponry
