@@ -11,7 +11,7 @@
     size: Small
   - type: GunUpgrade
   - type: StaticPrice
-    price: 400
+    price: 300
   - type: Tag
     tags:
     - PKAUpgrade
