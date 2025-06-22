@@ -23,14 +23,17 @@ desc = """
 🩺 Хирургию, импланты и кибернетику. Наномашины, сынок!
 🤖 Гиганских мехов. Покажи этому Динозавру, кто тут Босс!
 🌱 Продвинутую ботанику! Множество растений и генетика.
+🧨 Улучшаемое вооружение и модули.
 🔬 Уникальные технологии.
 🏯 Создание своего клана и фракции!
+🎶 Полноценный аналог ТТС - Барки!
 
 Заходи, будет весело!
 """
 soft_max_players = 100
 lobbyduration = 180
-fallbackpreset = "Extended"
+defaultpreset = "nfpirate"
+fallbackpreset = "nfadventure"
 
 [hub]
 advertise = true
@@ -128,3 +131,6 @@ ahelp_webhook = "%webhook_ahelp%"
 ban_webhook = "%webhook_ban%"
 round_update_webhook = "%webhook_round_update%"
 #round_end_role = "%round_end_role%"
+
+[events]
+enabled = true

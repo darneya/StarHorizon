@@ -27,6 +27,8 @@
   - type: AttachableWeaponRangedMods
     modifiers:
     - accuracyAddMult: -0.05
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   abstract: true
@@ -157,6 +159,8 @@
     #     wieldedOnly: true
     #     inactiveOnly: true
     #   accuracyAddMult: -0.05 #TODO: Add flare gun modifiers when it's implemented.
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: RailAttachmentBase
@@ -183,3 +187,5 @@
         unwieldedOnly: true
       accuracyAddMult: 0.4
       scatterFlat: -8
+  - type: StaticPrice
+    price: 200
