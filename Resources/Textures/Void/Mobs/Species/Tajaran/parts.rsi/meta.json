@@ -1,18 +1,12 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "https://github.com/ParadiseSS13/Paradise/commit/924e8cc949a40ea64a978656dbbc0b43b4a8f33a and modified by EmoGarbage",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
+    "version": 1,
+    "license": "CC BY-SA 3.0",
+    "copyright": "https://github.com/TauCetiStation/TauCetiClassic/pull/9727",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
     "states": [
-        {
-            "name": "tajaran_m"
-        },
-        {
-            "name": "full"
-        },
         {
             "name": "head_m",
             "directions": 4
@@ -22,58 +16,156 @@
             "directions": 4
         },
         {
-            "name": "l_arm",
+            "name": "head_m_fat",
             "directions": 4
         },
         {
-            "name": "l_foot",
+            "name": "head_f_fat",
             "directions": 4
         },
         {
-            "name": "l_hand",
+            "name": "chest_m_pumped",
             "directions": 4
         },
         {
-            "name": "l_leg",
+            "name": "chest_f_pumped",
             "directions": 4
         },
         {
-            "name": "overlay_husk",
+            "name": "chest_m_fat",
             "directions": 4
         },
         {
-            "name": "r_arm",
+            "name": "chest_f_fat",
             "directions": 4
         },
         {
-            "name": "r_foot",
+            "name": "chest_m",
             "directions": 4
         },
         {
-            "name": "r_hand",
+            "name": "chest_f",
             "directions": 4
         },
         {
-            "name": "r_leg",
+            "name": "groin_m_pumped",
             "directions": 4
         },
         {
-            "name": "torso_m",
+            "name": "groin_f_pumped",
             "directions": 4
         },
         {
-            "name": "torso_f",
+            "name": "groin_m_fat",
             "directions": 4
         },
         {
-            "name": "tail_m",
-            "directions": 4,
-            "delays": [
-                [0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15],
-                [0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15],
-                [0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15],
-                [0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15, 0.15]
-            ]
+            "name": "groin_f_fat",
+            "directions": 4
+        },
+        {
+            "name": "groin_m",
+            "directions": 4
+        },
+        {
+            "name": "groin_f",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_m_pumped",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_f_pumped",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_m_fat",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_f_fat",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_m",
+            "directions": 4
+        },
+        {
+            "name": "r_arm_f",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_m_pumped",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_f_pumped",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_m_fat",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_f_fat",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_m",
+            "directions": 4
+        },
+        {
+            "name": "l_arm_f",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_f_pumped",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_f_fat",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_f",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_m_pumped",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_m_fat",
+            "directions": 4
+        },
+        {
+            "name": "r_leg_m",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_m_pumped",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_f_pumped",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_m_fat",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_f_fat",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_m",
+            "directions": 4
+        },
+        {
+            "name": "l_leg_f",
+            "directions": 4
         }
     ]
 }
