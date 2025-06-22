@@ -2,10 +2,10 @@
   id: WeaponryWorksVendInventory
   startingInventory:
     SurvivalKnife: 1
-    WeaponBrassKnuckles: 1 
-    WeaponLaserPistolNF: 1 
-    WeaponRifleGestio: 1 
-    WeaponRifleNovaliteC1: 1 
+    WeaponBrassKnuckles: 1
+    WeaponLaserPistolNF: 1
+    WeaponRifleGestio: 1
+    WeaponRifleNovaliteC1: 1
     WeaponShotgunDoubleBarreled: 1
     WeaponRevolverArgenti: 1
     WeaponPistolUniversal: 1
@@ -25,8 +25,18 @@
     MagazineNovaliteC1Empty: 1
     MagazineLightRifleLowCapacityEmpty: 1
     MagazinePistolEmpty: 1
+  # Horizon start
+    AttachmentMagneticHarness: 1
+    AttachmentT2Miniscope: 1
+    AttachmentReflexSight: 1
+    AttachmentM90UnderbarrelShotgun: 1
+    AttachmentVerticalGrip: 1
+    AttachmentLaserSight: 1
+    AttachmentSuppressor: 1
+  # Horizon end
   emaggedInventory:
     WeaponPistolViper: 1
+    AttachmentAntiLyingWarrior: 1 # Horizon
 
 - type: vendingMachineInventory
   id: WeaponryWorksVendPOIInventory
@@ -55,5 +65,15 @@
     MagazineNovaliteC1Empty: 4294967295
     MagazineLightRifleLowCapacityEmpty: 4294967295
     MagazinePistolEmpty: 4294967295
+    # Horizon start
+    AttachmentMagneticHarness: 4294967295
+    AttachmentT2Miniscope: 4294967295
+    AttachmentReflexSight: 4294967295
+    AttachmentM90UnderbarrelShotgun: 4294967295
+    AttachmentVerticalGrip: 4294967295
+    AttachmentLaserSight: 4294967295
+    AttachmentSuppressor: 4294967295
+  # Horizon end
   emaggedInventory:
     WeaponPistolViper: 1
+    AttachmentAntiLyingWarrior: 4294967295 # Horizon

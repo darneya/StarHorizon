@@ -36,6 +36,8 @@
   # - type: AttachableWeaponRangedMods Пока не работает
   #   modifiers:
   #   - damageFalloffAddMult: 0.1
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   parent: BarrelAttachmentBase
@@ -52,3 +54,5 @@
   - type: AttachableVisuals
     prefix: antilying
   - type: AttachableAntiLyingWarrior
+  - type: StaticPrice
+    price: 300
