@@ -1126,13 +1126,6 @@
     amount: 1
   tileReactions:
   - !type:ExtinguishTileReaction { }
-      - !type:HealthChange
-        condition:
-        - !type:OrganType
-          type: Demon
-        damage:
-          types:
-            Caustic: 0.5
 
 - type: reagent
   id: Pyrazine

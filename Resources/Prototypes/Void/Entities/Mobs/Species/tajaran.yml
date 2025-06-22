@@ -10,7 +10,7 @@
     - type: Body
       prototype: Tajaran
       requiredLegs: 2
-    - type: RoarAccent
+#    - type: RoarAccent
     - type: Hunger
     - type: Thirst
     - type: Icon
