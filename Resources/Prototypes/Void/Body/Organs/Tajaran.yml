@@ -1,6 +1,6 @@
 ﻿- type: entity
   id: OrganTajaranStomach
-  parent: OrganAnimalStomach
+  parent: [OrganAnimalStomach, BaseOrganStomach]
   noSpawn: true
   components:
     - type: Stomach

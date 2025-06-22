@@ -10,6 +10,9 @@
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
+        tongue: OrganHumanTongue # Horizon 
+        eye_implant: null # _Horizon
+        cyberdeka_implant: null # _Horizon
     torso:
       part: TorsoDemon
       organs:
@@ -18,6 +21,11 @@
         stomach: OrganDemonStomach
         liver: OrganAnimalLiver
         kidneys: OrganHumanKidneys
+        vessels_implant: null # _Horizon
+        blood_pump_implant: null
+        skin_implant: null # _Horizon
+        bone_implant: null # _Horizon
+        cavity: null # _Starlight
       connections:
       - left arm
       - right arm
@@ -33,8 +41,12 @@
       - left hand
     right hand:
       part: RightHandDemon
+      organs:
+        hands_implant: null # _Horizon
     left hand:
       part: LeftHandDemon
+      organs:
+        hands_implant: null # _Horizon
     right leg:
       part: RightLegDemon
       connections:

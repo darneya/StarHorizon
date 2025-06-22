@@ -17,8 +17,7 @@
     - Oni # DeltaV
     - Demon # Horizon
     - Katunian # Horizon
-    - Tajaran # Horizon
-    - Vulpkanin # Horizon
+    - Tajaran # Horizon 
 
 - type: guideEntry
   id: Arachnid
@@ -74,13 +73,3 @@
   id: Tajaran
   name: species-name-tajaran
   text: "/ServerInfo/Guidebook/Mobs/Tajaran.xml"
-
-- type: guideEntry
-  id: Vulpkanin
-  name: species-name-vulpkanin
-  text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
-
-- type: guideEntry
-  id: Felinid
-  name: species-name-felinid
-  text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
