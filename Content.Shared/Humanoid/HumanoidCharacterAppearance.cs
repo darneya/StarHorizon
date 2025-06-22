@@ -98,7 +98,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             HumanoidSkinColor.HumanToned => Humanoid.SkinColor.HumanSkinTone(speciesPrototype.DefaultHumanSkinTone),
             HumanoidSkinColor.Hues => speciesPrototype.DefaultSkinTone,
             HumanoidSkinColor.TintedHues => Humanoid.SkinColor.TintedHues(speciesPrototype.DefaultSkinTone),
-            HumanoidSkinColor.KatunianToned => speciesPrototype.DefaultSkinTone,
+            HumanoidSkinColor.KatunianToned => Humanoid.SkinColor.KatunianSkinTone(speciesPrototype.DefaultHumanSkinTone),
             HumanoidSkinColor.VoxFeathers => Humanoid.SkinColor.ClosestVoxColor(speciesPrototype.DefaultSkinTone),
             _ => Humanoid.SkinColor.ValidHumanSkinTone,
         };
@@ -164,7 +164,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
                 newSkinColor = Humanoid.SkinColor.ProportionalVoxColor(newSkinColor);
                 break;
         }
-            
+
         return new HumanoidCharacterAppearance(newHairStyle, newHairColor, newFacialHairStyle, newHairColor, newEyeColor, newSkinColor, new());
 
         float RandomizeColor(float channel)

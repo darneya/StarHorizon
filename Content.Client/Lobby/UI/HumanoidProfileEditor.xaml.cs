@@ -1149,6 +1149,20 @@ namespace Content.Client.Lobby.UI
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
                     break;
                 }
+                case HumanoidSkinColor.KatunianToned:
+                {
+                    if (!Skin.Visible)
+                    {
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
+                    }
+
+                    var color = SkinColor.KatunianSkinTone((int) Skin.Value / 2);
+
+                    Markings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                    break;
+                }
                 case HumanoidSkinColor.VoxFeathers:
                 {
                     if (!RgbSkinColorContainer.Visible)
@@ -1404,6 +1418,17 @@ namespace Content.Client.Lobby.UI
 
                     // set the RGB values to the direct values otherwise
                     _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                    break;
+                }
+                case HumanoidSkinColor.KatunianToned:
+                {
+                    if (!Skin.Visible)
+                    {
+                        Skin.Visible = true;
+                        RgbSkinColorContainer.Visible = false;
+                    }
+
+                    Skin.Value = SkinColor.KatunianSkinFromColor(Profile.Appearance.SkinColor) * 2;
                     break;
                 }
                 case HumanoidSkinColor.VoxFeathers:

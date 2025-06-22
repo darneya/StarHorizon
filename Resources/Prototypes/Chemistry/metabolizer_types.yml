@@ -44,7 +44,6 @@
 - type: metabolizerType
   id: Arachnid
   name: metabolizer-type-arachnid
-  name: arachnid
 
 - type: metabolizerType
   id: Demon
