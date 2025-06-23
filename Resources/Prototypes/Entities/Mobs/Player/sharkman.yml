@@ -2,7 +2,7 @@
   save: false
   name: Urist McJaws
   suffix: Urisst' Mzhand
-  parent: BaseMobShark
-  id: MobShark
+  parent: BaseMobSharkman
+  id: MobSharkman
 
 #Rawr

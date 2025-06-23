@@ -1,0 +1,28 @@
+- type: marking
+  id: SharkmanTailSmooth
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Sharkman]
+  sprites:
+  - sprite: _StarHorizon\Mobs\Customization\sharkman_parts.rsi
+    state: tail_smooth_primary
+  - sprite: _StarHorizon\Mobs\Customization\sharkman_parts.rsi
+    state: tail_smooth_secondary
+
+- type: marking
+  id: SharkmanDorsal
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Sharkman]
+  sprites:
+  - sprite: _StarHorizon\Mobs\Customization\sharkman_parts.rsi
+    state: tail_dorsal
+
+- type: marking
+  id: SharkmanTailSpiked
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Sharkman]
+  sprites:
+  - sprite: _StarHorizon\Mobs\Customization\sharkman_parts.rsi
+    state: tail_spiked

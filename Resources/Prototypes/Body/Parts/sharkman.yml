@@ -1,0 +1,119 @@
+# TODO: Add descriptions (many)
+# TODO BODY: Part damage
+- type: entity
+  id: PartSharkman
+  parent: [BaseItem, BasePart]
+  name: "sharkman body part"
+  abstract: true
+  components:
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoSharkman
+  name: "sharkman torso"
+  parent: [PartSharkman, BaseTorso]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
+    state: "torso_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadSharkman
+  name: "sharkman head"
+  parent: [PartSharkman, BaseHead]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
+    state: "head_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftArmShark
+  name: "left sharkman arm"
+  parent: [PartSharkman, BaseLeftArm]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
+    state: "l_arm"
+
+- type: entity
+  id: RightArmSharkman
+  name: "right sharkman arm"
+  parent: [PartSharkman, BaseRightArm]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
+    state: "r_arm"
+
+- type: entity
+  id: LeftHandSharkman
+  name: "left sharkman hand"
+  parent: [PartSharkman, BaseLeftHand]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Shark/parts.rsi
+    state: "l_hand"
+
+- type: entity
+  id: RightHandSharkman
+  name: "right sharkman hand"
+  parent: [PartSharkman, BaseRightHand]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
+    state: "r_hand"
+
+- type: entity
+  id: LeftLegSharkman
+  name: "left sharkman leg"
+  parent: [PartSharkman, BaseLeftLeg]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
+    state: "l_leg"
+
+- type: entity
+  id: RightLegSharkman
+  name: "right sharkman leg"
+  parent: [PartSharkman, BaseRightLeg]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
+    state: "r_leg"
+
+- type: entity
+  id: LeftFootSharkman
+  name: "left sharkman foot"
+  parent: [PartSharkman, BaseLeftFoot]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
+    state: "l_foot"
+
+- type: entity
+  id: RightFootSharkman
+  name: "right sharkman foot"
+  parent: [PartSharkman, BaseRightFoot]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
+    state: "r_foot"

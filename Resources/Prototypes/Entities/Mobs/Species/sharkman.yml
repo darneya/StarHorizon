@@ -1,26 +1,26 @@
 - type: entity
   save: false
-  name: Urisst' Mzhand
+  name: Urist McJaws
   parent: BaseMobSpeciesOrganic
-  id: BaseMobShark
+  id: BaseMobSharkman
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: Shark
+    species: Sharkman
     hideLayersOnEquip:
     - Snout
     - HeadTop
     - HeadSide
-    undergarmentBottom: UndergarmentBottomBoxersShark
+    undergarmentBottom: UndergarmentBottomBoxersSharkman
   - type: Hunger
   - type: Puller
     needsHands: false
   - type: Thirst
   - type: Icon
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: full
   - type: Body
-    prototype: Shark
+    prototype: Sharkman
     requiredLegs: 2
   - type: Butcherable
     butcheringType: Spike
@@ -59,10 +59,10 @@
     specificHeat: 42
     coldDamage:
       types:
-        Cold : 0.1 #per second, scales with temperature & other constants
+        Cold : 0.02 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat : 1.5 #per second, scales with temperature & other constants
+        Heat : 2 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
       270: 0.8
@@ -70,7 +70,7 @@
       235: 0.4
   - type: Wagging
   - type: Inventory
-    speciesId: shark
+    speciesId: sharkman
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -88,19 +88,19 @@
 
 - type: entity
   parent: BaseSpeciesDummy
-  id: MobSharkDummy
+  id: MobSharkmanDummy
   categories: [ HideSpawnMenu ]
-  description: A dummy shark meant to be used in character setup.
+  description: A dummy sharkman meant to be used in character setup.
   components:
   - type: HumanoidAppearance
-    species: Shark
+    species: Sharkman
     hideLayersOnEquip:
     - Snout
     - HeadTop
     - HeadSide
-    undergarmentBottom: UndergarmentBottomBoxersShark
+    undergarmentBottom: UndergarmentBottomBoxersSharkman
   - type: Inventory
-    speciesId: shark
+    speciesId: sharkman
     femaleDisplacements:
       jumpsuit:
         sizeMaps:

@@ -1,40 +1,40 @@
 - type: species
-  id: Shark
-  name: species-name-shark
+  id: Sharkmanman
+  name: species-name-Sharkman
   roundStart: true
-  prototype: MobShark
-  sprites: MobShark
+  prototype: MobSharkman
+  sprites: MobSharkman
   defaultSkinTone: "#34a223"
-  markingLimits: MobSharkMarkingLimits
-  dollPrototype: MobSharkDummy
+  markingLimits: MobSharkmanMarkingLimits
+  dollPrototype: MobSharkmanDummy
   skinColoration: Hues
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
 
 - type: speciesBaseSprites
-  id: MobSharkSprites
+  id: MobSharkmanSprites
   sprites:
-    Head: MobSharkHead
+    Head: MobSharkmanHead
     Snout: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Chest: MobSharkTorso
+    Chest: MobSharkmanTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Tail: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
-    LArm: MobSharkLArm
-    RArm: MobSharkRArm
-    LHand: MobSharkLHand
-    RHand: MobSharkRHand
-    LLeg: MobSharkLLeg
-    RLeg: MobSharkRLeg
-    LFoot: MobSharkLFoot
-    RFoot: MobSharkRFoot
+    LArm: MobSharkmanLArm
+    RArm: MobSharkmanRArm
+    LHand: MobSharkmanLHand
+    RHand: MobSharkmanRHand
+    LLeg: MobSharkmanLLeg
+    RLeg: MobSharkmanRLeg
+    LFoot: MobSharkmanLFoot
+    RFoot: MobSharkmanRFoot
 
 - type: markingPoints
-  id: MobSharkMarkingLimits
+  id: MobSharkmanMarkingLimits
   points:
     Hair:
       points: 0
@@ -45,7 +45,7 @@
     Tail:
       points: 1
       required: true
-      defaultMarkings: [ Sharkdorsal ]
+      defaultMarkings: [ Sharkmandorsal ]
     Snout:
       points: 1
       required: true
@@ -56,7 +56,7 @@
     HeadSide:
       points: 1
       required: false
-      defaultMarkings: [ SharkEarsDefault ]
+      defaultMarkings: [ SharkmanEarsDefault ]
     # Frontier: apparently these don't exist on Delta
     UndergarmentTop:
       points: 1
@@ -68,95 +68,95 @@
     Chest:
       points: 4
       required: true
-      defaultMarkings: [ SharkChestDefault ]
+      defaultMarkings: [ SharkmanChestDefault ]
     Legs:
       points: 8
       required: false
     Arms:
       points: 8
       required: false
-      defaultMarkings: [ SharkDefaultHuescale ]
+      defaultMarkings: [ SharkmanDefaultHuescale ]
 
 - type: humanoidBaseSprite
-  id: MobSharkHead
+  id: MobSharkmanHead
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: head_m
 
 - type: humanoidBaseSprite
-  id: MobSharkHeadMale
+  id: MobSharkmanHeadMale
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: head_m
 
 - type: humanoidBaseSprite
-  id: MobSharkHeadFemale
+  id: MobSharkmanHeadFemale
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: head_f
 
 - type: humanoidBaseSprite
-  id: MobSharkTorso
+  id: MobSharkmanTorso
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: torso_m
 
 - type: humanoidBaseSprite
-  id: MobSharkTorsoMale
+  id: MobSharkmanTorsoMale
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: torso_m
 
 - type: humanoidBaseSprite
-  id: MobHSharkTorsoFemale
+  id: MobHSharkmanTorsoFemale
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: torso_f
 
 - type: humanoidBaseSprite
-  id: MobSharkLLeg
+  id: MobSharkmanLLeg
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: l_leg
 
 - type: humanoidBaseSprite
-  id: MobSharkLHand
+  id: MobSharkmanLHand
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: l_hand
 
 - type: humanoidBaseSprite
-  id: MobSharkLArm
+  id: MobSharkmanLArm
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: l_arm
 
 - type: humanoidBaseSprite
-  id: MobSharkLFoot
+  id: MobSharkmanLFoot
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: l_foot
 
 - type: humanoidBaseSprite
-  id: MobSharkRLeg
+  id: MobSharkmanRLeg
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: r_leg
 
 - type: humanoidBaseSprite
-  id: MobSharkRHand
+  id: MobSharkmanRHand
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: r_hand
 
 - type: humanoidBaseSprite
-  id: MobSharkRArm
+  id: MobSharkmanRArm
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: r_arm
 
 - type: humanoidBaseSprite
-  id: MobSharkRFoot
+  id: MobSharkmanRFoot
   baseSprite:
-    sprite: _StarHorizon\Mobs\Species\Shark\parts.rsi
+    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
     state: r_foot

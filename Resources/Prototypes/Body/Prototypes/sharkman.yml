@@ -1,26 +1,26 @@
 ﻿- type: body
-  name: "shark"
-  id: Shark
+  name: "sharkman"
+  id: Sharkman
   root: torso
   slots:
     head:
-      part: HeadShark
+      part: HeadSharkman
       connections:
       - torso
       organs:
-        brain: OrganHumanBrain
-        eyes: OrganHumanEyes
-        tongue: OrganHumanTongue
+        brain: OrganSharkmanBrain
+        eyes: OrganSharkmanEyes
+        tongue: OrganSharkmanTongue
         eye_implant: null # Horizon
         cyberdeka_implant: null # Horizon
     torso:
-      part: TorsoShark
+      part: TorsoSharkman
       organs:
-        heart: OrganAnimalHeart
-        lungs: OrganHumanLungs
-        stomach: OrganSharkStomach
-        liver: OrganAnimalLiver
-        kidneys: OrganHumanKidneys
+        heart: OrganSharkmanHeart
+        lungs: OrganSharkmanLungs
+        stomach: OrganSharkmanStomach
+        liver: OrganSharkmanLiver
+        kidneys: OrganSharkmanKidneys
         vessels_implant: null # Horizon
         blood_pump_implant: null
         skin_implant: null # Horizon
@@ -32,30 +32,30 @@
       - right leg
       - left leg
     right arm:
-      part: RightArmShark
+      part: RightArmSharkman
       connections:
       - right hand
     left arm:
-      part: LeftArmShark
+      part: LeftArmSharkman
       connections:
       - left hand
     right hand:
-      part: RightHandShark
+      part: RightHandSharkman
       organs:
         hands_implant: null # Horizon
     left hand:
-      part: LeftHandShark
+      part: LeftHandSharkman
       organs:
         hands_implant: null # Horizon
     right leg:
-      part: RightLegShark
+      part: RightLegSharkman
       connections:
       - right foot
     left leg:
-      part: LeftLegShark
+      part: LeftLegSharkman
       connections:
       - left foot
     right foot:
-      part: RightFootShark
+      part: RightFootSharkman
     left foot:
-      part: LeftFootShark
+      part: LeftFootSharkman
