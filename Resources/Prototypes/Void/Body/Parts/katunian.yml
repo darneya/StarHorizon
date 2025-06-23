@@ -13,7 +13,7 @@
         Quantity: 10
   - type: Sprite
     netsync: false
-    sprite: Void/Mobs/Species/Katunian/parts.rsi
+    sprite: _Void/Mobs/Species/Katunian/parts.rsi
 
 - type: entity
   id: TorsoKatunian
