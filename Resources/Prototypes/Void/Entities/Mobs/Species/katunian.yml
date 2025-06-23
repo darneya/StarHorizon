@@ -17,7 +17,7 @@
     requiredLegs: 2
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Scale
+    damageModifierSet: Katunian # Horizon
   - type: MeleeWeapon
     hidden: true
     soundHit:
