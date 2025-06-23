@@ -1,8 +1,0 @@
-- type: entity
-  save: false
-  name: Urist McJaws
-  suffix: Urisst' Mzhand
-  parent: BaseMobShark
-  id: MobShark
-
-#Rawr
