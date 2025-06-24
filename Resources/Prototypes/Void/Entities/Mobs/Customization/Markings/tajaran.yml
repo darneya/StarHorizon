@@ -4,7 +4,7 @@
   markingCategory: Chest
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_chest.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_chest.rsi
       state: belly1
 
 - type: marking
@@ -13,7 +13,7 @@
   markingCategory: Chest
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_chest.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_chest.rsi
       state: belly2
 
 - type: marking
@@ -22,7 +22,7 @@
   markingCategory: Chest
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_chest.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_chest.rsi
       state: belly3
 
 - type: marking
@@ -31,7 +31,7 @@
   markingCategory: Chest
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_chest.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_chest.rsi
       state: chest
 
 - type: marking
@@ -40,7 +40,7 @@
   markingCategory: Chest
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_chest.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_chest.rsi
       state: patch
 
 - type: marking
@@ -49,7 +49,7 @@
   markingCategory: Arms
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_chest.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_chest.rsi
       state: points
 
 - type: marking
@@ -58,7 +58,7 @@
   markingCategory: Tail
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_tail.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_tail.rsi
       state: wingler
 
 - type: marking
@@ -67,7 +67,7 @@
   markingCategory: Tail
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_tail.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_tail.rsi
       state: tail_tip
 
 - type: marking
@@ -76,7 +76,7 @@
   markingCategory: Head
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_head.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_head.rsi
       state: inears
 
 - type: marking
@@ -85,7 +85,7 @@
   markingCategory: Head
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_head.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_head.rsi
       state: muzzle
 
 - type: marking
@@ -94,7 +94,7 @@
   markingCategory: Head
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_head.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_head.rsi
       state: inears
 
 - type: marking
@@ -103,7 +103,7 @@
   markingCategory: Head
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_head.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_head.rsi
       state: muzzleinears
 
 - type: marking
@@ -112,7 +112,7 @@
   markingCategory: Head
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_head.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_head.rsi
       state: nose
 
 - type: marking
@@ -121,7 +121,7 @@
   markingCategory: Head
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_head.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_head.rsi
       state: outears
 
 - type: marking
@@ -131,7 +131,7 @@
   speciesRestriction: [TajaranSpecies]
   sponsorOnly: false
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_head.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_head.rsi
       state: patch_SPONSOR_ONLY
 
 - type: marking
@@ -140,7 +140,7 @@
   markingCategory: Head
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_head.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_head.rsi
       state: tiger_face
 
 - type: marking
@@ -149,7 +149,7 @@
   markingCategory: Head
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_head.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_head.rsi
       state: tiger_head
 
 - type: marking
@@ -158,7 +158,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: bangs
 
 - type: marking
@@ -167,7 +167,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: bedhead
 
 - type: marking
@@ -176,7 +176,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: bob
 
 - type: marking
@@ -185,7 +185,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: braid
 
 - type: marking
@@ -194,7 +194,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: clean
 
 - type: marking
@@ -203,7 +203,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: curly
 
 - type: marking
@@ -212,7 +212,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: fingerwave
 
 - type: marking
@@ -221,7 +221,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: ladiesretro
 
 - type: marking
@@ -230,7 +230,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: long
 
 - type: marking
@@ -239,7 +239,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: messy
 
 - type: marking
@@ -248,7 +248,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: mohawk
 
 - type: marking
@@ -257,7 +257,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: plait
 
 - type: marking
@@ -266,7 +266,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: rattail
 
 - type: marking
@@ -275,7 +275,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: shaggy
 
 - type: marking
@@ -284,7 +284,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: spikey
 
 - type: marking
@@ -293,7 +293,7 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: straight
 
 - type: marking
@@ -302,5 +302,5 @@
   markingCategory: Hair
   speciesRestriction: [TajaranSpecies]
   sprites:
-    - sprite: Void/Mobs/Customization/tajaran_hairs.rsi
+    - sprite: _Void/Mobs/Customization/tajaran_hairs.rsi
       state: victory
