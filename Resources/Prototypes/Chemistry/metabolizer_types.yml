@@ -44,8 +44,7 @@
 - type: metabolizerType
   id: Arachnid
   name: metabolizer-type-arachnid
-  name: arachnid
-  
+
 # Horizon start
 - type: metabolizerType
   id: Demon
