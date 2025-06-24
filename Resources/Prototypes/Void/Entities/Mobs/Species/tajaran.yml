@@ -13,11 +13,11 @@
     - type: Hunger
     - type: Thirst
     - type: Icon
-      sprite: Void/Mobs/Species/Tajaran/parts.rsi
+      sprite: _Void/Mobs/Species/Tajaran/parts.rsi
       state: tajaran_m
     - type: Damageable
       damageContainer: Biological
-      damageModifierSet: Fur
+      damageModifierSet: Tajaran # Horizon
     - type: MeleeWeapon
       hidden: true
       soundHit:
@@ -53,7 +53,7 @@
   name: Tajaran McHands
   parent: MobHumanDummy
   id: MobTajaranDummy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: A dummy tajaran meant to be used in character setup.
   components:
     - type: HumanoidAppearance
