@@ -1097,6 +1097,9 @@
         conditions:
         - !type:TotalDamage
           max: 50
+        - !type:OrganType
+          type: Demon
+          shouldHave: false
         damage:
           types:
             Blunt: -0.2

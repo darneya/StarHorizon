@@ -114,7 +114,7 @@
   id: TattooEyeRight
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Goblin, Felinid, Oni, Harpy, Vulpkanin] # Frontier: added Goblin and afterwards
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Goblin, Felinid, Oni, Harpy, Vulpkanin, Katunian] # Frontier: added Goblin and afterwards # Horizon races
   coloring:
     default:
       type:
@@ -128,7 +128,7 @@
   id: TattooEyeLeft
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Goblin, Felinid, Oni, Harpy, Vulpkanin] # Frontier: added Goblin and afterwards
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Goblin, Felinid, Oni, Harpy, Vulpkanin, Katunian] # Frontier: added Goblin and afterwards # Horizon races
   coloring:
     default:
       type:

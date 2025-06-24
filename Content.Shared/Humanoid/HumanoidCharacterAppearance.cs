@@ -98,6 +98,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             HumanoidSkinColor.HumanToned => Humanoid.SkinColor.HumanSkinTone(speciesPrototype.DefaultHumanSkinTone),
             HumanoidSkinColor.Hues => speciesPrototype.DefaultSkinTone,
             HumanoidSkinColor.TintedHues => Humanoid.SkinColor.TintedHues(speciesPrototype.DefaultSkinTone),
+            HumanoidSkinColor.KatunianToned => Humanoid.SkinColor.KatunianSkinTone(speciesPrototype.DefaultHumanSkinTone),
             HumanoidSkinColor.VoxFeathers => Humanoid.SkinColor.ClosestVoxColor(speciesPrototype.DefaultSkinTone),
             _ => Humanoid.SkinColor.ValidHumanSkinTone,
         };
@@ -112,7 +113,6 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             new ()
         );
     }
-
     private static IReadOnlyList<Color> RealisticEyeColors = new List<Color>
     {
         Color.Brown,
@@ -121,7 +121,6 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         Color.SteelBlue,
         Color.Black
     };
-
     public static HumanoidCharacterAppearance Random(string species, Sex sex)
     {
         var random = IoCManager.Resolve<IRobustRandom>();
@@ -143,7 +142,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             .WithGreen(RandomizeColor(newHairColor.G))
             .WithBlue(RandomizeColor(newHairColor.B));
 
-        // TODO: Add random markings
+            // TODO: Add random markings
 
         var newEyeColor = random.Pick(RealisticEyeColors);
 
@@ -166,7 +165,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
                 break;
         }
 
-        return new HumanoidCharacterAppearance(newHairStyle, newHairColor, newFacialHairStyle, newHairColor, newEyeColor, newSkinColor, new ());
+        return new HumanoidCharacterAppearance(newHairStyle, newHairColor, newFacialHairStyle, newHairColor, newEyeColor, newSkinColor, new());
 
         float RandomizeColor(float channel)
         {
