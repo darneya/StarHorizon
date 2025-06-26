@@ -80,14 +80,21 @@ public sealed partial class GhostGui : UIWidget
 
     protected override void FrameUpdate(FrameEventArgs args)
     {
-        if (_respawnTime is null || _gameTiming.CurTime > _respawnTime)
+        var curTime = _gameTiming.CurTime; // StarHorizon
+        if (_respawnTime is null || curTime > _respawnTime) // StarHorizon
         {
             GhostRespawnButton.Text = Loc.GetString("ghost-gui-respawn-button-allowed");
             GhostRespawnButton.Disabled = false;
         }
         else
         {
-            double delta = (_respawnTime.Value - _gameTiming.CurTime).TotalSeconds;
+            // StarHorizon start
+            var delta = (_respawnTime.Value - curTime).TotalSeconds;
+
+            if (delta < 0)
+                delta = 0;
+            // StarHorizon end
+
             GhostRespawnButton.Text = Loc.GetString("ghost-gui-respawn-button-denied", ("time", $"{delta:f1}"));
             GhostRespawnButton.Disabled = true;
         }

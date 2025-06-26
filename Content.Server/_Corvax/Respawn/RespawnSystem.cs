@@ -12,8 +12,8 @@ using Robust.Shared.Configuration; // Frontier
 using Content.Server._NF.CryoSleep; // Frontier
 using Robust.Shared.Player; // Frontier
 using Content.Shared.Ghost; // Frontier
-using Content.Server.Administration.Managers; // Frontier
-using Content.Server.Administration; // Frontier
+//using Content.Server.Administration.Managers; // Frontier
+//using Content.Server.Administration; // Frontier
 using Content.Shared.GameTicking; // Frontier
 
 namespace Content.Server._Corvax.Respawn;
@@ -23,7 +23,7 @@ public sealed class RespawnSystem : EntitySystem
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IAdminManager _admin = default!;
+    //[Dependency] private readonly IAdminManager _admin = default!;
 
     private float _respawnTimeOnFirstCryo = 0f; // Frontier: shorter time for cryo respawns
     private float _respawnTime = 0f;
@@ -47,7 +47,7 @@ public sealed class RespawnSystem : EntitySystem
         SubscribeLocalEvent<MindContainerComponent, CryosleepWakeUpEvent>(OnCryoWakeUp);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart); // Frontier
 
-        _admin.OnPermsChanged += OnAdminPermsChanged; // Frontier
+        //_admin.OnPermsChanged += OnAdminPermsChanged; // Frontier
         _player.PlayerStatusChanged += PlayerStatusChanged; // Frontier
 
         Subs.CVar(_cfg, NFCCVars.RespawnCryoFirstTime, OnRespawnCryoFirstTimeChanged, true); // Frontier
@@ -94,8 +94,8 @@ public sealed class RespawnSystem : EntitySystem
         if (HasComp<GhostComponent>(entity)) // Don't penalize user for reobserving
             return;
 
-        if (e.Mind.Comp.Session != null && _admin.IsAdmin(e.Mind.Comp.Session)) // Admins get free respawns
-            return;
+        //if (e.Mind.Comp.Session != null && _admin.IsAdmin(e.Mind.Comp.Session)) // Admins get free respawns
+            //return;
 
         // Get respawn info
         var userId = e.Mind.Comp.UserId.Value;
@@ -108,14 +108,14 @@ public sealed class RespawnSystem : EntitySystem
     }
 
     // Frontier: admin permissions handler: clear respawn data for admins
-    private void OnAdminPermsChanged(AdminPermsChangedEventArgs args)
-    {
-        if (args.IsAdmin)
-        {
-            var respawnData = GetRespawnData(args.Player.UserId);
-            SetRespawnTime(args.Player.UserId, ref respawnData, TimeSpan.Zero);
-        }
-    }
+    //private void OnAdminPermsChanged(AdminPermsChangedEventArgs args)
+    //{
+        //if (args.IsAdmin)
+        //{
+            //var respawnData = GetRespawnData(args.Player.UserId);
+            //SetRespawnTime(args.Player.UserId, ref respawnData, TimeSpan.Zero);
+        //}
+    //}
 
     // Frontier: respawn handler: adjusts respawn and cryo timers.
     public void Respawn(ICommonSession session)
@@ -134,8 +134,8 @@ public sealed class RespawnSystem : EntitySystem
         if (!_player.TryGetSessionByEntity(entity, out var session))
             return;
 
-        if (_admin.IsAdmin(session)) // admins get free respawns
-            return;
+        //if (_admin.IsAdmin(session)) // admins get free respawns
+            //return;
 
         var respawnData = GetRespawnData(session.UserId);
         double respawnTime = _respawnTimeOnFirstCryo; // Not previously respawned from cryo.
@@ -161,8 +161,10 @@ public sealed class RespawnSystem : EntitySystem
         data.RespawnTime = nextSpawn;
         data.LastCryoSleep = cryoTime;
 
-        if (_player.TryGetSessionById(user, out var session)) // Frontier: try first, if no valid session, nothing to do.
+        // StarHorizon start
+        if (_player.TryGetSessionById(user, out var session))
             RaiseNetworkEvent(new RespawnResetEvent(nextSpawn), session);
+        // StarHorizon end
     }
 
     public TimeSpan? GetRespawnTime(NetUserId user) // Frontier: GetRespawnResetTime<GetRespawnTime
@@ -183,11 +185,13 @@ public sealed class RespawnSystem : EntitySystem
     {
         var session = args.Session;
 
-        if (args.NewStatus == Robust.Shared.Enums.SessionStatus.InGame &&
-            _respawnInfo.ContainsKey(session.UserId))
+        // StarHorizon start
+        if (args.NewStatus == Robust.Shared.Enums.SessionStatus.InGame)
         {
-            RaiseNetworkEvent(new RespawnResetEvent(_respawnInfo[session.UserId].RespawnTime), session);
+            if (_respawnInfo.TryGetValue(session.UserId, out var data))
+                RaiseNetworkEvent(new RespawnResetEvent(data.RespawnTime), session);
         }
+        // StarHorizon end
     }
 
     // Frontier: reset game state, we have a new round.
