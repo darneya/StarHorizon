@@ -46,7 +46,7 @@ public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
 
         foreach (var ent in _lookup.GetEntitiesInRange(Transform(uid).Coordinates, 10f))
         {
-            if (!_mind.TryGetMind(ent, out _, out var mind) || mind.Session == null)
+            if (!_mind.TryGetMind(ent, out _, out var mind) || mind.CurrentEntity == null)
                 continue;
 
             RaiseNetworkEvent(new PlaySpeechBarksEvent(
@@ -56,7 +56,7 @@ public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
                         ev.Data.Pitch,
                         ev.Data.MinVar,
                         ev.Data.MaxVar,
-                        args.Whisper), mind.Session);
+                        args.Whisper), mind.CurrentEntity.Value);
         }
     }
 }

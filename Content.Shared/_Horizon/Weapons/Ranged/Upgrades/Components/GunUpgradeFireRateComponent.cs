@@ -5,7 +5,7 @@ namespace Content.Shared._Horizon.Weapons.Ranged.Upgrades.Components;
 /// <summary>
 /// A <see cref="GunUpgradeComponent"/> for increasing the firerate of a gun.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(GunUpgradeSystem))]
+[NetworkedComponent, Access(typeof(GunUpgradeSystem))]
 public sealed partial class GunUpgradeFireRateComponent : Component
 {
     [DataField]
