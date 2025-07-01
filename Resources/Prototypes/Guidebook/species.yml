@@ -12,12 +12,14 @@
     - SlimePerson
     - Vox
     - Goblin # Frontier
+    - Sheleg # Frontier
+    - Vulpkanin # DeltaV
     - Harpy # DeltaV
     - Felinid # DeltaV
     - Oni # DeltaV
     - Demon # Horizon
     - Katunian # Horizon
-    - Tajaran # Horizon 
+    - Tajaran # Horizon
 
 - type: guideEntry
   id: Arachnid

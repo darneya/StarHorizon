@@ -13,9 +13,8 @@
                       Access="Public"
                       HorizontalAlignment="Center"
                       HorizontalExpand="True"
-                      Margin="10"> <!-- Frontier: cherry-pick upstream#35041 - rename to SingleStorageContainer -->
+                      Margin="10">
         </BoxContainer>
-        <!-- Frontier: cherry-pick upstream#35041 -->
         <BoxContainer Name="DoubleStorageContainer"
                       Access="Public"
                       HorizontalAlignment="Stretch"

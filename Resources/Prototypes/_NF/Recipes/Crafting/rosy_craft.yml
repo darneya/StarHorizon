@@ -1,12 +1,7 @@
 - type: construction
-  name: плащ розовой моли
   id: ClothingNeckCloakRosyRecipe
   graph: ClothingNeckCloakRosyGraph
   startNode: start
   targetNode: ClothingNeckCloakRosy
   category: construction-category-clothing
-  description: Плащ из розового, коричневого и таракамолевого меха.
-  icon:
-    sprite: _NF/Clothing/Neck/Cloaks/rosy.rsi
-    state: icon
-  objectType: Item  
+  objectType: Item

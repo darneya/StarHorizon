@@ -1,25 +1,15 @@
 - type: construction
-  name: спальник
   id: NFBedrollCrafting
   graph: GraphNFBedrollFolded
   startNode: start
   targetNode: NFBedrollFolded
   category: construction-category-utilities
   objectType: Item
-  description: Когда больше негде спать, вам захочется взять с собой хотя бы одну удобную вещь. На этикетке указано, что перед сном ее нужно разворачивать, но кому нужны правила, верно?
-  icon:
-    sprite: _NF/Structures/Furniture/bedroll.rsi
-    state: bedroll01
 
 - type: construction
-  name: спальник
   id: NFBedrollAltFoldedCrafting
   graph: GraphNFBedrollFolded
   startNode: start
   targetNode: NFBedrollAltFolded
   category: construction-category-utilities
   objectType: Item
-  description: Когда больше негде спать, вам захочется взять с собой хотя бы одну удобную вещь. На этикетке указано, что перед сном ее нужно разворачивать, но кому нужны правила, верно?
-  icon:
-    sprite: _NF/Structures/Furniture/bedroll.rsi
-    state: bedroll02

@@ -1,47 +1,28 @@
 - type: construction
-  name: классическое паутинное пончо
   id: ClothingNeckClassicPonchoWebRecipe
   graph: ClothingNeckClassicPonchoWebGraph
   startNode: start
   targetNode: ClothingNeckClassicPonchoWebNode
   category: construction-category-clothing
-  description: Вся прелесть пустынных высот через призму паучьих фантазий. Идеально липкое — теперь вы не просто модник, а ходячая ловушка!
-  entityWhitelist:
+  entityWhitelist: &spidercraftWhitelist
     tags:
     - SpiderCraft
-  icon:
-    sprite: _NF/Clothing/Neck/Misc/classic_poncho_web.rsi
-    state: icon
   objectType: Item
 
 - type: construction
-  name: паутинное пончо
   id: ClothingNeckPonchoWebRecipe
   graph: ClothingNeckPonchoWebGraph
   startNode: start
   targetNode: ClothingNeckPonchoWebNode
   category: construction-category-clothing
-  description: "Как будто вас завернули в кокон, а потом такие: «А давай-ка добавим отверстия для конечностей!» — поздравляем, вы родились заново... и сразу стали иконой моды!"
-  entityWhitelist:
-    tags:
-    - SpiderCraft
-  icon:
-    sprite: _NF/Clothing/Neck/Misc/poncho_web.rsi
-    state: icon
+  entityWhitelist: *spidercraftWhitelist
   objectType: Item
 
 - type: construction
-  name: паутинный плащ
   id: ClothingNeckCloakWebRecipe
   graph: ClothingNeckCloakWebGraph
   startNode: start
   targetNode: ClothingNeckCloakWebNode
   category: construction-category-clothing
-  description: "Этот изысканный плащ намекает всем вокруг: вы не просто любите пауков, вы с ними на короткой ноге. Ну или на восьми."
-  entityWhitelist:
-    tags:
-    - SpiderCraft
-  icon:
-    sprite: _NF/Clothing/Neck/Cloaks/cloak_web.rsi
-    state: icon
+  entityWhitelist: *spidercraftWhitelist
   objectType: Item

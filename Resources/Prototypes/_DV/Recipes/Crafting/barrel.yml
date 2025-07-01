@@ -1,25 +1,15 @@
 - type: construction
-  name: деревянная бочка
   id: WoodenBarrel
   graph: WoodenBarrel
   startNode: start
   targetNode: woodenbarrel
   category: construction-category-storage
-  description: Старая заплесневелая деревянная бочка.
-  icon:
-    sprite: _DV/Objects/Storage/barrel.rsi
-    state: base
   objectType: Structure
 
 - type: construction
-  name: деревянный бочонок
   id: WoodenKeg
   graph: WoodenKeg
   startNode: start
   targetNode: woodenkeg
   category: construction-category-storage
-  description: Старый заплесневелый деревянный бочонок с краном спереди.
-  icon:
-    sprite: _DV/Objects/Storage/keg.rsi
-    state: base
   objectType: Structure

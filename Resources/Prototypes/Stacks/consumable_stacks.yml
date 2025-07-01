@@ -2,19 +2,19 @@
 
 - type: stack
   id: Pancake
-  name: блинчик # Horizon
+  name: stack-pancake
   spawn: FoodBakedPancake
   maxCount: 9
 
 - type: stack
   id: PancakeBb
-  name: блинчик с черникой # Horizon
+  name: stack-blueberry-pancake
   spawn: FoodBakedPancakeBb
   maxCount: 9
 
 - type: stack
   id: PancakeCc
-  name: блинчик с шоколадной крошкой # Horizon
+  name: stack-chocolate-chip-pancake
   spawn: FoodBakedPancakeCc
   maxCount: 9
 
@@ -22,7 +22,7 @@
 
 - type: stack
   id: PizzaBox
-  name: коробка пиццы # Horizon
+  name: stack-pizza-box
   icon: { sprite: Objects/Consumable/Food/Baked/pizza.rsi, state: box }
   spawn: FoodBoxPizza
   maxCount: 30
@@ -31,55 +31,55 @@
 
 - type: stack
   id: PaperRolling
-  name: сигаретная бумага # Horizon
+  name: stack-rolling-paper
   icon: { sprite: /Textures/Objects/Consumable/Smokeables/Cigarettes/paper.rsi, state: cigpaper }
   spawn: PaperRolling
   maxCount: 5
 
 - type: stack
   id: CigaretteFilter
-  name: сигаретный фильтр # Horizon
+  name: stack-cigarette-filter
   icon: { sprite: /Textures/Objects/Consumable/Smokeables/Cigarettes/paper.rsi, state: cigfilter }
   spawn: CigaretteFilter
   maxCount: 5
 
 - type: stack
   id: GroundTobacco
-  name: измельчённый табак # Horizon
+  name: stack-ground-tobacco
   icon: { sprite: /Textures/Objects/Misc/reagent_fillings.rsi, state: powderpile }
   spawn: GroundTobacco
   maxCount: 5
 
 - type: stack
   id: GroundCannabis
-  name: измельчённая конопля # Horizon
+  name: stack-ground-cannabis
   icon: { sprite: /Textures/Objects/Misc/reagent_fillings.rsi, state: powderpile }
   spawn: GroundCannabis
   maxCount:
 
 - type: stack
   id: GroundCannabisRainbow
-  name: измельчённая радужная конопля # Horizon
+  name: stack-ground-rainbow-cannabis
   icon: { sprite: /Textures/Objects/Specific/Hydroponics/rainbow_cannabis.rsi, state: powderpile_rainbow }
   spawn: GroundCannabisRainbow
   maxCount:
 
 - type: stack
   id: LeavesTobaccoDried
-  name: сушёные листья табака # Horizon
+  name: stack-dried-tobacco-leaves
   icon: { sprite: /Textures/Objects/Specific/Hydroponics/tobacco.rsi, state: dried }
   spawn: LeavesTobaccoDried
   maxCount: 5
 
 - type: stack
   id: LeavesCannabisDried
-  name: сушёные листья конопли # Horizon
+  name: stack-dried-cannabis-leaves
   icon: { sprite: /Textures/Objects/Specific/Hydroponics/tobacco.rsi, state: dried }
   spawn: LeavesCannabisDried
   maxCount: 5
 
 - type: stack
   id: LeavesCannabisRainbowDried
-  name: сушёные листья радужной конопли # Horizon
+  name: stack-dried-rainbow-cannabis-leaves
   icon: { sprite: /Textures/Objects/Specific/Hydroponics/rainbow_cannabis.rsi, state: dried }
   spawn: LeavesCannabisRainbowDried

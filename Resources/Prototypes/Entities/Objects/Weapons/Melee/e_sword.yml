@@ -430,3 +430,12 @@
       path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
       path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
+
+- type: entity
+  parent: [ EnergyDaggerLoud, BaseXenoborgContraband ]
+  id: EnergyDaggerLoudBlue
+  suffix: blue
+  components:
+  - type: EnergySword
+    colorOptions:
+    - "#2288ff" # can only be blue

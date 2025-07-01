@@ -1,21 +1,15 @@
 - type: construction
-  name: колчан (болты)
   id: CraftQuiverBolt
   graph: CraftQuiverBolt
   startNode: start
   targetNode: CraftQuiverBolt
   category: construction-category-clothing
-  description: Вмещает до 25 болтов и плотно сидит на поясе.
-  icon: { sprite: _NF/Objects/Clothing/Belt/crossbow_quiver.rsi, state: icon }
   objectType: Item
 
 - type: construction
-  name: тканевые обмотки для ног
   id: CraftShoesClothwrap
   graph: CraftShoesClothwrap
   startNode: start
   targetNode: CraftShoesClothwrap
   category: construction-category-clothing
-  description: Рулон обработанной ткани, используемой для обмотки ног или лап.
-  icon: { sprite: _NF/Clothing/Shoes/Misc/clothwrap.rsi, state: icon }
   objectType: Item

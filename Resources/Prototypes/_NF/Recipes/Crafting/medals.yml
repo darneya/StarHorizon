@@ -1,12 +1,7 @@
 - type: construction
-  name: славный орден границы 1-й степени
   id: GloriousOrder
   graph: ClothingNeckMedalGloriousOrder
   startNode: start
   targetNode: GloriousOrder
   category: construction-category-utilities
   objectType: Item
-  description: За недвусмысленную предприимчивость и мрачность против неисправимого правдоподобия.
-  icon:
-    sprite: _NF/Clothing/Neck/Medals/glorious_order.rsi
-    state: icon

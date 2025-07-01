@@ -1,12 +1,7 @@
 - type: construction
-  name: грубые кастеты
   id: CrassKnuckles
-  graph: GraphWeaponBrassKnucklesWhoopie
+  graph: ClothingHandsKnuckleDustersBrass
   startNode: start
-  targetNode: WeaponBrassKnucklesWhoopie
+  targetNode: crass
   category: construction-category-weapons
-  description: Подозрительно тихие, подозрительно смертоносные.
-  icon:
-    sprite: _NF/Objects/Weapons/Melee/crassknuckles.rsi
-    state: icon
   objectType: Item
