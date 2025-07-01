@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Horizon.Weapons.Ranged.Upgrades.Components;
 
-[NetworkedComponent, Access(typeof(GunUpgradeSystem))]
+[RegisterComponent, NetworkedComponent, Access(typeof(GunUpgradeSystem))]
 public sealed partial class GunComponentUpgrateComponent : Component
 {
     [DataField]

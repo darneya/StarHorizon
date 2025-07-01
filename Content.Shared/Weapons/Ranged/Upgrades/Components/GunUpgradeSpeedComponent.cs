@@ -1,3 +1,4 @@
+using Content.Shared._Horizon.Weapons.Ranged.Upgrades;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Weapons.Ranged.Upgrades.Components;

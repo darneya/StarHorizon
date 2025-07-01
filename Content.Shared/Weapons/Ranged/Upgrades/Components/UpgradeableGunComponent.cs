@@ -1,3 +1,4 @@
+using Content.Shared._Horizon.Weapons.Ranged.Upgrades;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;

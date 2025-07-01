@@ -1,3 +1,4 @@
+using Content.Shared._Horizon.Weapons.Ranged.Upgrades;
 using Content.Shared.Tag;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
