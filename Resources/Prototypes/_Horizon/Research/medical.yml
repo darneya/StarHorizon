@@ -258,7 +258,7 @@
   - RightArmCyberLazer
   technologyPrerequisites:
   - CyberLimbsTech
-  - PortableMicrofusionWeaponry
+  - NFPortableMicrofusionWeaponry
 
 - type: technology
   id: FunctionalEngineeringLimbsTech

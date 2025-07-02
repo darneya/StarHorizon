@@ -101,8 +101,8 @@
   - ScienceExplosives # sec gets everything for modular grenade making that sci does
   id: SecurityExplosives
   recipes:
-  #- ExplosivePayload # Frontier
-  #- GrenadeBlast # Frontier
+  - ExplosivePayload # Frontier
+  - GrenadeBlast # Frontier
   - NFGrenadeEMP # Frontier: use NF prefix
   - NFGrenadeFlash # Frontier: use NF prefix
   - NFMagazineGrenadeEmpty # Frontier: use NF prefix

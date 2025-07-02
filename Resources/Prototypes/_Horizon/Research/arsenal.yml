@@ -28,7 +28,7 @@
   - WeaponKineticClaws
   - WeaponKineticMachete
   technologyPrerequisites:
-  - SalvageWeapons
+  - NFSalvageWeapons
 
 - type: technology
   id: AdvancedPKARanged
@@ -45,7 +45,7 @@
   - WeaponProtoKineticRailgun
   - WeaponProtoKineticShotgun
   technologyPrerequisites:
-  - SalvageWeapons
+  - NFSalvageWeapons
 
 - type: technology
   id: AdvancedPKAModules
@@ -62,7 +62,7 @@
   - PKAUpgradeFireRate
   - PKAUpgradeLight
   technologyPrerequisites:
-  - SalvageWeapons
+  - NFSalvageWeapons
 
 - type: technology
   id: GygaxTechnology

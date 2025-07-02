@@ -200,7 +200,7 @@
   tier: 3
   cost: 15000
   recipeUnlocks:
-#  - WeaponAdvancedLaser # Frontier
+  - WeaponAdvancedLaser # Frontier
   - PortableRecharger
 
 - type: technology
@@ -212,8 +212,8 @@
   discipline: Arsenal
   tier: 3
   cost: 15000
-  # recipeUnlocks: # Frontier
-  # - WeaponTemperatureGun # Frontier
+  recipeUnlocks: # Frontier
+  - WeaponTemperatureGun # Frontier
 
 - type: technology
   id: AdvancedShuttleWeapon
@@ -225,7 +225,7 @@
   tier: 3
   cost: 15000
   recipeUnlocks:
-  # - GrenadeEMP # Frontier
+  - GrenadeEMP # Frontier
   - PowerCageHigh
-  # technologyPrerequisites: # Frontier
-  # - BasicShuttleArmament # Frontier
+  technologyPrerequisites: # Frontier
+  - BasicShuttleArmament # Frontier

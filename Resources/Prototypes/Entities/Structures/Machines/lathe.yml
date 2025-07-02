@@ -541,8 +541,7 @@
     - StarlightSurgeryImplants # Starlight
     - SyringeGuns # DeltaV
     - NFMedical # Frontier
-    # dynamicPacks: # Frontier
-    # - Chemistry # Frontier
+    - Chemistry # Frontier
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget

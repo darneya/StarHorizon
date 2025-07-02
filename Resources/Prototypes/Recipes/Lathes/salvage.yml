@@ -102,3 +102,14 @@
     Gold: 500
     Silver: 500
 
+- type: latheRecipe
+  id: PKAUpgradeLight
+  result: PKAUpgradeLight
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 1500
+    Gold: 500
+    Silver: 500
+
