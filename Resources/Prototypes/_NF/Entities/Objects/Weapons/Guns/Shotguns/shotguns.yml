@@ -5,6 +5,7 @@
   - BaseC3SyndicateContraband
   - NFBaseWeaponShotgunChamber50Magazine
   - NFBaseWeaponFrameShotgunWieldable
+  - BaseAttachableHolder
   name: Bulldog
   description: |-
     An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids.
@@ -19,6 +20,27 @@
     - FullAuto
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-gorlex-steel-works
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.365, -0.1075
+      rmc-aslot-rail: -0.02375, -0.0325
+  # Horizon Attachments end
 
 - type: entity
   id: NFWeaponShotgunDoubleBarreled
@@ -43,7 +65,7 @@
 
 - type: entity
   id: NFWeaponShotgunEnforcer
-  parent: [ NFBaseWeaponShotgunChamber50, NFBaseWeaponFrameShotgunWieldable ]
+  parent: [ NFBaseWeaponShotgunChamber50, NFBaseWeaponFrameShotgunWieldable, BaseAttachableHolder ]
   name: Enforcer
   description: |-
     A premium semi-automatic shotgun, featuring an upgraded tube capacity.
@@ -56,10 +78,29 @@
     sprite: Objects/Weapons/Guns/Shotguns/enforcer_inhands_64x.rsi
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
+    # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.2875, -0.125
+      rmc-aslot-rail: -0.0375, -0.1575
+    # Horizon Attachments end
 
 - type: entity
   id: NFWeaponShotgunKammerer
-  parent: [ NFBaseWeaponShotgunChamber50, NFBaseWeaponFrameShotgunWieldable ]
+  parent: [ NFBaseWeaponShotgunChamber50, NFBaseWeaponFrameShotgunWieldable, BaseAttachableHolder ]
   name: Kammerer
   description: |-
     An old yet faithful design, and a favorite among irregular forces on many worlds.
@@ -74,6 +115,25 @@
     capacity: 5
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.2875, -0.125
+      rmc-aslot-rail: -0.0375, -0.1575
+  # Horizon Attachments end
 
 - type: entity
   id: NFWeaponShotgunSawn

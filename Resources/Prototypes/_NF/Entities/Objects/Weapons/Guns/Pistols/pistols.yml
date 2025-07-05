@@ -1,7 +1,7 @@
 #region WizDen
 - type: entity
   id: NFWeaponPistolMk58
-  parent: [ NFBaseWeaponPistolChamber35, NFBaseWeaponFramePistolNanotrasen ]
+  parent: [ NFBaseWeaponPistolChamber35, NFBaseWeaponFramePistolNanotrasen, BaseAttachableHolder ]
   name: mk58
   description: A cheap semiauto sidearm.
   components:
@@ -12,10 +12,27 @@
   - type: NFWeaponDetails
   - type: PirateBountyItem
     id: WeaponPistolMk58
+  # Horizon Attachmens start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.17, -0.014
+      rmc-aslot-barrel: 0.84375, 0.125
+    # Horizon Attachments end
 
 - type: entity
   id: NFWeaponPistolN1984
-  parent: [ NFBaseWeaponPistolChamber45, NFBaseWeaponFramePistolNanotrasen ]
+  parent: [ NFBaseWeaponPistolChamber45, NFBaseWeaponFramePistolNanotrasen, BaseAttachableHolder ]
   name: N1984
   description: |-
     The sidearm of any self respecting officer. On the handle is a label that says 'for authorized use only.'
@@ -24,10 +41,27 @@
     sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/N1984.rsi
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3, 0.0
+      rmc-aslot-barrel: 0.70375, 0.125
+  # Horizon Attachments end
 
 - type: entity
   id: NFWeaponPistolCobra
-  parent: [ NFBaseWeaponPistolChamber45, NFBaseWeaponFramePistolCybersun ]
+  parent: [ NFBaseWeaponPistolChamber45, NFBaseWeaponFramePistolCybersun, BaseAttachableHolder ]
   name: cobra
   description: |-
     A rugged, robust operator handgun with inbuilt silencer. An illegal firearm often used by Syndicate agents.
@@ -41,11 +75,28 @@
     sprite: _NF/Objects/Weapons/Guns/Pistols/cobra.rsi
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Pistols/cobra.rsi
+  # Horizon Attachmens start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.12, 0.02
+      rmc-aslot-barrel: 0.80375, 0.125
+  # Horizon Attachments end
 
 #region DeltaV
 - type: entity
   id: NFWeaponPistolUniversal
-  parent: [ NFBaseWeaponPistolChamber35, NFBaseWeaponFramePistolNanotrasen ]
+  parent: [ NFBaseWeaponPistolChamber35, NFBaseWeaponFramePistolNanotrasen, BaseAttachableHolder ]
   name: mk32 "Universal"
   description: The Mark 32 Offensive Handgun.
   components:
@@ -57,6 +108,17 @@
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/Pistols/universal.rsi
   # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
   - type: AttachableHolderVisuals
     offsets:
       rmc-aslot-underbarrel: 0.25, 0.01

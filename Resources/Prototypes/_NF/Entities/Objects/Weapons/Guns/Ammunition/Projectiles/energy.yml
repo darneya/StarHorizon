@@ -118,13 +118,14 @@
   - type: Ammo
     muzzleFlash: HitscanEffect
   - type: TimedDespawn
-    lifetime: 1.5
+    lifetime: 0.22 # Horizon
   - type: PointLight
     radius: 2.5
     color: white
     energy: 0.5
   - type: GatheringProjectile
   - type: MiningGatheringSoft
+  - type: PressureDamageModify # Horizon
 
 - type: entity
   id: NFBulletKineticMediumPower
@@ -138,6 +139,7 @@
       types:
         Blunt: 13
         Structural: 30
+  - type: PressureDamageModify # Horizon
 
 - type: entity
   id: NFBulletKineticHighPower
@@ -160,3 +162,4 @@
   - type: PointLight
     color: "#ffffff"
   - type: MiningGatheringHard
+  - type: PressureDamageModify # Horizon

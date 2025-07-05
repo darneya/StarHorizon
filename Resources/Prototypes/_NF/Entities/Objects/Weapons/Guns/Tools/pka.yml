@@ -139,6 +139,16 @@
     sprite: _NF/Objects/Weapons/Guns/Basic/kinetic_accelerator_cannon.rsi
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/Basic/kinetic_accelerator_cannon.rsi
+  # Horizon start
+  - type: UpgradeableGun
+    maxUpgradeCount: 2
+    whitelist:
+      tags:
+      - PKAUpgrade
+  - type: ContainerContainer
+    containers:
+      upgrades: !type:Container
+  # Horizon end
 
 #region Frontier
 - type: entity
@@ -158,6 +168,16 @@
     graph: PKASawn
     node: start
     deconstructionTarget: null
+  # Horizon start
+  - type: UpgradeableGun
+    maxUpgradeCount: 2
+    whitelist:
+      tags:
+      - PKAUpgrade
+  - type: ContainerContainer
+    containers:
+      upgrades: !type:Container
+  # Horizon end
 
 - type: entity
   id: NFWeaponPkaSawn

@@ -1,7 +1,7 @@
 #region WizDen
 - type: entity
   id: NFWeaponPistolEchis
-  parent: NFBaseWeaponFrameMachinePistolGorlex
+  parent: [ NFBaseWeaponFrameMachinePistolGorlex, BaseAttachableHolder ]
   name: echis
   description: |-
     A viper for use by cyborgs. Creates .35 ammo on the fly from an internal ammo fabricator, which slowly self-charges.
@@ -22,10 +22,27 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 25
+  # Horizon Attachmens start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.17, -0.014
+      rmc-aslot-barrel: 0.84375, 0.125
+  # Horizon Attachments end
 
 - type: entity
   id: NFWeaponPistolViper
-  parent: [ NFBaseWeaponPistolChamber35HighCapacity, NFBaseWeaponFrameMachinePistolGorlex ]
+  parent: [ NFBaseWeaponPistolChamber35HighCapacity, NFBaseWeaponFrameMachinePistolGorlex, BaseAttachableHolder ]
   name: viper
   description: |-
     A small, easily concealable machine pistol. An illegal firearm often used by Syndicate agents.
@@ -34,11 +51,28 @@
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+  # Horizon Attachments end
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.17, -0.01
+      rmc-aslot-barrel: 0.84375, 0.12
+  # Horizon Attachments end
 
 #region DeltaV
 - type: entity
   id: NFWeaponPistolPollock
-  parent: [ NFBaseWeaponPistolChamber35, NFBaseWeaponFrameMachinePistolNanotrasen ]
+  parent: [ NFBaseWeaponPistolChamber35, NFBaseWeaponFrameMachinePistolNanotrasen, BaseAttachableHolder ]
   name: pollock
   description: A compact and mass-produced combat pistol.
   components:
@@ -46,6 +80,23 @@
     sprite: _DV/Objects/Weapons/Guns/Pistols/pollock.rsi
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/Pistols/pollock.rsi
+  # Horizon Attachmens start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.17, -0.014
+      rmc-aslot-barrel: 0.84375, 0.125
+  # Horizon Attachments end
 
 - type: entity
   id: NFWeaponPistolPollockHighCapacityMag

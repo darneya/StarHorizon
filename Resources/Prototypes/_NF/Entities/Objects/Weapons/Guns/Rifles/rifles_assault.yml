@@ -1,7 +1,7 @@
 #region WizDen
 - type: entity # TODO: switch to .25 rifle (caseless)
   id: NFWeaponRifleAssaultSm
-  parent: [ NFBaseWeaponRifleAssaultChamber30, NFBaseWeaponFrameRifleAssaultCybersun ]
+  parent: [ NFBaseWeaponRifleAssaultChamber30, BaseAttachableHolder, NFBaseWeaponFrameRifleAssaultCybersun ]
   name: Soland-Moss # Renamed: real brand name
   description: |-
     An iconic weapon of war. An illegal firearm often used by Syndicate agents.
@@ -14,10 +14,37 @@
     magState: mag
     steps: 4
     zeroVisible: true
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, 0
+      rmc-aslot-barrel: 0.96875, 0
+  # Horizon Attachments end
 
 - type: entity # TODO: switch to .25 rifle (caseless)
   id: NFWeaponRifleAssaultM90GrenadeLauncher
-  parent: [ NFBaseWeaponRifleAssaultChamber20, NFBaseWeaponFrameRifleAssaultCybersun ]
+  parent: [ NFBaseWeaponRifleAssaultChamber20, NFBaseWeaponFrameRifleAssaultCybersun, BaseAttachableHolder ]
   name: M-90gl
   description: |-
     An older bullpup carbine model, with an attached underbarrel grenade launcher. An illegal firearm often used by Syndicate agents.
@@ -26,10 +53,37 @@
     sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
   - type: Sprite
     sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0.0, -0.0325
+      rmc-aslot-barrel: 0.96875, 0
+  # Horizon Attachments end
 
 - type: entity
   id: NFWeaponRifleAssaultLecter
-  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponRifleAssaultChamber20, NFBaseWeaponFrameRifleAssaultNanotrasen ]
+  parent: [ BaseC2ContrabandUnredeemable, BaseAttachableHolder, NFBaseWeaponRifleAssaultChamber20, NFBaseWeaponFrameRifleAssaultNanotrasen ]
   name: Lecter
   description: |-
     A medium end military grade assault rifle. On the receiver is a label that says 'for authorized use only.'
@@ -45,6 +99,33 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, 0
+      rmc-aslot-barrel: 0.96875, 0
+  # Horizon Attachments end
 
 #region WizDen: Rubber
 - type: entity
@@ -59,7 +140,7 @@
 #region DeltaV
 - type: entity
   id: NFWeaponRifleAssaultVulcan
-  parent: [ NFBaseWeaponRifleAssaultChamber30, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ]
+  parent: [ NFBaseWeaponRifleAssaultChamber30, NFBaseWeaponFrameRifleAssaultFrontierGunsmith, BaseAttachableHolder ]
   name: Vulcan
   description: |-
     One of the heaviest small arms to grace Security's armory, this rifle is a modern take on a classic, informally dubbed the "Right Arm of the Free World".
@@ -72,10 +153,37 @@
     magState: mag
     steps: 3
     zeroVisible: true
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.28, -0.07
+      rmc-aslot-rail: -0.1, -0.12
+      rmc-aslot-barrel: 0.96875, -0.055
+  # Horizon Attachments end
 
 - type: entity
   id: NFWeaponRifleAssaultJackdaw
-  parent: [ BaseC3Contraband, NFBaseWeaponRifleAssaultChamber20, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ]
+  parent: [ BaseC3Contraband, NFBaseWeaponRifleAssaultChamber20, NFBaseWeaponFrameRifleAssaultFrontierGunsmith, BaseAttachableHolder ]
   name: Jackdaw
   description: |-
     The beginning of the end is heralded by the song of a Jackdaw.
@@ -87,6 +195,33 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_DV/Weapons/Guns/Gunshots/jackdaw.ogg
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.02
+      rmc-aslot-rail: -0.1, -0.04
+      rmc-aslot-barrel: 0.96875, 0.03
+  # Horizon Attachments end
 
 #region DeltaV: Rubber
 - type: entity
@@ -101,7 +236,7 @@
 #region Frontier
 - type: entity
   id: NFWeaponRifleAssaultGestio
-  parent: [ NFBaseWeaponRifleAssaultChamber30LowCapacity, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ]
+  parent: [ NFBaseWeaponRifleAssaultChamber30LowCapacity, NFBaseWeaponFrameRifleAssaultFrontierGunsmith, BaseAttachableHolder ]
   name: Gestio
   description: |-
     An old burst-fire rifle designed by Silver Industries that never left trials.
@@ -121,10 +256,37 @@
       - Burst
     soundGunshot:
       path: /Audio/_NF/Weapons/Guns/Gunshots/rifle.ogg
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.23, -0.045
+      rmc-aslot-rail: -0.1, -0.1
+      rmc-aslot-barrel: 0.90875, -0.024
+  # Horizon Attachments end
 
 - type: entity
   id: NFWeaponRifleAssaultNovaliteC1
-  parent: [ NFBaseWeaponRifleAssaultChamber20Clip, NFBaseWeaponFrameRifleAssaultFrontierGunsmith ]
+  parent: [ NFBaseWeaponRifleAssaultChamber20Clip, NFBaseWeaponFrameRifleAssaultFrontierGunsmith, BaseAttachableHolder ]
   name: Novalite C1
   description: |-
     A civilian grade semi-automatic rifle with an internal magazine.
@@ -139,3 +301,30 @@
       - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+    # Horizon Attachmens start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, 0
+      rmc-aslot-barrel: 0.96875, 0
+    # Horizon Attachments end

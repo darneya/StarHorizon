@@ -16,7 +16,7 @@
 
 - type: entity
   id: NFWeaponSubMachineGunC20r
-  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunCybersun ]
+  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunCybersun, BaseAttachableHolder ]
   name: C-20r
   description: |-
     An illegal firearm that is often used by the infamous nuclear operatives.
@@ -37,7 +37,7 @@
 
 - type: entity
   id: NFWeaponSubMachineGunDrozd
-  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunNanotrasen ]
+  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunNanotrasen, BaseAttachableHolder ]
   name: Drozd
   description: A fully automatic SMG.
   components: &drozdComponents
@@ -48,6 +48,31 @@
     sprite: _NF/Objects/Weapons/Guns/SMGs/drozd.rsi
   - type: Clothing
     sprite: _NF/Objects/Weapons/Guns/SMGs/drozd.rsi
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.28, -0.1250
+      rmc-aslot-rail: -0.0325, -0.0625
+      rmc-aslot-barrel: 0.90625, 0
+  # Horizon Attachment start
 
 - type: entity
   id: NFWeaponSubMachineGunDrozdLessLethal # Frontier-specific rubber variant
