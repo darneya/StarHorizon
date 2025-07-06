@@ -1,44 +1,29 @@
-# НАБЛЮДЕНИЕ
+# SURVEILLANCE
 - type: construction
-  name: камера наблюдения
   id: camera
   graph: SurveillanceCamera
   startNode: start
   targetNode: camera
   category: construction-category-utilities
-  description: "Камера наблюдения. Она следит. Скоро."
-  icon:
-    sprite: Structures/Wallmounts/camera.rsi
-    state: camera
   objectType: Structure
   placementMode: SnapgridCenter
 
 - type: construction
-  name: телемонитор
   id: WallmountTelescreen
   graph: WallmountTelescreen
   startNode: start
   targetNode: Telescreen
   category: construction-category-utilities
-  description: "Монитор для камер наблюдения на стену."
-  icon:
-    sprite: Structures/Machines/computers.rsi
-    state: telescreen_frame
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
 
 - type: construction
-  name: карта станции
   id: StationMap
   graph: StationMap
   startNode: start
   targetNode: station_map
   category: construction-category-structures
-  description: Карта станции.
-  icon:
-    sprite: Structures/Machines/station_map.rsi
-    state: station_map0
   placementMode: SnapgridCenter
   objectType: Structure
   canRotate: true
@@ -46,88 +31,61 @@
   conditions:
   - !type:WallmountCondition {}
 
-# ЭНЕРГЕТИКА
+# POWER
 - type: construction
-  name: ЛЭП (Локальный Энергопункт)
   id: APC
   graph: APC
   startNode: start
   targetNode: apc
   category: construction-category-utilities
-  description: "Локальный Энергопункт (ЛЭП). Контролирует энергию. В определённой зоне."
-  icon:
-    sprite: Structures/Power/apc.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
 
 - type: construction
-  name: кабельный терминал
   id: CableTerminal
   graph: CableTerminal
   startNode: start
   targetNode: cable_terminal
   category: construction-category-utilities
-  description: "Входное устройство для таких приборов как СМЭС. Красный кабель должен быть направлен к устройству."
-  icon:
-    sprite: Structures/Power/cable_terminal.rsi
-    state: term
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
 
 - type: construction
-  name: настенная подстанция
   id: WallmountSubstation
   graph: WallmountSubstation
   startNode: start
   targetNode: substation
   category: construction-category-utilities
-  description: "Настенная подстанция для компактных помещений. Убедитесь, что проложили кабель перед постройкой стены."
-  icon:
-    sprite: Structures/Power/substation.rsi
-    state: substation_wall
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
 
 - type: construction
   hide: true # Frontier
-  name: настенный генератор
   id: WallmountGenerator
   graph: WallmountGenerator
   startNode: start
   targetNode: generator
   category: construction-category-utilities
-  description: "Настенный генератор для компактных помещений. Убедитесь, что проложили кабель перед постройкой стены."
-  icon:
-    sprite: Structures/Power/Generation/wallmount_generator.rsi
-    state: panel
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
 
 - type: construction
   hide: true # Frontier
-  name: настенный ВСУ (Вспомогательный Силовой Узел)
   id: WallmountGeneratorAPU
   graph: WallmountGenerator
   startNode: start
   targetNode: APU
   category: construction-category-utilities
-  description: "Настенный ВСУ для компактных шаттлов. Убедитесь, что проложили кабель перед постройкой стены."
-  icon:
-    sprite: Structures/Power/Generation/wallmount_generator.rsi
-    state: panel
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
 
-# УТИЛИЗАЦИЯ
+# DISPOSALS
 - type: construction
-  name: утилизатор
-  description: Пневматический утилизатор отходов.
   id: DisposalUnit
   graph: DisposalMachine
   startNode: start
@@ -135,13 +93,8 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: "disposal"
 
 - type: construction
-  name: почтовый утилизатор
-  description: Пневматическая почтовая система.
   id: MailingUnit
   graph: DisposalMachine
   startNode: start
@@ -149,27 +102,17 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: "mailing"
 
 - type: construction
-  name: труба утилизации
   id: DisposalPipe
-  description: Большой сегмент трубы для системы утилизации.
   graph: DisposalPipe
   startNode: start
   targetNode: pipe
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: conpipe-s
 
 - type: construction
-  name: маркировщик утилизации
-  description: Труба, маркирующая объекты для маршрутизации.
   id: DisposalTagger
   graph: DisposalPipe
   startNode: start
@@ -177,13 +120,8 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: conpipe-tagger
 
 - type: construction
-  name: магистраль утилизации
-  description: Основная труба, используемая как точка входа для системы утилизации.
   id: DisposalTrunk
   graph: DisposalPipe
   startNode: start
@@ -191,13 +129,8 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: conpipe-t
 
 - type: construction
-  name: маршрутизатор утилизации
-  description: Трёхсторонний маршрутизатор. Объекты с совпадающими метками направляются в сторону.
   id: DisposalRouter
   graph: DisposalPipe
   startNode: start
@@ -205,15 +138,10 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: conpipe-j1s
   mirror: DisposalRouterFlipped
 
 - type: construction
   hide: true
-  name: маршрутизатор утилизации
-  description: Трёхсторонний маршрутизатор. Объекты с совпадающими метками направляются в сторону.
   id: DisposalRouterFlipped
   graph: DisposalPipe
   startNode: start
@@ -221,14 +149,9 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: conpipe-j2s
   mirror: DisposalRouter
 
 - type: construction
-  name: сигнальный маршрутизатор утилизации
-  description: Трёхсторонний маршрутизатор с сигнальным управлением.
   id: DisposalSignalRouter
   graph: DisposalPipe
   startNode: start
@@ -236,15 +159,10 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: signal-router-free
   mirror: DisposalSignalRouterFlipped
 
 - type: construction
   hide: true
-  name: сигнальный маршрутизатор утилизации
-  description: Трёхсторонний маршрутизатор с сигнальным управлением.
   id: DisposalSignalRouterFlipped
   graph: DisposalPipe
   startNode: start
@@ -252,14 +170,9 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: signal-router-flipped-free
   mirror: DisposalSignalRouter
 
 - type: construction
-  name: разветвитель утилизации
-  description: Трёхсторонний разветвитель. Стрелка указывает, куда выходят предметы.
   id: DisposalJunction
   graph: DisposalPipe
   startNode: start
@@ -267,15 +180,10 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: conpipe-j1
   mirror: DisposalJunctionFlipped
 
 - type: construction
   hide: true
-  name: разветвитель утилизации
-  description: Трёхсторонний разветвитель. Стрелка указывает, куда выходят предметы.
   id: DisposalJunctionFlipped
   graph: DisposalPipe
   startNode: start
@@ -283,14 +191,9 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: conpipe-j2
   mirror: DisposalJunction
 
 - type: construction
-  name: Y-разветвитель утилизации
-  description: Трёхсторонний разветвитель с дополнительным выходом.
   id: DisposalYJunction
   graph: DisposalPipe
   startNode: start
@@ -298,13 +201,17 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: conpipe-y
 
 - type: construction
-  name: изгиб трубы утилизации
-  description: Труба, изогнутая под 90 градусов.
+  id: DisposalXJunction
+  graph: DisposalPipe
+  startNode: start
+  targetNode: xJunction
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
   id: DisposalBend
   graph: DisposalPipe
   startNode: start
@@ -312,22 +219,14 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/disposal.rsi
-    state: conpipe-c
 
-# АТМОСФЕРА
+# ATMOS
 - type: construction
-  name: датчик атмосферы
   id: AirAlarmFixture
   graph: AirAlarm
   startNode: start
   targetNode: air_alarm
   category: construction-category-structures
-  description: Датчик атмосферы. Следит за... атмосферой?
-  icon:
-    sprite: Structures/Wallmounts/air_monitors.rsi
-    state: alarm0
   placementMode: SnapgridCenter
   objectType: Structure
   canRotate: true
@@ -336,16 +235,11 @@
   - !type:WallmountCondition {}
 
 - type: construction
-  name: пожарная сигнализация
   id: FireAlarm
   graph: FireAlarm
   startNode: start
   targetNode: fire_alarm
   category: construction-category-structures
-  description: Пожарная сигнализация. Осторожно, горячо!
-  icon:
-    sprite: Structures/Wallmounts/air_monitors.rsi
-    state: fire0
   placementMode: SnapgridCenter
   objectType: Structure
   canRotate: true
@@ -354,110 +248,73 @@
   - !type:WallmountCondition {}
 
 - type: construction
-  name: сенсор воздуха
   id: AirSensor
   graph: AirSensor
   startNode: start
   targetNode: sensor
   category: construction-category-structures
-  description: Сенсор воздуха. Чувствует воздух.
-  icon:
-    sprite: Structures/Specific/Atmospherics/sensor.rsi
-    state: gsensor1
   placementMode: SnapgridCenter
   objectType: Structure
   canRotate: true
 
 - type: construction
-  name: сенсор газовой трубы
   id: GasPipeSensor
   graph: GasPipeSensor
   startNode: start
   targetNode: sensor
   category: construction-category-structures
-  description: Отображает статус газа в подключённой трубной системе.
-  icon:
-    sprite: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
-    state: icon
   placementMode: SnapgridCenter
   objectType: Structure
   canRotate: true
 
-# ГАЗОВЫЕ ТРУБЫ
+# ATMOS PIPES
 - type: construction
-  name: половина газовой трубы
   id: GasPipeHalf
-  description: Половина газовой трубы. Не для скейтбордов.
   graph: GasPipe
   startNode: start
   targetNode: half
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon:
-    sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeHalf
 
 - type: construction
-  name: прямая газовая труба
   id: GasPipeStraight
-  description: Прямой сегмент трубы.
   graph: GasPipe
   startNode: start
   targetNode: straight
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon:
-    sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeStraight
 
 - type: construction
-  name: изгиб газовой трубы
   id: GasPipeBend
-  description: Сегмент трубы, изогнутый под 90 градусов.
   graph: GasPipe
   startNode: start
   targetNode: bend
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon:
-    sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeBend
 
 - type: construction
-  name: T-образное соединение газовой трубы
   id: GasPipeTJunction
-  description: Сегмент трубы с T-образным соединением.
   graph: GasPipe
   startNode: start
   targetNode: tjunction
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon:
-    sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeTJunction
 
 - type: construction
-  name: крестообразное соединение газовой трубы
   id: GasPipeFourway
-  description: Сегмент трубы с крестообразным соединением.
   graph: GasPipe
   startNode: start
   targetNode: fourway
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon:
-    sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeFourway
 
-# АТМОСФЕРНЫЕ УСТРОЙСТВА
+# ATMOS UNARY
 - type: construction
-  name: вентиляция
-  description: Нагнетает газ в помещение.
   id: GasVentPump
   graph: GasUnary
   startNode: start
@@ -465,20 +322,10 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: _NF/Structures/Piping/Atmospherics/vent.rsi # Frontier
-    state: vent_off
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeHalf
-  - sprite: _NF/Structures/Piping/Atmospherics/vent.rsi # Frontier
-    state: vent_off
   conditions:
     - !type:NoUnstackableInTile
 
 - type: construction
-  name: пассивная вентиляция
-  description: Вентиляция без питания, выравнивающая давление с обеих сторон.
   id: GasPassiveVent
   graph: GasUnary
   startNode: start
@@ -486,20 +333,10 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: _NF/Structures/Piping/Atmospherics/vent.rsi # Frontier
-    state: vent_passive
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeHalf
-  - sprite: _NF/Structures/Piping/Atmospherics/vent.rsi # Frontier
-    state: vent_passive
   conditions:
     - !type:NoUnstackableInTile
 
 - type: construction
-  name: скруббер
-  description: Откачивает газ в подключённые трубы.
   id: GasVentScrubber
   graph: GasUnary
   startNode: start
@@ -507,20 +344,10 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: _NF/Structures/Piping/Atmospherics/scrubber.rsi # Frontier
-    state: scrub_off
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeHalf
-  - sprite: _NF/Structures/Piping/Atmospherics/scrubber.rsi # Frontier
-    state: scrub_off
   conditions:
     - !type:NoUnstackableInTile
 
 - type: construction
-  name: инжектор воздуха
-  description: Впрыскивает воздух в атмосферу.
   id: GasOutletInjector
   graph: GasUnary
   startNode: start
@@ -528,42 +355,22 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/outletinjector.rsi
-    state: injector
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeHalf
-  - sprite: Structures/Piping/Atmospherics/outletinjector.rsi
-    state: injector
   conditions:
     - !type:NoUnstackableInTile
 
-  # АТМОСФЕРНЫЕ УСТРОЙСТВА (БИНАРНЫЕ)
+# ATMOS BINARY
 - type: construction
-  name: газовая помпа
   id: GasPressurePump
-  description: Помпа, перемещающая газ под давлением.
   graph: GasBinary
   startNode: start
   targetNode: pressurepump
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/pump.rsi
-    state: pumpPressure
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeStraight
-  - sprite: Structures/Piping/Atmospherics/pump.rsi
-    state: pumpPressure
   conditions:
     - !type:NoUnstackableInTile
 
 - type: construction
-  name: объёмная газовая помпа
-  description: Помпа, перемещающая газ по объёму.
   id: GasVolumePump
   graph: GasBinary
   startNode: start
@@ -571,162 +378,89 @@
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/pump.rsi
-    state: pumpVolume
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeStraight
-  - sprite: Structures/Piping/Atmospherics/pump.rsi
-    state: pumpVolume
   conditions:
     - !type:NoUnstackableInTile
 
 - type: construction
   id: GasPassiveGate
-  name: пассивный клапан
-  description: Односторонний воздушный клапан, не требующий питания.
   graph: GasBinary
   startNode: start
   targetNode: passivegate
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/pump.rsi
-    state: pumpPassiveGate
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeStraight
-  - sprite: Structures/Piping/Atmospherics/pump.rsi
-    state: pumpPassiveGate
   conditions:
     - !type:NoUnstackableInTile
 
 - type: construction
   id: GasValve
-  name: ручной клапан
-  description: Труба с клапаном для отключения потока газа.
   graph: GasBinary
   startNode: start
   targetNode: valve
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/pump.rsi
-    state: pumpManualValve
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeStraight
-  - sprite: Structures/Piping/Atmospherics/pump.rsi
-    state: pumpManualValve
   conditions:
     - !type:NoUnstackableInTile
 
 - type: construction
   id: SignalControlledValve
-  name: сигнальный клапан
-  description: Клапан, управляемый сигналами.
   graph: GasBinary
   startNode: start
   targetNode: signalvalve
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/pump.rsi
-    state: pumpSignalValve
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeStraight
-  - sprite: Structures/Piping/Atmospherics/pump.rsi
-    state: pumpSignalValve
   conditions:
   - !type:NoUnstackableInTile
 
 - type: construction
   id: GasPort
-  name: соединительный порт
-  description: Для подключения портативных устройств управления атмосферой.
   graph: GasBinary
   startNode: start
   targetNode: port
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
-    state: gasCanisterPort
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeHalf
-  - sprite: Structures/Piping/Atmospherics/gascanisterport.rsi
-    state: gasCanisterPort
   conditions:
     - !type:NoUnstackableInTile
 
 - type: construction
   id: GasDualPortVentPump
-  name: двухпортовая вентиляция
-  description: Имеет клапан и помпу. Два порта - один для выпуска воздуха, другой для забора при откачке.
   graph: GasBinary
   startNode: start
   targetNode: dualportventpump
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: _NF/Structures/Piping/Atmospherics/vent.rsi # Frontier
-    state: vent_off
-  layers:
-  - sprite: Structures/Piping/Atmospherics/pipe.rsi
-    state: pipeStraight
-  - sprite: _NF/Structures/Piping/Atmospherics/vent.rsi # Frontier
-    state: vent_off
 
 - type: construction
   id: HeatExchanger
-  name: радиатор
-  description: Передаёт тепло между трубой и окружающей средой.
   graph: GasBinary
   startNode: start
   targetNode: radiator
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/heatexchanger.rsi
-    state: heStraight
 
 - type: construction
   id: HeatExchangerBend
-  name: изогнутый радиатор
-  description: Передаёт тепло между трубой и окружающей средой.
   graph: GasBinary
   startNode: start
   targetNode: bendradiator
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/heatexchanger.rsi
-    state: heBend
 
-# АТМОСФЕРНЫЕ УСТРОЙСТВА (ТРОИЧНЫЕ)
+# ATMOS TRINARY
 - type: construction
   id: GasFilter
-  name: газовый фильтр
-  description: Очень полезен для фильтрации газов.
   graph: GasTrinary
   startNode: start
   targetNode: filter
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/gasfilter.rsi
-    state: gasFilter
   mirror: GasFilterFlipped
   conditions:
     - !type:NoUnstackableInTile
@@ -734,34 +468,24 @@
 - type: construction
   id: GasFilterFlipped
   hide: true
-  name: газовый фильтр
-  description: Очень полезен для фильтрации газов.
   graph: GasTrinary
   startNode: start
   targetNode: filterflipped
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/gasfilter.rsi
-    state: gasFilterF
   mirror: GasFilter
   conditions:
     - !type:NoUnstackableInTile
 
 - type: construction
   id: GasMixer
-  name: газовый смеситель
-  description: Очень полезен для смешивания газов.
   graph: GasTrinary
   startNode: start
   targetNode: mixer
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/gasmixer.rsi
-    state: gasMixer
   mirror: GasMixerFlipped
   conditions:
     - !type:NoUnstackableInTile
@@ -769,49 +493,34 @@
 - type: construction
   id: GasMixerFlipped
   hide: true
-  name: газовый смеситель
-  description: Очень полезен для смешивания газов.
   graph: GasTrinary
   startNode: start
   targetNode: mixerflipped
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/gasmixer.rsi
-    state: gasMixerF
   mirror: GasMixer
   conditions:
     - !type:NoUnstackableInTile
 
 - type: construction
   id: PressureControlledValve
-  name: пневматический клапан
-  description: Двунаправленный клапан, управляемый давлением. Открывается, если давление в выходной трубе ниже контрольного на 101.325 кПа.
   graph: GasTrinary
   startNode: start
   targetNode: pneumaticvalve
   category: construction-category-utilities
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: Structures/Piping/Atmospherics/pneumaticvalve.rsi
-    state: off
   conditions:
     - !type:NoUnstackableInTile
 
-  # СВЯЗЬ
+# INTERCOM
 - type: construction
-  name: интерком
   id: IntercomAssembly
   graph: Intercom
   startNode: start
   targetNode: intercom
   category: construction-category-structures
-  description: Интерком. Для случаев, когда станция просто обязана что-то узнать.
-  icon:
-    sprite: Structures/Wallmounts/intercom.rsi
-    state: base
   placementMode: SnapgridCenter
   objectType: Structure
   canRotate: true
@@ -819,18 +528,13 @@
   conditions:
   - !type:WallmountCondition {}
 
-# ТАЙМЕРЫ
+# TIMERS
 - type: construction
-  name: сигнальный таймер
   id: SignalTimer
   graph: Timer
   startNode: start
   targetNode: signal
   category: construction-category-utilities
-  description: "Настенный таймер для отправки сигналов по расписанию."
-  icon:
-    sprite: Structures/Wallmounts/switch.rsi
-    state: on
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -838,16 +542,11 @@
   - !type:WallmountCondition
 
 - type: construction
-  name: таймер с экраном
   id: ScreenTimer
   graph: Timer
   startNode: start
   targetNode: screen
   category: construction-category-utilities
-  description: "Настенный таймер для отправки сигналов по расписанию. С экраном для отображения текста."
-  icon:
-    sprite: Structures/Wallmounts/signalscreen.rsi
-    state: signalscreen
   objectType: Structure
   canRotate: false
   placementMode: SnapgridCenter
@@ -856,16 +555,11 @@
   - !type:WallmountCondition
 
 - type: construction
-  name: тюремный таймер
   id: BrigTimer
   graph: Timer
   startNode: start
   targetNode: brig
   category: construction-category-utilities
-  description: "Настенный таймер для отправки сигналов по расписанию. С экраном и требующий доступа службы безопасности."
-  icon:
-    sprite: Structures/Wallmounts/signalscreen.rsi
-    state: signalscreen
   objectType: Structure
   canRotate: false
   placementMode: SnapgridCenter

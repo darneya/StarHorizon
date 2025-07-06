@@ -15,6 +15,8 @@ public sealed partial class ResearchSystem
         SubscribeLocalEvent<ResearchServerComponent, TechnologyDatabaseModifiedEvent>(OnServerDatabaseModified);
         SubscribeLocalEvent<ResearchServerComponent, EntInsertedIntoContainerMessage>(OnServerInsertItem); // Horizon
         SubscribeLocalEvent<ResearchServerComponent, EntRemovedFromContainerMessage>(OnServerRemoveItem); // Horizon
+        SubscribeLocalEvent<ResearchServerComponent, AnchorStateChangedEvent>(OnServerAnchorChanged); // Frontier
+        SubscribeLocalEvent<ResearchServerComponent, EntParentChangedMessage>(OnServerParentChanged); // Frontier
     }
 
     private void OnServerStartup(EntityUid uid, ResearchServerComponent component, ComponentStartup args)
@@ -65,19 +67,27 @@ public sealed partial class ResearchSystem
     /// <param name="serverComponent"></param>
     /// <param name="dirtyServer">Whether or not to dirty the server component after registration</param>
     public void RegisterClient(EntityUid client, EntityUid server, ResearchClientComponent? clientComponent = null,
-        ResearchServerComponent? serverComponent = null,  bool dirtyServer = true)
+        ResearchServerComponent? serverComponent = null, bool dirtyServer = true)
     {
-        if (!Resolve(client, ref clientComponent) || !Resolve(server, ref serverComponent))
+        if (!Resolve(client, ref clientComponent, false) || !Resolve(server, ref serverComponent, false))
             return;
 
         if (serverComponent.Clients.Contains(client))
             return;
 
+        // Frontier: check grids
+        if (!TryComp(client, out TransformComponent? clientXform)
+            || !TryComp(server, out TransformComponent? serverXform)
+            || clientXform.GridUid == null
+            || clientXform.GridUid != serverXform.GridUid) // server null check implicit
+            return;
+        // End Frontier
+
         serverComponent.Clients.Add(client);
         clientComponent.Server = server;
         SyncClientWithServer(client, clientComponent: clientComponent);
 
-        if (dirtyServer)
+        if (dirtyServer && !TerminatingOrDeleted(server))
         {
             Dirty(server, serverComponent);
             Dirty(client, clientComponent); // Horizon
@@ -115,14 +125,14 @@ public sealed partial class ResearchSystem
     public void UnregisterClient(EntityUid client, EntityUid server, ResearchClientComponent? clientComponent = null,
         ResearchServerComponent? serverComponent = null, bool dirtyServer = true)
     {
-        if (!Resolve(client, ref clientComponent) || !Resolve(server, ref serverComponent))
+        if (!Resolve(client, ref clientComponent, false) || !Resolve(server, ref serverComponent, false))
             return;
 
         serverComponent.Clients.Remove(client);
         clientComponent.Server = null;
         SyncClientWithServer(client, clientComponent: clientComponent);
 
-        if (dirtyServer)
+        if (dirtyServer && !TerminatingOrDeleted(server))
         {
             Dirty(server, serverComponent);
             Dirty(client, clientComponent); // Horizon
@@ -192,4 +202,50 @@ public sealed partial class ResearchSystem
             UpdateClientInterface(client);
     }
     // Horizon end
+    // Frontier: unanchoring server
+    private void OnServerAnchorChanged(Entity<ResearchServerComponent> ent, ref AnchorStateChangedEvent args)
+    {
+        if (args.Anchored || ent.Comp.Clients.Count <= 0)
+            return;
+
+        // Server yanked, unregister the clients.
+        var clientList = new List<EntityUid>(ent.Comp.Clients);
+        bool clientsRemoved = false;
+        foreach (var client in clientList)
+        {
+            UnregisterClient(client, ent, serverComponent: ent.Comp, dirtyServer: false);
+            clientsRemoved = true;
+        }
+
+        if (clientsRemoved)
+            Dirty(ent);
+    }
+
+    private void OnServerParentChanged(Entity<ResearchServerComponent> ent, ref EntParentChangedMessage args)
+    {
+        if (TerminatingOrDeleted(ent))
+            return;
+
+        EntityUid? serverGrid = null;
+        if (TryComp(ent, out TransformComponent? xform))
+            serverGrid = xform.GridUid;
+
+        // Server yanked, unregister the clients.
+        var clientList = new List<EntityUid>(ent.Comp.Clients);
+        bool clientsRemoved = false;
+        foreach (var client in clientList)
+        {
+            if (serverGrid == null
+                || !TryComp(client, out TransformComponent? clientXform)
+                || clientXform.GridUid != serverGrid)
+            {
+                UnregisterClient(client, ent, serverComponent: ent.Comp, dirtyServer: false);
+                clientsRemoved = true;
+            }
+        }
+
+        if (clientsRemoved)
+            Dirty(ent);
+    }
+    // End Frontier
 }

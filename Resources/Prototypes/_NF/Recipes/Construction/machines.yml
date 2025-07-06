@@ -1,28 +1,20 @@
 - type: construction
-  name: компьютер (настольный)
   id: ConstructionComputerTabletop
+  name: recipes-computer-tabletop-name
   graph: ComputerTabletop
   startNode: start
   targetNode: tabletop computer
   category: construction-category-machines
-  description: Каркас для создания устройств с компьютерной платой.
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: _NF/Structures/Machines/computer_tabletop.rsi
-    state: computer_tabletop_frame
 
 - type: construction
-  name: компьютер (настенный)
   id: ConstructionComputerWallmount
+  name: recipes-computer-wallmount-name
   graph: ComputerWallmount
   startNode: start
   targetNode: wallmount computer
   category: construction-category-machines
-  description: Каркас для создания устройств с компьютерной платой.
-  icon:
-    sprite: _NF/Structures/Machines/computer_wallmount.rsi
-    state: computer_wallmount_frame
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true

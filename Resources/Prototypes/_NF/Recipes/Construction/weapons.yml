@@ -1,133 +1,95 @@
 - type: construction
-  name: лук
   id: ImprovisedCrossbow
   graph: ImprovisedCrossbow
   startNode: start
   targetNode: ImprovisedCrossbow
   category: construction-category-weapons
-  description: Самый первый пример дерзай — налетай, целься и стреляй.
-  icon: { sprite: _NF/Objects/Weapons/Guns/Crossbow/improvised.rsi, state: icon }
   objectType: Item
 
 - type: construction
-  name: стрела из осколка стекла
   id: CraftCrossbowBoltGlassShard
   graph: CraftCrossbowBoltGlassShard
   startNode: start
   targetNode: CraftCrossbowBoltGlassShard
   category: construction-category-weapons
-  description: Любимый метательный снаряд серорубашечников.
-  icon: { sprite: _NF/Objects/Weapons/Guns/Projectiles/crossbow_bolts.rsi, state: icon-bolt-glass }
   objectType: Item
 
 - type: construction
-  name: стрела из осколка плазменного стекла
   id: CraftCrossbowBoltPlasmaGlassShard
   graph: CraftCrossbowBoltPlasmaGlassShard
   startNode: start
   targetNode: CraftCrossbowBoltPlasmaGlassShard
   category: construction-category-weapons
-  description: Любимый метательный снаряд серорубашечников. Теперь повышенной смертоносности!
-  icon: { sprite: _NF/Objects/Weapons/Guns/Projectiles/crossbow_bolts.rsi, state: icon-bolt-glassp }
   objectType: Item
 
 - type: construction
-  name: стрела из осколка уранового стекла
   id: CraftCrossbowBoltUraniumGlassShard
   graph: CraftCrossbowBoltUraniumGlassShard
   startNode: start
   targetNode: CraftCrossbowBoltUraniumGlassShard
   category: construction-category-weapons
-  description: Любимый метательный снаряд серорубашечников. Теперь повышенной радиоактивности!
-  icon: { sprite: _NF/Objects/Weapons/Guns/Projectiles/crossbow_bolts.rsi, state: icon-bolt-glassu }
   objectType: Item
 
 - type: construction
-  name: болт-шприц
   id: CraftCrossbowBoltSyringe
   graph: CraftCrossbowBoltSyringe
   startNode: start
   targetNode: CraftCrossbowBoltSyringe
   category: construction-category-weapons
-  description: Болт со шприцем вместо наконечника. Очень неэффективно.
-  icon: { sprite: _NF/Objects/Weapons/Guns/Projectiles/crossbow_bolts.rsi, state: icon-bolt-syringe }
   objectType: Item
 
 - type: construction
-  name: болт с пласталевым наконечником
   id: CraftCrossbowBoltPlasteel
   graph: CraftCrossbowBoltPlasteel
   startNode: start
   targetNode: CraftCrossbowBoltPlasteel
   category: construction-category-weapons
-  description: Болт с пласталевым наконечником. Имеет способность к бронепробитию.
-  icon: { sprite: _NF/Objects/Weapons/Guns/Projectiles/crossbow_bolts.rsi, state: icon-bolt-plasteel }
   objectType: Item
 
 - type: construction
-  name: разрывной болт
   id: CraftCrossbowBoltExplosive
   graph: CraftCrossbowBoltExplosive
   startNode: start
   targetNode: CraftCrossbowBoltExplosive
   category: construction-category-weapons
-  description: Болт с небольшим зарядом взрывчатого вещества.
-  icon: { sprite: _NF/Objects/Weapons/Guns/Projectiles/crossbow_bolts.rsi, state: icon-bolt-explosive }
   objectType: Item
 
 - type: construction
-  name: ЭМИ болт
   id: CraftCrossbowBoltEMP
   graph: CraftCrossbowBoltEMP
   startNode: start
   targetNode: CraftCrossbowBoltEMP
   category: construction-category-weapons
-  description: Болт с прикреплённым к нему элементом питания.
-  icon: { sprite: _NF/Objects/Weapons/Guns/Projectiles/crossbow_bolts.rsi, state: icon-bolt-emp }
   objectType: Item
 
 - type: construction
-  name: зажигательный болт
   id: CraftCrossbowBoltIncendiary
   graph: CraftCrossbowBoltIncendiary
   startNode: start
   targetNode: CraftCrossbowBoltIncendiary
   category: construction-category-weapons
-  description: Болт с прикреплённым к нему флаером.
-  icon: { sprite: _NF/Objects/Weapons/Guns/Projectiles/crossbow_bolts.rsi, state: icon-bolt-incendiary }
   objectType: Item
 
 - type: construction
-  name: болт-шрапнель
   id: CraftCrossbowBoltShrapnel
   graph: CraftCrossbowBoltShrapnel
   startNode: start
   targetNode: CraftCrossbowBoltShrapnel
   category: construction-category-weapons
-  description: Болт с прикреплённым к нему ружейным патроном.
-  icon: { sprite: _NF/Objects/Weapons/Guns/Projectiles/crossbow_bolts.rsi, state: icon-bolt-shell }
   objectType: Item
 
 - type: construction
-  name: деревянный кол
   id: RecipeWoodenStake
   graph: WoodenStakeCraftingGraph
   startNode: start
   targetNode: WoodenStakeNode
   category: construction-category-weapons
-  description: Одинаково хорошо подходит для установки палатки или прокалывания сердца.
-  icon: { sprite: _NF/Objects/Weapons/Melee/wooden_stake.rsi, state: icon }
   objectType: Item
 
 - type: construction
-  name: дубина
   id: club
   graph: CavemanClub
   startNode: start
   targetNode: club
   category: construction-category-weapons
-  description: Большая палка причиняет большую боль.
-  icon:
-    sprite: _NF/Objects/Weapons/Melee/caveman_club.rsi
-    state: icon
   objectType: Item

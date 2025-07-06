@@ -1,11 +1,8 @@
 
 - type: construction
-  name: табак Грибковый запах
   id: smokeableGroundTobaccoShrooms
   graph: smokeableGroundTobaccoShrooms
   startNode: start
   targetNode: ground
   category: construction-category-misc
-  description: Мелко нарезанные сушеные грибы. Просто идеально.
-  icon: { sprite: Objects/Misc/reagent_fillings.rsi, state: powderpile, color: "#83a05a" }
   objectType: Item

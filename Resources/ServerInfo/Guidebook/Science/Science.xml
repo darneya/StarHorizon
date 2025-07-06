@@ -21,7 +21,7 @@
   <GuideEntityEmbed Entity="Syringe" Caption="Биохимия"/>
   <GuideEntityEmbed Entity="WeaponTetherGun" Caption="Наука"/>
   <GuideEntityEmbed Entity="ComputerTelevision" Caption="Сервис"/>
-  <GuideEntityEmbed Entity="WeaponXrayCannon" Caption="Арсенал"/>
+  <GuideEntityEmbed Entity="NFWeaponEnergyRifleSniperXrayCannon" Caption="Арсенал"/>
 </Box>
 
 <GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/> Воспользуйтесь ближайшей консолью РнД, чтобы узнать, какой вид исследований закреплен за каждым древом дисциплины.

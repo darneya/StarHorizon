@@ -1,103 +1,55 @@
 - type: construction
-  name: чистобот
   id: cleanbot
   graph: CleanBot
   startNode: start
   targetNode: bot
   category: construction-category-utilities
   objectType: Item
-  description: Ужас автоматизации теперь угрожает и космическим уборщикам.
-  icon:
-    sprite: Mobs/Silicon/Bots/cleanbot.rsi
-    state: cleanbot
 
 - type: construction
-  name: пожарбот
   id: firebot
   graph: FireBot
   startNode: start
   targetNode: bot
   category: construction-category-utilities
   objectType: Item
-  description: Маленький бот для тушения пожаров. Он выглядит довольно встревоженным.
-  icon:
-    sprite: Mobs/Silicon/Bots/firebot.rsi
-    state: firebot
 
 - type: construction
-  name: хонкбот
   id: honkbot
   graph: HonkBot
   startNode: start
   targetNode: bot
   category: construction-category-utilities
   objectType: Item
-  description: Ужасающе.
-  icon:
-    sprite: Mobs/Silicon/Bots/honkbot.rsi
-    state: honkbot
 
 - type: construction
-  name: таксибот
-  id: taxibot
-  graph: TaxiBot
-  startNode: start
-  targetNode: bot
-  category: construction-category-utilities
-  objectType: Item
-  description: Подвезти?
-  icon:
-    sprite: Mobs/Silicon/Bots/taxibot.rsi
-    state: taxibot
-
-- type: construction
-  name: кринжбот
   id: jonkbot
   graph: JonkBot
   startNode: start
   targetNode: bot
   category: construction-category-utilities
   objectType: Item
-  description: Ужасающе.
-  icon:
-    sprite: Mobs/Silicon/Bots/honkbot.rsi
-    state: jonkbot
 
 - type: construction
-  name: медибот
   id: medibot
   graph: MediBot
   startNode: start
   targetNode: bot
   category: construction-category-utilities
   objectType: Item
-  description: Не заменит врача, но лучше, чем ничего.
-  icon:
-    sprite: Mobs/Silicon/Bots/medibot.rsi
-    state: medibot
 
 - type: construction
-  name: мимбот
   id: mimebot
   graph: MimeBot
   startNode: start
   targetNode: bot
   category: construction-category-utilities
   objectType: Item
-  description: Почему бы не помахать мимботу?
-  icon:
-    sprite: Mobs/Silicon/Bots/mimebot.rsi
-    state: mimebot
 
 - type: construction
-  name: грузобот
   id: supplybot
   graph: SupplyBot
   startNode: start
   targetNode: bot
   category: construction-category-utilities
   objectType: Item
-  description: Доставляет грузы!
-  icon:
-    sprite: Mobs/Silicon/Bots/supplybot.rsi
-    state: supplybot

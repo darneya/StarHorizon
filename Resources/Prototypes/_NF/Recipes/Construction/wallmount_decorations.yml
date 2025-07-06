@@ -1,44 +1,29 @@
 - type: construction
-  name: праздничные гирлянды-призраки
   id: PaintingGhostHangingConstruction
   graph: PaintingGhostHangingGraph
   startNode: start
   targetNode: PaintingGhostHangingNode
   category: construction-category-misc
-  description: Декоративные настенные гирлянды! Выглядят как люди, потерянные в пустоте!
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon:
-    sprite: _NF/Structures/Wallmounts/paintings_directional.rsi
-    state: painting_ghost
 
 - type: construction
-  name: праздничные гирлянды-летучие мыши
   id: PaintingBatHangingConstruction
   graph: PaintingBatHangingGraph
   startNode: start
   targetNode: PaintingBatHangingNode
   category: construction-category-misc
-  description: Декоративные настенные гирлянды! Летучие мыши страшные, но и важные опылители!
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon:
-    sprite: _NF/Structures/Wallmounts/paintings_directional.rsi
-    state: painting_bat
 
 - type: construction
-  name: праздничные гирлянды-тыквы
   id: PaintingPumpkinHangingConstruction
   graph: PaintingPumpkinHangingGraph
   startNode: start
   targetNode: PaintingPumpkinHangingNode
   category: construction-category-misc
-  description: Декоративные настенные гирлянды! Сезон декоративных тыкв!
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  icon:
-    sprite: _NF/Structures/Wallmounts/paintings_directional.rsi
-    state: painting_pumpkin

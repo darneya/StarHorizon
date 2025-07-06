@@ -1,14 +1,9 @@
 - type: construction
-  name: паутинная стена
   id: WallWeb
   graph: WebStructures
   startNode: start
   targetNode: wall
   category: construction-category-structures
-  description: Довольно хрупкая, но шелковисто-гладкая стена.
-  icon:
-    sprite: Structures/Walls/web.rsi
-    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
@@ -20,16 +15,11 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: паутинный стол
   id: TableWeb
   graph: WebStructures
   startNode: start
   targetNode: table
   category: construction-category-furniture
-  description: Необходим для серьёзной веб-разработки.
-  icon:
-    sprite: Structures/Furniture/Tables/web.rsi
-    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
@@ -41,16 +31,11 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: паутинная кровать
   id: WebBed
   graph: WebStructures
   startNode: start
   targetNode: bed
   category: construction-category-furniture
-  description: Забавный факт, миф о том, что вы едите пауков во сне - ложный.
-  icon:
-    sprite: Structures/Web/bed.rsi
-    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
@@ -62,16 +47,11 @@
     - !type:TileNotBlocked
 
 - type: construction
-  name: паутинный стул
   id: ChairWeb
   graph: WebStructures
   startNode: start
   targetNode: chair
   category: construction-category-furniture
-  description: Хотите серьёзно заняться веб-разработкой? Приобретите этот стул!
-  icon:
-    sprite: Structures/Web/chair.rsi
-    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -80,16 +60,11 @@
     - SpiderCraft
 
 - type: construction
-  name: паутинный ящик
   id: CrateWeb
   graph: WebStructures
   startNode: start
   targetNode: crate
   category: construction-category-storage
-  description: Для хранения еды и прочего. Не такой прочный, как обычный ящик, и его нельзя заварить.
-  icon:
-    sprite: Structures/Storage/Crates/web.rsi
-    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canRotate: false
@@ -99,39 +74,16 @@
     - SpiderCraft
 
 - type: construction
-  name: паутинная дверь
   id: WebDoor
   graph: WebStructures
   startNode: start
   targetNode: door
   category: construction-category-structures
-  description: Ручная дверь из паутины, обычно устанавливаемая перед ловушкой или ямой.
-  icon:
-    sprite: Structures/Doors/web_door.rsi
-    state: closed
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   entityWhitelist:
     tags:
     - SpiderCraft
-  conditions:
-    - !type:TileNotBlocked
-
-- type: construction
-  name: паутинное гнездо
-  id: WebNest
-  graph: WebStructures
-  startNode: start
-  targetNode: nest
-  category: construction-category-furniture
-  description: Забавный факт, миф о том, что вы едите пауков во сне - ложный.
-  icon:
-    sprite: Structures/Web/nest.rsi
-    state: icon
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canRotate: false
-  canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked

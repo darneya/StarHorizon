@@ -49,28 +49,3 @@
   id: WeaponProtoKineticShotgun
   parent: WeaponProtoKineticPistol
   result: WeaponProtoKineticShotgun
-
-- type: latheRecipe
-  id: PKAUpgradeDamage
-  result: PKAUpgradeDamage
-  categories:
-  - Weapons
-  completetime: 10
-  materials:
-    Steel: 500
-    Plasteel: 500
-
-- type: latheRecipe
-  id: PKAUpgradeRange
-  parent: PKAUpgradeDamage
-  result: PKAUpgradeRange
-
-- type: latheRecipe
-  id: PKAUpgradeFireRate
-  parent: PKAUpgradeDamage
-  result: PKAUpgradeFireRate
-
-- type: latheRecipe
-  id: PKAUpgradeLight
-  parent: PKAUpgradeDamage
-  result: PKAUpgradeLight

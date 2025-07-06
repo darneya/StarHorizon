@@ -1,84 +1,67 @@
 - type: construction
-  name: усиленная потайная дверь
   id: SolidReinforcedSecretDoorConstruction
+  name: recipes-reinforced-secret-door-name
+  description: recipes-secret-door-desc # reuse base
   graph: ReinforcedSecretDoorGraph
   startNode: start
   targetNode: ReinforcedSecretDoorNode
   category: construction-category-structures
-  description: Потайная дверь, встроенная в стену.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: _NF/Structures/Doors/secret_door_reinforced.rsi
-    state: closed
   conditions:
     - !type:TileNotBlocked
 
 - type: construction
-  name: деревянная потайная дверь
   id: WoodSecretDoorConstruction
+  name: recipes-wood-secret-door-name
+  description: recipes-secret-door-desc # reuse base
   graph: WoodSecretDoorGraph
   startNode: start
   targetNode: WoodSecretDoorNode
   category: construction-category-structures
-  description: Потайная дверь, встроенная в стену.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: _NF/Structures/Doors/secret_door_wood.rsi
-    state: closed
   conditions:
     - !type:TileNotBlocked
 
 - type: construction
-  name: урановая потайная дверь
   id: UraniumSecretDoorConstruction
+  name: recipes-uranium-secret-door-name
+  description: recipes-secret-door-desc # reuse base
   graph: UraniumSecretDoorGraph
   startNode: start
   targetNode: UraniumSecretDoorNode
   category: construction-category-structures
-  description: Потайная дверь, встроенная в стену.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: _NF/Structures/Doors/secret_door_uranium.rsi
-    state: closed
   conditions:
     - !type:TileNotBlocked
 
 - type: construction
-  name: шаттл-потайная дверь
   id: ShuttleSecretDoorConstruction
+  name: recipes-shuttle-secret-door-name
+  description: recipes-secret-door-desc # reuse base
   graph: ShuttleSecretDoorGraph
   startNode: start
   targetNode: ShuttleSecretDoorNode
   category: construction-category-structures
-  description: Потайная дверь, встроенная в стену.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: _NF/Structures/Doors/secret_door_shuttle.rsi
-    state: closed
   conditions:
     - !type:TileNotBlocked
 
 - type: construction
-  name: стеллаж для ящиков
   id: CrateStorageRackConstruction
   graph: CrateStorageRack
   startNode: start
   targetNode: rack
   category: construction-category-structures
-  description: Вмещает до 4 ящиков одновременно, для загрузки/выгрузки требуется погрузчик.
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  icon:
-    sprite: _NF/Structures/Storage/crate_storage_rack.rsi
-    state: fill-0
   conditions:
     - !type:TileNotBlocked

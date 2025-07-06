@@ -2,14 +2,9 @@
 ## Wall freezers
 - type: construction
   id: ShelfWallFreezerWhite
-  name: настенный морозильник (белый)
-  description: Удобное место для хранения скоропортящихся продуктов.
   graph: WallFreezer
   startNode: start
   targetNode: ShelfWallFreezerWhite
-  icon:
-    sprite: _NF/Structures/Storage/Shelfs/Departments/Service/wall_fridge.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -18,14 +13,9 @@
 
 - type: construction
   id: ShelfWallFreezerDark
-  name: настенный морозильник (тёмный)
-  description: Удобное место для хранения скоропортящихся продуктов.
   graph: WallFreezer
   startNode: start
   targetNode: ShelfWallFreezerDark
-  icon:
-    sprite: _NF/Structures/Storage/Shelfs/Departments/Service/wall_fridge.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
