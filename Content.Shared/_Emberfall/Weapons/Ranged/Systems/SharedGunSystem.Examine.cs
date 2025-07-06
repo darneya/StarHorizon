@@ -35,28 +35,28 @@ public abstract partial class SharedGunSystem
         msg.PushNewline();
         msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-recoil",
             ("color", FireRateExamineColor),
-            ("value", ent.Comp.AngleIncreaseModified.Degrees)
+            ("value", Math.Round(ent.Comp.AngleIncreaseModified.Degrees, 2))
         ));
 
         // Stability (AngleDecay)
         msg.PushNewline();
         msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-stability",
             ("color", FireRateExamineColor),
-            ("value", ent.Comp.AngleDecayModified.Degrees)
+            ("value", Math.Round(ent.Comp.AngleDecayModified.Degrees,2))
         ));
 
         // Max Angle
         msg.PushNewline();
         msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-max-angle",
             ("color", FireRateExamineColor),
-            ("value", ent.Comp.MaxAngleModified.Degrees)
+            ("value", Math.Round(ent.Comp.MaxAngleModified.Degrees, 2))
         ));
 
         // Min Angle
         msg.PushNewline();
         msg.AddMarkupOrThrow(Loc.GetString("gun-examine-nf-min-angle",
             ("color", FireRateExamineColor),
-            ("value", ent.Comp.MinAngleModified.Degrees)
+            ("value", Math.Round(ent.Comp.MinAngleModified.Degrees, 2))
         ));
 
         // Frontier: separate burst fire calculation
