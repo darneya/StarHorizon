@@ -5,7 +5,6 @@
   id: ShipVoucherALL
   name: Ваунчер на любой шаттл
   description: Позволяет бесплатно купить один любой шаттл. Уничтожается при продаже шаттла.
-  categories: Debug
   suffix: DEBUG, StarHorizon, не рабочий
   components:
   - type: Tag
