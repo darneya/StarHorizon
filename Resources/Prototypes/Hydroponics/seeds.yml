@@ -145,8 +145,8 @@
   packetPrototype: CarrotSeeds
   productPrototypes:
   - FoodCarrot
-#  mutationPrototypes:
-#  - diamondcarrot # Horizon Bothany # Temp. disabled for balance reasons
+  mutationPrototypes:
+  - diamondcarrot # Horizon Bothany
   lifespan: 25
   maturation: 10
   production: 3
