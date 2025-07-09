@@ -28,7 +28,7 @@ entities:
       name: Pioneer
     - type: Transform
       pos: -0.51420784,-0.5497939
-      parent: 1
+      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
