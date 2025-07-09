@@ -73,6 +73,7 @@
     quickEquip: false
     slots:
       - Belt
+      - Neck # Horizon
 
 - type: entity
   name: seclite
@@ -124,6 +125,7 @@
     quickEquip: false
     slots:
       - Belt
+      - Neck # Horizon
 
 - type: entity
   parent: FlashlightLantern

@@ -44,3 +44,4 @@
     quickEquip: false
     slots:
       - Belt
+      - Neck # Horizon
