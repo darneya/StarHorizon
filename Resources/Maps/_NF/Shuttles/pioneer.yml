@@ -28,7 +28,7 @@ entities:
       name: Pioneer
     - type: Transform
       pos: -0.51420784,-0.5497939
-      parent: invalid
+      parent: 1
     - type: MapGrid
       chunks:
         0,0:
@@ -626,8 +626,6 @@ entities:
       pos: -0.5,-0.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
@@ -641,8 +639,6 @@ entities:
       pos: -0.5,0.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 62
     - type: AtmosPipeColor
