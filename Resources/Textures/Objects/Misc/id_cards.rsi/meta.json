@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/d917f4c2a088419d5c3aec7656b7ff8cebd1822e idcluwne made by brainfood1183 (github) for ss14, idbrigmedic made by PuroSlavKing (Github), pirate made by brainfood1183 (github), idadmin made by Arimah (github), idvisitor by IProduceWidgets (Github), idintern-service by spanky-spanky (Github) | service icons darkened by frobnic8 (Discord and Github), wizard and idwizard by ScarKy0",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/d917f4c2a088419d5c3aec7656b7ff8cebd1822e idcluwne made by brainfood1183 (github) for ss14, idbrigmedic made by PuroSlavKing (Github), pirate made by brainfood1183 (github), idadmin made by Arimah (github), idvisitor by IProduceWidgets (Github), idintern-service by spanky-spanky (Github) | service icons darkened by frobnic8 (Discord and Github), wizard and idwizard by ScarKy0, resprite and _world made by TheGypsyBaron",
   "size": {
     "x": 32,
     "y": 32
@@ -227,9 +227,6 @@
       "name": "idseniorofficer"
     },
     {
-      "name": "wizard"
-    },
-    {
       "name": "idwizard"
     },
     {
@@ -279,6 +276,237 @@
     {
       "name": "green-inhand-right",
       "directions": 4
+    },
+    {
+      "name": "wizard",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "default_world"
+    },
+    {
+      "name": "centcom_world"
+    },
+    {
+      "name": "admin_world"
+    },
+    {
+      "name": "ert_chaplain_world"
+    },
+    {
+      "name": "ert_commander_world"
+    },
+    {
+      "name": "ert_engineer_world"
+    },
+    {
+      "name": "ert_janitor_world"
+    },
+    {
+      "name": "ert_medic_world"
+    },
+    {
+      "name": "ert_security_world"
+    },
+    {
+      "name": "gold_world"
+    },
+    {
+      "name": "idpassenger_world"
+    },
+    {
+      "name": "idatmospherictechnician_world"
+    },
+    {
+      "name": "idbartender_world"
+    },
+    {
+      "name": "idbotanist_world"
+    },
+    {
+      "name": "idboxer_world"
+    },
+    {
+      "name": "idcaptain_world"
+    },
+    {
+      "name": "idcargotechnician_world"
+    },
+    {
+      "name": "idcentcom_world"
+    },
+    {
+      "name": "idchaplain_world"
+    },
+    {
+      "name": "idchemist_world"
+    },
+    {
+      "name": "idchiefengineer_world"
+    },
+    {
+      "name": "idchiefmedicalofficer_world"
+    },
+    {
+      "name": "idclown_world"
+    },
+    {
+      "name": "idcook_world"
+    },
+    {
+      "name": "idcurator_world"
+    },
+    {
+      "name": "iddetective_world"
+    },
+    {
+      "name": "idgeneticist_world"
+    },
+    {
+      "name": "idheadofpersonnel_world"
+    },
+    {
+      "name": "idheadofsecurity_world"
+    },
+    {
+      "name": "idbrigmedic_world"
+    },
+    {
+      "name": "idjanitor_world"
+    },
+    {
+      "name": "idlawyer_world"
+    },
+    {
+      "name": "idmedicaldoctor_world"
+    },
+    {
+      "name": "idmime_world"
+    },
+    {
+      "name": "idparamedic_world"
+    },
+    {
+      "name": "idpsychologist_world"
+    },
+    {
+      "name": "idreporter_world"
+    },
+    {
+      "name": "idquartermaster_world"
+    },
+    {
+      "name": "idresearchdirector_world"
+    },
+    {
+      "name": "idroboticist_world"
+    },
+    {
+      "name": "idscientist_world"
+    },
+    {
+      "name": "idsecurityofficer_world"
+    },
+    {
+      "name": "idshaftminer_world"
+    },
+    {
+      "name": "idstationengineer_world"
+    },
+    {
+      "name": "idunknown_world"
+    },
+    {
+      "name": "idvirologist_world"
+    },
+    {
+      "name": "idvisitor_world"
+    },
+    {
+      "name": "idwarden_world"
+    },
+    {
+      "name": "idmusician_world"
+    },
+    {
+      "name": "idzookeeper_world"
+    },
+    {
+      "name": "idintern-sci_world"
+    },
+    {
+      "name": "idintern-cadet_world"
+    },
+    {
+      "name": "idintern-med_world"
+    },
+    {
+      "name": "idintern-service_world"
+    },
+    {
+      "name": "idintern-tech_world"
+    },
+    {
+      "name": "idadmin_world"
+    },
+    {
+      "name": "orange_world"
+    },
+    {
+      "name": "pirate_world"
+    },
+    {
+      "name": "prisoner_001_world"
+    },
+    {
+      "name": "prisoner_002_world"
+    },
+    {
+      "name": "prisoner_003_world"
+    },
+    {
+      "name": "prisoner_004_world"
+    },
+    {
+      "name": "prisoner_005_world"
+    },
+    {
+      "name": "prisoner_006_world"
+    },
+    {
+      "name": "prisoner_007_world"
+    },
+    {
+      "name": "silver_world"
+    },
+    {
+      "name": "syndie_world"
+    },
+    {
+      "name": "idseniorengineer_world"
+    },
+    {
+      "name": "idseniorresearcher_world"
+    },
+    {
+      "name": "idseniorphysician_world"
+    },
+    {
+      "name": "idseniorofficer_world"
+    },
+    {
+      "name": "wizard_world"
+    },
+    {
+      "name": "idwizard_world"
     }
   ]
 }
