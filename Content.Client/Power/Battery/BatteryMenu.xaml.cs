@@ -206,10 +206,10 @@ public sealed partial class BatteryMenu : FancyWindow
         // Update storage display.
         StoredPercentageValue.Text = _loc.GetString(
             "battery-menu-stored-percent-value",
-            ("value", msg.Charge / msg.Capacity));
+            ("value", Math.Round(msg.Charge / msg.Capacity, 2)));
         StoredEnergyValue.Text = _loc.GetString(
             "battery-menu-stored-energy-value",
-            ("value", msg.Charge));
+            ("value", Math.Round(msg.Charge, 2)));
 
         // Update charge meter.
         _storageLevel = ContentHelpers.RoundToNearestLevels(msg.Charge, msg.Capacity, _chargeMeterBoxes.Length);
@@ -230,7 +230,7 @@ public sealed partial class BatteryMenu : FancyWindow
 
     private string FormatPower(float value)
     {
-        return _loc.GetString("battery-menu-power-value", ("value", value));
+        return _loc.GetString("battery-menu-power-value", ("value", Math.Round(value, 2)));
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
