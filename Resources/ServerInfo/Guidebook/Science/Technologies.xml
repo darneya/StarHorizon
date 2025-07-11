@@ -5,19 +5,27 @@
 
 Ниже перечислены различные технологии и соответствующие им дисциплины.
 
+<!-- Frontier: all disciplines below swapped to NF variants -->
+
 ## Промышленность
-<GuideTechDisciplineEmbed Discipline="Industrial"/>
+<GuideTechDisciplineEmbed Discipline="NFEngineering"/>
 
-## Арсенал
-<GuideTechDisciplineEmbed Discipline="Arsenal"/>
+## Медицина
+<GuideTechDisciplineEmbed Discipline="NFMedical"/>
 
-## Экспериментальное
-<GuideTechDisciplineEmbed Discipline="Experimental"/>
+## Наемники
+<GuideTechDisciplineEmbed Discipline="NFArsenalMercenary"/>
+
+## Шерифы
+<GuideTechDisciplineEmbed Discipline="NFArsenalNfsd"/>
+
+## Утилизация
+<GuideTechDisciplineEmbed Discipline="NFSalvage"/>
+
+## Наука
+<GuideTechDisciplineEmbed Discipline="NFScience"/>
 
 ## Обслуживание персонала
-<GuideTechDisciplineEmbed Discipline="CivilianServices"/>
-
-## Биохимия
-<GuideTechDisciplineEmbed Discipline="Biochemical"/>
+<GuideTechDisciplineEmbed Discipline="NFService"/>
 
 </Document>

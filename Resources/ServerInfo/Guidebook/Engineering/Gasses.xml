@@ -118,4 +118,16 @@
 
   Может быть сконденсирован для создания нашатырного спирта, используемого в производстве космического очистителя.
 
+  <!-- Frontier: respiron section -->
+
+  ## Respiron
+  <Box>
+    <GuideEntityEmbed Entity="RespironCanister" Caption=""/>
+  </Box>
+  A gas that all known living creatures can breathe. Aspirates creatures more efficiently than oxygen or nitrogen.
+
+  Can be created through energy-to-matter conversion in a large machine at Edison. Useful for creating breathable atmospheres for station restoration.
+
+  Extremely non-reactive and non-toxic.
+
 </Document>

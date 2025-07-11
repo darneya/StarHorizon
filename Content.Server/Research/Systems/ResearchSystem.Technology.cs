@@ -86,7 +86,7 @@ public sealed partial class ResearchSystem
         // Horizon end
 
         AddTechnology(serverEnt.Value, prototype);
-        TrySetMainDiscipline(prototype, serverEnt.Value);
+        // TrySetMainDiscipline(prototype, serverEnt.Value); // Goobstation commented
         ModifyServerPoints(serverEnt.Value, -prototype.Cost);
         UpdateTechnologyCards(serverEnt.Value);
 
