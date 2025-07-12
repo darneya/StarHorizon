@@ -4,14 +4,14 @@
   icon:
     sprite: _Horizon/Structures/Hydroponics/containers.rsi
     state: hydrotray4
-  discipline: CivilianServices
+  discipline: NFService
   tier: 2
   cost: 10000
   recipeUnlocks:
   - HydroponicsTrayUpgradeKit
   - HydroponicsToolScytheAdv
   technologyPrerequisites:
-  - Hydroponics
+  - NFHydroponics
 
 - type: technology
   id: HydroponicsDNAManip
@@ -19,7 +19,7 @@
   icon:
     sprite: Structures/Machines/seed_extractor.rsi
     state: seedextractor
-  discipline: CivilianServices
+  discipline: NFService
   tier: 3
   cost: 15000
   recipeUnlocks:
