@@ -6,13 +6,13 @@
   icon:
     sprite: Objects/Specific/Mech/mecha.rsi
     state: ripleymkii-open
-  discipline: NFEngineering
+  discipline: Industrial
   tier: 2
   cost: 10000
   recipeUnlocks:
   - RipleyMk2ModificationKit
   technologyPrerequisites:
-  - NFRipleyAPLU
+  - RipleyAPLU
 
 - type: technology
   id: ClarkeTechnology
@@ -20,7 +20,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha.rsi
     state: clarke
-  discipline: NFEngineering
+  discipline: Industrial
   tier: 2
   cost: 10000
   recipeUnlocks:
@@ -33,7 +33,7 @@
   - ClarkeCentralElectronics
   - ClarkePeripheralsElectronics
   technologyPrerequisites:
-  - NFRipleyAPLU
+  - RipleyAPLU
 
 - type: technology
   id: MechTechnologyMining
@@ -41,7 +41,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_plasmacutter
-  discipline: NFEngineering
+  discipline: Industrial
   tier: 2
   cost: 10000
   recipeUnlocks:
@@ -58,7 +58,7 @@
   icon:
     sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: mining_kineticgun
-  discipline: NFEngineering
+  discipline: Industrial
   tier: 2
   cost: 10000
   recipeUnlocks:
@@ -75,7 +75,7 @@
   icon:
     sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
     state: generator_plasma
-  discipline: NFEngineering
+  discipline: Industrial
   tier: 3
   cost: 15000
   recipeUnlocks:
@@ -83,7 +83,7 @@
   - MechReactorUranium
   - MechReactorTesla
   technologyPrerequisites:
-  - NFPortableFission
+  - PortableFission
 
 - type: technology
   id: HarsonTechnology
@@ -91,7 +91,7 @@
   icon:
     sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     state: harson-open
-  discipline: NFEngineering
+  discipline: Industrial
   tier: 3
   cost: 15000
   recipeUnlocks:
@@ -117,7 +117,7 @@
   icon:
     sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     state: ripleyzairjah-open
-  discipline: NFEngineering
+  discipline: Industrial
   tier: 3
   cost: 15000
   recipeUnlocks:
@@ -139,7 +139,7 @@
   icon:
     sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     state: clarkeorangey-open
-  discipline: NFEngineering
+  discipline: Industrial
   tier: 3
   cost: 15000
   recipeUnlocks:

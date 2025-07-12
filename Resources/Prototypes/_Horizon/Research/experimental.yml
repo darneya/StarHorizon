@@ -7,7 +7,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha.rsi
     state: phazon
-  discipline: NFScience
+  discipline: Experimental
   tier: 3
   cost: 30000
   recipeUnlocks:
@@ -28,7 +28,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha.rsi
     state: phazonjanus-open
-  discipline: NFScience
+  discipline: Experimental
   tier: 3
   cost: 30000
   recipeUnlocks:

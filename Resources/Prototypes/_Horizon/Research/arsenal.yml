@@ -6,8 +6,8 @@
   icon:
     sprite: _Horizon/Clothing/Eyes/ninjavisor.rsi
     state: icon
-  discipline: NFArsenalNfsd
-  tier: 1
+  discipline: Arsenal
+  tier: 2
   cost: 10000
   recipeUnlocks:
   - ClothingEyesVision
@@ -19,7 +19,7 @@
   icon:
     sprite: _Horizon/Objects/Weapons/Melee/crusher_hammer.rsi
     state: icon
-  discipline: NFSalvage
+  discipline: Arsenal
   tier: 2
   cost: 7500
   recipeUnlocks:
@@ -36,7 +36,7 @@
   icon:
     sprite: _Horizon/Objects/Weapons/Guns/PKA/kinetic_railgun.rsi
     state: icon
-  discipline: NFSalvage
+  discipline: Arsenal
   tier: 2
   cost: 7500
   recipeUnlocks:
@@ -53,7 +53,7 @@
   icon:
     sprite: _Horizon/Objects/Tools/upgrade.rsi
     state: display
-  discipline: NFSalvage
+  discipline: Arsenal
   tier: 2
   cost: 7500
   recipeUnlocks:
@@ -70,7 +70,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha.rsi
     state: gygax
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 2
   cost: 15000
   recipeUnlocks:
@@ -90,7 +90,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_laser
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 2
   cost: 10000
   recipeUnlocks:
@@ -105,7 +105,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_scatter
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 2
   cost: 10000
   recipeUnlocks:
@@ -124,7 +124,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_abooster_proj
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 2
   cost: 10000
   recipeUnlocks:
@@ -141,7 +141,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha.rsi
     state: durand
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 3
   cost: 20000
   recipeUnlocks:
@@ -163,7 +163,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_pulse
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 3
   cost: 15000
   recipeUnlocks:
@@ -178,7 +178,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_missilerack_six
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 3
   cost: 15000
   recipeUnlocks:
@@ -198,7 +198,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_clamp
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 3
   cost: 15000
   recipeUnlocks:
@@ -215,7 +215,7 @@
   icon:
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
     state: mecha_ion
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 3
   cost: 20000
   recipeUnlocks:
@@ -230,7 +230,7 @@
   icon:
     sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     state: gygaxgrey-open
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 3
   cost: 20000
   recipeUnlocks:
@@ -248,7 +248,7 @@
   icon:
     sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
     state: durshire-open
-  discipline: NFArsenalNfsd
+  discipline: Arsenal
   tier: 3
   cost: 25000
   recipeUnlocks:
