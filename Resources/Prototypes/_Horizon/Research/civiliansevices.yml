@@ -12,6 +12,7 @@
   - HydroponicsToolScytheAdv
   technologyPrerequisites:
   - NFHydroponics
+  position: 1, 4
 
 - type: technology
   id: HydroponicsDNAManip
@@ -27,3 +28,4 @@
   - BotanicDNACircuitboard
   technologyPrerequisites:
   - HydroponicsAdv
+  position: 2, 4

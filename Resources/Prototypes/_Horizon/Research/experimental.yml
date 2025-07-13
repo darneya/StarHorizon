@@ -21,6 +21,7 @@
   - PhazonCentralElectronics
   - PhazonPeripheralsElectronics
   - PhazonWeaponControlElectronics
+  position: 1, 5
 
 - type: technology
   id: PhazonMechPaint
@@ -38,3 +39,4 @@
   - MechPhazonPlazmusUpgradeKit
   technologyPrerequisites:
   - PhazonTechnology
+  position: 2, 5

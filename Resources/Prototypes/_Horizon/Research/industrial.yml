@@ -13,6 +13,7 @@
   - RipleyMk2ModificationKit
   technologyPrerequisites:
   - NFRipleyAPLU
+  position: 1, 6
 
 - type: technology
   id: ClarkeTechnology
@@ -34,6 +35,7 @@
   - ClarkePeripheralsElectronics
   technologyPrerequisites:
   - NFRipleyAPLU
+  position: 1, 7
 
 - type: technology
   id: MechTechnologyMining
@@ -51,6 +53,7 @@
     - BoxPlasmaBox
   technologyPrerequisites:
   - ClarkeTechnology
+  position: 1, 8
 
 - type: technology
   id: MechGunPKA
@@ -66,6 +69,7 @@
   - MechGunPKAHeavy
   technologyPrerequisites:
   - ClarkeTechnology
+  position: 2, 8
 
 # Tier 3
 
@@ -84,6 +88,7 @@
   - MechReactorTesla
   technologyPrerequisites:
   - NFPortableFission
+  position: 3, 8
 
 - type: technology
   id: HarsonTechnology
@@ -110,6 +115,7 @@
 #  - HarsonPeripheralsElectronics
 #  technologyPrerequisites:
 #  - ClarkeTechnology
+  position: 4, 8
 
 - type: technology
   id: RipleyMKIIMechPaint
@@ -132,6 +138,7 @@
   - MechRipleyDeathUpgradeKit
   technologyPrerequisites:
   - RipleyMKIITechnology
+  position: 5, 8
 
 - type: technology
   id: ClarkeMechPaint
@@ -147,3 +154,4 @@
   - MechClarkeSpiderUpgradeKit
   technologyPrerequisites:
   - ClarkeTechnology
+  position: 6, 8

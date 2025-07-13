@@ -11,6 +11,7 @@
   - AttachmentVerticalGrip
   - AttachmentLaserSight
   - AttachmentReflexSight
+  position: 1, 10
 
 - type: technology
   id: ArsenalExtendedModules
@@ -27,6 +28,7 @@
   - AttachmentAntiLyingWarrior
   technologyPrerequisites:
   - ArsenalBasicModules
+  position: 2, 10
 
 - type: technology
   id: ArsenalAdvancedModules
@@ -48,3 +50,4 @@
   - 40mmGrenadeSmoke
   technologyPrerequisites:
   - ArsenalExtendedModules
+  position: 3, 10

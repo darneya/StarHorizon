@@ -12,6 +12,7 @@
   recipeUnlocks:
   - ClothingEyesVision
   - ClothingEyesVisionSec
+  position: 1, 3
 
 - type: technology
   id: AdvancedPKAMelee
@@ -29,6 +30,7 @@
   - WeaponKineticMachete
   technologyPrerequisites:
   - NFSalvageWeapons
+  position: 2, 3
 
 - type: technology
   id: AdvancedPKARanged
@@ -46,6 +48,7 @@
   - WeaponProtoKineticShotgun
   technologyPrerequisites:
   - NFSalvageWeapons
+  position: 3, 3
 
 - type: technology
   id: AdvancedPKAModules
@@ -63,6 +66,7 @@
   - PKAUpgradeLight
   technologyPrerequisites:
   - NFSalvageWeapons
+  position: 3, 3
 
 - type: technology
   id: GygaxTechnology
@@ -83,6 +87,7 @@
   - GygaxHead
   - GygaxCentralElectronics
   - GygaxPeripheralsElectronics
+  position: 4, 3
 
 - type: technology
   id: MechEnergyGunSmallTechnology
@@ -98,6 +103,7 @@
     - MechGunDisabler
   technologyPrerequisites:
   - GygaxTechnology
+  position: 5, 3
 
 - type: technology
   id: MechGunSmallTechnology
@@ -117,6 +123,7 @@
   - BoxAmmoHades
   technologyPrerequisites:
   - GygaxTechnology
+  position: 6, 3
 
 - type: technology
   id: MechTechnologyArmor
@@ -132,6 +139,7 @@
   - MechEquipmentArmorRange
   technologyPrerequisites:
   - GygaxTechnology
+  position: 7, 3
 
 # Tier 3
 
@@ -156,6 +164,7 @@
   - DurandPeripheralsElectronics
   technologyPrerequisites:
   - GygaxTechnology
+  position: 8, 3
 
 - type: technology
   id: MechEnergyGunHeavyTechnology
@@ -171,6 +180,7 @@
   - MechGunTeslaCannon
   technologyPrerequisites:
   - DurandTechnology
+  position: 9, 3
 
 - type: technology
   id: MechGunHeavyTechnology
@@ -191,6 +201,7 @@
   - BoxAmmoGranade
   technologyPrerequisites:
   - DurandTechnology
+  position: 10, 3
 
 - type: technology
   id: MechCloseWeaponTechnology
@@ -208,6 +219,7 @@
   - MechWeaponWarhammer
   technologyPrerequisites:
   - DurandTechnology
+  position: 11, 3
 
 - type: technology
   id: MechEnergyGunExperimentalTechnology
@@ -223,6 +235,7 @@
   - MechGunXRayRifle
   technologyPrerequisites:
   - DurandTechnology
+  position: 12, 3
 
 - type: technology
   id: GygaxMechPaint
@@ -241,6 +254,7 @@
   - MechGygaxRecitenceUpgradeKit
   technologyPrerequisites:
   - GygaxTechnology
+  position: 13, 3
 
 - type: technology
   id: ModernCombatMechsPaint
@@ -258,3 +272,4 @@
   - MechDurUnathiUpgradeKit
   technologyPrerequisites:
   - DurandTechnology
+  position: 14, 3
