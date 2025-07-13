@@ -223,8 +223,7 @@
     - NFMercenaryTechfabDeprecatedStatic
     - NfsdPracticeStatic
     dynamicPacks:
-    - NightVisionPack # Horizon
-    - NFMercenaryTechfabDynamicDeprecated # Horizon
+    - NightVisionPack # Horizon # Horizon
     - WeaponModulesPack # Horizon
   - type: BlueprintReceiver
     whitelist:
