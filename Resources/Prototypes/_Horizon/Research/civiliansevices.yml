@@ -1,31 +1,27 @@
 ﻿- type: technology
   id: HydroponicsAdv
   name: research-technology-adv-hydroponics
-  icon:
-    sprite: _Horizon/Structures/Hydroponics/containers.rsi
-    state: hydrotray4
+  entityIcon: indhydroponicsTray
   discipline: NFService
   tier: 2
-  cost: 10000
+  cost: 5000
   recipeUnlocks:
   - HydroponicsTrayUpgradeKit
   - HydroponicsToolScytheAdv
   technologyPrerequisites:
-  - NFHydroponics
-  position: 1, 4
+  - NFAdvancedHydroponicsStorge
+  position: 3, 46
 
 - type: technology
   id: HydroponicsDNAManip
   name: research-technology-hydroponics-dna-manip
-  icon:
-    sprite: Structures/Machines/seed_extractor.rsi
-    state: seedextractor
+  entityIcon: ComputerBotanicDNAManipulator
   discipline: NFService
   tier: 3
-  cost: 15000
+  cost: 7500
   recipeUnlocks:
   - BotanicDNADisk
   - BotanicDNACircuitboard
   technologyPrerequisites:
   - HydroponicsAdv
-  position: 2, 4
+  position: 4, 46

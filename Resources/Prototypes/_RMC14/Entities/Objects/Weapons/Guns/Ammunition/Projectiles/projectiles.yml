@@ -67,7 +67,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive # Powerful explosion in a very small radius. Doesn't break underplating.
     explosionType: DemolitionCharge
-    totalIntensity: 150
+    totalIntensity: 75
     intensitySlope: 25
     maxIntensity: 50
     canCreateVacuum: false
@@ -75,8 +75,8 @@
     deleteOnCollide: true
     damage:
       types:
-        Structural: 1000
-        Piercing: 75
+        Structural: 200
+        Piercing: 50
     soundHit:
       path: /Audio/Effects/gen_hit.ogg
 
