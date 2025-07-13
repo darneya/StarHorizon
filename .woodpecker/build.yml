@@ -1,5 +1,5 @@
 when:
-  - branch: master
+  - branch: Horizon/upstream_11072025
     event: [ manual ]
 
 steps:
@@ -18,7 +18,7 @@ steps:
     volumes:
       - "/var/lib/star-horizon/woodpecker/storage:/storage"
     commands:
-      - bash -c 'if [[ ! -e /storage/ss14 ]]; then mkdir -p /storage/ss14; fi'
-      - mv release/SS14.Server_linux-x64.zip /storage/ss14/
-      - cp Resources/ConfigPresets/StarHorizon/server_config.toml /storage/ss14/
-      - echo '$CI_COMMIT_SHA' > /storage/ss14/build_commit.txt
+      - bash -c 'if [[ ! -e /storage/ss14/upstream_11072025 ]]; then mkdir -p /storage/ss14/upstream_11072025; fi'
+      - mv release/SS14.Server_linux-x64.zip /storage/ss14/upstream_11072025/
+      - cp Resources/ConfigPresets/StarHorizon/server_config.toml /storage/ss14/upstream_11072025/
+      - echo '$CI_COMMIT_SHA' > /storage/ss14/upstream_11072025/build_commit.txt
