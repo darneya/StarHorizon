@@ -134,3 +134,10 @@ round_update_webhook = "%webhook_round_update%"
 
 [events]
 enabled = true
+
+################################################################################
+##### Relpay ###################################################################
+
+[replay]
+auto_record = true
+directory = "replays/"
