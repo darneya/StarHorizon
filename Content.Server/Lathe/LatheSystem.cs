@@ -90,7 +90,6 @@ namespace Content.Server.Lathe
             SubscribeLocalEvent<TechnologyDatabaseComponent, LatheGetRecipesEvent>(OnGetRecipes);
             SubscribeLocalEvent<EmagLatheRecipesComponent, LatheGetRecipesEvent>(GetEmagLatheRecipes);
             SubscribeLocalEvent<LatheHeatProducingComponent, LatheStartPrintingEvent>(OnHeatStartPrinting);
-            SubscribeLocalEvent<LatheComponent, LatheToggleInfiniteProductionMessage>(OnLatheToggleInfiniteProduction);
 
             //Frontier: upgradeable parts
             SubscribeLocalEvent<LatheComponent, RefreshPartsEvent>(OnPartsRefresh);
@@ -296,11 +295,11 @@ namespace Content.Server.Lathe
                         _puddle.TrySpillAt(uid, toAdd, out _);
                     }
                 }
-        
+
                 // Сохраняем последний напечатанный рецепт
                 prodComp.LastRecipe = comp.CurrentRecipe;
             }
-        
+
             comp.CurrentRecipe = null;
             prodComp.StartTime = _timing.CurTime;
 
