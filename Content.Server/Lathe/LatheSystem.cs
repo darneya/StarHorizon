@@ -1,11 +1,8 @@
-// Этот файл представляет собой объединённый LatheSystem.cs с включённой поддержкой бесконечного производства
-// и уже реализованным методом FinishProducing со всеми отступами
-
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Construction;
+using Content.Server.Construction; // Frontier
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Lathe.Components;
 using Content.Server.Materials;
@@ -324,8 +321,6 @@ namespace Content.Server.Lathe
                     UpdateRunningAppearance(uid, false);
                 }
             }
-        }
-
 
             comp.CurrentRecipe = null;
             prodComp.StartTime = _timing.CurTime;
