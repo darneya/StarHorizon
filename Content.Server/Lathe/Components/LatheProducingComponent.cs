@@ -1,5 +1,5 @@
-using Content.Shared.Research.Prototypes; // Ссылка, которая имеет определение LatheRecipePrototype
-                                          // Нужно явно указать её, чтобы можно было использовать LatheRecipePrototype.
+using Content.Shared.Research.Prototypes; // Horizon
+                                          
 namespace Content.Server.Lathe.Components;
 
 /// <summary>
@@ -21,12 +21,15 @@ public sealed partial class LatheProducingComponent : Component
     public TimeSpan ProductionLength;
 
     /// <summary>
-    /// Флаг, что указывает включено ли бесконечное производство.
+    /// Horizon. Флаг, что указывает включено ли бесконечное производство. 
     /// </summary>
     [DataField]
-    public bool InfiniteProduction; // = false; У bool базовое значение уже false, искл - bool?, там базовое значение null.
+    public bool InfiniteProduction;
 
+    /// <summary>
+    /// Horizon. Последний рецепт.
+    /// </summary>
     [DataField]
-    public LatheRecipePrototype? LastRecipe; // = null; Базовое значение уже null лучше не указывать его дважды
+    public LatheRecipePrototype? LastRecipe; 
 }
 

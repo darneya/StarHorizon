@@ -110,10 +110,7 @@
                             HorizontalAlignment="Left"
                             Margin="170 0 0 0">
                         </Label>
-                        <!-- Frontier: delete button -->
-                        <!-- Запихал, это всё в контейнер, чтобы оно выглядело прилично.
-                             Слегка поправил текст и картинки по длине. Поменял местами кнопки, чтобы выглядело нормально
-                             Добавил режим ToggleMode на true, чтобы кнопку нужно было переключать! А не нажимать -->
+                        <!-- Horizon: inf craft -->
                         <BoxContainer Orientation="Horizontal" Align="End">
                             <Button
                                 Name="InfiniteButton"
@@ -122,6 +119,7 @@
                                 StyleClasses="OpenRight"
                                 ToggleMode="True"
                             />
+                        <!-- Frontier: delete button -->
                             <Button
                                 Name="DeleteFabricating"
                                 Margin="0"

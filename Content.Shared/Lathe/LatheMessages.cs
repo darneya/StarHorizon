@@ -52,7 +52,7 @@ public enum LatheUiKey
 }
 
 /// <summary>
-///     Отправляется клиентом, чтобы включить или выключить бесконечное производство.
+/// Horizon. Отправляется клиентом, чтобы включить или выключить бесконечное производство.
 /// </summary>
 [Serializable, NetSerializable]
 public sealed class LatheToggleInfiniteProductionMessage : BoundUserInterfaceMessage
