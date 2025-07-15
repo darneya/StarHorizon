@@ -1,8 +1,11 @@
+// Этот файл представляет собой объединённый LatheSystem.cs с включённой поддержкой бесконечного производства
+// и уже реализованным методом FinishProducing со всеми отступами
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Construction; // Frontier
+using Content.Server.Construction;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Lathe.Components;
 using Content.Server.Materials;
@@ -90,6 +93,7 @@ namespace Content.Server.Lathe
             SubscribeLocalEvent<TechnologyDatabaseComponent, LatheGetRecipesEvent>(OnGetRecipes);
             SubscribeLocalEvent<EmagLatheRecipesComponent, LatheGetRecipesEvent>(GetEmagLatheRecipes);
             SubscribeLocalEvent<LatheHeatProducingComponent, LatheStartPrintingEvent>(OnHeatStartPrinting);
+            SubscribeLocalEvent<LatheComponent, LatheToggleInfiniteProductionMessage>(OnLatheToggleInfiniteProduction);
 
             //Frontier: upgradeable parts
             SubscribeLocalEvent<LatheComponent, RefreshPartsEvent>(OnPartsRefresh);
@@ -139,6 +143,7 @@ namespace Content.Server.Lathe
                 }
             }
         }
+
 
         private void OnGetWhitelist(EntityUid uid, LatheComponent component, ref GetMaterialWhitelistEvent args)
         {
@@ -294,7 +299,33 @@ namespace Content.Server.Lathe
                         _puddle.TrySpillAt(uid, toAdd, out _);
                     }
                 }
+        
+                // Сохраняем последний напечатанный рецепт
+                prodComp.LastRecipe = comp.CurrentRecipe;
             }
+        
+            comp.CurrentRecipe = null;
+            prodComp.StartTime = _timing.CurTime;
+
+            if (!TryStartProducing(uid, comp))
+            {
+                // Очередь пуста — проверим бесконечный режим
+                if (prodComp.InfiniteProduction && prodComp.LastRecipe != null)
+                {
+                    var batch = new LatheRecipeBatch(prodComp.LastRecipe, 0, 1);
+                    comp.Queue.Insert(0, batch);
+
+                    TryStartProducing(uid, comp);
+                }
+                else
+                {
+                    RemCompDeferred(uid, prodComp);
+                    UpdateUserInterfaceState(uid, comp);
+                    UpdateRunningAppearance(uid, false);
+                }
+            }
+        }
+
 
             comp.CurrentRecipe = null;
             prodComp.StartTime = _timing.CurTime;

@@ -17,5 +17,14 @@ public sealed partial class LatheProducingComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan ProductionLength;
+    
+    /// <summary>
+    /// Указывает, включено ли бесконечное производство.
+    /// </summary>
+    [DataField]
+    public bool InfiniteProduction = false;
+
+    [DataField]
+    public LatheRecipePrototype? LastRecipe = null;
 }
 

@@ -119,6 +119,12 @@
                             SetSize="38 32"
                             HorizontalAlignment="Right"
                             />
+                        <Button
+                            Name="InfiniteButton"
+                            Text="∞"
+                            ToolTip="Производить бесконечно"
+                            StyleClasses="OpenRight" />
+                            />
                         <!-- End Frontier: delete button -->
                     </PanelContainer>
                 </BoxContainer>
