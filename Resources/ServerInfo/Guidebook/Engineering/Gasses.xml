@@ -120,14 +120,13 @@
 
   <!-- Frontier: respiron section -->
 
-  ## Respiron
-  <Box>
-    <GuideEntityEmbed Entity="RespironCanister" Caption=""/>
-  </Box>
-  A gas that all known living creatures can breathe. Aspirates creatures more efficiently than oxygen or nitrogen.
+    ## Респирон
+    <Box>
+      <GuideEntityEmbed Entity="RespironCanister" Caption=""/>
+    </Box>
+    Газ, пригодный для дыхания всех известных живых существ. Обеспечивает более эффективный газообмен, чем кислород или азот.
 
-  Can be created through energy-to-matter conversion in a large machine at Edison. Useful for creating breathable atmospheres for station restoration.
+    Может быть синтезирован через преобразование энергии в материю на специальном оборудовании электростанции Эдисон. Полезен для создания пригодных для дыхания атмосфер при восстановлении станций.
 
-  Extremely non-reactive and non-toxic.
-
-</Document>
+    Чрезвычайно инертен и нетоксичен.
+  </Document>
