@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: AnomalousGeode
   parent: BasePOI
-  name: 'Anomalous Geode'
+  name: 'Аномальный Геод'
   minimumDistance: 2100
   maximumDistance: 3800
   spawnGroup: ScienceLab
