@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Lodge
   parent: BasePOI
-  name: 'Expeditionary Lodge'
+  name: 'Экспедиционная Лоджия'
   minimumDistance: 1650
   maximumDistance: 3400
   spawnGroup: Required

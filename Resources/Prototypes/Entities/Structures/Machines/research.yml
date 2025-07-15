@@ -17,11 +17,18 @@
   - type: ResearchServer
   - type: TechnologyDatabase
     supportedDisciplines:
-    - Industrial
-    - Arsenal
-    - Experimental
-    - CivilianServices
-    - Biochemical
+     # Start Frontier: Tech Tree
+#    - Industrial
+#    - Arsenal
+#    - Experimental
+#    - CivilianServices
+     - NFEngineering
+     - NFMedical
+     - NFArsenalMercenary
+     - NFSalvage
+     - NFScience
+     - NFService
+     # End Frontier: Tech Tree
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: ExtensionCableReceiver

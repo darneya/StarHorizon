@@ -3,15 +3,15 @@
 # Discord: dustylens
 
 # Maintainer Info
-# GitHub: ???
-# Discord: ???
+# GitHub: dustylens
+# Discord: dustylens
 
 # Notes:
 # Medical ship garage, medical manager base and medical bounty staging area.
 - type: pointOfInterest
   id: Medical
   parent: BasePOI
-  name: 'Medical Dispatch'
+  name: 'Медицинский Диспансер'
   minimumDistance: 1650
   maximumDistance: 3400
   spawnGroup: Required
