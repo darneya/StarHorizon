@@ -90,6 +90,7 @@ namespace Content.Server.Lathe
             SubscribeLocalEvent<TechnologyDatabaseComponent, LatheGetRecipesEvent>(OnGetRecipes);
             SubscribeLocalEvent<EmagLatheRecipesComponent, LatheGetRecipesEvent>(GetEmagLatheRecipes);
             SubscribeLocalEvent<LatheHeatProducingComponent, LatheStartPrintingEvent>(OnHeatStartPrinting);
+            SubscribeLocalEvent<LatheComponent, LatheToggleInfiniteProductionMessage>(OnLatheToggleInfiniteProduction);
 
             //Frontier: upgradeable parts
             SubscribeLocalEvent<LatheComponent, RefreshPartsEvent>(OnPartsRefresh);
@@ -253,6 +254,20 @@ namespace Content.Server.Lathe
             return true;
         }
 
+        private void OnLatheToggleInfiniteProduction(EntityUid uid, LatheComponent component, LatheToggleInfiniteProductionMessage args)
+        {
+            Logger.Info($"[LATHE] Received InfiniteProduction toggle: {args.Enabled}");
+
+            if (!EntityManager.TryGetComponent(uid, out LatheProducingComponent? producing))
+            {
+                Logger.Info("[LATHE] Failed to get LatheProducingComponent.");
+                return;
+            }
+        
+            producing.InfiniteProduction = args.Enabled;
+            Logger.Info($"[LATHE] InfiniteProduction now set to: {producing.InfiniteProduction}");
+        }
+
         public void FinishProducing(EntityUid uid, LatheComponent? comp = null, LatheProducingComponent? prodComp = null)
         {
             if (!Resolve(uid, ref comp, ref prodComp, false))
@@ -298,31 +313,16 @@ namespace Content.Server.Lathe
 
                 // Сохраняем последний напечатанный рецепт
                 prodComp.LastRecipe = comp.CurrentRecipe;
-            }
 
-            comp.CurrentRecipe = null;
-            prodComp.StartTime = _timing.CurTime;
-
-            if (!TryStartProducing(uid, comp))
-            {
-                // Очередь пуста — проверим бесконечный режим
-                if (prodComp.InfiniteProduction && prodComp.LastRecipe != null)
+                if (prodComp.InfiniteProduction && comp.CurrentRecipe != null)
                 {
-                    var batch = new LatheRecipeBatch(prodComp.LastRecipe, 0, 1);
-                    comp.Queue.Insert(0, batch);
-
-                    TryStartProducing(uid, comp);
-                }
-                else
-                {
-                    RemCompDeferred(uid, prodComp);
-                    UpdateUserInterfaceState(uid, comp);
-                    UpdateRunningAppearance(uid, false);
+                    TryAddToQueue(uid, comp.CurrentRecipe, 1, comp);
                 }
             }
 
             comp.CurrentRecipe = null;
             prodComp.StartTime = _timing.CurTime;
+            Logger.Info($"[LATHE] Checking InfiniteProduction: {prodComp.InfiniteProduction}, LastRecipe: {(prodComp.LastRecipe != null ? prodComp.LastRecipe.ID : "null")}, Queue.Count: {comp.Queue.Count}");
 
             if (!TryStartProducing(uid, comp))
             {
