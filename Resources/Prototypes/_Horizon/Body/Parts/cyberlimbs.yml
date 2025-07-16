@@ -482,7 +482,7 @@
     sound:
       path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
-    - WeaponAntiqueLaser
+    - NFWeaponEnergyPistolLaserAntique
 
 - type: entity
   id: RightArmCyberLazer
@@ -504,4 +504,4 @@
     sound:
       path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
-    - WeaponAntiqueLaser
+    - NFWeaponEnergyPistolLaserAntique
