@@ -32,8 +32,8 @@
 
 - type: technology
   id: AdvancedPKARanged
-  name: WeaponProtoKineticRailgun
-  entityIcon: AttachmentT2Miniscope
+  name: research-technology-advancedpkaranged
+  entityIcon: WeaponProtoKineticRailgun
   discipline: NFSalvage
   tier: 2
   cost: 5000
