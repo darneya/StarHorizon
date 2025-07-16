@@ -41,6 +41,12 @@
       "name": "gold"
     },
     {
+      "name": "idplantmanager"
+    },
+    {
+      "name": "idplanttechnician"
+    },
+    {
       "name": "gold-inhand-left",
       "directions": 4
     },
