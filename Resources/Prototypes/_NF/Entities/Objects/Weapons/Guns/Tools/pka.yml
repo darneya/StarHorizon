@@ -41,6 +41,16 @@
     price: 0 # WizDen price
   - type: NFWeaponDetails
     class: weapon-details-class-tool
+  # Horizon start
+  - type: UpgradeableGun
+    maxUpgradeCount: 2
+    whitelist:
+      tags:
+      - PKAUpgrade
+  - type: ContainerContainer
+    containers:
+      upgrades: !type:Container
+        # Horizon end
 
 #region manufacturer
 - type: entity
