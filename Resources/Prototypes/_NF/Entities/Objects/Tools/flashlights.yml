@@ -4,6 +4,7 @@
   id: FlashlightNfsdLite
   description: A tactical flashlight used by the NFSD.
   components:
+  - type: WorldItem
   - type: Tag
     tags:
       - SecBeltEquip

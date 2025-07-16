@@ -4,6 +4,7 @@
   id: FlashlightLantern
   description: It lights the way to freedom.
   components:
+  - type: WorldItem
   - type: Tag
     tags:
     - Flashlight
@@ -81,6 +82,7 @@
   id: FlashlightSeclite
   description: A robust flashlight used by security.
   components:
+  - type: WorldItem
   - type: Tag
     tags:
       - SecBeltEquip
