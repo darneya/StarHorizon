@@ -76,6 +76,7 @@
   description: A empty medipen with endless potential. Does not allow for deviation from Nanotrasen recipes.
   id: BlankMediPen
   components:
+  - type: WorldItem
   - type: Sprite
     sprite: _NF/Objects/Specific/Medical/medipen.rsi
     state: medipen
