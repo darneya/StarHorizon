@@ -28,6 +28,7 @@
      - NFSalvage
      - NFScience
      - NFService
+     - NFArsenalNfsd
      # End Frontier: Tech Tree
   - type: ApcPowerReceiver
     powerLoad: 200
