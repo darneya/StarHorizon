@@ -97,7 +97,7 @@ public sealed class WorldItemSystem : EntitySystem
     // ReSharper disable ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
     public void SetWorldState(EntityUid uid, SpriteComponent sprite, WorldItemComponent? worldItem = null)
     {
-        if (!TryComp(uid, out worldItem))
+        if (worldItem is null && !TryComp(uid, out worldItem))
             return;
 
         var transform = Transform(uid);

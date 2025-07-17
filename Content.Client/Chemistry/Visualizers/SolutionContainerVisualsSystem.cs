@@ -121,12 +121,16 @@ public sealed class SolutionContainerVisualsSystem : VisualizerSystem<SolutionCo
         if (closestFillSprite > 0)
         {
             if (fillBaseName == null)
+            {
+                if (prefix != string.Empty)
+                    _worldItemSystem.SetWorldState(uid, args.Sprite);
                 return;
+            }
 
             var stateName = fillBaseName + closestFillSprite;
             if (fillSprite != null)
                 args.Sprite.LayerSetSprite(fillLayer, fillSprite);
-            args.Sprite.LayerSetState(fillLayer + prefix, stateName);
+            args.Sprite.LayerSetState(fillLayer, stateName);
 
             if (changeColor && AppearanceSystem.TryGetData<Color>(uid, SolutionContainerVisuals.Color, out var color, args.Component))
                 args.Sprite.LayerSetColor(fillLayer, color);

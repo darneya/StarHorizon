@@ -5,6 +5,7 @@
   description: The holy light guides the way.
   components:
     - type: WorldItem
+      continue: true
     - type: HandheldLight
       addPrefix: true
       blinkingBehaviourId: blinking
