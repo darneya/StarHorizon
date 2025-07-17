@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/d917f4c2a088419d5c3aec7656b7ff8cebd1822e idcluwne made by brainfood1183 (github) for ss14, idbrigmedic made by PuroSlavKing (Github), pirate made by brainfood1183 (github), idadmin made by Arimah (github), idvisitor by IProduceWidgets (Github), idintern-service by spanky-spanky (Github) | service icons darkened by frobnic8 (Discord and Github), wizard and idwizard by ScarKy0, resprite and _world made by TheGypsyBaron",
+  "license": "CLA",
+  "copyright": "by TheGypsyBaron",
   "size": {
     "x": 32,
     "y": 32
@@ -278,16 +278,7 @@
       "directions": 4
     },
     {
-      "name": "wizard",
-      "delays": [
-        [
-          0.3,
-          0.3,
-          0.3,
-          0.3,
-          0.3
-        ]
-      ]
+      "name": "wizard"
     },
     {
       "name": "default_world"
@@ -507,6 +498,9 @@
     },
     {
       "name": "idwizard_world"
+    },
+    {
+      "name": "idcluwne_world"
     }
   ]
 }

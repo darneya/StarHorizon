@@ -4,6 +4,8 @@
   id: FlashlightLantern
   description: It lights the way to freedom.
   components:
+  - type: WorldItem
+    continue: true
   - type: Tag
     tags:
     - Flashlight
