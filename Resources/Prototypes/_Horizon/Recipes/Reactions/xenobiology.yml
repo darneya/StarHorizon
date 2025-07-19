@@ -1,0 +1,735 @@
+#Grey
+
+- type: reaction
+  id: GreyExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    GreyExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: MobAdultSlimesGrey
+
+- type: reaction
+  id: GreyExtractBlood
+  impact: Low
+  quantized: true
+  reactants:
+    GreyExtract:
+      amount: 5
+    Blood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: MonkeyCube
+    - !type:CreateEntityReactionEffect
+      entity: MonkeyCube
+    - !type:CreateEntityReactionEffect
+      entity: MonkeyCube
+
+- type: reaction
+  id: GreyExtractBloodZessuls
+  impact: Low
+  quantized: true
+  reactants:
+    GreyExtract:
+      amount: 5
+    ZessulsBlood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: MonkeyCube
+    - !type:CreateEntityReactionEffect
+      entity: MonkeyCube
+    - !type:CreateEntityReactionEffect
+      entity: MonkeyCube
+
+- type: reaction
+  id: GreyExtractWater
+  reactants:
+    GreyExtract:
+      amount: 5
+    Water:
+      amount: 5
+  products:
+    Epinephrine: 15
+
+#Green
+
+- type: reaction
+  id: GreenExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    GreenExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SheetUranium1
+    - !type:CreateEntityReactionEffect
+      entity: SheetUranium1
+    - !type:CreateEntityReactionEffect
+      entity: SheetUranium1
+
+- type: reaction
+  id: GreenExtractBlood
+  impact: Low
+  quantized: true
+  reactants:
+    GreenExtract:
+      amount: 5
+    Blood:
+      amount: 5
+  products:
+    Tritium: 10
+
+- type: reaction
+  id: GreenExtractBloodZessuls
+  impact: Low
+  quantized: true
+  reactants:
+    GreenExtract:
+      amount: 5
+    ZessulsBlood:
+      amount: 5
+  products:
+    Tritium: 10
+
+- type: reaction
+  id: GreenExtractWater
+  reactants:
+    GreenExtract:
+      amount: 5
+    Water:
+      amount: 5
+  products:
+    UnstableMutagen: 30
+
+#Blue
+
+- type: reaction
+  id: BlueExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    BlueExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  products:
+    Cryoxadone: 25
+
+- type: reaction
+  id: BlueExtractBlood
+  impact: Low
+  quantized: true
+  reactants:
+    BlueExtract:
+      amount: 5
+    Blood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: StabilizerSlimePotion
+
+- type: reaction
+  id: BlueExtractBloodZessuls
+  impact: Low
+  quantized: true
+  reactants:
+    BlueExtract:
+      amount: 5
+    ZessulsBlood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: StabilizerSlimePotion
+
+- type: reaction
+  id: BlueExtractWater
+  reactants:
+    BlueExtract:
+      amount: 1
+    Water:
+      amount: 1
+  effects:
+    - !type:AreaReactionEffect
+      duration: 30
+      prototypeId: Foam
+      sound:
+        path: /Audio/Effects/extinguish.ogg
+
+
+#Yellow
+
+- type: reaction
+  id: YellowExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    YellowExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: PowerCellSlime
+
+- type: reaction
+  id: YellowExtractBlood
+  impact: Low
+  quantized: true
+  reactants:
+    YellowExtract:
+      amount: 5
+    Blood:
+      amount: 5
+  effects:
+    - !type:EmpReactionEffect
+      rangePerUnit: 0.2
+      maxRange: 3
+      energyConsumption: 6500
+      duration: 7
+
+- type: reaction
+  id: YellowExtractBloodZessuls
+  impact: Low
+  quantized: true
+  reactants:
+    YellowExtract:
+      amount: 5
+    ZessulsBlood:
+      amount: 5
+  effects:
+    - !type:EmpReactionEffect
+      rangePerUnit: 0.2
+      maxRange: 3
+      energyConsumption: 6500
+      duration: 7
+
+- type: reaction
+  id: YellowExtractWater
+  reactants:
+    YellowExtract:
+      amount: 5
+    Water:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SlimeLight
+
+#Purple
+
+- type: reaction
+  id: PurpleExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    PurpleExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  products:
+    Plasma: 10
+
+- type: reaction
+  id: PurpleExtractBlood
+  impact: Low
+  quantized: true
+  reactants:
+    PurpleExtract:
+      amount: 1
+    Blood:
+      amount: 1
+  products:
+    RegenerateJelly: 10
+
+- type: reaction
+  id: PurpleExtractBloodZessuls
+  impact: Low
+  quantized: true
+  reactants:
+    PurpleExtract:
+      amount: 1
+    ZessulsBlood:
+      amount: 1
+  products:
+    RegenerateJelly: 10
+
+#Orange
+
+- type: reaction
+  id: OrangeExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    OrangeExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  products:
+    Toxin: 15
+
+- type: reaction
+  id: OrangeExtractBlood
+  impact: Low
+  quantized: true
+  reactants:
+    OrangeExtract:
+      amount: 5
+    Blood:
+      amount: 5
+  products:
+    CapsaicinOil: 25
+
+- type: reaction
+  id: OrangeExtractBloodZessuls
+  impact: Low
+  quantized: true
+  reactants:
+    OrangeExtract:
+      amount: 5
+    ZessulsBlood:
+      amount: 5
+  products:
+    CapsaicinOil: 25
+
+- type: reaction
+  id: OrangeExtractWater
+  reactants:
+    OrangeExtract:
+      amount: 1
+    Water:
+      amount: 1
+  effects:
+    - !type:AreaReactionEffect
+      duration: 30
+      prototypeId: Smoke
+      sound:
+        path: /Audio/Effects/smoke.ogg
+
+#DarkBlue
+
+#- type: reaction
+#  id: DarkBlueExtractPlasma
+#  impact: Low
+#  quantized: true
+#  reactants:
+#    DarkBlueExtract:
+#      amount: 5
+#    Plasma:
+#      amount: 5
+#  effects:
+#    - !type:CreateEntityReactionEffect
+#      entity: ColdRegenerateSlime
+
+- type: reaction
+  id: DarkBlueExtractBlood
+  impact: Low
+  quantized: true
+  reactants:
+    DarkBlueExtract:
+      amount: 5
+    Blood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: PressureSlimePotion
+
+- type: reaction
+  id: DarkBlueExtractBloodZessuls
+  impact: Low
+  quantized: true
+  reactants:
+    DarkBlueExtract:
+      amount: 5
+    ZessulsBlood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: PressureSlimePotion
+
+- type: reaction
+  id: DarkBlueExtractWater
+  reactants:
+    DarkBlueExtract:
+      amount: 5
+    Water:
+      amount: 5
+  products:
+    Frezon: 25
+
+#Red
+
+- type: reaction
+  id: RedExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    RedExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  products:
+    Stimulants: 3
+
+- type: reaction
+  id: RedExtractBlood
+  impact: Low
+  quantized: true
+  reactants:
+    RedExtract:
+      amount: 5
+    Blood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SpeedSlimePotion
+
+- type: reaction
+  id: RedExtractBloodZessuls
+  impact: Low
+  quantized: true
+  reactants:
+    RedExtract:
+      amount: 5
+    ZessulsBlood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SpeedSlimePotion
+
+- type: reaction
+  id: RedExtractWater
+  reactants:
+    RedExtract:
+      amount: 5
+    Water:
+      amount: 5
+  products:
+    Barozine: 5
+
+# Metall
+
+- type: reaction
+  id: MetallExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    MetallExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SheetPlasteel1
+
+- type: reaction
+  id: MetallExtractBlood
+  impact: Low
+  quantized: true
+  reactants:
+    MetallExtract:
+      amount: 5
+    Blood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SheetSteel1
+    - !type:CreateEntityReactionEffect
+      entity: SheetSteel1
+    - !type:CreateEntityReactionEffect
+      entity: SheetSteel1
+
+- type: reaction
+  id: MetallExtractBloodZessuls
+  impact: Low
+  quantized: true
+  reactants:
+    MetallExtract:
+      amount: 5
+    ZessulsBlood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SheetSteel1
+    - !type:CreateEntityReactionEffect
+      entity: SheetSteel1
+    - !type:CreateEntityReactionEffect
+      entity: SheetSteel1
+
+- type: reaction
+  id: MetallExtractWater
+  reactants:
+    MetallExtract:
+      amount: 5
+    Water:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SheetGlass1
+    - !type:CreateEntityReactionEffect
+      entity: SheetGlass1
+    - !type:CreateEntityReactionEffect
+      entity: SheetGlass1
+    - !type:CreateEntityReactionEffect
+      entity: SheetRGlass1
+
+# DarkPurple
+
+- type: reaction
+  id: DarkPurpleExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    DarkPurpleExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SheetPlasma1
+    - !type:CreateEntityReactionEffect
+      entity: SheetPlasma1
+    - !type:CreateEntityReactionEffect
+      entity: SheetPlasma1
+
+- type: reaction
+  id: DarkPurpleExtractWater
+  reactants:
+    DarkPurpleExtract:
+      amount: 5
+    Water:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: SheetPGlass1
+    - !type:CreateEntityReactionEffect
+      entity: SheetPGlass1
+    - !type:CreateEntityReactionEffect
+      entity: SheetPGlass1
+
+# BlueSpace
+
+# - type: reaction
+#   id: BlueSpaceExtractPlasma
+#   impact: Low
+#   quantized: true
+#   reactants:
+#     BlueSpaceExtract:
+#       amount: 5
+#     Plasma:
+#       amount: 5
+#   effects:
+#     - !type:CreateEntityReactionEffect
+#       entity: BlueSpaceCrystall
+
+# - type: reaction
+#   id: BlueSpaceExtractBlood
+#   impact: Low
+#   quantized: true
+#   reactants:
+#     BlueSpaceExtract:
+#       amount: 5
+#     Blood:
+#       amount: 5
+#   effects:
+#     - !type:CreateEntityReactionEffect
+#       entity: TileBlueSpace
+#     - !type:CreateEntityReactionEffect
+#       entity: TileBlueSpace
+#     - !type:CreateEntityReactionEffect
+#       entity: TileBlueSpace
+#     - !type:CreateEntityReactionEffect
+#       entity: TileBlueSpace
+# пока не узнаю че за плитки и кристалл
+
+# Silver
+
+- type: reaction
+  id: SilverExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    SilverExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: RandomFood
+
+- type: reaction
+  id: SilverExtractWater
+  reactants:
+    SilverExtract:
+      amount: 5
+    Water:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: RandomWater
+
+# Pyrit
+
+- type: reaction
+  id: PyritExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    PyritExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: RandomCrayon
+
+- type: reaction
+  id: PyritExtractWater
+  reactants:
+    PyritExtract:
+      amount: 5
+    Water:
+      amount: 5
+  products:
+    Arithrazine: 15
+
+# Gold
+
+- type: reaction
+  id: GoldExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    GoldExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: RandomAnimalAgress
+
+- type: reaction
+  id: GoldExtractBlood
+  impact: Low
+  quantized: true
+  reactants:
+    GoldExtract:
+      amount: 5
+    Blood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: RandomAnimalNeut
+
+- type: reaction
+  id: GoldExtractBloodZessuls
+  impact: Low
+  quantized: true
+  reactants:
+    GoldExtract:
+      amount: 5
+    ZessulsBlood:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: RandomAnimalNeut
+
+- type: reaction
+  id: GoldExtractWater
+  reactants:
+    GoldExtract:
+      amount: 5
+    Water:
+      amount: 5
+  effects:
+    - !type:CreateEntityReactionEffect
+      entity: RandomAnimalFriend
+
+# Oil
+
+- type: reaction
+  id: OilExtractPlasma
+  impact: Low
+  quantized: true
+  reactants:
+    OilExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  effects:
+    - !type:ExplosionReactionEffect
+      explosionType: Default
+      maxIntensity: 100
+      intensityPerUnit: 10 # 50+50 reagent for maximum explosion
+      intensitySlope: 4
+      maxTotalIntensity: 100
+
+# LightPink
+- type: reaction
+  id: LightPinkExtractPlasma
+  reactants:
+    LightPinkExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  products:
+    Cognizine: 10
+
+# Black
+- type: reaction
+  id: BlackExtractWater
+  reactants:
+    BlackExtract:
+      amount: 5
+    Water:
+      amount: 5
+  products:
+    Sigynate: 15
+
+# Adamantite
+- type: reaction
+  id: AdamantiteExtractWater
+  reactants:
+    AdamantiteExtract:
+      amount: 5
+    Water:
+      amount: 5
+  products:
+    Puncturase: 15
+
+- type: reaction
+  id: AdamantiteExtractPlasma
+  reactants:
+    AdamantiteExtract:
+      amount: 5
+    Plasma:
+      amount: 5
+  products:
+    Bruizine: 15
+
+- type: reaction
+  id: AdamantiteExtractBlood
+  reactants:
+    AdamantiteExtract:
+      amount: 5
+    Blood:
+      amount: 5
+  products:
+    Lacerinol: 15
+
+- type: reaction
+  id: AdamantiteExtractBloodZessuls
+  reactants:
+    AdamantiteExtract:
+      amount: 5
+    ZessulsBlood:
+      amount: 5
+  products:
+    Lacerinol: 15

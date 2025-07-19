@@ -7,11 +7,11 @@
   components:
   - type: Sprite
     drawdepth: Mobs
-    sprite: Mobs/Aliens/slimes.rsi
+    sprite: _Horizon/Mobs/Aliens/slimes.rsi # Horizon
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base" ]
       state: blue_adult_slime
-  - type: Carriable #DeltaV 
+  - type: Carriable #DeltaV
   - type: Fixtures
     fixtures:
       fix1:
@@ -85,7 +85,7 @@
         scaleByQuantity: true
         damage:
           types:
-            Heat: 0.15
+            Heat: 4 # Horizon
       - !type:PopupMessage
         type: Local
         messages: [ "slime-hurt-by-water-popup" ]
@@ -146,7 +146,7 @@
       Unsexed: AnimalSlime # Imp
   - type: NpcFactionMember
     factions:
-    - SimpleNeutral
+    - XenobioSlime # Horizon
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
@@ -162,6 +162,16 @@
         Base: blue_adult_slime
       Dead:
         Base: blue_adult_slime_dead
+  # Horizon start
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSlime
+      amount: 1
+    - id: BlueSlimeExtract
+      amount: 1
+  - type: XenoBiology
+    mutagen: MobAdultSlimesDarkBlue
+  # Horizon end
 
 - type: entity
   name: blue slime
@@ -172,7 +182,10 @@
     - type: NpcFactionMember
       factions:
         - SimpleHostile
+    - type: GhostTakeoverAvailable # Horizon
     - type: GhostRole
+      makeSentient: true # Horizon
+      name: ghost-role-information-slimes-name # Horizon
       description: ghost-role-information-angry-slimes-description
       rules: ghost-role-information-angry-slimes-rules
       mindRoles:
@@ -195,6 +208,16 @@
           Base: green_adult_slime
         Dead:
           Base: green_adult_slime_dead
+  # Horizon start
+    - type: Butcherable
+      spawned:
+      - id: FoodMeatSlime
+        amount: 1
+      - id: GreenSlimeExtract
+        amount: 1
+    - type: XenoBiology
+      mutagen: MobAdultSlimesGreen
+  # Horizon end
     - type: MeleeWeapon
       damage:
         types:
@@ -212,7 +235,10 @@
     - type: NpcFactionMember
       factions:
         - SimpleHostile
+    - type: GhostTakeoverAvailable # Horizon
     - type: GhostRole
+      makeSentient: true # Horizon
+      name: ghost-role-information-slimes-name # Horizon
       description: ghost-role-information-angry-slimes-description
       rules: ghost-role-information-angry-slimes-rules
       mindRoles:
@@ -235,6 +261,16 @@
           Base: yellow_adult_slime
         Dead:
           Base: yellow_adult_slime_dead
+  # Horizon start
+    - type: Butcherable
+      spawned:
+      - id: FoodMeatSlime
+        amount: 1
+      - id: YellowSlimeExtract
+        amount: 1
+    - type: XenoBiology
+      mutagen: MobAdultSlimesYellow
+  # Horizon end
     - type: MeleeWeapon
       damage:
         types:
@@ -253,6 +289,8 @@
       factions:
         - SimpleHostile
     - type: GhostRole
+      makeSentient: true # Horizon
+      name: ghost-role-information-slimes-name # Horizon
       description: ghost-role-information-angry-slimes-description
       rules: ghost-role-information-angry-slimes-rules
       mindRoles:
