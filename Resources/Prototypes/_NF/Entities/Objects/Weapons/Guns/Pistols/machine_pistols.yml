@@ -38,6 +38,7 @@
     offsets:
       rmc-aslot-underbarrel: 0.17, -0.014
       rmc-aslot-barrel: 0.84375, 0.125
+  - type: DualWield #2hands
   # Horizon Attachments end
 
 - type: entity
@@ -67,6 +68,7 @@
     offsets:
       rmc-aslot-underbarrel: 0.17, -0.01
       rmc-aslot-barrel: 0.84375, 0.12
+  - type: DualWield #2hands
   # Horizon Attachments end
 
 #region DeltaV
@@ -96,6 +98,7 @@
     offsets:
       rmc-aslot-underbarrel: 0.17, -0.014
       rmc-aslot-barrel: 0.84375, 0.125
+  - type: DualWield #2Hands
   # Horizon Attachments end
 
 - type: entity

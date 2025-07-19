@@ -107,7 +107,7 @@
     attackRate: 1
     damage:
       types:
-        Piercing: 4
+        Piercing: 10
     angle: 0
     animation: WeaponArcThrust
     soundHit:

@@ -10,6 +10,7 @@
     sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponRevolverWard45
@@ -25,6 +26,7 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponRevolverDeckard
@@ -51,6 +53,7 @@
     magState: mag
     steps: 4
     zeroVisible: true
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponRevolverRitland45
@@ -63,6 +66,7 @@
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Revolvers/python.rsi
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponRevolverPirate
@@ -75,6 +79,7 @@
     sprite: Objects/Weapons/Guns/Revolvers/pirate_revolver.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Revolvers/pirate_revolver.rsi
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponPistolFlintlock
@@ -109,6 +114,7 @@
     sprite: _DV/Objects/Weapons/Guns/Revolvers/fitz.rsi
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/Revolvers/fitz.rsi
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponRevolverFaith
@@ -137,6 +143,7 @@
     sprite: _DV/Objects/Weapons/Guns/Revolvers/lucky.rsi
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/Revolvers/lucky.rsi
+  - type: DualWield #2hands
 
 #region Frontier
 - type: entity
@@ -153,6 +160,7 @@
     sprite: _NF/Objects/Weapons/Guns/Revolvers/argenti.rsi
   - type: StaticPrice
     price: 200
+  - type: DualWield #2hands
 
 # Frontier: Rubber
 - type: entity
