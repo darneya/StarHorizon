@@ -152,6 +152,7 @@
     capacity: 2
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-custom-made
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponShotgunSawnEmpty

@@ -9,7 +9,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 8
+        Heat: 10
 
 # Assault Rifles / Carbines
 - type: entity
@@ -50,7 +50,7 @@
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:
       types:
-        Heat: 14
+        Heat: 15
 
 #region Disabler bolts
 - type: entity
@@ -83,7 +83,7 @@
       collection: WeakHit
     forceSound: true
   - type: StaminaDamageOnCollide
-    damage: 18
+    damage: 20
 
 - type: entity
   id: NFBulletDisablerLow
