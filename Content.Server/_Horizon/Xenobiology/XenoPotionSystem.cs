@@ -1,12 +1,13 @@
 // Maded by Gorox. Discord - smeshinka112
+
+using Content.Server.Atmos.Components;
 using Content.Shared._Horizon.XenoPotion.Components;
 using Content.Shared._Horizon.XenoPotionEffected.Components;
-using Content.Server.Atmos.Components;
+using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Interaction;
-using Content.Shared.Clothing;
 
-namespace Content.Server._Horizon.XenoPotion;
+namespace Content.Server._Horizon.Xenobiology;
 
 public sealed class XenoPotionSystem : EntitySystem
 {
@@ -19,52 +20,33 @@ public sealed class XenoPotionSystem : EntitySystem
 
     private void OnAfterInteract(EntityUid uid, XenoPotionComponent component, ref AfterInteractEvent args)
     {
-        if (args.Handled)
+        if (args.Handled ||
+            args.Target == null ||
+            !TryComp<XenoPotionEffectedComponent>(uid, out var potionEffected))
             return;
 
-        if (args.Target != null && component.Effect == "Speed" && !EntityManager.HasComponent<XenoPotionEffectedComponent>(args.Target.Value))
+        var target = args.Target.Value;
+        var name = MetaData(args.Target.Value).EntityName;
+
+        if (!TryComp<PressureProtectionComponent>(target, out var pressureComp) ||
+            !HasComp<ClothingComponent>(target))
+            return;
+
+        switch (component.Effect)
         {
-            if (args.Target != null && TryComp<ClothingSpeedModifierComponent>(args.Target.Value, out var speedComp))
-            {
-                var meta = MetaData(args.Target.Value);
-                var name = meta.EntityName;
+            case "Speed":
+                _metaData.SetEntityName(target, Loc.GetString("potion-speed-name-prefix", ("target", name)));
+                potionEffected.Color = component.Color;
+                break;
 
-                if (speedComp.SprintModifier > 1.0)
-                    return;
-
-                EnsureComp<XenoPotionEffectedComponent>(args.Target.Value, out XenoPotionEffectedComponent? color);
-
-                _metaData.SetEntityName(args.Target.Value, Loc.GetString("potion-speed-name-prefix", ("target", name)));
-
-                EntityManager.RemoveComponent<ClothingSpeedModifierComponent>(args.Target.Value);
-
-                color.Color = component.Color;
-
-                EntityManager.DeleteEntity(args.Used);
-            }
-        }
-
-        else if (args.Target != null && component.Effect == "Pressure" && !EntityManager.HasComponent<XenoPotionEffectedComponent>(args.Target.Value))
-        {
-            if (args.Target != null && !EntityManager.HasComponent<PressureProtectionComponent>(args.Target.Value) && EntityManager.HasComponent<ClothingComponent>(args.Target.Value))
-            {
-                var meta = MetaData(args.Target.Value);
-                var name = meta.EntityName;
-
-                EnsureComp<XenoPotionEffectedComponent>(args.Target.Value, out XenoPotionEffectedComponent? color);
-
+            case "Pressure":
                 _metaData.SetEntityName(args.Target.Value, Loc.GetString("potion-pressure-name-prefix", ("target", name)));
-
-                EnsureComp<PressureProtectionComponent>(args.Target.Value, out PressureProtectionComponent pressure);
-
-                color.Color = component.Color;
-
-                pressure.LowPressureMultiplier = 1000f;
-
-                EntityManager.DeleteEntity(args.Used);
-            }
+                potionEffected.Color = component.Color;
+                pressureComp.LowPressureMultiplier = 1000f;
+                break;
         }
 
+        EntityManager.DeleteEntity(args.Used);
         args.Handled = true;
     }
 }

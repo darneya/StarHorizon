@@ -1,90 +1,89 @@
 // Maded by Gorox. Discord - smeshinka112
-using Content.Server._Horizon.XenoBiology.Components;
-using Content.Server._Horizon.XenoFood.Components;
+
 using Content.Server.Polymorph.Systems;
-using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Weapons.Melee.Events;
+using Robust.Shared.Map;
 using Robust.Shared.Random;
 
-namespace Content.Server._Horizon.XenoBiology.Systems;
+namespace Content.Server._Horizon.Xenobiology;
 
 public sealed class XenoBiologySystem : EntitySystem
 {
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly IRobustRandom _robustRandom = default!;
-    [Dependency] private readonly PolymorphSystem _polymorph = default!;
+    [Dependency] private readonly MobStateSystem _mobState = null!;
+    [Dependency] private readonly IRobustRandom _robustRandom = null!;
+    [Dependency] private readonly PolymorphSystem _polymorph = null!;
 
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<XenoBiologyComponent, ComponentAdd>(OnComponentAdd);
+        SubscribeLocalEvent<XenoBiologyComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<XenoBiologyComponent, MeleeHitEvent>(OnSlimeAttack);
+    }
+
+    private void OnComponentAdd(Entity<XenoBiologyComponent> entity, ref ComponentAdd args)
+    {
+        entity.Comp.CurrentSpecies = MetaData(entity.Owner).EntityPrototype?.ID;
+        CheckPointForSplit(entity.Owner, entity.Comp);
+    }
+
+    private void OnComponentInit(Entity<XenoBiologyComponent> entity, ref ComponentInit args)
+    {
+        entity.Comp.CurrentSpecies = MetaData(entity.Owner).EntityPrototype?.ID;
+        CheckPointForSplit(entity.Owner, entity.Comp);
     }
 
     private void OnSlimeAttack(EntityUid uid, XenoBiologyComponent component, ref MeleeHitEvent args)
     {
         foreach (var hitEntity in args.HitEntities)
         {
-            if (EntityManager.HasComponent<XenoFoodComponent>(hitEntity))
-            {
-                if (_mobState.IsIncapacitated(hitEntity))
-                    return;
+            if (!HasComp<XenoFoodComponent>(hitEntity))
+                continue;
 
-                component.Points += component.PointsPerAttack;
-                break;
-            }
+            if (_mobState.IsIncapacitated(hitEntity))
+                continue;
+
+            component.Points += component.PointsPerAttack;
+            break;
         }
+        CheckPointForSplit(uid, component);
     }
 
-    public override void Update(float frameTime)
+    private void CheckPointForSplit(EntityUid uid, XenoBiologyComponent component)
     {
-        var xenoQuery = EntityQueryEnumerator<XenoBiologyComponent, TransformComponent>();
-        while (xenoQuery.MoveNext(out var uid, out var component, out _))
+        if (component.CurrentSpecies is null) // Мы не знаем что делить.
+            return;
+
+        if (component.Points < component.TargetToSplitPoints)
+            return;
+
+        if (TryComp<MindContainerComponent>(uid, out var mind) && mind.HasMind)
         {
-            var prototype = MetaData(uid).EntityPrototype?.ID;
+            _polymorph.PolymorphEntity(uid, component.PolymorphEntity); // Превращаем слайма в человика.
+            return;
+        }
 
-            if (component.Points >= component.PointsThreshold)
+        TrySplitOrMutate(uid, component, Transform(uid).Coordinates);
+    }
+
+    public void TrySplitOrMutate(EntityUid uid, XenoBiologyComponent component, EntityCoordinates coordinates)
+    {
+        if (_robustRandom.Prob(component.MutationChance))
+        {
+            Spawn(component.MutationEntity, coordinates);
+            component.Points = 0;
+        }
+        else
+        {
+            if (_robustRandom.Prob(component.SplitChance))
             {
-                if (TryComp<MindContainerComponent>(uid, out var mindContainer) && mindContainer.HasMind)
-                {
-                    _polymorph.PolymorphEntity(uid, component.OnMind);
-                }
-
-                if (_robustRandom.Prob(component.Mutationchance))
-                {
-                    Spawn(component.Mutagen, Transform(uid).Coordinates);
-                }
-                else
-                {
-                    Spawn(prototype, Transform(uid).Coordinates);
-                }
-
-                if (_robustRandom.Prob(component.Mutationchance))
-                {
-                    Spawn(component.Mutagen, Transform(uid).Coordinates);
-                }
-                else
-                {
-                    Spawn(prototype, Transform(uid).Coordinates);
-                }
-
-                if (_robustRandom.Prob(component.Mutationchance))
-                {
-                    Spawn(component.Mutagen, Transform(uid).Coordinates);
-                }
-                else
-                {
-                    Spawn(prototype, Transform(uid).Coordinates);
-                }
-
-                EntityManager.DeleteEntity(uid);
-                return;
+                Spawn(component.CurrentSpecies, coordinates);
+                component.Points = 0;
             }
-
-            else if (component.Points > 0 && _robustRandom.Prob(0.001f))
-            {
-                component.Points -= 1;
-            }
+            else
+                component.Points -= component.PointLoss;
         }
     }
 }

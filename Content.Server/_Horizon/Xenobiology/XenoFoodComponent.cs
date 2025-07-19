@@ -1,5 +1,5 @@
 // Maded by Gorox. Discord - smeshinka112
-namespace Content.Server._Horizon.XenoFood.Components;
+namespace Content.Server._Horizon.Xenobiology;
 
 [RegisterComponent]
-public sealed partial class XenoFoodComponent : Component { }
+public sealed partial class XenoFoodComponent : Component;
