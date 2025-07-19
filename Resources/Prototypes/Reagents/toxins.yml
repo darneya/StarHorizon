@@ -338,7 +338,7 @@
         damage:
           groups:
             Airloss: 10
-  pricePerUnit: 10 # Horizon
+  pricePerUnit: 50 # Horizon
 
 - type: reagent
   id: MindbreakerToxin

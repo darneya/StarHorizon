@@ -311,4 +311,4 @@
         damage:
           types:
             Caustic: 1
-  pricePerUnit: 5 # Horizon
+  pricePerUnit: 3 # Horizon

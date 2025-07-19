@@ -657,7 +657,7 @@
           conditions:
             - !type:ReagentThreshold
               min: 10
-  pricePerUnit: 10 # Horizon
+  pricePerUnit: 30 # Horizon
 
 - type: reagent
   id: AmbuzolPlus
@@ -675,7 +675,7 @@
           conditions:
             - !type:ReagentThreshold
               min: 5
-  pricePerUnit: 15 # Horizon
+  pricePerUnit: 50 # Horizon
 
 - type: reagent
   id: PulpedBananaPeel
