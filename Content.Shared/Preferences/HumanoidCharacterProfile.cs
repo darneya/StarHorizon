@@ -27,7 +27,7 @@ namespace Content.Shared.Preferences
     [Serializable, NetSerializable]
     public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
-        private static readonly Regex RestrictedNameRegex = new(@"[^A-Z,a-z,А-Я,а-я,0-9, -]"); // Horizon
+        private static readonly Regex RestrictedNameRegex = new(@"[^A-Z,a-z,А-Я,а-я,0-9, -, ']"); // Horizon
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
 
         public const int MaxNameLength = 32;
@@ -566,7 +566,7 @@ namespace Content.Shared.Preferences
 
             if (configManager.GetCVar(CCVars.RestrictedNames))
             {
-                name = Regex.Replace(name, @"[^A-Z,a-z,А-Я,а-я,0-9, -]", string.Empty); // Horizon
+                name = Regex.Replace(name, @"[^A-Z,a-z,А-Я,а-я,0-9, -, ']", string.Empty); // Horizon
                 /*
                  * 0041-005A  Basic Latin: Uppercase Latin Alphabet
                  * 0061-007A  Basic Latin: Lowercase Latin Alphabet
