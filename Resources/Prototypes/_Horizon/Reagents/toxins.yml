@@ -37,6 +37,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.25
+  pricePerUnit: 4
 
 - type: reagent
   id: XenoidAcidH
@@ -77,6 +78,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.25
+  pricePerUnit: 4
 
 - type: reagent
   id: XenoidAcidK
@@ -117,6 +119,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.25
+  pricePerUnit: 4
 
 - type: reagent
   id: ExtractW
@@ -146,6 +149,7 @@
           damage:
             types:
               Cellular: 0.01
+  pricePerUnit: 5
 
 - type: reagent
   id: ExtractH
@@ -175,6 +179,7 @@
         damage:
           types:
             Cellular: 0.02
+  pricePerUnit: 7
 
 - type: reagent
   id: ExtractK
@@ -204,3 +209,4 @@
         damage:
           types:
             Cellular: 0.03
+  pricePerUnit: 9

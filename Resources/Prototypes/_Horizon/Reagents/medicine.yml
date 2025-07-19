@@ -92,6 +92,7 @@
         damage:
           types:
             Caustic: 2.0
+  pricePerUnit: 11
 
 - type: reagent
   id: Serenitol
@@ -135,6 +136,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 6
 
 - type: reagent
   id: Neurozenium
@@ -200,6 +202,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 8
 
 - type: reagent
   id: Blissifylovene
@@ -344,7 +347,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
-
+  pricePerUnit: 12
 
 - type: reagent
   id: Calmafluxine
@@ -383,6 +386,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 8
 
 - type: reagent
   id: Tranquinase
@@ -468,6 +472,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 9
 
 - type: reagent
   id: Equilibrazine
@@ -544,6 +549,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 10
 
 - type: reagent
   id: Addictine
@@ -650,6 +656,7 @@
         - !type:ReagentThreshold
           reagent: Desoxyephedrine
           max: 0.01
+  pricePerUnit: 9
 
 - type: reagent
   id: Stubantazine
@@ -703,6 +710,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.2
+  pricePerUnit: 7
 
 - type: reagent
   id: Soretizone
@@ -770,6 +778,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 9
 
 - type: reagent
   id: Agonolexyne
@@ -851,3 +860,4 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 11

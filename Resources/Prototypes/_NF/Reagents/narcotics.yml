@@ -52,6 +52,7 @@
         - !type:OrganType
           type: Dwarf
           shouldHave: true
+  pricePerUnit: 3 # Horizon
 
 - type: reagent
   id: ShroomMix
@@ -155,3 +156,4 @@
         - !type:OrganType
           type: Goblin
           shouldHave: false
+  pricePerUnit: 4 # Horizon
