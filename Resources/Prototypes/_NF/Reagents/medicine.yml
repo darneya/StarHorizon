@@ -19,6 +19,7 @@
             Blunt: -2
             Piercing: -2
             Slash: -2
+  pricePerUnit: 22 # Horizon
 
 - type: reagent
   id: Stelloxadone
@@ -43,4 +44,4 @@
             Cellular: 1
           groups:
             Brute: 3
-          
+  pricePerUnit: 20.5 # Horizon

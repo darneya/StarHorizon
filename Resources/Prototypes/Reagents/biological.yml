@@ -184,6 +184,7 @@
     collection: FootstepBlood
     params:
       volume: 6
+  pricePerUnit: 60 # Horizon
 
 - type: reagent
   id: Fat
