@@ -25,10 +25,10 @@ public sealed partial class XenoBiologyComponent : Component
 
     /// Шанс мутации при делении
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MutationChance = 0.3f;
+    public float MutationChance = 0.4f;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float SplitChance = 0.2f;
+    public float SplitChance = 0.1f;
 
     /// Прототип при удачной мутации
     [DataField("mutagen", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
