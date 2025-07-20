@@ -83,7 +83,7 @@
     deleteOnCollide: false
     damage:
       types:
-        Heat: 30
+        Heat: 20
         Structural: 20
   - type: TimedDespawn
     lifetime: 0.1
@@ -99,7 +99,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 60
+        Blunt: 40
         Structural: 40
   - type: GatheringProjectile
     amount: 40
@@ -116,7 +116,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 15
+        Blunt: 10
         Structural: 10
 
 - type: entity
@@ -129,7 +129,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 15
+        Blunt: 10
         Structural: 20
   - type: TimedDespawn
     lifetime: 0.9 # Horizon
@@ -155,7 +155,7 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 15
+        Blunt: 10
         Structural: 20
   - type: TimedDespawn
     lifetime: 0.07 # Horizon

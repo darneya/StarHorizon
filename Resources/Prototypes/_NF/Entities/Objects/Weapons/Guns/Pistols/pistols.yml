@@ -29,6 +29,7 @@
       rmc-aslot-underbarrel: 0.17, -0.014
       rmc-aslot-barrel: 0.84375, 0.125
     # Horizon Attachments end
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponPistolN1984
@@ -57,6 +58,7 @@
     offsets:
       rmc-aslot-underbarrel: 0.3, 0.0
       rmc-aslot-barrel: 0.70375, 0.125
+  - type: DualWield #2hands
   # Horizon Attachments end
 
 - type: entity
@@ -123,7 +125,7 @@
     offsets:
       rmc-aslot-underbarrel: 0.25, 0.01
       rmc-aslot-barrel: 1.0, 0.125
-  # Horizon Attachments end
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponPistolUniversalNfsd
