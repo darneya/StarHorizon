@@ -15,8 +15,6 @@
           Quantity: 5
   - type: Item
     size: Small
-  - type: StaticPrice
-    price: 250
 
 - type: entity
   parent: BaseSlimeExtract
@@ -35,25 +33,8 @@
           Quantity: 5
   - type: ResearchDisk
     points: 100
-
-- type: entity
-  parent: BaseSlimeExtract
-  id: GreenSlimeExtract
-  name: green slime extract
-  description: Slime extract.
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
-    state: extract
-    color: "#00FF00"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: GreenExtract
-          Quantity: 5
-  - type: ResearchDisk
-    points: 300
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   parent: BaseSlimeExtract
@@ -73,25 +54,8 @@
           Quantity: 5
   - type: ResearchDisk
     points: 200
-
-- type: entity
-  parent: BaseSlimeExtract
-  id: YellowSlimeExtract
-  name: yellow slime extract
-  description: Slime extract.
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
-    state: extract
-    color: "#FFFF00"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: YellowExtract
-          Quantity: 5
-  - type: ResearchDisk
-    points: 300
+  - type: StaticPrice
+    price: 200
 
 - type: entity
   parent: BaseSlimeExtract
@@ -111,6 +75,8 @@
           Quantity: 5
   - type: ResearchDisk
     points: 200
+  - type: StaticPrice
+    price: 200
 
 - type: entity
   parent: BaseSlimeExtract
@@ -130,6 +96,71 @@
           Quantity: 5
   - type: ResearchDisk
     points: 200
+  - type: StaticPrice
+    price: 200
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: MetallSlimeExtract
+  name: металлический экстракт слайма
+  description: Экстракт слайма.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
+    state: extract
+    color: "#6d758d"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: MetallExtract
+          Quantity: 5
+  - type: ResearchDisk
+    points: 200
+  - type: StaticPrice
+    price: 200
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: GreenSlimeExtract
+  name: green slime extract
+  description: Slime extract.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
+    state: extract
+    color: "#00FF00"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: GreenExtract
+          Quantity: 5
+  - type: ResearchDisk
+    points: 300
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: YellowSlimeExtract
+  name: yellow slime extract
+  description: Slime extract.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
+    state: extract
+    color: "#FFFF00"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: YellowExtract
+          Quantity: 5
+  - type: ResearchDisk
+    points: 300
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   parent: BaseSlimeExtract
@@ -149,6 +180,8 @@
           Quantity: 5
   - type: ResearchDisk
     points: 300
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   parent: BaseSlimeExtract
@@ -168,44 +201,8 @@
           Quantity: 5
   - type: ResearchDisk
     points: 300
-
-- type: entity
-  parent: BaseSlimeExtract
-  id: BlueSpaceSlimeExtract
-  name: блюспейс экстракт слайма
-  description: Экстракт слайма.
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
-    state: extract
-    color: "#FFFFFF"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: BlueSpaceExtract
-          Quantity: 5
-  - type: ResearchDisk
-    points: 500
-
-- type: entity
-  parent: BaseSlimeExtract
-  id: OilSlimeExtract
-  name: нефтяной экстракт слайма
-  description: Экстракт слайма.
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
-    state: extract
-    color: "#242234"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: OilExtract
-          Quantity: 5
-  - type: ResearchDisk
-    points: 100
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   parent: BaseSlimeExtract
@@ -225,44 +222,8 @@
           Quantity: 5
   - type: ResearchDisk
     points: 300
-
-- type: entity
-  parent: BaseSlimeExtract
-  id: AdamantiteSlimeExtract
-  name: адамантитовый экстракт слайма
-  description: Экстракт слайма.
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
-    state: extract
-    color: "#92dcba"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: AdamantiteExtract
-          Quantity: 5
-  - type: ResearchDisk
-    points: 500
-
-- type: entity
-  parent: BaseSlimeExtract
-  id: SepiaSlimeExtract
-  name: сепиа экстракт слайма
-  description: Экстракт слайма.
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
-    state: extract
-    color: "#c7b08b"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: SepiaExtract
-          Quantity: 5
-  - type: ResearchDisk
-    points: 500
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   parent: BaseSlimeExtract
@@ -282,44 +243,8 @@
           Quantity: 5
   - type: ResearchDisk
     points: 300
-
-- type: entity
-  parent: BaseSlimeExtract
-  id: MetallSlimeExtract
-  name: металлический экстракт слайма
-  description: Экстракт слайма.
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
-    state: extract
-    color: "#6d758d"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: MetallExtract
-          Quantity: 5
-  - type: ResearchDisk
-    points: 300
-
-- type: entity
-  parent: BaseSlimeExtract
-  id: PyriteSlimeExtract
-  name: пиритовый экстракт слайма
-  description: Экстракт слайма.
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
-    state: extract
-    color: "#ffd541"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: PyritExtract
-          Quantity: 5
-  - type: ResearchDisk
-    points: 500
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   parent: BaseSlimeExtract
@@ -339,44 +264,8 @@
           Quantity: 5
   - type: ResearchDisk
     points: 300
-
-- type: entity
-  parent: BaseSlimeExtract
-  id: BlackSlimeExtract
-  name: чёрный экстракт слайма
-  description: Экстракт слайма.
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
-    state: extract
-    color: "#333941"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: BlackExtract
-          Quantity: 5
-  - type: ResearchDisk
-    points: 500
-
-- type: entity
-  parent: BaseSlimeExtract
-  id: LightPinkSlimeExtract
-  name: светло-розовый экстракт слайма
-  description: Экстракт слайма.
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
-    state: extract
-    color: "#e9b5a3"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: LightPinkExtract
-          Quantity: 5
-  - type: ResearchDisk
-    points: 500
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   parent: BaseSlimeExtract
@@ -396,6 +285,8 @@
           Quantity: 5
   - type: ResearchDisk
     points: 300
+  - type: StaticPrice
+    price: 300
 
 - type: entity
   parent: BaseSlimeExtract
@@ -415,3 +306,152 @@
           Quantity: 5
   - type: ResearchDisk
     points: 500
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: LightPinkSlimeExtract
+  name: светло-розовый экстракт слайма
+  description: Экстракт слайма.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
+    state: extract
+    color: "#e9b5a3"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: LightPinkExtract
+          Quantity: 5
+  - type: ResearchDisk
+    points: 500
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: BlackSlimeExtract
+  name: чёрный экстракт слайма
+  description: Экстракт слайма.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
+    state: extract
+    color: "#333941"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: BlackExtract
+          Quantity: 5
+  - type: ResearchDisk
+    points: 500
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: PyriteSlimeExtract
+  name: пиритовый экстракт слайма
+  description: Экстракт слайма.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
+    state: extract
+    color: "#ffd541"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: PyritExtract
+          Quantity: 5
+  - type: ResearchDisk
+    points: 500
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: SepiaSlimeExtract
+  name: сепиа экстракт слайма
+  description: Экстракт слайма.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
+    state: extract
+    color: "#c7b08b"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: SepiaExtract
+          Quantity: 5
+  - type: ResearchDisk
+    points: 500
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: AdamantiteSlimeExtract
+  name: адамантитовый экстракт слайма
+  description: Экстракт слайма.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
+    state: extract
+    color: "#92dcba"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: AdamantiteExtract
+          Quantity: 5
+  - type: ResearchDisk
+    points: 500
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: BlueSpaceSlimeExtract
+  name: блюспейс экстракт слайма
+  description: Экстракт слайма.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
+    state: extract
+    color: "#FFFFFF"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: BlueSpaceExtract
+          Quantity: 5
+  - type: ResearchDisk
+    points: 500
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseSlimeExtract
+  id: OilSlimeExtract
+  name: нефтяной экстракт слайма
+  description: Экстракт слайма.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Xenobiology/extract.rsi
+    state: extract
+    color: "#242234"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: OilExtract
+          Quantity: 5
+  - type: ResearchDisk
+    points: 500
+  - type: StaticPrice
+    price: 500
