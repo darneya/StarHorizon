@@ -31,23 +31,6 @@
       entity: MonkeyCube
 
 - type: reaction
-  id: GreyExtractBloodZessuls
-  impact: Low
-  quantized: true
-  reactants:
-    GreyExtract:
-      amount: 5
-    ZessulsBlood:
-      amount: 5
-  effects:
-    - !type:CreateEntityReactionEffect
-      entity: MonkeyCube
-    - !type:CreateEntityReactionEffect
-      entity: MonkeyCube
-    - !type:CreateEntityReactionEffect
-      entity: MonkeyCube
-
-- type: reaction
   id: GreyExtractWater
   reactants:
     GreyExtract:
@@ -70,11 +53,7 @@
       amount: 5
   effects:
     - !type:CreateEntityReactionEffect
-      entity: SheetUranium1
-    - !type:CreateEntityReactionEffect
-      entity: SheetUranium1
-    - !type:CreateEntityReactionEffect
-      entity: SheetUranium1
+      entity: SheetUranium10
 
 - type: reaction
   id: GreenExtractBlood
@@ -84,18 +63,6 @@
     GreenExtract:
       amount: 5
     Blood:
-      amount: 5
-  products:
-    Tritium: 10
-
-- type: reaction
-  id: GreenExtractBloodZessuls
-  impact: Low
-  quantized: true
-  reactants:
-    GreenExtract:
-      amount: 5
-    ZessulsBlood:
       amount: 5
   products:
     Tritium: 10
@@ -135,20 +102,7 @@
       amount: 5
   effects:
     - !type:CreateEntityReactionEffect
-      entity: StabilizerSlimePotion
-
-- type: reaction
-  id: BlueExtractBloodZessuls
-  impact: Low
-  quantized: true
-  reactants:
-    BlueExtract:
-      amount: 5
-    ZessulsBlood:
-      amount: 5
-  effects:
-    - !type:CreateEntityReactionEffect
-      entity: StabilizerSlimePotion
+      entity: SpeedSlimePotion
 
 - type: reaction
   id: BlueExtractWater
@@ -197,22 +151,6 @@
       duration: 7
 
 - type: reaction
-  id: YellowExtractBloodZessuls
-  impact: Low
-  quantized: true
-  reactants:
-    YellowExtract:
-      amount: 5
-    ZessulsBlood:
-      amount: 5
-  effects:
-    - !type:EmpReactionEffect
-      rangePerUnit: 0.2
-      maxRange: 3
-      energyConsumption: 6500
-      duration: 7
-
-- type: reaction
   id: YellowExtractWater
   reactants:
     YellowExtract:
@@ -235,7 +173,7 @@
     Plasma:
       amount: 5
   products:
-    Plasma: 10
+    Plasma: 20
 
 - type: reaction
   id: PurpleExtractBlood
@@ -247,19 +185,7 @@
     Blood:
       amount: 1
   products:
-    RegenerateJelly: 10
-
-- type: reaction
-  id: PurpleExtractBloodZessuls
-  impact: Low
-  quantized: true
-  reactants:
-    PurpleExtract:
-      amount: 1
-    ZessulsBlood:
-      amount: 1
-  products:
-    RegenerateJelly: 10
+    RegenerateJelly: 20
 
 #Orange
 
@@ -273,7 +199,7 @@
     Plasma:
       amount: 5
   products:
-    Toxin: 15
+    Toxin: 20
 
 - type: reaction
   id: OrangeExtractBlood
@@ -285,19 +211,7 @@
     Blood:
       amount: 5
   products:
-    CapsaicinOil: 25
-
-- type: reaction
-  id: OrangeExtractBloodZessuls
-  impact: Low
-  quantized: true
-  reactants:
-    OrangeExtract:
-      amount: 5
-    ZessulsBlood:
-      amount: 5
-  products:
-    CapsaicinOil: 25
+    CapsaicinOil: 20
 
 - type: reaction
   id: OrangeExtractWater
@@ -315,19 +229,6 @@
 
 #DarkBlue
 
-#- type: reaction
-#  id: DarkBlueExtractPlasma
-#  impact: Low
-#  quantized: true
-#  reactants:
-#    DarkBlueExtract:
-#      amount: 5
-#    Plasma:
-#      amount: 5
-#  effects:
-#    - !type:CreateEntityReactionEffect
-#      entity: ColdRegenerateSlime
-
 - type: reaction
   id: DarkBlueExtractBlood
   impact: Low
@@ -336,19 +237,6 @@
     DarkBlueExtract:
       amount: 5
     Blood:
-      amount: 5
-  effects:
-    - !type:CreateEntityReactionEffect
-      entity: PressureSlimePotion
-
-- type: reaction
-  id: DarkBlueExtractBloodZessuls
-  impact: Low
-  quantized: true
-  reactants:
-    DarkBlueExtract:
-      amount: 5
-    ZessulsBlood:
       amount: 5
   effects:
     - !type:CreateEntityReactionEffect
@@ -376,7 +264,7 @@
     Plasma:
       amount: 5
   products:
-    Stimulants: 3
+    Stimulants: 5
 
 - type: reaction
   id: RedExtractBlood
@@ -386,19 +274,6 @@
     RedExtract:
       amount: 5
     Blood:
-      amount: 5
-  effects:
-    - !type:CreateEntityReactionEffect
-      entity: SpeedSlimePotion
-
-- type: reaction
-  id: RedExtractBloodZessuls
-  impact: Low
-  quantized: true
-  reactants:
-    RedExtract:
-      amount: 5
-    ZessulsBlood:
       amount: 5
   effects:
     - !type:CreateEntityReactionEffect
@@ -427,7 +302,11 @@
       amount: 5
   effects:
     - !type:CreateEntityReactionEffect
-      entity: SheetPlasteel1
+      entity: SheetPlastic1
+    - !type:CreateEntityReactionEffect
+      entity: SheetPlastic1
+    - !type:CreateEntityReactionEffect
+      entity: SheetPlastic1
 
 - type: reaction
   id: MetallExtractBlood
@@ -440,28 +319,7 @@
       amount: 5
   effects:
     - !type:CreateEntityReactionEffect
-      entity: SheetSteel1
-    - !type:CreateEntityReactionEffect
-      entity: SheetSteel1
-    - !type:CreateEntityReactionEffect
-      entity: SheetSteel1
-
-- type: reaction
-  id: MetallExtractBloodZessuls
-  impact: Low
-  quantized: true
-  reactants:
-    MetallExtract:
-      amount: 5
-    ZessulsBlood:
-      amount: 5
-  effects:
-    - !type:CreateEntityReactionEffect
-      entity: SheetSteel1
-    - !type:CreateEntityReactionEffect
-      entity: SheetSteel1
-    - !type:CreateEntityReactionEffect
-      entity: SheetSteel1
+      entity: SheetSteel10
 
 - type: reaction
   id: MetallExtractWater
@@ -472,13 +330,7 @@
       amount: 5
   effects:
     - !type:CreateEntityReactionEffect
-      entity: SheetGlass1
-    - !type:CreateEntityReactionEffect
-      entity: SheetGlass1
-    - !type:CreateEntityReactionEffect
-      entity: SheetGlass1
-    - !type:CreateEntityReactionEffect
-      entity: SheetRGlass1
+      entity: SheetGlass10
 
 # DarkPurple
 
@@ -508,46 +360,7 @@
       amount: 5
   effects:
     - !type:CreateEntityReactionEffect
-      entity: SheetPGlass1
-    - !type:CreateEntityReactionEffect
-      entity: SheetPGlass1
-    - !type:CreateEntityReactionEffect
-      entity: SheetPGlass1
-
-# BlueSpace
-
-# - type: reaction
-#   id: BlueSpaceExtractPlasma
-#   impact: Low
-#   quantized: true
-#   reactants:
-#     BlueSpaceExtract:
-#       amount: 5
-#     Plasma:
-#       amount: 5
-#   effects:
-#     - !type:CreateEntityReactionEffect
-#       entity: BlueSpaceCrystall
-
-# - type: reaction
-#   id: BlueSpaceExtractBlood
-#   impact: Low
-#   quantized: true
-#   reactants:
-#     BlueSpaceExtract:
-#       amount: 5
-#     Blood:
-#       amount: 5
-#   effects:
-#     - !type:CreateEntityReactionEffect
-#       entity: TileBlueSpace
-#     - !type:CreateEntityReactionEffect
-#       entity: TileBlueSpace
-#     - !type:CreateEntityReactionEffect
-#       entity: TileBlueSpace
-#     - !type:CreateEntityReactionEffect
-#       entity: TileBlueSpace
-# пока не узнаю че за плитки и кристалл
+      entity: SheetPGlass10
 
 # Silver
 
@@ -598,7 +411,7 @@
     Water:
       amount: 5
   products:
-    Arithrazine: 15
+    Arithrazine: 20
 
 # Gold
 
@@ -623,19 +436,6 @@
     GoldExtract:
       amount: 5
     Blood:
-      amount: 5
-  effects:
-    - !type:CreateEntityReactionEffect
-      entity: RandomAnimalNeut
-
-- type: reaction
-  id: GoldExtractBloodZessuls
-  impact: Low
-  quantized: true
-  reactants:
-    GoldExtract:
-      amount: 5
-    ZessulsBlood:
       amount: 5
   effects:
     - !type:CreateEntityReactionEffect
@@ -680,7 +480,7 @@
     Plasma:
       amount: 5
   products:
-    Cognizine: 10
+    Cognizine: 20
 
 # Black
 - type: reaction
@@ -691,7 +491,7 @@
     Water:
       amount: 5
   products:
-    Sigynate: 15
+    Sigynate: 20
 
 # Adamantite
 - type: reaction
@@ -702,7 +502,7 @@
     Water:
       amount: 5
   products:
-    Puncturase: 15
+    Puncturase: 20
 
 - type: reaction
   id: AdamantiteExtractPlasma
@@ -712,7 +512,7 @@
     Plasma:
       amount: 5
   products:
-    Bruizine: 15
+    Bruizine: 20
 
 - type: reaction
   id: AdamantiteExtractBlood
@@ -722,14 +522,4 @@
     Blood:
       amount: 5
   products:
-    Lacerinol: 15
-
-- type: reaction
-  id: AdamantiteExtractBloodZessuls
-  reactants:
-    AdamantiteExtract:
-      amount: 5
-    ZessulsBlood:
-      amount: 5
-  products:
-    Lacerinol: 15
+    Lacerinol: 20
