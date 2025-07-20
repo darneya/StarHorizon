@@ -5,6 +5,7 @@
   description: A card necessary to access various areas aboard the station.
   abstract: true
   components:
+  - type: WorldItem
   - type: Sprite
     sprite: Objects/Misc/id_cards.rsi
   - type: Clothing

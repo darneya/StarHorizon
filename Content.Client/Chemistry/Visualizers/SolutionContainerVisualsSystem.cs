@@ -122,8 +122,7 @@ public sealed class SolutionContainerVisualsSystem : VisualizerSystem<SolutionCo
         {
             if (fillBaseName == null)
             {
-                if (prefix != string.Empty)
-                    _worldItemSystem.SetWorldState(uid, args.Sprite);
+                _worldItemSystem.SetWorldState(uid, args.Sprite);
                 return;
             }
 
