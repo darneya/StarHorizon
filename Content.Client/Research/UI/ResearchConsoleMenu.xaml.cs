@@ -64,7 +64,7 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
             MinHeight = 10
         });
 
-        var server = _entity.GetComponent<ResearchClientComponent>(Entity).Server; // _Horizon
+        var server = _entity.GetComponent<ResearchClientComponent>(Entity).Server; // Horizon
         var hasAccess = _player.LocalEntity is not { } local ||
                         !_entity.TryGetComponent<AccessReaderComponent>(Entity, out var access) ||
                         _accessReader.IsAllowed(local, Entity, access);
@@ -72,13 +72,13 @@ public sealed partial class ResearchConsoleMenu : FancyWindow
         {
             var tech = _prototype.Index<TechnologyPrototype>(techId);
             var cardControl = new TechnologyCardControl(tech,
-                _prototype, // _Horizon code design edit start
+                _prototype, // Horizon code design edit start
                 _sprite,
                 _research.GetTechnologyDescription(tech, includeTier: false),
                 _research.GetTechNeededItemList(server, tech),
                 state.Points,
                 hasAccess,
-                _research.TryGetAllTargets(server, tech)); // _Horizon code design edit end
+                _research.TryGetAllTargets(server, tech)); // Horizon code design edit end
             cardControl.OnPressed += () => OnTechnologyCardPressed?.Invoke(techId);
             TechnologyCardsContainer.AddChild(cardControl);
         }

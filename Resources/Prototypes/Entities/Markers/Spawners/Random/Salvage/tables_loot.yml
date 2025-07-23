@@ -65,6 +65,8 @@
       weight: 0.05
     - id: SheetPlasteel10
       weight: 0.05
+    - id: NFScrapSilver # Frontier
+      weight: 2 # Frontier
 
 - type: entityTable
   id: SalvageScrapLarge
@@ -81,6 +83,13 @@
       weight: 0.5
     - id: ScrapMopBucket
       weight: 0.5
+    - id: NFScrapSolarGlass # Frontier
+    - id: ScrapGenericBrokenMachine # Frontier
+      weight: 0.5 # Frontier
+    - id: ScrapGenericBrokenMachineAncient # Frontier
+      weight: 0.25 # Frontier
+    - id: ScrapGenericMachineAncient # Frontier
+      weight: 0.1 # Frontier
 
 # Treasure: High-value scatterables that don't do a ton.
 
@@ -162,6 +171,29 @@
       weight: 0.05 # Frontier
     - id: CardBoxSyndicate # Frontier
       weight: 0.005 # Frontier
+    - !type:NestedSelector # Frontier
+      tableId: TableStashVariety # Frontier
+    - id: ScrapGenericBrokenMachine # Frontier
+      weight: 0.5 # Frontier
+    - id: ScrapGenericBrokenMachineAncient # Frontier
+      weight: 0.25 # Frontier
+    - id: ScrapGenericMachineAncient # Frontier
+      weight: 0.1 # Frontier
+    # Horizon start
+    - id: ClothingBeltCursedKatanaSheathFilled
+      weight: 0.005 # Horizon - 5 in 1000
+    - !type:GroupSelector
+      children:
+      - id: WeaponProtoKineticPistol
+      - id: WeaponProtoKineticRepeater
+      - id: WeaponProtoKineticRailgun
+      - id: WeaponProtoKineticShotgun
+      - id: WeaponKineticSpear
+      - id: WeaponKineticHammer
+      - id: WeaponKineticClaws
+      - id: WeaponKineticMachete
+      - id: ClothingBackpackDuffelSyndicateFilledWeaponAttachments
+  # Horizon end
 
 - type: entityTable
   id: SalvageTreasureLegendary
@@ -179,6 +211,23 @@
       tableId: RingTableRare
       rolls: !type:RangeNumberSelector
         range: 2, 3
+    - !type:NestedSelector # Frontier
+      tableId: TableStashVariety # Frontier
+    # Horizon start
+    - id: ClothingBeltCursedKatanaSheathFilled
+      weight: 0.01 # Horizon - 1 in 100
+    - !type:GroupSelector
+      children:
+      - id: WeaponProtoKineticPistol
+      - id: WeaponProtoKineticRepeater
+      - id: WeaponProtoKineticRailgun
+      - id: WeaponProtoKineticShotgun
+      - id: WeaponKineticSpear
+      - id: WeaponKineticHammer
+      - id: WeaponKineticClaws
+      - id: WeaponKineticMachete
+      - id: ClothingBackpackDuffelSyndicateFilledWeaponAttachments
+  # Horizon end
 
 # Equipment: Tools and things used by salvagers. Quote unquote "Gamer Loot"
 
@@ -219,7 +268,7 @@
     - id: RadioHandheldNF # Frontier RadioHandheld<RadioHandheldNF
     - id: ClothingBeltUtility
     - id: Floodlight
-    - id: WeaponProtoKineticAccelerator
+    - id: NFWeaponPka # Frontier: WeaponProtoKineticAccelerator<NFWeaponPka
       weight: 0.5
     - id: OxygenTankFilled
     - id: WelderIndustrial
@@ -260,21 +309,55 @@
       - id: JetpackMini # Frontier JetpackBlack<JetpackMini
     - id: MysterySpaceBladeBox # Frontier
     - id: CrossbowModernHand # Frontier
+    - id: NFWeaponHoloflareGun # Frontier
+  # Horizon start
+    - !type:GroupSelector
+      children:
+      - id: WeaponProtoKineticPistol
+      - id: WeaponProtoKineticRepeater
+      - id: WeaponProtoKineticRailgun
+      - id: WeaponProtoKineticShotgun
+      - id: WeaponKineticSpear
+      - id: WeaponKineticHammer
+      - id: WeaponKineticClaws
+      - id: WeaponKineticMachete
+      - id: ClothingBackpackDuffelSyndicateFilledWeaponAttachments
+  # Horizon end
 
 - type: entityTable
   id: SalvageEquipmentLegendary
   table: !type:GroupSelector
     children:
-    - id: AdvancedMineralScanner
+#    - id: AdvancedMineralScanner # Horizon
 #    - id: BlueprintFulton # Frontier
 #    - id: BlueprintSeismicCharge # Frontier
-    - id: WeaponCrusherGlaive
-    - id: ClothingOuterHardsuitSalvage
+#    - id: WeaponCrusherGlaive # Horizon
+#    - id: ClothingOuterHardsuitSalvage # Horizon
     - id: ChemistryBottleOmnizine
     - !type:GroupSelector
       children:
       - id: JetpackBlueFilled
       - id: JetpackMiniFilled # Frontier JetpackBlackFilled<JetpackMiniFilled
+    # - !type:GroupSelector # Frontier
+    #   children: # Frontier
+    #   - id: PKAUpgradeDamage # Frontier
+    #   - id: PKAUpgradeRange # Frontier
+    #   - id: PKAUpgradeFireRate # Frontier
+    - id: PowerCellAntiqueProto # Frontier
+    - id: NFShovel # Frontier
+  # Horizon start
+    - !type:GroupSelector
+      children:
+      - id: WeaponProtoKineticPistol
+      - id: WeaponProtoKineticRepeater
+      - id: WeaponProtoKineticRailgun
+      - id: WeaponProtoKineticShotgun
+      - id: WeaponKineticSpear
+      - id: WeaponKineticHammer
+      - id: WeaponKineticClaws
+      - id: WeaponKineticMachete
+      - id: ClothingBackpackDuffelSyndicateFilledWeaponAttachments
+  # Horizon end
 
 - type: entityTable
   id: RandomGeneratorTable

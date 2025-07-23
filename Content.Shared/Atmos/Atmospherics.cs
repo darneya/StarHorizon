@@ -96,6 +96,9 @@ namespace Content.Shared.Atmos
         public const float OxygenMolesFreezer = MolesCellFreezer * OxygenStandard;
         public const float NitrogenMolesFreezer = MolesCellFreezer * NitrogenStandard;
 
+        public const float OxygenMolesGasMiner = MolesCellGasMiner * OxygenStandard;
+        public const float NitrogenMolesGasMiner = MolesCellGasMiner * NitrogenStandard;
+
         #endregion
 
         /// <summary>
@@ -174,6 +177,7 @@ namespace Content.Shared.Atmos
             [Gas.Plasma] = Loc.GetString("gas-plasma-abbreviation"),
             [Gas.Tritium] = Loc.GetString("gas-tritium-abbreviation"),
             [Gas.WaterVapor] = Loc.GetString("gas-water-vapor-abbreviation"),
+            [Gas.Respiron] = Loc.GetString("gas-respiron-abbreviation"), // Frontier
         };
 
         #region Excited Groups
@@ -203,7 +207,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     Total number of gases. Increase this if you want to add more!
         /// </summary>
-        public const int TotalNumberOfGases = 20; // Horizon
+        public const int TotalNumberOfGases = 21; // Horizon
 
         /// <summary>
         ///     This is the actual length of the gases arrays in mixtures.
@@ -419,18 +423,19 @@ namespace Content.Shared.Atmos
         Ammonia = 6,
         NitrousOxide = 7,
         Frezon = 8,
+        Respiron = 9, // Frontier
         // Horizon start
-        BZ = 9,
-        Pluoxium = 10,
-        Hydrogen = 11,
-        Nitrium = 12,
-        Healium = 13,
-        HyperNoblium = 14,
-        ProtoNitrate = 15,
-        Zauker = 16,
-        Halon = 17,
-        Helium = 18,
-        AntiNoblium = 19
+        BZ = 10,
+        Pluoxium = 11,
+        Hydrogen = 12,
+        Nitrium = 13,
+        Healium = 14,
+        HyperNoblium = 15,
+        ProtoNitrate = 16,
+        Zauker = 17,
+        Halon = 18,
+        Helium = 19,
+        AntiNoblium = 20
         // Horizon end
     }
 }

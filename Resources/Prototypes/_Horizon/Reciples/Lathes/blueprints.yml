@@ -5,7 +5,7 @@
 ## Service
 ## Arsenal
 
-- type: latheRecipe
-  parent: NFBaseBlueprintLatheRecipe
-  id: HorizonBlueprintClothingEyesVision
-  result: HorizonBlueprintClothingEyesVision
+#- type: latheRecipe
+#  parent: NFBaseBlueprintLatheRecipe
+#  id: HorizonBlueprintClothingEyesVision
+#  result: HorizonBlueprintClothingEyesVision

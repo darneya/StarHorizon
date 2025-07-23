@@ -4,6 +4,8 @@
   id: HydroponicsToolMiniHoe
   description: It's used for removing weeds or scratching your back.
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: icon_world # Horizon Bothany
   - type: Tag
     tags:
     - Hoe
@@ -19,6 +21,9 @@
         Slash: 6
   - type: Item
     sprite: Objects/Tools/Hydroponics/hoe.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
 
 - type: entity
   name: plant clippers
@@ -26,6 +31,8 @@
   id: HydroponicsToolClippers
   description: A tool used to take samples from plants.
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: icon_world # Horizon Bothany
   - type: Tag
     tags:
     - PlantSampleTaker
@@ -40,6 +47,9 @@
   - type: Item
     sprite: Objects/Tools/Hydroponics/clippers.rsi
     storedRotation: -90
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
 
 - type: entity
   name: scythe
@@ -47,6 +57,8 @@
   id: HydroponicsToolScythe
   description: A sharp and curved blade on a long fibremetal handle, this tool makes it easy to reap what you sow.
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: icon_world # Horizon Bothany
   - type: Sharp
   - type: Sprite
     sprite: Objects/Tools/Hydroponics/scythe.rsi
@@ -64,6 +76,10 @@
     - back
   - type: StaticPrice
     price: 40
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
+      Plastic: 100
 
 - type: entity
   name: hatchet
@@ -71,6 +87,8 @@
   id: HydroponicsToolHatchet
   description: A very sharp axe blade upon a short fibremetal handle. It has a long history of chopping things, but now it is used for chopping wood.
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: icon_world # Horizon Bothany
   - type: Tag
     tags:
     - BotanyHatchet
@@ -87,6 +105,9 @@
         Piercing: 2
   - type: Item
     sprite: Objects/Tools/Hydroponics/hatchet.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
 
 - type: entity
   name: spade
@@ -94,6 +115,8 @@
   id: HydroponicsToolSpade
   description: A small tool for digging and moving dirt.
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: icon_world # Horizon Bothany
   - type: Tag
     tags:
     - BotanyShovel
@@ -112,11 +135,14 @@
     sprite: Objects/Tools/Hydroponics/spade.rsi
   - type: Shovel
     speedModifier: 0.75 # slower at digging than a full-sized shovel
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
 
 - type: entity
   name: plant bag
   id: PlantBag
-  parent: BaseStorageItem
+  parent: NFBaseClothingBeltStorageBag # Frontier: BaseStorageItem<NFBaseClothingBeltStorageBag
   description: A bag for botanists to easily move their huge harvests.
   components:
   - type: Sprite

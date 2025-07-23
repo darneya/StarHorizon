@@ -35,6 +35,15 @@
     {
       "name": "equipped-BELT",
       "directions": 4
+    },
+    {
+      "name": "flashlight_world"
+    },
+    {
+      "name": "flashlight-on_world"
+    },
+    {
+      "name": "flashlight-overlay_world"
     }
   ]
 }

@@ -128,7 +128,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-bureaucratic-error-announcement
-    minimumPlayers: 25
+    minimumPlayers: 1 # Horizon TempTweak
     weight: 3
     duration: 1
   - type: BureaucraticErrorRule
@@ -141,7 +141,7 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
-    minimumPlayers: 15
+    minimumPlayers: 1 # Horizon TempTweak
     weight: 5
     duration: 1
   - type: ClericalErrorRule
@@ -153,7 +153,7 @@
   - type: StationEvent
     weight: 5
     duration: 1
-    minimumPlayers: 10
+    minimumPlayers: 5 # Horizon TempTweak
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
 
@@ -165,12 +165,12 @@
     weight: 6.5
     earliestStart: 40
     reoccurrenceDelay: 20
-    minimumPlayers: 20
+    minimumPlayers: 5 # Horizon TempTweak
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
-  - type: AntagSpawner
-    prototype: MobDragon
+  # - type: AntagSpawner # Frontier
+    # prototype: MobDragon # Frontier
   - type: DragonRule
   - type: AntagObjectives
     objectives:
@@ -195,7 +195,7 @@
     duration: null
     earliestStart: 30
     reoccurrenceDelay: 20
-    minimumPlayers: 30
+    minimumPlayers: 5 # Horizon TempTweak
   - type: SpaceSpawnRule
   - type: AntagLoadProfileRule
   - type: AntagObjectives
@@ -232,6 +232,7 @@
         nameSegments:
         - NamesNinjaTitle
         - NamesNinja
+        nameFormat: name-format-ninja
       mindRoles:
       - MindRoleNinja
 
@@ -244,7 +245,7 @@
     duration: null
     earliestStart: 20
     reoccurrenceDelay: 20
-    minimumPlayers: 15
+    minimumPlayers: 5 # Horizon TempTweak
   - type: ParadoxCloneRule
     objectiveBlacklist:
       tags:
@@ -279,7 +280,7 @@
     weight: 7.5
     duration: 1
     earliestStart: 45
-    minimumPlayers: 20
+    minimumPlayers: 5 # Horizon TempTweak
   - type: RandomSpawnRule
     prototype: MobRevenant
 
@@ -292,7 +293,7 @@
     duration: 1
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 10
+    minimumPlayers: 5 # Horizon TempTweak
   - type: AntagSelection
     agentName: wizard-round-end-name
     definitions:
@@ -318,6 +319,7 @@
         nameSegments:
         - NamesWizardFirst
         - NamesWizardLast
+        nameFormat: name-format-wizard
       mindRoles:
       - MindRoleWizard
 
@@ -407,7 +409,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 15
-    minimumPlayers: 15
+    minimumPlayers: 5 # Horizon TempTweak
     weight: 5
     duration: 60
   - type: VentClogRule
@@ -421,7 +423,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
-    minimumPlayers: 15
+    minimumPlayers: 5 # Horizon TempTweak
     weight: 5
     duration: 60
   - type: VentCrittersRule
@@ -442,7 +444,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
-    minimumPlayers: 15
+    minimumPlayers: 5 # Horizon TempTweak
     weight: 5
     duration: 60
   - type: VentCrittersRule
@@ -463,7 +465,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
-    minimumPlayers: 15
+    minimumPlayers: 5 # Horizon TempTweak
     weight: 5
     duration: 60
   - type: VentCrittersRule
@@ -480,7 +482,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
-    minimumPlayers: 20
+    minimumPlayers: 5 # Horizon TempTweak
     weight: 1.5
     duration: 60
   - type: VentCrittersRule
@@ -528,7 +530,7 @@
   - type: StationEvent
     earliestStart: 35
     weight: 5.5
-    minimumPlayers: 20
+    minimumPlayers: 5 # Horizon TempTweak
     duration: 1
   - type: RuleGrids
   - type: LoadMapRule
@@ -550,6 +552,7 @@
         nameSegments:
         - NamesSyndicatePrefix
         - NamesSyndicateNormal
+        nameFormat: name-format-nukie-generic
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -563,7 +566,7 @@
   - type: StationEvent
     earliestStart: 30
     weight: 8
-    minimumPlayers: 15
+    minimumPlayers: 5 # Horizon TempTweak
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:
@@ -607,7 +610,7 @@
   - type: StationEvent
     weight: 8
     reoccurrenceDelay: 20
-    duration: 1
+    duration: 3 # Horizon TempTweak
   - type: IonStormRule
 
 - type: entity
@@ -616,7 +619,7 @@
   components:
   - type: StationEvent
     earliestStart: 0
-    minimumPlayers: 20
+    minimumPlayers: 5 # Horizon TempTweak
     maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
     weight: 5
   - type: MobReplacementRule
@@ -629,7 +632,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     weight: 5
-    minimumPlayers: 25
+    minimumPlayers: 5 # Horizon TempTweak
     reoccurrenceDelay: 20
   - type: GreytideVirusRule
     accessGroups:

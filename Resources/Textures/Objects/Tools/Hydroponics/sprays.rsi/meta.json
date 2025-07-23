@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/c6e3401f2e7e1e55c57060cdf956a98ef1fefc24",
+  "license": "CLA",
+  "copyright": "sprite by TheGypsyBaron",
   "size": {
     "x": 32,
     "y": 32
@@ -40,6 +40,21 @@
     {
       "name": "plantbgone-inhand-right",
       "directions": 4
+    },
+        {
+      "name": "deathspray_world"
+    },
+    {
+      "name": "nolabelspray_world"
+    },
+    {
+      "name": "pestspray_world"
+    },
+    {
+      "name": "plantbgone_world"
+    },
+    {
+      "name": "weedspray_world"
     }
   ]
 }

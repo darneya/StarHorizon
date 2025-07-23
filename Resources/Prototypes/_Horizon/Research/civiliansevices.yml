@@ -1,0 +1,27 @@
+﻿- type: technology
+  id: HydroponicsAdv
+  name: research-technology-adv-hydroponics
+  entityIcon: indhydroponicsTray
+  discipline: NFService
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - HydroponicsTrayUpgradeKit
+  - HydroponicsToolScytheAdv
+  technologyPrerequisites:
+  - NFAdvancedHydroponicsStorge
+  position: 3, 46
+
+- type: technology
+  id: HydroponicsDNAManip
+  name: research-technology-hydroponics-dna-manip
+  entityIcon: ComputerBotanicDNAManipulator
+  discipline: NFService
+  tier: 3
+  cost: 7500
+  recipeUnlocks:
+  - BotanicDNADisk
+  - BotanicDNACircuitboard
+  technologyPrerequisites:
+  - HydroponicsAdv
+  position: 4, 46

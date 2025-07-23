@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 using Content.Shared._Horizon.MediaPlayer;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._Horizon.MediaPlayer;
@@ -8,6 +10,7 @@ public sealed class MediaPlayerSystem : SharedMediaPlayerSystem
 {
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = null!;
     [Dependency] private readonly IPrototypeManager _protoManager = null!;
+    [Dependency] private readonly SharedAudioSystem _audioSystem = null!;
     public List<MediaFilePrototype> MediaFilePrototypes = [];
 
     public override void Initialize()
@@ -27,6 +30,12 @@ public sealed class MediaPlayerSystem : SharedMediaPlayerSystem
                 .OrderBy(x => x.ID)
                 .ToList();
         };
+
+        // Уебанский способ инициализировать всю музыку. Я знаю.
+        foreach (var proto in MediaFilePrototypes)
+        {
+            _audioSystem.GetAudioLength(new ResolvedPathSpecifier(proto.SoundPath.Path));
+        }
     }
 
     private void OnProtoReload(PrototypesReloadedEventArgs obj)

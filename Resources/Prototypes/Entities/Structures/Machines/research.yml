@@ -2,10 +2,13 @@
   id: ResearchAndDevelopmentServer
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: R&D server
-  description: Contains the collective knowledge of the station's scientists. Destroying it would send them back to the stone age. You don't want that do you?
+  description: Contains the extent of somebody's hard-earned knowledge. Handle with care. # Frontier: separate description
   components:
+  - type: BindToStation # Frontier
+    enabled: false # Frontier - should be draggable between stations
   - type: Sprite
     sprite: Structures/Machines/server.rsi
+    snapCardinals: true # Frontier
     layers:
       - state: server
       - state: variant-research
@@ -14,11 +17,19 @@
   - type: ResearchServer
   - type: TechnologyDatabase
     supportedDisciplines:
-    - Industrial
-    - Arsenal
-    - Experimental
-    - CivilianServices
-    - Biochemical
+     # Start Frontier: Tech Tree
+#    - Industrial
+#    - Arsenal
+#    - Experimental
+#    - CivilianServices
+     - NFEngineering
+     - NFMedical
+     - NFArsenalMercenary
+     - NFSalvage
+     - NFScience
+     - NFService
+     - NFArsenalNfsd
+     # End Frontier: Tech Tree
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: ExtensionCableReceiver
@@ -59,12 +70,12 @@
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
-      storagebase: !type:Container # _Horizon
-        ents: [] # _Horizon
+      storagebase: !type:Container # Horizon
+        ents: [] # Horizon
   - type: GuideHelp
     guides:
     - Science
-  # _Horizon Starts
+  # Horizon Starts
   - type: Storage
     maxItemSize: Huge
     grid:
@@ -74,7 +85,7 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-  # _Horizon ends
+  # Horizon ends
 
 - type: entity
   id: BaseResearchAndDevelopmentPointSource

@@ -173,7 +173,7 @@ namespace Content.Shared.Damage
         ///     null if the user had no applicable components that can take damage.
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
-            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null)
+            bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null, EntityUid? tool = null) // Horizon Attachments
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
@@ -203,7 +203,7 @@ namespace Content.Shared.Damage
                     damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
                 }
 
-                var ev = new DamageModifyEvent(damage, origin);
+                var ev = new DamageModifyEvent(damage, origin, tool); // Horizon Attachments
                 RaiseLocalEvent(uid.Value, ev);
                 damage = ev.Damage;
 
@@ -214,7 +214,7 @@ namespace Content.Shared.Damage
             }
 
             damage = ApplyUniversalAllModifiers(damage);
-            // Aavikko start
+            // Horizon start
             var finalEv = new DamageBeforeApplyEvent
             {
                 Damage = damage,
@@ -223,7 +223,7 @@ namespace Content.Shared.Damage
             RaiseLocalEvent(uid.Value, finalEv);
             if (finalEv.Cancelled)
                 return damage;
-            // Aavikko end
+            // Horizon end
 
             // TODO DAMAGE PERFORMANCE
             // Consider using a local private field instead of creating a new dictionary here.
@@ -307,7 +307,7 @@ namespace Content.Shared.Damage
             DamageChanged(uid, component, new DamageSpecifier());
         }
 
-        public void SetDamageModifierSetId(EntityUid uid, string damageModifierSetId, DamageableComponent? comp = null)
+        public void SetDamageModifierSetId(EntityUid uid, string? damageModifierSetId, DamageableComponent? comp = null)
         {
             if (!_damageableQuery.Resolve(uid, ref comp))
                 return;
@@ -340,7 +340,7 @@ namespace Content.Shared.Damage
                 damage.DamageDict.Add(typeId, damageValue);
             }
 
-            TryChangeDamage(uid, damage, interruptsDoAfters: false);
+            TryChangeDamage(uid, damage, interruptsDoAfters: false, origin: args.Origin);
         }
 
         private void OnRejuvenate(EntityUid uid, DamageableComponent component, RejuvenateEvent args)
@@ -396,12 +396,14 @@ namespace Content.Shared.Damage
         public readonly DamageSpecifier OriginalDamage;
         public DamageSpecifier Damage;
         public EntityUid? Origin;
+        public EntityUid? Tool; // Horizon Attachments
 
-        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null)
+        public DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, EntityUid? tool = null) // Horizon Attachments
         {
             OriginalDamage = damage;
             Damage = damage;
             Origin = origin;
+            Tool = tool; // Horizon Attachments
         }
     }
 

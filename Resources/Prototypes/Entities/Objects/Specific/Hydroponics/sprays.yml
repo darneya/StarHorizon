@@ -5,6 +5,8 @@
   description: Kills those pesky weeds!
   suffix: "Filled"
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: plantbgone_world # Horizon Bothany
   - type: Tag
     tags:
     - PlantBGone
@@ -31,6 +33,8 @@
   description: It's a toxic mixture, in spray form, to kill small weeds.
   suffix: "Filled"
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: weedspray_world # Horizon Bothany
   - type: Sprite
     sprite: Objects/Tools/Hydroponics/sprays.rsi
     state: weedspray
@@ -60,6 +64,8 @@
   description: It's some pest eliminator spray! Do not inhale!
   suffix: "Filled"
   components:
+  - type: WorldItem # Horizon Bothany
+    overridePrefix: pestspray_world # Horizon Bothany
   - type: Sprite
     state: pestspray
   - type: SolutionContainerManager

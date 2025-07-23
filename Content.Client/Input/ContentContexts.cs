@@ -1,3 +1,4 @@
+using Content.Shared._RMC14.Input; //Horizon Attachments
 using Content.Shared.Input;
 using Robust.Shared.Input;
 
@@ -73,8 +74,10 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.OpenInventoryMenu);
             human.AddFunction(ContentKeyFunctions.SmartEquipBackpack);
             human.AddFunction(ContentKeyFunctions.SmartEquipBelt);
+            human.AddFunction(ContentKeyFunctions.SmartEquipWallet); // Frontier
             human.AddFunction(ContentKeyFunctions.OpenBackpack);
             human.AddFunction(ContentKeyFunctions.OpenBelt);
+            human.AddFunction(ContentKeyFunctions.OpenWallet); // Frontier
             human.AddFunction(ContentKeyFunctions.MouseMiddle);
             human.AddFunction(ContentKeyFunctions.RotateObjectClockwise);
             human.AddFunction(ContentKeyFunctions.RotateObjectCounterclockwise);
@@ -126,6 +129,21 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.OpenDecalSpawnWindow);
             common.AddFunction(ContentKeyFunctions.OpenAdminMenu);
             common.AddFunction(ContentKeyFunctions.OpenGuidebook);
+
+            CMFunctions(contexts); // Horizon Attachments
         }
+
+            // Horizon Attachments start
+        private static void CMFunctions(IInputContextContainer contexts)
+        {
+            var human = contexts.GetContext("human");
+            human.AddFunction(CMKeyFunctions.RMCActivateAttachableBarrel);
+            human.AddFunction(CMKeyFunctions.RMCActivateAttachableRail);
+            human.AddFunction(CMKeyFunctions.RMCActivateAttachableStock);
+            human.AddFunction(CMKeyFunctions.RMCActivateAttachableUnderbarrel);
+            human.AddFunction(CMKeyFunctions.RMCFieldStripHeldItem);
+            human.AddFunction(CMKeyFunctions.CMUniqueAction);
+        }
+            // Horizon Attachments end
     }
 }

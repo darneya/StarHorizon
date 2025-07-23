@@ -37,4 +37,14 @@ public sealed partial class VoiceMaskComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? ActionEntity;
+
+    // _Horizon start
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public string BarkId = "Human1";
+
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float BarkPitch = 1f;
+    // _Horizon end
 }

@@ -26,7 +26,7 @@ public sealed partial class MechSystem : SharedMechSystem // Horizon Mech
         if (args.Sprite == null)
             return;
 
-        if (!args.Sprite.LayerMapTryGet(MechVisualLayers.Base, out var layerId) || // _Horizon
+        if (!args.Sprite.LayerMapTryGet(MechVisualLayers.Base, out var layerId) || // Horizon
             !args.Sprite.TryGetLayer(layerId, out var layer)) // Horizon Mech
             return;
 

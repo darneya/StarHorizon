@@ -11,8 +11,8 @@
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
         tongue: OrganHumanTongue
-        eye_implant: null # _Horizon
-        cyberdeka_implant: null # _Horizon
+        eye_implant: null # Horizon
+        cyberdeka_implant: null # Horizon
     torso:
       part: TorsoHuman
       connections:
@@ -26,11 +26,11 @@
         stomach: OrganHumanStomach
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
-        vessels_implant: null # _Horizon
+        vessels_implant: null # Horizon
         blood_pump_implant: null
-        skin_implant: null # _Horizon
-        bone_implant: null # _Horizon
-        cavity: null # _Starlight
+        skin_implant: null # Horizon
+        bone_implant: null # Horizon
+        cavity: null # Horizon
     right arm:
       part: RightArmHuman
       connections:

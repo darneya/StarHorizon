@@ -81,12 +81,16 @@
   - BoxAmmoSniper
   - BoxAmmoGranade
   - BoxPlasmaBox
+  - RipleyMk2ModificationKit
   - MechRipleyAluminizerUpgradeKit
   - MechRipleyCombatUpgradeKit
   - MechRipleyEarthUpgradeKit
   - MechRipleyFlamesredUpgradeKit
   - MechRipleyTitanUpgradeKit
   - MechRipleyZairjahUpgradeKit
+  - MechRipleyFirefighterUpgradeKit
+  - MechRipleyHaulerUpgradeKit
+  - MechRipleyDeathUpgradeKit
   - MechClarkeOrangeyUpgradeKit
   - MechClarkeSpiderUpgradeKit
   - MechHarsonUpgradeKit

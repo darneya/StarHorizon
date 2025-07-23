@@ -1,1 +1,1 @@
-﻿research-discipline-medical = Медицинская
+﻿research-discipline-medical = Биохимия

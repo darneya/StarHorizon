@@ -80,13 +80,13 @@ public sealed partial class ResearchSystem
         if (!CanServerUnlockTechnology(client, prototype, clientDatabase, component))
             return false;
 
-        // _Horizon starts
+        // Horizon start
         if (prototype.ResearchTargets != null && TryComp<StorageComponent>(serverEnt, out var storageComp))
             DeleteTechnologyTargets(serverEnt.Value, storageComp, prototype.ResearchTargets);
-        // _Horizon ends
+        // Horizon end
 
         AddTechnology(serverEnt.Value, prototype);
-        TrySetMainDiscipline(prototype, serverEnt.Value);
+        // TrySetMainDiscipline(prototype, serverEnt.Value); // Goobstation commented
         ModifyServerPoints(serverEnt.Value, -prototype.Cost);
         UpdateTechnologyCards(serverEnt.Value);
 
@@ -95,7 +95,7 @@ public sealed partial class ResearchSystem
         return true;
     }
 
-	// _Horizon void starts
+	// Horizon void start
     private void DeleteTechnologyTargets(EntityUid serverEnt, StorageComponent storage, List<string> researchTargets, ResearchServerComponent? serverComponent = null)
     {
         if (!Resolve(serverEnt, ref serverComponent))
@@ -112,7 +112,7 @@ public sealed partial class ResearchSystem
             }
         }
     }
-    // _Horizon void ends
+    // Horizon void end
 
     /// <summary>
     ///     Adds a technology to the database without checking if it could be unlocked.
@@ -144,15 +144,17 @@ public sealed partial class ResearchSystem
         }
 
         component.UnlockedTechnologies.Add(technology.ID);
+        var addedRecipes = new List<string>();
         foreach (var unlock in technology.RecipeUnlocks)
         {
             if (component.UnlockedRecipes.Contains(unlock))
                 continue;
             component.UnlockedRecipes.Add(unlock);
+            addedRecipes.Add(unlock);
         }
         Dirty(uid, component);
 
-        var ev = new TechnologyDatabaseModifiedEvent();
+        var ev = new TechnologyDatabaseModifiedEvent(addedRecipes);
         RaiseLocalEvent(uid, ref ev);
     }
 
@@ -170,7 +172,7 @@ public sealed partial class ResearchSystem
         if (!Resolve(uid, ref client, ref database, false))
             return false;
 
-        if (!TryGetClientServer(uid, out var server, out var serverComp, client)) // _Horizon if edit
+        if (!TryGetClientServer(uid, out var server, out var serverComp, client)) // Horizon if edit
             return false;
 
         if (!IsTechnologyAvailable(database, technology))
@@ -179,7 +181,7 @@ public sealed partial class ResearchSystem
         if (technology.Cost > serverComp.Points)
             return false;
 
-        return TryGetAllTargets(server, technology); // _Horizon return edit
+        return TryGetAllTargets(server, technology); // Horizon return edit
     }
 
     private void OnDatabaseRegistrationChanged(EntityUid uid, TechnologyDatabaseComponent component, ref ResearchRegistrationChangedEvent args)

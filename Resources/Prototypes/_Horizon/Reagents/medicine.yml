@@ -1,4 +1,100 @@
 ﻿- type: reagent
+  id: MintExtract
+  name: экстракт мяты
+  group: Foods
+  # parent: BaseJuice
+  desc: Приятно пахнущий мятный экстракт
+  suffix: Horizon
+  physicalDesc: мятное
+  flavor: minty
+  color: "#18ad45"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -1
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.05
+        sprintSpeedModifier: 1.05
+
+- type: reagent
+  id: CatNipExtract
+  name: экстракт котовика
+  group: Foods
+  # parent: BaseJuice
+  desc: Подозрительно муррчащий экстракт котовика
+  suffix: Horizon
+  physicalDesc: котомятное
+  flavor: minty
+  color: "#18ad45"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -1
+    Narcotic:
+      effects:
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
+        type: Add
+        time: 5
+        refresh: false
+        conditions:
+        - !type:OrganType
+          type: Animal
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.15
+        sprintSpeedModifier: 1.15
+        conditions:
+        - !type:OrganType
+          type: Animal
+      - !type:Emote
+        emote: Meow
+        showInChat: true
+        probability: 0.05
+        conditions:
+        - !type:OrganType
+          type: Animal
+      - !type:Emote
+        emote: Mew
+        showInChat: true
+        probability: 0.05
+        conditions:
+        - !type:OrganType
+          type: Animal
+
+- type: reagent
+  id: EarthBlood
+  name: кровь земли
+  group: Medicine
+  desc: Легендарное лекарство, остерегайтесь побочных эффектов!
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#f4bf20"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -3
+            Toxin: -3
+            Airloss: -3
+            Brute: -3
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Caustic: 2.0
+  pricePerUnit: 11
+
+- type: reagent
   id: Serenitol
   name: reagent-name-serenitol
   group: Medicine
@@ -40,6 +136,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 6
 
 - type: reagent
   id: Neurozenium
@@ -105,6 +202,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 8
 
 - type: reagent
   id: Blissifylovene
@@ -249,7 +347,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
-
+  pricePerUnit: 12
 
 - type: reagent
   id: Calmafluxine
@@ -288,6 +386,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 8
 
 - type: reagent
   id: Tranquinase
@@ -373,6 +472,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 9
 
 - type: reagent
   id: Equilibrazine
@@ -449,6 +549,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 10
 
 - type: reagent
   id: Addictine
@@ -555,6 +656,7 @@
         - !type:ReagentThreshold
           reagent: Desoxyephedrine
           max: 0.01
+  pricePerUnit: 9
 
 - type: reagent
   id: Stubantazine
@@ -608,6 +710,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.2
+  pricePerUnit: 7
 
 - type: reagent
   id: Soretizone
@@ -675,6 +778,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 9
 
 - type: reagent
   id: Agonolexyne
@@ -756,3 +860,23 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 11
+
+#Xenobiology
+- type: reagent
+  id: RegenerateJelly
+  name: reagent-name-slime-regenerate-jelly
+  group: Medicine
+  desc: reagent-desc-slime-regenerate-jelly
+  physicalDesc: reagent-physical-desc-acidic
+  flavor: medicine
+  color: "#6A5ACD"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -2
+            Brute: -2
+  pricePerUnit: 5

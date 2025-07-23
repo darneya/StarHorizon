@@ -26,11 +26,24 @@
       - Meat
 
 - type: entity
+  id: OrganArachnidBrain
+  parent: [BaseArachnidOrgan, BaseOrganBrain]
+  name: мозг
+  description: "Источник невероятно, бесконечного интеллекта. Хиссс~"
+  components:
+  - type: WorldItem
+  - type: Sprite
+    state: brain
+  - type: Item
+    size: Small
+
+- type: entity
   id: OrganArachnidStomach
   parent: [OrganAnimalStomach, BaseOrganStomach]
   name: stomach
   description: "Gross. This is hard to stomach."
   components:
+  - type: WorldItem
   - type: Sprite
     sprite: Mobs/Species/Arachnid/organs.rsi
     state: stomach
@@ -57,6 +70,8 @@
   name: lungs
   description: "Filters oxygen from an atmosphere... just more greedily."
   components:
+  - type: WorldItem
+    overridePrefix: lungs_world
   - type: Sprite
     layers:
       - state: lung-l
@@ -92,6 +107,7 @@
   name: heart
   description: "A disgustingly persistent little biological pump made for spiders."
   components:
+  - type: WorldItem
   - type: Sprite
     state: heart-on
   - type: Item
@@ -109,11 +125,12 @@
 
 - type: entity
   id: OrganArachnidLiver
-  parent: [BaseHumanOrgan, BaseOrganLiver]
+  parent: [BaseArachnidOrgan, BaseOrganLiver]
   name: liver
   description: "Pairing suggestion: chianti and fava beans."
   categories: [ HideSpawnMenu ]
   components:
+  - type: WorldItem
   - type: Item
     size: Small
     heldPrefix: liver
@@ -129,11 +146,12 @@
 
 - type: entity
   id: OrganArachnidKidneys
-  parent: [BaseHumanOrgan, BaseOrganKidneys]
+  parent: [BaseArachnidOrgan, BaseOrganKidneys]
   name: kidneys
   description: "Filters toxins from the bloodstream."
-  categories: [ HideSpawnMenu ]
   components:
+  - type: WorldItem
+    overridePrefix: kidney_world
   - type: Sprite
     layers:
       - state: kidney-l
@@ -154,6 +172,8 @@
   name: eyes
   description: "Two was already too many."
   components:
+  - type: WorldItem
+    overridePrefix: eyeballs_world
   - type: Sprite
     layers:
       - state: eyeball-l
@@ -168,5 +188,30 @@
   name: tongue
   description: "A fleshy muscle mostly used for lying."
   components:
+  - type: WorldItem
   - type: Sprite
     state: tongue
+
+- type: entity
+  id: OrganArachnidMuscle
+  parent: [BaseArachnidOrgan]
+  name: muscle
+  description: "Make you move!"
+  components:
+  - type: WorldItem
+  - type: Sprite
+    state: muscle
+  - type: Item
+    size: Small
+
+- type: entity
+  id: OrganArachnidWebGland
+  parent: [BaseArachnidOrgan]
+  name: web gland
+  description: "Iu this is terrible!"
+  components:
+  - type: WorldItem
+  - type: Sprite
+    state: web-gland
+  - type: Item
+    size: Small

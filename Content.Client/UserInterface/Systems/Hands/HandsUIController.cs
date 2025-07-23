@@ -305,18 +305,18 @@ public sealed class HandsUIController : UIController, IOnStateEntered<GameplaySt
         var button = new HandButton(handName, location);
         button.StoragePressed += StorageActivate;
         button.Pressed += HandPressed;
-        var uiLocation = location.GetUILocation(); // _Horizon
+        var uiLocation = location.GetUILocation(); // Horizon
 
         if (!_handLookup.TryAdd(handName, button))
             throw new Exception("Tried to add hand with duplicate name to UI. Name:" + handName);
 
         if (HandsGui != null)
         {
-            // _Horizon  start
+            // Horizon  start
             if (uiLocation == HandUILocation.Functional)
                 HandsGui.FunctionalHandContainer.AddButton(button);
             else
-                // _Horizon  end
+                // Horizon  end
                 HandsGui.HandContainer.AddButton(button);
         }
         else

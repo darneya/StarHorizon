@@ -602,7 +602,7 @@ public partial class SharedBodySystem
             }
         }
     }
-    // Aavikko start
+    // Horizon start
     public IEnumerable<Entity<BodyPartComponent>> GetAllBodyPart(
         EntityUid partId,
         BodyPartComponent? part = null)
@@ -630,7 +630,7 @@ public partial class SharedBodySystem
             }
         }
     }
-    // Aavikko end
+    // Horizon end
     /// <summary>
     /// Returns true if the bodyId has any parts of this type.
     /// </summary>

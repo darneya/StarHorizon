@@ -44,9 +44,10 @@
     price: 500
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: Bulldog
   # Don't parent to BaseWeaponShotgun because it differs significantly
-  parent: [BaseItem, BaseGunWieldable, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  parent: [BaseItem, BaseGunWieldable, BaseC3SyndicateContraband, BaseAttachableHolder] # horizon # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
   id: WeaponShotgunBulldog
   description: An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids. Uses .50 shotgun shells.
   components:
@@ -80,7 +81,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineShotgun
+        # startingItem: MagazineShotgun # Frontier
         priority: 2
         whitelist:
           tags:
@@ -100,10 +101,32 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+    # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.365, -0.1075
+      rmc-aslot-rail: -0.02375, -0.0325
+    # Horizon Attachments end
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: double-barreled shotgun
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC1Contraband] # Frontier: BaseSecurityBartenderContraband<BaseC1Contraband
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC1Contraband] # Frontier: BaseSecurityBartenderZookeeperContraband<BaseC1Contraband
   id: WeaponShotgunDoubleBarreled
   description: An immortal classic. A civilian grade shotgun. Uses .50 shotgun shells.
   components:
@@ -127,6 +150,7 @@
     price: 350
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: double-barreled shotgun
   parent: WeaponShotgunDoubleBarreled
   id: WeaponShotgunDoubleBarreledRubber
@@ -137,8 +161,9 @@
     proto: ShellShotgunBeanbag
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: Enforcer
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC2ContrabandUnredeemable, BaseAttachableHolder] # Horizon # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   id: WeaponShotgunEnforcer
   description: A premium semi-automatic shotgun, featuring an upgraded clip capacity. Uses .50 shotgun shells. # Frontier: no sec reference
   components: # intend for Enforcer to have wider choke for semi-auto function
@@ -152,8 +177,28 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: PirateBountyItem # Frontier
     id: Enforcer # Frontier
+    # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.2875, -0.125
+      rmc-aslot-rail: -0.0375, -0.1575
+    # Horizon Attachments end
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   parent: WeaponShotgunEnforcer
   id: WeaponShotgunEnforcerRubber
   suffix: Non-Lethal
@@ -162,8 +207,9 @@
     proto: ShellShotgunBeanbag
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: Kammerer
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC2ContrabandUnredeemable] # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC2ContrabandUnredeemable, BaseAttachableHolder] # Horizon # Frontier: BaseSecurityContraband<BaseC2ContrabandUnredeemable
   id: WeaponShotgunKammerer
   description: An old yet faithful design, and a favorite among irregular forces on many worlds. Uses .50 shotgun shells. # Frontier: of<on
   components: # intend for Kammerer to have tighter choke for slower fire rate and/or manual cycling
@@ -182,8 +228,28 @@
   - type: Tag
     tags:
     - WeaponShotgunKammerer
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.2875, -0.125
+      rmc-aslot-rail: -0.0375, -0.1575
+  # Horizon Attachments end
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: sawn-off shotgun
   parent: [ BaseWeaponShotgun, BaseC1Contraband ] # Frontier: BaseSecurityBartenderContraband<BaseC1Contraband
   id: WeaponShotgunSawn
@@ -206,6 +272,7 @@
     deconstructionTarget: null
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: sawn-off shotgun
   parent: WeaponShotgunSawn
   id: WeaponShotgunSawnEmpty
@@ -219,6 +286,7 @@
     deconstructionTarget: null
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: handmade pistol
   parent: [BaseWeaponShotgun, BaseC1Contraband] # Frontier: BaseMinorContraband<BaseC1Contraband
   id: WeaponShotgunHandmade
@@ -243,6 +311,7 @@
     price: 0
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: blunderbuss
   parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC3PirateContraband] # Frontier: BaseMinorContraband<BaseC3PirateContraband
   id: WeaponShotgunBlunderbuss
@@ -264,6 +333,7 @@
     price: 0
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: improvised shotgun
   parent: [BaseWeaponShotgun, BaseGunWieldable, BaseC1Contraband] # Frontier: BaseMinorContraband<BaseC1Contraband
   id: WeaponShotgunImprovised
@@ -284,13 +354,14 @@
   - type: BallisticAmmoProvider
     capacity: 1
     proto: null
-  - type: Construction
-    graph: ImprovisedShotgunGraph
-    node: shotgun
+  # - type: Construction # Frontier
+  #   graph: ImprovisedShotgunGraph # Frontier
+  #   node: shotgun # Frontier
   - type: StaticPrice
     price: 20
 
 - type: entity
+  categories: [ HideSpawnMenu ] # Frontier
   name: improvised shotgun
   parent: WeaponShotgunImprovised
   suffix: Loaded

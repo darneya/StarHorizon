@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from ss13 resprited by Genok DS:935227728469319690",
+    "license": "CLA",
+    "copyright": "resprite by TheGypsyBaron",
     "size": {
       "x": 32,
       "y": 32
@@ -57,6 +57,22 @@
       },
       {
         "name": "stomach-inhand-right"
+      },
+      {
+        "name": "heart-off_world"
+      },
+      {
+        "name": "liver_world"
+      },
+      {
+        "name": "lungs_world"
+      },
+      {
+        "name": "kidney_world"
+      },
+      {
+        "name": "stomach_world"
       }
+
     ]
   }

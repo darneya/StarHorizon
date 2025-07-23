@@ -41,6 +41,7 @@
   name: brain
   description: "The source of incredible, unending intelligence. Honk."
   components:
+  - type: WorldItem
   - type: Sprite
     state: brain
   - type: Organ
@@ -75,13 +76,15 @@
   - type: Item
     size: Small
     heldPrefix: brain
-  
+
 - type: entity
   id: OrganHumanEyes
   parent: [BaseHumanOrgan, BaseOrganEyes]
   name: eyes
   description: "I see you!"
   components:
+  - type: WorldItem
+    overridePrefix: eyeballs_world
   - type: Sprite
     layers:
       - state: eyeball-l
@@ -96,6 +99,7 @@
   name: tongue
   description: "A fleshy muscle mostly used for lying."
   components:
+  - type: WorldItem
   - type: Sprite
     state: tongue
 
@@ -116,6 +120,7 @@
   name: ears
   description: "There are three parts to the ear. Inner, middle and outer. Only one of these parts should normally be visible."
   components:
+  - type: WorldItem
   - type: Sprite
     state: ears
 
@@ -125,6 +130,8 @@
   name: lungs
   description: "Filters oxygen from an atmosphere, which is then sent into the bloodstream to be used as an electron carrier."
   components:
+  - type: WorldItem
+    overridePrefix: lungs_world
   - type: Sprite
     layers:
       - state: lung-l
@@ -162,6 +169,7 @@
   name: heart
   description: "I feel bad for the heartless bastard who lost this."
   components:
+  - type: WorldItem
   - type: Sprite
     state: heart-on
   # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
@@ -185,6 +193,7 @@
   name: stomach
   description: "Gross. This is hard to stomach."
   components:
+  - type: WorldItem
   - type: Sprite
     state: stomach
   - type: Item
@@ -217,6 +226,7 @@
   name: liver
   description: "Pairing suggestion: chianti and fava beans."
   components:
+  - type: WorldItem
   - type: Sprite
     state: liver
   - type: Item
@@ -235,6 +245,8 @@
   name: kidneys
   description: "Filters toxins from the bloodstream."
   components:
+  - type: WorldItem
+    overridePrefix: kidney_world
   - type: Sprite
     layers:
       - state: kidney-l
@@ -247,3 +259,39 @@
     maxReagents: 5
     metabolizerTypes: [Human]
     removeEmpty: true
+
+- type: entity
+  id: OrganHumanMuscle
+  parent: [BaseHumanOrgan]
+  name: muscle
+  description: "Make you move!"
+  components:
+  - type: WorldItem
+  - type: Sprite
+    state: muscle
+  - type: Item
+    size: Small
+
+- type: entity
+  id: OrganHumanNerve
+  parent: [BaseHumanOrgan]
+  name: nerve
+  description: "Do some electrochemical magic."
+  components:
+  - type: WorldItem
+  - type: Sprite
+    state: nerve
+  - type: Item
+    size: Small
+
+- type: entity
+  id: OrganHumanVessel
+  parent: [BaseAnimalOrgan]
+  name: vessel
+  description: "vessel..."
+  components:
+  - type: WorldItem
+  - type: Sprite
+    state: vessel
+  - type: Item
+    size: Small

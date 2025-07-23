@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Sprited by Nimfar11 (Github) for Space Station 14, inhands by mubururu_ (github)",
+  "license": "CLA",
+  "copyright": "sprite by TheGypsyBaron",
   "size": {
     "x": 32,
     "y": 32
@@ -52,6 +52,56 @@
     },
     {
       "name": "lung-r-slime"
+    },
+    {
+      "name": "eyeball-l"
+    },
+    {
+      "name": "eyeball-r"
+    },
+    {
+      "name": "stomach"
+    },
+    {
+      "name": "kidney-l"
+    },
+    {
+      "name": "kidney-r"
+    },
+    {
+      "name": "liver"
+    },
+    {
+      "name": "lungs_world"
+    },
+    {
+      "name": "brain-slime_world"
+    },
+    {
+      "name": "eyeballs_world"
+    },
+    {
+      "name": "heart-off_world"
+    },
+    {
+      "name": "heart-on_world",
+      "delays": [
+        [
+         0.6,
+         0.1,
+         0.1
+        ]
+        ]
+    },
+    {
+      "name": "kidney_world"
+    },
+    {
+      "name": "liver_world"
+    },
+    {
+      "name": "stomach_world"
     }
+
   ]
 }

@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Nfsd
   parent: BasePOI
-  name: 'NFSD Outpost'
+  name: 'Пост ДШНФ'
   minimumDistance: 750
   maximumDistance: 1000
   spawnGroup: Required
@@ -46,10 +46,10 @@
             Sheriff: [ 1, 1 ]
             Bailiff: [ 1, 1 ]
             SeniorOfficer: [ 1, 1 ]
-            Brigmedic: [ 0, 0 ]
-            NFDetective: [ 0, 0 ]
+            Brigmedic: [ 1, 1 ] # Horizon
+            NFDetective: [ 1, 1 ] # Horizon
             Deputy: [ 3, 3 ]
-            Cadet: [ 0, 0 ]
+            Cadet: [ 3, 3 ] # Horizon
             # Others:
             PublicAffairsLiaison: [ 1, 1 ]
           tags:

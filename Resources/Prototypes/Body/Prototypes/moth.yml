@@ -11,8 +11,8 @@
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
         tongue: OrganHumanTongue
-        eye_implant: null # _Horizon
-        cyberdeka_implant: null # _Horizon
+        eye_implant: null # Horizon
+        cyberdeka_implant: null # Horizon
     torso:
       part: TorsoMoth
       organs:
@@ -21,11 +21,11 @@
         stomach: OrganMothStomach
         liver: OrganAnimalLiver
         kidneys: OrganHumanKidneys
-        vessels_implant: null # _Horizon
+        vessels_implant: null # Horizon
         blood_pump_implant: null
-        skin_implant: null # _Horizon
-        bone_implant: null # _Horizon
-        cavity: null # _Starlight
+        skin_implant: null # Horizon
+        bone_implant: null # Horizon
+        cavity: null # Horizon
       connections:
       - right arm
       - left arm
@@ -42,11 +42,11 @@
     right hand:
       part: RightHandMoth
       organs:
-        hands_implant: null # _Horizon
+        hands_implant: null # Horizon
     left hand:
       part: LeftHandMoth
       organs:
-        hands_implant: null # _Horizon
+        hands_implant: null # Horizon
     right leg:
       part: RightLegMoth
       connections:

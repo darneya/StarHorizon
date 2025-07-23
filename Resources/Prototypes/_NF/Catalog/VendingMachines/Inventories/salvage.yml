@@ -1,7 +1,8 @@
 - type: vendingMachineInventory
   id: NFSalvageEquipmentInventory
   startingInventory:
-    WeaponProtoKineticAccelerator: 4
+    NFWeaponHoloflareGun: 4
+    NFWeaponPka: 4
     WeaponCrusher: 6
     WeaponCrusherDagger: 8
     WeaponGrapplingGun: 10
@@ -11,11 +12,18 @@
     BoxDispenserFlare: 5
     FlashlightLantern: 15
     RadioHandheldNF: 5
+# Horizon start
+    PKAUpgradeDamage: 2
+    PKAUpgradeRange: 2
+    PKAUpgradeFireRate: 2
+    PKAUpgradeLight: 2
+# Horizon end
 
 - type: vendingMachineInventory
   id: NFSalvageEquipmentPOIInventory
   startingInventory:
-    WeaponProtoKineticAccelerator: 4294967295 # Infinite
+    NFWeaponHoloflareGun: 4294967295 # Infinite
+    NFWeaponPka: 4294967295 # Infinite
     WeaponCrusher: 4294967295 # Infinite
     WeaponCrusherDagger: 4294967295 # Infinite
     WeaponGrapplingGun: 4294967295 # Infinite
@@ -25,3 +33,9 @@
     BoxDispenserFlare: 4294967295 # Infinite
     FlashlightLantern: 4294967295 # Infinite
     RadioHandheldNF: 4294967295 # Infinite
+# Horizon start
+    PKAUpgradeDamage: 4294967295 # Infinite
+    PKAUpgradeRange: 4294967295 # Infinite
+    PKAUpgradeFireRate: 4294967295 # Infinite
+    PKAUpgradeLight: 4294967295 # Infinite
+# Horizon end

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/9bebd81ae0b0a7f952b59886a765c681205de31f",
+  "license": "CLA",
+  "copyright": "by TheGypsyBaron",
   "size": {
     "x": 32,
     "y": 32
@@ -42,6 +42,18 @@
 	{
 	  "name": "off-equipped-BELT",
 	  "directions": 4
-	}
+	},
+  {
+    "name": "lantern_world"
+  },
+  {
+    "name": "lantern-on_world"
+  },
+  {
+    "name": "burnt_world"
+  },
+  {
+    "name": "flashing_world"
+  }
   ]
 }

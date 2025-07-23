@@ -1,9 +1,10 @@
 research-discipline-none = Отсутствует
-research-discipline-industrial = Промышленность
+research-discipline-industrial = Индустрия
 research-discipline-biochemical = Биохимия
 research-discipline-arsenal = Арсенал
-research-discipline-experimental = Экспериментальное
-research-discipline-civilian-services = Обслуживание персонала
+research-discipline-experimental = Наука
+research-discipline-civilian-services = Сервис
+
 research-technology-fulton = Фултоны
 research-technology-salvage-equipment = Снаряжение для утилизации
 research-technology-advanced-powercells = Продвинутые батареи
@@ -27,6 +28,7 @@ research-technology-salvage-weapons = Утилизаторское оружие
 research-technology-draconic-munitions = Драконьи боеприпасы
 research-technology-uranium-munitions = Урановые боеприпасы
 research-technology-explosive-technology = Взрывчатые вещества
+research-technology-special-means = Специализированные средства
 research-technology-weaponized-laser-manipulation = Манипулирование лазерным оружием
 research-technology-nonlethal-ammunition = Нелетальные боеприпасы
 research-technology-practice-ammunition = Учебные боеприпасы

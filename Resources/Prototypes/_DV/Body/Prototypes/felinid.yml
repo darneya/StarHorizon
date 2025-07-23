@@ -10,8 +10,8 @@
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
-        eye_implant: null # _Horizon
-        cyberdeka_implant: null # _Horizon
+        eye_implant: null # Horizon
+        cyberdeka_implant: null # Horizon
     torso:
       part: TorsoFelinid
       connections:

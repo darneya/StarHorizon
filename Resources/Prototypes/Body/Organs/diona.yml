@@ -31,6 +31,7 @@
   name: brain
   description: "The central hub of a diona's pseudo-neurological activity, its root-like tendrils search for its former body."
   components:
+  - type: WorldItem
   - type: Item
     size: Small
     heldPrefix: brain
@@ -58,6 +59,8 @@
   name: eyes
   description: "I see you!"
   components:
+  - type: WorldItem
+    overridePrefix: eyeballs_world
   - type: Sprite
     layers:
       - state: eyeball-l
@@ -69,6 +72,7 @@
   name: stomach
   description: "The diona's equivalent of a stomach, it reeks of asparagus and vinegar."
   components:
+  - type: WorldItem
   - type: Sprite
     state: stomach
   - type: SolutionContainerManager
@@ -104,12 +108,14 @@
   name: lungs
   description: "A spongy mess of slimy, leaf-like structures. Capable of breathing both carbon dioxide and oxygen."
   components:
+  - type: WorldItem
+    overridePrefix: lungs_world
   - type: Sprite
     state: lungs
   - type: Item
     size: Small
     heldPrefix: lungs
-  - type: Lung 
+  - type: Lung
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false
@@ -129,6 +135,41 @@
         maxVol: 100
         canReact: False
 
+# HORIZON START
+- type: entity
+  id: OrganDionaKidneys
+  parent: [BaseDionaOrgan, BaseOrganKidneys]
+  name: почки
+  description: "Фильтруют токсины в крови."
+  components:
+  - type: WorldItem
+    overridePrefix: kidney_world
+  - type: Sprite
+    sprite: Mobs/Species/Diona/organs.rsi
+    layers:
+      - state: kidney-l
+      - state: kidney-r
+  - type: Item
+    size: Small
+    heldPrefix: kidneys
+  # The kidneys just remove anything that doesn't currently have any metabolisms, as a stopgap.
+  - type: Metabolizer
+    maxReagents: 5
+    metabolizerTypes: [Diona]
+    removeEmpty: true
+
+- type: entity
+  id: OrganDionaEars
+  parent: [BaseDionaOrgan, BaseOrganEars]
+  name: уши
+  description: "Ухо состоит из трёх частей. Внутренней, средней, и наружной. В нормальных условиях видно только одну."
+  components:
+  - type: WorldItem
+  - type: Sprite
+    sprite: Mobs/Species/Diona/organs.rsi
+    state: ears
+# HORIZON END
+
 # Organs that turn into nymphs on removal
 - type: entity
   id: OrganDionaBrainNymph
@@ -137,8 +178,9 @@
   name: brain
   description: "The source of incredible, unending intelligence. Honk."
   components:
+  - type: WorldItem
   - type: Brain
-  - type: Nymph # This will make the organs turn into a nymph when they're removed. 
+  - type: Nymph # This will make the organs turn into a nymph when they're removed.
     entityPrototype: OrganDionaNymphBrain
     transferMind: true
 
@@ -149,6 +191,7 @@
   name: stomach
   description: "Gross. This is hard to stomach."
   components:
+  - type: WorldItem
   - type: Nymph
     entityPrototype: OrganDionaNymphStomach
 
@@ -159,6 +202,7 @@
   name: lungs
   description: "Filters oxygen from an atmosphere, which is then sent into the bloodstream to be used as an electron carrier."
   components:
+  - type: WorldItem
   - type: Nymph
     entityPrototype: OrganDionaNymphLungs
 
@@ -171,18 +215,20 @@
   suffix: Brain
   description: Contains the brain of a formerly fully-formed Diona. Killing this would kill the Diona forever. You monster.
   components:
+  - type: WorldItem
   - type: IsDeadIC
   - type: Body
     prototype: AnimalNymphBrain
 
 - type: entity
   id: OrganDionaNymphStomach
-  parent: MobDionaNymphAccent 
+  parent: MobDionaNymphAccent
   categories: [ HideSpawnMenu ]
   name: diona nymph
   suffix: Stomach
-  description: Contains the stomach of a formerly fully-formed Diona. It doesn't taste any better for it. 
+  description: Contains the stomach of a formerly fully-formed Diona. It doesn't taste any better for it.
   components:
+  - type: WorldItem
   - type: IsDeadIC
   - type: Body
     prototype: AnimalNymphStomach
@@ -193,8 +239,9 @@
   categories: [ HideSpawnMenu ]
   name: diona nymph
   suffix: Lungs
-  description: Contains the lungs of a formerly fully-formed Diona. Breathtaking. 
+  description: Contains the lungs of a formerly fully-formed Diona. Breathtaking.
   components:
+  - type: WorldItem
   - type: IsDeadIC
   - type: Body
     prototype: AnimalNymphLungs

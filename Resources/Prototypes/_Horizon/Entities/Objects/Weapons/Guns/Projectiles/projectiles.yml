@@ -83,10 +83,10 @@
     deleteOnCollide: false
     damage:
       types:
-        Heat: 30
+        Heat: 20
         Structural: 20
   - type: TimedDespawn
-    lifetime: 0.2
+    lifetime: 0.1
 
 - type: entity
   id: BulletKineticRailgun
@@ -99,7 +99,63 @@
     impactEffect: BulletImpactEffectKinetic
     damage:
       types:
-        Blunt: 70
-        Structural: 20
+        Blunt: 40
+        Structural: 40
   - type: GatheringProjectile
     amount: 40
+  - type: TimedDespawn
+    lifetime: 0.20 # Horizon
+
+- type: entity
+  id: BulletKineticPistol
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Blunt: 10
+        Structural: 10
+
+- type: entity
+  id: BulletKineticRepeater
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Blunt: 10
+        Structural: 20
+  - type: TimedDespawn
+    lifetime: 0.9 # Horizon
+
+- type: entity
+  id: BulletKineticShotgunSpread
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: ProjectileSpread
+    proto: BulletKineticShotgunPellet
+    count: 4
+    spread: 10
+
+- type: entity
+  id: BulletKineticShotgunPellet
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Blunt: 10
+        Structural: 20
+  - type: TimedDespawn
+    lifetime: 0.07 # Horizon

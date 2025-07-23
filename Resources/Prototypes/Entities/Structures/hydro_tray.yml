@@ -93,6 +93,11 @@
     range: 5
     sound:
       path: /Audio/Ambience/Objects/flowing_water_open.ogg
+  # Horizon Bothany start
+  - type: Construction
+    graph: UpgradeHydroponicsTray
+    node: start
+  # Horizon Bothany end
   - type: GuideHelp
     guides:
     - Botany

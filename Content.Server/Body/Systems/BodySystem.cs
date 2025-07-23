@@ -23,7 +23,7 @@ public sealed class BodySystem : SharedBodySystem
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
-    [Dependency] private readonly LimbSystem _limbSystem = default!; // _Horizon
+    [Dependency] private readonly LimbSystem _limbSystem = default!; // Horizon
 
     public override void Initialize()
     {

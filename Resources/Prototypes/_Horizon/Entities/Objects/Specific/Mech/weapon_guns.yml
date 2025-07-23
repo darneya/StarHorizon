@@ -85,7 +85,7 @@
     - FullAuto
     fireRate: 4
   - type: HitscanMechAmmoProvider
-    proto: RedLaser # Heat 14
+    proto: NFRedLightLaser # Heat 14
     fireCost: 15
   - type: Tag
     tags:
@@ -105,7 +105,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanMechAmmoProvider
-    proto: RedHeavyLaser # Heat 28
+    proto: NFRedMediumLaser # Heat 28
     fireCost: 30
   - type: Tag
     tags:
@@ -128,7 +128,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanMechAmmoProvider
-    proto: Pulse # Heat 35
+    proto: NFPulse # Heat 35
     fireCost: 50
   - type: Tag
     tags:
@@ -151,7 +151,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanMechAmmoProvider
-    proto: XrayLaser # Heat: 10 Radiation: 10
+    proto: NFXrayLaser # Heat: 10 Radiation: 10
     fireCost: 40
   - type: Tag
     tags:
@@ -227,7 +227,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: ShellShotgun # Piercing: 8.3
+    proto: NFPelletShotgunSpread # Piercing: 8.3
     shots: 12
     capacity: 12
     ammoType: shotgun
@@ -260,7 +260,7 @@
   - type: BallisticMechAmmoProvider
     shots: 30
     capacity: 30
-    proto: BulletPistol # Piercing: 16
+    proto: NFBulletPistol35 # Piercing: 16
     reloadTime: 5
   - type: UIFragment
     ui: !type:MechGunUi
@@ -287,7 +287,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: BulletPistolIncendiary # Blunt: 2 Heat: 14
+    proto: NFBulletPistol45Incendiary # Blunt: 2 Heat: 14
     shots: 45
     capacity: 45
     ammoType: lightrifleincendiary
@@ -317,7 +317,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: BulletAntiMateriel # Piercing 40 Structural 30 Stamina 35
+    proto: NFBulletRifle60 # Piercing 40 Structural 30 Stamina 35
     shots: 7
     capacity: 7
     ammoType: sniper

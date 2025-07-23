@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: ThePit
   parent: BasePOI
-  name: "The Pit"
+  name: "Яма"
   minimumDistance: 2200
   maximumDistance: 4200
   spawnGroup: Arena

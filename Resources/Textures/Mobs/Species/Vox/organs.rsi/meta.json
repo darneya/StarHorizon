@@ -1,7 +1,7 @@
 {
     "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "made by mubururu_ (github)",
+    "license": "CLA",
+    "copyright": "sprite by TheGypsyBaron",
     "size": {
         "x": 32,
         "y": 32
@@ -20,6 +20,89 @@
         },
         {
             "name": "lung-r"
+        },
+        {
+            "name": "brain"
+        },
+        {
+            "name": "ears"
+        },
+        {
+            "name": "eyeball-l"
+        },
+        {
+            "name": "eyeball-r"
+        },
+        {
+            "name": "heart-off"
+        },
+        {
+            "name": "heart-on",
+            "delays": [
+                [
+                    0.6,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "kidney-l"
+        },
+        {
+            "name": "kidney-r"
+        },
+        {
+            "name": "liver"
+        },
+        {
+            "name": "stomach"
+        },
+        {
+            "name": "tongue"
+        },
+        {
+            "name": "muscle"
+        },
+        {
+            "name": "lungs_world"
+        },
+        {
+            "name": "brain_world"
+        },
+        {
+            "name": "ears_world"
+        },
+        {
+            "name": "eyeballs_world"
+        },
+        {
+            "name": "heart-off_world"
+        },
+        {
+            "name": "heart-on_world",
+            "delays": [
+                [
+                    0.6,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "kidney_world"
+        },
+        {
+            "name": "liver_world"
+        },
+        {
+            "name": "stomach_world"
+        },
+        {
+            "name": "tongue_world"
+        },
+        {
+            "name": "muscle_world"
         }
     ]
 }

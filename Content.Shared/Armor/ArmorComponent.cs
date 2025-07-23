@@ -8,13 +8,13 @@ namespace Content.Shared.Armor;
 /// <summary>
 /// Used for clothing that reduces damage when worn.
 /// </summary>
-[RegisterComponent, AutoGenerateComponentState, NetworkedComponent, Access(typeof(SharedArmorSystem))] // _Horizon
+[RegisterComponent, AutoGenerateComponentState, NetworkedComponent, Access(typeof(SharedArmorSystem))] // Horizon
 public sealed partial class ArmorComponent : Component
 {
     /// <summary>
     /// The damage reduction
     /// </summary>
-    [DataField(required: true), AutoNetworkedField] // _Horizon
+    [DataField(required: true), AutoNetworkedField] // Horizon
     public DamageModifierSet Modifiers = null!;
 
     /// <summary>

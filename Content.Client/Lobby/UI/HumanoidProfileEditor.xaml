@@ -65,7 +65,7 @@
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-age-label'}" />
                                     <Control HorizontalExpand="True"/>
-                                    <LineEdit Name="AgeEdit" MinSize="40 0" HorizontalAlignment="Right" />
+                                    <LineEdit Name="AgeEdit" MinSize="50 0" HorizontalAlignment="Right" /> <!-- Frontier: "40 0" < "50 0" -->
                                 </BoxContainer>
                                 <!-- Sex -->
                                 <BoxContainer HorizontalExpand="True">
@@ -91,11 +91,31 @@
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
+                                <!-- _Horizon Start -->
+                                <BoxContainer HorizontalExpand="True" Visible="False" Name="BarksContainer">
+                                    <Label Text="{Loc 'humanoid-profile-editor-bark-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <OptionButton Name="BarkProtoButton" HorizontalAlignment="Right" />
+                                    <Button Name="BarkPlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" MaxWidth="80" />
+                                </BoxContainer>
+                                <BoxContainer HorizontalExpand="True" Visible="False" Name="BarksPitchContainer">
+                                    <Label Text="{Loc 'humanoid-profile-editor-bark-pitch-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <LineEdit Name="PitchEdit" MinSize="40 0" HorizontalAlignment="Right" Margin="2 0 2 0" />
+                                </BoxContainer>
+                                <BoxContainer HorizontalExpand="True" Visible="False" Name="BarksDelayContainer">
+                                    <Label Text="{Loc 'humanoid-profile-editor-bark-delay-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <LineEdit Name="DelayVariationMinEdit" MinSize="40 0" HorizontalAlignment="Right" Margin="2 0 2 0" />
+                                    <LineEdit Name="DelayVariationMaxEdit" MinSize="40 0" HorizontalAlignment="Right" Margin="2 0 2 0" />
+                                </BoxContainer>
+                                <!-- _Horizon End -->
                             </BoxContainer>
                             <!-- Skin -->
                             <BoxContainer Margin="10" HorizontalExpand="True" Orientation="Vertical">
                                 <Label Text="{Loc 'humanoid-profile-editor-skin-color-label'}" />
                                 <Slider HorizontalExpand="True" Name="Skin" MinValue="0" MaxValue="100" Value="20" />
+                                <Slider HorizontalExpand="True" Name="SkinKatunian" Visible="False" MinValue="0" MaxValue="50" Value="0" />
                                 <BoxContainer Name="RgbSkinColorContainer" Visible="False" Orientation="Vertical" HorizontalExpand="True"></BoxContainer>
                             </BoxContainer>
                             <!-- Hair -->

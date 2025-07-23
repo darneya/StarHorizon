@@ -25,11 +25,13 @@ plant-holder-component-plant-unhealthy-adjective = нездоровым
 plant-holder-component-dead-plant-matter-message = Он заполнен [color=red]мёртвыми растениями[/color].
 plant-holder-component-weed-high-level-message = Он заполнен [color=green]сорняками[/color]!
 plant-holder-component-pest-high-level-message = Он заполнен [color=gray]маленькими червячками[/color]!
-plant-holder-component-water-level-message = Вода:     [color=cyan]{ $waterLevel }[/color].
-plant-holder-component-nutrient-level-message = Питательные вещества: [color=orange]{ $nutritionLevel }[/color].
+plant-holder-component-water-level-message = Вода: [color=cyan]{ $waterLevel }[/color].
+plant-holder-component-nutrient-level-message = Питательные вещества: [color=cyan]{ $nutritionLevel }[/color].
 plant-holder-component-toxins-high-warning = Горит [color=red]предупреждение уровня токсичности[/color].
 plant-holder-component-light-improper-warning = Мигает [color=yellow]предупреждение о неподходящем уровне освещения[/color].
 plant-holder-component-heat-improper-warning = Мигает [color=orange]предупреждение о неподходящем уровне температуры[/color].
 plant-holder-component-pressure-improper-warning = Мигает [color=lightblue]предупреждение о неподходящем атмосферном давлении[/color].
 plant-holder-component-gas-missing-warning = Мигает [color=cyan]предупреждение о неподходящем атмосферном составе[/color].
 plant-holder-component-early-sample-message = Растение ещё не выросло настолько, чтобы извлечь семена.
+plant-holder-component-age-message = Возраст растения: [color=red]{ $age }[/color].
+plant-holder-component-health-message = Здоровье растения: [color=red]{ $health }[/color].

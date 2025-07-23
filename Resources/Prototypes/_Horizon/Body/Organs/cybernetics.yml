@@ -203,6 +203,8 @@
   description: " Блюспейс-сердце. Имеет маркировку HR-BX-3-1. Произведено и импортировано корпорацией BioXen."
   suffix: Horizon, BioXen
   components:
+  - type: WorldItem
+    overridePrefix: heart-off_world
   - type: Sprite
     sprite: _Horizon/Mobs/Species/Cyberlimbs/organs_bs.rsi
     layers:
@@ -230,6 +232,8 @@
   description: "Кибернетическое сердце, лучшего качества, чем его биологический прародитель. Имеет маркировку IP-BX-4-0,5. Чертежи предоставлены Interdyne Pharmaceutics, произведены и импортированы корпорацией BioXen."
   suffix: Horizon, BioXen
   components:
+  - type: WorldItem
+    overridePrefix: heart-off_world
   - type: Sprite
     sprite: _Horizon/Mobs/Species/Cyberlimbs/organs_cyber.rsi
     layers:
@@ -258,6 +262,8 @@
   description: "Бионическое сердце с улучшенной системой фильтрации. Имеет маркировку IP-BX-2-1,5. Чертежи предоставлены Interdyne Pharmaceutics, произведены и импортированы корпорацией BioXen."
   suffix: Horizon, BioXen
   components:
+  - type: WorldItem
+    overridePrefix: heart-off_world
   - type: Sprite
     sprite: _Horizon/Mobs/Species/Cyberlimbs/organs_bio.rsi
     layers:

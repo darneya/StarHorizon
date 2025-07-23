@@ -66,6 +66,7 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Ephedrine
@@ -119,6 +120,7 @@
         conditions:
         - !type:ReagentThreshold
           min: 30
+  pricePerUnit: 3 # Horizon
 
 - type: reagent
   id: Stimulants
@@ -192,6 +194,7 @@
             groups:
               Burn: -1
               Brute: -1
+  pricePerUnit: 8 # Horizon
 
 - type: reagent
   id: THC
@@ -227,6 +230,7 @@
           min: 0.25
         reagent: Addictine
         amount: 0.2
+  pricePerUnit: 1
 # Horizon end
 
 - type: reagent
@@ -240,6 +244,7 @@
   plantMetabolism:
   - !type:PlantAdjustHealth
     amount: -5
+  pricePerUnit: 1 # Horizon
 
 # TODO: Replace these nonstandardized effects with generic brain damage
 - type: reagent
@@ -281,6 +286,7 @@
           min: 0.25
         reagent: Addictine
         amount: 0.2
+  pricePerUnit: 4
 # Horizon end
 
 - type: reagent
@@ -311,6 +317,7 @@
           min: 0.25
         reagent: Addictine
         amount: 0.1
+  pricePerUnit: 3
 # Horizon end
 
 - type: reagent
@@ -330,6 +337,7 @@
         type: Add
         time: 5
         refresh: false
+  pricePerUnit: 2 # Horizon
 
 # Probably replace this one with sleeping chem when putting someone in a comatose state is easier
 - type: reagent
@@ -353,6 +361,7 @@
         component: ForcedSleeping
         refresh: false
         type: Add
+  pricePerUnit: 7 # Horizon
 
 - type: reagent
   id: MuteToxin
@@ -372,6 +381,7 @@
         type: Add
         time: 10
         refresh: false
+  pricePerUnit: 7 # Horizon
 
 - type: reagent
   id: NorepinephricAcid
@@ -416,6 +426,7 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
+  pricePerUnit: 6 # Horizon
 
 - type: reagent
   id: TearGas
@@ -462,6 +473,7 @@
         conditions:
         - !type:ReagentThreshold
           min: 20
+  pricePerUnit: 4 # Horizon
 
 - type: reagent
   id: Happiness
@@ -512,3 +524,4 @@
         type: Add
         time: 5
         refresh: false
+  pricePerUnit: 5 # Horizon

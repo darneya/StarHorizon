@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Made by PixelTheKermit (github) for SS14, inhands by mubururu_ (github)",
+  "license": "CLA",
+  "copyright": "sprite by TheGypsyBaron",
   "size": {
     "x": 32,
     "y": 32
@@ -36,10 +36,9 @@
       "name": "heart-on",
       "delays": [
         [
+          0.6,
           0.1,
-          0.1,
-          0.1,
-          0.6
+          0.1
         ]
       ]
     },
@@ -68,6 +67,58 @@
     },
     {
       "name": "web-gland"
+    },
+    {
+      "name": "brain"
+    },
+    {
+      "name": "kidney-l"
+    },
+    {
+      "name": "kidney-r"
+    },
+    {
+      "name": "liver"
+    },
+    {
+      "name": "brain_world"
+    },
+    {
+      "name": "eyeballs_world"
+    },
+    {
+      "name": "heart-off_world"
+    },
+    {
+      "name": "heart-on_world",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.6
+        ]
+      ]
+    },
+    {
+      "name": "kidney_world"
+    },
+    {
+      "name": "lungs_world"
+    },
+    {
+      "name": "muscle_world"
+    },
+    {
+      "name": "stomach_world"
+    },
+    {
+      "name": "tongue_world"
+    },
+    {
+      "name": "web-gland_world"
+    },
+    {
+      "name": "liver_world"
     }
   ]
 }

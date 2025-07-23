@@ -187,6 +187,24 @@
   - type: AddAccentClothing
     accent: OwOAccent
 
+# Horizon start
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseC3SyndicateContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  id: ClothingHeadHatBunnyEars
+  name: bunny ears
+  description: "BUNNNNN!"
+  categories: [ DoNotMap ]
+  components:
+  - type: Tag
+    tags: [] # ignore "WhitelistChameleon" tag
+  - type: Sprite
+    sprite: Nyanotrasen/Mobs/Customization/bunny_ears.rsi
+  - type: Clothing
+    sprite: Nyanotrasen/Mobs/Customization/bunny_ears.rsi
+
+# Horizon end
+
 - type: entity
   parent: [ClothingHeadHatCatEars, BaseToggleClothing]
   id: ClothingHeadHatCatEarsValid

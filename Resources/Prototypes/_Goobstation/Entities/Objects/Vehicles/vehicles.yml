@@ -7,6 +7,7 @@
   - type: Vehicle
     # renderOver: East, SouthEast, South, SouthWest, West # Frontier
     renderOver: East, South, West # Frontier
+    radarBlip: false # Frontier
   - type: Strap
     position: Stand
     unbuckleDistanceSquared: 0.09 # Frontier
@@ -22,18 +23,18 @@
   - type: InteractionOutline
   - type: Access
   - type: Physics
-    bodyType: Dynamic
+    bodyType: KinematicController # Frontier: Dynamic<KinematicController - it moves, it's kinematic
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.45
+          radius: 0.25
         density: 100
         mask:
           - MobMask
-        layer:
-          - MobLayer
+        # layer: # Frontier
+        #   - MobLayer # Frontier: not hit by bullets and lasers
         hard: true
   - type: Pullable
   - type: Damageable
@@ -78,6 +79,7 @@
   - type: Tag
     tags:
     - DoorBumpOpener
+    - DemagImmune # Frontier: no unicycle radar blips
   - type: RequireProjectileTarget
 
 - type: entity
@@ -137,7 +139,6 @@
   - type: Sprite
     sprite: Objects/Vehicles/syndicatesegway.rsi
     state: vehicle
-    renderOver: North, NorthEast, NorthWest
     noRot: true
   - type: ItemSlots
     slots:
@@ -244,10 +245,10 @@
     baseWalkSpeed: 2.5
   - type: StaticPrice
     price: 75
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 125
-      Plastic: 125
+  #- type: PhysicalComposition # Frontier
+    #materialComposition: # Frontier
+      #Steel: 125 # Frontier
+      #Plastic: 125 # Frontier
 
 - type: entity
   parent: VehicleWheelchair
@@ -287,9 +288,9 @@
     baseWalkSpeed: 2.5
   - type: StaticPrice
     price: 175
-  - type: PhysicalComposition
-    materialComposition:
-      Steel: 125
-      Plastic: 125
+  #- type: PhysicalComposition # Frontier
+    #materialComposition: # Frontier
+      #Steel: 125 # Frontier
+      #Plastic: 125 # Frontier
   - type: ItemSlots # Frontier
     slots: {} # Frontier: no keys required

@@ -15,34 +15,35 @@ pg_username = "ss14_user"
 pg_password = "%pg_password%"
 
 [game]
-hostname = "StarHorizon - Горизонт событий [💫] [18+]"
+hostname = "StarHorizon - Frontier [💫] [18+]"
 desc = """
 Добро пожаловать на наш сервер! Мы предлагаем полную свободу выбора!
 
 У нас вы встретите:
-🏢 Отзывчивую и дружелюбную администрацию, креативное комьюнити и массу возможностей для самореализации!
-🏯 Возможность создать свой собственный клан, а впоследствии и фракцию или присоединитесь к уже существующим!
-🩺 Хирургию! А также кибернетические конечности и органы.
-🔬 Ксенобиологию! Вырасти своего ручного ксеноса!
-🤖 Робототехнику! Исследуй и строй железных монстров! Покажи Тиранозавру на экспедиции кто тут Босс!
-🌱 Продвинутую ботанику с новыми видами растений и цветов, а также ферментацию и генетику! Создай свой одуванчик - убийцу!
-👹 А также лучшие Барки! Гав!
+🩺 Хирургию, импланты и кибернетику. Наномашины, сынок!
+🤖 Гиганских мехов. Покажи этому Динозавру, кто тут Босс!
+🌱 Продвинутую ботанику! Множество растений и генетика.
+🧨 Улучшаемое вооружение и модули.
+🔬 Уникальные технологии.
+🏯 Создание своего клана и фракции!
+🎶 Полноценный аналог ТТС - Барки!
 
-Мы рады встрече с тобой, странник!
+Заходи, будет весело!
 """
 soft_max_players = 100
 lobbyduration = 180
-fallbackpreset = "Extended"
+defaultpreset = "nfpirate"
+fallbackpreset = "nfadventure"
 
 [hub]
-advertise = false
-#tags = "lang:ru,region:eu_e,rp:med"
-#server_url = "ss14://ss14.aavikko.ru:1212"
-## Wizard's Den hub
-#hub_urls = "https://hub.spacestation14.com/"
+advertise = true
+tags = "lang:ru,region:eu_e,rp:med"
+server_url = "ss14://ss14.starhorizon.ru:1212"
+# Wizard's Den hub
+hub_urls = "https://hub.spacestation14.com/"
 
 [server]
-rules_file = "DefaultRuleset"
+rules_file = "FrontierRuleset"
 lobby_name = "StarHorizon"
 
 [console]
@@ -87,8 +88,8 @@ map_enabled = true
 restart_not_allowed_when_admin_online = false
 
 [shuttle]
-auto_call_time = 1440
-
+auto_call_time = 4320
+shuttle.emergency_authorize_time = 30
 
 [rules]
 time = 90.0
@@ -130,3 +131,13 @@ ahelp_webhook = "%webhook_ahelp%"
 ban_webhook = "%webhook_ban%"
 round_update_webhook = "%webhook_round_update%"
 #round_end_role = "%round_end_role%"
+
+[events]
+enabled = true
+
+################################################################################
+##### Relpay ###################################################################
+
+[replay]
+auto_record = true
+directory = "replays/"

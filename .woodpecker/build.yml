@@ -1,6 +1,5 @@
 when:
-  - branch: master
-    event: [ manual ]
+  - event: [ manual ]
 
 steps:
   - name: build Content.Packaging
@@ -18,6 +17,7 @@ steps:
     volumes:
       - "/var/lib/star-horizon/woodpecker/storage:/storage"
     commands:
-      - bash -c 'if [[ ! -e /storage/ss14 ]]; then mkdir -p /storage/ss14; fi'
-      - mv release/SS14.Server_linux-x64.zip /storage/ss14/
-      - cp Resources/ConfigPresets/StarHorizon/server_config.toml /storage/ss14/
+      - bash -c 'if [[ ! -e /storage/ss14/${CI_COMMIT_BRANCH} ]]; then mkdir -p /storage/ss14/${CI_COMMIT_BRANCH}; fi'
+      - mv release/SS14.Server_linux-x64.zip /storage/ss14/${CI_COMMIT_BRANCH}/
+      - cp Resources/ConfigPresets/StarHorizon/server_config.toml /storage/ss14/${CI_COMMIT_BRANCH}/
+      - echo '${CI_COMMIT_SHA}' > /storage/ss14/${CI_COMMIT_BRANCH}/build_commit.txt

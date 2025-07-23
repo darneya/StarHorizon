@@ -31,3 +31,7 @@
       path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
       path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
+
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 200

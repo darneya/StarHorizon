@@ -1,0 +1,49 @@
+- type: technology
+  id: ArsenalBasicModules
+  name: research-technology-modules-based
+  entityIcon: AttachmentReflexSight
+  discipline: NFArsenalNfsd
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - AttachmentVerticalGrip
+  - AttachmentLaserSight
+  - AttachmentReflexSight
+  technologyPrerequisites:
+  - NFBasicAmmunitionProduction
+  position: 1, 66
+
+- type: technology
+  id: ArsenalExtendedModules
+  name: research-technology-modules-extended
+  entityIcon: AttachmentSuppressor
+  discipline: NFArsenalNfsd
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - AttachmentMagneticHarness
+  - AttachmentSuppressor
+  - AttachmentAntiLyingWarrior
+  technologyPrerequisites:
+  - ArsenalBasicModules
+  position: 2, 66
+
+- type: technology
+  id: ArsenalAdvancedModules
+  name: research-technology-modules-advanced
+  entityIcon: AttachmentT2Miniscope
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 5000
+  recipeUnlocks:
+  - AttachmentT2Miniscope
+  - AttachmentM90UnderbarrelShotgun
+  - AttachmentM90GrenadeLauncher
+  - 40mmGrenadeHEAT
+  - 40mmGrenadeBaton
+  - 40mmGrenadeEMP
+  - 40mmGrenadeFlash
+  - 40mmGrenadeSmoke
+  technologyPrerequisites:
+  - ArsenalExtendedModules
+  position: 3, 66
