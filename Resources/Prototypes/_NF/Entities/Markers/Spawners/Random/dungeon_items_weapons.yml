@@ -303,6 +303,13 @@
     - WeaponCaseLongLaserCarbineExpedition
     - WeaponCaseLongXrayCannonExpedition
     - WeaponCaseLongTemperatureGunExpedition
+    - ClothingOuterIndeep1
+    - ClothingOuterIndeep2
+    - ClothingOuterFight
+    - ClothingOuterExperementalSyndy
+    - ClothingOuterNukeDark
+    - ClothingOuterHunter
+    - ClothingOuterHunterElite
     chance: 1.0
     offset: 0.0
     rarePrototypes:
