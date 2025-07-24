@@ -62,7 +62,7 @@
 
 #Trauma team EVA
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseRestrictedContraband]
+  parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitTraumaTeam
   name: EVA парамедика "Траумы"
   description: Специальный прототип скафандра EVA для отрядов Trauma Team Interstellar. Снабжен экзоскелетом для повышенной грузоподъёмности и мобильности.
@@ -89,7 +89,7 @@
 
 #Trauma team EVAR
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseRestrictedContraband]
+  parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitTraumaTeamRed
   name: EVA техника "Траумы"
   description: Специальный прототип скафандра EVA для отрядов Trauma Team Interstellar. Снабжен экзоскелетом для повышенной грузоподъёмности и мобильности.
@@ -119,7 +119,7 @@
 
 #Trauma team EVAS
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseRestrictedContraband]
+  parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitTraumaTeamSur
   name: EVA реаниматора "Траумы"
   description: Специальный прототип скафандра EVA для отрядов Trauma Team Interstellar. Снабжен экзоскелетом для повышенной грузоподъёмности и мобильности.
