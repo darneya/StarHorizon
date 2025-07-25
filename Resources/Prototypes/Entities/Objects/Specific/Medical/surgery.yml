@@ -5,6 +5,7 @@
   id: BaseToolSurgery
   abstract: true
   components:
+  - type: WorldItem
   - type: Sprite
   - type: StaticPrice
     price: 20
@@ -441,8 +442,8 @@
 - type: entity
   name: продвинутая циркулярная пила
   id: SawAdvanced
-  parent: [ SawElectric, BaseC3SyndicateContraband ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
-  description: Вам кажется, что с её помощью можно разрезать что угодно.
+  parent: [ BaseC3SyndicateContraband, SawElectric ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
+  description: Interdyne's state-of-the-art surgical saw. Guaranteed to stay spotless and sterile, no matter how messy the job.
   components:
   - type: Sprite
     state: advanced

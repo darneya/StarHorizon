@@ -24,6 +24,7 @@ public sealed partial class GasSaleMenu : FancyWindow
         "gases-ammonia", // 6
         "gases-n2o", // 7
         "gases-frezon", // 8
+        "gases-respiron", // 9
     ];
 
     public string FallbackGasString = "gas-fallback";
@@ -54,7 +55,7 @@ public sealed partial class GasSaleMenu : FancyWindow
             Gases.Children.Add(gasLabel);
 
             Label amountLabel = new();
-            amountLabel.Text = Loc.GetString("gas-sale-menu-quantity", ("value", gasAmount));
+            amountLabel.Text = Loc.GetString("gas-sale-menu-quantity", ("value", Math.Round(gasAmount, 2)));
             amountLabel.HorizontalAlignment = HAlignment.Right;
             GasAmounts.Children.Add(amountLabel);
             hasGas = true;

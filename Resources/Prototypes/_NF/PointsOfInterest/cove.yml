@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Cove
   parent: BasePOI
-  name: Pirate Cove
+  name: 'Пиратская Бухта'
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGamePreset: [ NFPirate ]
@@ -21,7 +21,7 @@
   addComponents:
   - type: IFF
     color: "#C83737"
-    flags: [HideLabel]
+    flags: [HideLabel, Hide]
     readOnly: false
 
 - type: gameMap
@@ -39,11 +39,12 @@
           iconPath: /Textures/_NF/Interface/Pirate/piratelogo.png
           stationSubtext: 'frontier-lobby-pirate-subtext'
           stationDescription: 'frontier-lobby-pirate-description'
+          lobbySortOrder: 6
         - type: StationJobs
           availableJobs:
             NFPirateCaptain: [ 1, 1 ]
             NFPirateFirstMate: [ 1, 1 ]
-            NFPirate: [ 0, 0 ]
+            NFPirate: [ 3, 3 ] # Horizon
         - type: StationDeadDropReporting
           messageSet: Pirate
         - type: StationDeadDropHintExempt

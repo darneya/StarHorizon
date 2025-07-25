@@ -34,6 +34,7 @@ using Robust.Shared.Random;
 using Content.Shared.Mech.Equipment.Components;
 using Content.Shared.Storage;
 using Content.Server._Horizon.Mech.Components;
+using Content.Shared.NPC.Systems; // Frontier
 
 namespace Content.Server.Mech.Systems;
 
@@ -50,6 +51,7 @@ public sealed partial class MechSystem : SharedMechSystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly SharedToolSystem _toolSystem = default!;
+    [Dependency] private readonly NpcFactionSystem _npcFaction = default!; // Frontier
     // Horizon Mech start
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
@@ -338,12 +340,14 @@ public sealed partial class MechSystem : SharedMechSystem
 
         // Frontier - Make AI Attack mechs based on user.
         if (TryComp<MobStateComponent>(args.User, out var _))
-            EnsureComp<MobStateComponent>(uid);
+        {
+            component.MobStateAdded = !EnsureComp<MobStateComponent>(uid, out _);
+            component.MobThresholdsAdded = !EnsureComp<MobThresholdsComponent>(uid, out _);
+        }
         if (TryComp<NpcFactionMemberComponent>(args.User, out var faction))
         {
-            var factionMech = EnsureComp<NpcFactionMemberComponent>(uid);
-            if (faction.Factions != null)
-                factionMech.Factions = faction.Factions;
+            component.NpcFactionAdded = !EnsureComp<NpcFactionMemberComponent>(uid, out var factionMech);
+            _npcFaction.AddFactions((uid, factionMech), faction.Factions);
         }
         // End Frontier
 
@@ -359,6 +363,24 @@ public sealed partial class MechSystem : SharedMechSystem
             return;
 
         TryEject(uid, component);
+
+        // Frontier: revert state
+        if (component.MobStateAdded)
+        {
+            RemComp<MobStateComponent>(uid);
+            component.MobStateAdded = false;
+        }
+        if (component.MobThresholdsAdded)
+        {
+            RemComp<MobThresholdsComponent>(uid);
+            component.MobThresholdsAdded = false;
+        }
+        if (component.NpcFactionAdded)
+        {
+            RemComp<NpcFactionMemberComponent>(uid);
+            component.NpcFactionAdded = false;
+        }
+        // End Frontier: revert state
 
         args.Handled = true;
     }

@@ -3,8 +3,7 @@
 namespace Content.Server.Atmos.Components;
 
 [RegisterComponent]
-[Access(typeof(BarotraumaSystem))]
-public sealed partial class PressureProtectionComponent : Component
+public sealed partial class PressureProtectionComponent : Component // Horizon
 {
     [DataField]
     public float HighPressureMultiplier = 1f;

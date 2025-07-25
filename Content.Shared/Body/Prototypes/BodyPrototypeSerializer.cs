@@ -40,18 +40,12 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
         {
             foreach (var (key, value) in organsNode)
             {
-                if (key is not ValueDataNode)
-                {
-                    nodes.Add(new ErrorNode(key, $"Key is not a value data node"));
-                    continue;
-                }
-
                 if (value is not ValueDataNode organ)
                 {
                     nodes.Add(new ErrorNode(value, $"Value is not a value data node"));
                     continue;
                 }
-                
+
                 if (organ.Value == "null" || organ.Value == null)
                     continue;
 
@@ -97,12 +91,6 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
 
             foreach (var (key, value) in slots)
             {
-                if (key is not ValueDataNode)
-                {
-                    nodes.Add(new ErrorNode(key, $"Key is not a value data node"));
-                    continue;
-                }
-
                 if (value is not MappingDataNode slot)
                 {
                     nodes.Add(new ErrorNode(value, $"Slot is not a mapping data node"));
@@ -134,9 +122,8 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
         var slotNodes = node.Get<MappingDataNode>("slots");
         var allConnections = new Dictionary<string, (string? Part, HashSet<string>? Connections, Dictionary<string, string>? Organs)>();
 
-        foreach (var (keyNode, valueNode) in slotNodes)
+        foreach (var (slotId, valueNode) in slotNodes)
         {
-            var slotId = ((ValueDataNode)keyNode).Value;
             var slot = (MappingDataNode)valueNode;
 
             string? part = null;
@@ -161,9 +148,9 @@ public sealed class BodyPrototypeSerializer : ITypeReader<BodyPrototype, Mapping
             {
                 organs = new Dictionary<string, string>();
 
-                foreach (var (organKeyNode, organValueNode) in slotOrgansNode)
+                foreach (var (organKey, organValueNode) in slotOrgansNode)
                 {
-                    organs.Add(((ValueDataNode)organKeyNode).Value, ((ValueDataNode)organValueNode).Value);
+                    organs.Add(organKey, ((ValueDataNode)organValueNode).Value);
                 }
             }
 

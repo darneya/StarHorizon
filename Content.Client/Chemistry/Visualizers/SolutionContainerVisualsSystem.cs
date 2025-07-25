@@ -1,3 +1,4 @@
+using Content.Client._Horizon.WorldItem;
 using Content.Client.Items.Systems;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
@@ -14,6 +15,7 @@ namespace Content.Client.Chemistry.Visualizers;
 
 public sealed class SolutionContainerVisualsSystem : VisualizerSystem<SolutionContainerVisualsComponent>
 {
+    [Dependency] private readonly WorldItemSystem _worldItemSystem = null!; // Horizon
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly ItemSystem _itemSystem = default!;
 
@@ -27,7 +29,10 @@ public sealed class SolutionContainerVisualsSystem : VisualizerSystem<SolutionCo
 
     private void OnMapInit(EntityUid uid, SolutionContainerVisualsComponent component, MapInitEvent args)
     {
-        var meta = MetaData(uid);
+        // var meta = MetaData(uid); // Frontier
+        if (!TryComp(uid, out MetaDataComponent? meta)) // Frontier
+            return; // Frontier
+
         component.InitialDescription = meta.EntityDescription;
     }
 
@@ -56,6 +61,7 @@ public sealed class SolutionContainerVisualsSystem : VisualizerSystem<SolutionCo
         var fillBaseName = component.FillBaseName;
         var changeColor = component.ChangeColor;
         var fillSprite = component.MetamorphicDefaultSprite;
+        var prefix = _worldItemSystem.GetPrefixOrOverride(uid); // Horizon
 
         // Currently some solution methods such as overflowing will try to update appearance with a
         // volume greater than the max volume. We'll clamp it so players don't see
@@ -115,7 +121,10 @@ public sealed class SolutionContainerVisualsSystem : VisualizerSystem<SolutionCo
         if (closestFillSprite > 0)
         {
             if (fillBaseName == null)
+            {
+                _worldItemSystem.SetWorldState(uid, args.Sprite);
                 return;
+            }
 
             var stateName = fillBaseName + closestFillSprite;
             if (fillSprite != null)
@@ -133,11 +142,8 @@ public sealed class SolutionContainerVisualsSystem : VisualizerSystem<SolutionCo
                 args.Sprite.LayerSetVisible(fillLayer, false);
             else
             {
-                args.Sprite.LayerSetState(fillLayer, component.EmptySpriteName);
-                if (changeColor)
-                    args.Sprite.LayerSetColor(fillLayer, component.EmptySpriteColor);
-                else
-                    args.Sprite.LayerSetColor(fillLayer, Color.White);
+                args.Sprite.LayerSetState(fillLayer, component.EmptySpriteName + prefix);
+                args.Sprite.LayerSetColor(fillLayer, changeColor ? component.EmptySpriteColor : Color.White);
             }
         }
 

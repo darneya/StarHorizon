@@ -1529,9 +1529,6 @@
   description: It's good for the eyes!
   suffix: Horizon
   components:
-  - type: Food
-    trash:
-    - DiamondOre1
   - type: SolutionContainerManager
     solutions:
       food:
@@ -1541,8 +1538,8 @@
           Quantity: 5
         - ReagentId: Vitamin
           Quantity: 4
-        - ReagentId: Oculine
-          Quantity: 3
+        - ReagentId: Omnizine
+          Quantity: 2
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Hydroponics/diamondcarrot.rsi
   - type: Produce

@@ -3,26 +3,23 @@
 - type: technology
   id: RipleyMKIITechnology
   name: research-technology-mech-ripleymk2
-  icon:
-    sprite: Objects/Specific/Mech/mecha.rsi
-    state: ripleymkii-open
-  discipline: Industrial
+  entityIcon: MechRipleyMk2
+  discipline: NFEngineering
   tier: 2
-  cost: 10000
+  cost: 5000
   recipeUnlocks:
   - RipleyMk2ModificationKit
   technologyPrerequisites:
-  - RipleyAPLU
+  - NFRipleyAPLU
+  position: 2, 28
 
 - type: technology
   id: ClarkeTechnology
   name: research-technology-mech-clarke
-  icon:
-    sprite: Objects/Specific/Mech/mecha.rsi
-    state: clarke
-  discipline: Industrial
+  entityIcon: MechClarke
+  discipline: NFEngineering
   tier: 2
-  cost: 10000
+  cost: 5000
   recipeUnlocks:
   - ClarkeHarness
   - ClarkeLArm
@@ -33,17 +30,16 @@
   - ClarkeCentralElectronics
   - ClarkePeripheralsElectronics
   technologyPrerequisites:
-  - RipleyAPLU
+  - RipleyMKIITechnology
+  position: 3, 28
 
 - type: technology
   id: MechTechnologyMining
   name: research-technology-mech-mining
-  icon:
-    sprite: Objects/Specific/Mech/mecha_equipment.rsi
-    state: mecha_plasmacutter
-  discipline: Industrial
+  entityIcon: MechWeaponCutter
+  discipline: NFEngineering
   tier: 2
-  cost: 10000
+  cost: 5000
   recipeUnlocks:
     - MechEquipmentDrill
     - MechEquipmentDiamondDrill
@@ -51,49 +47,46 @@
     - BoxPlasmaBox
   technologyPrerequisites:
   - ClarkeTechnology
+  position: 4, 26
 
 - type: technology
   id: MechGunPKA
   name: research-technology-mech-gun-pka
-  icon:
-    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
-    state: mining_kineticgun
-  discipline: Industrial
+  entityIcon: MechGunPKAHeavy
+  discipline: NFEngineering
   tier: 2
-  cost: 10000
+  cost: 5000
   recipeUnlocks:
   - MechGunPKA
   - MechGunPKAHeavy
   technologyPrerequisites:
   - ClarkeTechnology
+  position: 4, 27
 
 # Tier 3
 
 - type: technology
   id: ModernReactor
   name: research-technology-mech-reactor
-  icon:
-    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
-    state: generator_plasma
-  discipline: Industrial
+  entityIcon: MechReactorTesla
+  discipline: NFEngineering
   tier: 3
-  cost: 15000
+  cost: 7500
   recipeUnlocks:
   - MechReactorPlasma
   - MechReactorUranium
   - MechReactorTesla
   technologyPrerequisites:
-  - PortableFission
+  - ClarkeTechnology
+  position: 4, 24
 
 - type: technology
   id: HarsonTechnology
   name: research-technology-mech-harson
-  icon:
-    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
-    state: harson-open
-  discipline: Industrial
+  entityIcon: MechHarson
+  discipline: NFEngineering
   tier: 3
-  cost: 15000
+  cost: 10000
   recipeUnlocks:
   - MechHarsonUpgradeKit
   - MechHarsonSpiderUpgradeKit
@@ -108,18 +101,15 @@
 #  - HarsonHead
 #  - HarsonCentralElectronics
 #  - HarsonPeripheralsElectronics
-#  technologyPrerequisites:
-#  - ClarkeTechnology
+  position: 4, 25
 
 - type: technology
   id: RipleyMKIIMechPaint
   name: research-technology-mech-ripley-paint
-  icon:
-    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
-    state: ripleyzairjah-open
-  discipline: Industrial
+  entityIcon: MechRipleyMk2Aluminizer
+  discipline: NFEngineering
   tier: 3
-  cost: 15000
+  cost: 10000
   recipeUnlocks:
   - MechRipleyAluminizerUpgradeKit
   - MechRipleyCombatUpgradeKit
@@ -132,18 +122,18 @@
   - MechRipleyDeathUpgradeKit
   technologyPrerequisites:
   - RipleyMKIITechnology
+  position: 2, 27
 
 - type: technology
   id: ClarkeMechPaint
   name: research-technology-mech-clarke-paint
-  icon:
-    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
-    state: clarkeorangey-open
-  discipline: Industrial
+  entityIcon: MechClarkeOrangey
+  discipline: NFEngineering
   tier: 3
-  cost: 15000
+  cost: 10000
   recipeUnlocks:
   - MechClarkeOrangeyUpgradeKit
   - MechClarkeSpiderUpgradeKit
   technologyPrerequisites:
   - ClarkeTechnology
+  position: 4, 28

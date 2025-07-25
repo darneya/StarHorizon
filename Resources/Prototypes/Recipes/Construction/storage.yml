@@ -1,15 +1,10 @@
-# БЮРОКРАТИЯ
+#bureaucracy
 - type: construction
   id: FilingCabinet
-  name: картотечный шкаф
-  description: Шкаф для всех ваших документов.
   graph: FilingCabinet
   startNode: start
   targetNode: filingCabinet
   category: construction-category-storage
-  icon:
-    sprite: Structures/Storage/cabinets.rsi
-    state: filingcabinet
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -18,15 +13,10 @@
 
 - type: construction
   id: TallCabinet
-  name: высокий шкаф
-  description: Шкаф для всех ваших документов.
   graph: FilingCabinet
   startNode: start
   targetNode: tallCabinet
   category: construction-category-storage
-  icon:
-    sprite: Structures/Storage/cabinets.rsi
-    state: tallcabinet
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -35,51 +25,36 @@
 
 - type: construction
   id: ChestDrawer
-  name: комод на колёсиках
-  description: Небольшой ящик для документов. Теперь с колёсиками!
   graph: FilingCabinet
   startNode: start
   targetNode: chestDrawer
   category: construction-category-storage
-  icon:
-    sprite: Structures/Storage/cabinets.rsi
-    state: chestdrawer
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
 
-  # ВИТРИНЫ
+# ItemCabinets
 - type: construction
   id: ShowCase
-  name: витрина
-  description: Прочная витрина для ценных экспонатов.
   graph: GlassBox
   startNode: start
   targetNode: glassBox
   category: construction-category-storage
-  icon:
-    sprite: Structures/Storage/glassbox.rsi
-    state: icon
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
 
-    # ПОЛКИ
-  # Обычные
+# Shelfs
+# Normals
 - type: construction
   id: ShelfWood
-  name: деревянная полка
-  description: Удобное место для хранения чего угодно.
   graph: Shelf
   startNode: start
   targetNode: ShelfWood
-  icon:
-    sprite: Structures/Storage/Shelfs/wood.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -88,14 +63,9 @@
 
 - type: construction
   id: ShelfMetal
-  name: металлическая полка
-  description: Прочное место для хранения чего угодно.
   graph: Shelf
   startNode: start
   targetNode: ShelfMetal
-  icon:
-    sprite: Structures/Storage/Shelfs/metal.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -104,31 +74,21 @@
 
 - type: construction
   id: ShelfGlass
-  name: стеклянная полка
-  description: Как обычная полка, но хрупкая и без стенок!
   graph: Shelf
   startNode: start
   targetNode: ShelfGlass
-  icon:
-    sprite: Structures/Storage/Shelfs/glass.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
   conditions:
     - !type:WallmountCondition
 
-  # Усиленные
+# Reinforced
 - type: construction
   id: ShelfRWood
-  name: прочная деревянная полка
-  description: Идеальное место для хранения ваших виниловых пластинок.
   graph: Shelf
   startNode: start
   targetNode: ShelfRWood
-  icon:
-    sprite: Structures/Storage/Shelfs/wood.rsi
-    state: rbase
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -137,14 +97,9 @@
 
 - type: construction
   id: ShelfRMetal
-  name: прочная металлическая полка
-  description: Надёжная и крепкая - сохранит ваши трофеи от инженеров.
   graph: Shelf
   startNode: start
   targetNode: ShelfRMetal
-  icon:
-    sprite: Structures/Storage/Shelfs/metal.rsi
-    state: rbase
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -153,31 +108,21 @@
 
 - type: construction
   id: ShelfRGlass
-  name: прочная стеклянная полка
-  description: Прозрачная, достаточно крепкая, с блестящим пластиковым корпусом. Что ещё нужно?
   graph: Shelf
   startNode: start
   targetNode: ShelfRGlass
-  icon:
-    sprite: Structures/Storage/Shelfs/glass.rsi
-    state: rbase
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
   conditions:
     - !type:WallmountCondition
 
-  # Отделенческие
+# Departmental
 - type: construction
   id: ShelfBar
-  name: барная полка
-  description: Специально разработана для хранения дополнительных алкогольных напитков - вмещает больше бутылок!
   graph: Shelf
   startNode: start
   targetNode: ShelfBar
-  icon:
-    sprite: Structures/Storage/Shelfs/Departments/Service/bar.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -186,14 +131,9 @@
 
 - type: construction
   id: ShelfKitchen
-  name: кухонная полка
-  description: Для ножей, специй и всего вкусного!
   graph: Shelf
   startNode: start
   targetNode: ShelfKitchen
-  icon:
-    sprite: Structures/Storage/Shelfs/Departments/Service/kitchen.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
@@ -202,14 +142,9 @@
 
 - type: construction
   id: ShelfChemistry
-  name: химическая полка
-  description: Идеальна для безопасного хранения важных реактивов подальше от неуклюжих клоунов!
   graph: Shelf
   startNode: start
   targetNode: ShelfChemistry
-  icon:
-    sprite: Structures/Storage/Shelfs/Departments/Medical/chemistry.rsi
-    state: base
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true

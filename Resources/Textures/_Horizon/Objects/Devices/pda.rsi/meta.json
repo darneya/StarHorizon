@@ -785,6 +785,28 @@
       ]
     },
     {
+      "name": "pda-plantmanager",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "pda-planttechnician",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
       "name": "equipped-IDCARD",
       "directions": 4
     },
@@ -997,6 +1019,12 @@
     },
     {
       "name": "pda-doc_world"
+    },
+    {
+      "name": "pda-planttechnician_world"
+    },
+    {
+      "name": "pda-plantmanager_world"
     }
   ]
 }

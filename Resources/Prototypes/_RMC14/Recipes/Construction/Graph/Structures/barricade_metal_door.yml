@@ -16,7 +16,7 @@
         doAfter: 5
 
   - node: nodeBarricadeMetalDoor
-    entity: CMBarricadeMetalDoor
+    entity: BarricadeMetalDoor
     edges:
     - to: start
       completed:

@@ -6,7 +6,12 @@
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/hypospray.rsi
-    state: hypo
+    layers:
+      - state: hypo
+        map: ["enum.SolutionContainerLayers.Base"]
+      - state: hypo_fill1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
   - type: Item
     sprite: Objects/Specific/Medical/hypospray.rsi
   - type: SolutionContainerManager
@@ -28,6 +33,11 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: Hypospray
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: hypo_fill
+    solutionName: hypospray
 
 - type: entity
   name: gorlex hypospray
@@ -37,7 +47,12 @@
   components:
   - type: Sprite
     sprite: Objects/Specific/Medical/syndihypo.rsi
-    state: hypo
+    layers:
+      - state: hypo
+        map: ["enum.SolutionContainerLayers.Base"]
+      - state: hypo_fill1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
   - type: Item
     sprite: Objects/Specific/Medical/syndihypo.rsi
   - type: SolutionContainerManager
@@ -52,6 +67,11 @@
     onlyAffectsMobs: false
   - type: UseDelay
     delay: 0.5
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: hypo_fill
+    solutionName: hypospray
 
 - type: entity
   name: borghypo
@@ -59,9 +79,20 @@
   description: A sterile injector for rapid administration of drugs to patients. A cheaper and more specialised version for medical borgs.
   id: BorgHypo
   components:
+  # Frontier: fillable sprite
   - type: Sprite
-    sprite: Objects/Specific/Medical/hypospray.rsi
-    state: borghypo
+    sprite: _NF/Objects/Specific/Medical/borghypo.rsi
+    layers:
+    - state: borghypo
+      map: [ enum.SolutionContainerLayers.Base ]
+    - state: fill-1
+      visible: false
+      map: [ enum.SolutionContainerLayers.Fill ]
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 7
+    fillBaseName: fill-
+  # End Frontier: fillable sprite
   - type: Item
     sprite: Objects/Specific/Medical/hypospray.rsi
   - type: SolutionContainerManager
@@ -97,6 +128,8 @@
   description: A sterile injector for rapid administration of drugs to patients. This one can't be refilled.
   id: ChemicalMedipen
   components:
+  - type: WorldItem
+  - type: GoblinPreciousTrash # Frontier
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
     layers:
@@ -134,9 +167,6 @@
     maxFillLevels: 1
     changeColor: false
     emptySpriteName: firstaid_empty
-  - type: Tag
-    tags:
-    - Trash
   - type: PhysicalComposition
     materialComposition:
       Plastic: 50
@@ -170,8 +200,6 @@
           Quantity: 12
         - ReagentId: TranexamicAcid
           Quantity: 3
-  - type: Tag
-    tags: []
 
 - type: entity
   name: poison auto-injector
@@ -209,8 +237,6 @@
           Quantity: 10
         - ReagentId: Epinephrine
           Quantity: 5
-  - type: Tag
-    tags: []
 
 - type: entity
   name: brute auto-injector
@@ -253,8 +279,6 @@
           Quantity: 15
         - ReagentId: TranexamicAcid
           Quantity: 5
-  - type: Tag
-    tags: []
 
 - type: entity
   name: burn auto-injector
@@ -297,8 +321,6 @@
           Quantity: 10
         - ReagentId: Leporazine
           Quantity: 10
-  - type: Tag
-    tags: []
 
 - type: entity
   name: rad auto-injector
@@ -341,8 +363,6 @@
           Quantity: 15
         - ReagentId: Bicaridine
           Quantity: 5
-  - type: Tag
-    tags: []
 
 - type: entity
   name: puncturase auto-injector
@@ -385,8 +405,6 @@
           Quantity: 10
         - ReagentId: TranexamicAcid
           Quantity: 5
-  - type: Tag
-    tags: []
 
 - type: entity
   name: pyrazine auto-injector
@@ -429,8 +447,6 @@
           Quantity: 10
         - ReagentId: Dermaline
           Quantity: 10
-  - type: Tag
-    tags: []
 
 - type: entity
   name: airloss auto-injector
@@ -473,8 +489,6 @@
           Quantity: 20
         - ReagentId: DexalinPlus
           Quantity: 20
-  - type: Tag
-    tags: []
 
 - type: entity
   name: space medipen
@@ -518,8 +532,6 @@
             Quantity: 10
           - ReagentId: Barozine
             Quantity: 20
-  - type: Tag
-    tags: []
 
 - type: entity
   name: hyperzine injector
@@ -564,8 +576,6 @@
     injectOnly: true
   - type: StaticPrice
     price: 500
-  - type: Tag
-    tags: []
 
 - type: entity
   name: hyperzine microinjector
@@ -605,8 +615,6 @@
     emptySpriteName: microstimpen_empty
   - type: StaticPrice
     price: 100
-  - type: Tag
-    tags: []
 
 - type: entity
   name: combat medipen
@@ -651,8 +659,6 @@
     injectOnly: true
   - type: StaticPrice
     price: 500
-  - type: Tag
-    tags: []
 
 - type: entity
   name: pen
@@ -725,5 +731,3 @@
     transferAmount: 1
     onlyAffectsMobs: false
     injectOnly: true
-  - type: Tag
-    tags: []

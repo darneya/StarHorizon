@@ -89,7 +89,8 @@
   productPrototypes:
   - FoodBanana
   mutationPrototypes:
-  - mimana
+    - mimana
+    - monkanana # Frontier
   harvestRepeat: Repeat
   lifespan: 50
   maturation: 6
@@ -144,8 +145,8 @@
   packetPrototype: CarrotSeeds
   productPrototypes:
   - FoodCarrot
-#  mutationPrototypes:
-#  - diamondcarrot # Horizon Bothany # Temp. disabled for balance reasons
+  mutationPrototypes:
+  - diamondcarrot # Horizon Bothany
   lifespan: 25
   maturation: 10
   production: 3
@@ -946,8 +947,8 @@
   idealHeat: 298
   chemicals:
     Egg:
-      Min: 1
-      Max: 10
+      Min: 4
+      Max: 12
       PotencyDivisor: 10
 
 - type: seed
@@ -1423,8 +1424,8 @@
   chemicals:
     Amatoxin:
       Min: 1
-      Max: 25
-      PotencyDivisor: 4
+      Max: 10
+      PotencyDivisor: 12
     Nutriment: ## yumby :)
       Min: 1
       Max: 5

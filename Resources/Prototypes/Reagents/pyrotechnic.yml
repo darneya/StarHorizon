@@ -34,6 +34,7 @@
           types:
             Heat: 2
             Poison: 1
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Napalm
@@ -63,6 +64,7 @@
             Caustic: 0.5 # based off napalm being an irritant
       - !type:FlammableReaction
         multiplier: 0.4
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Phlogiston
@@ -92,6 +94,7 @@
       - !type:FlammableReaction
         multiplier: 0.2
       - !type:Ignite
+  pricePerUnit: 7 # Horizon
 
 - type: reagent
   id: ChlorineTrifluoride
@@ -131,6 +134,7 @@
         visualType: MediumCaution
         probability: 0.3
         type: Local
+  pricePerUnit: 10 # Horizon
 
 - type: reagent
   id: FoamingAgent
@@ -149,19 +153,32 @@
   parent: BasePyrotechnic
   desc: reagent-desc-welding-fuel
   physicalDesc: reagent-physical-desc-oily
-  slippery: true
+  slipData:
+    requiredSlipSpeed: 3.5
   flavor: bitter
   flavorMinimum: 0.01
   color: "#a76b1c"
   recognizable: true
   boilingPoint: -84.7 # Acetylene. Close enough.
   meltingPoint: -80.7
+  friction: 0.4
   tileReactions:
   - !type:FlammableTileReaction {}
   metabolisms:
+    Food:
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+        conditions:
+        - !type:OrganType
+          type: Vox
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Vox
+          shouldHave: false
         damage:
           types:
             Poison: 1

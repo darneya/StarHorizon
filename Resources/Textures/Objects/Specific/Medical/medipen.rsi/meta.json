@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "tgstation at 986af32e22a88dae14fd147d812a5a4d27c1bc30 | stimpen sprites made by PuroSlavKing (Github) for Space Station 14. Nearly all resprited by joshepvodka, in-hand sprites by SeamLesss (github)",
+  "license": "CLA",
+  "copyright": "by TheGypsyBaron",
   "size": {
     "x": 32,
     "y": 32
@@ -111,27 +111,129 @@
     },
     {
       "name": "base-needle-inhand-left",
-        "directions": 4
+      "directions": 4
     },
     {
       "name": "base-needle-inhand-right",
-        "directions": 4
+      "directions": 4
     },
     {
       "name": "base-colorA-inhand-left",
-        "directions": 4
+      "directions": 4
     },
     {
       "name": "base-colorA-inhand-right",
-        "directions": 4
+      "directions": 4
     },
     {
       "name": "base-colorB-inhand-left",
-        "directions": 4
+      "directions": 4
     },
     {
       "name": "base-colorB-inhand-right",
-        "directions": 4
+      "directions": 4
+    },
+    {
+      "name": "medipen_world"
+    },
+    {
+      "name": "medipen_empty_world"
+    },
+    {
+      "name": "firstaid_world"
+    },
+    {
+      "name": "firstaid_empty_world"
+    },
+    {
+      "name": "hypovolemic_world"
+    },
+    {
+      "name": "hypovolemic_empty_world"
+    },
+    {
+      "name": "stimpen_world"
+    },
+    {
+      "name": "stimpen_empty_world"
+    },
+    {
+      "name": "microstimpen_world"
+    },
+    {
+      "name": "microstimpen_empty_world"
+    },
+    {
+      "name": "morphen_world"
+    },
+    {
+      "name": "morphen_empty_world"
+    },
+    {
+      "name": "oxapen_world"
+    },
+    {
+      "name": "oxapen_empty_world"
+    },
+    {
+      "name": "penacid_world"
+    },
+    {
+      "name": "penacid_empty_world"
+    },
+    {
+      "name": "salacid_world"
+    },
+    {
+      "name": "bicpen_world"
+    },
+    {
+      "name": "bicpen_empty_world"
+    },
+    {
+      "name": "dermpen_world"
+    },
+    {
+      "name": "dermpen_empty_world"
+    },
+    {
+      "name": "salacid_empty_world"
+    },
+    {
+      "name": "salpen_world"
+    },
+    {
+      "name": "salpen_empty_world"
+    },
+    {
+      "name": "atropen_world"
+    },
+    {
+      "name": "atropen_empty_world"
+    },
+    {
+      "name": "arithpen_world"
+    },
+    {
+      "name": "arithpen_empty_world"
+    },
+    {
+      "name": "punctpen_world"
+    },
+    {
+      "name": "punctpen_empty_world"
+    },
+    {
+      "name": "pyrapen_world"
+    },
+    {
+      "name": "pyrapen_empty_world"
+    },
+    {
+      "name": "dexpen_world"
+    },
+    {
+      "name": "dexpen_empty_world"
     }
   ]
 }

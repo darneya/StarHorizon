@@ -27,5 +27,11 @@
     <GuideEntityEmbed Entity="MobHarpy" Caption="Гарпия"/>
     <GuideEntityEmbed Entity="MobOni" Caption="Они"/>
   </Box>
+  # Расы Void Sector
+  <Box>
+  <GuideEntityEmbed Entity="MobDemon" Caption="Тифлинг"/>
+  <GuideEntityEmbed Entity="MobKatunian" Caption="Катунианец"/>
+  <GuideEntityEmbed Entity="MobTajaran" Caption="Таяран"/>
+  </Box>
 
 </Document>

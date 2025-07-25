@@ -86,7 +86,7 @@ public sealed partial class ResearchSystem
         // Horizon end
 
         AddTechnology(serverEnt.Value, prototype);
-        TrySetMainDiscipline(prototype, serverEnt.Value);
+        // TrySetMainDiscipline(prototype, serverEnt.Value); // Goobstation commented
         ModifyServerPoints(serverEnt.Value, -prototype.Cost);
         UpdateTechnologyCards(serverEnt.Value);
 
@@ -144,15 +144,17 @@ public sealed partial class ResearchSystem
         }
 
         component.UnlockedTechnologies.Add(technology.ID);
+        var addedRecipes = new List<string>();
         foreach (var unlock in technology.RecipeUnlocks)
         {
             if (component.UnlockedRecipes.Contains(unlock))
                 continue;
             component.UnlockedRecipes.Add(unlock);
+            addedRecipes.Add(unlock);
         }
         Dirty(uid, component);
 
-        var ev = new TechnologyDatabaseModifiedEvent();
+        var ev = new TechnologyDatabaseModifiedEvent(addedRecipes);
         RaiseLocalEvent(uid, ref ev);
     }
 

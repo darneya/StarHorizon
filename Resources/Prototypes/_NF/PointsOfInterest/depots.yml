@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: CargoDepot
   parent: BasePOI
-  name: Cargo Depot
+  name: "Торговый Депот"
   minimumDistance: 4000
   maximumDistance: 5000
   spawnGroup: CargoDepot
@@ -35,7 +35,7 @@
 - type: pointOfInterest
   id: CargoDepotAlt
   parent: BasePOI
-  name: Cargo Depot
+  name: "Торговый Депот"
   minimumDistance: 4000
   maximumDistance: 5000
   spawnGroup: CargoDepot
@@ -45,7 +45,7 @@
 - type: gameMap
   id: CargoDepot
   mapName: 'Cargo Depot' # Has a letter appended in PointOfInterestSystem
-  mapPath: /Maps/_NF/POI/cargodepotalt.yml
+  mapPath: /Maps/_NF/POI/cargodepot.yml
   minPlayers: 0
   stations:
     CargoDepot:

@@ -4,6 +4,8 @@
   id: FlashlightLantern
   description: It lights the way to freedom.
   components:
+  - type: WorldItem
+    continue: true
   - type: Tag
     tags:
     - Flashlight
@@ -24,8 +26,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        minValue: 0.1
-        maxValue: 2.0
+        startValue: 0.1 # Wizden#37444
+        endValue: 2.0 # Wizden#37444
         isLooped: true
   - type: ToggleableLightVisuals
     spriteLayer: light
@@ -73,6 +75,7 @@
     quickEquip: false
     slots:
       - Belt
+      - Neck # Horizon
 
 - type: entity
   name: seclite
@@ -124,6 +127,7 @@
     quickEquip: false
     slots:
       - Belt
+      - Neck # Horizon
 
 - type: entity
   parent: FlashlightLantern
