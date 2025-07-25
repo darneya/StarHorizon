@@ -17,7 +17,7 @@
     needsHands: false
   - type: Thirst
   - type: Icon
-    sprite: _StarHorizon\Mobs\Species\Sharkman\parts.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/parts.rsi
     state: full
   - type: Body
     prototype: Sharkman

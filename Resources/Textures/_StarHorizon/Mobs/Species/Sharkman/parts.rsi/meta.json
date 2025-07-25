@@ -1,14 +1,17 @@
 {
     "version": 1,
-    "license": "CC-BY-NC-SA-3.0",
-    "copyright": "TheVelocipony",
+    "license": "CC-BY-SA-3.0",
+    "copyright": "RavenReaper",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
         {
-            "name": "full",
+            "name": "full"
+        },
+        {
+            "name": "tail",
             "directions": 4
         },
         {
@@ -57,6 +60,10 @@
         },
         {
             "name": "torso_m",
+            "directions": 4
+        },
+        {
+            "name": "ears",
             "directions": 4
         }
     ]

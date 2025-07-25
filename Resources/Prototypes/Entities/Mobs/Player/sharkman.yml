@@ -1,7 +1,7 @@
 - type: entity
   save: false
   name: Urist McJaws
-  suffix: Urisst' Mzhand
+  suffix: Urist' McJaws
   parent: BaseMobSharkman
   id: MobSharkman
 

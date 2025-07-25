@@ -4,12 +4,12 @@
   components:
   - type: WorldItem
   - type: Sprite
-    sprite: _StarHorizon\Mobs\Species\Sharkman\organs.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/organs.rsi
   - type: Stomach
     # specialDigestible: # Frontier
       # tags: # Frontier
       # - Fruit # Frontier
-      # - SharkmanmanFood # Frontier
+      # - ReptilianFood # Frontier
       # - Meat # Frontier
       # - Pill # Frontier
       # - Crayon # Frontier
@@ -32,7 +32,7 @@
   components:
   - type: WorldItem
   - type: Sprite
-    sprite: _StarHorizon\Mobs\Species\Sharkman\organs.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/organs.rsi
     state: brain
   - type: Organ
   - type: Input
@@ -76,7 +76,7 @@
   - type: WorldItem
     overridePrefix: eyeballs_world
   - type: Sprite
-    sprite: _StarHorizon\Mobs\Species\Sharkman\organs.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/organs.rsi
     layers:
       - state: eyeball-l
       - state: eyeball-r
@@ -92,7 +92,7 @@
   components:
   - type: WorldItem
   - type: Sprite
-    sprite: _StarHorizon\Mobs\Species\Sharkman\organs.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/organs.rsi
     state: tongue
 
 - type: entity
@@ -103,7 +103,7 @@
   components:
   - type: WorldItem
   - type: Sprite
-    sprite: _StarHorizon\Mobs\Species\Sharkman\organs.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/organs.rsi
     state: ears
 
 - type: entity
@@ -115,7 +115,7 @@
   - type: WorldItem
     overridePrefix: lungs_world
   - type: Sprite
-    sprite: _StarHorizon\Mobs\Species\Sharkman\organs.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/organs.rsi
     layers:
       - state: lung-l
       - state: lung-r
@@ -154,7 +154,7 @@
   components:
   - type: WorldItem
   - type: Sprite
-    sprite: _StarHorizon\Mobs\Species\Sharkman\organs.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/organs.rsi
     state: heart-on
   # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
   # This is done because these chemicals need to have some effect even if they aren't being filtered out of your body.
@@ -179,7 +179,7 @@
   components:
   - type: WorldItem
   - type: Sprite
-    sprite: _StarHorizon\Mobs\Species\Sharkman\organs.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/organs.rsi
     state: liver
   - type: Item
     size: Small
@@ -200,7 +200,7 @@
   - type: WorldItem
     overridePrefix: kidney_world
   - type: Sprite
-    sprite: _StarHorizon\Mobs\Species\Sharkman\organs.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/organs.rsi
     layers:
       - state: kidney-l
       - state: kidney-r
@@ -221,7 +221,7 @@
   components:
   - type: WorldItem
   - type: Sprite
-    sprite: _StarHorizon\Mobs\Species\Sharkman\organs.rsi
+    sprite: _StarHorizon/Mobs/Species/Sharkman/organs.rsi
     state: muscle
   - type: Item
     size: Small
