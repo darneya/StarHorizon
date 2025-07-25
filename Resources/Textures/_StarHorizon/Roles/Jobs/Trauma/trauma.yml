@@ -1,0 +1,22 @@
+- type: job
+  id: TraumaTeamParamedic
+  name: job-name-trauma
+  description: job-description-trauma
+  playTimeTracker: JobTrauma
+  setPreference: true # Frontier
+  weight: 10
+  startingGear: TraumaGear
+  icon: "JobIconChiefEngineer"
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  accessGroups: # Frontier
+  - GeneralAccess # Frontier
+
+- type: startingGear
+  id: TraumaGear
+  equipment:
+    id: CEPDA
+    outerClothing: ClothingOuterHardsuitTraumaTeam
+  storage:
+    back:
+    - Flash

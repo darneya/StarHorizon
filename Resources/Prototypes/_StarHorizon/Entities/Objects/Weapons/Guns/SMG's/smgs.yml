@@ -1,47 +1,54 @@
 - type: entity
-  name: Vector-7S
-  parent: BaseWeaponSubMachineGun
-  id: WeaponSubMachineGunVector-7S
-  suffix: Вектор навсегда
-  description: Улучшенная и модифицированная версия некогда списанного со счетов Вектора. Оборудован улучшеной системой подачи патронов и умным прицелом. Умные патроны в комплект не идут.
+  id: NFBaseWeaponSubMachineGunChamber45
+  parent: NFBaseWeaponSubMachineGunChamber
+  abstract: true
   components:
-  - type: Sprite
-    sprite: _StarHorizon\Objects\Weapons\Guns\SMGs\vectorseven.rsi
-    layers:
-      - state: base
-        map: ["enum.GunVisualLayers.Base"]
-      - state: mag-0
-        map: ["enum.GunVisualLayers.Mag"]
-  - type: Clothing
-    sprite: _StarHorizon\Objects\Weapons\Guns\SMGs\vectorseven.rsi
-  - type: Gun
-    fireRate: 12
-    selectedMode: FullAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
-    availableModes:
-    - FullAuto
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineMagnumSubMachineGun
+        startingItem: NFMagazineSubMachineGun45
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
-        whitelist:
+        whitelist: &mag45Whitelist
           tags:
-            - MagazineMagnumSubMachineGun
-      gun_chamber:
+            - NFMagazineSubMachineGunPistol45
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber: &chamber45Standard
         name: Chamber
-        startingItem: CartridgeMagnum
+        startingItem: NFCartridgePistol45
         priority: 1
         whitelist:
           tags:
-            - CartridgeMagnum
-        whitelistFailPopup: gun-magazine-whitelist-fail
+            - NFCartridgePistol45
+
+- type: entity
+  name: vector-7S
+  parent: [NFBaseWeaponSubMachineGunChamber45, NFBaseWeaponFrameSubMachineGun] # Frontier: BaseMajorContraband<BaseC3SyndicateContraband
+  id: WeaponSubMachineGunBLANK
+  description: Улучшенная и модифицированная версия некогда списанного со счетов Вектора. Оборудован улучшеной системой подачи патронов и умным прицелом. Умные патроны в комплект не идут.
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Weapons/Guns/SMGs/vectorseven.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 12
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
   - type: MagazineVisuals
     magState: mag
     steps: 1
     zeroVisible: true
   - type: Appearance
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+    whitelist:
+          tags:
+            - NFCartridgePistol45
