@@ -1,29 +1,23 @@
-ent-BaseCartridgeBarrettM82.70 = { ent-BaseItem }
-
-  .desc = { ent-BaseItem.desc }
-ent-CartridgeBarrettM82.70 = патрон (.70 крупнокалиберный)
-
-  .suffix = Horizon
-  .desc = { ent-BaseCartridgeBarrettM82.70.desc }
-ent-BaseBarrettM82.70 = патрон (.70 крупнокалиберный)
-
-  .suffix = Horizon
-  .desc = { ent-CartridgeBarrettM82.70.desc }
-ent-BulletSniperBarrettM82.70 = патрон (.70 крупнокалиберный)
-
-  .suffix = Horizon
-  .desc = { ent-BaseBullet.desc }
+ent-BaseCartridgeBarrettM8270 = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-CartridgeBarrettM8270 = патрон (.70 крупнокалиберный)
+    .suffix = Horizon
+    .desc = { ent-BaseCartridgeBarrettM8270.desc }
+ent-BaseBarrettM8270 = патрон (.70 крупнокалиберный)
+    .suffix = Horizon
+    .desc = { ent-CartridgeBarrettM8270.desc }
+ent-BulletSniperBarrettM8270 = патрон (.70 крупнокалиберный)
+    .suffix = Horizon
+    .desc = { ent-BaseBullet.desc }
 ent-CartridgeSniperBarrettM82AR = патрон (.70 бронированный)
-
-  .suffix = Horizon
-  .desc = { ent-CartridgeBarrettM82.70.desc }
+    .suffix = Horizon
+    .desc = { ent-CartridgeBarrettM8270.desc }
 ent-BulletSniperBarrettM82AR = патрон (.70 бронированный)
     .suffix = Horizon
     .desc = { ent-BaseBullet.desc }
 ent-CartridgeSniperBarrettM82HighVelocity = патрон (.70 высокоскорострельный)
-
-  .suffix = Horizon
-  .desc = { ent-CartridgeBarrettM82.70.desc }
+    .suffix = Horizon
+    .desc = { ent-CartridgeBarrettM8270.desc }
 ent-BulletSniperBarrettM82HighVelocity = патрон (.70 высокоскорострельный)
     .suffix = Horizon
     .desc = { ent-BaseBullet.desc }

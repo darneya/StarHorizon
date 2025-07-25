@@ -61,22 +61,18 @@ ent-PlasmaCabbageSeeds = пакет семян (плазменная капус�
 ent-BarrelmelonSeeds = пакет семян (алкобуз)
     .suffix = Horizon
     .desc = { ent-SeedBase.desc }
-ent-СloveySeeds = пакет семян (желтая гвоздика)
-
-  .suffix = Horizon
-  .desc = { ent-SeedBase.desc }
-ent-СlovewSeeds = пакет семян (белая гвоздика)
-
-  .suffix = Horizon
-  .desc = { ent-SeedBase.desc }
-ent-СloverSeeds = пакет семян (красная гвоздика)
-
-  .suffix = Horizon
-  .desc = { ent-SeedBase.desc }
-ent-СlovepSeeds = пакет семян (фиолетовая гвоздика)
-
-  .suffix = Horizon
-  .desc = { ent-SeedBase.desc }
+ent-CloveySeeds = пакет семян (желтая гвоздика)
+    .suffix = Horizon
+    .desc = { ent-SeedBase.desc }
+ent-ClovewSeeds = пакет семян (белая гвоздика)
+    .suffix = Horizon
+    .desc = { ent-SeedBase.desc }
+ent-CloverSeeds = пакет семян (красная гвоздика)
+    .suffix = Horizon
+    .desc = { ent-SeedBase.desc }
+ent-ClovepSeeds = пакет семян (фиолетовая гвоздика)
+    .suffix = Horizon
+    .desc = { ent-SeedBase.desc }
 ent-LilypSeeds = пакет семян (фиолетовая лилия)
     .suffix = Horizon
     .desc = { ent-SeedBase.desc }
