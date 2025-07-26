@@ -134,7 +134,7 @@
     sprite: Objects/Consumable/Drinks/generic_jug.rsi
     state: icon
   product: CrateServiceSodaDispenser
-  cost: 850
+  cost: 2000 # Horizon
   category: cargoproduct-category-name-service
   group: market
 
@@ -144,7 +144,7 @@
     sprite: Objects/Consumable/Drinks/generic_jug.rsi
     state: icon
   product: CrateServiceBoozeDispenser
-  cost: 750
+  cost: 3000 # Horizon
   category: cargoproduct-category-name-service
   group: market
 
