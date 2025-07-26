@@ -20,7 +20,6 @@
 
 - type: cargoProduct
   id: ServiceLightsHoliday
-  abstract: true # Frontier
   icon:
     sprite: Objects/Power/light_bulb.rsi
     state: normal
@@ -31,7 +30,6 @@
 
 - type: cargoProduct
   id: ServiceLightsColorful
-  abstract: true # Frontier
   icon:
     sprite: Objects/Power/light_bulb.rsi
     state: normal
@@ -52,7 +50,6 @@
 
 - type: cargoProduct
   id: ServiceTheatre
-  abstract: true # Frontier
   icon:
     sprite: Clothing/Mask/mime.rsi
     state: icon
@@ -63,7 +60,6 @@
 
 - type: cargoProduct
   id: ServiceSmokeables
-  abstract: true # Frontier
   icon:
     sprite: Objects/Consumable/Smokeables/Cigarettes/Cartons/green.rsi
     state: icon
@@ -104,7 +100,6 @@
 
 - type: cargoProduct
   id: ServicePersonnel
-  abstract: true # Frontier
   icon:
     sprite: Objects/Misc/id_cards.rsi
     state: default
@@ -135,7 +130,6 @@
 
 - type: cargoProduct
   id: ServiceSodaDispenser
-  abstract: true # Frontier
   icon:
     sprite: Objects/Consumable/Drinks/generic_jug.rsi
     state: icon
@@ -146,7 +140,6 @@
 
 - type: cargoProduct
   id: ServiceBoozeDispenser
-  abstract: true # Frontier
   icon:
     sprite: Objects/Consumable/Drinks/generic_jug.rsi
     state: icon
