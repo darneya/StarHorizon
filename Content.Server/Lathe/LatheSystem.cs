@@ -222,20 +222,11 @@ namespace Content.Server.Lathe
         {
             if (!Resolve(uid, ref component))
                 return false;
-            if (component.CurrentRecipe != null || !this.IsPowered(uid, EntityManager))
-                return false;
-            if (component.Queue.Count <= 0)
+            if (component.CurrentRecipe != null || component.Queue.Count <= 0 || !this.IsPowered(uid, EntityManager))
                 return false;
 
             // Frontier: handle batches
             var batch = component.Queue.First();
-
-            if (!CanProduce(uid, batch.Recipe, 1, component))
-            {
-                Logger.Info($"[LATHE] Waiting for materials for infinite production: {batch.Recipe.ID}");
-                return false;
-            }
-
             batch.ItemsPrinted++;
             if (batch.ItemsPrinted >= batch.ItemsRequested || batch.ItemsPrinted < 0) // Rollover sanity check
                 component.Queue.RemoveAt(0);
