@@ -32,11 +32,11 @@
   parent: BaseStructure
   abstract: true
   components:
-# These might/might not be a good idea
-#  - type: MovedByPressure
-#  - type: DamageOnHighSpeedImpact
-#  - type: TileFrictionModifier
-#    modifier: 0.5
+  # These might/might not be a good idea
+  #  - type: MovedByPressure
+  #  - type: DamageOnHighSpeedImpact
+  #  - type: TileFrictionModifier
+  #    modifier: 0.5
   - type: Transform
     anchored: false
   - type: Clickable
@@ -61,8 +61,8 @@
   id: StructureWheeled
   abstract: true
   components:
-    - type: TileFrictionModifier
-      modifier: 0.4
+  - type: TileFrictionModifier
+    modifier: 0.4
 
 - type: Tag
   id: Structure

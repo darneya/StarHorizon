@@ -342,6 +342,7 @@ namespace Content.Shared.Movement.Systems
 
             entity.Comp.RelativeEntity = xform.GridUid ?? xform.MapUid;
             entity.Comp.TargetRelativeRotation = Angle.Zero;
+            RaiseLocalEvent(entity, new SprintingInputEvent(entity)); // WD EDIT
         }
 
         private void HandleRunChange(EntityUid uid, ushort subTick, bool walking)
@@ -354,6 +355,7 @@ namespace Content.Shared.Movement.Systems
                 if (moverComp != null)
                 {
                     SetMoveInput((uid, moverComp), MoveButtons.None);
+                    RaiseLocalEvent(uid, new SprintingInputEvent((uid, moverComp))); // WD EDIT
                 }
 
                 HandleRunChange(relayMover.RelayEntity, subTick, walking);
@@ -474,6 +476,8 @@ namespace Content.Shared.Movement.Systems
             // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
 
             SetMoveInput(entity, subTick, walking, MoveButtons.Walk);
+            RaiseLocalEvent(entity, new ToggleWalkEvent(walking)); // Goob edit
+            RaiseLocalEvent(entity, new SprintingInputEvent(entity)); // WD EDIT
         }
 
         /// <summary>
