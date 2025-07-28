@@ -11,18 +11,3 @@
     - state: ID_ERT_Juggernaut
   - type: Item
     heldPrefix: ID_ERT_Juggernaut
-
-- type: entity
-  parent: IDCardStandard
-  id: TraumaIDCard
-  name: Test ID карта парамедика "Траумы"
-  components:
-  - type: Sprite
-    layers:
-    - state: silver
-    - state: idchiefmedicalofficer
-  - type: Item
-    heldPrefix: silver
-  - type: PresetIdCard
-    job: ChiefMedicalOfficer
-
