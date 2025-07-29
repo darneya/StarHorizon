@@ -1,12 +1,4 @@
-ent-EmpGrenadeNfsd = { ent-EmpGrenade }
-    .desc = { ent-EmpGrenade.desc }
-ent-ExGrenadeNfsd = { ent-ExGrenade }
-    .desc = { ent-ExGrenade.desc }
-ent-GrenadeShrapnelNfsd = { ent-GrenadeShrapnel }
-    .desc = { ent-GrenadeShrapnel.desc }
-ent-GrenadeIncendiaryNfsd = { ent-GrenadeIncendiary }
-    .desc = { ent-GrenadeIncendiary.desc }
-ent-GrenadeStingerNfsd = { ent-GrenadeStinger }
-    .desc = { ent-GrenadeStinger.desc }
-ent-ClusterGrenadeNfsd = { ent-ClusterGrenade }
-    .desc = { ent-ClusterGrenade.desc }
+ent-ExGrenadeNfsd = { ent-BaseC2ContrabandUnredeemable }
+    .desc = { ent-BaseC2ContrabandUnredeemable.desc }
+ent-EmpGrenadeNfsd = { ent-BaseC2ContrabandUnredeemable }
+    .desc = { ent-BaseC2ContrabandUnredeemable.desc }

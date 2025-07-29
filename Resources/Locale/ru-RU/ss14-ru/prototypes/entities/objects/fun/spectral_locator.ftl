@@ -1,8 +1,8 @@
 ent-SpectralLocatorUnpowered = спектральный локатор
-    .desc = Похоже, это модифицированный локатор аномалий. Выглядит очень старым.
-    .suffix = Не требует питания
+    .desc = Похоже на модифицированный локатор аномалий. Кажется очень старый.
+    .suffix = Незаряжанный
 ent-SpectralLocator = { ent-SpectralLocatorUnpowered }
-    .suffix = Заряжен
+    .suffix = Запитанный
     .desc = { ent-SpectralLocatorUnpowered.desc }
 ent-SpectralLocatorEmpty = { ent-SpectralLocator }
     .suffix = Пустой

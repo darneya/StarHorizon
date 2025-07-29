@@ -1,2 +1,2 @@
-ent-dragshadow = тени
+ent-dragshadow = drag shadow
     .desc = { "" }

@@ -36,5 +36,10 @@ deep-fried-fried-item = жареный { $entity }
 deep-fried-fried-item-examine = Обволакивает толстый слой хрустящей корочки.
 deep-fried-burned-item = подгорелый { $entity }
 deep-fried-burned-item-examine = Почернел от нагара.
+# Frontier: cauldron definitions
+deep-fried-spooky-item = spooky { $entity }
+deep-fried-spooky-item-examine = It's slick with oil and translucent.
+deep-fried-spectral-item = spectral { $entity }
+deep-fried-spectral-item-examine = It's oily, transparent, and unnaturally light.
 reagent-name-oil-ghee = топлёное масло
 reagent-desc-oil-ghee = Густое и полупрозрачное.

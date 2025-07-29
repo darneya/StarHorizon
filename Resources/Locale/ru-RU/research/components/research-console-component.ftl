@@ -5,8 +5,8 @@ research-console-menu-main-discipline = Основная дисциплина: [
 research-console-menu-server-research-button = Исследовать
 research-console-available-text = Доступные технологии
 research-console-unlocked-text = Исследованные технологии
-research-console-tier-discipline-info = Уровень { $tier }, [color={ $color }]{ $discipline }[/color]
-research-console-tier-info-small = : Уровень { $tier }
+research-console-tier-discipline-info = Поколение { $tier }, [color={ $color }]{ $discipline }[/color]
+research-console-tier-info-small = Поколение: { $tier }
 research-console-cost = Стоимость: [color=orchid]{ $amount }[/color]
 research-console-unlocks-list-start = Открывает:
 research-console-unlocks-list-entry = - [color=yellow]{ $name }[/color]
@@ -18,7 +18,3 @@ research-console-prereqs-list-start = Требует:
 research-console-prereqs-list-entry = - [color=orchid]{ $text }[/color]
 research-console-no-access-popup = Нет доступа!
 research-console-unlock-technology-radio-broadcast = Исследовано: [bold]{ $technology }[/bold], за [bold]{ $amount }[/bold] очков исследований.
-
-## _Horzion start
-research-console-need-items-list = Для открытия требует:
-research-console-research-target = - [color={$markup}]{$target}[/color]

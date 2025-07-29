@@ -1,2 +1,2 @@
-vehicle-use-key = Используйте { $keys } для запуска { $vehicle }.
+vehicle-use-key = Вы используете { $keys } чтобы запустить { $vehicle }.
 vehicle-slot-component-slot-name-keys = Ключи

@@ -22,6 +22,12 @@ ent-WeaponCaseShortPython = { ent-WeaponCaseShort }
 ent-WeaponCaseShortMateba = { ent-WeaponCaseShort }
     .suffix = Экспедиция, Матеба
     .desc = { ent-WeaponCaseShort.desc }
+ent-WeaponCaseShortRitland45Expedition = { ent-WeaponCaseShort }
+    .suffix = Dungeon, Ritland-45
+    .desc = { ent-WeaponCaseShort.desc }
+ent-WeaponCaseShortWard45Expedition = { ent-WeaponCaseShort }
+    .suffix = Dungeon, Ward-45
+    .desc = { ent-WeaponCaseShort.desc }
 ent-WeaponCaseShortRevolverPirate = { ent-WeaponCaseShort }
     .suffix = Экспедиция, Пиратский револьвер
     .desc = { ent-WeaponCaseShort.desc }
@@ -67,6 +73,9 @@ ent-WeaponCaseLongLecterExpedition = { ent-WeaponCaseLong }
 ent-WeaponCaseLongAk = { ent-WeaponCaseLong }
     .suffix = Экспедиция, АКМС
     .desc = { ent-WeaponCaseLong.desc }
+ent-WeaponCaseLongSm = { ent-WeaponCaseLong }
+    .suffix = Dungeon, Soland-Moss AR
+    .desc = { ent-WeaponCaseLong.desc }
 ent-WeaponCaseLongM90Expedition = { ent-WeaponCaseLong }
     .suffix = Экспедиция, M-90gl
     .desc = { ent-WeaponCaseLong.desc }
@@ -91,6 +100,9 @@ ent-WeaponCaseShortAdvancedLaserExpedition = { ent-WeaponCaseShort }
 ent-WeaponCaseLongLaserCannonExpedition = { ent-WeaponCaseShort }
     .suffix = Экспедиция, Лазерная пушка
     .desc = { ent-WeaponCaseShort.desc }
+ent-WeaponCaseShortAntiqueLaserExpedition = { ent-WeaponCaseShort }
+    .suffix = Dungeon, Antique Laser
+    .desc = { ent-WeaponCaseShort.desc }
 ent-WeaponCaseLongXrayCannonExpedition = { ent-WeaponCaseShort }
     .suffix = Экспедиция, Рентгеновская пушка
     .desc = { ent-WeaponCaseShort.desc }
@@ -99,6 +111,12 @@ ent-WeaponCaseLongMosinExpedition = { ent-WeaponCaseLong }
     .desc = { ent-WeaponCaseLong.desc }
 ent-WeaponCaseLongHristovExpedition = { ent-WeaponCaseLong }
     .suffix = Экспедиция, Христов
+    .desc = { ent-WeaponCaseLong.desc }
+ent-WeaponCaseLongTemperatureGunExpedition = { ent-WeaponCaseLong }
+    .suffix = Dungeon, Temperature Gun
+    .desc = { ent-WeaponCaseLong.desc }
+ent-WeaponCaseLongBarlowsBoltExpedition = { ent-WeaponCaseLong }
+    .suffix = Dungeon, Mosin
     .desc = { ent-WeaponCaseLong.desc }
 ent-WeaponCaseLongRepeaterExpedition = { ent-WeaponCaseLong }
     .suffix = Экспедиция, Повторитель
@@ -118,6 +136,9 @@ ent-WeaponCaseLongLightMachineGunL6 = { ent-WeaponCaseLong }
 ent-WeaponCaseShortEnergyShieldExpedition = { ent-WeaponCaseShort }
     .suffix = Экспедиция, Энергетический щит
     .desc = { ent-WeaponCaseShort.desc }
+ent-WeaponCaseHeavyLightMachineGunL6 = { ent-WeaponCaseHeavy }
+    .suffix = Dungeon, L6
+    .desc = { ent-WeaponCaseHeavy.desc }
 ent-WeaponCaseShortEnergySwordExpedition = { ent-WeaponCaseShort }
     .suffix = Экспедиция, Энергетический меч
     .desc = { ent-WeaponCaseShort.desc }
@@ -151,138 +172,105 @@ ent-WeaponCaseHeavyAsmgtExpeditions = { ent-WeaponCaseHeavy }
 ent-WeaponCaseSubMachineGunVector22 = { ent-WeaponCaseLong }
     .suffix = Экспедиция, Vector 22
     .desc = { ent-WeaponCaseLong.desc }
-
 ent-WeaponCaseShortAmmoBoxSlugShotgun = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxLethal20 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxPracticeShotgun = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxPractice45 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxLethal45 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxLethalShotgun = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxRubber20 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxRubber45 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxRubber35 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxLethal30 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxLethal35 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxLethal25 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxRubber30 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxIncendiary45 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxUranium45 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxFlareShotgun = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxIncendiaryShotgun = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxRubberShotgun = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxPractice25 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxBigRubber25 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxRubber25 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxBigLethal25 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxEmp35 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxUranium35 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxIncendiary35 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxPractice35 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxUranium30 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxIncendiary30 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
+ent-WeaponCaseShortAmmoBoxUraniumShotgun = { ent-WeaponCaseShortAmmo }
+    .desc = { ent-WeaponCaseShortAmmo.desc }
 ent-WeaponCaseShortAmmoBoxPractice30 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxBigLethal30 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxUranium20 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxIncendiary20 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxPractice20 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxBigRubber20 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortAmmoBoxBigLethal20 = { ent-WeaponCaseShortAmmo }
     .desc = { ent-WeaponCaseShortAmmo.desc }
-
 ent-WeaponCaseShortFitzExpedition = { ent-WeaponCaseShort }
     .desc = { ent-WeaponCaseShort.desc }
-
+    .suffix = Dungeon, Fitz
 ent-WeaponCaseShortFaithExpedition = { ent-WeaponCaseShort }
     .desc = { ent-WeaponCaseShort.desc }
-
+    .suffix = Dungeon, Faith
 ent-WeaponCaseShortLuckyExpedition = { ent-WeaponCaseShort }
     .desc = { ent-WeaponCaseShort.desc }
-
+    .suffix = Dungeon, Lucky 37
 ent-WeaponCaseLongTypewriterExpedition = { ent-WeaponCaseLong }
     .desc = { ent-WeaponCaseLong.desc }
-
+    .suffix = Dungeon, Typewriter
 ent-WeaponCaseLongVulcanExpedition = { ent-WeaponCaseLong }
     .desc = { ent-WeaponCaseLong.desc }
-
+    .suffix = Dungeon, Vulcan
 ent-WeaponCaseLongJackdaw = { ent-WeaponCaseLong }
     .desc = { ent-WeaponCaseLong.desc }
-
+    .suffix = Dungeon, Jackdaw
 ent-WeaponCaseLongSniperCeremonialExpedition = { ent-WeaponCaseLong }
     .desc = { ent-WeaponCaseLong.desc }
-
+    .suffix = Dungeon, Ceremonial Rifle
 ent-WeaponCaseShortUniversalExpedition = { ent-WeaponCaseShort }
     .desc = { ent-WeaponCaseShort.desc }
-
+    .suffix = Dungeon, Universal
 ent-WeaponCaseShortPollockExpedition = { ent-WeaponCaseShort }
     .desc = { ent-WeaponCaseShort.desc }
-
+    .suffix = Dungeon, Pollock
 ent-WeaponCaseLongSVSExpedition = { ent-WeaponCaseLong }
     .desc = { ent-WeaponCaseLong.desc }
+    .suffix = Dungeon, SVS
