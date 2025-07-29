@@ -15,6 +15,9 @@ admin-fax-lock-page = Защитить страницу
 admin-fax-lock-page-tooltip = Защитить бумагу от редактирования, чтобы её нельзя было изменить даже такими вещами, как ручка cybersun.
 # Штампы
 paper_stamp-generic = { ent-RubberStampBase }
+# Frontier: stamp protection
+admin-fax-stamp-protect-page = Блок ручки Cybersun
+admin-fax-stamp-protect-page-tooltip = Блокирует редактирование ручками Cybersun.
 paper_stamp-cap = { ent-RubberStampCaptain }
 paper_stamp-centcom = { ent-RubberStampCentcom }
 paper_stamp-chaplain = { ent-RubberStampChaplain }

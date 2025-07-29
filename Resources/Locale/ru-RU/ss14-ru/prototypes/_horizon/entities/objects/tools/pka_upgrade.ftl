@@ -6,3 +6,5 @@ ent-PKAUpgradeRange = ПКУ модификатор (дальность)
     .desc = { ent-BasePKAUpgrade.desc }
 ent-PKAUpgradeFireRate = ПКУ модификатор (скорострельность)
     .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeLight = ПКУ модификатор (свет)
+    .desc = { ent-BasePKAUpgrade.desc }

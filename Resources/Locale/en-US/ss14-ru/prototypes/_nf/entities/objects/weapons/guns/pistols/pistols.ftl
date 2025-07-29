@@ -11,3 +11,5 @@ ent-NFWeaponPistolUniversalNfsd = mk32-M "Universal" service pistol
 ent-NFWeaponPistolUniversalNfsdLessLethal = { ent-NFBaseWeaponPistolChamber35HighCapacityRubber }
     .suffix = Frontier, Less-lethal
     .desc = { ent-NFBaseWeaponPistolChamber35HighCapacityRubber.desc }
+ent-NFWeaponPistolBeretta = Beretta M92FS
+    .desc = Один из самых популярных пистолетов среди полиции.

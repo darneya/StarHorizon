@@ -12,4 +12,3 @@ ent-HamtrCentralElectronics = центральный модуль управле
     .desc = Центр контроля мехи ХМЯК.
 ent-HamtrPeripheralsElectronics = периферийный модуль управления ХМЯК
     .desc = Периферийный контроллер мехи ХМЯК.
-

@@ -84,6 +84,7 @@ JobLibrarian = { job-name-librarian }
 JobMime = { job-name-mime }
 JobMusician = { job-name-musician }
 JobPassenger = { job-name-passenger }
+JobBrigmedic = Бригмедик
 JobReporter = { job-name-reporter }
 JobServiceWorker = { job-name-serviceworker }
 JobZookeeper = { job-name-zookeeper }

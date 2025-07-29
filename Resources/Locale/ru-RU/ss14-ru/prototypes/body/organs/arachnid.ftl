@@ -1,5 +1,7 @@
 ent-BaseArachnidOrgan = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
+ent-OrganArachnidBrain = мозг
+    .desc = Источник невероятно, бесконечного интеллекта. Хиссс~
 ent-OrganArachnidStomach = желудок
     .desc = Мерзость. Не перевариваю его.
 ent-OrganArachnidLungs = лёгкие
@@ -14,3 +16,7 @@ ent-OrganArachnidEyes = глаза
     .desc = Двух было уже слишком много.
 ent-OrganArachnidTongue = язык
     .desc = Мясистая мышца, используемая в основном для обмана.
+ent-OrganArachnidMuscle = мышцы
+    .desc = Позволяют вам двигаться!
+ent-OrganArachnidWebGland = паутинная железа
+    .desc = Фу, это ужасно!

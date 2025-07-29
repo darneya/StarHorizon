@@ -18,9 +18,12 @@ shuttle-console-angular-velocity-value = { $angularVelocity }
 shuttle-console-linear-velocity = Линейная скорость:
 shuttle-console-angular-velocity = Угловая скорость:
 shuttle-console-unknown = Неизвестно
+# Buttons
+shuttle-console-strafing = Режим обстрела
 shuttle-console-iff-label = { $name } ({ $distance }м)
 shuttle-console-exclusion = Зона исключения
 shuttle-console-nav-settings = Настройки
+shuttle-console-iffshuttles-toggle = Показать шаттлы
 shuttle-console-iff-toggle = Показать ССЧ
 shuttle-console-dock-toggle = Показать порты
 

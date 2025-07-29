@@ -115,6 +115,7 @@ flavor-complex-corn = как кукуруза
 flavor-complex-banana = как бананы
 flavor-complex-apple = как яблоки
 flavor-complex-cotton = как хлопок
+flavor-complex-pear = как груша
 flavor-complex-bungo = как бунго
 flavor-complex-raisins = как сушёный виноград
 flavor-complex-orange = как апельсины
