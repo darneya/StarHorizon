@@ -24,7 +24,6 @@ station-beacon-atmos-burn = Камера сгорания
 station-beacon-atmos-collector = Массив газосборников
 station-beacon-lobby = Лобби
 station-beacon-doc-office = Офис ММО
-
 station-beacon-eva-access = EVA Доступ
 station-beacon-dock-one = Порт 1
 station-beacon-dock-two = Порт 2
