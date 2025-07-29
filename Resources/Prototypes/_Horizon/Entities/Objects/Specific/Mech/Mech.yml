@@ -24,7 +24,7 @@
         Piercing: 0.4
         Heat: 0.5
         Radiation: 0
-        Caustic: 0.1
+        Caustic: 0.9
         Structural: 0.4
     maxintegrity: 200
     baseState: gygax
@@ -169,7 +169,7 @@
         Piercing: 0.25
         Heat: 0.25
         Radiation: 0
-        Caustic: 0.1
+        Caustic: 0.9
         Structural: 0.3
     maxintegrity: 400
     baseState: durand
@@ -312,7 +312,7 @@
         Piercing: 0.4
         Heat: 0.5
         Radiation: 0
-        Caustic: 0.1
+        Caustic: 0.9
         Structural: 0.4
     maxintegrity: 200
     baseState: phazon

@@ -57,7 +57,7 @@
 
 - type: entity
   id: NFWeaponRevolverRitland45
-  parent: [ NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverGorlex ]
+  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverNanotrasen ]
   name: ritland-45
   description: |-
     An illegal revolver favoured by Syndicate agents.
@@ -170,3 +170,89 @@
   components:
   - type: RevolverAmmoProvider
     proto: NFCartridgePistol35Rubber
+
+#Horizon
+- type: entity
+  id: NFWeaponRevolverAltruist
+  parent: [ BaseC2ContrabandUnredeemable, NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverNanotrasen ]
+  name: альтруист
+  description: |-
+    Легендарная классика на новых пулях. Лучше следите за руками
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Pistols/magnum38.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Pistols/magnum38.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+  - type: DualWield #2hands
+
+- type: entity
+  id: NFWeaponRevolverHeadfasher
+  parent: [ NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverFrontierGunsmith ]
+  name: головорез
+  description: |-
+    Довольной тяжелый и вместительный револьвер для бойцов горячих точек
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Pistols/m44.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Pistols/m44.rsi
+  - type: RevolverAmmoProvider
+    capacity: 7
+    chambers: [ True, True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null, null ]
+  - type: DualWield #2hands
+
+- type: entity
+  id: NFWeaponRevolverRS9
+  parent: [ NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverFrontierGunsmith ]
+  name: РШ-9
+  description: |-
+    Боевой револьвер созданный для сотрудников секретных служб. Очень дорогой,но до безумия эффективный
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Pistols/rsh9.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Pistols/rsh9.rsi
+  - type: RevolverAmmoProvider
+    capacity: 7
+    chambers: [ True, True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null, null ]
+  - type: DualWield #2hands
+
+- type: entity
+  id: NFWeaponRevolverSpearhead
+  parent: [ NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverFrontierGunsmith ]
+  name: копье
+  description: |-
+    Большой и грозный револьвер. Часто используется военными комисарами
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Pistols/spearhead.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Pistols/spearhead.rsi
+  - type: RevolverAmmoProvider
+    capacity: 7
+    chambers: [ True, True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null, null ]
+  - type: DualWield #2hands
+
+- type: entity
+  id: NFWeaponRevolverZrk72
+  parent: [ NFBaseWeaponRevolverChamber45, NFBaseWeaponFrameRevolverFrontierGunsmith ]
+  name: ЗРК-72
+  description: |-
+    Массивный револьвер,получивший популярность у элитных подразделений наемников Синдиката
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Pistols/zhnk72.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Pistols/zhnk72.rsi
+  - type: RevolverAmmoProvider
+    capacity: 7
+    chambers: [ True, True, True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null, null, null ]
+  - type: DualWield #2hands
+
