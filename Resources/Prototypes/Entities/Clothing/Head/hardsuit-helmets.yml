@@ -22,6 +22,7 @@
     - Snout
     - HeadTop
     - HeadSide
+  - type: CatWearable
 
 #Atmospherics Hardsuit
 - type: entity
@@ -423,6 +424,7 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: CatWearable
 
 #Blood-red Medic Hardsuit
 - type: entity

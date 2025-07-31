@@ -977,6 +977,9 @@
   id: PercussionInstrument
 
 - type: Tag
+  id: PetOnly
+
+- type: Tag
   id: PetWearable
 
 - type: Tag
