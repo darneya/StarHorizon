@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Cove
   parent: BasePOI
-  name: 'Пиратская Бухта'
+  name: Pirate Cove
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGamePreset: [ NFPirate ]

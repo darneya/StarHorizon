@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: TradeMall
   parent: BasePOI
-  name: 'Торговый Центр'
+  name: Trade Mall
   minimumDistance: 1500
   maximumDistance: 2500
   spawnGroup: MarketStation

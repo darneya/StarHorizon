@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Medical
   parent: BasePOI
-  name: 'Медицинский Диспансер'
+  name: 'Medical Dispatch'
   minimumDistance: 1650
   maximumDistance: 3400
   spawnGroup: Required
