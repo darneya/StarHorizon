@@ -1,1 +1,1 @@
-botany-cannot-be-swabbed-message = Ты не можешь это вытереть!
+botany-cannot-be-swabbed-message = Вы не можете взять образец!

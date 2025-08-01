@@ -1,1 +1,1 @@
-drinks-effect-nf-wassail = You feel relaxed and festive.
+drinks-effect-nf-wassail = Вы чувствуете себя расслабленно и празднично.

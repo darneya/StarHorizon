@@ -1,2 +1,2 @@
-reagent-name-juice-pear = pear juice
-reagent-desc-juice-pear = Mellow, sweet and subtly fragrant.
+reagent-name-juice-pear = грушевый сок
+reagent-desc-juice-pear = Мягкий, сладкий и тонко ароматный.

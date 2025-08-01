@@ -1,2 +1,2 @@
 # Material Reclaimer
-material-reclaimer-upgrade-process-rate = скорость обработки
+material-reclaimer-upgrade-process-rate = скорость процесса

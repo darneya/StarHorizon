@@ -1,2 +1,2 @@
-custom-objective-intro = { $title } wrote:
-custom-objective-unknown-name = Anonymous
+custom-objective-intro = { $title } написал:
+custom-objective-unknown-name = Аноним
