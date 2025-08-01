@@ -197,7 +197,7 @@
 
 - type: entity
   parent: BaseShipVoucher
-  id: ShipVoucherСustom
+  id: ShipVoucherCustom
   name: Ваунчер на необычные шаттлы
   description: Позволяет бесплатно купить один любой шаттл на специальной консоли. Уничтожается при продаже шаттла.
   suffix: StarHorizon

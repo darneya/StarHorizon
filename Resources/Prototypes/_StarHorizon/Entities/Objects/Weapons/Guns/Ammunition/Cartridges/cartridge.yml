@@ -1,5 +1,5 @@
 - type: entity
-  id: BaseCartridgeMinigunERT.15
+  id: BaseCartridgeMinigunERT15
   parent: BaseItem
   abstract: true
   components:
@@ -8,26 +8,26 @@
     netsync: false
   - type: Tag
     tags:
-    - Cartridge.15
-    - CartridgeMinigunERT.15
+    - Cartridge15
+    - CartridgeMinigunERT15
   - type: Item
     size: Tiny
   - type: SpaceGarbage
 
 - type: entity
-  id: CartridgeMinigunERT.15
+  id: CartridgeMinigunERT15
   name: патрон (.15 мелкокалиберный)
   suffix: StarHorizon
-  parent: BaseCartridgeMinigunERT.15
+  parent: BaseCartridgeMinigunERT15
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
   - type: Tag
     tags:
-    - Cartridge.15
-    - CartridgeMinigunERT.15
+    - Cartridge15
+    - CartridgeMinigunERT15
   - type: CartridgeAmmo
-    proto: BulletMinigunERT.15
+    proto: BulletMinigunERT15
   - type: Sprite
     sprite: _StarHorizon/Objects/Weapons/Guns/Ammunition/Casings/minigunert15bullet.rsi
     layers:
@@ -39,16 +39,16 @@
     price: 10
 
 - type: entity
-  id: BaseMinigunERT.15
+  id: BaseMinigunERT15
   name: патрон (.15 мелкокалиберный)
   suffix: StarHorizon
-  parent: CartridgeMinigunERT.15
+  parent: CartridgeMinigunERT15
   components:
   - type: CartridgeAmmo
-    proto: BulletMinigunERT.15
+    proto: BulletMinigunERT15
 
 - type: entity
-  id: BulletMinigunERT.15
+  id: BulletMinigunERT15
   name: патрон (.15 мелкокалиберный)
   suffix: StarHorizon
   parent: BaseBullet
@@ -60,16 +60,16 @@
         Blunt: 7
 
 - type: entity
-  id: BaseMinigunERT.15.Incendiary
+  id: BaseMinigunERT15Incendiary
   name: патрон (.15 зажигательный)
   suffix: _StarHorizon
-  parent: CartridgeMinigunERT.15
+  parent: CartridgeMinigunERT15
   components:
   - type: CartridgeAmmo
-    proto: BulletMinigunERT.15.Incendiary
+    proto: BulletMinigunERT15Incendiary
 
 - type: entity
-  id: BulletMinigunERT.15.Incendiary
+  id: BulletMinigunERT15Incendiary
   name: патрон (.15 зажигательный)
   categories: [ HideSpawnMenu ]
   parent: BaseBulletIncendiary

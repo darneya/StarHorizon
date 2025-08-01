@@ -6,12 +6,12 @@
   components:
   - type: Tag
     tags:
-      - MagazineMinigunERT.15
+      - MagazineMinigunERT15
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgeMinigunERT.15
+        - CartridgeMinigunERT15
     capacity: 200
   - type: Item
     size: Large
@@ -38,7 +38,7 @@
   parent: BaseMagazinerMinigunERT15
   components:
   - type: BallisticAmmoProvider
-    proto: BaseMinigunERT.15
+    proto: BaseMinigunERT15
   - type: Sprite
     layers:
     - state: base
@@ -47,13 +47,13 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  id: MagazineMinigunERT15.Incendiary
+  id: MagazineMinigunERT15Incendiary
   name: барабан минигана джаггернаута (.15 зажигательный)
   suffix: StarHorizon
   parent: BaseMagazinerMinigunERT15
   components:
   - type: BallisticAmmoProvider
-    proto: BaseMinigunERT.15.Incendiary
+    proto: BaseMinigunERT15Incendiary
   - type: Sprite
     layers:
     - state: fire

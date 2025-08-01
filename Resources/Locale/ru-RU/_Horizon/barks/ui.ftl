@@ -1,4 +1,4 @@
-﻿humanoid-profile-editor-bark-label = Голос (Барк):
+humanoid-profile-editor-bark-label = Голос (Барк):
 humanoid-profile-editor-voice-play = Прослушать
 humanoid-profile-editor-bark-pitch-label = Высота:
 humanoid-profile-editor-bark-delay-label = Минимальная и максимальная задержка:

@@ -43,4 +43,3 @@ ent-ReinforcedJugPotassium = { ent-ReinforcedJug }
     .desc = { ent-ReinforcedJug.desc }
 ent-ReinforcedJugSilicon = { ent-ReinforcedJug }
     .desc = { ent-ReinforcedJug.desc }
-

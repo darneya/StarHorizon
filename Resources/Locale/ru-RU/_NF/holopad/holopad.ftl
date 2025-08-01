@@ -1,4 +1,4 @@
-﻿# Mapping prototypes
+# Mapping prototypes
 # General
 nf-holopad-general-laboratory = Аномальная Лаборатория
 nf-holopad-general-bahama = Багамская Мама
