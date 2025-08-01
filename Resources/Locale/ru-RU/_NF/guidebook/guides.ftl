@@ -8,20 +8,15 @@ guide-entry-expeditions = Экспедиции
 guide-entry-cargo-hauling = Грузоперевозки
 guide-entry-shipyard = Верфи
 guide-entry-frontier-rules = Правила сервера
-
 # Engineering entries
 guide-entry-gas-mining = Газодобыча
-
 # Security entries
 guide-entry-nfsd-smuggling = Контрабанда
-
 # Medical entries
 guide-entry-medical-bounties = Медицинские премии
 guide-entry-medical-doc = Менеджер Медицинских Операций
-
 # Reference entries
 guide-entry-medicalrecipes = Медицинские рецепты
-
 # Expedition faction entries
 guide-entry-expedition-aberrant-flesh = Аномальная плоть
 guide-entry-expedition-argocytes = Аргоциты
@@ -34,7 +29,6 @@ guide-entry-expedition-gangers = Панки
 guide-entry-expedition-silicons = Мятежные ИИ
 guide-entry-expedition-syndicate-naval-forces = Синдикат
 guide-entry-expedition-xenos = Ксеносы
-
 # Shipyard entries
 guide-entry-shipyard-ambition = Ambition
 guide-entry-shipyard-apothecary = Apothecary
@@ -65,7 +59,6 @@ guide-entry-shipyard-prospector = Prospector
 guide-entry-shipyard-searchlight = Searchlight
 guide-entry-shipyard-spirit = Spirit
 guide-entry-shipyard-vagabond = Vagabond
-
 # Rules entries
 guide-entry-frontier-rule-0 = 0. Admin
 guide-entry-frontier-rule-1 = 1. ERP
@@ -80,7 +73,3 @@ guide-entry-frontier-rule-9 = 9. Security
 guide-entry-frontier-rule-10 = 10. Command
 guide-entry-frontier-rule-11 = 11. Escalation
 guide-entry-frontier-rule-12 = 12. PVP
-
-
-
-

@@ -36,14 +36,14 @@
         priority: 2
         whitelist:
           tags:
-           - MagazineMinigunERT.15
+           - MagazineMinigunERT15
       gun_chamber:
         name: Cartridge
-        startingItem: BaseMinigunERT.15
+        startingItem: BaseMinigunERT15
         priority: 1
         whitelist:
           tags:
-           - CartridgeMinigunERT.15
+           - CartridgeMinigunERT15
   - type: MagazineVisuals
     magState: mag
     steps: 4

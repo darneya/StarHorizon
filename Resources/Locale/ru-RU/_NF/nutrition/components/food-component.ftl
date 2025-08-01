@@ -1,4 +1,5 @@
 ### Interaction Messages
+
 wipe-face = Вы вытерли лицо с помощью { $food }.
 
 ## System
@@ -9,4 +10,3 @@ food-system-verb-wipe = Вытереть лицо
 food-system-wipe = { CAPITALIZE(THE($user)) } пытается вытереть ваше лицо.
 food-system-wipe-success = { CAPITALIZE(THE($user)) } вытер ваше лицо.
 food-system-wipe-success-user = Вы вытерли лицо { THE($target) }.
-

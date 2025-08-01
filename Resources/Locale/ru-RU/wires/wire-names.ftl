@@ -38,7 +38,13 @@ wires-board-name-windoor = Управление раздвижным окном
 wires-board-name-mech = Мех
 wires-board-name-fatextractor = Экстрактор жира
 wires-board-name-flatpacker = Упаковщик
-wires-board-name-spaceheater = Термостат
+wires-board-name-spaceheater = Обогреватель
+wires-board-name-jukebox = Музыкальный автомат
+wires-board-name-computer = Компъютер
+wires-board-name-holopad = Голопад
+wires-board-name-barsign = Знак Бара
+wires-board-name-weapon-energy-turret = Охранная турель
+wires-board-name-turret-controls = Панель управления турелью
 
 # names that get displayed in the wire hacking hud & admin logs.
 
@@ -61,9 +67,9 @@ wire-name-pa-power = ПИТН
 wire-name-pa-strength = СИЛА
 wire-name-bomb-live = АКТВ
 wire-name-bomb-delay = ЗДРЖ
-wire-name-bomb-proceed = ПРДЛ
-wire-name-bomb-boom = БУУМ
-wire-name-bomb-bolt = БОЛТ
+wire-name-bomb-proceed = ТЙМР
+wire-name-bomb-boom = ВЗРВ
+wire-name-bomb-bolt = КРЕП
 wire-name-speech = ДНМК
 wire-name-listen = МИКР
 wire-name-log = ЛОГ
