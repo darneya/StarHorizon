@@ -204,6 +204,12 @@
     },
     {
       "name": "silver_world"
+    },
+    {
+      "name": "idplantmanager_world"
+    },
+    {
+      "name": "idplanttechnician_world"
     }
   ]
 }
