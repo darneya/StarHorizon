@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: Bahama
   parent: BasePOI
-  name: "Банана Мама"
+  name: "Bahama Mama's"
   minimumDistance: 1200
   maximumDistance: 2900
   spawnGamePreset: [ NFAdventure, NFPirate ]
