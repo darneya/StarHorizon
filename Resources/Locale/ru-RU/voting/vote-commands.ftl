@@ -1,8 +1,9 @@
 ### Voting system related console commands
 
+
 ## 'createvote' command
 
-cmd-createvote-desc = Создаёт голосование
+cmd-createvote-desc = Создает голосование
 cmd-createvote-help = Использование: createvote <'restart'|'preset'|'map'>
 cmd-createvote-cannot-call-vote-now = Сейчас вы не можете запустить голосование!
 cmd-createvote-invalid-vote-type = Неверный тип голосования

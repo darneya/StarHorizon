@@ -5,7 +5,6 @@ nf-research-discipline-arsenal-nfsd = Арсенал Шерифов
 nf-research-discipline-salvage = Утилизация
 nf-research-discipline-science = Наука
 nf-research-discipline-service = Сервис
-
 # Сохранять в алфавитном порядке по ключу.
 nf-research-technology-abnormal-artifact-manipulation = Утилизация артефактов
 nf-research-technology-advanced-anomaly-research = Продвинутые аномальные исследования

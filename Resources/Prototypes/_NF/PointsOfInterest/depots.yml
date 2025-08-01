@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: CargoDepot
   parent: BasePOI
-  name: "Торговый Депот"
+  name: Cargo Depot
   minimumDistance: 4000
   maximumDistance: 5000
   spawnGroup: CargoDepot
@@ -35,7 +35,7 @@
 - type: pointOfInterest
   id: CargoDepotAlt
   parent: BasePOI
-  name: "Торговый Депот"
+  name: Cargo Depot
   minimumDistance: 4000
   maximumDistance: 5000
   spawnGroup: CargoDepot

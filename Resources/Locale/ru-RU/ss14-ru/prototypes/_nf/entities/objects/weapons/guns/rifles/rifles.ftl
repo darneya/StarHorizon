@@ -13,4 +13,4 @@ ent-WeaponRifleVulcan = вулкан
 ent-WeaponRifleJackdaw = CAWS-25 "Галка"
     .desc = Начало конца возвещается песней галки. Использует безгильзовые патроны .25.. Обладает модицирующимися частями - верхней планкой, подствольной частью и стволом.
 ent-WeaponRifleVulcanRubber = { ent-WeaponRifleVulcan }
-  .desc = { ent-WeaponRifleVulcan.desc }
+    .desc = { ent-WeaponRifleVulcan.desc }

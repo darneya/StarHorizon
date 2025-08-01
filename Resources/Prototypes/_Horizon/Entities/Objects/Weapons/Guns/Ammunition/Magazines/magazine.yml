@@ -6,12 +6,12 @@
   components:
   - type: Tag
     tags:
-      - MagazineBarrettM82.70
+      - MagazineBarrettM8270
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgeBarrettM82.70
+        - CartridgeBarrettM8270
     capacity: 5
   - type: Item
     size: Small
@@ -38,7 +38,7 @@
   parent: BaseMagazinerBarrettM82
   components:
   - type: BallisticAmmoProvider
-    proto: BaseBarrettM82.70
+    proto: BaseBarrettM8270
   - type: Sprite
     layers:
     - state: red

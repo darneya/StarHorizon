@@ -23,7 +23,7 @@
 - type: startingGear
   id: MobCurieGear
   equipment:
-    outerClothing: ClothingOuterSuitRad
+    outerClothing: ClothingOuterHardsuitRadCat
     id: CurieIDCard
 
 - type: startingGear

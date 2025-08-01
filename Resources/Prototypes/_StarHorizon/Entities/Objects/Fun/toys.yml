@@ -767,3 +767,30 @@
       damage:
         types:
           Blunt: 12
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieBotanist
+  name: плюшевый ботаник
+  description: Он крепко ухватился за томатик своими цепкими лапами. Знаменит своими выходками и покорением космоса невероятно огромной армией из томатов-убийц.
+  suffix: StarHorizon
+  components:
+  - type: StaticPrice
+    price: 50
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Fun/plushiebotanist.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _StarHorizon/Objects/Fun/plushiebotanist.rsi
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Effects/Footsteps/slime1.ogg
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Effects/Footsteps/slime1.ogg
+  - type: UseDelay
+    delay: 0.5
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/Footsteps/slime1.ogg

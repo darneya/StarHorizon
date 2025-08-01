@@ -1,20 +1,14 @@
-# ДЕБАГ
-
+# Фронтир шаттлы
 - type: entity
   parent: BaseShipVoucher
-  id: ShipVoucherALL
-  name: Ваунчер на любой шаттл
-  description: Позволяет бесплатно купить один любой шаттл. Уничтожается при продаже шаттла.
-  suffix: DEBUG, StarHorizon, не рабочий
+  id: ShipVoucherFrontierShipyard
+  suffix: StarHorizon
+  name: Ваучер на шаттл фронтира
+  description: Позволяет бесплатно купить один шаттл на верфи Фронтира. Уничтожается при продаже шаттла.
   components:
-  - type: Tag
-    tags:
-      - Debug
   - type: Sprite
     layers:
-    - state: nfsd
-  - type: Item
-    heldPrefix: nfsd
+    - state: blue
   - type: ShipyardVoucher
     destroyOnEmpty: true
     consoleType: Shipyard
@@ -24,53 +18,18 @@
     - SyndicateAgent
     - Wizard
     - Xenoborg
-    - Pirate # Frontier
+    - Pirate
     accessGroups:
     - AllAccess
     - Silicon
-    - GeneralNfsdAccess # Frontier
-
-#Граждаский шаттлы
-
-- type: entity
-  parent: BaseShipVoucher
-  id: ShipVoucherShuttle
-  name: Ваунчер на шаттл
-  description: Позволяет бесплатно купить один шаттл легальный шаттл. Уничтожается при продаже шаттла.
-  suffix: DEBUG, StarHorizon, не рабочий
-  components:
-  - type: Sprite
-    layers:
-    - state: blue
-  - type: ShipyardVoucher
-    destroyOnEmpty: true
-    consoleType: Shipyard
-    access:
-    - External
-    - Maintenance
-
-#Шаттлы фронтира
-
-- type: entity
-  parent: ShipVoucherShuttle
-  id: ShipVoucherFrontierShipyard
-  name: Ваунчер на обычный шаттл
-  description: Позволяет бесплатно купить один шаттл на верфи Фронтира. Уничтожается при продаже шаттла.
-  components:
-  - type: Sprite
-    layers:
-    - state: blue
-  - type: ShipyardVoucher
-    consoleType: Shipyard
+    - GeneralNfsdAccess
 
 # НФСД шаттлы
-
 - type: entity
-  parent: BaseShipVoucher
+  parent: ShipVoucherFrontierShipyard
   id: ShipVoucherFrontierNFSD
-  name: Ваунчер на НСФД шаттл
-  description: Позволяет бесплатно купить один шаттл на аванпосте НСФД. Уничтожается при продаже шаттла.
-  suffix: StarHorizon
+  name: Ваучер на НФСД шаттл
+  description: Позволяет бесплатно купить один шаттл на аванпосте НФСД. Уничтожается при продаже шаттла.
   components:
   - type: Sprite
     layers:
@@ -79,62 +38,38 @@
     heldPrefix: nfsd
   - type: ShipyardVoucher
     consoleType: Security
-    destroyOnEmpty: true
-    access:
-    - Armory
-    - Brig
-    - Sergeant # Frontier
-    - Bailiff # Frontier
-    accessGroups: # Frontier
-    - GeneralNfsdAccess # Frontier
 
 # Пиратские шаттлы
-
 - type: entity
-  parent: BaseShipVoucher
+  parent: ShipVoucherFrontierShipyard
   id: ShipVoucherFrontierBlackMarket
-  name: Ваунчер на шаттл чёрного рынка
-  description: Позволяет бесплатно купить один шаттл на чёрном рынке. Уничтожается при продаже шаттла. УУУ нелегал....
-  suffix: StarHorizon
+  name: Ваучер на шаттл чёрного рынка
+  description: Позволяет бесплатно купить один шаттл на чёрном рынке. Уничтожается при продаже шаттла. Ваучеры на нелегальные шаттлы? Серьёзно?
   components:
   - type: Sprite
     layers:
     - state: blue
   - type: ShipyardVoucher
     consoleType: BlackMarket
-    destroyOnEmpty: true
-    access:
-    - External
-    - Maintenance
-    - Pirate
 
 # Синдикатские шаттлы
-
 - type: entity
-  parent: BaseShipVoucher
+  parent: ShipVoucherFrontierShipyard
   id: ShipVoucherFrontierSyndicate
-  name: Ваунчер на шаттл синдиката
-  description: Позволяет бесплатно купить один шаттл на чёрном рынке. Уничтожается при продаже шаттла. УУУ нелегал....
-  suffix: StarHorizon
+  name: Ваучер на шаттл синдиката
+  description: Позволяет бесплатно купить один шаттл на чёрном рынке. Уничтожается при продаже шаттла. Ваучеры на нелегальные шаттлы? Серьёзно?
   components:
   - type: Sprite
     layers:
     - state: blue
   - type: ShipyardVoucher
-    destroyOnEmpty: true
     consoleType: Syndicate
-    access:
-    - External
-    - Maintenance
-    - NuclearOperative
-    - SyndicateAgent
 
 # Экспедиционные шаттлы
-
 - type: entity
-  parent: ShipVoucherShuttle
+  parent: ShipVoucherFrontierShipyard
   id: ShipVoucherFrontierExpedition
-  name: Ваунчер на экспедиционный шаттл
+  name: Ваучер на экспедиционный шаттл
   description: Позволяет бесплатно купить один шаттл на экспедиционной ложи. Уничтожается при продаже шаттла.
   components:
   - type: Sprite
@@ -144,11 +79,10 @@
     consoleType: Expedition
 
 # Мусорные шаттлы
-
 - type: entity
-  parent: ShipVoucherShuttle
+  parent: ShipVoucherFrontierShipyard
   id: ShipVoucherFrontierScrap
-  name: Ваунчер на мусорный шаттл
+  name: Ваучер на мусорный шаттл
   description: Позволяет бесплатно купить один шаттл на консоле свалки. Уничтожается при продаже шаттла. Вы серьёзно даже не можете позволить это купить за свои деньги?
   components:
   - type: Sprite
@@ -158,33 +92,23 @@
     consoleType: Scrap
 
 # Шаттлы предстовителей фронтира
-
 - type: entity
-  parent: BaseShipVoucher
+  parent: ShipVoucherFrontierShipyard
   id: ShipVoucherFrontierSr
-  name: Ваунчер на шаттл представителя фронтира
+  name: Ваучер на шаттл представителя фронтира
   description: Позволяет бесплатно купить один шаттл на верфи представителя фронтира. Уничтожается при продаже шаттла.
   components:
   - type: Sprite
     layers:
     - state: blue
   - type: ShipyardVoucher
-    destroyOnEmpty: true
     consoleType: Sr
-    access:
-    - External
-    - Maintenance
-    - Janitor
-    - Service
-    - Mail
-    - StationTrafficController
 
 # Мед шаттлы
-
 - type: entity
-  parent: ShipVoucherShuttle
+  parent: ShipVoucherFrontierShipyard
   id: ShipVoucherFrontierMedical
-  name: Ваунчер на медицинский шаттл
+  name: Ваучер на медицинский шаттл
   description: Позволяет бесплатно купить один шаттл на медицинском аванпосте. Уничтожается при продаже шаттла.
   components:
   - type: Sprite
@@ -194,28 +118,14 @@
     consoleType: Medical
 
 # Кастомные шаттлы или шаттлы фракций
-
 - type: entity
-  parent: BaseShipVoucher
+  parent: ShipVoucherFrontierShipyard
   id: ShipVoucherСustom
-  name: Ваунчер на необычные шаттлы
+  name: Ваучер на необычные шаттлы
   description: Позволяет бесплатно купить один любой шаттл на специальной консоли. Уничтожается при продаже шаттла.
-  suffix: StarHorizon
   components:
   - type: Sprite
     layers:
-    - state: nfsd
+    - state: blue
   - type: ShipyardVoucher
-    destroyOnEmpty: true
     consoleType: Custom
-    access:
-    - CentralCommand
-    - NuclearOperative
-    - SyndicateAgent
-    - Wizard
-    - Xenoborg
-    - Pirate # Frontier
-    accessGroups:
-    - AllAccess
-    - Silicon
-    - GeneralNfsdAccess # Frontier

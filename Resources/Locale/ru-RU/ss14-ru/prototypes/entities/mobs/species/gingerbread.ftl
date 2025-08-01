@@ -3,3 +3,4 @@ ent-BaseMobGingerbread = Урист МакПеченька
     .suffix = Печенье
 ent-MobGingerbreadDummy = { ent-BaseSpeciesDummy }
     .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { "" }

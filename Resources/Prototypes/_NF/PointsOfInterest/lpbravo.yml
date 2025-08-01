@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: LPBravo
   parent: BasePOI
-  name: 'Точка Прослушки Браво'
+  name: 'Listening Point Bravo'
   minimumDistance: 4000
   maximumDistance: 6000
   spawnGroup: SyndicateFOB

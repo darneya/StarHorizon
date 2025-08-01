@@ -1,0 +1,10 @@
+advertisement-mailvend-1 = Кредиты за ваши мысли? Почему бы и нет?
+advertisement-mailvend-2 = Конверты! Бумага! Ручки!
+advertisement-mailvend-3 = Когда в последний раз ты писал домой?
+advertisement-mailvend-4 = Кому нужны гарнитуры? Письма — в моде!
+advertisement-mailvend-5 = Помните, марки бесплатны!
+advertisement-mailvend-6 = Есть друг по переписке? Почему бы не завести его?
+goodbye-mailvend-1 = Счастливого писания!
+goodbye-mailvend-2 = Не забудь точки над ё!
+goodbye-mailvend-3 = Помни, чистописание важно!
+goodbye-mailvend-4 = Не забудь написать!

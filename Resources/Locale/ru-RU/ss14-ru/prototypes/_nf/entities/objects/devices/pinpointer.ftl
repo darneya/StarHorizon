@@ -7,4 +7,3 @@ ent-PinpointerDeadDropHint = пинпоинтер на подсказку для
 ent-PinpointerDeadDrop = пинпоинтер скрытых тайников
     .suffix = DEBUG
     .desc = Указывает на скрытый тайник.
-

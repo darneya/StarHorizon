@@ -1,2 +1,2 @@
 ent-MiniStationAnchor = мини станционный якорь
-  .desc = { ent-StationAnchor.desc }
+    .desc = { ent-StationAnchor.desc }
