@@ -19,13 +19,13 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.4
-        Heat: 0.5
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.6
         Radiation: 0
         Caustic: 0.9
-        Structural: 0.4
+        Structural: 0.5
     maxintegrity: 200
     baseState: gygax
     openState: gygax-open
@@ -164,13 +164,13 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.15
-        Slash: 0.15
-        Piercing: 0.25
-        Heat: 0.25
+        Blunt: 0.25
+        Slash: 0.25
+        Piercing: 0.35
+        Heat: 0.35
         Radiation: 0
         Caustic: 0.9
-        Structural: 0.3
+        Structural: 0.4
     maxintegrity: 400
     baseState: durand
     openState: durand-open
@@ -287,7 +287,7 @@
 
 - type: entity
   id: MechPhazon
-  parent: BaseMech
+  parent: [BaseMech, BaseC3Contraband]
   name: phazon
   description: Most advanced mech.
   components:
@@ -307,13 +307,13 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.4
-        Heat: 0.5
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.6
         Radiation: 0
         Caustic: 0.9
-        Structural: 0.4
+        Structural: 0.5
     maxintegrity: 200
     baseState: phazon
     openState: phazon-open
@@ -382,13 +382,13 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.15
-        Slash: 0.15
-        Piercing: 0.25
-        Heat: 0.25
+        Blunt: 0.25
+        Slash: 0.25
+        Piercing: 0.35
+        Heat: 0.35
         Radiation: 0
-        Caustic: 0.1
-        Structural: 0.25
+        Caustic: 0.9
+        Structural: 0.35
     maxintegrity: 400
     baseState: marauder
     openState: marauder-open
@@ -453,13 +453,13 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.15
-        Slash: 0.15
-        Piercing: 0.2
-        Heat: 0.2
+        Blunt: 0.25
+        Slash: 0.25
+        Piercing: 0.3
+        Heat: 0.3
         Radiation: 0
-        Caustic: 0.1
-        Structural: 0.25
+        Caustic: 0.9
+        Structural: 0.35
     maxintegrity: 400
     baseState: seraph
     openState: seraph-open
@@ -512,13 +512,13 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.4
-        Heat: 0.5
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.6
         Radiation: 0
-        Caustic: 0.1
-        Structural: 0.4
+        Caustic: 0.9
+        Structural: 0.5
     maxintegrity: 300
     baseState: darkgygax
     openState: darkgygax-open
@@ -569,13 +569,13 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.15
-        Slash: 0.15
-        Piercing: 0.25
-        Heat: 0.25
+        Blunt: 0.25
+        Slash: 0.25
+        Piercing: 0.35
+        Heat: 0.35
         Radiation: 0
-        Caustic: 0.1
-        Structural: 0.25
+        Caustic: 0.9
+        Structural: 0.35
     maxintegrity: 400
     baseState: mauler
     openState: mauler-open
@@ -625,13 +625,13 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.15
-        Slash: 0.15
-        Piercing: 0.25
-        Heat: 0.25
+        Blunt: 0.25
+        Slash: 0.25
+        Piercing: 0.35
+        Heat: 0.35
         Radiation: 0
-        Caustic: 0.1
-        Structural: 0.25
+        Caustic: 0.9
+        Structural: 0.35
     maxintegrity: 400
     baseState: mauler
     openState: mauler-open
