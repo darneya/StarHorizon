@@ -1,5 +1,5 @@
 ﻿- type: entity
-  id: BaseCartridgeBarrettM82.70
+  id: BaseCartridgeBarrettM8270
   parent: BaseItem
   abstract: true
   components:
@@ -8,26 +8,26 @@
     netsync: false
   - type: Tag
     tags:
-    - Cartridge.70
-    - CartridgeBarrettM82.70
+    - Cartridge70
+    - CartridgeBarrettM8270
   - type: Item
     size: Tiny
   - type: SpaceGarbage
 
 - type: entity
-  id: CartridgeBarrettM82.70
+  id: CartridgeBarrettM8270
   name: патрон (.70 крупнокалиберный)
   suffix: Horizon
-  parent: BaseCartridgeBarrettM82.70
+  parent: BaseCartridgeBarrettM8270
   abstract: true
   noSpawn: true
   components:
   - type: Tag
     tags:
-    - Cartridge.70
-    - CartridgeBarrettM82.70
+    - Cartridge70
+    - CartridgeBarrettM8270
   - type: CartridgeAmmo
-    proto: BulletSniperBarrettM82.70
+    proto: BulletSniperBarrettM8270
   - type: Sprite
     sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/barrettm82bullet.rsi
     layers:
@@ -39,16 +39,16 @@
     price: 150
 
 - type: entity
-  id: BaseBarrettM82.70
+  id: BaseBarrettM8270
   name: патрон (.70 крупнокалиберный)
   suffix: Horizon
-  parent: CartridgeBarrettM82.70
+  parent: CartridgeBarrettM8270
   components:
   - type: CartridgeAmmo
-    proto: BulletSniperBarrettM82.70
+    proto: BulletSniperBarrettM8270
 
 - type: entity
-  id: BulletSniperBarrettM82.70
+  id: BulletSniperBarrettM8270
   name: патрон (.70 крупнокалиберный)
   suffix: Horizon
   parent: BaseBullet
@@ -64,7 +64,7 @@
   id: CartridgeSniperBarrettM82AR
   name: патрон (.70 бронированный)
   suffix: Horizon
-  parent: CartridgeBarrettM82.70
+  parent: CartridgeBarrettM8270
   components:
   - type: CartridgeAmmo
     proto: BulletSniperBarrettM82AR
@@ -90,7 +90,7 @@
   id: CartridgeSniperBarrettM82HighVelocity
   name: патрон (.70 высокоскорострельный)
   suffix: Horizon
-  parent: CartridgeBarrettM82.70
+  parent: CartridgeBarrettM8270
   components:
   - type: CartridgeAmmo
     proto: BulletSniperBarrettM82HighVelocity

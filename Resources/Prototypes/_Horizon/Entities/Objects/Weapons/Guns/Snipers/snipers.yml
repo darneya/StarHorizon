@@ -41,14 +41,14 @@
         priority: 2
         whitelist:
           tags:
-           - MagazineBarrettM82.70
+           - MagazineBarrettM8270
       gun_chamber:
         name: Chamber
-        startingItem: BaseBarrettM82.70
+        startingItem: BaseBarrettM8270
         priority: 1
         whitelist:
           tags:
-           - CartridgeBarrettM82.70
+           - CartridgeBarrettM8270
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -78,14 +78,14 @@
         priority: 2
         whitelist:
           tags:
-           - MagazineBarrettM82.70
+           - MagazineBarrettM8270
       gun_chamber:
         name: Cartridge
-        startingItem: BaseBarrettM82.70
+        startingItem: BaseBarrettM8270
         priority: 1
         whitelist:
           tags:
-           - CartridgeBarrettM82.70
+           - CartridgeBarrettM8270
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot

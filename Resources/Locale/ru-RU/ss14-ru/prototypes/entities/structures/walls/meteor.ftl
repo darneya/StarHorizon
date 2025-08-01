@@ -1,4 +1,4 @@
-ent-MeteorRock = метеоритный камень
+ent-MeteorRock = метеоритная порода
     .desc = Остатки метеорита.
 ent-MeteorRockCoal = { ent-MeteorRock }
     .desc = Рудная жила, богатая углём.

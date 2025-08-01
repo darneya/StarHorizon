@@ -58,10 +58,10 @@ accent-words-generic-aggressive-2 = Рррр!
 accent-words-generic-aggressive-3 = Грр...
 accent-words-generic-aggressive-4 = Гррав!!
 # Duck
-accent-words-duck-1 = Ква!
-accent-words-duck-2 = Ква.
-accent-words-duck-3 = Ква?
-accent-words-duck-4 = Ква-ква!
+accent-words-duck-1 = Кря!
+accent-words-duck-2 = Кря.
+accent-words-duck-3 = Кря?
+accent-words-duck-4 = Кря кря!
 # Chicken
 accent-words-chicken-1 = Кудах!
 accent-words-chicken-2 = Кудах.
@@ -71,7 +71,7 @@ accent-words-chicken-4 = Кудах тах-тах!
 accent-words-pig-1 = Хрю.
 accent-words-pig-2 = Хрю?
 accent-words-pig-3 = Хрю!
-accent-words-pig-4 = Хрю-хрю!
+accent-words-pig-4 = Хрю Хрю!
 # Kangaroo
 accent-words-kangaroo-1 = Грр!
 accent-words-kangaroo-2 = Ххссс!
@@ -83,10 +83,8 @@ accent-words-slimes-2 = Блимпаф?
 accent-words-slimes-3 = Бламп!
 accent-words-slimes-4 = Блааамп...
 accent-words-slimes-5 = Блабл-бламп!
-
 # Mothroach
-# accent-words-mothroach-1 = Чирик!
-
+accent-words-mothroach-1 = Бззз!
 # Crab
 accent-words-crab-1 = Чик.
 accent-words-crab-2 = Чик-клац!
@@ -109,9 +107,9 @@ accent-words-nymph-1 = Чирик!
 accent-words-nymph-2 = Чурр...
 accent-words-nymph-3 = Чипи?
 accent-words-nymph-4 = Шрруп!
-# Nyanotrasen Mothroach
-accent-words-mothroach-1 = Сквик!
-accent-words-mothroach-2 = Чирик!
-accent-words-mothroach-3 = Чиик!
-accent-words-mothroach-4 = Иии!
-accent-words-mothroach-5 = Ийип!
+# TomatoKiller
+accent-words-tomato-1 = Тотат!
+accent-words-tomato-2 = Тощита
+accent-words-tomato-3 = Мастет?
+accent-words-tomato-4 = Готат!
+accent-words-tomato-5 = Вода...

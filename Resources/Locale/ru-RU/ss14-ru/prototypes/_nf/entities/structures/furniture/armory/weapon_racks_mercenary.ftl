@@ -31,4 +31,3 @@ ent-StructurePistolRackMercenary = { ent-StructurePistolRack }
 ent-StructurePistolRackWallmountedMercenary = { ent-StructurePistolRack }
     .suffix = Наёмник, Пустой, Настенный
     .desc = { ent-StructurePistolRack.desc }
-

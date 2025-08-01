@@ -20,12 +20,12 @@ portable-generator-ui-clogged = В топливном баке обнаруже�
 portable-generator-ui-eject = Извлечь
 portable-generator-ui-eta = (~{ $minutes } минут)
 portable-generator-ui-unanchored = Не закреплено
-portable-generator-ui-current-output = Текущая мощность: { $voltage }
-portable-generator-ui-network-stats = Электросеть:
+portable-generator-ui-current-output = Выработка: { $voltage }
+portable-generator-ui-network-stats = Сеть:
 portable-generator-ui-network-stats-value = { POWERWATTS($supply) } / { POWERWATTS($load) }
-portable-generator-ui-network-stats-not-connected = Не подключён
+portable-generator-ui-network-stats-not-connected = Не подключен
 power-switchable-generator-examine = Выработанная энергия направлена на { $voltage }.
-power-switchable-generator-switched = Выход переключён на { $voltage }!
+power-switchable-generator-switched = Переключить выход на { $voltage }!
 power-switchable-voltage =
     { $voltage ->
         [HV] [color=orange]ВВ[/color]
