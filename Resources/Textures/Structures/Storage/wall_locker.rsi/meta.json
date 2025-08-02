@@ -37,5 +37,8 @@
     { "name": "n2" },
     { "name": "n2_door" },
     { "name": "n2_open" }
+    { "name": "eng" },
+    { "name": "eng_open" },
+    { "name": "eng_evac_door" }
   ]
 }

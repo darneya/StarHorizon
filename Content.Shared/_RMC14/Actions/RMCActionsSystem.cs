@@ -1,6 +1,9 @@
 using Content.Shared.Actions;
+using Content.Shared.Actions.Components;
 using Content.Shared.Actions.Events;
 using Content.Shared.FixedPoint;
+using Content.Shared.Interaction;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._RMC14.Actions;
 
@@ -17,7 +20,7 @@ public sealed class RMCActionsSystem : EntitySystem
         SubscribeLocalEvent<ActionSharedCooldownComponent, ActionPerformedEvent>(OnSharedCooldownPerformed);
 
         SubscribeLocalEvent<ActionCooldownComponent, RMCActionUseEvent>(OnCooldownUse);
-        
+
         SubscribeLocalEvent<InstantActionComponent, ActionReducedUseDelayEvent>(OnReducedUseDelayEvent);
         SubscribeLocalEvent<EntityTargetActionComponent, ActionReducedUseDelayEvent>(OnReducedUseDelayEvent);
         SubscribeLocalEvent<WorldTargetActionComponent, ActionReducedUseDelayEvent>(OnReducedUseDelayEvent);
@@ -49,7 +52,7 @@ public sealed class RMCActionsSystem : EntitySystem
         }
     }
 
-    private void OnReducedUseDelayEvent<T>(EntityUid uid, T component, ActionReducedUseDelayEvent args) where T : BaseActionComponent
+    private void OnReducedUseDelayEvent(EntityUid uid, ActionComponent component, ActionReducedUseDelayEvent args)
     {
         if (!TryComp(uid, out ActionReducedUseDelayComponent? comp))
             return;
@@ -61,17 +64,14 @@ public sealed class RMCActionsSystem : EntitySystem
 
         if (TryComp(uid, out ActionSharedCooldownComponent? shared))
         {
-            if (comp.UseDelayBase == null)
-                comp.UseDelayBase = shared.Cooldown;
+            comp.UseDelayBase ??= shared.Cooldown;
 
             RefreshSharedUseDelay((uid, comp), shared);
             return;
         }
 
         // Should be fine to only set this once as the base use delay should remain constant
-        if (comp.UseDelayBase == null)
-            comp.UseDelayBase = component.UseDelay;
-
+        comp.UseDelayBase ??= component.UseDelay;
         RefreshUseDelay((uid, comp));
     }
 
