@@ -1,0 +1,12 @@
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateBuhanka
+  name: Гусеничный Наземный Интегрируемый Десантный Аппарат
+  description: |
+    Вмещает в себя до 8 человек, а так же до 20 единиц почти любой твёрдой материи.
+    Конкретно этот имеет модуль имеет опозновательные знаки Траумы.
+  components:
+  - type: Icon
+    sprite: _StarHorizon/Structures/Storage/buhanka.rsi
+  - type: Sprite
+    sprite: _StarHorizon/Structures/Storage/buhanka.rsi

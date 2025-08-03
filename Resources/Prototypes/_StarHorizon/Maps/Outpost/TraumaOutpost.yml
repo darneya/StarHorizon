@@ -1,0 +1,28 @@
+- type: gameMap
+  id: TraumaOutpost
+  mapName: 'Аванпост ТТИ'
+  mapPath: /Maps/TwiceNoRise/Stations/TraumaStationRelease.yml # Вроде бы путь правильный, но хз, проверить не могу
+  minPlayers: 0
+  maxPlayers: 12
+  randomRotation: false
+  maxRandomOffset: 0
+  stations:
+    Frontier:
+      stationProto: StandardFrontierStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Аванпост ТТИ'
+#          nameGenerator:
+#            !type:NanotrasenNameGenerator
+#            prefixCreator: '14'
+        - type: ExtraStationInformation
+          iconPath: /Textures/_NF/Logo/icon/icon-256x256.png # used the biggest one, looks better when downscaling than upscaling
+          stationSubtext: 'frontier-lobby-frontier-subtext'
+          stationDescription: 'frontier-lobby-frontier-description'
+          lobbySortOrder: 1
+        - type: StationJobs
+          availableJobs:
+            TraumaParamedicJob: [ 4, 4 ] # Насчёт джобок точно так же, проверить не могу
+            TraumaMedTechJob: [ 2, 2 ]
+            TraumaRessurectorJob: [ 2, 2 ]
+            TraumaRepresentativeJob: [ 2, 1 ]
