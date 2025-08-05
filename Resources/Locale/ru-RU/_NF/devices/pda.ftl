@@ -1,4 +1,4 @@
 # Popups
-pda-wiped-device = The PDA's voice program was terminated.
+pda-wiped-device = Голосовая программа КПК была прекращена.
 # Verbs
-pda-wipe-device-verb-text = Terminate Voice
+pda-wipe-device-verb-text = Прервать голосовую связь

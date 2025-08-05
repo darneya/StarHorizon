@@ -3,10 +3,10 @@
 # Used internally by the GASQUANTITY() function.
 zzzz-fmt-gas-quantity =
     { TOSTRING($divided, "F1") } { $places ->
-        [0] mol
-        [1] kmol
-        [2] Mmol
-        [3] Gmol
-        [4] Tmol
+        [0] моль
+        [1] кмоль
+        [2] ммоль
+        [3] гмоль
+        [4] тмоль
        *[5] ???
     }

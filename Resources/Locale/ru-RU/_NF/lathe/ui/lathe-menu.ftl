@@ -1,1 +1,1 @@
-lathe-product-value-modifier = Напечатанные здесь вещи продаются с коэффициентом [color=red]{ $modifier }x[/color].
+lathe-product-value-modifier = Печатные изделия продаются по [color=red]{ NATURALFIXED($modifier, 2) }x[/color] от рыночной цены.

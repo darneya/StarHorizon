@@ -16,3 +16,7 @@ reagent-name-honey = мёд
 reagent-desc-honey = Густой, золотистый и липкий, оригинальный подсластитель.
 reagent-name-honey-iced-tea = холодный чай с медом
 reagent-desc-honey-iced-tea = Чай с капелькой меда.
+reagent-name-wassail = под парусом
+reagent-desc-wassail = Горячий глинтвейн.
+reagent-name-eggnog = гоголь-моголь
+reagent-desc-eggnog = Сливочный, сладкий и слегка пьянящий. Полностью обжигающий.

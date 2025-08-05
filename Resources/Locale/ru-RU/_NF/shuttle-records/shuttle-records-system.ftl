@@ -15,7 +15,7 @@ shuttle-records-insufficient-funds = У станции недостаточно 
 shuttle-records-no-access = Доступ запрещен.
 shuttle-records-transaction-confirm = Вы уверены?
 shuttle-records-transaction-cost = Стоимость транзакции: { $cost }
-shuttle-records-search = Название шаттла или имя его Владельца
+shuttle-records-search = Название шаттла или имя его владельца
 shuttle-records-time-of-purchase = Дата покупки: [color=white]{ $time }[/color]
 shuttle-records-show-active-only = Показывать только активные шаттлы
 shuttle-records-purchased-voucher = Шаттл был оплачен ваучером.
