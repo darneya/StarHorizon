@@ -10,3 +10,5 @@ ent-ClothingBackpackNfsdBrown = рюкзак ДСБФ
     .desc = { ent-ClothingBackpackSecurity.desc }
 ent-ClothingBackpackNfsdCream = { ent-ClothingBackpackNfsdBrown }
     .desc = { ent-ClothingBackpackNfsdBrown.desc }
+ent-NFGoblinMadeClothingBackpackTrashBlue = мусзак
+    .desc = Этот плохиш может вместить столько мусора!
