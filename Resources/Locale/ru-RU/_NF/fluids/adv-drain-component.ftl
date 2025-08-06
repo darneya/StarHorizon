@@ -1,1 +1,1 @@
-adv-drain-component-examine-volume = [color="blue"]Contains - { $volume }u/{ $maxvolume }u.[/color]
+adv-drain-component-examine-volume = [color="blue"]Содержит - { $volume }ед./{ $maxvolume }ед.[/color]

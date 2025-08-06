@@ -1,12 +1,9 @@
 # Metals
-materials-scrap = лом
-materials-bluespace = блюспейс
+materials-scrap = металлолом
 # Ores
-materials-raw-scrap = лом
-materials-raw-scrap-tech = тиехнолом
+materials-raw-scrap = несортированный металлолом
 # Other
-materials-anomalite = anomalite
-materials-reinforced-uranium-glass = reinforced uranium glass
-materials-uranium-glass = uranium glass
-materials-clockwork-glass = clockwork glass
-materials-brass = brass
+materials-reinforced-uranium-glass = укрепленное урановое стекло
+materials-uranium-glass = урановое стекло
+materials-clockwork-glass = стекло с часовым механизмом
+materials-brass = латунь

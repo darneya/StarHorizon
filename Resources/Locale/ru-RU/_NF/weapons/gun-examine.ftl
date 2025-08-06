@@ -1,12 +1,13 @@
-gun-examine-nf-recoil = - [color={ $color }]Recoil[/color]: [color=lightblue]{ $value }°[/color] per shot
-gun-examine-nf-stability = - [color={ $color }]Stability[/color]: [color=lightblue]{ $value }°[/color] per second
-gun-examine-nf-max-angle = - [color={ $color }]Maximum spread[/color]: [color=lightblue]{ $value }°[/color]
-gun-examine-nf-min-angle = - [color={ $color }]Minimum spread[/color]: [color=lightblue]{ $value }°[/color]
-gun-examine-nf-fire-rate = - [color={ $color }]Fire rate[/color]: [color=lightblue]{ $value } RPS[/color]
-gun-examine-nf-fire-rate-burst = - [color={ $color }]Fire rate[/color]: [color=lightblue]{ $value } RPS[/color] (burst of [color=lightblue]{ $burstsize }[/color] at [color=lightblue]{ $burstrate } RPS[/color])
-gun-examine-nf-muzzle-velocity = - [color={ $color }]Muzzle velocity[/color]: [color=lightblue]{ $value } m/s[/color]
-gun-examine-nf-class = - [color={ $color }]Class[/color]: [color=lightblue]{ $value }[/color]
-gun-examine-nf-manufacturer = - [color={ $color }]Manufacturer[/color]: [color=lightblue]{ $value }[/color]
+gun-examine-nf-recoil = - [color={$color}]Recoil[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color] per shot
+gun-examine-nf-stability = - [color={$color}]Stability[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color] per second
+gun-examine-nf-max-angle = - [color={$color}]Maximum spread[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color]
+gun-examine-nf-min-angle = - [color={$color}]Minimum spread[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color]
+gun-examine-nf-fire-rate = - [color={$color}]Fire rate[/color]: [color=lightblue]{NATURALFIXED($value, 1)} RPS[/color]
+gun-examine-nf-fire-rate-burst = - [color={$color}]Fire rate[/color]: [color=lightblue]{NATURALFIXED($value, 1)} RPS[/color] (burst of [color=lightblue]{$burstsize}[/color] at [color=lightblue]{NATURALFIXED($burstrate, 1)} RPS[/color])
+gun-examine-nf-muzzle-velocity = - [color={$color}]Muzzle velocity[/color]: [color=lightblue]{NATURALFIXED($value, 1)} m/s[/color]
+gun-examine-nf-class = - [color={$color}]Class[/color]: [color=lightblue]{$value}[/color]
+gun-examine-nf-manufacturer = - [color={$color}]Manufacturer[/color]: [color=lightblue]{$value}[/color]
+
 # Calibers
 gun-examine-caliber-35 = .35 pistol ammo
 gun-examine-caliber-45 = .45 pistol ammo
@@ -31,7 +32,6 @@ gun-examine-energybolt-disabler-pistol = 750J disabler bolt
 gun-examine-energybolt-disabler-practice = 25J disabler bolt
 gun-examine-energybolt-holoflare = holoflare
 gun-examine-pulse-low = 1750J energy pulse
-gun-examine-particle-stream = high-energy particle stream
 gun-examine-energybolt-emp = EMP bolt
 gun-examine-energybolt-kinetic-high = 1600J kinetic bolt
 gun-examine-energybolt-kinetic-medium = 1100J kinetic bolt
@@ -41,6 +41,7 @@ gun-examine-caliber-40mm-grenade-dart = 40mm grenades / tracking darts
 gun-examine-caliber-rocket = rocket-propelled grenades
 gun-examine-caliber-cannon-ball = cannon balls
 gun-examine-caliber-mail-capsule = mail capsules
+
 # Manufacturers (alphabetical please)
 weapon-details-manufacturer-custom-made = Custom Made
 weapon-details-manufacturer-cybersun-industries = Cybersun Industries
@@ -48,8 +49,8 @@ weapon-details-manufacturer-foam-force-llc = Foam Force LLC
 weapon-details-manufacturer-frontier-gunsmith-consortium = Frontier Gunsmith Consortium
 weapon-details-manufacturer-gorlex-steel-works = Gorlex Steel Works
 weapon-details-manufacturer-nanotrasen-munitions = NanoTrasen Munitions
-weapon-details-manufacturer-nanotrasen-technologies = NanoTrasen Technologies
 weapon-details-manufacturer-steelbolt-tool-forge = Steelbolt Tool Forge
+
 # Classes (alphabetical please)
 weapon-details-class-assault-rifle = Assault Rifle
 weapon-details-class-launcher = Launcher

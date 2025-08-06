@@ -1,1 +1,1 @@
-construction-category-goblin = Goblin
+construction-category-goblin = Гоблин

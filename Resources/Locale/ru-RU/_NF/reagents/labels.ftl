@@ -1,5 +1,5 @@
-# Бумажки с названиями содержимого бочек
-# Хим. элементы и базовые реагенты
+# Labels for reagent barrels
+# Elements & basic reagents
 reagent-label-aluminium = [bold]Алюминий[/bold]
 reagent-label-carbon = [bold]Углерод[/bold]
 reagent-label-chlorine = [bold]Хлор[/bold]
@@ -22,19 +22,19 @@ reagent-label-silver = [bold]Серебро[/bold]
 reagent-label-sodium = [bold]Натрий[/bold]
 reagent-label-sugar = [bold]Сахар[/bold]
 reagent-label-sulfur = [bold]Сера[/bold]
-# Реагенты сервисного отдела
+# Service & other reagents
 reagent-label-cornoil = [bold]Кукурузное масло[/bold]
 reagent-label-diethylamine = [bold]Диэтиламин[/bold]
 reagent-label-ketchup = [bold]Кетчуп[/bold]
 reagent-label-mayo = [bold]Майонез[/bold]
 reagent-label-mustard = [bold]Горчица[/bold]
 reagent-label-oil = [bold]Масло[/bold]
-reagent-label-oil-olive = [bold]Оливкое масло[/bold]
+reagent-label-oil-olive = [bold]Оливковое масло[/bold]
 reagent-label-space-cleaner = [bold]Космический очиститель[/bold]
 reagent-label-space-lube = [bold]Космическая смазка[/bold]
 reagent-label-welding-fuel = [bold]Сварочное топливо[/bold]
-# Напитки
-reagent-label-absinthe = [bold]Абсцент[/bold]
+# Drinks
+reagent-label-absinthe = [bold]Абсент[/bold]
 reagent-label-ale = [bold]Эль[/bold]
 reagent-label-beer = [bold]Пиво[/bold]
 reagent-label-coffeeliqueur = [bold]Кофейный ликёр[/bold]
@@ -47,3 +47,4 @@ reagent-label-vodka = [bold]Водка[/bold]
 reagent-label-water = [bold]Вода[/bold]
 reagent-label-whiskey = [bold]Виски[/bold]
 reagent-label-wine = [bold]Вино[/bold]
+reagent-label-mead = [bold]Медовуха[/bold]

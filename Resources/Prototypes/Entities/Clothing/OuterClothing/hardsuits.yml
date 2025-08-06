@@ -30,6 +30,7 @@
   - type: StaticPrice # Frontier
     price: 20 # Frontier
     vendPrice: 2000 # Frontier
+  - type: CatWearable
 
 #Atmospherics Hardsuit
 - type: entity
@@ -586,6 +587,7 @@
     - MonkeyWearable
     - Hardsuit
     - WhitelistChameleon
+  - type: CatWearable
 
 # Syndicate Medic Hardsuit
 - type: entity

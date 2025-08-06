@@ -1,4 +1,2 @@
-reagent-name-goblin-blood = goblin blood
-reagent-desc-goblin-blood = Liquid as thick as clotting syrup that clings to the edges of a jam jar. The smell is a pungent cocktail of metal and decay. Why would it make you think about jam?
-reagent-name-primatine = primatine
-reagent-desc-primatine = A thick brown liquid, looks like hairs are in it.
+reagent-name-goblin-blood = гоблинская кровь
+reagent-desc-goblin-blood = Жидкость, густая как сироп, которая прилипает к краям банки с джемом. Запах — едкий коктейль из металла и гниения. Почему это должно заставить вас подумать о джеме?

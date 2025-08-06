@@ -10,6 +10,18 @@ chat-emote-name-meow = Мяукать
 chat-emote-name-mew = Мявкать
 chat-emote-name-growl = Рычать
 chat-emote-name-purr = Мурлыкать
+# Harpy
+chat-emote-name-ring = Звенеть
+chat-emote-name-pew = Лазерить
+chat-emote-name-bang = Греметь
+chat-emote-name-rev = Газовать
+chat-emote-name-caw = Каркать
+# Vulpkanin
+chat-emote-name-bark = Лаять
+chat-emote-name-snarl = Рычать
+chat-emote-name-whine = Скулить
+chat-emote-name-howl = Выть
+chat-emote-name-awoo = Аууууу
 # Message
 chat-emote-msg-belch = рыгает
 # Goblin
@@ -27,7 +39,6 @@ chat-emote-msg-harpy-pews = лазерит
 chat-emote-msg-harpy-bangs = гремит
 chat-emote-msg-harpy-revs = газует
 chat-emote-msg-harpy-caws = каркает
-chat-emote-msg-harpy-honks = хонкает
 # Vulpkanin
 chat-emote-msg-vulpkanin-barks = лает
 chat-emote-msg-vulpkanin-snarls = рычит

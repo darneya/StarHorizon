@@ -1,34 +1,56 @@
 salvage-expedition-window-finish = Завершить экспедицию
 salvage-expedition-announcement-early-finish = Экспедиция была окончена. Шаттл покинет планету через { $departTime } секунд.
+salvage-expedition-announcement-destruction =
+    { $count ->
+        [1] Уничтожить {$structure} до окончания экспедиции.
+       *[others] Уничтожить {$count} {MAKEPLURAL($structure)} до окончания экспедиции.
+    }
+salvage-expedition-announcement-elimination =
+    { $count ->
+        [1] Устранить {$target} до окончания экспедиции.
+       *[others] Устранить {$count} {MAKEPLURAL($target)} до окончания экспедиции.
+    }
+salvage-expedition-announcement-destruction-entity-fallback = строений
+salvage-expedition-announcement-elimination-entity-fallback = целей
 salvage-expedition-shuttle-not-found = Не обнаружен шаттл.
-salvage-expedition-not-everyone-aboard = Не вся команда на шаттле! { $target } всё еще отсутствует!
-salvage-time-mod-standard-time = Обычная продолжительность
-salvage-time-mod-rush = Пробежка
+salvage-expedition-not-everyone-aboard = Не вся команда на шаттле! { CAPITALIZE($target) } всё еще отсутствует!
+# Salvage mods
+salvage-time-mod-standard-time = Нормальная продолжительность
+salvage-time-mod-rush = Уменьшенная продолжительность
 salvage-weather-mod-heavy-snowfall = Сильный снегопад
 salvage-weather-mod-rain = Дождь
-salvage-biome-mod-shadow = Темень
+salvage-biome-mod-shadow = Теневой лес
 salvage-dungeon-mod-cave-factory = Пещерная фабрика
-salvage-dungeon-mod-med-sci = Научно медицинская база
+salvage-dungeon-mod-med-sci = Научно-медицинская база
 salvage-dungeon-mod-factory-dorms = Заводские общежития
-salvage-dungeon-mod-lava-mercenary = База наемников в Аду
+salvage-dungeon-mod-lava-mercenary = База наемников над лавой
 salvage-dungeon-mod-virology-lab = Вирусологическая лаборатория
-salvage-dungeon-mod-salvage-outpost = Утилизационный аванпост
-salvage-air-mod-1 = 82 N2, 21 O2
-salvage-air-mod-2 = 72 N2, 21 O2, 10 N2O
-salvage-air-mod-3 = 72 N2, 21 O2, 10 H2O
-salvage-air-mod-4 = 72 N2, 21 O2, 10 NH3
-salvage-air-mod-5 = 72 N2, 21 O2, 10 CO2
-salvage-air-mod-6 = 79 N2, 21 O2, 5 P
-salvage-air-mod-7 = 57 N2, 21 O2, 15 NH3, 5 P, 5 N2O
-salvage-air-mod-8 = 57 N2, 21 O2, 15 H2O, 5 NH3, 5 N2O
-salvage-air-mod-9 = 57 N2, 21 O2, 15 CO2, 5 P, 5 N2O
-salvage-air-mod-10 = 82 CO2, 21 O2
-salvage-air-mod-11 = 67 CO2, 31 O2, 5 P
-salvage-air-mod-12 = 103 H2O
-salvage-air-mod-13 = 103 NH3
-salvage-air-mod-14 = 103 N2O
-salvage-air-mod-15 = 103 CO2
-salvage-air-mod-16 = 34 CO2, 34 NH3, 34 N2O
-salvage-air-mod-17 = 34 H2O, 34 NH3, 34 N2O
-salvage-air-mod-18 = 34 H2O, 34 N2O, 17 NH3, 17 CO2
+salvage-dungeon-mod-salvage-outpost = Шахтерский форпост
+salvage-air-mod-1 = 82 Азот, 21 Кислород
+salvage-air-mod-2 = 72 Азот, 21 Кислород, 10 Оксид азота
+salvage-air-mod-3 = 72 Азот, 21 Кислород, 10 Водяной пар
+salvage-air-mod-4 = 72 Азот, 21 Кислород, 10 Аммиак
+salvage-air-mod-5 = 72 Азот, 21 Кислород, 10 Углекислый газ
+salvage-air-mod-6 = 79 Азот, 21 Кислород, 5 Фосфор
+salvage-air-mod-7 = 57 Азот, 21 Кислород, 15 Аммиак, 5 Фосфор, 5 Оксид азота
+salvage-air-mod-8 = 57 Азот, 21 Кислород, 15 Водяной пар, 5 Аммиак, 5 Оксид азота
+salvage-air-mod-9 = 57 Азот, 21 Кислород, 15 Углекислый газ, 5 Фосфор, 5 Оксид азота
+salvage-air-mod-10 = 82 Углекислый газ, 21 Кислород
+salvage-air-mod-11 = 67 Углекислый газ, 31 Кислород, 5 Фосфор
+salvage-air-mod-12 = 103 Водяной пар
+salvage-air-mod-13 = 103 Аммиак
+salvage-air-mod-14 = 103 Оксид азота
+salvage-air-mod-15 = 103 Углекислый газ
+salvage-air-mod-16 = 34 Углекислый газ, 34 Аммиак, 34 Оксид азота
+salvage-air-mod-17 = 34 Водяной пар, 34 Аммиак, 34 Оксид азота
+salvage-air-mod-18 = 34 Водяной пар, 34 Оксид азота, 17 Аммиак, 17 Углекислый газ
 salvage-air-mod-unknown = Неизвестная атмосфера
+salvage-expedition-difficulty-NFModerate = Умеренная
+salvage-expedition-difficulty-NFHazardous = Высокая
+salvage-expedition-difficulty-NFExtreme = Экстремальная
+salvage-expedition-megafauna-remaining = {$count ->
+        [one] {$count} цель осталась.
+       *[other] {$count} оставшиеся цели.
+    }
+salvage-expedition-type-Destruction = Уничтожение
+salvage-expedition-type-Elimination = Устранение
