@@ -1,12 +1,13 @@
-# Author Info
+# Информация об авторе шаттла
+# GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
 # Discord: astr0laris
 
-# Maintainer Info
-# GitHub: https://github.com/Dalexiandr
-# Discord: EvilBug
+# Информация об сопровождающем 
+# GitHub/Gitea: https://git.starhorizon.ru/EvilBug
+# Discord: evilbug 
 
-# Shuttle Notes:
-# 
+# Прототип шаттла: 
+#
 - type: vessel
   id: Eden
   parent: BaseVessel
