@@ -12,12 +12,13 @@
   parent: BaseVessel
   name: HRZN Eden
   description: Старый исследовательский шаттл из другого сектора, переоборудованный ботаниками в летающую лабораторию для выращивания редких растений.
-  price: 97000
+  price: 120000 # 85299, наценка верфи 30% = 110798
   category: Medium
   group: Shipyard
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/eden.yml
   class:
   - Botany
+  - Chemistry
   engine:
   - Uranium
 
@@ -37,6 +38,6 @@
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
-            Botanist: [ 0, 0 ]
-            StationEngineer: [ 0, 0 ]
-            Pilot: [ 0, 0 ]
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]
