@@ -1,6 +1,5 @@
 research-technology-advanced-food-service = Передовое пищевое производство
 research-technology-advanced-personal-propulsion = Продвинутые персональные двигатели
-research-technology-rapid-construction = Быстрое строительство
 research-technology-hardsuits-basic = Базовые скафандры
 research-technology-hardsuits-specialized = Специализированные скафандры
 research-technology-atmospheric-drilling = Газодобывающее оборудование
