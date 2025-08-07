@@ -23,6 +23,30 @@
   - UplinkWeaponry
 
 - type: listing
+  id: UplinkNFRevolverRS9
+  name: РШ-9
+  description: Боевой револьвер созданный для сотрудников секретных служб. Очень дорогой,но до безумия эффективный
+  icon: { sprite: _NF/Objects/Weapons/Guns/Pistols/rsh9.rsi, state: base }
+  productEntity: NFWeaponRevolverRS9
+  discountCategory: rareDiscounts
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkNFRevolverXM40
+  name: XM-40
+  description: Эксперементальная штурмовая винтовка созданная для элитных подразделений Горлакса
+  icon: { sprite: _NF/Objects/Weapons/Guns/Rifles/xm40.rsi, state: base }
+  productEntity: NFWeaponRifleAssaultXM40
+  discountCategory: rareDiscounts
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
+
+- type: listing
   id: UplinkNFPistolCobra
   name: uplink-pistol-cobra-name
   description: uplink-pistol-cobra45-desc

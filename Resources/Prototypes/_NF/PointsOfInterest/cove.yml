@@ -11,12 +11,12 @@
 - type: pointOfInterest
   id: Cove
   parent: BasePOI
-  name: 'Пиратская Бухта'
+  name: Pirate Cove
   minimumDistance: 10000
   maximumDistance: 15000
   spawnGamePreset: [ NFPirate ]
   spawnGroup: Required
-  gridPath: /Maps/_NF/POI/cove.yml
+  gridPath: /Maps/_Horizon/POI/cove.yml # Horizon-Maps
   hideWarp: true
   addComponents:
   - type: IFF
@@ -27,7 +27,7 @@
 - type: gameMap
   id: Cove
   mapName: 'Pirate Cove'
-  mapPath: /Maps/_NF/POI/cove.yml
+  mapPath: /Maps/_Horizon/POI/cove.yml # Horizon-Maps
   minPlayers: 0
   stations:
     Cove:

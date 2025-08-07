@@ -126,3 +126,164 @@
     sprite: _DV/Objects/Weapons/Guns/SMGs/typewriter.rsi
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/SMGs/typewriter.rsi
+
+- type: entity
+  id: NFWeaponSubMachineGunUsi
+  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunGorlex ]
+  name: Узи
+  description: |-
+    Легкий пистолет пулемет с высокой скорострельностью
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/SMGs/uzi.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/SMGs/uzi.rsi
+
+- type: entity
+  id: NFWeaponSubMachineGunType64
+  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunNanotrasen, BaseAttachableHolder ]
+  name: Type-64
+  description: Часто используемый в военных конфликтах пистолет пулемет.Надежен и прост в обращении
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/SMGs/type64.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/SMGs/type64.rsi
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.28, -0.1250
+      rmc-aslot-rail: -0.0325, -0.0625
+      rmc-aslot-barrel: 0.90625, 0
+  # Horizon Attachment start
+
+- type: entity
+  id: NFWeaponSubMachineGunType19
+  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunNanotrasen, BaseAttachableHolder ]
+  name: Type-19
+  description: Легкий пистолет пулемет который часто используют революционеры и бунтовщики.
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/SMGs/type19.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/SMGs/type19.rsi
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.28, -0.1250
+      rmc-aslot-rail: -0.0325, -0.0625
+      rmc-aslot-barrel: 0.90625, 0
+
+- type: entity
+  id: NFWeaponSubMachineGunP90
+  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunFrontierGunsmith ]
+  name: P-90
+  description: |-
+    Несмотря на древность дизайна,все еще является верным другом на поле боя.
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_DV/Weapons/Guns/Gunshots/typewriter.ogg
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/SMGs/p90.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/SMGs/p90.rsi
+
+
+- type: entity
+  id: NFWeaponSubMachineGunMP27
+  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunFrontierGunsmith ]
+  name: MP-27
+  description: |-
+    Старый, но рабочий
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_DV/Weapons/Guns/Gunshots/typewriter.ogg
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/SMGs/mp27.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/SMGs/mp27.rsi
+
+- type: entity
+  id: NFWeaponSubMachineGunFP9000
+  parent: [ NFBaseWeaponSubMachineGunChamber35, NFBaseWeaponFrameSubMachineGunNanotrasen, BaseAttachableHolder ]
+  name: FP-9000
+  description: Один из современнейших образцов пистолетов пулеметов на рынке. Используется специальными службами.
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/SMGs/fp9000.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/SMGs/fp9000.rsi
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.28, -0.1250
+      rmc-aslot-rail: -0.0325, -0.0625
+      rmc-aslot-barrel: 0.90625, 0

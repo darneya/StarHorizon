@@ -5,11 +5,11 @@ lathe-recipe-ToolboxMechanicalNF-name = технический ящик (пус�
 lathe-recipe-ToolboxEmergencyNF-name = аварийный ящик (пустой)
 
 # Weapon cases
-lathe-recipe-WeaponCaseShort-name = оружейный ящик (короткий, пустой)
-lathe-recipe-WeaponCaseLong-name = оружейный ящик (пустой)
-lathe-recipe-WeaponCaseHeavy-name = оружейный ящик (пустой)
-lathe-recipe-WeaponCaseShortAmmo-name = ящик боеприпасов (пустой)
-lathe-recipe-WeaponCaseShortExplosives-name = ящик взрывчатки (пустой)
+lathe-recipe-WeaponCaseShort-name = оружейный кейс (маленький, пустой)
+lathe-recipe-WeaponCaseLong-name = оружейный кейс (пустой)
+lathe-recipe-WeaponCaseHeavy-name = оружейный кейс (тяжелый, пустой)
+lathe-recipe-WeaponCaseShortAmmo-name = ящик патронов (маленький, пустой)
+lathe-recipe-WeaponCaseShortExplosives-name = кейс для взрывчатки (маленький, пустой)
 
 # Cardboard
 lathe-recipe-NFHappyHonkMimeEmpty-name = обед Хэппи Хонк (мим, пустой)

@@ -1,9 +1,9 @@
 plant-analyzer-interface-title = Анализатор растений АгроИнфо 3000
-plant-analyzer-window-no-seed-information-text = No seed/plant scanned.
+plant-analyzer-window-no-seed-information-text = Нет сканированных семян или посадок.
 plant-analyzer-window-tab-basics = Информация
 plant-analyzer-window-tab-tolerances = Толерантность
 plant-analyzer-window-tab-mutations = Мутации
-plant-analyzer-window-scanmode = Продв. сканирование:
+plant-analyzer-window-scanmode = Продвинутое сканирование:
 plant-analyzer-window-mode-on = Вкл
 plant-analyzer-window-mode-off = Выкл
 
@@ -23,14 +23,14 @@ plant-analyzer-plant-maturation-text = Созревание: {$maturation}
 plant-analyzer-plant-production-text = Производит: {$production}
 plant-analyzer-plant-growthstages-text = Стадия роста: {$growthStages}
 
-plant-analyzer-tolerance-nutrient-usage = Потребление нутриентов: {$nutrientUsage} u/за стадию
-plant-analyzer-tolerance-water-usage = Потребление воды: {$waterUsage} u/за стадию
+plant-analyzer-tolerance-nutrient-usage = Потребление нутриентов: {$nutrientUsage} ед./за стадию
+plant-analyzer-tolerance-water-usage = Потребление воды: {$waterUsage} ед./за стадию
 plant-analyzer-tolerance-ideal-heat = Подходящая температура: {$idealHeat} K
 plant-analyzer-tolerance-heat-tolerance = Теплостойкость: ±{$heatTolerance} K
 plant-analyzer-tolerance-ideal-light = Подходящий уровень освещения: {$idealLight} кд
 plant-analyzer-tolerance-light-tolerance = Светостойкость: ±{$lightTolerance} кд
 plant-analyzer-tolerance-toxin-tolerance = Устойчивость к токсинам: {$toxinsTolerance}
-plant-analyzer-tolerance-low-pressure = Порог высокого давления: {$lowPressureTolerance} кПа
+plant-analyzer-tolerance-low-pressure = Порог низкого давления: {$lowPressureTolerance} кПа
 plant-analyzer-tolerance-high-pressure = Порог высокого давления: {$highPressureTolerance} кПа
 plant-analyzer-tolerance-pest-tolerance = Устойчивость к вредителям: {$pestTolerance}
 plant-analyzer-tolerance-weed-tolerance = Устойчивость к сорнякам: {$weedTolerance}

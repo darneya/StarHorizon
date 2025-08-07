@@ -27,10 +27,10 @@
         bone_implant: null # _Horizon
         cavity: null # _Starlight
       connections:
-        - left arm
         - right arm
-        - left leg
+        - left arm
         - right leg
+        - left leg
         - tail
     right arm:
       part: RightArmTajaran

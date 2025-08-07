@@ -1,6 +1,7 @@
 ## Entity
 
-gas-analyzer-object-out-of-range = Вы не можете туда достать.
+gas-analyzer-object-out-of-range = Объект вышел за пределы досягаемости.
+gas-analyzer-component-player-cannot-reach-message = Вы не можете туда достать.
 gas-analyzer-shutoff = Газоанализатор выключается.
 
 ## UI
@@ -13,7 +14,7 @@ gas-analyzer-window-no-data = Нет данных
 gas-analyzer-window-no-gas-text = Нет газов
 gas-analyzer-window-error-text = Ошибка: { $errorText }
 gas-analyzer-window-volume-text = Объём:
-gas-analyzer-window-volume-val-text = { $volume } л
+gas-analyzer-window-volume-val-text = { $volume } Л
 gas-analyzer-window-pressure-text = Давление:
 gas-analyzer-window-pressure-val-text = { $pressure } кПа
 gas-analyzer-window-temperature-text = Температура:

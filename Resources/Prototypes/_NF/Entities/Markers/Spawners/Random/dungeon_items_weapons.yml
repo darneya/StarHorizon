@@ -217,6 +217,24 @@
     - WeaponCaseLongSVSExpedition
     - WeaponCaseLongKammererExpedition
     - WeaponCaseShortLaserGunExpedition
+    - WeaponCaseLongMAR40Expedition #horizon
+    - WeaponCaseLongMAR30Expedition
+    - WeaponCaseLongM59AExpedition
+    - WeaponCaseLongM4SPRExpedition
+    - WeaponCaseLongL83A2Expedition
+    - WeaponCaseLongAK4047Expedition
+    - WeaponCaseLongUsiExpedition
+    - WeaponCaseLongType64Expedition
+    - WeaponCaseLongType19Expedition
+    - WeaponCaseLongMP27Expedition
+    - WeaponCaseLongFP9000Expedition
+    - WeaponCaseLongShotgunCustomBuiltExpedition
+    - WeaponCaseLongShotgunHG3712
+    - WeaponCaseLongShotgunM890
+    - WeaponCaseLongShotgunType23
+    - WeaponCaseShortWeaponRevolverAltruist
+    - WeaponCaseShortWeaponRevolverHeadfasher
+    - WeaponCaseShortWeaponRevolverZrk72
     chance: 1.0
     offset: 0.0
     rarePrototypes:
@@ -285,6 +303,13 @@
     - WeaponCaseLongLaserCarbineExpedition
     - WeaponCaseLongXrayCannonExpedition
     - WeaponCaseLongTemperatureGunExpedition
+    - ClothingOuterIndeep1
+    - ClothingOuterIndeep2
+    - ClothingOuterFight
+    - ClothingOuterExperementalSyndy
+    - ClothingOuterNukeDark
+    - ClothingOuterHunter
+    - ClothingOuterHunterElite
     chance: 1.0
     offset: 0.0
     rarePrototypes:

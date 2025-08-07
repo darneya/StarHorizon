@@ -137,3 +137,164 @@
     sprite: _StarHorizon/Clothing/Head/Hardsuits/blueshield.rsi
   - type: PointLight
     color: blue
+
+- type: entity
+  parent: [ NFClothingHeadHardsuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitSpacerOld
+  name: древний шлем
+  description: древний шлем
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/old.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/old.rsi
+  - type: PointLight
+    color: "#ffdbad"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: [ ClothingHeadHardsuitBase ]
+  id: ClothingHeadHelmetHardsuitIndeep1
+  name: глубинный шлем
+  description: защищает от всего
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/indeep.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/indeep.rsi
+  - type: PNV
+    color: "#CC5500"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: [ NFClothingHeadHardsuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitIndeep2
+  name: глубинный шлем медика
+  description: защищает от всего
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/indeep2.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/indeep2.rsi
+  - type: PointLight
+    color: "#CC5500"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: [ NFClothingHeadHardsuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitFight
+  name: боевой шлем
+  description: старая модель
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/fight.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/fight.rsi
+  - type: PointLight
+    color: "#F4C430"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+
+- type: entity
+  parent: [ NFClothingHeadHardsuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitExperementalSyndy
+  name: эксперементальный шлем
+  description: прочный,удобный,красивый
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/syndicateramzi.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/syndicateramzi.rsi
+  - type: PointLight
+    color: "#F4C430"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: [ NFClothingHeadHardsuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitCybersunResearch
+  name: шлем скафандра ученого киберсан
+  description: красный шлем,выглядит опасно
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/cybersunhelmet.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/cybersunhelmet.rsi
+  - type: PointLight
+    color: "#FFF5EE"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: [ NFClothingHeadHardsuitWithLightBase ]
+  id: ClothingHeadHelmetHardsuitNukeDark
+  name: шлем отступника
+  description: черный как и душа
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/corpsec.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/corpsec.rsi
+  - type: PointLight
+    color: "#FFA812"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: [ ClothingHeadHardsuitBase ]
+  id: ClothingHeadHelmetHardsuitHunter
+  name: шлем охотника
+  description: снабжен ПНВ
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/hardsuit.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/hardsuit.rsi
+  - type: PNV
+    color: "#CC5500"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: [ ClothingHeadHardsuitBase ]
+  id: ClothingHeadHelmetHardsuitHunterElite
+  name: элитный шлем охотника
+  description: снабжен ПНВ
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/hardsuitelite.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/hardsuitelite.rsi
+  - type: PNV
+    color: "#CC5500"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: [ ClothingHeadHardsuitBase ]
+  id: ClothingHeadHelmetHardsuitNano
+  name: продвинутый шлем
+  description: снабжен ПНВ
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/zhanshi.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/Head/Hardsuits/zhanshi.rsi
+  - type: PNV
+    color: "#CC5500"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000

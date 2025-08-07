@@ -35,7 +35,7 @@
         - type: PreventPilot
         - type: ForceAnchor # Added post-FTL, so anchoring is fine.
         paths:
-        - /Maps/_NF/Bluespace/cache.yml
+        - /Maps/_Horizon/Bluespace/cache.yml # Horizon-Maps
     rewardAccounts:
       Nfsd: 1.0
 
@@ -155,7 +155,7 @@
         - type: PreventPilot
         - type: ForceAnchor
         paths:
-        - /Maps/_NF/Bluespace/syndieftlintercept.yml
+        - /Maps/_Horizon/Bluespace/syndieftlintercept.yml # Horizon-Maps
 
 - type: entity
   id: BluespaceWizardFederationScout

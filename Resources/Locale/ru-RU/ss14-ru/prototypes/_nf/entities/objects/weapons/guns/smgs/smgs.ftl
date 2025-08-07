@@ -3,4 +3,3 @@ ent-WeaponSubMachineGunDrozdRubber = Дрозд
     .desc = { ent-WeaponSubMachineGunDrozd.desc }
 ent-WeaponSubMachineGunTypewriter = "Пишущая машинка"
     .desc = Современный взгляд на классический дизайн, используемый гангстерами во все времена и во всём пространстве. Использует патроны калибра .35 авто.
-

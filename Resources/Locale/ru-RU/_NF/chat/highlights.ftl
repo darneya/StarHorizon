@@ -1,0 +1,19 @@
+highlights-station-representative = "SR", Station Representative, Station Rep
+highlights-station-traffic-controller = "STC", Traffic Control
+highlights-valet = Valet
+highlights-mail-carrier = Почтальон
+# janitor using upstream definition
+highlights-security-guard = Security Guard, Station Guard, Guard
+highlights-director-of-care = "DOC", Director of Care
+highlights-cadet = Кадет, "ДСБФ"
+highlights-deputy = Рейнджер, "ДСБФ"
+highlights-detective = Детектив, "Дек", "ДСБФ"
+highlights-brigmedic = Коронер, "ДСБФ"
+highlights-sergeant = Sergeant, Sarge, "ДСБФ"
+highlights-bailiff = Бейлиф, "ДСБФ"
+highlights-public-affairs-liaison = Liaison, "PAL", "ДСБФ"
+highlights-sheriff = Шериф, "ДСБФ"
+highlights-prisoner = Заключенный
+highlights-pirate = Пират
+highlights-pirate-first-mate = Пират, Старпом
+highlights-pirate-captain = Пират, "Кэп", Капитан
