@@ -11,4 +11,3 @@ admin-player-actions-player-panel = Открыть Панель Игроков
 admin-player-actions-clone = Клонировать
 admin-player-actions-follow = Следовать
 admin-player-actions-confirm = Вы уверены?
-admin-player-actions-player-panel = Открыть Меню Действий
