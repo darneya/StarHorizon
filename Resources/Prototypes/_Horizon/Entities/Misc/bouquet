@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseItem
+  name: свадебный букет
+  id: WeddingBouquet
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Plushies/shark.rsi
+    state: grey
+  - type: Item
+    heldPrefix: grey  
+  - type: EmitSoundOnCollide
+    sound: /Audio/Effects/plant_rustle.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/Effects/plant_rustle.ogg
+  - type: StaticPrice
+    price: 5
+
