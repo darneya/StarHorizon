@@ -2,12 +2,14 @@
   id: DecoreLeft
   name: праздничная декорация
   suffix: левая часть
+  placement:
+    mode: SnapgridCenter 
   description: Придайте празднику эффекта.
   components:
   - type: SpriteFade
   - type: Clickable
   - type: Sprite
-    sprite: _Horizon/\Structures/Decoration/decore.rsi
+    sprite: _Horizon/Structures/Decoration/decore.rsi
     state: decoration
     drawdepth: Overdoors
     offset: 0,0.9
@@ -65,7 +67,7 @@
 - type: entity
   id: DecoreRightAlt
   parent: DecoreLeft
-  name: праздничная декорация
+  name: малая праздничная декорация
   suffix: правая часть
   description: Придайте празднику эффекта.
   components:
@@ -75,7 +77,7 @@
 - type: entity
   id: DecoreLeftAlt
   parent: DecoreLeft
-  name: праздничная декорация
+  name: малая праздничная декорация
   suffix: левая часть
   description: Придайте празднику эффекта.
   components:
