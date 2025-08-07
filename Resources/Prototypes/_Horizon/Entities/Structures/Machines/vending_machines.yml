@@ -15,7 +15,7 @@
   - type: Speech
   - type: Tag
   - type: Sprite
-    sprite: Void/Structures/Machines/VendingMachines/starbardrobe.rsi
+    sprite: _Horizon/Structures/Machines/VendingMachines/starbardrobe.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]

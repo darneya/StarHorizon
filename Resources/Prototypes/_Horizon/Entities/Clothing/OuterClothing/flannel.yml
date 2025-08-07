@@ -5,10 +5,10 @@
   description: Ходить в клеточку всё еще модно
   components:
   - type: Sprite
-    sprite: _Horizon/Clothing/OuterClothing/flannel_blue.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Flannel/flannel_blue.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: _Horizon/Clothing/OuterClothing/flannel_blue.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Flannel/flannel_blue.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -17,10 +17,10 @@
   description: Ходить в клеточку всё еще модно
   components:
   - type: Sprite
-    sprite: _Horizon/Clothing/OuterClothing/flannel_red.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Flannel/flannel_red.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: _Horizon/Clothing/OuterClothing/flannel_red.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Flannel/flannel_red.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -29,10 +29,10 @@
   description: Ходить в клеточку всё еще модно
   components:
   - type: Sprite
-    sprite: _Horizon/Clothing/OuterClothing/flannel_orange.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Flannel/flannel_orange.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: _Horizon/Clothing/OuterClothing/flannel_orange.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Flannel/flannel_orange.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -41,10 +41,10 @@
   description: Ходить в клеточку всё еще модно
   components:
   - type: Sprite
-    sprite: _Horizon/Clothing/OuterClothing/flannel_green.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Flannel/flannel_green.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: _Horizon/Clothing/OuterClothing/flannel_green.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Flannel/flannel_green.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -53,7 +53,7 @@
   description: Ходить в клеточку всё еще модно
   components:
   - type: Sprite
-    sprite: _Horizon/Clothing/OuterClothing/flannel_pink.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Flannel/flannel_pink.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: _Horizon/Clothing/OuterClothing/flannel_pink.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Flannel/flannel_pink.rsi

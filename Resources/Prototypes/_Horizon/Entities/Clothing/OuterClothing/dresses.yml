@@ -5,10 +5,10 @@
   description: Пышное свадебное платье, сделанное из шёлка, усыпанное узорами из цветов.
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/dress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/dress.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/dress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/dress.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -17,10 +17,10 @@
   description: Бальное платье с бантами и золотыми вставками.
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/richdress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/richdress.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/richdress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/richdress.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -29,10 +29,10 @@
   description: Платье идеально впишется под бокал красного вина в дивный вечер.
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/reddress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/reddress.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/reddress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/reddress.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -41,10 +41,10 @@
   description: Оно сияет!
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/stardress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/stardress.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/stardress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/stardress.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
@@ -58,10 +58,10 @@
   description: Россыпь звёзд у ваших ног
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/cosmodress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/cosmodress.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/cosmodress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/cosmodress.rsi
     clothingVisuals:
       outerClothing:
       - state: equipped-OUTERCLOTHING
@@ -75,10 +75,10 @@
   description: Платье идеально впишется под бокал красного вина в дивный вечер.
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/blackdress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/blackdress.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/blackdress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/blackdress.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -87,10 +87,10 @@
   description: Стань жемчужиной на мероприятии
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/silkdress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/silkdress.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/silkdress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/silkdress.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -99,10 +99,10 @@
   description: Милый бантик делает вас привлекательнее
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/pinkdress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/pinkdress.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/pinkdress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/pinkdress.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -111,10 +111,10 @@
   description: Простой но милый сарафан с бантиком
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/sundress_blue.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/sundress_blue.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/sundress_blue.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/sundress_blue.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -123,10 +123,10 @@
   description: Простой но милый сарафан с бантиком
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/sundress_brown.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/sundress_brown.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/sundress_brown.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/sundress_brown.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -135,10 +135,10 @@
   description: Простой но милый сарафан с бантиком
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/sundress_purple.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/sundress_purple.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/sundress_purple.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/sundress_purple.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -147,10 +147,10 @@
   description: Простой но милый сарафан с бантиком
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/sundress_teal.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/sundress_teal.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/sundress_teal.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/sundress_teal.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -159,10 +159,10 @@
   description: Лёгкое платье на дивный вечер
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/black_dress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/black_dress.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/black_dress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/black_dress.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -171,7 +171,7 @@
   description: В нем вы будете словно алая роза
   components:
   - type: Sprite
-    sprite: Void/Clothing/OuterClothing/Dresses/red_dress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/red_dress.rsi
   - type: Clothing
     slots: [ outerClothing ]
-    sprite: Void/Clothing/OuterClothing/Dresses/red_dress.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Dresses/red_dress.rsi

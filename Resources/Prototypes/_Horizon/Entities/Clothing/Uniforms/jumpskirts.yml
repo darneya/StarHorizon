@@ -5,13 +5,46 @@
   description: Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
   components:
   - type: Sprite
+    sprite: _Horizon/Clothing/Uniforms/Jumpskirt/blackssc.rsi
+  - type: Clothing
+    sprite: _Horizon/Clothing/Uniforms/Jumpskirt/blackssc.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtUnderDressBrown
+  name: белье под платье
+  description: Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
+  components:
+  - type: Sprite
+    sprite: _Horizon/Clothing/Uniforms/Jumpskirt/brownssc.rsi
+  - type: Clothing
+    sprite: _Horizon/Clothing/Uniforms/Jumpskirt/brownssc.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtUnderDressWhite
+  name: белье под платье
+  description: Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
+  components:
+  - type: Sprite
+    sprite: _Horizon/Clothing/Uniforms/Jumpskirt/whitessc.rsi
+  - type: Clothing
+    sprite: _Horizon/Clothing/Uniforms/Jumpskirt/whitessc.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtUnderDressBlackSocs
+  name: белье под платье
+  description: Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
+  components:
+  - type: Sprite
     sprite: _Horizon/Clothing/Uniforms/Jumpskirt/blacksc.rsi
   - type: Clothing
     sprite: _Horizon/Clothing/Uniforms/Jumpskirt/blacksc.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
-  id: ClothingUniformJumpskirtUnderDressBrown
+  id: ClothingUniformJumpskirtUnderDressBrownSocs
   name: белье под платье
   description: Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
   components:
@@ -22,7 +55,7 @@
 
 - type: entity
   parent: ClothingUniformSkirtBase
-  id: ClothingUniformJumpskirtUnderDressWhite
+  id: ClothingUniformJumpskirtUnderDressWhiteSocs
   name: белье под платье
   description: Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
   components:
@@ -38,9 +71,9 @@
   description: Нарядный костюм с ноткой аристократии.
   components:
   - type: Sprite
-    sprite: _Horizon/Clothing/Uniforms/Jumpskirt/whitesc.rsi
+    sprite: _Horizon/Clothing/Uniforms/Jumpskirt/redsm.rsi
   - type: Clothing
-    sprite: _Horizon/Clothing/Uniforms/Jumpskirt/whitesc.rsi   
+    sprite: _Horizon/Clothing/Uniforms/Jumpskirt/redsm.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase

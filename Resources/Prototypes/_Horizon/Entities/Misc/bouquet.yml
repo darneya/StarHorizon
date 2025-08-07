@@ -4,10 +4,10 @@
   id: WeddingBouquet
   components:
   - type: Sprite
-    sprite: Objects/Fun/Plushies/shark.rsi
-    state: grey
+    sprite: _Horizon/Objects/Misc/bouquet.rsi
+    state: bush
   - type: Item
-    heldPrefix: grey  
+    heldPrefix: bush  
   - type: EmitSoundOnCollide
     sound: /Audio/Effects/plant_rustle.ogg
   - type: EmitSoundOnLand

@@ -29,7 +29,7 @@
 
 - type: entity
   parent: VoidRingBase
-  id: ClothingHandsRingWedding
+  id: ClothingHandsRingWeddingExclusive1
   suffix: Эксклюзив Александра
   name: обручальное кольцо
   description: Пока смерть не разлучит нас.
@@ -37,6 +37,6 @@
   - type: Sprite
     sprite: _Horizon/Clothing/Hands/Gloves/wedding_ring_alexandr.rsi
   - type: Clothing
-    sprite: _Horizon/Clothing/Hands/Gloves/wedding_ring_alexandr.rsi
+    sprite: _Horizon/Clothing/Hands/Gloves/wedding_ring_alexandr.
   - type: StaticPrice
     price: 300
