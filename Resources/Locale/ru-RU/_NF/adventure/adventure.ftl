@@ -9,6 +9,7 @@ adventure-webhook-list-high = Больше всего заработали:
 adventure-webhook-list-low = Больше всего потратили:
 adventure-webhook-top-profit = Прибыль составила: { $amount }.
 adventure-webhook-top-loss = Убыток составил: { $amount }.
+adventure-webhook-shipstats-start = Статистика верфи
 adventure-webhook-ledger-start = Бухгалтерский учёт
 adventure-webhook-footer =
     Сервер: { $serverName }

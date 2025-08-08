@@ -1,6 +1,12 @@
+ent-StructurePistolRackWallmountedMercenaryFilled = { ent-StructurePistolRackWallmountedMercenary }
+    .suffix = Экспедиция, Наемник, Заполненный, Настенный
+    .desc = { ent-StructurePistolRackWallmountedMercenary.desc }
 ent-StructureMeleeWeaponRackBloodCultFilled = { ent-WeaponRackMeleeBase }
     .suffix = Культ крови, Заполненный
     .desc = { ent-WeaponRackMeleeBase.desc }
+ent-StructurePistolRackPiratesFilled = { ent-StructurePistolRackPirates }
+    .suffix = Пират, Заполненный
+    .desc = { ent-StructurePistolRackPirates.desc }
 ent-StructureMeleeWeaponRackBloodCult = { ent-WeaponRackMeleeBase }
     .suffix = Культ крови, Пустой
     .desc = { ent-WeaponRackMeleeBase.desc }
