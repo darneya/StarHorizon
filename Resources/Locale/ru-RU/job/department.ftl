@@ -1,10 +1,10 @@
 department-Cargo = Отдел снабжения
 department-Civilian = Сервисный отдел
-department-Command = Командование
+department-Command = Командование Фронтира
 department-CentralCommand = Центральное Командование
 department-Engineering = Инженерный отдел
 department-Medical = Медицинский отдел
-department-Security = Служба безопасности
+department-Security = Департамент Шерифа Нового Фронтира
 department-Science = Научный отдел
 department-Silicon = Синтетики
 department-Specific = На определённых станциях

@@ -8,7 +8,5 @@ trait-deuteranopia-name = Дейтеранопия
 trait-deuteranopia-desc =
     Из-за бионических глаз, мутаций или вулпканинской природы
     у вас отсутствует восприятие красно-зеленых цветов.
-trait-unclonable-name = Неклонируемость
-trait-unclonable-desc = Клонирование невозможно.
 trait-painnumbness-name = Онемение
 trait-painnumbness-desc = Вы не чувствуете боли и не осознаете, насколько вам может быть больно.
