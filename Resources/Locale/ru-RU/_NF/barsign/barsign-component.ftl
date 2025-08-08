@@ -3,13 +3,6 @@
 barsign-prototype-name-little-treats = Маленькие Лакомства
 barsign-prototype-description-little-treats = Уютная чайная для всех утончённых космических джентльменов.
 
-## Maltroach
-
-barsign-prototype-name-nf-maltroach = Таракамольня
-barsign-prototype-description-nf-maltroach = Таракамоль радушно приветствуют вас в баре... или друг друга?
-barsign-prototype-name-maltroach = Таракамольня
-barsign-prototype-description-maltroach = Таракамоль радушно приветствуют вас в баре... или друг друга?
-
 ## Neon Flamingos
 
 barsign-prototype-name-neon-flamingos = Неоновые Фламинго
