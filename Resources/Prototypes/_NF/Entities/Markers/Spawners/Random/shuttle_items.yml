@@ -168,7 +168,7 @@
       - id: VendingMachineRoboDrobe
       - id: VendingMachineGeneDrobe
       - id: VendingMachineViroDrobe
-      - id: VendingMachinePride
+      # - id: VendingMachinePride
     # Uncommon
     - !type:GroupSelector
       weight: 5
