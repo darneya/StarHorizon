@@ -31,6 +31,3 @@ ent-AirlockExternalGlassShuttleNfsdTransitMinorPOI = { ent-AirlockGlassShuttleNf
 ent-AirlockExternalGlassShuttleMcCargo = { ent-AirlockGlassShuttle }
     .suffix = Внешний, Каргония, Стеклянный, Стыковочный
     .desc = { ent-AirlockGlassShuttle.desc }
-ent-AirlockExternalGlassNfsdLocked = { ent-AirlockExternalGlass }
-    .suffix = ДШНФ, Стеклянный, Закрыт
-    .desc = { ent-AirlockExternalGlass.desc }

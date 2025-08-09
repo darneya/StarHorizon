@@ -46,5 +46,3 @@ ent-LockerWallEVAColorLvhi = настенный шкаф EVA LVHI
     .desc = { ent-NFBaseLockerGridInvWallColor.desc }
 ent-LockerWallEVAColorFsb = настенный шкаф EVA "FSB"
     .desc = { ent-LockerWallColorBase.desc }
-ent-LockerWallEVAColorFsbFilled = { ent-LockerWallEVAColorFsb }
-    .desc = { ent-LockerWallColorBase.desc }

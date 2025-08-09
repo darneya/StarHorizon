@@ -136,6 +136,3 @@ ent-SuitStorageEVANfsd = { ent-SuitStorageBase }
 ent-SuitStorageEVAChaplain = { ent-SuitStorageBase }
     .suffix = EVA, Священник
     .desc = { ent-SuitStorageBase.desc }
-ent-SuitStorageWallmountPrivateSecurity = { ent-SuitStorageWallmount }
-    .suffix = EVA, Частная охрана
-    .desc = { ent-SuitStorageBase.desc }

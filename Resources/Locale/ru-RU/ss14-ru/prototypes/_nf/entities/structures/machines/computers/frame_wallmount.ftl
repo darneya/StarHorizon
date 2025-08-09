@@ -1,5 +1,5 @@
 ent-BaseStructureComputerWallmount = { ent-BaseStructureComputerTabletop }
-    .desc = { ent-BaseStructureComputerTabletop.desc } }
+    .desc = { ent-BaseStructureComputerTabletop.desc }
 ent-ComputerWallmountFrame = каркас консоли
     .desc = Консоль в строительстве.
 ent-ComputerWallmountBroken = { ent-BaseStructureWallmount }
