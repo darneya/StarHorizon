@@ -1108,7 +1108,7 @@
   prerequisiteLineType: Diagonal
   technologyPrerequisites:
   - NFSeedExtractor
-  position: 2, 46 # Horizon
+  position: 3, 45 # Horizon
 
 - type: technology
   id: NFMeatManipulation
@@ -1135,19 +1135,6 @@
   technologyPrerequisites:
   - NFBiogenerator
   position: 3, 44 # Horizon
-
-- type: technology
-  id: NFBiogenerator
-  name: nf-research-technology-biogenerator
-  entityIcon: Biogenerator
-  discipline: NFService
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - BiogeneratorMachineCircuitboard
-  technologyPrerequisites:
-  - NFAdvancedFoodService
-  position: 3, 45 # Horizon
 
 # region Power / Shuttle
 
@@ -1338,34 +1325,6 @@
   position: 0, 53 # Horizon
 
 - type: technology
-  id: NFShuttlecraftThrust
-  name: nf-research-technology-shuttlecraft-thrust
-  entityIcon: Thruster
-  discipline: NFEngineering
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - ThrusterMachineCircuitboard
-  - GyroscopeMachineCircuitboard
-  technologyPrerequisites:
-  - NFSpaceScanning
-  position: 1, 52 # Horizon
-
-- type: technology
-  id: NFShuttlecraftThrustSmall
-  name: nf-research-technology-shuttlecraft-thrust-small
-  entityIcon: SmallThruster
-  discipline: NFEngineering
-  tier: 1
-  cost: 1000
-  recipeUnlocks:
-  - SmallThrusterMachineCircuitboard
-  - SmallGyroscopeMachineCircuitboard
-  technologyPrerequisites:
-  - NFShuttlecraftThrust
-  position: 1, 53 # Horizon
-
-- type: technology
   id: NFShuttlecraft
   name: nf-research-technology-shuttlecraft
   entityIcon: ComputerShuttle
@@ -1393,7 +1352,7 @@
   prerequisiteLineType: Diagonal
   technologyPrerequisites:
   - NFSpaceScanning
-  position: 1, 32
+  position: 1, 52 # Horizon
 
 - type: technology
   id: NFShuttlecraftThrustSmall
@@ -1407,7 +1366,7 @@
   - SmallGyroscopeMachineCircuitboard
   technologyPrerequisites:
   - NFShuttlecraftThrust
-  position: 2, 52 # Horizon
+  position: 1, 53 # Horizon
 
 # region Jetpack
 
