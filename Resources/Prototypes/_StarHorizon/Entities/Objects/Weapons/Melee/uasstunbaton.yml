@@ -1,6 +1,7 @@
 - type: entity
   name: шоковая дубинка UAS
   parent: [BaseItem, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: WeaponStunprodUAS
   suffix: StarHorizon, UAS
   description: Шоковая дубинка, разработанная с использованием утекшей технологии NanoTrasen. Имеет улучшенную систему энергопотребления.

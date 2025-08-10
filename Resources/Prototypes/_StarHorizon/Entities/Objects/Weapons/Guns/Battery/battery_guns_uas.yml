@@ -32,6 +32,7 @@
   id: BaseWeaponPowerCellUAS
   suffix: StarHorizon, UAS
   parent: [BaseItem, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   abstract: true
   components:
   - type: Sprite
@@ -69,6 +70,7 @@
 - type: entity
   name: пп-дизейблер UAS
   parent: BaseWeaponUAS
+  categories: [ HideSpawnMenu ]
   id: WeaponDisablerSMGUAS
   suffix: StarHorizon, UAS
   description: Улучшенная модель дизейблера с уменьшенной в угоду повышенной скорострельности мощностью.
@@ -110,6 +112,7 @@
 - type: entity
   name: efs пулемет UAS
   parent: BaseWeaponUAS
+  categories: [ HideSpawnMenu ]
   suffix: StarHorizon, UAS
   id: WeaponLaserMinigunUAS
   description: Первая попытка UAS создать машину смерти, хоть и в форме пулемёта.
@@ -151,6 +154,7 @@
 - type: entity
   name: efs гранатомет UAS
   parent: BaseWeaponUAS
+  categories: [ HideSpawnMenu ]
   suffix: StarHorizon, UAS
   id: WeaponLaserGranadeUAS
   description: Первая попытка UAS создать машину смерти, хоть и в форме гранатомёта.
@@ -196,6 +200,7 @@
 - type: entity
   name: винтовка-дизейблер UAS
   parent: BaseWeaponUAS
+  categories: [ HideSpawnMenu ]
   id: WeaponDisablerSniperUAS
   suffix: StarHorizon, UAS
   description: Энергоёмкое EFS-устройство, используемое только в крайних случаях.
@@ -241,6 +246,7 @@
 - type: entity
   name: рипсоидная винтовка UAS
   parent: BaseWeaponUAS
+  categories: [ HideSpawnMenu ]
   id: UASRipsoidCannon
   suffix: StarHorizon, UAS
   description: Рипсоидная винтовка с расширенной батареей.
@@ -277,6 +283,7 @@
 - type: entity
   name: пистолет совета UAS
   parent: BaseWeaponUAS
+  categories: [ HideSpawnMenu ]
   id: UASCounselorGun
   suffix: StarHorizon, UAS
   description: Особая модификация рипсоидной винтовки, созданная для защиты совета.
@@ -312,6 +319,7 @@
 - type: entity
   name: модифицированный ПП UAS
   parent: BaseWeaponPowerCellUAS
+  categories: [ HideSpawnMenu ]
   id: PMLaserUASGun
   description: Лазерный ПП, модернизированный в сторону мощности, хоть и в ущерб автономному электроснабжению.
   components:
@@ -332,6 +340,7 @@
 - type: entity
   name: лазерная винтовка UAS
   parent: BaseWeaponPowerCellUAS
+  categories: [ HideSpawnMenu ]
   id: LaserUASGun
   description: Специально созданная под EFS ячейки винтовка с высокой скорострельностью.
   components:

@@ -37,6 +37,7 @@
   id: UASEnergyCore
   suffix: StarHorizon, UAS
   parent: BasePowerCellUAS
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _StarHorizon/Objects/Power/uascore.rsi

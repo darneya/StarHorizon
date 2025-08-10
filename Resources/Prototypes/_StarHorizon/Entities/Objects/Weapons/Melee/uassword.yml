@@ -1,6 +1,7 @@
 - type: entity
   name: efs меч
   parent: [BaseItem, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: UASSword
   suffix: StarHorizon, UAS
   description: Сегментированный меч, созданный чтобы нарезать врагов на такие же сегменты.
