@@ -8,6 +8,8 @@
   components:
   - type: Sprite
     sprite: _StarHorizon/Clothing/OuterClothing/Vests/uasvest.rsi
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: Clothing
     sprite: _StarHorizon/Clothing/OuterClothing/Vests/uasvest.rsi
   - type: Armor
@@ -30,6 +32,8 @@
   components:
   - type: Sprite
     sprite: _StarHorizon/Clothing/OuterClothing/Coats/uascoastconsul.rsi
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: Clothing
     sprite: _StarHorizon/Clothing/OuterClothing/Coats/uascoastconsul.rsi
   - type: Armor

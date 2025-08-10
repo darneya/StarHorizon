@@ -42,17 +42,16 @@
   components:
   - type: Sprite
     sprite: _StarHorizon/Clothing/Hands/Gloves/uasglovesisolate.rsi
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: Clothing
-    blacklist:
-      tags:
-      - Orc
     sprite: _StarHorizon/Clothing/Hands/Gloves/uasglovesisolate.rsi
   - type: Insulated
   - type: Fiber
     fiberMaterial: красные переливающиеся
 
 - type: entity
-  parent: [ClothingHandsGlovesSyntheticBase, BaseUASContraband]
+  parent: UASGlovesIsolate
   categories: [ HideSpawnMenu ]
   id: UASGloves
   suffix: StarHorizon, UAS
@@ -62,9 +61,4 @@
   - type: Sprite
     sprite: _StarHorizon/Clothing/Hands/Gloves/uasgloves.rsi
   - type: Clothing
-    blacklist:
-      tags:
-      - Orc
     sprite: _StarHorizon/Clothing/Hands/Gloves/uasgloves.rsi
-  - type: Fiber
-    fiberMaterial: красные переливающиеся

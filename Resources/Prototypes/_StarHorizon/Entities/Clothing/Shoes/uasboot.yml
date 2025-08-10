@@ -10,6 +10,8 @@
     sprite: _StarHorizon/Clothing/Shoes/Boots/uasboot.rsi
   - type: Clothing
     sprite: _StarHorizon/Clothing/Shoes/Boots/uasboot.rsi
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
   - type: FootstepModifier
@@ -33,6 +35,8 @@
     sprite: _StarHorizon/Clothing/Shoes/Boots/uasmagboots.rsi
   - type: Magboots
   - type: Appearance
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: GenericVisualizer
     visuals:
       enum.ToggleVisuals.Toggled:

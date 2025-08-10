@@ -13,6 +13,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: Armor
@@ -47,6 +49,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: Armor
@@ -81,6 +85,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: Armor

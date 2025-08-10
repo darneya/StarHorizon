@@ -87,6 +87,8 @@
   components:
   - type: Sprite
     sprite: _StarHorizon/Clothing/Back/Satchels/uassatchel.rsi
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: Storage
     maxItemSize: Huge
     grid:

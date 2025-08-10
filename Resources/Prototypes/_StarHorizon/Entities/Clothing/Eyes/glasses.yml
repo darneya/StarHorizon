@@ -8,6 +8,8 @@
   components:
   - type: Sprite
     sprite: _StarHorizon/Clothing/Eyes/uasglasseshud.rsi
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: Clothing
     sprite: _StarHorizon/Clothing/Eyes/uasglasseshud.rsi
   - type: FlashImmunity
