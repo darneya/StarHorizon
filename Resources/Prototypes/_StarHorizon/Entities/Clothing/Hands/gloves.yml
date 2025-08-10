@@ -34,6 +34,7 @@
 
 - type: entity
   parent: [ClothingHandsGlovesSyntheticBase, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: UASGlovesIsolate
   suffix: StarHorizon, UAS
   name: продвинутые перчатки UAS
@@ -52,6 +53,7 @@
 
 - type: entity
   parent: [ClothingHandsGlovesSyntheticBase, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: UASGloves
   suffix: StarHorizon, UAS
   name: EFS перчатки

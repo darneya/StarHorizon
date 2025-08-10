@@ -1,5 +1,6 @@
 - type: entity
   parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: UASVests
   suffix: StarHorizon, UAS
   name: бронежилет UAS
@@ -21,6 +22,7 @@
 
 - type: entity
   parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseUASContraband, ClothingOuterCoatHoSTrench]
+  categories: [ HideSpawnMenu ]
   id: UAScoastconsul
   suffix: StarHorizon, UAS
   name: плащ совета UAS

@@ -79,6 +79,7 @@
 
 - type: entity
   parent: [ClothingBackpack, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: UASsatchel
   suffix: StarHorizon, UAS
   name: глубокая сумка UAS
@@ -92,7 +93,68 @@
     - 0,0,6,4
   - type: ExplosionResistance
     damageCoefficient: 0.1
-# скрытое от спавна
+
+- type: entity
+  parent: [ClothingBackpack, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
+  id: UASsatchelDEBUG
+  suffix: StarHorizon, UAS, DEBUG
+  name: ОЧЕНЬ глубокая сумка UAS
+  description: Сумка с дохуя углубленными карманами на удобном магнитном крепеже.
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/Back/Satchels/uassatchel.rsi
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - 0,0,39,24
+  - type: ExplosionResistance
+    damageCoefficient: 0.01
+
+- type: entity
+  parent: UASsatchelDEBUG
+  categories: [ HideSpawnMenu ]
+  id: UASsatchelFillDEBUG
+  suffix: StarHorizon, UAS, DEBUG, fill
+  name: ОЧЕНЬ глубокая сумка с вещами UAS
+  description: Сумка с дохуя углубленными карманами на удобном магнитном крепеже.
+  components:
+  - type: StorageFill # Тут надо перечислить все предметы UAS
+    contents:
+    - id: UASsatchel
+    - id: ClothingEyesGlassesUAS
+    - id: UASGlovesIsolate
+    - id: UASGloves
+    - id: uasberet
+    - id: uascap 
+    - id: ClothingHeadsetUAS
+    - id: ClothingNeckCloakUAS
+    - id: UASGloryMedal
+    - id: ClothingOuterHardsuitTitan
+    - id: ClothingOuterHardsuitKnight
+    - id: UASVests
+    - id: UAScoastconsul
+    - id: UASBoots
+    - id: UASClothingShoesBootsMag
+    - id: SuitProtectiveUAS
+    - id: SuitUAS
+    - id: SkirtUAS
+    - id: LumaPlushina
+    - id: RipsiPlushin
+    - id: UASEnergyCore
+    - id: WeaponDisablerSMGUAS
+    - id: WeaponLaserMinigunUAS
+    - id: WeaponLaserGranadeUAS
+    - id: WeaponDisablerSniperUAS
+    - id: UASRipsoidCannon
+    - id: UASCounselorGun
+    - id: PMLaserUASGun
+    - id: LaserUASGun
+    - id: WeaponStunprodUAS
+    - id: UASSword
+    - id: UASGranade
+#    - id:
+
 # Кадет
 - type: entity
   parent: UASsatchel
@@ -107,6 +169,7 @@
     - id: UASEnergyCore
     - id: WeaponDisablerSMGUAS
     - id: CombatMedipenUAS
+
 # Офицер
 - type: entity
   parent: UASsatchel
@@ -123,6 +186,7 @@
     - id: PMLaserUASGun
     - id: CombatMedipenUAS
     - id: UASDroneOff
+
 # Рыцарь
 - type: entity
   parent: UASsatchel
@@ -140,6 +204,7 @@
     - id: CombatMedipenUAS
     - id: UASDroneOff
     - id: UASGranade
+
 # Паук
 - type: entity
   parent: UASsatchel
@@ -158,6 +223,7 @@
     - id: NanitMedipenUAS
     - id: UASDroneOff
     - id: UASGranade
+
 # Титан
 - type: entity
   parent: UASsatchel
@@ -178,6 +244,7 @@
     - id: UASDroneOff
     - id: UASGranade
     - id: UASGranade
+
 # Советник
 - type: entity
   parent: UASsatchel

@@ -1,5 +1,6 @@
 - type: entity
   parent: ClothingNeckBase
+  categories: [ HideSpawnMenu ]
   id: UASGloryMedal
   name: медаль UAS
   suffix: StarHorizon, UAS
@@ -15,6 +16,7 @@
 
 - type: entity
   parent: ClothingNeckBase
+  categories: [ HideSpawnMenu ]
   id: ClothingNeckCloakUAS
   suffix: StarHorizon, UAS
   name: плащ UAS

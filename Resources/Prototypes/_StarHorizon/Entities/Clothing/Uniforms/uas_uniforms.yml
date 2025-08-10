@@ -3,6 +3,7 @@
   description: Защитный комбинезон UAS с укреплёнными рёбрами из казмия.
   name: защитный комбинезон UAS
   parent: [ClothingUniformBase, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: SuitProtectiveUAS
   components:
   - type: FactionClothing
@@ -17,6 +18,7 @@
   description: Стандартный комбинезон UAS без рукавов.
   name: комбинезон UAS
   parent: [ClothingUniformBase, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: SuitUAS
   components:
   - type: FactionClothing
@@ -31,6 +33,7 @@
   description: Стандартная юбка-комбинезон UAS с укреплёнными рёбрами из Казмия.
   name: защитная юбка-комбинезон UAS
   parent: [ClothingUniformSkirtBase, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: SkirtProtectiveUAS
   components:
   - type: FactionClothing
@@ -45,6 +48,7 @@
   description: Стандартная юбка-комбинезон UAS без рукавов.
   name: юбка-комбинезон UAS
   parent: [ClothingUniformSkirtBase, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: SkirtUAS
   components:
   - type: FactionClothing

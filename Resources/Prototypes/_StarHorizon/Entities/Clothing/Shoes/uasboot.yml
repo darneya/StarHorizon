@@ -1,5 +1,6 @@
 - type: entity
   parent: [ClothingShoesMilitaryBase, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: UASBoots
   suffix: StarHorizon, UAS
   name: боевые ботинки UAS
@@ -17,6 +18,7 @@
 
 - type: entity
   parent: [ClothingShoesBase, BaseToggleClothing, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: UASClothingShoesBootsMag
   name: магнитные ботинки UAS
   suffix: StarHorizon, UAS

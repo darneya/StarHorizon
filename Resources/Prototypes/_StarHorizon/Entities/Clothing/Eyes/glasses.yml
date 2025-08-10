@@ -1,5 +1,6 @@
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: ClothingEyesGlassesUAS
   name: очки офицера UAS
   suffix: StarHorizon, UAS
