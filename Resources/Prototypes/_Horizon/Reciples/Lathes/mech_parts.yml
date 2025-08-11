@@ -904,6 +904,14 @@
     Steel: 300
 
 - type: latheRecipe
+  id: BoxAmmoGranade
+  result: BoxAmmoGranade
+  category: Mech
+  completetime: 1
+  materials:
+    Steel: 300
+
+- type: latheRecipe
   id: BoxPlasmaBox
   result: BoxPlasmaBox
   category: Mech

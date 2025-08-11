@@ -178,6 +178,7 @@
   recipeUnlocks:
   - MechGunAntiMatterRifle
   - BoxAmmoSniper
+  - BoxAmmoGranade
   technologyPrerequisites:
   - DurandTechnology
   position: 6, 36
