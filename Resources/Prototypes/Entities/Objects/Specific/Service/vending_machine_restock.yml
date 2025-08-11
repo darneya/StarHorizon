@@ -143,6 +143,7 @@
 #    - PietyVendInventory # Dont enable, infinite demon dogs issue
     - NfsdDrobeInventory # Frontier
     - YarrrDrobeInventory
+    - StardropInventory
   - type: Sprite
     layers:
     - state: base
