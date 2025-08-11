@@ -1047,6 +1047,19 @@
   prerequisiteLineType: Diagonal
   technologyPrerequisites:
   - NFFoodService
+  position: 2, 46 # Horizon
+
+- type: technology
+  id: NFDeepFryer
+  name: nf-research-technology-deep-fryer
+  entityIcon: KitchenDeepFryer
+  discipline: NFService
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - DeepFryerMachineCircuitboard
+  technologyPrerequisites:
+  - NFFoodService
   position: 1, 44 # Horizon
 
 - type: technology
@@ -1337,7 +1350,7 @@
   - MiniStationAnchorCircuitboard
   technologyPrerequisites:
   - NFSpaceScanning
-  position: 1, 31
+  position: 2, 52 # Horizon
 
 - type: technology
   id: NFShuttlecraftThrust
