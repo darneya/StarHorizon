@@ -26,6 +26,7 @@
       water: !type:ContainerSlot
       nutriblock: !type:ContainerSlot
       flare: !type:ContainerSlot
+      crowbar: !type:ContainerSlot
       tank: !type:ContainerSlot
       mask: !type:ContainerSlot
       emergencypen: !type:ContainerSlot
@@ -63,6 +64,11 @@
           - BreathMask
           - SecurityBreathMask
           - SyndicateBreathMask
+      crowbar:
+        ejectOnInteract: false
+        whitelist:
+          tags:
+          - Crowbar
       emergencypen:
         ejectOnInteract: false
         whitelist:
@@ -78,7 +84,7 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
       tank:
@@ -152,7 +158,7 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
       tank:
@@ -168,7 +174,7 @@
 
 - type: entity
   parent: BoxSurvivalSlots
-  id: BoxSurvivalSlotsEngineering
+  id: BoxSurvivalSlotsOxygenExtended
   name: extended-capacity survival box
   description: It's a box with basic internals inside. This one is labelled to contain an extended-capacity tank.
   suffix: Extended
@@ -178,11 +184,13 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
+      crowbar:
+      - CrowbarPocket
       tank:
-      - ExtendedEmergencyOxygenTankFilled
+      - DoubleEmergencyOxygenTankFilled
       mask:
       - ClothingMaskBreath
       emergencypen:
@@ -193,8 +201,8 @@
     state: box_extend
 
 - type: entity
-  parent: BoxSurvivalSlotsEngineering
-  id: BoxSurvivalSlotsEngineeringNitrogen
+  parent: BoxSurvivalSlotsOxygenExtended
+  id: BoxSurvivalSlotsNitrogenExtended
   suffix: Extended N2
   components:
   - type: ContainerFill
@@ -202,11 +210,13 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
+      crowbar:
+      - CrowbarPocket
       tank:
-      - ExtendedEmergencyNitrogenTankFilled
+      - DoubleEmergencyNitrogenTankFilled
       mask:
       - ClothingMaskBreath
       emergencypen:
@@ -230,9 +240,11 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
+      crowbar:
+      - CrowbarPocket
       tank:
       - ExtendedEmergencyOxygenTankFilled
       mask:
@@ -254,9 +266,11 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
+      crowbar:
+      - CrowbarPocket
       tank:
       - ExtendedEmergencyNitrogenTankFilled
       mask:
@@ -282,9 +296,11 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
+      crowbar:
+      - CrowbarPocket
       tank:
       - EmergencyOxygenTankFilled
       mask:
@@ -306,9 +322,11 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
+      crowbar:
+      - CrowbarPocket
       tank:
       - EmergencyNitrogenTankFilled
       mask:
@@ -334,7 +352,7 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
       tank:
@@ -363,7 +381,7 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
       tank:
@@ -389,9 +407,11 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
+      crowbar:
+      - CrowbarPocket
       tank:
       - ExtendedEmergencyOxygenTankFilled
       mask:
@@ -413,9 +433,11 @@
       water:
       - DrinkWaterBottleFull
       nutriblock:
-      - FoodSnackNutribrick
+      - FoodPSB
       flare:
       - Flare
+      crowbar:
+      - CrowbarPocket
       tank:
       - ExtendedEmergencyNitrogenTankFilled
       mask:

@@ -22,14 +22,6 @@ APCBasicEmpImmune: APCBasic
 # 2024-02-09
 Ashtray: NFAshtray
 
-# 2024-05-25
-BoxSurvival: NFBoxSurvival
-BoxSurvivalEngineering: NFBoxSurvivalExtended
-BoxSurvivalMedical: NFBoxSurvival
-BoxHug: NFBoxSurvival
-BoxSurvivalNitrogen: NFBoxSurvivalNitrogen
-BoxSurvivalNFOxygenExtended: NFBoxSurvivalExtended
-
 # 2024-07-19
 ComputerTabletopComputerIFFPOI: ComputerTabletopIFFPOI
 
