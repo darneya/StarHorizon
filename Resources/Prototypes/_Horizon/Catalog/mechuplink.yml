@@ -1,18 +1,3 @@
-- type: storeCategory
-  id: UplinkMechMechs
-  name: экзоскелеты
-  priority: 1
-
-- type: storeCategory
-  id: UplinkMechWeapon
-  name: вооружение
-  priority: 2
-
-- type: storeCategory
-  id: UplinkMechEquipment
-  name: снаряжение
-  priority: 3
-
 - type: storePreset
   id: StorePresetUplinkMech
   storeName: UplinkMech

@@ -390,7 +390,7 @@
     - CrateVendingMachineRestockCuddlyCritterVendFilled
     - CrateVendingMachineRestockAutoTuneVendFilled
     - CrateVendingMachineRestockPottedPlantVendFilled
-    - CrateVendingMachineRestockPrideFilled
+    # - CrateVendingMachineRestockPrideFilled
     - CrateVendingMachineRestockSalvageEquipmentFilled
     - CrateVendingMachineRestockSecTechFilled
     chance: 1.0

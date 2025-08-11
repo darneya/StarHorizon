@@ -66,21 +66,6 @@
 # Tier 3
 
 - type: technology
-  id: ModernReactor
-  name: research-technology-mech-reactor
-  entityIcon: MechReactorTesla
-  discipline: NFEngineering
-  tier: 3
-  cost: 7500
-  recipeUnlocks:
-  - MechReactorPlasma
-  - MechReactorUranium
-  - MechReactorTesla
-  technologyPrerequisites:
-  - ClarkeTechnology
-  position: 4, 24
-
-- type: technology
   id: HarsonTechnology
   name: research-technology-mech-harson
   entityIcon: MechHarson
