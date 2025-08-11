@@ -1,5 +1,6 @@
 - type: entity
   parent: [ClothingShoesMilitaryBase, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: UASBoots
   suffix: StarHorizon, UAS
   name: боевые ботинки UAS
@@ -9,6 +10,8 @@
     sprite: _StarHorizon/Clothing/Shoes/Boots/uasboot.rsi
   - type: Clothing
     sprite: _StarHorizon/Clothing/Shoes/Boots/uasboot.rsi
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
   - type: FootstepModifier
@@ -17,6 +20,7 @@
 
 - type: entity
   parent: [ClothingShoesBase, BaseToggleClothing, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: UASClothingShoesBootsMag
   name: магнитные ботинки UAS
   suffix: StarHorizon, UAS
@@ -31,6 +35,8 @@
     sprite: _StarHorizon/Clothing/Shoes/Boots/uasmagboots.rsi
   - type: Magboots
   - type: Appearance
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: GenericVisualizer
     visuals:
       enum.ToggleVisuals.Toggled:
