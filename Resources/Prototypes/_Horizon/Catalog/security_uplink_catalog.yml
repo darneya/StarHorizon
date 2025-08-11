@@ -1,0 +1,18 @@
+- type: listing
+  id: UplinkSecurityMechGunGrenade
+  name: мех-гранатомет SGL-6
+  description: Гранатомёт для меха имеет магазин в 3 патрона
+  productEntity: MechGunGrenade
+  icon: { sprite: _Horizon/Objects/Specific/Mech/equipment.rsi, state: kinetic_grenade }
+  cost:
+    FrontierUplinkCoin: 30
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Sheriff
