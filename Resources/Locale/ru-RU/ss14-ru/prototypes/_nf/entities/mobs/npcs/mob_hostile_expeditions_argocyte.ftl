@@ -24,3 +24,19 @@ ent-MobArgocyteEnforcerExpeditions = силач
     .desc = Четвертая стадия жизненного цикла морфотипа «Хранитель». Основные стражи улья, защищающие его от потенциальных захватчиков.
 ent-MobArgocyteLeviathingExpeditions = левиазверь
     .desc = Финальная известная стадия жизненного цикла морфотипа «Хранитель». Эти гигантские существа возглавляют атаки на врагов улья, превращая каждую битву в настоящий апокалипсис.
+ent-ActionLeviathingSpawn = [color=yellow]Призыв аргоцита[/color]
+    .desc = Призывает аргоцита, который будет следовать за вами. [color=yellow]Перезарядка: 60 секунд.[/color]
+ent-MobArgocyteLeviathingSpawned = { "" }
+    .desc = { "" }
+ent-MobArgocyteMolderLeviathingSpawned = { ent-MobArgocyteLeviathingSpawned }
+    .desc = { ent-MobArgocyteLeviathingSpawned.desc }
+ent-MobArgocytePouncerLeviathingSpawned = { ent-MobArgocyteLeviathingSpawned }
+    .desc = { ent-MobArgocyteLeviathingSpawned.desc }
+ent-MobArgocyteGliderLeviathingSpawned = { ent-MobArgocyteLeviathingSpawned }
+    .desc = { ent-MobArgocyteLeviathingSpawned.desc }
+ent-MobArgocyteHarvesterLeviathingSpawned = { ent-MobArgocyteLeviathingSpawned }
+    .desc = { ent-MobArgocyteLeviathingSpawned.desc }
+ent-MobArgocyteCrawlerLeviathingSpawned = { ent-MobArgocyteLeviathingSpawned }
+    .desc = { ent-MobArgocyteLeviathingSpawned.desc }
+ent-SpawnMobArgocyteLeviathingSpawned = { ent-MarkerBase }
+    .desc = { ent-MarkerBase.desc }

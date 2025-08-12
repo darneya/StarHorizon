@@ -1,0 +1,12 @@
+- type: entity
+  id: UASToggleInvisibilitySpider
+  name: Невидимость Паука
+  description: Переключение режима метаматериала для маскировки
+  components:
+  - type: InstantAction
+    useDelay: 10
+    icon:
+      sprite: _StarHorizon/Interface/Actions/uasaction.rsi
+      state: invisibility
+    itemIconStyle: NoItem
+    event: !type:ToggleActionEvent

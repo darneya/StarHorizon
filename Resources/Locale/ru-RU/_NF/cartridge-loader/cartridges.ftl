@@ -14,6 +14,7 @@ ledger-no-balance = Н/Д
 ledger-tab-Frontier = Аванпост Фронтир
 ledger-tab-Nfsd = ДСБФ
 ledger-tab-Medical = Медицинская диспетчерская
+ledger-tab-Edison = Эдисон
 # Fallback, if this displays, something's wrong.
 ledger-tab-Unknown = Неизвестно
 ledger-entry-type-TickingIncome = Субсидии NT
@@ -25,6 +26,7 @@ ledger-entry-type-BlackMarketShipyardTax = Анонимная перепрода
 ledger-entry-type-BluespaceReward = Выплаты за несение службы
 ledger-entry-type-MedicalBountyTax = Медицинские выплаты
 ledger-entry-type-AntiSmugglingBonus = Борьба с контрабандой
+ledger-entry-type-PowerTransmission = Экспорт электроэнергии
 ledger-entry-type-StationDepositFines = Начисленные штрафы
 ledger-entry-type-StationDepositDonation = Пожертвования
 ledger-entry-type-StationDepositAssetsSold = Проданные активы
