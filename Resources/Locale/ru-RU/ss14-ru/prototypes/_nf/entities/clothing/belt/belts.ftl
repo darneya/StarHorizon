@@ -8,3 +8,5 @@ ent-ClothingBeltNfsd = пояс ДСБФ
     .desc = Пояс для тактических операций.
 ent-ClothingBeltNfsdWebbing = РПС ДСБФ
     .desc = Тактический боевой разгрузочный жилет.
+ent-ClothingBeltMartialBlack = черный пояс
+    .desc = Это самый боевой из всех поясов.
