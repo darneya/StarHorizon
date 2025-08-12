@@ -31,6 +31,7 @@
       mask: !type:ContainerSlot
       emergencypen: !type:ContainerSlot
       spacepen: !type:ContainerSlot
+      pill: !type:ContainerSlot
   - type: ItemSlots
     slots:
       water:
@@ -69,6 +70,11 @@
         whitelist:
           tags:
           - Crowbar
+      pill:
+        ejectOnInteract: false
+        whitelist:
+          tags:
+          - Pill
       emergencypen:
         ejectOnInteract: false
         whitelist:
@@ -197,6 +203,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      pill:
+      - NFPillSheleg
   - type: Sprite
     state: box_extend
 
@@ -223,6 +231,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      pill:
+      - NFPillSheleg
   - type: Label
     currentLabel: reagent-name-nitrogen
   - type: Sprite
@@ -230,10 +240,10 @@
 
 - type: entity
   parent: BoxSurvivalSlots
-  id: BoxSurvivalSlotsSecurity
+  id: BoxSurvivalSlotsNfsd
   name: survival box
   description: It's a box with basic internals inside.
-  suffix: Security
+  suffix: Nfsd
   components:
   - type: ContainerFill
     containers:
@@ -253,13 +263,15 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      pill:
+      - NFPillSheleg
   - type: Sprite
     state: box_sec
 
 - type: entity
-  parent: BoxSurvivalSlotsSecurity
-  id: BoxSurvivalSlotsSecurityNitrogen
-  suffix: Security N2
+  parent: BoxSurvivalSlotsNfsd
+  id: BoxSurvivalSlotsNfsdNitrogen
+  suffix: Nfsd N2
   components:
   - type: ContainerFill
     containers:
@@ -279,6 +291,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      pill:
+      - NFPillSheleg
   - type: Label
     currentLabel: reagent-name-nitrogen
   - type: Sprite
@@ -309,6 +323,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      pill:
+      - NFPillSheleg
   - type: Sprite
     state: box_med
 
@@ -335,6 +351,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      pill:
+      - NFPillSheleg
   - type: Label
     currentLabel: reagent-name-nitrogen
   - type: Sprite

@@ -883,11 +883,11 @@
   - ContractorNFBoxSurvivalExtended
   - ContractorNFBoxSurvivalExtendedNitrogen
   - ContractorNFBoxSurvivalSheleg
-  - ContractorNFBoxSurvivalExtendedSheleg
+#  - ContractorNFBoxSurvivalExtendedSheleg # Horizon Survival box
   fallbacks:
   - ContractorNFBoxSurvival
   - ContractorNFBoxSurvivalNitrogen
-  - ContractorNFBoxSurvivalSheleg
+#  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
 
 - type: loadoutGroup
   id: ContractorEncryptionKey

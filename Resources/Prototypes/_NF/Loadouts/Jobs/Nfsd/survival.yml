@@ -7,7 +7,7 @@
     proto: NFOxygenBreather
   storage:
     back:
-    - NFBoxSurvivalExtended
+    - BoxSurvivalSlotsNfsd # Horizon Survival box
 
 - type: loadout
   id: NfsdBoxSurvivalNfsdNitrogen
@@ -17,7 +17,7 @@
     proto: NFNitrogenBreather
   storage:
     back:
-    - NFBoxSurvivalExtendedNitrogen
+    - BoxSurvivalSlotsNfsdNitrogen # Horizon Survival box
 
 - type: loadout
   id: NfsdBoxSurvivalNfsdSheleg
@@ -27,4 +27,4 @@
     proto: NFSheleg
   storage:
     back:
-    - NFBoxSurvivalExtendedSheleg
+    - BoxSurvivalSlotsNfsd # Horizon Survival box
