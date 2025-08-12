@@ -648,10 +648,9 @@
   cost: 15000
   recipeUnlocks:
   - ClothingShoesBootsSpeed
-  prerequisiteLineType: Diagonal
   technologyPrerequisites:
-  - NFMagnetsTech
-  position: 1, 23 # Horizon
+  - NFMagnetsTechAdvanced
+  position: 2, 23 # Horizon
 
 - type: technology
   id: NFMagnetsTechCombat
@@ -677,10 +676,9 @@
   cost: 7500
   recipeUnlocks:
   - ClothingShoesBootsMagAdv
-  prerequisiteLineType: Diagonal
   technologyPrerequisites:
-  - NFMagnetsTechAdvanced
-  position: 2, 23 # Horizon
+  - NFMagnetsTech
+  position: 1, 23 # Horizon
 
 # region Robotics & Mechs
 
@@ -1046,7 +1044,7 @@
   - PlantBagOfHolding
   prerequisiteLineType: Diagonal
   technologyPrerequisites:
-  - NFFoodService
+  - NFSeedExtractor
   position: 2, 46 # Horizon
 
 - type: technology
@@ -1120,7 +1118,7 @@
   - BiogeneratorMachineCircuitboard
   prerequisiteLineType: Diagonal
   technologyPrerequisites:
-  - NFSeedExtractor
+  - NFAdvancedFoodService
   position: 3, 45 # Horizon
 
 - type: technology
@@ -1380,6 +1378,76 @@
   technologyPrerequisites:
   - NFShuttlecraftThrust
   position: 1, 53 # Horizon
+
+# region Atmospherics
+
+- type: technology
+  id: NFAdvancedAtmosphericsTools
+  name: nf-research-technology-advanced-atmospherics-tools
+  entityIcon: HolofanProjector
+  discipline: NFEngineering
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - HolofanProjector
+#  - FireExtinguisherBluespace # DeltaV
+  technologyPrerequisites:
+  - NFAtmosphericTech
+  position: 0, 35
+
+- type: technology
+  id: NFAtmosphericTech
+  name: nf-research-technology-atmospheric-tech
+  entityIcon: GasThermoMachineFreezer
+  discipline: NFEngineering
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ThermomachineFreezerMachineCircuitBoard
+  - GasRecyclerMachineCircuitboard
+  position: 0, 36
+
+- type: technology
+  id: NFAtmosphericDrilling
+  name: nf-research-technology-atmospheric-drilling
+  entityIcon: GasMiningDrill
+  discipline: NFEngineering
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - GasMiningDrillMachineCircuitboard
+  - GaslockFrameMachineCircuitboard
+  prerequisiteLineType: Diagonal
+  technologyPrerequisites:
+  - NFAtmosphericTech
+  position: 1, 37
+
+- type: technology
+  id: NFAdvancedAtmosphericsPortable
+  name: nf-research-technology-advanced-atmospherics-portable
+  entityIcon: PortableScrubber
+  discipline: NFEngineering
+  tier: 1
+  cost: 2500
+  recipeUnlocks:
+  - PortableScrubberMachineCircuitBoard
+  prerequisiteLineType: Diagonal
+  technologyPrerequisites:
+  - NFAtmosphericTech
+  position: 1, 35
+
+- type: technology
+  id: NFAdvancedAtmospherics
+  name: nf-research-technology-advanced-atmospherics
+  entityIcon: GasThermoMachineHellfireFreezer
+  discipline: NFEngineering
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - HellfireFreezerMachineCircuitBoard
+  technologyPrerequisites:
+  - NFAtmosphericTech
+  position: 1, 36
 
 # region Jetpack
 
@@ -1789,7 +1857,6 @@
   - NFMagazineGrenadeEmpty
   - NFGrenadeFlash
   - NFGrenadeEMP
-  prerequisiteLineType: Tree
   technologyPrerequisites:
   - NFImprovedSalvageWeapons
   - NFExplosiveTechnology

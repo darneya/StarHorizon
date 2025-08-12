@@ -61,6 +61,7 @@
   - MechGunPKAHeavy
   technologyPrerequisites:
   - ClarkeTechnology
+  prerequisiteLineType: Tree
   position: 4, 27
 
 # Tier 3
