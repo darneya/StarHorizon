@@ -882,7 +882,7 @@
   - ContractorNFBoxSurvivalNitrogen
   - ContractorNFBoxSurvivalExtended
   - ContractorNFBoxSurvivalExtendedNitrogen
-  - ContractorNFBoxSurvivalSheleg
+#  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
 #  - ContractorNFBoxSurvivalExtendedSheleg # Horizon Survival box
   fallbacks:
   - ContractorNFBoxSurvival

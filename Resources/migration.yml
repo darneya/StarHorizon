@@ -622,24 +622,4 @@ AirlockMaintIntLocked: AirlockMaintLocked
 ComputerCargoShuttle: ComputerShuttleCargo
 CargoShuttleComputerCircuitboard: CargoShuttleConsoleCircuitboard
 
-#Horizon 2025-04-15
-BoxSurvival: BoxSurvivalSlots
-NFBoxSurvival: BoxSurvivalSlots
-BoxSurvivalNitrogen: BoxSurvivalSlotsNitrogen
-NFBoxSurvivalNitrogen: BoxSurvivalSlotsNitrogen
-BoxSurvivalEngineering: BoxSurvivalSlotsOxygenExtended
-BoxSurvivalEngineeringNitrogen: BoxSurvivalSlotsNitrogenExtended
-NFBoxSurvivalOxygenExtended: BoxSurvivalSlotsOxygenExtended
-NFBoxSurvivalNitrogenExtended: BoxSurvivalSlotsNitrogenExtended
-BoxSurvivalMedical: BoxSurvivalSlotsMedical
-BoxSurvivalMedicalNitrogen: BoxSurvivalSlotsMedicalNitrogen
-BoxHug: BoxHugSlots
-BoxHugNitrogen: BoxHugSlotsNitrogen
-BoxSurvivalSecurity: BoxSurvivalSlotsNfsd
-BoxSurvivalSecurityNitrogen: BoxSurvivalSlotsNfsdNitrogen
-BoxSurvivalSyndicate: BoxSurvivalSlotsSyndicate
-BoxSurvivalSyndicateNitrogen: BoxSurvivalSlotsSyndicateNitrogen
-BoxMime: BoxMimeSlots
-BoxMimeNitrogen: BoxMimeSlotsNitrogen
-
 # Frontier: put Frontier-related migrations in nf_migration.yml. Thank you.

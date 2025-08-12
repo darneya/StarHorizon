@@ -240,10 +240,10 @@
 
 - type: entity
   parent: BoxSurvivalSlots
-  id: BoxSurvivalSlotsNfsd
+  id: BoxSurvivalSlotsSecurity
   name: survival box
   description: It's a box with basic internals inside.
-  suffix: Nfsd
+  suffix: Security
   components:
   - type: ContainerFill
     containers:
@@ -269,9 +269,9 @@
     state: box_sec
 
 - type: entity
-  parent: BoxSurvivalSlotsNfsd
-  id: BoxSurvivalSlotsNfsdNitrogen
-  suffix: Nfsd N2
+  parent: BoxSurvivalSlotsSecurity
+  id: BoxSurvivalSlotsSecurityNitrogen
+  suffix: Security N2
   components:
   - type: ContainerFill
     containers:
@@ -438,6 +438,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      pill:
+      - NFPillSheleg
   - type: Sprite
     state: box_syndie
 
@@ -464,6 +466,8 @@
       - EmergencyMedipen
       spacepen:
       - SpaceMedipen
+      pill:
+      - NFPillSheleg
   - type: Label
     currentLabel: reagent-name-nitrogen
   - type: Sprite
