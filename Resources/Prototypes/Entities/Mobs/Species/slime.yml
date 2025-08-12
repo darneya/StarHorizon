@@ -28,7 +28,6 @@
   - type: Geras
   - type: Storage
     clickInsert: false
-    openOnActivate: false
     grid:
     - 0,0,1,2
     maxItemSize: Large

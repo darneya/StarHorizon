@@ -2,6 +2,7 @@
 # General
 nf-holopad-general-laboratory = Лаборатория аномалий
 nf-holopad-general-bahama = Ресторан «Багама Мама»
+nf-holopad-general-barrier-gate = Барьерные врата
 nf-holopad-general-courthouse-witness = Суд - Сторона свидетелей
 nf-holopad-general-courthouse-defendant = Суд - Сторона ответчика
 nf-holopad-general-expedition-lodge = Аванпост экспедиций

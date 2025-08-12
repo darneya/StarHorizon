@@ -14,5 +14,7 @@ seeds-bees-name = пчёлы
 seeds-bees-display-name = соты
 seeds-everyspice-name = пряности
 seeds-everyspice-display-name = пряные растения
+seeds-monkanana-name = обезьянан
+seeds-monkanana-display-name = обезьянановые деревья
 # Should be in seed-component
 botany-seed-jar-name = банка { $seedName } { $seedNoun }

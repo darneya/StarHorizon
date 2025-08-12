@@ -54,7 +54,7 @@
   - ClothingHeadHatCatEarsRobot
   technologyPrerequisites:
   - CyberLimbsTech
-  position: 2, 21
+  position: 2, 20
 
 #- type: technology # _DV Import
 #  id: SyringeGun
@@ -86,7 +86,8 @@
     - HemostatAdvanced
   technologyPrerequisites:
     - SurgeryTech
-  position: 1, 15
+  prerequisiteLineType: Diagonal
+  position: 1, 14
 
 - type: technology
   id: CyberImplantsTech
@@ -135,6 +136,7 @@
   - MechEquipmentHumanGrabber
   technologyPrerequisites:
   - OdysseusTechnology
+  prerequisiteLineType: Tree
   position: 4, 31
 
 - type: technology
@@ -178,7 +180,8 @@
   - OrganCyberKidneys
   technologyPrerequisites:
   - CyberImplantsTech
-  position: 3, 19
+  prerequisiteLineType: Tree
+  position: 3, 16
 
 - type: technology
   id: BsOrgansTech
@@ -234,7 +237,7 @@
     - RightArmCyberGarden
   technologyPrerequisites:
     - CyberLimbsTech
-  position: 3, 20
+  position: 2, 19
 
 - type: technology
   id: FunctionalCombatLimbsTech
@@ -248,7 +251,7 @@
   - RightArmCyberLazer
   technologyPrerequisites:
   - FunctionalCyberLimbsTech
-  position: 4, 20
+  position: 3, 20
 
 - type: technology
   id: FunctionalEngineeringLimbsTech
@@ -264,7 +267,7 @@
   - RightArmCyberAtmos
   technologyPrerequisites:
   - FunctionalCyberLimbsTech
-  position: 4, 21
+  position: 3, 19
 
 - type: technology
   id: CyberImplantsNight
@@ -277,7 +280,7 @@
   - EyeImplantNight
   technologyPrerequisites:
   - CyberImplantsTech
-  position: 3, 15
+  position: 3, 14
 
 - type: technology
   id: OdyssMechPaint
@@ -306,7 +309,7 @@
   - HeatSubcutaneousArmor
   technologyPrerequisites:
   - CyberImplantsTech
-  position: 4, 16
+  position: 3, 15
 
 - type: technology
   id: AdvProtectiveImplantsTech
@@ -322,7 +325,7 @@
   - RadiationSubcutaneousArmor
   technologyPrerequisites:
   - ProtectiveImplantsTech
-  position: 5, 15
+  position: 4, 15
 
 - type: technology
   id: AdvPerformanceImplantsTech
@@ -338,4 +341,4 @@
   - VesselsImplant
   technologyPrerequisites:
   - ProtectiveImplantsTech
-  position: 5, 16
+  position: 4, 14
