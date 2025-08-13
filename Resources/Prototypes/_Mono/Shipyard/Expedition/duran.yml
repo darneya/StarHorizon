@@ -1,3 +1,5 @@
+# Remap
+
 # Author Info
 # GitHub: starch70
 # Discord: _starch_
@@ -8,7 +10,7 @@
   id: Duran
   parent: BaseVessel
   name: SKR Duran
-  description: Легкий шатл,снабженный парочкой Фабов и небольшой кухней.
+  description: Легкий шатл, снабженный парочкой Фабов и небольшой кухней.
   price: 50000
   category: Medium
   group: Expedition
@@ -17,7 +19,7 @@
   class:
   - Expedition
   engine:
-  - Uranium
+  - AME
 
 - type: gameMap
   id: Duran
