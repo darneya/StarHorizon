@@ -10,9 +10,9 @@
   addComponents:
   - type: IFF
     color: "#00ab86"
-  - type: StationTransit
-    routes:
-      SpawnPoints: 60
+  # - type: StationTransit
+  #   routes:
+  #     SpawnPoints: 60
 
 - type: gameMap
   id: TTIOutpost
