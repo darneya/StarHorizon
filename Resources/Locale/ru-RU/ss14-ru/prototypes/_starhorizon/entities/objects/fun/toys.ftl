@@ -88,3 +88,6 @@ ent-DakiLemird2 = дакимакура
     .suffix = StarHorizon
 ent-PlasteelHammer = rubber hammer
     .desc = This is a copy of the legendary rubber toy hammer, but made of plasteel. BONK!
+ent-PlushieBotanist = плюшевый ботаник
+    .desc = Он крепко ухватился за томатик своими цепкими лапами. Знаменит своими выходками и покорением космоса невероятно огромной армией из томатов-убийц.
+    .suffix = StarHorizon

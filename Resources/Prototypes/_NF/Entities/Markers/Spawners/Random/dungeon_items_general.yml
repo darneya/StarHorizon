@@ -171,7 +171,6 @@
     - SuitStorageEVAPrivateSec
     - SuitStorageEVAHydro
     - SuitStorageEVAMail
-    - SuitStorageBasic
     - SuitStoragePilot
     - SuitStorageParamedic
     - SuitStorageEngi
@@ -391,7 +390,7 @@
     - CrateVendingMachineRestockCuddlyCritterVendFilled
     - CrateVendingMachineRestockAutoTuneVendFilled
     - CrateVendingMachineRestockPottedPlantVendFilled
-    - CrateVendingMachineRestockPrideFilled
+    # - CrateVendingMachineRestockPrideFilled
     - CrateVendingMachineRestockSalvageEquipmentFilled
     - CrateVendingMachineRestockSecTechFilled
     chance: 1.0
