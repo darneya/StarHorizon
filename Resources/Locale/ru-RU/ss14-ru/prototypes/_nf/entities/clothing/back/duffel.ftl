@@ -1,6 +1,6 @@
 ent-ClothingBackpackDuffelArcadia = аркадианский вещмешок
     .desc = Вещмешок производства производства Arcadia Industries
-ent-ClothingBackpackDuffelNfsdBrown = вещмешок ДСБФ
+ent-ClothingBackpackDuffelNfsdBrown = вещмешок ДШНФ
     .desc = { ent-ClothingBackpackDuffelSecurity.desc }
 ent-ClothingBackpackDuffelNfsdCream = { ent-ClothingBackpackDuffelNfsdBrown }
     .desc = { ent-ClothingBackpackDuffelNfsdBrown.desc }
