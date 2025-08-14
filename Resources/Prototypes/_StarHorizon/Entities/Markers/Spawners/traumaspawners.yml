@@ -1,0 +1,51 @@
+- type: entity
+  id: SpawnPointTraumaParamedic
+  parent: SpawnPointJobBase
+  name: парамедик Траумы
+  components:
+  - type: SpawnPoint
+    job_id: TraumaParamedicJob
+  - type: Sprite
+    sprite: _StarHorizon/Markers/Jobs/traumamarkers.rsi
+    layers:
+      - state: green
+      - state: medic
+
+- type: entity
+  id: SpawnPointTraumaMedTech
+  parent: SpawnPointJobBase
+  name: медицинский техник Траумы
+  components:
+  - type: SpawnPoint
+    job_id: TraumaMedTechJob
+  - type: Sprite
+    sprite: _StarHorizon/Markers/Jobs/traumamarkers.rsi
+    layers:
+      - state: green
+      - state: medic
+
+- type: entity
+  id: SpawnPointTraumaRessurector
+  parent: SpawnPointJobBase
+  name: реаниматор Траумы
+  components:
+  - type: SpawnPoint
+    job_id: TraumaRessurectorJob
+  - type: Sprite
+    sprite: _StarHorizon/Markers/Jobs/traumamarkers.rsi
+    layers:
+      - state: green
+      - state: medic
+
+- type: entity
+  id: SpawnPointTraumaRepresentative
+  parent: SpawnPointJobBase
+  name: представитель Траумы
+  components:
+  - type: SpawnPoint
+    job_id: TraumaRepresentativeJob
+  - type: Sprite
+    sprite: _StarHorizon/Markers/Jobs/traumamarkers.rsi
+    layers:
+      - state: green
+      - state: medic

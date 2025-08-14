@@ -1,0 +1,29 @@
+
+- type: job
+  id: TraumaRepresentativeJob
+  name: представитель Траумы
+  description: job-description-traumarepresentative
+  playTimeTracker: TraumaRepresentativeJob
+  whitelisted: true
+  startingGear: TraumaRepresentativeGear
+  alwaysUseSpawner: true
+  icon: "JobIconDoc"
+  supervisors: job-supervisors-trauma-director
+  weight: 170
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: TraumaRepresentativeGear
+  equipment:
+    ears: ClothingHeadsetGrey
+    eyes: ClothingEyesGlassesSunglasses
+    id: TraumaRepresentativeIDCard
+    pocket1: EncryptionKeyTrauma
+    pocket2: CyberPen
+    jumpsuit: ClothingUniformJumpsuitJournalist
+    shoes: ClothingShoesBootsLaceup
