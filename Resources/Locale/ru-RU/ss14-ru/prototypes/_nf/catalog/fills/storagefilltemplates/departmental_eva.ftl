@@ -58,4 +58,3 @@ ent-StorageFillEVASuitFsb = { "" }
     .desc = Содержит стандартный скафандр от Far Star Biotech (FSB).
 ent-StorageFillEVASuitStc = { "" }
     .desc = Содержит стандартный внекорабельный комплект диспетчера станции.
-

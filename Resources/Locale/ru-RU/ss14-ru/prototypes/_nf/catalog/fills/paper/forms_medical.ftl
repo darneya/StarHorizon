@@ -17,4 +17,3 @@ ent-PaperWrittenMedicalFormReceiptInvoice = квитанция об оплате
     .desc = { ent-Paper.desc }
 ent-PaperWrittenMedicalFormRelease = бланк медицинской выписки
     .desc = { ent-Paper.desc }
-

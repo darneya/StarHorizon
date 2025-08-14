@@ -3,4 +3,3 @@ ent-BaseStockPart = stock part
 ent-MicroManipulatorStockPart = манипулятор
     .desc = Базовый манипулятор, используемый в конструкции различных устройств.
     .suffix = Поколение 1
-
