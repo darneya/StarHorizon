@@ -1,4 +1,4 @@
-ent-EnergyShieldNfsd = энергощит ДСБФ
+ent-EnergyShieldNfsd = энергощит ДШНФ
     .desc = { ent-EnergyShield.desc }
 ent-NFMetalShield = металлический щит
     .desc = Прочный металлический щит. В нём есть окошко, чтобы можно было подмигнуть тому, кто по тебе бьёт.
