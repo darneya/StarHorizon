@@ -1,6 +1,6 @@
 - type: job
   id: TraumaParamedic
-  name: парамедик Траумы
+  name: job-name-traumaparamedic
   description: job-description-traumaparamedic
   playTimeTracker: TraumaParamedicJob
   whitelisted: true
