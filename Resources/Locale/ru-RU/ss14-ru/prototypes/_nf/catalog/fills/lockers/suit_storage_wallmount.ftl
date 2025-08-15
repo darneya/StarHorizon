@@ -194,4 +194,4 @@ ent-SuitStorageWallmountEVAPrivateSec = { ent-StorageFillEVASuitPrivateSec }
     .suffix = ЕВА, Телохранитель
 ent-SuitStorageWallmountEVANfsd = { ent-StorageFillEVASuitNfsd }
     .desc = { ent-StorageFillEVASuitNfsd.desc }
-    .suffix = ЕВА, ДСБФ
+    .suffix = ЕВА, ДШНФ

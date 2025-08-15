@@ -1,3 +1,5 @@
+names-vulpkanin-first-male-dataset-1 = Арон
+names-vulpkanin-first-male-dataset-2 = Эйб
 names-vulpkanin-first-male-dataset-3 = Абрахам
 names-vulpkanin-first-male-dataset-4 = Аделгер
 names-vulpkanin-first-male-dataset-5 = Адолар

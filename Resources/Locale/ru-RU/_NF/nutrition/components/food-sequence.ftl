@@ -28,4 +28,3 @@ food-sequence-cotton-burger-content-plushie-vulpkanin = вульп
 food-sequence-cotton-burger-content-plushie-corgi = корги
 food-sequence-cotton-burger-content-plushie-cat = кот
 food-sequence-cotton-burger-content-plushie-rpg = ракета
-

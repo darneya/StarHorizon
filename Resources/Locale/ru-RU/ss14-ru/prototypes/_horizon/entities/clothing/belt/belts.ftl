@@ -1,4 +1,4 @@
-ent-ClothingBeltNfsdWebbingCat = Котячий РПС ДСБФ
+ent-ClothingBeltNfsdWebbingCat = Котячий РПС ДШНФ
     .desc = Тактический боевой разгрузочный жилет. Специально для котов.
     .suffix = Только коты
 ent-ClothingBeltMercenaryWebbingCat = Котячий РПС наёмника
