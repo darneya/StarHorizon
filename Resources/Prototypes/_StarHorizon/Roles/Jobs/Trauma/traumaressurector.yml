@@ -1,5 +1,5 @@
 - type: job
-  id: TraumaRessurectorJob
+  id: TraumaRessurector
   name: реаниматор Траумы
   description: job-description-traumaressurector
   playTimeTracker: TraumaRessurectorJob

@@ -1,5 +1,5 @@
 - type: job
-  id: TraumaParamedicJob
+  id: TraumaParamedic
   name: парамедик Траумы
   description: job-description-traumaparamedic
   playTimeTracker: TraumaParamedicJob

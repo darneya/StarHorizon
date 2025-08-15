@@ -32,7 +32,7 @@
           lobbySortOrder: 0
         - type: StationJobs
           availableJobs:
-            TraumaParamedicJob: [ 4, 4 ]
-            TraumaMedTechJob: [ 2, 2 ]
-            TraumaRessurectorJob: [ 2, 2 ]
-            TraumaRepresentativeJob: [ 2, 2 ]
+            TraumaParamedic: [ 4, 4 ]
+            TraumaMedTech: [ 2, 2 ]
+            TraumaRessurector: [ 2, 2 ]
+            TraumaRepresentative: [ 2, 2 ]

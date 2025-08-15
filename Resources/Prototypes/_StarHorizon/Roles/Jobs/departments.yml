@@ -5,7 +5,7 @@
   color: "#00ab86"
   weight: -10
   roles:
-  - TraumaMedTechJob
-  - TraumaParamedicJob
-  - TraumaRessurectorJob
-  - TraumaRepresentativeJob
+  - TraumaMedTech
+  - TraumaParamedic
+  - TraumaRessurector
+  - TraumaRepresentative

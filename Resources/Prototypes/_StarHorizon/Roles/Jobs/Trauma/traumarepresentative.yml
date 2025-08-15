@@ -1,6 +1,6 @@
 
 - type: job
-  id: TraumaRepresentativeJob
+  id: TraumaRepresentative
   name: представитель Траумы
   description: job-description-traumarepresentative
   playTimeTracker: TraumaRepresentativeJob

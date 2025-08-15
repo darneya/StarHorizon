@@ -20,7 +20,7 @@
   components:
   - type: WorldItem
   - type: PresetIdCard
-    job: TraumaParamedicJob
+    job: TraumaParamedic
   - type: Sprite
     sprite: _StarHorizon/Objects/Devices/traumaparamedic.rsi # Horizon
     layers:
@@ -37,7 +37,7 @@
   components:
   - type: WorldItem
   - type: PresetIdCard
-    job: TraumaMedTechJob
+    job: TraumaMedTech
   - type: Sprite
     sprite: _StarHorizon/Objects/Devices/traumamedtech.rsi # Horizon
     layers:
@@ -54,7 +54,7 @@
   components:
   - type: WorldItem
   - type: PresetIdCard
-    job: TraumaRessurectorJob
+    job: TraumaRessurector
   - type: Sprite
     sprite: _StarHorizon/Objects/Devices/traumaressurector.rsi # Horizon
     layers:
@@ -71,7 +71,7 @@
   components:
   - type: WorldItem
   - type: PresetIdCard
-    job: TraumaRepresentativeJob
+    job: TraumaRepresentative
   - type: Sprite
     sprite: _StarHorizon/Objects/Devices/traumarepresentative.rsi # Horizon
     layers:
