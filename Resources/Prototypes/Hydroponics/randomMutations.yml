@@ -181,6 +181,6 @@
       persists: false
       effect: !type:PlantMutateConsumeGasses
     - name: ChangeHarvest
-      baseOdds: 0.036
+      baseOdds: 0.000036 # Horizon
       persists: false
       effect: !type:PlantMutateHarvest
