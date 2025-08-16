@@ -375,3 +375,6 @@
 
 - type: Tag
   id: 40mmGrenade
+
+- type: Tag
+  id: CapacitorStockPart
