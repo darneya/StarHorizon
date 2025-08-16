@@ -939,3 +939,79 @@
     Steel: 2000
     Silver: 600
     Uranium: 200
+
+- type: latheRecipe
+  id: MechWeaponSword
+  result: MechWeaponSwordCrate
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plasteel: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: MechWeaponSpear
+  result: MechWeaponSpearCrate
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plasteel: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: MechWeaponClaws
+  result: MechWeaponClawsCrate
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plasteel: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: MechWeaponWarhammer
+  result: MechWeaponWarhammerCrate
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plasteel: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: MechReactorPlasma
+  result: MechReactorPlasma
+  category: Mech
+  completetime: 10
+  materials:
+    Steel: 500
+    Glass: 500
+    Silver: 100
+    Gold: 100
+    Plasma: 300
+
+- type: latheRecipe
+  id: MechReactorUranium
+  result: MechReactorUranium
+  category: Mech
+  completetime: 10
+  materials:
+    Steel: 1000
+    Glass: 500
+    Silver: 200
+    Gold: 200
+    Plasma: 500
+
+- type: latheRecipe
+  id: MechReactorTesla
+  result: MechReactorTesla
+  category: Mech
+  completetime: 10
+  materials:
+    Steel: 2000
+    Glass: 1000
+    Silver: 300
+    Gold: 300
+    Plasma: 700
