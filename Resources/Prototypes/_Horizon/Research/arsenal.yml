@@ -178,11 +178,31 @@
   cost: 7500
   recipeUnlocks:
   - MechGunAntiMatterRifle
+  - MechGunGrenade
+  - MechGunMissileLRM6
+  - MechGunMissileSRM8Frag
+  - MechGunMissileSRM8Ignite
   - BoxAmmoSniper
   - BoxAmmoGranade
   technologyPrerequisites:
   - DurandTechnology
   position: 5, 36
+
+- type: technology
+  id: MechCloseWeaponTechnology
+  name: research-technology-mech-close
+  entityIcon: MechWeaponSword
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 7500
+  recipeUnlocks:
+  - MechWeaponSword
+  - MechWeaponSpear
+  - MechWeaponClaws
+  - MechWeaponWarhammer
+  technologyPrerequisites:
+  - DurandTechnology
+  position: 6, 34
 
 - type: technology
   id: MechEnergyGunExperimentalTechnology

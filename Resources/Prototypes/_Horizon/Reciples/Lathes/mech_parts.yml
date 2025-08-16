@@ -855,6 +855,45 @@
     Plasma: 400
 
 - type: latheRecipe
+  id: MechGunGrenade
+  result: MechGunGrenadeCrate
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1100
+    Glass: 400
+
+- type: latheRecipe
+  id: MechGunMissileSRM8Frag
+  result: MechGunMissileSRM8FragCrate
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1100
+    Silver: 300
+    Uranium: 100
+
+- type: latheRecipe
+  id: MechGunMissileSRM8Ignite
+  result: MechGunMissileSRM8IgniteCrate
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1100
+    Silver: 300
+    Uranium: 100
+
+- type: latheRecipe
+  id: MechGunMissileLRM6
+  result: MechGunMissileLRM6Crate
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1100
+    Silver: 300
+    Uranium: 100
+
+- type: latheRecipe
   id: MechGunPKA
   result: MechGunPKACrate
   category: Mech
