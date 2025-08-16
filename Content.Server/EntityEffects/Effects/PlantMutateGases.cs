@@ -16,7 +16,7 @@ public sealed partial class PlantMutateExudeGasses : EntityEffect
     public float MinValue = 0.01f;
 
     [DataField]
-    public float MaxValue = 0.5f;
+    public float MaxValue = 0.4f; // Horizon
 
     public override void Effect(EntityEffectBaseArgs args)
     {
@@ -35,7 +35,13 @@ public sealed partial class PlantMutateExudeGasses : EntityEffect
           Gas.Ammonia,
           Gas.Plasma,
           Gas.WaterVapor,
-          //Gas.Tritium,
+          // Horizon start
+          Gas.Tritium,
+          Gas.BZ,
+          Gas.Pluoxium,
+          Gas.Hydrogen,
+          Gas.ProtoNitrate,
+          // Horizon end
           //Gas.Frezon,
         };
         // End Frontier: List of gasses
@@ -72,7 +78,7 @@ public sealed partial class PlantMutateConsumeGasses : EntityEffect
     public float MinValue = 0.01f;
 
     [DataField]
-    public float MaxValue = 0.5f;
+    public float MaxValue = 0.9f; // Horizon
     public override void Effect(EntityEffectBaseArgs args)
     {
         var plantholder = args.EntityManager.GetComponent<PlantHolderComponent>(args.TargetEntity);
@@ -90,7 +96,13 @@ public sealed partial class PlantMutateConsumeGasses : EntityEffect
           Gas.Ammonia,
           Gas.Plasma,
           Gas.WaterVapor,
-          //Gas.Tritium,
+          // Horizon start
+          Gas.Tritium,
+          Gas.BZ,
+          Gas.Pluoxium,
+          Gas.Hydrogen,
+          Gas.ProtoNitrate,
+          // Horizon end
           //Gas.Frezon,
         };
         // End Frontier: List of gasses
