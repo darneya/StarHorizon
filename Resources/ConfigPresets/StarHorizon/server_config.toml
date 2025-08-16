@@ -88,7 +88,7 @@ map_enabled = true
 restart_not_allowed_when_admin_online = false
 
 [shuttle]
-auto_call_time = 2880
+auto_call_time = 1440
 shuttle.emergency_authorize_time = 30
 
 [rules]
