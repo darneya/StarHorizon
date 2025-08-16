@@ -72,7 +72,7 @@
   entityIcon: MechReactorTesla
   discipline: NFEngineering
   tier: 3
-  cost: 7500
+  cost: 30000
   recipeUnlocks:
   - MechReactorPlasma
   - MechReactorUranium
