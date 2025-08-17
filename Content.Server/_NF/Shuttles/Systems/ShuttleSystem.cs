@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2024 neuPanda
 // SPDX-FileCopyrightText: 2025 Ark
 // SPDX-FileCopyrightText: 2025 Dvir
+// SPDX-FileCopyrightText: 2025 Ilya246
 // SPDX-FileCopyrightText: 2025 Redrover1760
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -102,14 +103,15 @@ public sealed partial class ShuttleSystem
             return;
         }
 
-        // Clamp the speed between 0 and 30
-        var maxSpeed = Math.Clamp(args.MaxSpeed, 0f, 30f);
+        // Mono - fix
+        var maxSpeed = Math.Max(args.MaxSpeed, 0f);
 
         // Don't do anything if the value didn't change
-        if (Math.Abs(shuttleComponent.BaseMaxLinearVelocity - maxSpeed) < 0.01f)
+        if (Math.Abs(shuttleComponent.SetMaxVelocity - maxSpeed) < 0.01f)
             return;
 
-        shuttleComponent.BaseMaxLinearVelocity = maxSpeed;
+        // Mono - fix
+        shuttleComponent.SetMaxVelocity = maxSpeed;
 
         // Refresh the shuttle consoles to update the UI
         _console.RefreshShuttleConsoles(transform.GridUid.Value);
