@@ -216,6 +216,7 @@
     icon:
       sprite: _Horizon/Objects/Magic/demon.rsi
       state: blink
+  - type: InstantAction
     event: !type:TeleportSpellEvent
 
 #стена
@@ -224,7 +225,7 @@
   name: forcewall
   description: Creates a magical barrier.
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 4
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
@@ -232,6 +233,7 @@
     icon:
       sprite: _Horizon/Objects/Magic/demon.rsi
       state: shield
+  - type: InstantAction
     event: !type:InstantSpawnSpellEvent
       prototype: WallDemon
       posData: !type:TargetInFront
@@ -252,9 +254,10 @@
       state: goliath_tentacle_wiggle
     sound:
       path: "/Audio/Magic/Demon/demon_consume.ogg"
-    event: !type:GoliathSummonTentacleAction
     useDelay: 5
     range: 20
+  - type: InstantAction
+    event: !type:GoliathSummonTentacleAction
 
 #инста гиб
 - type: entity
@@ -275,6 +278,7 @@
     icon:
       sprite: _Horizon/Objects/Magic/demon.rsi
       state: gib
+  - type: InstantAction
     event: !type:SmiteSpellEvent
   - type: Magic
     requiresClothes: false
