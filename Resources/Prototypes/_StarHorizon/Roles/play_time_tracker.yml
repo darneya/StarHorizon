@@ -1,2 +1,14 @@
 - type: playTimeTracker
   id: JobERTJuggernaut
+
+- type: playTimeTracker
+  id:  TraumaMedTechJob
+
+- type: playTimeTracker
+  id:  TraumaParamedicJob
+
+- type: playTimeTracker
+  id:  TraumaRessurectorJob
+
+- type: playTimeTracker
+  id:  TraumaRepresentativeJob

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC BY-NC-ND 3.0",
-  "copyright": "Sprites by TheGypsyBaron DS:701266770429739008",
+  "copyright": "Sprites by TheGypsyBaron DS:701266770429739008, xenoborg sprites, created and modified by Samuka-C (github).",
   "size": {
     "x": 32,
     "y": 32
@@ -324,8 +324,8 @@
       ]
     },
     {
-          "name": "synd_engi",
-          "directions": 4
+      "name": "synd_engi",
+      "directions": 4
     },
 	{
       "name": "synd_engi_e",
@@ -334,7 +334,326 @@
     {
       "name": "synd_engi_l",
       "directions": 4
+    },
+    {
+      "name": "xenoborg_heavy",
+      "directions": 4
+    },
+    {
+      "name": "xenoborg_heavy_e",
+      "directions": 4
+    },
+    {
+      "name": "xenoborg_heavy_e_r",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "xenoborg_heavy_l",
+      "directions": 4
+    },
+	  {
+      "name": "xenoborg_scout",
+      "directions": 4
+    },
+    {
+      "name": "xenoborg_scout_l",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "xenoborg_scout_e",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "xenoborg_scout_e_r",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "xenoborg_engi",
+      "directions": 4
+    },
+	  {
+      "name": "xenoborg_engi_e",
+      "directions": 4
+    },
+    {
+      "name": "xenoborg_engi_e_r",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "xenoborg_engi_l",
+      "directions": 4
+    },
+    {
+      "name": "xenoborg_stealth",
+      "directions": 4
+    },
+    {
+      "name": "xenoborg_stealth_e",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "xenoborg_stealth_e_r",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "xenoborg_stealth_l",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ]
+      ]
     }
-
   ]
 }

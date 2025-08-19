@@ -19,7 +19,7 @@
   entityIcon: AttachmentSuppressor
   discipline: NFArsenalNfsd
   tier: 2
-  cost: 5000
+  cost: 10000
   recipeUnlocks:
   - AttachmentMagneticHarness
   - AttachmentSuppressor
@@ -34,7 +34,7 @@
   entityIcon: AttachmentT2Miniscope
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 5000
+  cost: 25000
   recipeUnlocks:
   - AttachmentT2Miniscope
   - AttachmentM90UnderbarrelShotgun

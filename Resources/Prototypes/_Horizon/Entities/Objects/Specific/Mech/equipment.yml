@@ -130,7 +130,7 @@
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: HitscanMechAmmoProvider
     proto: HealMechGun
-    fireCost: 12
+    fireCost: 24
   - type: Tag
     tags:
       - MechEquipmentMed

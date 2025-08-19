@@ -1,8 +1,8 @@
-ent-SuitProtectiveUAS = защитный комбинезон UAS
-    .desc = Защитный комбинезон UAS с укреплёнными рёбрами из казмия.
-    .suffix = StarHorizon, UAS
 ent-SuitUAS = комбинезон UAS
     .desc = Стандартный комбинезон UAS без рукавов.
+    .suffix = StarHorizon, UAS
+ent-SuitProtectiveUAS = защитный комбинезон UAS
+    .desc = Защитный комбинезон UAS с укреплёнными рёбрами из казмия.
     .suffix = StarHorizon, UAS
 ent-SkirtProtectiveUAS = защитная юбка-комбинезон UAS
     .desc = Стандартная юбка-комбинезон UAS с укреплёнными рёбрами из Казмия.

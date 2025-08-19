@@ -1,0 +1,17 @@
+ent-ClothingUniformJumpskirtUnderDressBlack = белье под платье
+    .desc = Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
+ent-ClothingUniformJumpskirtUnderDressBrown = белье под платье
+    .desc = Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
+ent-ClothingUniformJumpskirtUnderDressWhite = белье под платье
+    .desc = Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
+ent-ClothingUniformJumpskirtUnderDressBlackSocs = белье под платье
+    .desc = Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
+ent-ClothingUniformJumpskirtUnderDressBrownSocs = белье под платье
+    .desc = Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
+ent-ClothingUniformJumpskirtUnderDressWhiteSocs = белье под платье
+    .desc = Этот набор существует исключительно для того, чтобы носить его под платьями, а не для кое чего другого!
+ent-ClothingUniformJumpskirtRedsm = женский костюм с жилеткой
+    .desc = Нарядный костюм с ноткой аристократии.
+ent-ClothingUniformJumpskirtMalanisa = одежда с украшениями
+    .desc = Даже из простой майки можно сделать стильный набор со вкусом.
+    .suffix = Вещи Маланисы

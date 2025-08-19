@@ -1,6 +1,7 @@
 
 - type: entity
   parent: [Clothing, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: ClothingHeadsetUAS
   suffix: StarHorizon, UAS
   name: гарнитура UAS
@@ -12,6 +13,8 @@
   - type: Sprite
     sprite: _StarHorizon/Clothing/Headset/uasears.rsi
     state: icon
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
   - type: Item
     size: Small
   - type: Clothing
