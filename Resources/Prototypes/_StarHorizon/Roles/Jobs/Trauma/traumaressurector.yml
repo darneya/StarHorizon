@@ -1,6 +1,6 @@
 - type: job
-  id: TraumaRessurectorJob
-  name: реаниматор Траумы
+  id: TraumaRessurector
+  name: job-name-traumaressurector
   description: job-description-traumaressurector
   playTimeTracker: TraumaRessurectorJob
   whitelisted: true

@@ -1,10 +1,10 @@
 - type: job
-  id: TraumaMedTechJob
-  name: медицинский техник Траумы
+  id: TraumaMedTech
+  name: job-name-traumamedtech
   description: job-description-traumamedtech
   playTimeTracker: TraumaMedTechJob
   whitelisted: true
-  startingGear: TraumaMedTechGear
+  startingGear: ParamedicGear
   alwaysUseSpawner: true
   icon: "JobIconDoc"
   supervisors: job-supervisors-trauma-repr

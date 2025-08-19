@@ -1,7 +1,7 @@
 
 - type: job
-  id: TraumaRepresentativeJob
-  name: представитель Траумы
+  id: TraumaRepresentative
+  name: job-name-traumarepresentative
   description: job-description-traumarepresentative
   playTimeTracker: TraumaRepresentativeJob
   whitelisted: true

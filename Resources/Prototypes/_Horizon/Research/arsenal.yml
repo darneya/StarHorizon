@@ -20,7 +20,7 @@
   entityIcon: WeaponKineticHammer
   discipline: NFSalvage
   tier: 2
-  cost: 5000
+  cost: 15000
   recipeUnlocks:
   - WeaponKineticSpear
   - WeaponKineticHammer
@@ -36,7 +36,7 @@
   entityIcon: WeaponProtoKineticRailgun
   discipline: NFSalvage
   tier: 2
-  cost: 5000
+  cost: 15000
   recipeUnlocks:
   - WeaponProtoKineticPistol
   - WeaponProtoKineticRepeater
@@ -52,7 +52,7 @@
   entityIcon: PKAUpgradeDamage
   discipline: NFSalvage
   tier: 2
-  cost: 5000
+  cost: 15000
   recipeUnlocks:
   - PKAUpgradeDamage
   - PKAUpgradeRange
@@ -140,7 +140,7 @@
   entityIcon: MechDurand
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 10000
+  cost: 20000
   recipeUnlocks:
   - DurandHarness
   - DurandLArm
@@ -175,14 +175,34 @@
   entityIcon: MechGunMissileLRM6
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 7500
+  cost: 30000
   recipeUnlocks:
   - MechGunAntiMatterRifle
+  - MechGunGrenade
+  - MechGunMissileLRM6
+  - MechGunMissileSRM8Frag
+  - MechGunMissileSRM8Ignite
   - BoxAmmoSniper
   - BoxAmmoGranade
   technologyPrerequisites:
   - DurandTechnology
   position: 5, 36
+
+- type: technology
+  id: MechCloseWeaponTechnology
+  name: research-technology-mech-close
+  entityIcon: MechWeaponSword
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - MechWeaponSword
+  - MechWeaponSpear
+  - MechWeaponClaws
+  - MechWeaponWarhammer
+  technologyPrerequisites:
+  - DurandTechnology
+  position: 6, 34
 
 - type: technology
   id: MechEnergyGunExperimentalTechnology

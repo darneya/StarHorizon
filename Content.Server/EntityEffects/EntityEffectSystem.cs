@@ -76,7 +76,7 @@ public sealed class EntityEffectSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly VomitSystem _vomit = default!;
 
-    // Frontier: List of gasses
+    // Frontier-Horizon: List of gasses
     private Gas[] _plantGasList =
     {
         Gas.Oxygen,
@@ -86,8 +86,13 @@ public sealed class EntityEffectSystem : EntitySystem
         Gas.Ammonia,
         Gas.Plasma,
         Gas.WaterVapor,
+        Gas.Tritium,
+        Gas.BZ,
+        Gas.Pluoxium,
+        Gas.Hydrogen,
+        Gas.ProtoNitrate,
     };
-    // End Frontier: List of gasses
+    // End Frontier-Horizon: List of gasses
 
     public override void Initialize()
     {
