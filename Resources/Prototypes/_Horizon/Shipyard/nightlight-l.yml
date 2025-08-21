@@ -16,7 +16,7 @@
   price: 66000 # 50463, наценка верфи 30% = 65602
   category: Medium
   group: Custom
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/nightlightl.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/nightlight-l.yml
   class:
   - Botany
   - Civilian 
@@ -27,7 +27,7 @@
 - type: gameMap
   id: NightlightL
   mapName: 'NRZN Nightlight-L'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/nightlightl.yml
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/nightlight-l.yml
   minPlayers: 0
   stations:
     NightlightL:
