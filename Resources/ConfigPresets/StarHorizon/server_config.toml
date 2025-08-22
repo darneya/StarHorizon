@@ -68,7 +68,7 @@ admin_prefix_webhook = true
 
 [infolinks]
 discord = "https://discord.starhorizon.ru"
-#wiki = "https://wiki.aavikko.ru/"
+#wiki = "https://wiki.starhorizon.ru/"
 
 ################################################################################
 ##### In Game ##################################################################
@@ -89,19 +89,12 @@ restart_not_allowed_when_admin_online = false
 
 [shuttle]
 auto_call_time = 1440
-shuttle.emergency_authorize_time = 30
 
 [rules]
 time = 90.0
 
 [tips]
 enabled = false
-
-[ooc]
-enable_during_round = false
-
-[looc]
-enabled_crit = false
 
 [chat]
 max_announcement_length = 2048
@@ -131,10 +124,8 @@ enabled = false
 ahelp_webhook = "%webhook_ahelp%"
 ban_webhook = "%webhook_ban%"
 round_update_webhook = "%webhook_round_update%"
+leaderboard_webhook = "%webhook_round_update%"
 #round_end_role = "%round_end_role%"
-
-[events]
-enabled = true
 
 ################################################################################
 ##### Relpay ###################################################################
