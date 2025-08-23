@@ -1,0 +1,33 @@
+- type: vessel
+  id: Gnat
+  parent: BaseVessel
+  name: NRZN Gnat
+  description: "Истощи все газовые жилы в этом секторе!"
+  price: 16000 # 14400, наценка верфи 10% = 15840
+  category: Small
+  group: Shipyard
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/gnat.yml
+  class:
+  - Atmospherics
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Gnat
+  mapName: 'NRZN Gnat'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/gnat.yml
+  minPlayers: 0
+  stations:
+    Gnat:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Gnat {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

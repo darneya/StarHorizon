@@ -5,14 +5,14 @@
 # Shuttle Notes:
 #
 - type: vessel
-  id: Archon
+  id: Lancea
   parent: BaseVessel
-  name: SKR Archon
+  name: SKR Lancea
   description: Новая версия старого боевого шатла,которую еще можно встретить во множестве секторов. Стальная,проверенная временем классика
   price: 60000
   category: Medium
   group: Expedition
-  shuttlePath: /Maps/_Mono/Shuttles/Expedition/archon.yml
+  shuttlePath: /Maps/_Mono/Shuttles/Expedition/lancea.yml
   guidebookPage: null
   class:
   - Expedition
@@ -20,21 +20,21 @@
   - AME
 
 - type: gameMap
-  id: Archon
-  mapName: 'Archon'
-  mapPath: /Maps/_Mono/Shuttles/Expedition/archon.yml
+  id: Lancea
+  mapName: 'Lancea'
+  mapPath: /Maps/_Mono/Shuttles/Expedition/lancea.yml
   minPlayers: 0
   stations:
     Archon:
       stationProto: StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Archon {1}'
+          mapNameTemplate: 'Lancea {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
         - type: StationJobs
           availableJobs:
-            Contractor: [ 0, 0 ]
-            Pilot: [ 0, 0 ]
-            Mercenary: [ 0, 0 ]
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]
