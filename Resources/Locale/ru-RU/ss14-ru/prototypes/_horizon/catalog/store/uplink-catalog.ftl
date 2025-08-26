@@ -1,0 +1,10 @@
+uplink-attachmentsbundle-name = Набор оружейных модулей
+uplink-attachmentsbundle-description = Комплект из вертикальной рукояти, лазерного целеуказателя, коллиматорного и оптического прицелов.
+uplink-lasersight-name = Лазерный целеуказатель
+uplink-lasersight-description = Маломощный лазер, закрепляемый под оружием и позволяющий прицеливаться значительно быстрее, особенно с одной руки.
+uplink-attachments-antilying-name = Модуль коррекции огня
+uplink-attachments-antilying-description = Особо продвинутый модуль, позволяющий попадать даже в лежащих под укрытиями противников.
+uplink-suppressor-name = Глушитель
+uplink-suppressor-description = Устанавлаемый на ствол универсальный мультикалиберный глушитель. Существенно снижает звук от стрельбы и скрывает дульную вспышку.
+uplink-attachments-magneticharness-name = Магнитный ремень
+uplink-attachments-magneticharness-description = Комплект из ремня и магнитных креплений, которые крепятся к верхней планке. В случае потери бойцом равновесия - оружие не падает на землю и остается с владельцем.

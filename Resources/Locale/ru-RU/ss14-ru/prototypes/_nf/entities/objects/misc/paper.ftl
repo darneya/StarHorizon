@@ -5,11 +5,10 @@ ent-PaperDeadDropFax = подозрительный факс
 ent-BoxFolderClipboardPal = планшет ПЮД
     .desc = { ent-BoxFolderClipboard.desc }
 ent-BoxFolderPalBrown = папка ПЮД
-    .desc = Папка, содержащая важные формы ДСБФ.
-ent-BoxFolderNfsdForms = { ent-BoxFolderPalBrown }
-    .desc = Папка, заполненная шаблонами документов ДСБФ.
-ent-BoxFolderNfsdFormsBrown = { ent-BoxFolderPalBrown }
-    .desc = { ent-BoxFolderNfsdForms.desc }
+    .desc = Папка, содержащая важные формы ДШНФ.
+    .suffix = Коричневый
+ent-PaperDeadDropHint = подозрительная записка
+    .desc = Мятый листок с каракулями. Похоже, писали в спешке.
 ent-BoxFolderPalGreen = { ent-BoxFolderPalBrown }
     .desc = { ent-BoxFolderPalBrown.desc }
-
+    .suffix = Зеленый

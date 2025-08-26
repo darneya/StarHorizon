@@ -1,10 +1,9 @@
 # Glass
 materials-glass = стекло
-materials-reinforced-glass = бронестекло
+materials-reinforced-glass = армированное стекло
 materials-plasma-glass = плазменное стекло
-materials-reinforced-plasma-glass = плазменное бронестекло
+materials-reinforced-plasma-glass = плазменное армированное стекло
 # Metals
-materials-magmite = магмитовая сталь
 materials-steel = сталь
 materials-gold = золото
 materials-silver = серебро
@@ -24,10 +23,10 @@ materials-meat = мясо
 materials-web = шёлк
 materials-bones = кости
 materials-coal = уголь
-materials-diamond = алмазы
-materials-gunpowder = чёрный порох
+materials-diamond = алмаз
+materials-gunpowder = порох
+materials-cotton = хлопок
 # Ores
-materials-raw-magmite = магмитовая руда
 materials-raw-iron = руда железа
 materials-raw-quartz = руда кварца
 materials-raw-gold = руда золота
@@ -35,7 +34,5 @@ materials-raw-silver = руда серебра
 materials-raw-plasma = руда плазмы
 materials-raw-uranium = руда урана
 materials-raw-bananium = руда бананиума
-# Material Reclaimer
-material-reclaimer-upgrade-process-rate = скорость обработки
-materials-raw-salt = каменная соль
-materials-raw-diamond = необработанные алмазы
+materials-raw-salt = рудная соль
+materials-raw-diamond = необработанный алмаз

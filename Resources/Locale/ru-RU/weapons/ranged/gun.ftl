@@ -5,7 +5,8 @@ gun-selected-mode = Выбран { $mode }
 gun-disabled = Вы не можете использовать оружие!
 gun-clumsy = Оружие взрывается вам в лицо!
 gun-set-fire-mode = Выбран режим { $mode }
-gun-magazine-whitelist-fail = Это не помещается в оружие!
+gun-magazine-whitelist-fail = Это не влезет в оружие!
+gun-magazine-fired-empty = Патроны кончились!
 # SelectiveFire
 gun-SemiAuto = полуавто
 gun-Burst = очередь
@@ -38,12 +39,7 @@ gun-chamber-bolt-closed-state = открыт
 gun-chamber-bolt-open-state = закрыт
 gun-chamber-rack = Передёрнуть затвор
 # MagazineAmmoProvider
-gun-magazine-examine =
-    Тут [color={ $color }]{ $count }[/color] { $count ->
-        [one] патрон
-        [few] патрона
-       *[other] патронов
-    }.
+gun-magazine-examine = Осталось [color={ $color }]{ $count }[/color] выстрелов.
 # RevolverAmmoProvider
 gun-revolver-empty = Разрядить револьвер
 gun-revolver-full = Револьвер полностью заряжен
@@ -51,3 +47,6 @@ gun-revolver-insert = Заряжен
 gun-revolver-spin = Вращать барабан
 gun-revolver-spun = Барабан вращается
 gun-speedloader-empty = Спидлоадер пуст
+# GunSpreadModifier
+examine-gun-spread-modifier-reduction = Разброс уменьшен на [color=yellow]{ $percentage }%[/color].
+examine-gun-spread-modifier-increase = Разброс увеличен на [color=yellow]{ $percentage }%[/color].

@@ -347,13 +347,13 @@
   id: tulipy
 
 - type: Tag
-  id: MagazineBarrettM82.70
+  id: MagazineBarrettM8270
 
 - type: Tag
-  id: Cartridge.70
+  id: Cartridge70
 
 - type: Tag
-  id: CartridgeBarrettM82.70
+  id: CartridgeBarrettM8270
 
 - type: Tag
   id: 9x18mm
@@ -375,3 +375,6 @@
 
 - type: Tag
   id: 40mmGrenade
+
+- type: Tag
+  id: CapacitorStockPart

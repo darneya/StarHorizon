@@ -1,0 +1,11 @@
+ent-ClothingOuterClothingBlackCoatDragon = чёрное пальто из драконьей кожи
+    .desc = Хорошо прошитое чёрное пальто из драконьей кожи.
+ent-ClothingOuterClothingBlackCoatDragonMalanisa = чёрное пальто из драконьей кожи с мехом
+    .desc = Ни один дракон не пострадал в процессе производства такой роскоши, что не скажешь об остальных.
+    .suffix = Вещи Маланисы
+ent-ClothingOuterClothingBlackJacket = чёрная куртка
+    .desc = Стильно, модно, молодежно.
+ent-ClothingOuterClothingBlackJacketSkull = чёрная куртка с черепом
+    .desc = Для крутых перцев.
+ent-ClothingOuterCoatBomberBlack = чёрная куртка-бомбер
+    .desc = Толстая, поношенная кожаная куртка-бомбер периода Второй мировой войны.

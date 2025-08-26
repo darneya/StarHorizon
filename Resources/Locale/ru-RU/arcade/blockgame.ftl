@@ -6,8 +6,8 @@ blockgame-menu-label-points = Очки: { $points }
 blockgame-menu-label-level = Уровень: { $level }
 # Game over information of your round
 blockgame-menu-gameover-info =
-    Глобальный счёт: { $global }
-    Локальный счёт: { $local }
+    Глобальный счет: { $global }
+    Локальный счет: { $local }
     Очки: { $points }
 blockgame-menu-title = Блоки Nanotrasen
 blockgame-menu-button-new-game = Новая игра
@@ -20,4 +20,4 @@ blockgame-menu-button-back = Назад
 blockgame-menu-label-next = Следующее
 blockgame-menu-label-hold = Удерживать
 blockgame-menu-text-station = Станция
-blockgame-menu-text-nanotrasen = Nanotrasen
+blockgame-menu-text-nanotrasen = NanoTrasen

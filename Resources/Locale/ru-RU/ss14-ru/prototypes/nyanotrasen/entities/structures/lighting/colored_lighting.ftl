@@ -7,6 +7,3 @@ ent-PoweredlightColoredFrostyBlue = { ent-Poweredlight }
 ent-PoweredlightColoredBlack = { ent-Poweredlight }
     .desc = Осветительный прибор. Потребляет энергию и излучает свет, если оснащен лампой-трубкой.
     .suffix = Чёрный
-ent-PoweredLightPostSmallRed = светильник
-    .desc = Осветительный прибор. Потребляет энергию и излучает свет, если оснащен лампой-трубкой.
-    .suffix = Красный

@@ -1,5 +1,6 @@
 ### Corvax Interaction
 
+
 ## Elzuosa
 
 pat-success-elzuosa = вы обнимаете { $target }, чувствуя, как по вам проходит высоковольтный ток.

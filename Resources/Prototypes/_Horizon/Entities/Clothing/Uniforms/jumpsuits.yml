@@ -1,0 +1,32 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitBlacksm
+  name: черный смокинг
+  description: Красивый черный смокинг для важных мероприятий.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Clothing/Uniforms/Jumpsuit/black_sm.rsi
+  - type: Clothing
+    sprite: _Horizon/Clothing/Uniforms/Jumpsuit/black_sm.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitWhitesm
+  name: белый смокинг
+  description: Красивый белый смокинг для важных мероприятий.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Clothing/Uniforms/Jumpsuit/white_sm.rsi
+  - type: Clothing
+    sprite: _Horizon/Clothing/Uniforms/Jumpsuit/white_sm.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitRedsm
+  name: костюм с жилеткой
+  description: Нарядный костюм с ноткой аристократии.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Clothing/Uniforms/Jumpsuit/red_sm.rsi
+  - type: Clothing
+    sprite: _Horizon/Clothing/Uniforms/Jumpsuit/red_sm.rsi    

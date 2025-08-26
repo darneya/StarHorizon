@@ -1,8 +1,11 @@
 - type: Tag
-  id: MagazineMinigunERT.15
+  id: MagazineMinigunERT15
 
 - type: Tag
-  id: Cartridge.15
+  id: Cartridge15
 
 - type: Tag
-  id: CartridgeMinigunERT.15
+  id: CartridgeMinigunERT15
+
+- type: Tag
+  id: PowerUAS

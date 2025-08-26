@@ -1,1 +1,1 @@
-shutter-rattle = *бдзынь*
+shutter-rattle = *гремит гремит*
