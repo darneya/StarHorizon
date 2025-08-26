@@ -1391,6 +1391,7 @@
   recipeUnlocks:
   - HolofanProjector
 #  - FireExtinguisherBluespace # DeltaV
+  - FanTinyElectronics # Horizon
   technologyPrerequisites:
   - NFAtmosphericTech
   position: 0, 35

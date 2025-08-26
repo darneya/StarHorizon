@@ -378,3 +378,6 @@
 
 - type: Tag
   id: CapacitorStockPart
+
+- type: Tag
+  id: FanTinyElectronics
