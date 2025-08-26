@@ -10,3 +10,15 @@
   materials:
     Steel: 100
     Glass: 100
+
+- type: latheRecipe
+  id: FanTinyElectronics
+  result: FanTinyElectronics
+  categories:
+  - Machines
+  - Engineering
+  completetime: 4
+  materials:
+     Steel: 200
+     Plastic: 100
+     Silver: 10
