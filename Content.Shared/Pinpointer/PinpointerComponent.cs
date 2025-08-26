@@ -1,4 +1,7 @@
+using Content.Shared.Alert;
+using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Pinpointer;
@@ -51,7 +54,21 @@ public sealed partial class PinpointerComponent : Component
     [ViewVariables]
     public EntityUid? Target = null;
 
-    [ViewVariables, AutoNetworkedField]
+    // WD EDIT START
+    [DataField]
+    public ProtoId<AlertPrototype>? Alert;
+
+    [DataField]
+    public bool CanToggle = true;
+
+    [DataField]
+    public bool CanEmag = true;
+
+    [DataField]
+    public bool CanExamine = true;
+    // WD EDIT END
+
+    [DataField, AutoNetworkedField] // WD EDIT: ViewVariables -> DataField
     public bool IsActive = false;
 
     [ViewVariables, AutoNetworkedField]
