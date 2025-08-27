@@ -322,3 +322,11 @@
   components:
   - type: Implanter
     implant: DeathRattleImplantCentcomm
+
+- type: entity
+  id: DeathRattleImplanterTrauma
+  name: клиентский имплант траумы
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: TraumaTrackingImplant
