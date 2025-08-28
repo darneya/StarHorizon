@@ -1,0 +1,44 @@
+# Информация об авторе шаттла
+# GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
+# Discord: astr0laris
+
+# Информация об сопровождающем 
+# GitHub/Gitea: https://git.starhorizon.ru/EvilBug
+# Discord: evilbug 
+
+# Прототип шаттла: 
+#
+- type: vessel
+  id: Eden
+  parent: BaseVessel
+  name: HRZN Eden
+  description: Старый исследовательский шаттл из другого сектора, переоборудованный ботаниками в летающую лабораторию для выращивания редких растений.
+  price: 120000 # 85299, наценка верфи 30% = 110798
+  category: Medium
+  group: Shipyard
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/eden.yml
+  class:
+  - Botany
+  - Chemistry
+  engine:
+  - Uranium
+
+- type: gameMap
+  id: Eden
+  mapName: 'Eden'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/eden.yml
+  minPlayers: 0
+  stations:
+    Eden:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Eden {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

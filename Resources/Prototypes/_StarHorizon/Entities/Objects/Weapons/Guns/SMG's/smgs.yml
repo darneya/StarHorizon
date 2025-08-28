@@ -24,10 +24,11 @@
             - NFCartridgePistol45
 
 - type: entity
-  name: vector-7S
   parent: [NFBaseWeaponSubMachineGunChamber45, NFBaseWeaponFrameSubMachineGun] # Frontier: BaseMajorContraband<BaseC3SyndicateContraband
   id: WeaponSubMachineGunBLANK
+  name: Vector-7S
   description: Улучшенная и модифицированная версия некогда списанного со счетов Вектора. Оборудован улучшеной системой подачи патронов и умным прицелом. Умные патроны в комплект не идут.
+  suffix: TraumaTeam
   components:
   - type: Sprite
     sprite: _StarHorizon/Objects/Weapons/Guns/SMGs/vectorseven.rsi
@@ -37,7 +38,7 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
-    fireRate: 12 # Не надо нерфить пж, вот лучше 🍪
+    fireRate: 10
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
   - type: MagazineVisuals

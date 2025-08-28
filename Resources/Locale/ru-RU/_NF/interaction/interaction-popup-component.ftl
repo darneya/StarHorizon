@@ -1,7 +1,12 @@
 ## Petting animals
 
-petting-failure-mistake = Фхтагн мглв'нафх { THE($target) } гладить, Й'а Й'а кхтулху фхтагн н'гха.
+petting-failure-mistake = Фхтагн мглв'нафх { $target }, гладить, Й'а Й'а кхтулху фхтагн н'гха.
+petting-success-artifact = Вы гладите { $target } по { POSS-ADJ($target) } причудливой поверхности.
+petting-failure-artifact = Вы протягиваете руку, чтобы погладить { $target }, но голос в голове подсказывает, что этого делать не стоит.
+petting-failure-pibble = Вы протягиваете руку, чтобы погладить { $target }, но думаете об этом получше.
 
-pat-success-generic = Вы гладите { $target } по мягкой пушистой голове.
-pat-success-generic-others = { CAPITALIZE(THE($user)) } гладит { $target } по мягкой пушистой голове.
-pat-success-generic-target = { CAPITALIZE(THE($user)) } гладит вас по мягкой пушистой голове.
+## Patting players
+
+pat-success-generic = Вы гладите { $target } по { POSS-ADJ($target) } мягкой пушистой голове.
+pat-success-generic-others = { CAPITALIZE($user) } гладит { $target } по { POSS-ADJ($target) } мягкой пушистой голове.
+pat-success-generic-target = { CAPITALIZE($user) } гладит вас по вашей мягкой пушистой голове.

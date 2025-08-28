@@ -1,9 +1,0 @@
-- type: entity
-  id: TraumaShipyardConsole
-  parent: ComputerShipyardBase
-  name: консоль аренды шаттлов траумы
-  components:
-  - type: ShipyardListing 
-    shuttles:
-    - TraumaAV4C
-

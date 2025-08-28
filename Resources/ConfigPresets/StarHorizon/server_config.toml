@@ -21,7 +21,7 @@ desc = """
 
 У нас вы встретите:
 🩺 Хирургию, импланты и кибернетику. Наномашины, сынок!
-🤖 Гиганских мехов. Покажи этому Динозавру, кто тут Босс!
+🤖 Гигантских мехов. Покажи этому Динозавру, кто тут Босс!
 🌱 Продвинутую ботанику! Множество растений и генетика.
 🧨 Улучшаемое вооружение и модули.
 🔬 Уникальные технологии.
@@ -58,6 +58,7 @@ message_wait_time = 1
 new_player_threshold = 180
 afk_time = 180.0
 admins_count_in_playercount = true # отображает админов в счетчике
+chat_discord_channel_id = 1408835997449588746
 
 [interaction]
 rate_limit_announce_admins_delay = -1 # убирает спам о превышении лимитов игроком
@@ -68,7 +69,7 @@ admin_prefix_webhook = true
 
 [infolinks]
 discord = "https://discord.starhorizon.ru"
-#wiki = "https://wiki.aavikko.ru/"
+#wiki = "https://wiki.starhorizon.ru/"
 
 ################################################################################
 ##### In Game ##################################################################
@@ -88,8 +89,7 @@ map_enabled = true
 restart_not_allowed_when_admin_online = false
 
 [shuttle]
-auto_call_time = 4320
-shuttle.emergency_authorize_time = 30
+auto_call_time = 1440
 
 [rules]
 time = 90.0
@@ -97,17 +97,12 @@ time = 90.0
 [tips]
 enabled = false
 
-[ooc]
-enable_during_round = false
-
-[looc]
-enabled_crit = false
-
 [chat]
 max_announcement_length = 2048
 
 [ic]
 flavor_text = true
+flavor_text_length = 1024
 
 ################################################################################
 ##### Metrics ##################################################################
@@ -128,12 +123,12 @@ enabled = false
 
 [discord]
 ahelp_webhook = "%webhook_ahelp%"
-ban_webhook = "%webhook_ban%"
+#ban_webhook = "%webhook_ban%"
 round_update_webhook = "%webhook_round_update%"
+leaderboard_webhook = "%webhook_round_update%"
 #round_end_role = "%round_end_role%"
-
-[events]
-enabled = true
+guild_id = 1348258341658562560
+token = "%bot_token%"
 
 ################################################################################
 ##### Relpay ###################################################################

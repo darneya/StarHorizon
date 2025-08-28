@@ -16,11 +16,11 @@
     - type: StorageFill
       contents:
         - id: MagazineMinigunERT15
-        - id: MagazineMinigunERT15.Incendiary
+        - id: MagazineMinigunERT15Incendiary
         - id: MagazineMinigunERT15
-        - id: MagazineMinigunERT15.Incendiary
+        - id: MagazineMinigunERT15Incendiary
         - id: MagazineMinigunERT15
-        - id: MagazineMinigunERT15.Incendiary
+        - id: MagazineMinigunERT15Incendiary
       maxItemSize: Large
     - type: ContainerContainer
       containers:

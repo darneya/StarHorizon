@@ -17,6 +17,8 @@ using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item.ItemToggle.Components;
+using Content.Shared.Mech.Components;
+using Content.Shared.Mech.Equipment.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Physics;
@@ -357,6 +359,17 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         if (!CombatMode.IsInCombatMode(user))
             return false;
+
+        // Если у оружия есть MechEquipmentComponent, атака невозможна.
+        if (HasComp<MechEquipmentComponent>(weaponUid))
+        {
+            // Проверяем, является ли пользователь пилотом меха.
+            if (!TryComp<MechPilotComponent>(user, out var mechPilot) || mechPilot.Mech == null)
+            {
+                PopupSystem.PopupClient("Это оружие слишком большое для вас.", user);
+                return false;
+            }
+        }
 
         EntityUid? target = null;
         switch (attack)

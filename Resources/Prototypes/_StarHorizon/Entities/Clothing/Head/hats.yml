@@ -83,6 +83,7 @@
 
 - type: entity
   parent: [ClothingHeadBase, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: uasberet
   name: берет UAS
   suffix: StarHorizon, UAS
@@ -98,6 +99,7 @@
 
 - type: entity
   parent: [ClothingHeadBase, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: uascap
   name: фуражка UAS
   suffix: StarHorizon, UAS

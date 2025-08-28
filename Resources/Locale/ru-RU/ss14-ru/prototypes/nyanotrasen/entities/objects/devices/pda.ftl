@@ -1,3 +1,5 @@
+ent-NFPrisonerPDA = prisoner PDA
+    .desc = Clear, so you can make sure there's nothing being smuggled inside.
 ent-PrisonerPDA = КПК заключенного
     .desc = Прозрачный, чтобы убедиться, что внутри нет ничего контрабандного.
 ent-GladiatorPDA = КПК гладиатора
