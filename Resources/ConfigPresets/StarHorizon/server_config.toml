@@ -58,6 +58,7 @@ message_wait_time = 1
 new_player_threshold = 180
 afk_time = 180.0
 admins_count_in_playercount = true # отображает админов в счетчике
+chat_discord_channel_id = 1408835997449588746
 
 [interaction]
 rate_limit_announce_admins_delay = -1 # убирает спам о превышении лимитов игроком
@@ -125,7 +126,8 @@ ahelp_webhook = "%webhook_ahelp%"
 ban_webhook = "%webhook_ban%"
 round_update_webhook = "%webhook_round_update%"
 leaderboard_webhook = "%webhook_round_update%"
-#round_end_role = "%round_end_role%"
+token = "%bot_token%"
+guild_id = 1348258341658562560
 
 ################################################################################
 ##### Relpay ###################################################################
