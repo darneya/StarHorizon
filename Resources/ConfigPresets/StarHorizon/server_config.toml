@@ -75,8 +75,8 @@ discord = "https://discord.starhorizon.ru"
 ##### In Game ##################################################################
 
 [atmos]
-space_wind = false
-monstermos_rip_tiles = false
+space_wind = true
+monstermos_rip_tiles = true
 mmos_spacing_speed = 0.95
 mmos_max_wind = 1000.0
 
