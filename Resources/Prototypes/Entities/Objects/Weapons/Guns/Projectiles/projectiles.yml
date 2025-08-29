@@ -15,7 +15,7 @@
   - type: EffectVisuals
   - type: Tag
     tags:
-    - HideContextMenu
+      - HideContextMenu
   - type: AnimationPlayer
 
 - type: entity
