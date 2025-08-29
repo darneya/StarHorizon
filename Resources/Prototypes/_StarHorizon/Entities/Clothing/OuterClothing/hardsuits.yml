@@ -388,9 +388,9 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitTraumaTeam
-  name: EVA парамедика "Траумы"
-  description: Специальный прототип скафандра EVA для отрядов Trauma Team Interstellar. Снабжен экзоскелетом для повышенной грузоподъёмности и мобильности.
   suffix: TraumaTeam
+  name: EVA парамедика траумы
+  description: Стандартный образец герметичного комплекта брони Trauma Team Interstellar, усилен более крепким материалом для работы в безвоздушном пространстве.
   components:
   - type: Sprite
     sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/traumateam.rsi
@@ -418,12 +418,11 @@
   id: ClothingOuterHardsuitTraumaTeamRed
   name: EVA техника "Траумы"
   description: Специальный прототип скафандра EVA для отрядов Trauma Team Interstellar. Снабжен экзоскелетом для повышенной грузоподъёмности и мобильности.
-  suffix: TraumaTeam
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/traumateam.rsi
+    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/traumateamred.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/traumateam.rsi
+    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/traumateamred.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
@@ -449,12 +448,11 @@
   id: ClothingOuterHardsuitTraumaTeamSur
   name: EVA реаниматора "Траумы"
   description: Специальный прототип скафандра EVA для отрядов Trauma Team Interstellar. Снабжен экзоскелетом для повышенной грузоподъёмности и мобильности.
-  suffix: TraumaTeam
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/traumateam.rsi
+    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/traumateamsur.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/traumateam.rsi
+    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/traumateamsur.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
