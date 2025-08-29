@@ -2,7 +2,7 @@
   id: TraumaMedTech
   name: job-name-traumamedtech
   description: job-description-traumamedtech
-  playTimeTracker: TraumaMedTechJob
+  playTimeTracker: JobTraumaMedTech
   whitelisted: true
   startingGear: ParamedicGear
   alwaysUseSpawner: true
@@ -11,10 +11,10 @@
   weight: 170
   canBeAntag: false
   accessGroups:
-  - AllAccess
+    - AllAccess
   special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    - !type:AddImplantSpecial
+      implants: [MindShieldImplant]
 
 - type: startingGear
   id: TraumaMedTechGear
