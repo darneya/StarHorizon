@@ -174,6 +174,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
             TrySetArrowAngle(uid, Angle.Zero, pinpointer); // Frontier
             if (oldDist != pinpointer.DistanceToTarget) // Frontier
                 UpdateAppearance(uid, pinpointer); // Frontier
+            LocateTarget(uid, pinpointer); // WD EDIT
             return;
         }
 
