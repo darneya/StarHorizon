@@ -77,3 +77,12 @@ server-ban-string-no-pii = { $admin } выдал бан { $severity } тяжес
 cmd-ban_exemption_get-arg-player = <игрок>
 # Kick on ban
 ban-kick-reason = Вы были забанены
+# Horizon Ban webhook
+discord-banned-title = Бан
+discord-banned = ## Админ: `{ $admin }`
+    ## Нарушитель: `{ $name }`
+
+    ## Причина: ```{ $reason }```
+    ## До: `{ $expires }`
+discord-banned-footer = Сервер: { $server }
+    Раунд: #{ $round }
