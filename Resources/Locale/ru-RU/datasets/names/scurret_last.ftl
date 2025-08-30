@@ -18,6 +18,7 @@
 
 # When all else fails, to NT and her crews, Wa is as good a name as any.
 
+
 # Было принято решение сделать все слова мужского рода, т.к. имеется "Хорёк" в конце из-за чего scurret-first нужно тоже было сделать все мужского рода.
 
 names-scurret-last-dataset-1 = Ва
