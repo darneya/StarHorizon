@@ -123,9 +123,34 @@ public abstract class SharedPinpointerSystem : EntitySystem
 
         pinpointer.Target = target;
         if (pinpointer.UpdateTargetName)
-            pinpointer.TargetName = target == null ? null : Identity.Name(target.Value, EntityManager);
-        if (pinpointer.IsActive)
-            UpdateDirectionToTarget(uid, pinpointer);
+            pinpointer.TargetName = Identity.Name(target.Value, EntityManager);
+        // WD EDIT START - UpdateDirectionToTarget is triggered when updating, no need to run it again
+        // if (pinpointer.IsActive)
+        //    UpdateDirectionToTarget(uid, pinpointer);
+        // WD EDIT END
+    }
+
+    /// <summary>
+    /// Goob edit: sets a list of targets for a pinpointer.
+    /// </summary>
+    public virtual void SetTargets(EntityUid uid, List<EntityUid> targets, PinpointerComponent? pinpointer = null)
+    {
+        if (!Resolve(uid, ref pinpointer))
+            return;
+
+        if (!pinpointer.CanTargetMultiple)
+        {
+            return; // No.
+        }
+
+        var targetsList = targets.Where(Exists).ToList();
+
+        pinpointer.Targets = targetsList;
+
+        // WD EDIT START - UpdateDirectionToTarget is triggered when updating, no need to run it again
+        // if (pinpointer.IsActive)
+        //    UpdateDirectionToTarget(uid, pinpointer);
+        // WD EDIT END
     }
 
     /// <summary>
