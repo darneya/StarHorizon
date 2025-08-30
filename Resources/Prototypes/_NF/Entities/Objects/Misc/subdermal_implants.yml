@@ -54,32 +54,6 @@
 
 - type: entity
   parent: BaseSubdermalImplant
-  id: TraumaTrackingImplant
-  name: БИООМЕТРИЧЕСКИЙ ИМПЛАНТ ТРАУМЫ
-  description: Клиентский имплант который передает биометрику на сервера Траумы.
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: SubdermalImplant
-#    - type: SuitSensor
-#      randomMode: false
-#      controlsLocked: true
-#      mode: SensorCords
-#      activationContainer: "implant"
-#    - type: DeviceNetwork
-#      deviceNetId: Wireless
-#      transmitFrequencyId: SuitSensor
-#    - type: StationLimitedNetwork
-#    - type: WirelessNetworkConnection
-#      range: 500
-    - type: TriggerOnMobstateChange
-      mobState:
-      - Critical
-      - Dead
-    - type: Rattle
-      radioChannel: "Trauma"
-
-- type: entity
-  parent: BaseSubdermalImplant
   id: DeathAcidifierImplantNF
   name: death-acidifier implant
   description: This implant melts the user and their equipment upon death.
