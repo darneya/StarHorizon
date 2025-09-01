@@ -86,3 +86,11 @@ discord-banned = **Админ:** `{ $admin }`
     **До:** `{ $expires }`
 discord-banned-footer = Сервер: { $server }
     Раунд: #{ $round }
+# Horizon Role Ban webhook
+discord-role-banned-title = Блокировка роли
+discord-role-banned = **Админ:** `{ $admin }`
+    **Нарушитель:** `{ $name }`
+    **Роль:** `{ $role }`
+
+    **Причина:** ```{ $reason }```
+    **До:** `{ $length }`

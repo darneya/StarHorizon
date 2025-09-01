@@ -332,6 +332,47 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         {
             SendRoleBans(session);
         }
+        // Horizon start
+        var adminName = banningAdmin == null
+            ? Loc.GetString("system-user")
+            : (await _db.GetPlayerRecordByUserId(banningAdmin.Value))?.LastSeenUserName ?? Loc.GetString("system-user");
+
+        try
+        {
+            if (_webhookId == null)
+                return;
+            var bannedName = target is null ? "null" : $"{targetUsername}";
+            int color = 0x9C0000;
+            var embed = new WebhookEmbed
+            {
+                Title = Loc.GetString("discord-role-banned-title"),
+                Description = Loc.GetString(
+                    "discord-role-banned",
+                    ("admin", adminName),
+                    ("length", length),
+                    ("name", bannedName),
+                    ("role", role),
+                    ("reason", reason)
+                ),
+                Color = color,
+                Footer = new WebhookEmbedFooter
+                {
+                    Text = Loc.GetString(
+                        "discord-banned-footer",
+                        ("server", _baseServer.ServerName),
+                        ("round", roundId?.ToString() ?? "N/A")
+                    )
+                }
+            };
+
+            var payload = new WebhookPayload { Embeds = [embed] };
+            await _discord.CreateMessage(_webhookId.Value, payload);
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Error while sending discord role ban message:\n{e}");
+        }
+        // Horizon end
     }
 
     public async Task<string> PardonRoleBan(int banId, NetUserId? unbanningAdmin, DateTimeOffset unbanTime)
