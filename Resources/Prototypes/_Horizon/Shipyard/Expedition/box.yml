@@ -1,6 +1,6 @@
 # Информация об авторе шаттла
-# GitHub/Gitea: ???
-# Discord: helloohelloo
+# GitHub/Gitea: https://github.com/OHoro4ek1
+# Discord: ohoro4ek
 
 # Информация об сопровождающем 
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
@@ -9,36 +9,35 @@
 # Прототип шаттла: 
 #
 - type: vessel
-  id: NightlightL
+  id: BoxShuttle
   parent: BaseVessel
-  name: NRZN NightLight-L
-  description: '"Да напиши просто расширенна версия NightLight повышенной комфортности, все."'
-  price: 66000 # 50463, наценка верфи 30% = 65602
+  name: NRZN Box
+  description: Компактный утилизаторский шаттл для экспедиций и утилизации астероидов.
+  price: 66500
   category: Medium
-  group: Custom
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/nightlight-l.yml
+  group: Expedition
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Expedition/box.yml
   class:
-  - Botany
-  - Civilian 
-  - Kitchen
+  - Expedition
+  - Salvage
   engine:
-  - Uranium
+  - AME
 
 - type: gameMap
-  id: NightlightL
-  mapName: 'NRZN Nightlight-L'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/nightlight-l.yml
+  id: BoxShuttle
+  mapName: 'NRZN Box'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Expedition/box.yml
   minPlayers: 0
   stations:
-    NightlightL:
+    BoxShuttle:
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Nightlight-L {1}'
+          mapNameTemplate: 'Box {1}'  
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
-        - type: StationJobs
+        - type: StationJobs 
           availableJobs:
             ContractorInterview: [ 0, 0 ]
             PilotInterview: [ 0, 0 ]
