@@ -1,0 +1,40 @@
+# Author Info
+# GitHub: starch70
+# Discord: _starch_
+
+# Shuttle Notes:
+#
+- type: vessel
+  id: Lancea
+  parent: BaseVessel
+  name: SKR Lancea
+  description: Новая версия старого боевого шатла,которую еще можно встретить во множестве секторов. Стальная,проверенная временем классика
+  price: 60000
+  category: Medium
+  group: Expedition
+  shuttlePath: /Maps/_Mono/Shuttles/Expedition/lancea.yml
+  guidebookPage: null
+  class:
+  - Expedition
+  engine:
+  - AME
+
+- type: gameMap
+  id: Lancea
+  mapName: 'Lancea'
+  mapPath: /Maps/_Mono/Shuttles/Expedition/lancea.yml
+  minPlayers: 0
+  stations:
+    Archon:
+      stationProto: StandardFrontierExpeditionVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Lancea {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]

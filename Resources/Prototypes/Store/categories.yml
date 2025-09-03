@@ -96,6 +96,23 @@
   name: store-category-pointless
   priority: 11
 
+# Horizon Mech start
+- type: storeCategory
+  id: UplinkMechMechs
+  name: мехи
+  priority: 12
+
+- type: storeCategory
+  id: UplinkMechWeapon
+  name: вооружение мехов
+  priority: 13
+
+- type: storeCategory
+  id: UplinkMechEquipment
+  name: снаряжение мехов
+  priority: 14
+# Horizon Mech end
+
 #revenant
 - type: storeCategory
   id: RevenantAbilities

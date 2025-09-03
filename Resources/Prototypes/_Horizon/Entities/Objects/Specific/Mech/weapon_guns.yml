@@ -174,7 +174,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: BatteryMechAmmoProvider
-    proto: BulletDisabler # Stamina 30, Heat 5
+    proto: NFBulletDisablerSmg # Stamina 30, Heat 5
     fireCost: 30
   - type: Tag
     tags:
@@ -200,7 +200,7 @@
       params:
         variation: 0.2
   - type: BatteryMechAmmoProvider
-    proto: TeslaGunBullet
+    proto: NFTeslaGunBullet
     fireCost: 100
   - type: Tag
     tags:
@@ -346,7 +346,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: GrenadeFlash
+    proto: NFBulletGrenadeFlash
     shots: 3
     capacity: 3
     ammoType: granade
@@ -378,7 +378,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: BulletRocketLRM
+    proto: NFBulletRocket
     shots: 1
     capacity: 6
     ammoType: granade
@@ -408,7 +408,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: BulletWeakRocket
+    proto: NFBulletWeakRocket
     shots: 2
     capacity: 8
     ammoType: granade
@@ -438,7 +438,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: BulletWeakRocketFire
+    proto: NFBulletGrenadeBlast
     shots: 2
     capacity: 8
     ammoType: granade
@@ -466,7 +466,7 @@
     - FullAuto
     fireRate: 2
   - type: BatteryMechAmmoProvider
-    proto: BulletKinetic
+    proto: NFBulletKinetic
     fireCost: 3
   - type: Tag
     tags:
@@ -487,7 +487,7 @@
     - FullAuto
     fireRate: 2
   - type: BatteryMechAmmoProvider
-    proto: BulletKineticRailgun
+    proto: NFBulletKineticShuttle
     fireCost: 5
   - type: Tag
     tags:

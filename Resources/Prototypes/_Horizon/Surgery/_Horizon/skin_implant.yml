@@ -23,7 +23,7 @@
       modifiers:
       coefficients:
         Slash: 0.85
-        Pierce: 0.85
+        Piercing: 0.85
 
 - type: entity
   id: UpgradedSubcutaneousArmor
@@ -38,7 +38,7 @@
       modifiers:
       coefficients:
         Slash: 0.75
-        Pierce: 0.75
+        Piercing: 0.75
 # But only 2 tiers
 
 # Heat Armor for tier 1 to 3
