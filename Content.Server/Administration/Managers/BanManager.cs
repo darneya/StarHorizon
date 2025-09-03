@@ -333,6 +333,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             SendRoleBans(session);
         }
         // Horizon start
+        var expiresString = expires == null ? Loc.GetString("server-ban-string-never") : $"{expires}";
         var adminName = banningAdmin == null
             ? Loc.GetString("system-user")
             : (await _db.GetPlayerRecordByUserId(banningAdmin.Value))?.LastSeenUserName ?? Loc.GetString("system-user");
@@ -349,7 +350,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
                 Description = Loc.GetString(
                     "discord-role-banned",
                     ("admin", adminName),
-                    ("length", length),
+                    ("expires", expiresString),
                     ("name", bannedName),
                     ("role", role),
                     ("reason", reason)

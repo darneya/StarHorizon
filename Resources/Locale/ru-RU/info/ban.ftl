@@ -79,18 +79,18 @@ cmd-ban_exemption_get-arg-player = <игрок>
 ban-kick-reason = Вы были забанены
 # Horizon Ban webhook
 discord-banned-title = Бан
-discord-banned = **Админ:** `{ $admin }`
-    **Нарушитель:** `{ $name }`
+discord-banned = { "**" }Админ:** `{ $admin }`
+    { "**" }Нарушитель:** `{ $name }`
 
-    **Причина:** ```{ $reason }```
-    **До:** `{ $expires }`
+    { "**" }Причина:** ```{ $reason }```
+    { "**" }До:** `{ $expires }`
 discord-banned-footer = Сервер: { $server }
     Раунд: #{ $round }
 # Horizon Role Ban webhook
 discord-role-banned-title = Блокировка роли
-discord-role-banned = **Админ:** `{ $admin }`
-    **Нарушитель:** `{ $name }`
-    **Роль:** `{ $role }`
+discord-role-banned = { "**" }Админ:** `{ $admin }`
+    { "**" }Нарушитель:** `{ $name }`
+    { "**" }Роль:** `{ $role }`
 
-    **Причина:** ```{ $reason }```
-    **До:** `{ $length }`
+    { "**" }Причина:** ```{ $reason }```
+    { "**" }До:** `{ $expires }`
