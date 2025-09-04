@@ -8,10 +8,12 @@ using Content.Shared.Movement.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Content.Server.Shuttles.Components; // Frontier
+using Content.Shared.PowerCell;
+using Content.Shared.Movement.Components;
 
 namespace Content.Server.Shuttles.Systems;
 
-public sealed partial class RadarConsoleSystem : SharedRadarConsoleSystem // Frontier: add partial
+public sealed class RadarConsoleSystem : SharedRadarConsoleSystem
 {
     [Dependency] private readonly ShuttleConsoleSystem _console = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;

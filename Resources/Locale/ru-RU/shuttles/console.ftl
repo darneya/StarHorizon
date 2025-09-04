@@ -18,6 +18,7 @@ shuttle-console-angular-velocity-value = { $angularVelocity }
 shuttle-console-linear-velocity = Линейная скорость:
 shuttle-console-angular-velocity = Угловая скорость:
 shuttle-console-unknown = Неизвестно
+shuttle-console-additional-display-label = Дополнительно
 # Buttons
 shuttle-console-strafing = Режим обстрела
 shuttle-console-iff-label = { $name } ({ $distance }м)
@@ -26,6 +27,17 @@ shuttle-console-nav-settings = Настройки
 shuttle-console-iffshuttles-toggle = Показать шаттлы
 shuttle-console-iff-toggle = Показать ССЧ
 shuttle-console-dock-toggle = Показать порты
+# Network Port Buttons
+shuttle-console-network-ports = Сетевые Порты
+# Device Link Buttons
+shuttle-console-device-button-1 = Порт 1
+shuttle-console-device-button-2 = Порт 2
+shuttle-console-device-button-3 = Порт 3
+shuttle-console-device-button-4 = Порт 4
+shuttle-console-device-button-5 = Порт 5
+shuttle-console-device-button-6 = Порт 6
+shuttle-console-device-button-7 = Порт 7
+shuttle-console-device-button-8 = Порт 8
 
 # MAP
 

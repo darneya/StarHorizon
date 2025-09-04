@@ -1,10 +1,20 @@
+// SPDX-FileCopyrightText: 2024 Whatstone
+// SPDX-FileCopyrightText: 2024 neuPanda
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 Dvir
+// SPDX-FileCopyrightText: 2025 Redrover1760
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // New Frontiers - This file is licensed under AGPLv3
 // Copyright (c) 2024 New Frontiers Contributors
 // See AGPLv3.txt for details.
+
+using Content.Server._Mono.Shuttles.Components;
 using Content.Server._NF.Station.Components;
 using Content.Server.Shuttles.Components;
-using Content.Shared._NF.Shuttles.Events;
 using Content.Shared._NF.Shipyard.Components;
+using Content.Shared._NF.Shuttles.Events;
 using Content.Shared.Shuttles.Components;
 using Robust.Shared.Physics.Components;
 
@@ -13,15 +23,16 @@ namespace Content.Server.Shuttles.Systems;
 public sealed partial class ShuttleSystem
 {
     [Dependency] private readonly RadarConsoleSystem _radarConsole = default!;
-    private const float SpaceFrictionStrength = 0.0075f;
-    private const float DampenDampingStrength = 0.25f;
-    private const float AnchorDampingStrength = 2.5f;
+    private const float SpaceFrictionStrength = 0.0015f;
+    private const float DampenDampingStrength = 0.05f; // FRONTIER MERGE: this should be valuable
+    private const float AnchorDampingStrength = 0.5f;
     private void NfInitialize()
     {
         SubscribeLocalEvent<ShuttleConsoleComponent, SetInertiaDampeningRequest>(OnSetInertiaDampening);
         SubscribeLocalEvent<ShuttleConsoleComponent, SetServiceFlagsRequest>(NfSetServiceFlags);
         SubscribeLocalEvent<ShuttleConsoleComponent, SetTargetCoordinatesRequest>(NfSetTargetCoordinates);
         SubscribeLocalEvent<ShuttleConsoleComponent, SetHideTargetRequest>(NfSetHideTarget);
+        SubscribeLocalEvent<ShuttleConsoleComponent, SetMaxShuttleSpeedRequest>(OnSetMaxShuttleSpeed);
     }
 
     private bool SetInertiaDampening(EntityUid uid, PhysicsComponent physicsComponent, ShuttleComponent shuttleComponent, TransformComponent transform, InertiaDampeningMode mode)
@@ -37,13 +48,14 @@ public sealed partial class ShuttleSystem
             return false;
         }
 
-        if (!EntityManager.HasComponent<ShuttleDeedComponent>(transform.GridUid) ||
+        if (!EntityManager.HasComponent<ShuttleDeedComponent>(transform.GridUid) &
+            !EntityManager.HasComponent<DeedlessShuttleComponent>(transform.GridUid) || // Mono
             EntityManager.HasComponent<StationDampeningComponent>(_station.GetOwningStation(transform.GridUid)))
         {
             return false;
         }
 
-        shuttleComponent.BodyModifier = mode switch
+        var linearDampeningStrength = mode switch
         {
             InertiaDampeningMode.Off => SpaceFrictionStrength,
             InertiaDampeningMode.Dampen => DampenDampingStrength,
@@ -51,8 +63,16 @@ public sealed partial class ShuttleSystem
             _ => DampenDampingStrength, // other values: default to some sane behaviour (assume normal dampening)
         };
 
-        if (shuttleComponent.DampingModifier != 0)
-            shuttleComponent.DampingModifier = shuttleComponent.BodyModifier;
+        var angularDampeningStrength = mode switch
+        {
+            InertiaDampeningMode.Off => SpaceFrictionStrength,
+            InertiaDampeningMode.Dampen => DampenDampingStrength,
+            InertiaDampeningMode.Anchor => AnchorDampingStrength,
+            _ => DampenDampingStrength, // other values: default to some sane behaviour (assume normal dampening)
+        };
+
+        _physics.SetLinearDamping(transform.GridUid.Value, physicsComponent, linearDampeningStrength);
+        _physics.SetAngularDamping(transform.GridUid.Value, physicsComponent, angularDampeningStrength);
         _console.RefreshShuttleConsoles(transform.GridUid.Value);
         return true;
     }
@@ -72,22 +92,46 @@ public sealed partial class ShuttleSystem
             component.DampeningMode = args.Mode;
     }
 
+    private void OnSetMaxShuttleSpeed(EntityUid uid, ShuttleConsoleComponent component, SetMaxShuttleSpeedRequest args)
+    {
+        // Ensure that the entity requested is a valid shuttle
+        if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform) ||
+            !transform.GridUid.HasValue ||
+            !EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? shuttleComponent))
+        {
+            return;
+        }
+
+        // Clamp the speed between 0 and 30
+        var maxSpeed = Math.Clamp(args.MaxSpeed, 0f, 30f);
+
+        // Don't do anything if the value didn't change
+        if (Math.Abs(shuttleComponent.BaseMaxLinearVelocity - maxSpeed) < 0.01f)
+            return;
+
+        shuttleComponent.BaseMaxLinearVelocity = maxSpeed;
+
+        // Refresh the shuttle consoles to update the UI
+        _console.RefreshShuttleConsoles(transform.GridUid.Value);
+    }
+
     public InertiaDampeningMode NfGetInertiaDampeningMode(EntityUid entity)
     {
         if (!EntityManager.TryGetComponent<TransformComponent>(entity, out var xform))
             return InertiaDampeningMode.Dampen;
 
-        // Not a shuttle, shouldn't be togglable
-        if (!EntityManager.HasComponent<ShuttleDeedComponent>(xform.GridUid) ||
+        // Not a shuttle, shouldn't be togglable // Mono - Added DeedlessShuttle
+        if (!EntityManager.HasComponent<ShuttleDeedComponent>(xform.GridUid) &
+            !EntityManager.HasComponent<DeedlessShuttleComponent>(xform.GridUid) ||
             EntityManager.HasComponent<StationDampeningComponent>(_station.GetOwningStation(xform.GridUid)))
             return InertiaDampeningMode.Station;
 
-        if (!EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttle))
+        if (!EntityManager.TryGetComponent(xform.GridUid, out PhysicsComponent? physicsComponent))
             return InertiaDampeningMode.Dampen;
 
-        if (shuttle.BodyModifier >= AnchorDampingStrength)
+        if (physicsComponent.LinearDamping >= AnchorDampingStrength)
             return InertiaDampeningMode.Anchor;
-        else if (shuttle.BodyModifier <= SpaceFrictionStrength)
+        else if (physicsComponent.LinearDamping <= SpaceFrictionStrength)
             return InertiaDampeningMode.Off;
         else
             return InertiaDampeningMode.Dampen;

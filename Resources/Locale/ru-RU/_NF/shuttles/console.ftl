@@ -22,3 +22,4 @@ shuttle-console-hide-target = Показать
 shuttle-console-hide-target-description = Включает/выключает видимость целевой точки маршрута на консоли радара.
 shuttle-console-target-name = Метка
 shuttle-console-map-track = ⌖
+shuttle-console-maximum-speed = Максимальная скорость

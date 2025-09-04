@@ -50,13 +50,12 @@ public sealed partial class MapScreen : BoxContainer
     private TimeSpan _nextMapDequeue;
 
     private float _minMapDequeue = 0.05f;
-    private float _maxMapDequeue = 0.10f; // Frontier: 0.25<0.10
+    private float _maxMapDequeue = 0.25f;
 
     private StyleBoxFlat _ftlStyle;
 
     public event Action<MapCoordinates, Angle>? RequestFTL;
     public event Action<NetEntity, Angle>? RequestBeaconFTL;
-    public event Action<NetEntity?, NetEntity>? RequestTrackEntity; // Frontier
 
     private readonly Dictionary<MapId, BoxContainer> _mapHeadings = new();
     private readonly Dictionary<MapId, List<IMapObject>> _mapObjects = new();
@@ -119,7 +118,7 @@ public sealed partial class MapScreen : BoxContainer
         //frontier - we only allow pre-approved vessels to FTL
         if (!_entManager.HasComponent<ShuttleFTLComponent>(_shuttleEntity))
         {
-            MapFTLButton.Visible = false;
+            MapFTLButton.Visible = true;
         }
         else
         {
@@ -183,6 +182,7 @@ public sealed partial class MapScreen : BoxContainer
             // Unselect FTL
             MapFTLButton.Pressed = false;
             MapRadar.FtlMode = false;
+            MapRadar.ShowFTLRangeOnly = false;
             MapFTLButton.Disabled = true;
         }
     }
@@ -190,6 +190,11 @@ public sealed partial class MapScreen : BoxContainer
     private void FtlPreviewToggled(BaseButton.ButtonToggledEventArgs obj)
     {
         MapRadar.FtlMode = obj.Pressed;
+        // When FTL button is toggled, disable the ShowFTLRangeOnly mode
+        if (obj.Pressed)
+        {
+            MapRadar.ShowFTLRangeOnly = false;
+        }
     }
 
     public void SetConsole(EntityUid? console)
@@ -227,7 +232,13 @@ public sealed partial class MapScreen : BoxContainer
         }
 
         RebuildMapObjects();
-        BumpMapDequeue();
+        
+        // Immediately add all objects to the map instead of queueing them
+        foreach (var mapObj in _pendingMapObjects)
+        {
+            AddMapObject(mapObj.mapId, mapObj.mapobj);
+        }
+        _pendingMapObjects.Clear();
 
         _nextPing = _timing.CurTime + _pingCooldown;
         MapRebuildButton.Disabled = true;
@@ -241,6 +252,8 @@ public sealed partial class MapScreen : BoxContainer
     private void MapRebuildPressed(BaseButton.ButtonEventArgs obj)
     {
         PingMap();
+        // Show FTL range circle without targeting elements
+        MapRadar.ShowFTLRangeOnly = true;
     }
 
     /// <summary>
@@ -327,20 +340,9 @@ public sealed partial class MapScreen : BoxContainer
             {
                 _entManager.TryGetComponent(grid.Owner, out IFFComponent? iffComp);
 
-                // Frontier: Service flags for shuttles
-                // If it is a GridMapObject, Turn the mapObj.ServiceFlags into a string like Food = F, Medical = M, etc.
-                // This should turn the ServiceFlags into a string like "FM" for Food and Medical.
-                var serviceFlagsText = string.Empty;
-                if (iffComp?.ServiceFlags != null)
-                {
-                    serviceFlagsText = _shuttles.GetServiceFlagsSuffix(iffComp.ServiceFlags);
-                }
-
                 var gridObj = new GridMapObject()
                 {
-                    Name = _entManager.GetComponent<MetaDataComponent>(grid.Owner).EntityName + serviceFlagsText,
-                    // Frontier: Service Flags
-                    ServiceFlags = iffComp?.ServiceFlags ?? ServiceFlags.None,
+                    Name = _entManager.GetComponent<MetaDataComponent>(grid.Owner).EntityName,
                     Entity = grid.Owner,
                     HideButton = iffComp != null && (iffComp.Flags & IFFFlags.HideLabel) != 0x0,
                 };
@@ -443,16 +445,6 @@ public sealed partial class MapScreen : BoxContainer
         MapRadar.SetMap(coordinates.MapId, coordinates.Position, recentering: true);
     }
 
-    // Frontier: entity tracking
-    private void OnMapObjectTrackPress(IMapObject mapObject)
-    {
-        if (mapObject is not GridMapObject gridObj)
-            return;
-
-        RequestTrackEntity?.Invoke(_shuttleEntity is null ? null : _entManager.GetNetEntity(_shuttleEntity), _entManager.GetNetEntity(gridObj.Entity));
-    }
-    // End Frontier: entity tracking
-
     public void SetMap(MapId mapId, Vector2 position)
     {
         MapRadar.SetMap(mapId, position);
@@ -475,15 +467,13 @@ public sealed partial class MapScreen : BoxContainer
             HorizontalExpand = true,
         };
 
-        gridButton.Label.ClipText = true; // Frontier
-
         var gridContainer = new BoxContainer()
         {
             Children =
             {
                 new Control()
                 {
-                    MinWidth = 16f, // Frontier: 32<16
+                    MinWidth = 32f,
                 },
                 gridButton
             }
@@ -496,23 +486,6 @@ public sealed partial class MapScreen : BoxContainer
         {
             OnMapObjectPress(mapObj);
         };
-
-        // Frontier: tracking button handler
-        if (mapObj is GridMapObject gridObj)
-        {
-            var trackButton = new Button()
-            {
-                Text = Loc.GetString("shuttle-console-map-track"),
-                MinWidth = 32,
-                MaxWidth = 32
-            };
-            trackButton.OnPressed += args =>
-            {
-                OnMapObjectTrackPress(mapObj);
-            };
-            gridContainer.Children.Add(trackButton);
-        }
-        // End Frontier: tracking button handler
 
         if (gridContents.ChildCount > 1)
         {
@@ -551,13 +524,14 @@ public sealed partial class MapScreen : BoxContainer
 
         var curTime = _timing.CurTime;
 
-        if (_nextMapDequeue < curTime && _pendingMapObjects.Count > 0)
-        {
-            var mapObj = _pendingMapObjects[^1];
-            _pendingMapObjects.RemoveAt(_pendingMapObjects.Count - 1);
-            AddMapObject(mapObj.mapId, mapObj.mapobj);
-            BumpMapDequeue();
-        }
+        // Skip the gradual reveal of map objects - they're already added in PingMap
+        // if (_nextMapDequeue < curTime && _pendingMapObjects.Count > 0)
+        // {
+        //     var mapObj = _pendingMapObjects[^1];
+        //     _pendingMapObjects.RemoveAt(_pendingMapObjects.Count - 1);
+        //     AddMapObject(mapObj.mapId, mapObj.mapobj);
+        //     BumpMapDequeue();
+        // }
 
         if (!IsFTLBlocked() && _nextPing < curTime)
         {
