@@ -29,5 +29,11 @@ namespace Content.Shared._Horizon.CCVar
 
         public static readonly CVarDef<float> BarksVolume =
             CVarDef.Create("barks.volume", 1f, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+        /// <summary>
+        ///     URL of the Discord webhook which will relay bans.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordBanWebhook =
+            CVarDef.Create("discord.ban_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
     }
 }
