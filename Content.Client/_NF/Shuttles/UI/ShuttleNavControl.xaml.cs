@@ -8,6 +8,12 @@ using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 using Robust.Client.Graphics;
 using Robust.Shared.Collections;
+using Robust.Client.UserInterface;
+using Robust.Shared.Input;
+using Robust.Shared.Timing;
+using Content.Shared._Mono.Radar;
+using Content.Client._Mono.Radar;
+using Content.Client.Station;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 
@@ -15,7 +21,12 @@ namespace Content.Client.Shuttles.UI
 {
     public sealed partial class ShuttleNavControl
     {
+        public bool HideTarget { get; set; } = false;
+        public Vector2? Target { get; set; } = null;
+        public NetEntity? TargetEntity { get; set; } = null;
         public InertiaDampeningMode DampeningMode { get; set; }
+        public ServiceFlags ServiceFlags { get; set; } = ServiceFlags.None;
+        private static readonly Color TargetColor = Color.FromHex("#9cae93ff");
 
         /// <summary>
         /// Whether the shuttle is currently in FTL. This is used to disable the Park button
@@ -25,15 +36,23 @@ namespace Content.Client.Shuttles.UI
 
         private void NfUpdateState(NavInterfaceState state)
         {
+            if (state.MaxIffRange != null)
+                MaximumIFFDistance = state.MaxIffRange.Value;
+            HideCoords = state.HideCoords;
+            Target = state.Target;
+            TargetEntity = state.TargetEntity;
+            HideTarget = state.HideTarget;
 
             if (!EntManager.GetCoordinates(state.Coordinates).HasValue ||
-                !EntManager.TryGetComponent(EntManager.GetCoordinates(state.Coordinates).GetValueOrDefault().EntityId,out TransformComponent? transform) ||
-                !EntManager.TryGetComponent(transform.GridUid, out PhysicsComponent? physicsComponent))
+                !EntManager.TryGetComponent(EntManager.GetCoordinates(state.Coordinates).GetValueOrDefault().EntityId, out TransformComponent? transform) ||
+                !EntManager.HasComponent<PhysicsComponent>(transform.GridUid))
             {
                 return;
             }
 
             DampeningMode = state.DampeningMode;
+            Target = state.Target;
+            TargetEntity = state.TargetEntity;
 
             // Check if the entity has an FTLComponent which indicates it's in FTL
             if (transform.GridUid != null)
@@ -105,11 +124,11 @@ namespace Content.Client.Shuttles.UI
                 if (blipData.IsOutsideRadarCircle)
                 {
                     // Calculate the angle of rotation
-                    var angle = (float) Math.Atan2(blipData.VectorToPosition.Y, blipData.VectorToPosition.X) + -1.6f;
+                    var angle = (float)Math.Atan2(blipData.VectorToPosition.Y, blipData.VectorToPosition.X) + -1.6f;
 
                     // Manually create a rotation matrix
-                    var cos = (float) Math.Cos(angle);
-                    var sin = (float) Math.Sin(angle);
+                    var cos = (float)Math.Cos(angle);
+                    var sin = (float)Math.Sin(angle);
                     float[,] rotationMatrix = { { cos, -sin }, { sin, cos } };
 
                     // Rotate each vertex

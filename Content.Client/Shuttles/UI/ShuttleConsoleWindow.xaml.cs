@@ -54,6 +54,13 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
             RequestBeaconFTL?.Invoke(ent, angle);
         };
 
+        // Frontier: entity tracking
+        MapContainer.RequestTrackEntity += (ent, trackEntity) =>
+        {
+            RequestTrackEntity?.Invoke(ent, trackEntity);
+        };
+        // End Frontier
+
         DockContainer.DockRequest += (entity, netEntity) =>
         {
             DockRequest?.Invoke(entity, netEntity);

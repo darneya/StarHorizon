@@ -221,17 +221,17 @@
                             <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#151515" BackgroundColor="#050505"/>
                         </controls:PanelContainer.PanelOverride>
                         <!-- Overview -->
-                        <controls:GridContainer Columns="2"
+                        <controls:GridContainer Columns="1"
                                        HorizontalAlignment="Stretch"
                                        VerticalAlignment="Top"
                                        HorizontalExpand="True"
                                        Margin="6 6 6 6"
                                        Name="AdditionalReadonlyDisplay">
                             <!-- Network Port Buttons -->
-                            <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 54">
+                            <!-- <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="4 4 4 54">
                                 <controls:PanelContainer.PanelOverride>
                                     <graphics:StyleBoxFlat BorderThickness="2" BorderColor="#333333" BackgroundColor="#181818"/>
-                                </controls:PanelContainer.PanelOverride>
+                                </controls:PanelContainer.PanelOverride> -->
                                 <controls:BoxContainer Orientation="Vertical" HorizontalExpand="True">
                                 <controls:PanelContainer VerticalExpand="True" HorizontalExpand="True" Margin="2 2 2 6">
                                     <controls:PanelContainer.PanelOverride>
@@ -299,9 +299,61 @@
                                     </controls:ScrollContainer>
                                 </controls:PanelContainer>
                                 </controls:BoxContainer>
-                            </controls:PanelContainer>
+                            <!-- </controls:PanelContainer> -->
                             <!-- End Network Port Buttons -->
 
+                                <!-- Frontier - settable target -->
+                                    <controls:BoxContainer Orientation="Vertical"
+                                                           HorizontalExpand="True"
+                                                           Name="TargetCoordsBox">
+                                        <!-- Заголовок -->
+                                        <controls:PanelContainer VerticalExpand="True"
+                                                HorizontalExpand="True"
+                                                Margin="2 2 2 6">
+                                            <controls:PanelContainer.PanelOverride>
+                                                <graphics:StyleBoxFlat BorderThickness="2"
+                                                        BorderColor="#333333"
+                                                        BackgroundColor="#050505"/>
+                                            </controls:PanelContainer.PanelOverride>
+                                            <controls:Label Text="{controls:Loc 'shuttle-console-target'}"
+                                                            FontColorOverride="#00ff2a"
+                                                            VerticalExpand="False"
+                                                            HorizontalAlignment="Center"/>
+                                        </controls:PanelContainer>
+                                        <!-- Поля ввода -->
+                                        <controls:BoxContainer Orientation="Horizontal"
+                                                               HorizontalExpand="True"
+                                                               Align="Center"
+                                                               Margin="0 0 0 3">
+                                            <controls:LineEdit Name="TargetX"
+                                                    Access="Public"
+                                                    HorizontalExpand="True"/>
+                                            <controls:LineEdit Name="TargetY"
+                                                    Access="Public"
+                                                    HorizontalExpand="True"/>
+                                        </controls:BoxContainer>
+                                        <!-- Кнопки -->
+                                        <controls:BoxContainer Orientation="Horizontal"
+                                                               HorizontalExpand="True"
+                                                               Align="Center">
+                                            <controls:Button Name="TargetSet"
+                                                             Text="{controls:Loc 'shuttle-console-set-target'}"
+                                                             TextAlign="Center"
+                                                             MinWidth="20"
+                                                             ToolTip="{controls:Loc 'shuttle-console-set-target-description'}"
+                                                             StyleClasses="ButtonSquare"
+                                                             Margin="0"/>
+                                            <controls:Button Name="TargetShow"
+                                                             Text="{controls:Loc 'shuttle-console-hide-target'}"
+                                                             TextAlign="Center"
+                                                             ToggleMode="True"
+                                                             MinWidth="20"
+                                                             ToolTip="{controls:Loc 'shuttle-console-hide-target-description'}"
+                                                             StyleClasses="ButtonSquare"
+                                                             Margin="0"/>
+                                        </controls:BoxContainer>
+                                    </controls:BoxContainer>
+                                <!-- End Frontier - settable target -->
                         </controls:GridContainer> <!-- End of Right Additional Panel Contents -->
                     </controls:PanelContainer> <!-- End of Right Additional Panel Background -->
                 </controls:PanelContainer> <!-- End of Right Additional Panel Background -->
