@@ -354,6 +354,56 @@
                                         </controls:BoxContainer>
                                     </controls:BoxContainer>
                                 <!-- End Frontier - settable target -->
+
+                                <!-- Frontier - Service Flags -->
+                                    <controls:BoxContainer Orientation="Vertical"
+                                                            HorizontalExpand="True"
+                                                            Name="ServiceFlagsBox">
+                                        <!-- Заголовок -->
+                                        <controls:PanelContainer VerticalExpand="True"
+                                                                HorizontalExpand="True"
+                                                                Margin="2 2 2 6">
+                                                <controls:PanelContainer.PanelOverride>
+                                                    <graphics:StyleBoxFlat BorderThickness="2"
+                                                            BorderColor="#333333"
+                                                            BackgroundColor="#050505"/>
+                                                </controls:PanelContainer.PanelOverride>
+                                            <controls:Label Text="{controls:Loc 'shuttle-console-service-flags'}"
+                                                            FontColorOverride="#00ff2a"
+                                                            VerticalExpand="False"
+                                                            HorizontalAlignment="Center"/>
+                                        </controls:PanelContainer>
+                                        <controls:BoxContainer Orientation="Vertical"
+                                                               HorizontalExpand="True"
+                                                               Align="Center"
+                                                               Margin="0 0 0 3">
+                                            <controls:Button Name="ServiceFlagServices"
+                                                             Text="{controls:Loc 'shuttle-console-service-flag-Services-label'}"
+                                                             TextAlign="Center"
+                                                             ToggleMode="True"
+                                                             MinWidth="30"
+                                                             ToolTip="{controls:Loc 'shuttle-console-service-flag-Services-description'}"
+                                                             StyleClasses="ButtonSquare"
+                                                             Margin="0"/>
+                                            <controls:Button Name="ServiceFlagTrade"
+                                                             Text="{controls:Loc 'shuttle-console-service-flag-Trade-label'}"
+                                                             TextAlign="Center"
+                                                             ToggleMode="True"
+                                                             MinWidth="30"
+                                                             ToolTip="{controls:Loc 'shuttle-console-service-flag-Trade-description'}"
+                                                             StyleClasses="ButtonSquare"
+                                                             Margin="0"/>
+                                            <controls:Button Name="ServiceFlagSocial"
+                                                             Text="{controls:Loc 'shuttle-console-service-flag-Social-label'}"
+                                                             TextAlign="Center"
+                                                             ToggleMode="True"
+                                                             MinWidth="30"
+                                                             ToolTip="{controls:Loc 'shuttle-console-service-flag-Social-description'}"
+                                                             StyleClasses="ButtonSquare"
+                                                             Margin="0"/>
+                                        </controls:BoxContainer>
+                                    </controls:BoxContainer>
+                                <!-- End Frontier - Service Flags -->
                         </controls:GridContainer> <!-- End of Right Additional Panel Contents -->
                     </controls:PanelContainer> <!-- End of Right Additional Panel Background -->
                 </controls:PanelContainer> <!-- End of Right Additional Panel Background -->
