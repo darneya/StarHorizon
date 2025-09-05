@@ -1,7 +1,7 @@
 shuttle-pilot-start = Пилотирование начато
 shuttle-pilot-end = Пилотирование прекращено
 shuttle-console-in-ftl = Невозможно войти в БСС когда уже в БСС!
-shuttle-console-mass = Сликом большой для БСС прыжка
+shuttle-console-mass = Слишком большой для БСС прыжка
 shuttle-console-proximity = Слишком близко к соседним объектам
 shuttle-console-static = Объект статичен
 shuttle-console-prevent = Вы не можете управлять этим шаттлом.
@@ -15,8 +15,8 @@ shuttle-console-position = Позиция:
 shuttle-console-linear-velocity-value = { $X }, { $Y }
 shuttle-console-orientation = Ориентация:
 shuttle-console-angular-velocity-value = { $angularVelocity }
-shuttle-console-linear-velocity = Линейная скорость:
-shuttle-console-angular-velocity = Угловая скорость:
+shuttle-console-linear-velocity = Лин. скорость:
+shuttle-console-angular-velocity = Угл. скорость:
 shuttle-console-unknown = Неизвестно
 shuttle-console-additional-display-label = Дополнительно
 # Buttons
