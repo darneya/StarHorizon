@@ -2,7 +2,7 @@
 - type: spaceBiome
   id: HRZNYellowZone
   parent: NFBiomeBase
-  priority: 4
+  priority: 3
   distanceRange: 0, 5000
   chunkComponents:
   - type: SimpleDebrisSelector
@@ -75,9 +75,12 @@
 - type: spaceBiome
   id: HRZNRedZone
   parent: NFBiomeBase
-  priority: 3
+  priority: 2
   distanceRange: 5000, 9500
   chunkComponents:
+  - type: NoiseRangeCarver
+    ranges:
+    - 0.5, 0.7 # Horizon
   - type: SimpleDebrisSelector
     debrisTable:
     # Extra Enormous
@@ -223,116 +226,13 @@
       prob: 0.006
       orGroup: wreck
 
-# region Violet 10000-15000
+# region White 10000-15000
 - type: spaceBiome
-  id: HRZNVioletZone
-  parent: NFBiomeBase
-  priority: 2
-  distanceRange: 10000, 14500
-  chunkComponents:
-  - type: NoiseRangeCarver
-    ranges:
-    - 0.9, 1.0 # Horizon
-    noiseChannel: Carver
-  - type: SimpleDebrisSelector
-    debrisTable:
-    # Extra Enormous
-    - id: NFAsteroidDebrisExtraEnormous
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidIceDebrisExtraEnormous
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidAndesiteDebrisExtraEnormous
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidBasaltDebrisExtraEnormous
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidSandDebrisExtraEnormous
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidChromiteDebrisExtraEnormous
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidRockDebrisExtraEnormous
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidScrapDebrisExtraEnormous
-      prob: 0.15
-      orGroup: debris
-    # Gigantic
-    - id: NFAsteroidDebrisGigantic
-      prob: 0.6
-      orGroup: debris
-    - id: NFAsteroidAndesiteDebrisGigantic
-      prob: 0.6
-      orGroup: debris
-    - id: NFAsteroidBasaltDebrisGigantic
-      prob: 0.6
-      orGroup: debris
-    - id: NFAsteroidSandDebrisGigantic
-      prob: 0.6
-      orGroup: debris
-    - id: NFAsteroidChromiteDebrisGigantic
-      prob: 0.6
-      orGroup: debris
-    - id: NFAsteroidRockDebrisGigantic
-      prob: 0.6
-      orGroup: debris
-    - id: NFAsteroidScrapDebrisGigantic
-      prob: 0.3
-      orGroup: debris
-    # Extra Gigantic
-    - id: NFAsteroidDebrisExtraGigantic
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidAndesiteDebrisExtraGigantic
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidBasaltDebrisExtraGigantic
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidSandDebrisExtraGigantic
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidChromiteDebrisExtraGigantic
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidRockDebrisExtraGigantic
-      prob: 0.3
-      orGroup: debris
-    - id: NFAsteroidScrapDebrisExtraGigantic
-      prob: 0.15
-      orGroup: debris
-  - type: NoiseDrivenDebrisSelector
-    debrisTable:
-    - id: NFWreckDebrisHuge
-      prob: 0.6
-      orGroup: wreck
-    - id: NFWreckDebrisExtraHuge
-      prob: 0.3
-      orGroup: wreck
-    - id: NFWreckDebrisEnormous
-      prob: 0.15
-      orGroup: wreck
-    - id: NFWreckDebrisBrassSmall
-      prob: 0.03
-      orGroup: wreck
-    - id: NFWreckDebrisBrassMedium
-      prob: 0.006
-      orGroup: wreck
-
-# region Void 15000-20000
-- type: spaceBiome
-  id: HRZNVoid
+  id: HRZNWhite
   parent: NFBiomeBase
   priority: 1
-  distanceRange: 15000, 19500
+  distanceRange: 10000, 14500
   chunkComponents:
-  - type: NoiseRangeCarver
-    ranges:
-    - 0.7, 0.9 # Horizon
   - type: SimpleDebrisSelector
     debrisTable:
     # Medium (1.44)
@@ -450,9 +350,9 @@
       prob: 0.1
       orGroup: wreck
 
-# region Void 20000-endless
+# region Void 15000-endless
 - type: spaceBiome
-  id: HRZNVoidFar
+  id: HRZNVoid
   parent: NFBiomeBase
   priority: 0
   # no distanceRange, accepts all remaining distance
@@ -460,7 +360,7 @@
   chunkComponents:
   - type: NoiseRangeCarver
     ranges:
-    - 0.5, 0.7 # Horizon
+    - 0.6, 0.9 # Horizon
   - type: SimpleDebrisSelector
     debrisTable:
     # Medium (1.44)
