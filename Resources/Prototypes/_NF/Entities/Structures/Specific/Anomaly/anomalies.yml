@@ -28,7 +28,7 @@
         minRange: 2.5
         maxRange: 4.5
       spawns:
-      - CrystalOrange
+      - RandomOrangeCrystal
     - settings:
         spawnOnSuperCritical: true
         minAmount: 30
@@ -36,7 +36,7 @@
         minRange: 5
         maxRange: 15
       spawns:
-      - CrystalOrange
+      - RandomOrangeCrystal
       - WallSpawnAsteroid
       - WallSpawnAsteroid
       - NFWallSpawnAsteroidBananiumCrab
@@ -78,7 +78,7 @@
         minRange: 2.5
         maxRange: 4.5
       spawns:
-      - CrystalPink
+      - RandomPinkCrystal
     - settings:
         spawnOnSuperCritical: true
         minAmount: 30
@@ -86,7 +86,7 @@
         minRange: 5
         maxRange: 15
       spawns:
-      - CrystalPink
+      - RandomPinkCrystal
       - WallSpawnAsteroid
       - WallSpawnAsteroid
       - NFWallSpawnAsteroidPlasmaCrab
@@ -128,7 +128,7 @@
         minRange: 2.5
         maxRange: 4.5
       spawns:
-      - CrystalBlue
+      - RandomBlueCrystal
     - settings:
         spawnOnSuperCritical: true
         minAmount: 30
@@ -136,7 +136,7 @@
         minRange: 5
         maxRange: 15
       spawns:
-      - CrystalBlue
+      - RandomBlueCrystal
       - WallSpawnAsteroid
       - WallSpawnAsteroid
       - NFWallSpawnAsteroidSaltCrab

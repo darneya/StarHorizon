@@ -306,8 +306,8 @@
       allowedTiles:
         - FloorSnow
       entities:
-        - CrystalBlue
-        - CrystalCyan
+        - RandomBlueCrystal
+        - RandomCyanCrystal
     # Rock formations
     - !type:BiomeEntityLayer
       allowedTiles:

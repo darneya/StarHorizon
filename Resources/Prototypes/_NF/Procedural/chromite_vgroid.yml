@@ -326,7 +326,7 @@
       allowedTiles:
         - FloorChromite
       entities:
-        - CrystalPink
+        - RandomPinkCrystal
     - !type:BiomeEntityLayer
       threshold: 0.97
       noise:
@@ -337,7 +337,7 @@
         - FloorChromite
       entities:
         - ShadowTree
-        - CrystalPink
+        - RandomPinkCrystal
     # Rock formations
     - !type:BiomeEntityLayer
       threshold: -0.2
