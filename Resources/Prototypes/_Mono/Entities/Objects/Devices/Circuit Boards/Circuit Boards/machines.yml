@@ -1,25 +1,3 @@
-- type: entity
-  id: MachineDriveWarpCircuitboard
-  parent: BaseMachineCircuitboard
-  name: warp drive circuit board
-  description: A machine board for a warp drive.
-  components:
-  - type: Sprite
-    state: security
-  - type: MachineBoard
-    prototype: MachineFTLDrive
-    requirements:
-      Capacitor: 4
-      Manipulator: 2
-    componentRequirements:
-      AmeFuelContainer:
-        amount: 3
-        defaultPrototype: AmeJar
-    stackRequirements:
-      Glass: 10
-      Steel: 10
-      Uranium: 30
-
 # Shields
 - type: entity
   id: MachineShieldLightCircuitboard
@@ -49,7 +27,7 @@
   - type: MachineBoard
     prototype: ShieldGeneratorMedium
     requirements:
-      Capacitor: 2
+      Capacitor: 4
       Manipulator: 2
     stackRequirements:
       Glass: 10
@@ -66,7 +44,7 @@
   - type: MachineBoard
     prototype: ShieldGeneratorLarge
     requirements:
-      Capacitor: 2
+      Capacitor: 6
       Manipulator: 2
     stackRequirements:
       Glass: 10
