@@ -62,6 +62,8 @@
     sprite: Objects/Misc/module.rsi
     layers:
     - state: rndmajordisk
+  - type: StaticPrice
+    price: 10000
 
 - type: entity
   parent: TechnologyDiscBase
