@@ -51,7 +51,7 @@ namespace Content.Server._Horizon.SponsorManager
             {
                 Path = Directory.GetCurrentDirectory() + @"/Resources/Prototypes/Aavikko/Sponsors/SponsorInfo",
                 Filter = "discord_sponsors.txt",
-                NotifyFilter = NotifyFilters.LastWrite
+                NotifyFilter = NotifyFilters.LastWrite,
             };
 
             _watcher.Changed += SyncSponsorsFiles;
@@ -67,7 +67,6 @@ namespace Content.Server._Horizon.SponsorManager
             var discordLines = SafeReadAllLines(_dsSponsorsFilePath);
 
             ProcessDiscordSponsors(discordLines);
-
         }
 
         private void ProcessDiscordSponsors(string[] discordLines)
