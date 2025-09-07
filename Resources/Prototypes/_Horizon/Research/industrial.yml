@@ -32,6 +32,8 @@
   technologyPrerequisites:
   - RipleyMKIITechnology
   position: 3, 28
+  researchTargets:
+  - TechnologyDiscClarkeTechnology
 
 - type: technology
   id: MechTechnologyMining
@@ -72,7 +74,7 @@
   entityIcon: MechReactorTesla
   discipline: NFEngineering
   tier: 3
-  cost: 30000
+  cost: 15000
   recipeUnlocks:
   - MechReactorPlasma
   - MechReactorUranium
@@ -103,6 +105,8 @@
 #  - HarsonCentralElectronics
 #  - HarsonPeripheralsElectronics
   position: 4, 25
+  researchTargets:
+  - TechnologyDiscHarsonTechnology
 
 - type: technology
   id: RipleyMKIIMechPaint

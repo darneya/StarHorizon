@@ -20,7 +20,7 @@
   entityIcon: WeaponKineticHammer
   discipline: NFSalvage
   tier: 2
-  cost: 15000
+  cost: 7500
   recipeUnlocks:
   - WeaponKineticSpear
   - WeaponKineticHammer
@@ -29,6 +29,8 @@
   technologyPrerequisites:
   - NFImprovedSalvageWeapons
   position: 4, 57
+  researchTargets:
+  - TechnologyDiscAdvancedPKAMelee
 
 - type: technology
   id: AdvancedPKARanged
@@ -36,7 +38,7 @@
   entityIcon: WeaponProtoKineticRailgun
   discipline: NFSalvage
   tier: 2
-  cost: 15000
+  cost: 7500
   recipeUnlocks:
   - WeaponProtoKineticPistol
   - WeaponProtoKineticRepeater
@@ -45,6 +47,8 @@
   technologyPrerequisites:
   - NFImprovedSalvageWeapons
   position: 4, 58
+  researchTargets:
+  - TechnologyDiscAdvancedPKARanged
 
 - type: technology
   id: AdvancedPKAModules
@@ -52,7 +56,7 @@
   entityIcon: PKAUpgradeDamage
   discipline: NFSalvage
   tier: 2
-  cost: 15000
+  cost: 7500
   recipeUnlocks:
   - PKAUpgradeDamage
   - PKAUpgradeRange
@@ -61,6 +65,8 @@
   technologyPrerequisites:
   - NFImprovedSalvageWeapons
   position: 4, 59
+  researchTargets:
+  - TechnologyDiscAdvancedPKAModules
 
 - type: technology
   id: GygaxTechnology
@@ -82,6 +88,8 @@
   technologyPrerequisites:
   - RipleyMKIITechnology
   position: 3, 34
+  researchTargets:
+  - TechnologyDiscGygaxTechnology
 
 - type: technology
   id: MechEnergyGunSmallTechnology
@@ -116,22 +124,6 @@
   prerequisiteLineType: Tree
   position: 4, 35
 
-#- type: technology
-#  id: MechTechnologyArmor
-#  name: research-technology-mech-armor
-#  icon:
-#    sprite: Objects/Specific/Mech/mecha_equipment.rsi
-#    state: mecha_abooster_proj
-#  discipline: NFArsenalNfsd
-#  tier: 2
-#  cost: 10000
-#  recipeUnlocks:
-#  - MechEquipmentArmorMelee
-#  - MechEquipmentArmorRange
-#  technologyPrerequisites:
-#  - GygaxTechnology
-#  position: 7, 3
-
 # Tier 3
 
 - type: technology
@@ -140,7 +132,7 @@
   entityIcon: MechDurand
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 20000
+  cost: 10000
   recipeUnlocks:
   - DurandHarness
   - DurandLArm
@@ -154,6 +146,8 @@
   technologyPrerequisites:
   - GygaxTechnology
   position: 4, 37
+  researchTargets:
+  - TechnologyDiscDurandTechnology
 
 - type: technology
   id: MechEnergyGunHeavyTechnology
@@ -175,7 +169,7 @@
   entityIcon: MechGunMissileLRM6
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 30000
+  cost: 15000
   recipeUnlocks:
   - MechGunAntiMatterRifle
   - MechGunGrenade
@@ -194,7 +188,7 @@
   entityIcon: MechWeaponSword
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 20000
+  cost: 10000
   recipeUnlocks:
   - MechWeaponSword
   - MechWeaponSpear
