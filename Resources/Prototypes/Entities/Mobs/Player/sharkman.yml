@@ -1,8 +1,0 @@
-- type: entity
-  save: false
-  name: Urist McJaws
-  suffix: Urist' McJaws
-  parent: BaseMobSharkman
-  id: MobSharkman
-
-#Rawr
