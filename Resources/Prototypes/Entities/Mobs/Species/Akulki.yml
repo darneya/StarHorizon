@@ -174,7 +174,6 @@
         Blunt: 5
   - type: Tag
     tags:
-    - Akulki
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
@@ -221,7 +220,7 @@
     Heat: 1.3
     Poison: 0.5
     Cold: 0.5
-    Electricity: 1.3
+    Shock: 1.3
 
 - type: entity
   parent: BaseMobAkulki
