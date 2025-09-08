@@ -1,0 +1,263 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: OreBaseFar
+  description: A piece of unrefined ore.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Materials/ore.rsi
+  - type: Item
+    sprite: _Horizon/Objects/Materials/ore.rsi
+    size: Normal
+  - type: Tag
+    tags:
+    - Ore
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+
+- type: entity
+  parent: OreBaseFar
+  id: PsycoreOre
+  name: psycore ore
+  suffix: Full
+  components:
+  - type: Sprite
+    state: psycore
+  - type: Stack
+    stackType: PsycoreOre
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawPsycore: 100
+  - type: Extractable
+    grindableSolutionName: psycore
+  - type: SolutionContainerManager
+    solutions:
+      psycore:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 20
+  - type: Item
+    heldPrefix: psycore
+  - type: Tag
+    tags:
+    - Ore
+    - OrePsycore
+
+- type: entity
+  parent: PsycoreOre
+  id: PsycoreOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: PsycoreOre
+  id: PsycoreOre5
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: OreBaseFar
+  id: TitanOre
+  name: titan ore
+  suffix: Full
+  components:
+  - type: Sprite
+    state: titan
+  - type: Stack
+    stackType: TitanOre
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawTitan: 100
+  - type: Extractable
+    grindableSolutionName: titan
+  - type: SolutionContainerManager
+    solutions:
+      titan:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 20
+  - type: Item
+    heldPrefix: titan
+  - type: Tag
+    tags:
+    - Ore
+    - OreTitan
+
+- type: entity
+  parent: TitanOre
+  id: TitanOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: TitanOre
+  id: TitanOre5
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: OreBaseFar
+  id: EmeraldOre
+  name: emerald ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: EmeraldOre
+  - type: Sprite
+    state: emerald
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawEmerald: 100
+  - type: Extractable
+    grindableSolutionName: emerald
+  - type: SolutionContainerManager
+    solutions:
+      emerald:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 20
+  - type: Item
+    heldPrefix: emerald
+  - type: Tag
+    tags:
+    - Ore
+    - OreEmerald
+
+- type: entity
+  parent: EmeraldOre
+  id: EmeraldOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: OreBaseFar
+  id: RubyOre
+  name: ruby ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: RubyOre
+  - type: Sprite
+    state: ruby
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawRuby: 100
+  - type: Extractable
+    grindableSolutionName: ruby
+  - type: SolutionContainerManager
+    solutions:
+      ruby:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 20
+  - type: Item
+    heldPrefix: ruby
+  - type: Tag
+    tags:
+    - Ore
+    - OreRuby
+
+- type: entity
+  parent: RubyOre
+  id: RubyOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: OreBaseFar
+  id: SapphireOre
+  name: sapphire ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: SapphireOre
+  - type: Sprite
+    state: sapphire
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawSapphire: 100
+  - type: Extractable
+    grindableSolutionName: sapphire
+  - type: SolutionContainerManager
+    solutions:
+      sapphire:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 20
+  - type: Item
+    heldPrefix: sapphire
+  - type: Tag
+    tags:
+    - Ore
+    - OreSapphire
+
+- type: entity
+  parent: SapphireOre
+  id: SapphireOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: OreBaseFar
+  id: TopazOre
+  name: topaz ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: TopazOre
+  - type: Sprite
+    state: topaz
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawTopaz: 100
+  - type: Extractable
+    grindableSolutionName: topaz
+  - type: SolutionContainerManager
+    solutions:
+      topaz:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 20
+  - type: Item
+    heldPrefix: topaz
+  - type: Tag
+    tags:
+    - Ore
+    - OreTopaz
+
+- type: entity
+  parent: TopazOre
+  id: TopazOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
