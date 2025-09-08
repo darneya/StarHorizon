@@ -20,7 +20,7 @@
   entityIcon: WeaponKineticHammer
   discipline: NFSalvage
   tier: 2
-  cost: 5000
+  cost: 15000
   recipeUnlocks:
   - WeaponKineticSpear
   - WeaponKineticHammer
@@ -36,7 +36,7 @@
   entityIcon: WeaponProtoKineticRailgun
   discipline: NFSalvage
   tier: 2
-  cost: 5000
+  cost: 15000
   recipeUnlocks:
   - WeaponProtoKineticPistol
   - WeaponProtoKineticRepeater
@@ -52,7 +52,7 @@
   entityIcon: PKAUpgradeDamage
   discipline: NFSalvage
   tier: 2
-  cost: 5000
+  cost: 15000
   recipeUnlocks:
   - PKAUpgradeDamage
   - PKAUpgradeRange
@@ -113,6 +113,7 @@
   - BoxAmmoHades
   technologyPrerequisites:
   - GygaxTechnology
+  prerequisiteLineType: Tree
   position: 4, 35
 
 #- type: technology
@@ -139,7 +140,7 @@
   entityIcon: MechDurand
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 10000
+  cost: 20000
   recipeUnlocks:
   - DurandHarness
   - DurandLArm
@@ -152,7 +153,7 @@
   - DurandPeripheralsElectronics
   technologyPrerequisites:
   - GygaxTechnology
-  position: 5, 37
+  position: 4, 37
 
 - type: technology
   id: MechEnergyGunHeavyTechnology
@@ -166,7 +167,7 @@
   - MechGunTeslaCannon
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 35
+  position: 5, 39
 
 - type: technology
   id: MechGunHeavyTechnology
@@ -174,7 +175,7 @@
   entityIcon: MechGunMissileLRM6
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 7500
+  cost: 30000
   recipeUnlocks:
   - MechGunAntiMatterRifle
   - MechGunGrenade
@@ -185,7 +186,7 @@
   - BoxAmmoGranade
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 36
+  position: 5, 36
 
 - type: technology
   id: MechCloseWeaponTechnology
@@ -193,7 +194,7 @@
   entityIcon: MechWeaponSword
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 7500
+  cost: 20000
   recipeUnlocks:
   - MechWeaponSword
   - MechWeaponSpear
@@ -215,7 +216,7 @@
   - MechGunXRayRifle
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 38
+  position: 5, 38
 
 - type: technology
   id: GygaxMechPaint
@@ -248,4 +249,4 @@
   - MechDurUnathiUpgradeKit
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 37
+  position: 5, 37

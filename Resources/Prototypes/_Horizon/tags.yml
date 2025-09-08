@@ -375,3 +375,21 @@
 
 - type: Tag
   id: 40mmGrenade
+
+- type: Tag
+  id: CapacitorStockPart
+
+- type: Tag
+  id: FanTinyElectronics
+
+- type: Tag
+  id: MagazineMinigunERT15
+
+- type: Tag
+  id: Cartridge15
+
+- type: Tag
+  id: CartridgeMinigunERT15
+
+- type: Tag
+  id: PowerUAS

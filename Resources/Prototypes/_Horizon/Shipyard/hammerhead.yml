@@ -1,0 +1,33 @@
+- type: vessel
+  id: Hammerhead
+  parent: BaseVessel
+  name: NRZN Hammerhead
+  description: "Самый брутальный шаттл от самой брутальной компании. Шаттл-бар для настоящих мужчин и дварфов! Пейте без продыху!"
+  price: 38050 # 33078, наценка верфи 15% = 38040
+  category: Medium
+  group: Scrap
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/hammerhead.yml
+  class:
+  - Civilian
+  engine:
+  - Plasma
+
+- type: gameMap
+  id: Hammerhead
+  mapName: 'NRZN Hammerhead'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/hammerhead.yml
+  minPlayers: 0
+  stations:
+    Hammerhead:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Hammerhead {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]
