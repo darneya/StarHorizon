@@ -23,3 +23,12 @@
         layer:
         - MachineLayer
 
+- type: entity
+  parent: TubaInstrumentFlatpack
+  id: DrumsetInstrumentFlatpack
+  name: упакованная ударная установка
+  description: Упаковка, содержащая ударную установку .
+  components:
+  - type: Flatpack
+    entity: DrumsetInstrument       
+
