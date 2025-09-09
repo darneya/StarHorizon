@@ -56,13 +56,13 @@
     - id: WallChromiteCobblebrickPsycore
       weight: 0.003
     - id: WallChromiteCobblebrickTopaz
-      weight: 0.001
+      weight: 0.0005
     - id: WallChromiteCobblebrickSapphire
-      weight: 0.001
+      weight: 0.0005
     - id: WallChromiteCobblebrickRuby
-      weight: 0.001
+      weight: 0.0005
     - id: WallChromiteCobblebrickEmerald
-      weight: 0.001
+      weight: 0.0005
     - id: NFChromiteNFCobblebrickElementalSpawner
       weight: 0.005
 
@@ -93,13 +93,13 @@
     - id: NFWallBasaltCobblebrickArtifactFragment
       weight: 0.2
     - id: WallChromiteCobblebrickEmerald
-      weight: 0.2
+      weight: 0.1
     - id: WallChromiteCobblebrickRuby
-      weight: 0.2
+      weight: 0.1
     - id: WallChromiteCobblebrickSapphire
-      weight: 0.2
+      weight: 0.1
     - id: WallChromiteCobblebrickTopaz
-      weight: 0.2
+      weight: 0.1
 
 - type: entity
   id: NFChromiteMineralHardRichFar
