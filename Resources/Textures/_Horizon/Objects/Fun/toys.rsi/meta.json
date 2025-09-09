@@ -258,6 +258,20 @@
     },
         {
       "name": "baloon18base"
-    }    
+    },
+    {
+      "name": "box-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "box-inhand-right",
+      "directions": 4
+    },    
+    {
+      "name": "box"
+    },
+    {
+      "name": "box-open"
+    }       
   ]
 }

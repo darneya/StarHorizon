@@ -645,7 +645,7 @@
   description: О да, праздник!
   components:
   - type: Sprite
-    sprite: Objects/Consumable/Food/Baked/donut.rsi
+    sprite: _Horizon/Objects/Fun/toys.rsi
     state: box
   - type: Storage
     grid:
