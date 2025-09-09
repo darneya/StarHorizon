@@ -89,15 +89,3 @@
     trash:
     - FoodPlateSmall       
 
-- type: microwaveMealRecipe
-  id: RecipeWeddingCake
-  name: рецепт свадебного торта
-  result: FoodCakeWedding
-  time: 15
-  group: Cake
-  reagents:
-    Cream: 20
-    JuiceBerry: 20
-  solids:
-    FoodCakePlain: 3
-  recipeType: Assembler 
