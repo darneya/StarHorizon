@@ -155,7 +155,38 @@
     - id: WeaponStunprodUAS
     - id: UASSword
     - id: UASGranade
-#    - id:
+    - id: UASBox
+    - id: UASopenbox
+    - id: UASBoxStoreUniform
+    - id: UASBoxStoreBug
+    - id: UASBoxStoreAccessory
+    - id: UASBoxStoreHack
+    - id: UASBoxStoreLasGun
+    - id: PDAUAS
+    - id: PDACadetUAS
+    - id: PDARipsoidUAS
+    - id: PDAOfficerUAS
+    - id: PDAOfficerUAS
+    - id: PDAKnightUAS
+    - id: PDATitanUAS
+    - id: PDACounselorUAS
+    - id: UASHandcuffs
+    - id: UASCadetID
+    - id: UASRipsoidID
+    - id: UASOfficerID
+    - id: UASKnightID
+    - id: UASSpiderID
+    - id: UASTitanID
+    - id: UASCounselorID
+    - id: CitadelCoin1
+    - id: CitadelCoin
+    - id: UASOmegaTool
+    - id: UAShardBomb
+    - id: UASBombR
+    - id: UASBombOfficer
+    - id: UASBombSpider
+    - id: UASBombKnight
+#    - id: 
 
 # Кадет
 - type: entity
@@ -170,7 +201,7 @@
     - id: UASHandcuffs
     - id: UASEnergyCore
     - id: WeaponDisablerSMGUAS
-    - id: CombatMedipenUAS
+#    - id: CombatMedipenUAS
 
 # Офицер
 - type: entity
@@ -186,8 +217,8 @@
     - id: UASHandcuffs
     - id: UASEnergyCore
     - id: PMLaserUASGun
-    - id: CombatMedipenUAS
-    - id: UASDroneOff
+#    - id: CombatMedipenUAS
+#    - id: UASDroneOff
 
 # Рыцарь
 - type: entity
@@ -202,9 +233,9 @@
     - id: UASEnergyCore
     - id: UASOmegaTool
     - id: LaserUASGun
-    - id: NanitMedipenUAS
-    - id: CombatMedipenUAS
-    - id: UASDroneOff
+#    - id: NanitMedipenUAS
+#    - id: CombatMedipenUAS
+#    - id: UASDroneOff
     - id: UASGranade
 
 # Паук
@@ -220,10 +251,10 @@
     - id: WeaponDisablerSniperUAS
     - id: UASEnergyCore
     - id: UASHandcuffs
-    - id: CombatMedipenUAS
-    - id: NanitMedipenUAS
-    - id: NanitMedipenUAS
-    - id: UASDroneOff
+#    - id: CombatMedipenUAS
+#    - id: NanitMedipenUAS
+#    - id: NanitMedipenUAS
+#    - id: UASDroneOff
     - id: UASGranade
 
 # Титан
@@ -240,10 +271,10 @@
     - id: UASEnergyCore
     - id: NanitMedipenUAS
     - id: NanitMedipenUAS
-    - id: CombatMedipenUAS
-    - id: CombatMedipenUAS
-    - id: UASDroneOff
-    - id: UASDroneOff
+#    - id: CombatMedipenUAS
+#    - id: CombatMedipenUAS
+#    - id: UASDroneOff
+#    - id: UASDroneOff
     - id: UASGranade
     - id: UASGranade
 
@@ -259,8 +290,8 @@
     - id: UASCounselorGun
     - id: UASEnergyCore
     - id: UASHandcuffs
-    - id: CombatMedipenUAS
-    - id: NanitMedipenUAS
-    - id: NanitMedipenUAS
-    - id: UASDroneOff
-    - id: UASDroneOff
+#    - id: CombatMedipenUAS
+#    - id: NanitMedipenUAS
+#    - id: NanitMedipenUAS
+#    - id: UASDroneOff
+#    - id: UASDroneOff

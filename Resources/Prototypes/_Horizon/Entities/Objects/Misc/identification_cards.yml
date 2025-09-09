@@ -1,0 +1,154 @@
+- type: entity
+  parent: [IDCardStandard, BaseUASContraband]
+  id: UASStandartID
+  name: UASID
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Misc/uasidcard.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: _Horizon/Objects/Misc/uasidcard.rsi
+  - type: Item
+    size: Small
+
+# Советник
+- type: entity
+  parent: UASStandartID
+  id: UASCounselorID
+  suffix: StarHorizon, UAS
+  name: карта Совета UAS
+  description: Карта с необходимыми для членов UAS доступами.
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: counselor
+  - type: Item
+  - type: IdCard
+    jobTitle: Советник UAS
+    jobIcon: JobIconCounselorUAS
+  - type: Access
+    tags:
+    - Maintenance
+
+# Титан
+- type: entity
+  parent: UASStandartID
+  id: UASTitanID
+  suffix: StarHorizon, UAS
+  name: карта офицера Титана UAS
+  description: Карта с необходимыми доступами для членов UAS
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: titan
+  - type: Item
+  - type: IdCard
+    jobTitle: Офицер Титан UAS
+    jobIcon: JobIconTitanUAS
+  - type: Access
+    tags:
+    - Maintenance
+
+# Паук
+- type: entity
+  parent: UASStandartID
+  id: UASSpiderID
+  suffix: StarHorizon, UAS
+  name: карта офицера Паука UAS
+  description: Карта с необходимыми доступами для членов UAS
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: spider
+  - type: Item
+  - type: IdCard
+    jobTitle: Офицер Паук UAS
+    jobIcon: JobIconSpiderUAS
+  - type: Access
+    tags:
+    - Maintenance
+
+# Рыцарь
+- type: entity
+  parent: UASStandartID
+  id: UASKnightID
+  suffix: StarHorizon, UAS
+  name: карта офицера Рыцаря UAS
+  description: Карта с необходимыми доступами для членов UAS
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: knight
+  - type: Item
+  - type: IdCard
+    jobTitle: Офицер Рыцарь UAS
+    jobIcon: JobIconKnightUAS
+  - type: Access
+    tags:
+    - Maintenance
+
+# Офицер
+- type: entity
+  parent: UASStandartID
+  id: UASOfficerID
+  suffix: StarHorizon, UAS
+  name: карта Офицера UAS
+  description: Карта с необходимыми доступами для членов UAS
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: officer
+  - type: Item
+  - type: IdCard
+    jobTitle: Офицер UAS
+    jobIcon: JobIconOfficerUAS
+  - type: Access
+    tags:
+    - Maintenance
+
+# Кадет
+- type: entity
+  parent: UASStandartID
+  id: UASCadetID
+  suffix: StarHorizon, UAS
+  name: карта кадета UAS
+  description: Карта с необходимыми доступами для членов UAS
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: cadet
+  - type: Item
+  - type: IdCard
+    jobTitle: Кадет UAS
+    jobIcon: JobIconCadetUAS
+  - type: Access
+    tags:
+    - Maintenance
+
+# Рипсоид, не спрашивайте кто это такой, это трансбот
+- type: entity
+  parent: UASStandartID
+  id: UASRipsoidID
+  suffix: StarHorizon, UAS
+  name: карта Рипсоида UAS
+  description: Карта с необходимыми доступами для членов UAS
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: ripsoid
+  - type: Item
+  - type: IdCard
+    jobTitle: Рипсоид UAS
+    jobIcon: JobIconRipsoidUAS
+  - type: Access
+    tags:
+    - Maintenance
