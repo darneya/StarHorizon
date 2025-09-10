@@ -43,3 +43,7 @@ research-technology-hydroponics-dna-manip = Манипуляции ДНК рас
 research-technology-modules-based = Базовые оружейные модули [диск]
 research-technology-modules-extended = Улучшенные оружейные модули
 research-technology-modules-advanced = Продвинутые оружейные модули
+research-technology-incendiary-ammunition = Зажигательные боеприпасы [диск]
+research-technology-uranium-ammunition = Урановые боеприпасы [диск]
+research-technology-piercing-ammunition = Бронебойные боеприпасы [диск]
+research-technology-psycore-ammunition = Химические боеприпасы [диск]

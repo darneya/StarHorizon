@@ -244,3 +244,79 @@
   technologyPrerequisites:
   - DurandTechnology
   position: 5, 37
+
+- type: technology
+  id: IncendiaryAmmunitionTechnology
+  name: research-technology-incendiary-ammunition
+  entityIcon: NFAmmunitionBoxRifle20Incendiary
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - NFAmmunitionBoxRifle20Incendiary
+  - NFAmmunitionBoxRifle30Incendiary
+  - NFAmmunitionBoxPistol35Incendiary
+  - NFAmmunitionBoxPistol45Incendiary
+  - NFAmmunitionBoxShellShotgunIncendiary
+  technologyPrerequisites:
+  - NFBulkRifleAmmo
+  position: 5, 64
+  researchTargets:
+  - TechnologyDiscArsenalIncendiaryAmmunition
+
+- type: technology
+  id: UraniumAmmunitionTechnology
+  name: research-technology-uranium-ammunition
+  entityIcon: NFAmmunitionBoxRifle20Uranium
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - NFAmmunitionBoxRifle20Uranium
+  - NFAmmunitionBoxRifle30Uranium
+  - NFAmmunitionBoxPistol35Uranium
+  - NFAmmunitionBoxPistol45Uranium
+  - NFAmmunitionBoxShellShotgunUranium
+  technologyPrerequisites:
+  - NFBulkRifleAmmo
+  position: 5, 65
+  researchTargets:
+  - TechnologyDiscArsenalUraniumAmmunition
+
+- type: technology
+  id: PiercingAmmunitionTechnology
+  name: research-technology-piercing-ammunition
+  entityIcon: NFAmmunitionBoxRifle20Piercing
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - NFAmmunitionBoxRifle20Piercing
+  - NFAmmunitionBoxRifle30Piercing
+  - NFAmmunitionBoxPistol35Piercing
+  - NFAmmunitionBoxPistol45Piercing
+  - NFAmmunitionBoxShellShotgunPiercing
+  technologyPrerequisites:
+  - NFBulkRifleAmmo
+  position: 5, 66
+  researchTargets:
+  - TechnologyDiscArsenalPiercingAmmunition
+
+- type: technology
+  id: PsycoreAmmunitionTechnology
+  name: research-technology-psycore-ammunition
+  entityIcon: NFAmmunitionBoxRifle20Psycore
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - NFAmmunitionBoxRifle20Psycore
+  - NFAmmunitionBoxRifle30Psycore
+  - NFAmmunitionBoxPistol35Psycore
+  - NFAmmunitionBoxPistol45Psycore
+  - NFAmmunitionBoxShellShotgunPsycore
+  technologyPrerequisites:
+  - NFBulkRifleAmmo
+  position: 5, 67
+  researchTargets:
+  - TechnologyDiscArsenalPsycoreAmmunition

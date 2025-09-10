@@ -17,5 +17,9 @@
     - TechnologyDiscClarkeTechnology
     - TechnologyDiscHarsonTechnology
     - TechnologyDiscArsenalBasicModules
+    - TechnologyDiscArsenalIncendiaryAmmunition
+    - TechnologyDiscArsenalUraniumAmmunition
+    - TechnologyDiscArsenalPiercingAmmunition
+    - TechnologyDiscArsenalPsycoreAmmunition
     - TechnologyDiscHydroponicsDNAManip
     offset: 0.0

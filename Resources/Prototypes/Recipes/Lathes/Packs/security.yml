@@ -92,6 +92,26 @@
   - 40mmGrenadeEMP
   - 40mmGrenadeFlash
   - 40mmGrenadeSmoke
+  - NFAmmunitionBoxRifle20Psycore
+  - NFAmmunitionBoxRifle30Psycore
+  - NFAmmunitionBoxPistol35Psycore
+  - NFAmmunitionBoxPistol45Psycore
+  - NFAmmunitionBoxShellShotgunPsycore
+  - NFAmmunitionBoxRifle20Piercing
+  - NFAmmunitionBoxRifle30Piercing
+  - NFAmmunitionBoxPistol35Piercing
+  - NFAmmunitionBoxPistol45Piercing
+  - NFAmmunitionBoxShellShotgunPiercing
+  - NFAmmunitionBoxRifle20Incendiary
+  - NFAmmunitionBoxRifle30Incendiary
+  - NFAmmunitionBoxPistol35Incendiary
+  - NFAmmunitionBoxPistol45Incendiary
+  - NFAmmunitionBoxShellShotgunIncendiary
+  - NFAmmunitionBoxRifle20Uranium
+  - NFAmmunitionBoxRifle30Uranium
+  - NFAmmunitionBoxPistol35Uranium
+  - NFAmmunitionBoxPistol45Uranium
+  - NFAmmunitionBoxShellShotgunUranium
 # Horizon Attachements end
 
 - type: latheRecipePack

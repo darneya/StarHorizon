@@ -124,3 +124,27 @@
   id: TechnologyDiscHydroponicsDNAManip
   name: technology disc [DNA Manipulator]
   description: A disk containing data about Botannical DNA Manipulator.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscArsenalIncendiaryAmmunition
+  name: technology disc [Incendiary Ammunition]
+  description: A disk containing data about Incendiary Ammunition.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscArsenalUraniumAmmunition
+  name: technology disc [Uranium Ammunition]
+  description: A disk containing data about Uranium Ammunition.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscArsenalPiercingAmmunition
+  name: technology disc [Piercing Ammunition]
+  description: A disk containing data about Piercing Ammunition.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscArsenalPsycoreAmmunition
+  name: technology disc [Psycore Ammunition]
+  description: A disk containing data about Psycore Ammunition.

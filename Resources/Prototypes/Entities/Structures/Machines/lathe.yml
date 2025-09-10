@@ -491,6 +491,8 @@
       runningState: icon
       staticPacks:
       - NfsdAmmoStatic # Frontier: SecurityAmmoStatic<NfsdAmmoStatic
+      dynamicPacks:
+      - HRZNAmmo # Horizon
     - type: MaterialStorage
       whitelist:
         tags:
