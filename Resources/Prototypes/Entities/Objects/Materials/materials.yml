@@ -580,7 +580,7 @@
     heldPrefix: bananium
   - type: NFFuel # Frontier
   - type: RadiationSource # Horizon
-    intensity: 0.015 # Horizon
+    intensity: 0.0015 # Horizon
 
 - type: entity
   parent: MaterialBananium

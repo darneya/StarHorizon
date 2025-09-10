@@ -164,7 +164,7 @@
     - OrePlasma
   - type: NFFuel # Frontier
   - type: RadiationSource # Horizon
-    intensity: 0.005 # Horizon
+    intensity: 0.0005 # Horizon
 
 - type: entity
   parent: PlasmaOre
@@ -282,7 +282,7 @@
     - OreUranium
   - type: NFFuel # Frontier
   - type: RadiationSource # Horizon
-    intensity: 0.01 # Horizon
+    intensity: 0.001 # Horizon
 
 - type: entity
   parent: UraniumOre
@@ -331,7 +331,7 @@
     - OreBananium
   - type: NFFuel # Frontier
   - type: RadiationSource # Horizon
-    intensity: 0.015 # Horizon
+    intensity: 0.0015 # Horizon
 
 - type: entity
   parent: BananiumOre

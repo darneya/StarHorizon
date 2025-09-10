@@ -112,7 +112,7 @@
     - Sheet
   - type: NFFuel # Frontier
   - type: RadiationSource # Horizon
-    intensity: 0.005 # Horizon
+    intensity: 0.0005 # Horizon
 
 - type: entity
   parent: SheetPlasma
@@ -250,7 +250,7 @@
   - type: UraniumMaterials # Frontier
   - type: NFFuel # Frontier
   - type: RadiationSource # Horizon
-    intensity: 0.01 # Horizon
+    intensity: 0.001 # Horizon
 
 - type: entity
   parent: SheetUranium
