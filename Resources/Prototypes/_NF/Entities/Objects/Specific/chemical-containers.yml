@@ -223,7 +223,7 @@
     count: 20
   - type: NFFuel # Frontier
   - type: RadiationSource # Horizon
-    intensity: 0.002 # Horizon
+    intensity: 0.02 # Horizon
 
 - type: entity
   parent: FuelPlasma
@@ -260,7 +260,7 @@
     count: 20
   - type: NFFuel # Frontier
   - type: RadiationSource # Horizon
-    intensity: 0.003 # Horizon
+    intensity: 0.03 # Horizon
 
 - type: entity
   parent: FuelUranium
@@ -297,7 +297,7 @@
     count: 20
   - type: NFFuel # Frontier
   - type: RadiationSource # Horizon
-    intensity: 0.004 # Horizon
+    intensity: 0.04 # Horizon
 
 - type: entity
   parent: FuelBananium
@@ -334,7 +334,7 @@
     count: 20
   - type: NFFuel # Frontier
   - type: RadiationSource # Horizon
-    intensity: 0.004 # Horizon
+    intensity: 0.04 # Horizon
 
 - type: entity
   parent: FuelSkrungle
