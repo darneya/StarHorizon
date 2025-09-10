@@ -1,8 +1,13 @@
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 Ilya246
+// SPDX-FileCopyrightText: 2025 ark1368
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
 namespace Content.Shared._Mono.Radar;
 
 /// <summary>
-/// Handles objects which should be represented by radar blips.
+/// These handle objects which should be represented by radar blips.
 /// </summary>
 [RegisterComponent]
 public sealed partial class RadarBlipComponent : Component
@@ -10,42 +15,39 @@ public sealed partial class RadarBlipComponent : Component
     /// <summary>
     /// Color that gets shown on the radar screen.
     /// </summary>
-    [DataField]
-    public Color RadarColor { get; set; } = Color.Red;
+    [ViewVariables(VVAccess.ReadWrite), DataField("radarColor")]
+    public Color RadarColor = Color.Red;
 
     /// <summary>
     /// Color that gets shown on the radar screen when the blip is highlighted.
     /// </summary>
-    [DataField]
-    public Color HighlightedRadarColor { get; set; } = Color.OrangeRed;
+    [ViewVariables(VVAccess.ReadWrite), DataField("highlightedRadarColor")]
+    public Color HighlightedRadarColor = Color.OrangeRed;
 
     /// <summary>
     /// Scale of the blip.
     /// </summary>
     [DataField]
-    public float Scale { get; set; } = 1f;
+    public float Scale = 1;
 
     /// <summary>
     /// The shape of the blip on the radar.
     /// </summary>
     [DataField]
-    public RadarBlipShape Shape { get; set; } = RadarBlipShape.Circle;
+    public RadarBlipShape Shape = RadarBlipShape.Circle;
 
     /// <summary>
     /// Whether this blip should be shown even when parented to a grid.
     /// </summary>
     [DataField]
-    public bool RequireNoGrid { get; set; } = false;
+    public bool RequireNoGrid = false;
 
     /// <summary>
     /// Whether this blip should be visible on radar across different grids.
     /// </summary>
     [DataField]
-    public bool VisibleFromOtherGrids { get; set; } = true;
+    public bool VisibleFromOtherGrids = true;
 
-    /// <summary>
-    /// Whether this blip is enabled and should be shown on radar.
-    /// </summary>
     [DataField]
-    public bool Enabled { get; set; } = true;
+    public bool Enabled = true;
 }

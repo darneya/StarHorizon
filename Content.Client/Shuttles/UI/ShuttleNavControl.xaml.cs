@@ -12,6 +12,7 @@
 // SPDX-FileCopyrightText: 2025 Blu
 // SPDX-FileCopyrightText: 2025 BlueHNT
 // SPDX-FileCopyrightText: 2025 GreaseMonk
+// SPDX-FileCopyrightText: 2025 Ilya246
 // SPDX-FileCopyrightText: 2025 LukeZurg22
 // SPDX-FileCopyrightText: 2025 RikuTheKiller
 // SPDX-FileCopyrightText: 2025 Whatstone
@@ -41,6 +42,12 @@ using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Client._Mono.Radar;
+using Content.Shared._Mono.Radar;
+using Robust.Shared.Prototypes;
+using System.Linq;
+using Content.Shared._Crescent.ShipShields;
+using Robust.Shared.Physics.Collision.Shapes;
 
 namespace Content.Client.Shuttles.UI;
 
@@ -94,6 +101,9 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     // These 2 handle timing updates
     private const float RadarUpdateInterval = 0f;
     private float _updateAccumulator = 0f;
+
+    private bool _wasPanned = false;
+    private EntityCoordinates? _oldCoordinates;
     #endregion
 
     private bool _isMouseDown;
@@ -126,6 +136,9 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
     public void SetMatrix(EntityCoordinates? coordinates, Angle? angle)
     {
+        if (_wasPanned) // Mono hack
+            return;
+
         _coordinates = coordinates;
         _rotation = angle;
     }
@@ -151,15 +164,17 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     {
         base.KeyBindUp(args);
 
-        // Frontier: Clicking coordinates
         if (args.Function != EngineKeyFunctions.UIClick)
+        {
             return;
+        }
 
         _isMouseDown = false;
 
         if (_coordinates == null || _rotation == null || OnRadarClick == null)
+        {
             return;
-        // End Frontier
+        }
 
         var a = InverseScalePosition(args.RelativePosition);
         var relativeWorldPos = a with { Y = -a.Y };
@@ -260,9 +275,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
     protected override void Draw(DrawingHandleScreen handle)
     {
-        // Adds Monolith's Circle Masking on the Radar.
-        // It's handy to know, and is left commented..
-        //UseCircleMaskShader(handle);
+        UseCircleMaskShader(handle);
 
         base.Draw(handle);
 
@@ -287,7 +300,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
         var mapPos = _transform.ToMapCoordinates(_coordinates.Value);
         var posMatrix = Matrix3Helpers.CreateTransform(_coordinates.Value.Position, _rotation.Value);
-        var ourEntRot = RotateWithEntity ? _transform.GetWorldRotation(xform) : _rotation.Value;
+        var ourEntRot = _wasPanned ? new Angle(0) : RotateWithEntity ? _transform.GetWorldRotation(xform) : _rotation.Value;
         var ourEntMatrix = Matrix3Helpers.CreateTransform(_transform.GetWorldPosition(xform), ourEntRot);
         var shuttleToWorld = Matrix3x2.Multiply(posMatrix, ourEntMatrix);
         Matrix3x2.Invert(shuttleToWorld, out var worldToShuttle);
@@ -377,6 +390,9 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             shouldDrawIFF = NfCheckShouldDrawIffRangeCondition(shouldDrawIFF, gridMapPos - mapPos.Position);
             // End Frontier
 
+            // Mono
+            var gridUiPosition = Vector2.Transform(gridBody.LocalCenter, curGridToView) / UIScale;
+
             if (shouldDrawIFF)
             {
                 //var gridCentre = Vector2.Transform(gridBody.LocalCenter, curGridToView);
@@ -386,7 +402,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 // The actual position in the UI. We offset the matrix position to render it off by half its width
                 // plus by the offset.
                 //var uiPosition = ScalePosition(gridCentre) / UIScale;
-                var uiPosition = Vector2.Transform(gridBody.LocalCenter, curGridToView) / UIScale;
+                var uiPosition = gridUiPosition; // Mono
 
                 // Confines the UI position within the viewport.
                 var uiXCentre = (int)Width / 2;
@@ -487,7 +503,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                                 : blipSize, // left align the text to the right of the blip
                             Y = labelOffset.Y + handle.GetDimensions(Font, mainLabel, 1f).Y + (lines.Length > 1 ? handle.GetDimensions(Font, lines[1], 1f).Y : 0) + 5
                         };
-                        handle.DrawString(Font, (uiPosition + coordOffset) * UIScale, coordsText, 0.7f * UIScale, coordColor);
+                        handle.DrawString(Font, (uiPosition + coordOffset) * UIScale, coordsText, 0.7f * UIScale, displayColor);
                     }
                 }
 
@@ -505,9 +521,9 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             if (!gridAABB.Intersects(viewAABB))
                 continue;
 
-            DrawGrid(handle, curGridToView, grid, labelColor);
-            DrawDocks(handle, gUid, curGridToView);
-        }
+                DrawGrid(handle, curGridToView, grid, labelColor);
+                DrawDocks(handle, gUid, curGridToView);
+            }
 
         // Frontier: draw target
         if (!HideTarget && Target is { } target)
@@ -621,8 +637,8 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         var origin = ScalePosition(-new Vector2(Offset.X, -Offset.Y));
         handle.DrawLine(origin, origin + angle.ToVec() * ScaledMinimapRadius * 1.42f, Color.Red.WithAlpha(0.1f));
 
-        // Get raw blips with grid information
-        var rawBlips = _blips.GetRawBlips();
+        // Get blips
+        var rawBlips = _blips.GetCurrentBlips();
 
         // Prepare view bounds for culling
         var monoViewBounds = new Box2(-3f, -3f, Size.X + 3f, Size.Y + 3f);
@@ -630,28 +646,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         // Draw blips using the same grid-relative transformation approach as docks
         foreach (var blip in rawBlips)
         {
-            Vector2 blipPosInView;
-
-            // Handle differently based on if there's a grid
-            if (blip.Grid == null)
-            {
-                // For world-space blips without a grid, use standard world transformation
-                blipPosInView = Vector2.Transform(blip.Position, worldToShuttle * shuttleToView);
-            }
-            else if (EntManager.TryGetEntity(blip.Grid, out var gridEntity))
-            {
-                // For grid-relative blips, transform using the grid's transform
-                var gridToWorld = _transform.GetWorldMatrix(gridEntity.Value);
-                var gridToView = gridToWorld * worldToShuttle * shuttleToView;
-
-                // Transform the grid-local position
-                blipPosInView = Vector2.Transform(blip.Position, gridToView);
-            }
-            else
-            {
-                // Skip blips with invalid grid references
-                continue;
-            }
+            var blipPosInView = Vector2.Transform(_transform.ToMapCoordinates(blip.Position).Position, worldToShuttle * shuttleToView);
 
             // Check if this blip is within view bounds before drawing
             if (monoViewBounds.Contains(blipPosInView))
@@ -661,34 +656,11 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         }
 
         // Draw hitscan lines from the radar blips system
-        var hitscanLines = _blips.GetRawHitscanLines();
+        var hitscanLines = _blips.GetHitscanLines();
         foreach (var line in hitscanLines)
         {
-            Vector2 startPosInView;
-            Vector2 endPosInView;
-
-            // Handle differently based on if there's a grid
-            if (line.Grid == null)
-            {
-                // For world-space lines without a grid, use standard world transformation
-                startPosInView = Vector2.Transform(line.Start, worldToShuttle * shuttleToView);
-                endPosInView = Vector2.Transform(line.End, worldToShuttle * shuttleToView);
-            }
-            else if (EntManager.TryGetEntity(line.Grid, out var gridEntity))
-            {
-                // For grid-relative lines, transform using the grid's transform
-                var gridToWorld = _transform.GetWorldMatrix(gridEntity.Value);
-                var gridToView = gridToWorld * worldToShuttle * shuttleToView;
-
-                // Transform the grid-local positions
-                startPosInView = Vector2.Transform(line.Start, gridToView);
-                endPosInView = Vector2.Transform(line.End, gridToView);
-            }
-            else
-            {
-                // Skip lines with invalid grid references
-                continue;
-            }
+            var startPosInView = Vector2.Transform(line.Start, worldToShuttle * shuttleToView);
+            var endPosInView = Vector2.Transform(line.End, worldToShuttle * shuttleToView);
 
             // Only draw lines if at least one endpoint is within view
             if (monoViewBounds.Contains(startPosInView) || monoViewBounds.Contains(endPosInView))
@@ -866,8 +838,8 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                     continue;
 
                 labeled.Add(state.LabelName);
-                var labelDimensions = handle.GetDimensions(Font, state.LabelName, 1.0f);
-                handle.DrawString(Font, (uiPosition / UIScale - labelDimensions / 2) * UIScale, state.LabelName, UIScale * 1.0f, _dockLabelColor);
+                var labelDimensions = handle.GetDimensions(Font, state.LabelName, 0.9f);
+                handle.DrawString(Font, (uiPosition / UIScale - labelDimensions / 2) * UIScale, state.LabelName, UIScale * 0.9f, _dockLabelColor);
             }
             // End Frontier
         }
@@ -878,7 +850,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         return (value - MidPointVector) / MinimapScale;
     }
 
-    public sealed class BlipData
+    public class BlipData
     {
         public bool IsOutsideRadarCircle { get; set; }
         public Vector2 UiPosition { get; set; }
@@ -887,7 +859,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     }
 
     private const int RadarBlipSize = 15;
-    private const int RadarFontSize = 10;
+    private const int RadarFontSize = 8;
 
     private void DrawShields(DrawingHandleScreen handle, TransformComponent consoleXform, Matrix3x2 matrix)
     {

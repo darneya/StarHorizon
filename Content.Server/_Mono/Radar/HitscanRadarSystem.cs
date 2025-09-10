@@ -1,9 +1,9 @@
-using System.Numerics;
-using Content.Server._Mono.FireControl;
-using Content.Shared.Weapons.Ranged;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Systems;
+using System.Numerics;
+using Content.Server._Mono.FireControl;
 using Robust.Shared.Timing;
+using Content.Shared.Weapons.Ranged;
 
 namespace Content.Server._Mono.Radar;
 

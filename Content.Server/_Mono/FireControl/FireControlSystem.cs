@@ -392,6 +392,10 @@ public sealed partial class FireControlSystem : EntitySystem
         if (grid != null && TryComp<FTLComponent>((EntityUid)grid, out var ftlComp))
             return;
 
+        // Check if the weapon's grid is pacified
+        if (grid != null && TryComp<SpaceArtilleryDisabledGridComponent>((EntityUid)grid, out var pacifiedComp))
+            return;
+
         // Check if the weapon is an expedition
         if (grid != null &&
             TryComp<TransformComponent>((EntityUid)grid, out var gridXform) &&

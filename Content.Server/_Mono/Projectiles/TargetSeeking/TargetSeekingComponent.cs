@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 Redrover1760
+// SPDX-FileCopyrightText: 2025 RikuTheKiller
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 
 namespace Content.Server._Mono.Projectiles.TargetSeeking;
@@ -15,10 +21,10 @@ public sealed partial class TargetSeekingComponent : Component
     public float DetectionRange = 300f;
 
     /// <summary>
-    /// Angular range in which targets can be detected and tracked.
+    /// Minimum angular deviation from directly facing the target.
     /// </summary>
     [DataField]
-    public Angle ScanArc = Angle.FromDegrees(360);
+    public Angle Tolerance = Angle.FromDegrees(1);
 
     /// <summary>
     /// How quickly the projectile can change direction in degrees per second.
@@ -57,16 +63,28 @@ public sealed partial class TargetSeekingComponent : Component
     public float LaunchSpeed = 10f;
 
     /// <summary>
+    /// Has the projectile had its launch speed applied yet?
+    /// </summary>
+    [DataField]
+    public bool Launched = false;
+
+    /// <summary>
     /// Current speed of the projectile in m/s.
     /// </summary>
     [DataField]
     public float CurrentSpeed;
 
     /// <summary>
+    /// The amount of time in seconds left the missile starts searching for targets. // Mono
+    /// </summary>
+    [DataField]
+    public float TrackDelay = 0f;
+
+    /// <summary>
     /// Field of view in degrees for target detection.
     /// </summary>
     [DataField]
-    public float FieldOfView = 90f;
+    public float ScanArc = 90f;
 
     /// <summary>
     /// Used for tracking metrics between updates.
