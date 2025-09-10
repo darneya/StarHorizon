@@ -145,7 +145,7 @@
   - DurandPeripheralsElectronics
   technologyPrerequisites:
   - GygaxTechnology
-  position: 4, 37
+  position: 5, 37
   researchTargets:
   - TechnologyDiscDurandTechnology
 
@@ -161,7 +161,7 @@
   - MechGunTeslaCannon
   technologyPrerequisites:
   - DurandTechnology
-  position: 5, 39
+  position: 6, 39
 
 - type: technology
   id: MechGunHeavyTechnology
@@ -180,7 +180,7 @@
   - BoxAmmoGranade
   technologyPrerequisites:
   - DurandTechnology
-  position: 5, 36
+  position: 6, 36
 
 - type: technology
   id: MechCloseWeaponTechnology
@@ -196,7 +196,7 @@
   - MechWeaponWarhammer
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 34
+  position: 6, 35
 
 - type: technology
   id: MechEnergyGunExperimentalTechnology
@@ -210,7 +210,7 @@
   - MechGunXRayRifle
   technologyPrerequisites:
   - DurandTechnology
-  position: 5, 38
+  position: 6, 38
 
 - type: technology
   id: GygaxMechPaint
@@ -243,7 +243,7 @@
   - MechDurUnathiUpgradeKit
   technologyPrerequisites:
   - DurandTechnology
-  position: 5, 37
+  position: 6, 37
 
 - type: technology
   id: IncendiaryAmmunitionTechnology
