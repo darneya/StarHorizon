@@ -18,3 +18,7 @@ ent-NFAmmunitionBoxShellShotgunFlare = коробка патронов (.50 фа
     .desc = { ent-NFBaseAmmunitionBoxShellShotgun.desc }
 ent-NFAmmunitionBoxShellShotgunTranquilizer = коробка патронов (.50 транквилизаторы)
     .desc = { ent-NFBaseAmmunitionBoxShellShotgun.desc }
+ent-NFAmmunitionBoxShellShotgunPiercing = коробка патронов (.50 бронебойные)
+    .desc = { ent-NFBaseAmmunitionBoxShellShotgun.desc }
+ent-NFAmmunitionBoxShellShotgunPsycore = коробка патронов (.50 химические)
+    .desc = { ent-NFBaseAmmunitionBoxShellShotgun.desc }
