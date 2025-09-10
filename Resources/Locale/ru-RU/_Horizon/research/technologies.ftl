@@ -47,3 +47,4 @@ research-technology-incendiary-ammunition = Зажигательные боеп�
 research-technology-uranium-ammunition = Урановые боеприпасы [диск]
 research-technology-piercing-ammunition = Бронебойные боеприпасы [диск]
 research-technology-psycore-ammunition = Химические боеприпасы [диск]
+research-technology-fuel = Производство топлива

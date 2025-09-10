@@ -142,3 +142,18 @@
   technologyPrerequisites:
   - ClarkeTechnology
   position: 4, 28
+
+- type: technology
+  id: FuelGeneration
+  name: research-technology-fuel
+  entityIcon: FuelUranium1
+  discipline: NFEngineering
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - FuelPlasma1
+  - FuelUranium1
+  - FuelBananium1
+  technologyPrerequisites:
+  - NFAdvancedPowerGeneration
+  position: 5, 49

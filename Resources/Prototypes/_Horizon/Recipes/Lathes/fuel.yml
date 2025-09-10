@@ -1,0 +1,26 @@
+- type: latheRecipe
+  id: FuelPlasma1
+  result: FuelPlasma1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawQuartz: 100
+    RawPlasma: 110
+    RawIron: 100
+
+- type: latheRecipe
+  id: FuelUranium1
+  result: FuelUranium1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawQuartz: 100
+    RawUranium: 110
+    RawIron: 100
+
+- type: latheRecipe
+  id: FuelBananium1
+  result: FuelBananium1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawQuartz: 100
+    RawBananium: 110
+    RawIron: 100
