@@ -5,4 +5,4 @@ gunnery-select-all = Выбрать все
 gunnery-unselect-all = Снять выбор со всех
 gunnery-guns = Орудия
 
-gunnery-server-examine-detail = Сервер потребляет [color={$valueColor}]{$usedProcessingPower}/{$processingPower}[/color] его вычислительной мощности.
+gunnery-server-examine-detail = Сервер потребляет [color={$valueColor}]{$usedProcessingPower}/{$processingPower}[/color] вычислительной мощности.
