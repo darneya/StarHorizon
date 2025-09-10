@@ -14,6 +14,7 @@
   parent: BaseMachinePowered
   name: gunnery control server
   description: Manages the remote operation of ship weapons.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: Structures/Machines/server.rsi
