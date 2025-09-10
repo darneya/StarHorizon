@@ -14,6 +14,9 @@
       "name": "closed"
     },
     {
+      "name": "welded"
+    },
+    {
       "name": "open"
     }
   ]
