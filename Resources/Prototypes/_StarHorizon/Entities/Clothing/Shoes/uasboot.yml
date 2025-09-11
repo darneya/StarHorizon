@@ -13,10 +13,7 @@
   - type: Tag
     tags: [] # Выносим с ВЛа для хамелеонки
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.5
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepBoots
+    modifier: 0.4
   - type: StaticPrice
     price: 5000
 

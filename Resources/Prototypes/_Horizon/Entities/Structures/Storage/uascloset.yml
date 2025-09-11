@@ -77,7 +77,7 @@
 
 - type: entity
   id: ClosetUASDebug
-  name: шкаф с снаряжением Офицера
+  name: шкаф со структурами UAS
   parent: ClosetBaseUAS
   suffix: StarHorizon, UAS, DEBUG
   description: Блюспейс хранилище со всеми вещами структурами UAS
@@ -88,11 +88,8 @@
     - id: ClosetOfficer
     - id: ClosetSpider
     - id: ClosetKnight
-    - id: UASBoots
-    - id: UASsatchelOfficer
-    - id: PDAOfficerUAS
-    - id: WeaponStunprodUAS
-    - id: UASGloves
+    - id: UASVending
+    - id: BaseUASUplink
 
 - type: entity
   id: ClosetOfficer

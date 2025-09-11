@@ -92,7 +92,7 @@
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,6,4
+    - 0,0,7,4
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: StaticPrice
@@ -188,6 +188,11 @@
     - id: UASBombOfficer
     - id: UASBombSpider
     - id: UASBombKnight
+    - id: UASBoxKitUniform
+    - id: SheetEFS1
+    - id: SheetEFS
+    - id: Sheetkazmie1
+    - id: Sheetkazmie
 #    - id: 
 
 # Кадет

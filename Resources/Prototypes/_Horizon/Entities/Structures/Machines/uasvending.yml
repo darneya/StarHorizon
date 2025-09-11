@@ -58,7 +58,7 @@
 - type: vendingMachineInventory
   id: VendingMachineUAS
   startingInventory:
-   ClothingEyesGlassesUAS: 5
+   ClothingEyesGlassesUAS: 1
    SuitProtectiveUAS: 2
    SuitUAS: 3
    SkirtProtectiveUAS: 2

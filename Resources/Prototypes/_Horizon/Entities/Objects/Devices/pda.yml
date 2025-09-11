@@ -13,12 +13,6 @@
       whitelist:
         tags:
         - Write
-        - SalvagePenWelder
-        - LibraPenR
-        - RollingPen
-      blacklist:
-        tags:
-        - CrossPen
     state: pda
   - type: PdaBorderColor
     borderColor: "#2b2f35"
