@@ -43,3 +43,5 @@ ent-ClothingOuterHardsuitTraumaTeamRed = EVA техника "Траумы"
     .desc = Специальный прототип скафандра EVA для отрядов Trauma Team Interstellar. Снабжен экзоскелетом для повышенной грузоподъёмности и мобильности.
 ent-ClothingOuterHardsuitTraumaTeamSur = EVA реаниматора "Траумы"
     .desc = Специальный прототип скафандра EVA для отрядов Trauma Team Interstellar. Снабжен экзоскелетом для повышенной грузоподъёмности и мобильности.
+ent-ClothingOuterHardsuitTraumaTeamPilot = EVA пилота траумы
+    .desc = Стандартный образец герметичного комплекта брони Trauma Team Interstellar, усилен более крепким материалом для работы в безвоздушном пространстве.

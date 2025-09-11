@@ -1,3 +1,5 @@
+ent-MaterialBaseFar = { ent-BaseItem }
+    .desc = Сырой материал.
 ent-MaterialEmerald = очищенный изумруд
     .suffix = Полный
     .desc = { ent-MaterialBase.desc }
