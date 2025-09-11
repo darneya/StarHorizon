@@ -22,4 +22,15 @@ shuttle-console-hide-target = Показать
 shuttle-console-hide-target-description = Включает/выключает видимость целевой точки маршрута на консоли радара.
 shuttle-console-target-name = Метка
 shuttle-console-map-track = ⌖
+# Network Port Buttons
+shuttle-console-network-ports = Сетевые Порты
+# Device Link Buttons
+shuttle-console-device-button-1 = Порт 1
+shuttle-console-device-button-2 = Порт 2
+shuttle-console-device-button-3 = Порт 3
+shuttle-console-device-button-4 = Порт 4
+shuttle-console-device-button-5 = Порт 5
+shuttle-console-device-button-6 = Порт 6
+shuttle-console-device-button-7 = Порт 7
+shuttle-console-device-button-8 = Порт 8
 shuttle-console-maximum-speed = Максимальная скорость

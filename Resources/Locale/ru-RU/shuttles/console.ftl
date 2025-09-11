@@ -3,6 +3,9 @@ shuttle-pilot-end = Пилотирование прекращено
 shuttle-console-in-ftl = Невозможно войти в БСС когда уже в БСС!
 shuttle-console-mass = Слишком большой для БСС прыжка
 shuttle-console-proximity = Слишком близко к соседним объектам
+shuttle-console-in-expedition = FTL is unavailable during expeditions
+shuttle-console-no-powered-ftl-drive = No FTL drive detected
+shuttle-console-ftl-drive-unpowered = FTL drive detected but not powered
 shuttle-console-static = Объект статичен
 shuttle-console-prevent = Вы не можете управлять этим шаттлом.
 
@@ -27,17 +30,6 @@ shuttle-console-nav-settings = Настройки
 shuttle-console-iffshuttles-toggle = Показать шаттлы
 shuttle-console-iff-toggle = Показать ССЧ
 shuttle-console-dock-toggle = Показать порты
-# Network Port Buttons
-shuttle-console-network-ports = Сетевые Порты
-# Device Link Buttons
-shuttle-console-device-button-1 = Порт 1
-shuttle-console-device-button-2 = Порт 2
-shuttle-console-device-button-3 = Порт 3
-shuttle-console-device-button-4 = Порт 4
-shuttle-console-device-button-5 = Порт 5
-shuttle-console-device-button-6 = Порт 6
-shuttle-console-device-button-7 = Порт 7
-shuttle-console-device-button-8 = Порт 8
 
 # MAP
 
@@ -46,6 +38,7 @@ shuttle-console-ftl-state-Available = Доступен
 shuttle-console-ftl-state-Starting = Разгон
 shuttle-console-ftl-state-Travelling = Перемещение
 shuttle-console-ftl-state-Invalid = Неверно
+shuttle-console-undock-all = Отстыковать все
 shuttle-console-ftl-state-Arriving = Прибытие
 shuttle-console-ftl-state-Cooldown = Перезагрузка
 shuttle-console-map-settings = Настройки
