@@ -80,7 +80,7 @@
 - type: entity
   id: WeaponTurretCharonReload
   name: M381 CHARON mass driver
-  parent: BallisticArtilleryUnanchorableCartridge
+  parent: BallisticArtilleryCartridge
   suffix: Ship, Manual Reload, No Rotate
   description: A capital-class railgun that fires a massive slug at extreme velocity, capable of catastrophic damage to enemy ships. Heavy linear accelerator, can be remotely activated or linked up to a GCS.
   components:
