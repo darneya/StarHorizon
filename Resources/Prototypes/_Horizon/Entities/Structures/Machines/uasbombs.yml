@@ -1,5 +1,6 @@
 - type: entity
   parent: [BaseHardBomb, BaseUASContraband, BaseItem]
+  categories: [ HideSpawnMenu ]
   id: UAShardBomb
   name: мобильная бомба UAS
   suffix: StarHorizon, UAS

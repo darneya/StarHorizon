@@ -18,6 +18,7 @@
   parent: UASStandartID
   id: UASCounselorID
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   name: карта Совета UAS
   description: Карта с необходимыми для членов UAS доступами.
   components:
@@ -38,6 +39,7 @@
   parent: UASStandartID
   id: UASTitanID
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   name: карта офицера Титана UAS
   description: Карта с необходимыми доступами для членов UAS
   components:
@@ -58,6 +60,7 @@
   parent: UASStandartID
   id: UASSpiderID
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   name: карта офицера Паука UAS
   description: Карта с необходимыми доступами для членов UAS
   components:
@@ -78,6 +81,7 @@
   parent: UASStandartID
   id: UASKnightID
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   name: карта офицера Рыцаря UAS
   description: Карта с необходимыми доступами для членов UAS
   components:
@@ -98,6 +102,7 @@
   parent: UASStandartID
   id: UASOfficerID
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   name: карта Офицера UAS
   description: Карта с необходимыми доступами для членов UAS
   components:
@@ -118,6 +123,7 @@
   parent: UASStandartID
   id: UASCadetID
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   name: карта кадета UAS
   description: Карта с необходимыми доступами для членов UAS
   components:
@@ -138,6 +144,7 @@
   parent: UASStandartID
   id: UASRipsoidID
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   name: карта Рипсоида UAS
   description: Карта с необходимыми доступами для членов UAS
   components:

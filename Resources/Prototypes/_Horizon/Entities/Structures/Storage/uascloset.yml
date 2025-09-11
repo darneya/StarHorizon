@@ -4,6 +4,7 @@
   name: шкаф UAS
   description: Стандартное хранилище корпорации UAS
   suffix: StarHorizon, UAS, Structure
+  categories: [ HideSpawnMenu ]
   components:
   - type: ResistLocker
   - type: Transform
@@ -79,6 +80,7 @@
   id: ClosetUASDebug
   name: шкаф со структурами UAS
   parent: ClosetBaseUAS
+  categories: [ HideSpawnMenu ]
   suffix: StarHorizon, UAS, DEBUG
   description: Блюспейс хранилище со всеми вещами структурами UAS
   components:
@@ -96,6 +98,7 @@
   name: шкаф с снаряжением Офицера
   parent: ClosetBaseUAS
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -114,6 +117,7 @@
   name: шкаф с снаряжением Паука
   parent: ClosetBaseUAS
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -131,6 +135,7 @@
   name: шкаф с снаряжением Рыцаря
   parent: ClosetBaseUAS
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:

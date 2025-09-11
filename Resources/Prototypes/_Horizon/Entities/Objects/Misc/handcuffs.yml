@@ -4,6 +4,7 @@
   id: UASHandcuffs
   suffix: StarHorizon, UAS
   parent: [BaseItem, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Item
     size: Small

@@ -3,6 +3,7 @@
   parent: BaseItem
   id: UASBox
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   description: Закрытый ящик с логотипом корпорации.
   components:
   - type: Sprite

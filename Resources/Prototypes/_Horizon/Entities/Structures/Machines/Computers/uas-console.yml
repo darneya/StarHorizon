@@ -1,5 +1,6 @@
 - type: entity
   parent: [BaseStructure, UASStore, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: BaseUASUplink
   name: консоль запроса UAS
   description: Подозрительная консоль без монитора.

@@ -1,5 +1,6 @@
 - type: entity
   parent: [BasePDA, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: PDAUAS
   suffix: StarHorizon, UAS
   name: кпк агента UAS

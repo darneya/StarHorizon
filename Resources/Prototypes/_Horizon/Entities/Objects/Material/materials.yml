@@ -18,6 +18,7 @@
   parent: SheetEFS
   id: SheetEFS1
   suffix: Single
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: efs
@@ -50,6 +51,7 @@
   parent: SheetEFSBase
   id: SheetEFS
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   components:
   - type: PhysicalComposition
     materialComposition:
@@ -94,6 +96,7 @@
   parent: Sheetkazmie
   id: Sheetkazmie1
   suffix: Single
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     state: kazmie
@@ -127,6 +130,7 @@
   parent: SheetkazmieBase
   id: Sheetkazmie
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   components:
   - type: PhysicalComposition
     materialComposition:

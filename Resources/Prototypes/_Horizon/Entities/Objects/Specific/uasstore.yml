@@ -16,6 +16,7 @@
   parent: CitadelCoin
   id: CitadelCoin1
   suffix: StarHorizon, UAS, 1 TЗ
+  categories: [ HideSpawnMenu ]
   components:
   - type: Stack
     count: 1
@@ -23,6 +24,7 @@
 - type: entity
   name: токен запроса
   parent: [BaseItem, BaseUASContraband]
+  categories: [ HideSpawnMenu ]
   id: CitadelCoin
   suffix: StarHorizon, UAS, 20 TЗ
   description: Кажется, он пульсирует подозрительно манящей энергией.
@@ -62,7 +64,6 @@
     - UASUplinkKit
     currencyWhitelist:
     - CitadelCoin
-#
 
 - type: storeCategory
   id: UASUplinkWeaponry

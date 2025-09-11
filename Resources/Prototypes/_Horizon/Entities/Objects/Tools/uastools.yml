@@ -2,6 +2,7 @@
   name: омега-инструмент UAS
   parent: BaseItem
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   id: UASOmegaTool
   description: Мульти-инструмент модели "Омега" от корпорации UAS.
   components:
