@@ -492,6 +492,8 @@
       runningState: icon
       staticPacks:
       - NfsdAmmoStatic # Frontier: SecurityAmmoStatic<NfsdAmmoStatic
+      dynamicPacks:
+      - HRZNAmmo # Horizon
     - type: MaterialStorage
       whitelist:
         tags:
@@ -733,6 +735,8 @@
     - OreSmelting
     - RGlassSmelting
     - AdvancedSmelting
+    dynamicPacks: # Horizon
+    - FuelCreation # Horizon
 
 - type: entity
   parent: BaseLathe

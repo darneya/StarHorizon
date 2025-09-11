@@ -1,0 +1,12 @@
+ent-IngotTitan = титановый слиток
+    .suffix = Полный
+    .desc = { ent-IngotBase.desc }
+ent-IngotTitan1 = титановый слиток
+    .suffix = Один
+    .desc = { ent-IngotBase.desc }
+ent-IngotPsycore = псикориевый слиток
+    .suffix = Полный
+    .desc = { ent-IngotBase.desc }
+ent-IngotPsycore1 = псикориевый слиток
+    .suffix = Один
+    .desc = { ent-IngotBase.desc }
