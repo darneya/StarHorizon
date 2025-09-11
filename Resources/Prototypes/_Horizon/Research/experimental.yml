@@ -6,7 +6,7 @@
   entityIcon: MechPhazon
   discipline: NFScience
   tier: 3
-  cost: 30000
+  cost: 20000
   recipeUnlocks:
   - PhazonHarness
   - PhazonLArm
@@ -21,6 +21,8 @@
   technologyPrerequisites:
   - RipleyMKIITechnology
   position: 3, 29
+  researchTargets:
+  - TechnologyDiscPhazonTechnology
 
 - type: technology
   id: PhazonMechPaint

@@ -380,4 +380,51 @@
   id: CapacitorStockPart
 
 - type: Tag
+  id: FanTinyElectronics
+
+- type: Tag
+  id: MagazineMinigunERT15
+
+- type: Tag
+  id: Cartridge15
+
+- type: Tag
+  id: CartridgeMinigunERT15
+
+- type: Tag
+  id: PowerUAS
+
+# Far Ores Section Tags
+
+- type: Tag
+  id: OrePsycore
+
+- type: Tag
+  id: OreTitan
+
+- type: Tag
+  id: OreEmerald
+
+- type: Tag
+  id: OreRuby
+
+- type: Tag
+  id: OreSapphire
+
+- type: Tag
+  id: OreTopaz
+
+- type: Tag
+  id: Emerald
+
+- type: Tag
+  id: Ruby
+
+- type: Tag
+  id: Sapphire
+
+- type: Tag
+  id: Topaz
+
+- type: Tag
   id: UASMaterial

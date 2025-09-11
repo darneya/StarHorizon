@@ -158,6 +158,71 @@
     depositPrototype: MuddlePlasma
   - type: Sprite
     color: "#F0DDF0"
+
+# Horizon start
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositFrezon
+  suffix: Frezon
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyFrezon
+  - type: Sprite
+    color: "#F0DDF0"
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositBZ
+  suffix: BZ
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyBZ
+  - type: Sprite
+    color: "#F0DDF0"
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositPluoxium
+  suffix: Pluoxium
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyPluoxium
+  - type: Sprite
+    color: "#F0DDF0"
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositHydrogen
+  suffix: Hydrogen
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyHydrogen
+  - type: Sprite
+    color: "#F0DDF0"
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositProtoNitrate
+  suffix: ProtoNitrate
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyProtoNitrate
+  - type: Sprite
+    color: "#F0DDF0"
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositHelium
+  suffix: Helium
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyHelium
+  - type: Sprite
+    color: "#F0DDF0"
+
+# Horizon end
+
 # endregion Standard Deposits
 
 # region Very Small Deposits

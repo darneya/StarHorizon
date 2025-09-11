@@ -306,6 +306,7 @@
     - NFEngineeringBoards # Frontier
     - NFMedicalBoards # Frontier
     - NFServiceBoards # Frontier
+    - SHEngineeringBoards
   - type: EmagLatheRecipes
     emagDynamicPacks: [] # Frontier: empty list
     # - SecurityBoards # Frontier
@@ -490,6 +491,8 @@
       runningState: icon
       staticPacks:
       - NfsdAmmoStatic # Frontier: SecurityAmmoStatic<NfsdAmmoStatic
+      dynamicPacks:
+      - HRZNAmmo # Horizon
     - type: MaterialStorage
       whitelist:
         tags:
@@ -731,6 +734,8 @@
     - OreSmelting
     - RGlassSmelting
     - AdvancedSmelting
+    dynamicPacks: # Horizon
+    - FuelCreation # Horizon
 
 - type: entity
   parent: BaseLathe

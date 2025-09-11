@@ -1391,6 +1391,7 @@
   recipeUnlocks:
   - HolofanProjector
 #  - FireExtinguisherBluespace # DeltaV
+  - FanTinyElectronics # Horizon
   technologyPrerequisites:
   - NFAtmosphericTech
   position: 0, 35
@@ -1840,7 +1841,7 @@
   - NFAmmunitionBoxBigRifle30Overpressure
   technologyPrerequisites:
   - NFImprovedRifleAmmo
-  position: 3, 64 # Horizon
+  position: 4, 64 # Horizon
 
 - type: technology
   id: NFBasicShuttleArmament
