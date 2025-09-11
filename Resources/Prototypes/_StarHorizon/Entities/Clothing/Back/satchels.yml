@@ -95,6 +95,8 @@
     - 0,0,6,4
   - type: ExplosionResistance
     damageCoefficient: 0.1
+  - type: StaticPrice
+    price: 50000
 
 - type: entity
   parent: [ClothingBackpack, BaseUASContraband]

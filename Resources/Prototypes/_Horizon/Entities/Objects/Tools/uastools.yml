@@ -1,7 +1,7 @@
 - type: entity
   name: омега-инструмент UAS
   parent: BaseItem
-  suffix: Aavikko, UAS
+  suffix: StarHorizon, UAS
   id: UASOmegaTool
   description: Мульти-инструмент модели "Омега" от корпорации UAS.
   components:

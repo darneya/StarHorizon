@@ -76,9 +76,9 @@
     price: 75
 
 - type: entity
-  id: ClosetOfficer
+  id: ClosetUASDebug
   name: шкаф с снаряжением Офицера
-  parent: ClosetUASDebug
+  parent: ClosetBaseUAS
   suffix: StarHorizon, UAS, DEBUG
   description: Блюспейс хранилище со всеми вещами структурами UAS
   components:

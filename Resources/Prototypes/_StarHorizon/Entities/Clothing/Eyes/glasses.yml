@@ -16,6 +16,8 @@
   - type: EyeProtection
   - type: IdentityBlocker
     coverage: EYES
+  - type: StaticPrice
+    price: 50000
 
 - type: entity
   parent: ClothingEyesBase

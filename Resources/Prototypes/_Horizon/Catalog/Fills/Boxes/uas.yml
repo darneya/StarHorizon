@@ -46,6 +46,34 @@
 
 - type: entity
   categories: [ HideSpawnMenu ]
+  name: Ультимативный набор UAS
+  description: Станьте настоящим патриотом UAS. Слава UAS!
+  parent: UASBox
+  id: UASBoxKitUniform
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: PDAUAS
+    - id: UASGloves
+    - id: UASGlovesIsolate
+    - id: SuitUAS
+    - id: SuitProtectiveUAS
+    - id: SkirtProtectiveUAS
+    - id: SkirtUAS
+    - id: UASBoots
+    - id: ClothingEyesGlassesUAS
+    - id: UASsatchel
+    - id: UASVests
+    - id: uasberet
+    - id: uascap
+    - id: RipsiPlushin
+    - id: LumaPlushina
+    - id: UASopenbox
+  - type: StaticPrice
+    price: 200000
+
+- type: entity
+  categories: [ HideSpawnMenu ]
   parent: UASBox
   id: UASBoxStoreBug
   components:

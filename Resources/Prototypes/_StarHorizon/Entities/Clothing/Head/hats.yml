@@ -96,6 +96,8 @@
   - type: Tag
     tags:
     - HamsterWearable
+  - type: StaticPrice
+    price: 5000
 
 - type: entity
   parent: [ClothingHeadBase, BaseUASContraband]
@@ -112,3 +114,5 @@
   - type: Tag
     tags:
     - HamsterWearable
+  - type: StaticPrice
+    price: 5000

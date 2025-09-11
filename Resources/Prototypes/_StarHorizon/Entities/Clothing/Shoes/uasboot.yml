@@ -17,6 +17,8 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepBoots
+  - type: StaticPrice
+    price: 5000
 
 - type: entity
   parent: [ClothingShoesBootsMagBase, BaseUASContraband]
