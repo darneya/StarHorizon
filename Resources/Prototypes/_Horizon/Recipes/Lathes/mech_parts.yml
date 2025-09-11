@@ -7,7 +7,7 @@
   materials:
     Steel: 2200
     Glass: 600
-    Diamond: 100
+    Plasteel: 100
 
 - type: latheRecipe
   id: GygaxLArm
@@ -16,7 +16,7 @@
   completetime: 4
   materials:
     Steel: 900
-    Diamond: 100
+    Plasteel: 100
 
 - type: latheRecipe
   id: GygaxLLeg
@@ -25,7 +25,7 @@
   completetime: 4
   materials:
     Steel: 900
-    Diamond: 100
+    Plasteel: 100
 
 - type: latheRecipe
   id: GygaxRLeg
@@ -34,7 +34,7 @@
   completetime: 4
   materials:
     Steel: 900
-    Diamond: 100
+    Plasteel: 100
 
 - type: latheRecipe
   id: GygaxRArm
@@ -43,7 +43,7 @@
   completetime: 4
   materials:
     Steel: 900
-    Diamond: 100
+    Plasteel: 100
 
 - type: latheRecipe
   id: GygaxArmorPlates
@@ -51,9 +51,9 @@
   category: MechGygax
   completetime: 4
   materials:
-    Steel: 900
-    Diamond: 600
-    Plasteel: 600
+    Steel: 1000
+    Plasteel: 500
+    Titan: 1000
 
 - type: latheRecipe
   id: GygaxHead
@@ -63,7 +63,7 @@
   materials:
     Steel: 600
     Glass: 300
-    Diamond: 100
+    Plasteel: 100
 
 - type: latheRecipe
   id: GygaxCentralElectronics
@@ -284,9 +284,9 @@
   category: MechDurand
   completetime: 4
   materials:
-    Steel: 1700
-    Uranium: 1400
-    Plasteel: 1100
+    Steel: 2000
+    Uranium: 1000
+    Titan: 2000
 
 - type: latheRecipe
   id: DurandHead
@@ -372,9 +372,9 @@
   category: MechPhazon
   completetime: 4
   materials:
-    Steel: 1400
-    Plasma: 1100
-    Plasteel: 1100
+    Steel: 2000
+    Plasma: 1500
+    Titan: 1000
 
 - type: latheRecipe
   id: PhazonHead

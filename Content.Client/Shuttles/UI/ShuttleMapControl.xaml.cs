@@ -14,6 +14,7 @@ using Robust.Shared.Input;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -24,9 +25,8 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IInputManager _inputs = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IEntityManager _entManager = default!; // Frontier
-
-    private readonly SharedMapSystem _mapSystem;
     private readonly ShuttleSystem _shuttles;
     private readonly SharedTransformSystem _xformSystem;
 
@@ -45,6 +45,11 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
     /// Toggles FTL mode on. This shows a pre-vis for FTLing a grid.
     /// </summary>
     public bool FtlMode;
+
+    /// <summary>
+    /// Shows only the FTL range circle without cursor targeting elements.
+    /// </summary>
+    public bool ShowFTLRangeOnly;
 
     private Angle _ftlAngle;
 
@@ -75,7 +80,6 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
     public ShuttleMapControl() : base(256f, 512f, 512f)
     {
         RobustXamlLoader.Load(this);
-        _mapSystem = EntManager.System<SharedMapSystem>();
         _shuttles = EntManager.System<ShuttleSystem>();
         _xformSystem = EntManager.System<SharedTransformSystem>();
         var cache = IoCManager.Resolve<IResourceCache>();
@@ -99,10 +103,6 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 
     protected override void MouseMove(GUIMouseMoveEventArgs args)
     {
-        // No move for you.
-        if (FtlMode)
-            return;
-
         base.MouseMove(args);
     }
 
@@ -112,7 +112,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
         {
             if (args.Function == EngineKeyFunctions.UIClick)
             {
-                var mapUid = _mapSystem.GetMapOrInvalid(ViewingMap);
+                var mapUid = _mapManager.GetMapEntityId(ViewingMap);
 
                 var beaconsOnly = EntManager.TryGetComponent(mapUid, out FTLDestinationComponent? destComp) &&
                                   destComp.BeaconsOnly;
@@ -127,6 +127,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
                 {
                     // We'll send the "adjusted" position and server will adjust it back when relevant.
                     var mapCoords = new MapCoordinates(InverseMapPosition(args.RelativePosition), ViewingMap);
+
                     RequestFTL?.Invoke(mapCoords, _ftlAngle);
                 }
             }
@@ -252,7 +253,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 
         DrawParallax(handle);
 
-        var viewedMapUid = _mapSystem.GetMapOrInvalid(ViewingMap);
+        var viewedMapUid = _mapManager.GetMapEntityId(ViewingMap);
         var matty = Matrix3Helpers.CreateInverseTransform(Offset, Angle.Zero);
         var realTime = _timing.RealTime;
         var viewBox = new Box2(Offset - WorldRangeVector, Offset + WorldRangeVector);
@@ -261,7 +262,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 
         // Draw our FTL range + no FTL zones
         // Do it up here because we want this layered below most things.
-        if (FtlMode)
+        if (FtlMode || ShowFTLRangeOnly)
         {
             if (EntManager.TryGetComponent<TransformComponent>(_shuttleEntity, out var shuttleXform))
             {
@@ -326,14 +327,15 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
                 localPos = localPos with { Y = -localPos.Y };
                 var beaconUiPos = ScalePosition(localPos);
                 var mapObject = GetMapObject(localPos, Angle.Zero, scale: 0.75f, scalePosition: true);
+                var displayColor = beaconColor;
 
-                var existingVerts = _verts.GetOrNew(beaconColor);
-                var existingEdges = _edges.GetOrNew(beaconColor);
+                var existingVerts = _verts.GetOrNew(displayColor);
+                var existingEdges = _edges.GetOrNew(displayColor);
 
                 AddMapObject(existingEdges, existingVerts, mapObject);
                 _beacons.Add(mapO);
 
-                var existingStrings = _strings.GetOrNew(beaconColor);
+                var existingStrings = _strings.GetOrNew(displayColor);
                 existingStrings.Add((beaconUiPos, beaconName));
             }
         }
@@ -403,7 +405,15 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
             foreach (var (gridUiPos, iffText) in sendStrings)
             {
                 var textWidth = handle.GetDimensions(_font, iffText, 1f);
-                handle.DrawString(_font, gridUiPos + textWidth with { X = -textWidth.X / 2f, Y = textWidth.Y * UIScale }, iffText, adjustedColor);
+
+                // Split text into lines
+                var lines = iffText.Split('\n');
+                var mainLabel = lines[0];
+                var mainTextWidth = handle.GetDimensions(_font, mainLabel, 1f);
+                var displayColor = adjustedColor;
+
+                // Draw main ship label with company color if available
+                handle.DrawString(_font, gridUiPos + mainTextWidth with { X = -mainTextWidth.X / 2f, Y = mainTextWidth.Y * UIScale }, mainLabel, displayColor);
             }
         }
 
@@ -411,7 +421,7 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
         var mouseLocalPos = GetLocalPosition(mousePos);
 
         // Draw dotted line from our own shuttle entity to mouse.
-        if (FtlMode)
+        if (FtlMode && !ShowFTLRangeOnly)
         {
             if (mousePos.Window != WindowId.Invalid)
             {
@@ -482,7 +492,9 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
 
         mapOffset = InverseMapPosition(mapOffset);
         var coordsText = $"{mapOffset.X:0.0}, {mapOffset.Y:0.0}";
-        DrawData(handle, coordsText);
+        var coordColor = Color.White;
+
+        DrawData(handle, coordsText, coordColor);
     }
 
     private void AddMapObject(List<Vector2> edges, List<Vector2> verts, ValueList<Vector2> mapObject)
@@ -616,5 +628,16 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
         {
             _mapObjects.AddRange(obbies);
         }
+    }
+
+    /// <summary>
+    /// Draw the coordinate data with a custom color.
+    /// </summary>
+    protected void DrawData(DrawingHandleScreen handle, string text, Color color)
+    {
+        var font = _font;
+        var dimensions = handle.GetDimensions(font, text, 1f);
+        var position = new Vector2(15f, Height - dimensions.Y - 15f);
+        handle.DrawString(font, position, text, color);
     }
 }

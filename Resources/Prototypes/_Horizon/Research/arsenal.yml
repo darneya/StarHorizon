@@ -20,7 +20,7 @@
   entityIcon: WeaponKineticHammer
   discipline: NFSalvage
   tier: 2
-  cost: 15000
+  cost: 7500
   recipeUnlocks:
   - WeaponKineticSpear
   - WeaponKineticHammer
@@ -29,6 +29,8 @@
   technologyPrerequisites:
   - NFImprovedSalvageWeapons
   position: 4, 57
+  researchTargets:
+  - TechnologyDiscAdvancedPKAMelee
 
 - type: technology
   id: AdvancedPKARanged
@@ -36,7 +38,7 @@
   entityIcon: WeaponProtoKineticRailgun
   discipline: NFSalvage
   tier: 2
-  cost: 15000
+  cost: 7500
   recipeUnlocks:
   - WeaponProtoKineticPistol
   - WeaponProtoKineticRepeater
@@ -45,6 +47,8 @@
   technologyPrerequisites:
   - NFImprovedSalvageWeapons
   position: 4, 58
+  researchTargets:
+  - TechnologyDiscAdvancedPKARanged
 
 - type: technology
   id: AdvancedPKAModules
@@ -52,7 +56,7 @@
   entityIcon: PKAUpgradeDamage
   discipline: NFSalvage
   tier: 2
-  cost: 15000
+  cost: 7500
   recipeUnlocks:
   - PKAUpgradeDamage
   - PKAUpgradeRange
@@ -61,6 +65,8 @@
   technologyPrerequisites:
   - NFImprovedSalvageWeapons
   position: 4, 59
+  researchTargets:
+  - TechnologyDiscAdvancedPKAModules
 
 - type: technology
   id: GygaxTechnology
@@ -82,6 +88,8 @@
   technologyPrerequisites:
   - RipleyMKIITechnology
   position: 3, 34
+  researchTargets:
+  - TechnologyDiscGygaxTechnology
 
 - type: technology
   id: MechEnergyGunSmallTechnology
@@ -116,22 +124,6 @@
   prerequisiteLineType: Tree
   position: 4, 35
 
-#- type: technology
-#  id: MechTechnologyArmor
-#  name: research-technology-mech-armor
-#  icon:
-#    sprite: Objects/Specific/Mech/mecha_equipment.rsi
-#    state: mecha_abooster_proj
-#  discipline: NFArsenalNfsd
-#  tier: 2
-#  cost: 10000
-#  recipeUnlocks:
-#  - MechEquipmentArmorMelee
-#  - MechEquipmentArmorRange
-#  technologyPrerequisites:
-#  - GygaxTechnology
-#  position: 7, 3
-
 # Tier 3
 
 - type: technology
@@ -140,7 +132,7 @@
   entityIcon: MechDurand
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 20000
+  cost: 10000
   recipeUnlocks:
   - DurandHarness
   - DurandLArm
@@ -153,7 +145,9 @@
   - DurandPeripheralsElectronics
   technologyPrerequisites:
   - GygaxTechnology
-  position: 4, 37
+  position: 5, 37
+  researchTargets:
+  - TechnologyDiscDurandTechnology
 
 - type: technology
   id: MechEnergyGunHeavyTechnology
@@ -167,7 +161,7 @@
   - MechGunTeslaCannon
   technologyPrerequisites:
   - DurandTechnology
-  position: 5, 39
+  position: 6, 39
 
 - type: technology
   id: MechGunHeavyTechnology
@@ -175,7 +169,7 @@
   entityIcon: MechGunMissileLRM6
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 30000
+  cost: 15000
   recipeUnlocks:
   - MechGunAntiMatterRifle
   - MechGunGrenade
@@ -186,7 +180,7 @@
   - BoxAmmoGranade
   technologyPrerequisites:
   - DurandTechnology
-  position: 5, 36
+  position: 6, 36
 
 - type: technology
   id: MechCloseWeaponTechnology
@@ -194,7 +188,7 @@
   entityIcon: MechWeaponSword
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 20000
+  cost: 10000
   recipeUnlocks:
   - MechWeaponSword
   - MechWeaponSpear
@@ -202,7 +196,7 @@
   - MechWeaponWarhammer
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 34
+  position: 6, 35
 
 - type: technology
   id: MechEnergyGunExperimentalTechnology
@@ -216,7 +210,7 @@
   - MechGunXRayRifle
   technologyPrerequisites:
   - DurandTechnology
-  position: 5, 38
+  position: 6, 38
 
 - type: technology
   id: GygaxMechPaint
@@ -249,4 +243,80 @@
   - MechDurUnathiUpgradeKit
   technologyPrerequisites:
   - DurandTechnology
-  position: 5, 37
+  position: 6, 37
+
+- type: technology
+  id: IncendiaryAmmunitionTechnology
+  name: research-technology-incendiary-ammunition
+  entityIcon: NFAmmunitionBoxRifle20Incendiary
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - NFAmmunitionBoxRifle20Incendiary
+  - NFAmmunitionBoxRifle30Incendiary
+  - NFAmmunitionBoxPistol35Incendiary
+  - NFAmmunitionBoxPistol45Incendiary
+  - NFAmmunitionBoxShellShotgunIncendiary
+  technologyPrerequisites:
+  - NFBulkRifleAmmo
+  position: 5, 64
+  researchTargets:
+  - TechnologyDiscArsenalIncendiaryAmmunition
+
+- type: technology
+  id: UraniumAmmunitionTechnology
+  name: research-technology-uranium-ammunition
+  entityIcon: NFAmmunitionBoxRifle20Uranium
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - NFAmmunitionBoxRifle20Uranium
+  - NFAmmunitionBoxRifle30Uranium
+  - NFAmmunitionBoxPistol35Uranium
+  - NFAmmunitionBoxPistol45Uranium
+  - NFAmmunitionBoxShellShotgunUranium
+  technologyPrerequisites:
+  - NFBulkRifleAmmo
+  position: 5, 65
+  researchTargets:
+  - TechnologyDiscArsenalUraniumAmmunition
+
+- type: technology
+  id: PiercingAmmunitionTechnology
+  name: research-technology-piercing-ammunition
+  entityIcon: NFAmmunitionBoxRifle20Piercing
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - NFAmmunitionBoxRifle20Piercing
+  - NFAmmunitionBoxRifle30Piercing
+  - NFAmmunitionBoxPistol35Piercing
+  - NFAmmunitionBoxPistol45Piercing
+  - NFAmmunitionBoxShellShotgunPiercing
+  technologyPrerequisites:
+  - NFBulkRifleAmmo
+  position: 5, 66
+  researchTargets:
+  - TechnologyDiscArsenalPiercingAmmunition
+
+- type: technology
+  id: PsycoreAmmunitionTechnology
+  name: research-technology-psycore-ammunition
+  entityIcon: NFAmmunitionBoxRifle20Psycore
+  discipline: NFArsenalNfsd
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - NFAmmunitionBoxRifle20Psycore
+  - NFAmmunitionBoxRifle30Psycore
+  - NFAmmunitionBoxPistol35Psycore
+  - NFAmmunitionBoxPistol45Psycore
+  - NFAmmunitionBoxShellShotgunPsycore
+  technologyPrerequisites:
+  - NFBulkRifleAmmo
+  position: 5, 67
+  researchTargets:
+  - TechnologyDiscArsenalPsycoreAmmunition

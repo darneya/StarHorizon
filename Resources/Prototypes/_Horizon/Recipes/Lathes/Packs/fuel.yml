@@ -1,0 +1,8 @@
+## Dynamic
+
+- type: latheRecipePack
+  id: FuelCreation
+  recipes:
+  - FuelPlasma1
+  - FuelUranium1
+  - FuelBananium1

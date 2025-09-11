@@ -349,7 +349,7 @@
         - FloraRockSolid
         - FloraRockSolid
         - FloraRockSolid
-        - CrystalOrange
+        - RandomOrangeCrystal
     - !type:BiomeEntityLayer
       threshold: 0.2
       noise:
