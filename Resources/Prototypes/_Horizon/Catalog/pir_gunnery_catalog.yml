@@ -1,4 +1,34 @@
 - type: listing
+  id: PirComputerGunneryConsole
+  name: Консоль контроля орудий
+  description: Консоль для управления корабельным вооружением.
+  productEntity: ComputerGunneryConsole
+  cost:
+    Doubloon: 5
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirGunneryServerLow
+  name: Сервер контроля орудий
+  description: Сервер для управления корабельным вооружением.
+  productEntity: GunneryServerLow
+  cost:
+    Doubloon: 5
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirShieldGeneratorSmall
+  name: Сервер контроля орудий
+  description: Сервер для управления корабельным вооружением.
+  productEntity: ShieldGeneratorSmall
+  cost:
+    Doubloon: 10
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
   id: PirWeaponTurretCharonReload
   name: M381 ХАРОН ускоритель массы
   description: Рельсотрон, линкорное орудие, стреляющее массивным снарядом на экстремальной скорости, способное нанести катастрофический урон вражеским шаттлам. Тяжёлый линейный ускоритель, может управляться дистанционно или подключаться к серверу контроля орудиями.
