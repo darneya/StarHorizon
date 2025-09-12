@@ -8,3 +8,17 @@
   - MachineGCSLowCircuitboard
   - MachineGCSMediumCircuitboard
   - MachineGCSHighCircuitboard
+
+- type: latheRecipePack
+  id: ShipgunAmmo
+  recipes:
+  - CharonSlugUniversal
+  - CharonSubnuclearSlugUniversal
+  - ASM220TorpedoHEUniversal
+  - ASM220TorpedoECMUniversal
+  - ASM220TorpedoLOSATUniversal
+  - 150mmHEUniversal
+  - 150mmEmpShellUniversal
+  - GPOL50BombUniversal
+  - ZenithRocketUniversal
+  - QuasarAcceleratorUniversal
