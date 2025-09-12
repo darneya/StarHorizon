@@ -1,3 +1,5 @@
+ent-OreBaseFar = { ent-BaseItem }
+    .desc = Кусок необработанной руды.
 ent-PsycoreOre = псикориевая руда
     .suffix = Полный
     .desc = { ent-OreBase.desc }

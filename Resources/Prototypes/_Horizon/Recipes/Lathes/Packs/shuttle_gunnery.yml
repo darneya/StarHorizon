@@ -1,0 +1,10 @@
+# From Monolith
+- type: latheRecipePack
+  id: MonoAdvancedShuttleComponents
+  recipes:
+  - GunneryControlComputerCircuitboard
+  - MachineShieldLightCircuitboard
+  - MachineShieldMediumCircuitboard
+  - MachineGCSLowCircuitboard
+  - MachineGCSMediumCircuitboard
+  - MachineGCSHighCircuitboard

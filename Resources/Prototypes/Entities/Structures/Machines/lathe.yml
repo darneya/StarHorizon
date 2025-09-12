@@ -306,7 +306,8 @@
     - NFEngineeringBoards # Frontier
     - NFMedicalBoards # Frontier
     - NFServiceBoards # Frontier
-    - SHEngineeringBoards
+    - SHEngineeringBoards # Horizon
+    - MonoAdvancedShuttleComponents # Horizon
   - type: EmagLatheRecipes
     emagDynamicPacks: [] # Frontier: empty list
     # - SecurityBoards # Frontier
