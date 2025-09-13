@@ -52,7 +52,7 @@
 
 - type: latheRecipe
   id: EngieTovar
-  result: engietovar
+  result: EngieTovar
   completetime: 3
   materials:
     Steel: 1500
@@ -60,7 +60,7 @@
 
 - type: latheRecipe
   id: GoldTovar
-  result: goldtovar
+  result: GoldTovar
   completetime: 3
   materials:
     Silver: 3000
@@ -68,7 +68,7 @@
 
 - type: latheRecipe
   id: ArmoryTovar
-  result: armorytovar
+  result: ArmoryTovar
   completetime: 3
   materials:
     Titan: 3000
@@ -76,7 +76,7 @@
 
 - type: latheRecipe
   id: SciTovar
-  result: scitovar
+  result: SciTovar
   completetime: 3
   materials:
     Glass: 3000
@@ -85,7 +85,7 @@
 
 - type: latheRecipe
   id: EnergoTovar
-  result: energotovar
+  result: EnergoTovar
   completetime: 3
   materials:
     Uranium: 3000
