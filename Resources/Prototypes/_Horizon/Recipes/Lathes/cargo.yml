@@ -51,7 +51,7 @@
   result: WeaponProtoKineticShotgun
 
 - type: latheRecipe
-  id: engietovar
+  id: EngieTovar
   result: engietovar
   completetime: 3
   materials:
@@ -59,7 +59,7 @@
     Glass: 1500
 
 - type: latheRecipe
-  id: goldtovar
+  id: GoldTovar
   result: goldtovar
   completetime: 3
   materials:
@@ -67,7 +67,7 @@
     Gold: 3000
 
 - type: latheRecipe
-  id: armorytovar
+  id: ArmoryTovar
   result: armorytovar
   completetime: 3
   materials:
@@ -75,7 +75,7 @@
     Plasteel: 3000
 
 - type: latheRecipe
-  id: scitovar
+  id: SciTovar
   result: scitovar
   completetime: 3
   materials:
@@ -84,7 +84,7 @@
     Psycore: 3000
 
 - type: latheRecipe
-  id: energotovar
+  id: EnergoTovar
   result: energotovar
   completetime: 3
   materials:
