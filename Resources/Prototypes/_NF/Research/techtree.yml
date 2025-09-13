@@ -53,7 +53,7 @@
   - AutolatheHyperConvectionMachineCircuitboard
   - ProtolatheHyperConvectionMachineCircuitboard
   - CircuitImprinterHyperConvectionMachineCircuitboard
-  - engietovar
+  - EngieTovar
   technologyPrerequisites:
   - NFAdvancedParts
   position: 1, 2
