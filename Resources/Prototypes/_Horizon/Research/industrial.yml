@@ -154,7 +154,7 @@
   - FuelPlasma1
   - FuelUranium1
   - FuelBananium1
-  - energotovar
+  - EnergoTovar
   technologyPrerequisites:
   - NFAdvancedPowerGeneration
   position: 5, 49
