@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseItem
-  id: engietovar
+  id: EngieTovar
   name: Инженерные товары
   description: Товары инженерного назначения. Крепко запечатаны, не открыть.
   components:
@@ -14,7 +14,7 @@
 
 - type: entity
   parent: BaseItem
-  id: goldtovar
+  id: GoldTovar
   name: Ювелирные товары
   description: Товары из драгоценных металлов. Крепко запечатаны, не открыть.
   components:
@@ -28,7 +28,7 @@
 
 - type: entity
   parent: BaseItem
-  id: armorytovar
+  id: ArmoryTovar
   name: Армейские товары
   description: Товары для снабжения маленькой армии или складов NanoTrasen. Крепко запечатаны, не открыть.
   components:
@@ -42,7 +42,7 @@
 
 - type: entity
   parent: BaseItem
-  id: scitovar
+  id: SciTovar
   name: Научные товары
   description: Передовые разработки в упаковке. Крепко запечатаны, не открыть.
   components:
@@ -56,7 +56,7 @@
 
 - type: entity
   parent: BaseItem
-  id: energotovar
+  id: EnergoTovar
   name: Энерготовары
   description: Топливные стержни в упаковке. Крепко запечатаны, не открыть.
   components:
