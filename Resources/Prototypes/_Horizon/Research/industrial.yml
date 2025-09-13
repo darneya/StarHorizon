@@ -1,4 +1,4 @@
-﻿# Tier 2
+# Tier 2
 
 - type: technology
   id: RipleyMKIITechnology
@@ -154,6 +154,7 @@
   - FuelPlasma1
   - FuelUranium1
   - FuelBananium1
+  - energotovar
   technologyPrerequisites:
   - NFAdvancedPowerGeneration
   position: 5, 49

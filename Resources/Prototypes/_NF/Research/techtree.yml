@@ -53,6 +53,7 @@
   - AutolatheHyperConvectionMachineCircuitboard
   - ProtolatheHyperConvectionMachineCircuitboard
   - CircuitImprinterHyperConvectionMachineCircuitboard
+  - engietovar
   technologyPrerequisites:
   - NFAdvancedParts
   position: 1, 2
@@ -335,6 +336,7 @@
   - SuperCapacitorStockPart
   - SuperMatterBinStockPart
   - PicoManipulatorStockPart
+  - scitovar
   technologyPrerequisites:
   - NFAdvancedAnomalyResearch
   position: 3, 6
@@ -1583,6 +1585,7 @@
   cost: 2500
   recipeUnlocks:
   - MiningDrillDiamond
+  - goldtovar
   - AdvancedMineralScannerEmpty
   technologyPrerequisites:
   - NFExcavation
@@ -1779,6 +1782,7 @@
   - NFMagazineRifle30Empty
   - NFMagazineDrumRifle20Empty
   - MagazineAsmgtUniversalEmpty
+  - armorytovar
   technologyPrerequisites:
   - NFImprovedPistolAmmo
   position: 2, 64 # Horizon
