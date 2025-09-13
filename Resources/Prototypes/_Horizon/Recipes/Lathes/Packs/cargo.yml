@@ -15,8 +15,8 @@
   - PKAUpgradeRange
   - PKAUpgradeFireRate
   - PKAUpgradeLight
-  - engietovar
-  - goldtovar
-  - armorytovar
-  - scitovar
-  - energotovar
+  - EngieTovar
+  - GoldTovar
+  - ArmoryTovar
+  - SciTovar
+  - EnergoTovar
