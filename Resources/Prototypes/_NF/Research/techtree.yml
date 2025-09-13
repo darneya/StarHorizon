@@ -336,7 +336,7 @@
   - SuperCapacitorStockPart
   - SuperMatterBinStockPart
   - PicoManipulatorStockPart
-  - scitovar
+  - SciTovar
   technologyPrerequisites:
   - NFAdvancedAnomalyResearch
   position: 3, 6
@@ -1585,7 +1585,7 @@
   cost: 2500
   recipeUnlocks:
   - MiningDrillDiamond
-  - goldtovar
+  - GoldTovar
   - AdvancedMineralScannerEmpty
   technologyPrerequisites:
   - NFExcavation
@@ -1782,7 +1782,7 @@
   - NFMagazineRifle30Empty
   - NFMagazineDrumRifle20Empty
   - MagazineAsmgtUniversalEmpty
-  - armorytovar
+  - ArmoryTovar
   technologyPrerequisites:
   - NFImprovedPistolAmmo
   position: 2, 64 # Horizon
