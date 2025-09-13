@@ -12,6 +12,8 @@
   technologyPrerequisites:
   - NFBasicAmmunitionProduction
   position: 1, 66
+  researchTargets:
+  - TechnologyDiscArsenalBasicModules
 
 - type: technology
   id: ArsenalExtendedModules
@@ -34,7 +36,7 @@
   entityIcon: AttachmentT2Miniscope
   discipline: NFArsenalNfsd
   tier: 3
-  cost: 25000
+  cost: 15000
   recipeUnlocks:
   - AttachmentT2Miniscope
   - AttachmentM90UnderbarrelShotgun

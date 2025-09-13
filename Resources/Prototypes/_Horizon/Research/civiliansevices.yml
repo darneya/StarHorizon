@@ -25,3 +25,5 @@
   technologyPrerequisites:
   - HydroponicsAdv
   position: 4, 46
+  researchTargets:
+  - TechnologyDiscHydroponicsDNAManip
