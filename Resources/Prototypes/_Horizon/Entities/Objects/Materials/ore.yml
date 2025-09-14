@@ -39,10 +39,10 @@
     materialComposition:
       RawPsycore: 100
   - type: Extractable
-    grindableSolutionName: psycore
+    grindableSolutionName: psycoreore
   - type: SolutionContainerManager
     solutions:
-      psycore:
+      psycoreore:
         reagents:
         - ReagentId: Carbon
           Quantity: 20
@@ -84,10 +84,10 @@
     materialComposition:
       RawTitan: 100
   - type: Extractable
-    grindableSolutionName: titan
+    grindableSolutionName: titanore
   - type: SolutionContainerManager
     solutions:
-      titan:
+      titanore:
         reagents:
         - ReagentId: Carbon
           Quantity: 20
@@ -129,10 +129,10 @@
     materialComposition:
       RawEmerald: 100
   - type: Extractable
-    grindableSolutionName: emerald
+    grindableSolutionName: emeraldore
   - type: SolutionContainerManager
     solutions:
-      emerald:
+      emeraldore:
         reagents:
         - ReagentId: Carbon
           Quantity: 20
@@ -166,10 +166,10 @@
     materialComposition:
       RawRuby: 100
   - type: Extractable
-    grindableSolutionName: ruby
+    grindableSolutionName: rubyore
   - type: SolutionContainerManager
     solutions:
-      ruby:
+      rubyore:
         reagents:
         - ReagentId: Carbon
           Quantity: 20
@@ -203,9 +203,9 @@
     materialComposition:
       RawSapphire: 100
   - type: Extractable
-    grindableSolutionName: sapphire
+    grindableSolutionName: sapphireore
   - type: SolutionContainerManager
-    solutions:
+    solutionsore:
       sapphire:
         reagents:
         - ReagentId: Carbon
@@ -240,10 +240,10 @@
     materialComposition:
       RawTopaz: 100
   - type: Extractable
-    grindableSolutionName: topaz
+    grindableSolutionName: topazore
   - type: SolutionContainerManager
     solutions:
-      topaz:
+      topazore:
         reagents:
         - ReagentId: Carbon
           Quantity: 20
@@ -287,7 +287,7 @@
     solutions:
       toriumore:
         reagents:
-        - ReagentId: Torium
+        - ReagentId: Carbon
           Quantity: 10
         canReact: false
   - type: Item
@@ -307,6 +307,14 @@
   components:
   - type: Stack
     count: 1
+
+- type: entity
+  parent: ToriumOre
+  id: ToriumOre5
+  suffix: Single
+  components:
+  - type: Stack
+    count: 5
 
 - type: entity
   parent: OreBaseFar
@@ -333,7 +341,7 @@
     solutions:
       toriumore:
         reagents:
-        - ReagentId: Plutonium
+        - ReagentId: Carbon
           Quantity: 10
         canReact: false
   - type: Item
@@ -353,6 +361,14 @@
   components:
   - type: Stack
     count: 1
+
+- type: entity
+  parent: PlutoniumOre
+  id: PlutoniumOre5
+  suffix: Single
+  components:
+  - type: Stack
+    count: 5
 
 - type: entity
   parent: OreBaseFar
@@ -379,7 +395,7 @@
     solutions:
       toriumore:
         reagents:
-        - ReagentId: Neptunium
+        - ReagentId: Carbon
           Quantity: 10
         canReact: false
   - type: Item
@@ -399,3 +415,11 @@
   components:
   - type: Stack
     count: 1
+
+- type: entity
+  parent: NeptuniumOre
+  id: NeptuniumOre5
+  suffix: Single
+  components:
+  - type: Stack
+    count: 5

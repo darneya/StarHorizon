@@ -39,3 +39,24 @@
   icon: { sprite: /Textures/_Horizon/Objects/Materials/ore.rsi, state: topaz }
   spawn: TopazOre1
   maxCount: 30
+
+- type: stack
+  id: ToriumOre
+  name: stack-rough-torium
+  icon: { sprite: /Textures/_Horizon/Objects/Materials/ore.rsi, state: torium }
+  spawn: ToriumOre1
+  maxCount: 100
+
+- type: stack
+  id: PlutoniumOre
+  name: stack-rough-plutonium
+  icon: { sprite: /Textures/_Horizon/Objects/Materials/ore.rsi, state: plutonium }
+  spawn: PlutoniumOre1
+  maxCount: 100
+
+- type: stack
+  id: NeptuniumOre
+  name: stack-rough-neptunium
+  icon: { sprite: /Textures/_Horizon/Objects/Materials/ore.rsi, state: neptunium }
+  spawn: TopazOre1
+  maxCount: 100
