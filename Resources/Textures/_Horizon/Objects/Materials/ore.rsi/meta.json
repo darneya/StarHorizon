@@ -72,6 +72,39 @@
     {
       "name": "topaz-inhand-right",
       "directions": 4
+    },
+    {
+      "name": "neptunium"
+    },
+    {
+      "name": "neptunium-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "neptunium-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "plutonium"
+    },
+    {
+      "name": "plutonium-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "plutonium-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "torium"
+    },
+    {
+      "name": "torium-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "torium-inhand-right",
+      "directions": 4
     }
   ]
 }
