@@ -14,6 +14,8 @@
     sprite:  _StarHorizon/Clothing/Uniforms/Jumpsuit/uasuniform.rsi
   - type: Clothing
     sprite:  _StarHorizon/Clothing/Uniforms/Jumpsuit/uasuniform.rsi
+  - type: StaticPrice
+    price: 5000
 
 - type: entity
   suffix: StarHorizon, UAS

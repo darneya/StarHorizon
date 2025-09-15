@@ -49,6 +49,8 @@
   - type: Insulated
   - type: Fiber
     fiberMaterial: красные переливающиеся
+  - type: StaticPrice
+    price: 5000
 
 - type: entity
   parent: UASGlovesIsolate
@@ -62,3 +64,5 @@
     sprite: _StarHorizon/Clothing/Hands/Gloves/uasgloves.rsi
   - type: Clothing
     sprite: _StarHorizon/Clothing/Hands/Gloves/uasgloves.rsi
+  - type: StaticPrice
+    price: 5000
