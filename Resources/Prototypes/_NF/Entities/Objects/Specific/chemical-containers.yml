@@ -210,7 +210,7 @@
     materialComposition:
       FuelGradePlasma: 100
   - type: Sprite
-    sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
     layers:
     - state: plasma
       map: ["base"]
@@ -247,7 +247,7 @@
     materialComposition:
       FuelGradeUranium: 100
   - type: Sprite
-    sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
     layers:
     - state: uranium
       map: ["base"]
@@ -284,7 +284,7 @@
     materialComposition:
       FuelGradeBananium: 100
   - type: Sprite
-    sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
     layers:
     - state: bananium
       map: ["base"]
@@ -321,7 +321,7 @@
     materialComposition:
       Skrungle: 100
   - type: Sprite
-    sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
     layers:
     - state: skrungle
       map: ["base"]

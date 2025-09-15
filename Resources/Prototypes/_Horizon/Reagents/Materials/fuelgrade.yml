@@ -1,0 +1,48 @@
+- type: material
+  id: FuelGradePurePlasma
+  stackEntity: FuelPurePlasma1
+  name: fuel-grade pure plasma
+  icon: { sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi, state: plasma_pure }
+  color: "#7e009e"
+  price: 0.1 # half of regular plasma
+
+- type: material
+  id: FuelGradeUnstablePlasma
+  stackEntity: FuelUnstablePlasma1
+  name: fuel-grade unstable plasma
+  icon: { sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi, state: plasma_unstable }
+  color: "#7e009e"
+  price: 0.1 # half of regular plasma
+
+- type: material
+  id: FuelGradePureUranium
+  stackEntity: FuelPureUranium1
+  name: fuel-grade pure uranium
+  icon: { sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi, state: uranium_pure }
+  color: "#32a852"
+  price: 0.1 # half of regular uranium
+
+- type: material
+  id: FuelGradeUnstableUranium
+  stackEntity: FuelUnstableUranium1
+  name: fuel-grade unstable uranium
+  icon: { sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi, state: uranium_unstable }
+  color: "#32a852"
+  price: 0.1 # half of regular uranium
+
+- type: material
+  id: FuelGradePureBananium
+  stackEntity: FuelPureBananium1
+  name: fuel-grade pure bananium
+  icon: { sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi, state: bananium_pure }
+  color: "#e0c330"
+  price: 0.1 # half of regular bananium
+
+- type: material
+  id: FuelGradeUnstableBananium
+  stackEntity: FuelUnstableBananium1
+  name: fuel-grade unstable bananium
+  icon: { sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi, state: bananium_unstable }
+  color: "#e0c330"
+  price: 0.1 # half of regular bananium
+
