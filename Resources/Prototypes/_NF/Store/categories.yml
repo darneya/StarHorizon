@@ -23,6 +23,10 @@
   id: UplinkSecurityExplosives
   name: store-category-secexplosives
 
+- type: storeCategory
+  id: UplinkSecurityGunnery
+  name: Орудия шаттлов
+
 #pirate
 - type: storeCategory
   id: UplinkPirateBundles
@@ -48,3 +52,6 @@
   id: UplinkPirateExplosives
   name: store-category-pirateexplosives
 
+- type: storeCategory
+  id: UplinkPirateGunnery
+  name: Орудия шаттлов

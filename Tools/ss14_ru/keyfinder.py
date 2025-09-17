@@ -48,7 +48,7 @@ class FilesFinder:
                 ru_file = self.create_ru_analog(relative_file)
                 self.created_files.append(ru_file)
             elif relative_file.locale == 'ru-RU':
-                if not any(part in relative_file.file.full_path for part in ["robust-toolbox", "corvax"]):
+                if not any(part in relative_file.file.full_path for part in ["robust-toolbox", "corvax", "_horizon", "_Horizon"]):
                     self.warn_en_analog_not_exist(relative_file)
             else:
                 raise Exception(f'Неизвестная локаль: {relative_file.locale}')

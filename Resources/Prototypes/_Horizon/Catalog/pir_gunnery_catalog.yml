@@ -1,0 +1,179 @@
+- type: listing
+  id: PirComputerGunneryConsole
+  name: Консоль контроля орудий
+  description: Консоль для управления корабельным вооружением.
+  productEntity: ComputerGunneryConsole
+  cost:
+    Doubloon: 5
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirGunneryServerLow
+  name: Сервер контроля орудий
+  description: Сервер для управления корабельным вооружением.
+  productEntity: GunneryServerLow
+  cost:
+    Doubloon: 5
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirShieldGeneratorSmall
+  name: Сервер контроля орудий
+  description: Сервер для управления корабельным вооружением.
+  productEntity: ShieldGeneratorSmall
+  cost:
+    Doubloon: 10
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretCharonReload
+  name: M381 ХАРОН ускоритель массы
+  description: Рельсотрон, линкорное орудие, стреляющее массивным снарядом на экстремальной скорости, способное нанести катастрофический урон вражеским шаттлам. Тяжёлый линейный ускоритель, может управляться дистанционно или подключаться к серверу контроля орудиями.
+  productEntity: WeaponTurretCharonReload
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretTarnyxReload
+  name: АДБХ-31 ТАРНИКС 150мм ЭМИ Пушка
+  description: Тяжелая ЭМИ пушка, созданная Aetherion Dynamics, предназначенная для выведения из строя больших участков вражеских кораблей одним мощным выстрелом. Эффективна в асимметричных боях. Может быть активирована дистанционно или подключена к СКО.
+  productEntity: WeaponTurretTarnyxReload
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretL85Autocannon
+  name: автопушка L85 калибра 20мм
+  description: Лёгкая 20мм баллистическая автопушка, предназначенная для быстрого огня и подавления небольших целей на ближней дистанции. Дешёвая, лёгкая, может управляться дистанционно или подключаться к серверу контроля орудий.
+  productEntity: WeaponTurretL85Autocannon
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretDravon
+  name: автопушка ADBP-7 ДРАВОН 57мм
+  description: Одноствольная автопушка от Aetherion Dynamics. Среднее артиллерийское орудие с высокой скорострельностью, но относительно низкой мощностью, использующее снаряды HEAT для поражения брони и систем корабля. Может управляться дистанционно или подключаться к серверу контроля орудий.
+  productEntity: WeaponTurretDravon
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretAK570
+  name: тяжёлая автопушка AK570 калибра 90мм
+  description: Двуствольная тяжёлая 90мм автопушка, стреляющая универсальными снарядами APHE, эффективна для продолжительного огня по средним целям. Может управляться дистанционно или подключаться к серверу контроля орудий.
+  productEntity: WeaponTurretAK570
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretCharonette
+  name: ускоритель массы M194 ШАРОНЕТТ
+  description: Меньший, более компактный рельсотрон, стреляющий крупными снарядами на высокой скорости, способный нанести значительный урон вражеским кораблям. Средний линейный ускоритель, может управляться дистанционно или подключаться к серверу контроля орудий.
+  productEntity: WeaponTurretCharonette
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretType35
+  name: плазменная пушка МАРОДЁР Type-35
+  description: Запускает магнетически сдерживаемые шары плазмы по целям. Может управляться дистанционно или подключаться к серверу контроля орудий.
+  productEntity: WeaponTurretType35
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretM25
+  name: горный пульсер M25
+  description: Использует механизмы для запуска… чего-то. Легко разрушает породу.
+  productEntity: WeaponTurretM25
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretM220
+  name: пусковая установка ЭМИ-снарядов M220 РУБИКОН
+  description: Запускает ЭМИ-снаряды по кораблям, выводя системы из строя мощными электромагнитными импульсами. Идеально для нелетальных столкновений. Может управляться дистанционно или подключаться к серверу контроля орудий.
+  productEntity: WeaponTurretM220
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretASM220
+  name: торпедная установка ASM-220
+  description: Тяжелая торпедная установка вертикального пуска, работающая на ручной загрузке, обычно выполняемой в порту. Однако она оснащена высокоэффективными ракетами для своего размера.
+  productEntity: WeaponTurretASM220
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretLightMunitionsBay
+  name: легкая пусковая установка GPOB-L
+  description: Относительно небольшой бронированный отсек для боеприпасов, способный вместить до двух легких боевых зарядов. Обычно используется на легких космических кораблях, особенно на бомбардировщиках, и обеспечивает ограниченный способ нанесения урона целям, значительно превосходящим пользователя по массе.
+  productEntity: WeaponTurretLightMunitionsBay
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretVespera
+  name: АДМП-27 ВЕСПЕРА быстрострельная установка
+  description: Быстрострельная ройная ракетная установка, произведённая Aetherion Dynamics. Насыщает цели управляемыми боеголовками, чтобы подавить защиту. Может быть дистанционно активирована или подключена к СКО.
+  productEntity: WeaponTurretVespera
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretASM501
+  name: установка АСМ-501
+  description: Торпедная установка для крейсеров. Выпускает тяжёлые торпеды для нанесения высоких повреждений большим кораблям и станциям. Может быть дистанционно активирована или подключена к СКО.
+  productEntity: WeaponTurretASM501
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretVanyk
+  name: АСМ-302 установка
+  description: Эскортная ракетная установка, произведённая Aetherion Dynamics. Запускает управляемые ракеты для базового корабельного боя и блокирования зон. Может быть дистанционно активирована или подключена к СКО.
+  productEntity: WeaponTurretVanyk
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery
+
+- type: listing
+  id: PirWeaponTurretTovek
+  name: АДМХ-23 ТОВЕК гибридная ЭМИ установка
+  description: Гибридная ЭМИ ракетная установка от Aetherion Dynamics. Выпускает боеголовки ЭМИВВ для отключения и ослабления вражеских кораблей на дальних дистанциях. Может быть дистанционно активирована или подключена к СКО.
+  productEntity: WeaponTurretTovek
+  cost:
+    Doubloon: 20
+  categories:
+  - UplinkPirateGunnery

@@ -28,15 +28,15 @@ ent-ActionLeviathingSpawn = [color=yellow]Призыв аргоцита[/color]
     .desc = Призывает аргоцита, который будет следовать за вами. [color=yellow]Перезарядка: 60 секунд.[/color]
 ent-MobArgocyteLeviathingSpawned = { "" }
     .desc = { "" }
-ent-MobArgocyteMolderLeviathingSpawned = { ent-MobArgocyteLeviathingSpawned }
-    .desc = { ent-MobArgocyteLeviathingSpawned.desc }
-ent-MobArgocytePouncerLeviathingSpawned = { ent-MobArgocyteLeviathingSpawned }
-    .desc = { ent-MobArgocyteLeviathingSpawned.desc }
-ent-MobArgocyteGliderLeviathingSpawned = { ent-MobArgocyteLeviathingSpawned }
-    .desc = { ent-MobArgocyteLeviathingSpawned.desc }
-ent-MobArgocyteHarvesterLeviathingSpawned = { ent-MobArgocyteLeviathingSpawned }
-    .desc = { ent-MobArgocyteLeviathingSpawned.desc }
-ent-MobArgocyteCrawlerLeviathingSpawned = { ent-MobArgocyteLeviathingSpawned }
-    .desc = { ent-MobArgocyteLeviathingSpawned.desc }
+ent-MobArgocyteMolderLeviathingSpawned = { ent-MobArgocyteMolder }
+    .desc = { ent-MobArgocyteMolder.desc }
+ent-MobArgocytePouncerLeviathingSpawned = { ent-MobArgocytePouncer }
+    .desc = { ent-MobArgocytePouncer.desc }
+ent-MobArgocyteGliderLeviathingSpawned = { ent-MobArgocyteGlider }
+    .desc = { ent-MobArgocyteGlider.desc }
+ent-MobArgocyteHarvesterLeviathingSpawned = { ent-MobArgocyteHarvester }
+    .desc = { ent-MobArgocyteHarvester.desc }
+ent-MobArgocyteCrawlerLeviathingSpawned = { ent-MobArgocyteCrawler }
+    .desc = { ent-MobArgocyteCrawler.desc }
 ent-SpawnMobArgocyteLeviathingSpawned = { ent-MarkerBase }
     .desc = { ent-MarkerBase.desc }

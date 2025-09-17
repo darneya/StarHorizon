@@ -1,0 +1,55 @@
+- type: latheRecipe
+  id: MaterialEmerald
+  result: MaterialEmerald1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawEmerald: 100
+
+- type: latheRecipe
+  id: MaterialRuby
+  result: MaterialRuby1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawRuby: 100
+
+- type: latheRecipe
+  id: MaterialSapphire
+  result: MaterialSapphire1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawSapphire: 100
+
+- type: latheRecipe
+  id: MaterialTopaz
+  result: MaterialTopaz1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawTopaz: 100
+
+- type: latheRecipe
+  id: IngotTitan1
+  result: IngotTitan1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawTitan: 100
+
+- type: latheRecipe
+  id: IngotTitan30
+  result: IngotTitan
+  completetime: 2
+  materials:
+    RawTitan: 3000
+
+- type: latheRecipe
+  id: IngotPsycore1
+  result: IngotPsycore1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawPsycore: 100
+
+- type: latheRecipe
+  id: IngotPsycore30
+  result: IngotPsycore
+  completetime: 2
+  materials:
+    RawPsycore: 3000
