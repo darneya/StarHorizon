@@ -19,7 +19,7 @@
   components:
   - type: MaterialStorage
     storage:
-      FuelGradePlasma: 1000
+      FuelGradeUnstablePlasma: 1000
 
 - type: entity
   parent:
@@ -30,7 +30,7 @@
   components:
   - type: MaterialStorage
     storage:
-      FuelGradeUranium: 1000
+      FuelGradeUnstableUranium: 1000
 
 - type: entity
   parent:
@@ -137,7 +137,7 @@
   components:
     - type: MaterialStorage
       storage:
-        FuelGradeBananium: 1000
+        FuelGradeUnstableBananium: 1000
 
 - type: entity
   name: D-K Jr. portable generator
@@ -189,4 +189,4 @@
   components:
     - type: MaterialStorage
       storage:
-        FuelGradeBananium: 1000
+        FuelGradeUnstableBananium: 1000
