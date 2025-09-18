@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: NRZN Ikarus
   description: Гражданский шаттл для отдыха и развлечений, всё что нужно тем, кто устал от постоянных приключений и хочет просто отдохнуть.
-  price: 60000
+  price: 60000 # 47904, наценка верфи 25% = 59880
   category: Medium
   group: Shipyard
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/ikarus.yml

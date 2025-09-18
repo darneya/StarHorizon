@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: NRZN Box
   description: Компактный утилизаторский шаттл для экспедиций и утилизации астероидов.
-  price: 66500
+  price: 75000 # 58765, наценка верфи 25% = 73456
   category: Medium
   group: Expedition
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Expedition/box.yml

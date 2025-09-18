@@ -4,8 +4,8 @@ meta:
   engineVersion: 261.2.0
   forkId: ""
   forkVersion: ""
-  time: 08/28/2025 14:03:35
-  entityCount: 712
+  time: 09/18/2025 10:11:06
+  entityCount: 722
 maps: []
 grids:
 - 1
@@ -1365,7 +1365,12 @@ entities:
     - type: Transform
       pos: -5.5,-20.5
       parent: 1
-  - uid: 511
+  - uid: 679
+    components:
+    - type: Transform
+      pos: -5.5,-18.5
+      parent: 1
+  - uid: 714
     components:
     - type: Transform
       pos: -5.5,-19.5
@@ -1647,6 +1652,13 @@ entities:
     - type: Transform
       pos: 4.5,-3.5
       parent: 1
+- proto: CableTerminal
+  entities:
+  - uid: 715
+    components:
+    - type: Transform
+      pos: -5.5,-18.5
+      parent: 1
 - proto: Carpet
   entities:
   - uid: 211
@@ -1706,6 +1718,11 @@ entities:
       parent: 1
 - proto: Catwalk
   entities:
+  - uid: 129
+    components:
+    - type: Transform
+      pos: -5.5,-18.5
+      parent: 1
   - uid: 206
     components:
     - type: Transform
@@ -1848,6 +1865,18 @@ entities:
     - type: Transform
       pos: 2.5,-0.5
       parent: 1
+    - type: DeviceLinkSource
+      linkedPorts: {}
+      lastSignals: {}
+      ports:
+      - device-button-1
+      - device-button-2
+      - device-button-3
+      - device-button-4
+      - device-button-5
+      - device-button-6
+      - device-button-7
+      - device-button-8
 - proto: ComputerTabletopStationRecords
   entities:
   - uid: 338
@@ -2335,6 +2364,7 @@ entities:
   - uid: 244
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 7.5,-20.5
       parent: 1
   - uid: 248
@@ -3257,11 +3287,10 @@ entities:
       parent: 1
 - proto: Gyroscope
   entities:
-  - uid: 679
+  - uid: 713
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -5.5,-18.5
+      pos: -2.5,-19.5
       parent: 1
 - proto: JukeboxWallmountShip
   entities:
@@ -3349,16 +3378,11 @@ entities:
       parent: 1
 - proto: PortableGeneratorSuperPacman
   entities:
-  - uid: 129
+  - uid: 288
     components:
     - type: Transform
-      anchored: True
-      pos: -5.5,-20.5
+      pos: -5.5,-18.5
       parent: 1
-    - type: Physics
-      bodyType: Static
-    - type: Anchorable
-      currentDelay: 2
 - proto: PottedPlant12
   entities:
   - uid: 202
@@ -3489,6 +3513,40 @@ entities:
       rot: 3.141592653589793 rad
       pos: 6.5,-15.5
       parent: 1
+- proto: Railing
+  entities:
+  - uid: 717
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 10.5,-18.5
+      parent: 1
+  - uid: 718
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 9.5,-18.5
+      parent: 1
+  - uid: 719
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 8.5,-18.5
+      parent: 1
+  - uid: 721
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 7.5,-19.5
+      parent: 1
+- proto: RailingCorner
+  entities:
+  - uid: 720
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 7.5,-18.5
+      parent: 1
 - proto: ShuttersWindowOpen
   entities:
   - uid: 204
@@ -3511,54 +3569,72 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -3.5,-9.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 27
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 5.5,-23.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 28
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,-23.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 30
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -1.5,-23.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 31
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -0.5,-23.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 61
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 3.5,0.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 63
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -3.5,-10.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 65
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 1.5,0.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 66
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 2.5,0.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
 - proto: SignalButtonWindows
   entities:
   - uid: 186
@@ -3582,6 +3658,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 8.5,-14.5
+      parent: 1
+- proto: SMESBasic
+  entities:
+  - uid: 716
+    components:
+    - type: Transform
+      pos: -5.5,-19.5
       parent: 1
 - proto: SodaDispenser
   entities:
@@ -3633,10 +3716,10 @@ entities:
       parent: 1
 - proto: SubstationBasic
   entities:
-  - uid: 288
+  - uid: 511
     components:
     - type: Transform
-      pos: -5.5,-19.5
+      pos: -5.5,-20.5
       parent: 1
 - proto: SuitStorageWallmountEVAServiceWorker
   entities:
@@ -4818,6 +4901,8 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 7.5,-14.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
 - proto: WindowReinforcedDirectional
   entities:
   - uid: 208
@@ -4826,4 +4911,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 7.5,-15.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
 ...
