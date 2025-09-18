@@ -4,7 +4,7 @@
   name: Akulki heart
   components:
   - type: Metabolizer
-    metabolizerTypes: [Akulki]
+    metabolizerTypes: [ Bloodsucker ]
 
 - type: entity
   id: OrganAkulkiLiver
@@ -12,7 +12,7 @@
   name: Akulki liver
   components:
   - type: Metabolizer
-    metabolizerTypes: [Akulki]
+    metabolizerTypes: [ Bloodsucker ]
 
 - type: entity
   id: OrganAkulkiStomach
@@ -35,7 +35,7 @@
   - type: Metabolizer
     # mm very yummy
     maxReagents: 5
-    metabolizerTypes: [Akulki]
+    metabolizerTypes: [ Bloodsucker ]
 
 - type: body
   id: Akulki
@@ -128,8 +128,10 @@
   - type: Butcherable
     butcheringType: Spike
     spawned:
-    - id: FoodMeatHuman
-      amount: 6
+    - id: FoodMeatFish
+      amount: 4
+    - id: MaterialToothSharkminnow1
+      amount: 2
   - type: Fixtures
     fixtures:
       fix1:
@@ -168,10 +170,16 @@
     baseWalkSpeed: 3.4
     baseSprintSpeed: 3.4
   - type: MeleeWeapon
-    attackRate: 0.8
+    altDisarm: false
+    attackRate: 1.6
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+        path: /Audio/Effects/bite.ogg
     damage:
       types:
-        Blunt: 5
+        Slash: 7
+        Bloodloss: 5
   - type: Tag
     tags:
     - CanPilot
