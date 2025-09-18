@@ -735,8 +735,6 @@
     - OreSmelting
     - RGlassSmelting
     - AdvancedSmelting
-    dynamicPacks: # Horizon
-    - FuelCreation # Horizon
 
 - type: entity
   parent: BaseLathe

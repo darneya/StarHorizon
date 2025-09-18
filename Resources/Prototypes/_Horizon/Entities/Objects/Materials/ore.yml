@@ -298,7 +298,7 @@
     - OreTorium
   - type: NFFuel
   - type: RadiationSource
-    intensity: 0.001
+    intensity: 0.02
 
 - type: entity
   parent: ToriumOre
@@ -311,7 +311,7 @@
 - type: entity
   parent: ToriumOre
   id: ToriumOre5
-  suffix: Single
+  suffix: 5
   components:
   - type: Stack
     count: 5
@@ -352,7 +352,7 @@
     - OrePlutonium
   - type: NFFuel
   - type: RadiationSource
-    intensity: 0.03
+    intensity: 0.04
 
 - type: entity
   parent: PlutoniumOre
@@ -365,7 +365,7 @@
 - type: entity
   parent: PlutoniumOre
   id: PlutoniumOre5
-  suffix: Single
+  suffix: 5
   components:
   - type: Stack
     count: 5
@@ -419,7 +419,7 @@
 - type: entity
   parent: NeptuniumOre
   id: NeptuniumOre5
-  suffix: Single
+  suffix: 5
   components:
   - type: Stack
     count: 5

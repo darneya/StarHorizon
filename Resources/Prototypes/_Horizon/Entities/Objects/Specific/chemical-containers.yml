@@ -23,8 +23,6 @@
     stackType: FuelPlasmaPure
     count: 20
   - type: NFFuel
-  - type: RadiationSource
-    intensity: 0.005
 
 - type: entity
   parent: FuelPlasmaPure
@@ -97,8 +95,6 @@
     stackType: FuelUraniumPure
     count: 20
   - type: NFFuel
-  - type: RadiationSource
-    intensity: 0.007
 
 - type: entity
   parent: FuelUraniumPure
@@ -171,8 +167,6 @@
     stackType: FuelBananiumPure
     count: 20
   - type: NFFuel
-  - type: RadiationSource
-    intensity: 0.01
 
 - type: entity
   parent: FuelBananiumPure
@@ -214,6 +208,113 @@
 - type: entity
   parent: FuelBananiumUnstable
   id: FuelBananiumUnstable1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+  - type: StaticPrice
+    vendPrice: 0
+
+- type: entity
+  parent: BaseItem
+  id: FuelPlutonium
+  name: fuel-grade plutonium
+  description: A rod made from plutonium, suitable for fuel.
+  suffix: 20
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      FuelGradePlutonium: 100
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
+    layers:
+    - state: plutonium
+      map: ["base"]
+  - type: Appearance
+  - type: StaticPrice
+    price: 0
+    vendPrice: 5000
+  - type: Stack
+    stackType: FuelPlutonium
+    count: 20
+  - type: NFFuel # Frontier
+
+- type: entity
+  parent: FuelPlutonium
+  id: FuelPlutonium1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+  - type: StaticPrice
+    vendPrice: 0
+
+- type: entity
+  parent: BaseItem
+  id: FuelPlutoniumPure
+  name: fuel-grade pure plutonium
+  description: A rod made from plutonium, suitable for fuel.
+  suffix: 20
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      FuelGradePurePlutonium: 100
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
+    layers:
+    - state: plutonium_pure
+      map: ["base"]
+  - type: Appearance
+  - type: StaticPrice
+    price: 0
+    vendPrice: 5000
+  - type: Stack
+    stackType: FuelPlutoniumPure
+    count: 20
+  - type: NFFuel # Frontier
+
+- type: entity
+  parent: FuelPlutoniumPure
+  id: FuelPlutoniumPure1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+  - type: StaticPrice
+    vendPrice: 0
+
+- type: entity
+  parent: BaseItem
+  id: FuelPlutoniumUnstable
+  name: fuel-grade unstable plutonium
+  description: A rod made from plutonium, suitable for fuel.
+  suffix: 20
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      FuelGradeUnstablePlutonium: 100
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
+    layers:
+    - state: plutonium_unstable
+      map: ["base"]
+  - type: Appearance
+  - type: StaticPrice
+    price: 0
+    vendPrice: 5000
+  - type: Stack
+    stackType: FuelPlutoniumUnstable
+    count: 20
+  - type: NFFuel # Frontier
+  - type: RadiationSource
+    intensity: 0.16
+
+- type: entity
+  parent: FuelPlutoniumUnstable
+  id: FuelPlutoniumUnstable1
   suffix: Single
   components:
   - type: Stack

@@ -146,15 +146,58 @@
 - type: technology
   id: FuelGeneration
   name: research-technology-fuel
-  entityIcon: FuelUranium1
+  entityIcon: OreProcessorFuel
   discipline: NFEngineering
-  tier: 1
+  tier: 2
   cost: 5000
   recipeUnlocks:
-  - FuelPlasma1
-  - FuelUranium1
-  - FuelBananium1
+  - OreProcessorFuelMachineCircuitboard
   - EnergoTovar
+  technologyPrerequisites:
+  - NFPowerGeneration
+  position: 4, 50
+
+- type: technology
+  id: FuelGenerationUnstable
+  name: research-technology-fuel-unstable
+  entityIcon: FuelPlasmaUnstable1
+  discipline: NFEngineering
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - FuelPlasmaUnstable1
+  - FuelUraniumUnstable1
+  - FuelBananiumUnstable1
+  - FuelPlutoniumUnstable1
+  technologyPrerequisites:
+  - FuelGeneration
+  position: 5, 50
+
+- type: technology
+  id: FuelGenerationPure
+  name: research-technology-fuel-pure
+  entityIcon: FuelPlasmaPure1
+  discipline: NFEngineering
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - FuelPlasmaPure1
+  - FuelUraniumPure1
+  - FuelBananiumPure1
+  - FuelPlutoniumPure1
+  technologyPrerequisites:
+  - FuelGenerationUnstable
+  position: 6, 50
+
+- type: technology
+  id: NFExperimentalPowerGeneration
+  name: nf-research-technology-experimental-generators
+  entityIcon: PortableGeneratorStarPacman
+  discipline: NFEngineering
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - PortableGeneratorStarPacmanMachineCircuitboard
   technologyPrerequisites:
   - NFAdvancedPowerGeneration
   position: 5, 49

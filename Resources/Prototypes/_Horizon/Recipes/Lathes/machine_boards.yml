@@ -1,0 +1,4 @@
+- type: latheRecipe
+  parent: [ BaseGoldCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
+  id: OreProcessorFuelMachineCircuitboard
+  result: OreProcessorFuelMachineCircuitboard

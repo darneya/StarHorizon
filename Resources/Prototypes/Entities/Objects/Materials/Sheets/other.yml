@@ -111,8 +111,6 @@
     tags:
     - Sheet
   - type: NFFuel # Frontier
-  - type: RadiationSource # Horizon
-    intensity: 0.005 # Horizon
 
 - type: entity
   parent: SheetPlasma
@@ -249,8 +247,6 @@
         canReact: false
   - type: UraniumMaterials # Frontier
   - type: NFFuel # Frontier
-  - type: RadiationSource # Horizon
-    intensity: 0.01 # Horizon
 
 - type: entity
   parent: SheetUranium

@@ -39,3 +39,24 @@
   icon: { sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi, state: bananium_unstable }
   spawn: FuelBananiumUnstable1
   maxCount: 30
+
+- type: stack
+  id: FuelPlutonium
+  name: stack-fuel-grade-plutonium
+  icon: { sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi, state: plutonium }
+  spawn: FuelPlutonium1
+  maxCount: 30
+
+- type: stack
+  id: FuelPlutoniumPure
+  name: stack-fuel-grade-plutonium-pure
+  icon: { sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi, state: plutonium_pure }
+  spawn: FuelPlutoniumPure1
+  maxCount: 30
+
+- type: stack
+  id: FuelPlutoniumUnstable
+  name: stack-fuel-grade-plutonium-unstable
+  icon: { sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi, state: plutonium_unstable }
+  spawn: FuelPlutoniumUnstable1
+  maxCount: 30
