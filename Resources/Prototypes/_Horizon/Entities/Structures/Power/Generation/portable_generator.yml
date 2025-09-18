@@ -39,7 +39,7 @@
       optimalBurnRate: 0.0037
       # leaky, worse power curve
       fuelEfficiencyConstant: 0.5
-      radiationColor: "#00bfff"
+      radiationColor: "#d42319"
     - type: SolidFuelGeneratorAdapter
       fuelMaterial: FuelGradeUnstablePlutonium
     - type: MaterialStorage
