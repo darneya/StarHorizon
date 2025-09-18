@@ -189,6 +189,7 @@
     - NightVisionSecPack # Horizon
     - WeaponModulesPack # Horizon
     - HRZNAmmo # Horizon
+    - ShipgunAmmo # Horizon
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -227,6 +228,7 @@
     - NightVisionSecPack # Horizon
     - WeaponModulesPack # Horizon
     - HRZNAmmo # Horizon
+    - ShipgunAmmo # Horizon
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -278,6 +280,7 @@
     - NightVisionSecPack # Horizon
     - WeaponModulesPack # Horizon
     - HRZNAmmo # Horizon
+    - ShipgunAmmo # Horizon
   - type: BlueprintReceiver
     whitelist:
       tags:
