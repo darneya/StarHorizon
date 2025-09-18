@@ -9,32 +9,33 @@
 # Прототип шаттла: 
 #
 - type: vessel
-  id: AsperL
+  id: Ophiophagus
   parent: BaseVessel
-  name: NRZN Asper L
-  description: Малый добывающй шаттл для пилотирования командой до двух человек, используется для добычи и переработки ресурсов.
-  price: 13700 # 12367, наценка верфи 10% = 13604
+  name: NRZN Ophiophagus
+  description: Массивный материнский научный шаттл для которого нужно более 5-ти членов экипажа
+  price: 205000 # 146593, наценка верфи 40% = 205230
+  category: Large
+  group: Security
   access: Security
-  mapchecker_group_override: Security
-  category: Micro
-  group: Custom
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/asper-l.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/ophiophagus.yml
   class:
-  - Salvage
+  - Fighter
+  - Patrol
+  - Science
   engine:
-  - APU
+  - AME
 
 - type: gameMap
-  id: AsperL
-  mapName: 'NRZN Asper L'
-  mapPath: /Uploaded/Ophiophagus/asper-l.yml
+  id: Ophiophagus
+  mapName: 'NRZN Ophiophagus'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/ophiophagus.yml
   minPlayers: 0
   stations:
-    AsperL:
+    Ophiophagus:
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Asper L {1}'
+          mapNameTemplate: 'Ophiophagus {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

@@ -2,6 +2,7 @@
 - type: entity
   name: консоль верфи спонсоров
   parent: [BaseStructureDisableToolUse, BaseStructureIndestructible, BaseComputer]
+  categories: [ HideSpawnMenu ]
   id: ComputerShipyardSponcor
   description: Признавайтесь. Сколько вы потратили денег что бы получить доступ к этой верфи?
   suffix: StarHorizon, верфь спонсоров

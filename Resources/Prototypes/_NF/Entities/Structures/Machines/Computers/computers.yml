@@ -76,7 +76,7 @@
   suffix: High
   components:
   - type: MarketModifier
-    mod: 0.75 # Horizon Temp 1.25>>0.75
+    mod: 1.25
 
 - type: entity
   parent: ComputerPalletConsoleNFMarket
@@ -92,7 +92,7 @@
   suffix: Low
   components:
   - type: MarketModifier
-    mod: 1.25 # Horizon Temp 0.75>>1.25
+    mod: 0.75
 
 - type: entity
   parent: ComputerPalletConsoleNFMarket
