@@ -45,3 +45,27 @@
   unit: materials-unit-piece
   icon: { sprite: "_Horizon/Objects/Materials/ore.rsi", state: topaz }
   price: 0.15
+
+- type: material
+  id: RawPlutonium
+  stackEntity: PlutoniumOre1
+  name: materials-raw-plutonium
+  unit: materials-unit-piece
+  icon: { sprite: "_Horizon/Objects/Materials/ore.rsi", state: plutonium }
+  price: 0.15
+
+- type: material
+  id: RawNeptunium
+  stackEntity: NeptuniumOre1
+  name: materials-raw-neptunium
+  unit: materials-unit-piece
+  icon: { sprite: "_Horizon/Objects/Materials/ore.rsi", state: neptunium }
+  price: 0.15
+
+- type: material
+  id: RawTorium
+  stackEntity: ToriumOre1
+  name: materials-raw-torium
+  unit: materials-unit-piece
+  icon: { sprite: "_Horizon/Objects/Materials/ore.rsi", state: torium }
+  price: 0.15

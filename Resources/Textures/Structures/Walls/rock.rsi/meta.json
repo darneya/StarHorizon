@@ -246,6 +246,15 @@
         },
         {
             "name": "rock_titan"
+        },
+        {
+            "name": "rock_neptunium"
+        },
+        {
+            "name": "rock_torium"
+        },
+        {
+            "name": "rock_plutonium"
         }
     ]
 }

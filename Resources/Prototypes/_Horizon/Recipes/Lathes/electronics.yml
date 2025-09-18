@@ -22,3 +22,8 @@
      Steel: 200
      Plastic: 100
      Silver: 10
+
+- type: latheRecipe
+  id: PortableGeneratorStarPacmanMachineCircuitboard
+  parent: [ BaseGoldCircuitboardRecipe, BaseEngineeringMachineRecipeCategory ]
+  result: PortableGeneratorStarPacmanMachineCircuitboard
