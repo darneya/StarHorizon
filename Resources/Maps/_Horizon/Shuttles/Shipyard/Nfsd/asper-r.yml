@@ -1079,8 +1079,6 @@ entities:
     - type: AtmosPipeColor
       color: '#0000FFFF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 2
 - proto: GasVentScrubber
@@ -1094,8 +1092,6 @@ entities:
     - type: AtmosPipeColor
       color: '#FF0000FF'
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 2
 - proto: GeneratorWallmountAPU

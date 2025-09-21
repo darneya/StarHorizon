@@ -4,36 +4,35 @@
 
 # Информация об сопровождающем 
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
-# Discord: Astrolaris 
+# Discord: astr0laris 
 
 # Прототип шаттла: 
 #
 - type: vessel
-  id: Gazebo
+  id: TorchLight
   parent: BaseVessel
-  name: NRZN Gazebo
-  description: Комфортабельный шаттл для отдыха и безумных вечеринок.
-  price: 56000 # 42940, наценка верфи 30% = 55822
-  category: Medium
+  name: NRZN TorchLight
+  description: Небольшой шаттл для одиночных путешествий люкс класса.
+  price: 33000 # 25086, наценка верфи 30% = 32612
+  category: Small
   group: Custom
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/gazebo.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Sponsor/torchlight.yml
   class:
   - Civilian
-  - Kitchen
   engine:
   - Uranium
 
 - type: gameMap
-  id: Gazebo
-  mapName: 'NRZN Gazebo'
-  mapPath: /Maps/_Horizon/Shuttles/gazebo.yml
+  id: TorchLight
+  mapName: 'NRZN TorchLight'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Sponsor/torchlight.yml
   minPlayers: 0
   stations:
-    Gazebo:
+    TorchLight:
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Gazebo {1}'  
+          mapNameTemplate: 'TorchLight {1}'  
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
@@ -42,4 +41,3 @@
             ContractorInterview: [ 0, 0 ]
             PilotInterview: [ 0, 0 ]
             MercenaryInterview: [ 0, 0 ]
-

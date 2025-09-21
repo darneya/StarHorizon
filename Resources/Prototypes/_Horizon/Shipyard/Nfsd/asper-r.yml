@@ -9,32 +9,32 @@
 # Прототип шаттла: 
 #
 - type: vessel
-  id: Echis
+  id: AsperR
   parent: BaseVessel
-  name: NRZN Echis
-  description: Малый транспортировочный шаттл для пилотирования в одиночку, используется для перемещения артефактов.
-  price: 11000 # 9894, наценка верфи 10% = 10883
+  name: NRZN Asper R
+  description: Малый боевой шаттл для пилотирования командой до двух человек, используется для защиты материнского шаттла.
+  price: 35000 # 31602, наценка верфи 10% = 34870
   access: Security
   mapchecker_group_override: Security
   category: Micro
   group: Custom
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/echis.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/asper-r.yml
   class:
-  - Science
+  - Fighter
   engine:
   - APU
 
 - type: gameMap
-  id: Echis
-  mapName: 'NRZN Echis'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/echis.yml
+  id: AsperR
+  mapName: 'NRZN Asper R'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/asper-r.yml
   minPlayers: 0
   stations:
-    Ophiophagus:
+    AsperR:
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Echis {1}'
+          mapNameTemplate: 'Asper R {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

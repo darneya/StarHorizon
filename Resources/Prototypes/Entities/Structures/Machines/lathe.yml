@@ -494,6 +494,7 @@
       - NfsdAmmoStatic # Frontier: SecurityAmmoStatic<NfsdAmmoStatic
       dynamicPacks:
       - HRZNAmmo # Horizon
+      - ShipgunAmmo # Horizon
     - type: MaterialStorage
       whitelist:
         tags:

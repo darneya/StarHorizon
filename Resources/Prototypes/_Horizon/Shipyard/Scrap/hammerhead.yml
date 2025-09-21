@@ -6,7 +6,7 @@
   price: 38050 # 33078, наценка верфи 15% = 38040
   category: Medium
   group: Scrap
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/hammerhead.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Scrap/hammerhead.yml
   class:
   - Civilian
   engine:
@@ -15,7 +15,7 @@
 - type: gameMap
   id: Hammerhead
   mapName: 'NRZN Hammerhead'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/hammerhead.yml
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Scrap/hammerhead.yml
   minPlayers: 0
   stations:
     Hammerhead:

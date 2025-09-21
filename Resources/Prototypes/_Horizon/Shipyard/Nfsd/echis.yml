@@ -9,33 +9,32 @@
 # Прототип шаттла: 
 #
 - type: vessel
-  id: Ophiophagus
+  id: Echis
   parent: BaseVessel
-  name: NRZN Ophiophagus
-  description: Массивный материнский научный шаттл для которого нужно более 5-ти членов экипажа
-  price: 205000 # 146593, наценка верфи 40% = 205230
-  category: Large
-  group: Security
+  name: NRZN Echis
+  description: Малый транспортировочный шаттл для пилотирования в одиночку, используется для перемещения артефактов.
+  price: 11000 # 9894, наценка верфи 10% = 10883
   access: Security
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/ophiophagus.yml
+  mapchecker_group_override: Security
+  category: Small
+  group: Custom
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/echis.yml
   class:
-  - Fighter
-  - Patrol
   - Science
   engine:
-  - AME
+  - APU
 
 - type: gameMap
-  id: Ophiophagus
-  mapName: 'NRZN Ophiophagus'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/ophiophagus.yml
+  id: Echis
+  mapName: 'NRZN Echis'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/echis.yml
   minPlayers: 0
   stations:
-    Ophiophagus:
+    Echis:
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Ophiophagus {1}'
+          mapNameTemplate: 'Echis {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
