@@ -1,0 +1,101 @@
+- type: entity
+  id: BaseOreDeposit
+  name: Base Ore Deposit
+  abstract: true
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+    canCollide: False
+  - type: Fixtures
+  - type: OreDeposit
+  - type: Sprite
+    drawdepth: FloorTiles
+    sprite: _NF/Objects/Specific/Atmospherics/deposit.rsi
+    layers:
+    - state: deposit
+
+- type: entity
+  id: MixedOreDeposit
+  parent: BaseOreDeposit
+  name: Mixed Ore Deposit
+  description: A deposit containing exactly 200 iron, 50 gold, and 5 diamond ores.
+  components:
+  - type: OreDeposit
+    oreCounts:
+      SteelOre: 200
+      GoldOre: 50
+      DiamondOre: 5
+    hardness: 1.2
+
+- type: entity
+  id: RichOreDeposit
+  parent: BaseOreDeposit
+  name: Rich Ore Deposit
+  description: A rich deposit with 500 iron, 100 gold, 20 diamond, and 10 plasma ores.
+  components:
+  - type: OreDeposit
+    oreCounts:
+      SteelOre: 500
+      GoldOre: 100
+      DiamondOre: 20
+      PlasmaOre: 10
+    hardness: 1.5
+
+- type: entity
+  id: Level1OreScanner
+  parent: BaseItem
+  name: Basic Ore Scanner
+  description: A basic ore scanner.
+  components:
+  - type: OreScanner
+    scanLevel: 1
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _NF/Objects/Tools/multitool.rsi
+    layers:
+    - state: icon
+    - state: green-unlit
+      shader: unshaded
+
+- type: entity
+  id: Level2OreScanner
+  parent: Level1OreScanner
+  name: Standard Ore Scanner
+  description: A standard ore scanner.
+  components:
+  - type: OreScanner
+    scanLevel: 2
+
+- type: entity
+  id: Level3OreScanner
+  parent: Level1OreScanner
+  name: Advanced Ore Scanner
+  description: An advanced ore scanner.
+  components:
+  - type: OreScanner
+    scanLevel: 3
+
+- type: entity
+  id: Level4OreScanner
+  parent: Level1OreScanner
+  name: Expert Ore Scanner
+  description: An expert ore scanner.
+  components:
+  - type: OreScanner
+    scanLevel: 4
+
+- type: entity
+  id: Level5OreScanner
+  parent: Level1OreScanner
+  name: Master Ore Scanner
+  description: A master ore scanner.
+  components:
+  - type: OreScanner
+    scanLevel: 5
+ 
