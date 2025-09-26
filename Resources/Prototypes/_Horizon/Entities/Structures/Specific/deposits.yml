@@ -1,3 +1,5 @@
+# Deposit
+
 - type: entity
   id: BaseOreDeposit
   name: Base Ore Deposit
@@ -15,15 +17,29 @@
   - type: OreDeposit
   - type: Sprite
     drawdepth: FloorTiles
-    sprite: _NF/Objects/Specific/Atmospherics/deposit.rsi
+    sprite: _Horizon/Structures/Specific/deposit.rsi
     layers:
-    - state: deposit
+    - state: deposit1
+      map: [ "random_deposit" ]
+  - type: RandomSprite
+    available:
+    - random_deposit:
+        deposit1: ""
+        deposit2: ""
+        deposit3: ""
+        deposit4: "" 
+        deposit5: ""
+        deposit6: ""
+        deposit7: ""
+        deposit8: ""
+        deposit9: ""
+        deposit10: ""
 
 - type: entity
   id: MixedOreDeposit
   parent: BaseOreDeposit
   name: Mixed Ore Deposit
-  description: A deposit containing exactly 200 iron, 50 gold, and 5 diamond ores.
+  description: A deposit.
   components:
   - type: OreDeposit
     oreCounts:
@@ -36,7 +52,7 @@
   id: RichOreDeposit
   parent: BaseOreDeposit
   name: Rich Ore Deposit
-  description: A rich deposit with 500 iron, 100 gold, 20 diamond, and 10 plasma ores.
+  description: A rich deposit.
   components:
   - type: OreDeposit
     oreCounts:
@@ -45,6 +61,21 @@
       DiamondOre: 20
       PlasmaOre: 10
     hardness: 1.5
+
+- type: entity
+  id: DiamondOreDeposit
+  parent: BaseOreDeposit
+  name: Diamond Ore Deposit
+  description: Алмазы? Алмазы! Жила Слишком похожа из одной кубической игры...
+  components:
+  - type: OreDeposit
+    oreCounts:
+      DiamondOre: 200
+    hardness: 10
+  - type: Sprite
+    color: "#77e7d1"
+
+# Scanner
 
 - type: entity
   id: Level1OreScanner
