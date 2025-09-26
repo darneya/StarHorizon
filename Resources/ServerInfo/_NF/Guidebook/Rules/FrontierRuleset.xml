@@ -1,4 +1,5 @@
 <Document>
+
   #Правила станции "Фронтир"
   [color=red]Если какие-либо ссылки не работают, используйте версию руководства в меню (Escape) или (Numpad 0).[/color]
   [color=red]Правила должны быть прочитаны полностью.[/color]
@@ -32,26 +33,26 @@
   ## Основные правила.
   Это общие правила. Нажмите для получения дополнительной информации.
 
-  - [textlink="0. Правила Нулевой Терпимости." link="FrontierRuleZeroTolerance"]
-  - [textlink="1. Правила Сообщества." link="FrontierRule1"]
-  - [textlink="2. Правила Внутриигровой Информации." link="FrontierRule2"]
-  - [textlink="3. Правила Эскалации." link="FrontierRule3"]
-  - [textlink="4. Правила Чата и Языка." link="FrontierRule4"]
+  - [textlink="0. Правила нулевой терпимости." link="FrontierRuleZeroTolerance"]
+  - [textlink="1. Правила сообщества." link="FrontierRule1"]
+  - [textlink="2. Правила внутриигровой информации." link="FrontierRule2"]
+  - [textlink="3. Правила эскалации." link="FrontierRule3"]
+  - [textlink="4. Правила чата и языка." link="FrontierRule4"]
 
   ## Ролевые правила
   Это правила ролевого взаимодействия. Нажмите для получения дополнительной информации.
-  - [textlink="5. Правила Персонажа." link="FrontierRule5"]
-  - [textlink="6. Правила Зон." link="FrontierRule6"]
-  - [textlink="7. Правила Антагонизма." link="FrontierRule7"]
-  - [textlink="8. Правила Конфликтов Игроков." link="FrontierRule8"]
-  - [textlink="9. Правила Пиратства." link="FrontierRule9"]
-  - [textlink="10. Преступления и Штрафы." link="FrontierRule10"]
-  - [textlink="11. Правила Силиконов." link="FrontierRule11"]
+  - [textlink="5. Правила персонажа." link="FrontierRule5"]
+  - [textlink="6. Правила зон." link="FrontierRule6"]
+  - [textlink="7. Правила антагонизма." link="FrontierRule7"]
+  - [textlink="8. Правила конфликтов игроков." link="FrontierRule8"]
+  - [textlink="9. Правила пиратства." link="FrontierRule9"]
+  - [textlink="10. Преступления и штрафы." link="FrontierRule10"]
+  - [textlink="11. Правила силиконов." link="FrontierRule11"]
 
   ## ДСБ и Командование
   Эти правила также применяются к любому лицу, которое является заместителем или действует вместо роли ДСБ/Командования.
-  - [textlink="12. Стандарты Безопасности." link="FrontierRule12"]
-  - [textlink="13. Стандарты Командования." link="FrontierRule13"]
+  - [textlink="12. Стандарты безопасности." link="FrontierRule12"]
+  - [textlink="13. Стандарты командования." link="FrontierRule13"]
 
   ## Правила ЕРП
   - Все, что заходит дальше поцелуев и обнимашек, автоматически считается ЕРП.
