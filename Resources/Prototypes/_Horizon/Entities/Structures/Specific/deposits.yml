@@ -27,7 +27,7 @@
         deposit1: ""
         deposit2: ""
         deposit3: ""
-        deposit4: "" 
+        deposit4: ""
         deposit5: ""
         deposit6: ""
         deposit7: ""
@@ -36,42 +36,98 @@
         deposit10: ""
 
 - type: entity
-  id: MixedOreDeposit
+  id: OreDepositCommonMetal
   parent: BaseOreDeposit
-  name: Mixed Ore Deposit
-  description: A deposit.
+  name: жила с рудными металлами
+  description: Рудная жила с металлами для машиностроения.
   components:
   - type: OreDeposit
     oreCounts:
+      Coal: 300
       SteelOre: 200
-      GoldOre: 50
-      DiamondOre: 5
-    hardness: 1.2
+      SpaceQuartz: 200
+    hardness: 5
+  - type: Sprite
+    color: "#9da398"
 
 - type: entity
-  id: RichOreDeposit
+  id: OreDepositPreciousMetal
   parent: BaseOreDeposit
-  name: Rich Ore Deposit
-  description: A rich deposit.
+  name: жила с драгоценными металлами
+  description: "Рудная жила с драгоценными металлами. Нужно больше золот..."
   components:
   - type: OreDeposit
     oreCounts:
-      SteelOre: 500
+      SpaceQuartz: 200
       GoldOre: 100
-      DiamondOre: 20
-      PlasmaOre: 10
-    hardness: 1.5
+      SilverOre: 100
+    hardness: 5
+  - type: Sprite
+    color: "#cfb10c"
 
 - type: entity
-  id: DiamondOreDeposit
+  id: OreDepositCommonRadioactive
   parent: BaseOreDeposit
-  name: Diamond Ore Deposit
+  name: жила с радиоактивными металлами
+  description: Рудная жила... Осторожно! Фонит!
+  components:
+  - type: OreDeposit
+    oreCounts:
+      SpaceQuartz: 300
+      PlasmaOre: 150
+      UraniumOre: 150
+      BananiumOre: 100
+    hardness: 6
+  - type: Sprite
+    color: "#1dc436"
+
+- type: entity
+  id: OreDepositRareMetal
+  parent: BaseOreDeposit
+  name: жила с редкими металлами
+  description: Рудная жила с редкими металлами для машиностроения.
+  components:
+  - type: OreDeposit
+    oreCounts:
+      TitanOre: 100
+      PsycoreOre: 100
+      Coal: 300
+      SteelOre: 250
+    hardness: 10
+  - type: Sprite
+    color: "#590080"
+
+- type: entity
+  id: OreDepositRareRadioactive
+  parent: BaseOreDeposit
+  name: жила с редкими радиоактивными металлами
+  description: Рудная жила... Осторожно! Фонит!
+  components:
+  - type: OreDeposit
+    oreCounts:
+      UraniumOre: 100
+      ToriumOre: 100
+      PlutoniumOre: 50
+      NeptuniumOre: 50
+    hardness: 10
+  - type: Sprite
+    color: "#b31200"
+
+- type: entity
+  id: OreDepositPreciousGem
+  parent: BaseOreDeposit
+  name: жила с драгоценными камнями
   description: Алмазы? Алмазы! Жила Слишком похожа из одной кубической игры...
   components:
   - type: OreDeposit
     oreCounts:
-      DiamondOre: 200
-    hardness: 10
+      SpaceQuartz: 200
+      DiamondOre: 50
+      EmeraldOre: 30
+      TopazOre: 30
+      SapphireOre: 30
+      RubyOre: 30
+    hardness: 15
   - type: Sprite
     color: "#77e7d1"
 
@@ -129,4 +185,3 @@
   components:
   - type: OreScanner
     scanLevel: 5
- 

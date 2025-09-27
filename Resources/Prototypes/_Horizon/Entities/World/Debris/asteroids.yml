@@ -31,9 +31,9 @@
   - type: RandomEntityPopulator
     entries:
     - params:
-        prob: 0.75
-        min: 1
-        max: 4
+        prob: 0.9
+        min: 3
+        max: 7
         canBeAirSealed: true
       entries:
       - id: GasDepositOxygen
@@ -55,6 +55,18 @@
       - id: GasDepositProtoNitrate
         orGroup: deposit
       - id: GasDepositHelium
+        orGroup: deposit
+      - id: OreDepositCommonMetal
+        orGroup: deposit
+      - id: OreDepositPreciousMetal
+        orGroup: deposit
+      - id: OreDepositCommonRadioactive
+        orGroup: deposit
+      - id: OreDepositRareMetal
+        orGroup: deposit
+      - id: OreDepositRareRadioactive
+        orGroup: deposit
+      - id: OreDepositPreciousGem
         orGroup: deposit
 # endregion Chromite Table
 
