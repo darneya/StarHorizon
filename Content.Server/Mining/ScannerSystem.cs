@@ -40,7 +40,7 @@ public sealed class OreScannerSystem : EntitySystem
         message.AppendLine("Сканер обнаружил что в жиле находится:");
 
         var oresToShow = scannerLevel >= 5 ? sortedOres.Count : System.Math.Min(scannerLevel, sortedOres.Count);
-        
+
         for (int i = 0; i < oresToShow && i < sortedOres.Count; i++)
         {
             var (oreType, amount) = sortedOres[i];
@@ -64,7 +64,7 @@ public sealed class OreScannerSystem : EntitySystem
 
         foreach (var hand in hands.Hands.Values)
         {
-            if (hand.HeldEntity != null && 
+            if (hand.HeldEntity != null &&
                 EntityManager.TryGetComponent<OreScannerComponent>(hand.HeldEntity.Value, out var scanner))
             {
                 return scanner.ScanLevel;
@@ -78,16 +78,25 @@ public sealed class OreScannerSystem : EntitySystem
     {
         return oreType switch
         {
-            "SteelOre" => "Железо",
-            "GoldOre" => "Золото",
-            "DiamondOre" => "Алмазы",
-            "PlasmaOre" => "Плазма",
-            "UraniumOre" => "Уран",
+            "SteelOre" => "Железная руда",
+            "GoldOre" => "Золотоносная руда",
+            "DiamondOre" => "Необработанные алмазы",
+            "PlasmaOre" => "Плазменная руда",
+            "UraniumOre" => "Урановая руда",
             "Coal" => "Уголь",
-            "SilverOre" => "Серебро",
-            "SpaceQuartz" => "Кварц",
-            "BananiumOre" => "Бананиум",
+            "SilverOre" => "Серебряная руда",
+            "SpaceQuartz" => "Космический кварц",
+            "BananiumOre" => "Бананиумовая руда",
             "Salt" => "Соль",
+            "PsycoreOre" => "Псикориевая руда",
+            "TitanOre" => "Титановая руда",
+            "EmeraldOre" => "Необработанные изумруды",
+            "TopazOre" => "Необработанные топазы",
+            "SapphireOre" => "Необработанные сапфиры",
+            "RubyOre" => "Необработанные рубины",
+            "ToriumOre" => "Ториевая руда",
+            "PlutoniumOre" => "Плутониевая руда",
+            "NeptuniumOre" => "Нептуниевая руда",
             _ => oreType
         };
     }

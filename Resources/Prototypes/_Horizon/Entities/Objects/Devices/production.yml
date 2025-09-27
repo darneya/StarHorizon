@@ -19,3 +19,20 @@
         Silicon: 20
     - type: StaticPrice
       price: 40
+
+- type: entity
+  id: OreMiningDrillMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: буровая установка для добычи руды (машинная плата)
+  description: Печатная плата буровой установки для добычи руды.
+  components:
+    - type: Sprite
+      state: engineering
+    - type: MachineBoard
+      prototype: GasMiningDrill
+      requirements:
+        Manipulator: 3
+      stackRequirements:
+        Steel: 10
+    - type: BindToStation
+      enabled: false # should be draggable between stations
