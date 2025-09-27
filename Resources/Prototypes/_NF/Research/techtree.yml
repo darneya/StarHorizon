@@ -230,11 +230,11 @@
   cost: 15000
   recipeUnlocks:
   - BorgModuleRCD
-  prerequisiteLineType: Tree
+#  prerequisiteLineType: Tree # Horizon
   technologyPrerequisites:
   - NFRapidConstruction
-  - NFBluespaceStorage
-  position: 4, 2
+#  - NFBluespaceStorage # Horizon
+  position: 4, 1
 
 # region Xenoarch
 
@@ -318,11 +318,11 @@
   cost: 10000
   recipeUnlocks:
   - DeviceDesynchronizer
-  prerequisiteLineType: Tree
+#  prerequisiteLineType: Tree # Horizon
   technologyPrerequisites:
-  - NFAdvancedToolsTechnology
+#  - NFAdvancedToolsTechnology # Horizon
   - NFAdvancedAnomalyResearch
-  position: 3, 5
+  position: 4, 6 # Horizon
 
 - type: technology
   id: NFSuperParts
@@ -391,11 +391,11 @@
   cost: 2500
   recipeUnlocks:
   - ClothingOuterHardsuitMedical
-  prerequisiteLineType: Tree
+#  prerequisiteLineType: Tree # Horizon
   technologyPrerequisites:
-  - NFHardsuitsBasic
-  - NFBiochemicalStasis
-  position: 1, 9
+  - NFHardsuitsField # Horizon
+#  - NFBiochemicalStasis # Horizon
+  position: 2, 9 # Horizon
 
 - type: technology
   id: NFHardsuitsEngineering
@@ -435,9 +435,9 @@
   cost: 5000
   recipeUnlocks:
   - ClothingOuterHardsuitRd
-  prerequisiteLineType: Tree
+#  prerequisiteLineType: Tree # Horizon
   technologyPrerequisites:
-  - NFSuperParts
+#  - NFSuperParts # Horizon
   - NFHardsuitsAdvanced
   position: 4, 7
 
@@ -451,7 +451,7 @@
   recipeUnlocks:
   - ClothingOuterHardsuitMercenary
   - ClothingOuterHardsuitPrivateSecurity
-  prerequisiteLineType: Diagonal
+#  prerequisiteLineType: Diagonal # Horizon
   technologyPrerequisites:
   - NFHardsuitsAdvanced
   position: 4, 9
@@ -466,7 +466,7 @@
   cost: 15000
   recipeUnlocks:
   - ClothingOuterHardsuitMaximPrototype
-  prerequisiteLineType: Tree
+#  prerequisiteLineType: Tree # Horizon
   technologyPrerequisites:
   - NFHardsuitsExperimentalRD
   - NFHardsuitsArmored
@@ -524,10 +524,10 @@
   - SyringeBluespace
   - JugBluespace
   - VialBluespace
-  prerequisiteLineType: Diagonal
+#  prerequisiteLineType: Diagonal # Horizon
   technologyPrerequisites:
-  - NFReinforcedJug
-  position: 1, 10
+  - NFEngineeringMedicine # Horizon
+  position: 2, 10
 
 - type: technology
   id: NFBasicMedicine
@@ -555,7 +555,7 @@
   - BorgModuleAdvancedChemical
   technologyPrerequisites:
   - NFBluespaceChemistry
-  position: 2, 10
+  position: 3, 10
 
 - type: technology
   id: NFEngineeringMedicine
@@ -582,10 +582,10 @@
   recipeUnlocks:
   - LauncherSyringe
   - MiniSyringe
-  prerequisiteLineType: Diagonal
+#  prerequisiteLineType: Diagonal # Horizon
   technologyPrerequisites:
   - NFBasicMedicine
-  position: 2, 12
+  position: 1, 12 # Horizon
 
 - type: technology
   id: NFAppliedBiochemicalStasis
@@ -1322,7 +1322,7 @@
   cost: 2500
   recipeUnlocks:
   - RadarConsoleCircuitboard
-  position: 0, 52 # Horizon
+  position: 0, 72 # Horizon
 
 - type: technology
   id: NFSpaceHandHeldScanning
@@ -1335,7 +1335,7 @@
   - HandHeldMassScanner
   technologyPrerequisites:
   - NFSpaceScanning
-  position: 0, 53 # Horizon
+  position: 1, 71 # Horizon
 
 - type: technology
   id: NFShuttlecraft
@@ -1350,7 +1350,7 @@
   - MiniStationAnchorCircuitboard
   technologyPrerequisites:
   - NFSpaceScanning
-  position: 2, 52 # Horizon
+  position: 1, 72 # Horizon
 
 - type: technology
   id: NFShuttlecraftThrust
@@ -1362,10 +1362,10 @@
   recipeUnlocks:
   - ThrusterMachineCircuitboard
   - GyroscopeMachineCircuitboard
-  prerequisiteLineType: Diagonal
+#  prerequisiteLineType: Diagonal # Horizon
   technologyPrerequisites:
   - NFSpaceScanning
-  position: 1, 52 # Horizon
+  position: 1, 73 # Horizon
 
 - type: technology
   id: NFShuttlecraftThrustSmall
@@ -1379,7 +1379,7 @@
   - SmallGyroscopeMachineCircuitboard
   technologyPrerequisites:
   - NFShuttlecraftThrust
-  position: 1, 53 # Horizon
+  position: 2, 73 # Horizon
 
 # region Atmospherics
 
@@ -1396,7 +1396,7 @@
   - FanTinyElectronics # Horizon
   technologyPrerequisites:
   - NFAtmosphericTech
-  position: 0, 35
+  position: 0, 52 # Horizon
 
 - type: technology
   id: NFAtmosphericTech
@@ -1408,7 +1408,7 @@
   recipeUnlocks:
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
-  position: 0, 36
+  position: 0, 53 # Horizon
 
 - type: technology
   id: NFAtmosphericDrilling
@@ -1420,10 +1420,10 @@
   recipeUnlocks:
   - GasMiningDrillMachineCircuitboard
   - GaslockFrameMachineCircuitboard
-  prerequisiteLineType: Diagonal
+#  prerequisiteLineType: Diagonal # Horizon
   technologyPrerequisites:
   - NFAtmosphericTech
-  position: 1, 37
+  position: 1, 54 # Horizon
 
 - type: technology
   id: NFAdvancedAtmosphericsPortable
@@ -1434,23 +1434,23 @@
   cost: 2500
   recipeUnlocks:
   - PortableScrubberMachineCircuitBoard
-  prerequisiteLineType: Diagonal
+#  prerequisiteLineType: Diagonal # Horizon
   technologyPrerequisites:
-  - NFAtmosphericTech
-  position: 1, 35
+  - NFAdvancedAtmosphericsTools # Horizon
+  position: 1, 52 # Horizon
 
 - type: technology
   id: NFAdvancedAtmospherics
   name: nf-research-technology-advanced-atmospherics
   entityIcon: GasThermoMachineHellfireFreezer
   discipline: NFEngineering
-  tier: 1
-  cost: 7500
+  tier: 2
+  cost: 15000
   recipeUnlocks:
   - HellfireFreezerMachineCircuitBoard
   technologyPrerequisites:
   - NFAtmosphericTech
-  position: 1, 36
+  position: 1, 53
 
 # region Jetpack
 
@@ -1464,7 +1464,7 @@
   cost: 2500
   recipeUnlocks:
   - JetpackBlue
-  position: 0, 54 # Horizon
+  position: 0, 74 # Horizon
 
 - type: technology
   id: NFArsenalMercenaryPropulsion
@@ -1477,7 +1477,7 @@
   - JetpackSecurity
   technologyPrerequisites:
   - NFBasicPersonalPropulsion
-  position: 0, 55 # Horizon
+  position: 0, 75 # Horizon
 
 - type: technology
   id: NFPersonalPropulsion
@@ -1491,7 +1491,7 @@
   - JetpackCaptain
   technologyPrerequisites:
   - NFBasicPersonalPropulsion
-  position: 1, 54 # Horizon
+  position: 1, 74 # Horizon
 
 - type: technology
   id: NFArsenalNfsdPropulsion
@@ -1504,7 +1504,7 @@
   - JetpackNfsd
   technologyPrerequisites:
   - NFArsenalMercenaryPropulsion
-  position: 1, 55 # Horizon
+  position: 1, 75 # Horizon
 
 - type: technology
   id: NFAdvancedPersonalPropulsion
@@ -1518,7 +1518,7 @@
   - JetpackVoid
   technologyPrerequisites:
   - NFPersonalPropulsion
-  position: 2, 54 # Horizon
+  position: 2, 74 # Horizon
 
 # region Salvage
 
