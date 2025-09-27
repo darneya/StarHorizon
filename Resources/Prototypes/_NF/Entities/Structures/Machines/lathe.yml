@@ -188,6 +188,8 @@
     dynamicPacks:
     - NightVisionSecPack # Horizon
     - WeaponModulesPack # Horizon
+    - HRZNAmmo # Horizon
+    - ShipgunAmmo # Horizon
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -223,8 +225,10 @@
     - NFMercenaryTechfabDeprecatedStatic
     - NfsdPracticeStatic
     dynamicPacks:
-    - NightVisionPack # Horizon # Horizon
+    - NightVisionSecPack # Horizon
     - WeaponModulesPack # Horizon
+    - HRZNAmmo # Horizon
+    - ShipgunAmmo # Horizon
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -273,8 +277,10 @@
     staticPacks:
     - NFHackedMercenaryTechfabDeprecatedStatic
     dynamicPacks:
-    - NightVisionPack # Horizon
+    - NightVisionSecPack # Horizon
     - WeaponModulesPack # Horizon
+    - HRZNAmmo # Horizon
+    - ShipgunAmmo # Horizon
   - type: BlueprintReceiver
     whitelist:
       tags:
