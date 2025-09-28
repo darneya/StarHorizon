@@ -1,6 +1,6 @@
 - type: entity
   id: OreMiningDrill
-  parent: [ BaseStructureDynamic, BaseMachinePowered ]
+  parent: [ BaseStructureDynamic, BaseMachinePowered, ConstructibleMachine]
   name: буровая установка для добычи руды
   description: Мощная буровая установка для разработки рудных месторождений на астероидах.
   placement:
@@ -55,6 +55,8 @@
     containers:
       storagebase: !type:Container
         ents: []
+      machine_board: !type:Container
+      machine_parts: !type:Container
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:

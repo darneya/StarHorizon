@@ -29,10 +29,10 @@
     - type: Sprite
       state: engineering
     - type: MachineBoard
-      prototype: GasMiningDrill
-      requirements:
-        Manipulator: 3
+      prototype: OreMiningDrill
       stackRequirements:
         Steel: 10
+        Silver: 20
+        CableHV: 10
     - type: BindToStation
       enabled: false # should be draggable between stations
