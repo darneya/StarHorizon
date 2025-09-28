@@ -56,7 +56,11 @@
         orGroup: deposit
       - id: GasDepositHelium
         orGroup: deposit
-      - id: OreDepositCommonMetal
+      - id: OreDepositSteelMetal
+        orGroup: deposit
+      - id: OreDepositQuarzMetal
+        orGroup: deposit
+      - id: OreDepositMixedMetal
         orGroup: deposit
       - id: OreDepositPreciousMetal
         orGroup: deposit

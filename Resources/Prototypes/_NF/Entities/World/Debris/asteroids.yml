@@ -51,7 +51,11 @@
           orGroup: deposit
         - id: GasDepositMuddlePlasma
           orGroup: deposit
-        - id: OreDepositCommonMetal
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
           orGroup: deposit
         - id: OreDepositPreciousMetal
           orGroup: deposit
@@ -112,7 +116,11 @@
           orGroup: deposit
         - id: GasDepositWaterVaporLarge
           orGroup: deposit
-        - id: OreDepositCommonMetal
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
           orGroup: deposit
         - id: OreDepositPreciousMetal
           orGroup: deposit
@@ -163,7 +171,11 @@
           orGroup: deposit
         - id: GasDepositAmmonia
           orGroup: deposit
-        - id: OreDepositCommonMetal
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
           orGroup: deposit
         - id: OreDepositPreciousMetal
           orGroup: deposit
@@ -214,7 +226,11 @@
           orGroup: deposit
         - id: GasDepositMuddleEvenVerySmall
           orGroup: deposit
-        - id: OreDepositCommonMetal
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
           orGroup: deposit
         - id: OreDepositPreciousMetal
           orGroup: deposit
@@ -265,7 +281,11 @@
           orGroup: deposit
         - id: GasDepositNitrogenLarge
           orGroup: deposit
-        - id: OreDepositCommonMetal
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
           orGroup: deposit
         - id: OreDepositPreciousMetal
           orGroup: deposit
@@ -318,7 +338,11 @@
           orGroup: deposit
         - id: GasDepositAirVeryLarge
           orGroup: deposit
-        - id: OreDepositCommonMetal
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
           orGroup: deposit
         - id: OreDepositPreciousMetal
           orGroup: deposit
@@ -371,7 +395,11 @@
           orGroup: deposit
         - id: GasDepositAirSmall
           orGroup: deposit
-        - id: OreDepositCommonMetal
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
           orGroup: deposit
         - id: OreDepositPreciousMetal
           orGroup: deposit

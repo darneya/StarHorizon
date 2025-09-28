@@ -36,16 +36,43 @@
         deposit10: ""
 
 - type: entity
-  id: OreDepositCommonMetal
+  id: OreDepositSteelMetal
   parent: BaseOreDeposit
-  name: жила с рудными металлами
+  name: жила с рудными металлами (сталь)
   description: Рудная жила с металлами для машиностроения.
   components:
   - type: OreDeposit
     oreCounts:
-      Coal: 300
-      SteelOre: 200
-      SpaceQuartz: 200
+      Coal: 600
+      SteelOre: 400
+    hardness: 5
+  - type: Sprite
+    color: "#9da398"
+
+- type: entity
+  id: OreDepositQuarzMetal
+  parent: BaseOreDeposit
+  name: жила с рудными металлами (кварц)
+  description: Рудная жила с металлами для машиностроения.
+  components:
+  - type: OreDeposit
+    oreCounts:
+      SpaceQuartz: 700
+    hardness: 5
+  - type: Sprite
+    color: "#9da398"
+
+- type: entity
+  id: OreDepositMixedMetal
+  parent: BaseOreDeposit
+  name: жила с рудными металлами (смешанными)
+  description: Рудная жила с металлами для машиностроения.
+  components:
+  - type: OreDeposit
+    oreCounts:
+      Coal: 400
+      SteelOre: 300
+      SpaceQuartz: 300
     hardness: 5
   - type: Sprite
     color: "#9da398"
@@ -58,9 +85,9 @@
   components:
   - type: OreDeposit
     oreCounts:
-      SpaceQuartz: 200
-      GoldOre: 100
-      SilverOre: 100
+      SpaceQuartz: 300
+      GoldOre: 150
+      SilverOre: 150
     hardness: 5
   - type: Sprite
     color: "#cfb10c"
@@ -74,9 +101,9 @@
   - type: OreDeposit
     oreCounts:
       SpaceQuartz: 300
-      PlasmaOre: 150
-      UraniumOre: 150
-      BananiumOre: 100
+      PlasmaOre: 200
+      UraniumOre: 200
+      BananiumOre: 150
     hardness: 6
   - type: Sprite
     color: "#1dc436"
@@ -92,7 +119,7 @@
       TitanOre: 100
       PsycoreOre: 100
       Coal: 300
-      SteelOre: 250
+      SteelOre: 200
     hardness: 10
   - type: Sprite
     color: "#590080"
@@ -144,7 +171,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _NF/Objects/Tools/multitool.rsi
+    sprite: _Horizon/Objects/Specific/Mining/locator.rsi
     layers:
     - state: icon
     - state: green-unlit
@@ -180,8 +207,8 @@
 - type: entity
   id: Level5OreScanner
   parent: Level1OreScanner
-  name: Master Ore Scanner
-  description: A master ore scanner.
+  name: локатор рудных месторождений
+  description: Сканирует месторождения и отображает информацию по состоянию руды внутри него.
   components:
   - type: OreScanner
     scanLevel: 5
