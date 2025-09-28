@@ -224,7 +224,7 @@ public sealed class OreExtractorSystem : EntitySystem
         
         for (int i = 0; i < amount; i++)
         {
-            var oreEntity = EntityManager.SpawnEntity($"{oreType}1", spawnPosition);
+            var oreEntity = EntityManager.SpawnEntity($"{oreType}", spawnPosition);
             
             _stack.TryMergeToContacts(oreEntity);
         }

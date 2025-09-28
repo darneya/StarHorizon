@@ -43,8 +43,8 @@
   components:
   - type: OreDeposit
     oreCounts:
-      Coal: 600
-      SteelOre: 400
+      Coal1: 600
+      SteelOre1: 400
     hardness: 5
   - type: Sprite
     color: "#9da398"
@@ -57,7 +57,7 @@
   components:
   - type: OreDeposit
     oreCounts:
-      SpaceQuartz: 700
+      SpaceQuartz1: 700
     hardness: 5
   - type: Sprite
     color: "#9da398"
@@ -70,9 +70,9 @@
   components:
   - type: OreDeposit
     oreCounts:
-      Coal: 400
-      SteelOre: 300
-      SpaceQuartz: 300
+      Coal1: 400
+      SteelOre1: 300
+      SpaceQuartz1: 300
     hardness: 5
   - type: Sprite
     color: "#9da398"
@@ -85,9 +85,9 @@
   components:
   - type: OreDeposit
     oreCounts:
-      SpaceQuartz: 300
-      GoldOre: 150
-      SilverOre: 150
+      SpaceQuartz1: 300
+      GoldOre1: 150
+      SilverOre1: 150
     hardness: 5
   - type: Sprite
     color: "#cfb10c"
@@ -100,10 +100,10 @@
   components:
   - type: OreDeposit
     oreCounts:
-      SpaceQuartz: 300
-      PlasmaOre: 200
-      UraniumOre: 200
-      BananiumOre: 150
+      SpaceQuartz1: 300
+      PlasmaOre1: 200
+      UraniumOre1: 200
+      BananiumOre1: 150
     hardness: 6
   - type: Sprite
     color: "#1dc436"
@@ -116,10 +116,10 @@
   components:
   - type: OreDeposit
     oreCounts:
-      TitanOre: 100
-      PsycoreOre: 100
-      Coal: 300
-      SteelOre: 200
+      TitanOre1: 100
+      PsycoreOre1: 100
+      Coal1: 300
+      SteelOre1: 200
     hardness: 10
   - type: Sprite
     color: "#590080"
@@ -132,10 +132,10 @@
   components:
   - type: OreDeposit
     oreCounts:
-      UraniumOre: 100
-      ToriumOre: 100
-      PlutoniumOre: 50
-      NeptuniumOre: 50
+      UraniumOre1: 100
+      ToriumOre1: 100
+      PlutoniumOre1: 50
+      NeptuniumOre1: 50
     hardness: 10
   - type: Sprite
     color: "#b31200"
@@ -148,12 +148,12 @@
   components:
   - type: OreDeposit
     oreCounts:
-      SpaceQuartz: 200
-      DiamondOre: 50
-      EmeraldOre: 30
-      TopazOre: 30
-      SapphireOre: 30
-      RubyOre: 30
+      SpaceQuartz1: 200
+      DiamondOre1: 50
+      EmeraldOre1: 30
+      TopazOre1: 30
+      SapphireOre1: 30
+      RubyOre1: 30
     hardness: 15
   - type: Sprite
     color: "#77e7d1"
