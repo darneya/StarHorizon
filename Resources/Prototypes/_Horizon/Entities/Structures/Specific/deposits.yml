@@ -177,7 +177,7 @@
     color: "#77e7d1"
 
 - type: entity
-  id: OreDepositPreciousGem
+  id: OreDepositLemi
   parent: BaseOreDeposit
   name: жила с лемирдиумом
   suffix: Абуз
