@@ -45,7 +45,9 @@
     oreCounts:
       Coal1: 600
       SteelOre1: 400
-    hardness: 5
+      NFMobCoalCrab: 10
+      NFMobIronCrab: 10
+    hardness: 1
   - type: Sprite
     color: "#9da398"
 
@@ -58,7 +60,8 @@
   - type: OreDeposit
     oreCounts:
       SpaceQuartz1: 700
-    hardness: 5
+      NFMobQuartzCrab: 15
+    hardness: 1
   - type: Sprite
     color: "#9da398"
 
@@ -73,7 +76,10 @@
       Coal1: 400
       SteelOre1: 300
       SpaceQuartz1: 300
-    hardness: 5
+      NFMobCoalCrab: 5
+      NFMobIronCrab: 5
+      NFMobQuartzCrab: 5
+    hardness: 1
   - type: Sprite
     color: "#9da398"
 
@@ -88,7 +94,9 @@
       SpaceQuartz1: 300
       GoldOre1: 150
       SilverOre1: 150
-    hardness: 5
+      NFMobGoldCrab: 10
+      NFMobSilverCrab: 10
+    hardness: 2
   - type: Sprite
     color: "#cfb10c"
 
@@ -104,7 +112,10 @@
       PlasmaOre1: 200
       UraniumOre1: 200
       BananiumOre1: 150
-    hardness: 6
+      NFMobPlasmaCrab: 10
+      NFMobUraniumCrab: 10
+      NFMobBananiumCrab: 10
+    hardness: 2
   - type: Sprite
     color: "#1dc436"
 
@@ -120,7 +131,10 @@
       PsycoreOre1: 100
       Coal1: 300
       SteelOre1: 200
-    hardness: 10
+      NFMobCoalCrab: 10
+      NFMobIronCrab: 10
+      NFMobQuartzCrab: 10
+    hardness: 4
   - type: Sprite
     color: "#590080"
 
@@ -136,7 +150,10 @@
       ToriumOre1: 100
       PlutoniumOre1: 50
       NeptuniumOre1: 50
-    hardness: 10
+      NFMobPlasmaCrab: 10
+      NFMobUraniumCrab: 10
+      NFMobBananiumCrab: 10
+    hardness: 4
   - type: Sprite
     color: "#b31200"
 
@@ -154,9 +171,26 @@
       TopazOre1: 30
       SapphireOre1: 30
       RubyOre1: 30
-    hardness: 15
+      NFMobGoldCrab: 15
+    hardness: 5
   - type: Sprite
     color: "#77e7d1"
+
+- type: entity
+  id: OreDepositPreciousGem
+  parent: BaseOreDeposit
+  name: жила с лемирдиумом
+  suffix: Абуз
+  description: "Легендарная жила! Будьте аккуратны! Она вас зажмет своими ляжк... ААААААА!"
+  components:
+  - type: OreDeposit
+    oreCounts:
+      PlushieLemird: 5
+      PlushieLemirdSchoolGirl: 5
+      PlushieLemird3: 5
+    hardness: 5
+  - type: Sprite
+    color: "#db07a6"
 
 # Scanner
 
