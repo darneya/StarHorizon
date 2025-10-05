@@ -1,6 +1,33 @@
 # Tier 2
 
 - type: technology
+  id: AdvancedShuttlecraft
+  name: research-technology-advanced-shuttlecraft
+  entityIcon: ComputerAdvancedRadar
+  discipline: NFEngineering
+  tier: 1
+  cost: 15000
+  recipeUnlocks:
+  - AdvancedRadarConsoleCircuitboard
+  technologyPrerequisites:
+  - NFShuttlecraft
+  position: 2, 72
+
+- type: technology
+  id: OreDrilling
+  name: research-technology-ore-drilling
+  entityIcon: OreMiningDrill
+  discipline: NFEngineering
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - OreMiningDrillMachineCircuitboard
+  technologyPrerequisites:
+  - NFAtmosphericTech
+  - NFExcavation
+  position: 1, 55
+
+- type: technology
   id: RipleyMKIITechnology
   name: research-technology-mech-ripleymk2
   entityIcon: MechRipleyMk2
@@ -191,7 +218,7 @@
 
 - type: technology
   id: NFExperimentalPowerGeneration
-  name: nf-research-technology-experimental-generators
+  name: research-technology-experimental-generators
   entityIcon: PortableGeneratorStarPacman
   discipline: NFEngineering
   tier: 3
