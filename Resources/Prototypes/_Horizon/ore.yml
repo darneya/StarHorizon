@@ -40,6 +40,24 @@
   minOreYield: 1
   maxOreYield: 1
 
+- type: ore
+  id: OrePlutonium
+  oreEntity: PlutoniumOre1
+  minOreYield: 1
+  maxOreYield: 2
+
+- type: ore
+  id: OreNeptunium
+  oreEntity: NeptuniumOre1
+  minOreYield: 1
+  maxOreYield: 2
+
+- type: ore
+  id: OreTorium
+  oreEntity: ToriumOre1
+  minOreYield: 1
+  maxOreYield: 2
+
 # Dense rocks
 
 # Medium yields
@@ -79,3 +97,21 @@
   oreEntity: TopazOre1
   minOreYield: 2
   maxOreYield: 3
+
+- type: ore
+  id: OrePlutoniumDense
+  oreEntity: PlutoniumOre1
+  minOreYield: 2
+  maxOreYield: 4
+
+- type: ore
+  id: OreNeptuniumDense
+  oreEntity: NeptuniumOre1
+  minOreYield: 2
+  maxOreYield: 4
+
+- type: ore
+  id: OreToriumDense
+  oreEntity: ToriumOre1
+  minOreYield: 2
+  maxOreYield: 4

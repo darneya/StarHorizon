@@ -21,6 +21,12 @@
       weight: 0.005
     - id: WallRockChromiteTopaz
       weight: 0.005
+    - id: WallRockChromitePlutonium
+      weight: 0.03
+    - id: WallRockChromiteNeptunium
+      weight: 0.03
+    - id: WallRockChromiteTorium
+      weight: 0.05
     - id: NFChromiteElementalSpawner
       weight: 0.05
 
@@ -63,6 +69,12 @@
       weight: 0.0005
     - id: WallChromiteCobblebrickEmerald
       weight: 0.0005
+    - id: WallChromiteCobblebrickPlutonium
+      weight: 0.003
+    - id: WallChromiteCobblebrickNeptunium
+      weight: 0.003
+    - id: WallChromiteCobblebrickTorium
+      weight: 0.007
     - id: NFChromiteNFCobblebrickElementalSpawner
       weight: 0.005
 
