@@ -3,7 +3,8 @@
   name: job-name-paramedic
   description: job-description-paramedic
   playTimeTracker: JobParamedic
-  setPreference: false # Frontier
+  salary: 40000 # Horizon
+  setPreference: true # Lua
   requirements:
   - !type:DepartmentTimeRequirement
     department: Medical

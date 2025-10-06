@@ -3,6 +3,7 @@
   name: job-name-pal
   description: job-description-public-affairs-liaison
   playTimeTracker: JobPublicAffairsLiaison
+  salary: 35000 # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 43200 # 12 hours

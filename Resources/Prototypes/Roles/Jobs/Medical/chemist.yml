@@ -3,7 +3,8 @@
   name: job-name-chemist
   description: job-description-chemist
   playTimeTracker: JobChemist
-  setPreference: false # Frontier
+  salary: 45000 # Horizon
+  setPreference: true # Lua
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical

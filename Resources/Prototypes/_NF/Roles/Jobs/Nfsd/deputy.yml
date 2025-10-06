@@ -3,6 +3,7 @@
   name: job-name-deputy
   description: job-description-deputy
   playTimeTracker: JobSecurityOfficer
+  salary: 40000 # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 43200 # 12 hours

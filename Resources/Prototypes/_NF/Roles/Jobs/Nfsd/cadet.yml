@@ -3,6 +3,7 @@
   name: job-name-cadet-nf
   description: job-description-cadet-nf
   playTimeTracker: JobSecurityCadet
+  salary: 35000 # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 21600 # 6 hours

@@ -3,6 +3,7 @@
   name: job-name-stc
   description: job-description-stc
   playTimeTracker: JobStc
+  salary: 65000 # Horizon
   startingGear: StcGear
   alwaysUseSpawner: true
   requirements:

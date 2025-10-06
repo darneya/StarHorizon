@@ -1,8 +1,9 @@
-﻿- type: job
+- type: job
   id: Valet
   name: job-name-valet
   description: job-description-valet
   playTimeTracker: JobValet
+  salary: 25000 # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 10800
