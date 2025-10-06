@@ -23,7 +23,7 @@
         HorizontalExpand="True"
         AppendStyleClass="{x:Static style:StyleBase.ButtonOpenRight}"
         />
-    <!-- Aavikko start -->
+    <!-- Horizon start -->
     <ui:MenuButton
         Name="SponsorShop"
         Access="Internal"
@@ -35,7 +35,7 @@
         AppendStyleClass="{x:Static style:StyleBase.ButtonOpenLeft}"
         Visible="False"
         />
-    <!-- Aavikko end -->
+    <!-- Horizon end -->
     <ui:MenuButton
         Name="GuidebookButton"
         Access="Internal"

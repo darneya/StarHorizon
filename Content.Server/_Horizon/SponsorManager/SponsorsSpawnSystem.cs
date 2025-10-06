@@ -28,7 +28,7 @@ namespace Content.Server._Horizon.SponsorManager
         {
             _sponsorItems.Clear();
 
-            foreach (var line in File.ReadLines("Resources/Prototypes/Aavikko/Sponsors/SponsorInfo/sponsor_items.txt"))
+            foreach (var line in File.ReadLines("Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/sponsor_items.txt"))
             {
                 var separatorIndex = line.IndexOf(',');
                 if (separatorIndex == -1)
