@@ -7,6 +7,9 @@
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 72000 # 20 hrs
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 36000 # 10 hrs
   #  whitelisted: true # Horizon TempTweak
   startingGear: DocGear
   alwaysUseSpawner: true
@@ -34,7 +37,7 @@
 - type: startingGear
   id: DocGear
   equipment:
-    pocket1: HypoMini
+    pocket1: Hypospray # Horizon
     pocket2: MedicalAppraisalTool
   storage:
     back:
