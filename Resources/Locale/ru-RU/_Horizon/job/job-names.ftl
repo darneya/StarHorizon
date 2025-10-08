@@ -1,4 +1,4 @@
-job-name-traumamedtech = медицинский техник Траумы
-job-name-traumaparamedic = парамедик Траумы
-job-name-traumarepresentative = представитель Траумы
-job-name-traumaressurector = реаниматор Траумы
+job-name-traumamedtech = Медицинский техник
+job-name-traumaparamedic = Парамедик
+job-name-traumarepresentative = Представитель
+job-name-traumaressurector = Реаниматор
