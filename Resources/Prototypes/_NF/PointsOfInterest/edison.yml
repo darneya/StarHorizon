@@ -43,4 +43,4 @@
         - type: StationJobs
           availableJobs:
             PlantManager: [ 1, 1 ]
-            PlantTechnician: [ 3, 3 ]
+            PlantTechnician: [ 5, 5 ]

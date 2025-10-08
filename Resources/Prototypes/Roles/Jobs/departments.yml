@@ -81,6 +81,7 @@
   - Sheriff # Frontier
   - PlantManager # Frontier
   - StationTrafficController # Frontier
+  - DirectorOfCare # Horizon (FOK IT!!! CMO IS A COMMAND)
   primary: false
   weight: 100
   editorHidden: true # Frontier
@@ -107,7 +108,14 @@
   color: "#52B4E9"
   weight: -93
   primary: false
-  editorHidden: true # Frontier
+  # Horizon start
+  # editorHidden: true # Frontier
+  roles:
+  - DirectorOfCare
+  - Paramedic
+  - Chemist
+  - MedicalDoctor
+  # Horizon end
 
 - type: department
   id: Security

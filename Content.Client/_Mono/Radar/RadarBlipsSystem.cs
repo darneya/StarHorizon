@@ -15,7 +15,7 @@ namespace Content.Client._Mono.Radar;
 
 public sealed partial class RadarBlipsSystem : EntitySystem
 {
-    private const double BlipStaleSeconds = 3.0;
+    private const double BlipStaleSeconds = 1.5;
     private static readonly List<(Vector2, float, Color, RadarBlipShape)> EmptyBlipList = new();
     private static readonly List<(NetEntity netUid, NetCoordinates Position, Vector2 Vel, float Scale, Color Color, RadarBlipShape Shape)> EmptyRawBlipList = new();
     private static readonly List<(Vector2 Start, Vector2 End, float Thickness, Color Color)> EmptyHitscanList = new();

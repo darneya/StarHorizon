@@ -42,8 +42,11 @@
         - type: StationJobs
           availableJobs:
             DirectorOfCare: [ 1, 1 ]
-            Pilot: [ -1, -1 ]
-            Mercenary: [ -1, -1 ]
+            Chemist: [ 1, 1 ] # Horizon
+            Paramedic: [ 10, 10 ] # Horizon
+            MedicalDoctor: [ 3, 3 ] # Horizon
+            # Pilot: [ -1, -1 ] # Horizon
+            # Mercenary: [ -1, -1 ] # Horizon
           tags:
           - HeadOfPersonnel
           - HeadOfSecurity
