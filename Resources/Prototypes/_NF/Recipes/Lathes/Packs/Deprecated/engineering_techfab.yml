@@ -54,6 +54,7 @@
     - HolofanProjector
     - FireExtinguisher
     - GasDepositLocator
+    - Level5OreScanner
   ## Parts
     - MicroManipulatorStockPart
     - MatterBinStockPart

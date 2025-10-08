@@ -39,10 +39,10 @@
     materialComposition:
       RawPsycore: 100
   - type: Extractable
-    grindableSolutionName: psycore
+    grindableSolutionName: psycoreore
   - type: SolutionContainerManager
     solutions:
-      psycore:
+      psycoreore:
         reagents:
         - ReagentId: Carbon
           Quantity: 20
@@ -84,10 +84,10 @@
     materialComposition:
       RawTitan: 100
   - type: Extractable
-    grindableSolutionName: titan
+    grindableSolutionName: titanore
   - type: SolutionContainerManager
     solutions:
-      titan:
+      titanore:
         reagents:
         - ReagentId: Carbon
           Quantity: 20
@@ -129,10 +129,10 @@
     materialComposition:
       RawEmerald: 100
   - type: Extractable
-    grindableSolutionName: emerald
+    grindableSolutionName: emeraldore
   - type: SolutionContainerManager
     solutions:
-      emerald:
+      emeraldore:
         reagents:
         - ReagentId: Carbon
           Quantity: 20
@@ -166,10 +166,10 @@
     materialComposition:
       RawRuby: 100
   - type: Extractable
-    grindableSolutionName: ruby
+    grindableSolutionName: rubyore
   - type: SolutionContainerManager
     solutions:
-      ruby:
+      rubyore:
         reagents:
         - ReagentId: Carbon
           Quantity: 20
@@ -203,9 +203,9 @@
     materialComposition:
       RawSapphire: 100
   - type: Extractable
-    grindableSolutionName: sapphire
+    grindableSolutionName: sapphireore
   - type: SolutionContainerManager
-    solutions:
+    solutionsore:
       sapphire:
         reagents:
         - ReagentId: Carbon
@@ -240,10 +240,10 @@
     materialComposition:
       RawTopaz: 100
   - type: Extractable
-    grindableSolutionName: topaz
+    grindableSolutionName: topazore
   - type: SolutionContainerManager
     solutions:
-      topaz:
+      topazore:
         reagents:
         - ReagentId: Carbon
           Quantity: 20
@@ -261,3 +261,165 @@
   components:
   - type: Stack
     count: 1
+
+- type: entity
+  parent: OreBaseFar
+  id: ToriumOre
+  name: torium ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: ToriumOre
+  - type: Sprite
+    state: torium
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawTorium: 100
+  - type: PointLight
+    radius: 1.2
+    energy: 0.8
+    castShadows: false
+    color: "#92c6e7"
+  - type: Extractable
+    grindableSolutionName: toriumore
+  - type: SolutionContainerManager
+    solutions:
+      toriumore:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 10
+        canReact: false
+  - type: Item
+    heldPrefix: torium
+  - type: Tag
+    tags:
+    - Ore
+    - OreTorium
+  - type: NFFuel
+  - type: RadiationSource
+    intensity: 0.02
+
+- type: entity
+  parent: ToriumOre
+  id: ToriumOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: ToriumOre
+  id: ToriumOre5
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: OreBaseFar
+  id: PlutoniumOre
+  name: plutonium ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: PlutoniumOre
+  - type: Sprite
+    state: plutonium
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawPlutonium: 100
+  - type: PointLight
+    radius: 1.2
+    energy: 0.8
+    castShadows: false
+    color: "#b52d12"
+  - type: Extractable
+    grindableSolutionName: plutoniumore
+  - type: SolutionContainerManager
+    solutions:
+      toriumore:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 10
+        canReact: false
+  - type: Item
+    heldPrefix: plutonium
+  - type: Tag
+    tags:
+    - Ore
+    - OrePlutonium
+  - type: NFFuel
+  - type: RadiationSource
+    intensity: 0.04
+
+- type: entity
+  parent: PlutoniumOre
+  id: PlutoniumOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: PlutoniumOre
+  id: PlutoniumOre5
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: OreBaseFar
+  id: NeptuniumOre
+  name: neptunium ore
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: NeptuniumOre
+  - type: Sprite
+    state: neptunium
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      RawNeptunium: 100
+  - type: PointLight
+    radius: 1.2
+    energy: 0.8
+    castShadows: false
+    color: "#d1d1d1"
+  - type: Extractable
+    grindableSolutionName: neptuniumore
+  - type: SolutionContainerManager
+    solutions:
+      toriumore:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 10
+        canReact: false
+  - type: Item
+    heldPrefix: neptunium
+  - type: Tag
+    tags:
+    - Ore
+    - OreNeptunium
+  - type: NFFuel
+  - type: RadiationSource
+    intensity: 0.04
+
+- type: entity
+  parent: NeptuniumOre
+  id: NeptuniumOre1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: NeptuniumOre
+  id: NeptuniumOre5
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5

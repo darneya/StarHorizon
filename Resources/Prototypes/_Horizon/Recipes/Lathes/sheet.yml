@@ -53,3 +53,45 @@
   completetime: 2
   materials:
     RawPsycore: 3000
+
+- type: latheRecipe
+  id: SheetPlutonium1
+  result: SheetPlutonium1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawPlutonium: 100
+
+- type: latheRecipe
+  id: SheetPlutonium30
+  result: SheetPlutonium
+  completetime: 2
+  materials:
+    RawPlutonium: 3000
+
+- type: latheRecipe
+  id: SheetNeptunium1
+  result: SheetNeptunium1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawNeptunium: 100
+
+- type: latheRecipe
+  id: SheetNeptunium30
+  result: SheetNeptunium
+  completetime: 2
+  materials:
+    RawNeptunium: 3000
+
+- type: latheRecipe
+  id: SheetTorium1
+  result: SheetTorium1
+  completetime: 0.06 # Frontier: 0<0.06 (~2/30)
+  materials:
+    RawTorium: 100
+
+- type: latheRecipe
+  id: SheetTorium30
+  result: SheetTorium
+  completetime: 2
+  materials:
+    RawTorium: 3000
