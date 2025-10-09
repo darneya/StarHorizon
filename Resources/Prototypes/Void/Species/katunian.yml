@@ -8,6 +8,10 @@
   dollPrototype: MobKatunianDummy
   skinColoration: KatunianToned
 
+  #maleFirstNames: NamesKatunianMale
+  #femaleFirstNames: NamesKatunianFemale
+  #lastNames: NamesKatunianLast
+
 - type: speciesBaseSprites
   id: MobKatunianSprites
   sprites:
