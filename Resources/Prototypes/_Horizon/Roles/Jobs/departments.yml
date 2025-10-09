@@ -1,9 +1,9 @@
 - type: department
   id: TraumaTeam
   name: department-Trauma
-  description: department-Trauma-description 
+  description: department-Trauma-description
   color: "#00ab86"
-  weight: -10
+  weight: -100
   roles:
   - TraumaMedTech
   - TraumaParamedic

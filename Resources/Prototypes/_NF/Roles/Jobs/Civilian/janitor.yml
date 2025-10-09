@@ -3,7 +3,7 @@
   name: job-name-janitor
   description: job-description-janitor
   playTimeTracker: JobJanitor
-  salary: 25000 # Horizon
+  salary: 35000 # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 10800

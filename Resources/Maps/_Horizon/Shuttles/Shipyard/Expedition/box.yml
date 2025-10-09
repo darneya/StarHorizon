@@ -4,7 +4,7 @@ meta:
   engineVersion: 261.2.0
   forkId: ""
   forkVersion: ""
-  time: 08/20/2025 18:35:21
+  time: 10/02/2025 07:27:01
   entityCount: 773
 maps: []
 grids:
@@ -14,6 +14,8 @@ orphans:
 nullspace: []
 tilemap:
   1: Space
+  18: FloorBar
+  23: FloorBlue
   4: FloorDark
   9: FloorDarkHerringbone
   6: FloorDarkMini
@@ -21,11 +23,17 @@ tilemap:
   2: FloorDarkPavementVertical
   10: FloorGlass
   7: FloorKitchen
+  22: FloorMetalDiamond
   13: FloorMining
   15: FloorMiningDark
   11: FloorMiningLight
+  16: FloorRGlass
+  17: FloorShowroom
   14: FloorTechMaint
   8: FloorTechMaint2
+  20: FloorWhiteHerringbone
+  21: FloorWhiteMono
+  19: FloorWood
   12: FloorWoodTile
   5: Lattice
   0: Plating
@@ -2199,6 +2207,18 @@ entities:
     - type: Transform
       pos: 2.5,-0.5
       parent: 1
+    - type: DeviceLinkSource
+      linkedPorts: {}
+      lastSignals: {}
+      ports:
+      - device-button-1
+      - device-button-2
+      - device-button-3
+      - device-button-4
+      - device-button-5
+      - device-button-6
+      - device-button-7
+      - device-button-8
 - proto: ComputerSurveillanceCameraMonitor
   entities:
   - uid: 240
@@ -4355,45 +4375,61 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,0.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 542
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 1.5,0.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 543
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 2.5,0.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 544
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,0.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 545
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 4.5,0.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 546
     components:
     - type: Transform
       pos: -2.5,-12.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 547
     components:
     - type: Transform
       pos: -4.5,-19.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
   - uid: 548
     components:
     - type: Transform
       pos: 2.5,-6.5
       parent: 1
+    - type: DeltaPressure
+      gridUid: 1
 - proto: RemoteSignaller
   entities:
   - uid: 549
