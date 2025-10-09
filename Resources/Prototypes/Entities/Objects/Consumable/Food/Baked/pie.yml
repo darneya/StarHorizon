@@ -524,8 +524,10 @@
       food:
         maxVol: 30
         reagents:
+        - ReagentId: JuiceGrape
+          Quantity: 5
         - ReagentId: Nutriment
-          Quantity: 15
+          Quantity: 10
         - ReagentId: Vitamin
           Quantity: 5
         - ReagentId: Sugar
