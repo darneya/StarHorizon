@@ -52,15 +52,25 @@
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
   - type: TallWhitelist
-    scale: 1.2
+    scale: 1.1
   - type: ShortWhitelist
-    scale: 0.8
+    scale: 0.9
     density: 140
     pseudoItem: true
     cosmeticOnly: false
   - type: Temperature
     heatDamageThreshold: 320 # 5 lower than base # Frontier: 315<320
     coldDamageThreshold: 220 # 40 lower than base,
+  - type: Carriable # Carrying system from nyanotrasen.
+  #- type: Inventory # Allows vulps to wear properly shaped helmets
+  #  speciesId: vulpkanin
+  - type: Speech
+    allowedEmotes: ['KHiss', 'KFurr', 'KPurr', 'KGrowl']
+  - type: Vocal
+    sounds:
+      Male: MaleKatunian
+      Female: FemaleKatunian
+      Unsexed: MaleKatunian
 
 - type: entity
   parent: BaseSpeciesDummy
