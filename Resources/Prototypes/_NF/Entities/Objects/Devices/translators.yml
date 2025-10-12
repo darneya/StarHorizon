@@ -1,0 +1,205 @@
+# Translators
+- type: entity
+  id: TranslatorBase
+  abstract: true
+  parent: [ BaseItem ]
+  name: Translator
+  description: "Translates speech."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Devices/translator.rsi
+    state: icon
+    layers:
+      - state: icon
+      - state: translator
+        shader: unshaded
+        visible: false
+        map: [ "enum.ToggleableVisuals.Layer", "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: HandheldTranslator
+    enabled: false
+  - type: ItemToggle
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  id: Translator
+  abstract: true
+  parent: [ TranslatorBase, PowerCellSlotMediumItem ]
+  suffix: Powered
+  components:
+  - type: PowerCellDraw
+    drawRate: 0.5
+
+- type: entity
+  id: TranslatorEmpty
+  abstract: true
+  parent: [ Translator ]
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+
+- type: entity
+  id: BubblishTranslator
+  parent: [ Translator ]
+  name: Bubblish translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: BadSpeak
+      Bubblish: BadSpeak
+
+- type: entity
+  id: ArachnidTranslator
+  parent: [ Translator ]
+  name: Arachnid translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Arachnid: Speak
+
+- type: entity
+  id: RootSpeakTranslator
+  parent: [ Translator ]
+  name: RootSpeak translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: BadSpeak
+      RootSpeak: BadSpeak
+
+- type: entity
+  id: NekomimeticTranslator
+  parent: [ Translator ]
+  name: Nekomimetic translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Nekomimetic: Speak
+
+- type: entity
+  id: DraconicTranslator
+  parent: [ Translator ]
+  name: Draconic translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Draconic: Speak
+
+- type: entity
+  id: CanilunztTranslator
+  parent: [ Translator ]
+  name: Canilunzt translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Canilunzt: Speak
+
+- type: entity
+  id: SolCommonTranslator
+  parent: [ Translator ]
+  name: SolCommon translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      SolCommon: Speak
+
+- type: entity
+  id: DwarfTranslator
+  parent: [ Translator ]
+  name: Dwarf translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Dwarf: Speak
+
+- type: entity
+  id: NianTranslator
+  parent: [ Translator ]
+  name: Nian translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: BadSpeak
+      Nian: BadSpeak
+
+- type: entity
+  id: SikTajTranslator
+  parent: [ Translator ]
+  name: SikTaj translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      SikTaj: Speak
+
+- type: entity
+  id: NeoRusskiyaTranslator
+  parent: [ Translator ]
+  name: Neo-Russkiya translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      NeoRusskiya: Speak
+
+- type: entity
+  id: ClownishTranslator
+  parent: [ Translator ]
+  name: Clownish translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Clownish: Speak
+
+- type: entity
+  id: AnimalTranslator
+  parent: [ Translator ]
+  name: Animals translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: BadSpeak
+      Cat: BadSpeak
+      Dog: BadSpeak
+      Mothroach: BadSpeak
+      Monkey: BadSpeak
+      Bee: BadSpeak
+      Mouse: BadSpeak
+      Chicken: BadSpeak
+      Duck: BadSpeak
+      Cow: BadSpeak
+      Sheep: BadSpeak
+      Kangaroo: BadSpeak
+      Pig: BadSpeak
+  - type: StaticPrice
+    price: 3500
