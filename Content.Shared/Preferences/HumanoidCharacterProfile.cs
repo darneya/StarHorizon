@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Shared._Horizon.Bark;
+using Content.Shared._Horizon.FlavorText;
 using Content.Shared._NF.Bank;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
@@ -109,6 +110,10 @@ namespace Content.Shared.Preferences
 
         public BarkData Bark = new(); // _Horizon
 
+        public ErpStatus ErpStat = ErpStatus.No;    // _Horizon
+
+        public ProtoId<CharacterFactionPrototype> Faction = "None"; // _Horizon
+
         /// <summary>
         /// <see cref="_jobPriorities"/>
         /// </summary>
@@ -146,6 +151,8 @@ namespace Content.Shared.Preferences
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
             Dictionary<string, RoleLoadout> loadouts,
+            ErpStatus erp,  // _Horizon
+            ProtoId<CharacterFactionPrototype> faction, // _Horizon
             BarkData bark) // _Horizon
         {
             Name = name;
@@ -162,6 +169,8 @@ namespace Content.Shared.Preferences
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
+            ErpStat = erp;  // _Horizon
+            Faction = faction;  // _Horizon
             Bark = bark; // _Horizon
         }
 
@@ -186,6 +195,8 @@ namespace Content.Shared.Preferences
                 antagPreferences,
                 traitPreferences,
                 loadouts,
+                other.ErpStat,  // _Horizon
+                other.Faction,  // _Horizon
                 other.Bark) // _Horizon
         {
         }
@@ -206,6 +217,8 @@ namespace Content.Shared.Preferences
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
                 new Dictionary<string, RoleLoadout>(other.Loadouts),
+                other.ErpStat,  // _Horizon
+                other.Faction,  // _Horizon
                 other.Bark) // _Horizon
         {
         }
@@ -689,6 +702,11 @@ namespace Content.Shared.Preferences
             {
                 _loadouts.Remove(value);
             }
+
+            // Horizon start
+            if (!prototypeManager.HasIndex(Faction))
+                Faction = "None";
+            // Horizon end
         }
 
         /// <summary>
@@ -843,6 +861,22 @@ namespace Content.Shared.Preferences
             return new(this)
             {
                 Bark = Bark.WithMaxVar(variation),
+            };
+        }
+
+        public HumanoidCharacterProfile WithErpStatus(ErpStatus erp)
+        {
+            return new(this)
+            {
+                ErpStat = erp
+            };
+        }
+
+        public HumanoidCharacterProfile WithFaction(ProtoId<CharacterFactionPrototype> faction)
+        {
+            return new(this)
+            {
+                Faction = faction
             };
         }
         // _Horizon end

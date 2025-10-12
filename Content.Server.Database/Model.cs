@@ -429,6 +429,8 @@ namespace Content.Server.Database
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+        public int ErpStatus { get; set; } = 0; // _Horizon
+        public string Faction { get; set; } = null!; // _Horizon
     }
 
     public class Job
