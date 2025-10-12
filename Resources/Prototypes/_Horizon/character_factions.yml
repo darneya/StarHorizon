@@ -1,0 +1,9 @@
+- type: characterFaction
+  id: None
+  name: faction-none-name
+  desc: faction-none-desc
+
+- type: characterFaction
+  id: Test faction
+  name: Test faction
+  desc: fajfpofjpoassdadsasdajoefoqwiqfepiojdj
