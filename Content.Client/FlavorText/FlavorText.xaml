@@ -1,5 +1,15 @@
 ﻿<Control Name="CFlavorText" xmlns="https://spacestation14.io">
     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
         <TextEdit Name="CFlavorTextInput" Access="Public" MinSize="220 100" Margin="10" HorizontalExpand="True" VerticalExpand="True" />
+        <!-- Horizon start -->
+        <BoxContainer Orientation="Vertical">
+            <OptionButton Name="ERPStatusButton" Access="Public" MinHeight="38" Margin="10 4" HorizontalExpand="True" />
+            <RichTextLabel Name="ERPStatusDescription" Access="Public" MinSize="220 100" Margin="10 4" HorizontalExpand="True" VerticalExpand="True" VerticalAlignment="Top" />
+        </BoxContainer>
+        <BoxContainer Orientation="Vertical">
+            <OptionButton Name="FactionButton" Access="Public" MinHeight="38" Margin="10 4" HorizontalExpand="True" />
+            <RichTextLabel Name="FactionDescription" Access="Public" MinSize="220 100" Margin="10 4" HorizontalExpand="True" VerticalExpand="True" VerticalAlignment="Top" />
+        </BoxContainer>
+        <!-- Horizon end -->
     </BoxContainer>
 </Control>

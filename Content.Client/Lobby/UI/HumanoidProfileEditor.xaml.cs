@@ -11,6 +11,7 @@ using Content.Client.Sprite;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared._Horizon.CCVar;
+using Content.Shared._Horizon.FlavorText;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -542,6 +543,49 @@ namespace Content.Client.Lobby.UI
                 _flavorTextEdit = _flavorText.CFlavorTextInput;
 
                 _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
+
+                // Horizon start
+
+                _flavorText.OnErpStatChanged += args =>
+                {
+                    OnErpChange((ErpStatus)args);
+                    _flavorText.ERPStatusButton.Select(args);
+
+                    UpdateErpDesc();
+                };
+
+                for (var i = 0; i <= (int)ErpStatus.NonCon; i++)
+                {
+                    _flavorText.ERPStatusButton.AddItem(FormattedMessage.EscapeText(Loc.GetString($"erp-status-{(ErpStatus)i}")), i);
+
+                    if (i == (int?)Profile?.ErpStat)
+                    {
+                        OnErpChange((ErpStatus)i);
+                        _flavorText.ERPStatusButton.Select(i);
+                    }
+                }
+
+                var factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().ToList();
+
+                _flavorText.OnFactionChanged += args =>
+                {
+                    OnFactionChange(factions[args]);
+                    _flavorText.FactionButton.Select(args);
+                    UpdateFactionDesc();
+                };
+
+                for (var i = 0; i < factions.Count; i++)
+                {
+                    _flavorText.FactionButton.AddItem(Loc.GetString(factions[i].Name), i);
+
+                    if (factions.ElementAt(i).ID == Profile?.Faction)
+                    {
+                        OnFactionChange(factions.ElementAt(i).ID);
+                        _flavorText.FactionButton.Select(i);
+                        UpdateFactionDesc();
+                    }
+                }
+                // Horizon end
             }
             else
             {
@@ -550,6 +594,10 @@ namespace Content.Client.Lobby.UI
 
                 TabContainer.RemoveChild(_flavorText);
                 _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
+                // Horizon start
+                _flavorText.OnErpStatChanged = null;
+                _flavorText.OnFactionChanged = null;
+                // Horizon end
                 _flavorText.Dispose();
                 _flavorTextEdit?.Dispose();
                 _flavorTextEdit = null;
@@ -1402,6 +1450,14 @@ namespace Content.Client.Lobby.UI
             {
                 _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
             }
+
+            // Horizon start
+            if (_flavorText != null)
+            {
+                UpdateErpDesc();
+                UpdateFactionDesc();
+            }
+            // Horizon end
         }
 
         private void UpdateAgeEdit()
@@ -1872,6 +1928,45 @@ namespace Content.Client.Lobby.UI
             _rgbSkinColorSelector.Color = color;
 
             ReloadProfilePreview();
+        }
+
+        private void OnErpChange(ErpStatus status)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithErpStatus(status);
+            SetDirty();
+        }
+
+        private void OnFactionChange(ProtoId<CharacterFactionPrototype> faction)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithFaction(faction);
+            SetDirty();
+        }
+
+        private void UpdateErpDesc()
+        {
+            if (_flavorText == null)
+                return;
+
+            _flavorText.ERPStatusDescription.SetMarkup(Loc.GetString($"erp-status-{Profile?.ErpStat}-desc"));
+        }
+
+        private void UpdateFactionDesc()
+        {
+            if (_flavorText == null || Profile == null)
+                return;
+
+            if (Profile.Faction == string.Empty)
+                OnFactionChange("None");
+
+            var faction = _prototypeManager.Index(Profile.Faction);
+
+            _flavorText.FactionDescription.SetMarkup(Loc.GetString(faction.Desc));
         }
         // Horizon end
     }
