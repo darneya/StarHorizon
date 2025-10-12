@@ -15,6 +15,7 @@
   description: The FSB Spirit is a search and rescue shuttle for experienced Frontier medics.
   price: 15000
   category: Small
+  access: Medical
   group: Medical
   shuttlePath: /Maps/_NF/Shuttles/spirit.yml
   guidebookPage: ShipyardSpirit

@@ -16,6 +16,7 @@
   description: A medical carrier produced by the Far Star Biotech corporation. Designed for large scale colonization support, humanitarian relief and post-disaster investigation and recovery operations.
   price: 200000 # 133217 0.5 199825.5
   category: Large
+  access: Medical
   group: Medical
   shuttlePath: /Maps/_NF/Shuttles/caladrius.yml
   guidebookPage: ShipyardCaladrius
