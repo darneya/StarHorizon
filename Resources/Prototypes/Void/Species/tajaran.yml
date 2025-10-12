@@ -11,6 +11,11 @@
   femaleFirstNames: NamesTajaranFirstFemale
   LastNames: NamesTajaranLast
   naming: FirstLast
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - SikTaj
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobTajaranSprites

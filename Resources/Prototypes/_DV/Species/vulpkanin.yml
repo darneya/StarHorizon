@@ -11,6 +11,11 @@
   maleFirstNames: NamesVulpkaninMale
   femaleFirstNames: NamesVulpkaninFemale
   lastNames: NamesVulpkaninLast
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Canilunzt
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobVulpkaninSprites

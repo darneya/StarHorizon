@@ -13,6 +13,11 @@
   lastNames: NamesArachnidLast
   sexes:
   - Unsexed
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Arachnid
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobArachnidSprites

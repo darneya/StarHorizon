@@ -11,6 +11,11 @@
   femaleFirstNames: NamesOniFemale
   lastNames: NamesOniLocation
   naming: LastNoFirst
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Nekomimetic
+  # Horizon end
 
 - type: markingPoints
   id: MobOniMarkingLimits

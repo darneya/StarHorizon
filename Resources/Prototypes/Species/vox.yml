@@ -13,6 +13,12 @@
   naming: First
   sexes:
   - Unsexed
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - VoxPidgin
+  uniqueLanguages: [VoxPidgin]
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobVoxSprites

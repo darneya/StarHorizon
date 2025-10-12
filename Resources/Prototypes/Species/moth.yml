@@ -11,6 +11,11 @@
   maleFirstNames: NamesMothFirstMale
   femaleFirstNames: NamesMothFirstFemale
   lastNames: NamesMothLast
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Nian
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobMothSprites

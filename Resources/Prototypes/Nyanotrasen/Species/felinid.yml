@@ -7,6 +7,11 @@
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy
   skinColoration: HumanToned
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Nekomimetic
+  # Horizon end
 
 - type: markingPoints
   id: MobFelinidMarkingLimits

@@ -12,6 +12,12 @@
   femaleFirstNames: NamesDionaFirst
   lastNames: NamesDionaLast
   naming: TheFirstofLast
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - RootSpeak
+  uniqueLanguages: [RootSpeak]
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobDionaSprites

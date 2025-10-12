@@ -7,3 +7,8 @@
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobDwarfDummy
   skinColoration: HumanToned
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Dwarf
+  # Horizon end

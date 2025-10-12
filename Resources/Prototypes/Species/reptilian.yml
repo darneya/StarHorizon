@@ -11,6 +11,11 @@
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Draconic
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobReptilianSprites
