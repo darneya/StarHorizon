@@ -1454,8 +1454,31 @@ namespace Content.Client.Lobby.UI
             // Horizon start
             if (_flavorText != null)
             {
-                UpdateErpDesc();
-                UpdateFactionDesc();
+                for (var i = 0; i <= (int)ErpStatus.NonCon; i++)
+                {
+                    //_flavorText.ERPStatusButton.AddItem(FormattedMessage.RemoveMarkupOrThrow(Loc.GetString($"erp-status-{(ErpStatus)i}")), i);
+
+                    if (i == (int?)Profile?.ErpStat)
+                    {
+                        OnErpChange((ErpStatus)i);
+                        _flavorText.ERPStatusButton.Select(i);
+                        UpdateErpDesc();
+                    }
+                }
+
+                var factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().OrderBy(x => Loc.GetString(x.Name)).ToList();
+
+                for (var i = 0; i < factions.Count; i++)
+                {
+                    //_flavorText.FactionButton.AddItem(Loc.GetString(factions[i].Name), i);
+
+                    if (factions.ElementAt(i).ID == Profile?.Faction)
+                    {
+                        OnFactionChange(factions.ElementAt(i).ID);
+                        _flavorText.FactionButton.Select(i);
+                        UpdateFactionDesc();
+                    }
+                }
             }
             // Horizon end
         }
