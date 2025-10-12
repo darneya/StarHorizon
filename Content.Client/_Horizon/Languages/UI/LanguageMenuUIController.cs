@@ -7,13 +7,14 @@ using Content.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Client.Player;
 using Content.Client._Horizon.Languages;
+using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 
 namespace Content.Client._Horizon.Languages.UI;
 
 public sealed class LanguageMenuUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
     private LanguageMenuWindow? _menu;
-    private MenuButton? LanguagesButton => UIManager.GetActiveUIWidgetOrNull<UserInterface.Systems.MenuBar.Widgets.GameTopMenuBar>()?.LanguagesButton;
+    private MenuButton? LanguagesButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.LanguagesButton;
 
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
