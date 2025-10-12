@@ -556,7 +556,7 @@ namespace Content.Client.Lobby.UI
 
                 for (var i = 0; i <= (int)ErpStatus.NonCon; i++)
                 {
-                    _flavorText.ERPStatusButton.AddItem(FormattedMessage.EscapeText(Loc.GetString($"erp-status-{(ErpStatus)i}")), i);
+                    _flavorText.ERPStatusButton.AddItem(FormattedMessage.RemoveMarkupOrThrow(Loc.GetString($"erp-status-{(ErpStatus)i}")), i);
 
                     if (i == (int?)Profile?.ErpStat)
                     {
@@ -565,7 +565,7 @@ namespace Content.Client.Lobby.UI
                     }
                 }
 
-                var factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().ToList();
+                var factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().OrderBy(x => Loc.GetString(x.Name)).ToList();
 
                 _flavorText.OnFactionChanged += args =>
                 {
