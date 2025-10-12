@@ -17,6 +17,9 @@ public abstract partial class SharedLanguageSystem : EntitySystem
 
     public override void Initialize()
     {
+        InitializeImplant();
+        InitializeTranslator();
+
         Subs.SubscribeWithRelay<LanguageSpeakerComponent, GetLanguagesEvent>(OnGetLanguages);
     }
 
