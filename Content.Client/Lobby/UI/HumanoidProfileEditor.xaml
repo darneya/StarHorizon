@@ -59,7 +59,8 @@
                                     <TextureButton Name="SpeciesInfoButton" Scale="0.3 0.3"
                                                    VerticalAlignment="Center"
                                                    ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                    <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" />
+                                    <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" Visible="False"/>    <!-- _Horizon: Установил Visible="False" -->
+                                    <Button Name="NewSpeciesButton" HorizontalAlignment="Right" ToggleMode="True" />    <!-- _Horizon: Новая кнопка. -->
                                 </BoxContainer>
                                 <!-- Age -->
                                 <BoxContainer HorizontalExpand="True">
