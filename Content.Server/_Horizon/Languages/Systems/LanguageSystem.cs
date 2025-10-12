@@ -226,14 +226,12 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         if (!Resolve(uid, ref comp, false))
             return;
 
-        Dirty(uid, comp);
+        if (!GetLanguages(uid, out var langs, out var translator, out var current))
+            return;
 
-        if (!GetLanguagesKnowledged(uid, LanguageKnowledge.Understand, out var langs, out _))
-            return;
-        if (!GetLanguages(uid, out _, out var translator, out var current))
-            return;
         if (!_mind.TryGetMind(uid, out _, out var mind) || mind == null || !_player.TryGetSessionById(mind.UserId, out var session))
             return;
+
         foreach (var item in langs)
         {
             var proto = _proto.Index<LanguagePrototype>(item.Key);

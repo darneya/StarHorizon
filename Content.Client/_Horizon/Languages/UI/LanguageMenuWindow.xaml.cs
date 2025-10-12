@@ -98,7 +98,7 @@ public sealed partial class LanguageMenuWindow : FancyWindow
 
         if (options.Count > 0)
         {
-            var list = options.ToList();
+            var list = options.Union(translator).ToList();
             list.Sort((x, y) => _proto.Index<LanguagePrototype>(x.Key).LocalizedName[0].CompareTo(_proto.Index<LanguagePrototype>(y.Key).LocalizedName[0]));
             list.Sort((x, y) => _proto.Index<LanguagePrototype>(y.Key).Priority.CompareTo(_proto.Index<LanguagePrototype>(x.Key).Priority));
             list.Sort((x, y) => _language.CanSpeak(Owner, y.Key).CompareTo(_language.CanSpeak(Owner, x.Key)));

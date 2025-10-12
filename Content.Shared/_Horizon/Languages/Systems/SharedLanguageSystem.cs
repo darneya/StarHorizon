@@ -6,6 +6,7 @@ using Robust.Shared.Network;
 using System.Linq;
 using Content.Shared.Implants.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Hands.EntitySystems;
 
 namespace Content.Shared._Horizon.Language;
 
@@ -14,13 +15,14 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     public override void Initialize()
     {
         InitializeImplant();
         InitializeTranslator();
 
-        Subs.SubscribeWithRelay<LanguageSpeakerComponent, GetLanguagesEvent>(OnGetLanguages);
+        SubscribeLocalEvent<LanguageSpeakerComponent, GetLanguagesEvent>(OnGetLanguages);
     }
 
     public ProtoId<LanguagePrototype> Universal = "Universal";
@@ -171,9 +173,9 @@ public abstract partial class SharedLanguageSystem : EntitySystem
         langs = ev.Languages.Where(x => x.Value >= required).ToDictionary();
         foreach (var item in ev.Translator.Where(x => x.Value >= required))
         {
-            if (ev.Languages.TryGetValue(item.Key, out var originalKnowledge) && originalKnowledge > item.Value)
+            if (ev.Languages.TryGetValue(item.Key, out var originalKnowledge) && originalKnowledge < item.Value)
                 langs[item.Key] = ev.Translator[item.Key];
-            else
+            else if (!langs.ContainsKey(item.Key))
                 langs.Add(item.Key, item.Value);
         }
 
@@ -210,10 +212,11 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     {
         if (!Resolve(uid, ref comp, false))
             return;
-        var list = comp.Languages
-            .OrderBy(x => CanSpeak(uid, x.Key))
-            .ThenBy(x => _proto.Index<LanguagePrototype>(x.Key).LocalizedName)
-            .ThenBy(x => _proto.Index<LanguagePrototype>(x.Key).Priority);
+        var list = comp.Languages.ToList();
+
+        list.Sort((x, y) => _proto.Index<LanguagePrototype>(x.Key).LocalizedName[0].CompareTo(_proto.Index<LanguagePrototype>(y.Key).LocalizedName[0]));
+        list.Sort((x, y) => _proto.Index<LanguagePrototype>(y.Key).Priority.CompareTo(_proto.Index<LanguagePrototype>(x.Key).Priority));
+        list.Sort((x, y) => CanSpeak(uid, y.Key).CompareTo(CanSpeak(uid, x.Key)));
 
         comp.Languages = list.ToDictionary();
     }

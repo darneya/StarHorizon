@@ -24,5 +24,6 @@ public sealed partial class HandheldTranslatorComponent : Component
     [DataField]
     public bool Enabled = false;
 
-    public EntityUid? User;
+    [AutoNetworkedField]
+    public NetEntity? User;
 }

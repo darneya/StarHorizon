@@ -42,7 +42,7 @@ public sealed partial class LanguageSystem
         Dirty(translator, component);
 
         ToggleTranslator(translator);
-        component.User = component.Enabled ? args.User : null;
+        component.User = component.Enabled ? GetNetEntity(args.User) : null;
 
         UpdateUi(args.User);
     }
@@ -51,7 +51,7 @@ public sealed partial class LanguageSystem
     {
         Dirty(translator, component);
 
-        component.User = args.User;
+        component.User = GetNetEntity(args.User);
 
         UpdateUi(args.User);
     }
@@ -61,7 +61,7 @@ public sealed partial class LanguageSystem
         Dirty(translator, component);
 
         if (component.User.HasValue)
-            SelectDefaultLanguage(component.User.Value);
+            SelectDefaultLanguage(GetEntity(component.User.Value));
 
         component.User = null;
 
@@ -81,7 +81,7 @@ public sealed partial class LanguageSystem
             var popupMessage = Loc.GetString(component.Enabled ? "translator-component-turnon" : "translator-component-shutoff", ("translator", uid));
             _popup.PopupEntity(popupMessage, uid);
             if (!component.Enabled && component.User.HasValue)
-                SelectDefaultLanguage(component.User.Value);
+                SelectDefaultLanguage(GetEntity(component.User.Value));
         }
 
         Dirty(uid, component);

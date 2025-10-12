@@ -1,3 +1,4 @@
+using Content.Shared._Horizon.Language;
 using Content.Shared.Atmos;
 using Content.Shared.Camera;
 using Content.Shared.Hands.Components;
@@ -22,6 +23,7 @@ public abstract partial class SharedHandsSystem
         SubscribeLocalEvent<HandsComponent, HitScanReflectAttemptEvent>(RefRelayEvent);
         SubscribeLocalEvent<HandsComponent, WieldAttemptEvent>(RefRelayEvent);
         SubscribeLocalEvent<HandsComponent, UnwieldAttemptEvent>(RefRelayEvent);
+        SubscribeLocalEvent<HandsComponent, GetLanguagesEvent>(RefRelayEvent);  // Horizon languages
     }
 
     private void RelayEvent<T>(Entity<HandsComponent> entity, ref T args) where T : EntityEventArgs
