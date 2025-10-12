@@ -13,4 +13,7 @@ public sealed partial class CharacterFactionPrototype : IPrototype
 
     [DataField(required: true)]
     public string Desc = default!;
+
+    [DataField]
+    public Color Color = Color.White;
 }

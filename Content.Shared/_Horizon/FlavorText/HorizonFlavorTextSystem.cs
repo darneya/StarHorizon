@@ -21,7 +21,7 @@ public sealed partial class HorizonFlavorTextSystem : EntitySystem
     }
 
     private void OnErpExamined(Entity<ErpStatusComponent> ent, ref ExaminedEvent args)
-        => args.PushMarkup(Loc.GetString($"erp-status-{ent.Comp.Status}"), 41);
+        => args.PushMarkup(Loc.GetString($"erp-status-{ent.Comp.Status}"), -5);
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
     {
@@ -49,6 +49,9 @@ public sealed partial class HorizonFlavorTextSystem : EntitySystem
             return;
 
         var proto = _proto.Index(ent.Comp.Faction);
-        args.PushMarkup(Loc.GetString($"character-faction-{proto.Name}", ("ent", Identity.Name(ent.Owner, EntityManager))), 40);
+        args.PushMarkup(Loc.GetString($"character-faction-examine",
+                                     ("ent", Identity.Name(ent.Owner, EntityManager)),
+                                     ("faction", Loc.GetString(proto.Name)),
+                                     ("color", proto.Color.ToHex())), -4);
     }
 }
