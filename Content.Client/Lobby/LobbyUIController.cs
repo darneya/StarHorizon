@@ -5,6 +5,7 @@ using Content.Client.Inventory;
 using Content.Client.Lobby.UI;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Station;
+using Content.Shared._Horizon.Language;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -126,6 +127,13 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
             {
                 _profileEditor.RefreshTraits();
             }
+
+            // Horizon Languages start
+            if (obj.WasModified<LanguagePrototype>())
+            {
+                _profileEditor.RefreshLanguages();
+            }
+            // Horizon Languages end
         }
     }
 

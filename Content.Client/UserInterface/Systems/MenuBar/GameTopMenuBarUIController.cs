@@ -1,4 +1,4 @@
-using Content.Client._Horizon.Language.UI;
+using Content.Client._Horizon.Languages.UI;
 using Content.Client.UserInterface.Systems.Actions;
 using Content.Client.UserInterface.Systems.Admin;
 using Content.Client.UserInterface.Systems.Bwoink;

@@ -8,7 +8,7 @@ using Robust.Shared.Input.Binding;
 using Robust.Client.Player;
 using Content.Client._Horizon.Languages;
 
-namespace Content.Client._Horizon.Language.UI;
+namespace Content.Client._Horizon.Languages.UI;
 
 public sealed class LanguageMenuUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
