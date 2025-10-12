@@ -516,6 +516,8 @@ namespace Content.Shared.Preferences
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
             if (!Bark.MemberwiseEquals(other.Bark)) return false; // _Horizon
+            if (ErpStat != other.ErpStat) return false;   // _Horizon
+            if (Faction != other.Faction) return false;   // _Horizon
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
