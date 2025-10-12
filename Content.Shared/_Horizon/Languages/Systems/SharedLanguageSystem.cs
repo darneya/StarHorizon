@@ -208,9 +208,9 @@ public abstract partial class SharedLanguageSystem : EntitySystem
         if (!Resolve(uid, ref comp, false))
             return;
         var list = comp.Languages
-            .OrderBy(x => _proto.Index<LanguagePrototype>(x.Key).LocalizedName[0])
-            .ThenBy(x => _proto.Index<LanguagePrototype>(x.Key).Priority)
-            .ThenByDescending(x => CanSpeak(uid, x.Key));
+            .OrderBy(x => CanSpeak(uid, x.Key))
+            .ThenBy(x => _proto.Index<LanguagePrototype>(x.Key).LocalizedName)
+            .ThenBy(x => _proto.Index<LanguagePrototype>(x.Key).Priority);
 
         comp.Languages = list.ToDictionary();
     }
