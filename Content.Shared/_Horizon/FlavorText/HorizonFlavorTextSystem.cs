@@ -52,6 +52,6 @@ public sealed partial class HorizonFlavorTextSystem : EntitySystem
         args.PushMarkup(Loc.GetString($"character-faction-examine",
                                      ("ent", Identity.Name(ent.Owner, EntityManager)),
                                      ("faction", Loc.GetString(proto.Name)),
-                                     ("color", proto.Color.ToHex())), -4);
+                                     ("color", proto.Color.ToHex())), 40);
     }
 }
