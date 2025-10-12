@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Shared._Horizon.Bark;
+using Content.Shared._Horizon.Language;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Database;
@@ -51,6 +52,7 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
+                .Include(p => p.Profiles).ThenInclude(l => l.Languages) // Horizon languages
                 .Include(p => p.Profiles)
                     .ThenInclude(h => h.Loadouts)
                     .ThenInclude(l => l.Groups)
@@ -107,6 +109,7 @@ namespace Content.Server.Database
                 .Include(p => p.Jobs)
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
+                .Include(p => p.Languages)  // Horizon languages
                 .Include(p => p.Loadouts)
                     .ThenInclude(l => l.Groups)
                     .ThenInclude(group => group.Loadouts)
@@ -210,6 +213,7 @@ namespace Content.Server.Database
             var jobs = profile.Jobs.ToDictionary(j => new ProtoId<JobPrototype>(j.JobName), j => (JobPriority) j.Priority);
             var antags = profile.Antags.Select(a => new ProtoId<AntagPrototype>(a.AntagName));
             var traits = profile.Traits.Select(t => new ProtoId<TraitPrototype>(t.TraitName));
+            var languages = profile.Languages.Select(t => new ProtoId<LanguagePrototype>(t.LanguageName));  // Horizon Languages
 
             var sex = Sex.Male;
             if (Enum.TryParse<Sex>(profile.Sex, true, out var sexVal))
@@ -287,7 +291,8 @@ namespace Content.Server.Database
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar) // _Horizon
+                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar), // _Horizon
+                languages.ToHashSet() // _Horizon
             );
         }
 
@@ -379,6 +384,11 @@ namespace Content.Server.Database
             profile.BarkPitch = humanoid.Bark.Pitch;
             profile.LowBarkVar = humanoid.Bark.MinVar;
             profile.HighBarkVar = humanoid.Bark.MaxVar;
+            profile.Languages.Clear();
+            profile.Languages.AddRange(
+                humanoid.Languages
+                        .Select(l => new Language { LanguageName = l.ToString() }));
+
             // _Horizon end
 
             return profile;

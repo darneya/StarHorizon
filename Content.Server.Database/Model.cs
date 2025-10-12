@@ -422,6 +422,7 @@ namespace Content.Server.Database
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
+        public List<Language> Languages { get; } = new(); // Horizon Languages
 
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
@@ -467,6 +468,17 @@ namespace Content.Server.Database
 
         public string TraitName { get; set; } = null!;
     }
+
+    // Horizon languages start
+    public class Language
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+
+        public string LanguageName { get; set; } = null!;
+    }
+    // Horizon languages end
 
     #region Loadouts
 
