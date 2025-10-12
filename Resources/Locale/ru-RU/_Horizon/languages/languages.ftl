@@ -59,3 +59,6 @@ language-Binary-desc = Двоичный код, используется для 
 
 language-Dev = Разработческий
 language-Dev-desc = Ужасно
+
+language-CodeSpeak = Кодовый
+language-CodeSpeak-desc = Несвязные на первый взгляд сочетания всевозможных слов, используемые для передачи данных шпионами синдиката.
