@@ -711,56 +711,6 @@
     verbs:
       Default: [ хонкает ]
 
-  # Resomi language
-- type: language
-  id: Scratches
-  roundstart: true
-  uiColor: "#52ffcb"
-  parent: BaseVocalLanguage
-  speech: !type:Generic
-    obfuscateSyllables: true
-    color: "#52ffcb"
-    whisperColor: "#448a75"
-    replacement: ["ca", "ra", "ma", "sa", "na", "ta", "la", "sha", "scha", "a", "a", "ce", "re", "me", "se", "ne", "te", "le", "she", "sche", "e", "e", "ci", "ri", "mi", "si", "ni", "ti", "li", "shi", "schi", "i", "i"]
-
-
-# Elysian language for Empire
-- type: language
-  id: Elysian
-  roundstart: true
-  uiColor: "#00fc65"
-  parent: BaseVocalLanguage
-  speech: !type:Generic
-    obfuscateSyllables: true
-    color: "#FFF575"
-    whisperColor: "#d1f069"
-    replacement:
-    - ja
-    - ne
-    - in
-    - er
-    - sie
-    - ber
-    - flu
-    - en
-    - hi
-    - ge
-    - im
-    - i
-    - und
-    - mir
-    - ka
-    - die
-    - zah
-    - den
-    - ble
-    - ie
-    - vi
-    - aus
-    - das
-    - son
-    - mal
-
 - type: language
   id: SignLanguage
   roundstart: true
