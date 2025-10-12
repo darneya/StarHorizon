@@ -64,6 +64,6 @@ public sealed class LanguagePrototype : IPrototype, IInheritingPrototype
     [DataField("conditions", serverOnly: true)]
     private ILanguageCondition[] _conditions = Array.Empty<ILanguageCondition>();
 
-    public string LocalizedName => Loc.GetString("language-" + ID + "-name");
-    public string LocalizedDescription => Loc.GetString("language-" + ID + "-description");
+    public string LocalizedName => Loc.GetString("language-" + ID);
+    public string LocalizedDescription => Loc.GetString("language-" + ID + "-desc");
 }
