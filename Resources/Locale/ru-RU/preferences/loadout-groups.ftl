@@ -1,6 +1,9 @@
 # Errors
 loadout-group-species-restriction = Этот предмет недоступен для вашей текущей расы.
 # Miscellaneous
+loadout-group-top = Нижнее белье (Верх)
+loadout-group-bottom = Нижнее белье (Верх)
+loadout-group-socks = Носки
 loadout-group-trinkets = Аксессуары
 loadout-group-glasses = Очки
 loadout-group-backpack = Рюкзак

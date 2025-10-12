@@ -1,4 +1,4 @@
-﻿- type: inventoryTemplate
+- type: inventoryTemplate
   id: arachnid
   slots:
     - name: shoes
@@ -11,6 +11,38 @@
       blacklist:
         tags:
         - PetOnly
+# Underwear tweak start
+    - name: socks
+      slotTexture: socks
+      slotFlags: SOCKS
+      stripTime: 6
+      uiWindowPos: 3,0
+      strippingWindowPos: 2,4
+      displayName: Socks
+      whitelist:
+        tags:
+          - Socks
+    - name: underwearb
+      slotTexture: underwearb
+      slotFlags: UNDERWEARB
+      stripTime: 6
+      uiWindowPos: 3,1
+      strippingWindowPos: 1,4
+      displayName: Panties
+      whitelist:
+        tags:
+          - UnderwearB
+    - name: underweart
+      slotTexture: underweart
+      slotFlags: UNDERWEART
+      stripTime: 6
+      uiWindowPos: 3,2
+      strippingWindowPos: 0,4
+      displayName: Bra
+      whitelist:
+        tags:
+          - UnderwearT
+# Underwear tweak end
     - name: jumpsuit
       slotTexture: uniform
       slotFlags: INNERCLOTHING
