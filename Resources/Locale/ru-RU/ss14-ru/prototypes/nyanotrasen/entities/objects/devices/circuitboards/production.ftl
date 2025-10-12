@@ -1,4 +1,4 @@
-ent-EngineeringTechFabCircuitboard = инженерных техфаб (машинная плата)
+ent-EngineeringTechFabCircuitboard = инженерный техфаб (машинная плата)
     .desc = Плата для создания инженерного техфаба.
 ent-ServiceTechFabCircuitboard = сервисный техфаб (машинная плата)
     .desc = Плата для создания сервисного техфаба.
