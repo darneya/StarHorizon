@@ -8,6 +8,11 @@
   markingLimits: MobSlimeMarkingLimits
   dollPrototype: MobSlimePersonDummy
   skinColoration: Hues
+  # Horizon start
+  prosCount: 1
+  specialCount: 3
+  consCount: 2
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobSlimeSprites

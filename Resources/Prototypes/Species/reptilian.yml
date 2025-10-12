@@ -11,6 +11,11 @@
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
+  # Horizon start
+  prosCount: 2
+  specialCount: 1
+  consCount: 1
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobReptilianSprites

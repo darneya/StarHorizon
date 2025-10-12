@@ -7,6 +7,11 @@
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
   skinColoration: HumanToned
+  # Horizon start
+  prosCount: 2
+  specialCount: 3
+  consCount: 3
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobHarpySprites

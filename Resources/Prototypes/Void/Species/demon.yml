@@ -12,6 +12,11 @@
   femaleFirstNames: NamesOniFemale
   lastNames: NamesOniLocation
   naming: LastNoFirst
+  # Horizon start
+  prosCount: 2
+  specialCount: 1
+  consCount: 1
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobDemonSprites

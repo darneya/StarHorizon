@@ -13,6 +13,11 @@
   lastNames: NamesArachnidLast
   sexes:
   - Unsexed
+  # Horizon start
+  prosCount: 1
+  specialCount: 2
+  consCount: 1
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobArachnidSprites

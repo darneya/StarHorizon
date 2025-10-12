@@ -11,6 +11,11 @@
   maleFirstNames: NamesGoblinFirstMale
   femaleFirstNames: NamesGoblinFirstFemale
   lastNames: NamesGoblinLast
+  # Horizon start
+  prosCount: 2
+  specialCount: 3
+  consCount: 3
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobGoblinSprites

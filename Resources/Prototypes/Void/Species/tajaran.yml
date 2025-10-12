@@ -11,6 +11,10 @@
   femaleFirstNames: NamesTajaranFirstFemale
   LastNames: NamesTajaranLast
   naming: FirstLast
+  # Horizon start
+  prosCount: 2
+  consCount: 2
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobTajaranSprites

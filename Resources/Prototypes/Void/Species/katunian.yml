@@ -11,6 +11,10 @@
   #maleFirstNames: NamesKatunianMale
   #femaleFirstNames: NamesKatunianFemale
   #lastNames: NamesKatunianLast
+  # Horizon start
+  prosCount: 2
+  consCount: 1
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobKatunianSprites

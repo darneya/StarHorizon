@@ -11,6 +11,11 @@
   maleFirstNames: NamesVulpkaninMale
   femaleFirstNames: NamesVulpkaninFemale
   lastNames: NamesVulpkaninLast
+  # Horizon start
+  prosCount: 2
+  specialCount: 2
+  consCount: 2
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobVulpkaninSprites

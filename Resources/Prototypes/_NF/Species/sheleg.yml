@@ -15,6 +15,11 @@
   youngAge: 80
   oldAge: 400
   maxAge: 800
+  # Horizon start
+  prosCount: 4
+  specialCount: 3
+  consCount: 4
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobShelegSprites

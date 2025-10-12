@@ -7,3 +7,8 @@
   markingLimits: MobHumanMarkingLimits
   dollPrototype: MobDwarfDummy
   skinColoration: HumanToned
+  # Horizon start
+  prosCount: 2
+  specialCount: 1
+  consCount: 2
+  # Horizon end
