@@ -187,6 +187,14 @@ namespace Content.Shared.Roles
         [DataField("salary")]
         public int Salary = 0;
         // Lua end
+
+        // Horizon start
+        [DataField]
+        public bool ShowCharacterFaction = false;
+
+        [DataField]
+        public bool ShowErpStatus = true;
+        // Horizon end
     }
 
     /// <summary>
