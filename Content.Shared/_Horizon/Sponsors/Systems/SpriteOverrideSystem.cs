@@ -1,6 +1,6 @@
 using Robust.Shared.Utility;
 
-namespace Content.Shared.__Horizon.Sponsors.Systems
+namespace Content.Shared._Horizon.Sponsors.Systems
 {
     public sealed class SpriteOverrideSystem : EntitySystem
     {
