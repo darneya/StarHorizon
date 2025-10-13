@@ -25,6 +25,8 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 10
+  - type: StaticPrice
+    price: 10
   - type: Tag
     tags:
       - ClothMade

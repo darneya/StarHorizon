@@ -10,11 +10,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-  #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -29,11 +29,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-  #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 # Silicons
 - type: roleLoadout
@@ -62,11 +62,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobBartender
@@ -80,11 +80,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -96,11 +96,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobChef
@@ -115,11 +115,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobLibrarian
@@ -131,11 +131,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobLawyer
@@ -148,11 +148,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobChaplain
@@ -168,11 +168,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobJanitor
@@ -188,11 +188,11 @@
   - Trinkets
   - JanitorPlunger
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobBotanist
@@ -206,11 +206,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobClown
@@ -225,11 +225,11 @@
   - Glasses
   - SurvivalClown
   - Trinkets
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobMime
@@ -245,11 +245,11 @@
   - Glasses
   - SurvivalMime
   - Trinkets
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobMusician
@@ -263,11 +263,11 @@
   - Trinkets
   - Instruments
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 # Cargo
 - type: roleLoadout
@@ -284,11 +284,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -303,11 +303,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -320,11 +320,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 # Engineering
 - type: roleLoadout
@@ -340,11 +340,11 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -355,11 +355,11 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -374,11 +374,11 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -391,11 +391,11 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 # Science
 - type: roleLoadout
@@ -413,11 +413,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobScientist
@@ -435,11 +435,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -451,11 +451,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 # Security
 - type: roleLoadout
@@ -472,11 +472,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobWarden
@@ -491,11 +491,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -511,11 +511,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobDetective
@@ -530,11 +530,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -544,13 +544,14 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
-# Medical
+# Region Medical
+
 - type: roleLoadout
   id: JobChiefMedicalOfficer
   groups:
@@ -558,6 +559,11 @@
   - ChiefMedicalOfficerHead
   - MedicalMask
   - ChiefMedicalOfficerJumpsuit
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
   - MedicalGloves
   - MedicalBackpack
   - ChiefMedicalOfficerOuterClothing
@@ -567,11 +573,6 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
-    #  underwear tweak start
-  - Top
-  - Bottom
-  - Socks
-  #  underwear tweak end
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -593,6 +594,9 @@
   - ContractorHead
   - ContractorNeck
   - ContractorJumpsuit
+  - TopCMO
+  - BottomCMO
+  - Socks
   - ContractorGloves
   - ContractorBackpack
   - ContractorOuterClothing
@@ -611,11 +615,6 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
-    #  underwear tweak start
-  - Top
-  - Bottom
-  - Socks
-  #  underwear tweak end
   # Horizon end
 
 - type: roleLoadout
@@ -623,16 +622,16 @@
   groups:
   - GroupTankHarness
   - MedicalInternJumpsuit
+  # Horizon start
+  - TopCMO
+  - BottomCMO
+  - Socks
+  # Horizon end
   - MedicalBackpack
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
-    #  underwear tweak start
-  - Top
-  - Bottom
-  - Socks
-  #  underwear tweak end
 
 - type: roleLoadout
   id: JobChemist
@@ -651,6 +650,9 @@
   - ContractorHead
   - ContractorNeck
   - ContractorJumpsuit
+  - TopCMO
+  - BottomCMO
+  - Socks
   - ContractorGloves
   - ContractorBackpack
   - ContractorOuterClothing
@@ -669,11 +671,6 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
-    #  underwear tweak start
-  - Top
-  - Bottom
-  - Socks
-  #  underwear tweak end
   # Horizon end
 
 - type: roleLoadout
@@ -695,6 +692,9 @@
   - ContractorHead
   - ContractorNeck
   - ContractorJumpsuit
+  - TopCMO
+  - BottomCMO
+  - Socks
   - ContractorGloves
   - ContractorBackpack
   - ContractorOuterClothing
@@ -713,11 +713,6 @@
   - ContractorBackpackItems
   - ContractorHandItems
   - NFSpeciesSpecific
-    #  underwear tweak start
-  - Top
-  - Bottom
-  - Socks
-  #  underwear tweak end
   # Horizon end
 
 # Wildcards
@@ -730,11 +725,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobReporter
@@ -746,11 +741,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobPsychologist
@@ -762,11 +757,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 - type: roleLoadout
   id: JobBoxer
@@ -779,11 +774,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
-    #  underwear tweak start
+  # Horizon start
   - Top
   - Bottom
   - Socks
-  #  underwear tweak end
+  # Horizon end
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit

@@ -181,7 +181,7 @@
   - type: Sprite
     sprite: Clothing/Underwear/Bottom/Heads/rd_panties.rsi
 
-# 
+#
 
 - type: entity
   parent: ClothingUnderwearBottomBase
@@ -299,3 +299,20 @@
   - type: Sprite
     sprite: Clothing/Underwear/Bottom/panties_cow.rsi
 
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesDota
+  name: gamer panties
+  description: Resistant to energetic strains.
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/dota.rsi
+
+- type: entity
+  parent: ClothingUnderwearBottomBase
+  id: ClothingUnderwearBottomPantiesKitten
+  name: kitten panties
+  description: "It meows!"
+  components:
+  - type: Sprite
+    sprite: Clothing/Underwear/Bottom/kitten.rsi

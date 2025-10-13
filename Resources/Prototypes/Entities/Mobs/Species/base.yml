@@ -25,8 +25,10 @@
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     - map: [ "socks" ]
+# Horizon start
     #- map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]    #Horizon underwear
     #- map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]       #Horizon underwear
+# Horizon end
     - map: ["jumpsuit"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
@@ -324,8 +326,10 @@
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     - map: [ "socks" ]
+# Horizon start
     #- map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]     # Horizon underwear
     #- map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]        # Horizon underwear
+# Horizon end
     - map: ["jumpsuit"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]

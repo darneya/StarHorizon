@@ -142,6 +142,7 @@
     - BoxingDrobeInventory
 #    - PietyVendInventory # Dont enable, infinite demon dogs issue
     - NfsdDrobeInventory # Frontier
+    - UnderwearMateInventory # Horizon
     - YarrrDrobeInventory
     - StardropInventory
   - type: Sprite
