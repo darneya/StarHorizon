@@ -6,6 +6,10 @@
   placement:
     mode: AlignTileAny
   components:
+  - type: Electrified
+    mediumVoltageNode: input
+    mediumVoltageDamageMultiplier: 10
+    requirePower: true
   - type: StationAiWhitelist
   - type: BluespaceHarvester
   - type: Appearance
@@ -54,16 +58,24 @@
   - type: Destructible
     thresholds:
     - trigger: !type:DamageTrigger
-        damage: 350 # We don't need to break it
+        damage: 750
       behaviors:
       - !type:DoActsBehavior
-        acts: [ "Destruction" ]
+        acts: ["Destruction"]
+  - type: Explosive
+    explosionType: Bluespace
+    deleteAfterExplosion: false
+    totalIntensity: 5000
+    intensitySlope: 20
+    maxIntensity: 2500
   - type: ActivatableUI
     key: enum.BluespaceHarvesterUiKey.Key
   - type: UserInterface
     interfaces:
       enum.BluespaceHarvesterUiKey.Key:
         type: BluespaceHarvesterBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Machine
     board: MachineBluespaceHarvesterCircuitboard
   - type: NodeContainer
@@ -83,7 +95,13 @@
     radius: 2.5
     energy: 0.5
     castShadows: false
+  - type: LitOnPowered
+  - type: WiresPanel
+  - type: Wires
+    boardName: wires-board-name-bluespace-harvester
+    layoutId: BluespaceHarvester
+  - type: WiresVisuals
   - type: AccessReader
-    access: [ [ "Engineering" ], [ "Research" ], [ "Command" ] ]
+    access: [["Engineering"], ["Research"]]
   - type: GuideHelp
     guides: [ Power ] # TODO: Add BH guide
