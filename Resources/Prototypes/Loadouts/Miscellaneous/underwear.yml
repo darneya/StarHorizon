@@ -4,6 +4,16 @@
   - !type:SpeciesLoadoutEffect
     species:
     - Human
+    - Harpy
+    - Vulpkanin
+    - Goblin
+    - Sheleg
+    - Oni
+    - Arachnid
+    - Diona
+    - Vox
+    - DemonSpecies
+    - Katunian
     - Reptilian
     - SlimePerson
     - Dwarf
