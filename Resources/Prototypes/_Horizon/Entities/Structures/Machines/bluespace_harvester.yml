@@ -7,8 +7,8 @@
     mode: AlignTileAny
   components:
   - type: Electrified
-    mediumVoltageNode: input
-    mediumVoltageDamageMultiplier: 10
+    highVoltageNode: input
+    highVoltageDamageMultiplier: 10
     requirePower: true
   - type: StationAiWhitelist
   - type: BluespaceHarvester
@@ -31,7 +31,7 @@
         layer:
         - WallLayer
   - type: Sprite
-    sprite: Aavikko/Bluespace/harvester.rsi
+    sprite: _Horizon/Bluespace/harvester.rsi
     snapCardinals: true
     layers:
     - state: tap_0

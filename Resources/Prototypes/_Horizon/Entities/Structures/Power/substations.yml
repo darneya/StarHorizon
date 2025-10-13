@@ -20,10 +20,10 @@
     intensitySlope: 20
     maxIntensity: 2500
   - type: PowerMonitoringDevice
-    sprite: _CorvaxNext/Objects/Structures/Power/bluespace_transitor.rsi
+    sprite: _Horizon/Objects/Structures/Power/bluespace_transitor.rsi
     state: display
   - type: Sprite
-    sprite: _CorvaxNext/Objects/Structures/Power/bluespace_transitor.rsi
+    sprite: _Horizon/Objects/Structures/Power/bluespace_transitor.rsi
     snapCardinals: true
     layers:
     - state: offline

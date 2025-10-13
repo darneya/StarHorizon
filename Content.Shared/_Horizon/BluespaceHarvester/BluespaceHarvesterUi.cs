@@ -1,7 +1,7 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._CorvaxNext.BluespaceHarvester;
+namespace Content.Shared._Horizon.BluespaceHarvester;
 
 [Serializable, NetSerializable]
 public sealed class BluespaceHarvesterBoundUserInterfaceState : BoundUserInterfaceState

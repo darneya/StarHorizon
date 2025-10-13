@@ -1,6 +1,6 @@
 using Content.Shared.Storage;
 
-namespace Content.Server._CorvaxNext.BluespaceHarvester;
+namespace Content.Server._Horizon.BluespaceHarvester;
 
 // TODO: Make it not tied to the harvester for mappers and loot in debris and dungeons.
 [RegisterComponent]

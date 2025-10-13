@@ -1,7 +1,7 @@
-using Content.Shared._CorvaxNext.BluespaceHarvester;
+using Content.Shared._Horizon.BluespaceHarvester;
 using JetBrains.Annotations;
 
-namespace Content.Client._CorvaxNext.BluespaceHarvester;
+namespace Content.Client._Horizon.BluespaceHarvester;
 
 [UsedImplicitly]
 public sealed class BluespaceHarvesterBoundUserInterface : BoundUserInterface
@@ -46,7 +46,7 @@ public sealed class BluespaceHarvesterBoundUserInterface : BoundUserInterface
         SendMessage(new BluespaceHarvesterTargetLevelMessage(level));
     }
 
-    public void SendBuy(Shared._CorvaxNext.BluespaceHarvester.BluespaceHarvesterCategory category)
+    public void SendBuy(Shared._Horizon.BluespaceHarvester.BluespaceHarvesterCategory category)
     {
         SendMessage(new BluespaceHarvesterBuyMessage(category));
     }

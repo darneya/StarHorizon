@@ -1,6 +1,6 @@
 using Robust.Shared.Random;
 
-namespace Content.Server._CorvaxNext.BluespaceHarvester;
+namespace Content.Server._Horizon.BluespaceHarvester;
 
 public sealed class BluespaceHarvesterRiftSystem : EntitySystem
 {

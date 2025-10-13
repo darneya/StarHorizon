@@ -1,6 +1,6 @@
 using Content.Server.Power.Components;
 using Content.Shared.Audio;
-using Content.Shared._CorvaxNext.BluespaceHarvester;
+using Content.Shared._Horizon.BluespaceHarvester;
 using Content.Shared.Destructible;
 using Content.Shared.Emag.Components;
 using Robust.Server.GameObjects;
@@ -13,7 +13,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
-namespace Content.Server._CorvaxNext.BluespaceHarvester;
+namespace Content.Server._Horizon.BluespaceHarvester;
 
 public sealed class BluespaceHarvesterSystem : EntitySystem
 {

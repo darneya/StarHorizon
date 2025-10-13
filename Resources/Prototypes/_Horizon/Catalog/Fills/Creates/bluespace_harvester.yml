@@ -334,3 +334,26 @@
     contents:
     - id: RandomHarvesterBomb
       amount: 8
+
+- type: entity
+  id: CrateHarvesterLemird
+  parent: CrateDestructionSecure
+  suffix: Bluespace Harvester, Lemird, DO NOT MAP
+  components:
+  - type: StorageFill
+    contents:
+      - id: PlushieLemird
+      - id: PlushieLemirdSchoolGirl
+      - id: PlushieLemird3
+      - id: DakiLemird
+      - id: DakiLemird2
+
+#- type: entity
+#  id: CrateHarvesterUASAnomaly
+#  parent: CrateDestructionSecure
+#  suffix: Bluespace Harvester, UASAnomaly
+#  components:
+#  - type: StorageFill
+#    contents:
+#      - id: UASAnomaly
+

@@ -1,8 +1,8 @@
-using Content.Shared._CorvaxNext.BluespaceHarvester;
+using Content.Shared._Horizon.BluespaceHarvester;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CorvaxNext.BluespaceHarvester;
+namespace Content.Server._Horizon.BluespaceHarvester;
 
 [RegisterComponent, Access(typeof(BluespaceHarvesterSystem))]
 public sealed partial class BluespaceHarvesterComponent : Component

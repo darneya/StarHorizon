@@ -9,7 +9,7 @@
   - type: Sprite
     layers:
     - state: red
-    - sprite: Aavikko/Bluespace/harvester.rsi
+    - sprite: _Horizon/Bluespace/harvester.rsi
       state: tap_5
   - type: RandomSpawner
     prototypes:
@@ -36,7 +36,7 @@
   - type: Sprite
     layers:
     - state: red
-    - sprite: Aavikko/Bluespace/harvester.rsi
+    - sprite: _Horizon/Bluespace/harvester.rsi
       state: tap_5
   - type: RandomSpawner
     prototypes:
@@ -64,7 +64,7 @@
   - type: Sprite
     layers:
     - state: red
-    - sprite: Aavikko/Bluespace/harvester.rsi
+    - sprite: _Horizon/Bluespace/harvester.rsi
       state: tap_5
   - type: RandomSpawner
     prototypes:
@@ -93,7 +93,7 @@
   - type: Sprite
     layers:
     - state: red
-    - sprite: Aavikko/Bluespace/harvester.rsi
+    - sprite: _Horizon/Bluespace/harvester.rsi
       state: tap_5
   - type: RandomSpawner
     prototypes:
@@ -671,7 +671,9 @@
     - WeaponPulseRifle
     - WeaponPulsePistol
     - WeaponLightMachineGunL6
-    - WeaponSniperHristov
+    - CrateHarvesterUASAnomaly
+    - CrateHarvesterLemird
+    - CrateHarvesterSniper
     chance: 1.0
     offset: 0.0
     rarePrototypes:

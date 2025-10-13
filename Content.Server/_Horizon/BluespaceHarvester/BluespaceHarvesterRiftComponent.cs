@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._CorvaxNext.BluespaceHarvester;
+namespace Content.Server._Horizon.BluespaceHarvester;
 
 [RegisterComponent]
 public sealed partial class BluespaceHarvesterRiftComponent : Component
