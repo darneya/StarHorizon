@@ -488,7 +488,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (language.LanguageType.RaiseEvent)
         {
-            var ev = new EntitySpokeEvent(source, resultMessage, language, null, null);  // ADT message => resultMessage
+            var ev = new EntitySpokeEvent(source, resultMessage, language, null, null);
             RaiseLocalEvent(source, ev, true);
         }
 
@@ -613,6 +613,12 @@ public sealed partial class ChatSystem : SharedChatSystem
         language.LanguageType.Whisper(source, message, name, nameIdentity, (byte)range, EntityManager, out var success, out var resultMessage, out var resultObfMessage);
         if (!success)
             return;
+
+        if (language.LanguageType.RaiseEvent)
+        {
+            var ev = new EntitySpokeEvent(source, resultMessage, language, channel, resultObfMessage, true);
+            RaiseLocalEvent(source, ev, true);
+        }
         // Horizon languages end
 
         if (!hideLog)

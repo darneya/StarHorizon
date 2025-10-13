@@ -102,7 +102,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
     private void OnHeadsetReceive(EntityUid uid, HeadsetComponent component, ref RadioReceiveEvent args)
     {
         if (TryComp(Transform(uid).ParentUid, out ActorComponent? actor))
-            _netMan.ServerSendMessage(_language.CanUnderstand(uid, args.Language) ? args.ChatMsg : args.UnknownLanguageChatMsg, actor.PlayerSession.Channel);   // Horizon languages
+            _netMan.ServerSendMessage(_language.CanUnderstand(Transform(uid).ParentUid, args.Language) ? args.ChatMsg : args.UnknownLanguageChatMsg, actor.PlayerSession.Channel);   // Horizon languages
     }
 
     private void OnEmpPulse(EntityUid uid, HeadsetComponent component, ref EmpPulseEvent args)
