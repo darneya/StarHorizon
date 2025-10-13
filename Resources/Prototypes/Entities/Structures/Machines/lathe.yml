@@ -307,6 +307,8 @@
     - NFMedicalBoards # Frontier
     - NFServiceBoards # Frontier
     - SHEngineeringBoards
+    dynamicRecipes:
+    - MachineBluespaceHarvesterCircuitboard # StarHorizon-BluespaceHarvester
   - type: EmagLatheRecipes
     emagDynamicPacks: [] # Frontier: empty list
     # - SecurityBoards # Frontier
