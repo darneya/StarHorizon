@@ -53,7 +53,7 @@
     Snout:
       points: 2
       required: false
-      defaultMarkings: [ GoblinNoseBasic ]
+#      defaultMarkings: [ GoblinNoseBasic ]
 # Horizon start
     # UndergarmentTop:
     #   points: 1
