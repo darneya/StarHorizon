@@ -3,6 +3,7 @@
   name: job-name-sheriff
   description: job-description-sheriff
   playTimeTracker: JobHeadOfSecurity
+  salary: 80000 # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 129600 # 36 hours

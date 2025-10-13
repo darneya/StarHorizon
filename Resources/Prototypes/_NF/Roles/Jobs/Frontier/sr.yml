@@ -3,6 +3,7 @@
   name: job-name-sr
   description: job-description-sr
   playTimeTracker: JobHeadOfPersonnel
+  salary: 80000 # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 72000 # 20 hrs

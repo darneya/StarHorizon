@@ -136,10 +136,71 @@
       sprite: Structures/Walls/rock.rsi
       map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
+- type: entity
+  id: WallChromiteCobblebrickPlutonium
+  parent: NFWallChromiteCobblebrick
+  description: An ore vein rich with plutonium. Extremely hard.
+  suffix: Plutonium
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OrePlutoniumDense
+  - type: Sprite
+    layers:
+    - map: [ "enum.CornerLayers.SE" ]
+      state: cobblebrick0
+    - map: [ "enum.CornerLayers.SW" ]
+      state: cobblebrick0
+    - map: [ "enum.CornerLayers.NE" ]
+      state: cobblebrick0
+    - map: [ "enum.CornerLayers.NW" ]
+      state: cobblebrick0
+    - state: rock_plutonium
+      sprite: Structures/Walls/rock.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
+- type: entity
+  id: WallChromiteCobblebrickNeptunium
+  parent: NFWallChromiteCobblebrick
+  description: An ore vein rich with neptunium. Extremely hard.
+  suffix: Neptunium
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreNeptuniumDense
+  - type: Sprite
+    layers:
+    - map: [ "enum.CornerLayers.SE" ]
+      state: cobblebrick0
+    - map: [ "enum.CornerLayers.SW" ]
+      state: cobblebrick0
+    - map: [ "enum.CornerLayers.NE" ]
+      state: cobblebrick0
+    - map: [ "enum.CornerLayers.NW" ]
+      state: cobblebrick0
+    - state: rock_neptunium
+      sprite: Structures/Walls/rock.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
 
-
-
-
-
-
+- type: entity
+  id: WallChromiteCobblebrickTorium
+  parent: NFWallChromiteCobblebrick
+  description: An ore vein rich with torium. Extremely hard.
+  suffix: Torium
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreToriumDense
+  - type: Sprite
+    layers:
+    - map: [ "enum.CornerLayers.SE" ]
+      state: cobblebrick0
+    - map: [ "enum.CornerLayers.SW" ]
+      state: cobblebrick0
+    - map: [ "enum.CornerLayers.NE" ]
+      state: cobblebrick0
+    - map: [ "enum.CornerLayers.NW" ]
+      state: cobblebrick0
+    - state: rock_torium
+      sprite: Structures/Walls/rock.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]

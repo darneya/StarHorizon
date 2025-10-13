@@ -1,1 +1,1 @@
-department-Trauma = Trauma Team Interstellar
+department-Trauma = [Фракция] Trauma Team Interstellar

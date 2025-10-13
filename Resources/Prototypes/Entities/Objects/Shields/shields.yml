@@ -32,6 +32,8 @@
           Heat: 1
     - type: Damageable
       damageContainer: Shield
+    - type: StaminaResistance
+      damageCoefficient: 0.80
     - type: Destructible
       thresholds:
         - trigger:
@@ -113,6 +115,8 @@
       state: riot_bullet-icon
     - type: Item
       heldPrefix: riot_bullet
+    - type: StaminaResistance
+      damageCoefficient: 1
     - type: Blocking
       passiveBlockModifier:
         coefficients:

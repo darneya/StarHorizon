@@ -49,3 +49,44 @@
   id: WeaponProtoKineticShotgun
   parent: WeaponProtoKineticPistol
   result: WeaponProtoKineticShotgun
+
+- type: latheRecipe
+  id: EngieTovar
+  result: EngieTovar
+  completetime: 3
+  materials:
+    Steel: 1500
+    Glass: 1500
+
+- type: latheRecipe
+  id: GoldTovar
+  result: GoldTovar
+  completetime: 3
+  materials:
+    Silver: 3000
+    Gold: 3000
+
+- type: latheRecipe
+  id: ArmoryTovar
+  result: ArmoryTovar
+  completetime: 3
+  materials:
+    Titan: 3000
+    Plasteel: 3000
+
+- type: latheRecipe
+  id: SciTovar
+  result: SciTovar
+  completetime: 3
+  materials:
+    Glass: 3000
+    Plasma: 3000
+    Psycore: 3000
+
+- type: latheRecipe
+  id: EnergoTovar
+  result: EnergoTovar
+  completetime: 3
+  materials:
+    Uranium: 3000
+    Steel: 3000

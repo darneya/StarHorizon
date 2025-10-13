@@ -425,3 +425,15 @@
 
 - type: Tag
   id: Topaz
+
+- type: Tag
+  id: OreTorium
+
+- type: Tag
+  id: OrePlutonium
+
+- type: Tag
+  id: OreNeptunium
+
+- type: Tag
+  id: UASMaterial

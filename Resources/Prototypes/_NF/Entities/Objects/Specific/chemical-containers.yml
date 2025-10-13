@@ -210,7 +210,7 @@
     materialComposition:
       FuelGradePlasma: 100
   - type: Sprite
-    sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
     layers:
     - state: plasma
       map: ["base"]
@@ -222,8 +222,6 @@
     stackType: FuelPlasma
     count: 20
   - type: NFFuel # Frontier
-  - type: RadiationSource # Horizon
-    intensity: 0.02 # Horizon
 
 - type: entity
   parent: FuelPlasma
@@ -247,7 +245,7 @@
     materialComposition:
       FuelGradeUranium: 100
   - type: Sprite
-    sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
     layers:
     - state: uranium
       map: ["base"]
@@ -259,8 +257,6 @@
     stackType: FuelUranium
     count: 20
   - type: NFFuel # Frontier
-  - type: RadiationSource # Horizon
-    intensity: 0.03 # Horizon
 
 - type: entity
   parent: FuelUranium
@@ -284,7 +280,7 @@
     materialComposition:
       FuelGradeBananium: 100
   - type: Sprite
-    sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
     layers:
     - state: bananium
       map: ["base"]
@@ -296,8 +292,6 @@
     stackType: FuelBananium
     count: 20
   - type: NFFuel # Frontier
-  - type: RadiationSource # Horizon
-    intensity: 0.04 # Horizon
 
 - type: entity
   parent: FuelBananium
@@ -321,7 +315,7 @@
     materialComposition:
       Skrungle: 100
   - type: Sprite
-    sprite: _NF/Objects/Specific/Fuel/fuelgrade_material.rsi
+    sprite: _Horizon/Objects/Specific/Fuel/fuelgrade_material.rsi # Horizon
     layers:
     - state: skrungle
       map: ["base"]
@@ -333,8 +327,6 @@
     stackType: FuelSkrungle
     count: 20
   - type: NFFuel # Frontier
-  - type: RadiationSource # Horizon
-    intensity: 0.04 # Horizon
 
 - type: entity
   parent: FuelSkrungle

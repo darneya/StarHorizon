@@ -12,6 +12,8 @@
     tags: [] # Выносим с ВЛа для хамелеонки
   - type: Clothing
     sprite: _StarHorizon/Clothing/Neck/Cloaks/uascloak.rsi
+  - type: StaticPrice
+    price: 100000
 
 - type: entity
   parent: ClothingNeckCloakUAS

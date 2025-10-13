@@ -1,5 +1,7 @@
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Shuttles.BUIStates;
+using Content.Shared.Power.EntitySystems;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.UI.MapObjects;
 using Content.Shared.Whitelist;
@@ -21,6 +23,8 @@ public abstract partial class SharedShuttleSystem : EntitySystem
     [Dependency] protected readonly SharedPhysicsSystem Physics = default!;
     [Dependency] protected readonly SharedTransformSystem XformSystem = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _powerReceiverSystem = default!;
+    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
 
     public const float FTLRange = 256f;
     public const float FTLBufferRange = 8f;
@@ -57,7 +61,7 @@ public abstract partial class SharedShuttleSystem : EntitySystem
     /// </summary>
     public bool CanFTLTo(EntityUid shuttleUid, MapId targetMap, EntityUid consoleUid)
     {
-        var mapUid = Maps.GetMapOrInvalid(targetMap);
+        var mapUid = Maps.GetMap(targetMap);
         var shuttleMap = _xformQuery.GetComponent(shuttleUid).MapID;
 
         if (shuttleMap == targetMap)
@@ -73,7 +77,10 @@ public abstract partial class SharedShuttleSystem : EntitySystem
                 return false;
             }
 
-            if (!_itemSlots.TryGetSlot(consoleUid, SharedShuttleConsoleComponent.DiskSlotName, out var itemSlot, component: slot) || !itemSlot.HasItem)
+            if (!_itemSlots.TryGetSlot(consoleUid,
+                    SharedShuttleConsoleComponent.DiskSlotName,
+                    out var itemSlot,
+                    component: slot) || !itemSlot.HasItem)
             {
                 return false;
             }
@@ -88,7 +95,9 @@ public abstract partial class SharedShuttleSystem : EntitySystem
 
                 var diskCoords = diskCoordinates.Destination;
 
-                if (diskCoords == null || !TryComp<FTLDestinationComponent>(diskCoords.Value, out var diskDestination) || diskDestination != destination)
+                if (diskCoords == null ||
+                    !TryComp<FTLDestinationComponent>(diskCoords.Value, out var diskDestination) ||
+                    diskDestination != destination)
                 {
                     return false;
                 }
@@ -108,7 +117,8 @@ public abstract partial class SharedShuttleSystem : EntitySystem
     /// <summary>
     /// Gets the list of map objects relevant for the specified map.
     /// </summary>
-    public IEnumerable<(ShuttleExclusionObject Exclusion, MapCoordinates Coordinates)> GetExclusions(MapId mapId, List<ShuttleExclusionObject> exclusions)
+    public IEnumerable<(ShuttleExclusionObject Exclusion, MapCoordinates Coordinates)> GetExclusions(MapId mapId,
+        List<ShuttleExclusionObject> exclusions)
     {
         foreach (var exc in exclusions)
         {
@@ -124,7 +134,8 @@ public abstract partial class SharedShuttleSystem : EntitySystem
     /// <summary>
     /// Gets the list of map objects relevant for the specified map.
     /// </summary>
-    public IEnumerable<(ShuttleBeaconObject Beacon, MapCoordinates Coordinates)> GetBeacons(MapId mapId, List<ShuttleBeaconObject> beacons)
+    public IEnumerable<(ShuttleBeaconObject Beacon, MapCoordinates Coordinates)> GetBeacons(MapId mapId,
+        List<ShuttleBeaconObject> beacons)
     {
         foreach (var beacon in beacons)
         {
@@ -187,7 +198,10 @@ public abstract partial class SharedShuttleSystem : EntitySystem
     /// <summary>
     /// Returns true if the spot is free to be FTLd to (not close to any objects and in range).
     /// </summary>
-    public bool FTLFree(EntityUid shuttleUid, EntityCoordinates coordinates, Angle angle, List<ShuttleExclusionObject>? exclusionZones)
+    public bool FTLFree(EntityUid shuttleUid,
+        EntityCoordinates coordinates,
+        Angle angle,
+        List<ShuttleExclusionObject>? exclusionZones)
     {
         if (!_physicsQuery.TryGetComponent(shuttleUid, out var shuttlePhysics) ||
             !_xformQuery.TryGetComponent(shuttleUid, out var shuttleXform))
@@ -195,17 +209,19 @@ public abstract partial class SharedShuttleSystem : EntitySystem
             return false;
         }
 
-        // Just checks if any grids inside of a buffer range at the target position.
+        // Just checks if any grids inside a buffer range at the target position.
         _grids.Clear();
-        var mapCoordinates = XformSystem.ToMapCoordinates(coordinates);
+        var mapCoordinates = _transformSystem.ToMapCoordinates(coordinates);
 
         var ourPos = Maps.GetGridPosition((shuttleUid, shuttlePhysics, shuttleXform));
 
         // This is the already adjusted position
         var targetPosition = mapCoordinates.Position;
 
+        var range = GetFTLRange(shuttleUid);
+
         // Check range even if it's cross-map.
-        if ((targetPosition - ourPos).Length() > FTLRange)
+        if (range <= 0 || (targetPosition - ourPos).Length() > range)
         {
             return false;
         }
@@ -229,19 +245,42 @@ public abstract partial class SharedShuttleSystem : EntitySystem
         var ourFTLBuffer = GetFTLBufferRange(shuttleUid);
         var circle = new PhysShapeCircle(ourFTLBuffer + FTLBufferRange, targetPosition);
 
-        _mapManager.FindGridsIntersecting(mapCoordinates.MapId, circle, Robust.Shared.Physics.Transform.Empty,
-            ref _grids, includeMap: false);
+        _mapManager.FindGridsIntersecting(mapCoordinates.MapId,
+            circle,
+            Robust.Shared.Physics.Transform.Empty,
+            ref _grids,
+            includeMap: false);
 
-        // If any grids in range that aren't us then can't FTL.
-        foreach (var grid in _grids)
-        {
-            if (grid.Owner == shuttleUid)
-                continue;
+        // If any grids in range that aren't 'us' then can't FTL.
+        return _grids.All(grid => grid.Owner == shuttleUid);
+    }
 
-            return false;
-        }
+    /// <summary>
+    /// Returns the given EntityCoordinates with the distance clamped to the maximum FTL range of the given shuttle.
+    /// </summary>
+    public EntityCoordinates ClampCoordinatesToFTLRange(EntityUid shuttleUid, EntityCoordinates coordinates)
+    {
+        if (!_physicsQuery.TryGetComponent(shuttleUid, out var shuttlePhysics) ||
+            !_xformQuery.TryGetComponent(shuttleUid, out var shuttleTransform))
+            return coordinates;
 
-        return true;
+        var targetMapCoordinates = XformSystem.ToMapCoordinates(coordinates);
+
+        if (targetMapCoordinates == MapCoordinates.Nullspace)
+            return coordinates;
+
+        var targetPosition = targetMapCoordinates.Position;
+        var shuttlePosition = Maps.GetGridPosition((shuttleUid, shuttlePhysics, shuttleTransform));
+
+        var shuttleToTarget = targetPosition - shuttlePosition;
+
+        var targetDistance = shuttleToTarget.Length();
+        var maximumDistance = GetFTLRange(shuttleUid);
+
+        if (targetDistance > maximumDistance)
+            return coordinates.WithPosition(shuttlePosition + shuttleToTarget.Normalized() * maximumDistance);
+
+        return coordinates;
     }
 }
 
@@ -271,4 +310,3 @@ public enum FTLState : byte
     Arriving = 1 << 3,
     Cooldown = 1 << 4,
 }
-

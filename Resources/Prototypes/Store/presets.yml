@@ -20,6 +20,7 @@
     - UplinkMechMechs # Horizon Mechs
     - UplinkMechWeapon # Horizon Mechs
     - UplinkMechEquipment # Horizon Mechs
+    - UplinkGunnery # Horizon Gunnery
     currencyWhitelist:
     - Telecrystal
     balance:

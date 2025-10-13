@@ -306,7 +306,8 @@
     - NFEngineeringBoards # Frontier
     - NFMedicalBoards # Frontier
     - NFServiceBoards # Frontier
-    - SHEngineeringBoards
+    - SHEngineeringBoards # Horizon
+    - MonoAdvancedShuttleComponents # Horizon
     dynamicRecipes:
     - MachineBluespaceHarvesterCircuitboard # StarHorizon-BluespaceHarvester
   - type: EmagLatheRecipes
@@ -495,6 +496,7 @@
       - NfsdAmmoStatic # Frontier: SecurityAmmoStatic<NfsdAmmoStatic
       dynamicPacks:
       - HRZNAmmo # Horizon
+      - ShipgunAmmo # Horizon
     - type: MaterialStorage
       whitelist:
         tags:
@@ -736,8 +738,6 @@
     - OreSmelting
     - RGlassSmelting
     - AdvancedSmelting
-    dynamicPacks: # Horizon
-    - FuelCreation # Horizon
 
 - type: entity
   parent: BaseLathe

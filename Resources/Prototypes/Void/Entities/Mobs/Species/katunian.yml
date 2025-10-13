@@ -5,6 +5,18 @@
   id: BaseMobKatunian
   abstract: true
   components:
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui
   - type: HumanoidAppearance
     species: Katunian
   - type: Hunger
@@ -31,7 +43,24 @@
     thresholds:
       0: Alive
       110: Critical
-      200: Dead
+      220: Dead
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: TallWhitelist
+    scale: 1.2
+  - type: ShortWhitelist
+    scale: 0.8
+    density: 140
+    pseudoItem: true
+    cosmeticOnly: false
+  - type: Temperature
+    heatDamageThreshold: 320 # 5 lower than base # Frontier: 315<320
+    coldDamageThreshold: 220 # 40 lower than base,
 
 - type: entity
   parent: BaseSpeciesDummy

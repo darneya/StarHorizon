@@ -25,7 +25,7 @@
   mapPath: /Maps/_Mono/Shuttles/Expedition/lancea.yml
   minPlayers: 0
   stations:
-    Archon:
+    Lancea:
       stationProto: StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup

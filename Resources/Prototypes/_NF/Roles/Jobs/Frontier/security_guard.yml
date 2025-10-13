@@ -3,6 +3,7 @@
   name: job-name-security-guard
   description: job-description-security-guard
   playTimeTracker: JobSecurityGuard
+  salary: 45000 # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 36000 # Frontier - 10 hrs
