@@ -15,6 +15,7 @@
   description: A small medical and chemistry support vessel. Deployed by the Far Star Biotech company to provide aid and medical services to the Frontier.
   price: 36000 # 30183 0.2 36219.6
   category: Small
+  access: Medical
   group: Medical
   shuttlePath: /Maps/_NF/Shuttles/apothecary.yml
   guidebookPage: ShipyardApothecary
