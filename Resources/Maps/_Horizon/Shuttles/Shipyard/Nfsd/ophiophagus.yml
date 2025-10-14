@@ -15416,13 +15416,6 @@ entities:
     - type: Transform
       pos: 0.5,-13.5
       parent: 1
-- proto: MachineMiniAnomalyGenerator
-  entities:
-  - uid: 1954
-    components:
-    - type: Transform
-      pos: 0.5,-10.5
-      parent: 1
 - proto: MedicalAssemblerPOI
   entities:
   - uid: 1955

@@ -15,6 +15,7 @@
   description: A small vessel outfitted for the search and recovery of wounded NT personnel. Manufactured by Langstad-Voigt Heavy Industries.
   price: 34500 # 28440 0.2 34128
   category: Small
+  access: Medical
   group: Medical
   shuttlePath: /Maps/_NF/Shuttles/searchlight.yml
   guidebookPage: ShipyardSearchlight

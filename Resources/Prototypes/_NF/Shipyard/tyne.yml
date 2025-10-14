@@ -15,6 +15,7 @@
   description: A small, agile lifeboat with an exterior deck and survivor cabin for search and rescue operations.
   price: 21000 #19255 0.05 20217.75
   category: Small
+  access: Medical
   group: Medical
   shuttlePath: /Maps/_NF/Shuttles/tyne.yml
   class:

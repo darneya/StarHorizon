@@ -3847,13 +3847,6 @@ entities:
     - type: Transform
       pos: 5.5,4.5
       parent: 1
-- proto: MachineMiniAnomalyGenerator
-  entities:
-  - uid: 687
-    components:
-    - type: Transform
-      pos: 5.5,-2.5
-      parent: 1
 - proto: MatterBinStockPart
   entities:
   - uid: 759
