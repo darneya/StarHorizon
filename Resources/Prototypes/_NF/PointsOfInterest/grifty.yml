@@ -12,9 +12,9 @@
   id: Grifty
   parent: BasePOI
   name: "Grifty's Gas n Grub"
-  minimumDistance: 3250
-  maximumDistance: 5600
-  spawnGroup: Scrapyard
+  minimumDistance: 7500 # Horizon
+  maximumDistance: 13500 # Horizon
+  spawnGroup: Required # Horizon
   gridPath: /Maps/_Horizon/POI/grifty.yml #Horizon-Maps
   addComponents:
   - type: SolarPoweredGrid
