@@ -108,11 +108,16 @@ namespace Content.Shared.Preferences
         [DataField]
         public SpawnPriorityPreference SpawnPriority { get; private set; } = SpawnPriorityPreference.None;
 
-        public BarkData Bark = new(); // _Horizon
+        // Horizon start
+        public BarkData Bark = new();
 
-        public ErpStatus ErpStat = ErpStatus.No;    // _Horizon
+        public ErpStatus ErpStat = ErpStatus.No;
 
-        public ProtoId<CharacterFactionPrototype> Faction = "None"; // _Horizon
+        public ProtoId<CharacterFactionPrototype> Faction = "None";
+
+        [DataField]
+        public string OOCFlavorText { get; set; } = string.Empty;
+        // Horizon end
 
         /// <summary>
         /// <see cref="_jobPriorities"/>
@@ -151,9 +156,12 @@ namespace Content.Shared.Preferences
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
             Dictionary<string, RoleLoadout> loadouts,
-            ErpStatus erp,  // _Horizon
-            ProtoId<CharacterFactionPrototype> faction, // _Horizon
-            BarkData bark) // _Horizon
+            // Horizon start
+            ErpStatus erp,
+            ProtoId<CharacterFactionPrototype> faction,
+            string oocFlavor,
+            BarkData bark
+            ) // Horizon end
         {
             Name = name;
             FlavorText = flavortext;
@@ -169,9 +177,12 @@ namespace Content.Shared.Preferences
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
-            ErpStat = erp;  // _Horizon
-            Faction = faction;  // _Horizon
-            Bark = bark; // _Horizon
+            // Horizon start
+            ErpStat = erp;
+            Faction = faction;
+            OOCFlavorText = oocFlavor;
+            Bark = bark;
+            // Horizon end
         }
 
         /// <summary>Copy constructor but with overridable references (to prevent useless copies)</summary>
@@ -195,9 +206,12 @@ namespace Content.Shared.Preferences
                 antagPreferences,
                 traitPreferences,
                 loadouts,
-                other.ErpStat,  // _Horizon
-                other.Faction,  // _Horizon
-                other.Bark) // _Horizon
+                // Horizon start
+                other.ErpStat,
+                other.Faction,
+                other.OOCFlavorText,
+                other.Bark
+                ) // Horizon end
         {
         }
 
@@ -217,9 +231,12 @@ namespace Content.Shared.Preferences
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
                 new Dictionary<string, RoleLoadout>(other.Loadouts),
-                other.ErpStat,  // _Horizon
-                other.Faction,  // _Horizon
-                other.Bark) // _Horizon
+                // Horizon start
+                other.ErpStat,
+                other.Faction,
+                other.OOCFlavorText,
+                other.Bark
+                ) // Horizon end
         {
         }
 
@@ -515,9 +532,12 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
-            if (!Bark.MemberwiseEquals(other.Bark)) return false; // _Horizon
-            if (ErpStat != other.ErpStat) return false;   // _Horizon
-            if (Faction != other.Faction) return false;   // _Horizon
+            // Horizon start
+            if (!Bark.MemberwiseEquals(other.Bark)) return false;
+            if (ErpStat != other.ErpStat) return false;
+            if (Faction != other.Faction) return false;
+            if (OOCFlavorText != other.OOCFlavorText) return false;
+            // Horizon end
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
@@ -880,6 +900,11 @@ namespace Content.Shared.Preferences
             {
                 Faction = faction
             };
+        }
+
+        public HumanoidCharacterProfile WithOOCFlavorText(string flavorText)
+        {
+            return new(this) { OOCFlavorText = flavorText };
         }
         // _Horizon end
 

@@ -288,9 +288,12 @@ namespace Content.Server.Database
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                (ErpStatus)profile.ErpStatus,  // _Horizon
-                profile.Faction,    // _Horizon
-                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar) // _Horizon
+                // Horizon start
+                (ErpStatus)profile.ErpStatus,
+                profile.Faction,
+                profile.OOCFlavorText,
+                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar)
+            // Horizon end
             );
         }
 
@@ -385,6 +388,7 @@ namespace Content.Server.Database
 
             profile.ErpStatus = (int)humanoid.ErpStat;
             profile.Faction = humanoid.Faction;
+            profile.OOCFlavorText = humanoid.OOCFlavorText;
             // _Horizon end
 
             return profile;
