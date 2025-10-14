@@ -1,3 +1,4 @@
+using Content.Shared._Horizon.FlavorText;
 using Content.Shared.Access;
 using Content.Shared.Guidebook;
 using Content.Shared.Players.PlayTimeTracking;
@@ -190,10 +191,7 @@ namespace Content.Shared.Roles
 
         // Horizon start
         [DataField]
-        public bool ShowCharacterFaction = false;
-
-        [DataField]
-        public bool ShowErpStatus = true;
+        public ProtoId<CharacterFactionPrototype>? ForceFaction = null;
         // Horizon end
     }
 

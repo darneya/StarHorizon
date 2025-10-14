@@ -6,7 +6,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Horizon.FlavorText;
 
-public sealed partial class HorizonFlavorTextSystem : EntitySystem
+public abstract partial class SharedHorizonFlavorTextSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
@@ -28,19 +28,18 @@ public sealed partial class HorizonFlavorTextSystem : EntitySystem
         if (args.JobId == null || !_proto.TryIndex<JobPrototype>(args.JobId, out var job))
             return;
 
-        if (job.ShowCharacterFaction)
-        {
-            var comp = EnsureComp<CharacterFactionMemberComponent>(args.Mob);
-            comp.Faction = args.Profile.Faction;
-            Dirty(args.Mob, comp);
-        }
+        var factionComp = EnsureComp<CharacterFactionMemberComponent>(args.Mob);
+        factionComp.Faction = job.ForceFaction ?? args.Profile.Faction;
 
-        if (job.ShowErpStatus)
-        {
-            var comp = EnsureComp<ErpStatusComponent>(args.Mob);
-            comp.Status = args.Profile.ErpStat;
-            Dirty(args.Mob, comp);
-        }
+        var oocComp = EnsureComp<OocDescriptionComponent>(args.Mob);
+        oocComp.Description = args.Profile.OOCFlavorText;
+
+        var erpComp = EnsureComp<ErpStatusComponent>(args.Mob);
+        erpComp.Status = args.Profile.ErpStat;
+
+        Dirty(args.Mob, factionComp);
+        Dirty(args.Mob, oocComp);
+        Dirty(args.Mob, erpComp);
     }
 
     private void OnCharacterFactionExamined(Entity<CharacterFactionMemberComponent> ent, ref ExaminedEvent args)
@@ -53,5 +52,10 @@ public sealed partial class HorizonFlavorTextSystem : EntitySystem
                                      ("ent", Identity.Name(ent.Owner, EntityManager)),
                                      ("faction", Loc.GetString(proto.Name)),
                                      ("color", proto.Color.ToHex())), 40);
+    }
+
+    public virtual void OpenFlavorMenu(EntityUid uid, EntityUid user, string description)
+    {
+
     }
 }

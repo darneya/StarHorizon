@@ -16,4 +16,7 @@ public sealed partial class CharacterFactionPrototype : IPrototype
 
     [DataField]
     public Color Color = Color.White;
+
+    [DataField]
+    public bool Roundstart = true;
 }
