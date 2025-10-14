@@ -13,7 +13,7 @@ namespace Content.Client.FlavorText
 
         // Horizon start
         public Action<int>? OnErpStatChanged;
-        public Action<int>? OnFactionChanged;
+        public Action<string>? OnOOCFlavorTextChanged;
         // Horizon end
 
         public FlavorText()
@@ -27,7 +27,9 @@ namespace Content.Client.FlavorText
 
             // Horizon start
             ERPStatusButton.OnItemSelected += args => OnErpStatChanged?.Invoke(args.Id);
-            FactionButton.OnItemSelected += args => OnFactionChanged?.Invoke(args.Id);
+
+            OOCFlavorTextInput.Placeholder = new Rope.Leaf(loc.GetString("ooc-flavor-text-placeholder"));
+            OOCFlavorTextInput.OnTextChanged += args => OnOOCFlavorTextChanged?.Invoke(Rope.Collapse(OOCFlavorTextInput.TextRope).Trim());
             // Horizon end
         }
 

@@ -68,6 +68,8 @@ namespace Content.Client.Lobby.UI
 
         private SpeciesWindow? _speciesWindow;  // Horizon
 
+        private List<CharacterFactionPrototype> _factions = new();  // Horizon
+
         private bool _exporting;
         private bool _imaging;
 
@@ -296,6 +298,30 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion
+
+            TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-factions-tab"));
+
+            _factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().Where(x => x.Roundstart).OrderBy(x => Loc.GetString(x.Name)).ToList();
+
+            for (var i = 0; i < _factions.Count; i++)
+            {
+                FactionButton.AddItem(Loc.GetString(_factions[i].Name), i);
+
+                if (_factions.ElementAt(i).ID == Profile?.Faction)
+                {
+                    OnFactionChange(_factions.ElementAt(i).ID);
+                    FactionButton.Select(i);
+                    UpdateFactionDesc();
+                }
+            }
+
+            FactionButton.OnItemSelected += args =>
+            {
+                OnFactionChange(_factions[args.Id]);
+                FactionButton.Select(args.Id);
+                UpdateFactionDesc();
+            };
+
             // _Horizon End
 
             #region Skin
@@ -546,6 +572,8 @@ namespace Content.Client.Lobby.UI
 
                 // Horizon start
 
+                _flavorText.OnOOCFlavorTextChanged += OnOOCFlavorTextChange;
+
                 _flavorText.OnErpStatChanged += args =>
                 {
                     OnErpChange((ErpStatus)args);
@@ -564,27 +592,6 @@ namespace Content.Client.Lobby.UI
                         _flavorText.ERPStatusButton.Select(i);
                     }
                 }
-
-                var factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().OrderBy(x => Loc.GetString(x.Name)).ToList();
-
-                _flavorText.OnFactionChanged += args =>
-                {
-                    OnFactionChange(factions[args]);
-                    _flavorText.FactionButton.Select(args);
-                    UpdateFactionDesc();
-                };
-
-                for (var i = 0; i < factions.Count; i++)
-                {
-                    _flavorText.FactionButton.AddItem(Loc.GetString(factions[i].Name), i);
-
-                    if (factions.ElementAt(i).ID == Profile?.Faction)
-                    {
-                        OnFactionChange(factions.ElementAt(i).ID);
-                        _flavorText.FactionButton.Select(i);
-                        UpdateFactionDesc();
-                    }
-                }
                 // Horizon end
             }
             else
@@ -596,7 +603,6 @@ namespace Content.Client.Lobby.UI
                 _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
                 // Horizon start
                 _flavorText.OnErpStatChanged = null;
-                _flavorText.OnFactionChanged = null;
                 // Horizon end
                 _flavorText.Dispose();
                 _flavorTextEdit?.Dispose();
@@ -1454,6 +1460,7 @@ namespace Content.Client.Lobby.UI
             // Horizon start
             if (_flavorText != null)
             {
+                _flavorText.OOCFlavorTextInput.TextRope = new Rope.Leaf(Profile?.OOCFlavorText ?? "");
                 for (var i = 0; i <= (int)ErpStatus.NonCon; i++)
                 {
                     //_flavorText.ERPStatusButton.AddItem(FormattedMessage.RemoveMarkupOrThrow(Loc.GetString($"erp-status-{(ErpStatus)i}")), i);
@@ -1466,16 +1473,16 @@ namespace Content.Client.Lobby.UI
                     }
                 }
 
-                var factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().OrderBy(x => Loc.GetString(x.Name)).ToList();
+                _factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().OrderBy(x => Loc.GetString(x.Name)).ToList();
 
-                for (var i = 0; i < factions.Count; i++)
+                for (var i = 0; i < _factions.Count; i++)
                 {
                     //_flavorText.FactionButton.AddItem(Loc.GetString(factions[i].Name), i);
 
-                    if (factions.ElementAt(i).ID == Profile?.Faction)
+                    if (_factions.ElementAt(i).ID == Profile?.Faction)
                     {
-                        OnFactionChange(factions.ElementAt(i).ID);
-                        _flavorText.FactionButton.Select(i);
+                        OnFactionChange(_factions.ElementAt(i).ID);
+                        FactionButton.Select(i);
                         UpdateFactionDesc();
                     }
                 }
@@ -1969,6 +1976,7 @@ namespace Content.Client.Lobby.UI
 
             Profile = Profile.WithFaction(faction);
             SetDirty();
+            RefreshJobs();
         }
 
         private void UpdateErpDesc()
@@ -1989,7 +1997,16 @@ namespace Content.Client.Lobby.UI
 
             var faction = _prototypeManager.Index(Profile.Faction);
 
-            _flavorText.FactionDescription.SetMarkup(Loc.GetString(faction.Desc));
+            FactionDescription.SetMarkup(Loc.GetString(faction.Desc));
+        }
+
+        private void OnOOCFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithOOCFlavorText(content);
+            SetDirty();
         }
         // Horizon end
     }
