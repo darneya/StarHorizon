@@ -13,7 +13,6 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: FrontierBirthday
     prototype: FrontierBirthdayGift
-  showCharacterFaction: true  # Horizon
 
 # Interview variant
 - type: job
