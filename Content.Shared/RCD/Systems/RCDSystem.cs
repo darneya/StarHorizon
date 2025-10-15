@@ -26,6 +26,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using System.Linq;
 using Robust.Shared.Audio;
+using Content.Shared._Horizon.RCD;
 
 namespace Content.Shared.RCD.Systems;
 
@@ -564,6 +565,11 @@ public sealed class RCDSystem : EntitySystem
     {
         if (!_net.IsServer)
             return;
+
+        // Horizon start
+        var ev = new RCDPlacementFinishedEvent();
+        RaiseLocalEvent(uid, ref ev);
+        // Horizon end
 
         var prototype = _protoManager.Index(component.ProtoId);
 
