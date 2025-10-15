@@ -30,7 +30,24 @@ public abstract partial class SharedMechSystem
         if (!TryComp<MechComponent>(mechUid, out var mech))
             return;
 
-        if (ev.Equipment == null)
+        var entity = GetEntity(ev.Equipment);
+
+        var mechEv = new MechEquipmentSelectedEvent(entity);
+        RaiseLocalEvent(mechUid, ref mechEv);
+
+        if (entity.HasValue)
+        {
+            var equipEv = new MechEquipmentGotSelectedEvent(mechUid);
+            RaiseLocalEvent(entity.Value, ref equipEv);
+        }
+
+        if (mech.CurrentSelectedEquipment.HasValue)
+        {
+            var equipEv = new MechEquipmentGotDeselectedEvent(mechUid);
+            RaiseLocalEvent(mech.CurrentSelectedEquipment.Value, ref equipEv);
+        }
+
+        if (entity == null)
         {
             mech.CurrentSelectedEquipment = null;
 
