@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Client._Horizon.RCD;
 using Content.Client.Gameplay;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
@@ -92,6 +93,17 @@ public sealed class AlignRCDConstruction : PlacementMode
             return false;
 
         var heldEntity = hands.ActiveHand?.HeldEntity;
+
+        // Horizon start
+        if (player.HasValue)
+        {
+            var ev = new GetRCDEntityEvent();
+            _entityManager.EventBus.RaiseLocalEvent(player.Value, ref ev);
+
+            if (ev.Entity.HasValue)
+                heldEntity = ev.Entity.Value;
+        }
+        // Horizon end
 
         if (!_entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd))
             return false;

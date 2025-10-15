@@ -1,3 +1,4 @@
+using Content.Client._Horizon.RCD;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.RCD;
@@ -39,6 +40,17 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
             return;
 
         var heldEntity = hands.ActiveHand?.HeldEntity;
+
+        // Horizon start
+        if (player.HasValue)
+        {
+            var ev = new GetRCDEntityEvent();
+            RaiseLocalEvent(player.Value, ref ev);
+
+            if (ev.Entity.HasValue)
+                heldEntity = ev.Entity.Value;
+        }
+        // Horizon end
 
         if (!TryComp<RCDComponent>(heldEntity, out var rcd))
         {
