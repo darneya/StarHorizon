@@ -1473,7 +1473,7 @@ namespace Content.Client.Lobby.UI
                     }
                 }
 
-                _factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().OrderBy(x => Loc.GetString(x.Name)).ToList();
+                _factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().Where(x => x.Roundstart).OrderBy(x => Loc.GetString(x.Name)).ToList();
 
                 for (var i = 0; i < _factions.Count; i++)
                 {
