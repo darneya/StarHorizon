@@ -11,6 +11,14 @@ public sealed partial class MechTurnLightsEvent : InstantActionEvent
 {
 }
 
+public sealed partial class MechRCDToggleEvent : InstantActionEvent
+{
+}
+
+public sealed partial class MechRCDMenuEvent : InstantActionEvent
+{
+}
+
 /// <summary>
 /// Raised on mech equipment destruction.
 /// </summary>
