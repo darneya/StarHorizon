@@ -4,6 +4,43 @@
   desc: faction-none-desc
 
 - type: characterFaction
-  id: TestFaction
-  name: Test faction
-  desc: fajfpofjpoassdadsasdajoefoqwiqfepiojdj
+  id: FactionFrontier
+  name: faction-frontier-name
+  desc: faction-frontier-desc
+  color: "#263B99"
+
+- type: characterFaction
+  id: FactionNFSD
+  name: faction-nfsd-name
+  desc: faction-nfsd-desc
+  color: "#369926"
+
+- type: characterFaction
+  id: FactionMed
+  name: faction-med-name
+  desc: faction-med-desc
+  color: "#27BEF5"
+
+- type: characterFaction
+  id: FactionEdison
+  name: faction-edison-name
+  desc: faction-edison-desc
+  color: "#E0861D"
+
+- type: characterFaction
+  id: FactionSIU
+  name: faction-siu-name
+  desc: faction-siu-desc
+  color: "#881DE0"
+
+- type: characterFaction
+  id: FactionFSB
+  name: faction-fsb-name
+  desc: faction-fsb-desc
+  color: "#2E2E2E"
+
+- type: characterFaction
+  id: FactionLVHI
+  name: faction-lvhi-name
+  desc: faction-lvhi-desc
+  color: "#2E2E2E"
