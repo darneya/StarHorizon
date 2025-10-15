@@ -66,4 +66,12 @@ public sealed partial class RCDComponent : Component
     [DataField, AutoNetworkedField]
     public bool IsShipyardRCD;
     // End Frontier: ship-based RCDs
+
+    // Horizon start
+    /// <summary>
+    /// Обычные взаимодействия будут происходить только при значении true
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool GenericUse = true;
+    // Horizon end
 }

@@ -104,6 +104,11 @@ public sealed class RCDSystem : EntitySystem
         if (!args.IsInDetailsRange)
             return;
 
+        // Horizon start
+        if (!component.GenericUse)
+            return;
+        // Horizon end
+
         var prototype = _protoManager.Index(component.ProtoId);
 
         var msg = Loc.GetString("rcd-component-examine-mode-details", ("mode", Loc.GetString(prototype.SetName)));
@@ -122,57 +127,68 @@ public sealed class RCDSystem : EntitySystem
         args.PushMarkup(msg);
     }
 
+    // Horizon - переписал функцию и вынес её функционал в новую публичную
     private void OnAfterInteract(EntityUid uid, RCDComponent component, AfterInteractEvent args)
     {
         if (args.Handled || !args.CanReach)
             return;
 
-        var user = args.User;
-        var used = args.Used; // Frontier
-        var location = args.ClickLocation;
+        if (!component.GenericUse)
+            return;
+
+        if (TryInteract(args.Used, args.User, args.Target, args.ClickLocation, component))
+            args.Handled = true;
+    }
+
+    // Horizon - вот сюда
+    public bool TryInteract(EntityUid uid, EntityUid user, EntityUid? target, EntityCoordinates location, RCDComponent? component = null)
+    {
+        if (!Resolve(uid, ref component, false))
+            return false;
+
         var prototype = _protoManager.Index(component.ProtoId);
 
         // Initial validity checks
         if (!location.IsValid(EntityManager))
-            return;
+            return false;
 
         var gridUid = _transform.GetGrid(location);
 
         if (!TryComp<MapGridComponent>(gridUid, out var mapGrid))
         {
             _popup.PopupClient(Loc.GetString("rcd-component-no-valid-grid"), uid, user);
-            return;
+            return false;
         }
         var tile = _mapSystem.GetTileRef(gridUid.Value, mapGrid, location);
         var position = _mapSystem.TileIndicesFor(gridUid.Value, mapGrid, location);
 
-        if (!IsRCDOperationStillValid(uid, component, gridUid.Value, mapGrid, tile, position, args.Target, args.User))
-            return;
+        if (!IsRCDOperationStillValid(uid, component, gridUid.Value, mapGrid, tile, position, target, user))
+            return false;
 
         // Frontier: grid-access restrictions
         // Frontier - Remove all RCD use on outpost.
         if (TryComp<ProtectedGridComponent>(gridUid.Value, out var prot) && prot.PreventRCDUse)
         {
-            _popup.PopupClient(Loc.GetString("rcd-component-use-blocked"), used, user);
-            return;
+            _popup.PopupClient(Loc.GetString("rcd-component-use-blocked"), uid, user);
+            return false;
         }
 
         // Frontier - Grid access restriction
-        if (TryComp<GridAccessComponent>(args.Used, out var gridAccessComponent))
+        if (TryComp<GridAccessComponent>(uid, out var gridAccessComponent))
         {
             if (!GridAccessSystem.IsAuthorized(gridUid.Value, gridAccessComponent, out var popupMessage))
             {
                 if (popupMessage != null)
                 {
-                    _popup.PopupClient(Loc.GetString("rcd-component-" + popupMessage), used, user);
+                    _popup.PopupClient(Loc.GetString("rcd-component-" + popupMessage), uid, user);
                 }
-                return;
+                return false;
             }
         }
         // End Frontier: grid-access restrictions
 
         if (!_net.IsServer)
-            return;
+            return true;
 
         // Get the starting cost, delay, and effect from the prototype
         var cost = prototype.Cost;
@@ -187,9 +203,9 @@ public sealed class RCDSystem : EntitySystem
             case RcdMode.Deconstruct:
 
                 // Deconstructing an object
-                if (args.Target != null)
+                if (target != null)
                 {
-                    if (TryComp<RCDDeconstructableComponent>(args.Target, out var destructible))
+                    if (TryComp<RCDDeconstructableComponent>(target, out var destructible))
                     {
                         cost = destructible.Cost;
                         delay = destructible.Delay;
@@ -233,7 +249,7 @@ public sealed class RCDSystem : EntitySystem
         var effect = Spawn(effectPrototype, location);
         var ev = new RCDDoAfterEvent(GetNetCoordinates(location), component.ConstructionDirection, component.ProtoId, cost, EntityManager.GetNetEntity(effect));
 
-        var doAfterArgs = new DoAfterArgs(EntityManager, user, delay, ev, uid, target: args.Target, used: uid)
+        var doAfterArgs = new DoAfterArgs(EntityManager, user, delay, ev, uid, target: target, used: uid)
         {
             BreakOnDamage = true,
             BreakOnHandChange = true,
@@ -243,10 +259,10 @@ public sealed class RCDSystem : EntitySystem
             BlockDuplicate = false
         };
 
-        args.Handled = true;
-
         if (!_doAfter.TryStartDoAfter(doAfterArgs))
             QueueDel(effect);
+
+        return true;
     }
 
     private void OnDoAfterAttempt(EntityUid uid, RCDComponent component, DoAfterAttemptEvent<RCDDoAfterEvent> args)
