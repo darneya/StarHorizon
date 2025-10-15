@@ -2,6 +2,7 @@
 - type: species
   id: Goblin
   name: species-name-goblin
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Goblin.xml" # Horizon
   roundStart: true
   prototype: MobGoblin
   sprites: MobGoblinSprites

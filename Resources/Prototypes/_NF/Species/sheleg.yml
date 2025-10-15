@@ -1,6 +1,7 @@
 - type: species
   id: Sheleg
   name: species-name-sheleg
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Sheleg.xml" # Horizon
   roundStart: true
   prototype: MobSheleg
   dollPrototype: MobShelegDummy

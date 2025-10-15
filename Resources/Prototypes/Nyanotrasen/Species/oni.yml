@@ -1,6 +1,7 @@
 - type: species
   id: Oni
   name: species-name-oni
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Oni.xml" # Horizon
   roundStart: true
   prototype: MobOni
   dollPrototype: MobOniDummy

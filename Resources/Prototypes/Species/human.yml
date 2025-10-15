@@ -1,6 +1,7 @@
 - type: species
   id: Human
   name: species-name-human
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Human.xml" # Horizon
   roundStart: true
   prototype: MobHuman
   sprites: MobHumanSprites

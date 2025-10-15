@@ -1,6 +1,7 @@
 - type: species
   id: Vox
   name: species-name-vox
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Vox.xml" # Horizon
   roundStart: true
   prototype: MobVox
   sprites: MobVoxSprites

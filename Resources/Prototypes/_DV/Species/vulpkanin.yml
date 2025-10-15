@@ -1,6 +1,7 @@
 - type: species
   id: Vulpkanin
   name: species-name-vulpkanin
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Vulpkanin.xml" # Horizon
   roundStart: true
   prototype: MobVulpkanin
   sprites: MobVulpkaninSprites

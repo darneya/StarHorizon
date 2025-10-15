@@ -1,6 +1,7 @@
 - type: species
   id: SlimePerson
   name: species-name-slime
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Slime.xml" # Horizon
   roundStart: true
   prototype: MobSlimePerson
   sprites: MobSlimeSprites

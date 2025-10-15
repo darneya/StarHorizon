@@ -1,6 +1,7 @@
 - type: species
   id: TajaranSpecies
   name: species-name-tajaran
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Tajaran.xml" # Horizon
   roundStart: true #can player role
   prototype: MobTajaran
   sprites: MobTajaranSprites

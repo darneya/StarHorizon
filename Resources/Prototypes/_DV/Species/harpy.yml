@@ -1,6 +1,7 @@
 - type: species
   id: Harpy
   name: species-name-harpy
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Harpy.xml" # Horizon
   roundStart: true
   prototype: MobHarpy
   sprites: MobHarpySprites

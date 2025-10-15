@@ -1,6 +1,7 @@
 - type: species
   id: Reptilian
   name: species-name-reptilian
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Reptilian.xml" # Horizon
   roundStart: true
   prototype: MobReptilian
   sprites: MobReptilianSprites
