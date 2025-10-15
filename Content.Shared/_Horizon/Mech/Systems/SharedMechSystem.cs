@@ -72,9 +72,7 @@ public abstract partial class SharedMechSystem
 
     private void ReceiveEquipmentUiMesssages<T>(EntityUid uid, MechComponent component, T args) where T : MechEquipmentUiMessage
     {
-        if (!_timing.IsFirstTimePredicted)
-            return;
-        var ev = new MechEquipmentUiMessageRelayEvent(args, GetNetEntity(component.PilotSlot.ContainedEntity));
+        var ev = new MechEquipmentUiMessageRelayEvent<T>(args, GetNetEntity(component.PilotSlot.ContainedEntity));
         var allEquipment = new List<EntityUid>(component.EquipmentContainer.ContainedEntities);
         var argEquip = GetEntity(args.Equipment);
 
