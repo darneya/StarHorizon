@@ -15,6 +15,7 @@
   description: A medium full-feature botanical research biodome equipped to help a botanist fully interact with their plants in almost any way conceivable.
   price: 56000 # 40091 0.4 56127.4
   category: Medium
+  access: Medical
   group: Medical
   shuttlePath: /Maps/_NF/Shuttles/akupara.yml
   guidebookPage: ShipyardAkupara
