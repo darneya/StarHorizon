@@ -15,12 +15,12 @@ using Robust.Server.Audio;
 using Content.Server._Horizon.Mech.Equipment.Components;
 
 namespace Content.Server._Horizon.Mech.Equipment.EntitySystems;
+
 public sealed class MechGunSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly MechSystem _mech = default!;
-    [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -32,7 +32,7 @@ public sealed class MechGunSystem : EntitySystem
         SubscribeLocalEvent<MechEquipmentComponent, GunShotEvent>(MechGunShot);
 
         SubscribeLocalEvent<BallisticMechAmmoProviderComponent, MechEquipmentUiStateReadyEvent>(OnUiStateReady);
-        SubscribeLocalEvent<BallisticMechAmmoProviderComponent, MechEquipmentUiMessageRelayEvent>(OnReload);
+        SubscribeLocalEvent<BallisticMechAmmoProviderComponent, MechEquipmentUiMessageRelayEvent<MechGunReloadMessage>>(OnReload);
     }
 
     public override void Update(float frameTime)
@@ -95,19 +95,14 @@ public sealed class MechGunSystem : EntitySystem
         args.States.Add(GetNetEntity(uid), state);
     }
 
-    private void OnReload(EntityUid uid, BallisticMechAmmoProviderComponent comp, MechEquipmentUiMessageRelayEvent args)
+    private void OnReload(EntityUid uid, BallisticMechAmmoProviderComponent comp, MechEquipmentUiMessageRelayEvent<MechGunReloadMessage> args)
     {
-        if (args.Message is not MechGunReloadMessage msg)
-            return;
         if (comp.Reloading)
             return;
+
         if (!TryComp<MechEquipmentComponent>(uid, out var equip) || !equip.EquipmentOwner.HasValue)
             return;
-        if (!_timing.IsFirstTimePredicted)
-        {
-            _mech.UpdateUserInterfaceByEquipment(uid);
-            return;
-        }
+
         if (comp.Shots >= comp.Capacity)
         {
             _mech.UpdateUserInterfaceByEquipment(uid);
@@ -117,8 +112,7 @@ public sealed class MechGunSystem : EntitySystem
         var magazine = TryMagazine(equip.EquipmentOwner.Value, comp);
         if (magazine == null || !_mech.TryChangeEnergy(equip.EquipmentOwner.Value, -comp.Capacity))
         {
-            var pilot = GetEntity(args.Pilot) ?? EntityUid.Invalid;
-            _audio.PlayPredicted(comp.NoAmmoForReload, pilot, equip.EquipmentOwner.Value);
+            _audio.PlayPvs(comp.NoAmmoForReload, equip.EquipmentOwner.Value);
             _mech.UpdateUserInterfaceByEquipment(uid);
             return;
         }
@@ -129,6 +123,7 @@ public sealed class MechGunSystem : EntitySystem
         comp.ReloadEnd = _timing.CurTime + TimeSpan.FromSeconds(comp.ReloadTime);
         _audio.PlayPvs(comp.ReloadSound, uid);
         Dirty(uid, comp);
+
         _mech.UpdateUserInterfaceByEquipment(uid);
     }
 

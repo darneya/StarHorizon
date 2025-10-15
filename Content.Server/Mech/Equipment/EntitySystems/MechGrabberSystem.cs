@@ -42,7 +42,7 @@ public sealed class MechGrabberSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<MechGrabberComponent, MechEquipmentUiMessageRelayEvent>(OnGrabberMessage);
+        SubscribeLocalEvent<MechGrabberComponent, MechEquipmentUiMessageRelayEvent<MechGrabberEjectMessage>>(OnGrabberMessage);
         SubscribeLocalEvent<MechGrabberComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<MechGrabberComponent, MechEquipmentUiStateReadyEvent>(OnUiStateReady);
         SubscribeLocalEvent<MechGrabberComponent, MechEquipmentRemovedEvent>(OnEquipmentRemoved);
@@ -54,11 +54,8 @@ public sealed class MechGrabberSystem : EntitySystem
         SubscribeLocalEvent<MechGrabberComponent, EntityTerminatingEvent>(OnTerminating);   // Horizon Mech
     }
 
-    private void OnGrabberMessage(EntityUid uid, MechGrabberComponent component, MechEquipmentUiMessageRelayEvent args)
+    private void OnGrabberMessage(EntityUid uid, MechGrabberComponent component, MechEquipmentUiMessageRelayEvent<MechGrabberEjectMessage> args)
     {
-        if (args.Message is not MechGrabberEjectMessage msg)
-            return;
-
         if (!TryComp<MechEquipmentComponent>(uid, out var equipmentComponent) ||
             equipmentComponent.EquipmentOwner == null)
             return;
@@ -68,7 +65,7 @@ public sealed class MechGrabberSystem : EntitySystem
         if (!_interaction.InRangeUnobstructed(mech, targetCoords))
             return;
 
-        var item = GetEntity(msg.Item);
+        var item = GetEntity(args.Message.Item);
 
         if (!component.ItemContainer.Contains(item))
             return;
