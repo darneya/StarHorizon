@@ -1,3 +1,4 @@
+using Content.Shared.Interaction;
 using Content.Shared.RCD.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -73,5 +74,8 @@ public sealed partial class RCDComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool GenericUse = true;
+
+    [DataField, AutoNetworkedField]
+    public float Range = SharedInteractionSystem.InteractionRange;
     // Horizon end
 }

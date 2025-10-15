@@ -79,7 +79,7 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
             MobUid = heldEntity.Value,
             PlacementOption = _placementMode,
             EntityType = prototype.Prototype,
-            Range = (int) Math.Ceiling(SharedInteractionSystem.InteractionRange),
+            Range = (int) Math.Ceiling(rcd.Range),  // Horizon - custom rcd range
             IsTile = (prototype.Mode == RcdMode.ConstructTile),
             UseEditorContext = false,
         };

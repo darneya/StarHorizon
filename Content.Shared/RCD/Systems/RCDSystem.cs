@@ -383,8 +383,8 @@ public sealed class RCDSystem : EntitySystem
 
         // Exit if the target / target location is obstructed
         var unobstructed = (target == null)
-            ? _interaction.InRangeUnobstructed(user, _mapSystem.GridTileToWorld(gridUid, mapGrid, position), popup: popMsgs)
-            : _interaction.InRangeUnobstructed(user, target.Value, popup: popMsgs);
+            ? _interaction.InRangeUnobstructed(user, _mapSystem.GridTileToWorld(gridUid, mapGrid, position), component.Range, popup: popMsgs)    // Horizon - custom range
+            : _interaction.InRangeUnobstructed(user, target.Value, component.Range, popup: popMsgs); // Horizon - custom range
 
         if (!unobstructed)
             return false;
