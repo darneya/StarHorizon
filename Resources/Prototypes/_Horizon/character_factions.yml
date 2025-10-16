@@ -29,6 +29,12 @@
   desc: faction-siu-desc
   color: "#881DE0"
 
+- type: characterFaction
+  id: FactionArcadia
+  name: faction-arcadia-name
+  desc: faction-arcadia-desc
+  color: "#881DE0"
+
 # Region Medical
 
 - type: characterFaction
@@ -42,6 +48,12 @@
   id: FactionFSB
   name: faction-fsb-name
   desc: faction-fsb-desc
+  color: "#27BEF5"
+
+- type: characterFaction
+  id: FactionCCC
+  name: faction-ccc-name
+  desc: faction-ccc-desc
   color: "#27BEF5"
 
 # Region Edison / Engineering
@@ -64,3 +76,18 @@
   name: faction-uac-name
   desc: faction-uac-desc
   color: "#E0861D"
+
+- type: characterFaction
+  id: FactionNakamura
+  name: faction-nakamura-name
+  desc: faction-nakamura-desc
+  color: "#E0861D"
+
+# Region Pirate
+
+- type: characterFaction
+  id: FactionPirate
+  name: faction-pirate-name
+  desc: faction-pirate-desc
+  color: "#ff0d00"
+  roundstart: false
