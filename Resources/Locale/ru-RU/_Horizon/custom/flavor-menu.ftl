@@ -1,8 +1,8 @@
 flavor-text-menu-title = О персонаже
 
-erp-status-No-flavor = С этим персонажем [color=red]запрещены любые ЕРП взаимодействия[/color].
-erp-status-Consentual-flavor = С этим персонажем [color=green]ЕРП взаимодействия разрешены только с согласия[/color].
-erp-status-NonCon-flavor = По отношению к этому персонажу [color=darkviolet]разрешены любые ЕРП взаимодействия[/color].
+erp-status-No-flavor = [color=red]С данным персонажем запрещены любые ЕРП взаимодействия[/color].
+erp-status-Consentual-flavor = [color=darkyellow]С данным персонажем ЕРП взаимодействия разрешены только с предварительного согласия[/color].
+erp-status-NonCon-flavor = [color=green]Для большей части ЕРП взаимодействий, с данным персонажем предварительно согласие не требуется. Действия насильственного характера, все ещё требуют предварительного согласования.[/color]
 
 flavor-no-ic-desc = Описание отсутствует.
 flavor-no-ooc-desc = OOC заметки отсутствуют.
