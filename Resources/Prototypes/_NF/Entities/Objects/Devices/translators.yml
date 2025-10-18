@@ -181,6 +181,28 @@
       Clownish: Speak
 
 - type: entity
+  id: GoblinTranslator
+  parent: [ Translator ]
+  name: Goblin translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Goblin: Speak
+
+- type: entity
+  id: HarpyTranslator
+  parent: [ Translator ]
+  name: Harpy translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Harpy: Speak
+
+- type: entity
   id: AnimalTranslator
   parent: [ Translator ]
   name: Animals translator

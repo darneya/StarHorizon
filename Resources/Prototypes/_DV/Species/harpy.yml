@@ -7,6 +7,12 @@
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
   skinColoration: HumanToned
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Harpy
+  uniqueLanguages: [Harpy]
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobHarpySprites

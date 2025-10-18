@@ -125,3 +125,19 @@
   components:
   - type: Implanter
     implant: CodeSpeakTranslatorImplant
+
+- type: entity
+  id: GoblinSpeakTranslatorImplanter
+  name: GoblinSpeak Translator implanter
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: GoblinSpeakTranslatorImplant
+
+- type: entity
+  id: HarpySpeakTranslatorImplanter
+  name: HarpySpeak Translator implanter
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: HarpySpeakTranslatorImplant

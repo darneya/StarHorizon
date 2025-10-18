@@ -181,3 +181,23 @@
   - type: TranslatorImplant
     languages:
       CodeSpeak: Speak
+
+- type: entity
+  parent: BaseTranslatorImplant
+  id: GoblinSpeakTranslatorImplant
+  name: translator implant
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    languages:
+      Goblin: Speak
+
+- type: entity
+  parent: BaseTranslatorImplant
+  id: HarpySpeakTranslatorImplant
+  name: translator implant
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    languages:
+      Harpy: Speak

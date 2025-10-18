@@ -4,4 +4,4 @@ translator-disabled = Переводчик выключен
 popup-deaf-cannot-hear = { $entity } что-то говорит.
 
 translator-component-turnon = { $translator } включается.
-translator-component-turnoff = { $translator } выключается.
+translator-component-shutoff = { $translator } выключается.

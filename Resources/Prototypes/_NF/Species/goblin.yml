@@ -11,6 +11,12 @@
   maleFirstNames: NamesGoblinFirstMale
   femaleFirstNames: NamesGoblinFirstFemale
   lastNames: NamesGoblinLast
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Goblin
+  uniqueLanguages: [Goblin]
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobGoblinSprites
