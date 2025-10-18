@@ -1510,3 +1510,12 @@
   id: XenoborgModuleStealth
 
 # ALPHABETICAL
+
+- type: Tag
+  id: UnderwearB
+
+- type: Tag
+  id: UnderwearT
+
+- type: Tag
+  id: Socks

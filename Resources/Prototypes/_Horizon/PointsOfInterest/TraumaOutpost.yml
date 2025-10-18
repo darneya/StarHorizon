@@ -26,7 +26,7 @@
         - type: StationNameSetup
           mapNameTemplate: 'TTI Outpost'
         - type: ExtraStationInformation
-          iconPath: /Textures/_StarHorizon/Markers/Jobs/traumamarkers.rsi/medic.png
+          iconPath: /Textures/_Horizon/Interface/banner_trauma.png # Horizon
           stationSubtext: 'frontier-lobby-trauma-subtext'
           stationDescription: 'frontier-lobby-trauma-description'
           lobbySortOrder: 0

@@ -1110,8 +1110,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 9
+        maxVol: 14
         reagents:
+        - ReagentId: JuiceGrape
+          Quantity: 5
         - ReagentId: Nutriment
           Quantity: 5
         - ReagentId: Vitamin
@@ -1143,8 +1145,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 9
+        maxVol: 14
         reagents:
+        - ReagentId: JuiceGrape
+          Quantity: 5
         - ReagentId: Nutriment
           Quantity: 5
         - ReagentId: Vitamin

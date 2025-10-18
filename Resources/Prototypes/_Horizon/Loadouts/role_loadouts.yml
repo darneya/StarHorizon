@@ -13,6 +13,11 @@
     - ContractorImplanter
     - ContractorBackpackItems
     - ContractorHandItems
+    # Horizon start
+    - Top
+    - Bottom
+    - Socks
+    # Horizon end
 
 - type: roleLoadout
   id: JobTraumaMedTech
@@ -29,6 +34,11 @@
     - ContractorImplanter
     - ContractorBackpackItems
     - ContractorHandItems
+    # Horizon start
+    - Top
+    - Bottom
+    - Socks
+    # Horizon end
 
 - type: roleLoadout
   id: JobTraumaRessurector
@@ -45,6 +55,11 @@
     - ContractorImplanter
     - ContractorBackpackItems
     - ContractorHandItems
+    # Horizon start
+    - Top
+    - Bottom
+    - Socks
+    # Horizon end
 
 - type: roleLoadout
   id: JobTraumaRepresentative
@@ -59,3 +74,8 @@
     - ContractorImplanter
     - ContractorBackpackItems
     - ContractorHandItems
+    # Horizon start
+    - Top
+    - Bottom
+    - Socks
+    # Horizon end
