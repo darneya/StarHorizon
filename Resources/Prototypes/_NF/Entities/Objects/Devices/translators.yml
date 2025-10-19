@@ -26,7 +26,7 @@
     enabled: false
   - type: ItemToggle
   - type: StaticPrice
-    price: 1500
+    price: 200
 
 - type: entity
   id: Translator
@@ -56,8 +56,8 @@
   components:
   - type: HandheldTranslator
     languages:
-      GalacticCommon: BadSpeak
-      Bubblish: BadSpeak
+      GalacticCommon: Speak
+      Bubblish: Understand
 
 - type: entity
   id: ArachnidTranslator
@@ -68,7 +68,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      Arachnid: Speak
+      Arachnid: Understand
 
 - type: entity
   id: RootSpeakTranslator
@@ -79,7 +79,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: BadSpeak
-      RootSpeak: BadSpeak
+      RootSpeak: Understand
 
 - type: entity
   id: NekomimeticTranslator
@@ -90,7 +90,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      Nekomimetic: Speak
+      Nekomimetic: Understand
 
 - type: entity
   id: DraconicTranslator
@@ -101,7 +101,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      Draconic: Speak
+      Draconic: Understand
 
 - type: entity
   id: CanilunztTranslator
@@ -112,7 +112,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      Canilunzt: Speak
+      Canilunzt: Understand
 
 - type: entity
   id: SolCommonTranslator
@@ -123,7 +123,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      SolCommon: Speak
+      SolCommon: Understand
 
 - type: entity
   id: DwarfTranslator
@@ -134,7 +134,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      Dwarf: Speak
+      Dwarf: Understand
 
 - type: entity
   id: NianTranslator
@@ -144,8 +144,8 @@
   components:
   - type: HandheldTranslator
     languages:
-      GalacticCommon: BadSpeak
-      Nian: BadSpeak
+      GalacticCommon: Speak
+      Nian: Understand
 
 - type: entity
   id: SikTajTranslator
@@ -156,7 +156,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      SikTaj: Speak
+      SikTaj: Understand
 
 - type: entity
   id: NeoRusskiyaTranslator
@@ -167,7 +167,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      NeoRusskiya: Speak
+      NeoRusskiya: Understand
 
 - type: entity
   id: ClownishTranslator
@@ -178,7 +178,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      Clownish: Speak
+      Clownish: Understand
 
 - type: entity
   id: GoblinTranslator
@@ -189,7 +189,7 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      Goblin: Speak
+      Goblin: Understand
 
 - type: entity
   id: HarpyTranslator
@@ -200,7 +200,18 @@
   - type: HandheldTranslator
     languages:
       GalacticCommon: Speak
-      Harpy: Speak
+      Harpy: Understand
+
+- type: entity
+  id: VoxPidginTranslator
+  parent: [ Translator ]
+  name: Vox Pidgin translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      VoxPidgin: Understand
 
 - type: entity
   id: AnimalTranslator
