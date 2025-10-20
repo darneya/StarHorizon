@@ -12,6 +12,7 @@ public abstract partial class SharedMechSystem
     private void InitializeADT()
     {
         SubscribeLocalEvent<MechComponent, MechGunReloadMessage>(ReceiveEquipmentUiMesssages);
+        SubscribeLocalEvent<MechComponent, MechToolSetMessage>(ReceiveEquipmentUiMesssages);
         SubscribeLocalEvent<MechComponent, StorageInteractAttemptEvent>(OnStorageInteract);
     }
 
@@ -53,26 +54,24 @@ public abstract partial class SharedMechSystem
 
             var popup = Loc.GetString("mech-equipment-select-none-popup");
 
-            if (_timing.IsFirstTimePredicted)
-                _popup.PopupEntity(popup, uid, uid);
+            _popup.PopupPredicted(popup, null, uid, uid);
 
             if (_net.IsServer)
                 Dirty(mechUid, mech);
+
             return;
         }
 
-        var entity = GetEntity(ev.Equipment.Value);
-
-        if (!mech.EquipmentContainer.Contains(entity))
+        if (!mech.EquipmentContainer.Contains(entity.Value))
             Log.Error("Mech does not have selected equipment");
+
         mech.CurrentSelectedEquipment = entity;
 
         var popupString = mech.CurrentSelectedEquipment != null
             ? Loc.GetString("mech-equipment-select-popup", ("item", mech.CurrentSelectedEquipment))
             : Loc.GetString("mech-equipment-select-none-popup");
 
-        if (_timing.IsFirstTimePredicted)
-            _popup.PopupEntity(popupString, uid, uid);
+        _popup.PopupPredicted(popupString, null, uid, uid);
 
         if (_net.IsServer)
             Dirty(mechUid, mech);
