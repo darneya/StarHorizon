@@ -3,6 +3,7 @@
   name: job-name-intern
   description: job-description-intern
   playTimeTracker: JobMedicalIntern
+  forceFaction: FactionMed # Horizon
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical

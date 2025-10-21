@@ -1,6 +1,7 @@
 - type: species
   id: Harpy
   name: species-name-harpy
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Harpy.xml" # Horizon
   roundStart: true
   prototype: MobHarpy
   sprites: MobHarpySprites
@@ -8,6 +9,9 @@
   dollPrototype: MobHarpyDummy
   skinColoration: HumanToned
   # Horizon start
+  prosCount: 2
+  specialCount: 3
+  consCount: 3
   defaultLanguages:
   - GalacticCommon
   - Harpy

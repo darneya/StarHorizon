@@ -1,6 +1,7 @@
 - type: species
   id: Diona
   name: species-name-diona
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Diona.xml" # Horizon
   roundStart: true
   prototype: MobDiona
   sprites: MobDionaSprites
@@ -17,6 +18,9 @@
   - GalacticCommon
   - RootSpeak
   uniqueLanguages: [RootSpeak]
+  prosCount: 2
+  specialCount: 2
+  consCount: 2
   # Horizon end
 
 - type: speciesBaseSprites

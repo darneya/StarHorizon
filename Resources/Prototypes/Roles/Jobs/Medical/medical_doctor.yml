@@ -4,6 +4,7 @@
   description: job-description-doctor
   playTimeTracker: JobMedicalDoctor
   salary: 40000 # Horizon
+  forceFaction: FactionMed # Horizon
   setPreference: true # Lua
   requirements:
   # Horizon start

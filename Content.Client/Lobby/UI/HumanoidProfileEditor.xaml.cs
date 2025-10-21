@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Content.Client._Horizon.Lobby.UI;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI.Loadouts;
 using Content.Client.Lobby.UI.Roles;
@@ -10,6 +11,7 @@ using Content.Client.Sprite;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared._Horizon.CCVar;
+using Content.Shared._Horizon.FlavorText;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -63,6 +65,10 @@ namespace Content.Client.Lobby.UI
 
         // One at a time.
         private LoadoutWindow? _loadoutWindow;
+
+        private SpeciesWindow? _speciesWindow;  // Horizon
+
+        private List<CharacterFactionPrototype> _factions = new();  // Horizon
 
         private bool _exporting;
         private bool _imaging;
@@ -245,6 +251,77 @@ namespace Content.Client.Lobby.UI
             }
 
             #endregion
+
+            #region Species menu
+
+            NewSpeciesButton.OnToggled += args =>
+            {
+                if (Profile == null)
+                    return;
+
+                _speciesWindow?.Dispose();
+
+                if (!args.Pressed)
+                {
+                    _speciesWindow = null;
+                }
+                else
+                {
+                    _speciesWindow = new(
+                        Profile,
+                        prototypeManager,
+                        _controller,
+                        _resManager);
+
+                    _speciesWindow.OpenCenteredLeft();
+                    _speciesWindow.ChooseAction += args =>
+                    {
+                        var oldProfile = Profile.Clone();
+                        SetSpecies(args);
+                        OnSkinColorOnValueChangedKeepColor(oldProfile);
+                        UpdateHairPickers();
+
+                        _speciesWindow?.Close();
+                        _speciesWindow = null;
+
+                        var speciesName = _prototypeManager.Index(Profile?.Species ?? "Human").Name;
+                        NewSpeciesButton.Text = Loc.GetString(speciesName);
+                        NewSpeciesButton.Pressed = false;
+                        //SetDefaultLanguages();
+                    };
+                    _speciesWindow.OnClose += () =>
+                    {
+                        NewSpeciesButton.Pressed = false;
+                        _speciesWindow = null;
+                    };
+                }
+            };
+
+            #endregion
+
+            TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-factions-tab"));
+
+            _factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().Where(x => x.Roundstart).OrderBy(x => Loc.GetString(x.Name)).ToList();
+
+            for (var i = 0; i < _factions.Count; i++)
+            {
+                FactionButton.AddItem(Loc.GetString(_factions[i].Name), i);
+
+                if (_factions.ElementAt(i).ID == Profile?.Faction)
+                {
+                    OnFactionChange(_factions.ElementAt(i).ID);
+                    FactionButton.Select(i);
+                    UpdateFactionDesc();
+                }
+            }
+
+            FactionButton.OnItemSelected += args =>
+            {
+                OnFactionChange(_factions[args.Id]);
+                FactionButton.Select(args.Id);
+                UpdateFactionDesc();
+            };
+
             // _Horizon End
 
             #region Skin
@@ -270,7 +347,7 @@ namespace Content.Client.Lobby.UI
                     return;
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithHairStyleName(newStyle.id));
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             HairStylePicker.OnColorChanged += newColor =>
@@ -280,7 +357,7 @@ namespace Content.Client.Lobby.UI
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithHairColor(newColor.marking.MarkingColors[0]));
                 UpdateCMarkingsHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             FacialHairPicker.OnMarkingSelect += newStyle =>
@@ -289,7 +366,7 @@ namespace Content.Client.Lobby.UI
                     return;
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithFacialHairStyleName(newStyle.id));
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             FacialHairPicker.OnColorChanged += newColor =>
@@ -299,7 +376,7 @@ namespace Content.Client.Lobby.UI
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithFacialHairColor(newColor.marking.MarkingColors[0]));
                 UpdateCMarkingsFacialHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             HairStylePicker.OnSlotRemove += _ =>
@@ -311,7 +388,7 @@ namespace Content.Client.Lobby.UI
                 );
                 UpdateHairPickers();
                 UpdateCMarkingsHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             FacialHairPicker.OnSlotRemove += _ =>
@@ -323,7 +400,7 @@ namespace Content.Client.Lobby.UI
                 );
                 UpdateHairPickers();
                 UpdateCMarkingsFacialHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             HairStylePicker.OnSlotAdd += delegate()
@@ -343,7 +420,7 @@ namespace Content.Client.Lobby.UI
 
                 UpdateHairPickers();
                 UpdateCMarkingsHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             FacialHairPicker.OnSlotAdd += delegate()
@@ -363,7 +440,7 @@ namespace Content.Client.Lobby.UI
 
                 UpdateHairPickers();
                 UpdateCMarkingsFacialHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             #endregion Hair
@@ -494,6 +571,30 @@ namespace Content.Client.Lobby.UI
                 _flavorTextEdit = _flavorText.CFlavorTextInput;
 
                 _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
+
+                // Horizon start
+
+                _flavorText.OnOOCFlavorTextChanged += OnOOCFlavorTextChange;
+
+                _flavorText.OnErpStatChanged += args =>
+                {
+                    OnErpChange((ErpStatus)args);
+                    _flavorText.ERPStatusButton.Select(args);
+
+                    UpdateErpDesc();
+                };
+
+                for (var i = 0; i <= (int)ErpStatus.NonCon; i++)
+                {
+                    _flavorText.ERPStatusButton.AddItem(FormattedMessage.RemoveMarkupOrThrow(Loc.GetString($"erp-status-{(ErpStatus)i}")), i);
+
+                    if (i == (int?)Profile?.ErpStat)
+                    {
+                        OnErpChange((ErpStatus)i);
+                        _flavorText.ERPStatusButton.Select(i);
+                    }
+                }
+                // Horizon end
             }
             else
             {
@@ -502,6 +603,9 @@ namespace Content.Client.Lobby.UI
 
                 TabContainer.RemoveChild(_flavorText);
                 _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
+                // Horizon start
+                _flavorText.OnErpStatChanged = null;
+                // Horizon end
                 _flavorText.Dispose();
                 _flavorTextEdit?.Dispose();
                 _flavorTextEdit = null;
@@ -640,6 +744,12 @@ namespace Content.Client.Lobby.UI
                 if (Profile?.Species.Equals(_species[i].ID) == true)
                 {
                     SpeciesButton.SelectId(i);
+
+                    // Horizon Species Window start
+                    NewSpeciesButton.Text = name;
+                    NewSpeciesButton.Pressed = false;
+                    _speciesWindow?.Close();
+                    // Horizon Species Window end
                 }
             }
 
@@ -1349,6 +1459,38 @@ namespace Content.Client.Lobby.UI
             {
                 _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
             }
+
+            // Horizon start
+            if (_flavorText != null)
+            {
+                _flavorText.OOCFlavorTextInput.TextRope = new Rope.Leaf(Profile?.OOCFlavorText ?? "");
+                for (var i = 0; i <= (int)ErpStatus.NonCon; i++)
+                {
+                    //_flavorText.ERPStatusButton.AddItem(FormattedMessage.RemoveMarkupOrThrow(Loc.GetString($"erp-status-{(ErpStatus)i}")), i);
+
+                    if (i == (int?)Profile?.ErpStat)
+                    {
+                        OnErpChange((ErpStatus)i);
+                        _flavorText.ERPStatusButton.Select(i);
+                        UpdateErpDesc();
+                    }
+                }
+
+                _factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().Where(x => x.Roundstart).OrderBy(x => Loc.GetString(x.Name)).ToList();
+
+                for (var i = 0; i < _factions.Count; i++)
+                {
+                    //_flavorText.FactionButton.AddItem(Loc.GetString(factions[i].Name), i);
+
+                    if (_factions.ElementAt(i).ID == Profile?.Faction)
+                    {
+                        OnFactionChange(_factions.ElementAt(i).ID);
+                        FactionButton.Select(i);
+                        UpdateFactionDesc();
+                    }
+                }
+            }
+            // Horizon end
         }
 
         private void UpdateAgeEdit()
@@ -1776,5 +1918,99 @@ namespace Content.Client.Lobby.UI
             ImportButton.Disabled = false;
             ExportButton.Disabled = false;
         }
+
+        // Horizon start
+        private void OnSkinColorOnValueChangedKeepColor(HumanoidCharacterProfile previus)
+        {
+            if (Profile is null) return;
+
+            var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var color = previus.Appearance.SkinColor;
+
+            switch (skin)
+            {
+                case HumanoidSkinColor.HumanToned:
+                    {
+                        var tone = SkinColor.HumanSkinToneFromColor(previus.Appearance.SkinColor);
+                        color = SkinColor.HumanSkinTone((int)tone);
+                        Skin.Value = tone;
+
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
+                        break;
+                    }
+                case HumanoidSkinColor.Hues:
+                    {
+                        break;
+                    }
+                case HumanoidSkinColor.TintedHues:
+                    {
+                        color = SkinColor.TintedHues(previus.Appearance.SkinColor);
+
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        break;
+                    }
+                case HumanoidSkinColor.VoxFeathers:
+                    {
+                        color = SkinColor.ClosestVoxColor(previus.Appearance.SkinColor);
+
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        break;
+                    }
+            }
+
+            _rgbSkinColorSelector.Color = color;
+
+            ReloadProfilePreview();
+        }
+
+        private void OnErpChange(ErpStatus status)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithErpStatus(status);
+            SetDirty();
+        }
+
+        private void OnFactionChange(ProtoId<CharacterFactionPrototype> faction)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithFaction(faction);
+            SetDirty();
+            RefreshJobs();
+        }
+
+        private void UpdateErpDesc()
+        {
+            if (_flavorText == null)
+                return;
+
+            _flavorText.ERPStatusDescription.SetMarkup(Loc.GetString($"erp-status-{Profile?.ErpStat}-desc"));
+        }
+
+        private void UpdateFactionDesc()
+        {
+            if (_flavorText == null || Profile == null)
+                return;
+
+            if (Profile.Faction == string.Empty)
+                OnFactionChange("None");
+
+            var faction = _prototypeManager.Index(Profile.Faction);
+
+            FactionDescription.SetMarkup(Loc.GetString(faction.Desc));
+        }
+
+        private void OnOOCFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithOOCFlavorText(content);
+            SetDirty();
+        }
+        // Horizon end
     }
 }

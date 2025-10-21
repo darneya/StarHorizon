@@ -1,6 +1,7 @@
 - type: species
   id: Reptilian
   name: species-name-reptilian
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Reptilian.xml" # Horizon
   roundStart: true
   prototype: MobReptilian
   sprites: MobReptilianSprites
@@ -15,6 +16,9 @@
   defaultLanguages:
   - GalacticCommon
   - Draconic
+  prosCount: 2
+  specialCount: 1
+  consCount: 1
   # Horizon end
 
 - type: speciesBaseSprites

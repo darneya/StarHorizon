@@ -1,6 +1,7 @@
 - type: species
   id: Oni
   name: species-name-oni
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Oni.xml" # Horizon
   roundStart: true
   prototype: MobOni
   dollPrototype: MobOniDummy
@@ -15,6 +16,9 @@
   defaultLanguages:
   - GalacticCommon
   - Nekomimetic
+  prosCount: 2
+  specialCount: 1
+  consCount: 1
   # Horizon end
 
 - type: markingPoints

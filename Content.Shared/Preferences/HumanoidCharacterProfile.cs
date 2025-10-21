@@ -2,6 +2,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Shared._Horizon.Bark;
 using Content.Shared._Horizon.Language;
+using Content.Shared._Horizon.FlavorText;
 using Content.Shared._NF.Bank;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
@@ -111,6 +112,13 @@ namespace Content.Shared.Preferences
         // Horizon start
         public BarkData Bark = new();
 
+        public ErpStatus ErpStat = ErpStatus.No;
+
+        public ProtoId<CharacterFactionPrototype> Faction = "None";
+
+        [DataField]
+        public string OOCFlavorText { get; set; } = string.Empty;
+
         [DataField]
         private HashSet<ProtoId<LanguagePrototype>> _languages = new();
 
@@ -155,8 +163,12 @@ namespace Content.Shared.Preferences
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
             Dictionary<string, RoleLoadout> loadouts,
-            BarkData bark,  // _Horizon
-            HashSet<ProtoId<LanguagePrototype>> languages) // _Horizon
+            // Horizon start
+            ErpStatus erp,
+            ProtoId<CharacterFactionPrototype> faction,
+            string oocFlavor,
+            BarkData bark,
+            HashSet<ProtoId<LanguagePrototype>> languages) // Horizon end
         {
             Name = name;
             FlavorText = flavortext;
@@ -172,8 +184,13 @@ namespace Content.Shared.Preferences
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
-            Bark = bark; // _Horizon
-            _languages = languages; // _Horizon
+            // Horizon start
+            ErpStat = erp;
+            Faction = faction;
+            OOCFlavorText = oocFlavor;
+            Bark = bark;
+            _languages = languages;
+            // Horizon end
         }
 
         /// <summary>Copy constructor but with overridable references (to prevent useless copies)</summary>
@@ -197,8 +214,12 @@ namespace Content.Shared.Preferences
                 antagPreferences,
                 traitPreferences,
                 loadouts,
-                other.Bark, // _Horizon
-                other.Languages.ToHashSet()) // _Horizon
+                // Horizon start
+                other.ErpStat,
+                other.Faction,
+                other.OOCFlavorText,
+                other.Bark,
+                other.Languages.ToHashSet()) // Horizon end
         {
         }
 
@@ -218,8 +239,12 @@ namespace Content.Shared.Preferences
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
                 new Dictionary<string, RoleLoadout>(other.Loadouts),
-                other.Bark, // _Horizon
-                other.Languages.ToHashSet()) // _Horizon
+                // Horizon start
+                other.ErpStat,
+                other.Faction,
+                other.OOCFlavorText,
+                other.Bark,
+                other.Languages.ToHashSet()) // Horizon end
         {
         }
 
@@ -520,8 +545,13 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
-            if (!Bark.MemberwiseEquals(other.Bark)) return false; // _Horizon
-            if (!_languages.SequenceEqual(other._languages)) return false;  // _Horizon
+            // Horizon start
+            if (!Bark.MemberwiseEquals(other.Bark)) return false;
+            if (ErpStat != other.ErpStat) return false;
+            if (Faction != other.Faction) return false;
+            if (OOCFlavorText != other.OOCFlavorText) return false;
+            if (!_languages.SequenceEqual(other._languages)) return false;
+            // Horizon end
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
@@ -710,6 +740,9 @@ namespace Content.Shared.Preferences
             }
 
             // Horizon start
+            if (!prototypeManager.HasIndex(Faction))
+                Faction = "None";
+
             if (_languages.Count <= 0)
                 _languages = new(speciesPrototype.DefaultLanguages);
             List<ProtoId<LanguagePrototype>> langsInvalid = new();
@@ -879,6 +912,27 @@ namespace Content.Shared.Preferences
             {
                 Bark = Bark.WithMaxVar(variation),
             };
+        }
+
+        public HumanoidCharacterProfile WithErpStatus(ErpStatus erp)
+        {
+            return new(this)
+            {
+                ErpStat = erp
+            };
+        }
+
+        public HumanoidCharacterProfile WithFaction(ProtoId<CharacterFactionPrototype> faction)
+        {
+            return new(this)
+            {
+                Faction = faction
+            };
+        }
+
+        public HumanoidCharacterProfile WithOOCFlavorText(string flavorText)
+        {
+            return new(this) { OOCFlavorText = flavorText };
         }
 
         #endregion

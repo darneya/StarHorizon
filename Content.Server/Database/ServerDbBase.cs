@@ -10,6 +10,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Shared._Horizon.Bark;
 using Content.Shared._Horizon.Language;
+using Content.Shared._Horizon.FlavorText;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Database;
@@ -287,12 +288,16 @@ namespace Content.Server.Database
                 ),
                 spawnPriority,
                 jobs,
-                (PreferenceUnavailableMode) profile.PreferenceUnavailable,
+                (PreferenceUnavailableMode)profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar), // _Horizon
-                languages.ToHashSet() // _Horizon
+                // Horizon start
+                (ErpStatus)profile.ErpStatus,
+                profile.Faction,
+                profile.OOCFlavorText,
+                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar),
+                languages.ToHashSet() // Horizon end
             );
         }
 
@@ -384,6 +389,10 @@ namespace Content.Server.Database
             profile.BarkPitch = humanoid.Bark.Pitch;
             profile.LowBarkVar = humanoid.Bark.MinVar;
             profile.HighBarkVar = humanoid.Bark.MaxVar;
+
+            profile.ErpStatus = (int)humanoid.ErpStat;
+            profile.Faction = humanoid.Faction;
+            profile.OOCFlavorText = humanoid.OOCFlavorText;
             profile.Languages.Clear();
             profile.Languages.AddRange(
                 humanoid.Languages

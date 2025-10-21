@@ -3,6 +3,7 @@ using Content.Shared.Dataset;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Humanoid.Prototypes;
 
@@ -156,6 +157,17 @@ public sealed partial class SpeciesPrototype : IPrototype
     [DataField]
     public List<ProtoId<LanguagePrototype>> ForceLanguages = new();
 
+    [DataField]
+    public ResPath? Description = new("/ServerInfo/_Horizon/SpeciesDesc/NoDesc.xml");
+
+    [DataField]
+    public int ProsCount = 0;
+
+    [DataField]
+    public int ConsCount = 0;
+
+    [DataField]
+    public int SpecialCount = 0;
     // Horizon end
 }
 

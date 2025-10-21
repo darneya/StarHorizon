@@ -875,6 +875,10 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("char_name");
 
+                    b.Property<int>("ErpStatus")
+                        .HasColumnType("integer")
+                        .HasColumnName("erp_status");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("text")
@@ -889,6 +893,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("facial_hair_name");
+
+                    b.Property<string>("Faction")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("faction");
 
                     b.Property<string>("FlavorText")
                         .IsRequired()
@@ -921,6 +930,11 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
+
+                    b.Property<string>("OOCFlavorText")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("oocflavor_text");
 
                     b.Property<int>("PreferenceId")
                         .HasColumnType("integer")

@@ -430,6 +430,9 @@ namespace Content.Server.Database
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+        public int ErpStatus { get; set; } // _Horizon
+        public string Faction { get; set; } = null!; // _Horizon
+        public string OOCFlavorText { get; set; } = null!; // _Horizon
     }
 
     public class Job

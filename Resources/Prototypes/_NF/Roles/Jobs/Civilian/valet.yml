@@ -4,6 +4,7 @@
   description: job-description-valet
   playTimeTracker: JobValet
   salary: 35000 # Horizon
+  forceFaction: FactionFrontier # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 10800
