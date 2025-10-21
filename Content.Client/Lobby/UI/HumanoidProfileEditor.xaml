@@ -161,12 +161,10 @@
                 </BoxContainer>
                 <!-- Horizon start -->
                 <BoxContainer Name="FactionsTab" Orientation="Vertical" Margin="10">
-                    <ScrollContainer VerticalExpand="True">
-                        <BoxContainer Orientation="Horizontal">
-                            <RichTextLabel Name="FactionDescription" Access="Public" MinSize="220 100" Margin="10 4" HorizontalExpand="True" VerticalExpand="True" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                            <OptionButton Name="FactionButton" Access="Public" SetWidth="240" SetHeight="38" Margin="10 4" VerticalAlignment="Top" HorizontalAlignment="Right" />
-                        </BoxContainer>
-                    </ScrollContainer>
+                    <BoxContainer Orientation="Vertical">
+                        <OptionButton Name="FactionButton" Access="Public" SetWidth="240" SetHeight="38" Margin="10 4" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <RichTextLabel Name="FactionDescription" Access="Public" MinSize="220 100" MaxWidth="775" Margin="10 4" HorizontalExpand="True" VerticalExpand="True" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                    </BoxContainer>
                 </BoxContainer>
                 <!-- Horizon end -->
             </TabContainer>

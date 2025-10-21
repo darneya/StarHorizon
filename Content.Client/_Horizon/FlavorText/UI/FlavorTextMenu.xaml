@@ -25,6 +25,7 @@
                 <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True" >
                     <BoxContainer Orientation="Vertical" VerticalAlignment="Top">
                         <RichTextLabel Name="ErpStatusLabel" HorizontalExpand="True" Margin="2" />
+                        <customControls:HSeparator Margin="2"/>
                         <RichTextLabel Name="OOCDescriptionLabel" HorizontalExpand="True" Margin="2" />
                     </BoxContainer>
                 </ScrollContainer>
