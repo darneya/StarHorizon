@@ -1,12 +1,21 @@
 - type: species
   id: Felinid
   name: species-name-felinid
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Felinid.xml" # Horizon
   roundStart: true
   prototype: MobFelinid
   sprites: MobHumanSprites
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy
   skinColoration: HumanToned
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Nekomimetic
+  prosCount: 3
+  specialCount: 2
+  consCount: 3
+  # Horizon end
 
 - type: markingPoints
   id: MobFelinidMarkingLimits

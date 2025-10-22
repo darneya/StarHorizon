@@ -2,6 +2,7 @@
 - type: species
   id: Goblin
   name: species-name-goblin
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Goblin.xml" # Horizon
   roundStart: true
   prototype: MobGoblin
   sprites: MobGoblinSprites
@@ -11,6 +12,15 @@
   maleFirstNames: NamesGoblinFirstMale
   femaleFirstNames: NamesGoblinFirstFemale
   lastNames: NamesGoblinLast
+  # Horizon start
+  prosCount: 2
+  specialCount: 3
+  consCount: 3
+  defaultLanguages:
+  - GalacticCommon
+  - Goblin
+  uniqueLanguages: [Goblin]
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobGoblinSprites

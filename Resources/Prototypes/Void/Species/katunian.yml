@@ -1,6 +1,7 @@
 - type: species
   id: Katunian
   name: species-name-katunian
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Katunian.xml" # Horizon
   roundStart: true
   prototype: MobKatunian
   sprites: MobKatunianSprites
@@ -11,6 +12,10 @@
   #maleFirstNames: NamesKatunianMale
   #femaleFirstNames: NamesKatunianFemale
   #lastNames: NamesKatunianLast
+  # Horizon start
+  prosCount: 2
+  consCount: 1
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobKatunianSprites

@@ -1,6 +1,7 @@
 - type: species
   id: Vulpkanin
   name: species-name-vulpkanin
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Vulpkanin.xml" # Horizon
   roundStart: true
   prototype: MobVulpkanin
   sprites: MobVulpkaninSprites
@@ -11,6 +12,14 @@
   maleFirstNames: NamesVulpkaninMale
   femaleFirstNames: NamesVulpkaninFemale
   lastNames: NamesVulpkaninLast
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Canilunzt
+  prosCount: 2
+  specialCount: 2
+  consCount: 2
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobVulpkaninSprites

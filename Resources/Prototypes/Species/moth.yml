@@ -1,6 +1,7 @@
 - type: species
   id: Moth
   name: species-name-moth
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Moth.xml" # Horizon
   roundStart: true
   prototype: MobMoth
   sprites: MobMothSprites
@@ -11,6 +12,14 @@
   maleFirstNames: NamesMothFirstMale
   femaleFirstNames: NamesMothFirstFemale
   lastNames: NamesMothLast
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Nian
+  prosCount: 2
+  specialCount: 1
+  consCount: 1
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobMothSprites
