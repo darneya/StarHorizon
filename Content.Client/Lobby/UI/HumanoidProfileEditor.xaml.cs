@@ -299,7 +299,7 @@ namespace Content.Client.Lobby.UI
 
             #endregion
 
-            TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-factions-tab"));
+            TabContainer.SetTabTitle(5, Loc.GetString("humanoid-profile-editor-factions-tab"));
 
             _factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().Where(x => x.Roundstart).OrderBy(x => Loc.GetString(x.Name)).ToList();
 
