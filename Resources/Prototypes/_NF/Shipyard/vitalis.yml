@@ -5,7 +5,6 @@
   description: A medium medical support vessel designed for cryogenic deployment.
   price: 75000 #62702 0.2 75242.4
   category: Medium
-  access: Medical
   group: Medical
   shuttlePath: /Maps/_NF/Shuttles/vitalis.yml
   guidebookPage: ShipyardVitalis

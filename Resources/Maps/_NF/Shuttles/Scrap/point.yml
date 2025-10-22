@@ -1784,6 +1784,13 @@ entities:
     - type: Transform
       pos: -0.5,10.5
       parent: 1
+- proto: MachineMiniAnomalyGenerator
+  entities:
+  - uid: 179
+    components:
+    - type: Transform
+      pos: 7.5,6.5
+      parent: 1
 - proto: Mattress
   entities:
   - uid: 108

@@ -1817,6 +1817,13 @@ entities:
     - type: Transform
       pos: 3.5,3.5
       parent: 174
+- proto: MachineMiniAnomalyGenerator
+  entities:
+  - uid: 182
+    components:
+    - type: Transform
+      pos: 1.5,4.5
+      parent: 174
 - proto: NFHolopadShip
   entities:
   - uid: 61

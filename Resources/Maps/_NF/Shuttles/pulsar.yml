@@ -3658,6 +3658,13 @@ entities:
       parent: 1
     - type: MaterialStorageMagnetPickup
       magnetEnabled: True
+- proto: MachineMiniAnomalyGenerator
+  entities:
+  - uid: 432
+    components:
+    - type: Transform
+      pos: 2.5,8.5
+      parent: 1
 - proto: MaterialReclaimer
   entities:
   - uid: 256

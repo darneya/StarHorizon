@@ -15,7 +15,6 @@
   description: Старый исследовательский шаттл из другого сектора, переоборудованный ботаниками в летающую лабораторию для выращивания редких растений.
   price: 500000 # 85299, наценка верфи 30% = 110798 # После внутрених решений шаттл стоит 500к вместо 120к
   category: Medium
-  access: Medical
   group: Medical
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Medical/eden.yml
   class:
