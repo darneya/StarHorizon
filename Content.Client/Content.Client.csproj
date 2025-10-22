@@ -25,4 +25,12 @@
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\XamlIL.targets" />
+  <ItemGroup>
+    <EmbeddedResource Remove="_horizon\cytology\microscope\ui\CellSemplesItem.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Update="_Horizon\Cytology\Microscope\UI\CellSemplesItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AdditionalFiles>
+  </ItemGroup>
 </Project>

@@ -1,0 +1,191 @@
+- type: cellSample
+  id: CellSampleMurine
+  name: Murine cells
+  growthRateInSeconds: 10 # TODO назначить нормально
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  supplementaryChemicals:
+    "Cornoil": 2
+    "Rice": 1
+    "Nutriment": 1
+    "Vitamin": 1
+    "Sugar": 1
+  suppressiveChemicals:
+    "Astrotame": -4
+    "Rubberneck": -3
+  spawnMobByPrototype:
+  - MobMouse
+  - MobMouse
+  
+- type: cellSample
+  id: CellSampleChicken
+  name: Galliform skin cells
+  growthRateInSeconds: 200
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  supplementaryChemicals:
+    "Rice": 4
+    "Vitamin": 2
+    "Nutriment": 1
+  suppressiveChemicals:
+    "Oil": -4
+    "Toxin": -2
+  spawnMobByPrototype:
+  - MobChicken
+  
+- type: cellSample
+  id: CellSampleCow
+  name: Bovine Stem Cells
+  growthRateInSeconds: 600
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "Cellulose"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Rice": 2
+    "Flour": 1
+  suppressiveChemicals:
+    "CarpoToxin ": -5
+    "Toxin": -2
+  spawnMobByPrototype:
+  - MobCow
+  
+- type: cellSample
+  id: CellSampleCat
+  name: Feliform Cells
+  growthRateInSeconds: 300
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Oculine": 2
+    "Milk": 1
+  suppressiveChemicals:
+    "CocoaPowder": -4
+    "HotCocoa": -2
+    "Theobromine": -2
+  spawnMobByPrototype:
+  - MobCat
+  
+- type: cellSample
+  id: CellSampleCorgi
+  name: Canid Cells
+  growthRateInSeconds: 450
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  supplementaryChemicals:
+    "Vitamin": 2
+  suppressiveChemicals:
+    "CocoaPowder": -2
+  spawnMobByPrototype:
+  - MobCorgi
+  
+- type: cellSample
+  id: CellSampleSpaceCarp
+  name: Cyprinid Cells
+  growthRateInSeconds: 450
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  supplementaryChemicals:
+    "CarpoToxin": 3
+    "Vitamin": 2
+  suppressiveChemicals:
+    "Bungotoxin": -6
+    "Mercury": -4
+    "Oxygen": -3
+  spawnMobByPrototype:
+  - NFMobCarp
+  
+- type: cellSample
+  id: CellSampleMegaSpaceCarp
+  name: Cartilaginous Cyprinid Cells
+  growthRateInSeconds: 600
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  supplementaryChemicals:
+    "CarpoToxin": 3
+    "Cornoil": 3
+    "Vitamin": 2
+  suppressiveChemicals:
+    "Bungotoxin": -6
+    "Oxygen": -3
+  spawnMobByPrototype:
+  - NFMobShark
+  
+- type: cellSample
+  id: CellSampleSnake
+  name: Ophidic Cells
+  growthRateInSeconds: 250
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Egg": 2
+  suppressiveChemicals:
+    "Syrup": -6
+    "Sulfur": -3
+  spawnMobByPrototype:
+  - MobSnake
+  
+- type: cellSample
+  id: CellSampleCockroach
+  name: Blattodeoid Anthropod (sic) Cells
+  growthRateInSeconds: 100
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  supplementaryChemicals:
+    "Slime": 2
+    "Vitamin": 1
+  suppressiveChemicals:
+    "JuiceBerryPoison": -4
+    "PestKiller": -2
+  spawnMobByPrototype:
+  - MobCockroach
+  - MobCockroach
+  - MobCockroach
+  - MobCockroach
+  - MobCockroach
+  
+- type: cellSample
+  id: CellSampleFrog
+  name: Anura Amphibian Cells
+  growthRateInSeconds: 250
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Egg": 1
+  suppressiveChemicals:
+    "Toxin": -6
+    "Sulfur": -3
+  spawnMobByPrototype:
+  - MobFrog
+  
+- type: cellSample
+  id: CellSampleSlime
+  name: Slime Particles
+  growthRateInSeconds: 250
+  viralSusceptibility: 2 # TODO дать применение
+  requiredChemicals:
+  - "Protein"
+  supplementaryChemicals:
+    "Slime": 2
+    "Enzyme": 1
+  suppressiveChemicals:
+    "FrostOil": -4
+    "Ice": -2
+  spawnMobByPrototype:
+  - MobAdultSlimesDarkBlue
