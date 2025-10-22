@@ -148,3 +148,21 @@
   id: TechnologyDiscArsenalPsycoreAmmunition
   name: technology disc [Psycore Ammunition]
   description: A disk containing data about Psycore Ammunition.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscUniversalTranslator
+  name: technology disc [Universal Translator]
+  description: A disk containing data about Universal Translator.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscRareTranslator
+  name: technology disc [Rare Translator]
+  description: A disk containing data about Rare Translator.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscTranslatorImplants
+  name: technology disc [Translator Implants]
+  description: A disk containing data about Translator Implants.
