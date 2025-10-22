@@ -236,3 +236,52 @@
       Pig: BadSpeak
   - type: StaticPrice
     price: 3500
+
+- type: entity
+  id: UniversalTranslator
+  parent: [ Translator ]
+  name: universal translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Arachnid: Understand
+      Nekomimetic: Understand
+      Draconic: Understand
+      Canilunzt: Understand
+      SikTaj: Understand
+      Nian: Understand
+      SolCommon: Understand
+      Dwarf: Understand
+      CintaTaj: Understand
+      Gutter: Understand
+      NeoRusskiya: Understand
+      Clownish: Understand
+
+- type: entity
+  id: RareTranslator
+  parent: [ Translator ]
+  name: rare translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Arachnid: Understand
+      Nekomimetic: Understand
+      Draconic: Understand
+      Canilunzt: Understand
+      SikTaj: Understand
+      Nian: Understand
+      SolCommon: Understand
+      Dwarf: Understand
+      CintaTaj: Understand
+      Gutter: Understand
+      NeoRusskiya: Understand
+      Clownish: Understand
+      Harpy: Understand
+      Goblin: Understand
+      VoxPidgin: Understand
+      Bubblish: Understand
+      RootSpeak: Understand

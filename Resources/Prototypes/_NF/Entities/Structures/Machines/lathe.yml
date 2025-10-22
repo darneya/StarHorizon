@@ -44,6 +44,8 @@
     - NFServiceTechfabDeprecatedStatic
     - NFPaperAndPaperAccessories
     - ReportingStatic # DeltaV
+    dynamicPacks:
+    - Translators # Horizon
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NFServiceTechfabDeprecatedEmagStatic
