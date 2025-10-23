@@ -4,73 +4,34 @@
   graph:
     - node: start
       edges:
-      - to: frame
+      - to: fantiny
         steps:
         - material: Steel
-          amount: 3
-          doAfter: 2
-
-    - node: frame
-      entity: AtmosDeviceFanTinyFrame
-      edges:
-      - to: start
-        steps:
-        - tool: Welding
-          doAfter: 3
-        completed:
-        - !type:GivePrototype
-          prototype: SheetSteel1
-          amount: 3
-        - !type:DeleteEntity {}
-        conditions:
-          - !type:EntityAnchored
-            anchored: false
-      - to: parts
-        steps:
-        - material: Cable
-          amount: 1
-          doAfter: 2
-        - tool: Screwing
-          doAfter: 2
-
-    - node: parts
-      entity: AtmosDeviceFanTinyFrame
-      edges:
-      - to: electronics
-        steps:
+          amount: 15
+        - material: MetalRod
+          amount: 5
         - tag: FanTinyElectronics
-          store: board
-          name: "микросхема маленького вентилятора"
+          name: "микросхема вентилятора"
           icon:
             sprite: "Objects/Misc/module.rsi"
             state: "cell_con_micro"
-          doAfter: 1
-      - to: frame
-        completed:
-        - !type:GivePrototype
-          prototype: CableApcStack1
-          amount: 1
-        steps:
-        - tool: Cutting
-          doAfter: 1
-
-    - node: electronics
-      edges:
-      - to: fantiny
-        steps:
-        - tool: Screwing
-          doAfter: 2
+          doAfter: 10
 
     - node: fantiny
       entity: AtmosDeviceFanTiny
       edges:
-      - to: parts
-        conditions:
-        - !type:WirePanel {}
-        - !type:ContainerNotEmpty
-          container: board
-        completed:
-        - !type:EmptyAllContainers {}
-        steps:
-        - tool: Prying
-          doAfter: 1
+          - to: start
+            completed:
+              - !type:SpawnPrototype
+                prototype: SheetSteel1
+                amount: 15
+              - !type:SpawnPrototype
+                prototype: PartRodMetal1
+                amount: 5
+              - !type:SpawnPrototype
+                prototype: FanTinyElectronics
+                amount: 1
+              - !type:DeleteEntity {}
+            steps:
+              - tool: Screwing
+                doAfter: 10
