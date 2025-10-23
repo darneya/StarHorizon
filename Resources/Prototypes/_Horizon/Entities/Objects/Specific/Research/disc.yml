@@ -49,3 +49,120 @@
     state: biodisc
   - type: ResearchDisk
     points: 10000
+
+- type: entity
+  parent: BaseItem
+  id: TechnologyDiscBase
+  abstract: true
+  name: technology disc
+  description: A disk containing some technological data.
+  suffix: Horizon
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: rndmajordisk
+  - type: StaticPrice
+    price: 10000
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscAdvancedPKAMelee
+  name: technology disc [PKA Melee]
+  description: A disk containing data about PKA Melee Weapons.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscAdvancedPKARanged
+  name: technology disc [PKA Ranged]
+  description: A disk containing data about PKA Ranged Weapons.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscAdvancedPKAModules
+  name: technology disc [PKA Modules]
+  description: A disk containing data about PKA Modules.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscGygaxTechnology
+  name: technology disc [Gygax]
+  description: A disk containing data about Gygax Mech.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscDurandTechnology
+  name: technology disc [Durand]
+  description: A disk containing data about Durand Mech.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscPhazonTechnology
+  name: technology disc [Phazon]
+  description: A disk containing data about Phazon Mech.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscClarkeTechnology
+  name: technology disc [Clarke]
+  description: A disk containing data about Clarke Mech.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscHarsonTechnology
+  name: technology disc [Harson]
+  description: A disk containing data about Harson Mech.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscArsenalBasicModules
+  name: technology disc [Arsenal Modules]
+  description: A disk containing data about Arsenal Modules.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscHydroponicsDNAManip
+  name: technology disc [DNA Manipulator]
+  description: A disk containing data about Botannical DNA Manipulator.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscArsenalIncendiaryAmmunition
+  name: technology disc [Incendiary Ammunition]
+  description: A disk containing data about Incendiary Ammunition.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscArsenalUraniumAmmunition
+  name: technology disc [Uranium Ammunition]
+  description: A disk containing data about Uranium Ammunition.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscArsenalPiercingAmmunition
+  name: technology disc [Piercing Ammunition]
+  description: A disk containing data about Piercing Ammunition.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscArsenalPsycoreAmmunition
+  name: technology disc [Psycore Ammunition]
+  description: A disk containing data about Psycore Ammunition.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscUniversalTranslator
+  name: technology disc [Universal Translator]
+  description: A disk containing data about Universal Translator.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscRareTranslator
+  name: technology disc [Rare Translator]
+  description: A disk containing data about Rare Translator.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscTranslatorImplants
+  name: technology disc [Translator Implants]
+  description: A disk containing data about Translator Implants.

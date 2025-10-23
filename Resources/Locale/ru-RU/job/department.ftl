@@ -1,8 +1,8 @@
 department-Cargo = Отдел снабжения
-department-Civilian = Сервисный отдел
+department-Civilian = Независимые Компании
 department-CentralCommand = Центральное Командование
-department-Engineering = Инженерный отдел
-department-Medical = Медицинский отдел
+department-Engineering = Инженерный Отдел
+department-Medical = Медицинский Отдел
 department-Science = Научный отдел
 department-Silicon = Синтетики
 department-Specific = На определённых станциях

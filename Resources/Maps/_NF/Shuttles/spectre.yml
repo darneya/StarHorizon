@@ -6057,7 +6057,7 @@ entities:
     - type: Transform
       pos: -2.5,1.5
       parent: 3
-- proto: MachineMiniAnomalyGenerator
+- proto: MachineAnomalyGenerator
   entities:
   - uid: 472
     components:

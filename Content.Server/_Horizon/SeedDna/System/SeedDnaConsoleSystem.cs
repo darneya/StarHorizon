@@ -68,12 +68,8 @@ public sealed class SeedDnaConsoleSystem : SharedSeedDnaConsoleSystem
 
     private void RewriteSeedData(EntityUid seed, SeedDataDto seedDataDto)
     {
-        var seedData = EntityManager.GetComponent<SeedComponent>(seed).Seed;
-        if (seedData == null)
-        {
-            seedData = new SeedData();
-            EntityManager.GetComponent<SeedComponent>(seed).Seed = seedData;
-        }
+        var seedData = new SeedData();
+        EntityManager.GetComponent<SeedComponent>(seed).Seed = seedData;
 
         //@formatter:off
         if (seedDataDto.ConsumeGasses != null) seedData.ConsumeGasses = seedDataDto.ConsumeGasses;

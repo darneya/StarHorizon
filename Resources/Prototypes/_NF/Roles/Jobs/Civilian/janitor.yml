@@ -3,6 +3,8 @@
   name: job-name-janitor
   description: job-description-janitor
   playTimeTracker: JobJanitor
+  salary: 35000 # Horizon
+  forceFaction: FactionFrontier # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 10800

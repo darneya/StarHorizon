@@ -306,6 +306,8 @@
     - NFEngineeringBoards # Frontier
     - NFMedicalBoards # Frontier
     - NFServiceBoards # Frontier
+    - SHEngineeringBoards # Horizon
+    - MonoAdvancedShuttleComponents # Horizon
   - type: EmagLatheRecipes
     emagDynamicPacks: [] # Frontier: empty list
     # - SecurityBoards # Frontier
@@ -490,6 +492,9 @@
       runningState: icon
       staticPacks:
       - NfsdAmmoStatic # Frontier: SecurityAmmoStatic<NfsdAmmoStatic
+      dynamicPacks:
+      - HRZNAmmo # Horizon
+      - ShipgunAmmo # Horizon
     - type: MaterialStorage
       whitelist:
         tags:

@@ -54,7 +54,7 @@
   - ClothingHeadHatCatEarsRobot
   technologyPrerequisites:
   - CyberLimbsTech
-  position: 2, 20
+  position: 2, 19
 
 #- type: technology # _DV Import
 #  id: SyringeGun
@@ -237,7 +237,7 @@
     - RightArmCyberGarden
   technologyPrerequisites:
     - CyberLimbsTech
-  position: 2, 19
+  position: 2, 20
 
 - type: technology
   id: FunctionalCombatLimbsTech
@@ -251,7 +251,7 @@
   - RightArmCyberLazer
   technologyPrerequisites:
   - FunctionalCyberLimbsTech
-  position: 3, 20
+  position: 3, 21
 
 - type: technology
   id: FunctionalEngineeringLimbsTech
@@ -267,7 +267,7 @@
   - RightArmCyberAtmos
   technologyPrerequisites:
   - FunctionalCyberLimbsTech
-  position: 3, 19
+  position: 3, 20
 
 - type: technology
   id: CyberImplantsNight
@@ -280,7 +280,7 @@
   - EyeImplantNight
   technologyPrerequisites:
   - CyberImplantsTech
-  position: 3, 14
+  position: 3, 15
 
 - type: technology
   id: OdyssMechPaint
@@ -309,7 +309,7 @@
   - HeatSubcutaneousArmor
   technologyPrerequisites:
   - CyberImplantsTech
-  position: 3, 15
+  position: 3, 14
 
 - type: technology
   id: AdvProtectiveImplantsTech
@@ -325,7 +325,7 @@
   - RadiationSubcutaneousArmor
   technologyPrerequisites:
   - ProtectiveImplantsTech
-  position: 4, 15
+  position: 4, 14
 
 - type: technology
   id: AdvPerformanceImplantsTech
@@ -341,4 +341,4 @@
   - VesselsImplant
   technologyPrerequisites:
   - ProtectiveImplantsTech
-  position: 4, 14
+  position: 4, 13

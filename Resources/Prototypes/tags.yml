@@ -43,6 +43,9 @@
   id: Balloon
 
 - type: Tag
+  id: BalloonBase  
+
+- type: Tag
   id: Banana
 
 - type: Tag
@@ -1507,3 +1510,12 @@
   id: XenoborgModuleStealth
 
 # ALPHABETICAL
+
+- type: Tag
+  id: UnderwearB
+
+- type: Tag
+  id: UnderwearT
+
+- type: Tag
+  id: Socks

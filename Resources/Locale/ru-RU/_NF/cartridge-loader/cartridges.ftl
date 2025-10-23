@@ -13,8 +13,9 @@ ledger-balance = Баланс:
 ledger-no-balance = Н/Д
 ledger-tab-Frontier = Аванпост Фронтир
 ledger-tab-Nfsd = ДШНФ
-ledger-tab-Medical = Медицинская диспетчерская
+ledger-tab-Medical = Мед. дисп.
 ledger-tab-Edison = Эдисон
+ledger-tab-Trauma = Trauma Team
 # Fallback, if this displays, something's wrong.
 ledger-tab-Unknown = Неизвестно
 ledger-entry-type-TickingIncome = Субсидии NT

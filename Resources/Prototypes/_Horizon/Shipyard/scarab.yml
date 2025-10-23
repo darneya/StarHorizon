@@ -1,0 +1,43 @@
+# Информация об авторе шаттла
+# GitHub/Gitea: ??? 
+# Discord: lnqz1tor
+
+# Информация об сопровождающем 
+# GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
+# Discord: astr0laris
+
+# Прототип шаттла: 
+#
+- type: vessel
+  id: Scarab
+  parent: BaseVessel
+  name: NRZN Scarab
+  description: Продвинутый шахтёрский шаттл с возможностью оперативной добычи большей части ресурсов в дальних зонах.
+  price: 70000 # 58713, наценка верфи 15% = 67519
+  category: Medium
+  group: Shipyard
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/scarab.yml
+  class:
+  - Salvage
+  engine:
+  - AME
+
+- type: gameMap
+  id: Scarab
+  mapName: 'NRZN Scarab'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/scarab.yml
+  minPlayers: 0
+  stations:
+    Scarab:
+      stationProto: StandardFrontierVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Scarab {1}'  
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs 
+          availableJobs:
+            ContractorInterview: [ 0, 0 ]
+            PilotInterview: [ 0, 0 ]
+            MercenaryInterview: [ 0, 0 ]
