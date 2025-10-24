@@ -1,3 +1,4 @@
+using System.Numerics;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Horizon.Pain;
@@ -32,14 +33,17 @@ public sealed partial class PainComponent : Component
     public byte GunshotsCount = 0;
 
     [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan? EndThrowDuration;
+    public TimeSpan EndThrowDuration = TimeSpan.Zero;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public Vector2 TotalDirectionForce = Vector2.Zero;
 
     [ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan? EndGunshotsTime;
 
 
     [ViewVariables(VVAccess.ReadWrite)]
-    public byte? MeleAttackSlowPercentage;
+    public byte? MeleeAttackSlowPercentage;
 
     [ViewVariables(VVAccess.ReadWrite)]
     public byte? RangeAttackSlowPercentage;

@@ -48,6 +48,11 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         var ev = new ProjectileHitEvent(component.Damage * _damageableSystem.UniversalProjectileDamageModifier, target, component.Shooter);
         RaiseLocalEvent(uid, ref ev);
 
+        // _Horizon
+        var entityEv = new ProjectileTargetHitEvent(target, uid);
+        RaiseLocalEvent(target, ref entityEv);
+        // _Horizon
+
         var otherName = ToPrettyString(target);
         var damageRequired = _destructibleSystem.DestroyedAt(target);
         if (TryComp<DamageableComponent>(target, out var damageableComponent))
