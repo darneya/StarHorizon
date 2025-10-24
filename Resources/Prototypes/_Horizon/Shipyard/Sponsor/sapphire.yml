@@ -1,39 +1,41 @@
 # Информация об авторе шаттла
-# GitHub/Gitea: ???
-# Discord: amir7036
+# GitHub/Gitea: ??? 
+# Discord: helloohelloo
 
 # Информация об сопровождающем 
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
-# Discord: Astrolaris 
+# Discord: astr0laris
 
 # Прототип шаттла: 
 #
 - type: vessel
-  id: Gazebo
+  id: Sapphire
   parent: BaseVessel
-  name: NECG Ruby
-  description: Комфортабельный шаттл-бар для дальних перелетов, обеспечивающий дополнительный комфорт своим пассажирам.
-  price: 250000 # 42940, наценка верфи 30% = 55822
-  category: Medium
+  name: NECG Sapphire
+  description: Сапфир получил такое название, благодаря богатейшему интерьеру и экипировке внутри. Предназначен для больших вечеринок в дальнем космосе.
+  price: 500000
+  category: Large
   group: Shipyard
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Sponsor/gazebo.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Sponsor/sapphire.yml
   class:
+  - Chemistry
   - Civilian
   - Kitchen
+  - Botany
   engine:
   - Uranium
 
 - type: gameMap
-  id: Gazebo
-  mapName: 'NECG Ruby'
-  mapPath: /Maps/_Horizon/Shuttles/Sponsor/gazebo.yml
+  id: Sapphire
+  mapName: 'NECG Sapphire'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Sponsor/sapphire.yml
   minPlayers: 0
   stations:
-    Gazebo:
+    Sapphire:
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Gazebo {1}'  
+          mapNameTemplate: 'NECG Sapphire {1}'  
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
@@ -42,4 +44,3 @@
             ContractorInterview: [ 0, 0 ]
             PilotInterview: [ 0, 0 ]
             MercenaryInterview: [ 0, 0 ]
-
