@@ -18,4 +18,7 @@ public sealed partial class CytologySwabComponent : Component
 
     [DataField]
     public int MaxSamples = 3;
+
+    [DataField, AutoNetworkedField]
+    public string? TextureState;
 }

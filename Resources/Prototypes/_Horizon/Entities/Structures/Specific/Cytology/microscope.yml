@@ -7,15 +7,7 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/Cytology/microscope.rsi
-    layers:
-    - state: icon
-      map: ["enum.CytologyMicroscopeVisualLayers.Base"]
-    - state: icon
-      map: ["enum.CytologyMicroscopeVisualLayers.PetriDish"]
-      visible: false
-    - state: icon
-      map: ["enum.CytologyMicroscopeVisualLayers.Content"]
-      visible: false
+    state: icon
   - type: Icon
     sprite: Structures/Machines/mixer.rsi
     state: mixer_empty

@@ -33,6 +33,8 @@ public sealed partial class CellSamplePrototype : IPrototype, ICloneable // TODO
 
     [DataField] public HashSet<string>? SpawnMobByPrototype;
 
+    [DataField] public String? TextureState;
+
     public object Clone()
     {
         return new CellSamplePrototype()
@@ -44,7 +46,8 @@ public sealed partial class CellSamplePrototype : IPrototype, ICloneable // TODO
             RequiredChemicals = RequiredChemicals,
             SupplementaryChemicals = SupplementaryChemicals,
             SuppressiveChemicals = SuppressiveChemicals,
-            SpawnMobByPrototype = SpawnMobByPrototype
+            SpawnMobByPrototype = SpawnMobByPrototype,
+            TextureState = TextureState
         };
     }
 }

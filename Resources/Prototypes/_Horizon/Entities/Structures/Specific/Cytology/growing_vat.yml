@@ -21,6 +21,9 @@
     - state: soup
       map: ["enum.CytologyGrowingVatVisualLayers.Liquid"]
       visible: false
+    - state: bubbles
+      map: ["enum.CytologyGrowingVatVisualLayers.Foam"]
+      visible: false
   - type: Physics
     bodyType: Static
   - type: Fixtures

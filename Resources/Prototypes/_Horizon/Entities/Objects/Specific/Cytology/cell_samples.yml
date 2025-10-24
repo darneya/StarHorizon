@@ -17,6 +17,7 @@
   spawnMobByPrototype:
   - MobMouse
   - MobMouse
+  textureState: "black"
   
 - type: cellSample
   id: CellSampleChicken
@@ -34,6 +35,7 @@
     "Toxin": -2
   spawnMobByPrototype:
   - MobChicken
+  textureState: "yellow"
   
 - type: cellSample
   id: CellSampleCow
@@ -53,6 +55,7 @@
     "Toxin": -2
   spawnMobByPrototype:
   - MobCow
+  textureState: "green"
   
 - type: cellSample
   id: CellSampleCat
@@ -71,6 +74,7 @@
     "Theobromine": -2
   spawnMobByPrototype:
   - MobCat
+  textureState: "black"
   
 - type: cellSample
   id: CellSampleCorgi
@@ -85,6 +89,7 @@
     "CocoaPowder": -2
   spawnMobByPrototype:
   - MobCorgi
+  textureState: "brown"
   
 - type: cellSample
   id: CellSampleSpaceCarp
@@ -103,6 +108,7 @@
     "Oxygen": -3
   spawnMobByPrototype:
   - NFMobCarp
+  textureState: "violet"
   
 - type: cellSample
   id: CellSampleMegaSpaceCarp
@@ -121,6 +127,7 @@
     "Oxygen": -3
   spawnMobByPrototype:
   - NFMobShark
+  textureState: "violet"
   
 - type: cellSample
   id: CellSampleSnake
@@ -137,6 +144,7 @@
     "Sulfur": -3
   spawnMobByPrototype:
   - MobSnake
+  textureState: "green"
   
 - type: cellSample
   id: CellSampleCockroach
@@ -157,6 +165,7 @@
   - MobCockroach
   - MobCockroach
   - MobCockroach
+  textureState: "brown"
   
 - type: cellSample
   id: CellSampleFrog
@@ -189,3 +198,4 @@
     "Ice": -2
   spawnMobByPrototype:
   - MobAdultSlimesDarkBlue
+  textureState: "violet"

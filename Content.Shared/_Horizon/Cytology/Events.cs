@@ -25,3 +25,8 @@ public sealed partial class CytologySwabTransferToPetriDishDoAfterEvent : Simple
 public sealed partial class CytologyTransferDoAfterEvent : SimpleDoAfterEvent
 {
 }
+
+[Serializable, NetSerializable]
+public sealed partial class CytologyGrowingVatIndicatorUpdateAppearance : EntityEventArgs
+{
+}

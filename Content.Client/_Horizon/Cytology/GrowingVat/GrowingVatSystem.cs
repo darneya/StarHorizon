@@ -33,7 +33,6 @@ namespace Content.Client._Horizon.Cytology.GrowingVat;
 
 public sealed class GrowingVatSystem : SharedGrowingVatSystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
@@ -43,6 +42,7 @@ public sealed class GrowingVatSystem : SharedGrowingVatSystem
 
         SubscribeLocalEvent<CytologyGrowingVatComponent, AppearanceChangeEvent>(OnAppearanceChange);
     }
+
 
     private void OnAppearanceChange(Entity<CytologyGrowingVatComponent> growingVat, ref AppearanceChangeEvent args)
     {
@@ -58,18 +58,26 @@ public sealed class GrowingVatSystem : SharedGrowingVatSystem
         var growingVatSprite = (growingVat.Owner, sprite);
         if (_sprite.LayerMapTryGet(growingVatSprite, CytologyGrowingVatVisualLayers.Liquid, out var liquidLayer, false))
         {
-            if (!TryGetSolutionFromBeaker(growingVat.Owner, out var beakerSolution) || beakerSolution.Volume <= 0)
+
+            if (TryGetSolutionFromBeaker(growingVat.Owner, out var beakerSolution) || beakerSolution?.Volume <= 0)
             {
-                _sprite.LayerSetVisible(growingVatSprite, liquidLayer, false);
+                _sprite.LayerSetVisible(growingVatSprite, liquidLayer, true);
+
+                var averageColor = CalculateAverageReagentColor(beakerSolution);
+                _sprite.LayerSetColor(growingVatSprite, liquidLayer, averageColor);
+
+                if (_sprite.LayerMapTryGet(growingVatSprite, CytologyGrowingVatVisualLayers.Foam, out var foamLayer, false))
+                {
+                    if(Appearance.TryGetData(growingVat.Owner, CytologyGrowingVatVisualStates.WithFoam, out bool isFoamVisible))
+                    {
+                        _sprite.LayerSetVisible(growingVatSprite, foamLayer, isFoamVisible);
+                    }
+                }
+
                 return;
             }
 
-            _sprite.LayerSetVisible(growingVatSprite, liquidLayer, true);
-            _sprite.LayerSetRsiState(growingVatSprite, liquidLayer, "soup");
-
-            var averageColor = CalculateAverageReagentColor(beakerSolution);
-            _sprite.LayerSetColor(growingVatSprite, liquidLayer, averageColor);
-
+            _sprite.LayerSetVisible(growingVatSprite, liquidLayer, false);
         }
     }
 
@@ -110,22 +118,18 @@ public sealed class GrowingVatSystem : SharedGrowingVatSystem
     {
         var growingVatSprite = (growingVat.Owner, sprite);
 
-        if (_appearance.TryGetData<bool>(growingVat.Owner, PowerDeviceVisuals.Powered, out var powered, appearance) &&
-            _sprite.LayerMapTryGet(growingVatSprite, PowerDeviceVisualLayers.Powered, out var powerLayer, false))
+        var powered = Appearance.TryGetData<bool>(growingVat.Owner, PowerDeviceVisuals.Powered, out var powerData, appearance) && powerData;
+
+        if (_sprite.LayerMapTryGet(growingVatSprite, PowerDeviceVisualLayers.Powered, out var powerLayer, false))
         {
             _sprite.LayerSetVisible(growingVatSprite, powerLayer, powered);
 
-            if (!growingVat.Comp.IsActive)
-            {
-                _sprite.LayerSetRsiState(growingVatSprite, powerLayer, "white");
-                return;
-            }
-
             if (_sprite.LayerMapTryGet(growingVatSprite, CytologyGrowingVatVisualLayers.Indicator, out var indicatorLayer, false))
             {
+                var shouldShowIndicator = powered && growingVat.Comp.IsActive;
                 var state = growingVat.Comp.StopWithError ? "red" : "green";
 
-                _sprite.LayerSetVisible(growingVatSprite, indicatorLayer, true);
+                _sprite.LayerSetVisible(growingVatSprite, indicatorLayer, shouldShowIndicator);
                 _sprite.LayerSetRsiState(growingVatSprite, indicatorLayer, state);
             }
         }

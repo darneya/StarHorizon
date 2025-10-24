@@ -43,15 +43,16 @@ public abstract class SharedGrowingVatSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CytologyGrowingVatComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerb);
         SubscribeLocalEvent<CytologyGrowingVatComponent, PowerChangedEvent>(OnPowerChanged);
         SubscribeLocalEvent<CytologyGrowingVatComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<CytologyGrowingVatComponent, EntInsertedIntoContainerMessage>(OnSolutionContainerChanged);
+        SubscribeLocalEvent<CytologyGrowingVatComponent, EntRemovedFromContainerMessage>(OnSolutionContainerChanged);
     }
 
     public override void Update(float frameTime)
@@ -61,13 +62,16 @@ public abstract class SharedGrowingVatSystem : EntitySystem
         var query = EntityQueryEnumerator<CytologyGrowingVatComponent>();
         while (query.MoveNext(out var uid, out var cytologyGrowingVatComp))
         {
+
             if (!cytologyGrowingVatComp.IsActive)
                 continue;
 
-            if (cytologyGrowingVatComp.NextUpdate > _timing.CurTime)
+            Entity<CytologyGrowingVatComponent> growingVat = (uid, cytologyGrowingVatComp);
+
+            if (growingVat.Comp.NextUpdate > _timing.CurTime)
                 continue;
 
-            cytologyGrowingVatComp.NextUpdate = _timing.CurTime + cytologyGrowingVatComp.UpdateInterval;
+            growingVat.Comp.NextUpdate = _timing.CurTime + growingVat.Comp.UpdateInterval;
 
             if (!TryGetSolutionFromBeaker(uid, out var beakerSolution))
                 continue;
@@ -80,43 +84,14 @@ public abstract class SharedGrowingVatSystem : EntitySystem
                 cytologyPetriDishComp == null)
                 continue;
 
-            ProcessGrowth(uid, petriDish, beakerSolution, cytologyPetriDishComp);
+            ProcessGrowth(growingVat, petriDish, beakerSolution, cytologyPetriDishComp);
 
         }
     }
 
-    private void OnGetVerb(Entity<CytologyGrowingVatComponent> growingVat, ref GetVerbsEvent<AlternativeVerb> args)
-    {
-        if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract || args.Hands == null)
-            return;
-
-        AlternativeVerb verb = new()
-        {
-            Act = growingVat.Comp.IsActive
-                ? () => ToggleOff(growingVat)
-                : () => ToggleOn(growingVat),
-            Text = Loc.GetString("verb-toggle-growing-vat")
-        };
-
-        args.Verbs.Add(verb);
-
-    }
-
-    private void ToggleOn(Entity<CytologyGrowingVatComponent> growingVat)
-    {
-        growingVat.Comp.IsActive = true;
-        _appearance.SetData(growingVat.Owner, CytologyGrowingVatVisuals.Working, true);
-    }
-
-    private void ToggleOff(Entity<CytologyGrowingVatComponent> growingVat)
-    {
-        growingVat.Comp.IsActive = false;
-        _appearance.SetData(growingVat.Owner, CytologyGrowingVatVisuals.Working, false);
-    }
-
     private void OnPowerChanged(Entity<CytologyGrowingVatComponent> growingVat, ref PowerChangedEvent args)
     {
-        _appearance.SetData(growingVat.Owner, CytologyGrowingVatVisuals.Powered, args.Powered);
+        Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.Powered, args.Powered);
     }
 
     public bool TryGetSolutionFromBeaker(EntityUid uid, out Solution solution)
@@ -134,7 +109,10 @@ public abstract class SharedGrowingVatSystem : EntitySystem
         return true;
     }
 
-
+    private void OnSolutionContainerChanged<T>(Entity<CytologyGrowingVatComponent> growingVat, ref T ev)
+    {
+        Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.WithLiquid, TryGetSolutionFromBeaker(growingVat.Owner, out _));
+    }
     private bool TryGetCellSemplesFromPetriDish(EntityUid uid, out List<CellSample> cellSamples)
     {
         cellSamples = default!;
@@ -154,8 +132,14 @@ public abstract class SharedGrowingVatSystem : EntitySystem
         return true;
     }
 
-    private void ProcessGrowth(EntityUid vat, EntityUid petriDish, Solution beakerSolution, CytologyPetriDishComponent cytologyPetriDishComp)
+    private void ProcessGrowth(Entity<CytologyGrowingVatComponent> growingVat, EntityUid petriDish, Solution beakerSolution, CytologyPetriDishComponent cytologyPetriDishComp)
     {
+
+        Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.IsError, growingVat.Comp.StopWithError);
+        Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.WithFoam, growingVat.Comp.WithFoam);
+        growingVat.Comp.WithFoam = false;
+        growingVat.Comp.StopWithError = true;
+
         var cellSamples = cytologyPetriDishComp.CellSamples;
         if (cellSamples.Count == 0)
             return;
@@ -219,6 +203,8 @@ public abstract class SharedGrowingVatSystem : EntitySystem
             {
                 beakerSolution.RemoveReagent(chem, FixedPoint2.New(1));
             }
+            growingVat.Comp.StopWithError = false;
+            growingVat.Comp.WithFoam = true;
 
             if (cell.GrowProgress >= 1f && proto.SpawnMobByPrototype != null)
             {
@@ -233,8 +219,8 @@ public abstract class SharedGrowingVatSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, CytologyGrowingVatComponent component, MapInitEvent args)
     {
-        _appearance.SetData(uid, CytologyGrowingVatVisualLayers.Indicator, false);
-        _appearance.SetData(uid, CytologyGrowingVatVisualLayers.Liquid, false);
+        Appearance.SetData(uid, CytologyGrowingVatVisualLayers.Indicator, false);
+        Appearance.SetData(uid, CytologyGrowingVatVisualLayers.Liquid, false);
     }
 
     private void WriteCellSamplesInGrowthProgress(CytologyPetriDishComponent CytologyPetriDishComp)

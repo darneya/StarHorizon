@@ -9,6 +9,21 @@
     "states": [
         {
             "name": "icon"
+        },
+        {
+            "name": "black"
+        },
+        {
+            "name": "brown"
+        },
+        {
+            "name": "green"
+        },
+        {
+            "name": "violet"
+        },
+        {
+            "name": "yellow"
         }
     ]
 }

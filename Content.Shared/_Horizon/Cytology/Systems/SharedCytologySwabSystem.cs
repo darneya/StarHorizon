@@ -1,18 +1,22 @@
 using Content.Shared._Horizon.Cytology.Components;
+using Content.Shared._Horizon.Cytology.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Robust.Shared.Prototypes;
 using System.Linq;
 
 namespace Content.Shared._Horizon.Cytology.Systems;
 
-public sealed class SharedCytologySwabSystem : EntitySystem
+public abstract class SharedCytologySwabSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly CytologyDirtSystem _dirtSystem = default!;
+    [Dependency] private readonly SharedPetriDishSystem _petriDishSystem = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
 
     public override void Initialize()
     {
@@ -43,7 +47,7 @@ public sealed class SharedCytologySwabSystem : EntitySystem
         TryTransferCellsToPetriDish(uid, component, args);
     }
 
-    private void OnTakeDirtDoAfter(EntityUid uid, CytologySwabComponent component, DoAfterEvent args)
+    private void OnTakeDirtDoAfter(Entity<CytologySwabComponent> swab, ref CytologySwabTakeDirtDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Args.Target == null)
             return;
@@ -57,18 +61,22 @@ public sealed class SharedCytologySwabSystem : EntitySystem
         var samples = _dirtSystem.GetCellSamples(args.Args.Target.Value, dirtComp);
         var samplesToCollect = samples; //TODO упростим
 
-        component.CellSamples.AddRange(samplesToCollect);
-        component.IsUsed = true;
+        swab.Comp.CellSamples.AddRange(samplesToCollect);
+        swab.Comp.IsUsed = true;
+
+        if (samples.Count > 0 && _prototypeManager.TryIndex<CellSamplePrototype>(samples.Last().ProtoID, out var proto))
+        {
+            swab.Comp.TextureState = proto.TextureState;
+            Appearance.SetData(swab.Owner, CytologySwabVisualStates.IsVisible, true);
+        }
 
         _dirtSystem.CleanDirt(args.Args.Target.Value, dirtComp);
 
         _popupSystem.PopupEntity(Loc.GetString("cytology-swab-collected", ("samples", samplesToCollect.Count)), args.Args.Target.Value, args.Args.User);
-
-        //Dirty(uid, component); // TODO надо будет вынести в дирт филд
         args.Handled = true;
     }
 
-    private void OnTransferToPetriDishDoAfter(EntityUid uid, CytologySwabComponent component, CytologySwabTransferToPetriDishDoAfterEvent args)
+    private void OnTransferToPetriDishDoAfter(Entity<CytologySwabComponent> swab, ref CytologySwabTransferToPetriDishDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Args.Target == null)
             return;
@@ -79,7 +87,17 @@ public sealed class SharedCytologySwabSystem : EntitySystem
         if (petriDishComp.CellSamples.Count + args.CellSamples.Count > petriDishComp.MaxSamples)
             return;
 
-        petriDishComp.CellSamples.AddRange(args.CellSamples); // TODO это лишает уникальности
+        var cellSamples = args.CellSamples;
+
+        petriDishComp.CellSamples.AddRange(cellSamples); // TODO это лишает уникальности
+        swab.Comp.CellSamples.RemoveAll(x => cellSamples.Contains(x));
+
+        if (swab.Comp.CellSamples.Count() <= 0)
+        {
+            Appearance.SetData(swab.Owner, CytologySwabVisualStates.IsVisible, false);
+        }
+
+        _petriDishSystem.PetriDishUpdateAppearance(args.Args.Target, petriDishComp);
 
         args.Handled = true;
     }
@@ -103,9 +121,6 @@ public sealed class SharedCytologySwabSystem : EntitySystem
         swab.CellSamples.Except(samplesToTransfer);
         if (swab.CellSamples.Count == 0)
             swab.IsUsed = false;
-
-        //Dirty(swabUid, swab);
-        //Dirty(petriDishUid, petriDish); //TODO Возможно, можно обойтись без этого
 
         return true;
     }

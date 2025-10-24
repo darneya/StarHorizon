@@ -10,9 +10,13 @@
     maxSamples: 5
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Cytology/petri_dish.rsi
+    state: icon
     layers:
     - state: icon
-      map: ["enum.CytologyPetriDishVisualLayers.Base"]
-    - state: icon
-      map: ["enum.CytologyPetriDishVisualLayers.Content"]
+    - state: fill
+      map: ["enum.CytologyPetriDishVisualLayers.Fill"]
       visible: false
+    - state: film
+      map: ["enum.CytologyPetriDishVisualLayers.Fill"]
+      visible: false
+  - type: Appearance

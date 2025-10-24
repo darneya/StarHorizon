@@ -1,23 +1,41 @@
 using Content.Shared._Horizon.Cytology.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
-using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Content.Shared._Horizon.Cytology.Prototypes;
+using Robust.Shared.Prototypes;
+using Content.Shared.Verbs;
 
 namespace Content.Shared._Horizon.Cytology.Systems;
 
-public sealed class SharedPetriDishSystem : EntitySystem
+public abstract class SharedPetriDishSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedCytologySwabSystem _swabSystem = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<CytologyPetriDishComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<CytologyPetriDishComponent, AfterInteractEvent>(OnAfterInteract);
-        SubscribeLocalEvent<CytologyPetriDishComponent, CytologyTransferDoAfterEvent>(OnDoAfter);
+        SubscribeLocalEvent<CytologyPetriDishComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerb);
+    }
+
+    private void OnGetVerb(Entity<CytologyPetriDishComponent> petriDish, ref GetVerbsEvent<AlternativeVerb> args)
+    {
+        if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract || args.Hands == null)
+            return;
+
+        AlternativeVerb verb = new()
+        {
+            Act = () => ClearSamples(petriDish),
+            Text = Loc.GetString("verb-split-samples")
+        };
+
+        args.Verbs.Add(verb);
+
     }
 
     private void OnExamined(EntityUid uid, CytologyPetriDishComponent dish, ExaminedEvent args)
@@ -31,62 +49,11 @@ public sealed class SharedPetriDishSystem : EntitySystem
         }
     }
 
-    private void OnAfterInteract(EntityUid uid, CytologyPetriDishComponent dish, AfterInteractEvent args)
+    public void ClearSamples(Entity<CytologyPetriDishComponent> petriDish)
     {
-        if (args.Target == null || !args.CanReach)
-            return;
-
-        if (!TryComp<CytologySwabComponent>(args.Target, out var swab))
-            return;
-
-        if (!swab.IsUsed || swab.CellSamples.Count == 0)
-        {
-            _popupSystem.PopupEntity(Loc.GetString("cytology-dish-no-samples"), args.Target.Value, args.User);
-            return;
-        }
-
-        if (dish.CellSamples.Count >= dish.MaxSamples)
-        {
-            _popupSystem.PopupEntity(Loc.GetString("cytology-dish-full"), uid, args.User);
-            return;
-        }
-
-        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, 1f, new CytologyTransferDoAfterEvent(), uid, target: args.Target, used: uid)
-        {
-            Broadcast = true,
-            BreakOnMove = true,
-            NeedHand = true,
-        });
-    }
-
-    private void OnDoAfter(EntityUid uid, CytologyPetriDishComponent dish, DoAfterEvent args)
-    {
-        if (args.Cancelled || args.Handled || args.Args.Target == null)
-            return;
-
-        if (!TryComp<CytologySwabComponent>(args.Args.Target, out var swab))
-            return;
-
-        if (_swabSystem.TryTransferSamples(args.Args.Target.Value, uid, swab, dish))
-        {
-            _popupSystem.PopupEntity(Loc.GetString("cytology-dish-transferred"), uid, args.Args.User);
-        }
-        else
-        {
-            _popupSystem.PopupEntity(Loc.GetString("cytology-dish-transfer-failed"), uid, args.Args.User);
-        }
-
-        args.Handled = true;
-    }
-
-    public void ClearSamples(EntityUid uid, CytologyPetriDishComponent? dish = null)
-    {
-        if (!Resolve(uid, ref dish))
-            return;
-
-        dish.CellSamples.Clear();
-        dish.IsUsed = false;
-        //Dirty(uid, dish);
+        petriDish.Comp.CellSamples.Clear();
+        petriDish.Comp.IsUsed = false;
+        PetriDishUpdateAppearance(petriDish.Owner, petriDish.Comp);
     }
 
     public List<CellSample> GetCellSamples(EntityUid uid, CytologyPetriDishComponent? dish = null)
@@ -95,5 +62,62 @@ public sealed class SharedPetriDishSystem : EntitySystem
             return new List<CellSample>();
 
         return dish.CellSamples;
+    }
+
+    public void PetriDishUpdateAppearance(EntityUid? uid, CytologyPetriDishComponent dish)
+    {
+        if (uid is not { } petriDishUid)
+            return;
+
+        if(dish.CellSamples.Count > 0)
+        {
+            Appearance.SetData(petriDishUid, CytologyPetriDishVisualStates.HasSamples, true);
+            Appearance.SetData(petriDishUid, CytologyPetriDishVisualStates.Color, CalculateAverageCellSampleColor(dish.CellSamples));
+        }
+        else Appearance.SetData(petriDishUid, CytologyPetriDishVisualStates.HasSamples, false);
+
+    }
+
+    private Color CalculateAverageCellSampleColor(List<CellSample> cellSamples)
+    {
+        if (cellSamples.Count == 0)
+            return Color.White;
+
+        var colorSum = Vector3.Zero;
+        var totalSamples = cellSamples.Count;
+
+        foreach (var sample in cellSamples)
+        {
+            if (!_prototypeManager.TryIndex<CellSamplePrototype>(sample.ProtoID, out var proto))
+                continue;
+
+            var sampleColor = GetColorFromTextureState(proto.TextureState);
+            var colorVector = new Vector3(sampleColor.R, sampleColor.G, sampleColor.B);
+            colorSum += colorVector;
+        }
+
+        if (totalSamples == 0)
+            return Color.White;
+
+        var averageColorVector = colorSum / totalSamples;
+        return new Color(
+            Math.Clamp(averageColorVector.X, 0f, 1f),
+            Math.Clamp(averageColorVector.Y, 0f, 1f),
+            Math.Clamp(averageColorVector.Z, 0f, 1f),
+            1f
+        );
+    }
+
+    private Color GetColorFromTextureState(string? textureState)
+    {
+        return textureState switch
+        {
+            "black" => Color.Black,
+            "yellow" => Color.Yellow,
+            "green" => Color.Green,
+            "brown" => Color.Brown,
+            "violet" => Color.Purple,
+            _ => Color.White
+        };
     }
 }
