@@ -203,7 +203,8 @@
     lifetime: 1
   - type: PointLight
     color: "#FF8888"
-  - type: MiningGatheringHard # Frontier
+  - type: GatheringProjectile
+  - type: MiningGatheringSoft
 
 - type: entity
   parent: BulletCharge
