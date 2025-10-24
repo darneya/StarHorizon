@@ -9,6 +9,8 @@
     damage:
       types:
         Piercing: 10
+  - type: ThrowOnProjectileHit
+    throwDuration: 1
 
 - type: entity
   categories: [ HideSpawnMenu ]

@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Horizon.Pain.Components;
 using Content.Shared.Projectiles;
 using Content.Shared.Stunnable;
 using Robust.Shared.Physics.Components;
@@ -18,43 +19,35 @@ public sealed class GunshotThrowBodySystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<PainComponent, ProjectileTargetHitEvent>(OnProjectileHit);
+        SubscribeLocalEvent<ThrowOnProjectileHitComponent, ProjectileHitEvent>(OnProjectileHit);
     }
 
-    private void OnProjectileHit(Entity<PainComponent> pain, ref ProjectileTargetHitEvent ev)
+    private void OnProjectileHit(Entity<ThrowOnProjectileHitComponent> entity, ref ProjectileHitEvent ev)
     {
-        if (pain.Comp.EndThrowDuration > _gameTiming.CurTime)
-            return;
-        if (!TryComp<PhysicsComponent>(ev.Projectile, out var physics))
+        if (!TryComp<PainComponent>(ev.Target, out var pain) || !TryComp<PhysicsComponent>(entity.Owner, out var physics))
             return;
 
-        pain.Comp.EndGunshotsTime ??= _gameTiming.CurTime + pain.Comp.GunshotsTime;
-        if (pain.Comp.EndGunshotsTime <= _gameTiming.CurTime)
-        {
-            pain.Comp.EndGunshotsTime = null;
-            pain.Comp.GunshotsCount = 0;
-            Dirty(pain);
+        if (pain.EndThrowDuration > _gameTiming.CurTime)
             return;
+
+        pain.GunshotsCount++;
+        pain.EndGunshotsTime ??= _gameTiming.CurTime + entity.Comp.GunshotsTime;
+        if (pain.EndGunshotsTime <= _gameTiming.CurTime)
+        {
+            pain.EndGunshotsTime = null;
+            pain.GunshotsCount = 0;
         }
 
-        pain.Comp.GunshotsCount++;
-        pain.Comp.TotalDirectionForce += physics.LinearVelocity;
-        if (pain.Comp.GunshotsCount >= pain.Comp.GunshotsToThrowBody)
+        pain.TotalDirectionForce += physics.LinearVelocity;
+        if (pain.GunshotsCount >= entity.Comp.GunshotsToThrowBody)
         {
-            TryThrowBody(pain.Comp.TotalDirectionForce.Normalized(), ev.Target);
-
-            pain.Comp.EndThrowDuration = _gameTiming.CurTime + pain.Comp.ThrowDuration;
-            pain.Comp.TotalDirectionForce = Vector2.Zero;
-            pain.Comp.EndGunshotsTime = null;
-            pain.Comp.GunshotsCount = 0;
+            _physics.ApplyLinearImpulse(ev.Target, pain.TotalDirectionForce * entity.Comp.AdditionalForce);
+            pain.EndThrowDuration = _gameTiming.CurTime + entity.Comp.ThrowDuration;
+            pain.TotalDirectionForce = Vector2.Zero;
+            pain.EndGunshotsTime = null;
+            pain.GunshotsCount = 0;
         }
 
-        Dirty(pain);
-    }
-
-    private void TryThrowBody(Vector2 normalized, EntityUid body)
-    {
-        _stun.TryKnockdown(body, TimeSpan.FromSeconds(2), false);
-        _physics.SetLinearVelocity(body, normalized * 5f);
+        Dirty(ev.Target, pain);
     }
 }
