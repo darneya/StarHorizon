@@ -2,7 +2,7 @@
 - type: tile
   id: FloorCaveShadow
   name: tiles-cave-shadow
-  sprite: /Textures/_horizon/Tiles/caveshadow.png
+  sprite: /Textures/_Horizon/Tiles/caveshadow.png
   variants: 7
   placementVariants:
   - 1.0
