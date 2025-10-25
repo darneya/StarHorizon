@@ -8,7 +8,8 @@
     size: Tiny
   - type: CytologySwab
     swabDelay: 2.0
-    maxSamples: 3
+  - type: CytologySampleContainer
+    maxSamples: 5
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Cytology/swab.rsi
     layers:

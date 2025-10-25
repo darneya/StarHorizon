@@ -452,7 +452,10 @@
     deleteItems: true # Frontier
     deleteOrgans: true # Frontier
     gib: false # Frontier
-    useArgumentEntity: true # Frontier
+    useArgumentEntity: true # Frontier]
+  - type: SampleSource # Horizon cytology
+    availableCellSamples:
+    - protoID: CellSampleCockroach
 
 - type: entity
   name: glockroach

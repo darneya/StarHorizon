@@ -5,6 +5,7 @@ using Content.Shared.Popups;
 using Content.Shared._Horizon.Cytology.Prototypes;
 using Robust.Shared.Prototypes;
 using Content.Shared.Verbs;
+using System.Linq;
 
 namespace Content.Shared._Horizon.Cytology.Systems;
 
@@ -40,10 +41,13 @@ public abstract class SharedPetriDishSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, CytologyPetriDishComponent dish, ExaminedEvent args)
     {
+        if (!TryComp<CytologySampleContainerComponent>(uid, out var petriDishSampleContainerComp))
+            return;
+
         if (args.IsInDetailsRange)
         {
-            if (dish.IsUsed && dish.CellSamples.Count > 0)
-                args.PushMarkup(Loc.GetString("cytology-dish-used", ("samples", dish.CellSamples.Count)));
+            if (dish.IsUsed && petriDishSampleContainerComp.CellSamples.Count > 0)
+                args.PushMarkup(Loc.GetString("cytology-dish-used", ("samples", petriDishSampleContainerComp.CellSamples.Count)));
             else
                 args.PushMarkup(Loc.GetString("cytology-dish-unused"));
         }
@@ -51,28 +55,34 @@ public abstract class SharedPetriDishSystem : EntitySystem
 
     public void ClearSamples(Entity<CytologyPetriDishComponent> petriDish)
     {
-        petriDish.Comp.CellSamples.Clear();
+        if (!TryComp<CytologySampleContainerComponent>(petriDish.Owner, out var petriDishSampleContainerComp))
+            return;
+
+        petriDishSampleContainerComp.CellSamples.Clear();
         petriDish.Comp.IsUsed = false;
-        PetriDishUpdateAppearance(petriDish.Owner, petriDish.Comp);
+        PetriDishUpdateAppearance(petriDish.Owner);
     }
 
-    public List<CellSample> GetCellSamples(EntityUid uid, CytologyPetriDishComponent? dish = null)
+    public List<CellSample> GetCellSamples(EntityUid uid)
     {
-        if (!Resolve(uid, ref dish))
+        if (!TryComp<CytologySampleContainerComponent>(uid, out var petriDishSampleContainerComp))
             return new List<CellSample>();
 
-        return dish.CellSamples;
+        return petriDishSampleContainerComp.CellSamples;
     }
 
-    public void PetriDishUpdateAppearance(EntityUid? uid, CytologyPetriDishComponent dish)
+    public void PetriDishUpdateAppearance(EntityUid? uid)
     {
         if (uid is not { } petriDishUid)
             return;
 
-        if(dish.CellSamples.Count > 0)
+        if (!TryComp<CytologySampleContainerComponent>(uid, out var petriDishSampleContainerComp))
+            return;
+
+        if (petriDishSampleContainerComp.CellSamples.Count > 0)
         {
             Appearance.SetData(petriDishUid, CytologyPetriDishVisualStates.HasSamples, true);
-            Appearance.SetData(petriDishUid, CytologyPetriDishVisualStates.Color, CalculateAverageCellSampleColor(dish.CellSamples));
+            Appearance.SetData(petriDishUid, CytologyPetriDishVisualStates.Color, CalculateAverageCellSampleColor(petriDishSampleContainerComp.CellSamples));
         }
         else Appearance.SetData(petriDishUid, CytologyPetriDishVisualStates.HasSamples, false);
 
@@ -119,5 +129,25 @@ public abstract class SharedPetriDishSystem : EntitySystem
             "violet" => Color.Purple,
             _ => Color.White
         };
+    }
+
+    public bool TryTransferCellsToPetriDish(EntityUid transferDevice, EntityUid? petriDish, EntityUid user)
+    {
+
+        if (!TryComp<CytologySampleContainerComponent>(transferDevice, out var transferDeviceSampleContainerComp) ||
+            !TryComp<CytologySampleContainerComponent>(petriDish, out var petriDishSampleContainerComp))
+            return false;
+
+        var availableSpace = petriDishSampleContainerComp.MaxSamples - petriDishSampleContainerComp.CellSamples.Count();
+        if(availableSpace <= 0)
+        {
+            _popupSystem.PopupEntity(Loc.GetString("cytology-petri-dish-is-full"), petriDish.Value, user);
+            return false;
+        }
+        var collectedCells = transferDeviceSampleContainerComp.CellSamples.Take(availableSpace).ToList();
+
+        petriDishSampleContainerComp.CellSamples.AddRange(collectedCells);
+
+        return true;
     }
 }

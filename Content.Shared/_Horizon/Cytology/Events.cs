@@ -11,18 +11,12 @@ public sealed partial class CytologySwabTakeDirtDoAfterEvent : SimpleDoAfterEven
 }
 
 [Serializable, NetSerializable]
-public sealed partial class CytologySwabTransferToPetriDishDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class CytologyTransferDoAfterEvent : SimpleDoAfterEvent
 {
-    public readonly List<CellSample> CellSamples;
-
-    public CytologySwabTransferToPetriDishDoAfterEvent(List<CellSample> cellSamples)
-    {
-        CellSamples = cellSamples;
-    }
 }
 
 [Serializable, NetSerializable]
-public sealed partial class CytologyTransferDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class CytologyInjectorTakeDoAfterEvent : SimpleDoAfterEvent
 {
 }
 

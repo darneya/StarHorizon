@@ -119,28 +119,29 @@ public abstract class SharedGrowingVatSystem : EntitySystem
 
         var petriDishContainer = _itemSlotsSystem.GetItemOrNull(uid, PetriDishSlotName);
 
-        if (petriDishContainer is not { } petriDish)
+        if (!TryComp<CytologySampleContainerComponent>(petriDishContainer, out var petriDishSampleContainerComp))
             return false;
 
-
-        _solutionContainerSystem.TryGetSolution(uid, null, out _, out var sln1);
-        if (TryComp<CytologyPetriDishComponent>(petriDishContainer, out var cytologyPetriDishComp) ||
-            cytologyPetriDishComp?.CellSamples == null)
+        _solutionContainerSystem.TryGetSolution(uid, null, out _, out var sln1); //TODO не нужно. удалим
+        if (petriDishSampleContainerComp.CellSamples == null)
             return false;
 
-        cellSamples = cytologyPetriDishComp.CellSamples;
+        cellSamples = petriDishSampleContainerComp.CellSamples;
         return true;
     }
 
     private void ProcessGrowth(Entity<CytologyGrowingVatComponent> growingVat, EntityUid petriDish, Solution beakerSolution, CytologyPetriDishComponent cytologyPetriDishComp)
     {
 
+        if (!TryComp<CytologySampleContainerComponent>(petriDish, out var petriDishSampleContainerComp))
+            return;
+
         Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.IsError, growingVat.Comp.StopWithError);
         Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.WithFoam, growingVat.Comp.WithFoam);
         growingVat.Comp.WithFoam = false;
         growingVat.Comp.StopWithError = true;
 
-        var cellSamples = cytologyPetriDishComp.CellSamples;
+        var cellSamples = petriDishSampleContainerComp.CellSamples;
         if (cellSamples.Count == 0)
             return;
 

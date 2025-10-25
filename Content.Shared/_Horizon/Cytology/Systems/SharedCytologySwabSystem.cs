@@ -24,27 +24,34 @@ public abstract class SharedCytologySwabSystem : EntitySystem
         SubscribeLocalEvent<CytologySwabComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CytologySwabComponent, AfterInteractEvent>(OnAfterInteract);
         SubscribeLocalEvent<CytologySwabComponent, CytologySwabTakeDirtDoAfterEvent>(OnTakeDirtDoAfter);
-        SubscribeLocalEvent<CytologySwabComponent, CytologySwabTransferToPetriDishDoAfterEvent>(OnTransferToPetriDishDoAfter);
     }
 
     private void OnExamined(EntityUid uid, CytologySwabComponent component, ExaminedEvent args)
     {
+        if (!TryComp<CytologySampleContainerComponent>(uid, out var swabSampleContainerComp))
+            return;
+
         if (args.IsInDetailsRange)
         {
-            if (component.IsUsed && component.CellSamples.Count > 0)
-                args.PushMarkup(Loc.GetString("cytology-swab-used", ("samples", component.CellSamples.Count)));
+            if (swabSampleContainerComp.CellSamples.Count > 0)
+                args.PushMarkup(Loc.GetString("cytology-swab-used", ("samples", swabSampleContainerComp.CellSamples.Count)));
             else
                 args.PushMarkup(Loc.GetString("cytology-swab-unused"));
         }
     }
-
     private void OnAfterInteract(EntityUid uid, CytologySwabComponent component, AfterInteractEvent args)
     {
         if (args.Target == null || !args.CanReach)
             return;
 
         TryCollectCellsFromDirt(uid, component, args);
-        TryTransferCellsToPetriDish(uid, component, args);
+
+        _petriDishSystem.TryTransferCellsToPetriDish(uid, args.Target, args.User);
+        if(TryComp<CytologySampleContainerComponent>(uid, out var swabSampleContainerComp))
+        {
+            if(swabSampleContainerComp.CellSamples.Count() <= 0)
+                Appearance.SetData(uid, CytologySwabVisualStates.IsVisible, false);
+        }
     }
 
     private void OnTakeDirtDoAfter(Entity<CytologySwabComponent> swab, ref CytologySwabTakeDirtDoAfterEvent args)
@@ -55,14 +62,16 @@ public abstract class SharedCytologySwabSystem : EntitySystem
         if (!TryComp<CytologyDirtComponent>(args.Args.Target, out var dirtComp))
             return;
 
+        if (!TryComp<CytologySampleContainerComponent>(swab.Owner, out var swabSampleContainerComp))
+            return;
+
         if (!_dirtSystem.HasSamples(args.Args.Target.Value, dirtComp))
             return;
 
         var samples = _dirtSystem.GetCellSamples(args.Args.Target.Value, dirtComp);
         var samplesToCollect = samples; //TODO упростим
 
-        swab.Comp.CellSamples.AddRange(samplesToCollect);
-        swab.Comp.IsUsed = true;
+        swabSampleContainerComp.CellSamples.AddRange(samplesToCollect);
 
         if (samples.Count > 0 && _prototypeManager.TryIndex<CellSamplePrototype>(samples.Last().ProtoID, out var proto))
         {
@@ -76,58 +85,12 @@ public abstract class SharedCytologySwabSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void OnTransferToPetriDishDoAfter(Entity<CytologySwabComponent> swab, ref CytologySwabTransferToPetriDishDoAfterEvent args)
-    {
-        if (args.Cancelled || args.Handled || args.Args.Target == null)
-            return;
-
-        if (!TryComp<CytologyPetriDishComponent>(args.Args.Target, out var petriDishComp))
-            return;
-
-        if (petriDishComp.CellSamples.Count + args.CellSamples.Count > petriDishComp.MaxSamples)
-            return;
-
-        var cellSamples = args.CellSamples;
-
-        petriDishComp.CellSamples.AddRange(cellSamples); // TODO это лишает уникальности
-        swab.Comp.CellSamples.RemoveAll(x => cellSamples.Contains(x));
-
-        if (swab.Comp.CellSamples.Count() <= 0)
-        {
-            Appearance.SetData(swab.Owner, CytologySwabVisualStates.IsVisible, false);
-        }
-
-        _petriDishSystem.PetriDishUpdateAppearance(args.Args.Target, petriDishComp);
-
-        args.Handled = true;
-    }
-
-    public bool TryTransferSamples(EntityUid swabUid, EntityUid petriDishUid, CytologySwabComponent? swab = null, CytologyPetriDishComponent? petriDish = null)
-    {
-        if (!Resolve(swabUid, ref swab) || !Resolve(petriDishUid, ref petriDish))
-            return false;
-
-        if (!swab.IsUsed || swab.CellSamples.Count == 0)
-            return false;
-
-        if (petriDish.CellSamples.Count >= petriDish.MaxSamples)
-            return false;
-
-        var samplesToTransfer = swab.CellSamples;
-
-        petriDish.CellSamples.AddRange(samplesToTransfer);
-        petriDish.IsUsed = true;
-
-        swab.CellSamples.Except(samplesToTransfer);
-        if (swab.CellSamples.Count == 0)
-            swab.IsUsed = false;
-
-        return true;
-    }
-
     private void TryCollectCellsFromDirt(EntityUid uid, CytologySwabComponent component, AfterInteractEvent args)
     {
         if (!TryComp<CytologyDirtComponent>(args.Target, out var dirt))
+            return;
+
+        if (!TryComp<CytologySampleContainerComponent>(uid, out var swabSampleContainerComp))
             return;
 
         if (!_dirtSystem.HasSamples(args.Target.Value, dirt)) // TODO упростим, а также вынесем в говорящие функции
@@ -136,42 +99,13 @@ public abstract class SharedCytologySwabSystem : EntitySystem
             return;
         }
 
-        if (component.IsUsed && component.CellSamples.Count >= component.MaxSamples)
+        if (swabSampleContainerComp.CellSamples.Count >= swabSampleContainerComp.MaxSamples)
         {
             _popupSystem.PopupEntity(Loc.GetString("cytology-swab-full"), uid, args.User);
             return;
         }
 
         _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.SwabDelay, new CytologySwabTakeDirtDoAfterEvent(), uid, target: args.Target, used: uid)
-        {
-            Broadcast = true,
-            BreakOnMove = true,
-            NeedHand = true,
-        });
-    }
-
-    private void TryTransferCellsToPetriDish(EntityUid uid, CytologySwabComponent component, AfterInteractEvent args)
-    {
-        if (!TryComp<CytologyPetriDishComponent>(args.Target, out var petriDishComp))
-            return;
-
-        List<CellSample> transferSamples = new List<CellSample>();
-
-        foreach(var sample in component.CellSamples)
-        {
-            if(petriDishComp.CellSamples.Count == petriDishComp.MaxSamples)
-            {
-                _popupSystem.PopupEntity(Loc.GetString("cytology-petri-dish-is-full"), args.Target.Value, args.User);
-                continue;
-            }
-
-            transferSamples.Add(sample);
-        }
-
-        if (transferSamples.Count <= 0)
-            return;
-
-        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, component.SwabDelay, new CytologySwabTransferToPetriDishDoAfterEvent(transferSamples), uid, target: args.Target, used: uid)
         {
             Broadcast = true,
             BreakOnMove = true,

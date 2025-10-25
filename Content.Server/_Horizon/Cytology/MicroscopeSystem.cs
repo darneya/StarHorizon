@@ -59,12 +59,12 @@ public sealed class MicroscopeSystem : EntitySystem
         if (container is not { Valid: true })
             return null;
 
-        if (!TryComp<CytologyPetriDishComponent>(container, out var fits))
+        if (!TryComp<CytologySampleContainerComponent>(container, out var petriDishSampleContainerComp))
             return null;
 
         List<CellSampleInfo> cellSampleInfos = new();
 
-        foreach (var cellSample in fits.CellSamples)
+        foreach (var cellSample in petriDishSampleContainerComp.CellSamples)
         {
             if (!_prototypeManager.TryIndex<CellSamplePrototype>(cellSample.ProtoID, out var cellSamplePrototype))
                 continue;

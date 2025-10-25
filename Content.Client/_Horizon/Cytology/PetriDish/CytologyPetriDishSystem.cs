@@ -25,11 +25,14 @@ public sealed class CytologyPetriDishSystem : SharedPetriDishSystem
         if (args.Sprite == null)
             return;
 
+        if (!TryComp<CytologySampleContainerComponent>(petriDish.Owner, out var petriDishSampleContainerComp))
+            return;
+
         var petriDishSprite = (petriDish.Owner, args.Sprite);
 
         if (_sprite.LayerMapTryGet(petriDishSprite, CytologyPetriDishVisualLayers.Fill, out var fillLayer, false))
         {
-            var hasSamples = petriDish.Comp.CellSamples.Count > 0;
+            var hasSamples = petriDishSampleContainerComp.CellSamples.Count > 0;
             _sprite.LayerSetVisible(petriDishSprite, fillLayer, hasSamples);
 
             if (hasSamples)

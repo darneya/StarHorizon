@@ -46,3 +46,15 @@ public enum CytologyPetriDishVisualStates : byte
     HasSamples,
     Color
 }
+
+[Serializable, NetSerializable]
+public enum CytologyInjectorVisualLayers : byte
+{
+    Indicator
+}
+
+[Serializable, NetSerializable]
+public enum CytologyInjectorVisualStates : byte
+{
+    HasSamples
+}
