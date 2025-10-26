@@ -26,7 +26,4 @@ public sealed partial class ProjectileHitEffectComponent : Component
 
     [DataField]
     public bool Push = false;
-
-    [DataField]
-    public bool CanCauseSurgery = false;
 }

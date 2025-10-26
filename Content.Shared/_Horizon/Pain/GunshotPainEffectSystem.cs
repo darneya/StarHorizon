@@ -1,12 +1,9 @@
 using System.Numerics;
 using Content.Shared._Horizon.Pain.Components;
-using Content.Shared.Damage;
 using Content.Shared.Projectiles;
 using Content.Shared.Stunnable;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Horizon.Pain;
@@ -19,8 +16,6 @@ public sealed class GunshotPainEffectSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = null!;
     [Dependency] private readonly SharedPhysicsSystem _physics = null!;
     [Dependency] private readonly SharedStunSystem _stun = null!;
-    [Dependency] private readonly IPrototypeManager _proto = null!;
-    [Dependency] private readonly IRobustRandom _random = null!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -36,9 +31,6 @@ public sealed class GunshotPainEffectSystem : EntitySystem
 
         if (painBody.EffectCooldown > _gameTiming.CurTime && painBody.GunshotsCount.ContainsKey(entity.Comp.BulletId))
             return;
-
-        if (entity.Comp.CanCauseSurgery)
-            TryCauseSurgery(painBody.AllowedSurgeryDict, ev.Damage);
 
         CountShot(painBody, physics.LinearVelocity, entity.Comp.BulletId);
         TryApplyGunshotsEffect(ev.Target, painBody, entity.Comp);
@@ -90,25 +82,5 @@ public sealed class GunshotPainEffectSystem : EntitySystem
         }
         component.EffectCooldown = _gameTiming.CurTime + projectile.EffectCooldown;
         component.TotalImpulse = Vector2.Zero;
-    }
-
-    private void TryCauseSurgery(Dictionary<string, DamageSpecifier> surgeryDict, DamageSpecifier damage)
-    {
-        foreach (var (surgery, specifier) in surgeryDict)
-        {
-            var proto = _proto.Index<EntityPrototype>(surgery);
-            foreach (var (type, actualDmg) in damage.DamageDict)
-            {
-                if (!specifier.DamageDict.TryGetValue(type, out var surgeryDamage) || surgeryDamage > actualDmg)
-                    continue;
-
-                var chance = actualDmg.Float() - surgeryDamage.Float();
-                if (chance < _random.NextFloat(0, 10))
-                    continue;
-
-                // TODO: Сделать здесь создание операции и постоянный эффект при его наличии.
-                return;
-            }
-        }
     }
 }

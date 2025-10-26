@@ -21,12 +21,4 @@ public sealed partial class GunshotPainEffectedComponent : Component
 
     [ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan? EndGunshotsTime = TimeSpan.FromMilliseconds(500);
-
-    /// <summary>
-    /// Список возможных редко возникающих повреждений требующих операций
-    /// string id операции, DamageSpecifier мин. количество урона для возникновения
-    /// P/s влияет только на попадания из оружия (Пули, лазеры)
-    /// </summary>
-    [DataField]
-    public Dictionary<string, DamageSpecifier> AllowedSurgeryDict = new();
 }
