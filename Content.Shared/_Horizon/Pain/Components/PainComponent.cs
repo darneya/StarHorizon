@@ -1,38 +1,17 @@
-using System.Numerics;
-using Robust.Shared.GameStates;
-
 namespace Content.Shared._Horizon.Pain.Components;
 
 /// <summary>
-///
+/// This is used for...
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class PainComponent : Component
 {
     [DataField]
-    public PainStages? PainStage;
+    public Dictionary<PainStages, sbyte> PainThresholds = new();
 
+    /// <summary>
+    /// Список визгов, криков, кашлей от боли
+    /// </summary>
     [DataField]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan PainStunTime = TimeSpan.FromSeconds(15);
-
-
-    [ViewVariables(VVAccess.ReadOnly)]
-    public byte GunshotsCount = 0;
-
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan EndThrowDuration = TimeSpan.Zero;
-
-    [ViewVariables(VVAccess.ReadOnly)]
-    public Vector2 TotalDirectionForce = Vector2.Zero;
-
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan? EndGunshotsTime;
-
-
-    [ViewVariables(VVAccess.ReadWrite)]
-    public byte? MeleeAttackSlowPercentage;
-
-    [ViewVariables(VVAccess.ReadWrite)]
-    public byte? RangeAttackSlowPercentage;
+    public List<string> PainScreamList = [];
 }

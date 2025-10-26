@@ -9,8 +9,11 @@
     damage:
       types:
         Piercing: 10
-  - type: ThrowOnProjectileHit
-    throwDuration: 1
+  - type: ProjectileHitEffect
+    push: true
+    effectDuration: 3
+    bulletId: shotgunBullet
+    effect: KnockedDown
 
 - type: entity
   categories: [ HideSpawnMenu ]
