@@ -25,7 +25,7 @@
   - type: SolutionContainerManager
     solutions:
       stomach:
-        maxVol: 75
+        maxVol: 100
       food:
         maxVol: 5
         reagents:
@@ -171,7 +171,7 @@
     baseSprintSpeed: 3.4
   - type: MeleeWeapon
     altDisarm: false
-    attackRate: 1.6
+    attackRate: 0.8
     angle: 0
     animation: WeaponArcBite
     soundHit:
