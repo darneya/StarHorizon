@@ -11,9 +11,7 @@ namespace Content.Shared._Horizon.Cytology.Systems;
 
 public abstract class SharedPetriDishSystem : EntitySystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedCytologySwabSystem _swabSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
 
@@ -46,7 +44,7 @@ public abstract class SharedPetriDishSystem : EntitySystem
 
         if (args.IsInDetailsRange)
         {
-            if (dish.IsUsed && petriDishSampleContainerComp.CellSamples.Count > 0)
+            if (petriDishSampleContainerComp.CellSamples.Count > 0)
                 args.PushMarkup(Loc.GetString("cytology-dish-used", ("samples", petriDishSampleContainerComp.CellSamples.Count)));
             else
                 args.PushMarkup(Loc.GetString("cytology-dish-unused"));
@@ -59,33 +57,14 @@ public abstract class SharedPetriDishSystem : EntitySystem
             return;
 
         petriDishSampleContainerComp.CellSamples.Clear();
-        petriDish.Comp.IsUsed = false;
-        PetriDishUpdateAppearance(petriDish.Owner);
+        PetriDishUpdateAppearance((petriDish.Owner, petriDishSampleContainerComp));
     }
 
-    public List<CellSample> GetCellSamples(EntityUid uid)
+    public void PetriDishUpdateAppearance(Entity<CytologySampleContainerComponent> petriDish)
     {
-        if (!TryComp<CytologySampleContainerComponent>(uid, out var petriDishSampleContainerComp))
-            return new List<CellSample>();
 
-        return petriDishSampleContainerComp.CellSamples;
-    }
-
-    public void PetriDishUpdateAppearance(EntityUid? uid)
-    {
-        if (uid is not { } petriDishUid)
-            return;
-
-        if (!TryComp<CytologySampleContainerComponent>(uid, out var petriDishSampleContainerComp))
-            return;
-
-        if (petriDishSampleContainerComp.CellSamples.Count > 0)
-        {
-            Appearance.SetData(petriDishUid, CytologyPetriDishVisualStates.HasSamples, true);
-            Appearance.SetData(petriDishUid, CytologyPetriDishVisualStates.Color, CalculateAverageCellSampleColor(petriDishSampleContainerComp.CellSamples));
-        }
-        else Appearance.SetData(petriDishUid, CytologyPetriDishVisualStates.HasSamples, false);
-
+        Appearance.SetData(petriDish.Owner, CytologyPetriDishVisualStates.Color, CalculateAverageCellSampleColor(petriDish.Comp.CellSamples));
+        Appearance.SetData(petriDish.Owner, CytologyPetriDishVisualStates.Samples, petriDish.Comp.CellSamples.Count);
     }
 
     private Color CalculateAverageCellSampleColor(List<CellSample> cellSamples)
@@ -134,19 +113,39 @@ public abstract class SharedPetriDishSystem : EntitySystem
     public bool TryTransferCellsToPetriDish(EntityUid transferDevice, EntityUid? petriDish, EntityUid user)
     {
 
+        if (petriDish is not { } petriDishUid)
+            return false;
+
         if (!TryComp<CytologySampleContainerComponent>(transferDevice, out var transferDeviceSampleContainerComp) ||
-            !TryComp<CytologySampleContainerComponent>(petriDish, out var petriDishSampleContainerComp))
+            !TryComp<CytologySampleContainerComponent>(petriDishUid, out var petriDishSampleContainerComp))
             return false;
 
         var availableSpace = petriDishSampleContainerComp.MaxSamples - petriDishSampleContainerComp.CellSamples.Count();
         if(availableSpace <= 0)
         {
-            _popupSystem.PopupEntity(Loc.GetString("cytology-petri-dish-is-full"), petriDish.Value, user);
+            _popupSystem.PopupClient(Loc.GetString("cytology-petri-dish-is-full"), petriDishUid, user);
             return false;
         }
         var collectedCells = transferDeviceSampleContainerComp.CellSamples.Take(availableSpace).ToList();
 
+
         petriDishSampleContainerComp.CellSamples.AddRange(collectedCells);
+        //DirtyField(petriDishUid, petriDishSampleContainerComp, nameof(CytologySampleContainerComponent.CellSamples));
+
+        transferDeviceSampleContainerComp.CellSamples.RemoveAll(x => collectedCells.Contains(x));
+        //DirtyField(transferDevice, transferDeviceSampleContainerComp, nameof(CytologySampleContainerComponent.CellSamples));
+
+        //petriDishSampleContainerComp.CellSamples = petriDishSampleContainerComp.CellSamples
+        //    .Concat(collectedCells)
+        //    .ToList();
+        //DirtyField(petriDishUid, petriDishSampleContainerComp, nameof(CytologySampleContainerComponent.CellSamples));
+
+        //transferDeviceSampleContainerComp.CellSamples = transferDeviceSampleContainerComp.CellSamples
+        //    .Except(collectedCells)
+        //    .ToList();
+        //DirtyField(transferDevice, transferDeviceSampleContainerComp, nameof(CytologySampleContainerComponent.CellSamples));
+
+        PetriDishUpdateAppearance((petriDishUid, petriDishSampleContainerComp));
 
         return true;
     }

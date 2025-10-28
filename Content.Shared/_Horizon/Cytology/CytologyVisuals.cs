@@ -37,13 +37,14 @@ public enum CytologySwabVisualStates : byte
 [Serializable, NetSerializable]
 public enum CytologyPetriDishVisualLayers : byte
 {
-    Fill
+    Fill,
+    Foam
 }
 
 [Serializable, NetSerializable]
 public enum CytologyPetriDishVisualStates : byte
 {
-    HasSamples,
+    Samples,
     Color
 }
 

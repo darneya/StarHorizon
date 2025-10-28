@@ -38,29 +38,19 @@ public sealed class CytologyDirtSystem : EntitySystem
         Dirty(uid, component);
     }
 
-    public List<CellSample> GetCellSamples(EntityUid uid, CytologyDirtComponent? component = null)
-    {
-        if (!Resolve(uid, ref component))
-            return new List<CellSample>();
-
-        return component.IsCleaned ? new List<CellSample>() : component.CurrentCellSamples;
-    }
-
-    public void CleanDirt(EntityUid uid, CytologyDirtComponent? component = null) //TODO не забыть при очистке уборщика удалять
+    public void CleanDirt(EntityUid uid, CytologyDirtComponent? component = null) //TODO не забыть при очистке уборщика удалять. Тоже, может
     {
         if (!Resolve(uid, ref component))
             return;
 
-        component.IsCleaned = true;
         component.CurrentCellSamples.Clear();
-        Dirty(uid, component);
     }
 
-    public bool HasSamples(EntityUid uid, CytologyDirtComponent? component = null)
+    public bool HasSamples(EntityUid uid, CytologyDirtComponent? component = null) // TODO, избавиться МБ
     {
         if (!Resolve(uid, ref component))
             return false;
 
-        return !component.IsCleaned && component.CurrentCellSamples.Count > 0;
+        return component.CurrentCellSamples.Count > 0;
     }
 }

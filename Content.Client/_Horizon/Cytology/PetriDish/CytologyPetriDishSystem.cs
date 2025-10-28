@@ -40,6 +40,11 @@ public sealed class CytologyPetriDishSystem : SharedPetriDishSystem
                 Appearance.TryGetData(petriDish.Owner, CytologyPetriDishVisualStates.Color, out Color fillColor);
                 _sprite.LayerSetColor(petriDishSprite, fillLayer, fillColor);
             }
+
+            if (_sprite.LayerMapTryGet(petriDishSprite, CytologyPetriDishVisualLayers.Foam, out var foamLayer, false))
+            {
+                _sprite.LayerSetVisible(petriDishSprite, foamLayer, hasSamples);
+            }
         }
     }
 }

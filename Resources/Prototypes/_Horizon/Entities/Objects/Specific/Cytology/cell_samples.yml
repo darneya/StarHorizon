@@ -23,7 +23,7 @@
   id: CellSampleChicken
   name: Galliform skin cells
   growthRateInSeconds: 200
-  viralSusceptibility: 2 # TODO дать применение
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   supplementaryChemicals:
@@ -182,6 +182,7 @@
     "Sulfur": -3
   spawnMobByPrototype:
   - MobFrog
+  textureState: "green"
   
 - type: cellSample
   id: CellSampleSlime

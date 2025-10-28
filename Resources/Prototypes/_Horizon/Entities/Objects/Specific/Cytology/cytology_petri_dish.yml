@@ -17,7 +17,7 @@
     - state: fill
       map: ["enum.CytologyPetriDishVisualLayers.Fill"]
       visible: false
-    - state: film
-      map: ["enum.CytologyPetriDishVisualLayers.Fill"]
+    - state: foam
+      map: ["enum.CytologyPetriDishVisualLayers.Foam"]
       visible: false
   - type: Appearance

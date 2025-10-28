@@ -46,6 +46,9 @@ public abstract class SharedCytologySwabSystem : EntitySystem
 
         TryCollectCellsFromDirt(uid, component, args);
 
+
+        TryComp<CytologySampleContainerComponent>(uid, out var test1);
+
         _petriDishSystem.TryTransferCellsToPetriDish(uid, args.Target, args.User);
         if(TryComp<CytologySampleContainerComponent>(uid, out var swabSampleContainerComp))
         {
@@ -59,29 +62,27 @@ public abstract class SharedCytologySwabSystem : EntitySystem
         if (args.Cancelled || args.Handled || args.Args.Target == null)
             return;
 
-        if (!TryComp<CytologyDirtComponent>(args.Args.Target, out var dirtComp))
+        if (!TryComp<CytologySampleContainerComponent>(swab.Owner, out var swabSampleContainerComp) ||
+            !TryComp<CytologyDirtComponent>(args.Target, out var dirtComp))
             return;
 
-        if (!TryComp<CytologySampleContainerComponent>(swab.Owner, out var swabSampleContainerComp))
+        if (dirtComp.CurrentCellSamples.Count <= 0)
             return;
 
-        if (!_dirtSystem.HasSamples(args.Args.Target.Value, dirtComp))
-            return;
+        var availableSpace = swabSampleContainerComp.MaxSamples - swabSampleContainerComp.CellSamples.Count;
+        var collectedCells = dirtComp.CurrentCellSamples.Take(availableSpace).ToList();
 
-        var samples = _dirtSystem.GetCellSamples(args.Args.Target.Value, dirtComp);
-        var samplesToCollect = samples; //TODO упростим
+        swabSampleContainerComp.CellSamples.AddRange(collectedCells);
+        dirtComp.CurrentCellSamples.RemoveAll(x => collectedCells.Contains(x));
 
-        swabSampleContainerComp.CellSamples.AddRange(samplesToCollect);
-
-        if (samples.Count > 0 && _prototypeManager.TryIndex<CellSamplePrototype>(samples.Last().ProtoID, out var proto))
+        if (collectedCells.Count > 0 && _prototypeManager.TryIndex<CellSamplePrototype>(collectedCells.Last().ProtoID, out var proto))
         {
             swab.Comp.TextureState = proto.TextureState;
             Appearance.SetData(swab.Owner, CytologySwabVisualStates.IsVisible, true);
         }
 
-        _dirtSystem.CleanDirt(args.Args.Target.Value, dirtComp);
+        _popupSystem.PopupClient(Loc.GetString("cytology-swab-collected", ("samples", collectedCells.Count)), args.Args.Target.Value, args.Args.User);
 
-        _popupSystem.PopupEntity(Loc.GetString("cytology-swab-collected", ("samples", samplesToCollect.Count)), args.Args.Target.Value, args.Args.User);
         args.Handled = true;
     }
 
@@ -95,13 +96,13 @@ public abstract class SharedCytologySwabSystem : EntitySystem
 
         if (!_dirtSystem.HasSamples(args.Target.Value, dirt)) // TODO упростим, а также вынесем в говорящие функции
         {
-            _popupSystem.PopupEntity(Loc.GetString("cytology-swab-no-samples"), args.Target.Value, args.User);
+            _popupSystem.PopupClient(Loc.GetString("cytology-swab-no-samples"), args.Target.Value, args.User);
             return;
         }
 
         if (swabSampleContainerComp.CellSamples.Count >= swabSampleContainerComp.MaxSamples)
         {
-            _popupSystem.PopupEntity(Loc.GetString("cytology-swab-full"), uid, args.User);
+            _popupSystem.PopupClient(Loc.GetString("cytology-swab-full"), uid, args.User);
             return;
         }
 

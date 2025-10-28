@@ -49,15 +49,15 @@ public sealed class GrowingVatSystem : SharedGrowingVatSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<CytologyGrowingVatComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerb);
+        SubscribeLocalEvent<CytologyGrowingVatComponent, GetVerbsEvent<InteractionVerb>>(OnGetVerb);
     }
 
-    private void OnGetVerb(Entity<CytologyGrowingVatComponent> growingVat, ref GetVerbsEvent<AlternativeVerb> args) //TODO Сделать предиктед
+    private void OnGetVerb(Entity<CytologyGrowingVatComponent> growingVat, ref GetVerbsEvent<InteractionVerb> args) //TODO Сделать предиктед
     {
         if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract || args.Hands == null)
             return;
 
-        AlternativeVerb verb = new()
+        InteractionVerb verb = new()
         {
             Act = growingVat.Comp.IsActive
                 ? () => ToggleOff(growingVat)

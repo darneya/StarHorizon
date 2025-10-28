@@ -6,10 +6,15 @@
                 Title="microscope">
     
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="5" SeparationOverride="10">
-        <BoxContainer Orientation="Horizontal">
+        <ScrollContainer
+            HScrollEnabled="False"
+            HorizontalExpand="True"
+            MinSize="100 256"
+            SizeFlagsStretchRatio="2"
+            VerticalExpand="True">
             <BoxContainer Name="CellSamplesList" Orientation="Vertical" Margin="4" HorizontalExpand="True" SeparationOverride="6">
             </BoxContainer>
-        </BoxContainer>
+        </ScrollContainer>
     </BoxContainer>
 
 

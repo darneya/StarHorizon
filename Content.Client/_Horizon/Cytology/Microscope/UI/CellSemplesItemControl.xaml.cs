@@ -52,17 +52,9 @@ public sealed partial class CellSemplesItemControl : Control
         DisplayName.Text = info.DisplayName;
         GrowthRateInSeconds.Text = info.GrowthRateInSeconds.ToString();
         ViralSusceptibility.Text = info.ViralSusceptibility.ToString();
-        foreach (string item in info.RequiredChemicals)
-        {
-            RequiredChemicals.Text += item;
-        }
-        foreach (string item in info.SupplementaryChemicals)
-        {
-            SupplementaryChemicals.Text += item;
-        }
-        foreach (string item in info.SuppressiveChemicals)
-        {
-            SuppressiveChemicals.Text += item;
-        }
+
+        RequiredChemicals.Text = string.Join(" ", info.RequiredChemicals);
+        SupplementaryChemicals.Text = string.Join(" ", info.SupplementaryChemicals);
+        SuppressiveChemicals.Text = string.Join(" ", info.SuppressiveChemicals);
     }
 }

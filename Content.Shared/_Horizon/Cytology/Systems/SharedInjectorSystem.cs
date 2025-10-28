@@ -1,7 +1,5 @@
 using Content.Shared._Horizon.Cytology.Components;
-using Content.Shared._Horizon.Cytology.Prototypes;
 using Content.Shared.DoAfter;
-using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Shared.Prototypes;
@@ -53,7 +51,7 @@ public sealed class SharedInjectorSystem : EntitySystem
 
         if (injectorSampleContainerComp.CellSamples.Count >= injectorSampleContainerComp.MaxSamples)
         {
-            _popupSystem.PopupEntity(Loc.GetString("cytology-injector-full"), injector.Owner, args.User);
+            _popupSystem.PopupClient(Loc.GetString("cytology-injector-full"), injector.Owner, args.User);
             return;
         }
 
@@ -82,7 +80,7 @@ public sealed class SharedInjectorSystem : EntitySystem
 
         injectorSampleContainerComp.CellSamples.AddRange(collectedCells);
 
-        _popupSystem.PopupEntity(Loc.GetString("cytology-injector-collected"), args.Args.Target.Value, args.Args.User);
+        _popupSystem.PopupClient(Loc.GetString("cytology-injector-collected"), args.Args.Target.Value, args.Args.User);
 
         _appearance.SetData(injector.Owner, CytologyInjectorVisualStates.HasSamples, injectorSampleContainerComp.CellSamples.Count() > 0);
 

@@ -15,8 +15,5 @@ public sealed partial class CytologyDirtComponent : Component
     public float SampleChance = 0.7f;
 
     [DataField]
-    public bool IsCleaned = false;
-
-    [DataField]
     public int MaxSamples = 3;
 }

@@ -1,17 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.FixedPoint;
 using Robust.Shared.Serialization;
-using Content.Shared.Chemistry;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
-using Content.Shared.Chemistry.Reagent;
-using Content.Server.Materials.Components;
 
 namespace Content.Shared._Horizon.Cytology.Systems;
 
