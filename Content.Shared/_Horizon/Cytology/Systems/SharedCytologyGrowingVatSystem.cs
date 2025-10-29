@@ -8,13 +8,12 @@ using Content.Shared.Chemistry.Components;
 using Robust.Shared.Timing;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
-using Robust.Shared.Random;
 using Content.Shared.Power;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Shared._Horizon.Cytology.Systems;
 
-public abstract class SharedGrowingVatSystem : EntitySystem
+public abstract class SharedCytologyGrowingVatSystem : EntitySystem
 {
 
     public const string BeakerSlotName = "beakerSlot";
@@ -55,7 +54,12 @@ public abstract class SharedGrowingVatSystem : EntitySystem
 
             growingVat.Comp.NextUpdate = _timing.CurTime + growingVat.Comp.UpdateInterval;
 
-            var dishEnt = _itemSlotsSystem.GetItemOrNull(uid, PetriDishSlotName);
+            var dishEnt = _itemSlotsSystem.GetItemOrNull(uid, PetriDishSlotName); //Get an inserted petri dish
+
+            Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.IsError, growingVat.Comp.StopWithError);
+            Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.WithFoam, growingVat.Comp.WithFoam);
+            growingVat.Comp.WithFoam = false; //Set these flags in advance. If they don't update, it means that the code is interrupted
+            growingVat.Comp.StopWithError = true;
 
             if (dishEnt is not { } petriDishUid)
                 continue;
@@ -99,29 +103,24 @@ public abstract class SharedGrowingVatSystem : EntitySystem
         if (!TryComp<CytologySampleContainerComponent>(petriDish, out var petriDishSampleContainerComp))
             return;
 
-        var beakerEnt = _itemSlotsSystem.GetItemOrNull(growingVat.Owner, BeakerSlotName);
+        var beakerEnt = _itemSlotsSystem.GetItemOrNull(growingVat.Owner, BeakerSlotName); //Get an inserted beaker
 
         if (!TryGetSolutionFromBeaker(growingVat.Owner, out var beakerSolution, out var solutionEntity))
             return;
-
-        Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.IsError, growingVat.Comp.StopWithError);
-        Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.WithFoam, growingVat.Comp.WithFoam);
-        growingVat.Comp.WithFoam = false;
-        growingVat.Comp.StopWithError = true;
 
         var cellSamples = petriDishSampleContainerComp.CellSamples;
         if (cellSamples.Count == 0)
             return;
 
         var reagentLookup = new Dictionary<string, FixedPoint2>();
-        foreach (var rq in beakerSolution.Contents)
+        foreach (var rq in beakerSolution.Contents) //Get all the reagents in the beaker. I haven't found a function. that does this
         {
             var id = rq.Reagent.Prototype;
             if (!reagentLookup.TryAdd(id, rq.Quantity))
                 reagentLookup[id] += rq.Quantity;
         }
 
-        for (var i = cellSamples.Count - 1; i >= 0; i--)
+        for (var i = cellSamples.Count - 1; i >= 0; i--) //Go through each cell
         {
             var cell = cellSamples[i];
             if (!_prototypeManager.TryIndex<CellSamplePrototype>(cell.ProtoID, out var proto))
@@ -132,7 +131,7 @@ public abstract class SharedGrowingVatSystem : EntitySystem
             {
                 if (!reagentLookup.TryGetValue(required, out var qty) || qty <= FixedPoint2.Zero)
                 {
-                    hasAllRequired = false;
+                    hasAllRequired = false; //If any of the required reagents is missing
                     break;
                 }
             }
@@ -140,27 +139,30 @@ public abstract class SharedGrowingVatSystem : EntitySystem
             if (!hasAllRequired)
                 continue;
 
-            SetGrowProgress(proto, cell, reagentLookup);
+            SetCellGrowProgress(proto, cell, reagentLookup);
 
             ConsumeChemicals(solutionEntity, proto.RequiredChemicals);
             ConsumeChemicals(solutionEntity, proto.SupplementaryChemicals.Keys);
             ConsumeChemicals(solutionEntity, proto.SuppressiveChemicals.Keys);
 
-            growingVat.Comp.StopWithError = false;
+            growingVat.Comp.StopWithError = false; //Those are the flags. If the code reaches here, then everything is fine
             growingVat.Comp.WithFoam = true;
 
             if (cell.GrowProgress >= 1f && proto.SpawnMobByPrototype != null)
             {
-                foreach(var mob in proto.SpawnMobByPrototype)
+                var ev = new CytologyGrowingVatMakeSmoke(beakerSolution);
+                RaiseLocalEvent(growingVat.Owner, ev);
+
+                foreach (var mob in proto.SpawnMobByPrototype)
                 {
-                    Spawn(mob, Transform(petriDish).Coordinates);
+                    Spawn(mob, Transform(petriDish).Coordinates); //TODO добавить спец эфекты
                 }
                 cellSamples.RemoveAt(i);
             }
         }
     }
 
-    private void SetGrowProgress(CellSamplePrototype proto, CellSample cell, Dictionary<string, FixedPoint2> reagentLookup)
+    private void SetCellGrowProgress(CellSamplePrototype proto, CellSample cell, Dictionary<string, FixedPoint2> reagentLookup)
     {
         var modifier = 1f;
 
@@ -193,9 +195,9 @@ public abstract class SharedGrowingVatSystem : EntitySystem
         }
     }
 
-    private void OnMapInit(EntityUid uid, CytologyGrowingVatComponent component, MapInitEvent args)
+    private void OnMapInit(Entity<CytologyGrowingVatComponent> growingVat, ref MapInitEvent args)
     {
-        Appearance.SetData(uid, CytologyGrowingVatVisualLayers.Indicator, false);
-        Appearance.SetData(uid, CytologyGrowingVatVisualLayers.Liquid, false);
+        Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualLayers.Indicator, false);
+        Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualLayers.Liquid, false);
     }
 }

@@ -75,3 +75,4 @@
   - type: CytologyGrowingVat
   - type: ApcPowerReceiver
     powerLoad: 250
+  - type: Smoke

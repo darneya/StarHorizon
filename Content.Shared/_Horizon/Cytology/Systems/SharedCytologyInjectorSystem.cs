@@ -2,19 +2,16 @@ using Content.Shared._Horizon.Cytology.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
-using Robust.Shared.Prototypes;
 using System.Linq;
 
 
 namespace Content.Shared._Horizon.Cytology.Systems;
 
-public sealed class SharedInjectorSystem : EntitySystem
+public sealed class SharedCytologyInjectorSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly CytologyDirtSystem _dirtSystem = default!;
-    [Dependency] private readonly SharedPetriDishSystem _petriDishSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly SharedCytologyPetriDishSystem _petriDishSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     public override void Initialize()
@@ -74,7 +71,6 @@ public sealed class SharedInjectorSystem : EntitySystem
         if (!TryComp<CytologySampleContainerComponent>(injector.Owner, out var injectorSampleContainerComp))
             return;
 
-        //TODO дать комментарии и перенести в другие фунции
         var availableSpace = injectorSampleContainerComp.MaxSamples - injectorSampleContainerComp.CellSamples.Count();
         var collectedCells = sampleSourceComp.AvailableCellSamples.Take(availableSpace).ToList();
 

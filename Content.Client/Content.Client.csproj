@@ -33,4 +33,9 @@
       <Generator>MSBuild:Compile</Generator>
     </AdditionalFiles>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="_Horizon\Cytology\Microscope\UI\CellSampleItemsControl.xaml.cs">
+      <DependentUpon>CellSampleItemsControl.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

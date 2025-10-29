@@ -1,5 +1,3 @@
-using Robust.Shared.GameStates;
-using Robust.Shared.Serialization;
 using Content.Shared.Containers.ItemSlots;
 
 namespace Content.Server._Horizon.Cytology.Components;

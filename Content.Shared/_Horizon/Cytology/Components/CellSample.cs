@@ -4,9 +4,12 @@ using Robust.Shared.Serialization;
 namespace Content.Shared._Horizon.Cytology.Components;
 
 
+/// <summary>
+/// Stores the cell shot along with the growth parameter, which changes during growing
+/// </summary>
 [Serializable, NetSerializable]
 [DataDefinition]
-public sealed partial class CellSample // TODO думать что-то с дубликатом
+public sealed partial class CellSample
 {
     [DataField]
     public string ProtoID;

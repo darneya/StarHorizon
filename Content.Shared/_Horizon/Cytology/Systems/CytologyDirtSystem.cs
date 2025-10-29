@@ -16,41 +16,28 @@ public sealed class CytologyDirtSystem : EntitySystem
         SubscribeLocalEvent<CytologyDirtComponent, MapInitEvent>(OnMapInit);
     }
 
-    private void OnExamined(EntityUid uid, CytologyDirtComponent component, ExaminedEvent args)
+    private void OnExamined(Entity<CytologyDirtComponent> dirt, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
             return;
 
-        if(component.CurrentCellSamples.Count > 0)
+        if(dirt.Comp.CurrentCellSamples.Count > 0)
             args.PushMarkup(Loc.GetString("cytology-polluted"));
     }
-    private void OnMapInit(EntityUid uid, CytologyDirtComponent component, MapInitEvent args)
+    private void OnMapInit(Entity<CytologyDirtComponent> dirt, ref MapInitEvent args)
     {
-        if (component.PossibleCellSamples.Count == 0)
-            return;
 
-        if (!_random.Prob(component.SampleChance)) // TODO может быть, пересмотреть логику
-            return;
+        foreach (var cellSample in dirt.Comp.PossibleCellSamples)
+        {
+            if (dirt.Comp.CurrentCellSamples.Count >= dirt.Comp.MaxSamples) //If we have reached the limit that an object can store
+                break;
 
-        var numSamples = _random.Next(1, component.PossibleCellSamples.Count);
-        component.CurrentCellSamples = _random.GetItems(component.PossibleCellSamples, numSamples, false).ToList(); //TODO подумать над этим
+            if (!_random.Prob(dirt.Comp.SampleChance)) //The chance with which the next cell will appear
+                continue;
 
-        Dirty(uid, component);
-    }
+            dirt.Comp.CurrentCellSamples.Add(cellSample);
+        }
 
-    public void CleanDirt(EntityUid uid, CytologyDirtComponent? component = null) //TODO не забыть при очистке уборщика удалять. Тоже, может
-    {
-        if (!Resolve(uid, ref component))
-            return;
-
-        component.CurrentCellSamples.Clear();
-    }
-
-    public bool HasSamples(EntityUid uid, CytologyDirtComponent? component = null) // TODO, избавиться МБ
-    {
-        if (!Resolve(uid, ref component))
-            return false;
-
-        return component.CurrentCellSamples.Count > 0;
+        DirtyField(dirt.Owner, dirt.Comp, nameof(dirt.Comp.CurrentCellSamples)); //Predicted doesn't work here because random doesn't support it
     }
 }

@@ -1,5 +1,4 @@
 using Content.Shared._Horizon.Cytology.Components;
-using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Popups;
 using Content.Shared._Horizon.Cytology.Prototypes;
@@ -9,7 +8,7 @@ using System.Linq;
 
 namespace Content.Shared._Horizon.Cytology.Systems;
 
-public abstract class SharedPetriDishSystem : EntitySystem
+public abstract class SharedCytologyPetriDishSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -37,9 +36,9 @@ public abstract class SharedPetriDishSystem : EntitySystem
 
     }
 
-    private void OnExamined(EntityUid uid, CytologyPetriDishComponent dish, ExaminedEvent args)
+    private void OnExamined(Entity<CytologyPetriDishComponent> petriDish, ref ExaminedEvent args)
     {
-        if (!TryComp<CytologySampleContainerComponent>(uid, out var petriDishSampleContainerComp))
+        if (!TryComp<CytologySampleContainerComponent>(petriDish.Owner, out var petriDishSampleContainerComp))
             return;
 
         if (args.IsInDetailsRange)
@@ -51,7 +50,7 @@ public abstract class SharedPetriDishSystem : EntitySystem
         }
     }
 
-    public void ClearSamples(Entity<CytologyPetriDishComponent> petriDish)
+    public void ClearSamples(Entity<CytologyPetriDishComponent> petriDish) //TODO оно есть, потому-что, может быть, уборщик будет иметь возможность чистить объекты
     {
         if (!TryComp<CytologySampleContainerComponent>(petriDish.Owner, out var petriDishSampleContainerComp))
             return;
@@ -67,7 +66,7 @@ public abstract class SharedPetriDishSystem : EntitySystem
         Appearance.SetData(petriDish.Owner, CytologyPetriDishVisualStates.Samples, petriDish.Comp.CellSamples.Count);
     }
 
-    private Color CalculateAverageCellSampleColor(List<CellSample> cellSamples)
+    private Color CalculateAverageCellSampleColor(List<CellSample> cellSamples) //Calculates the overall color based on the samples inside
     {
         if (cellSamples.Count == 0)
             return Color.White;
@@ -130,20 +129,8 @@ public abstract class SharedPetriDishSystem : EntitySystem
 
 
         petriDishSampleContainerComp.CellSamples.AddRange(collectedCells);
-        //DirtyField(petriDishUid, petriDishSampleContainerComp, nameof(CytologySampleContainerComponent.CellSamples));
 
         transferDeviceSampleContainerComp.CellSamples.RemoveAll(x => collectedCells.Contains(x));
-        //DirtyField(transferDevice, transferDeviceSampleContainerComp, nameof(CytologySampleContainerComponent.CellSamples));
-
-        //petriDishSampleContainerComp.CellSamples = petriDishSampleContainerComp.CellSamples
-        //    .Concat(collectedCells)
-        //    .ToList();
-        //DirtyField(petriDishUid, petriDishSampleContainerComp, nameof(CytologySampleContainerComponent.CellSamples));
-
-        //transferDeviceSampleContainerComp.CellSamples = transferDeviceSampleContainerComp.CellSamples
-        //    .Except(collectedCells)
-        //    .ToList();
-        //DirtyField(transferDevice, transferDeviceSampleContainerComp, nameof(CytologySampleContainerComponent.CellSamples));
 
         PetriDishUpdateAppearance((petriDishUid, petriDishSampleContainerComp));
 

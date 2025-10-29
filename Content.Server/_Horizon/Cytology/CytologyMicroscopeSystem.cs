@@ -1,13 +1,8 @@
-using Content.Server.Popups;
-using Content.Server.Storage.EntitySystems;
 using Content.Shared._Horizon.Cytology.Components;
 using Content.Shared._Horizon.Cytology.Prototypes;
 using Content.Shared._Horizon.Cytology.Systems;
-using Content.Shared.Administration.Logs;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Labels.EntitySystems;
-using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
@@ -17,16 +12,10 @@ using Content.Server._Horizon.Cytology.Components;
 
 namespace Content.Server._Horizon.Cytology;
 
-public sealed class MicroscopeSystem : EntitySystem
+public sealed class CytologyMicroscopeSystem : EntitySystem
 {
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly AudioSystem _audioSystem = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
-    [Dependency] private readonly StorageSystem _storageSystem = default!;
-    [Dependency] private readonly LabelSystem _labelSystem = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     public override void Initialize()
@@ -47,7 +36,7 @@ public sealed class MicroscopeSystem : EntitySystem
 
     private void UpdateUiState(Entity<CytologyMicroscopeComponent> ent)
     {
-        var inputContainer = _itemSlotsSystem.GetItemOrNull(ent.Owner, SharedMicroscope.InputSlotName);
+        var inputContainer = _itemSlotsSystem.GetItemOrNull(ent.Owner, SharedCytologyMicroscope.InputSlotName);
 
         var state = new MicroscopeBoundUserInterfaceState(BuildInputContainerInfo(inputContainer));
 

@@ -4,13 +4,13 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Horizon.Cytology.Systems;
 
-public sealed class SharedMicroscope
+public sealed class SharedCytologyMicroscope
 {
     public const string InputSlotName = "petriDishSlot";
 }
 
 [Serializable, NetSerializable]
-public sealed class CellSampleInfo // TODO думать что делать с дубликатом
+public sealed class CellSampleInfo
 {
 
     public readonly string DisplayName;

@@ -8,7 +8,7 @@ using Content.Client.Power;
 
 namespace Content.Client._Horizon.Cytology.GrowingVat;
 
-public sealed class GrowingVatSystem : SharedGrowingVatSystem
+public sealed class CytologyGrowingVatSystem : SharedCytologyGrowingVatSystem
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -42,19 +42,16 @@ public sealed class GrowingVatSystem : SharedGrowingVatSystem
 
                 var averageColor = beakerSolution.GetColor(_prototypeManager);
                 _sprite.LayerSetColor(growingVatSprite, liquidLayer, averageColor);
-
-                if (_sprite.LayerMapTryGet(growingVatSprite, CytologyGrowingVatVisualLayers.Foam, out var foamLayer, false))
-                {
-                    if(Appearance.TryGetData(growingVat.Owner, CytologyGrowingVatVisualStates.WithFoam, out bool isFoamVisible))
-                    {
-                        _sprite.LayerSetVisible(growingVatSprite, foamLayer, isFoamVisible);
-                    }
-                }
-
-                return;
             }
+            else _sprite.LayerSetVisible(growingVatSprite, liquidLayer, false);
+        }
 
-            _sprite.LayerSetVisible(growingVatSprite, liquidLayer, false);
+        if (_sprite.LayerMapTryGet(growingVatSprite, CytologyGrowingVatVisualLayers.Foam, out var foamLayer, false))
+        {
+            if (Appearance.TryGetData(growingVat.Owner, CytologyGrowingVatVisualStates.WithFoam, out bool isFoamVisible))
+            {
+                _sprite.LayerSetVisible(growingVatSprite, foamLayer, isFoamVisible);
+            }
         }
     }
 

@@ -1,7 +1,6 @@
-using Content.Shared._Horizon.Cytology.Components;
+using Content.Shared.Chemistry.Components;
 using Content.Shared.DoAfter;
 using Robust.Shared.Serialization;
-using Content.Shared._Horizon.Cytology.Components;
 
 namespace Content.Shared._Horizon.Cytology;
 
@@ -21,6 +20,11 @@ public sealed partial class CytologyInjectorTakeDoAfterEvent : SimpleDoAfterEven
 }
 
 [Serializable, NetSerializable]
-public sealed partial class CytologyGrowingVatIndicatorUpdateAppearance : EntityEventArgs
+public sealed partial class CytologyGrowingVatMakeSmoke : EntityEventArgs
 {
+    public Solution Soln;
+    public CytologyGrowingVatMakeSmoke(Solution soln)
+    {
+        Soln = soln;
+    }
 }

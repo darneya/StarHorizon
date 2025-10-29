@@ -9,7 +9,7 @@ using Dependency = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Client._Horizon.Cytology.PetriDish;
 
-public sealed class CytologyPetriDishSystem : SharedPetriDishSystem
+public sealed class CytologyPetriDishSystem : SharedCytologyPetriDishSystem
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
 

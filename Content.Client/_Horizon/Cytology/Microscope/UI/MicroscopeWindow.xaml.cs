@@ -37,7 +37,7 @@ public sealed partial class MicroscopeWindow : FancyWindow
 
         foreach (var info in state.CellSampleInfo)
         {
-            var item = new CellSemplesItemControl(info);
+            var item = new CellSampleItemsControl(info);
             CellSamplesList.AddChild(item);
         }
     }
