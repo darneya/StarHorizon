@@ -25,11 +25,18 @@ public sealed class MechSoundboardSystem : EntitySystem
     {
         // you have to specify a collection so it must exist probably
         var sounds = comp.Sounds.Select(sound => sound.Collection!);
-        var state = new MechSoundboardUiState
+
+        // Horizon - изменение передачи состояний интерфейса
+        /*var state = new MechSoundboardUiState
         {
             Sounds = sounds.ToList()
         };
-        args.States.Add(GetNetEntity(uid), state);
+        args.States.Add(GetNetEntity(uid), state);*/
+
+        args.State = new MechSoundboardUiState
+        {
+            Sounds = sounds.ToList()
+        };
     }
 
     private void OnSoundboardMessage(EntityUid uid, MechSoundboardComponent comp, MechEquipmentUiMessageRelayEvent<MechSoundboardPlayMessage> args)

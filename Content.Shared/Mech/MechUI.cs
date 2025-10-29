@@ -13,7 +13,7 @@ public enum MechUiKey : byte
 /// </summary>
 public sealed class MechEquipmentUiStateReadyEvent : EntityEventArgs
 {
-    public Dictionary<NetEntity, BoundUserInterfaceState?> States = new();  // Horizon Mech
+    public BoundUserInterfaceState? State;  // Horizon Mech
 }
 
 /// <summary>

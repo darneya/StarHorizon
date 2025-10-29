@@ -128,12 +128,11 @@ public sealed class MechForkSystem : EntitySystem
 
     private void OnUiStateReady(EntityUid uid, MechForkComponent component, MechEquipmentUiStateReadyEvent args)
     {
-        var state = new MechGrabberUiState
+        args.State = new MechGrabberUiState
         {
             Contents = GetNetEntityList(component.ItemContainer.ContainedEntities.ToList()),
             MaxContents = component.MaxContents
         };
-        args.States[GetNetEntity(uid)] = state;
     }
 
     private void OnEquipped(EntityUid uid, MechForkComponent component, MechEquipmentEquippedAction args)

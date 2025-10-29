@@ -128,12 +128,11 @@ public sealed class MechGrabberSystem : EntitySystem
 
     private void OnUiStateReady(EntityUid uid, MechGrabberComponent component, MechEquipmentUiStateReadyEvent args)
     {
-        var state = new MechGrabberUiState
+        args.State = new MechGrabberUiState
         {
             Contents = GetNetEntityList(component.ItemContainer.ContainedEntities.ToList()),
             MaxContents = component.MaxContents
         };
-        args.States.Add(GetNetEntity(uid), state);
     }
 
     private void OnInteract(EntityUid uid, MechGrabberComponent component, UserActivateInWorldEvent args)
