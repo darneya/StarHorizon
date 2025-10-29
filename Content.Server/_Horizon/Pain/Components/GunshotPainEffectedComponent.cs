@@ -1,13 +1,12 @@
 using System.Numerics;
-using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Horizon.Pain.Components;
+namespace Content.Server._Horizon.Pain.Components;
 
 /// <summary>
 ///
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent]
 public sealed partial class GunshotPainEffectedComponent : Component
 {
     [ViewVariables(VVAccess.ReadOnly)]

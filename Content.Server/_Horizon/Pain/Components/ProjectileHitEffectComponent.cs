@@ -1,4 +1,4 @@
-namespace Content.Shared._Horizon.Pain.Components;
+namespace Content.Server._Horizon.Pain.Components;
 
 /// <summary>
 /// This is used for...

@@ -1,12 +1,12 @@
 using System.Numerics;
-using Content.Shared._Horizon.Pain.Components;
+using Content.Server._Horizon.Pain.Components;
 using Content.Shared.Projectiles;
 using Content.Shared.Stunnable;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 
-namespace Content.Shared._Horizon.Pain;
+namespace Content.Server._Horizon.Pain;
 
 /// <summary>
 /// Вызывает новые эффекты при попадании пулями
@@ -34,7 +34,6 @@ public sealed class GunshotPainEffectSystem : EntitySystem
 
         CountShot(painBody, physics.LinearVelocity, entity.Comp.BulletId);
         TryApplyGunshotsEffect(ev.Target, painBody, entity.Comp);
-        Dirty(ev.Target, painBody);
     }
 
     private void CountShot(GunshotPainEffectedComponent component, Vector2 linearVelocity, string bulletId)

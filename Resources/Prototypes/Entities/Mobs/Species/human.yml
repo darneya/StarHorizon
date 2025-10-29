@@ -31,6 +31,32 @@
   - type: Speech # Frontier
     allowedEmotes: ['Belch'] # Frontier
   - type: GunshotPainEffected
+  - type: Pain
+    painThresholds:
+      Nothing: 0
+      MildPain: 50
+      AveragePain: 100
+      SeverePain: 150
+      UnbeatablePain: 250
+    screamPrototype: screamHuman
+    converterPrototype: human
+
+- type: painConverter
+  id: human
+  convert:
+    Slash: 1
+    Blunt: 1
+    Heat: 5
+    Piercing: 1
+
+- type: screamOfPain
+  id: screamHuman
+  screamList:
+    20:
+      - "Arghh!"
+      - "Dammit!"
+      - "Shit!"
+      - "Mnghhh..."
 
 - type: entity
   parent: BaseSpeciesDummy

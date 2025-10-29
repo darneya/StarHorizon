@@ -10,6 +10,7 @@ using Content.Shared.Movement.Systems;
 using Content.Shared.Movement.Components;
 using Content.Shared.Body.Components;
 using Content.Server.Guardian;
+using Content.Shared._Horizon.Pain.Prototypes;
 using Content.Shared.DoAfter;
 
 namespace Content.Server._Horizon.Laying;
@@ -91,6 +92,11 @@ public sealed class LayingSystem : EntitySystem
             return false;
 
         if (standing.Standing)
+            return false;
+
+        var ev = new PainEffectEvent("TryStandUp");
+        RaiseLocalEvent(uid, ref ev);
+        if (ev.Cancelled)
             return false;
 
         var args = new DoAfterArgs(EntityManager, uid, 2f, new StandingUpDoAfterEvent(), uid)
