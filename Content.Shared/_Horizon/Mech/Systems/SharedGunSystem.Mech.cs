@@ -1,16 +1,22 @@
+using System.Linq;
 using Content.Shared._Horizon.Mech.Equipment.Components;
 using Content.Shared._Horizon.Weapons.Ranged.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Mech;
 using Content.Shared.Mech.Components;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Mech.Equipment.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
 public abstract partial class SharedGunSystem
 {
     [Dependency] private readonly SharedMechSystem _mech = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _sol = default!;
 
     protected virtual void InitializeMechGun()
     {
@@ -25,6 +31,8 @@ public abstract partial class SharedGunSystem
 
         SubscribeLocalEvent<HitscanMechAmmoProviderComponent, TakeAmmoEvent>(OnTakeAmmo);
         SubscribeLocalEvent<HitscanMechAmmoProviderComponent, GetAmmoCountEvent>(OnMechAmmoCount);
+
+        SubscribeLocalEvent<SyringeMechGunComponent, StartupMechShootableEvent>(OnSuringeStartup);
     }
 
     private void OnShotAttempt(EntityUid uid, MechGunComponent comp, ref ShotAttemptedEvent args)
@@ -61,6 +69,14 @@ public abstract partial class SharedGunSystem
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+
+    private void OnSuringeStartup(EntityUid uid, SyringeMechGunComponent component, ref StartupMechShootableEvent args)
+    {
+        if (!_sol.TryGetSolution(args.Shootable, component.SolutionName, out var solution))
+            return;
+
+        _sol.TryAddReagent(solution.Value, component.CurrentReagent, component.Amount);
     }
 
     private void OnTakeAmmo(EntityUid uid, MechAmmoProviderComponent component, TakeAmmoEvent args)

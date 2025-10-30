@@ -11,6 +11,9 @@ public sealed class MechGunUiState : BoundUserInterfaceState
     public float ReloadTime;
     public bool Reloading = false;
     public TimeSpan? ReloadEndTime = null;
+
+    public List<string> AllowedReagents = new();
+    public string SelectedReagent = string.Empty;
 }
 
 [Serializable, NetSerializable]
@@ -35,6 +38,19 @@ public sealed class MechGunReloadMessage : MechEquipmentUiMessage
         Equipment = equipment;
     }
 }
+
+[Serializable, NetSerializable]
+public sealed class SelectMechSyringeGunReagentMessage : MechEquipmentUiMessage
+{
+    public string Reagent;
+
+    public SelectMechSyringeGunReagentMessage(NetEntity equipment, string reagent)
+    {
+        Equipment = equipment;
+        Reagent = reagent;
+    }
+}
+
 
 [Serializable, NetSerializable]
 public sealed class MechToolSetMessage : MechEquipmentUiMessage

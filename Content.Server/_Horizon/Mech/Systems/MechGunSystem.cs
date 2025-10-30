@@ -33,6 +33,8 @@ public sealed class MechGunSystem : EntitySystem
 
         SubscribeLocalEvent<BallisticMechAmmoProviderComponent, MechEquipmentUiStateReadyEvent>(OnUiStateReady);
         SubscribeLocalEvent<BallisticMechAmmoProviderComponent, MechEquipmentUiMessageRelayEvent<MechGunReloadMessage>>(OnReload);
+
+        SubscribeLocalEvent<SyringeMechGunComponent, SelectMechSyringeGunReagentMessage>(OnSelectSyringeReagent);
     }
 
     public override void Update(float frameTime)
@@ -122,6 +124,14 @@ public sealed class MechGunSystem : EntitySystem
         comp.Reloading = true;
         comp.ReloadEnd = _timing.CurTime + TimeSpan.FromSeconds(comp.ReloadTime);
         _audio.PlayPvs(comp.ReloadSound, uid);
+        Dirty(uid, comp);
+
+        _mech.UpdateUserInterfaceByEquipment(uid);
+    }
+
+    private void OnSelectSyringeReagent(EntityUid uid, SyringeMechGunComponent comp, SelectMechSyringeGunReagentMessage args)
+    {
+        comp.CurrentReagent = args.Reagent;
         Dirty(uid, comp);
 
         _mech.UpdateUserInterfaceByEquipment(uid);
