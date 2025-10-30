@@ -81,7 +81,7 @@ public abstract partial class SharedGunSystem
 
                 for (var i = 0; i < shots; i++)
                 {
-                    args.Ammo.Add(GetShootable(projectile, args.Coordinates));
+                    args.Ammo.Add(GetShootable(uid, projectile, args.Coordinates));
                     projectile.Shots--;
                 }
                 break;
@@ -91,7 +91,7 @@ public abstract partial class SharedGunSystem
 
                 for (var i = 0; i < args.Shots; i++)
                 {
-                    args.Ammo.Add(GetShootable(battery, args.Coordinates));
+                    args.Ammo.Add(GetShootable(uid, battery, args.Coordinates));
                     if (!equipmentComp.EquipmentOwner.HasValue)
                         break;
                     if (!_mech.TryChangeEnergy(equipmentComp.EquipmentOwner.Value, -battery.ShotCost))
@@ -104,7 +104,7 @@ public abstract partial class SharedGunSystem
 
                 for (var i = 0; i < args.Shots; i++)
                 {
-                    args.Ammo.Add(GetShootable(hitscan, args.Coordinates));
+                    args.Ammo.Add(GetShootable(uid, hitscan, args.Coordinates));
                     if (!equipmentComp.EquipmentOwner.HasValue)
                         break;
                     if (!_mech.TryChangeEnergy(equipmentComp.EquipmentOwner.Value, -hitscan.ShotCost))
@@ -119,20 +119,28 @@ public abstract partial class SharedGunSystem
             Dirty(uid, component);
     }
 
-    private (EntityUid? Entity, IShootable) GetShootable(MechAmmoProviderComponent component, EntityCoordinates coordinates)
+    private (EntityUid? Entity, IShootable) GetShootable(EntityUid gun, MechAmmoProviderComponent component, EntityCoordinates coordinates)
     {
         switch (component)
         {
             case BallisticMechAmmoProviderComponent proj:
-                var ent = Spawn(proj.Prototype, coordinates);
-                return (ent, EnsureShootable(ent));
+                return StartupMechShootable(gun, proj.Prototype, coordinates);
             case BatteryMechAmmoProviderComponent battery:
-                var entBattery = Spawn(battery.Prototype, coordinates);
-                return (entBattery, EnsureShootable(entBattery));
+                return StartupMechShootable(gun, battery.Prototype, coordinates);
             case HitscanMechAmmoProviderComponent hitscan:
                 return (null, ProtoManager.Index(hitscan.Proto));
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+
+    private (EntityUid? Entity, IShootable) StartupMechShootable(EntityUid gun, EntProtoId proto, EntityCoordinates coordinates)
+    {
+        var ent = Spawn(proto, coordinates);
+
+        var ev = new StartupMechShootableEvent(ent);
+        RaiseLocalEvent(gun, ref ev);
+
+        return (ent, EnsureShootable(ent));
     }
 }

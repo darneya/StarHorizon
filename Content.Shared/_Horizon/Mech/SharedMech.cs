@@ -41,6 +41,9 @@ public record struct MechEquipmentGotSelectedEvent(EntityUid Mech);
 [ByRefEvent]
 public record struct MechEquipmentGotDeselectedEvent(EntityUid Mech);
 
+[ByRefEvent]
+public record struct StartupMechShootableEvent(EntityUid Shootable);
+
 
 /// <summary>
 /// Sent to server when player selects mech equipment in radial menu.
