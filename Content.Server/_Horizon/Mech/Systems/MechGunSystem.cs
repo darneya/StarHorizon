@@ -86,15 +86,25 @@ public sealed class MechGunSystem : EntitySystem
 
     private void OnUiStateReady(EntityUid uid, BallisticMechAmmoProviderComponent component, MechEquipmentUiStateReadyEvent args)
     {
-        var state = new MechGunUiState
+        List<string> allowedReagents = new();
+        string selectedReagent = string.Empty;
+
+        if (TryComp<SyringeMechGunComponent>(uid, out var suringeComp))
+        {
+            allowedReagents = suringeComp.AllowedReagents;
+            selectedReagent = suringeComp.CurrentReagent;
+        }
+
+        args.State = new MechGunUiState
         {
             ReloadTime = component.ReloadTime,
             Shots = component.Shots,
             Capacity = component.Capacity,
             Reloading = component.Reloading,
             ReloadEndTime = component.Reloading ? component.ReloadEnd : null,
+            AllowedReagents = allowedReagents,
+            SelectedReagent = selectedReagent
         };
-        args.States.Add(GetNetEntity(uid), state);
     }
 
     private void OnReload(EntityUid uid, BallisticMechAmmoProviderComponent comp, MechEquipmentUiMessageRelayEvent<MechGunReloadMessage> args)
