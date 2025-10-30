@@ -234,3 +234,21 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 30
+
+- type: entity
+  id: MechEquipmentJet
+  parent: BaseMechEquipment
+  name: mech jetpack
+  description: Gives the mech the ability to grab things and drag them around.
+  components:
+  - type: Sprite
+    state: mecha_clamp
+  - type: MechEquipmentComponents
+    components:
+    - type: MechJetpack
+    - type: Jetpack
+      moleUsage: 0
+    - type: GasTank
+  - type: Tag
+    tags:
+      - MechEquipmentGeneral

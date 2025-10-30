@@ -87,3 +87,18 @@
     useDelay: 1
   - type: InstantAction
     event: !type:MechRCDMenuEvent
+
+- type: entity
+  id: MechJetpackToggleAction
+  name: Toggle jet
+  description: wuewue
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    icon:
+      sprite: Interface/Actions/actions_mecha.rsi
+      state: mech_overload_on
+    useDelay: 1
+  - type: InstantAction
+    event: !type:MechJetpackToggleEvent

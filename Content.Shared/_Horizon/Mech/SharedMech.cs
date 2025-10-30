@@ -19,6 +19,10 @@ public sealed partial class MechRCDMenuEvent : InstantActionEvent
 {
 }
 
+public sealed partial class MechJetpackToggleEvent : InstantActionEvent
+{
+}
+
 /// <summary>
 /// Raised on mech equipment destruction.
 /// </summary>
@@ -78,4 +82,16 @@ public sealed partial class PopulateMechEquipmentMenuEvent : EntityEventArgs
 [Serializable, NetSerializable]
 public sealed partial class CloseMechMenuEvent : EntityEventArgs
 {
+}
+
+public sealed partial class MechEquipmentEvent<T> : EntityEventArgs where T : EntityEventArgs
+{
+    public EntityUid Mech;
+    public T Args;
+
+    public MechEquipmentEvent(EntityUid mech, T args)
+    {
+        Mech = mech;
+        Args = args;
+    }
 }
