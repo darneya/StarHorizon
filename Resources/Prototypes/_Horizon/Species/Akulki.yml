@@ -1,101 +1,7 @@
-- type: entity
-  id: OrganAkulkiHeart
-  parent: OrganHumanHeart
-  name: Akulki heart
-  components:
-  - type: Metabolizer
-    metabolizerTypes: [ Bloodsucker ]
-
-- type: entity
-  id: OrganAkulkiLiver
-  parent: OrganHumanLiver
-  name: Akulki liver
-  components:
-  - type: Metabolizer
-    metabolizerTypes: [ Bloodsucker ]
-
-- type: entity
-  id: OrganAkulkiStomach
-  parent: OrganHumanStomach
-  name: Akulki stomach
-  components:
-  - type: Sprite
-    state: stomach
-  - type: Organ
-  - type: SolutionContainerManager
-    solutions:
-      stomach:
-        maxVol: 100
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-  - type: Stomach
-  - type: Metabolizer
-    # mm very yummy
-    maxReagents: 5
-    metabolizerTypes: [ Bloodsucker ]
-
-- type: body
-  id: Akulki
-  name: "Akulki"
-  root: torso
-  slots:
-    head:
-      part: HeadAkulki
-      connections:
-      - torso
-      organs:
-        brain: OrganHumanBrain
-        eyes: OrganHumanEyes
-    torso:
-      part: TorsoAkulki
-      connections:
-      - right arm
-      - left arm
-      - right leg
-      - left leg
-      organs:
-        heart: OrganAkulkiHeart
-        lungs: OrganHumanLungs
-        stomach: OrganReptilianStomach
-        liver: OrganAkulkiLiver
-        kidneys: OrganHumanKidneys
-    right arm:
-      part: RightArmAkulki
-      connections:
-      - right hand
-    left arm:
-      part: LeftArmAkulki
-      connections:
-      - left hand
-    right hand:
-      part: RightHandAkulki
-    left hand:
-      part: LeftHandAkulki
-    right leg:
-      part: RightLegAkulki
-      connections:
-      - right foot
-    left leg:
-      part: LeftLegAkulki
-      connections:
-      - left foot
-    right foot:
-      part: RightFootAkulki
-    left foot:
-      part: LeftFootAkulki
 
 - type: metabolizerType
   id: Akulki
   name: Akulki
-
-- type: entity
-  save: false
-  name: Урист МакЧелюсти
-  parent: BaseMobAkulki
-  id: MobAkulki
 
 - type: entity
   save: false
@@ -246,12 +152,21 @@
 - type: species
   id: Akulki
   name: Авзаг
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Akulki.xml" # Horizon
   roundStart: true
   prototype: MobAkulki
   sprites: MobAkulkiSprites
   markingLimits: MobAkulkiMarkingLimits
   dollPrototype: MobAkulkiDummy
   skinColoration: Hues
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - Arachnid
+  prosCount: 1
+  specialCount: 2
+  consCount: 1
+  # Horizon end
 
 - type: markingPoints
   id: MobAkulkiMarkingLimits
@@ -376,22 +291,3 @@
   baseSprite:
     sprite: _StarHorizon/Mobs/Species/Akulki/parts.rsi
     state: r_foot
-
-- type: marking
-  id: AkulkiTailSmooth
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Akulki]
-  sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/parts.rsi
-    state: tail_smooth_primary
-
-- type: marking
-  id: AkulkiTailSmoothAnimated
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Akulki]
-  sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/parts.rsi
-    state: tail_smooth_wagging
-
