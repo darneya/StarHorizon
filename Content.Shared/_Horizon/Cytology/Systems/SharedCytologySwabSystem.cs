@@ -21,7 +21,6 @@ public abstract class SharedCytologySwabSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<CytologySwabComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<CytologySwabComponent, AfterInteractEvent>(OnAfterInteract);
-        //SubscribeLocalEvent<CytologySwabComponent, CytologySwabTakeDirtDoAfterEvent>(OnTakeDirtDoAfter);
     }
 
     private void OnExamined(Entity<CytologySwabComponent> swab, ref ExaminedEvent args)
@@ -47,8 +46,7 @@ public abstract class SharedCytologySwabSystem : EntitySystem
         _petriDishSystem.TryTransferCellsToPetriDish(swab.Owner, args.Target, args.User);
         if(TryComp<CytologySampleContainerComponent>(swab.Owner, out var swabSampleContainerComp))
         {
-            if(swabSampleContainerComp.CellSamples.Count() <= 0)
-                Appearance.SetData(swab.Owner, CytologySwabVisualStates.IsVisible, false);
+            Appearance.SetData(swab.Owner, CytologySwabVisualStates.IsVisible, swabSampleContainerComp.CellSamples.Count() > 0);
         }
     }
 

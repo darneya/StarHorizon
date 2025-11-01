@@ -18,13 +18,3 @@ public sealed partial class CytologyTransferDoAfterEvent : SimpleDoAfterEvent
 public sealed partial class CytologyInjectorTakeDoAfterEvent : SimpleDoAfterEvent
 {
 }
-
-[Serializable, NetSerializable]
-public sealed partial class CytologyGrowingVatMakeSmoke : EntityEventArgs
-{
-    public Solution Soln;
-    public CytologyGrowingVatMakeSmoke(Solution soln)
-    {
-        Soln = soln;
-    }
-}

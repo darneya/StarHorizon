@@ -10,6 +10,8 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Power;
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Coordinates.Helpers;
+using Robust.Shared.Map;
 
 namespace Content.Shared._Horizon.Cytology.Systems;
 
@@ -25,6 +27,7 @@ public abstract class SharedCytologyGrowingVatSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
 
     public override void Initialize()
     {
@@ -64,6 +67,9 @@ public abstract class SharedCytologyGrowingVatSystem : EntitySystem
             if (dishEnt is not { } petriDishUid)
                 continue;
 
+            if (!cytologyGrowingVatComp.IsPowered)
+                continue;
+
             ProcessGrowth(growingVat, petriDishUid);
 
         }
@@ -71,6 +77,7 @@ public abstract class SharedCytologyGrowingVatSystem : EntitySystem
 
     private void OnPowerChanged(Entity<CytologyGrowingVatComponent> growingVat, ref PowerChangedEvent args)
     {
+        growingVat.Comp.IsPowered = args.Powered;
         Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.Powered, args.Powered);
     }
 
@@ -94,6 +101,7 @@ public abstract class SharedCytologyGrowingVatSystem : EntitySystem
 
     private void OnSolutionContainerChanged<T>(Entity<CytologyGrowingVatComponent> growingVat, ref T ev)
     {
+        Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.WithFoam, false);
         Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.WithLiquid, TryGetSolutionFromBeaker(growingVat.Owner, out _, out _));
     }
 
@@ -150,12 +158,12 @@ public abstract class SharedCytologyGrowingVatSystem : EntitySystem
 
             if (cell.GrowProgress >= 1f && proto.SpawnMobByPrototype != null)
             {
-                var ev = new CytologyGrowingVatMakeSmoke(beakerSolution);
-                RaiseLocalEvent(growingVat.Owner, ev);
+
+                PredictedSpawnAtPosition(growingVat.Comp.SmokePrototype, Transform(petriDish).Coordinates.SnapToGrid(EntityManager, _mapManager));
 
                 foreach (var mob in proto.SpawnMobByPrototype)
                 {
-                    Spawn(mob, Transform(petriDish).Coordinates); //TODO добавить спец эфекты
+                    PredictedSpawnAtPosition(mob, Transform(petriDish).Coordinates);
                 }
                 cellSamples.RemoveAt(i);
             }

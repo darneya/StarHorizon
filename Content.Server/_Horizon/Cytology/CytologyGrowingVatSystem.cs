@@ -16,7 +16,6 @@ public sealed class CytologyGrowingVatSystem : SharedCytologyGrowingVatSystem
         base.Initialize();
 
         SubscribeLocalEvent<CytologyGrowingVatComponent, GetVerbsEvent<InteractionVerb>>(OnGetVerb);
-        SubscribeLocalEvent<CytologyGrowingVatComponent, CytologyGrowingVatMakeSmoke>(MakeSmoke);
     }
 
     private void OnGetVerb(Entity<CytologyGrowingVatComponent> growingVat, ref GetVerbsEvent<InteractionVerb> args)
@@ -48,10 +47,5 @@ public sealed class CytologyGrowingVatSystem : SharedCytologyGrowingVatSystem
         growingVat.Comp.IsActive = false;
         DirtyField(growingVat.Owner, growingVat.Comp, nameof(growingVat.Comp.IsActive));
         Appearance.SetData(growingVat.Owner, CytologyGrowingVatVisualStates.Working, false);
-    }
-
-    private void MakeSmoke(Entity<CytologyGrowingVatComponent> growingVat, ref CytologyGrowingVatMakeSmoke args)
-    {
-        //_smokeSystem.StartSmoke(growingVat.Owner, args.Soln, 3f, 1); //TODO Работает ужасно
     }
 }

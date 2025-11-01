@@ -11,7 +11,7 @@ public sealed partial class CytologySwabComponent : Component
     public float SwabDelay = 2f;
 
     /// <summary>
-    /// Stores information about which texture to display to show the cell on it
+    ///     Stores information about which texture to display to show the cell on it
     /// </summary>
     [DataField, AutoNetworkedField]
     public string? TextureState;

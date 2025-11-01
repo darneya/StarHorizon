@@ -284,6 +284,9 @@
   - type: HTN # Frontier
     rootTask: # Frontier
       task: RuminantCompound # Frontier
+  - type: SampleSource # Horizon cytology
+    availableCellSamples:
+    - protoID: CellSampleChicken
 
 - type: entity
   parent: MobChicken
@@ -953,6 +956,9 @@
     guides:
     - Chef
     - FoodRecipes
+  - type: SampleSource # Horizon cytology
+    availableCellSamples:
+    - protoID: CellSampleCow
 
 - type: entity
   name: crab
@@ -1907,6 +1913,9 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: SampleSource # Horizon cytology
+    availableCellSamples:
+    - protoID: CellSampleMurine
 
 - type: entity
   parent: MobMouse
@@ -2220,6 +2229,9 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: SampleSource # Horizon cytology
+    availableCellSamples:
+    - protoID: CellSampleFrog
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity
@@ -2474,6 +2486,9 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
+  - type: SampleSource # Horizon cytology
+    availableCellSamples:
+    - protoID: CellSampleSnake
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -3141,6 +3156,9 @@
     factions:
     - Cat
   # End DeltaV
+  - type: SampleSource # Horizon cytology
+    availableCellSamples:
+    - protoID: CellSampleCat
 
 - type: entity
   name: calico cat
@@ -3883,3 +3901,6 @@
     - DoorBumpOpener
   - type: StatusIcon # marks them as crew
     bounds: -0.5,-0.5,0.5,0.5
+  - type: SampleSource # Horizon cytology
+    availableCellSamples:
+    - protoID: CellSampleCorgi

@@ -1,4 +1,4 @@
-cytology-dish-used = Dish used $samples
+cytology-dish-used = Dish used { $samples }
 cytology-dish-unused = Dish unused 
 cytology-dish-no-samples = Dish no samples 
 cytology-dish-full = Dish full 

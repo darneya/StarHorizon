@@ -26,13 +26,14 @@ public sealed class SharedCytologyInjectorSystem : EntitySystem
         if (args.Target == null || !args.CanReach)
             return;
 
-        _petriDishSystem.TryTransferCellsToPetriDish(injector.Owner, args.Target, args.User);
         TryCollectCellsFromCreature(injector, args);
 
-        if (!TryComp<CytologySampleContainerComponent>(injector.Owner, out var injectorSampleContainerComp))
-            return;
+        _petriDishSystem.TryTransferCellsToPetriDish(injector.Owner, args.Target, args.User);
 
-        _appearance.SetData(injector.Owner, CytologyInjectorVisualStates.HasSamples, injectorSampleContainerComp.CellSamples.Count() > 0);
+        if (TryComp<CytologySampleContainerComponent>(injector.Owner, out var injectorSampleContainerComp))
+        {
+            _appearance.SetData(injector.Owner, CytologyInjectorVisualStates.HasSamples, injectorSampleContainerComp.CellSamples.Count() > 0);
+        }
     }
 
     private void TryCollectCellsFromCreature(Entity<CytologyInjectorComponent> injector, AfterInteractEvent args)
@@ -75,6 +76,8 @@ public sealed class SharedCytologyInjectorSystem : EntitySystem
         var collectedCells = sampleSourceComp.AvailableCellSamples.Take(availableSpace).ToList();
 
         injectorSampleContainerComp.CellSamples.AddRange(collectedCells);
+
+        DirtyField(injector.Owner, injectorSampleContainerComp, nameof(injectorSampleContainerComp.CellSamples));
 
         _popupSystem.PopupClient(Loc.GetString("cytology-injector-collected"), args.Args.Target.Value, args.Args.User);
 

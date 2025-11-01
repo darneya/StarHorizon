@@ -5,7 +5,7 @@ namespace Content.Shared._Horizon.Cytology.Components;
 
 
 /// <summary>
-/// Stores the cell shot along with the growth parameter, which changes during growing
+///     Stores the cell shot along with the growth parameter, which changes during growing
 /// </summary>
 [Serializable, NetSerializable]
 [DataDefinition]

@@ -1,8 +1,8 @@
 - type: cellSample
   id: CellSampleMurine
   name: Murine cells
-  growthRateInSeconds: 10 # TODO назначить нормально
-  viralSusceptibility: 2 # TODO дать применение
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   supplementaryChemicals:
@@ -41,7 +41,7 @@
   id: CellSampleCow
   name: Bovine Stem Cells
   growthRateInSeconds: 600
-  viralSusceptibility: 2 # TODO дать применение
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   - "Nutriment"
@@ -61,7 +61,7 @@
   id: CellSampleCat
   name: Feliform Cells
   growthRateInSeconds: 300
-  viralSusceptibility: 2 # TODO дать применение
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   supplementaryChemicals:
@@ -80,7 +80,7 @@
   id: CellSampleCorgi
   name: Canid Cells
   growthRateInSeconds: 450
-  viralSusceptibility: 2 # TODO дать применение
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   supplementaryChemicals:
@@ -95,7 +95,7 @@
   id: CellSampleSpaceCarp
   name: Cyprinid Cells
   growthRateInSeconds: 450
-  viralSusceptibility: 2 # TODO дать применение
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   - "Nutriment"
@@ -114,7 +114,7 @@
   id: CellSampleMegaSpaceCarp
   name: Cartilaginous Cyprinid Cells
   growthRateInSeconds: 600
-  viralSusceptibility: 2 # TODO дать применение
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   - "Nutriment"
@@ -133,7 +133,7 @@
   id: CellSampleSnake
   name: Ophidic Cells
   growthRateInSeconds: 250
-  viralSusceptibility: 2 # TODO дать применение
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   supplementaryChemicals:
@@ -150,7 +150,7 @@
   id: CellSampleCockroach
   name: Blattodeoid Anthropod (sic) Cells
   growthRateInSeconds: 100
-  viralSusceptibility: 2 # TODO дать применение
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   supplementaryChemicals:
@@ -171,7 +171,7 @@
   id: CellSampleFrog
   name: Anura Amphibian Cells
   growthRateInSeconds: 250
-  viralSusceptibility: 2 # TODO дать применение
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   supplementaryChemicals:
@@ -188,7 +188,7 @@
   id: CellSampleSlime
   name: Slime Particles
   growthRateInSeconds: 250
-  viralSusceptibility: 2 # TODO дать применение
+  viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   supplementaryChemicals:

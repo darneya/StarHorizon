@@ -7,13 +7,13 @@ namespace Content.Shared._Horizon.Cytology.Components;
 public sealed partial class CytologySampleContainerComponent : Component
 {
     /// <summary>
-    /// How many samples does the object store
+    ///     How many samples does the object store
     /// </summary>
     [DataField, AutoNetworkedField]
     public List<CellSample> CellSamples = new();
 
     /// <summary>
-    /// Maximum number of samples which can store an object
+    ///     Maximum number of samples which can store an object
     /// </summary>
     [DataField]
     public int MaxSamples = 5;
