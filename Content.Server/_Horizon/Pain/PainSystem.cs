@@ -1,48 +1,106 @@
+using System.Numerics;
+using Content.Shared._Horizon.Pain.Components;
 using Content.Server.Chat.Systems;
 using Content.Shared._Horizon.Medical.Damage;
-using Content.Server._Horizon.Pain.Components;
 using Content.Shared._Horizon.Pain.Prototypes;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Popups;
+using Content.Shared.Projectiles;
 using Content.Shared.Standing;
+using Content.Shared.Stunnable;
+using Content.Shared.Traits.Assorted;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Horizon.Pain;
 
-/// <summary>
-///
-/// </summary>
 public sealed class PainSystem : EntitySystem
 {
     [Dependency] private readonly MovementSpeedModifierSystem _movement = null!;
     [Dependency] private readonly StandingStateSystem _standSystem = null!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = null!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = null!;
     [Dependency] private readonly IPrototypeManager _protoMan = null!;
+    [Dependency] private readonly IGameTiming _gameTiming = null!;
+    [Dependency] private readonly SharedStunSystem _stun = null!;
     [Dependency] private readonly IRobustRandom _random = null!;
     [Dependency] private readonly ChatSystem _chat = null!;
 
-    private ISawmill _sawmill = null!;
     /// <inheritdoc/>
     public override void Initialize()
     {
-        SubscribeLocalEvent<PainComponent, RefreshMovementSpeedModifiersEvent>(RefreshMovementSpeed);
-        SubscribeLocalEvent<PainComponent, DamageBeforeApplyEvent>(OnDamageCause);
-        SubscribeLocalEvent<PainComponent, PainEffectEvent>(ApplyPainEffect);
+        base.Initialize();
 
-        _sawmill = Logger.GetSawmill("painLogger");
+        SubscribeLocalEvent<ProjectileHitEffectComponent, ProjectileHitEvent>(OnProjectileHit);
+        SubscribeLocalEvent<PainComponent, DamageBeforeApplyEvent>(OnDamageCause);
+        SubscribeLocalEvent<PainComponent, RefreshMovementSpeedModifiersEvent>(SlowdownBody);
     }
+
+    #region Projectiles
+    private void OnProjectileHit(Entity<ProjectileHitEffectComponent> entity, ref ProjectileHitEvent ev)
+    {
+        if (!TryComp<PainComponent>(ev.Target, out var pain)
+            || !TryComp<PhysicsComponent>(entity.Owner, out var physics))
+            return;
+
+        if (pain.EffectCooldown > _gameTiming.CurTime && pain.GunshotsCount.ContainsKey(entity.Comp.BulletId))
+            return;
+
+        if (pain.EndGunshotsTime <= _gameTiming.CurTime)
+            ResetGunshots(pain, entity.Comp.BulletId);
+
+        CountShot(ev.Target, pain, physics.LinearVelocity, entity.Comp.BulletId, ev.Damage.GetTotal());
+        TryApplyGunshotsEffect(ev.Target, pain, entity.Comp);
+    }
+
+    private void CountShot(EntityUid body, PainComponent pain, Vector2 linearVelocity, string bulletId, FixedPoint2 totalDamage)
+    {
+        pain.EndGunshotsTime ??= _gameTiming.CurTime + TimeSpan.FromMilliseconds(500);
+        if (pain.EffectCooldown > _gameTiming.CurTime)
+            return;
+
+        pain.TotalDamage += totalDamage;
+        pain.TotalImpulse += linearVelocity;
+        if (!pain.GunshotsCount.TryAdd(bulletId, 1))
+            pain.GunshotsCount[bulletId]++;
+    }
+
+    private void ResetGunshots(PainComponent pain, string bulletId)
+    {
+        pain.TotalImpulse = Vector2.Zero;
+        pain.TotalDamage = FixedPoint2.Zero;
+        pain.GunshotsCount.Remove(bulletId);
+        pain.EndGunshotsTime = null;
+    }
+
+    private void TryApplyGunshotsEffect(EntityUid target, PainComponent pain, ProjectileHitEffectComponent projectile)
+    {
+        if (!pain.GunshotsCount.TryGetValue(projectile.BulletId, out var shots))
+            return;
+
+        if (shots < projectile.Gunshots || pain.EndGunshotsTime <= _gameTiming.CurTime)
+            return;
+
+        if (projectile.Push)
+            _physics.ApplyLinearImpulse(target, pain.TotalImpulse * 10f);
+
+        _stun.TryStun(target, projectile.EffectDuration, true);
+        TryCauseScreamOfPain(target, pain.ScreamOfPainPrototype, pain.TotalDamage, ref pain.NextPossibleScream);
+        pain.EffectCooldown = _gameTiming.CurTime + projectile.EffectCooldown;
+    }
+    #endregion
 
     private void OnDamageCause(Entity<PainComponent> entity, ref DamageBeforeApplyEvent ev)
     {
-        if (CheckPainRequirements(entity))
+        if (ev.Cancelled || ev.Damage.Empty || HasComp<PainNumbnessComponent>(entity.Owner))
             return;
 
-        if (ev.Cancelled || ev.Damage.Empty)
+        if (CheckPainRequirements(entity))
             return;
 
         if (ev.Damage.GetTotal() > 0)
@@ -81,10 +139,10 @@ public sealed class PainSystem : EntitySystem
             pain.CurrentPain += painPerDamage.Float() * damage.Float();
         }
 
-        TryCauseScreamOfPain(body, pain.ScreamOfPainPrototype, specifier.GetTotal());
-        pain.CurrentStage = UpdatePainStage(body, pain.CurrentPain, pain.PainThresholds);
-        if (pain.CurrentPain > pain.PainThresholds[PainStages.UnbeatablePain])
-            pain.CurrentPain = pain.PainThresholds[PainStages.UnbeatablePain];
+        TryCauseScreamOfPain(body, pain.ScreamOfPainPrototype, specifier.GetTotal(), ref pain.NextPossibleScream);
+        UpdatePainStage(body, ref pain, pain.CurrentPain, pain.PainThresholds);
+        if (pain.CurrentPain > pain.PainThresholds[PainStages.DeadPain])
+            pain.CurrentPain = pain.PainThresholds[PainStages.DeadPain];
     }
 
     public void RemovePainDamage(EntityUid body, PainComponent pain, Dictionary<string, FixedPoint2> damageDict)
@@ -101,30 +159,12 @@ public sealed class PainSystem : EntitySystem
             pain.CurrentPain += painPerDamage.Float() * damage.Float();
         }
 
-        pain.CurrentStage = UpdatePainStage(body, pain.CurrentPain, pain.PainThresholds);
+        UpdatePainStage(body, ref pain, pain.CurrentPain, pain.PainThresholds);
         if (pain.CurrentPain < pain.PainThresholds[PainStages.Nothing])
             pain.CurrentPain = pain.PainThresholds[PainStages.Nothing];
     }
 
-    private void ApplyPainEffect(EntityUid body, PainComponent pain, ref PainEffectEvent ev)
-    {
-        switch (ev.Key)
-        {
-            case "TryStandUp":
-                if (pain.CurrentStage != PainStages.UnbeatablePain)
-                    return;
-
-                _popupSystem.PopupEntity(Loc.GetString("pain-standup-cancelled"), body, PopupType.LargeCaution);
-                _sawmill.Debug($"Попытка встать была прервана из - за невыносимой боли у {MetaData(body).EntityName}");
-                ev.Cancelled = true;
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    private PainStages UpdatePainStage(EntityUid body, float pain, SortedDictionary<PainStages, float> painThresholds)
+    private void UpdatePainStage(EntityUid body, ref PainComponent comp, float pain, SortedDictionary<PainStages, float> painThresholds)
     {
         var actualStage = PainStages.Nothing;
         foreach (var (stage, painLevel) in painThresholds)
@@ -133,74 +173,60 @@ public sealed class PainSystem : EntitySystem
                 actualStage = stage;
         }
 
-        UpdatePainStageEffects(body, actualStage);
+        comp.CurrentStage = actualStage;
+        TryDownBody(body, comp.CurrentStage);
         _movement.RefreshMovementSpeedModifiers(body);
-
-        return actualStage;
+        DirtyField(body, comp, nameof(PainComponent.CurrentStage));
     }
 
-    private void UpdatePainStageEffects(EntityUid body, PainStages stage)
+    private void SlowdownBody(EntityUid body, PainComponent pain, ref RefreshMovementSpeedModifiersEvent ev)
     {
-        switch (stage)
-        {
-            case PainStages.Nothing:
+        if (pain.CurrentStage <= PainStages.AveragePain)
+            return;
 
-            case PainStages.MildPain:
+        if (!TryComp<DamageableComponent>(body, out var damageable))
+            return;
 
-            case PainStages.AveragePain:
+        var total = damageable.Damage.GetTotal();
+        if (total == 0)
+            return;
 
-            case PainStages.SeverePain:
-                break;
-
-            case PainStages.UnbeatablePain:
-                if (!_standSystem.IsDown(body))
-                    _standSystem.Down(body);
-                break;
-
-            default:
-                break;
-        }
+        var heat = damageable.Damage.DamageDict["Heat"];
+        var percentage = Math.Clamp(1f - (heat / total).Float(), 0.4f, 1f);
+        if (_standSystem.IsDown(body))
+            ev.ModifySpeed(percentage * 0.4f);
+        ev.ModifySpeed(percentage);
     }
 
-    private void RefreshMovementSpeed(EntityUid body, PainComponent pain, ref RefreshMovementSpeedModifiersEvent args)
+    private void TryDownBody(EntityUid body, PainStages currentStage)
     {
-        switch (pain.CurrentStage)
-        {
-            case PainStages.Nothing:
-                break;
+        if (currentStage != PainStages.UnbeatablePain)
+            return;
 
-            case PainStages.MildPain:
-                args.ModifySpeed(0.9f);
-                break;
+        if (_standSystem.IsDown(body))
+            return;
 
-            case PainStages.AveragePain:
-                args.ModifySpeed(0.8f);
-                break;
-
-            case PainStages.SeverePain:
-                args.ModifySpeed(0.6f);
-                break;
-
-            case PainStages.UnbeatablePain:
-                args.ModifySpeed(0.4f);
-                break;
-
-            default:
-                break;
-        }
+        _standSystem.Down(body);
+        _movement.RefreshMovementSpeedModifiers(body);
     }
 
-    private void TryCauseScreamOfPain(EntityUid body, string screamList, FixedPoint2 pain)
+    private void TryCauseScreamOfPain(EntityUid body, string screamList, FixedPoint2 pain, ref TimeSpan nextPossibleScream)
     {
+        if (_gameTiming.CurTime < nextPossibleScream)
+            return;
+
         var screamProto = _protoMan.Index<ScreamOfPainPrototype>(screamList);
+        string? scream = null;
         foreach (var (damage, list) in screamProto.ScreamList)
         {
-            if (damage > pain)
-                continue;
-
-            var scream = list[_random.Next(0, list.Count)];
-            _chat.TrySendInGameICMessage(body, scream, InGameICChatType.Speak, false, true);
-            return;
+            if (pain >= damage)
+                scream = list[_random.Next(0, list.Count)];
         }
+
+        if (scream is null)
+            return;
+
+        _chat.TrySendInGameICMessage(body, scream, InGameICChatType.Speak, false, true);
+        nextPossibleScream = _gameTiming.CurTime + TimeSpan.FromSeconds(1);
     }
 }

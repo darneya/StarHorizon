@@ -1,8 +1,5 @@
 namespace Content.Shared._Horizon.Pain.Prototypes;
 
-[ByRefEvent]
-public record struct PainEffectEvent(string Key, bool Cancelled = false, string Reason = "");
-
 public enum PainStages : byte
 {
     Nothing = 0,
@@ -10,4 +7,5 @@ public enum PainStages : byte
     AveragePain = 2,
     SeverePain = 3,
     UnbeatablePain = 4,
+    DeadPain = 5,
 }

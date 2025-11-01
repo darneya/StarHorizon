@@ -1,3 +1,4 @@
+using Content.Shared._Horizon.Pain.Components;
 using Content.Shared.Input;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Standing;
@@ -12,6 +13,8 @@ using Content.Shared.Body.Components;
 using Content.Server.Guardian;
 using Content.Shared._Horizon.Pain.Prototypes;
 using Content.Shared.DoAfter;
+using Content.Shared.Popups;
+using Content.Shared.Traits.Assorted;
 
 namespace Content.Server._Horizon.Laying;
 
@@ -21,6 +24,7 @@ public sealed class LayingSystem : EntitySystem
     [Dependency] private readonly StandingStateSystem _standing = null!;
     [Dependency] private readonly SharedGravitySystem _gravity = null!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = null!;
+    [Dependency] private readonly SharedPopupSystem _popup = null!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = null!;
 
     public override void Initialize()
@@ -94,10 +98,13 @@ public sealed class LayingSystem : EntitySystem
         if (standing.Standing)
             return false;
 
-        var ev = new PainEffectEvent("TryStandUp");
-        RaiseLocalEvent(uid, ref ev);
-        if (ev.Cancelled)
+        if (TryComp<PainComponent>(uid, out var pain) && pain.CurrentStage == PainStages.UnbeatablePain
+            && !HasComp<PainNumbnessComponent>(uid))
+        {
+            _popup.PopupEntity(Loc.GetString("pain-try-stand-up"), uid, PopupType.MediumCaution);
             return false;
+        }
+
 
         var args = new DoAfterArgs(EntityManager, uid, 2f, new StandingUpDoAfterEvent(), uid)
         {

@@ -30,7 +30,6 @@
   - type: Carriable # Frontier: Carrying system from nyanotrasen.
   - type: Speech # Frontier
     allowedEmotes: ['Belch'] # Frontier
-  - type: GunshotPainEffected
   - type: Pain
     painThresholds:
       Nothing: 0
@@ -38,6 +37,7 @@
       AveragePain: 100
       SeverePain: 150
       UnbeatablePain: 250
+      DeadPain: 500
     screamPrototype: screamHuman
     converterPrototype: human
 
@@ -53,10 +53,15 @@
   id: screamHuman
   screamList:
     20:
-      - "Arghh!"
-      - "Dammit!"
-      - "Shit!"
-      - "Mnghhh..."
+      - "Ургх!"
+      - "ЧЁРТ!"
+      - "БЛЯДЬ!"
+      - "Мгхххх..."
+    40:
+      - "CУКАААА!!!"
+      - "ТВОЮ МАТЬ!!!"
+      - "БЛЯЯЯЯЯ!"
+      - "АРГХХХХ!!!"
 
 - type: entity
   parent: BaseSpeciesDummy
