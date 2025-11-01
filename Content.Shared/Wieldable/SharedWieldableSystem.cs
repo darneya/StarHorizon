@@ -251,7 +251,7 @@ public abstract class SharedWieldableSystem : EntitySystem
             return;
 
         args.Cancelled = true;
-        _popup.PopupEntity(Loc.GetString("wieldable-component-pain-blocked"), ent.Owner, PopupType.MediumCaution);
+        _popup.PopupClient(Loc.GetString("wieldable-component-pain-blocked"), ent.Owner, ent.Owner, PopupType.MediumCaution);
     }
     // _Horizon end
 
