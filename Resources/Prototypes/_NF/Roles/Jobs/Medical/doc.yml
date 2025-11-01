@@ -4,6 +4,7 @@
   description: job-description-doc
   playTimeTracker: JobDirectorOfCare
   salary: 80000 # Horizon
+  forceFaction: FactionMed # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 72000 # 20 hrs

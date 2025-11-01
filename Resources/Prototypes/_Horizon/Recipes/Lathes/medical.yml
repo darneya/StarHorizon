@@ -342,6 +342,149 @@
     Plasma: 250
     Glass: 400
 
+- type: latheRecipe
+  id: GalacticCommonTranslatorImplanter
+  result: GalacticCommonTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: ArachnidTranslatorImplanter
+  result: ArachnidTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: NekomimeticTranslatorImplanter
+  result: NekomimeticTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: DraconicTranslatorImplanter
+  result: DraconicTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: CanilunztTranslatorImplanter
+  result: CanilunztTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: SikTajTranslatorImplanter
+  result: SikTajTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: NianTranslatorImplanter
+  result: NianTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: SolCommonTranslatorImplanter
+  result: SolCommonTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: DwarfTranslatorImplanter
+  result: DwarfTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: NeoRusskiyaTranslatorImplanter
+  result: NeoRusskiyaTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: ClownishTranslatorImplanter
+  result: ClownishTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: GoblinSpeakTranslatorImplanter
+  result: GoblinSpeakTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: HarpySpeakTranslatorImplanter
+  result: HarpySpeakTranslatorImplanter
+  category: Implants
+  completetime: 3
+  materials:
+    Plastic: 100
+    Steel: 100
+    Plasma: 100
+    Glass: 100
+
 # Exoskeletons
 # Bone
 

@@ -4,6 +4,7 @@
   description: job-description-senior-officer
   playTimeTracker: JobSeniorOfficer
   salary: 60000 # Horizon
+  forceFaction: FactionNFSD # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 108000 # 30 hours

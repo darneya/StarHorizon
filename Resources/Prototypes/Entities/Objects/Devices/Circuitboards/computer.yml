@@ -20,7 +20,8 @@
         Glass: 230
       chemicalComposition:
         Silicon: 20
-    - type: BindToStation # Frontier
+    - type: BindToStation # Horizon
+      enabled: false # Horizon - should be draggable between stations
 
 - type: entity
   parent: BaseComputerCircuitboard

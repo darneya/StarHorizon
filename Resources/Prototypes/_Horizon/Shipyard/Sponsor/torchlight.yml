@@ -11,11 +11,11 @@
 - type: vessel
   id: TorchLight
   parent: BaseVessel
-  name: NRZN TorchLight
+  name: NECG Torchlight
   description: Небольшой шаттл для одиночных путешествий люкс класса.
-  price: 33000 # 25086, наценка верфи 30% = 32612
+  price: 150000 # 25086, наценка верфи 30% = 32612
   category: Small
-  group: Custom
+  group: Shipyard
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Sponsor/torchlight.yml
   class:
   - Civilian
@@ -24,7 +24,7 @@
 
 - type: gameMap
   id: TorchLight
-  mapName: 'NRZN TorchLight'
+  mapName: 'NECG Torchlight'
   mapPath: /Maps/_Horizon/Shuttles/Shipyard/Sponsor/torchlight.yml
   minPlayers: 0
   stations:

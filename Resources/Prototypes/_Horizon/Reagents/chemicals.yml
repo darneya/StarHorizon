@@ -1,0 +1,42 @@
+- type: reagent
+  id: Darknes
+  name: темень
+  desc: Вещество похожее на смолу, является крайне нестабильным
+  physicalDesc: Мерзкое
+  flavor: bitter
+  color: "#292629"
+  boilingPoint: 55.5
+  meltingPoint: -50.0
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -2.5
+            Bloodloss: -2.5
+            Poison: -5
+      - !type:HealthChange
+        conditions:
+        - !type:TotalDamage
+          min: 100
+        damage:
+          types:
+            Radiation: 6.5
+            Poison: 6.5
+      - !type:HealthChange
+        conditions:
+        - !type:TotalDamage
+          min: 50
+        damage:
+          types:
+            Asphyxiation: -5
+            Bloodloss: -5
+            Poison: -2.5
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+        probability: 0.3
+      - !type:ModifyBleedAmount
+        amount: -0.10
