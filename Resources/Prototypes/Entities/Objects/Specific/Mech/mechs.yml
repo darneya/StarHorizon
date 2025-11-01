@@ -110,6 +110,8 @@
         node: start
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: CanBeTakenUnderControl # Horizon Remote control
+    remotePilot: MobRemotePilot
 
 - type: entity
   id: MechRipley

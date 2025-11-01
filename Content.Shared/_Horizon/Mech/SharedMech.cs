@@ -58,3 +58,11 @@ public sealed partial class PopulateMechEquipmentMenuEvent : EntityEventArgs
 public sealed partial class CloseMechMenuEvent : EntityEventArgs
 {
 }
+
+/// <summary>
+/// Raise on eject pilot to del remote pilot
+/// </summary>
+[Serializable, NetSerializable]
+public sealed partial class OnPilotEjectEvent : EntityEventArgs // Horizon RemotePilot
+{
+}
