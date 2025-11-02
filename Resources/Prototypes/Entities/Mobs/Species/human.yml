@@ -36,9 +36,9 @@
       Nothing: 0
       MildPain: 50
       AveragePain: 100
-      SeverePain: 140
-      UnbeatablePain: 180
-      DeadPain: 400
+      SeverePain: 200
+      UnbeatablePain: 250
+      DeadPain: 500
     screamPrototype: screamHuman
     converterPrototype: human
 
