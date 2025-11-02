@@ -1,12 +1,12 @@
 # Информация об авторе шаттла
-# GitHub/Gitea: ??? 
+# GitHub/Gitea: ???
 # Discord: lnqz1tor
 
-# Информация об сопровождающем 
+# Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
 # Discord: astr0laris
 
-# Прототип шаттла: 
+# Прототип шаттла:
 #
 - type: vessel
   id: Scarab
@@ -21,6 +21,13 @@
   - Salvage
   engine:
   - AME
+  costModifiers:
+    - !type:FactionCostModifier
+      faction: "FactionLVHI"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
 
 - type: gameMap
   id: Scarab
@@ -32,11 +39,11 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Scarab {1}'  
+          mapNameTemplate: 'Scarab {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
-        - type: StationJobs 
+        - type: StationJobs
           availableJobs:
             ContractorInterview: [ 0, 0 ]
             PilotInterview: [ 0, 0 ]
