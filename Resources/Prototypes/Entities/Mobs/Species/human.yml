@@ -36,9 +36,9 @@
       Nothing: 0
       MildPain: 50
       AveragePain: 100
-      SeverePain: 150
-      UnbeatablePain: 250
-      DeadPain: 500
+      SeverePain: 140
+      UnbeatablePain: 180
+      DeadPain: 400
     screamPrototype: screamHuman
     converterPrototype: human
 
@@ -48,7 +48,7 @@
     Slash: 1.5
     Blunt: 1.2
     Piercing: 2
-    Heat: 3
+    Heat: 4
     Shock: 0.8
     Cold: 2.5
     Caustic: 4
