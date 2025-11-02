@@ -98,21 +98,6 @@
 
 # Horizon start
 - type: storeCategory
-  id: UplinkMechMechs
-  name: Мехи
-  priority: 12
-
-- type: storeCategory
-  id: UplinkMechWeapon
-  name: Вооружение мехов
-  priority: 13
-
-- type: storeCategory
-  id: UplinkMechEquipment
-  name: Снаряжение мехов
-  priority: 14
-
-- type: storeCategory
   id: UplinkGunnery
   name: Орудия шаттлов
   priority: 15

@@ -1538,8 +1538,6 @@ entities:
       pos: 7.5,5.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 240
   - uid: 293
@@ -1548,8 +1546,6 @@ entities:
       pos: 7.5,10.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 240
 - proto: GasVentScrubber
@@ -1563,8 +1559,6 @@ entities:
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 240
   - uid: 329
