@@ -1,4 +1,3 @@
-using System.Numerics;
 using Content.Shared._Horizon.Pain.Components;
 using Content.Server.Chat.Systems;
 using Content.Shared._Horizon.Medical.Damage;
@@ -8,11 +7,9 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Projectiles;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 using Content.Shared.Traits.Assorted;
-using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -24,10 +21,8 @@ public sealed class PainSystem : EntitySystem
 {
     [Dependency] private readonly MovementSpeedModifierSystem _movement = null!;
     [Dependency] private readonly StandingStateSystem _standSystem = null!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = null!;
     [Dependency] private readonly IPrototypeManager _protoMan = null!;
     [Dependency] private readonly IGameTiming _gameTiming = null!;
-    [Dependency] private readonly SharedStunSystem _stun = null!;
     [Dependency] private readonly IRobustRandom _random = null!;
     [Dependency] private readonly ChatSystem _chat = null!;
 
@@ -36,64 +31,9 @@ public sealed class PainSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ProjectileHitEffectComponent, ProjectileHitEvent>(OnProjectileHit);
         SubscribeLocalEvent<PainComponent, DamageBeforeApplyEvent>(OnDamageCause);
         SubscribeLocalEvent<PainComponent, RefreshMovementSpeedModifiersEvent>(SlowdownBody);
     }
-
-    #region Projectiles
-    private void OnProjectileHit(Entity<ProjectileHitEffectComponent> entity, ref ProjectileHitEvent ev)
-    {
-        if (!TryComp<PainComponent>(ev.Target, out var pain)
-            || !TryComp<PhysicsComponent>(entity.Owner, out var physics))
-            return;
-
-        if (pain.EffectCooldown > _gameTiming.CurTime && pain.GunshotsCount.ContainsKey(entity.Comp.BulletId))
-            return;
-
-        if (pain.EndGunshotsTime <= _gameTiming.CurTime)
-            ResetGunshots(pain, entity.Comp.BulletId);
-
-        CountShot(ev.Target, pain, physics.LinearVelocity, entity.Comp.BulletId, ev.Damage.GetTotal());
-        TryApplyGunshotsEffect(ev.Target, pain, entity.Comp);
-    }
-
-    private void CountShot(EntityUid body, PainComponent pain, Vector2 linearVelocity, string bulletId, FixedPoint2 totalDamage)
-    {
-        pain.EndGunshotsTime ??= _gameTiming.CurTime + TimeSpan.FromMilliseconds(500);
-        if (pain.EffectCooldown > _gameTiming.CurTime)
-            return;
-
-        pain.TotalDamage += totalDamage;
-        pain.TotalImpulse += linearVelocity;
-        if (!pain.GunshotsCount.TryAdd(bulletId, 1))
-            pain.GunshotsCount[bulletId]++;
-    }
-
-    private void ResetGunshots(PainComponent pain, string bulletId)
-    {
-        pain.TotalImpulse = Vector2.Zero;
-        pain.TotalDamage = FixedPoint2.Zero;
-        pain.GunshotsCount.Remove(bulletId);
-        pain.EndGunshotsTime = null;
-    }
-
-    private void TryApplyGunshotsEffect(EntityUid target, PainComponent pain, ProjectileHitEffectComponent projectile)
-    {
-        if (!pain.GunshotsCount.TryGetValue(projectile.BulletId, out var shots))
-            return;
-
-        if (shots < projectile.Gunshots || pain.EndGunshotsTime <= _gameTiming.CurTime)
-            return;
-
-        if (projectile.Push)
-            _physics.ApplyLinearImpulse(target, pain.TotalImpulse * 10f);
-
-        _stun.TryStun(target, projectile.EffectDuration, true);
-        TryCauseScreamOfPain(target, pain.ScreamOfPainPrototype, pain.TotalDamage, ref pain.NextPossibleScream);
-        pain.EffectCooldown = _gameTiming.CurTime + projectile.EffectCooldown;
-    }
-    #endregion
 
     private void OnDamageCause(Entity<PainComponent> entity, ref DamageBeforeApplyEvent ev)
     {
