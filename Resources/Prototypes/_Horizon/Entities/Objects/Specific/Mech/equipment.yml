@@ -252,3 +252,39 @@
   - type: Tag
     tags:
       - MechEquipmentGeneral
+
+- type: entity
+  id: MechEquipmentRCD
+  parent: BaseMechEquipment
+  name: mech rcd
+  description: e
+  components:
+  - type: Sprite
+    state: mecha_clamp
+  - type: MechEquipmentComponents
+    components:
+    - type: RCD
+      availablePrototypes:
+      - WallSolid
+      - FloorSteel
+      - Plating
+      - Catwalk
+      - Grille
+      - Window
+      - WindowDirectional
+      - WindowReinforcedDirectional
+      - ReinforcedWindow
+      - Airlock
+      - AirlockGlass
+      - Firelock
+      - TubeLight
+      - BulbLight
+      - LVCable
+      - MVCable
+      - HVCable
+      - CableTerminal
+      - Deconstruct
+    - type: MechRCD
+  - type: Tag
+    tags:
+      - MechEquipmentGeneral
