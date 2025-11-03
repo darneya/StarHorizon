@@ -12,44 +12,50 @@ public sealed partial class PlanetPrototype : IPrototype
     [IdDataField]
     public string ID { get; set; } = string.Empty;
 
+    /// <summary>
+    /// Спавнить ли планету раундстартом
+    /// </summary>
     [DataField]
     public bool SpawnRoundstart = false;
 
+    /// <summary>
+    /// Карта основной локации планеты (0 0 координаты)
+    /// </summary>
     [DataField]
     public ResPath? MapPath;
 
     /// <summary>
-    /// The biome to create the planet with.
+    /// Биом, применяющийся к карте планеты
     /// </summary>
     [DataField(required: true)]
     public ProtoId<BiomeTemplatePrototype> Biome;
 
     /// <summary>
-    /// Name to give to the map.
+    /// Имя планеты
     /// </summary>
     [DataField(required: true)]
     public LocId MapName;
 
     /// <summary>
-    /// Ambient lighting for the map.
+    /// Освещение планеты
     /// </summary>
     [DataField]
     public Color MapLight = Color.FromHex("#D8B059");
 
     /// <summary>
-    /// Components to add to the map.
+    /// Компоненты, добавляемые к карте планеты
     /// </summary>
     [DataField]
     public ComponentRegistry? AddedComponents;
 
     /// <summary>
-    /// The gas mixture to use for the atmosphere.
+    /// Атмосферы планеты
     /// </summary>
     [DataField(required: true)]
     public GasMixture Atmosphere = new();
 
     /// <summary>
-    /// Biome layers to add to the map, i.e. ores.
+    /// Слои маркеров биомов, по типу руд
     /// </summary>
     [DataField]
     public List<ProtoId<BiomeMarkerLayerPrototype>> BiomeMarkerLayers = new();

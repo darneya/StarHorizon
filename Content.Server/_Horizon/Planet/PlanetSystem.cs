@@ -41,7 +41,7 @@ public sealed class PlanetSystem : EntitySystem
 
             if (proto.MapPath is { } path)
             {
-                LoadPlanet(proto.ID, path.CanonPath);
+                LoadPlanetWithMap(proto.ID, path.CanonPath);
             }
             else
                 SpawnPlanet(proto.ID);
@@ -49,7 +49,7 @@ public sealed class PlanetSystem : EntitySystem
     }
 
     /// <summary>
-    /// Spawn a planet map from a planet prototype.
+    /// Создаёт планету из прототипа
     /// </summary>
     public EntityUid SpawnPlanet(ProtoId<PlanetPrototype> id, bool runMapInit = true)
     {
@@ -77,10 +77,9 @@ public sealed class PlanetSystem : EntitySystem
     }
 
     /// <summary>
-    /// Spawns an initialized planet map from a planet prototype and loads a grid onto it.
-    /// Returns the map entity if loading succeeded.
+    /// Спавнит планету с загрузкой определённой карты
     /// </summary>
-    public EntityUid? LoadPlanet(ProtoId<PlanetPrototype> id, string path)
+    public EntityUid? LoadPlanetWithMap(ProtoId<PlanetPrototype> id, string path)
     {
         var map = SpawnPlanet(id, runMapInit: false);
         var mapId = Comp<MapComponent>(map).MapId;
