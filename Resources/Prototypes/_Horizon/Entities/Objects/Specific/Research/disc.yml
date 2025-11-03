@@ -115,9 +115,9 @@
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscArsenalBasicModules
-  name: technology disc [Arsenal Modules]
-  description: A disk containing data about Arsenal Modules.
+  id: TechnologyDiscArsenalAmmoModules
+  name: technology disc [Ammo Modules]
+  description: A disk containing data about Ammo Modules.
 
 - type: entity
   parent: TechnologyDiscBase
