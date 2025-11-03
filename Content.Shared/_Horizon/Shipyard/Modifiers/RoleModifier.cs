@@ -1,7 +1,5 @@
-using Content.Shared._Horizon.FlavorText;
-using Content.Shared.Mind;
-using Content.Shared.Roles;
-using Content.Shared.Roles.Jobs;
+using Content.Shared._NF.Shipyard.Components;
+using Content.Shared.Access.Components;
 
 namespace Content.Shared._Horizon.Shipyard;
 
@@ -10,18 +8,15 @@ public sealed partial class RoleModifier : BaseVesselCostModifier
     [DataField("role", required: true)]
     private string _role = string.Empty;
 
-    public override void Modify(EntityUid? user, ref int cost, IEntityManager entMan)
+    public override void Modify(EntityUid? user, EntityUid console, ref int cost, IEntityManager entMan)
     {
-        if (user is not { Valid: true } uid)
+        if (!entMan.TryGetComponent<ShipyardConsoleComponent>(console, out var comp) || entMan.GetEntity(comp.CurIdCard) is not { Valid: true } id)
             return;
 
-        var mindSys = entMan.System<SharedMindSystem>();
-        var jobSys = entMan.System<SharedJobSystem>();
-
-        if (!mindSys.TryGetMind(uid, out var mindId, out var mind) || !jobSys.MindTryGetJob(mindId, out var job))
+        if (!entMan.TryGetComponent<IdCardComponent>(id, out var idCardComp))
             return;
 
-        if (job.ID != _role)
+        if (idCardComp.JobPrototype != _role)
             return;
 
         cost = (int)(cost * CostMultiplier);

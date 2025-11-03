@@ -35,6 +35,8 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
     private bool _validId = false;
     private ConfirmButton? _currentlyConfirmingButton = null;
 
+    public EntityUid Owner = EntityUid.Invalid;   // Horizon
+
     public ShipyardConsoleMenu()
     {
         RobustXamlLoader.Load(this);
@@ -144,7 +146,7 @@ public sealed partial class ShipyardConsoleMenu : FancyWindow
                 // Horizon tweak start
                 var cost = prototype!.Price;
                 foreach (var item in prototype!.CostModifiers)
-                    item.Modify(_player.LocalEntity, ref cost, _entMan);
+                    item.Modify(_player.LocalEntity, Owner, ref cost, _entMan);
 
                 priceText = BankSystemExtensions.ToSpesoString(cost);
 

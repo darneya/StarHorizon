@@ -170,7 +170,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             var price = vessel.Price;
 
             foreach (var item in vessel.CostModifiers)
-                item.Modify(player, ref price, _entityManager);
+                item.Modify(player, shipyardConsoleUid, ref price, _entityManager);
 
             // Horizon end
             if (!_bank.TryBankWithdraw(player, price))  // Horizon - modify price
@@ -608,6 +608,11 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 voucherUsed);
 
         }
+
+        // Horizon start
+        component.CurIdCard = GetNetEntity(component.TargetIdSlot.ContainerSlot?.ContainedEntity);
+        Dirty(uid, component);
+        // Horizon end
     }
 
     /// <summary>
