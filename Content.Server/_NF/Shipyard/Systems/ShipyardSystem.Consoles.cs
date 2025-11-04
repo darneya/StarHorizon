@@ -166,9 +166,16 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
         else
         {
-            if (!_bank.TryBankWithdraw(player, vessel.Price))
+            // Horizon start
+            var price = vessel.Price;
+
+            foreach (var item in vessel.CostModifiers)
+                item.Modify(player, shipyardConsoleUid, ref price, _entityManager);
+
+            // Horizon end
+            if (!_bank.TryBankWithdraw(player, price))  // Horizon - modify price
             {
-                ConsolePopup(player, Loc.GetString("cargo-console-insufficient-funds", ("cost", vessel.Price)));
+                ConsolePopup(player, Loc.GetString("cargo-console-insufficient-funds", ("cost", price)));   // Horizon - modify price
                 PlayDenySound(player, shipyardConsoleUid, component);
                 return;
             }
@@ -601,6 +608,11 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 voucherUsed);
 
         }
+
+        // Horizon start
+        component.CurIdCard = GetNetEntity(component.TargetIdSlot.ContainerSlot?.ContainedEntity);
+        Dirty(uid, component);
+        // Horizon end
     }
 
     /// <summary>

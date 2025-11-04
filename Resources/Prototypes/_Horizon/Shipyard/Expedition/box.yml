@@ -2,11 +2,11 @@
 # GitHub/Gitea: https://github.com/OHoro4ek1
 # Discord: ohoro4ek
 
-# Информация об сопровождающем 
+# Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
 # Discord: astr0laris
 
-# Прототип шаттла: 
+# Прототип шаттла:
 #
 - type: vessel
   id: BoxShuttle
@@ -22,6 +22,21 @@
   - Salvage
   engine:
   - AME
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionSIU"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionArcadia"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: BoxShuttle
@@ -33,11 +48,11 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Box {1}'  
+          mapNameTemplate: 'Box {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
-        - type: StationJobs 
+        - type: StationJobs
           availableJobs:
             ContractorInterview: [ 0, 0 ]
             PilotInterview: [ 0, 0 ]

@@ -1,0 +1,5 @@
+- type: entity
+  save: false
+  name: Урист МакЧелюсти
+  parent: BaseMobAkulki
+  id: MobAkulki
