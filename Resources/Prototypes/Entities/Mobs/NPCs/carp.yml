@@ -91,9 +91,9 @@
       isToggle: true
       color: "#808080"
     # Horizon end
-  - type: SampleSource # Horizon cytology
-    availableCellSamples:
-    - protoID: CellSampleSpaceCarp
+    - type: SampleSource # Horizon cytology
+      availableCellSamples:
+      - protoID: CellSampleSpaceCarp
 
 - type: entity
   parent: BaseMobCarp
@@ -274,6 +274,6 @@
   categories: [ HideSpawnMenu ] # Frontier
   components:
     - type: NFSalvageMobRestrictions # Frontier: SalvageMobRestrictions<NFSalvageMobRestrictions
-  - type: SampleSource # Horizon cytology
-    availableCellSamples:
-    - protoID: CellSampleMegaSpaceCarp
+    - type: SampleSource # Horizon cytology
+      availableCellSamples:
+      - protoID: CellSampleMegaSpaceCarp
