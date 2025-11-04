@@ -1,5 +1,5 @@
 - type: construction
-  id: FanTiny
+  id: FanTinyRecipe
   graph: FanTiny
   startNode: start
   targetNode: fantiny
@@ -11,8 +11,8 @@
   - !type:TileNotBlocked
 
 - type: construction
-  id: FanDirectional
-  graph: FanDirectional
+  id: FanDirectionalRecipe
+  graph: fandirectional
   startNode: start
   targetNode: fandirectional
   category: construction-category-utilities

@@ -303,6 +303,6 @@
     sprite: _NF/Objects/Storage/Barrels/green.rsi
     state: icon
   product: ChemicalBarrelDiethylamine
-  cost: 2000 # Horizon
+  cost: 5000 # Horizon
   category: cargoproduct-category-name-medical
   group: market

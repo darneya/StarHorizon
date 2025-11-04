@@ -36,7 +36,7 @@
       Nothing: 0
       MildPain: 50
       AveragePain: 100
-      SeverePain: 150
+      SeverePain: 200
       UnbeatablePain: 250
       DeadPain: 500
     screamPrototype: screamHuman
@@ -45,24 +45,32 @@
 - type: painConverter
   id: human
   convert:
-    Slash: 1
-    Blunt: 1
-    Heat: 5
-    Piercing: 1
+    Slash: 1.5
+    Blunt: 1.2
+    Piercing: 2
+    Heat: 4
+    Shock: 0.8
+    Cold: 2.5
+    Caustic: 4
 
 - type: screamOfPain
   id: screamHuman
   screamList:
-    20:
-      - "Ургх!"
-      - "ЧЁРТ!"
-      - "БЛЯДЬ!"
-      - "Мгхххх..."
-    40:
+    25:
+      - "АааааЙ!"
+      - "Ауч!"
+      - "Черт!"
+      - "Мгхххх!!!"
+    50:
       - "CУКАААА!!!"
       - "ТВОЮ МАТЬ!!!"
-      - "БЛЯЯЯЯЯ!"
-      - "АРГХХХХ!!!"
+      - "Черт!"
+      - "Аааагх!"
+    100:
+      - "Ааааа! Хватит!"
+      - "Боооольно!"
+      - "Бляяяяяяяя!"
+      - "Аргх!"
 
 - type: entity
   parent: BaseSpeciesDummy
