@@ -3,14 +3,13 @@ using Content.Server.Chat.Systems;
 using Content.Shared._Horizon.Medical.Damage;
 using Content.Shared._Horizon.Pain.Prototypes;
 using Content.Shared.Damage;
+using Content.Shared.EntityEffects.Effects;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Standing;
-using Content.Shared.Stunnable;
 using Content.Shared.Traits.Assorted;
-using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -31,8 +30,20 @@ public sealed class PainSystem : EntitySystem
     {
         base.Initialize();
 
+        SubscribeLocalEvent<PainFadeEffectParams>(OnPainFadeEffect);
         SubscribeLocalEvent<PainComponent, DamageBeforeApplyEvent>(OnDamageCause);
         SubscribeLocalEvent<PainComponent, RefreshMovementSpeedModifiersEvent>(SlowdownBody);
+    }
+
+    private void OnPainFadeEffect(ref PainFadeEffectParams ev)
+    {
+        if (ev.Specifier.Empty || HasComp<PainNumbnessComponent>(ev.Target) || !TryComp<PainComponent>(ev.Target, out var pain))
+            return;
+
+        if (ev.Specifier.GetTotal() > 0)
+            AdjustPainDamage(ev.Target, pain, ev.Specifier);
+        else
+            RemovePainDamage(ev.Target, pain, ev.Specifier.DamageDict);
     }
 
     private void OnDamageCause(Entity<PainComponent> entity, ref DamageBeforeApplyEvent ev)
@@ -170,3 +181,5 @@ public sealed class PainSystem : EntitySystem
         nextPossibleScream = _gameTiming.CurTime + TimeSpan.FromSeconds(1);
     }
 }
+
+

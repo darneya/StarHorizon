@@ -733,6 +733,7 @@
           - "reagent-effect-painkiller-normal3"
           - "reagent-effect-painkiller-normal4"
         probability: 0.085
+      - !type:
       - !type:GenericStatusEffect
         probability: 0.1
         conditions:
@@ -792,6 +793,11 @@
     Medicine:
       metabolismRate : 0.01
       effects:
+      - !type:PainFadeEffect
+        fade:
+          groups:
+            Burn: -5
+            Brute: -5
       - !type:PopupMessage
         type: Local
         visualType: Large

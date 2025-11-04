@@ -39,17 +39,5 @@ public sealed partial class PainComponent : Component
     public TimeSpan PopupUpdateTime = TimeSpan.FromSeconds(15);
 
     [ViewVariables(VVAccess.ReadOnly)]
-    public Dictionary<string, byte> GunshotsCount = new();
-
-    [ViewVariables(VVAccess.ReadOnly)]
     public FixedPoint2 TotalDamage = FixedPoint2.Zero;
-
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan EffectCooldown = TimeSpan.Zero;
-
-    [ViewVariables(VVAccess.ReadOnly)]
-    public Vector2 TotalImpulse = Vector2.Zero;
-
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan? EndGunshotsTime = TimeSpan.FromMilliseconds(500);
 }
