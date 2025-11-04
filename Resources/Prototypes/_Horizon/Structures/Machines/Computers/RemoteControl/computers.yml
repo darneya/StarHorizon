@@ -2,10 +2,10 @@
   parent: BaseComputerAiAccess
   id: RemoteControllerComputer
   name: remote controller computer
-  description: Used to access the station's atmospheric automated alert system.
+  description: Allows to remotely acess and control different mechanisms.
   components:
   - type: Computer
-    board: AlertsComputerCircuitboard
+    board: RemoteControllerCircuitboard
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
