@@ -9,6 +9,7 @@ ent-MechEquipmentHumanSleeper = навесной слипер
     .desc = Забирает человека, замедляет метаболизм, оставляет его в безопасности.
 ent-MechEquipmentHumanGrabber = навесной переносчик
     .desc = You are my friend now :3
+
 ent-MechGunMedigunRed = красный медилазер (физические)
     .desc = Медицинский лазер, предназначенный для лечения большей части физических повреждений, таких, как порезы, удары, уколы.
 ent-MechGunMedigunYellow = желтый медилазер (ожоги)
@@ -18,21 +19,6 @@ ent-MechGunMedigunBlue = синий медилазер (яды)
 ent-MechGunMedigunGreen = зеленый медилазер (радиация)
     .desc = Продвинутый медицинский лазер, предназначенный для выведения радиации из организма. Имеет побочные эффекты в виде сильного повреждения тканей.
 
-ent-MechEquipmentDrill = бур
-    .desc = Просверлит всё! Стены, двери, руду, столы ковры, ваших врагов!
-ent-MechEquipmentDiamondDrill = алмазный бур
-    .desc = Сильно просверлит всё! Стены, двери, руду, столы ковры, ваших врагов!
-ent-MechReactorPlasma = plasma reactor
-    .desc = Plasma reactor for mecha.
-ent-MechReactorUranium = RITEG reactor
-    .desc = RITEG reactor for mecha.
-ent-MechReactorTesla = tesla reactor
-    .desc = Tesla reactor for mecha.
-
-ent-MechEquipmentJet = двигатели меха
-    .desc = Двигатели, позволяющие меху свободно летать в космосе.
-ent-MechEquipmentRCD = РСУ меха
-    .desc = РСУ меха для ваших инженерных идей.
 ent-MechGunSyringeBasic = шприцемет меха
     .desc = Шприцемет для меха, содержащий базовые химикаты.
 ent-MechGunSyringeAdvanced = продвинутый шприцемет меха
@@ -40,3 +26,21 @@ ent-MechGunSyringeAdvanced = продвинутый шприцемет меха
 ent-MechGunSyringeCombat = боевой шприцемет меха
     .desc = Шприцемет для меха, содержащий запрещенные химические прест... веще... в общем, да.
 
+ent-MechEquipmentDrill = бур
+    .desc = Просверлит всё! Стены, двери, руду, столы ковры, ваших врагов!
+ent-MechEquipmentDiamondDrill = алмазный бур
+    .desc = Сильно просверлит всё! Стены, двери, руду, столы ковры, ваших врагов!
+
+ent-MechReactorPlasma = плазменный реактор
+    .desc = Плазменный реактор для мехов.
+ent-MechReactorUranium = РИТЭГ реактор
+    .desc = РИТЭГ реактор для мехов.
+ent-MechReactorTesla = тесла реактор
+    .desc = Тесла реактор для мехов.
+
+ent-MechEquipmentJet = двигатели меха
+    .desc = Двигатели, позволяющие меху свободно летать в космосе.
+ent-MechEquipmentRCD = РСУ меха
+    .desc = РСУ меха для ваших инженерных идей.
+ent-MechEquipmentWire = кабелеукладчик меха
+    .desc = Позволяет почти мгновенно прокладывать кабеля.

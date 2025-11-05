@@ -1,6 +1,6 @@
 - type: entity
   id: ActionMechInhale
-  name: Toggle tightness
+  name: Открыть кабину
   description: "*задыхается*"
   categories: [ HideSpawnMenu ]
   components:
@@ -15,7 +15,7 @@
 
 - type: entity
   id: ActionMechTurnLights
-  name: Turn lights
+  name: Включить фары
   description: Мои глазаааа!!!
   categories: [ HideSpawnMenu ]
   components:
@@ -30,8 +30,8 @@
 
 - type: entity
   id: ActionMechOverload
-  name: Toggle overload
-  description: Deja vu I've just been in this place before Higher on the street And I know it's my time to go
+  name: Включить ускорение
+  description: Deja vu I've just been in this place before Higher on the street And I know it's my time to go!
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -45,8 +45,8 @@
 
 - type: entity
   id: ActionMechPhaze
-  name: Toggle phaze
-  description: is this a noclip??? No, this is phaze
+  name: Перейти в фазирование
+  description: Это не ноуклип! Это фазирование!
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
@@ -60,45 +60,45 @@
 
 - type: entity
   id: MechRCDToggleAction
-  name: Toggle rcd
-  description: wuewue
+  name: Активировать РСУ
+  description: Активировать РСУ для строительства.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     itemIconStyle: NoItem
     icon:
       sprite: Interface/Actions/actions_mecha.rsi
-      state: mech_overload_on
+      state: mech_zoom_on
     useDelay: 1
   - type: InstantAction
     event: !type:MechRCDToggleEvent
 
 - type: entity
   id: MechRCDMenuAction
-  name: Select rcd item
-  description: eeeeee
+  name: Перейти в меню РСУ
+  description: Перейти в меню РСУ для выбора того, что вы будете строить.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     itemIconStyle: NoItem
     icon:
       sprite: Interface/Actions/actions_mecha.rsi
-      state: mech_phasing_on
+      state: mech_seat_swap
     useDelay: 1
   - type: InstantAction
     event: !type:MechRCDMenuEvent
 
 - type: entity
   id: MechJetpackToggleAction
-  name: Toggle jet
-  description: wuewue
+  name: Активировать двигатели меха.
+  description: Уввввввиииииииииииииииииииии!
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     itemIconStyle: NoItem
     icon:
       sprite: Interface/Actions/actions_mecha.rsi
-      state: mech_overload_on
+      state: mech_thrusters_on
     useDelay: 1
   - type: InstantAction
     event: !type:MechJetpackToggleEvent

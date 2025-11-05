@@ -103,18 +103,6 @@
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscClarkeTechnology
-  name: technology disc [Clarke]
-  description: A disk containing data about Clarke Mech.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscHarsonTechnology
-  name: technology disc [Harson]
-  description: A disk containing data about Harson Mech.
-
-- type: entity
-  parent: TechnologyDiscBase
   id: TechnologyDiscArsenalAmmoModules
   name: technology disc [Ammo Modules]
   description: A disk containing data about Ammo Modules.

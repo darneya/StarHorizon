@@ -158,9 +158,10 @@
   entityIcon: MechGunSyringeBasic
   discipline: NFMedical
   tier: 2
-  cost: 5000
+  cost: 15000
   recipeUnlocks:
-  - MechEquipmentHumanGrabber
+  - MechGunSyringeBasic
+  - BoxChemBox
   technologyPrerequisites:
   - OdysseusTechnology
   prerequisiteLineType: Tree
@@ -169,12 +170,13 @@
 - type: technology
   id: MechTechnologySyringesAdvanced
   name: research-technology-mech-syringes-advanced
-  entityIcon: MechGunSyringeBasic
+  entityIcon: MechGunSyringeCombat
   discipline: NFMedical
   tier: 2
-  cost: 5000
+  cost: 10000
   recipeUnlocks:
-  - MechEquipmentHumanGrabber
+  - MechGunSyringeAdvanced
+  - MechGunSyringeCombat
   technologyPrerequisites:
   - MechTechnologySyringesBasic
   prerequisiteLineType: Tree
@@ -200,7 +202,7 @@
   entityIcon: MechGunMedigunGreen
   discipline: NFMedical
   tier: 2
-  cost: 5000
+  cost: 10000
   recipeUnlocks:
     - MechGunMedigunBlue
     - MechGunMedigunGreen

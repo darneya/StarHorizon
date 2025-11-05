@@ -324,12 +324,12 @@
     currentReagent: Bicaridine
     solutionName: injector
     allowedReagents:
-    - Bicaridine
-    - Dermaline
-    - Dylovene
-    - Inaprovaline
-    - Dexalin
-    - Hyronalin
+    - DexalinPlus
+    - Pyrazine
+    - Insuzine
+    - Bruizine
+    - Lacerinol
+    - Puncturase
 
 - type: entity
   name: combat mecha syringe
@@ -345,12 +345,10 @@
     currentReagent: Bicaridine
     solutionName: injector
     allowedReagents:
-    - Bicaridine
-    - Dermaline
-    - Dylovene
-    - Inaprovaline
-    - Dexalin
-    - Hyronalin
+    - UnstableMutagen
+    - FluorosulfuricAcid
+    - Tazinide
+    - Phlogiston
 
 # region Engineering
 
@@ -434,7 +432,7 @@
   id: MechEquipmentRCD
   parent: BaseMechEquipment
   name: mech rcd
-  description: e
+  description: rcd for meeeech
   components:
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
@@ -443,26 +441,57 @@
     components:
     - type: RCD
       availablePrototypes:
-      - WallSolid
-      - FloorSteel
-      - Plating
-      - Catwalk
-      - Grille
-      - Window
-      - WindowDirectional
-      - WindowReinforcedDirectional
-      - ReinforcedWindow
-      - Airlock
-      - AirlockGlass
-      - Firelock
-      - TubeLight
-      - BulbLight
-      - LVCable
-      - MVCable
-      - HVCable
-      - CableTerminal
-      - Deconstruct
+      - WallSolidMech
+      - FloorSteelMech
+      - PlatingMech
+      - CatwalkMech
+      - GrilleMech
+      - WindowMech
+      - WindowDirectionalMech
+      - WindowReinforcedDirectionalMech
+      - ReinforcedWindowMech
+      - AirlockMech
+      - AirlockGlassMech
+      - FirelockMech
+      - TubeLightMech
+      - BulbLightMech
+      - LVCableMech
+      - MVCableMech
+      - HVCableMech
+      - CableTerminalMech
+      - DeconstructMech
     - type: MechRCD
+  - type: LimitedCharges
+    maxCharges: 100
+  - type: AutoRecharge
+    rechargeDuration: 1
+  - type: Tag
+    tags:
+      - MechEquipmentGeneral
+
+- type: entity
+  id: MechEquipmentWire
+  parent: BaseMechEquipment
+  name: mech wires
+  description: wire laying for mechs
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: engi_wire
+  - type: MechEquipmentComponents
+    components:
+    - type: RCD
+      availablePrototypes:
+      - LVCableMechFast
+      - MVCableMechFast
+      - HVCableMechFast
+      - CableTerminalMechFast
+      - DeconstructMech
+    - type: MechRCD
+  - type: LimitedCharges
+    maxCharges: 100
+  - type: AutoRecharge
+    rechargeDuration: 1
   - type: Tag
     tags:
       - MechEquipmentGeneral

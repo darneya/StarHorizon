@@ -201,13 +201,15 @@
 - type: technology
   id: MechEnergyGunExperimentalTechnology
   name: research-technology-mech-gun-experimental
-  entityIcon: MechGunXRayRifle
+  entityIcon: MechGunCryo
   discipline: NFArsenalNfsd
   tier: 3
   cost: 10000
   recipeUnlocks:
   - MechGunHeavyPulseRifle
   - MechGunXRayRifle
+  - MechGunCryo
+  - MechGunPyro
   technologyPrerequisites:
   - DurandTechnology
   position: 6, 37

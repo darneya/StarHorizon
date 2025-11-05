@@ -273,3 +273,10 @@
   - type: SolutionInjectOnEmbed
     transferAmount: 5
     solution: injector
+  - type: Projectile
+    impactEffect: BulletImpactEffect
+    damage:
+      types:
+        Piercing: 0.5
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg

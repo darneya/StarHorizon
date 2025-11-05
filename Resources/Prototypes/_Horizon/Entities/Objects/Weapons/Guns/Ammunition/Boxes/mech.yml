@@ -89,7 +89,7 @@
 
 - type: entity
   parent: BaseItem
-  id: BoxChemicalBox
+  id: BoxChemBox
   name: chemical ammo box
   components:
   - type: BallisticAmmoProvider
