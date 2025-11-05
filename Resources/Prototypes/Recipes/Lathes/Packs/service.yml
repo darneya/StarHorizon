@@ -54,6 +54,14 @@
   - SynthesizerInstrument
   - PushHorn
 
+  # Horizon start
+- type: latheRecipePack
+  id: Translators
+  recipes:
+  - UniversalTranslator
+  - RareTranslator
+  # Horizon end
+
 - type: latheRecipePack
   id: ServiceBoards
   recipes:

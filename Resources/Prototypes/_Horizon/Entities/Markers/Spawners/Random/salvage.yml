@@ -16,10 +16,13 @@
     - TechnologyDiscPhazonTechnology
     - TechnologyDiscClarkeTechnology
     - TechnologyDiscHarsonTechnology
-    - TechnologyDiscArsenalBasicModules
+    - TechnologyDiscArsenalAmmoModules
     - TechnologyDiscArsenalIncendiaryAmmunition
     - TechnologyDiscArsenalUraniumAmmunition
     - TechnologyDiscArsenalPiercingAmmunition
     - TechnologyDiscArsenalPsycoreAmmunition
     - TechnologyDiscHydroponicsDNAManip
+    - TechnologyDiscUniversalTranslator
+    - TechnologyDiscRareTranslator
+    - TechnologyDiscTranslatorImplants
     offset: 0.0

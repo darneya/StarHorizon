@@ -35,5 +35,8 @@ namespace Content.Shared._Horizon.CCVar
         /// </summary>
         public static readonly CVarDef<string> DiscordBanWebhook =
             CVarDef.Create("discord.ban_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+        public static readonly CVarDef<bool> EnableCustomFonts =
+            CVarDef.Create("lang.enable_fonts", true, CVar.CLIENTONLY | CVar.ARCHIVE);
     }
 }

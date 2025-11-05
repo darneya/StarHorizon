@@ -469,6 +469,12 @@ public abstract partial class SharedMechSystem : EntitySystem   // Horizon Mech
             RemComp<ShowHealthBarsComponent>(pilot);
         }
         // Horizon Mech end
+
+        // Horizon RemotePilot start
+        var ejectEv = new OnPilotEjectEvent();
+        RaiseLocalEvent(pilot, ejectEv);
+        // Horizon RemotePilot end
+
         return true;
     }
 

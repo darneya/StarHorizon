@@ -132,6 +132,8 @@
   - type: Construction
     graph: UpgradeMechClarke
     node: start
+  - type: CanBeTakenUnderControl # Horizon Remote control
+    remotePilot: MobRemotePilot
 
 - type: entity
   id: MechClarkeBattery
@@ -272,6 +274,8 @@
   - type: Construction
     graph: UpgradeMechOdysseus
     node: start
+  - type: CanBeTakenUnderControl # Horizon Remote control
+    remotePilot: MobRemotePilot
 
 - type: entity
   id: MechOdysseusBattery
@@ -709,6 +713,8 @@
   - type: Construction
     graph: UpgradeMechRipleyMk2
     node: start
+  - type: CanBeTakenUnderControl # Horizon Remote control
+    remotePilot: MobRemotePilot
 
 - type: entity
   id: MechRipleyMk2Battery

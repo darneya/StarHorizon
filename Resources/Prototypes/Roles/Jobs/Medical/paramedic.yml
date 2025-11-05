@@ -4,6 +4,7 @@
   description: job-description-paramedic
   playTimeTracker: JobParamedic
   salary: 40000 # Horizon
+  forceFaction: FactionMed # Horizon
   setPreference: true # Lua
   requirements:
   # Horizon start

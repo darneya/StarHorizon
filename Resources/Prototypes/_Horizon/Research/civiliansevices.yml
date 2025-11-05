@@ -27,3 +27,60 @@
   position: 4, 46
   researchTargets:
   - TechnologyDiscHydroponicsDNAManip
+
+- type: technology
+  id: UniversalTranslator
+  name: research-technology-universal-translator
+  entityIcon: NekomimeticTranslator
+  discipline: NFService
+  tier: 1
+  cost: 15000
+  recipeUnlocks:
+  - UniversalTranslator
+  technologyPrerequisites:
+  - NFAdvancedEntertainment
+  position: 3, 39 # Horizon
+  researchTargets:
+  - TechnologyDiscUniversalTranslator
+
+- type: technology
+  id: RareTranslator
+  name: research-technology-rare-translator
+  entityIcon: NekomimeticTranslator
+  discipline: NFService
+  tier: 1
+  cost: 15000
+  recipeUnlocks:
+  - RareTranslator
+  technologyPrerequisites:
+  - UniversalTranslator
+  position: 4, 39 # Horizon
+  researchTargets:
+  - TechnologyDiscRareTranslator
+
+- type: technology
+  id: TranslatorImplants
+  name: research-technology-translator-implants
+  entityIcon: MedicalAssembler
+  discipline: NFService
+  tier: 1
+  cost: 15000
+  recipeUnlocks:
+  - GalacticCommonTranslatorImplanter
+  - ArachnidTranslatorImplanter
+  - NekomimeticTranslatorImplanter
+  - DraconicTranslatorImplanter
+  - CanilunztTranslatorImplanter
+  - SikTajTranslatorImplanter
+  - NianTranslatorImplanter
+  - SolCommonTranslatorImplanter
+  - DwarfTranslatorImplanter
+  - NeoRusskiyaTranslatorImplanter
+  - ClownishTranslatorImplanter
+  - GoblinSpeakTranslatorImplanter
+  - HarpySpeakTranslatorImplanter
+  technologyPrerequisites:
+  - NFAdvancedEntertainment
+  position: 3, 41 # Horizon
+  researchTargets:
+  - TechnologyDiscTranslatorImplants

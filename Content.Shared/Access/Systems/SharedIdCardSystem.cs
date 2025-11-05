@@ -200,6 +200,10 @@ public abstract class SharedIdCardSystem : EntitySystem
                 id.JobDepartments.Add(department.ID);
         }
 
+        // Horizon start
+        id.JobPrototype = job.ID;
+        // Horizon end
+
         Dirty(uid, id);
 
         return true;

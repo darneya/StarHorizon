@@ -4,6 +4,7 @@
   description: job-description-chemist
   playTimeTracker: JobChemist
   salary: 50000 # Horizon
+  forceFaction: FactionMed # Horizon
   setPreference: true # Lua
   requirements:
   # Horizon start

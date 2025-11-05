@@ -18,7 +18,7 @@
     - id: UASopenbox
 
 - type: entity
-  parent: UASBox
+  parent: BaseItem
   id: UASopenbox
   description: Вскрытый ящик с логотипом корпорации.
   categories: [ HideSpawnMenu ]
@@ -29,6 +29,7 @@
   - type: Item
     sprite: _Horizon/Objects/Storage/uasbox.rsi
     state: uasboxopen
+    size: Huge
 
 - type: entity
   categories: [ HideSpawnMenu ]

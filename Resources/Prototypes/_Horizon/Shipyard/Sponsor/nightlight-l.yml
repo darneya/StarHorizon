@@ -2,31 +2,40 @@
 # GitHub/Gitea: ???
 # Discord: helloohelloo
 
-# Информация об сопровождающем 
+# Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
 # Discord: astr0laris
 
-# Прототип шаттла: 
+# Прототип шаттла:
 #
 - type: vessel
   id: NightlightL
   parent: BaseVessel
-  name: NRZN NightLight-L
+  name: NECG Nightlight-L
   description: '"Да напиши просто расширенна версия NightLight повышенной комфортности, все."'
-  price: 66000 # 50463, наценка верфи 30% = 65602
+  price: 250000 # 50463, наценка верфи 30% = 65602
   category: Medium
-  group: Custom
+  group: Shipyard
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Sponsor/nightlight-l.yml
   class:
   - Botany
-  - Civilian 
+  - Civilian
   - Kitchen
   engine:
   - Uranium
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+  # Horizon end
 
 - type: gameMap
   id: NightlightL
-  mapName: 'NRZN Nightlight-L'
+  mapName: 'NECG Nightlight-L'
   mapPath: /Maps/_Horizon/Shuttles/Shipyard/Sponsor/nightlight-l.yml
   minPlayers: 0
   stations:

@@ -95,3 +95,10 @@ public sealed partial class MechEquipmentEvent<T> : EntityEventArgs where T : En
         Args = args;
     }
 }
+/// <summary>
+/// Raise on eject pilot to del remote pilot
+/// </summary>
+[Serializable, NetSerializable]
+public sealed partial class OnPilotEjectEvent : EntityEventArgs // Horizon RemotePilot
+{
+}

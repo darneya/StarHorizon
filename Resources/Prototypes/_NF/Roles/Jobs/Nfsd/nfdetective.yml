@@ -4,6 +4,7 @@
   description: job-description-nf-detective
   playTimeTracker: JobDetective
   salary: 40000 # Horizon
+  forceFaction: FactionNFSD # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 43200 # 12 hours

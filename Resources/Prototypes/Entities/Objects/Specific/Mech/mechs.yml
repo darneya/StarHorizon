@@ -167,6 +167,8 @@
   - type: Construction
     graph: UpgradeMechRipley
     node: start
+  - type: CanBeTakenUnderControl # Horizon Remote control
+    remotePilot: MobRemotePilot
   # Horizon end
 
 - type: entity

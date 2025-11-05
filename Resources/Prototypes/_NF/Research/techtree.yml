@@ -706,6 +706,8 @@
   cost: 1000
   recipeUnlocks:
   - ProximitySensor
+  - RemoteControllerCircuitboard # Horizon
+  - RemoteControlDevice # Horizon
   position: 0, 28 # Horizon
 
 - type: technology
@@ -914,7 +916,7 @@
   - PushHorn
   technologyPrerequisites:
   - NFAdvancedEntertainment
-  position: 2, 40 # Horizon
+  position: 2, 39 # Horizon
 
 # region Janitorial
 
