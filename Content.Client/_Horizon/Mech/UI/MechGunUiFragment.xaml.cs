@@ -17,6 +17,8 @@ public sealed partial class MechGunUiFragment : BoxContainer
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
     public event Action<EntityUid?>? ReloadAction;
+    public event Action<string>? SelectReagentAction;
+
     public EntityUid? FragmentOwner;
     private StartEndTime _reloadTimer;
     public float ReloadTime = 10f;
@@ -79,6 +81,13 @@ public sealed partial class MechGunUiFragment : BoxContainer
                 if (reagent.ID == state.SelectedReagent)
                     ReagentSelect.SelectId(i);
             }
+
+            ReagentSelect.OnItemSelected += args =>
+            {
+                var selectedReagent = state.AllowedReagents[args.Id];
+                SelectReagentAction?.Invoke(selectedReagent);
+                ReagentSelect.SelectId(args.Id);
+            };
         }
     }
 
