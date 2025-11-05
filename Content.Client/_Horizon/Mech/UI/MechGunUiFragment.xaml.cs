@@ -50,10 +50,11 @@ public sealed partial class MechGunUiFragment : BoxContainer
             _reloadTimer.End = state.ReloadEndTime.Value;
             _reloadTimer.Start = state.ReloadEndTime.Value - TimeSpan.FromSeconds(ReloadTime);
             ReloadButton.Disabled = true;
-            return;
         }
-
-        ShotsCount.Text = $"{state.Shots} / {state.Capacity}";
+        else
+        {
+            ShotsCount.Text = $"{state.Shots} / {state.Capacity}";
+        }
 
         ReagentSelect.Clear();
 
@@ -65,19 +66,19 @@ public sealed partial class MechGunUiFragment : BoxContainer
         else
         {
             ReagentContainer.Visible = true;
-        }
 
-        for (var i = 0; i < state.AllowedReagents.Count; i++)
-        {
-            var reagent = _proto.Index<ReagentPrototype>(state.AllowedReagents[i]);
+            for (var i = 0; i < state.AllowedReagents.Count; i++)
+            {
+                var reagent = _proto.Index<ReagentPrototype>(state.AllowedReagents[i]);
 
-            var reagentName = new StringBuilder(reagent.LocalizedName);
-            reagentName[0] = char.ToUpper(reagentName[0]);
+                var reagentName = new StringBuilder(reagent.LocalizedName);
+                reagentName[0] = char.ToUpper(reagentName[0]);
 
-            ReagentSelect.AddItem(reagentName.ToString(), i);
+                ReagentSelect.AddItem(reagentName.ToString(), i);
 
-            if (reagent.ID == state.SelectedReagent)
-                ReagentSelect.SelectId(i);
+                if (reagent.ID == state.SelectedReagent)
+                    ReagentSelect.SelectId(i);
+            }
         }
     }
 
