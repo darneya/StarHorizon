@@ -1,4 +1,4 @@
-# Gygax mech
+# region Gygax mech
 
 - type: entity
   id: MechGygax
@@ -74,7 +74,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Clarke mech
+# region Clarke mech
 
 - type: entity
   id: MechClarke
@@ -145,7 +145,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Durand mech
+# region Durand mech
 
 - type: entity
   id: MechDurand
@@ -222,7 +222,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Odysseys mech
+# region Odysseys mech
 
 - type: entity
   id: MechOdysseus
@@ -241,6 +241,7 @@
     footstepSoundCollection:
       path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
+    maxEquipmentAmount: 4
     modifiers:
       coefficients:
         Blunt: 0.75
@@ -276,6 +277,10 @@
     node: start
   - type: CanBeTakenUnderControl # Horizon Remote control
     remotePilot: MobRemotePilot
+  - type: Storage
+    grid:
+    - 0,0,6,3
+    clickInsert: false
 
 - type: entity
   id: MechOdysseusBattery
@@ -287,7 +292,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Phazon mech
+# region Phazon mech
 
 - type: entity
   id: MechPhazon
@@ -365,7 +370,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Мехи ОБР
+# region Мехи ОБР
 
 - type: entity
   id: MechMarauder
@@ -498,7 +503,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Мехи Синдиката
+# region Мехи Синдиката
 
 - type: entity
   id: MechDarkGygax
@@ -655,7 +660,7 @@
       - MechEquipmentSecMissile
     maxEquipmentAmount: 5
 
-# Ripley mkII mech
+# region Ripley mkII mech
 
 - type: entity
   id: MechRipleyMk2
@@ -726,7 +731,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Ripley upgraded
+# region Ripley upgraded
 
 - type: entity
   id: MechRipleyMk2Aluminizer
@@ -1013,7 +1018,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Gygax mech upgraded
+# region Gygax mech upgraded
 
 - type: entity
   id: MechGygaxGrey
@@ -1146,7 +1151,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Durand mech upgraded
+# region Durand mech upgraded
 
 - type: entity
   id: MechDurDollhouse
@@ -1254,7 +1259,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Clarke mech upgraded
+# region Clarke mech upgraded
 
 - type: entity
   id: MechClarkeOrangey
@@ -1377,13 +1382,13 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Odysseus mech upgraded
+# region Odysseus mech upgraded
 
 - type: entity
   id: MechOdysseusHermes
   parent: MechOdysseus
   name: Одиссей "Гермес"
-  description: Сверхпрочный водолазный мех, разработанный и произведённый для узкоспециализированных подводных операций. "Как он здесь оказался?"
+  description: "Сверхпрочный водолазный мех, разработанный и произведённый для узкоспециализированных подводных операций. Как он здесь оказался? На внешней стороне видны надписи О,М,Ш,П."
   components:
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
@@ -1395,6 +1400,12 @@
     baseState: odysseushermes
     openState: odysseushermes-open
     brokenState: odysseushermes-broken
+    equipmentWhitelist:
+      tags:
+      - MechEquipmentGeneral
+      - MechEquipmentMed
+      - MechEquipmentMining
+      - MechEquipmentSecProt
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.5
     baseSprintSpeed: 4.5
@@ -1413,7 +1424,7 @@
   id: MechOdysseusMurdy
   parent: MechOdysseusHermes
   name: Одиссей "Рипер"
-  description: "О ЧЕРТ, ЭТО ТОЧНО ОТРЯД СМЕРТИ, МЫ ВСЕ... получим плохое лечение?"
+  description: "О ЧЕРТ, ЭТО ТОЧНО ОТРЯД СМЕРТИ, МЫ ВСЕ... получим плохое лечение? На внешней стороне видны надписи О,М,ЛК,ЛЛ"
   components:
   - type: Sprite
     layers:
@@ -1423,6 +1434,13 @@
     baseState: odysseusmurdy
     openState: odysseusmurdy-open
     brokenState: odysseusmurdy-broken
+    equipmentWhitelist:
+      tags:
+      - MechEquipmentGeneral
+      - MechEquipmentMed
+      - MechEquipmentSecCC
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecLLazer
 
 - type: entity
   parent: MechOdysseusMurdy
@@ -1434,7 +1452,7 @@
       mech-battery-slot:
       - PowerCellHigh
 
-# Phazon mech upgraded
+# region Phazon mech upgraded
 
 - type: entity
   id: MechPhazonBlanco

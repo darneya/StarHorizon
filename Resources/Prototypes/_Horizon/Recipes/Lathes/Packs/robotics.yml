@@ -16,7 +16,10 @@
   - OdysseusLLeg
   - OdysseusRLeg
   - OdysseusHead
-  - MechGunMedigun
+  - MechGunMedigunRed
+  - MechGunMedigunYellow
+  - MechGunMedigunGreen
+  - MechGunMedigunBlue
   - ClarkeHarness
   - ClarkeLArm
   - ClarkeRArm

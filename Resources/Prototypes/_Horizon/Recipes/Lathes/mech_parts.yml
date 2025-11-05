@@ -773,8 +773,8 @@
     Diamond: 400
 
 - type: latheRecipe
-  id: MechGunMedigun
-  result: MechGunMedigun
+  id: MechGunMedigunRed
+  result: MechGunMedigunRed
   category: Mech
   completetime: 4
   materials:
@@ -782,6 +782,39 @@
     Glass: 300
     Silver: 300
     Plasma: 300
+
+- type: latheRecipe
+  id: MechGunMedigunYellow
+  result: MechGunMedigunYellow
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1000
+    Glass: 300
+    Silver: 300
+    Plasma: 300
+
+- type: latheRecipe
+  id: MechGunMedigunGreen
+  result: MechGunMedigunGreen
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1000
+    Glass: 300
+    Silver: 300
+    Plasma: 1000
+
+- type: latheRecipe
+  id: MechGunMedigunBlue
+  result: MechGunMedigunBlue
+  category: Mech
+  completetime: 4
+  materials:
+    Steel: 1000
+    Glass: 300
+    Silver: 300
+    Plasma: 1000
 
 #Оружие мехов
 

@@ -4,12 +4,20 @@ ent-MechEquipmentArmorMelee = противоударная броня меха
     .desc = Стань прочнее!
 ent-MechEquipmentArmorRange = противопульная броня меха
     .desc = Стань прочнее!
+
 ent-MechEquipmentHumanSleeper = навесной слипер
     .desc = Забирает человека, замедляет метаболизм, оставляет его в безопасности.
 ent-MechEquipmentHumanGrabber = навесной переносчик
     .desc = You are my friend now :3
-ent-MechGunMedigun = medigun
-    .desc = medigun
+ent-MechGunMedigunRed = красный медилазер (физические)
+    .desc = Медицинский лазер, предназначенный для лечения большей части физических повреждений, таких, как порезы, удары, уколы.
+ent-MechGunMedigunYellow = желтый медилазер (ожоги)
+    .desc = Медицинский лазер, предназначенный для лечения большей части ожогов, таких, как тепловой урон, переохлаждение, шок.
+ent-MechGunMedigunBlue = синий медилазер (яды)
+    .desc = Продвинутый медицинский лазер, предназначенный для очищения организма от большей части отравлений. Имеет побочные эффекты в виде сильного повреждения тканей.
+ent-MechGunMedigunGreen = зеленый медилазер (радиация)
+    .desc = Продвинутый медицинский лазер, предназначенный для выведения радиации из организма. Имеет побочные эффекты в виде сильного повреждения тканей.
+
 ent-MechEquipmentDrill = бур
     .desc = Просверлит всё! Стены, двери, руду, столы ковры, ваших врагов!
 ent-MechEquipmentDiamondDrill = алмазный бур
@@ -20,3 +28,15 @@ ent-MechReactorUranium = RITEG reactor
     .desc = RITEG reactor for mecha.
 ent-MechReactorTesla = tesla reactor
     .desc = Tesla reactor for mecha.
+
+ent-MechEquipmentJet = двигатели меха
+    .desc = Двигатели, позволяющие меху свободно летать в космосе.
+ent-MechEquipmentRCD = РСУ меха
+    .desc = РСУ меха для ваших инженерных идей.
+ent-MechGunSyringeBasic = шприцемет меха
+    .desc = Шприцемет для меха, содержащий базовые химикаты.
+ent-MechGunSyringeAdvanced = продвинутый шприцемет меха
+    .desc = Шприцемет для меха, содержащий продвинутые химикаты для лечения.
+ent-MechGunSyringeCombat = боевой шприцемет меха
+    .desc = Шприцемет для меха, содержащий запрещенные химические прест... веще... в общем, да.
+
