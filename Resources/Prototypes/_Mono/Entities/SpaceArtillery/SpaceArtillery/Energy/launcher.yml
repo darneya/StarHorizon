@@ -148,7 +148,7 @@
 - type: entity
   id: WeaponTurretType241
   name: Type-241 plasma lance
-  parent: BallisticArtilleryUnanchorable
+  parent: BallisticArtillery
   suffix: TSF ONLY, ADS ONLY
   description: A devastating weapon, usually used for large scale fire support and strategic destruction.
   components:
@@ -352,7 +352,7 @@
 - type: entity
   id: WeaponTurretDymere
   name: ADEX-9 DYMERE Turbolaser
-  parent: BallisticArtilleryUnanchorable
+  parent: BallisticArtillery
   suffix: TSF ONLY, ADS ONLY
   description: Aetherion Dynamics' most iconic supercapital battery. Fires enormous ionized gas projectiles that melt through the toughest ship armor. Can be remotely activated or linked to a GCS.
   components:

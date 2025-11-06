@@ -1,6 +1,6 @@
 store-preset-name-pirate-uplink = Пиратский Аплинк
-store-category-sechardsuits = Скафандры EVA
-store-category-secweapons = Вооружение
+store-category-sechardsuits = Броня
+store-categorysecweapons = Вооружение
 store-category-secutility = Снаряжение
 store-category-secammo = Боеприпасы
 store-category-secexplosives = Взрывчатка
@@ -11,3 +11,8 @@ store-category-pirateweapons = Вооружение
 store-category-pirateutility = Снаряжение
 store-category-pirateammo = Боеприпасы
 store-category-pirateexplosives = Взрывчатка
+store-category-secgunnery-missile = Шаттлы (ракеты)
+store-category-secgunnery-kinetic = Шаттлы (кинетика)
+store-category-secgunnery-energy = Шаттлы (энерго)
+store-category-secgunnery-ammo = Шаттлы (боеприпасы)
+store-category-secgunnery-consoles = Шаттлы (оборудование)

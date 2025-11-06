@@ -1,33 +1,62 @@
-#security
-- type: storeCategory
-  id: UplinkSecurityBundles
-  name: store-category-secbundles
-
-- type: storeCategory
-  id: UplinkSecurityHardsuits
-  name: store-category-sechardsuits
+# region Security
 
 - type: storeCategory
   id: UplinkSecurityWeapons
-  name: store-category-secweapons
+  name: store-categorysecweapons
+  priority: 0
 
 - type: storeCategory
   id: UplinkSecurityAmmo
   name: store-category-secammo
-
-- type: storeCategory
-  id: UplinkSecurityUtility
-  name: store-category-secutility
+  priority: 1
 
 - type: storeCategory
   id: UplinkSecurityExplosives
   name: store-category-secexplosives
+  priority: 2
 
 - type: storeCategory
-  id: UplinkSecurityGunnery
-  name: Орудия шаттлов
+  id: UplinkSecurityHardsuits
+  name: store-category-sechardsuits
+  priority: 3
 
-#pirate
+- type: storeCategory
+  id: UplinkSecurityUtility
+  name: store-category-secutility
+  priority: 4
+
+- type: storeCategory
+  id: UplinkSecurityBundles
+  name: store-category-secbundles
+  priority: 5
+
+- type: storeCategory
+  id: UplinkSecurityGunneryMissile
+  name: store-category-secgunnery-missile
+  priority: 6
+
+- type: storeCategory
+  id: UplinkSecurityGunneryKinetic
+  name: store-category-secgunnery-kinetic
+  priority: 7
+
+- type: storeCategory
+  id: UplinkSecurityGunneryEnergy
+  name: store-category-secgunnery-energy
+  priority: 8
+
+- type: storeCategory
+  id: UplinkSecurityGunneryAmmo
+  name: store-category-secgunnery-ammo
+  priority: 9
+
+- type: storeCategory
+  id: UplinkSecurityGunneryConsoles
+  name: store-category-secgunnery-consoles
+  priority: 10
+
+# region Pirate
+
 - type: storeCategory
   id: UplinkPirateBundles
   name: store-category-piratebundles
