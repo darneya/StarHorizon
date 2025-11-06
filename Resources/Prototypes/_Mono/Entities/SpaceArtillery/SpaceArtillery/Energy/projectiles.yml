@@ -22,7 +22,7 @@
         Radiation: 625
         Structural: 2125
         Heat: 175
-        Ion: 175
+#        Ion: 175
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
     layers:
@@ -61,7 +61,7 @@
         Radiation: 300
         Structural: 200
         Heat: 60
-        Ion: 75
+#        Ion: 75
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
     layers:
@@ -101,7 +101,7 @@
         Radiation: 100
         Structural: 150
         Heat: 200
-        Ion: 250
+#        Ion: 250
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
     layers:
@@ -174,7 +174,7 @@
       types:
         Radiation: 37
         Heat: 57
-        Ion: 187
+#        Ion: 187
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:

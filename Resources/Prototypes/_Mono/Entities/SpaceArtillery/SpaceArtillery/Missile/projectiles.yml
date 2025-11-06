@@ -167,7 +167,7 @@
       types:
         Structural: 3750
         Heat: 15
-        Ion: 1250
+#        Ion: 1250
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/hybrid_missile.rsi
     layers:

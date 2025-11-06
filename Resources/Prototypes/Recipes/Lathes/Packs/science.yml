@@ -30,6 +30,7 @@
   - SignallerAdvanced
   # - DeviceQuantumSpinInverter # Frontier
   - DeviceDesynchronizer
+  - RemoteControlDevice # Horizon
 
 - type: latheRecipePack
   id: ScienceClothing

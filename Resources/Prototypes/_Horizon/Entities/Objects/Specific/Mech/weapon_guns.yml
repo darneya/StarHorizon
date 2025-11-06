@@ -158,6 +158,52 @@
     - MechEquipmentSecExperim
 
 - type: entity
+  name: cryogun
+  parent: BaseMechGunBattery
+  id: MechGunCryo
+  description: An experimental weapon that uses cold energy against its target.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: energy_cryogun
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: HitscanMechAmmoProvider
+    proto: HRZNCryoLazer # Shock: 10 Cold: 15
+    fireCost: 30
+  - type: Tag
+    tags:
+    - MechEquipmentSecExperim
+
+- type: entity
+  name: pyrogun
+  parent: BaseMechGunBattery
+  id: MechGunPyro
+  description: An experimental weapon that uses concentrated pyrokinetic energy against its target.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: energy_pyrogun
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: HitscanMechAmmoProvider
+    proto: HRZNPyroLazer # Shock: 10 Heat: 15
+    fireCost: 30
+  - type: Tag
+    tags:
+    - MechEquipmentSecExperim
+
+- type: entity
   name: disabler "Peacemaker"
   parent: BaseMechGunBattery
   id: MechGunDisabler

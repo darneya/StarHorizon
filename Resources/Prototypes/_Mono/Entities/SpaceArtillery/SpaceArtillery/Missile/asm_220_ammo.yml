@@ -251,7 +251,7 @@
         Structural: 350
         Blunt: 200
         Heat: 50
-        Ion: 1000
+#        Ion: 1000
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/mini_rocket.rsi
     layers:

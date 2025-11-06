@@ -34,7 +34,12 @@
     - UplinkSecurityUtility
     - UplinkSecurityExplosives
     - UplinkSecurityBundles
-    - UplinkSecurityGunnery
+    - UplinkSecurityGunneryMissile
+    - UplinkSecurityGunneryKinetic
+    - UplinkSecurityGunneryEnergy
+    - UplinkSecurityGunneryAmmo
+    - UplinkSecurityGunneryConsoles
+    - UplinkSecurityMechas
     currencyWhitelist:
     - FrontierUplinkCoin
     balance:
