@@ -55,6 +55,11 @@
   name: store-category-secgunnery-consoles
   priority: 10
 
+- type: storeCategory
+  id: UplinkSecurityMechas
+  name: store-category-secmechas
+  priority: 11
+
 # region Pirate
 
 - type: storeCategory

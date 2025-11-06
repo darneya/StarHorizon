@@ -39,6 +39,7 @@
     - UplinkSecurityGunneryEnergy
     - UplinkSecurityGunneryAmmo
     - UplinkSecurityGunneryConsoles
+    - UplinkSecurityMechas
     currencyWhitelist:
     - FrontierUplinkCoin
     balance:

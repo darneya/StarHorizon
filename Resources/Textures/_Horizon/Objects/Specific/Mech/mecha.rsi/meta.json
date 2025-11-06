@@ -136,6 +136,16 @@
       "name": "harsonspider-broken"
     },
     {
+      "name": "durares",
+      "directions": 4
+    },
+    {
+      "name": "durares-open"
+    },
+    {
+      "name": "durares-broken"
+    },
+    {
       "name": "durdollhouse",
       "directions": 4
     },
@@ -265,6 +275,27 @@
     },
     {
       "name": "gygaxgrey-broken"
+    },
+    {
+      "name": "gygaxhermes",
+      "directions": 4
+    },
+    {
+      "name": "gygaxhermes-open",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "gygaxhermes-broken"
     },
     {
       "name": "gygaxmed",

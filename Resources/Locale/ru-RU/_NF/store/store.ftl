@@ -16,3 +16,4 @@ store-category-secgunnery-kinetic = Шаттлы (кинетика)
 store-category-secgunnery-energy = Шаттлы (энерго)
 store-category-secgunnery-ammo = Шаттлы (боеприпасы)
 store-category-secgunnery-consoles = Шаттлы (оборудование)
+store-category-secmechas = Мехи

@@ -659,3 +659,248 @@
         - Bailiff
         - SeniorOfficer
         - Sheriff
+
+# region Mechas
+
+# region Mechas
+- type: listing
+  id: SecMechGygaxHermes
+  name: Гигакс Гермес
+  description: Вариант Гигакса, предназначенный для нужд Департамента Шерифа. Обладает особенно теплыми сидениями и запасом пончиков.
+  productEntity: MechGygaxHermesBattery
+  cost:
+    FrontierUplinkCoin: 100
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecMechDurAres
+  name: Дюранд Арес
+  description: Вариант Дюранда, предназначенный для нужд Департамента Шерифа. Обладает особенно теплыми сидениями и запасом пончиков.
+  productEntity: MechDurAresBattery
+  cost:
+    FrontierUplinkCoin: 200
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Sheriff
+
+# region Mech Weapons
+# Легкое кинетическое оружие для мехов (доступны Bailiff, SeniorOfficer, Sheriff)
+- type: listing
+  id: SecMechGunScattershot
+  name: LBX AC 10 "Scattershot"
+  description: Дробовик для меха. Эффективен на ближней дистанции.
+  productEntity: MechGunScattershot
+  cost:
+    FrontierUplinkCoin: 20
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecMechGunAutocannonUAC2
+  name: Ultra AC 2
+  description: Скорострельная автопушка для меха. Высокая скорострельность, умеренный урон.
+  productEntity: MechGunAutocannonUAC2
+  cost:
+    FrontierUplinkCoin: 20
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecMechGunCarbineHades
+  name: FNX-99 "Hades" Carbine
+  description: Карбин с зажигательными патронами. Наносит тепловой урон.
+  productEntity: MechGunCarbineHades
+  cost:
+    FrontierUplinkCoin: 20
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+# Легкое энергетическое оружие для мехов (доступны Bailiff, SeniorOfficer, Sheriff)
+- type: listing
+  id: SecMechGunLaser
+  name: CH-PS "Immolator" Laser
+  description: Лазерная пушка для меха. Надежное энергетическое оружие.
+  productEntity: MechGunLaser
+  cost:
+    FrontierUplinkCoin: 15
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecMechGunDisabler
+  name: Disabler "Peacemaker"
+  description: Оглушающее энергетическое оружие. Идеально для нелетальных операций.
+  productEntity: MechGunDisabler
+  cost:
+    FrontierUplinkCoin: 15
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+# Ракетное оружие для мехов (доступны Sheriff)
+- type: listing
+  id: SecMechGunMissileLRM6
+  name: LRM-6 Missile Rack
+  description: Ракетная установка дальнего радиуса действия. Повышенная пробиваемость.
+  productEntity: MechGunMissileLRM6
+  cost:
+    FrontierUplinkCoin: 25
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Sheriff
+
+# region Mech Ammunition
+# Боеприпасы для мехов (доступны Bailiff, SeniorOfficer, Sheriff)
+- type: listing
+  id: SecMechAmmoAC2Ultra
+  name: Патроны AC-2 "ultra"
+  description: Боеприпасы для скорострельной автопушки Ultra AC 2.
+  productEntity: BoxAmmoAC2Ultra
+  cost:
+    FrontierUplinkCoin: 3
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecMechAmmoScattershot
+  name: Патроны LBX AC 10 "Scattershot"
+  description: Дробовые патроны для дробовика Scattershot.
+  productEntity: BoxAmmoScattershot
+  cost:
+    FrontierUplinkCoin: 3
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecMechAmmoHades
+  name: Патроны FNX-99 "Hades"
+  description: Зажигательные патроны для карбина Hades.
+  productEntity: BoxAmmoHades
+  cost:
+    FrontierUplinkCoin: 3
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+# Боеприпасы для мехов (доступны Sheriff)
+
+- type: listing
+  id: SecMechAmmoGranade
+  name: Универсальные гранаты
+  description: Гранаты для ракетной установки LRM-6.
+  productEntity: BoxAmmoGranade
+  cost:
+    FrontierUplinkCoin: 3
+  categories:
+    - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Sheriff
