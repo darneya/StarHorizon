@@ -2,7 +2,7 @@
 
 - type: storeCategory
   id: UplinkSecurityWeapons
-  name: store-categorysecweapons
+  name: store-category-secweapons
   priority: 0
 
 - type: storeCategory

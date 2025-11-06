@@ -1,6 +1,6 @@
 store-preset-name-pirate-uplink = Пиратский Аплинк
 store-category-sechardsuits = Броня
-store-categorysecweapons = Вооружение
+store-category-secweapons = Вооружение
 store-category-secutility = Снаряжение
 store-category-secammo = Боеприпасы
 store-category-secexplosives = Взрывчатка
