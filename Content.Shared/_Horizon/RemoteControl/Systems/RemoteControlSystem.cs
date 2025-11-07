@@ -60,14 +60,14 @@ public sealed class RemoteControlSystem : EntitySystem
 
     private void TransferMindInHost(EntityUid host, EntityUid controller, bool hostIsRemotePilot)
     {
-        if (_mindSystem.TryGetMind(host, out _, out _))
-            return;
-
         if (HasComp<UnderControlComponent>(controller))
         {
             _popupSystem.PopupClient(Loc.GetString("remote-control-already-under-control"), controller);
             return;
         }
+
+        if (_mindSystem.TryGetMind(host, out _, out _))
+            return;
 
         if(TryComp<MobThresholdsComponent>(host, out var mobThresholdsComp) &&
             (mobThresholdsComp.CurrentThresholdState == MobState.Critical ||
