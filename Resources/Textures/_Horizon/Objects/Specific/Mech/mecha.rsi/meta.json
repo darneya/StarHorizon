@@ -72,6 +72,38 @@
       "name": "clarkespider-broken"
     },
     {
+      "name": "clarkeveteran",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "clarkeveteran-open"
+    },
+    {
+      "name": "clarkeveteran-broken"
+    },
+    {
       "name": "harson",
       "directions": 4,
       "delays": [

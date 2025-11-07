@@ -85,12 +85,16 @@ ent-MechRipleyMk2Flamesred = Рипли "Поджигатель"
 ent-MechRipleyMk2FlamesredBattery = { ent-MechRipleyMk2Flamesred }
     .suffix = Батарея
     .desc = { ent-MechRipleyMk2Flamesred.desc }
-ent-MechRipleyMk2Titan = Рипли "Кулак Титана"
-    .desc = Это обычный Рипли, который был настроен так, чтобы выглядеть как мех Кулака Титана.
-    На внешней стороне можно заметить обозначения Общ,Шахт,Прот.
+ent-MechRipleyMk2Titan = Пиратский Рипли
+    .desc = Стоп... почему у этого Рипли боевого вооружение и что... это попугай?
+    На внешней стороне можно заметить обозначения Общ,Шахт,Прот,ЛЛ,ЛК.
 ent-MechRipleyMk2TitanBattery = { ent-MechRipleyMk2Titan }
     .suffix = Батарея
     .desc = { ent-MechRipleyMk2Titan.desc }
+ent-MechClarkeVeteranBattery = Пиратский Кларк
+    .suffix = Батарея
+    .desc = Стоп... почему у этого Кларка боевого вооружение и что... это попугай?
+    На внешней стороне можно заметить обозначения Общ,Шахт,Прот,ЛЛ,ЛК.
 ent-MechRipleyMk2Zairjah = Рипли "Заря"
     .desc = Шахтерский мех своеобразной конструкции, с закрытой кабиной и силовыми установками.
     На внешней стороне можно заметить обозначения Общ,Шахт,Прот.
