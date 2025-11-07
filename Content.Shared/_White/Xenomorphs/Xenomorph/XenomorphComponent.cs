@@ -1,4 +1,4 @@
-using Content.Shared._EinsteinEngines.Language;
+using Content.Shared._Horizon.Language;
 using Content.Shared._White.Xenomorphs.Caste;
 using Content.Shared.Damage;
 using Robust.Shared.GameStates;
@@ -24,8 +24,8 @@ public sealed partial class XenomorphComponent : Component
     /// <summary>
     /// Language on which xenomorph need to speak to send hivemind message.
     /// </summary>
-    [DataField]
-    public ProtoId<LanguagePrototype> XenoLanguageId { get; set; } = "XenoHivemind";
+    //[DataField]
+    //public ProtoId<LanguagePrototype> XenoLanguageId { get; set; } = "XenoHivemind";
 
     [ViewVariables]
     public bool OnWeed;

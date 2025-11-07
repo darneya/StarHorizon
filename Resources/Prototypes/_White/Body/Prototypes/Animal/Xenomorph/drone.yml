@@ -18,19 +18,23 @@
       connections:
       - right arm
       - left arm
-      - groin
+#      - groin //No shitmed :pepeSad:
+      - right leg # No shitmed :pepeSad:
+      - left leg # No shitmed :pepeSad:
       - head
       organs:
         plasma_vessel: OrganXenomorphPlasmaVesselLarge
-    groin:
-      part: GroinXenomorph
-      connections:
-      - right leg
-      - left leg
-      - head
-      organs:
-        stomach: OrganXenomorphStomach
-        liver: OrganXenomorphLiver
+        stomach: OrganXenomorphStomach # No shitmed :pepeSad:
+        liver: OrganXenomorphLiver # No shitmed :pepeSad:
+#    groin: //No shitmed :pepeSad:
+#      part: GroinXenomorph
+#      connections:
+#      - right leg
+#      - left leg
+#      - head
+#      organs:
+#        stomach: OrganXenomorphStomach
+#        liver: OrganXenomorphLiver
     right arm:
       part: RightArmXenomorph
       connections:

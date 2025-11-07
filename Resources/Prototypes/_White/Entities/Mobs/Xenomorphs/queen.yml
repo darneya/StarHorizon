@@ -15,6 +15,7 @@
     - map: [ "pocket2" ]
   - type: Xenomorph
     caste: Queen
+  - type: XenomorphQueen
   - type: TailLash
     tailDamage:
       groups:
@@ -28,6 +29,7 @@
     - ActionSpawnResinMembrane
     - ActionSpawnResinNest
     - ActionSpawnResinWeedNode
+    - ActionSpawnXenomorphEgg
   - type: Body
     prototype: XenomorphQueen
   - type: TypingIndicator
@@ -46,13 +48,16 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      490: Critical
-      500: Dead
+      735: Critical
+      750: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      410: 0.9
-      430: 0.7
-      460: 0.6
+      600: 0.9
+      645: 0.7
+      690: 0.6
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 2.5
   - type: MeleeWeapon
     damage:
       groups:
@@ -62,17 +67,6 @@
   - type: Speech
     speechSounds: Xenomorph
     speechVerb: LargeMob
-  - type: LanguageKnowledge
-    speaks:
-    - Xeno
-    - XenoHivemind
-    - TauCetiBasic
-    understands:
-    - Xeno
-    - XenoHivemind
-    - Hissing
-    - Draconic
-    - TauCetiBasic
   # - type: GuideHelp
   #   guides:
   #   - XenomorphQueen
@@ -102,6 +96,6 @@
     baseSprintSpeed: 3.8
   - type: SlowOnDamage
     speedModifierThresholds:
-      410: 0.7
-      430: 0.6
-      460: 0.5
+      600: 0.7
+      645: 0.6
+      690: 0.5

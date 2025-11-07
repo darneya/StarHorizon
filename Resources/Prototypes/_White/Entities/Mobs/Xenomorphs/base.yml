@@ -1,7 +1,12 @@
 - type: entity
-  parent: SimpleSpaceMobBase
+  parent:
+  - BaseMob
+  - MobDamageable
+  - MobPolymorphable
+  - MobCombat
+  - MobBloodstream
+  - MobFlammable
   id: BaseMobXenomorph
-  suffix: ""
   abstract: true
   components:
   - type: Xenomorph
@@ -11,10 +16,15 @@
         Toxin: -5
         Airloss: -10
         Brute: -5
-  - type: ThermalVision
-    toggleAction: ToggleThermalVisionXenomorph
-    color: "#7d0cc9"
-    lightRadius: 10
+  - type: Pinpointer
+    whitelist:
+      components:
+      - XenomorphQueen
+    alert: QueenFinder
+    isActive: true
+    canToggle: false
+    canEmag: false
+    canExamine: false
   - type: NameIdentifier
     group: GenericNumber
   - type: CombatMode
@@ -40,17 +50,17 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      125: Critical
-      135: Dead
+      185: Critical
+      200: Dead
     stateAlertDict:
       Alive: XenomorphHealth
       Critical: XenomorphCrit
       Dead: XenomorphDead
   - type: SlowOnDamage
     speedModifierThresholds:
-      70: 0.9
-      85: 0.7
-      100: 0.6
+      105: 0.9
+      125: 0.7
+      150: 0.6
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Xenomorph
@@ -67,10 +77,6 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Tag
-    tags:
-    - DoorBumpOpener
-    - FootstepSound
   - type: Bloodstream
     bloodReagent: FluorosulfuricAcid
     bloodMaxVolume: 250
@@ -88,7 +94,7 @@
     animation: WeaponArcBite
     damage:
       groups:
-        Brute: 20
+        Brute: 25
   - type: TypingIndicator
     proto: alien
   - type: Temperature
@@ -112,15 +118,6 @@
       Male: Xenomorph
       Female: Xenomorph
       Unsexed: Xenomorph
-  - type: LanguageKnowledge
-    speaks:
-    - Xeno
-    - XenoHivemind
-    understands:
-    - Xeno
-    - XenoHivemind
-    - Hissing
-    - Draconic
   - type: SSDIndicator
   - type: Emoting
   - type: BodyEmotes
@@ -137,8 +134,8 @@
     - Prying
   - type: Prying
     pryPowered: true
-  - type: Hands
   - type: ComplexInteraction
+  - type: Hands
   - type: Puller
     needsHands: false
   - type: IdExaminable
@@ -159,6 +156,10 @@
     defaultRotation: 90
     horizontalRotation: 90
   - type: Dna
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
 
 - type: entity
   id: BaseMobXenomorphDungeon

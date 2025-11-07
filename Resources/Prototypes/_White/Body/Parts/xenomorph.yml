@@ -17,11 +17,11 @@
 - type: entity
   id: ChestXenomorph
   name: xenomorph chest
-  parent: [PartXenomorph, BaseChest]
+  parent: [PartXenomorph, BaseTorso]
   components:
   - type: Sprite
     sprite: Mobs/Species/Human/parts.rsi
-    state: chest_m
+    state: torso_m
   - type: Extractable
     juiceSolution:
       reagents:
@@ -30,21 +30,21 @@
       - ReagentId: FluorosulfuricAcid
         Quantity: 20
 
-- type: entity
-  id: GroinXenomorph
-  name: xenomorph groin
-  parent: [PartXenomorph, BaseGroin]
-  components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-    state: groin_m
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: SulfuricAcid
-        Quantity: 10
-      - ReagentId: FluorosulfuricAcid
-        Quantity: 20
+#- type: entity
+#  id: GroinXenomorph
+#  name: xenomorph groin
+#  parent: [PartXenomorph, BaseGroin]
+#  components:
+#  - type: Sprite
+#    sprite: Mobs/Species/Human/parts.rsi
+#    state: groin_m
+#  - type: Extractable
+#    juiceSolution:
+#      reagents:
+#      - ReagentId: SulfuricAcid
+#        Quantity: 10
+#      - ReagentId: FluorosulfuricAcid
+#        Quantity: 20
 
 - type: entity
   id: HeadXenomorph

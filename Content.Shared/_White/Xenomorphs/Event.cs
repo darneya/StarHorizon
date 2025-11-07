@@ -1,4 +1,4 @@
-using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.FixedPoint;
 using Content.Shared._White.Xenomorphs.Caste;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
@@ -16,14 +16,21 @@ public sealed partial class XenomorphEvolutionDoAfterEvent : DoAfterEvent
     [DataField]
     public ProtoId<XenomorphCastePrototype> Caste;
 
-    public XenomorphEvolutionDoAfterEvent(EntProtoId choice, ProtoId<XenomorphCastePrototype> caste)
+    [DataField]
+    public bool CheckNeedCasteDeath;
+
+    public XenomorphEvolutionDoAfterEvent(EntProtoId choice, ProtoId<XenomorphCastePrototype> caste, bool checkNeedCasteDeath = true)
     {
         Choice = choice;
         Caste = caste;
+        CheckNeedCasteDeath = checkNeedCasteDeath;
     }
 
     public override DoAfterEvent Clone() => this;
 }
+
+[Serializable, NetSerializable]
+public sealed partial class LarvaBurstDoAfterEvent : SimpleDoAfterEvent;
 
 public sealed partial class TransferPlasmaActionEvent : EntityTargetActionEvent
 {
@@ -32,6 +39,8 @@ public sealed partial class TransferPlasmaActionEvent : EntityTargetActionEvent
 }
 
 public sealed partial class EvolutionsActionEvent : InstantActionEvent;
+
+public sealed partial class PromotionActionEvent : InstantActionEvent;
 
 public sealed partial class TailLashActionEvent : WorldTargetActionEvent;
 
@@ -44,9 +53,10 @@ public sealed partial class AfterXenomorphEvolutionEvent(EntityUid evolvedInto, 
     public ProtoId<XenomorphCastePrototype> Caste = caste;
 }
 
-public sealed partial class BeforeXenomorphEvolutionEvent(ProtoId<XenomorphCastePrototype> caste) : CancellableEntityEventArgs
+public sealed partial class BeforeXenomorphEvolutionEvent(ProtoId<XenomorphCastePrototype> caste, bool checkNeedCasteDeath = true) : CancellableEntityEventArgs
 {
     public ProtoId<XenomorphCastePrototype> Caste = caste;
+    public bool CheckNeedCasteDeath = checkNeedCasteDeath;
 }
 
 public sealed partial class PlasmaAmountChangeEvent(FixedPoint2 amount) : EntityEventArgs

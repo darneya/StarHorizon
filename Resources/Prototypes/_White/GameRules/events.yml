@@ -8,7 +8,16 @@
     minimumPlayers: 20
     earliestStart: 35
     reoccurrenceDelay: 50
+    chaos:
+      Hostile: 60
+      Medical: 75
+      Death: 100
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 700
   - type: VentSpawnRule
+  - type: AntagSpawner
+    prototype: MobXenomorphLarva
   - type: XenomorphsRule
   - type: AntagObjectives
     objectives:

@@ -1,8 +1,10 @@
 using Content.Server.DoAfter;
 using Content.Shared._White.Actions.Events;
+using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Coordinates;
 using Content.Shared.DoAfter;
 using Robust.Server.Audio;
+using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
@@ -15,10 +17,12 @@ public sealed class ActionsSystem : EntitySystem
 {
     [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
 
+    [Dependency] private readonly AnchorableSystem _anchorable = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly ContainerSystem _container = default!;
+    [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
 
     public override void Initialize()
     {
@@ -30,10 +34,8 @@ public sealed class ActionsSystem : EntitySystem
 
     private void OnSpawnTileEntityAction(SpawnTileEntityActionEvent args)
     {
-        if (args.Handled || !CreationTileEntity(args.Performer.ToCoordinates(), args.TileId, args.Entity, args.Audio))
-            return;
-
-        args.Handled = true;
+        if (!args.Handled && CreationTileEntity(args.Performer, args.Performer.ToCoordinates(), args.TileId, args.Entity, args.Audio, args.BlockedCollisionLayer, args.BlockedCollisionMask))
+            args.Handled = true;
     }
 
     private void OnPlaceTileEntityEvent(PlaceTileEntityEvent args)
@@ -43,12 +45,17 @@ public sealed class ActionsSystem : EntitySystem
 
         if (args.Length != 0)
         {
+            if (CheckTileBlocked(args.Target, args.BlockedCollisionLayer, args.BlockedCollisionMask))
+                return;
+
             var ev = new PlaceTileEntityDoAfterEvent
             {
                 Target = GetNetCoordinates(args.Target),
                 Entity = args.Entity,
                 TileId = args.TileId,
-                Audio = args.Audio
+                Audio = args.Audio,
+                BlockedCollisionLayer = args.BlockedCollisionLayer,
+                BlockedCollisionMask = args.BlockedCollisionMask
             };
 
             var doAfter = new DoAfterArgs(EntityManager, args.Performer, args.Length, ev, null)
@@ -64,24 +71,23 @@ public sealed class ActionsSystem : EntitySystem
             return;
         }
 
-        if (!CreationTileEntity(args.Target, args.TileId, args.Entity, args.Audio))
-            return;
-
-        args.Handled = true;
+        if (CreationTileEntity(args.Performer, args.Target, args.TileId, args.Entity, args.Audio, args.BlockedCollisionLayer, args.BlockedCollisionMask))
+            args.Handled = true;
     }
 
     private void OnPlaceTileEntityDoAfter(PlaceTileEntityDoAfterEvent args)
     {
-        if (args.Handled || !CreationTileEntity(GetCoordinates(args.Target), args.TileId, args.Entity, args.Audio))
-            return;
-
-        args.Handled = true;
+        if (!args.Handled && CreationTileEntity(args.User, GetCoordinates(args.Target), args.TileId, args.Entity, args.Audio, args.BlockedCollisionLayer, args.BlockedCollisionMask))
+            args.Handled = true;
     }
 
     #region Helpers
 
-    private bool CreationTileEntity(EntityCoordinates coordinates, string? tileId, EntProtoId? entProtoId, SoundSpecifier? audio)
+    private bool CreationTileEntity(EntityUid user, EntityCoordinates coordinates, string? tileId, EntProtoId? entProtoId, SoundSpecifier? audio, int collisionLayer = 0, int collisionMask = 0)
     {
+        if (_container.IsEntityOrParentInContainer(user))
+            return false;
+
         if (tileId != null)
         {
             if (_transform.GetGrid(coordinates) is not { } grid || !TryComp(grid, out MapGridComponent? mapGrid))
@@ -93,12 +99,23 @@ public sealed class ActionsSystem : EntitySystem
             _mapSystem.SetTile(grid, mapGrid, coordinates, tile);
         }
 
-        if (entProtoId != null)
-            Spawn(entProtoId, coordinates);
-
         _audio.PlayPvs(audio, coordinates);
 
+        if (entProtoId == null || CheckTileBlocked(coordinates, collisionLayer, collisionMask))
+            return false;
+
+        Spawn(entProtoId, coordinates);
+
         return true;
+    }
+
+    private bool CheckTileBlocked(EntityCoordinates coordinates, int collisionLayer = 0, int collisionMask = 0)
+    {
+        if (_transform.GetGrid(coordinates) is not { } grid || !TryComp(grid, out MapGridComponent? mapGrid))
+            return true;
+
+        var tileIndices = _mapSystem.TileIndicesFor(grid, mapGrid, coordinates);
+        return !_anchorable.TileFree(mapGrid, tileIndices, collisionLayer, collisionMask);
     }
 
     #endregion

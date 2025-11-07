@@ -46,6 +46,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
 
         SubscribeLocalEvent<XenomorphsRuleComponent, AfterAntagEntitySelectedEvent>(AfterAntagEntitySelected);
 
+        SubscribeLocalEvent<XenomorphComponent, ComponentInit>(OnXenomorphInit);
         SubscribeLocalEvent<XenomorphComponent, BeforeXenomorphEvolutionEvent>(BeforeXenomorphEvolution);
         SubscribeLocalEvent<XenomorphComponent, AfterXenomorphEvolutionEvent>(AfterXenomorphEvolution);
 
@@ -64,6 +65,15 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
 
         component.Xenomorphs.Add(args.EntityUid);
         component.AnnouncementTime ??= _timing.CurTime + _random.Next(component.MinTimeToAnnouncement, component.MaxTimeToAnnouncement);
+    }
+
+    private void OnXenomorphInit(EntityUid uid, XenomorphComponent component, ComponentInit args)
+    {
+        var query = QueryActiveRules();
+        while (query.MoveNext(out _, out var xenomorphsRule, out _))
+        {
+            xenomorphsRule.Xenomorphs.Add(uid);
+        }
     }
 
     private void BeforeXenomorphEvolution(
@@ -319,11 +329,11 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
     private HashSet<EntityUid> GetStationGrids()
     {
         var stationGrids = new HashSet<EntityUid>();
-        foreach (var station in _gameTicker.GetSpawnableStations())
-        {
-            if (TryComp<StationDataComponent>(station, out var data) && _station.GetLargestGrid(data) is { } grid)
-                stationGrids.Add(grid);
-        }
+        //foreach (var station in _gameTicker.GetSpawnableStations())
+        //{
+        //    if (TryComp<StationDataComponent>(station, out var data) && _station.GetLargestGrid(data) is { } grid)
+        //        stationGrids.Add(grid);
+        //}
 
         return stationGrids;
     }

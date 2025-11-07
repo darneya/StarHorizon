@@ -3,7 +3,6 @@
   id: MobXenomorphMaid
   name: lusty xenomorph maid
   description: Don't ask it to lay eggs in you.
-  abstract: true
   components:
   - type: Sprite
     sprite: _White/Mobs/Aliens/Xenomorphs/maid.rsi
@@ -49,17 +48,6 @@
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
-  - type: LanguageKnowledge
-    speaks:
-    - Xeno
-    - XenoHivemind
-    - TauCetiBasic # Smart thing
-    understands:
-    - Xeno
-    - XenoHivemind
-    - Hissing
-    - Draconic
-    - TauCetiBasic
   # - type: GuideHelp
   #   guides:
   #   - XenomorphMaid
