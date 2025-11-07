@@ -329,11 +329,11 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
     private HashSet<EntityUid> GetStationGrids()
     {
         var stationGrids = new HashSet<EntityUid>();
-        foreach (var station in _gameTicker.GetSpawnableStations())
-        {
-            if (TryComp<StationDataComponent>(station, out var data) && _station.GetLargestGrid(data) is { } grid)
-                stationGrids.Add(grid);
-        }
+        //foreach (var station in _gameTicker.GetSpawnableStations())
+        //{
+        //    if (TryComp<StationDataComponent>(station, out var data) && _station.GetLargestGrid(data) is { } grid)
+        //        stationGrids.Add(grid);
+        //}
 
         return stationGrids;
     }

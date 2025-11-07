@@ -60,10 +60,7 @@ public abstract partial class SharedWhiteInventorySystem
     {
         if (_mobState.IsDead(uid)
             || !_random.Prob(component.EquipProb)
-            || _entityWhitelist.IsBlacklistPass(component.Blacklist, target)
-            || _inventory.TryGetSlotEntity(target, component.BlockingSlot, out var headItem)
-                && TryComp<IngestionBlockerComponent>(headItem, out var ingestionBlocker)
-                && ingestionBlocker.Enabled)
+            || _entityWhitelist.IsBlacklistPass(component.Blacklist, target))
             return false;
 
         if (component.Force)
