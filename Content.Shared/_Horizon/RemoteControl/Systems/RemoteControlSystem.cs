@@ -48,7 +48,7 @@ public sealed class RemoteControlSystem : EntitySystem
             if (mechComp.Broken)
                 return;
 
-            if (!_remotePilotSystem.TryCreateRemotePilot(hostUid, out var pilotUid))
+            if (!_remotePilotSystem.TryCreateRemotePilot(hostUid, controllerUid, out var pilotUid))
                 return;
 
             TransferMindInHost(pilotUid.Value, controllerUid, true);
