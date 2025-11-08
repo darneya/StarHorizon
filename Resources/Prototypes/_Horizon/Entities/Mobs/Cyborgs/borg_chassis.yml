@@ -5,6 +5,11 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: engineeringk
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 
 - type: entity
   id: BorgChassisJanitorKerfus
@@ -13,6 +18,11 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: janitork
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 
 - type: entity
   id: BorgChassisMedicalKerfus
@@ -21,6 +31,11 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: medicalk
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 
 - type: entity
   id: BorgChassisServiceKerfus
@@ -29,3 +44,8 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: servicek
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium

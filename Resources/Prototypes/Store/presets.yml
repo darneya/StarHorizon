@@ -17,7 +17,8 @@
     - UplinkWearables
     - UplinkJob
     - UplinkPointless
-    - UplinkGunnery # Horizon Gunnery
+    - UplinkGunnery # Horizon
+    - UplinkSyndicateBorgs # Horizon
     currencyWhitelist:
     - Telecrystal
     balance:

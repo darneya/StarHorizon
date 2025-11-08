@@ -54,70 +54,6 @@
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkWeaponAttachmentsBundle
-  name: uplink-attachmentsbundle-name
-  description: uplink-attachmentsbundle-description
-  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/under.rsi, state: uplink_modules }
-  productEntity: ClothingBackpackDuffelSyndicateFilledWeaponAttachments
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 1
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkAttachments
-
-- type: listing
-  id: UplinkLaserSightAttachment
-  name: uplink-lasersight-name
-  description: uplink-lasersight-description
-  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/under.rsi, state: lasersight}
-  productEntity: AttachmentLaserSight
-  cost:
-    Telecrystal: 1
-  categories:
-  - UplinkAttachments
-
-- type: listing
-  id: UplinkSuppressorAttachment
-  name: uplink-suppressor-name
-  description: uplink-suppressor-description
-  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi, state: suppressor}
-  productEntity: AttachmentSuppressor
-  cost:
-    Telecrystal: 1
-  categories:
-  - UplinkAttachments
-
-- type: listing
-  id: UplinkAntilyingAttachment
-  name: uplink-attachments-antilying-name
-  description: uplink-attachments-antilying-description
-  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/barrel.rsi, state: antilying }
-  productEntity: AttachmentAntiLyingWarrior
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 1
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkAttachments
-
-- type: listing
-  id: UplinkMagneticHarnessAttachment
-  name: uplink-attachments-magneticharness-name
-  description: uplink-attachments-magneticharness-description
-  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/rail.rsi, state: magnetic }
-  productEntity: AttachmentMagneticHarness
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 1
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkAttachments
-
-- type: listing
   id: UplinkGrenadeLauncherBundle
   name: uplink-grenade-launcher-bundle-name
   description: uplink-grenade-launcher-bundle-desc
@@ -130,3 +66,151 @@
     Telecrystal: 20
   categories:
   - UplinkWeaponry
+
+# region Attachements
+
+- type: listing
+  id: UplinkRailAttachmentsBundle
+  name: uplink-rail-attachments-name
+  description: uplink-rail-attachments-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/under.rsi, state: uplink_modules }
+  productEntity: ClothingBackpackDuffelSyndicateFilledRailAttachments
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkAttachments
+
+- type: listing
+  id: UplinkBarrelAttachmentsBundle
+  name: uplink-barrel-attachments-name
+  description: uplink-barrel-attachments-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/under.rsi, state: uplink_modules }
+  productEntity: ClothingBackpackDuffelSyndicateFilledBarrelAttachments
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkAttachments
+
+- type: listing
+  id: UplinkUnderAttachmentsBundle
+  name: uplink-under-attachments-name
+  description: uplink-under-attachments-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/under.rsi, state: uplink_modules }
+  productEntity: ClothingBackpackDuffelSyndicateFilledUnderAttachments
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkAttachments
+
+# region Ammo
+
+- type: listing
+  id: UplinkLethalGrenadesBundle
+  name: uplink-lethal-grenades-name
+  description: uplink-lethal-grenades-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Ammunition/Explosives/40mm_grenade.rsi, state: heat }
+  productEntity: ClothingBackpackDuffelSyndicateFilledLethalGrenades
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 12
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkExplosives
+
+- type: listing
+  id: UplinkNonLethalGrenadesBundle
+  name: uplink-nonlethal-grenades-name
+  description: uplink-nonlethal-grenades-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Ammunition/Explosives/40mm_grenade.rsi, state: stun }
+  productEntity: ClothingBackpackDuffelSyndicateFilledNonLethalGrenades
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkExplosives
+
+# region Borgs
+
+- type: listing
+  id: UplinkSyndicateBorgAssault
+  name: uplink-syndicate-borg-assault-name
+  description: uplink-syndicate-borg-assault-desc
+  productEntity: BorgChassisSyndicateAssault
+  cost:
+    Telecrystal: 60
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgMedical
+  name: uplink-syndicate-borg-medical-name
+  description: uplink-syndicate-borg-medical-desc
+  productEntity: BorgChassisSyndicateMedical
+  cost:
+    Telecrystal: 50
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgSaboteur
+  name: uplink-syndicate-borg-saboteur-name
+  description: uplink-syndicate-borg-saboteur-desc
+  productEntity: BorgChassisSyndicateSaboteur
+  cost:
+    Telecrystal: 55
+  categories:
+    - UplinkSyndicateBorgs
+
+# region Borg Modules
+
+- type: listing
+  id: UplinkSyndicateBorgWeapon
+  name: uplink-syndicate-borg-weapon-name
+  description: uplink-syndicate-borg-weapon-desc
+  productEntity: BorgModuleSyndicateWeapon
+  cost:
+    Telecrystal: 10
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgOperative
+  name: uplink-syndicate-borg-operative-name
+  description: uplink-syndicate-borg-operative-desc
+  productEntity: BorgModuleOperative
+  cost:
+    Telecrystal: 10
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgEsword
+  name: uplink-syndicate-borg-esword-name
+  description: uplink-syndicate-borg-esword-desc
+  productEntity: BorgModuleEsword
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgL6C
+  name: uplink-syndicate-borg-l6c-name
+  description: uplink-syndicate-borg-l6c-desc
+  productEntity: BorgModuleL6C
+  cost:
+    Telecrystal: 20
+  categories:
+    - UplinkSyndicateBorgs

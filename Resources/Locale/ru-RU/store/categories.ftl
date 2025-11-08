@@ -9,6 +9,9 @@ store-category-deception = Обманки
 store-category-disruption = Саботаж
 store-category-allies = Союзники
 store-category-wearables = Броня
+store-category-attachments = Оружейные навесы
+store-category-syndicateborgs = Борги
+
 # Wizard
 store-caregory-spellbook-offensive = Наступательные заклинания
 store-caregory-spellbook-defensive = Защитные заклинания
