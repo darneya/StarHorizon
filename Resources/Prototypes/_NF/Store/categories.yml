@@ -63,29 +63,61 @@
 # region Pirate
 
 - type: storeCategory
-  id: UplinkPirateBundles
-  name: store-category-piratebundles
-
-- type: storeCategory
-  id: UplinkPirateHardsuits
-  name: store-category-piratehardsuits
-
-- type: storeCategory
   id: UplinkPirateWeapons
   name: store-category-pirateweapons
+  priority: 0
 
 - type: storeCategory
   id: UplinkPirateAmmo
   name: store-category-pirateammo
-
-- type: storeCategory
-  id: UplinkPirateUtility
-  name: store-category-pirateutility
+  priority: 1
 
 - type: storeCategory
   id: UplinkPirateExplosives
   name: store-category-pirateexplosives
+  priority: 2
 
 - type: storeCategory
-  id: UplinkPirateGunnery
-  name: Орудия шаттлов
+  id: UplinkPirateHardsuits
+  name: store-category-piratehardsuits
+  priority: 3
+
+- type: storeCategory
+  id: UplinkPirateUtility
+  name: store-category-pirateutility
+  priority: 4
+
+- type: storeCategory
+  id: UplinkPirateBundles
+  name: store-category-piratebundles
+  priority: 5
+
+- type: storeCategory
+  id: UplinkPirateGunneryEnergy
+  name: store-category-pirategunnery-energy
+  priority: 6
+
+- type: storeCategory
+  id: UplinkPirateGunneryKinetic
+  name: store-category-pirategunnery-kinetic
+  priority: 7
+
+- type: storeCategory
+  id: UplinkPirateGunneryMissile
+  name: store-category-pirategunnery-missile
+  priority: 8
+
+- type: storeCategory
+  id: UplinkPirateGunneryAmmo
+  name: store-category-pirategunnery-ammo
+  priority: 9
+
+- type: storeCategory
+  id: UplinkPirateGunneryConsoles
+  name: store-category-pirategunnery-consoles
+  priority: 10
+
+- type: storeCategory
+  id: UplinkPirateMechas
+  name: store-category-piratemechas
+  priority: 11

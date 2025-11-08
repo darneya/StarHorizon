@@ -78,7 +78,7 @@
   description: Быстрострельное энергетическое оружие, наносящее огромный урон целям. Требует длительной перезарядки.
   productEntity: WeaponTurretType54
   cost:
-    FrontierUplinkCoin: 80
+    FrontierUplinkCoin: 160
   categories:
     - UplinkSecurityGunneryEnergy
   conditions:
@@ -96,7 +96,7 @@
   description: Разрушительное оружие, обычно используемое для крупномасштабной огневой поддержки и стратегического уничтожения.
   productEntity: WeaponTurretType241
   cost:
-    FrontierUplinkCoin: 80
+    FrontierUplinkCoin: 160
   categories:
     - UplinkSecurityGunneryEnergy
   conditions:
@@ -114,7 +114,7 @@
   description: Самая знаковая суперкапитальная батарея Aetherion Dynamics. Выстреливает огромные ионизированные газовые снаряды, прожигающие самую прочную броню кораблей.
   productEntity: WeaponTurretDymere
   cost:
-    FrontierUplinkCoin: 80
+    FrontierUplinkCoin: 160
   categories:
     - UplinkSecurityGunneryEnergy
   conditions:
@@ -211,7 +211,7 @@
   description: Рельсотрон, линкорное орудие, стреляющее массивным снарядом на экстремальной скорости, способное нанести катастрофический урон вражеским шаттлам. Тяжёлый линейный ускоритель.
   productEntity: WeaponTurretCharonReload
   cost:
-    FrontierUplinkCoin: 80
+    FrontierUplinkCoin: 160
   categories:
     - UplinkSecurityGunneryKinetic
   conditions:
@@ -229,7 +229,7 @@
   description: Основная батарея с двумя стволами, наносящая быстрые сокрушительные залпы на экстремальной дистанции. Стреляет 220мм автоматическими снарядами со слегка сниженной разрушительной силой.
   productEntity: WeaponTurretCyrexa
   cost:
-    FrontierUplinkCoin: 80
+    FrontierUplinkCoin: 160
   categories:
     - UplinkSecurityGunneryKinetic
   conditions:
@@ -247,7 +247,7 @@
   description: Одно из крупнейших химических кинетических орудий в секторе. Его мощность сравнима только с масс-драйверами, такими как M381.
   productEntity: WeaponTurretHades
   cost:
-    FrontierUplinkCoin: 80
+    FrontierUplinkCoin: 160
   categories:
     - UplinkSecurityGunneryKinetic
   conditions:
@@ -364,7 +364,7 @@
   description: Гибридная ЭМИ ракетная установка от Aetherion Dynamics. Выпускает боеголовки ЭМИВВ для отключения и ослабления вражеских кораблей на дальних дистанциях.
   productEntity: WeaponTurretTovek
   cost:
-    FrontierUplinkCoin: 80
+    FrontierUplinkCoin: 160
   categories:
     - UplinkSecurityGunneryMissile
   conditions:
@@ -437,6 +437,11 @@
       whitelist:
         tags:
           - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
 
 - type: listing
   id: SecShuttleEquipmentShieldLight

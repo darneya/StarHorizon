@@ -59,8 +59,6 @@
   technologyPrerequisites:
   - RipleyMKIITechnology
   position: 3, 28
-  researchTargets:
-  - TechnologyDiscClarkeTechnology
 
 - type: technology
   id: MechTechnologyMining
@@ -175,7 +173,7 @@
   - MechRipleyCombatUpgradeKit
   - MechRipleyEarthUpgradeKit
   - MechRipleyFlamesredUpgradeKit
-  - MechRipleyTitanUpgradeKit
+#  - MechRipleyTitanUpgradeKit
   - MechRipleyZairjahUpgradeKit
   - MechRipleyFirefighterUpgradeKit
   - MechRipleyHaulerUpgradeKit

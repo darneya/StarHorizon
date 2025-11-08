@@ -6,6 +6,12 @@
   save: false
   abstract: true
   components:
+# Horizon start
+  - type: LanguageSpeaker
+    languages:
+      GalacticCommon: Speak
+      Binary: Speak
+# Horizon end
   - type: Reactive
     groups:
       Acidic: [Touch]
