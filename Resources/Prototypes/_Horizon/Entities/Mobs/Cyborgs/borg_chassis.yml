@@ -1,0 +1,31 @@
+- type: entity
+  id: BorgChassisEngineerKerfus
+  parent: BorgChassisSelectable
+  name: engineer cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: engineeringk
+
+- type: entity
+  id: BorgChassisJanitorKerfus
+  parent: BorgChassisSelectable
+  name: janitor cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: janitork
+
+- type: entity
+  id: BorgChassisMedicalKerfus
+  parent: BorgChassisSelectable
+  name: medical cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: medicalk
+
+- type: entity
+  id: BorgChassisServiceKerfus
+  parent: BorgChassisSelectable
+  name: service cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: servicek

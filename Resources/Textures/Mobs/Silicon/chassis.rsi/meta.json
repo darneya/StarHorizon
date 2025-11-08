@@ -255,7 +255,7 @@
       "name": "service_l",
       "directions": 4
     },
-	{
+    {
       "name": "synd_sec",
       "directions": 4
     },
@@ -267,7 +267,7 @@
       "name": "synd_sec_l",
       "directions": 4
     },
-	{
+    {
       "name": "synd_medical",
       "directions": 4
     },
@@ -327,7 +327,7 @@
       "name": "synd_engi",
       "directions": 4
     },
-	{
+    {
       "name": "synd_engi_e",
       "directions": 4
     },
@@ -393,7 +393,7 @@
       "name": "xenoborg_heavy_l",
       "directions": 4
     },
-	  {
+    {
       "name": "xenoborg_scout",
       "directions": 4
     },
@@ -499,7 +499,7 @@
       "name": "xenoborg_engi",
       "directions": 4
     },
-	  {
+    {
       "name": "xenoborg_engi_e",
       "directions": 4
     },
@@ -654,6 +654,238 @@
           0.1
         ]
       ]
+    },
+    {
+      "name": "kerfusmaid",
+      "directions": 4
+    },
+    {
+      "name": "kerfusmaid_e",
+      "directions": 4,
+      "delays": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "kerfusmaid_e_r",
+      "directions": 4,
+      "delays": [
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "kerfusmaid_l",
+      "directions": 4
+    },
+    {
+      "name": "kerfusnoerp",
+      "directions": 4
+    },
+    {
+      "name": "kerfusnoerp_e",
+      "directions": 4
+    },
+    {
+      "name": "kerfusnoerp_e_r",
+      "directions": 4
+    },
+    {
+      "name": "kerfusnoerp_l",
+      "directions": 4
+    },
+    {
+      "name": "kerfuswhite",
+      "directions": 4
+    },
+    {
+      "name": "kerfuswhite_e",
+      "directions": 4,
+      "delays": [
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "kerfuswhite_e_r",
+      "directions": 4,
+      "delays": [
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "name": "kerfuswhite_l",
+      "directions": 4
+    },
+    {
+      "name": "kerfusyellow",
+      "directions": 4
+    },
+    {
+      "name": "kerfusyellow_e",
+      "directions": 4
+    },
+    {
+      "name": "kerfusyellow_e_r",
+      "directions": 4
+    },
+    {
+      "name": "kerfusyellow_l",
+      "directions": 4
     }
   ]
 }

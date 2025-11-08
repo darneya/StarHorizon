@@ -44,3 +44,16 @@ borg-type-medical-transponder = медицинский киборг
 borg-type-service-name = Сервис
 borg-type-service-desc = Оказывайте помощь в предоставлении экипажу широкого спектра услуг: от подачи закусок и напитков до ботанических занятий и развлечений.
 borg-type-service-transponder = сервисный киборг
+
+borg-type-engineeringk-name = Керфус-инженер
+borg-type-engineeringk-desc = Миленькая инженерная помощница. Помогает строить, чинить и поддерживать станцию в рабочем состоянии. Обожает болтики и гаечки!
+borg-type-engineeringk-transponder = керфус-инженер
+borg-type-janitork-name = Керфус-уборщик
+borg-type-janitork-desc = Миленькая уборочная помощница. Следит за чистотой и порядком на станции. Тайно влюблена в свою швабру!
+borg-type-janitork-transponder = керфус-уборщик
+borg-type-medicalk-name = Керфус-врач
+borg-type-medicalk-desc = Миленькая медицинская помощница. Оказывает помощь нуждающемуся экипажу. Выписывает рецепты на объятия!
+borg-type-medicalk-transponder = керфус-врач
+borg-type-servicek-name = Керфус-сервис
+borg-type-servicek-desc = Миленькая сервисная помощница. Обеспечивает экипаж закусками, напитками и развлечениями. Специалист по вкусняшкам и хорошему настроению!
+borg-type-servicek-transponder = керфус-сервис
