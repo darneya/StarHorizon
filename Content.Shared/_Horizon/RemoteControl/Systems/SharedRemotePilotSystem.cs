@@ -3,6 +3,7 @@ using Content.Shared.Mech;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.DoAfter;
 using Content.Shared.Mech.EntitySystems;
+using Content.Shared.Popups;
 
 namespace Content.Shared._Horizon.RemoteControl.Systems;
 
@@ -11,6 +12,7 @@ public abstract class SharedRemotePilotSystem : EntitySystem
 
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly RemoteControlSystem _remoteControlSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
     public override void Initialize()
     {
@@ -21,24 +23,32 @@ public abstract class SharedRemotePilotSystem : EntitySystem
     private void OnPilotEject(Entity<RemotePilotComponent> pilot, ref OnPilotEjectEvent args)
     {
         _remoteControlSystem.ReturnToBody(pilot.Owner);
+        RemComp<UnderControlComponent>(GetEntity(args.Mech));
     }
 
-    public bool TryCreateRemotePilot(EntityUid host, [NotNullWhen(true)] out EntityUid? pilotUid)
+    public bool TryCreateRemotePilot(EntityUid mech, EntityUid controller, [NotNullWhen(true)] out EntityUid? pilotUid)
     {
         pilotUid = null;
 
-        if (!TryComp<CanBeTakenUnderControlComponent>(host, out var hostComp))
+        if (!TryComp<CanBeTakenUnderControlComponent>(mech, out var hostComp))
             return false;
 
-        pilotUid = PredictedSpawnAtPosition(hostComp.RemotePilot, Transform(host).Coordinates);
+        if (HasComp<UnderControlComponent>(mech))
+        {
+            _popupSystem.PopupClient(Loc.GetString("remote-control-already-under-control"), controller);
+            return false;
+        }
+
+        pilotUid = PredictedSpawnAtPosition(hostComp.RemotePilot, Transform(mech).Coordinates);
 
         //Don't create a pilot in the mech immediately, because we need to call the MechEntryEvent to initialize the UI update for controlling the mech.
-        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, pilotUid.Value, 0f, new MechEntryEvent(), host, target: host)
+        _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, pilotUid.Value, 0f, new MechEntryEvent(), mech, target: mech)
         {
             Broadcast = false,
             Hidden = true
         });
 
+        EnsureComp<UnderControlComponent>(mech, out _);
 
         return true;
     }
