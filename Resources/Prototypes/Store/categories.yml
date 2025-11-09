@@ -91,24 +91,47 @@
   id: UplinkSyndicateBorgs
   name: store-category-syndicateborgs
   priority: 10
+
+- type: storeCategory
+  id: UplinkSyndieMechas
+  name: store-category-syndicatemechas
+  priority: 11
+
+- type: storeCategory
+  id: UplinkSyndicateGunneryEnergy
+  name: store-category-syndicate-gunnery-energy
+  priority: 12
+
+- type: storeCategory
+  id: UplinkSyndicateGunneryKinetic
+  name: store-category-syndicate-gunnery-kinetic
+  priority: 13
+
+- type: storeCategory
+  id: UplinkSyndicateGunneryMissile
+  name: store-category-syndicate-gunnery-missile
+  priority: 14
+
+- type: storeCategory
+  id: UplinkSyndicateGunneryAmmo
+  name: store-category-syndicate-gunnery-ammo
+  priority: 15
+
+- type: storeCategory
+  id: UplinkSyndicateGunneryConsoles
+  name: store-category-syndicate-gunnery-consoles
+  priority: 16
 # Horizon end
 
 - type: storeCategory
   id: UplinkJob
   name: store-category-job
-  priority: 11
+  priority: 17
 
 - type: storeCategory
   id: UplinkPointless
   name: store-category-pointless
-  priority: 12
-
-# Horizon start
-- type: storeCategory
-  id: UplinkGunnery
-  name: Орудия шаттлов
-  priority: 15
-# Horizon end
+  priority: 18
 
 #revenant
 - type: storeCategory

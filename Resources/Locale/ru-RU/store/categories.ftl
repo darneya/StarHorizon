@@ -11,6 +11,12 @@ store-category-allies = Союзники
 store-category-wearables = Броня
 store-category-attachments = Оружейные навесы
 store-category-syndicateborgs = Борги
+store-category-syndicatemechas = Мехи
+store-category-syndicate-gunnery-energy = Энергетические орудия
+store-category-syndicate-gunnery-kinetic = Кинетические орудия
+store-category-syndicate-gunnery-missile = Ракетные системы
+store-category-syndicate-gunnery-ammo = Боеприпасы для орудий
+store-category-syndicate-gunnery-consoles = Оборудование шаттла
 
 # Wizard
 store-caregory-spellbook-offensive = Наступательные заклинания
