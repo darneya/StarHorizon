@@ -1,7 +1,7 @@
 - type: technology
   id: ArsenalUnderbarrelModules
   name: research-technology-modules-underbarrel
-  entityIcon: AttachmentM90UnderbarrelShotgun
+  entityIcon: TechUnder
   discipline: NFArsenalNfsd
   tier: 2
   cost: 7500
@@ -17,7 +17,7 @@
 - type: technology
   id: ArsenalUpperplankModules
   name: research-technology-modules-upperplank
-  entityIcon: AttachmentT2Miniscope
+  entityIcon: TechUpper
   discipline: NFArsenalNfsd
   tier: 2
   cost: 7500
@@ -32,7 +32,7 @@
 - type: technology
   id: ArsenalBarrelModules
   name: research-technology-modules-barrel
-  entityIcon: AttachmentAntiLyingWarrior
+  entityIcon: TechRail
   discipline: NFArsenalNfsd
   tier: 2
   cost: 7500
