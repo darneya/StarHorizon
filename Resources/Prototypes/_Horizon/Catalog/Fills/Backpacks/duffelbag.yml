@@ -23,7 +23,7 @@
     contents:
     - id: AttachmentT2Miniscope
     - id: AttachmentMagneticHarness
-    - id: AttachmentLaserSight
+    - id: AttachmentReflexSight
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
@@ -43,7 +43,7 @@
   - type: StorageFill
     contents:
     - id: AttachmentVerticalGrip
-    - id: AttachmentReflexSight
+    - id: AttachmentLaserSight
     - id: AttachmentM90UnderbarrelShotgun
     - id: AttachmentM90GrenadeLauncher
 
