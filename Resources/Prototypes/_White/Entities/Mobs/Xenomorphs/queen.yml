@@ -63,17 +63,6 @@
   - type: Speech
     speechSounds: Xenomorph
     speechVerb: LargeMob
-  - type: LanguageKnowledge
-    speaks:
-    - Xeno
-    - XenoHivemind
-    - TauCetiBasic
-    understands:
-    - Xeno
-    - XenoHivemind
-    - Hissing
-    - Draconic
-    - TauCetiBasic
   # - type: GuideHelp
   #   guides:
   #   - XenomorphQueen

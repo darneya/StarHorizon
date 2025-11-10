@@ -48,17 +48,6 @@
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
-  - type: LanguageKnowledge
-    speaks:
-    - Xeno
-    - XenoHivemind
-    - TauCetiBasic # Smart thing
-    understands:
-    - Xeno
-    - XenoHivemind
-    - Hissing
-    - Draconic
-    - TauCetiBasic
   # - type: GuideHelp
   #   guides:
   #   - XenomorphMaid

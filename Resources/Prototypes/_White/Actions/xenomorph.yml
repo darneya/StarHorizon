@@ -7,15 +7,6 @@
     icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: help }
     iconOn: { sprite: _White/Interface/Actions/xenomorph.rsi, state: harm }
 
-# Thermal action
-- type: entity
-  id: ToggleThermalVisionXenomorph
-  parent: ToggleThermalVision
-  components:
-  - type: Action
-    icon: { sprite: _White/Interface/Actions/xenomorph.rsi, state: vision_off }
-    iconOn: { sprite: _White/Interface/Actions/xenomorph.rsi, state: vision_on }
-
 # Evolution actions
 - type: entity
   id: ActionEvolution

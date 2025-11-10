@@ -24,7 +24,6 @@
   - type: ActionGrant
     actions:
     - ActionTransferPlasma
-  - type: VentCrawler
   - type: Body
     prototype: XenomorphLarva
   - type: Fixtures

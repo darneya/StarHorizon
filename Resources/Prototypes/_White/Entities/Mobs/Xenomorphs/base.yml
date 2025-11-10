@@ -14,10 +14,6 @@
         Toxin: -5
         Airloss: -10
         Brute: -5
-  - type: ThermalVision
-    toggleAction: ToggleThermalVisionXenomorph
-    color: "#7d0cc9"
-    lightRadius: 10
   - type: NameIdentifier
     group: GenericNumber
   - type: CombatMode
@@ -111,15 +107,6 @@
       Male: Xenomorph
       Female: Xenomorph
       Unsexed: Xenomorph
-  - type: LanguageKnowledge
-    speaks:
-    - Xeno
-    - XenoHivemind
-    understands:
-    - Xeno
-    - XenoHivemind
-    - Hissing
-    - Draconic
   - type: SSDIndicator
   - type: Emoting
   - type: BodyEmotes

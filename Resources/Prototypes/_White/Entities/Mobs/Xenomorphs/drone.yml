@@ -26,7 +26,6 @@
     - ActionSpawnResinMembrane
     - ActionSpawnResinNest
     - ActionSpawnResinWeedNode
-  - type: VentCrawler
   - type: Cuffable
   - type: Body
     prototype: XenomorphDrone
