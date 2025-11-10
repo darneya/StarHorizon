@@ -100,3 +100,19 @@ petting-success-tesla = Вы гладите { $target }, попутно нару
 petting-failure-tesla = Вы тянетесь погладить { $target }, но разряд заставляет вас отдёрнуть руку.
 petting-success-mail-teleporter = Вы гладите { $target } по { POSS-ADJ($target) } долговечной, холодной поверхности.
 petting-failure-mail-teleporter = Вы тянетесь погладить { $target }, но { SUBJECT($target) } занят сортировкой почты!
+
+petting-success-spiderb-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } глянцевому чёрному хитину.
+petting-failure-spiderb-cyborg = Вы тянетесь погладить { $target }, но { $target } занимается добычей полезных ископаемых!
+petting-success-spiderm-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } коричневому волосатому хитину.
+petting-failure-spiderm-cyborg = Вы тянетесь погладить { $target }, но { $target } слишком занят шахтерскими работами!
+petting-success-spiders-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } серому гладкому хитину.
+petting-failure-spiders-cyborg = Вы тянетесь погладить { $target }, но { $target } сосредоточен на работе!
+petting-success-spidery-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } жёлтому блестящему хитину.
+petting-failure-spidery-cyborg = Вы тянетесь погладить { $target }, но { $target } торопится куда-то!
+
+petting-success-sexybar-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } стильной металлической голове и слышите жизнерадостное жужжание.
+petting-failure-sexybar-cyborg = Вы тянетесь погладить { $target }, но { $target } слишком занята барными делами!
+petting-success-pneumaj-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } изящной металлической голове.
+petting-failure-pneumaj-cyborg = Вы тянетесь погладить { $target }, но { $target } занимается готовкой!
+petting-success-pneumas-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } изящной металлической голове.
+petting-failure-pneumas-cyborg = Вы тянетесь погладить { $target }, но { $target } спешит разносить напитки!

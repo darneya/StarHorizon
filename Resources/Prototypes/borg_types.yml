@@ -116,26 +116,45 @@
 
   # Visual
   inventoryTemplateId: borgTall
-  spriteBodyState: miner
-  spriteBodyMovementState: miner_moving
-  spriteHasMindState: miner_e
-  spriteNoMindState: miner_e_r
-  spriteToggleLightState: miner_l
+  spriteBodyState: spiderb
+  spriteHasMindState: spiderb_e
+  spriteNoMindState: spiderb_e_r
+  spriteToggleLightState: spiderb_l
 
   # Pet
-  petSuccessString: petting-success-salvage-cyborg
-  petFailureString: petting-failure-salvage-cyborg
+  petSuccessString: petting-success-mining-cyborg
+  petFailureString: petting-failure-mining-cyborg
 
   # Horizon skins
   skins:
-  - name: Default
-    spriteBodyState: miner
-    spriteBodyMovementState: miner_moving
-    spriteHasMindState: miner_e
-    spriteNoMindState: miner_e_r
-    spriteToggleLightState: miner_l
-    petSuccessString: petting-success-salvage-cyborg
-    petFailureString: petting-failure-salvage-cyborg
+  - name: Черный
+    spriteBodyState: spiderb
+    spriteHasMindState: spiderb_e
+    spriteNoMindState: spiderb_e_r
+    spriteToggleLightState: spiderb_l
+    petSuccessString: petting-success-spiderb-cyborg
+    petFailureString: petting-failure-spiderb-cyborg
+  - name: Шахтерский
+    spriteBodyState: spiderm
+    spriteHasMindState: spiderm_e
+    spriteNoMindState: spiderm_e_r
+    spriteToggleLightState: spiderm_l
+    petSuccessString: petting-success-spiderm-cyborg
+    petFailureString: petting-failure-spiderm-cyborg
+  - name: Серый
+    spriteBodyState: spiders
+    spriteHasMindState: spiders_e
+    spriteNoMindState: spiders_e_r
+    spriteToggleLightState: spiders_l
+    petSuccessString: petting-success-spiders-cyborg
+    petFailureString: petting-failure-spiders-cyborg
+  - name: Желтый
+    spriteBodyState: spidery
+    spriteHasMindState: spidery_e
+    spriteNoMindState: spidery_e_r
+    spriteToggleLightState: spidery_l
+    petSuccessString: petting-success-spidery-cyborg
+    petFailureString: petting-failure-spidery-cyborg
 
 
 # region Janitor borg
@@ -240,7 +259,7 @@
 
   # Horizon skins
   skins:
-  - name: Default
+  - name: Медик
     spriteBodyState: medical
     spriteBodyMovementState: medical_moving
     spriteHasMindState: medical_e
@@ -248,6 +267,27 @@
     spriteToggleLightState: medical_l
     petSuccessString: petting-success-medical-cyborg
     petFailureString: petting-failure-medical-cyborg
+    footstepCollection:
+      collection: FootstepHoverBorg
+  - name: Генетик
+    spriteBodyState: medicalg
+    spriteToggleLightState: medicalg_l
+    petSuccessString: petting-success-medicalg-cyborg
+    petFailureString: petting-failure-medicalg-cyborg
+    footstepCollection:
+      collection: FootstepHoverBorg
+  - name: Хирург
+    spriteBodyState: medicals
+    spriteToggleLightState: medicals_l
+    petSuccessString: petting-success-medicals-cyborg
+    petFailureString: petting-failure-medicals-cyborg
+    footstepCollection:
+      collection: FootstepHoverBorg
+  - name: Вирусолог
+    spriteBodyState: medicalv
+    spriteToggleLightState: medicalv_l
+    petSuccessString: petting-success-medicalv-cyborg
+    petFailureString: petting-failure-medicalv-cyborg
     footstepCollection:
       collection: FootstepHoverBorg
 

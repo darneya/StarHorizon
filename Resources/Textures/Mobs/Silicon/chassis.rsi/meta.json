@@ -934,6 +934,160 @@
     {
       "name": "pneumas_l",
       "directions": 4
+    },
+    {
+      "name": "spiderb",
+      "directions": 4
+    },
+    {
+      "name": "spiderb_e",
+      "directions": 4
+    },
+    {
+      "name": "spiderb_e_r",
+      "directions": 4
+    },
+    {
+      "name": "spiderb_l",
+      "directions": 4
+    },
+    {
+      "name": "spiderm",
+      "directions": 4
+    },
+    {
+      "name": "spiderm_e",
+      "directions": 4
+    },
+    {
+      "name": "spiderm_e_r",
+      "directions": 4
+    },
+    {
+      "name": "spiderm_l",
+      "directions": 4
+    },
+    {
+      "name": "spiders",
+      "directions": 4
+    },
+    {
+      "name": "spiders_e",
+      "directions": 4
+    },
+    {
+      "name": "spiders_e_r",
+      "directions": 4
+    },
+    {
+      "name": "spiders_l",
+      "directions": 4
+    },
+    {
+      "name": "spidery",
+      "directions": 4
+    },
+    {
+      "name": "spidery_e",
+      "directions": 4
+    },
+    {
+      "name": "spidery_e_r",
+      "directions": 4
+    },
+    {
+      "name": "spidery_l",
+      "directions": 4
+    },
+    {
+      "name": "medicalg",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "medicalg_l",
+      "directions": 4
+    },
+    {
+      "name": "medicals",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "medicals_l",
+      "directions": 4
+    },
+    {
+      "name": "medicalv",
+      "directions": 4,
+      "delays": [
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ],
+        [
+          0.1,
+          0.2,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "medicalv_l",
+      "directions": 4
     }
   ]
 }
