@@ -285,3 +285,35 @@
       VoxPidgin: Understand
       Bubblish: Understand
       RootSpeak: Understand
+
+- type: entity
+  id: BorgTranslator
+  parent: [ Translator ]
+  name: borg translator
+  description: "Translates speech."
+  components:
+  - type: HandheldTranslator
+    languages:
+      GalacticCommon: Speak
+      Arachnid: Understand
+      Nekomimetic: Understand
+      Draconic: Understand
+      Canilunzt: Understand
+      SikTaj: Understand
+      Nian: Understand
+      SolCommon: Understand
+      Dwarf: Understand
+      CintaTaj: Understand
+      Gutter: Understand
+      NeoRusskiya: Understand
+      Clownish: Understand
+      Harpy: Understand
+      Goblin: Understand
+      VoxPidgin: Understand
+      Bubblish: Understand
+      RootSpeak: Understand
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor

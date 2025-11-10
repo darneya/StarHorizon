@@ -303,167 +303,242 @@
     petSuccessString: petting-success-service-cyborg
     petFailureString: petting-failure-service-cyborg
 
-# Horizon start
-# region Engineering Kerfus
-- type: borgType
-  id: engineeringk
 
-  # Description
-  dummyPrototype: BorgChassisEngineerKerfus
+# # Horizon start
+# # region Engineering Kerfus
+# - type: borgType
+#   id: engineeringk
+#   # Description
+#   dummyPrototype: BorgChassisEngineerKerfus
+#   # Functional
+#   extraModuleCount: 3
+#   moduleWhitelist:
+#     tags:
+#     - BorgModuleGeneric
+#     - BorgModuleEngineering
+#   defaultModules:
+#   - BorgModuleTool
+#   - BorgModuleConstruction
+#   - BorgModuleRCDShipyard # Frontier: RCD<RCDShipyard
+#   - BorgModuleCable
+#   - BorgModuleJetpack # Frontier
+#   radioChannels:
+#   - Engineering
+#   - Science
+#   # Visual
+#   inventoryTemplateId: borgShort
+#   spriteBodyState: kerfusyellow
+#   spriteHasMindState: kerfusyellow_e
+#   spriteNoMindState: kerfusyellow_e_r
+#   spriteToggleLightState: kerfusyellow_l
+#   # Pet
+#   petSuccessString: petting-success-kerfusyellow-cyborg
+#   petFailureString: petting-failure-kerfusyellow-cyborg
+#   # Horizon skins
+#   skins:
+#   - name: Default
+#     inventoryTemplateId: borgShort
+#     spriteBodyState: kerfusyellow
+#     spriteHasMindState: kerfusyellow_e
+#     spriteNoMindState: kerfusyellow_e_r
+#     spriteToggleLightState: kerfusyellow_l
 
-  # Functional
-  extraModuleCount: 3
-  moduleWhitelist:
-    tags:
-    - BorgModuleGeneric
-    - BorgModuleEngineering
+# # region Janitor Kerfus
+# - type: borgType
+#   id: janitork
+#   # Description
+#   dummyPrototype: BorgChassisJanitorKerfus
+#   # Functional
+#   extraModuleCount: 3
+#   moduleWhitelist:
+#     tags:
+#     - BorgModuleGeneric
+#     - BorgModuleJanitor
+#   defaultModules:
+#   - BorgModuleTool
+#   - BorgModuleCleaning
+#   - BorgModuleCustodial
+#   - BorgModuleJetpack # Frontier
+#   radioChannels:
+#   - Science
+#   - Service
+#   # Visual
+#   inventoryTemplateId: borgShort
+#   spriteBodyState: kerfusmaid
+#   spriteHasMindState: kerfusmaid_e
+#   spriteNoMindState: kerfusmaid_e_r
+#   spriteToggleLightState: kerfusmaid_l
+#   # Pet
+#   petSuccessString: petting-success-kerfusmaid-cyborg
+#   petFailureString: petting-failure-kerfusmaid-cyborg
+#   # Horizon skins
+#   skins:
+#   - name: Default
+#     inventoryTemplateId: borgShort
+#     spriteBodyState: kerfusmaid
+#     spriteHasMindState: kerfusmaid_e
+#     spriteNoMindState: kerfusmaid_e_r
+#     spriteToggleLightState: kerfusmaid_l
 
-  defaultModules:
-  - BorgModuleTool
-  - BorgModuleConstruction
-  - BorgModuleRCDShipyard # Frontier: RCD<RCDShipyard
-  - BorgModuleCable
-  - BorgModuleJetpack # Frontier
+# # region Medical Kerfus
+# - type: borgType
+#   id: medicalk
+#   # Description
+#   dummyPrototype: BorgChassisMedicalKerfus
+#   # Functional
+#   extraModuleCount: 3
+#   moduleWhitelist:
+#     tags:
+#     - BorgModuleGeneric
+#     - BorgModuleMedical
+#   defaultModules:
+#   - BorgModuleTool
+#   - BorgModuleChemical
+#   - BorgModuleTopicals
+#   - BorgModuleRescue
+#   # - BorgModuleAdvancedTreatment # Frontier
+#   # - BorgModuleDefibrillator # Frontier
+#   - BorgModuleJetpack # Frontier
+#   radioChannels:
+#   - Science
+#   - Medical
+#   addComponents:
+#   - type: SolutionScanner
+#   - type: ShowHealthBars
+#     damageContainers:
+#     - Biological
+#   - type: ShowHealthIcons
+#     damageContainers:
+#     - Biological
+#   # Visual
+#   inventoryTemplateId: borgDutch
+#   spriteBodyState: kerfuswhite
+#   spriteHasMindState: kerfuswhite_e
+#   spriteNoMindState: kerfuswhite_e_r
+#   spriteToggleLightState: kerfuswhite_l
+#   # Pet
+#   petSuccessString: petting-success-kerfuswhite-cyborg
+#   petFailureString: petting-failure-kerfuswhite-cyborg
+#   # Sounds
+#   footstepCollection:
+#     collection: FootstepHoverBorg
+#   # Horizon skins
+#   skins:
+#   - name: Default
+#     inventoryTemplateId: borgDutch
+#     spriteBodyState: kerfuswhite
+#     spriteHasMindState: kerfuswhite_e
+#     spriteNoMindState: kerfuswhite_e_r
+#     spriteToggleLightState: kerfuswhite_l
 
-  radioChannels:
-  - Engineering
-  - Science
+# # region Service Kerfus
+# - type: borgType
+#   id: servicek
+#   # Description
+#   dummyPrototype: BorgChassisServiceKerfus
+#   # Functional
+#   extraModuleCount: 3
+#   moduleWhitelist:
+#     tags:
+#     - BorgModuleGeneric
+#     - BorgModuleService
+#   defaultModules:
+#   - BorgModuleTool
+#   - BorgModuleMusique
+#   # - BorgModuleService # Frontier: deprecated, use NF variant
+#   - BorgModuleClowning
+#   - BorgModuleGardening
+#   - BorgModuleHarvesting
+#   - BorgModuleBureaucracy # Frontier: FIXME - stacked as hell
+#   - BorgModuleNFService # Frontier
+#   - BorgModuleChef # Frontier
+#   - BorgModuleJetpack # Frontier
+#   radioChannels:
+#   - Science
+#   - Service
+#   # Visual
+#   inventoryTemplateId: borgTall
+#   spriteBodyState: kerfusnoerp
+#   spriteHasMindState: kerfusnoerp_e
+#   spriteNoMindState: kerfusnoerp_e_r
+#   spriteToggleLightState: kerfusnoerp_l
+#   # Pet
+#   petSuccessString: petting-success-kerfusnoerp-cyborg
+#   petFailureString: petting-failure-kerfusnoerp-cyborg
+#   # Horizon skins
+#   skins:
+#   - name: Default
+#     inventoryTemplateId: borgTall
+#     spriteBodyState: kerfusnoerp
+#     spriteHasMindState: kerfusnoerp_e
+#     spriteNoMindState: kerfusnoerp_e_r
+#     spriteToggleLightState: kerfusnoerp_l
+# # Horizon end
 
-  # Visual
-  inventoryTemplateId: borgShort
-  spriteBodyState: kerfusyellow
-  spriteHasMindState: kerfusyellow_e
-  spriteNoMindState: kerfusyellow_e_r
-  spriteToggleLightState: kerfusyellow_l
-
-  # Pet
-  petSuccessString: petting-success-kerfusyellow-cyborg
-  petFailureString: petting-failure-kerfusyellow-cyborg
-
-# region Janitor Kerfus
-- type: borgType
-  id: janitork
-
-  # Description
-  dummyPrototype: BorgChassisJanitorKerfus
-
-  # Functional
-  extraModuleCount: 3
-  moduleWhitelist:
-    tags:
-    - BorgModuleGeneric
-    - BorgModuleJanitor
-
-  defaultModules:
-  - BorgModuleTool
-  - BorgModuleCleaning
-  - BorgModuleCustodial
-  - BorgModuleJetpack # Frontier
-
-  radioChannels:
-  - Science
-  - Service
-
-  # Visual
-  inventoryTemplateId: borgShort
-  spriteBodyState: kerfusmaid
-  spriteHasMindState: kerfusmaid_e
-  spriteNoMindState: kerfusmaid_e_r
-  spriteToggleLightState: kerfusmaid_l
-
-  # Pet
-  petSuccessString: petting-success-kerfusmaid-cyborg
-  petFailureString: petting-failure-kerfusmaid-cyborg
-
-# region Medical Kerfus
-- type: borgType
-  id: medicalk
-
-  # Description
-  dummyPrototype: BorgChassisMedicalKerfus
-
-  # Functional
-  extraModuleCount: 3
-  moduleWhitelist:
-    tags:
-    - BorgModuleGeneric
-    - BorgModuleMedical
-
-  defaultModules:
-  - BorgModuleTool
-  - BorgModuleChemical
-  - BorgModuleTopicals
-  - BorgModuleRescue
-  # - BorgModuleAdvancedTreatment # Frontier
-  # - BorgModuleDefibrillator # Frontier
-  - BorgModuleJetpack # Frontier
-
-  radioChannels:
-  - Science
-  - Medical
-
-  addComponents:
-  - type: SolutionScanner
-  - type: ShowHealthBars
-    damageContainers:
-    - Biological
-  - type: ShowHealthIcons
-    damageContainers:
-    - Biological
-
-  # Visual
-  inventoryTemplateId: borgDutch
-  spriteBodyState: kerfuswhite
-  spriteHasMindState: kerfuswhite_e
-  spriteNoMindState: kerfuswhite_e_r
-  spriteToggleLightState: kerfuswhite_l
-
-  # Pet
-  petSuccessString: petting-success-kerfuswhite-cyborg
-  petFailureString: petting-failure-kerfuswhite-cyborg
-
-  # Sounds
-  footstepCollection:
-    collection: FootstepHoverBorg
-
-# region Service Kerfus
+# region Kerfus
 - type: borgType
   id: servicek
-
   # Description
   dummyPrototype: BorgChassisServiceKerfus
-
   # Functional
-  extraModuleCount: 3
+  extraModuleCount: 2
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
     - BorgModuleService
-
   defaultModules:
   - BorgModuleTool
   - BorgModuleMusique
-  # - BorgModuleService # Frontier: deprecated, use NF variant
-  - BorgModuleClowning
+  - BorgModuleTranslation
   - BorgModuleGardening
   - BorgModuleHarvesting
-  - BorgModuleBureaucracy # Frontier: FIXME - stacked as hell
-  - BorgModuleNFService # Frontier
-  - BorgModuleChef # Frontier
-  - BorgModuleJetpack # Frontier
-
+  - BorgModuleBureaucracy
+  - BorgModuleNFService
+  - BorgModuleChef
+  - BorgModuleJetpack
   radioChannels:
   - Science
   - Service
-
   # Visual
   inventoryTemplateId: borgTall
-  spriteBodyState: kerfusnoerp
-  spriteHasMindState: kerfusnoerp_e
-  spriteNoMindState: kerfusnoerp_e_r
-  spriteToggleLightState: kerfusnoerp_l
-
+  spriteBodyState: service
+  spriteHasMindState: service_e
+  spriteNoMindState: service_e_r
+  spriteToggleLightState: service_l
   # Pet
-  petSuccessString: petting-success-kerfusnoerp-cyborg
-  petFailureString: petting-failure-kerfusnoerp-cyborg
-# Horizon end
+  petSuccessString: petting-success-service-cyborg
+  petFailureString: petting-failure-service-cyborg
+  # Horizon skins
+  skins:
+  - name: Белая
+    inventoryTemplateId: borgDutch
+    spriteBodyState: kerfuswhite
+    spriteHasMindState: kerfuswhite_e
+    spriteNoMindState: kerfuswhite_e_r
+    spriteToggleLightState: kerfuswhite_l
+    petSuccessString: petting-success-service-cyborg
+    petFailureString: petting-failure-service-cyborg
+  - name: Миленькая
+    inventoryTemplateId: borgTall
+    spriteBodyState: kerfusnoerp
+    spriteHasMindState: kerfusnoerp_e
+    spriteNoMindState: kerfusnoerp_e_r
+    spriteToggleLightState: kerfusnoerp_l
+    petSuccessString: petting-success-kerfusnoerp-cyborg
+    petFailureString: petting-failure-kerfusnoerp-cyborg
+  - name: Инженерная
+    inventoryTemplateId: borgShort
+    spriteBodyState: kerfusyellow
+    spriteHasMindState: kerfusyellow_e
+    spriteNoMindState: kerfusyellow_e_r
+    spriteToggleLightState: kerfusyellow_l
+    petSuccessString: petting-success-kerfusyellow-cyborg
+    petFailureString: petting-failure-kerfusyellow-cyborg
+  - name: Горничная
+    inventoryTemplateId: borgShort
+    spriteBodyState: kerfusmaid
+    spriteHasMindState: kerfusmaid_e
+    spriteNoMindState: kerfusmaid_e_r
+    spriteToggleLightState: kerfusmaid_l
+    petSuccessString: petting-success-kerfusmaid-cyborg
+    petFailureString: petting-failure-kerfusmaid-cyborg

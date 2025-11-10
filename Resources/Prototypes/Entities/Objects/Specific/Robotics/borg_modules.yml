@@ -1749,3 +1749,24 @@
     - CloakingDevice
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-eye-module }
+
+# Horizon start
+
+- type: entity
+  id: BorgModuleTranslation
+  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  name: translation cyborg module
+  description: A module equipped with universal translation technology for communication across languages.
+  components:
+  - type: Sprite
+    layers:
+    - state: service
+    - state: icon-musique
+  - type: ItemBorgModule
+    moduleId: Translation
+    items:
+    - RareTranslator
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: musical-module }
+
+# Horizon end
