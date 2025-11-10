@@ -8,6 +8,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Serialization;
+using System.Linq;
 
 namespace Content.Shared.Pinpointer;
 
@@ -95,33 +96,31 @@ public abstract class SharedPinpointerSystem : EntitySystem
 
     /// <summary>
     ///     Set pinpointers target to track
+    ///     Goob edit: If CanTargetMultiple is true in Pinpointer component, then it will be ADDED, not set
     /// </summary>
     public virtual void SetTarget(EntityUid uid, EntityUid? target, PinpointerComponent? pinpointer = null)
     {
         if (!Resolve(uid, ref pinpointer))
             return;
 
-        if (pinpointer.Target == target)
-            return;
-
-        // Frontier: two-way pinpointer tracking
-        if (pinpointer.SetsTarget)
+        if (target == null || pinpointer.Targets.Contains(target.Value))
         {
-            if (TryComp<PinpointerTargetComponent>(pinpointer.Target, out var pinpointerTarget))
-            {
-                pinpointerTarget.Entities.Remove(uid);
-                if (pinpointerTarget.Entities.Count <= 0)
-                    RemComp<PinpointerTargetComponent>(pinpointer.Target.Value);
-            }
-            if (target != null)
-            {
-                pinpointerTarget = EnsureComp<PinpointerTargetComponent>(target.Value);
-                pinpointerTarget.Entities.Add(uid);
-            }
+            return;
         }
-        // End Frontier: two-way pinpointer tracking
 
-        pinpointer.Target = target;
+        if (!pinpointer.CanTargetMultiple)
+        {
+            pinpointer.Targets.Clear();
+        }
+
+        if (TerminatingOrDeleted(target.Value))
+        {
+            TrySetArrowAngle(uid, Angle.Zero, pinpointer);
+            return;
+        }
+
+        pinpointer.Targets.Add(target.Value);
+
         if (pinpointer.UpdateTargetName)
             pinpointer.TargetName = Identity.Name(target.Value, EntityManager);
         // WD EDIT START - UpdateDirectionToTarget is triggered when updating, no need to run it again

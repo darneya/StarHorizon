@@ -1,4 +1,3 @@
-using Content.Server.Nutrition.EntitySystems;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Nutrition.Components;

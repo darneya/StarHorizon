@@ -97,6 +97,19 @@ public sealed partial class PinpointerComponent : Component
     [DataField]
     public bool SetsTarget = false;
     // End Frontier: extra pinpointer fields
+
+    /// <summary>
+    ///     Goob edit: if true, this pinpointer will automatically track ANY nearest entity of a specified type.
+    ///     Doesn't work with retargeting, it will always left only one entity in target list.
+    /// </summary>
+    [DataField]
+    public bool CanTargetMultiple = true;
+
+    /// <summary>
+    /// Goob edit: many targets instead of just one
+    /// </summary>
+    [ViewVariables]
+    public List<EntityUid> Targets = new();
 }
 
 [Serializable, NetSerializable]
