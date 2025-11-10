@@ -728,6 +728,8 @@
     softness: 0.9
     offset: "0, -0.6"
     color: "#EEEEFF"
+  - type: AccessReader
+    access: [["Mercenary"], ["Security"]]
 
 #region POI versions of upstream machines
 

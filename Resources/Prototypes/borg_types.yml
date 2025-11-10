@@ -1,4 +1,4 @@
-# Generic borg
+# region Generic borg
 - type: borgType
   id: generic
 
@@ -42,7 +42,7 @@
     petSuccessString: petting-success-generic-cyborg
     petFailureString: petting-failure-generic-cyborg
 
-# Engineering borg
+# region Engineering borg
 - type: borgType
   id: engineering
 
@@ -89,7 +89,7 @@
     petFailureString: petting-failure-engineer-cyborg
 
 
-# Salvage borg
+# region Salvage borg
 - type: borgType
   id: mining
 
@@ -138,7 +138,7 @@
     petFailureString: petting-failure-salvage-cyborg
 
 
-# Janitor borg
+# region Janitor borg
 - type: borgType
   id: janitor
 
@@ -186,7 +186,7 @@
     petFailureString: petting-failure-janitor-cyborg
 
 
-# Medical borg
+# region Medical borg
 - type: borgType
   id: medical
 
@@ -252,7 +252,7 @@
       collection: FootstepHoverBorg
 
 
-# Service borg
+# region Service borg
 - type: borgType
   id: service
 
@@ -302,3 +302,168 @@
     spriteToggleLightState: service_l
     petSuccessString: petting-success-service-cyborg
     petFailureString: petting-failure-service-cyborg
+
+# Horizon start
+# region Engineering Kerfus
+- type: borgType
+  id: engineeringk
+
+  # Description
+  dummyPrototype: BorgChassisEngineerKerfus
+
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleEngineering
+
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleConstruction
+  - BorgModuleRCDShipyard # Frontier: RCD<RCDShipyard
+  - BorgModuleCable
+  - BorgModuleJetpack # Frontier
+
+  radioChannels:
+  - Engineering
+  - Science
+
+  # Visual
+  inventoryTemplateId: borgShort
+  spriteBodyState: kerfusyellow
+  spriteHasMindState: kerfusyellow_e
+  spriteNoMindState: kerfusyellow_e_r
+  spriteToggleLightState: kerfusyellow_l
+
+  # Pet
+  petSuccessString: petting-success-kerfusyellow-cyborg
+  petFailureString: petting-failure-kerfusyellow-cyborg
+
+# region Janitor Kerfus
+- type: borgType
+  id: janitork
+
+  # Description
+  dummyPrototype: BorgChassisJanitorKerfus
+
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleJanitor
+
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleCleaning
+  - BorgModuleCustodial
+  - BorgModuleJetpack # Frontier
+
+  radioChannels:
+  - Science
+  - Service
+
+  # Visual
+  inventoryTemplateId: borgShort
+  spriteBodyState: kerfusmaid
+  spriteHasMindState: kerfusmaid_e
+  spriteNoMindState: kerfusmaid_e_r
+  spriteToggleLightState: kerfusmaid_l
+
+  # Pet
+  petSuccessString: petting-success-kerfusmaid-cyborg
+  petFailureString: petting-failure-kerfusmaid-cyborg
+
+# region Medical Kerfus
+- type: borgType
+  id: medicalk
+
+  # Description
+  dummyPrototype: BorgChassisMedicalKerfus
+
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleMedical
+
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  # - BorgModuleAdvancedTreatment # Frontier
+  # - BorgModuleDefibrillator # Frontier
+  - BorgModuleJetpack # Frontier
+
+  radioChannels:
+  - Science
+  - Medical
+
+  addComponents:
+  - type: SolutionScanner
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+
+  # Visual
+  inventoryTemplateId: borgDutch
+  spriteBodyState: kerfuswhite
+  spriteHasMindState: kerfuswhite_e
+  spriteNoMindState: kerfuswhite_e_r
+  spriteToggleLightState: kerfuswhite_l
+
+  # Pet
+  petSuccessString: petting-success-kerfuswhite-cyborg
+  petFailureString: petting-failure-kerfuswhite-cyborg
+
+  # Sounds
+  footstepCollection:
+    collection: FootstepHoverBorg
+
+# region Service Kerfus
+- type: borgType
+  id: servicek
+
+  # Description
+  dummyPrototype: BorgChassisServiceKerfus
+
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleService
+
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMusique
+  # - BorgModuleService # Frontier: deprecated, use NF variant
+  - BorgModuleClowning
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  - BorgModuleBureaucracy # Frontier: FIXME - stacked as hell
+  - BorgModuleNFService # Frontier
+  - BorgModuleChef # Frontier
+  - BorgModuleJetpack # Frontier
+
+  radioChannels:
+  - Science
+  - Service
+
+  # Visual
+  inventoryTemplateId: borgTall
+  spriteBodyState: kerfusnoerp
+  spriteHasMindState: kerfusnoerp_e
+  spriteNoMindState: kerfusnoerp_e_r
+  spriteToggleLightState: kerfusnoerp_l
+
+  # Pet
+  petSuccessString: petting-success-kerfusnoerp-cyborg
+  petFailureString: petting-failure-kerfusnoerp-cyborg
+# Horizon end

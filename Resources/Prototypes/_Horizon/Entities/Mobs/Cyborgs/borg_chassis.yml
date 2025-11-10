@@ -1,0 +1,51 @@
+- type: entity
+  id: BorgChassisEngineerKerfus
+  parent: BorgChassisSelectable
+  name: engineer cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: engineeringk
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+
+- type: entity
+  id: BorgChassisJanitorKerfus
+  parent: BorgChassisSelectable
+  name: janitor cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: janitork
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+
+- type: entity
+  id: BorgChassisMedicalKerfus
+  parent: BorgChassisSelectable
+  name: medical cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: medicalk
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+
+- type: entity
+  id: BorgChassisServiceKerfus
+  parent: BorgChassisSelectable
+  name: service cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: servicek
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium

@@ -99,7 +99,7 @@
           map: ["light"]
           visible: false
     - type: BorgChassis
-      maxModules: 3
+      maxModules: 5 # Horizon
       moduleWhitelist:
         tags:
           - BorgModuleGeneric
@@ -131,7 +131,7 @@
           map: ["light"]
           visible: false
     - type: BorgChassis
-      maxModules: 3
+      maxModules: 5 # Horizon
       moduleWhitelist:
         tags:
           - BorgModuleGeneric
@@ -170,7 +170,7 @@
           map: ["light"]
           visible: false
     - type: BorgChassis
-      maxModules: 3
+      maxModules: 5 # Horizon
       moduleWhitelist:
         tags:
           - BorgModuleGeneric

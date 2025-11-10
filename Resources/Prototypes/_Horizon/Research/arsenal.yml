@@ -1,4 +1,4 @@
-# Tier 2
+# region Tier 2
 
 - type: technology
   id: NightVisionTech
@@ -87,7 +87,7 @@
   - GygaxPeripheralsElectronics
   technologyPrerequisites:
   - RipleyMKIITechnology
-  position: 3, 34
+  position: 3, 36
   researchTargets:
   - TechnologyDiscGygaxTechnology
 
@@ -103,7 +103,7 @@
     - MechGunDisabler
   technologyPrerequisites:
   - GygaxTechnology
-  position: 4, 34
+  position: 4, 37
 
 - type: technology
   id: MechGunSmallTechnology
@@ -122,7 +122,7 @@
   technologyPrerequisites:
   - GygaxTechnology
   prerequisiteLineType: Tree
-  position: 4, 35
+  position: 4, 38
 
 # Tier 3
 
@@ -145,7 +145,7 @@
   - DurandPeripheralsElectronics
   technologyPrerequisites:
   - GygaxTechnology
-  position: 5, 37
+  position: 5, 36
   researchTargets:
   - TechnologyDiscDurandTechnology
 
@@ -161,7 +161,7 @@
   - MechGunTeslaCannon
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 39
+  position: 6, 38
 
 - type: technology
   id: MechGunHeavyTechnology
@@ -180,7 +180,7 @@
   - BoxAmmoGranade
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 36
+  position: 6, 35
 
 - type: technology
   id: MechCloseWeaponTechnology
@@ -196,21 +196,23 @@
   - MechWeaponWarhammer
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 35
+  position: 6, 34
 
 - type: technology
   id: MechEnergyGunExperimentalTechnology
   name: research-technology-mech-gun-experimental
-  entityIcon: MechGunXRayRifle
+  entityIcon: MechGunCryo
   discipline: NFArsenalNfsd
   tier: 3
   cost: 10000
   recipeUnlocks:
   - MechGunHeavyPulseRifle
   - MechGunXRayRifle
+  - MechGunCryo
+  - MechGunPyro
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 38
+  position: 6, 37
 
 - type: technology
   id: GygaxMechPaint
@@ -227,7 +229,7 @@
   - MechGygaxRecitenceUpgradeKit
   technologyPrerequisites:
   - GygaxTechnology
-  position: 4, 36
+  position: 4, 35
 
 - type: technology
   id: ModernCombatMechsPaint
@@ -243,7 +245,7 @@
   - MechDurUnathiUpgradeKit
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 37
+  position: 6, 36
 
 - type: technology
   id: IncendiaryAmmunitionTechnology
