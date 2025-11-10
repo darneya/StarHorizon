@@ -48,6 +48,12 @@ public sealed class RemoteControlSystem : EntitySystem
             if (mechComp.Broken)
                 return;
 
+            if (mechComp.PilotSlot.ContainedEntity != null)
+            {
+                _popupSystem.PopupClient(Loc.GetString("remote-control-already-under-control"), controller);
+                return;
+            }
+
             if (!_remotePilotSystem.TryCreateRemotePilot(hostUid, controllerUid, out var pilotUid))
                 return;
 
