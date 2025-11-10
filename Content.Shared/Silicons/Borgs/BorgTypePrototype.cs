@@ -1,4 +1,5 @@
-﻿using Content.Shared.Interaction.Components;
+﻿using Content.Shared._Horizon.Silicon;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Radio;
 using Content.Shared.Silicons.Borgs.Components;
@@ -152,4 +153,9 @@ public sealed partial class BorgTypePrototype : IPrototype
     /// </summary>
     [DataField]
     public SoundSpecifier FootstepCollection { get; set; } = new SoundCollectionSpecifier(DefaultFootsteps);
+
+    // Horizon start
+    [DataField]
+    public List<BorgSkin> Skins = new();
+    // Horizon end
 }
