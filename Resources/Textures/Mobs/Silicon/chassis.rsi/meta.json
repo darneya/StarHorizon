@@ -886,6 +886,54 @@
     {
       "name": "kerfusyellow_l",
       "directions": 4
+    },
+    {
+      "name": "sexybar",
+      "directions": 4
+    },
+    {
+      "name": "sexybar_e",
+      "directions": 4
+    },
+    {
+      "name": "sexybar_e_r",
+      "directions": 4
+    },
+    {
+      "name": "sexybar_l",
+      "directions": 4
+    },
+    {
+      "name": "pneumaj",
+      "directions": 4
+    },
+    {
+      "name": "pneumaj_e",
+      "directions": 4
+    },
+    {
+      "name": "pneumaj_e_r",
+      "directions": 4
+    },
+    {
+      "name": "pneumaj_l",
+      "directions": 4
+    },
+    {
+      "name": "pneumas",
+      "directions": 4
+    },
+    {
+      "name": "pneumas_e",
+      "directions": 4
+    },
+    {
+      "name": "pneumas_e_r",
+      "directions": 4
+    },
+    {
+      "name": "pneumas_l",
+      "directions": 4
     }
   ]
 }
