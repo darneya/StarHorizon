@@ -466,7 +466,6 @@
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: PresentTrash
       - id: TechnologyDiscAdvancedPKAModules
         orGroup: TechDiskPool
       - id: TechnologyDiscGygaxTechnology
