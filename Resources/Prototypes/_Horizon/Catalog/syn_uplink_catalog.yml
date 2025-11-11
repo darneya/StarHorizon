@@ -612,6 +612,6 @@
   icon: { sprite: Objects/Specific/Cargo/mail.rsi, state: icon }
   productEntity: PresentTechDisk
   cost:
-    Telecrystal: 100
+    Telecrystal: 50
   categories:
     - UplinkPointless

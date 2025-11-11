@@ -749,7 +749,7 @@
   icon: { sprite: Objects/Specific/Cargo/mail.rsi, state: icon }
   productEntity: PresentTechDisk
   cost:
-    Doubloon: 100
+    Doubloon: 50
   categories:
     - UplinkPirateUtility
   conditions:
