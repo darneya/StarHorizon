@@ -216,12 +216,33 @@
 
   # Horizon skins
   skins:
-  - name: Default
+  - name: Классический
     spriteBodyState: janitor
     spriteBodyMovementState: janitor_moving
     spriteHasMindState: janitor_e
     spriteNoMindState: janitor_e_r
     spriteToggleLightState: janitor_l
+    petSuccessString: petting-success-janitor-cyborg
+    petFailureString: petting-failure-janitor-cyborg
+  - name: Коробка
+    spriteBodyState: janitorbox
+    spriteHasMindState: janitorbox_e
+    spriteNoMindState: janitorbox_e_r
+    spriteToggleLightState: janitorbox_l
+    petSuccessString: petting-success-janitor-cyborg
+    petFailureString: petting-failure-janitor-cyborg
+  - name: Хомячок
+    spriteBodyState: janitorh
+    spriteHasMindState: janitorh_e
+    spriteNoMindState: janitorh_e_r
+    spriteToggleLightState: janitorh_l
+    petSuccessString: petting-success-janitor-cyborg
+    petFailureString: petting-failure-janitor-cyborg
+  - name: Мордочка
+    spriteBodyState: janitorw
+    spriteHasMindState: janitorw_e
+    spriteNoMindState: janitorw_e_r
+    spriteToggleLightState: janitorw_l
     petSuccessString: petting-success-janitor-cyborg
     petFailureString: petting-failure-janitor-cyborg
 

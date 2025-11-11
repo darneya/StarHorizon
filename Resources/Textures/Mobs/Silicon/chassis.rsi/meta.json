@@ -106,6 +106,54 @@
       "directions": 4
     },
     {
+      "name": "janitorbox",
+      "directions": 4
+    },
+    {
+      "name": "janitorbox_e",
+      "directions": 4
+    },
+    {
+      "name": "janitorbox_e_r",
+      "directions": 4
+    },
+    {
+      "name": "janitorbox_l",
+      "directions": 4
+    },
+    {
+      "name": "janitorh",
+      "directions": 4
+    },
+    {
+      "name": "janitorh_e",
+      "directions": 4
+    },
+    {
+      "name": "janitorh_e_r",
+      "directions": 4
+    },
+    {
+      "name": "janitorh_l",
+      "directions": 4
+    },
+    {
+      "name": "janitorw",
+      "directions": 4
+    },
+    {
+      "name": "janitorw_e",
+      "directions": 4
+    },
+    {
+      "name": "janitorw_e_r",
+      "directions": 4
+    },
+    {
+      "name": "janitorw_l",
+      "directions": 4
+    },
+    {
       "name": "medical",
       "directions": 4,
       "delays": [
