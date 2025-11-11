@@ -80,11 +80,32 @@
 
   # Horizon skins
   skins:
-  - name: Default
+  - name: Стандартный
     spriteBodyState: engineer
     spriteHasMindState: engineer_e
     spriteNoMindState: engineer_e_r
     spriteToggleLightState: engineer_l
+    petSuccessString: petting-success-engineer-cyborg
+    petFailureString: petting-failure-engineer-cyborg
+  - name: Павук
+    spriteBodyState: engineera
+    spriteHasMindState: engineera_e
+    spriteNoMindState: engineera_e_r
+    spriteToggleLightState: engineera_l
+    petSuccessString: petting-success-engineer-cyborg
+    petFailureString: petting-failure-engineer-cyborg
+  - name: Тяжелый гученичный
+    spriteBodyState: engineere
+    spriteHasMindState: engineere_e
+    spriteNoMindState: engineere_e_r
+    spriteToggleLightState: engineere_l
+    petSuccessString: petting-success-engineer-cyborg
+    petFailureString: petting-failure-engineer-cyborg
+  - name: Легкий гусеничный
+    spriteBodyState: engineert
+    spriteHasMindState: engineert_e
+    spriteNoMindState: engineert_e_r
+    spriteToggleLightState: engineert_l
     petSuccessString: petting-success-engineer-cyborg
     petFailureString: petting-failure-engineer-cyborg
 

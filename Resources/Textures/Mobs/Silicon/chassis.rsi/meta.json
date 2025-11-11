@@ -1088,6 +1088,124 @@
     {
       "name": "medicalv_l",
       "directions": 4
+    },
+    {
+      "name": "engineera",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "engineera_e",
+      "directions": 4
+    },
+    {
+      "name": "engineera_e_r",
+      "directions": 4
+    },
+    {
+      "name": "engineera_l",
+      "directions": 4
+    },
+    {
+      "name": "engineere",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "engineere_e",
+      "directions": 4
+    },
+    {
+      "name": "engineere_e_r",
+      "directions": 4
+    },
+    {
+      "name": "engineere_l",
+      "directions": 4
+    },
+    {
+      "name": "engineert",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "engineert_e",
+      "directions": 4
+    },
+    {
+      "name": "engineert_e_r",
+      "directions": 4
+    },
+    {
+      "name": "engineert_l",
+      "directions": 4
     }
   ]
 }
