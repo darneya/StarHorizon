@@ -909,3 +909,24 @@
     - !type:BuyerJobCondition
       whitelist:
         - Sheriff
+
+- type: listing
+  id: SecTechDiskDelivery
+  name: uplink-sec-tech-disk-delivery-name
+  description: uplink-sec-tech-disk-delivery-desc
+  icon: { sprite: Objects/Specific/Cargo/mail.rsi, state: icon }
+  productEntity: PresentTechDisk
+  cost:
+    FrontierUplinkCoin: 70
+  categories:
+    - UplinkSecurityBundles
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff

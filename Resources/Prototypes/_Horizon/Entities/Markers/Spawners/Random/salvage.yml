@@ -8,19 +8,12 @@
   components:
   - type: RandomSpawner
     prototypes:
-    - TechnologyDiscAdvancedPKAMelee
-    - TechnologyDiscAdvancedPKARanged
     - TechnologyDiscAdvancedPKAModules
     - TechnologyDiscGygaxTechnology
     - TechnologyDiscDurandTechnology
     - TechnologyDiscPhazonTechnology
     - TechnologyDiscArsenalAmmoModules
-    - TechnologyDiscArsenalIncendiaryAmmunition
-    - TechnologyDiscArsenalUraniumAmmunition
-    - TechnologyDiscArsenalPiercingAmmunition
-    - TechnologyDiscArsenalPsycoreAmmunition
+    - TechnologyDiscArsenalAmmunition
     - TechnologyDiscHydroponicsDNAManip
     - TechnologyDiscUniversalTranslator
-    - TechnologyDiscRareTranslator
-    - TechnologyDiscTranslatorImplants
     offset: 0.0

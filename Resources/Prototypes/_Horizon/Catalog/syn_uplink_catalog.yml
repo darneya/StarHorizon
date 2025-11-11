@@ -604,3 +604,14 @@
     Telecrystal: 50
   categories:
     - UplinkSyndicateGunneryConsoles
+
+- type: listing
+  id: UplinkTechDiskDelivery
+  name: uplink-tech-disk-delivery-name
+  description: uplink-tech-disk-delivery-desc
+  icon: { sprite: Objects/Specific/Cargo/mail.rsi, state: icon }
+  productEntity: PresentTechDisk
+  cost:
+    Telecrystal: 100
+  categories:
+    - UplinkPointless

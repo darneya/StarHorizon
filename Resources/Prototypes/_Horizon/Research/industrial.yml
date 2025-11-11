@@ -208,7 +208,7 @@
   - EnergoTovar
   technologyPrerequisites:
   - NFPowerGeneration
-  position: 4, 50
+  position: 3, 50
 
 - type: technology
   id: FuelGenerationUnstable
@@ -224,7 +224,7 @@
   - FuelPlutoniumUnstable1
   technologyPrerequisites:
   - FuelGeneration
-  position: 5, 50
+  position: 4, 50
 
 - type: technology
   id: FuelGenerationPure
@@ -240,7 +240,7 @@
   - FuelPlutoniumPure1
   technologyPrerequisites:
   - FuelGenerationUnstable
-  position: 6, 50
+  position: 5, 50
 
 - type: technology
   id: NFExperimentalPowerGeneration

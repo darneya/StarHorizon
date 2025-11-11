@@ -97,3 +97,6 @@ uplink-syndicate-shuttle-gcs-medium-name = Среднемощный сервер
 uplink-syndicate-shuttle-gcs-medium-desc = Машинная плата для СКО. Улучшенный сервер для управления корабельными орудиями с повышенной производительностью.
 uplink-syndicate-shuttle-shield-light-name = Генератор щита CIR-C1A
 uplink-syndicate-shuttle-shield-light-desc = Машинная плата для генератора щита CIR-C1A. Легкий генератор защитного поля для базовой защиты корабля.
+
+uplink-tech-disk-delivery-name = контрабандный диск технологий
+uplink-tech-disk-delivery-desc = В данном письме содержится диск со случайной продвинутой технологией.

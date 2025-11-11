@@ -741,3 +741,23 @@
       whitelist:
         tags:
           - PirateUplink
+
+- type: listing
+  id: UplinkPirateTechDiskDelivery
+  name: uplink-pirate-tech-disk-delivery-name
+  description: uplink-pirate-tech-disk-delivery-desc
+  icon: { sprite: Objects/Specific/Cargo/mail.rsi, state: icon }
+  productEntity: PresentTechDisk
+  cost:
+    Doubloon: 100
+  categories:
+    - UplinkPirateUtility
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
+        - NFPirateFirstMate

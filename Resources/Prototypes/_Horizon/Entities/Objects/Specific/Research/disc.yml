@@ -67,18 +67,6 @@
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscAdvancedPKAMelee
-  name: technology disc [PKA Melee]
-  description: A disk containing data about PKA Melee Weapons.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscAdvancedPKARanged
-  name: technology disc [PKA Ranged]
-  description: A disk containing data about PKA Ranged Weapons.
-
-- type: entity
-  parent: TechnologyDiscBase
   id: TechnologyDiscAdvancedPKAModules
   name: technology disc [PKA Modules]
   description: A disk containing data about PKA Modules.
@@ -109,48 +97,18 @@
 
 - type: entity
   parent: TechnologyDiscBase
+  id: TechnologyDiscArsenalAmmunition
+  name: technology disc [Arsenal Ammunition]
+  description: A disk containing data about Arsenal Ammunition.
+
+- type: entity
+  parent: TechnologyDiscBase
   id: TechnologyDiscHydroponicsDNAManip
   name: technology disc [DNA Manipulator]
   description: A disk containing data about Botannical DNA Manipulator.
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscArsenalIncendiaryAmmunition
-  name: technology disc [Incendiary Ammunition]
-  description: A disk containing data about Incendiary Ammunition.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscArsenalUraniumAmmunition
-  name: technology disc [Uranium Ammunition]
-  description: A disk containing data about Uranium Ammunition.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscArsenalPiercingAmmunition
-  name: technology disc [Piercing Ammunition]
-  description: A disk containing data about Piercing Ammunition.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscArsenalPsycoreAmmunition
-  name: technology disc [Psycore Ammunition]
-  description: A disk containing data about Psycore Ammunition.
-
-- type: entity
-  parent: TechnologyDiscBase
   id: TechnologyDiscUniversalTranslator
   name: technology disc [Universal Translator]
   description: A disk containing data about Universal Translator.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscRareTranslator
-  name: technology disc [Rare Translator]
-  description: A disk containing data about Rare Translator.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscTranslatorImplants
-  name: technology disc [Translator Implants]
-  description: A disk containing data about Translator Implants.
