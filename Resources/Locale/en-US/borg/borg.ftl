@@ -61,12 +61,4 @@ borg-type-service-name = Service
 borg-type-service-desc = Help out with a wide range of crew services, ranging from serving snacks and drinks to botany to entertainment.
 borg-type-service-transponder = service cyborg
 
-borg-type-combat_assault-name = Combat Assault
-borg-type-combat_assault-desc = A specialized combat frame designed for direct assault. Equipped with lethal modules and combat capabilities.
-borg-type-combat_assault-transponder = combat assault cyborg
-
-borg-type-combat_medical-name = Combat Medical
-borg-type-combat_medical-desc = A combat-oriented medical support unit. Provides tactical medical support while maintaining combat capabilities.
-borg-type-combat_medical-transponder = combat medical cyborg
-
 

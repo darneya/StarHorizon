@@ -1254,6 +1254,510 @@
     {
       "name": "engineert_l",
       "directions": 4
+    },
+    {
+      "name": "crawlerla_bloodhound",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_bloodhound_e",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_bloodhound_e_r",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_bloodhound_l",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_clerical",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_clerical_e",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_clerical_e_r",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_clerical_l",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_grey",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_grey_e",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_grey_e_r",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_grey_l",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_shadow",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_shadow_e",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_shadow_e_r",
+      "directions": 4
+    },
+    {
+      "name": "crawlerla_shadow_l",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_bloodhound",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_bloodhound_e",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_bloodhound_e_r",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_bloodhound_l",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_reaper",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_reaper_e",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_reaper_e_r",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_reaper_l",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_shadow",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_shadow_e",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_shadow_e_r",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_shadow_l",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_siege",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_siege_e",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_siege_e_r",
+      "directions": 4
+    },
+    {
+      "name": "crawlerha_siege_l",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_crimson",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_crimson_e",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_crimson_e_r",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_crimson_l",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_flame",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "walkerla_flame_e",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_flame_e_r",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_flame_l",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_grey",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_grey_e",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_grey_e_r",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_grey_l",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_support",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "walkerla_support_e",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_support_e_r",
+      "directions": 4
+    },
+    {
+      "name": "walkerla_support_l",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_crimson",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_crimson_e",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_crimson_e_r",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_crimson_l",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_flame",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "walkerha_flame_e",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_flame_e_r",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_flame_l",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_grey",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_grey_e",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_grey_e_r",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_grey_l",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_support",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "walkerha_support_e",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_support_e_r",
+      "directions": 4
+    },
+    {
+      "name": "walkerha_support_l",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_blue",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "sputnik_blue_e",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_blue_e_r",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_blue_l",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_green",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "sputnik_green_e",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_green_e_r",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_green_l",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_red",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "sputnik_red_e",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_red_e_r",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_red_l",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_violet",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "sputnik_violet_e",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_violet_e_r",
+      "directions": 4
+    },
+    {
+      "name": "sputnik_violet_l",
+      "directions": 4
     }
   ]
 }
