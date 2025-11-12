@@ -28,6 +28,7 @@
     interactSuccessString: petting-success-generic-cyborg
     interactFailureString: petting-failure-generic-cyborg
   - type: BorgSwitchableType
+    borgTypeCategory: standard
     inherentRadioChannels:
     - Common
     - Binary
@@ -187,6 +188,77 @@
       interactFailureString: petting-failure-syndicate-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+- type: entity
+  id: BorgChassisDummyCombatAssault
+  parent: BorgChassisSelectable
+  name: combat assault cyborg
+  description: A specialized combat frame designed for direct assault.
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: combat_assault
+
+- type: entity
+  id: BorgChassisDummyCombatMedical
+  parent: BorgChassisSelectable
+  name: combat medical cyborg
+  description: A combat-oriented medical support unit.
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: combat_medical
+
+- type: entity
+  id: BorgChassisSelectableCombat
+  parent: BaseBorgChassisNT
+  description: A combat-optimized cyborg frame capable of selecting between different combat configurations.
+  components:
+  - type: Sprite
+    layers:
+    - state: robot
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: robot_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: robot_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    maxModules: 0
+    hasMindState: robot_e
+    noMindState: robot_e_r
+  - type: BorgTransponder
+    sprite:
+      sprite: Mobs/Silicon/chassis.rsi
+      state: robot
+    name: combat cyborg
+  - type: InteractionPopup
+    interactSuccessString: petting-success-generic-cyborg
+    interactFailureString: petting-failure-generic-cyborg
+  - type: BorgSwitchableType
+    borgTypeCategory: combat
+    inherentRadioChannels:
+    - Common
+    - Binary
+
+- type: entity
+  id: BorgChassisCombatLight
+  parent: BorgChassisSelectableCombat
+  name: light combat cyborg
+  suffix: type picked
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: combat_assault
+
+- type: entity
+  id: BorgChassisCombatHeavy
+  parent: BorgChassisSelectableCombat
+  name: heavy combat cyborg
+  suffix: type picked
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: combat_medical
 
 - type: entity
   id: BorgChassisDerelict

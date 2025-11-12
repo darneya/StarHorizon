@@ -25,6 +25,7 @@ public sealed partial class BorgSelectTypeMenu : FancyWindow
 
     private BorgTypePrototype? _selectedBorgType;
     private int _selectedSkin;  // Horizon borg skins
+    private string? _categoryFilter;  // Filter by category
 
     public event Action<ProtoId<BorgTypePrototype>, int>? ConfirmedBorgType;    // Horizon borg skins
 
@@ -37,9 +38,27 @@ public sealed partial class BorgSelectTypeMenu : FancyWindow
         IoCManager.InjectDependencies(this);
 
         _borg = _entMan.System<BorgSwitchableTypeSystem>(); // Horizon
+    }
 
+    /// <summary>
+    /// Initializes the menu with an optional category filter.
+    /// If a category is specified, only borg types with that category will be shown.
+    /// </summary>
+    /// <param name="categoryFilter">The category to filter by, or null to show all types</param>
+    public void Initialize(string? categoryFilter = null)
+    {
+        _categoryFilter = categoryFilter;
         var group = new ButtonGroup();
-        foreach (var borgType in _prototypeManager.EnumeratePrototypes<BorgTypePrototype>().OrderBy(PrototypeName))
+
+        var borgTypes = _prototypeManager.EnumeratePrototypes<BorgTypePrototype>();
+
+        // Filter by category if specified
+        if (categoryFilter != null)
+        {
+            borgTypes = borgTypes.Where(b => b.Category == categoryFilter);
+        }
+
+        foreach (var borgType in borgTypes.OrderBy(PrototypeName))
         {
             var button = new Button
             {

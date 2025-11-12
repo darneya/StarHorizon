@@ -22,6 +22,13 @@ public sealed partial class BorgTypePrototype : IPrototype
     [IdDataField]
     public required string ID { get; set; }
 
+    /// <summary>
+    /// The category of this borg type (e.g., "standard", "combat").
+    /// Used to filter borg types in selection menus.
+    /// </summary>
+    [DataField]
+    public string Category { get; set; } = "standard";
+
     //
     // Description info (name/desc) is configured via localization strings directly.
     //

@@ -47,6 +47,12 @@ public sealed partial class BorgSwitchableTypeComponent : Component
     [DataField]
     public ProtoId<RadioChannelPrototype>[] InherentRadioChannels = [];
 
+    /// <summary>
+    /// The category of borg types available for selection. If set, only borg types with matching category will be shown.
+    /// </summary>
+    [DataField]
+    public string? BorgTypeCategory;
+
     // Horizon start
     [DataField, AutoNetworkedField]
     public BorgSkin SelectedBorgSkin = new();
