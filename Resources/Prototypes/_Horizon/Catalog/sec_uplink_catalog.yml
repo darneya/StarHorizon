@@ -930,3 +930,21 @@
         - Bailiff
         - SeniorOfficer
         - Sheriff
+
+- type: listing
+  id: SecUplinkCombatBorg
+  name: uplink-combat-borg-name
+  description: uplink-combat-borg-desc
+  productEntity: BorgChassisSelectableCombat
+  cost:
+    FrontierUplinkCoin: 150
+  categories:
+  - UplinkSecurityMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Sheriff

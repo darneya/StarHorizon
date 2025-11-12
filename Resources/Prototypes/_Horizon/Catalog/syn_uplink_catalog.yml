@@ -615,3 +615,13 @@
     Telecrystal: 50
   categories:
     - UplinkPointless
+
+- type: listing
+  id: UplinkCombatBorg
+  name: uplink-combat-borg-name
+  description: uplink-combat-borg-desc
+  productEntity: BorgChassisSelectableCombat
+  cost:
+    Telecrystal: 150
+  categories:
+  - UplinkSyndicateBorgs

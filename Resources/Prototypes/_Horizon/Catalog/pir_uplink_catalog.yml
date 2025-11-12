@@ -761,3 +761,21 @@
       whitelist:
         - NFPirateCaptain
         - NFPirateFirstMate
+
+- type: listing
+  id: UplinkPirateCombatBorg
+  name: uplink-combat-borg-name
+  description: uplink-combat-borg-desc
+  productEntity: BorgChassisSelectableCombat
+  cost:
+    Doubloon: 150
+  categories:
+  - UplinkPirateMechas
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - NFPirateCaptain
