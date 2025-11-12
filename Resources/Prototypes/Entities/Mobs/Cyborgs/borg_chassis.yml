@@ -83,6 +83,45 @@
     selectedBorgType: service
 
 - type: entity
+  id: BorgChassisSelectableCombat
+  parent: BaseBorgChassisNT
+  components:
+  - type: Sprite
+    layers:
+    - state: crawlerla_grey
+      map: ["enum.BorgVisualLayers.Body"]
+    - state: crawlerla_grey_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: crawlerla_grey_l
+      shader: unshaded
+      map: ["light", "enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    # Combat borg can take modules until selected type.
+    maxModules: 5
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleCombat
+    hasMindState: crawlerla_grey_e
+    noMindState: crawlerla_grey
+  - type: BorgTransponder
+    sprite:
+      sprite: Mobs/Silicon/chassis.rsi
+      state: robot
+    name: cyborg
+  - type: InteractionPopup
+    interactSuccessString: petting-success-generic-cyborg
+    interactFailureString: petting-failure-generic-cyborg
+  - type: BorgSwitchableType
+    borgTypeCategory: combat
+    inherentRadioChannels:
+    - Common
+    - Binary
+
+- type: entity
   id: BorgChassisSyndicateAssault
   parent: BaseBorgChassisSyndicate
   name: syndicate assault cyborg
@@ -220,3 +259,232 @@
     interactFailureString: petting-failure-derelict-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+# region Combat Cyborgs
+
+- type: entity
+  id: BorgChassisScout
+  parent: BorgChassisSelectableCombat
+  name: scout cyborg
+  description: A lightweight reconnaissance cyborg designed for surveillance and information gathering. Fast and nimble.
+  components:
+    - type: Sprite
+      layers:
+        - state: sputnik_blue
+          map: ["enum.BorgVisualLayers.Body"]
+        - state: sputnik_blue_e
+          map: ["enum.BorgVisualLayers.Light"]
+          shader: unshaded
+          visible: false
+        - state: sputnik_blue_l
+          shader: unshaded
+          map: ["light", "enum.BorgVisualLayers.LightStatus"]
+          visible: false
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3.5
+      baseSprintSpeed: 5.5
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        120: Critical
+        240: Dead
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+        modifiers:
+          types:
+            Blunt: 0.95      # 5% reduction - minimal armor
+            Slash: 0.95
+            Piercing: 0.95
+            Shock: 0.90      # 10% reduction
+    - type: BorgChassis
+      hasMindState: sputnik_blue_e
+      noMindState: sputnik_blue
+    - type: InteractionPopup
+      interactSuccessString: petting-success-syndicate-cyborg
+      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+- type: entity
+  id: BorgChassisSpider
+  parent: BorgChassisSelectableCombat
+  name: spider cyborg
+  description: A lightweight arachnid-style assault cyborg, designed for mobile combat operations.
+  components:
+    - type: Sprite
+      layers:
+        - state: crawlerla_grey
+          map: ["enum.BorgVisualLayers.Body"]
+        - state: crawlerla_grey_e
+          map: ["enum.BorgVisualLayers.Light"]
+          shader: unshaded
+          visible: false
+        - state: crawlerla_grey_l
+          shader: unshaded
+          map: ["light", "enum.BorgVisualLayers.LightStatus"]
+          visible: false
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3.0
+      baseSprintSpeed: 5.0
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        140: Critical
+        280: Dead
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+        modifiers:
+          types:
+            Blunt: 0.80      # 20% reduction - heavy armor
+            Slash: 0.80
+            Piercing: 0.85    # 15% reduction
+            Shock: 0.85
+    - type: BorgChassis
+      hasMindState: crawlerla_grey_e
+      noMindState: crawlerla_grey
+    - type: InteractionPopup
+      interactSuccessString: petting-success-syndicate-cyborg
+      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+- type: entity
+  id: BorgChassisHeavyCrawler
+  parent: BorgChassisSelectableCombat
+  name: heavy crawler cyborg
+  description: A heavily armored tracked assault cyborg with improved firepower and durability.
+  components:
+    - type: Sprite
+      layers:
+        - state: crawlerha_siege
+          map: ["enum.BorgVisualLayers.Body"]
+        - state: crawlerha_siege_e
+          map: ["enum.BorgVisualLayers.Light"]
+          shader: unshaded
+          visible: false
+        - state: crawlerha_siege_l
+          shader: unshaded
+          map: ["light", "enum.BorgVisualLayers.LightStatus"]
+          visible: false
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.0
+      baseSprintSpeed: 4.0
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        220: Critical
+        440: Dead
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+        modifiers:
+          types:
+            Blunt: 0.90      # 10% reduction - light armor
+            Slash: 0.90
+            Piercing: 0.92
+            Shock: 0.90
+    - type: BorgChassis
+      hasMindState: crawlerha_siege_e
+      noMindState: crawlerha_siege
+    - type: InteractionPopup
+      interactSuccessString: petting-success-syndicate-cyborg
+      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+- type: entity
+  id: BorgChassisWalkerAssault
+  parent: BorgChassisSelectableCombat
+  name: assault walker cyborg
+  description: A two-legged assault walker designed for tactical combat with balanced speed and firepower.
+  components:
+    - type: Sprite
+      layers:
+        - state: walkerla_crimson
+          map: ["enum.BorgVisualLayers.Body"]
+        - state: walkerla_crimson_e
+          map: ["enum.BorgVisualLayers.Light"]
+          shader: unshaded
+          visible: false
+        - state: walkerla_crimson_l
+          shader: unshaded
+          map: ["light", "enum.BorgVisualLayers.LightStatus"]
+          visible: false
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.8
+      baseSprintSpeed: 4.8
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        150: Critical
+        300: Dead
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+        modifiers:
+          types:
+            Blunt: 0.92      # 8% reduction - light armor
+            Slash: 0.92
+            Piercing: 0.94
+            Shock: 0.92
+    - type: BorgChassis
+      hasMindState: walkerla_crimson_e
+      noMindState: walkerla_crimson
+    - type: InteractionPopup
+      interactSuccessString: petting-success-syndicate-cyborg
+      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+- type: entity
+  id: BorgChassisWalkerStrike
+  parent: BorgChassisSelectableCombat
+  name: strike walker cyborg
+  description: A heavily armored two-legged walker platform carrying maximum firepower for frontline assault operations.
+  components:
+    - type: Sprite
+      layers:
+        - state: walkerha_flame
+          map: ["enum.BorgVisualLayers.Body"]
+        - state: walkerha_flame_e
+          map: ["enum.BorgVisualLayers.Light"]
+          shader: unshaded
+          visible: false
+        - state: walkerha_flame_l
+          shader: unshaded
+          map: ["light", "enum.BorgVisualLayers.LightStatus"]
+          visible: false
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.2
+      baseSprintSpeed: 4.2
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        200: Critical
+        400: Dead
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+        modifiers:
+          types:
+            Blunt: 0.92      # 8% reduction - light armor
+            Slash: 0.92
+            Piercing: 0.94
+            Shock: 0.92
+    - type: BorgChassis
+      hasMindState: walkerha_flame_e
+      noMindState: walkerha_flame
+    - type: InteractionPopup
+      interactSuccessString: petting-success-syndicate-cyborg
+      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+# endregion

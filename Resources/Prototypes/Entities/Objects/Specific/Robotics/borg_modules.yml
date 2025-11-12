@@ -278,6 +278,33 @@
         color: "#7B0F12"
 
 - type: entity
+  id: BaseBorgModuleCombat
+  parent: BaseBorgModule
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - BorgModuleCombat
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
+- type: entity
   abstract: true
   parent: BaseBorgModule
   id: BaseXenoborgModuleGeneric
@@ -1751,6 +1778,331 @@
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-eye-module }
 
 # Horizon start
+
+# Combat Modules
+
+- type: entity
+  id: BorgModuleCombatPKA
+  parent: [ BaseBorgModuleCombat, BaseProviderBorgModule ]
+  name: kinetic accelerator cyborg module
+  description: A module equipped with a kinetic accelerator for rapid fire combat.
+  components:
+  - type: Sprite
+    layers:
+    - state: combat
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    moduleId: CombatPKA
+    items:
+    - NFWeaponPka
+    - WeaponCrusher
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
+- type: entity
+  id: BorgModuleCombatEchis
+  parent: [ BaseBorgModuleCombat, BaseProviderBorgModule ]
+  name: pistol cyborg module
+  description: A module equipped with a compact energy pistol for precise combat operations.
+  components:
+  - type: Sprite
+    layers:
+    - state: combat
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    moduleId: CombatEchis
+    items:
+    - NFWeaponPistolEchis
+    - NFWeaponPistolEchis
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
+- type: entity
+  id: BorgModuleCombatLaserAdvanced
+  parent: [ BaseBorgModuleCombat, BaseProviderBorgModule ]
+  name: advanced laser pistol cyborg module
+  description: A module equipped with an advanced laser pistol for superior firepower.
+  components:
+  - type: Sprite
+    layers:
+    - state: combat
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    moduleId: CombatLaserAdvanced
+    items:
+    - NFWeaponEnergyPistolLaserAdvanced
+    - NFWeaponEnergyPistolLaserAdvanced
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-laser-module }
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
+- type: entity
+  id: BorgModuleCombatPKAHeavy
+  parent: [ BaseBorgModuleCombat, BaseProviderBorgModule ]
+  name: heavy kinetic cannon cyborg module
+  description: A module equipped with a heavy kinetic cannon for devastating close-range attacks.
+  components:
+  - type: Sprite
+    layers:
+    - state: combat
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    moduleId: CombatPKAHeavy
+    items:
+    - NFWeaponPkaCannon
+    - WeaponCrusher
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
+- type: entity
+  id: BorgModuleCombatPKARailgun
+  parent: [ BaseBorgModuleCombat, BaseProviderBorgModule ]
+  name: kinetic railgun cyborg module
+  description: A module equipped with a kinetic railgun for armor-piercing attacks.
+  components:
+  - type: Sprite
+    layers:
+    - state: combat
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    moduleId: CombatPKARailgun
+    items:
+    - WeaponProtoKineticRailgun
+    - WeaponCrusher
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-laser-module }
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
+- type: entity
+  id: BorgModuleCombatPKARepeater
+  parent: [ BaseBorgModuleCombat, BaseProviderBorgModule ]
+  name: kinetic repeater cyborg module
+  description: A module equipped with a kinetic repeater for sustained automatic fire.
+  components:
+  - type: Sprite
+    layers:
+    - state: combat
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    moduleId: CombatPKARepeater
+    items:
+    - WeaponProtoKineticRepeater
+    - WeaponCrusher
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
+- type: entity
+  id: BorgModuleCombatPKAShotgun
+  parent: [ BaseBorgModuleCombat, BaseProviderBorgModule ]
+  name: kinetic shotgun cyborg module
+  description: A module equipped with a kinetic shotgun for devastating close-range spread fire.
+  components:
+  - type: Sprite
+    layers:
+    - state: combat
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    moduleId: CombatPKAShotgun
+    items:
+    - WeaponProtoKineticShotgun
+    - WeaponCrusher
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
+- type: entity
+  id: BorgModuleCombatL6C
+  parent: [ BaseBorgModuleCombat, BaseProviderBorgModule ]
+  name: GSW LMG-6 cyborg module
+  description: A module equipped with the GSW LMG-6 light machine gun for sustained fire support.
+  components:
+  - type: Sprite
+    layers:
+    - state: combat
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    moduleId: CombatL6C
+    items:
+    - NFWeaponLightMachineGunL6C
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
+- type: entity
+  id: BorgModuleCombatLaserHeavy
+  parent: [ BaseBorgModuleCombat, BaseProviderBorgModule ]
+  name: heavy laser cyborg module
+  description: A module equipped with a heavy laser system providing massive destructive power.
+  components:
+  - type: Sprite
+    layers:
+    - state: combat
+    - state: icon-syndicate
+  - type: ItemBorgModule
+    moduleId: CombatLaserHeavy
+    items:
+    - NFWeaponEnergyPistolLaserX01Multiphase
+    - NFWeaponEnergyPistolLaserX01Multiphase
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-laser2-module }
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
 
 - type: entity
   id: BorgModuleTranslation

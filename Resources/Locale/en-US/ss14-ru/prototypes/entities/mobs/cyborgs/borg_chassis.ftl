@@ -21,3 +21,15 @@ ent-BorgChassisSyndicateSaboteur = syndicate saboteur cyborg
     .desc = A streamlined engineering cyborg, equipped with covert modules. Its chameleon projector lets it disguise itself as a Nanotrasen cyborg.
 ent-BorgChassisDerelict = derelict cyborg
     .desc = A man-machine hybrid that assists in station activity. This one is in a state of great disrepair.
+
+# Combat cyborgs
+ent-BorgChassisScout = scout cyborg
+    .desc = A lightweight reconnaissance cyborg designed for surveillance and information gathering. Fast and nimble.
+ent-BorgChassisSpider = light crawler
+    .desc = A lightweight crawler with arachnid-style construction, designed for mobile combat operations.
+ent-BorgChassisHeavyCrawler = heavy crawler
+    .desc = A heavily armored heavy crawler with improved firepower and durability.
+ent-BorgChassisWalkerAssault = assault walker cyborg
+    .desc = A two-legged assault walker designed for tactical combat with balanced speed and firepower.
+ent-BorgChassisWalkerStrike = strike walker cyborg
+    .desc = A heavily armored two-legged walker platform carrying maximum firepower for frontline assault operations.

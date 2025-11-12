@@ -61,4 +61,26 @@ borg-type-service-name = Service
 borg-type-service-desc = Help out with a wide range of crew services, ranging from serving snacks and drinks to botany to entertainment.
 borg-type-service-transponder = service cyborg
 
+## Combat cyborg types
+
+borg-type-scout-name = Scout
+borg-type-scout-desc = A lightweight combat reconnaissance cyborg designed for surveillance and information gathering. Optimized for high speed movement and hit-and-run tactics.
+borg-type-scout-transponder = scout cyborg
+
+borg-type-spider-name = Light Crawler
+borg-type-spider-desc = A lightweight crawler with arachnid-style construction for mobile combat operations. Emphasizes heavy armor and durability for sustained engagement.
+borg-type-spider-transponder = light crawler
+
+borg-type-heavycrawler-name = Heavy Crawler
+borg-type-heavycrawler-desc = A heavily armored tracked assault cyborg optimized for maximum firepower and durability. Slow but extremely effective as a sustained damage platform.
+borg-type-heavycrawler-transponder = heavy crawler
+
+borg-type-walkerassault-name = Walker Assault
+borg-type-walkerassault-desc = A two-legged assault walker with balanced speed and firepower. Provides flexible tactical capabilities for varied combat situations.
+borg-type-walkerassault-transponder = assault walker cyborg
+
+borg-type-walkerstrike-name = Walker Strike
+borg-type-walkerstrike-desc = A heavily armored two-legged walker focused on maximum firepower output. Serves as a frontline combat platform for sustained operations.
+borg-type-walkerstrike-transponder = strike walker cyborg
+
 
