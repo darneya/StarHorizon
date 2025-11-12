@@ -32,6 +32,10 @@
     inherentRadioChannels:
     - Common
     - Binary
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        startingItem: PowerCellHigh
 
 - type: entity
   id: BorgChassisGeneric
@@ -120,6 +124,10 @@
     inherentRadioChannels:
     - Common
     - Binary
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        startingItem: PowerCellHigh
 
 - type: entity
   id: BorgChassisSyndicateAssault
