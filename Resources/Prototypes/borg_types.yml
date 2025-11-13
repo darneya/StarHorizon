@@ -509,6 +509,26 @@
   - Common
   - Binary
 
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      120: Critical
+      240: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+      modifiers:
+        types:
+          Blunt: 0.95      # 5% reduction - minimal armor
+          Slash: 0.95
+          Piercing: 0.95
+          Shock: 0.90      # 10% reduction
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 5.5
+
   # Visual
   inventoryTemplateId: borgShort
   spriteBodyState: sputnik_blue
@@ -576,6 +596,26 @@
   - Common
   - Binary
 
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      140: Critical
+      280: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+      modifiers:
+        types:
+          Blunt: 0.80      # 20% reduction - heavy armor
+          Slash: 0.80
+          Piercing: 0.85    # 15% reduction
+          Shock: 0.85
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.0
+    baseSprintSpeed: 5.0
+
   # Visual
   inventoryTemplateId: borgShort
   spriteBodyState: crawlerla_grey
@@ -642,6 +682,26 @@
   radioChannels:
   - Common
   - Binary
+
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      220: Critical
+      440: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+      modifiers:
+        types:
+          Blunt: 0.90      # 10% reduction - light armor
+          Slash: 0.90
+          Piercing: 0.92
+          Shock: 0.90
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.0
+    baseSprintSpeed: 4.0
 
   # Visual
   inventoryTemplateId: borgTall
@@ -711,6 +771,26 @@
   - Common
   - Binary
 
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      300: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+      modifiers:
+        types:
+          Blunt: 0.92      # 8% reduction - light armor
+          Slash: 0.92
+          Piercing: 0.94
+          Shock: 0.92
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.8
+    baseSprintSpeed: 4.8
+
   # Visual
   inventoryTemplateId: borgTall
   spriteBodyState: walkerla_crimson
@@ -778,6 +858,26 @@
   radioChannels:
   - Common
   - Binary
+
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      400: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+      modifiers:
+        types:
+          Blunt: 0.92      # 8% reduction - light armor
+          Slash: 0.92
+          Piercing: 0.94
+          Shock: 0.92
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.2
+    baseSprintSpeed: 4.2
 
   # Visual
   inventoryTemplateId: borgTall

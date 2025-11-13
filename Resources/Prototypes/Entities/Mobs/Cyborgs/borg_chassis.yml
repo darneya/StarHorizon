@@ -274,6 +274,7 @@
   id: BorgChassisScout
   parent: BorgChassisSelectableCombat
   name: scout cyborg
+  suffix: type picked
   description: A lightweight reconnaissance cyborg designed for surveillance and information gathering. Fast and nimble.
   components:
     - type: Sprite
@@ -309,6 +310,8 @@
     - type: BorgChassis
       hasMindState: sputnik_blue_e
       noMindState: sputnik_blue
+    - type: BorgSwitchableType
+      selectedBorgType: scout
     - type: InteractionPopup
       interactSuccessString: petting-success-syndicate-cyborg
       interactFailureString: petting-failure-syndicate-cyborg
@@ -319,6 +322,7 @@
   id: BorgChassisSpider
   parent: BorgChassisSelectableCombat
   name: spider cyborg
+  suffix: type picked
   description: A lightweight arachnid-style assault cyborg, designed for mobile combat operations.
   components:
     - type: Sprite
@@ -354,6 +358,8 @@
     - type: BorgChassis
       hasMindState: crawlerla_grey_e
       noMindState: crawlerla_grey
+    - type: BorgSwitchableType
+      selectedBorgType: spider
     - type: InteractionPopup
       interactSuccessString: petting-success-syndicate-cyborg
       interactFailureString: petting-failure-syndicate-cyborg
@@ -364,6 +370,7 @@
   id: BorgChassisHeavyCrawler
   parent: BorgChassisSelectableCombat
   name: heavy crawler cyborg
+  suffix: type picked
   description: A heavily armored tracked assault cyborg with improved firepower and durability.
   components:
     - type: Sprite
@@ -399,6 +406,8 @@
     - type: BorgChassis
       hasMindState: crawlerha_siege_e
       noMindState: crawlerha_siege
+    - type: BorgSwitchableType
+      selectedBorgType: heavycrawler
     - type: InteractionPopup
       interactSuccessString: petting-success-syndicate-cyborg
       interactFailureString: petting-failure-syndicate-cyborg
@@ -409,6 +418,7 @@
   id: BorgChassisWalkerAssault
   parent: BorgChassisSelectableCombat
   name: assault walker cyborg
+  suffix: type picked
   description: A two-legged assault walker designed for tactical combat with balanced speed and firepower.
   components:
     - type: Sprite
@@ -444,6 +454,8 @@
     - type: BorgChassis
       hasMindState: walkerla_crimson_e
       noMindState: walkerla_crimson
+    - type: BorgSwitchableType
+      selectedBorgType: walkerassault
     - type: InteractionPopup
       interactSuccessString: petting-success-syndicate-cyborg
       interactFailureString: petting-failure-syndicate-cyborg
@@ -454,6 +466,7 @@
   id: BorgChassisWalkerStrike
   parent: BorgChassisSelectableCombat
   name: strike walker cyborg
+  suffix: type picked
   description: A heavily armored two-legged walker platform carrying maximum firepower for frontline assault operations.
   components:
     - type: Sprite
@@ -489,6 +502,8 @@
     - type: BorgChassis
       hasMindState: walkerha_flame_e
       noMindState: walkerha_flame
+    - type: BorgSwitchableType
+      selectedBorgType: walkerstrike
     - type: InteractionPopup
       interactSuccessString: petting-success-syndicate-cyborg
       interactFailureString: petting-failure-syndicate-cyborg
