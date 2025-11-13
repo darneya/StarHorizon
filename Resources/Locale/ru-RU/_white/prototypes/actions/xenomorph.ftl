@@ -1,9 +1,6 @@
 ent-ActionCombatModeToggleXenomorph = { ent-ActionCombatModeToggle }
     .desc = { ent-ActionCombatModeToggle.desc }
 
-ent-ToggleThermalVisionXenomorph = { ent-ActionCombatModeToggle }
-    .desc = { ent-ActionCombatModeToggle.desc }
-
 ent-ActionEvolution = Эволюционировать
     .desc = Эволюционирует в высшую касту ксеноморфов.
 

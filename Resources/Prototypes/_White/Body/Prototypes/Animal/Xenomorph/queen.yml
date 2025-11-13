@@ -19,20 +19,25 @@
       connections:
       - right arm
       - left arm
-      - groin
+#      - groin //No shitmed :pepeSad:
+      - right leg # No shitmed :pepeSad:
+      - left leg # No shitmed :pepeSad:
       - head
       organs:
         plasma_vessel: OrganXenomorphPlasmaVesselLargeQueen
-    groin:
-      part: GroinXenomorph
-      connections:
-      - right leg
-      - left leg
-      - head
-      organs:
-        stomach: OrganXenomorphStomach
-        liver: OrganXenomorphLiver
-        egg_sack: OrganXenomorphEggSack
+        stomach: OrganXenomorphStomach # No shitmed :pepeSad:
+        liver: OrganXenomorphLiver # No shitmed :pepeSad:
+        egg_sack: OrganXenomorphEggSack # No shitmed :pepeSad:
+#    groin:
+#      part: GroinXenomorph
+#      connections:
+#      - right leg
+#      - left leg
+#      - head
+#      organs:
+#        stomach: OrganXenomorphStomach
+#        liver: OrganXenomorphLiver
+#        egg_sack: OrganXenomorphEggSack
     right arm:
       part: RightArmXenomorph
       connections:

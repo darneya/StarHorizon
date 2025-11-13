@@ -117,7 +117,7 @@ public sealed class FaceHuggerSystem : EntitySystem
             || !_container.TryGetContainingContainer((uid, null, null), out var target))
             return;
 
-        var bodyPart = _body.GetBodyChildrenOfType(target.Owner, component.InfectionBodyPart.Type, symmetry: component.InfectionBodyPart.Symmetry).FirstOrNull();
+        var bodyPart = _body.GetBodyChildrenOfType(target.Owner, component.InfectionBodyPart.Type).FirstOrNull(); //TODO
         if (!bodyPart.HasValue)
             return;
 

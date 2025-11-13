@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2021 Alexander Evgrashin <evgrashin.adl@gmail.com>
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Alert;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
@@ -14,9 +30,14 @@ namespace Content.Shared.Pinpointer;
 [Access(typeof(SharedPinpointerSystem))]
 public sealed partial class PinpointerComponent : Component
 {
-    // TODO: Type serializer oh god
-    [DataField("component"), ViewVariables(VVAccess.ReadWrite)]
-    public string? Component;
+    /// <summary>
+    /// Goob edit: pinpointer now works on EntityWhitelist (actually only on components but nvm)
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? Whitelist;
+
+    [DataField]
+    public EntityWhitelist? Blacklist;
 
     [DataField("mediumDistance"), ViewVariables(VVAccess.ReadWrite)]
     public float MediumDistance = 16f;
@@ -46,13 +67,32 @@ public sealed partial class PinpointerComponent : Component
     public bool UpdateTargetName;
 
     /// <summary>
+    ///     Goob edit: pinpointer can retarget only whitelisted entities if specified.
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? RetargetingWhitelist;
+
+    [DataField]
+    public EntityWhitelist? RetargetingBlacklist;
+
+    /// <summary>
     ///     Whether or not the target can be reassigned.
     /// </summary>
     [DataField("canRetarget"), ViewVariables(VVAccess.ReadWrite)]
     public bool CanRetarget;
 
+    /// <summary>
+    ///     Goob edit: if true, this pinpointer will automatically track ANY nearest entity of a specified type.
+    ///     Doesn't work with retargeting, it will always left only one entity in target list.
+    /// </summary>
+    [DataField]
+    public bool CanTargetMultiple = true;
+
+    /// <summary>
+    /// Goob edit: many targets instead of just one
+    /// </summary>
     [ViewVariables]
-    public EntityUid? Target = null;
+    public List<EntityUid> Targets = new();
 
     // WD EDIT START
     [DataField]
@@ -79,37 +119,6 @@ public sealed partial class PinpointerComponent : Component
 
     [ViewVariables]
     public bool HasTarget => DistanceToTarget != Distance.Unknown;
-
-    // Frontier: Frontier-specific fields
-    // If greater than 0, the pinpointer stops pointing to its target when it's further away than this many meters.
-    [DataField]
-    public float MaxRange = -1;
-
-    // Time in seconds to retarget.
-    [DataField]
-    public float RetargetDoAfter = 15f;
-
-    // Whether this pinpointer can target mobs.
-    [DataField]
-    public bool CanTargetMobs = false;
-
-    // Whether this pinpointer's target knows about the pinpointer using the PinpointerTargetComponent.
-    [DataField]
-    public bool SetsTarget = false;
-    // End Frontier: extra pinpointer fields
-
-    /// <summary>
-    ///     Goob edit: if true, this pinpointer will automatically track ANY nearest entity of a specified type.
-    ///     Doesn't work with retargeting, it will always left only one entity in target list.
-    /// </summary>
-    [DataField]
-    public bool CanTargetMultiple = true;
-
-    /// <summary>
-    /// Goob edit: many targets instead of just one
-    /// </summary>
-    [ViewVariables]
-    public List<EntityUid> Targets = new();
 }
 
 [Serializable, NetSerializable]

@@ -25,13 +25,6 @@
     canToggle: false
     canEmag: false
     canExamine: false
-  - type: ThermalVision
-    toggleAction: ToggleThermalVisionXenomorph
-    color: "#7d0cc9"
-    lightRadius: 10
-    strength: 0
-    noise: 0
-    tint: 3, 3, 3
   - type: NameIdentifier
     group: GenericNumber
   - type: CombatMode

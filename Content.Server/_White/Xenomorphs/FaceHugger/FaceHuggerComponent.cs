@@ -10,7 +10,7 @@ namespace Content.Server._White.Xenomorphs.FaceHugger;
 public sealed partial class FaceHuggerComponent : Component
 {
     [DataField]
-    public (BodyPartType Type, BodyPartSymmetry Symmetry) InfectionBodyPart = (BodyPartType.Chest, BodyPartSymmetry.None);
+    public (BodyPartType Type, BodyPartSymmetry Symmetry) InfectionBodyPart = (BodyPartType.Torso, BodyPartSymmetry.None);
 
     [DataField]
     public DamageSpecifier DamageOnImpact = new();
