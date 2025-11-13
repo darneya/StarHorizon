@@ -484,11 +484,11 @@
 # region Combat cyborgs
 
 - type: borgType
-  id: scout
+  id: assassin
   category: combat
 
   # Description
-  dummyPrototype: BorgChassisScout
+  dummyPrototype: BorgChassisCombatAssassin
 
   # Functional
   extraModuleCount: 2
@@ -537,8 +537,8 @@
   spriteToggleLightState: sputnik_blue_l
 
   # Pet
-  petSuccessString: petting-success-syndicate-cyborg
-  petFailureString: petting-failure-syndicate-cyborg
+  petSuccessString: petting-success-assassin-cyborg
+  petFailureString: petting-failure-assassin-cyborg
 
   # Horizon skins
   skins:
@@ -547,36 +547,123 @@
     spriteHasMindState: sputnik_blue_e
     spriteNoMindState: sputnik_blue
     spriteToggleLightState: sputnik_blue_l
-    petSuccessString: petting-success-syndicate-cyborg
-    petFailureString: petting-failure-syndicate-cyborg
+    petSuccessString: petting-success-assassin-cyborg
+    petFailureString: petting-failure-assassin-cyborg
   - name: Зелёный
     spriteBodyState: sputnik_green
     spriteHasMindState: sputnik_green_e
     spriteNoMindState: sputnik_green
     spriteToggleLightState: sputnik_green_l
-    petSuccessString: petting-success-syndicate-cyborg
-    petFailureString: petting-failure-syndicate-cyborg
+    petSuccessString: petting-success-assassin-cyborg
+    petFailureString: petting-failure-assassin-cyborg
   - name: Красный
     spriteBodyState: sputnik_red
     spriteHasMindState: sputnik_red_e
     spriteNoMindState: sputnik_red
     spriteToggleLightState: sputnik_red_l
-    petSuccessString: petting-success-syndicate-cyborg
-    petFailureString: petting-failure-syndicate-cyborg
+    petSuccessString: petting-success-assassin-cyborg
+    petFailureString: petting-failure-assassin-cyborg
   - name: Фиолетовый
     spriteBodyState: sputnik_violet
     spriteHasMindState: sputnik_violet_e
     spriteNoMindState: sputnik_violet
     spriteToggleLightState: sputnik_violet_l
-    petSuccessString: petting-success-syndicate-cyborg
-    petFailureString: petting-failure-syndicate-cyborg
+    petSuccessString: petting-success-assassin-cyborg
+    petFailureString: petting-failure-assassin-cyborg
+
+- type: borgType
+  id: scout
+  category: combat
+
+  # Description
+  dummyPrototype: BorgChassisCombatScout
+
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCombat
+    - BorgModuleEngineering
+
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleCombatPKA
+  - BorgModuleCombatLaserAdvanced
+  - BorgModuleJetpack
+
+  radioChannels:
+  - Common
+  - Binary
+
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      110: Critical
+      220: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+      modifiers:
+        types:
+          Blunt: 0.97      # 3% reduction - very light armor
+          Slash: 0.97
+          Piercing: 0.97
+          Shock: 0.92      # 8% reduction
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4.0
+    baseSprintSpeed: 6.0
+
+  # Visual
+  inventoryTemplateId: borgShort
+  spriteBodyState: drone_hs
+  spriteHasMindState: drone_hs_e
+  spriteNoMindState: drone_hs
+  spriteToggleLightState: drone_hs_l
+
+  # Pet
+  petSuccessString: petting-success-scout-cyborg
+  petFailureString: petting-failure-scout-cyborg
+
+  # Horizon skins
+  skins:
+  - name: Стандартный
+    spriteBodyState: drone_hs
+    spriteHasMindState: drone_hs_e
+    spriteNoMindState: drone_hs
+    spriteToggleLightState: drone_hs_l
+    petSuccessString: petting-success-scout-cyborg
+    petFailureString: petting-failure-scout-cyborg
+  - name: Янтарь
+    spriteBodyState: drone_jn
+    spriteHasMindState: drone_jn_e
+    spriteNoMindState: drone_jn
+    spriteToggleLightState: drone_jn_l
+    petSuccessString: petting-success-scout-cyborg
+    petFailureString: petting-failure-scout-cyborg
+  - name: Лазурь
+    spriteBodyState: drone_ls
+    spriteHasMindState: drone_ls_e
+    spriteNoMindState: drone_ls
+    spriteToggleLightState: drone_ls_l
+    petSuccessString: petting-success-scout-cyborg
+    petFailureString: petting-failure-scout-cyborg
+  - name: Алый
+    spriteBodyState: drone_sc
+    spriteHasMindState: drone_sc_e
+    spriteNoMindState: drone_sc
+    spriteToggleLightState: drone_sc_l
+    petSuccessString: petting-success-scout-cyborg
+    petFailureString: petting-failure-scout-cyborg
 
 - type: borgType
   id: spider
   category: combat
 
   # Description
-  dummyPrototype: BorgChassisSpider
+  dummyPrototype: BorgChassisCombatCrawler
 
   # Functional
   extraModuleCount: 3
@@ -663,7 +750,7 @@
   category: combat
 
   # Description
-  dummyPrototype: BorgChassisHeavyCrawler
+  dummyPrototype: BorgChassisCombatCrawlerHeavy
 
   # Functional
   extraModuleCount: 4
@@ -750,7 +837,7 @@
   category: combat
 
   # Description
-  dummyPrototype: BorgChassisWalkerAssault
+  dummyPrototype: BorgChassisCombatWalker
 
   # Functional
   extraModuleCount: 3
@@ -838,7 +925,7 @@
   category: combat
 
   # Description
-  dummyPrototype: BorgChassisWalkerStrike
+  dummyPrototype: BorgChassisCombatWalkerHeavy
 
   # Functional
   extraModuleCount: 3

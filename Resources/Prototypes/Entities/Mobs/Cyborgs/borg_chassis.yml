@@ -271,13 +271,14 @@
 # region Combat Cyborgs
 
 - type: entity
-  id: BorgChassisScout
+  id: BorgChassisCombatAssassin
   parent: BorgChassisSelectableCombat
-  name: scout cyborg
+  name: assassin cyborg
   suffix: type picked
-  description: A lightweight reconnaissance cyborg designed for surveillance and information gathering. Fast and nimble.
+  description: A deadly stealth cyborg equipped with advanced combat modules. Silent, fast, and lethal.
   components:
     - type: Sprite
+      sprite: Mobs/Silicon/chassis.rsi
       layers:
         - state: sputnik_blue
           map: ["enum.BorgVisualLayers.Body"]
@@ -311,17 +312,65 @@
       hasMindState: sputnik_blue_e
       noMindState: sputnik_blue
     - type: BorgSwitchableType
-      selectedBorgType: scout
+      selectedBorgType: assassin
     - type: InteractionPopup
-      interactSuccessString: petting-success-syndicate-cyborg
-      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessString: petting-success-assassin-cyborg
+      interactFailureString: petting-failure-assassin-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
-  id: BorgChassisSpider
+  id: BorgChassisCombatScout
   parent: BorgChassisSelectableCombat
-  name: spider cyborg
+  name: scout cyborg
+  suffix: type picked
+  description: A lightweight reconnaissance cyborg designed for surveillance and information gathering. Fast and nimble.
+  components:
+    - type: Sprite
+      layers:
+        - state: drone_hs
+          map: ["enum.BorgVisualLayers.Body"]
+        - state: drone_hs_e
+          map: ["enum.BorgVisualLayers.Light"]
+          shader: unshaded
+          visible: false
+        - state: drone_hs_l
+          shader: unshaded
+          map: ["light", "enum.BorgVisualLayers.LightStatus"]
+          visible: false
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 4.0
+      baseSprintSpeed: 6.0
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        110: Critical
+        220: Dead
+    - type: DamageOnInteractProtection
+      damageProtection:
+        flatReductions:
+          Heat: 10
+        modifiers:
+          types:
+            Blunt: 0.97      # 3% reduction - very light armor
+            Slash: 0.97
+            Piercing: 0.97
+            Shock: 0.92      # 8% reduction
+    - type: BorgChassis
+      hasMindState: drone_hs_e
+      noMindState: drone_hs_e_r
+    - type: BorgSwitchableType
+      selectedBorgType: scout
+    - type: InteractionPopup
+      interactSuccessString: petting-success-scout-cyborg
+      interactFailureString: petting-failure-scout-cyborg
+      interactSuccessSound:
+        path: /Audio/Ambience/Objects/periodic_beep.ogg
+
+- type: entity
+  id: BorgChassisCombatCrawler
+  parent: BorgChassisSelectableCombat
+  name: light crawler cyborg
   suffix: type picked
   description: A lightweight arachnid-style assault cyborg, designed for mobile combat operations.
   components:
@@ -367,7 +416,7 @@
         path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
-  id: BorgChassisHeavyCrawler
+  id: BorgChassisCombatCrawlerHeavy
   parent: BorgChassisSelectableCombat
   name: heavy crawler cyborg
   suffix: type picked
@@ -415,7 +464,7 @@
         path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
-  id: BorgChassisWalkerAssault
+  id: BorgChassisCombatWalker
   parent: BorgChassisSelectableCombat
   name: assault walker cyborg
   suffix: type picked
@@ -463,9 +512,9 @@
         path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
-  id: BorgChassisWalkerStrike
+  id: BorgChassisCombatWalkerHeavy
   parent: BorgChassisSelectableCombat
-  name: strike walker cyborg
+  name: heavy strike walker cyborg
   suffix: type picked
   description: A heavily armored two-legged walker platform carrying maximum firepower for frontline assault operations.
   components:

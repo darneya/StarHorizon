@@ -63,6 +63,10 @@ borg-type-service-transponder = service cyborg
 
 ## Combat cyborg types
 
+borg-type-assassin-name = Assassin
+borg-type-assassin-desc = A deadly stealth cyborg equipped with advanced combat modules. Specializes in covert operations and eliminating high-value targets. Silent, fast, and lethal.
+borg-type-assassin-transponder = assassin cyborg
+
 borg-type-scout-name = Scout
 borg-type-scout-desc = A lightweight combat reconnaissance cyborg designed for surveillance and information gathering. Optimized for high speed movement and hit-and-run tactics.
 borg-type-scout-transponder = scout cyborg

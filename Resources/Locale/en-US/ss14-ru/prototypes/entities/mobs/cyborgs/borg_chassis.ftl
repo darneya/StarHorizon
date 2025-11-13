@@ -22,14 +22,19 @@ ent-BorgChassisSyndicateSaboteur = syndicate saboteur cyborg
 ent-BorgChassisDerelict = derelict cyborg
     .desc = A man-machine hybrid that assists in station activity. This one is in a state of great disrepair.
 
+ent-BorgChassisSelectableCombat = combat cyborg
+    .desc = A combat cyborg chassis ready for type selection and specialized module installation.
+
 # Combat cyborgs
-ent-BorgChassisScout = scout cyborg
+ent-BorgChassisCombatAssassin = assassin cyborg
+    .desc = A deadly stealth cyborg equipped with advanced combat modules. Silent, fast, and lethal.
+ent-BorgChassisCombatScout = scout cyborg
     .desc = A lightweight reconnaissance cyborg designed for surveillance and information gathering. Fast and nimble.
-ent-BorgChassisSpider = light crawler
+ent-BorgChassisCombatCrawler = light crawler cyborg
     .desc = A lightweight crawler with arachnid-style construction, designed for mobile combat operations.
-ent-BorgChassisHeavyCrawler = heavy crawler
-    .desc = A heavily armored heavy crawler with improved firepower and durability.
-ent-BorgChassisWalkerAssault = assault walker cyborg
+ent-BorgChassisCombatCrawlerHeavy = heavy crawler cyborg
+    .desc = A heavily armored crawler with improved firepower and durability.
+ent-BorgChassisCombatWalker = assault walker cyborg
     .desc = A two-legged assault walker designed for tactical combat with balanced speed and firepower.
-ent-BorgChassisWalkerStrike = strike walker cyborg
+ent-BorgChassisCombatWalkerHeavy = heavy strike walker cyborg
     .desc = A heavily armored two-legged walker platform carrying maximum firepower for frontline assault operations.
