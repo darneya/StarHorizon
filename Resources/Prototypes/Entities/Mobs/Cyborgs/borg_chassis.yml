@@ -291,8 +291,8 @@
           map: ["light", "enum.BorgVisualLayers.LightStatus"]
           visible: false
     - type: MovementSpeedModifier
-      baseWalkSpeed: 3.5
-      baseSprintSpeed: 5.5
+      baseWalkSpeed: 3.6
+      baseSprintSpeed: 4.5
     - type: MobThresholds
       thresholds:
         0: Alive
@@ -301,13 +301,13 @@
     - type: DamageOnInteractProtection
       damageProtection:
         flatReductions:
-          Heat: 10
+          Heat: 5
         modifiers:
           types:
-            Blunt: 0.95      # 5% reduction - minimal armor
-            Slash: 0.95
-            Piercing: 0.95
-            Shock: 0.90      # 10% reduction
+            Blunt: 0.92      # 8% reduction - minimal armor
+            Slash: 0.92
+            Piercing: 0.95   # 5% reduction
+            Shock: 0.85      # 15% reduction
     - type: BorgChassis
       hasMindState: sputnik_blue_e
       noMindState: sputnik_blue
@@ -339,23 +339,23 @@
           map: ["light", "enum.BorgVisualLayers.LightStatus"]
           visible: false
     - type: MovementSpeedModifier
-      baseWalkSpeed: 4.0
-      baseSprintSpeed: 6.0
+      baseWalkSpeed: 3.8
+      baseSprintSpeed: 5.8
     - type: MobThresholds
       thresholds:
         0: Alive
-        110: Critical
-        220: Dead
+        160: Critical
+        320: Dead
     - type: DamageOnInteractProtection
       damageProtection:
         flatReductions:
           Heat: 10
         modifiers:
           types:
-            Blunt: 0.97      # 3% reduction - very light armor
-            Slash: 0.97
-            Piercing: 0.97
-            Shock: 0.92      # 8% reduction
+            Blunt: 0.85      # 15% reduction - light armor
+            Slash: 0.85
+            Piercing: 0.90   # 10% reduction
+            Shock: 0.80      # 20% reduction
     - type: BorgChassis
       hasMindState: drone_hs_e
       noMindState: drone_hs_e_r
@@ -386,24 +386,24 @@
           shader: unshaded
           map: ["light", "enum.BorgVisualLayers.LightStatus"]
           visible: false
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 3.0
-      baseSprintSpeed: 5.0
     - type: MobThresholds
       thresholds:
         0: Alive
-        140: Critical
-        280: Dead
+        200: Critical
+        440: Dead
     - type: DamageOnInteractProtection
       damageProtection:
         flatReductions:
-          Heat: 10
+          Heat: 20
         modifiers:
           types:
-            Blunt: 0.80      # 20% reduction - heavy armor
-            Slash: 0.80
-            Piercing: 0.85    # 15% reduction
-            Shock: 0.85
+            Blunt: 0.75      # 25% reduction - medium armor
+            Slash: 0.75
+            Piercing: 0.75   # 25% reduction
+            Shock: 0.75
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3.0
+      baseSprintSpeed: 4.8
     - type: BorgChassis
       hasMindState: crawlerla_grey_e
       noMindState: crawlerla_grey
@@ -434,24 +434,24 @@
           shader: unshaded
           map: ["light", "enum.BorgVisualLayers.LightStatus"]
           visible: false
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 2.0
-      baseSprintSpeed: 4.0
     - type: MobThresholds
       thresholds:
         0: Alive
-        220: Critical
-        440: Dead
+        260: Critical
+        520: Dead
     - type: DamageOnInteractProtection
       damageProtection:
         flatReductions:
-          Heat: 10
+          Heat: 25
         modifiers:
           types:
-            Blunt: 0.90      # 10% reduction - light armor
-            Slash: 0.90
-            Piercing: 0.92
-            Shock: 0.90
+            Blunt: 0.70      # 30% reduction - medium+ armor
+            Slash: 0.70
+            Piercing: 0.72   # 28% reduction
+            Shock: 0.70
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.6
+      baseSprintSpeed: 4.3
     - type: BorgChassis
       hasMindState: crawlerha_siege_e
       noMindState: crawlerha_siege
@@ -482,24 +482,24 @@
           shader: unshaded
           map: ["light", "enum.BorgVisualLayers.LightStatus"]
           visible: false
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 2.8
-      baseSprintSpeed: 4.8
     - type: MobThresholds
       thresholds:
         0: Alive
-        150: Critical
-        300: Dead
+        180: Critical
+        360: Dead
     - type: DamageOnInteractProtection
       damageProtection:
         flatReductions:
-          Heat: 10
+          Heat: 15
         modifiers:
           types:
-            Blunt: 0.92      # 8% reduction - light armor
-            Slash: 0.92
-            Piercing: 0.94
-            Shock: 0.92
+            Blunt: 0.78      # 22% reduction - light-medium armor
+            Slash: 0.78
+            Piercing: 0.82   # 18% reduction
+            Shock: 0.80      # 20% reduction
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3.2
+      baseSprintSpeed: 5.0
     - type: BorgChassis
       hasMindState: walkerla_crimson_e
       noMindState: walkerla_crimson
@@ -530,24 +530,24 @@
           shader: unshaded
           map: ["light", "enum.BorgVisualLayers.LightStatus"]
           visible: false
-    - type: MovementSpeedModifier
-      baseWalkSpeed: 2.2
-      baseSprintSpeed: 4.2
     - type: MobThresholds
       thresholds:
         0: Alive
-        200: Critical
-        400: Dead
+        240: Critical
+        480: Dead
     - type: DamageOnInteractProtection
       damageProtection:
         flatReductions:
-          Heat: 10
+          Heat: 22
         modifiers:
           types:
-            Blunt: 0.92      # 8% reduction - light armor
-            Slash: 0.92
-            Piercing: 0.94
-            Shock: 0.92
+            Blunt: 0.73      # 27% reduction - medium armor
+            Slash: 0.73
+            Piercing: 0.76   # 24% reduction
+            Shock: 0.73
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.8
+      baseSprintSpeed: 4.5
     - type: BorgChassis
       hasMindState: walkerha_flame_e
       noMindState: walkerha_flame
