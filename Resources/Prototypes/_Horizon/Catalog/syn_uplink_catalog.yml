@@ -622,6 +622,6 @@
   description: uplink-combat-borg-desc
   productEntity: BorgChassisSelectableCombat
   cost:
-    Telecrystal: 150
+    Telecrystal: 80
   categories:
   - UplinkSyndicateBorgs

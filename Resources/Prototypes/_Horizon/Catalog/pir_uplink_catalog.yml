@@ -768,7 +768,7 @@
   description: uplink-combat-borg-desc
   productEntity: BorgChassisSelectableCombat
   cost:
-    Doubloon: 150
+    Doubloon: 70
   categories:
   - UplinkPirateMechas
   conditions:

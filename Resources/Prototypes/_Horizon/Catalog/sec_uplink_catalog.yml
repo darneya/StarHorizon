@@ -937,7 +937,7 @@
   description: uplink-combat-borg-desc
   productEntity: BorgChassisSelectableCombat
   cost:
-    FrontierUplinkCoin: 150
+    FrontierUplinkCoin: 70
   categories:
   - UplinkSecurityMechas
   conditions:
