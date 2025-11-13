@@ -19,6 +19,7 @@
     - UplinkPointless
     # Horizon start
     - UplinkSyndicateBorgs
+    - UplinkSyndicateBorgsCombat
     - UplinkSyndieMechas
     - UplinkSyndicateGunneryEnergy
     - UplinkSyndicateGunneryKinetic

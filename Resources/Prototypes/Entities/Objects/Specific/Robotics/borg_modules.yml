@@ -1779,7 +1779,7 @@
 
 # Horizon start
 
-# Combat Modules
+# region Combat Modules
 
 - type: entity
   id: BorgModuleCombatPKA

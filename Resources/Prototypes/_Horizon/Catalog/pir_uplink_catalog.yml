@@ -768,9 +768,9 @@
   description: uplink-combat-borg-desc
   productEntity: BorgChassisSelectableCombat
   cost:
-    Doubloon: 70
+    Doubloon: 50
   categories:
-  - UplinkPirateMechas
+  - UplinkPirateBorges
   conditions:
     - !type:StoreWhitelistCondition
       whitelist:
@@ -779,3 +779,141 @@
     - !type:BuyerJobCondition
       whitelist:
         - NFPirateCaptain
+        - NFPirateFirstMate
+
+# region Combat Borg Modules
+
+- type: listing
+  id: UplinkPirateCombatBorgPKA
+  name: uplink-pirate-borg-pka-name
+  description: uplink-pirate-borg-pka-desc
+  productEntity: BorgModuleCombatPKA
+  cost:
+    Doubloon: 10
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+
+- type: listing
+  id: UplinkPirateCombatBorgEchis
+  name: uplink-pirate-borg-echis-name
+  description: uplink-pirate-borg-echis-desc
+  productEntity: BorgModuleCombatEchis
+  cost:
+    Doubloon: 15
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+
+- type: listing
+  id: UplinkPirateCombatBorgLaserAdvanced
+  name: uplink-pirate-borg-laser-advanced-name
+  description: uplink-pirate-borg-laser-advanced-desc
+  productEntity: BorgModuleCombatLaserAdvanced
+  cost:
+    Doubloon: 15
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+
+- type: listing
+  id: UplinkPirateCombatBorgPKAHeavy
+  name: uplink-pirate-borg-pka-heavy-name
+  description: uplink-pirate-borg-pka-heavy-desc
+  productEntity: BorgModuleCombatPKAHeavy
+  cost:
+    Doubloon: 15
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+
+- type: listing
+  id: UplinkPirateCombatBorgL6C
+  name: uplink-pirate-borg-l6c-name
+  description: uplink-pirate-borg-l6c-desc
+  productEntity: BorgModuleCombatL6C
+  cost:
+    Doubloon: 25
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+
+- type: listing
+  id: UplinkPirateCombatBorgPKARailgun
+  name: uplink-pirate-borg-pka-railgun-name
+  description: uplink-pirate-borg-pka-railgun-desc
+  productEntity: BorgModuleCombatPKARailgun
+  cost:
+    Doubloon: 25
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+
+- type: listing
+  id: UplinkPirateCombatBorgPKARepeater
+  name: uplink-pirate-borg-pka-repeater-name
+  description: uplink-pirate-borg-pka-repeater-desc
+  productEntity: BorgModuleCombatPKARepeater
+  cost:
+    Doubloon: 25
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+
+- type: listing
+  id: UplinkPirateCombatBorgPKAShotgun
+  name: uplink-pirate-borg-pka-shotgun-name
+  description: uplink-pirate-borg-pka-shotgun-desc
+  productEntity: BorgModuleCombatPKAShotgun
+  cost:
+    Doubloon: 25
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+
+- type: listing
+  id: UplinkPirateCombatBorgLaserHeavy
+  name: uplink-pirate-borg-laser-heavy-name
+  description: uplink-pirate-borg-laser-heavy-desc
+  productEntity: BorgModuleCombatLaserHeavy
+  cost:
+    Doubloon: 25
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink

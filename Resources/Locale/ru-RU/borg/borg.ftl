@@ -91,7 +91,7 @@ borg-type-heavycrawler-transponder = тяжелый кравлер
 borg-type-walkerassault-name = Шагоход
 borg-type-walkerassault-desc =
     Двуногий шагоход со сбалансированной скоростью и броней. Обеспечивает гибкие боевые возможности для различных тактических ситуаций.
-    Имеет 3 слота под дополнительные модули.
+    Имеет 2 слота под дополнительные модули.
     Совместим с общими, боевыми, а также инженерными модулями.
 borg-type-walkerassault-transponder = шагоход
 borg-type-walkerstrike-name = Тяжелый шагоход
