@@ -501,7 +501,6 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleCombatCloakingDevice
-  - BorgModuleCombatLaserAdvanced
   - BorgModuleCombatEchis
   - BorgModuleJetpack
 
@@ -579,7 +578,7 @@
   dummyPrototype: BorgChassisCombatScout
 
   # Functional
-  extraModuleCount: 3
+  extraModuleCount: 2
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
@@ -589,7 +588,6 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleCombatCloakingDevice
-  - BorgModuleCombatEchis
   - BorgModuleJetpack
 
   radioChannels:
@@ -676,8 +674,6 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleCombatPKARepeater
-  - BorgModuleCombatPKAShotgun
-  - BorgModuleCombatEchis
   - BorgModuleJetpack
 
   radioChannels:
@@ -764,8 +760,6 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleCombatPKARailgun
-  - BorgModuleCombatPKAShotgun
-  - BorgModuleCombatEchis
   - BorgModuleJetpack
 
   radioChannels:
@@ -852,7 +846,6 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleCombatLaserAdvanced
-  - BorgModuleCombatEchis
   - BorgModuleJetpack
 
   radioChannels:
@@ -939,7 +932,6 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleCombatLaserHeavy
-  - BorgModuleCombatL6C
   - BorgModuleJetpack
 
   radioChannels:
