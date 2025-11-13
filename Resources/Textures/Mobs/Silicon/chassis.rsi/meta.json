@@ -1758,6 +1758,174 @@
     {
       "name": "sputnik_violet_l",
       "directions": 4
+    },
+    {
+      "name": "drone_hs",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "drone_hs_e",
+      "directions": 4
+    },
+    {
+      "name": "drone_hs_e_r",
+      "directions": 4
+    },
+    {
+      "name": "drone_hs_l",
+      "directions": 4
+    },
+    {
+      "name": "drone_jn",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "drone_jn_e",
+      "directions": 4
+    },
+    {
+      "name": "drone_jn_e_r",
+      "directions": 4
+    },
+    {
+      "name": "drone_jn_l",
+      "directions": 4
+    },
+    {
+      "name": "drone_ls",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "drone_ls_e",
+      "directions": 4
+    },
+    {
+      "name": "drone_ls_e_r",
+      "directions": 4
+    },
+    {
+      "name": "drone_ls_l",
+      "directions": 4
+    },
+    {
+      "name": "drone_sc",
+      "directions": 4,
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "drone_sc_e",
+      "directions": 4
+    },
+    {
+      "name": "drone_sc_e_r",
+      "directions": 4
+    },
+    {
+      "name": "drone_sc_l",
+      "directions": 4
     }
   ]
 }

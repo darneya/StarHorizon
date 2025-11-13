@@ -484,11 +484,11 @@
 # region Combat cyborgs
 
 - type: borgType
-  id: scout
+  id: assassin
   category: combat
 
   # Description
-  dummyPrototype: BorgChassisScout
+  dummyPrototype: BorgChassisCombatAssassin
 
   # Functional
   extraModuleCount: 2
@@ -500,14 +500,33 @@
 
   defaultModules:
   - BorgModuleTool
-  - BorgModuleCombatPKA
+  - BorgModuleCombatCloakingDevice
   - BorgModuleCombatEchis
-  - BorgModuleCombatLaserAdvanced
   - BorgModuleJetpack
 
   radioChannels:
   - Common
   - Binary
+
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      120: Critical
+      240: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 5
+      modifiers:
+        types:
+          Blunt: 0.92      # 8% reduction - minimal armor
+          Slash: 0.92
+          Piercing: 0.95   # 5% reduction
+          Shock: 0.85      # 15% reduction
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.6
+    baseSprintSpeed: 4.5
 
   # Visual
   inventoryTemplateId: borgShort
@@ -517,8 +536,8 @@
   spriteToggleLightState: sputnik_blue_l
 
   # Pet
-  petSuccessString: petting-success-syndicate-cyborg
-  petFailureString: petting-failure-syndicate-cyborg
+  petSuccessString: petting-success-assassin-cyborg
+  petFailureString: petting-failure-assassin-cyborg
 
   # Horizon skins
   skins:
@@ -527,36 +546,122 @@
     spriteHasMindState: sputnik_blue_e
     spriteNoMindState: sputnik_blue
     spriteToggleLightState: sputnik_blue_l
-    petSuccessString: petting-success-syndicate-cyborg
-    petFailureString: petting-failure-syndicate-cyborg
+    petSuccessString: petting-success-assassin-cyborg
+    petFailureString: petting-failure-assassin-cyborg
   - name: Зелёный
     spriteBodyState: sputnik_green
     spriteHasMindState: sputnik_green_e
     spriteNoMindState: sputnik_green
     spriteToggleLightState: sputnik_green_l
-    petSuccessString: petting-success-syndicate-cyborg
-    petFailureString: petting-failure-syndicate-cyborg
+    petSuccessString: petting-success-assassin-cyborg
+    petFailureString: petting-failure-assassin-cyborg
   - name: Красный
     spriteBodyState: sputnik_red
     spriteHasMindState: sputnik_red_e
     spriteNoMindState: sputnik_red
     spriteToggleLightState: sputnik_red_l
-    petSuccessString: petting-success-syndicate-cyborg
-    petFailureString: petting-failure-syndicate-cyborg
+    petSuccessString: petting-success-assassin-cyborg
+    petFailureString: petting-failure-assassin-cyborg
   - name: Фиолетовый
     spriteBodyState: sputnik_violet
     spriteHasMindState: sputnik_violet_e
     spriteNoMindState: sputnik_violet
     spriteToggleLightState: sputnik_violet_l
-    petSuccessString: petting-success-syndicate-cyborg
-    petFailureString: petting-failure-syndicate-cyborg
+    petSuccessString: petting-success-assassin-cyborg
+    petFailureString: petting-failure-assassin-cyborg
+
+- type: borgType
+  id: scout
+  category: combat
+
+  # Description
+  dummyPrototype: BorgChassisCombatScout
+
+  # Functional
+  extraModuleCount: 2
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCombat
+    - BorgModuleMedical
+
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleCombatCloakingDevice
+  - BorgModuleJetpack
+
+  radioChannels:
+  - Common
+  - Binary
+
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      160: Critical
+      320: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10
+      modifiers:
+        types:
+          Blunt: 0.85      # 15% reduction - light armor
+          Slash: 0.85
+          Piercing: 0.90   # 10% reduction
+          Shock: 0.80      # 20% reduction
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.8
+    baseSprintSpeed: 5.8
+
+  # Visual
+  inventoryTemplateId: borgShort
+  spriteBodyState: drone_hs
+  spriteHasMindState: drone_hs_e
+  spriteNoMindState: drone_hs
+  spriteToggleLightState: drone_hs_l
+
+  # Pet
+  petSuccessString: petting-success-scout-cyborg
+  petFailureString: petting-failure-scout-cyborg
+
+  # Horizon skins
+  skins:
+  - name: Стандартный
+    spriteBodyState: drone_hs
+    spriteHasMindState: drone_hs_e
+    spriteNoMindState: drone_hs
+    spriteToggleLightState: drone_hs_l
+    petSuccessString: petting-success-scout-cyborg
+    petFailureString: petting-failure-scout-cyborg
+  - name: Янтарь
+    spriteBodyState: drone_jn
+    spriteHasMindState: drone_jn_e
+    spriteNoMindState: drone_jn
+    spriteToggleLightState: drone_jn_l
+    petSuccessString: petting-success-scout-cyborg
+    petFailureString: petting-failure-scout-cyborg
+  - name: Лазурь
+    spriteBodyState: drone_ls
+    spriteHasMindState: drone_ls_e
+    spriteNoMindState: drone_ls
+    spriteToggleLightState: drone_ls_l
+    petSuccessString: petting-success-scout-cyborg
+    petFailureString: petting-failure-scout-cyborg
+  - name: Алый
+    spriteBodyState: drone_sc
+    spriteHasMindState: drone_sc_e
+    spriteNoMindState: drone_sc
+    spriteToggleLightState: drone_sc_l
+    petSuccessString: petting-success-scout-cyborg
+    petFailureString: petting-failure-scout-cyborg
 
 - type: borgType
   id: spider
   category: combat
 
   # Description
-  dummyPrototype: BorgChassisSpider
+  dummyPrototype: BorgChassisCombatCrawler
 
   # Functional
   extraModuleCount: 3
@@ -568,13 +673,32 @@
 
   defaultModules:
   - BorgModuleTool
-  - BorgModuleCombatPKARailgun
-  - BorgModuleCombatLaserAdvanced
+  - BorgModuleCombatPKARepeater
   - BorgModuleJetpack
 
   radioChannels:
   - Common
   - Binary
+
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      440: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 20
+      modifiers:
+        types:
+          Blunt: 0.75      # 25% reduction - medium armor
+          Slash: 0.75
+          Piercing: 0.75   # 25% reduction
+          Shock: 0.75
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.0
+    baseSprintSpeed: 4.8
 
   # Visual
   inventoryTemplateId: borgShort
@@ -623,7 +747,7 @@
   category: combat
 
   # Description
-  dummyPrototype: BorgChassisHeavyCrawler
+  dummyPrototype: BorgChassisCombatCrawlerHeavy
 
   # Functional
   extraModuleCount: 4
@@ -636,12 +760,31 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleCombatPKARailgun
-  - BorgModuleCombatLaserHeavy
   - BorgModuleJetpack
 
   radioChannels:
   - Common
   - Binary
+
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      260: Critical
+      520: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 25
+      modifiers:
+        types:
+          Blunt: 0.70      # 30% reduction - medium+ armor
+          Slash: 0.70
+          Piercing: 0.72   # 28% reduction
+          Shock: 0.70
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.6
+    baseSprintSpeed: 4.3
 
   # Visual
   inventoryTemplateId: borgTall
@@ -690,10 +833,10 @@
   category: combat
 
   # Description
-  dummyPrototype: BorgChassisWalkerAssault
+  dummyPrototype: BorgChassisCombatWalker
 
   # Functional
-  extraModuleCount: 3
+  extraModuleCount: 2
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
@@ -703,13 +846,31 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleCombatLaserAdvanced
-  - BorgModuleCombatEchis
-  - BorgModuleCombatL6C
   - BorgModuleJetpack
 
   radioChannels:
   - Common
   - Binary
+
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      180: Critical
+      360: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 15
+      modifiers:
+        types:
+          Blunt: 0.78      # 22% reduction - light-medium armor
+          Slash: 0.78
+          Piercing: 0.82   # 18% reduction
+          Shock: 0.80      # 20% reduction
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.2
+    baseSprintSpeed: 5.0
 
   # Visual
   inventoryTemplateId: borgTall
@@ -758,7 +919,7 @@
   category: combat
 
   # Description
-  dummyPrototype: BorgChassisWalkerStrike
+  dummyPrototype: BorgChassisCombatWalkerHeavy
 
   # Functional
   extraModuleCount: 3
@@ -771,13 +932,31 @@
   defaultModules:
   - BorgModuleTool
   - BorgModuleCombatLaserHeavy
-  - BorgModuleCombatL6C
-  - BorgModuleCombatEchis
   - BorgModuleJetpack
 
   radioChannels:
   - Common
   - Binary
+
+  addComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      240: Critical
+      480: Dead
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 22
+      modifiers:
+        types:
+          Blunt: 0.73      # 27% reduction - medium armor
+          Slash: 0.73
+          Piercing: 0.76   # 24% reduction
+          Shock: 0.73
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.8
+    baseSprintSpeed: 4.5
 
   # Visual
   inventoryTemplateId: borgTall

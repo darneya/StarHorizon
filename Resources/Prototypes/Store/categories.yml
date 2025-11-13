@@ -93,45 +93,50 @@
   priority: 10
 
 - type: storeCategory
+  id: UplinkSyndicateBorgsCombat
+  name: store-category-syndicateborgs-combat
+  priority: 11
+
+- type: storeCategory
   id: UplinkSyndieMechas
   name: store-category-syndicatemechas
-  priority: 11
+  priority: 12
 
 - type: storeCategory
   id: UplinkSyndicateGunneryEnergy
   name: store-category-syndicate-gunnery-energy
-  priority: 12
+  priority: 13
 
 - type: storeCategory
   id: UplinkSyndicateGunneryKinetic
   name: store-category-syndicate-gunnery-kinetic
-  priority: 13
+  priority: 14
 
 - type: storeCategory
   id: UplinkSyndicateGunneryMissile
   name: store-category-syndicate-gunnery-missile
-  priority: 14
+  priority: 15
 
 - type: storeCategory
   id: UplinkSyndicateGunneryAmmo
   name: store-category-syndicate-gunnery-ammo
-  priority: 15
+  priority: 16
 
 - type: storeCategory
   id: UplinkSyndicateGunneryConsoles
   name: store-category-syndicate-gunnery-consoles
-  priority: 16
+  priority: 17
 # Horizon end
 
 - type: storeCategory
   id: UplinkJob
   name: store-category-job
-  priority: 17
+  priority: 18
 
 - type: storeCategory
   id: UplinkPointless
   name: store-category-pointless
-  priority: 18
+  priority: 19
 
 #revenant
 - type: storeCategory

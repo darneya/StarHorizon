@@ -937,9 +937,9 @@
   description: uplink-combat-borg-desc
   productEntity: BorgChassisSelectableCombat
   cost:
-    FrontierUplinkCoin: 150
+    FrontierUplinkCoin: 50
   categories:
-  - UplinkSecurityMechas
+  - UplinkSecurityBorges
   conditions:
     - !type:StoreWhitelistCondition
       whitelist:
@@ -947,4 +947,228 @@
           - SecurityUplink
     - !type:BuyerJobCondition
       whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+# region Combat Borg Modules
+
+- type: listing
+  id: SecUplinkCombatBorgPKA
+  name: uplink-sec-borg-pka-name
+  description: uplink-sec-borg-pka-desc
+  productEntity: BorgModuleCombatPKA
+  cost:
+    FrontierUplinkCoin: 10
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkCombatBorgEchis
+  name: uplink-sec-borg-echis-name
+  description: uplink-sec-borg-echis-desc
+  productEntity: BorgModuleCombatEchis
+  cost:
+    FrontierUplinkCoin: 15
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkCombatBorgLaserAdvanced
+  name: uplink-sec-borg-laser-advanced-name
+  description: uplink-sec-borg-laser-advanced-desc
+  productEntity: BorgModuleCombatLaserAdvanced
+  cost:
+    FrontierUplinkCoin: 15
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkCombatBorgPKAHeavy
+  name: uplink-sec-borg-pka-heavy-name
+  description: uplink-sec-borg-pka-heavy-desc
+  productEntity: BorgModuleCombatPKAHeavy
+  cost:
+    FrontierUplinkCoin: 15
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkCombatBorgL6C
+  name: uplink-sec-borg-l6c-name
+  description: uplink-sec-borg-l6c-desc
+  productEntity: BorgModuleCombatL6C
+  cost:
+    FrontierUplinkCoin: 25
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkCombatBorgPKARailgun
+  name: uplink-sec-borg-pka-railgun-name
+  description: uplink-sec-borg-pka-railgun-desc
+  productEntity: BorgModuleCombatPKARailgun
+  cost:
+    FrontierUplinkCoin: 25
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkCombatBorgPKARepeater
+  name: uplink-sec-borg-pka-repeater-name
+  description: uplink-sec-borg-pka-repeater-desc
+  productEntity: BorgModuleCombatPKARepeater
+  cost:
+    FrontierUplinkCoin: 25
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkCombatBorgPKAShotgun
+  name: uplink-sec-borg-pka-shotgun-name
+  description: uplink-sec-borg-pka-shotgun-desc
+  productEntity: BorgModuleCombatPKAShotgun
+  cost:
+    FrontierUplinkCoin: 25
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkCombatBorgLaserHeavy
+  name: uplink-sec-borg-laser-heavy-name
+  description: uplink-sec-borg-laser-heavy-desc
+  productEntity: BorgModuleCombatLaserHeavy
+  cost:
+    FrontierUplinkCoin: 25
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkRemoteControlConsole
+  name: uplink-sec-remote-control-console-name
+  description: uplink-sec-remote-control-console-desc
+  productEntity: RemoteControllerComputer
+  cost:
+    FrontierUplinkCoin: 5
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkRemoteControlDevice
+  name: uplink-sec-remote-control-device-name
+  description: uplink-sec-remote-control-device-desc
+  productEntity: RemoteControlDevice
+  cost:
+    FrontierUplinkCoin: 5
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
         - Sheriff

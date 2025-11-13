@@ -60,6 +60,11 @@
   name: store-category-secmechas
   priority: 11
 
+- type: storeCategory
+  id: UplinkSecurityBorges
+  name: store-category-secborges
+  priority: 12
+
 # region Pirate
 
 - type: storeCategory
@@ -121,3 +126,8 @@
   id: UplinkPirateMechas
   name: store-category-piratemechas
   priority: 11
+
+- type: storeCategory
+  id: UplinkPirateBorges
+  name: store-category-pirateborges
+  priority: 12

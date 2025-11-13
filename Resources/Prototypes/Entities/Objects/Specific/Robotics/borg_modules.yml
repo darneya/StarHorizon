@@ -1779,7 +1779,7 @@
 
 # Horizon start
 
-# Combat Modules
+# region Combat Modules
 
 - type: entity
   id: BorgModuleCombatPKA
@@ -1938,7 +1938,7 @@
   - type: ItemBorgModule
     moduleId: CombatPKARailgun
     items:
-    - WeaponProtoKineticRailgun
+    - WeaponProtoKineticRailgunBorg
     - WeaponCrusher
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-laser-module }
@@ -1974,7 +1974,7 @@
   - type: ItemBorgModule
     moduleId: CombatPKARepeater
     items:
-    - WeaponProtoKineticRepeater
+    - WeaponProtoKineticRepeaterBorg
     - WeaponCrusher
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
@@ -2085,6 +2085,41 @@
     - NFWeaponEnergyPistolLaserX01Multiphase
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-laser2-module }
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-icon-inhand-left
+        color: "#FF0000"
+      - state: base-module-inhand-left
+        color: "#891417"
+      - state: base-part-inhand-left
+      - state: base-stripes-inhand-left
+        color: "#7B0F12"
+      right:
+      - state: base-icon-inhand-right
+        color: "#FF0000"
+      - state: base-module-inhand-right
+        color: "#891417"
+      - state: base-part-inhand-right
+      - state: base-stripes-inhand-right
+        color: "#7B0F12"
+
+- type: entity
+  parent: [ BaseBorgModuleCombat, BaseProviderBorgModule ]
+  id: BorgModuleCombatCloakingDevice
+  name: cloaking device module
+  description: Integrated cloaking device for stealth operations. Renders the operative invisible for extended periods.
+  components:
+  - type: Sprite
+    layers:
+    - state: combat
+    - state: icon-syndicate-cloak
+  - type: ItemBorgModule
+    moduleId: CombatCloaking
+    items:
+    - CloakingDevice
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-cloak-module }
   - type: Item
     inhandVisuals:
       left:
