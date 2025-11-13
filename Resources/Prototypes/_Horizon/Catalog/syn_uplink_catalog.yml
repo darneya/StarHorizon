@@ -717,3 +717,23 @@
     Telecrystal: 25
   categories:
     - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkRemoteControlConsole
+  name: uplink-syndicate-remote-control-console-name
+  description: uplink-syndicate-remote-control-console-desc
+  productEntity: RemoteControllerComputer
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkRemoteControlDevice
+  name: uplink-syndicate-remote-control-device-name
+  description: uplink-syndicate-remote-control-device-desc
+  productEntity: RemoteControlDevice
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndicateBorgsCombat

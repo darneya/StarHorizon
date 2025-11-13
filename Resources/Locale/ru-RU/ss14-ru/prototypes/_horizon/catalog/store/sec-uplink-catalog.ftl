@@ -28,3 +28,9 @@ uplink-sec-borg-pka-shotgun-desc = Модуль, оснащённый дробо
 
 uplink-sec-borg-laser-heavy-name = модуль тяжёлого лазера киборга
 uplink-sec-borg-laser-heavy-desc = Модуль, оснащённый тяжёлым лазером для экстремальной огневой мощи.
+
+uplink-sec-remote-control-console-name = консоль дистанционного управления
+uplink-sec-remote-control-console-desc = Консоль для дистанционного управления механизмами и боргами.
+
+uplink-sec-remote-control-device-name = устройство дистанционного управления
+uplink-sec-remote-control-device-desc = Портативное устройство для управления подключенными механизмами.

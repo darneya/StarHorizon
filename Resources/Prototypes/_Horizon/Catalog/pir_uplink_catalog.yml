@@ -917,3 +917,33 @@
       whitelist:
         tags:
           - PirateUplink
+
+- type: listing
+  id: UplinkPirateRemoteControlConsole
+  name: uplink-pirate-remote-control-console-name
+  description: uplink-pirate-remote-control-console-desc
+  productEntity: RemoteControllerComputer
+  cost:
+    Doubloon: 5
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink
+
+- type: listing
+  id: UplinkPirateRemoteControlDevice
+  name: uplink-pirate-remote-control-device-name
+  description: uplink-pirate-remote-control-device-desc
+  productEntity: RemoteControlDevice
+  cost:
+    Doubloon: 5
+  categories:
+    - UplinkPirateBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - PirateUplink

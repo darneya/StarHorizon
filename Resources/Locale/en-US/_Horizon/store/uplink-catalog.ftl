@@ -26,6 +26,12 @@ uplink-syndicate-borg-pka-shotgun-desc = A module equipped with a shotgun for po
 uplink-syndicate-borg-laser-heavy-name = Heavy Laser Cyborg Module
 uplink-syndicate-borg-laser-heavy-desc = A module equipped with a heavy laser for extreme firepower.
 
+uplink-syndicate-remote-control-console-name = Remote Control Console
+uplink-syndicate-remote-control-console-desc = A console for remotely controlling mechanisms and cyborgs.
+
+uplink-syndicate-remote-control-device-name = Remote Control Device
+uplink-syndicate-remote-control-device-desc = A portable device for controlling connected mechanisms.
+
 # Combat Borg Modules - Security
 uplink-sec-borg-pka-name = Kinetic Accelerator Cyborg Module
 uplink-sec-borg-pka-desc = A module equipped with a kinetic accelerator for rapid-fire combat.
@@ -54,6 +60,12 @@ uplink-sec-borg-pka-shotgun-desc = A module equipped with a shotgun for powerful
 uplink-sec-borg-laser-heavy-name = Heavy Laser Cyborg Module
 uplink-sec-borg-laser-heavy-desc = A module equipped with a heavy laser for extreme firepower.
 
+uplink-sec-remote-control-console-name = Remote Control Console
+uplink-sec-remote-control-console-desc = A console for remotely controlling mechanisms and cyborgs.
+
+uplink-sec-remote-control-device-name = Remote Control Device
+uplink-sec-remote-control-device-desc = A portable device for controlling connected mechanisms.
+
 # Combat Borg Modules - Pirate
 uplink-pirate-borg-pka-name = Kinetic Accelerator Cyborg Module
 uplink-pirate-borg-pka-desc = A module equipped with a kinetic accelerator for rapid-fire combat.
@@ -81,3 +93,9 @@ uplink-pirate-borg-pka-shotgun-desc = A module equipped with a shotgun for power
 
 uplink-pirate-borg-laser-heavy-name = Heavy Laser Cyborg Module
 uplink-pirate-borg-laser-heavy-desc = A module equipped with a heavy laser for extreme firepower.
+
+uplink-pirate-remote-control-console-name = Remote Control Console
+uplink-pirate-remote-control-console-desc = A console for remotely controlling mechanisms and cyborgs.
+
+uplink-pirate-remote-control-device-name = Remote Control Device
+uplink-pirate-remote-control-device-desc = A portable device for controlling connected mechanisms.

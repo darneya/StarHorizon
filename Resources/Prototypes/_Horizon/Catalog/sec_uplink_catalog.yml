@@ -1132,3 +1132,43 @@
         - Bailiff
         - SeniorOfficer
         - Sheriff
+
+- type: listing
+  id: SecUplinkRemoteControlConsole
+  name: uplink-sec-remote-control-console-name
+  description: uplink-sec-remote-control-console-desc
+  productEntity: RemoteControllerComputer
+  cost:
+    FrontierUplinkCoin: 5
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: SecUplinkRemoteControlDevice
+  name: uplink-sec-remote-control-device-name
+  description: uplink-sec-remote-control-device-desc
+  productEntity: RemoteControlDevice
+  cost:
+    FrontierUplinkCoin: 5
+  categories:
+    - UplinkSecurityBorges
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
