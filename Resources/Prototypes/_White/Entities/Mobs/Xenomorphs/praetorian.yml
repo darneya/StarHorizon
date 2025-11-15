@@ -60,6 +60,24 @@
   # - type: GuideHelp
   #   guides:
   #   - XenomorphPraetorian
+  # Organs zone (No Shitmed)
+  - type: PlasmaVessel
+    maxPlasma: 500
+    plasma: 200
+    plasmaPerSecondOffWeed: 0.75
+    plasmaPerSecondOnWeed: 7.5
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.75
+  - type: PlasmaAmmoProvider
+    fireCost: 55
+    proto: BulletNeurotoxin
+  - type: Gun
+    fireRate: 0.75
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
 
 - type: entity
   parent: BaseMobXenomorphPraetorian

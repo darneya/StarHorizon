@@ -70,6 +70,24 @@
   # - type: GuideHelp
   #   guides:
   #   - XenomorphQueen
+  # Organs zone (No Shitmed)
+  - type: PlasmaVessel
+    maxPlasma: 500
+    plasma: 200
+    plasmaPerSecondOffWeed: 1
+    plasmaPerSecondOnWeed: 10
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.75
+  - type: PlasmaAmmoProvider
+    fireCost: 55
+    proto: BulletNeurotoxin
+  - type: Gun
+    fireRate: 0.75
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
 
 - type: entity
   parent: BaseMobXenomorphQueen

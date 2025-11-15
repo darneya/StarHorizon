@@ -39,6 +39,20 @@
   # - type: GuideHelp
   #   guides:
   #   - XenomorphSentinel
+  # Organs zone (No Shitmed)
+  - type: PlasmaVessel
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.75
+  - type: PlasmaAmmoProvider
+    fireCost: 55
+    proto: BulletNeurotoxin
+  - type: Gun
+    fireRate: 0.75
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
 
 - type: entity
   parent: BaseMobXenomorphSentinel

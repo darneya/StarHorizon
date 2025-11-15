@@ -61,6 +61,8 @@
   # - type: GuideHelp
   #   guides:
   #   - XenomorphLarva
+  - type: PlasmaVessel # No Shitmed
+    maxPlasma: 100
 
 - type: entity
   parent: BaseMobXenomorphLarva

@@ -10,6 +10,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Content.Shared.FixedPoint;
+using Content.Shared._White.Actions;
 
 namespace Content.Server._White.Actions;
 
@@ -23,6 +25,7 @@ public sealed class ActionsSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
+    [Dependency] private readonly PlasmaCostActionSystem _plasmaCost = default!; // Goobstation=
 
     public override void Initialize()
     {
@@ -43,6 +46,11 @@ public sealed class ActionsSystem : EntitySystem
         if (args.Handled)
             return;
 
+        // Check if this is a plasma-cost action and get the cost
+        // Goobstation
+        TryComp<PlasmaCostActionComponent>(args.Action, out var plasmaCost);
+        var plasmaCostValue = plasmaCost?.PlasmaCost ?? FixedPoint2.Zero;
+
         if (args.Length != 0)
         {
             if (CheckTileBlocked(args.Target, args.BlockedCollisionLayer, args.BlockedCollisionMask))
@@ -55,15 +63,18 @@ public sealed class ActionsSystem : EntitySystem
                 TileId = args.TileId,
                 Audio = args.Audio,
                 BlockedCollisionLayer = args.BlockedCollisionLayer,
-                BlockedCollisionMask = args.BlockedCollisionMask
+                BlockedCollisionMask = args.BlockedCollisionMask, // Goobstation start
+                PlasmaCost = plasmaCostValue,
+                Action = GetNetEntity(args.Action) // Goobstation end
             };
 
             var doAfter = new DoAfterArgs(EntityManager, args.Performer, args.Length, ev, null)
             {
                 BlockDuplicate = true,
                 BreakOnDamage = true,
-                CancelDuplicate = true,
-                BreakOnMove = true,
+                BreakOnMove = true, // Goobstation start
+                NeedHand = false,
+                CancelDuplicate = true, // Gooobstation end
                 Broadcast = true
             };
 
@@ -75,9 +86,24 @@ public sealed class ActionsSystem : EntitySystem
             args.Handled = true;
     }
 
+    /// Goobstation
+    /// <summary>
+    /// Handles the placement of a tile entity after the placement action is confirmed.
+    /// Verifies plasma cost and creates the tile if conditions are met.
+    /// </summary>
+    /// <param name="args">Event data containing placement details and cost</param>
     private void OnPlaceTileEntityDoAfter(PlaceTileEntityDoAfterEvent args)
     {
-        if (!args.Handled && CreationTileEntity(args.User, GetCoordinates(args.Target), args.TileId, args.Entity, args.Audio, args.BlockedCollisionLayer, args.BlockedCollisionMask))
+        if (args.Cancelled || args.Handled)
+            return;
+
+        // Check plasma cost only when the action is about to complete
+        if (!_plasmaCost.HasEnoughPlasma(args.User, args.PlasmaCost))
+            return;
+
+        _plasmaCost.DeductPlasma(args.User, args.PlasmaCost);
+
+        if (CreationTileEntity(args.User, GetCoordinates(args.Target), args.TileId, args.Entity, args.Audio, args.BlockedCollisionLayer, args.BlockedCollisionMask))
             args.Handled = true;
     }
 

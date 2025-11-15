@@ -54,7 +54,13 @@
   # - type: GuideHelp
   #   guides:
   #   - XenomorphHunter
-
+  # Organs zone (No Shitmed)
+  - type: PlasmaVessel
+    maxPlasma: 150
+    plasma: 100
+    plasmaPerSecondOffWeed: 0.25
+    plasmaPerSecondOnWeed: 2.5
+    
 - type: entity
   parent: BaseMobXenomorphHunter
   id: MobXenomorphHunter

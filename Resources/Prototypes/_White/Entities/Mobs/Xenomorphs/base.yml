@@ -122,6 +122,7 @@
   - type: Emoting
   - type: BodyEmotes
     soundsId: GeneralBodyEmotes
+  - type: PlasmaVessel # No Shitmed
 
 - type: entity
   parent: [BaseMobXenomorph, StripableInventoryBase]

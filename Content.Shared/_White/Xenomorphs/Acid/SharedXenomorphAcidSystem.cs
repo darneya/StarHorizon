@@ -4,6 +4,8 @@ using Content.Shared.Coordinates;
 using Content.Shared.Popups;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
+using Content.Shared.FixedPoint;
+using Content.Shared._White.Actions;
 
 namespace Content.Shared._White.Xenomorphs.Acid;
 
@@ -13,6 +15,7 @@ public abstract class SharedXenomorphAcidSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
 
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly PlasmaCostActionSystem _plasmaCost = default!; // Goobstation
 
     public override void Initialize()
     {
@@ -26,19 +29,38 @@ public abstract class SharedXenomorphAcidSystem : EntitySystem
         if (args.Handled)
             return;
 
+        // Check if this is a plasma-cost action and get the cost
+        // Goobstation start
+        TryComp<PlasmaCostActionComponent>(args.Action, out var plasmaCost);
+        var plasmaCostValue = plasmaCost?.PlasmaCost ?? FixedPoint2.Zero;
+
+        // Check plasma cost before proceeding
+        if (plasmaCostValue > FixedPoint2.Zero && !_plasmaCost.HasEnoughPlasma(uid, plasmaCostValue))
+        {
+            _popup.PopupEntity(Loc.GetString("xenomorphs-acid-not-enough-plasma"), uid, uid, type: PopupType.SmallCaution);
+            return;
+        }
+
         if (!HasComp<StructureComponent>(args.Target)) // TODO: This should check whether the target is a structure.
         {
-            _popup.PopupClient(Loc.GetString("xenomorphs-acid-not-corrodible", ("target", args.Target)), uid, uid);
+            _popup.PopupEntity(Loc.GetString("xenomorphs-acid-not-corrodible", ("target", args.Target)), uid, uid, type: PopupType.SmallCaution);
             return;
         }
 
         if (HasComp<AcidCorrodingComponent>(args.Target))
         {
-            _popup.PopupClient(Loc.GetString("xenomorphs-acid-already-corroding", ("target", args.Target)), uid, uid);
+            _popup.PopupEntity(Loc.GetString("xenomorphs-acid-already-corroding", ("target", args.Target)), uid, uid, type: PopupType.SmallCaution);
             return;
         }
 
+        // Deduct the plasma cost after all checks pass
+        if (plasmaCostValue > FixedPoint2.Zero)
+            _plasmaCost.DeductPlasma(uid, plasmaCostValue);
+
         args.Handled = true;
+        _popup.PopupEntity(Loc.GetString("xenomorphs-acid-apply", ("target", args.Target)), uid, uid, type: PopupType.Small);
+
+        // Goobstation end
 
         if (_net.IsClient)
             return;

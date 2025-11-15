@@ -6,6 +6,7 @@ using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Content.Shared.FixedPoint;
 
 namespace Content.Shared._White.Actions.Events;
 
@@ -90,5 +91,7 @@ public sealed partial class PlaceTileEntityDoAfterEvent : DoAfterEvent
 
     public int BlockedCollisionLayer;
 
+    public FixedPoint2 PlasmaCost; // Goobstation
+    public NetEntity Action; // Goobstation
     public override DoAfterEvent Clone() => this;
 }

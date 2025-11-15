@@ -43,4 +43,13 @@ public abstract class SharedPlasmaSystem : EntitySystem
 
         return true;
     }
+
+    /// <summary>
+    /// Goobstation - checks if a mob has at least a certain amount of plasma.
+    /// </summary>
+    public bool HasPlasma(EntityUid uid, FixedPoint2 amount)
+    {
+        return TryComp<PlasmaVesselComponent>(uid, out var comp)
+            && comp.Plasma >= amount;
+    }
 }

@@ -11,6 +11,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
+using Content.Shared.StepTrigger.Systems;
 
 namespace Content.Server._White.Xenomorphs.Egg;
 
@@ -32,6 +33,7 @@ public sealed class XenomorphEggSystem : EntitySystem
         SubscribeLocalEvent<XenomorphEggComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<XenomorphEggComponent, ActivateInWorldEvent>(OnActivateInWorld);
         SubscribeLocalEvent<XenomorphEggComponent, AttackedEvent>(OnAttacked);
+        SubscribeLocalEvent<XenomorphEggComponent, StepTriggeredOffEvent>(OnStepTriggered);
     }
 
     private void OnInit(EntityUid uid, XenomorphEggComponent component, ComponentInit args)
@@ -62,6 +64,20 @@ public sealed class XenomorphEggSystem : EntitySystem
             return;
 
         CleanBurstingEgg(uid, args.User, component);
+    }
+
+    private void OnStepTriggered(EntityUid uid, XenomorphEggComponent component, ref StepTriggeredOffEvent args)
+    {
+        if (component.Status == XenomorphEggStatus.Grown)
+        {
+            SetBursting(uid, component);
+        }
+        else if (component.Status == XenomorphEggStatus.Growning)
+        {
+            component.Status = XenomorphEggStatus.Grown;
+            _appearance.SetData(uid, XenomorphEggKey.Key, XenomorphEggVisualsStatus.Grown);
+            SetBursting(uid, component);
+        }
     }
 
     public override void Update(float frameTime)
@@ -123,6 +139,7 @@ public sealed class XenomorphEggSystem : EntitySystem
                 return;
         }
     }
+
 
     private void SetBursting(EntityUid uid, XenomorphEggComponent component)
     {

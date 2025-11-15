@@ -64,7 +64,6 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
             return;
 
         component.Xenomorphs.Add(args.EntityUid);
-        component.AnnouncementTime ??= _timing.CurTime + _random.Next(component.MinTimeToAnnouncement, component.MaxTimeToAnnouncement);
     }
 
     private void OnXenomorphInit(EntityUid uid, XenomorphComponent component, ComponentInit args)
@@ -223,8 +222,17 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
     {
         base.ActiveTick(uid, component, gameRule, frameTime);
 
-        if (!component.AnnouncementTime.HasValue || component.NextCheck > _timing.CurTime)
+        if (component.NextCheck > _timing.CurTime)
             return;
+
+        if (!component.AnnouncementTime.HasValue)
+        {
+            var allQueens = GetXenomorphs(component, "Queen");
+            if (allQueens.Count > 0)
+            {
+                component.AnnouncementTime ??= _timing.CurTime + _random.Next(component.MinTimeToAnnouncement, component.MaxTimeToAnnouncement);
+            }
+        }
 
         component.NextCheck = _timing.CurTime + component.CheckDelay;
 
@@ -309,7 +317,7 @@ public sealed class XenomorphsRuleSystem : GameRuleSystem<XenomorphsRuleComponen
     {
         var xenomorphs = new List<EntityUid>();
 
-        foreach(var xenomorph in xenomorphsRule.Xenomorphs.ToList())
+        foreach (var xenomorph in xenomorphsRule.Xenomorphs.ToList())
         {
             if (!Exists(xenomorph) || !TryComp<XenomorphComponent>(xenomorph, out var xenomorphComponent))
             {
