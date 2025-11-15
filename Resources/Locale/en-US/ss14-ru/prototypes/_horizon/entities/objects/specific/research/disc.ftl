@@ -24,3 +24,5 @@ ent-TechnologyDiscArsenalAmmunition = technology disc [Arsenal Ammunition]
     .desc = A disk containing data about Arsenal Ammunition.
 ent-TechnologyDiscHydroponicsDNAManip = technology disc [DNA Manipulator]
     .desc = A disk containing data about Botannical DNA Manipulator.
+ent-TechnologyDiscCombatCybernetics = technology disc [Combat Cybernetics]
+    .desc = A disk containing data about Combat Cybernetics systems.

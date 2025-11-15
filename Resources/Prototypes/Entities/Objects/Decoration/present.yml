@@ -482,6 +482,8 @@
         orGroup: TechDiskPool
       - id: TechnologyDiscUniversalTranslator
         orGroup: TechDiskPool
+      - id: TechnologyDiscCombatCybernetics
+        orGroup: TechDiskPool
     sound:
       path: /Audio/Effects/unwrap.ogg
 
