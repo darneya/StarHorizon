@@ -209,7 +209,7 @@
 - type: entity
   id: WeaponTurretCyrexa
   name: CYREXA 220mm cannon
-  parent: BallisticArtilleryUnanchorable
+  parent: BallisticArtillery
   description: A main battery with dual barrels, delivering rapid, punishing salvos at extreme range. Fires 220mm auto shells with slightly reduced brute strength. Can be remotely activated or linked up to a GCS.
   components:
   - type: StaticPrice
@@ -286,7 +286,7 @@
 - type: entity
   id: WeaponTurretHades
   name: HADES 305mm cannon
-  parent: BallisticArtilleryUnanchorable
+  parent: BallisticArtillery
   description: One of the largest chemical-based kinetic weapons in the sector. Its power is only rivaled by mass drivers such as the M381.
   components:
   - type: StaticPrice
@@ -434,7 +434,7 @@
 - type: entity
   id: WeaponTurretBofors
   name: Bofors 255mm cannon
-  parent: BallisticArtilleryUnanchorable
+  parent: BallisticArtillery
   description: A single-barrel, heavy artillery cannon designed for cruisers, delivering massive impact with each long-range shot. Can be remotely activated or linked up to a GCS.
   components:
   - type: StaticPrice
@@ -507,7 +507,7 @@
 - type: entity
   id: WeaponTurretKargil
   name: Kargil 203mm cannon
-  parent: BallisticArtilleryUnanchorable
+  parent: BallisticArtillery
   description: A cruiser artillery cannon that launches devastating 203mm shells for long-range ship-to-ship combat. Can be remotely activated or linked up to a GCS.
   components:
   - type: StaticPrice

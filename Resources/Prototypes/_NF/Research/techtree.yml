@@ -1848,6 +1848,8 @@
   technologyPrerequisites:
   - NFImprovedRifleAmmo
   position: 4, 64 # Horizon
+  researchTargets:
+  - TechnologyDiscArsenalAmmunition
 
 - type: technology
   id: NFBasicShuttleArmament

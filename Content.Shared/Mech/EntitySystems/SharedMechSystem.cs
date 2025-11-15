@@ -471,7 +471,7 @@ public abstract partial class SharedMechSystem : EntitySystem   // Horizon Mech
         // Horizon Mech end
 
         // Horizon RemotePilot start
-        var ejectEv = new OnPilotEjectEvent();
+        var ejectEv = new OnPilotEjectEvent(GetNetEntity(uid));
         RaiseLocalEvent(pilot, ejectEv);
         // Horizon RemotePilot end
 
