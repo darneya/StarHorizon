@@ -112,3 +112,9 @@
   id: TechnologyDiscUniversalTranslator
   name: technology disc [Universal Translator]
   description: A disk containing data about Universal Translator.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscCombatCybernetics
+  name: technology disc [Combat Cybernetics]
+  description: A disk containing data about Combat Cybernetics systems.
