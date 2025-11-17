@@ -87,8 +87,8 @@
       - shader: StencilClear
         sprite: Mobs/Species/Human/parts.rsi
         state: l_leg
-      - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
-      - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
+      - map: [ "underwearb" ]
+      - map: [ "underweart" ]
       - map: [ "jumpsuit" ]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]

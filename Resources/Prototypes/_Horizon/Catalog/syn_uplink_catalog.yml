@@ -604,3 +604,136 @@
     Telecrystal: 50
   categories:
     - UplinkSyndicateGunneryConsoles
+
+- type: listing
+  id: UplinkTechDiskDelivery
+  name: uplink-tech-disk-delivery-name
+  description: uplink-tech-disk-delivery-desc
+  icon: { sprite: Objects/Specific/Cargo/mail.rsi, state: icon }
+  productEntity: PresentTechDisk
+  cost:
+    Telecrystal: 50
+  categories:
+    - UplinkPointless
+
+- type: listing
+  id: UplinkCombatBorg
+  name: uplink-combat-borg-name
+  description: uplink-combat-borg-desc
+  productEntity: BorgChassisSelectableCombat
+  cost:
+    Telecrystal: 65
+  categories:
+  - UplinkSyndicateBorgsCombat
+
+# region Combat Borg Modules
+
+- type: listing
+  id: UplinkCombatBorgPKA
+  name: uplink-syndicate-borg-pka-name
+  description: uplink-syndicate-borg-pka-desc
+  productEntity: BorgModuleCombatPKA
+  cost:
+    Telecrystal: 10
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgEchis
+  name: uplink-syndicate-borg-echis-name
+  description: uplink-syndicate-borg-echis-desc
+  productEntity: BorgModuleCombatEchis
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgLaserAdvanced
+  name: uplink-syndicate-borg-laser-advanced-name
+  description: uplink-syndicate-borg-laser-advanced-desc
+  productEntity: BorgModuleCombatLaserAdvanced
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgPKAHeavy
+  name: uplink-syndicate-borg-pka-heavy-name
+  description: uplink-syndicate-borg-pka-heavy-desc
+  productEntity: BorgModuleCombatPKAHeavy
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgL6C
+  name: uplink-syndicate-borg-l6c-name
+  description: uplink-syndicate-borg-l6c-desc
+  productEntity: BorgModuleCombatL6C
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgPKARailgun
+  name: uplink-syndicate-borg-pka-railgun-name
+  description: uplink-syndicate-borg-pka-railgun-desc
+  productEntity: BorgModuleCombatPKARailgun
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgPKARepeater
+  name: uplink-syndicate-borg-pka-repeater-name
+  description: uplink-syndicate-borg-pka-repeater-desc
+  productEntity: BorgModuleCombatPKARepeater
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgPKAShotgun
+  name: uplink-syndicate-borg-pka-shotgun-name
+  description: uplink-syndicate-borg-pka-shotgun-desc
+  productEntity: BorgModuleCombatPKAShotgun
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgLaserHeavy
+  name: uplink-syndicate-borg-laser-heavy-name
+  description: uplink-syndicate-borg-laser-heavy-desc
+  productEntity: BorgModuleCombatLaserHeavy
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkRemoteControlConsole
+  name: uplink-syndicate-remote-control-console-name
+  description: uplink-syndicate-remote-control-console-desc
+  productEntity: RemoteControllerComputer
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkRemoteControlDevice
+  name: uplink-syndicate-remote-control-device-name
+  description: uplink-syndicate-remote-control-device-desc
+  productEntity: RemoteControlDevice
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndicateBorgsCombat

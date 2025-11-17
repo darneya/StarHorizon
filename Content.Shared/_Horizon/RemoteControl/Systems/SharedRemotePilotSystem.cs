@@ -23,7 +23,6 @@ public abstract class SharedRemotePilotSystem : EntitySystem
     private void OnPilotEject(Entity<RemotePilotComponent> pilot, ref OnPilotEjectEvent args)
     {
         _remoteControlSystem.ReturnToBody(pilot.Owner);
-        RemComp<UnderControlComponent>(GetEntity(args.Mech));
     }
 
     public bool TryCreateRemotePilot(EntityUid mech, EntityUid controller, [NotNullWhen(true)] out EntityUid? pilotUid)
@@ -33,12 +32,6 @@ public abstract class SharedRemotePilotSystem : EntitySystem
         if (!TryComp<CanBeTakenUnderControlComponent>(mech, out var hostComp))
             return false;
 
-        if (HasComp<UnderControlComponent>(mech))
-        {
-            _popupSystem.PopupClient(Loc.GetString("remote-control-already-under-control"), controller);
-            return false;
-        }
-
         pilotUid = PredictedSpawnAtPosition(hostComp.RemotePilot, Transform(mech).Coordinates);
 
         //Don't create a pilot in the mech immediately, because we need to call the MechEntryEvent to initialize the UI update for controlling the mech.
@@ -47,8 +40,6 @@ public abstract class SharedRemotePilotSystem : EntitySystem
             Broadcast = false,
             Hidden = true
         });
-
-        EnsureComp<UnderControlComponent>(mech, out _);
 
         return true;
     }

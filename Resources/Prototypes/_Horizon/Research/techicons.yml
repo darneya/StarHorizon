@@ -60,3 +60,30 @@
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Attachments/under.rsi
     state: tech_upper
+
+- type: entity
+  parent: BaseItem
+  id: TechCombatLimbsBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Tools/cyberling.rsi
+    state: taser
+
+- type: entity
+  parent: BaseItem
+  id: TechCombatLimbsAdvanced
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Tools/cyberling.rsi
+    state: laser_cyborg
+
+- type: entity
+  parent: BaseItem
+  id: TechCombatLimbsClose
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Tools/cyberling.rsi
+    state: fingerblades

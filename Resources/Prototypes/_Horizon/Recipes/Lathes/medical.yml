@@ -223,28 +223,6 @@
     Glass: 100
 
 - type: latheRecipe
-  id: LeftArmCyberLazer
-  result: LeftArmCyberLazer
-  category: Cyberlimbs
-  completetime: 10
-  materials:
-    Plastic: 450
-    Steel: 550
-    Silver: 100
-    Glass: 100
-
-- type: latheRecipe
-  id: RightArmCyberLazer
-  result: RightArmCyberLazer
-  category: Cyberlimbs
-  completetime: 10
-  materials:
-    Plastic: 450
-    Steel: 550
-    Silver: 100
-    Glass: 100
-
-- type: latheRecipe
   id: LeftArmCyberEngi
   result: LeftArmCyberEngi
   category: Cyberlimbs
@@ -280,6 +258,272 @@
 - type: latheRecipe
   id: RightArmCyberAtmos
   result: RightArmCyberAtmos
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+# Combat Weapon Arms
+
+- type: latheRecipe
+  id: LeftArmProtoCyberWeaponShotgunSawn
+  result: LeftArmProtoCyberWeaponShotgunSawn
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmProtoCyberWeaponShotgunSawn
+  result: RightArmProtoCyberWeaponShotgunSawn
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmProtoCyberWeaponEnergyPistolLaser
+  result: LeftArmProtoCyberWeaponEnergyPistolLaser
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmProtoCyberWeaponEnergyPistolLaser
+  result: RightArmProtoCyberWeaponEnergyPistolLaser
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmProtoCyberWeaponPkaSawn
+  result: LeftArmProtoCyberWeaponPkaSawn
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmProtoCyberWeaponPkaSawn
+  result: RightArmProtoCyberWeaponPkaSawn
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmProtoCyberWeaponEnergyPistolDisabler
+  result: LeftArmProtoCyberWeaponEnergyPistolDisabler
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmProtoCyberWeaponEnergyPistolDisabler
+  result: RightArmProtoCyberWeaponEnergyPistolDisabler
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberWeaponProtoKineticAccelerator
+  result: LeftArmCyberWeaponProtoKineticAccelerator
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberWeaponProtoKineticAccelerator
+  result: RightArmCyberWeaponProtoKineticAccelerator
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberWeaponEnergySubMachineGunDisabler
+  result: LeftArmCyberWeaponEnergySubMachineGunDisabler
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberWeaponEnergySubMachineGunDisabler
+  result: RightArmCyberWeaponEnergySubMachineGunDisabler
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberWeaponEnergyPistolLaserAdvanced
+  result: LeftArmCyberWeaponEnergyPistolLaserAdvanced
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberWeaponEnergyPistolLaserAdvanced
+  result: RightArmCyberWeaponEnergyPistolLaserAdvanced
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberWeaponShotgunAdvanced
+  result: LeftArmCyberWeaponShotgunAdvanced
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberWeaponShotgunAdvanced
+  result: RightArmCyberWeaponShotgunAdvanced
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberClawRending
+  result: LeftArmCyberClawRending
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberClawRending
+  result: RightArmCyberClawRending
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberClawPiersing
+  result: LeftArmCyberClawPiersing
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberClawPiersing
+  result: RightArmCyberClawPiersing
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberClawPoison
+  result: LeftArmCyberClawPoison
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberClawPoison
+  result: RightArmCyberClawPoison
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: LeftArmCyberLash
+  result: LeftArmCyberLash
+  category: Cyberlimbs
+  completetime: 10
+  materials:
+    Plastic: 450
+    Steel: 550
+    Silver: 100
+    Glass: 100
+
+- type: latheRecipe
+  id: RightArmCyberLash
+  result: RightArmCyberLash
   category: Cyberlimbs
   completetime: 10
   materials:

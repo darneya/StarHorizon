@@ -40,6 +40,7 @@
     - UplinkSecurityGunneryAmmo
     - UplinkSecurityGunneryConsoles
     - UplinkSecurityMechas
+    - UplinkSecurityBorges
     currencyWhitelist:
     - FrontierUplinkCoin
     balance:
@@ -63,6 +64,7 @@
     - UplinkPirateGunneryConsoles
     - UplinkPirateGunneryAmmo
     - UplinkPirateMechas
+    - UplinkPirateBorges
     currencyWhitelist:
     - Doubloon
     balance:
