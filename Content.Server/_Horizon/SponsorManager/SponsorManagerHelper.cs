@@ -14,6 +14,7 @@ public sealed class SponsorManagerHelper : EntitySystem
     {
         base.Initialize();
         _sponsorManager.FileWatcher();
+
         SubscribeNetworkEvent<SponsorCheckRequestEvent>(OnSponsorCheckRequest);
         SubscribeNetworkEvent<SponsorBuyItemRequestEvent>(OnSponsorBuyItemRequest);
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarting);
