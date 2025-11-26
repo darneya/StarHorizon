@@ -419,15 +419,16 @@ public sealed class EntityEffectSystem : EntitySystem
         if (!CanMetabolizePlant(args.Args.TargetEntity, out var plantHolderComp))
             return;
 
-        var deviation = 0;
         var seed = plantHolderComp.Seed;
         if (seed == null)
             return;
-        if (plantHolderComp.Age > seed.Maturation)
-            deviation = (int) Math.Max(seed.Maturation - 1, plantHolderComp.Age - _random.Next(7, 10));
-        else
-            deviation = (int) (seed.Maturation / seed.GrowthStages);
+
+        // Cryoxadone gradually reduces age, with some randomness
+        // Each application reduces age by a random amount (7-10)
+        // When age goes below 0, PlantHolderSystem.Update() will detect it and spawn a seed packet
+        var deviation = _random.Next(7, 10);
         plantHolderComp.Age -= deviation;
+
         plantHolderComp.LastProduce = plantHolderComp.Age;
         plantHolderComp.SkipAging++;
         plantHolderComp.ForceUpdate = true;

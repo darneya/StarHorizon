@@ -8,6 +8,8 @@
   - GasMiningDrillMachineCircuitboard
   - GaslockFrameMachineCircuitboard
   - MaterialSiloMachineCircuitboard
+  - PortableGeneratorStarPacmanMachineCircuitboard # Horizon
+  - OreMiningDrillMachineCircuitboard # Horizon
 
 - type: latheRecipePack
   id: NFEngineering

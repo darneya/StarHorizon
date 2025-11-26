@@ -30,6 +30,7 @@
   - SignallerAdvanced
   # - DeviceQuantumSpinInverter # Frontier
   - DeviceDesynchronizer
+  - RemoteControlDevice # Horizon
 
 - type: latheRecipePack
   id: ScienceClothing
@@ -131,3 +132,4 @@
   - ThrusterMachineCircuitboard
   - GyroscopeMachineCircuitboard
   - MiniGravityGeneratorCircuitboard
+  - AdvancedRadarConsoleCircuitboard # Horizon

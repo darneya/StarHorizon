@@ -3,6 +3,7 @@
   name: job-name-contractor
   description: job-description-contractor
   playTimeTracker: JobPassenger
+  salary: 5000 # Horizon
   icon: "JobIconContractor"
   supervisors: job-supervisors-hire
   displayWeight: 40 # Top

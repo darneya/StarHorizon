@@ -66,6 +66,18 @@
         HorizontalExpand="True"
         AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
         />
+    <!--Horizon Languages start-->
+    <ui:MenuButton
+        Name="LanguagesButton"
+        Access="Internal"
+        Icon="{xe:Tex '/Textures/Interface/emotes.svg.192dpi.png'}"
+        ToolTip="{Loc 'game-hud-open-languages-menu-button-tooltip'}"
+        BoundKey = "{x:Static is:ContentKeyFunctions.OpenLanguagesMenu}"
+        MinSize="42 64"
+        HorizontalExpand="True"
+        AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
+        />
+    <!--Horizon Languages end-->
     <ui:MenuButton
         Name="CraftingButton"
         Access="Internal"

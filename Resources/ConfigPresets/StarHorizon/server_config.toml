@@ -58,6 +58,7 @@ message_wait_time = 1
 new_player_threshold = 180
 afk_time = 180.0
 admins_count_in_playercount = true # отображает админов в счетчике
+chat_discord_channel_id = 1408835997449588746
 
 [interaction]
 rate_limit_announce_admins_delay = -1 # убирает спам о превышении лимитов игроком
@@ -74,8 +75,8 @@ discord = "https://discord.starhorizon.ru"
 ##### In Game ##################################################################
 
 [atmos]
-space_wind = false
-monstermos_rip_tiles = false
+space_wind = true
+monstermos_rip_tiles = true
 mmos_spacing_speed = 0.95
 mmos_max_wind = 1000.0
 
@@ -89,6 +90,14 @@ restart_not_allowed_when_admin_online = false
 
 [shuttle]
 auto_call_time = 1440
+emergency_authorize_time = 30
+impact.enabled = true
+impact.tile_break_energy = 3000.0
+impact.damage_multiplier = 0.00010
+impact.spark_energy = 2000000.0
+impact.slowdown = 8.0
+impact.min_throw_velocity = 1.0
+impact.inertia_scaling = 0.5
 
 [rules]
 time = 90.0
@@ -102,6 +111,9 @@ max_announcement_length = 2048
 [ic]
 flavor_text = true
 flavor_text_length = 1024
+
+[ooc]
+enabled_admin = false
 
 ################################################################################
 ##### Metrics ##################################################################
@@ -125,7 +137,8 @@ ahelp_webhook = "%webhook_ahelp%"
 ban_webhook = "%webhook_ban%"
 round_update_webhook = "%webhook_round_update%"
 leaderboard_webhook = "%webhook_round_update%"
-#round_end_role = "%round_end_role%"
+guild_id = 1348258341658562560
+token = "%bot_token%"
 
 ################################################################################
 ##### Relpay ###################################################################

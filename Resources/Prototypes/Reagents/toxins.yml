@@ -37,10 +37,18 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Katunian
+          shouldHave: false
         damage:
           types:
             Poison: 4
       - !type:PopupMessage
+        conditions:
+        - !type:OrganType
+          type: Katunian
+          shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-burning-insides" ]
@@ -506,6 +514,9 @@
           - !type:OrganType
             type: Demon
             shouldHave: false
+          - !type:OrganType
+            type: Katunian
+            shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
@@ -522,6 +533,9 @@
           - !type:OrganType
             type: Vox
             shouldHave: false
+          - !type:OrganType
+            type: Katunian
+            shouldHave: false
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -532,6 +546,9 @@
           shouldHave: false
         - !type:OrganType
           type: Demon
+          shouldHave: false
+        - !type:OrganType
+          type: Katunian
           shouldHave: false
         damage:
           types:
@@ -544,6 +561,9 @@
         - !type:OrganType
           type: Demon
           shouldHave: true
+        - !type:OrganType
+           type: Katunian
+           shouldHave: true
         reagent: Protein
         amount: 0.5
       - !type:AdjustReagent

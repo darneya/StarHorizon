@@ -488,7 +488,8 @@
     offset: 0.0
     rarePrototypes:
     # - VendingMachineChemicalsSyndicate # A bit less Syndicate loot
-    - VendingMachineArcadia
+    - VendingMachineArcadia 
+    - UASVending # Horizon
     # - VendingMachineSyndieDrobe # A bit less Syndicate loot
     - VendingMachineSyndieContraband
     rareChance: 0.03 # actually rare vs. entry frequencies
@@ -534,6 +535,7 @@
     rarePrototypes:
     - VendingMachineMagivend
     - VendingMachineArcadia
+    - UASVending # Horizon
     - VendingMachineBountyVendPunk
     # - VendingMachineSyndieDrobe # A bit less Syndicate loot
     - VendingMachineSyndieContraband
@@ -571,6 +573,7 @@
     - VendingMachineSyndieContraband
     - VendingMachineSec
     - VendingMachineArcadia
+    - UASVending # Horizon
     - SpawnDungeonMachineFrame
     rareChance: 0.03
 

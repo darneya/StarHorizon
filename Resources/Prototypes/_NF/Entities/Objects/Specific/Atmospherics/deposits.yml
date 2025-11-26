@@ -16,7 +16,7 @@
   - type: Fixtures
   - type: GasDeposit
   - type: RandomGasDeposit
-    scale: 5.0 # Horizon
+    scale: 4.0 # Horizon
   - type: Sprite
     drawdepth: FloorTiles
     sprite: _NF/Objects/Specific/Atmospherics/deposit.rsi
@@ -28,7 +28,7 @@
   abstract: true
   components:
   - type: RandomGasDeposit
-    scale: 1.50
+    scale: 1.0 # Horizon
   - type: Sprite
     scale: 0.75, 0.75
 
@@ -37,7 +37,7 @@
   abstract: true
   components:
   - type: RandomGasDeposit
-    scale: 3.0
+    scale: 2.0 # Horizon
   - type: Sprite
     scale: 0.85, 0.85
 
@@ -46,7 +46,7 @@
   abstract: true
   components:
   - type: RandomGasDeposit
-    scale: 7.0
+    scale: 5.0 # Horizon
   - type: Sprite
     scale: 1.1, 1.1
 
@@ -55,7 +55,7 @@
   abstract: true
   components:
   - type: RandomGasDeposit
-    scale: 13.50
+    scale: 10.0 # Horizon
   - type: Sprite
     scale: 1.2, 1.2
 # endregion Base Deposits
@@ -158,6 +158,71 @@
     depositPrototype: MuddlePlasma
   - type: Sprite
     color: "#F0DDF0"
+
+# Horizon start
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositFrezon
+  suffix: Frezon
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyFrezon
+  - type: Sprite
+    color: "#F0DDF0"
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositBZ
+  suffix: BZ
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyBZ
+  - type: Sprite
+    color: "#F0DDF0"
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositPluoxium
+  suffix: Pluoxium
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyPluoxium
+  - type: Sprite
+    color: "#F0DDF0"
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositHydrogen
+  suffix: Hydrogen
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyHydrogen
+  - type: Sprite
+    color: "#F0DDF0"
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositProtoNitrate
+  suffix: ProtoNitrate
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyProtoNitrate
+  - type: Sprite
+    color: "#F0DDF0"
+
+- type: entity
+  parent: BaseGasDeposit
+  id: GasDepositHelium
+  suffix: Helium
+  components:
+  - type: RandomGasDeposit
+    depositPrototype: MostlyHelium
+  - type: Sprite
+    color: "#F0DDF0"
+
+# Horizon end
+
 # endregion Standard Deposits
 
 # region Very Small Deposits
