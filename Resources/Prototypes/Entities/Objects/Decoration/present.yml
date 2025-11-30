@@ -468,8 +468,6 @@
     items:
       - id: TechnologyDiscAdvancedPKAModules
         orGroup: TechDiskPool
-      - id: TechnologyDiscGygaxTechnology
-        orGroup: TechDiskPool
       - id: TechnologyDiscDurandTechnology
         orGroup: TechDiskPool
       - id: TechnologyDiscPhazonTechnology
@@ -483,6 +481,8 @@
       - id: TechnologyDiscUniversalTranslator
         orGroup: TechDiskPool
       - id: TechnologyDiscCombatCybernetics
+        orGroup: TechDiskPool
+      - id: TechnologyDiskCombatCyborgs
         orGroup: TechDiskPool
     sound:
       path: /Audio/Effects/unwrap.ogg
