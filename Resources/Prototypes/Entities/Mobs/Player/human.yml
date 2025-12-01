@@ -115,3 +115,26 @@
   - type: NpcFactionMember
     factions:
     - Wizard
+
+# Cytology
+- type: entity
+  name: Urist Grown Human
+  parent: MobHuman
+  id: MobHumanGrown
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - FirstNames
+    - LastNames
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-grown-human-name
+    description: Вы человек, выращенный в цитологической ванне. Вы молоды и не знаете окружающий мир. Будьте осторожны и изучайте мир вокруг вас.
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable

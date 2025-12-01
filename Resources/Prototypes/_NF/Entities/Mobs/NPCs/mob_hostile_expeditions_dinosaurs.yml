@@ -121,6 +121,11 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepAsteroid
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleDinosaurCompy
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
 
 #region dilophosaurus
 - type: entity
@@ -156,6 +161,11 @@
         Slash: 8
         Caustic: 2
         Structural: 25
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleDinosaurDilo
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
 
 #region velociraptor
 - type: entity
@@ -198,6 +208,11 @@
       types:
         Slash: 18
         Structural: 30
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleDinosaurRaptor
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
 
 #region parasaurolophus
 - type: entity
@@ -238,6 +253,11 @@
       types:
         Blunt: 6
         Structural: 20
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleDinosaurPara
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
 
 #region kentrosaurus
 - type: entity
@@ -280,6 +300,11 @@
       types:
         Blunt: 10
         Structural: 20
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleDinosaurKentro
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
 
 #region triceratops
 - type: entity
@@ -322,6 +347,11 @@
       types:
         Piercing: 12
         Structural: 20
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleDinosaurTrike
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
 
 #region ankylosaurus
 - type: entity
@@ -364,6 +394,11 @@
       types:
         Blunt: 12
         Structural: 20
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleDinosaurAnki
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
 
 #region spinosaurus
 - type: entity
@@ -404,6 +439,11 @@
       types:
         Blunt: 12
         Structural: 20
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleDinosaurSpino
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
 
 #region stegosaurus
 - type: entity
@@ -447,6 +487,11 @@
         Blunt: 12
         Piercing: 8
         Structural: 20
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleDinosaurStego
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
 
 #region tyrannosaurus (boss)
 - type: entity

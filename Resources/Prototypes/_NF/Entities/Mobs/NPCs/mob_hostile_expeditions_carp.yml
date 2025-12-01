@@ -50,6 +50,9 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
       state: mouth
       shader: unshaded
+  # Horizon
+  - type: SampleSource
+  - type: CanBeTakenUnderControl
 
 - type: entity
   id: NFMobCarpHolo
@@ -75,6 +78,9 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
       state: mouth
       shader: unshaded
+  # Horizon
+  - type: SampleSource
+  - type: CanBeTakenUnderControl
 
 - type: entity
   id: NFMobCarpRainbow
@@ -92,6 +98,9 @@
     speedModifierThresholds:
       28: 0.7
       38: 0.5
+  # Horizon
+  - type: SampleSource
+  - type: CanBeTakenUnderControl
 
 - type: entity
   id: NFMobShark
@@ -178,6 +187,9 @@
         Piercing: 3
         Slash: 3
         Structural: 20
+  # Horizon
+  - type: SampleSource
+  - type: CanBeTakenUnderControl
 
 #region Wyverns
 - type: entity
@@ -257,6 +269,9 @@
     availableModes:
     - SemiAuto
     soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  # Horizon
+  - type: SampleSource
+  - type: CanBeTakenUnderControl
 
 - type: entity
   parent: NFMobRainbowWyvernIce
@@ -293,6 +308,9 @@
     proto: BulletFireBolt
     capacity: 1
     count: 1
+  # Horizon
+  - type: SampleSource
+  - type: CanBeTakenUnderControl
 
 - type: entity
   parent: NFMobRainbowWyvernIce
@@ -329,6 +347,9 @@
     proto: NFBulletAcid
     capacity: 1
     count: 1
+  # Horizon
+  - type: SampleSource
+  - type: CanBeTakenUnderControl
 
 #region boss
 - type: entity

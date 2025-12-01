@@ -31,3 +31,26 @@
       damageRecovery:
         types:
           Asphyxiation: -1.0
+
+# Cytology
+- type: entity
+  name: Urist Grown Vulpkanin
+  parent: MobVulpkanin
+  id: MobVulpkaninGrown
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - FirstNames
+    - LastNames
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-grown-vulpkanin-name
+    description: Вы вулпканин, выращенный в цитологической ванне. Острые чувства и лисья хитрость - ваши подарки. Исследуйте этот мир!
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable

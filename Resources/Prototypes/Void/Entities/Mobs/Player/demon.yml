@@ -31,4 +31,27 @@
       damageRecovery:
         types:
           Asphyxiation: -1.0
+
+# Cytology
+- type: entity
+  name: Urist Grown Demon
+  parent: MobDemon
+  id: MobDemonGrown
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - FirstNames
+    - LastNames
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-grown-demon-name
+    description: Вы демон, выращенный в цитологической ванне. Адское пламя и тёмная магия текут в ваших жилах. Исследуйте этот мир с демонической хитростью!
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
 #Weh
