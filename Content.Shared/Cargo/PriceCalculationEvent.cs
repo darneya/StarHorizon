@@ -8,6 +8,8 @@ namespace Content.Shared.Cargo;
 [ByRefEvent]
 public record struct PriceCalculationEvent()
 {
+    public EntityUid Entity;    // Horizon
+
     /// <summary>
     /// The total price of the entity.
     /// </summary>

@@ -249,9 +249,13 @@ public sealed class PricingSystem : EntitySystem
         if (predicate is not null && !predicate(uid)) // Frontier
             return 0.0;                               // Frontier
 
-        var ev = new PriceCalculationEvent();
+        var ev = new PriceCalculationEvent()
+        {
+            Entity = uid // Horizon
+        };
+
         ev.Price = 0; // Structs doesnt initialize doubles when called by constructor.
-        RaiseLocalEvent(uid, ref ev);
+        RaiseLocalEvent(uid, ref ev, true); // Horizon - added broadcast
 
         if (ev.Handled)
             return ev.Price;
