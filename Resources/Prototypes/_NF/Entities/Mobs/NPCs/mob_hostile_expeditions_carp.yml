@@ -52,6 +52,8 @@
       shader: unshaded
   # Horizon
   - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleCarpMagic
   - type: CanBeTakenUnderControl
 
 - type: entity
@@ -80,6 +82,8 @@
       shader: unshaded
   # Horizon
   - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleCarpHolo
   - type: CanBeTakenUnderControl
 
 - type: entity
@@ -100,6 +104,8 @@
       38: 0.5
   # Horizon
   - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleCarpRainbow
   - type: CanBeTakenUnderControl
 
 - type: entity
@@ -189,6 +195,8 @@
         Structural: 20
   # Horizon
   - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleRainbowSnake
   - type: CanBeTakenUnderControl
 
 #region Wyverns
@@ -271,6 +279,8 @@
     soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
   # Horizon
   - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleWyvernIce
   - type: CanBeTakenUnderControl
 
 - type: entity
@@ -310,6 +320,8 @@
     count: 1
   # Horizon
   - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleWyvernFire
   - type: CanBeTakenUnderControl
 
 - type: entity
@@ -349,6 +361,8 @@
     count: 1
   # Horizon
   - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleWyvernCaustic
   - type: CanBeTakenUnderControl
 
 #region boss

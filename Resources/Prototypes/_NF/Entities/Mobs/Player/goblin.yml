@@ -14,6 +14,8 @@
   id: MobGoblinGrown
   categories: [ HideSpawnMenu ]
   components:
+  - type: StaticPrice
+    price: 2000
   - type: RandomMetadata
     nameSegments:
     - FirstNames
@@ -29,3 +31,7 @@
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
+  # Horizon
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleGoblin

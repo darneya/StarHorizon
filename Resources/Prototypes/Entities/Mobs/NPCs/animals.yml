@@ -2987,6 +2987,10 @@
   - type: Tag
     tags:
     - VimPilot
+  # Horizon
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleCorgi
 
 - type: entity
   name: corrupted corgi
