@@ -1,6 +1,7 @@
 using Content.Shared.Destructible.Thresholds;
 using Content.Shared.Stacks;
 using Content.Shared.Storage.Components;
+using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -22,11 +23,14 @@ public sealed partial class ExpeditionGoalPrototype : IPrototype
 [ImplicitDataDefinitionForInheritors]
 public abstract partial class ExpeditionGoal
 {
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public string Description = default!;
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public string IconEntity = default!;
+
+    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
+    public int Reward = default!;
 
     [DataField(serverOnly: true), ViewVariables(VVAccess.ReadWrite)]
     public object? ClaimEvent;
@@ -36,15 +40,13 @@ public abstract partial class ExpeditionGoal
     public abstract bool TryComplete(EntityUid sellEntity, IEntityManager entMan);
 }
 
+[Serializable, NetSerializable]
 public sealed partial class EntityExpeditionGoal : ExpeditionGoal
 {
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public string RequiredTag = default!;
 
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool RequireId = false;
-
-    [DataField]
+    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public MinMax RandomAmount;
 
     [ViewVariables(VVAccess.ReadWrite)]
@@ -57,9 +59,10 @@ public sealed partial class EntityExpeditionGoal : ExpeditionGoal
         return new EntityExpeditionGoal()
         {
             Description = Loc.GetString(Description, ("amount", amount)),
+            IconEntity = IconEntity,
+            Reward = Reward,
             RequiredTag = RequiredTag,
-            RequiredAmount = amount,
-            RequireId = RequireId
+            RequiredAmount = amount
         };
     }
 
@@ -69,7 +72,11 @@ public sealed partial class EntityExpeditionGoal : ExpeditionGoal
 
         IncreaseFromStack(sellEntity, ref count, entMan);
 
-        if (entMan.TryGetComponent<SharedEntityStorageComponent>(sellEntity, out var storage))
+        var entStorage = entMan.System<SharedEntityStorageSystem>();
+        SharedEntityStorageComponent? storage = null;
+        entStorage.ResolveStorage(sellEntity, ref storage);
+
+        if (storage != null)
         {
             foreach (var item in storage.Contents.ContainedEntities)
                 IncreaseFromStack(item, ref count, entMan);
