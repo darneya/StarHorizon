@@ -3,3 +3,32 @@
   id: MobKatunian
   name: Катунианец
   parent: BaseMobKatunian
+
+# Cytology
+- type: entity
+  name: Urist Grown Katunian
+  parent: MobKatunian
+  id: MobKatunianGrown
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StaticPrice
+    price: 2000
+  - type: RandomMetadata
+    nameSegments:
+    - FirstNames
+    - LastNames
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-grown-katunian-name
+    description: Вы катунианец, выращенный в цитологической ванне. Чужеродное существо из неизведанных миров. Осторожно исследуйте окружающую реальность!
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+  # Horizon
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleKatunian

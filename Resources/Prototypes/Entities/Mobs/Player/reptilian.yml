@@ -5,4 +5,33 @@
   parent: BaseMobReptilian
   id: MobReptilian
 
+# Cytology
+- type: entity
+  name: Urist Grown Reptilian
+  parent: MobReptilian
+  id: MobReptilianGrown
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StaticPrice
+    price: 2000
+  - type: RandomMetadata
+    nameSegments:
+    - FirstNames
+    - LastNames
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-grown-reptilian-name
+    description: Вы рептилиец, выращенный в цитологической ванне. Хиссссс... Исследуйте этот новый мир!
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+  # Horizon
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleReptilian
+
 #Weh

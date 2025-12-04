@@ -12,6 +12,35 @@
         types:
           Asphyxiation: -1.0
 
+# Cytology
+- type: entity
+  name: Urist Grown Diona
+  parent: MobDiona
+  id: MobDionaGrown
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StaticPrice
+    price: 2000
+  - type: RandomMetadata
+    nameSegments:
+    - FirstNames
+    - LastNames
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-grown-diona-name
+    description: Вы диона, растительный организм, выращенный в цитологической ванне. Вы чувствуете связь с природой. Осторожно исследуйте окружающий мир!
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+  # Horizon
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleDiona
+
 # Reformed Diona
 - type: entity
   parent: MobDiona

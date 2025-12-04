@@ -340,8 +340,6 @@
   - RightArmCyberWeaponShotgunAdvanced
   technologyPrerequisites:
   - FunctionalCombatLimbsTechBase
-  researchTargets:
-  - TechnologyDiscCombatCybernetics
   position: 4, 21
 
 - type: technology
@@ -362,8 +360,6 @@
   - RightArmCyberLash
   technologyPrerequisites:
   - FunctionalCombatLimbsTechBase
-  researchTargets:
-  - TechnologyDiscCombatCybernetics
   position: 4, 22
 
 - type: technology

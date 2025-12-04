@@ -19,18 +19,18 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
-        Heat: 0.6
-        Radiation: 0
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.5
+        Radiation: 0.5
         Caustic: 0.9
-        Structural: 0.5
-    maxintegrity: 200
+        Structural: 0.7
+    maxintegrity: 150
     baseState: gygax
     openState: gygax-open
     brokenState: gygax-broken
-    mechToPilotDamageMultiplier: 0.2
+    mechToPilotDamageMultiplier: 0.5
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -1001,14 +1001,14 @@
     - map: [ "enum.MechVisualLayers.Base" ]
       state: gygaxgrey
   - type: Mech
-    maxintegrity: 250
+    maxintegrity: 180
     baseState: gygaxgrey
     openState: gygaxgrey-open
     brokenState: gygaxgrey-broken
-    mechToPilotDamageMultiplier: 0.2
+    mechToPilotDamageMultiplier: 0.5
   - type: MovementSpeedModifier
-    baseWalkSpeed: 5.0
-    baseSprintSpeed: 6.0
+    baseWalkSpeed: 4.5
+    baseSprintSpeed: 5.5
 
 - type: entity
   parent: MechGygaxGrey
