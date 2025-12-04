@@ -1,5 +1,4 @@
 Naik21,(ClothingBackpackDuffelNaik21)
 por1k,(ClothingBackpackDuffelPor1k,ClothingBeltJanitorPor1k)
 localhost@Makot,(ClothingBeltJanitorPor1k,ClothingBackpackDuffelPor1k)
-localhost@ShonSpider,(ClothingBackpackDuffelPor1k,ClothingBeltJanitorPor1k)
 Makot,(ClothingBeltJanitorPor1k,ClothingBackpackDuffelPor1k)

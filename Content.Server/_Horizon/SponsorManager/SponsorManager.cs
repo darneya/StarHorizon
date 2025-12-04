@@ -3,20 +3,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
-using Robust.Shared.ContentPack;
 
 namespace Content.Server._Horizon.SponsorManager
 {
     public sealed class SponsorManager
     {
-        [Dependency] private readonly IConfigurationManager _cfg = null!;
-        [Dependency] private readonly IResourceManager _resManager = null!;
-        private FileSystemWatcher _watcher = null!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
+        private FileSystemWatcher _watcher = default!;
 
-        private string _sponsorsFilePath =  "Sponsors/sponsors.txt";
-        private string _dsSponsorsFilePath = "Sponsors/discord_sponsors.txt";
-        private string _disposableFilePath = "Sponsors/disposable.txt";
-        private string _sponsorItemsFilePath = "Sponsors/sponsor_items.txt";
+        private readonly string _sponsorsFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/sponsors.txt";
+        private readonly string _dsSponsorsFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/discord_sponsors.txt";
+        private readonly string _disposableFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/disposable.txt";
+        private readonly string _sponsorItemsFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/sponsor_items.txt";
 
         private static HashSet<string> _sponsors = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly Dictionary<string, int> _sponsorsAndBalances = new();
@@ -24,27 +22,19 @@ namespace Content.Server._Horizon.SponsorManager
         #region Check files
         public void LoadSponsorsInfoFile()
         {
-            SetupPath();
             EnsureFileExists(_dsSponsorsFilePath);
             EnsureFileExists(_sponsorsFilePath);
             EnsureFileExists(_disposableFilePath);
             EnsureFileExists(_sponsorItemsFilePath);
         }
 
-        private void SetupPath()
+        private void EnsureFileExists(string filePath)
         {
-            _sponsorsFilePath = Path.Combine(_resManager.UserData.RootDir!, _sponsorsFilePath);
-            _dsSponsorsFilePath = Path.Combine(_resManager.UserData.RootDir!, _dsSponsorsFilePath);
-            _disposableFilePath = Path.Combine(_resManager.UserData.RootDir!, _disposableFilePath);
-            _sponsorItemsFilePath = Path.Combine(_resManager.UserData.RootDir!, _sponsorItemsFilePath);
-        }
+            var directoryPath = Path.GetDirectoryName(filePath);
 
-        private static void EnsureFileExists(string filePath)
-        {
-            var dir = Path.GetDirectoryName(filePath);
-            if (!Directory.Exists(dir))
+            if (!Directory.Exists(directoryPath))
             {
-                Directory.CreateDirectory(dir!);
+                Directory.CreateDirectory(directoryPath!);
             }
 
             if (!File.Exists(filePath))
@@ -57,13 +47,9 @@ namespace Content.Server._Horizon.SponsorManager
         #region File Watcher
         public void FileWatcher()
         {
-            var dir = Path.GetDirectoryName(_dsSponsorsFilePath);
-            if (!Directory.Exists(dir))
-                return;
-
-            _watcher = new FileSystemWatcher
+            _watcher = new FileSystemWatcher()
             {
-                Path = dir,
+                Path = Directory.GetCurrentDirectory() + @"/Resources/Prototypes/_Horizon/Sponsors/SponsorInfo",
                 Filter = "discord_sponsors.txt",
                 NotifyFilter = NotifyFilters.LastWrite,
             };
@@ -97,21 +83,21 @@ namespace Content.Server._Horizon.SponsorManager
                     .Select(l => l.Split(','))
                     .FirstOrDefault(parts => parts.Length >= 3 && parts[1].Trim().Equals(discordSponsor, StringComparison.OrdinalIgnoreCase));
 
-                if (line == null || line.Length < 4)
-                    continue;
-
-                var ckey = line[1].Trim();
-                var discordId = line[2].Trim();
-                var slots = CalculateSlots(discordId);
-                var tokens = CalculateTokens(discordId);
-
-                if (currentSponsors.Contains(discordSponsor))
+                if (line != null && line.Length >= 4)
                 {
-                    SaveSponsors(ckey, slots, tokens);
-                }
-                else
-                {
-                    AddSponsor(ckey, slots, tokens);
+                    var ckey = line[1].Trim();
+                    var discordId = line[2].Trim();
+                    var slots = CalculateSlots(discordId);
+                    var tokens = CalculateTokens(discordId);
+
+                    if (currentSponsors.Contains(discordSponsor))
+                    {
+                        SaveSponsors(ckey, slots, tokens);
+                    }
+                    else
+                    {
+                        AddSponsor(ckey, slots, tokens);
+                    }
                 }
             }
 
@@ -131,7 +117,7 @@ namespace Content.Server._Horizon.SponsorManager
 
         private string[] SafeReadAllLines(string filePath, int maxRetries = 3, int delay = 1000)
         {
-            for (var attempt = 0; attempt < maxRetries; attempt++)
+            for (int attempt = 0; attempt < maxRetries; attempt++)
             {
                 try
                 {
@@ -139,8 +125,9 @@ namespace Content.Server._Horizon.SponsorManager
                     using var sr = new StreamReader(fs);
 
                     var lines = new List<string>();
+                    string? line;
 
-                    while (sr.ReadLine() is { } line)
+                    while ((line = sr.ReadLine()) != null)
                     {
                         lines.Add(line);
                     }
@@ -152,7 +139,7 @@ namespace Content.Server._Horizon.SponsorManager
                 }
             }
 
-            return [];
+            return Array.Empty<string>();
         }
 
 
@@ -166,7 +153,7 @@ namespace Content.Server._Horizon.SponsorManager
                 "1349080888927064216" => 20,
                 "1349080921537773568" => 20,
                 "1349080947399725136" => 20,
-                _ => 0,
+                _ => 0
             };
         }
 
@@ -179,7 +166,7 @@ namespace Content.Server._Horizon.SponsorManager
                 "1349080888927064216" => 15,
                 "1349080921537773568" => 20,
                 "1349080947399725136" => 50,
-                _ => 0,
+                _ => 0
             };
         }
         #endregion Discord
@@ -260,14 +247,14 @@ namespace Content.Server._Horizon.SponsorManager
             var line = File.ReadLines(_sponsorsFilePath)
                 .FirstOrDefault(l => l.Contains(userName));
 
-            if (line == null)
-                return maxCharacterSlots;
-
-            var parts = line.Split(';');
-
-            if (int.TryParse(parts[1], out var slot))
+            if (line != null)
             {
-                return maxCharacterSlots + slot;
+                var parts = line.Split(';');
+
+                if (int.TryParse(parts[1], out var slot))
+                {
+                    return maxCharacterSlots + slot;
+                }
             }
 
             return maxCharacterSlots;
@@ -291,14 +278,14 @@ namespace Content.Server._Horizon.SponsorManager
             {
                 var parts = line.Split(';');
 
-                if (parts.Length < 3)
-                    continue;
-
-                var userName = parts[0].Trim();
-
-                if (int.TryParse(parts[2], out var balance))
+                if (parts.Length >= 3)
                 {
-                    _sponsorsAndBalances[userName] = balance;
+                    var userName = parts[0].Trim();
+
+                    if (int.TryParse(parts[2], out var balance))
+                    {
+                        _sponsorsAndBalances[userName] = balance;
+                    }
                 }
             }
 
@@ -308,16 +295,16 @@ namespace Content.Server._Horizon.SponsorManager
             foreach (var line in disposableLines)
             {
                 var parts = line.Split(',');
-                if (parts.Length < 2)
-                    continue;
-
-                var ckey = parts[0].Trim();
-                if (!int.TryParse(parts[2], out var additionalTokens))
-                    continue;
-
-                if (_sponsorsAndBalances.ContainsKey(ckey))
+                if (parts.Length >= 2)
                 {
-                    _sponsorsAndBalances[ckey] += additionalTokens;
+                    var ckey = parts[0].Trim();
+                    if (int.TryParse(parts[2], out var additionalTokens))
+                    {
+                        if (_sponsorsAndBalances.ContainsKey(ckey))
+                        {
+                            _sponsorsAndBalances[ckey] += additionalTokens;
+                        }
+                    }
                 }
             }
         }
@@ -325,14 +312,14 @@ namespace Content.Server._Horizon.SponsorManager
 
         public void DeductBalance(string userName, int cost)
         {
-            if (!_sponsorsAndBalances.TryGetValue(userName, out var balance))
-                return;
-
-            if (balance < cost)
-                return;
-
-            balance -= cost;
-            _sponsorsAndBalances[userName] = balance;
+            if (_sponsorsAndBalances.TryGetValue(userName, out var balance))
+            {
+                if (balance >= cost)
+                {
+                    balance -= cost;
+                    _sponsorsAndBalances[userName] = balance;
+                }
+            }
         }
 
         public string GetColor(string userName)
@@ -340,11 +327,14 @@ namespace Content.Server._Horizon.SponsorManager
             var line = File.ReadLines(_dsSponsorsFilePath)
                 .FirstOrDefault(l => l.Contains(userName));
 
-            if (line == null)
-                return "#FF0000";
+            if (line != null)
+            {
+                var parts = line.Split(", ");
 
-            var parts = line.Split(", ");
-            return parts[4];
+                return parts[4];
+            }
+
+            return "#FF0000";
         }
         #endregion Methods of finding
     }
