@@ -294,6 +294,16 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
+  - type: Pain
+    painThresholds:
+      Nothing: 0
+      MildPain: 50
+      AveragePain: 100
+      SeverePain: 200
+      UnbeatablePain: 250
+      DeadPain: 500
+    screamPrototype: screamHuman
+    converterPrototype: human
 
 - type: entity
   save: false

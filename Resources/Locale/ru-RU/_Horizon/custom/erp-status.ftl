@@ -1,5 +1,5 @@
 erp-status-No = [color=red]Отказ от ЕРП[/color]
-erp-status-Consentual = [color=darkyellow]ЕРП по согласию[/color]
+erp-status-Consentual = [color=yellow]ЕРП по согласию[/color]
 erp-status-NonCon = [color=green]Полное ЕРП[/color]
 
 erp-status-No-desc =

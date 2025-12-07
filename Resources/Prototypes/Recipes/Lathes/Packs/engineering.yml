@@ -92,4 +92,5 @@
   - EmitterCircuitboard
   - TelecomServerCircuitboard
   - SMESAdvancedMachineCircuitboard
+  - RemoteControllerCircuitboard # Horizon
   # - HolopadMachineCircuitboard # Frontier: use NF variant

@@ -3,7 +3,7 @@
   name: faction-none-name
   desc: faction-none-desc
 
-# Region Frontier
+# region Frontier
 
 - type: characterFaction
   id: FactionFrontier
@@ -12,7 +12,7 @@
   color: "#263B99"
   roundstart: false
 
-# Region NFSD
+# region NFSD
 
 - type: characterFaction
   id: FactionNFSD
@@ -21,7 +21,7 @@
   color: "#369926"
   roundstart: false
 
-# Region Experimental
+# region Experimental
 
 - type: characterFaction
   id: FactionSIU
@@ -35,7 +35,7 @@
   desc: faction-arcadia-desc
   color: "#881DE0"
 
-# Region Medical
+# region Medical
 
 - type: characterFaction
   id: FactionMed
@@ -56,7 +56,7 @@
   desc: faction-ccc-desc
   color: "#27BEF5"
 
-# Region Edison / Engineering
+# region Edison / Engineering
 
 - type: characterFaction
   id: FactionEdison
@@ -83,7 +83,7 @@
   desc: faction-nakamura-desc
   color: "#E0861D"
 
-# Region Pirate
+# region Pirate
 
 - type: characterFaction
   id: FactionPirate

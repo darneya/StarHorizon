@@ -15,7 +15,7 @@
     damage:
       types:
         Structural: 1000
-        Ion: 10000
+#        Ion: 10000
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/150_shell.rsi
     layers:

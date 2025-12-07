@@ -16,7 +16,13 @@
   - OdysseusLLeg
   - OdysseusRLeg
   - OdysseusHead
-  - MechGunMedigun
+  - MechGunMedigunRed
+  - MechGunMedigunYellow
+  - MechGunMedigunGreen
+  - MechGunMedigunBlue
+  - MechGunSyringeBasic
+  - MechGunSyringeAdvanced
+  - MechGunSyringeCombat
   - ClarkeHarness
   - ClarkeLArm
   - ClarkeRArm
@@ -44,6 +50,9 @@
   - MechWeaponCutter
   - MechEquipmentHumanSleeper
   - MechEquipmentHumanGrabber
+  - MechEquipmentJet
+  - MechEquipmentRCD
+  - MechEquipmentWire
   - GygaxCentralElectronics
   - GygaxPeripheralsElectronics
   - OdysseusCentralElectronics
@@ -66,6 +75,8 @@
   - MechGunGrenade
   - MechGunHeavyPulseRifle
   - MechGunXRayRifle
+  - MechGunCryo
+  - MechGunPyro
   - MechWeaponSword
   - MechWeaponSpear
   - MechWeaponClaws
@@ -81,6 +92,7 @@
   - BoxAmmoSniper
   - BoxAmmoGranade
   - BoxPlasmaBox
+  - BoxChemBox
   - RipleyMk2ModificationKit
   - MechRipleyAluminizerUpgradeKit
   - MechRipleyCombatUpgradeKit
