@@ -455,3 +455,36 @@
     tags:
     - Trash
   - type: SpaceGarbage
+
+# Horizon start
+
+- type: entity
+  id: PresentTechDisk
+  parent: [PresentBase, BaseItem]
+  name: technological present
+  description: A little box with a valuable technology disk inside.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: TechnologyDiscAdvancedPKAModules
+        orGroup: TechDiskPool
+      - id: TechnologyDiscDurandTechnology
+        orGroup: TechDiskPool
+      - id: TechnologyDiscPhazonTechnology
+        orGroup: TechDiskPool
+      - id: TechnologyDiscArsenalAmmoModules
+        orGroup: TechDiskPool
+      - id: TechnologyDiscArsenalAmmunition
+        orGroup: TechDiskPool
+      - id: TechnologyDiscHydroponicsDNAManip
+        orGroup: TechDiskPool
+      - id: TechnologyDiscUniversalTranslator
+        orGroup: TechDiskPool
+      - id: TechnologyDiscCombatCybernetics
+        orGroup: TechDiskPool
+      - id: TechnologyDiskCombatCyborgs
+        orGroup: TechDiskPool
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+# Horizon end

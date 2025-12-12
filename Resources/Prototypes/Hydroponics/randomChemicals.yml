@@ -3,7 +3,7 @@
 - type: weightedRandomFillSolution
   id: RandomPickBotanyReagent
   fills:
-  - quantity: 1
+  - quantity: 2
     weight: 0.2
     reagents:
     - Omnizine
@@ -12,7 +12,7 @@
     - Honk
     - BuzzochloricBees
     - Stimulants
-  - quantity: 1
+  - quantity: 3
     weight: 0.3
     reagents:
     - Cognizine
@@ -33,7 +33,7 @@
     - ChangelingSting
     - CogChamp
     - JuiceThatMakesYouWeh
-  - quantity: 1
+  - quantity: 5
     weight: 0.5
     reagents:
     - Desoxyephedrine
@@ -59,7 +59,7 @@
     - Cola
     - Diphenhydramine
     - Iron
-  - quantity: 1
+  - quantity: 7
     weight: 1
     reagents:
     - Bicaridine
@@ -90,7 +90,7 @@
     - Enzyme
     - Vinegar
     - Fluorine
-  - quantity: 2
+  - quantity: 10
     weight: 2
     reagents:
     - Vitamin
@@ -109,7 +109,7 @@
     - Flour
     - Soysauce
     - TableSalt
-  - quantity: 5
+  - quantity: 10
     weight: 15
     reagents:
     - Aluminium

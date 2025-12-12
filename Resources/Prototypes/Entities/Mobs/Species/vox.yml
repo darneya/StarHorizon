@@ -69,10 +69,8 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-# Horizon start
-    # - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
-    # - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-# Horizon end
+    - map: [ "underwearb" ]
+    - map: [ "underweart" ]
     - map: [ "jumpsuit" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]

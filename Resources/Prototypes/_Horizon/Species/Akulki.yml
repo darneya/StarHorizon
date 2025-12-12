@@ -110,8 +110,8 @@
   - type: TemperatureSpeed
     thresholds:
       320: 0.3
-      311: 0.2
-      301: 0.1
+      311: 1
+      301: 1.1
 
   - type: Barotrauma
     damage:

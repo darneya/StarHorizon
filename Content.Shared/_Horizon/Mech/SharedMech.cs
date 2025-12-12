@@ -101,4 +101,10 @@ public sealed partial class MechEquipmentEvent<T> : EntityEventArgs where T : En
 [Serializable, NetSerializable]
 public sealed partial class OnPilotEjectEvent : EntityEventArgs // Horizon RemotePilot
 {
+    public NetEntity Mech;
+
+    public OnPilotEjectEvent(NetEntity mech)
+    {
+        Mech = mech;
+    }
 }

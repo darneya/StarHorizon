@@ -19,18 +19,18 @@
   - type: Mech
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
-        Heat: 0.6
-        Radiation: 0
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.5
+        Radiation: 0.5
         Caustic: 0.9
-        Structural: 0.5
-    maxintegrity: 200
+        Structural: 0.7
+    maxintegrity: 150
     baseState: gygax
     openState: gygax-open
     brokenState: gygax-broken
-    mechToPilotDamageMultiplier: 0.2
+    mechToPilotDamageMultiplier: 0.5
     pilotWhitelist:
       components:
         - HumanoidAppearance
@@ -858,37 +858,6 @@
       - PowerCellHigh
 
 - type: entity
-  id: MechRipleyMk2Titan
-  parent: MechRipleyMk2
-  name: Рипли "Кулак Титана"
-  description: "Это обычный Рипли, который был настроен так, чтобы выглядеть как мех Кулака Титана."
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
-    layers:
-    - map: [ "enum.MechVisualLayers.Base" ]
-      state: ripleytitan
-  - type: Mech
-    maxintegrity: 250
-    baseState: ripleytitan
-    openState: ripleytitan-open
-    brokenState: ripleytitan-broken
-    mechToPilotDamageMultiplier: 0.4
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 3.5
-
-- type: entity
-  id: MechRipleyMk2TitanBattery
-  parent: MechRipleyMk2Titan
-  suffix: Battery
-  components:
-  - type: ContainerFill
-    containers:
-      mech-battery-slot:
-      - PowerCellHigh
-
-- type: entity
   id: MechRipleyMk2Zairjah
   parent: MechRipleyMk2
   name: Рипли "Заря"
@@ -1032,14 +1001,14 @@
     - map: [ "enum.MechVisualLayers.Base" ]
       state: gygaxgrey
   - type: Mech
-    maxintegrity: 250
+    maxintegrity: 180
     baseState: gygaxgrey
     openState: gygaxgrey-open
     brokenState: gygaxgrey-broken
-    mechToPilotDamageMultiplier: 0.2
+    mechToPilotDamageMultiplier: 0.5
   - type: MovementSpeedModifier
-    baseWalkSpeed: 5.0
-    baseSprintSpeed: 6.0
+    baseWalkSpeed: 4.5
+    baseSprintSpeed: 5.5
 
 - type: entity
   parent: MechGygaxGrey
@@ -1622,6 +1591,73 @@
     baseState: durares
     openState: durares-open
     brokenState: durares-broken
+
+
+# region Pirate
+
+- type: entity
+  id: MechRipleyMk2TitanBattery
+  parent: MechRipleyMk2
+  name: Пиратский Рипли
+  description: "Стоп... почему у этого Рипли боевого вооружение и что... это попугай?"
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: ripleytitan
+  - type: Mech
+    maxintegrity: 250
+    baseState: ripleytitan
+    openState: ripleytitan-open
+    brokenState: ripleytitan-broken
+    mechToPilotDamageMultiplier: 0.4
+    equipmentWhitelist:
+      tags:
+      - MechEquipmentGeneral
+      - MechEquipmentMining
+      - MechEquipmentSecProt
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecLLazer
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+- type: entity
+  id: MechClarkeVeteranBattery
+  parent: MechClarke
+  name: Пиратский Кларк
+  description: "Стоп... почему у этого Кларка боевого вооружение и что... это попугай?"
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: clarkeveteran
+  - type: Mech
+    baseState: clarkeveteran
+    openState: clarkeveteran-open
+    brokenState: clarkeveteran-broken
+    maxintegrity: 250
+    mechToPilotDamageMultiplier: 0.3
+    equipmentWhitelist:
+      tags:
+      - MechEquipmentGeneral
+      - MechEquipmentMining
+      - MechEquipmentSecProt
+      - MechEquipmentSecLKinetic
+      - MechEquipmentSecLLazer
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5.0
+    baseSprintSpeed: 6.0
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
 
 # region Tournament
 
