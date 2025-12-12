@@ -1,3 +1,4 @@
+using Content.Server._Horizon.SponsorManager;
 using Content.Server._NF.Auth;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -78,6 +79,8 @@ namespace Content.Server.IoC
             IoCManager.Register<MultiServerKickManager>();
             IoCManager.Register<CVarControlManager>();
             IoCManager.Register<MiniAuthManager>(); //Frontier
+            IoCManager.Register<SponsorManager>(); // _Horizon
+
 
             IoCManager.Register<DiscordLink>();
             IoCManager.Register<DiscordChatLink>();
