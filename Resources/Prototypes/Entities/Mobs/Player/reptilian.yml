@@ -4,6 +4,11 @@
   suffix: Urisst' Mzhand
   parent: BaseMobReptilian
   id: MobReptilian
+  components:
+  # Horizon
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleReptilian
 
 # Cytology
 - type: entity
@@ -13,11 +18,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StaticPrice
-    price: 2000
+    price: 2500
   - type: RandomMetadata
     nameSegments:
-    - FirstNames
-    - LastNames
+      - NamesFirst
+      - NamesLast
   - type: RandomHumanoidAppearance
     randomizeName: false
   - type: GhostRole
@@ -29,9 +34,5 @@
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
-  # Horizon
-  - type: SampleSource
-    availableCellSamples:
-    - protoID: CellSampleReptilian
 
 #Weh

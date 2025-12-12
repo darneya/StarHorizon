@@ -2,6 +2,11 @@
   save: false
   parent: BaseMobSlimePerson
   id: MobSlimePerson
+  components:
+  # Horizon
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleSlimePerson
 
 # Cytology
 - type: entity
@@ -11,11 +16,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StaticPrice
-    price: 2000
+    price: 2500
   - type: RandomMetadata
     nameSegments:
-    - FirstNames
-    - LastNames
+      - NamesFirst
+      - NamesLast
   - type: RandomHumanoidAppearance
     randomizeName: false
   - type: GhostRole
@@ -27,7 +32,3 @@
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
-  # Horizon
-  - type: SampleSource
-    availableCellSamples:
-    - protoID: CellSampleSlimePerson

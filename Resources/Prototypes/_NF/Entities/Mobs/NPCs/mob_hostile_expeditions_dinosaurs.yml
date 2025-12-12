@@ -126,6 +126,8 @@
     - protoID: CellSampleDinosaurCompy
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 4000
 
 #region dilophosaurus
 - type: entity
@@ -166,6 +168,8 @@
     - protoID: CellSampleDinosaurDilo
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 1600
 
 #region velociraptor
 - type: entity
@@ -213,6 +217,8 @@
     - protoID: CellSampleDinosaurRaptor
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 2400
 
 #region parasaurolophus
 - type: entity
@@ -258,6 +264,8 @@
     - protoID: CellSampleDinosaurPara
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 4000
 
 #region kentrosaurus
 - type: entity
@@ -305,6 +313,8 @@
     - protoID: CellSampleDinosaurKentro
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 3000
 
 #region triceratops
 - type: entity
@@ -352,6 +362,8 @@
     - protoID: CellSampleDinosaurTrike
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 4000
 
 #region ankylosaurus
 - type: entity
@@ -399,6 +411,8 @@
     - protoID: CellSampleDinosaurAnki
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 4400
 
 #region spinosaurus
 - type: entity
@@ -444,6 +458,8 @@
     - protoID: CellSampleDinosaurSpino
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 5000
 
 #region stegosaurus
 - type: entity
@@ -492,6 +508,8 @@
     - protoID: CellSampleDinosaurStego
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 3600
 
 #region tyrannosaurus (boss)
 - type: entity

@@ -134,6 +134,8 @@
     - protoID: CellSampleXeno
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 4000
   # Horizon end
 
 
@@ -186,6 +188,8 @@
     - protoID: CellSampleXenoPraetorian
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 6000
 
 - type: entity
   name: drone
@@ -229,6 +233,8 @@
     - protoID: CellSampleXenoDrone
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 4000
 
 - type: entity
   name: queen
@@ -328,6 +334,8 @@
     - protoID: CellSampleXenoRavager
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 4000
 
 - type: entity
   name: runner
@@ -364,6 +372,8 @@
     - protoID: CellSampleXenoRunner
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 1600
 
 - type: entity
   name: rouny
@@ -385,6 +395,8 @@
     - protoID: CellSampleXenoRouny
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 3000
 
 - type: entity
   name: spitter
@@ -438,6 +450,8 @@
     - protoID: CellSampleXenoSpitter
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 1400
 
 - type: entity
   name: space adder
@@ -513,6 +527,8 @@
     - protoID: CellSampleSpaceViper
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
+  - type: StaticPrice
+    price: 1600
 
 - type: entity
   name: space adder

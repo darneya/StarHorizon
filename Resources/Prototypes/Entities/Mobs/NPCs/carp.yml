@@ -125,6 +125,10 @@
       sprite: Mobs/Aliens/Carps/magic.rsi
     - type: TypingIndicator
       proto: guardian
+    # Horizon
+    - type: SampleSource
+      availableCellSamples:
+      - protoID: CellSampleCarpMagic
 
 - type: entity
   name: holocarp
@@ -149,6 +153,10 @@
             - Opaque
     - type: TypingIndicator
       proto: robot
+    # Horizon
+    - type: SampleSource
+      availableCellSamples:
+      - protoID: CellSampleCarpHolo
 
 - type: entity
   parent: MobCarp
@@ -162,6 +170,10 @@
     energy: 0.5
   - type: RgbLightController
     layers: [ 0 ]
+  # Horizon
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleCarpRainbow
 
 - type: entity
   id: MobCarpSalvage

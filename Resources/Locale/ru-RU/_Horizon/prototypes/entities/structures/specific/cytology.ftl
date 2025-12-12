@@ -1,4 +1,4 @@
-ent-GrowingVat = чан для выращивания
+ent-CytologyGrowingVat = чан для выращивания
     .desc = Используется для выращивания клеток
-ent-Microscope = микроскоп
+ent-CytologyMicroscope = микроскоп
     .desc = Используется для анализа содержимого чашки петри

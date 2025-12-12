@@ -3,6 +3,11 @@
   id: MobKatunian
   name: Катунианец
   parent: BaseMobKatunian
+  components:
+  # Horizon
+  - type: SampleSource
+    availableCellSamples:
+    - protoID: CellSampleKatunian
 
 # Cytology
 - type: entity
@@ -12,11 +17,11 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StaticPrice
-    price: 2000
+    price: 2500
   - type: RandomMetadata
     nameSegments:
-    - FirstNames
-    - LastNames
+      - NamesFirst
+      - NamesLast
   - type: RandomHumanoidAppearance
     randomizeName: false
   - type: GhostRole
@@ -28,7 +33,3 @@
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
-  # Horizon
-  - type: SampleSource
-    availableCellSamples:
-    - protoID: CellSampleKatunian

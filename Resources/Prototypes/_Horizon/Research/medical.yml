@@ -447,3 +447,20 @@
   technologyPrerequisites:
   - ProtectiveImplantsTech
   position: 4, 13
+
+- type: technology
+  id: Cytology
+  name: research-technology-cytology
+  entityIcon: CytologyGrowingVat
+  discipline: NFMedical
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - CytologyGrowingVatMachineCircuitboard
+  - CytologyMicroscopeMachineCircuitboard
+  - CytologySwab
+  - CytologyInjector
+  - CytologyPetriDish
+  technologyPrerequisites:
+  - NFEngineeringMedicine
+  position: 2, 12

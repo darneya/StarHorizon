@@ -1,5 +1,5 @@
 - type: entity
-  id: GrowingVat
+  id: CytologyGrowingVat
   name: growing vat
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   description: growing vat
@@ -72,6 +72,8 @@
     guides:
     - Chemicals
     - Chemist
+  - type: Machine
+    board: CytologyGrowingVatMachineCircuitboard
   - type: CytologyGrowingVat
     smokePrototype : Smoke
   - type: ApcPowerReceiver

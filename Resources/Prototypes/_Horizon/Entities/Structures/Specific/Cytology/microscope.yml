@@ -1,5 +1,6 @@
 - type: entity
-  id: Microscope
+  id: CytologyMicroscope
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: Microscope
   description: Microscope
   placement:
@@ -64,4 +65,6 @@
     guides:
     - Chemicals
     - Chemist
+  - type: Machine
+    board: CytologyMicroscopeMachineCircuitboard
   - type: CytologyMicroscope

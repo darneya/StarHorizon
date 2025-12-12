@@ -82,6 +82,7 @@ research-technology-virology = Вирусология
 research-technology-cryogenics = Криогеника
 research-technology-crew-monitoring = Мониторинг экипажа
 research-technology-bluespace-chemistry = Блюспейс-химия
+research-technology-cytology = Цитология
 research-technology-cloning = Клонирование
 research-technology-syringelauncher = Дистанционное лечение
 research-technology-military-machinery = Военная машинерия
