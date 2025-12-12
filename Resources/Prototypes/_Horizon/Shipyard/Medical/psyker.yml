@@ -1,3 +1,13 @@
+# Информация об авторе шаттла
+# GitHub/Gitea: ???
+# Discord: -Matrix- & ZuckerImKaffee
+
+# Информация об сопровождающем
+# GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
+# Discord: astr0laris
+
+# Прототип шаттла:
+#
 - type: vessel
   id: Psyker
   parent: BaseVessel
