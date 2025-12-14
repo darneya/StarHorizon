@@ -26,7 +26,8 @@ public abstract class SharedCytologyGrowingVatSystem : EntitySystem
     [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly SharedCytologyPetriDishSystem _petriDishSystem = default!;
-    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoid = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidSystem = default!;
+    [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
@@ -183,7 +184,8 @@ public abstract class SharedCytologyGrowingVatSystem : EntitySystem
         if (cell.StoredProfile is not { } profile)
             return;
 
-        _humanoid.LoadProfile(spawnedMob, profile);
+        _humanoidSystem.LoadProfile(spawnedMob, profile);
+        _metaDataSystem.SetEntityName(spawnedMob, profile.Name);
     }
 
     private void SetCellGrowProgress(CellSamplePrototype proto, CellSample cell, Dictionary<string, FixedPoint2> reagentLookup)
