@@ -4,6 +4,7 @@
   suffix: StarHorizon, UAS
   name: аномалия
   description: От аномалии исходит отчётливый скрежет металла...
+  categories: [ HideSpawnMenu ]
   components:
   - type: Anomaly
     corePrototype: UASAnomalyCircuitboard

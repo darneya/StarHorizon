@@ -4,6 +4,7 @@
   suffix: StarHorizon, UAS, Structure
   name: глыба казмия
   description: Монолитный кусок казмия. Кажется очень прочным.
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Horizon/Structures/Decoration/uasrock.rsi

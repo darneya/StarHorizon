@@ -193,7 +193,18 @@
     - id: SheetEFS
     - id: Sheetkazmie1
     - id: Sheetkazmie
-#    - id: 
+    - id: UASCrab
+    - id: UASDrone
+    - id: UASDroneOff
+    - id: UASDeathAcidifierImplanter
+    - id: UASImplanterTreker
+    - id: UASImplanterDrone
+    - id: UAShypo
+    - id: CombatMedipenUAS
+    - id: NanitMedipenUAS
+    - id: NanitDefibMedipenUAS
+    - id: ReliableContainerUASnanits
+    - id: UASAnomalyCircuitboard
 
 # Кадет
 - type: entity
@@ -208,7 +219,7 @@
     - id: UASHandcuffs
     - id: UASEnergyCore
     - id: WeaponDisablerSMGUAS
-#    - id: CombatMedipenUAS
+    - id: CombatMedipenUAS
 
 # Офицер
 - type: entity
@@ -224,8 +235,8 @@
     - id: UASHandcuffs
     - id: UASEnergyCore
     - id: PMLaserUASGun
-#    - id: CombatMedipenUAS
-#    - id: UASDroneOff
+    - id: CombatMedipenUAS
+    - id: UASDroneOff
 
 # Рыцарь
 - type: entity
@@ -240,9 +251,9 @@
     - id: UASEnergyCore
     - id: UASOmegaTool
     - id: LaserUASGun
-#    - id: NanitMedipenUAS
-#    - id: CombatMedipenUAS
-#    - id: UASDroneOff
+    - id: NanitMedipenUAS
+    - id: CombatMedipenUAS
+    - id: UASDroneOff
     - id: UASGranade
 
 # Паук
@@ -258,10 +269,10 @@
     - id: WeaponDisablerSniperUAS
     - id: UASEnergyCore
     - id: UASHandcuffs
-#    - id: CombatMedipenUAS
-#    - id: NanitMedipenUAS
-#    - id: NanitMedipenUAS
-#    - id: UASDroneOff
+    - id: CombatMedipenUAS
+    - id: NanitMedipenUAS
+    - id: NanitMedipenUAS
+    - id: UASDroneOff
     - id: UASGranade
 
 # Титан
@@ -278,10 +289,10 @@
     - id: UASEnergyCore
     - id: NanitMedipenUAS
     - id: NanitMedipenUAS
-#    - id: CombatMedipenUAS
-#    - id: CombatMedipenUAS
-#    - id: UASDroneOff
-#    - id: UASDroneOff
+    - id: CombatMedipenUAS
+    - id: CombatMedipenUAS
+    - id: UASDroneOff
+    - id: UASDroneOff
     - id: UASGranade
     - id: UASGranade
 
@@ -297,8 +308,8 @@
     - id: UASCounselorGun
     - id: UASEnergyCore
     - id: UASHandcuffs
-#    - id: CombatMedipenUAS
-#    - id: NanitMedipenUAS
-#    - id: NanitMedipenUAS
-#    - id: UASDroneOff
-#    - id: UASDroneOff
+    - id: CombatMedipenUAS
+    - id: NanitMedipenUAS
+    - id: NanitMedipenUAS
+    - id: UASDroneOff
+    - id: UASDroneOff

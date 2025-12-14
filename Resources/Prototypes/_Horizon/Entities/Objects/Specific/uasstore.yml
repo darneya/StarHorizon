@@ -225,19 +225,19 @@
   categories:
   - UASUplinkDisruption
 
-#- type: listing
-#  id: UASBoxStoreBug
-#  name: Набор с жуками
-#  description: Ящик, содержащий набор из 4 жуков и комбинезон.
-#  productEntity: UASBoxStoreBug
-#  icon: { sprite: _Horizon/Mobs/Elemental/uasbot.rsi, state: icon }
-#  discountCategory: usualDiscounts
-#  discountDownTo:
-#    CitadelCoin: 2
-#  cost:
-#    CitadelCoin: 10
-#  categories:
-#  - UASUplinkDisruption
+- type: listing
+  id: UASBoxStoreBug
+  name: Набор с жуками
+  description: Ящик, содержащий набор из 4 жуков и комбинезон.
+  productEntity: UASBoxStoreBug
+  icon: { sprite: _Horizon/Mobs/Elemental/uasbot.rsi, state: icon }
+  discountCategory: usualDiscounts
+  discountDownTo:
+    CitadelCoin: 2
+  cost:
+    CitadelCoin: 10
+  categories:
+  - UASUplinkDisruption
 
 - type: listing
   id: UASBoxStoreStun
@@ -299,47 +299,47 @@
 
 # Химия
 
-#- type: listing
-#  id: UASStoreCombatMedipenUAS
-#  name: Боевой медипен
-#  description: Медипен, предназначен для лечения обширных повреждений. Внимание, может вызвать рвоту.
-#  productEntity: CombatMedipenUAS
-#  icon: { sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi, state: omega }
-#  discountCategory: usualDiscounts
-#  discountDownTo:
-#    CitadelCoin: 2
-#  cost:
-#    CitadelCoin: 5
-#  categories:
-#  - UASUplinkChemicals
+- type: listing
+  id: UASStoreCombatMedipenUAS
+  name: Боевой медипен
+  description: Медипен, предназначен для лечения обширных повреждений. Внимание, может вызвать рвоту.
+  productEntity: CombatMedipenUAS
+  icon: { sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi, state: omega }
+  discountCategory: usualDiscounts
+  discountDownTo:
+    CitadelCoin: 2
+  cost:
+    CitadelCoin: 5
+  categories:
+  - UASUplinkChemicals
 
-#- type: listing
-#  id: UASStoreNanitMedipenUAS
-#  name: Нанитовый медипен
-#  description: Медипен, содержащий наниты. Используйте на свой страх и риск.
-#  productEntity: NanitMedipenUAS
-#  icon: { sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi, state: omega }
-#  discountCategory: usualDiscounts
-#  discountDownTo:
-#    CitadelCoin: 2
-#  cost:
-#    CitadelCoin: 10
-#  categories:
-#  - UASUplinkChemicals
+- type: listing
+  id: UASStoreNanitMedipenUAS
+  name: Нанитовый медипен
+  description: Медипен, содержащий наниты. Используйте на свой страх и риск.
+  productEntity: NanitMedipenUAS
+  icon: { sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi, state: omega }
+  discountCategory: usualDiscounts
+  discountDownTo:
+    CitadelCoin: 2
+  cost:
+    CitadelCoin: 10
+  categories:
+  - UASUplinkChemicals
 
-#- type: listing
-#  id: UASStoreReliableContainerUASnanits
-#  name: Контейнер с нанитами
-#  description: Сверхпрочный контейнер хранящий в себе нанитов.
-#  productEntity: ReliableContainerUASnanits
-#  icon: { sprite: _Horizon/Objects/Specific/Chemistry/uascontainer.rsi, state: container }
-#  discountCategory: usualDiscounts
-#  discountDownTo:
-#    CitadelCoin: 2
-#  cost:
-#    CitadelCoin: 40
-#  categories:
-#  - UASUplinkChemicals
+- type: listing
+  id: UASStoreReliableContainerUASnanits
+  name: Контейнер с нанитами
+  description: Сверхпрочный контейнер хранящий в себе нанитов.
+  productEntity: ReliableContainerUASnanits
+  icon: { sprite: _Horizon/Objects/Specific/Chemistry/uascontainer.rsi, state: container }
+  discountCategory: usualDiscounts
+  discountDownTo:
+    CitadelCoin: 2
+  cost:
+    CitadelCoin: 40
+  categories:
+  - UASUplinkChemicals
 
 #  снаряжение
 

@@ -4,6 +4,7 @@
   name: защитный бот UAS
   description: Бот необходимый для защиты важного оборудования UAS
   parent: [ MobElementalBase, MobCombat, BaseItem ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: Item
     size: Small
@@ -57,7 +58,7 @@
 - type: entity
   id: UASDrone
   parent: UASCrab
-  suffix: Aavikko, UAS
+  suffix: StarHorizon, UAS
   categories: [ HideSpawnMenu ]
   components:
   - type: MeleeWeapon
@@ -88,6 +89,7 @@
   name: отключенный защитный бот UAS
   suffix: StarHorizon, UAS
   parent: BaseItem
+  categories: [ HideSpawnMenu ]
   components:
   - type: DeleteOnTrigger
   - type: OnUseTimerTrigger

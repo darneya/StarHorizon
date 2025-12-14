@@ -92,6 +92,10 @@
     - id: ClosetKnight
     - id: UASVending
     - id: BaseUASUplink
+    - id: UASEFSCrystal
+    - id: UASRock
+    - id: BannerUASlogo
+    - id: UASFabricator
 
 - type: entity
   id: ClosetOfficer

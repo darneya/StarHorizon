@@ -2,6 +2,7 @@
   name: бронированный контейнер с нанитами
   parent: BaseItem
   description: Сверхпрочный контейнер для хранения опасных веществ.
+  categories: [ HideSpawnMenu ]
   id: ReliableContainerUASnanits
   suffix: StarHorizon, UAS
   components:

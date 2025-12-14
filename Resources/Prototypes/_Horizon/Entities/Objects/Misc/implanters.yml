@@ -43,6 +43,7 @@
   suffix: StarHorizon, UAS
   name: имплантер с растворяющимися нанитами UAS
   parent: BaseImplantOnlyImplanterUAS
+  categories: [ HideSpawnMenu ]
   components:
   - type: Implanter
     implant: UASAcidifierImplant
@@ -52,6 +53,7 @@
   suffix: StarHorizon, UAS
   name: имплантер с трекером UAS
   parent: BaseImplantOnlyImplanterUAS
+  categories: [ HideSpawnMenu ]
   components:
   - type: Implanter
     implant: UASTrakerImplant
@@ -61,6 +63,7 @@
   suffix: StarHorizon, UAS
   name: имплантер с дронами UAS
   parent: BaseImplantOnlyImplanterUAS
+  categories: [ HideSpawnMenu ]
   components:
   - type: Implanter
     implant: UASDroneImplant

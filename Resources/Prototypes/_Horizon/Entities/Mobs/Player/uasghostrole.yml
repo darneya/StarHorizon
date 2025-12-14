@@ -178,6 +178,7 @@
   id: RandomHumanoidSpawnerUASCounselor
   name: советник UAS
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
@@ -193,6 +194,7 @@
   id: RandomHumanoidSpawnerUASTitan
   name: офицер Титан UAS
   suffix: StarHorizon, UAS
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
@@ -206,6 +208,7 @@
 # Паук
 - type: entity
   id: RandomHumanoidSpawnerUASSpider
+  categories: [ HideSpawnMenu ]
   name: офицер Паук UAS
   suffix: StarHorizon, UAS
   components:
@@ -221,6 +224,7 @@
 # Рыцарь
 - type: entity
   id: RandomHumanoidSpawnerUASKnight
+  categories: [ HideSpawnMenu ]
   name: офицер РыцарьUAS
   suffix: StarHorizon, UAS
   components:
@@ -236,6 +240,7 @@
 # Офицер
 - type: entity
   id: RandomHumanoidSpawnerUASOfficer
+  categories: [ HideSpawnMenu ]
   name: офицер UAS
   suffix: StarHorizon, UAS
   components:
@@ -251,6 +256,7 @@
 # Кадет
 - type: entity
   id: RandomHumanoidSpawnerUASCadet
+  categories: [ HideSpawnMenu ]
   name: кадет UAS
   suffix: StarHorizon, UAS
   components:

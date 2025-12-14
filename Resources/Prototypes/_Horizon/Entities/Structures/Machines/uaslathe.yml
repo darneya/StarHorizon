@@ -5,6 +5,7 @@
   name: фабрикатор UAS
   description: Как вы его собрали?
   suffix: StarHorizon, UAS, Structure
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Machines/uasprotoplat.rsi
@@ -48,6 +49,7 @@
   name: микросхема UAS
   suffix: StarHorizon, UAS
   description: Красная прозрачная микросхема. Вы ощущаете исходящее от неё тепло.
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Horizon/Objects/Misc/uasciruitboard.rsi

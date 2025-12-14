@@ -4,6 +4,7 @@
   suffix: StarHorizon, UAS, Structure
   name: кристалл EFS вещества
   description: Вы ощущаете исходящий от этого кристалла жар.
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Horizon/Structures/Decoration/uascrystall.rsi

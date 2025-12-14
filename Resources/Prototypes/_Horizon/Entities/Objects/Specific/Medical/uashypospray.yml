@@ -4,6 +4,7 @@
   suffix: StarHorizon, UAS
   description: Использует технологию подкожного распыления химикатов, подозрительно похожую на "гипоспрей".
   id: UAShypo
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Medical/uashypospray.rsi
@@ -28,6 +29,7 @@
   parent: [ChemicalMedipen, BaseUASContraband]
   id: CombatMedipenUAS
   description: Предназначен для лечения обширных повреждений. Внимание, может вызвать рвоту!
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi
@@ -69,6 +71,7 @@
   parent: [ChemicalMedipen, BaseUASContraband]
   id: NanitMedipenUAS
   description: Медипен, содержащий наниты. Используйте на свой страх и риск.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi
@@ -102,6 +105,7 @@
   parent: [ChemicalMedipen, BaseUASContraband]
   id: NanitDefibMedipenUAS
   description: Одноразовый медипен-дефибриллятор. Содержит почти смертельную дозу нанитов.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi
