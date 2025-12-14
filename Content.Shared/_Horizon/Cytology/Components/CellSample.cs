@@ -1,3 +1,5 @@
+using Content.Shared.Humanoid;
+using Content.Shared.Preferences;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -17,9 +19,13 @@ public sealed partial class CellSample
     [DataField]
     public float GrowProgress;
 
-    public CellSample(string protoID, float growProgress = 0f)
+    [DataField]
+    public HumanoidCharacterProfile? StoredProfile;
+
+    public CellSample(string protoID, float growProgress = 0f, HumanoidCharacterProfile? storedProfile = null)
     {
         ProtoID = protoID;
         GrowProgress = growProgress;
+        StoredProfile = storedProfile;
     }
 }

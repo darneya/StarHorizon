@@ -56,14 +56,16 @@ public abstract class SharedCytologyPetriDishSystem : EntitySystem
             return;
 
         petriDishSampleContainerComp.CellSamples.Clear();
-        PetriDishUpdateAppearance((petriDish.Owner, petriDishSampleContainerComp));
+        PetriDishUpdateAppearance(petriDish.Owner);
     }
 
-    public void PetriDishUpdateAppearance(Entity<CytologySampleContainerComponent> petriDish)
+    public void PetriDishUpdateAppearance(EntityUid petriDish)
     {
+        if (!TryComp<CytologySampleContainerComponent>(petriDish, out var petriDishSampleContainerComp))
+            return;
 
-        Appearance.SetData(petriDish.Owner, CytologyPetriDishVisualStates.Color, CalculateAverageCellSampleColor(petriDish.Comp.CellSamples));
-        Appearance.SetData(petriDish.Owner, CytologyPetriDishVisualStates.Samples, petriDish.Comp.CellSamples.Count);
+        Appearance.SetData(petriDish, CytologyPetriDishVisualStates.Color, CalculateAverageCellSampleColor(petriDishSampleContainerComp.CellSamples));
+        Appearance.SetData(petriDish, CytologyPetriDishVisualStates.Samples, petriDishSampleContainerComp.CellSamples.Count);
     }
 
     private Color CalculateAverageCellSampleColor(List<CellSample> cellSamples) //Calculates the overall color based on the samples inside
@@ -132,7 +134,7 @@ public abstract class SharedCytologyPetriDishSystem : EntitySystem
 
         transferDeviceSampleContainerComp.CellSamples.RemoveAll(x => collectedCells.Contains(x));
 
-        PetriDishUpdateAppearance((petriDishUid, petriDishSampleContainerComp));
+        PetriDishUpdateAppearance(petriDishUid);
 
         return true;
     }
