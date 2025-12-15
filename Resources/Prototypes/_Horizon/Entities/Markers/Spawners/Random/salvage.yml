@@ -9,7 +9,6 @@
   - type: RandomSpawner
     prototypes:
     - TechnologyDiscAdvancedPKAModules
-    - TechnologyDiscGygaxTechnology
     - TechnologyDiscDurandTechnology
     - TechnologyDiscPhazonTechnology
     - TechnologyDiscArsenalAmmoModules
@@ -17,4 +16,5 @@
     - TechnologyDiscHydroponicsDNAManip
     - TechnologyDiscUniversalTranslator
     - TechnologyDiscCombatCybernetics
+    - TechnologyDiscCombatCyborgs
     offset: 0.0

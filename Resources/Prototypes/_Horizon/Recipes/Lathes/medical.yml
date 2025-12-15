@@ -879,3 +879,31 @@
   completetime: 5
   materials:
     Plastic: 500
+
+# Cytology
+
+- type: latheRecipe
+  id: CytologySwab
+  result: CytologySwab
+  category: Surgery
+  completetime: 2
+  materials:
+    Plastic: 50
+
+- type: latheRecipe
+  id: CytologyInjector
+  result: CytologyInjector
+  category: Surgery
+  completetime: 3
+  materials:
+    Plastic: 100
+    Glass: 50
+
+- type: latheRecipe
+  id: CytologyPetriDish
+  result: CytologyPetriDish
+  category: Surgery
+  completetime: 2
+  materials:
+    Plastic: 100
+    Glass: 100

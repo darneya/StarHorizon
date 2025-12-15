@@ -84,8 +84,6 @@
   technologyPrerequisites:
   - RipleyMKIITechnology
   position: 3, 36
-  researchTargets:
-  - TechnologyDiscGygaxTechnology
 
 - type: technology
   id: MechEnergyGunSmallTechnology
@@ -176,7 +174,7 @@
   - BoxAmmoGranade
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 35
+  position: 6, 36
 
 - type: technology
   id: MechCloseWeaponTechnology
@@ -241,7 +239,7 @@
   - MechDurUnathiUpgradeKit
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 36
+  position: 6, 35
 
 - type: technology
   id: IncendiaryAmmunitionTechnology
