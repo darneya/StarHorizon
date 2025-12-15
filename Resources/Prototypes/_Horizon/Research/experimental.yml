@@ -3,28 +3,26 @@
 - type: technology
   id: Bluespace
   name: research-technology-bluespace
-  icon:
-    sprite: Objects/Misc/stock_parts.rsi
-    state: ansible_crystal
-  discipline: Experimental
+  entityIcon: MachineBluespaceTransitorCircuitboard
+  discipline: NFScience
   tier: 2
   cost: 25000
-  position: 3, 32
+  position: 3, 5
   recipeUnlocks:
   - MachineBluespaceTransitorCircuitboard
+  technologyPrerequisites:
+  - NFSuperParts
 
 # Tier 3
 
 - type: technology
   id: BluespaceMining
   name: research-technology-bluespace-mining
-  icon:
-    sprite: Objects/Misc/stock_parts.rsi
-    state: ansible_crystal
-  discipline: Experimental
+  entityIcon: MachineBluespaceHarvesterCircuitboard
+  discipline: NFScience
   tier: 3
   cost: 30000
-  position: 3, 34
+  position: 4, 5
   recipeUnlocks:
   - MachineBluespaceHarvesterCircuitboard
   technologyPrerequisites:

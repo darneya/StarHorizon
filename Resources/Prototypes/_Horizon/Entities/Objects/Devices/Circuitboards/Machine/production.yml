@@ -35,5 +35,5 @@
     stackRequirements:
       Steel: 10
       CableHV: 30
-      BluespaceCrystal: 5
+      Bluespace: 5
       Capacitor: 15
