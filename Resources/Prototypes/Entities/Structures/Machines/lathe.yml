@@ -308,6 +308,7 @@
     - NFServiceBoards # Frontier
     - SHEngineeringBoards # Horizon
     - MonoAdvancedShuttleComponents # Horizon
+    - CytologyBoards # Horizon
   - type: EmagLatheRecipes
     emagDynamicPacks: [] # Frontier: empty list
     # - SecurityBoards # Frontier
@@ -547,6 +548,7 @@
     - SyringeGuns # DeltaV
     - NFMedical # Frontier
     - Chemistry # Frontier
+    - CytologyEquipment # Frontier
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget

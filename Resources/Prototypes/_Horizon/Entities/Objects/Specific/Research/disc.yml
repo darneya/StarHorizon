@@ -73,12 +73,6 @@
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscGygaxTechnology
-  name: technology disc [Gygax]
-  description: A disk containing data about Gygax Mech.
-
-- type: entity
-  parent: TechnologyDiscBase
   id: TechnologyDiscDurandTechnology
   name: technology disc [Durand]
   description: A disk containing data about Durand Mech.
@@ -118,3 +112,9 @@
   id: TechnologyDiscCombatCybernetics
   name: technology disc [Combat Cybernetics]
   description: A disk containing data about Combat Cybernetics systems.
+
+- type: entity
+  parent: TechnologyDiscBase
+  id: TechnologyDiscCombatCyborgs
+  name: technology disc [Combat Cyborgs]
+  description: A disk containing data about Combat Cyborg technology.

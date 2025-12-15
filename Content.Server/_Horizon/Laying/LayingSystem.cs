@@ -15,6 +15,7 @@ using Content.Shared._Horizon.Pain.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Popups;
 using Content.Shared.Traits.Assorted;
+using Robust.Shared.Map;
 
 namespace Content.Server._Horizon.Laying;
 
@@ -38,6 +39,7 @@ public sealed class LayingSystem : EntitySystem
         SubscribeLocalEvent<LayingComponent, RefreshMovementSpeedModifiersEvent>(RefreshMovementSpeed);
         SubscribeLocalEvent<LayingComponent, StandAttemptEvent>(OnCheckLegs);
         SubscribeLocalEvent<LayingComponent, StandingUpDoAfterEvent>(OnStandingUpComplete);
+        SubscribeLocalEvent<LayingComponent, EntParentChangedMessage>(OnEntParentChanged);
     }
 
     private void ToggleLaying(ICommonSession? session)
@@ -120,6 +122,29 @@ public sealed class LayingSystem : EntitySystem
         if (args.Cancelled)
             return;
 
+        Stand(uid);
+    }
+
+    private void OnEntParentChanged(EntityUid uid, LayingComponent component, EntParentChangedMessage args)
+    {
+        var transform = args.Transform;
+
+        if (InSpace(uid, transform))
+            Stand(uid);
+    }
+
+    private bool InSpace(EntityUid uid, TransformComponent? transform = null)
+    {
+        if (!Resolve(uid, ref transform))
+            return false;
+
+        if (transform.MapID == MapId.Nullspace)
+            return false;
+
+        return _gravity.IsWeightless(uid, xform: transform);
+    }
+    public void Stand(EntityUid uid)
+    {
         if (!TryComp<StandingStateComponent>(uid, out var standing))
             return;
 
