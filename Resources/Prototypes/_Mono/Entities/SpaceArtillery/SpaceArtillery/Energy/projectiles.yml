@@ -19,10 +19,10 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 1250
-        Structural: 4250
-        Heat: 350
-        Ion: 350
+        Radiation: 625
+        Structural: 2125
+        Heat: 175
+#        Ion: 175
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
     layers:
@@ -58,10 +58,10 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 600
-        Structural: 400
-        Heat: 120
-        Ion: 150
+        Radiation: 300
+        Structural: 200
+        Heat: 60
+#        Ion: 75
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
     layers:
@@ -98,10 +98,10 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 200
-        Structural: 300
-        Heat: 400
-        Ion: 500
+        Radiation: 100
+        Structural: 150
+        Heat: 200
+#        Ion: 250
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
     layers:
@@ -138,8 +138,8 @@
   - type: Projectile
     damage:
       types:
-        Structural: 15
-        Heat: 35
+        Structural: 7
+        Heat: 17
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/plasmashot.rsi
     layers:
@@ -172,9 +172,9 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 75
-        Heat: 115
-        Ion: 375
+        Radiation: 37
+        Heat: 57
+#        Ion: 187
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
     layers:
@@ -208,8 +208,8 @@
   - type: Projectile
     damage:
       types:
-        Structural: 10000
-        Heat: 10000
+        Structural: 5000
+        Heat: 5000
   - type: Sprite
     sprite: _Mono/Objects/SpaceArtillery/turbolaser_shot.rsi
     layers:

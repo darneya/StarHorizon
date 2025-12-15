@@ -50,7 +50,7 @@
   - PhazonWeaponControlElectronics
   technologyPrerequisites:
   - RipleyMKIITechnology
-  position: 3, 29
+  position: 3, 34
   researchTargets:
   - TechnologyDiscPhazonTechnology
 
@@ -68,4 +68,4 @@
   - MechPhazonPlazmusUpgradeKit
   technologyPrerequisites:
   - PhazonTechnology
-  position: 4, 29
+  position: 4, 34

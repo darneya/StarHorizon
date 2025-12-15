@@ -67,27 +67,9 @@
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscAdvancedPKAMelee
-  name: technology disc [PKA Melee]
-  description: A disk containing data about PKA Melee Weapons.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscAdvancedPKARanged
-  name: technology disc [PKA Ranged]
-  description: A disk containing data about PKA Ranged Weapons.
-
-- type: entity
-  parent: TechnologyDiscBase
   id: TechnologyDiscAdvancedPKAModules
   name: technology disc [PKA Modules]
   description: A disk containing data about PKA Modules.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscGygaxTechnology
-  name: technology disc [Gygax]
-  description: A disk containing data about Gygax Mech.
 
 - type: entity
   parent: TechnologyDiscBase
@@ -103,21 +85,15 @@
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscClarkeTechnology
-  name: technology disc [Clarke]
-  description: A disk containing data about Clarke Mech.
+  id: TechnologyDiscArsenalAmmoModules
+  name: technology disc [Ammo Modules]
+  description: A disk containing data about Ammo Modules.
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscHarsonTechnology
-  name: technology disc [Harson]
-  description: A disk containing data about Harson Mech.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscArsenalBasicModules
-  name: technology disc [Arsenal Modules]
-  description: A disk containing data about Arsenal Modules.
+  id: TechnologyDiscArsenalAmmunition
+  name: technology disc [Arsenal Ammunition]
+  description: A disk containing data about Arsenal Ammunition.
 
 - type: entity
   parent: TechnologyDiscBase
@@ -127,24 +103,18 @@
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscArsenalIncendiaryAmmunition
-  name: technology disc [Incendiary Ammunition]
-  description: A disk containing data about Incendiary Ammunition.
+  id: TechnologyDiscUniversalTranslator
+  name: technology disc [Universal Translator]
+  description: A disk containing data about Universal Translator.
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscArsenalUraniumAmmunition
-  name: technology disc [Uranium Ammunition]
-  description: A disk containing data about Uranium Ammunition.
+  id: TechnologyDiscCombatCybernetics
+  name: technology disc [Combat Cybernetics]
+  description: A disk containing data about Combat Cybernetics systems.
 
 - type: entity
   parent: TechnologyDiscBase
-  id: TechnologyDiscArsenalPiercingAmmunition
-  name: technology disc [Piercing Ammunition]
-  description: A disk containing data about Piercing Ammunition.
-
-- type: entity
-  parent: TechnologyDiscBase
-  id: TechnologyDiscArsenalPsycoreAmmunition
-  name: technology disc [Psycore Ammunition]
-  description: A disk containing data about Psycore Ammunition.
+  id: TechnologyDiscCombatCyborgs
+  name: technology disc [Combat Cyborgs]
+  description: A disk containing data about Combat Cyborg technology.

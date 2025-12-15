@@ -64,7 +64,7 @@
     tags:
       - SpreaderIgnore
   - type: Construction
-    graph: FanDirectional
+    graph: fandirectional
     node: fandirectional
   - type: ContainerFill
     containers:

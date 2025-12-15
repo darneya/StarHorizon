@@ -2,30 +2,39 @@
 # GitHub/Gitea: ???
 # Discord: amir7036
 
-# Информация об сопровождающем 
+# Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
-# Discord: Astrolaris 
+# Discord: Astrolaris
 
-# Прототип шаттла: 
+# Прототип шаттла:
 #
 - type: vessel
   id: Gazebo
   parent: BaseVessel
-  name: NRZN Gazebo
-  description: Комфортабельный шаттл для отдыха и безумных вечеринок.
-  price: 56000 # 42940, наценка верфи 30% = 55822
+  name: NECG Ruby
+  description: Комфортабельный шаттл-бар для дальних перелетов, обеспечивающий дополнительный комфорт своим пассажирам.
+  price: 250000 # 42940, наценка верфи 30% = 55822
   category: Medium
-  group: Custom
+  group: Shipyard
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Sponsor/gazebo.yml
   class:
   - Civilian
   - Kitchen
   engine:
   - Uranium
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+  # Horizon end
 
 - type: gameMap
   id: Gazebo
-  mapName: 'NRZN Gazebo'
+  mapName: 'NECG Ruby'
   mapPath: /Maps/_Horizon/Shuttles/Sponsor/gazebo.yml
   minPlayers: 0
   stations:
@@ -33,11 +42,11 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Gazebo {1}'  
+          mapNameTemplate: 'Gazebo {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
-        - type: StationJobs 
+        - type: StationJobs
           availableJobs:
             ContractorInterview: [ 0, 0 ]
             PilotInterview: [ 0, 0 ]
