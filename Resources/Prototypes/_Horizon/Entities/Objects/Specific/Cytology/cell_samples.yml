@@ -371,25 +371,6 @@
 # ===== XENOMORPHS =====
 
 - type: cellSample
-  id: CellSampleXeno
-  name: клетки ксено
-  growthRateInSeconds: 100
-  viralSusceptibility: 2
-  requiredChemicals:
-  - "Protein"
-  - "Nutriment"
-  - "XenoidAcidW"
-  supplementaryChemicals:
-    "Vitamin": 2
-    "Enzyme": 3
-  suppressiveChemicals:
-    "FrostOil": -4
-    "SulfuricAcid": -3
-  spawnMobByPrototype:
-  - MobXeno
-  textureState: "violet"
-
-- type: cellSample
   id: CellSampleXenoDrone
   name: клетки дрона
   growthRateInSeconds: 100
@@ -405,7 +386,7 @@
     "FrostOil": -4
     "SulfuricAcid": -2
   spawnMobByPrototype:
-  - MobXenoDrone
+  - MobXenomorphDrone
   textureState: "violet"
 
 - type: cellSample
@@ -424,31 +405,12 @@
     "FrostOil": -5
     "SulfuricAcid": -4
   spawnMobByPrototype:
-  - MobXenoPraetorian
+  - MobXenomorphPraetorian
   textureState: "violet"
 
 - type: cellSample
-  id: CellSampleXenoRavager
-  name: клетки разрушителя
-  growthRateInSeconds: 100
-  viralSusceptibility: 2
-  requiredChemicals:
-  - "Protein"
-  - "Nutriment"
-  - "XenoidAcidK"
-  supplementaryChemicals:
-    "Vitamin": 2
-    "Enzyme": 3
-  suppressiveChemicals:
-    "FrostOil": -4
-    "SulfuricAcid": -3
-  spawnMobByPrototype:
-  - MobXenoRavager
-  textureState: "violet"
-
-- type: cellSample
-  id: CellSampleXenoRunner
-  name: клетки бегуна
+  id: CellSampleXenoHunter
+  name: клетки охотника
   growthRateInSeconds: 100
   viralSusceptibility: 2
   requiredChemicals:
@@ -462,9 +424,28 @@
     "FrostOil": -3
     "SulfuricAcid": -2
   spawnMobByPrototype:
-  - MobXenoRunner
+  - MobXenomorphHunter
   textureState: "violet"
 
+- type: cellSample
+  id: CellSampleXenoSentinel
+  name: клетки защитника
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidW"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Enzyme": 3
+  suppressiveChemicals:
+    "FrostOil": -3
+    "SulfuricAcid": -2
+  spawnMobByPrototype:
+  - MobXenomorphSentinel
+  textureState: "violet"
+  
 - type: cellSample
   id: CellSampleXenoRouny
   name: клетки Руни
@@ -482,25 +463,6 @@
     "SulfuricAcid": -3
   spawnMobByPrototype:
   - MobXenoRouny
-  textureState: "violet"
-
-- type: cellSample
-  id: CellSampleXenoSpitter
-  name: клетки плевальщика
-  growthRateInSeconds: 100
-  viralSusceptibility: 2
-  requiredChemicals:
-  - "Protein"
-  - "Nutriment"
-  - "XenoidAcidW"
-  supplementaryChemicals:
-    "Vitamin": 2
-    "Enzyme": 3
-  suppressiveChemicals:
-    "FrostOil": -3
-    "SulfuricAcid": -2
-  spawnMobByPrototype:
-  - MobXenoSpitter
   textureState: "violet"
 
 # ===== SPACE FAUNA =====

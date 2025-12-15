@@ -70,6 +70,9 @@
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
+  - type: SampleSource # Horizon cytology
+    availableCellSamples:
+    - protoID: CellSampleXenoSentinel
 
 - type: entity
   parent: [BaseMobXenomorphDungeon, BaseMobXenomorphSentinel]
