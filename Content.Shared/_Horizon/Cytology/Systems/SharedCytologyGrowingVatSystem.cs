@@ -1,17 +1,18 @@
 using Content.Shared._Horizon.Cytology.Components;
 using Content.Shared._Horizon.Cytology.Prototypes;
-using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Containers.ItemSlots;
-using Robust.Shared.Containers;
-using Robust.Shared.Prototypes;
 using Content.Shared.Chemistry.Components;
-using Robust.Shared.Timing;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.FixedPoint;
-using Content.Shared.Power;
-using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Coordinates.Helpers;
+using Content.Shared.FixedPoint;
+using Content.Shared.Humanoid;
+using Content.Shared.Power;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Shared._Horizon.Cytology.Systems;
 
@@ -24,10 +25,13 @@ public abstract class SharedCytologyGrowingVatSystem : EntitySystem
 
     [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly SharedCytologyPetriDishSystem _petriDishSystem = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidSystem = default!;
+    [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
+    [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
 
     public override void Initialize()
     {
@@ -163,11 +167,25 @@ public abstract class SharedCytologyGrowingVatSystem : EntitySystem
 
                 foreach (var mob in proto.SpawnMobByPrototype)
                 {
-                    PredictedSpawnAtPosition(mob, Transform(petriDish).Coordinates);
+                    var spawnedMob = PredictedSpawnAtPosition(mob, Transform(petriDish).Coordinates);
+                    TrySetHumanoidApperenceToMobFromCellSampleInfo(spawnedMob, cell);
                 }
                 cellSamples.RemoveAt(i);
+
+                _petriDishSystem.PetriDishUpdateAppearance(petriDish);
             }
         }
+
+
+    }
+
+    private void TrySetHumanoidApperenceToMobFromCellSampleInfo(EntityUid spawnedMob, CellSample cell)
+    {
+        if (cell.StoredProfile is not { } profile)
+            return;
+
+        _humanoidSystem.LoadProfile(spawnedMob, profile);
+        _metaDataSystem.SetEntityName(spawnedMob, profile.Name);
     }
 
     private void SetCellGrowProgress(CellSamplePrototype proto, CellSample cell, Dictionary<string, FixedPoint2> reagentLookup)
