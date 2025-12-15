@@ -465,6 +465,84 @@
   - MobXenoRouny
   textureState: "violet"
 
+# ===== XENOMORPHS (NPC) =====
+
+- type: cellSample
+  id: CellSampleXeno
+  name: клетки норника
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidW"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Enzyme": 3
+  suppressiveChemicals:
+    "FrostOil": -4
+    "SulfuricAcid": -3
+  spawnMobByPrototype:
+  - MobXeno
+  textureState: "violet"
+
+- type: cellSample
+  id: CellSampleXenoRavager
+  name: клетки разорителя
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidH"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Enzyme": 3
+  suppressiveChemicals:
+    "FrostOil": -4
+    "SulfuricAcid": -3
+  spawnMobByPrototype:
+  - MobXenoRavager
+  textureState: "violet"
+
+- type: cellSample
+  id: CellSampleXenoRunner
+  name: клетки бегуна
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidW"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Enzyme": 2
+  suppressiveChemicals:
+    "FrostOil": -3
+    "SulfuricAcid": -2
+  spawnMobByPrototype:
+  - MobXenoRunner
+  textureState: "violet"
+
+- type: cellSample
+  id: CellSampleXenoSpitter
+  name: клетки плевальщика
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidW"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Enzyme": 3
+  suppressiveChemicals:
+    "FrostOil": -3
+    "SulfuricAcid": -2
+  spawnMobByPrototype:
+  - MobXenoSpitter
+  textureState: "violet"
+
 # ===== SPACE FAUNA =====
 
 - type: cellSample

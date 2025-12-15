@@ -73,6 +73,8 @@
   - type: SampleSource # Horizon cytology
     availableCellSamples:
     - protoID: CellSampleXenoDrone
+  - type: StaticPrice
+    price: 2000
 
 - type: entity
   parent: [BaseMobXenomorphDungeon, BaseMobXenomorphDrone]
