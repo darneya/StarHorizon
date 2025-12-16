@@ -60,7 +60,7 @@
     plasma: 100
     plasmaPerSecondOffWeed: 0.25
     plasmaPerSecondOnWeed: 2.5
-    
+
 - type: entity
   parent: BaseMobXenomorphHunter
   id: MobXenomorphHunter
@@ -80,6 +80,8 @@
   - type: SampleSource # Horizon cytology
     availableCellSamples:
     - protoID: CellSampleXenoHunter
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
   - type: StaticPrice
     price: 4000
 

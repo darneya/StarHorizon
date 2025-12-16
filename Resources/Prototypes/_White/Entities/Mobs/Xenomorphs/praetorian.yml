@@ -102,6 +102,8 @@
   - type: SampleSource # Horizon cytology
     availableCellSamples:
     - protoID: CellSampleXenoPraetorian
+  - type: CanBeTakenUnderControl # Horizon
+    remotePilot: MobRemotePilot
   - type: StaticPrice
     price: 4000
 
