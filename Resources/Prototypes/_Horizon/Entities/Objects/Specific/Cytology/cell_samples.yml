@@ -371,7 +371,26 @@
 # ===== XENOMORPHS =====
 
 - type: cellSample
-  id: CellSampleXenoDrone
+  id: CellSampleXenomorphLarva
+  name: клетки личинки
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidH"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Enzyme": 2
+  suppressiveChemicals:
+    "FrostOil": -3
+    "SulfuricAcid": -1
+  spawnMobByPrototype:
+  - MobXenomorphLarva
+  textureState: "violet"
+
+- type: cellSample
+  id: CellSampleXenomorphDrone
   name: клетки дрона
   growthRateInSeconds: 100
   viralSusceptibility: 2
@@ -390,7 +409,7 @@
   textureState: "violet"
 
 - type: cellSample
-  id: CellSampleXenoPraetorian
+  id: CellSampleXenomorphPraetorian
   name: клетки преторианца
   growthRateInSeconds: 100
   viralSusceptibility: 2
@@ -409,7 +428,7 @@
   textureState: "violet"
 
 - type: cellSample
-  id: CellSampleXenoHunter
+  id: CellSampleXenomorphHunter
   name: клетки охотника
   growthRateInSeconds: 100
   viralSusceptibility: 2
@@ -428,7 +447,7 @@
   textureState: "violet"
 
 - type: cellSample
-  id: CellSampleXenoSentinel
+  id: CellSampleXenomorphSentinel
   name: клетки защитника
   growthRateInSeconds: 100
   viralSusceptibility: 2
@@ -445,7 +464,9 @@
   spawnMobByPrototype:
   - MobXenomorphSentinel
   textureState: "violet"
-  
+
+# ===== XENOMORPHS (NPC) =====
+
 - type: cellSample
   id: CellSampleXenoRouny
   name: клетки Руни
@@ -465,7 +486,43 @@
   - MobXenoRouny
   textureState: "violet"
 
-# ===== XENOMORPHS (NPC) =====
+- type: cellSample
+  id: CellSampleXenoDrone
+  name: клетки дрона
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidH"
+  supplementaryChemicals:
+    "Vitamin": 3
+    "Enzyme": 3
+  suppressiveChemicals:
+    "FrostOil": -4
+    "SulfuricAcid": -2
+  spawnMobByPrototype:
+  - MobXenoDrone
+  textureState: "violet"
+
+- type: cellSample
+  id: CellSampleXenoPraetorian
+  name: клетки преторианца
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidK"
+  supplementaryChemicals:
+    "Vitamin": 3
+    "Enzyme": 4
+  suppressiveChemicals:
+    "FrostOil": -5
+    "SulfuricAcid": -4
+  spawnMobByPrototype:
+  - MobXenoPraetorian
+  textureState: "violet"
 
 - type: cellSample
   id: CellSampleXeno

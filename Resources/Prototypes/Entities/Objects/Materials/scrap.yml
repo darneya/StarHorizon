@@ -33,8 +33,10 @@
     - protoID: CellSampleCarpMagic
     - protoID: CellSampleSpaceViper
     - protoID: CellSampleCockroach
-    - protoID: CellSampleXenoDrone
-    - protoID: CellSampleXenoHunter
+    - protoID: CellSampleXenomorphLarva
+    - protoID: CellSampleXenomorphDrone
+    - protoID: CellSampleXenomorphHunter
+    - protoID: CellSampleXenomorphSentinel
 
 - type: entity
   parent: BaseStructure

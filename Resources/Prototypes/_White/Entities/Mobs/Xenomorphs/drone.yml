@@ -72,7 +72,7 @@
         type: TrackedRadialSelectorMenuBUI
   - type: SampleSource # Horizon cytology
     availableCellSamples:
-    - protoID: CellSampleXenoDrone
+    - protoID: CellSampleXenomorphDrone
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
   - type: StaticPrice

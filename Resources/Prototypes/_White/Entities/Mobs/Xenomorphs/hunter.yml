@@ -79,7 +79,7 @@
   - type: GhostTakeoverAvailable
   - type: SampleSource # Horizon cytology
     availableCellSamples:
-    - protoID: CellSampleXenoHunter
+    - protoID: CellSampleXenomorphHunter
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
   - type: StaticPrice

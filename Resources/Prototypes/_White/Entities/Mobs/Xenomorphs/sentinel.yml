@@ -72,11 +72,11 @@
   - type: GhostTakeoverAvailable
   - type: SampleSource # Horizon cytology
     availableCellSamples:
-    - protoID: CellSampleXenoSentinel
+    - protoID: CellSampleXenomorphSentinel
   - type: CanBeTakenUnderControl # Horizon
     remotePilot: MobRemotePilot
   - type: StaticPrice
-    price: 4000
+    price: 4500
 
 - type: entity
   parent: [BaseMobXenomorphDungeon, BaseMobXenomorphSentinel]

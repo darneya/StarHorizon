@@ -136,5 +136,7 @@
     - protoID: CellSampleCat
     - protoID: CellSampleCorgi
     - protoID: CellSampleCockroach
-    - protoID: CellSampleXenoDrone
-    - protoID: CellSampleXenoHunter
+    - protoID: CellSampleXenomorphLarva
+    - protoID: CellSampleXenomorphDrone
+    - protoID: CellSampleXenomorphHunter
+    - protoID: CellSampleXenomorphSentinel
