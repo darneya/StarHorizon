@@ -11,13 +11,14 @@
     size: Normal
   - type: MachineBoard
     prototype: BluespaceHarvester
+    requirements:
+      Capacitor: 5
+      MatterBin: 15
     stackRequirements:
       Glass: 15
       Steel: 15
       CableHV: 5
       Bluespace: 5
-      Capacitor: 5
-      MatterBin: 15
 
 - type: entity
   parent: BaseMachineCircuitboard
@@ -32,8 +33,9 @@
     size: Normal
   - type: MachineBoard
     prototype: BluespaceTransitor
+    requirements:
+      Capacitor: 15
     stackRequirements:
       Steel: 10
       CableHV: 30
       Bluespace: 5
-      Capacitor: 15
