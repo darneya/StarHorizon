@@ -45,7 +45,7 @@
   minPlayers: 0
   stations:
     BoxShuttle:
-      stationProto: StandardFrontierVessel
+      stationProto: StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Box {1}'

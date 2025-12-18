@@ -1,3 +1,5 @@
+using Content.Client._Horizon.Sponsors.Systems;
+using Content.Client._Horizon.Sponsors.UI;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -33,6 +35,8 @@ namespace Content.Client.IoC
         {
             var collection = IoCManager.Instance!;
 
+            collection.Register<SponsorConnectClientSystem>(); // _Horizon
+            collection.Register<SponsorShopUIController>(); // _Horizon
             collection.Register<IParallaxManager, ParallaxManager>();
             collection.Register<GeneratedParallaxCache>();
             collection.Register<IChatManager, ChatManager>();

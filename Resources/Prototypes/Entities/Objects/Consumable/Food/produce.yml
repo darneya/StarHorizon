@@ -509,6 +509,14 @@
   - type: SpaceGarbage
   - type: Food
     requiresSpecialDigestion: true
+  - type: CytologyDirt
+    possibleCellSamples:
+    - protoID: CellSampleMurine
+    - protoID: CellSampleCat
+    - protoID: CellSampleCorgi
+    - protoID: CellSampleCockroach
+    - protoID: CellSampleFrog
+    - protoID: CellSampleSlime
 
 - type: entity
   name: baked banana peel

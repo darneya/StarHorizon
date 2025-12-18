@@ -136,5 +136,7 @@ ent-BorgModuleCombatLaserAdvanced = advanced laser cyborg module
     .desc = Module with advanced laser weapon. Balanced firepower and range.
 ent-BorgModuleCombatLaserHeavy = heavy laser cyborg module
     .desc = Module with heavy laser weapon. Increased power output. Destructive against armored targets.
+ent-BorgModuleCombatL6C = cyborg GSW L6C module
+    .desc = Module that comes with a GSW L6C heavy machine gun.
 ent-BorgModuleCombatCloakingDevice = cloaking device cyborg module
     .desc = Integrated cloaking device for covert operations. Renders the cyborg invisible for an extended duration.
