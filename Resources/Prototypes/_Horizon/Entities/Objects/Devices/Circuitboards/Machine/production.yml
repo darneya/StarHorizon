@@ -32,7 +32,7 @@
   - type: Item
     size: Normal
   - type: MachineBoard
-    prototype: BluespaceTransitor
+    prototype: BLES
     requirements:
       Capacitor: 30
     stackRequirements:
