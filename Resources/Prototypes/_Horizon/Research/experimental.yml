@@ -3,13 +3,13 @@
 - type: technology
   id: Bluespace
   name: research-technology-bluespace
-  entityIcon: MachineBluespaceTransitorCircuitboard
+  entityIcon: MachineBLESCircuitboard
   discipline: NFScience
   tier: 2
   cost: 25000
   position: 3, 5
   recipeUnlocks:
-  - MachineBluespaceTransitorCircuitboard
+  - MachineBLESCircuitboard
   technologyPrerequisites:
   - NFSuperParts
 

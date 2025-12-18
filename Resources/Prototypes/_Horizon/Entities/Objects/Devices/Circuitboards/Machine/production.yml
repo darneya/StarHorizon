@@ -22,9 +22,9 @@
 
 - type: entity
   parent: BaseMachineCircuitboard
-  id: MachineBluespaceTransitorCircuitboard
-  name: bluespace T.R.A.N.S.I.T.O.R board
-  description: A machine board for a bluespace T.R.A.N.S.I.T.O.R
+  id: MachineBLEScuitboard
+  name: Плата блока хранения энергии с блюспейс-усилением
+  description: 'Это блок хранения энергии с блюспейс-усилением который позволяет хранить ОГО-ГО энернии с помощью блюспейс технологий в основном его просто зовут "БЛЭС"'
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi
@@ -34,7 +34,7 @@
   - type: MachineBoard
     prototype: BluespaceTransitor
     requirements:
-      Capacitor: 15
+      Capacitor: 30
     stackRequirements:
       Steel: 10
       CableHV: 30

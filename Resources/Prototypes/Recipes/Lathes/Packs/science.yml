@@ -102,7 +102,7 @@
   - ArtifactCrusherMachineCircuitboard
   - ResearchComputerCircuitboard # Frontier: add research computer
   - MachineBluespaceHarvesterCircuitboard # Horizon
-  - MachineBluespaceTransitorCircuitboard # Horizon
+  - MachineBLESCircuitboard # Horizon
 
 - type: latheRecipePack
   id: CameraBoards

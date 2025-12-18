@@ -57,5 +57,5 @@
 
 - type: latheRecipe
   parent: BaseGoldCircuitboardRecipe
-  id: MachineBluespaceTransitorCircuitboard
-  result: MachineBluespaceTransitorCircuitboard
+  id: MachineBLESCircuitboard
+  result: MachineBLESCircuitboard
