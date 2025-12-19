@@ -1,6 +1,8 @@
 using System.IO;
 using System.Threading.Tasks;
 using Content.Server.Chat.Managers;
+using Content.Server.GameTicking;
+using Content.Server.RoundEnd;
 using Robust.Server;
 using Robust.Shared.ContentPack;
 using Content.Shared._Horizon.CCVar;
@@ -17,6 +19,7 @@ namespace Content.Server._Horizon;
 
 public sealed class GameShutdownController
 {
+    [Dependency] private readonly IEntityManager _entityManager = null!;
     [Dependency] private readonly IResourceManager _resManager = null!;
     [Dependency] private readonly IConfigurationManager _cfg = null!;
     [Dependency] private readonly IGameTiming _gameTiming = null!;
@@ -24,8 +27,8 @@ public sealed class GameShutdownController
     [Dependency] private readonly IBaseServer _server = null!;
 
     private readonly ISawmill _sawmill = Logger.GetSawmill("ShutdownController");
-    private TimeSpan _sendCooldown;
     private Dictionary<string, ShutdownData> _shutdownTime = [];
+    private TimeSpan _sendCooldown;
     private TimeSpan? _startTime;
     private bool _shutdown;
 
@@ -75,6 +78,7 @@ public sealed class GameShutdownController
                 {
                     var message = string.Empty;
                     var restart = false;
+                    var restartAlways = false;
                     var beforeShutdownTime = TimeSpan.Zero;
                     var minServerPlay = TimeSpan.Zero;
                     if (attribution is not MappingDataNode map)
@@ -90,8 +94,11 @@ public sealed class GameShutdownController
                     if (map.TryGet("serverMessage", out var serverMessage))
                         message = serverMessage.ToString();
 
-                    if (map.TryGet<ValueDataNode>("restartServer", out var restartNode))
+                    if (map.TryGet<ValueDataNode>("restartRound", out var restartNode))
                         restart = restartNode.AsBool();
+
+                    if (map.TryGet<ValueDataNode>("restartRound", out var restartAlwaysNode))
+                        restartAlways = restartAlwaysNode.AsBool();
 
                     if (map.TryGet("beforeShutdown", out var beforeShutdown) &&
                         TimeSpan.TryParse(beforeShutdown.ToString(), out var beforeShutdownParsed))
@@ -111,9 +118,9 @@ public sealed class GameShutdownController
                         timeSpanParsed += TimeSpan.FromHours(24); // Flip to next day if we passed that point
 
                     if (_startTime.HasValue && sequence.Sequence.Count > 1 && minServerPlay >= timeSpanParsed)
-                        continue; // If we cant provide min server time then go to next time shutdown
+                        timeSpanParsed += minServerPlay - timeSpanParsed; // If we cant provide min server time then go to next time shutdown
 
-                    var data = new ShutdownData(timeSpanParsed, message, restart, beforeShutdownTime);
+                    var data = new ShutdownData(timeSpanParsed, message, restart, restartAlways, beforeShutdownTime);
                     timeSpan.Add(name.ToString(), data);
                 }
 
@@ -132,7 +139,7 @@ public sealed class GameShutdownController
         if (!_shutdown || _shutdownTime.Count == 0 || _startTime == null)
             return;
 
-        foreach (var (_, data) in _shutdownTime)
+        foreach (var (name, data) in _shutdownTime)
         {
             var actualTime = _startTime.Value + _gameTiming.RealTime;
             if (actualTime >= data.ShutdownTime - data.BeforeShutdownTime && _sendCooldown <= _gameTiming.RealTime)
@@ -141,9 +148,26 @@ public sealed class GameShutdownController
             if (actualTime < data.ShutdownTime)
                 continue;
 
-            _server.Shutdown($"GameShutdown controller start shutdown in {actualTime}");
-            _shutdownTime.Clear();
-            break;
+            if (data.Restart)
+            {
+                if (data.RestartAlways)
+                {
+                    if (_entityManager.EntitySysManager.TryGetEntitySystem(out GameTicker? gameTicker))
+                        gameTicker.RestartRound();
+                }
+                else if (_entityManager.EntitySysManager.TryGetEntitySystem(out RoundEndSystem? roundEndSystem))
+                    roundEndSystem.EndRound();
+
+                var newData = data;
+                newData.ShutdownTime += TimeSpan.FromHours(24);
+                _shutdownTime[name] = newData;
+            }
+            else
+            {
+                _server.Shutdown($"GameShutdown controller start shutdown in {actualTime}");
+                _shutdownTime.Clear();
+                break;
+            }
         }
     }
 
@@ -154,5 +178,5 @@ public sealed class GameShutdownController
         _sendCooldown += TimeSpan.FromMinutes(5) + _gameTiming.RealTime;
     }
 
-    private record struct ShutdownData(TimeSpan ShutdownTime, string Message, bool Restart, TimeSpan BeforeShutdownTime);
+    private record struct ShutdownData(TimeSpan ShutdownTime, string Message, bool Restart, bool RestartAlways, TimeSpan BeforeShutdownTime);
 }
