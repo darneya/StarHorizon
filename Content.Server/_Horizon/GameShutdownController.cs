@@ -104,21 +104,8 @@ public sealed class GameShutdownController
                         TimeSpan.TryParse(beforeShutdown.ToString(), out var beforeShutdownParsed))
                         beforeShutdownTime = beforeShutdownParsed;
 
-                    if (map.TryGet("minServerPlay", out var minServerTime) && _startTime.HasValue &&
-                        TimeSpan.TryParse(minServerTime.ToString(), out var minServerPlayParsed))
-                    {
-                        var play = minServerPlayParsed + _startTime.Value;
-                        if (play >= TimeSpan.FromHours(24))
-                            minServerPlay = play - minServerPlayParsed;
-                        else
-                            minServerPlay = play;
-                    }
-
                     if (_startTime.HasValue && timeSpanParsed <= _startTime.Value)
                         timeSpanParsed += TimeSpan.FromHours(24); // Flip to next day if we passed that point
-
-                    if (_startTime.HasValue && sequence.Sequence.Count > 1 && minServerPlay >= timeSpanParsed)
-                        timeSpanParsed += minServerPlay - timeSpanParsed; // If we cant provide min server time then go to next time shutdown
 
                     var data = new ShutdownData(timeSpanParsed, message, restart, restartAlways, beforeShutdownTime);
                     timeSpan.Add(name.ToString(), data);
