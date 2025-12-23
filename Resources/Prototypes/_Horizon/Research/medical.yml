@@ -20,7 +20,7 @@
 - type: technology
   id: CyberLimbsTech
   name: research-technology-basic-cyberlimbs
-  entityIcon: RightArmCyber
+  entityIcon: TechCyberBase
   discipline: NFMedical
   tier: 1
   cost: 2500
@@ -267,7 +267,7 @@
 - type: technology
   id: FunctionalCyberLimbsTech
   name: research-technology-functional-cyberlimbs
-  entityIcon: RightArmCyberReaper
+  entityIcon: TechCyberArmImplants
   discipline: NFMedical
   tier: 3
   cost: 7500
@@ -285,23 +285,9 @@
   position: 2, 20
 
 - type: technology
-  id: FunctionalCombatLimbsTech
-  name: research-technology-functional-combatlimbs
-  entityIcon: RightArmCyberLazer
-  discipline: NFMedical
-  tier: 3
-  cost: 7500
-  recipeUnlocks:
-  - LeftArmCyberLazer
-  - RightArmCyberLazer
-  technologyPrerequisites:
-  - FunctionalCyberLimbsTech
-  position: 3, 21
-
-- type: technology
   id: FunctionalEngineeringLimbsTech
   name: research-technology-functional-engineeringlimbs
-  entityIcon: RightArmCyberEngi
+  entityIcon: TechCyberArmAdvanced
   discipline: NFMedical
   tier: 3
   cost: 7500
@@ -313,6 +299,68 @@
   technologyPrerequisites:
   - FunctionalCyberLimbsTech
   position: 3, 20
+
+- type: technology
+  id: FunctionalCombatLimbsTechBase
+  name: research-technology-functional-combatlimbs-b
+  entityIcon: TechCombatLimbsBase
+  discipline: NFMedical
+  tier: 3
+  cost: 7500
+  recipeUnlocks:
+  - LeftArmProtoCyberWeaponShotgunSawn
+  - RightArmProtoCyberWeaponShotgunSawn
+  - LeftArmProtoCyberWeaponEnergyPistolLaser
+  - RightArmProtoCyberWeaponEnergyPistolLaser
+  - LeftArmProtoCyberWeaponPkaSawn
+  - RightArmProtoCyberWeaponPkaSawn
+  - LeftArmProtoCyberWeaponEnergyPistolDisabler
+  - RightArmProtoCyberWeaponEnergyPistolDisabler
+  technologyPrerequisites:
+  - FunctionalCyberLimbsTech
+  researchTargets:
+  - TechnologyDiscCombatCybernetics
+  position: 3, 21
+
+- type: technology
+  id: FunctionalCombatLimbsTechAdvanced
+  name: research-technology-functional-combatlimbs-adv
+  entityIcon: TechCombatLimbsAdvanced
+  discipline: NFMedical
+  tier: 3
+  cost: 7500
+  recipeUnlocks:
+  - LeftArmCyberWeaponProtoKineticAccelerator
+  - RightArmCyberWeaponProtoKineticAccelerator
+  - LeftArmCyberWeaponEnergySubMachineGunDisabler
+  - RightArmCyberWeaponEnergySubMachineGunDisabler
+  - LeftArmCyberWeaponEnergyPistolLaserAdvanced
+  - RightArmCyberWeaponEnergyPistolLaserAdvanced
+  - LeftArmCyberWeaponShotgunAdvanced
+  - RightArmCyberWeaponShotgunAdvanced
+  technologyPrerequisites:
+  - FunctionalCombatLimbsTechBase
+  position: 4, 21
+
+- type: technology
+  id: FunctionalCombatLimbsTechClose
+  name: research-technology-functional-combatlimbs-cc
+  entityIcon: TechCombatLimbsClose
+  discipline: NFMedical
+  tier: 3
+  cost: 7500
+  recipeUnlocks:
+  - LeftArmCyberClawRending
+  - RightArmCyberClawRending
+  - LeftArmCyberClawPiersing
+  - RightArmCyberClawPiersing
+  - LeftArmCyberClawPoison
+  - RightArmCyberClawPoison
+  - LeftArmCyberLash
+  - RightArmCyberLash
+  technologyPrerequisites:
+  - FunctionalCombatLimbsTechBase
+  position: 4, 22
 
 - type: technology
   id: CyberImplantsNight
@@ -399,3 +447,20 @@
   technologyPrerequisites:
   - ProtectiveImplantsTech
   position: 4, 13
+
+- type: technology
+  id: Cytology
+  name: research-technology-cytology
+  entityIcon: CytologyGrowingVat
+  discipline: NFMedical
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - CytologyGrowingVatMachineCircuitboard
+  - CytologyMicroscopeMachineCircuitboard
+  - CytologySwab
+  - CytologyInjector
+  - CytologyPetriDish
+  technologyPrerequisites:
+  - NFEngineeringMedicine
+  position: 2, 12

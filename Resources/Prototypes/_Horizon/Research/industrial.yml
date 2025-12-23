@@ -59,8 +59,6 @@
   technologyPrerequisites:
   - RipleyMKIITechnology
   position: 3, 28
-  researchTargets:
-  - TechnologyDiscClarkeTechnology
 
 - type: technology
   id: MechTechnologyMining
@@ -175,7 +173,7 @@
   - MechRipleyCombatUpgradeKit
   - MechRipleyEarthUpgradeKit
   - MechRipleyFlamesredUpgradeKit
-  - MechRipleyTitanUpgradeKit
+#  - MechRipleyTitanUpgradeKit
   - MechRipleyZairjahUpgradeKit
   - MechRipleyFirefighterUpgradeKit
   - MechRipleyHaulerUpgradeKit
@@ -210,7 +208,7 @@
   - EnergoTovar
   technologyPrerequisites:
   - NFPowerGeneration
-  position: 4, 50
+  position: 3, 50
 
 - type: technology
   id: FuelGenerationUnstable
@@ -226,7 +224,7 @@
   - FuelPlutoniumUnstable1
   technologyPrerequisites:
   - FuelGeneration
-  position: 5, 50
+  position: 4, 50
 
 - type: technology
   id: FuelGenerationPure
@@ -242,7 +240,7 @@
   - FuelPlutoniumPure1
   technologyPrerequisites:
   - FuelGenerationUnstable
-  position: 6, 50
+  position: 5, 50
 
 - type: technology
   id: NFExperimentalPowerGeneration

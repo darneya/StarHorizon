@@ -27,10 +27,8 @@
   - WeaponKineticClaws
   - WeaponKineticMachete
   technologyPrerequisites:
-  - NFImprovedSalvageWeapons
-  position: 4, 57
-  researchTargets:
-  - TechnologyDiscAdvancedPKAMelee
+  - AdvancedPKAModules
+  position: 5, 57
 
 - type: technology
   id: AdvancedPKARanged
@@ -45,10 +43,8 @@
   - WeaponProtoKineticRailgun
   - WeaponProtoKineticShotgun
   technologyPrerequisites:
-  - NFImprovedSalvageWeapons
-  position: 4, 58
-  researchTargets:
-  - TechnologyDiscAdvancedPKARanged
+  - AdvancedPKAModules
+  position: 5, 58
 
 - type: technology
   id: AdvancedPKAModules
@@ -64,7 +60,7 @@
   - PKAUpgradeLight
   technologyPrerequisites:
   - NFImprovedSalvageWeapons
-  position: 4, 59
+  position: 4, 57
   researchTargets:
   - TechnologyDiscAdvancedPKAModules
 
@@ -88,8 +84,6 @@
   technologyPrerequisites:
   - RipleyMKIITechnology
   position: 3, 36
-  researchTargets:
-  - TechnologyDiscGygaxTechnology
 
 - type: technology
   id: MechEnergyGunSmallTechnology
@@ -180,7 +174,7 @@
   - BoxAmmoGranade
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 35
+  position: 6, 36
 
 - type: technology
   id: MechCloseWeaponTechnology
@@ -245,7 +239,7 @@
   - MechDurUnathiUpgradeKit
   technologyPrerequisites:
   - DurandTechnology
-  position: 6, 36
+  position: 6, 35
 
 - type: technology
   id: IncendiaryAmmunitionTechnology
@@ -263,8 +257,6 @@
   technologyPrerequisites:
   - NFBulkRifleAmmo
   position: 5, 64
-  researchTargets:
-  - TechnologyDiscArsenalIncendiaryAmmunition
 
 - type: technology
   id: UraniumAmmunitionTechnology
@@ -282,8 +274,6 @@
   technologyPrerequisites:
   - NFBulkRifleAmmo
   position: 5, 65
-  researchTargets:
-  - TechnologyDiscArsenalUraniumAmmunition
 
 - type: technology
   id: PiercingAmmunitionTechnology
@@ -301,8 +291,6 @@
   technologyPrerequisites:
   - NFBulkRifleAmmo
   position: 5, 66
-  researchTargets:
-  - TechnologyDiscArsenalPiercingAmmunition
 
 - type: technology
   id: PsycoreAmmunitionTechnology
@@ -320,5 +308,3 @@
   technologyPrerequisites:
   - NFBulkRifleAmmo
   position: 5, 67
-  researchTargets:
-  - TechnologyDiscArsenalPsycoreAmmunition
