@@ -681,9 +681,9 @@ entities:
       id: Geode
     - type: ImplicitRoof
     - type: ShipyardGridRequiresNewThrusters
-      priceAdded: 15000
+      priceAdded: 35000
     - type: ShipyardGridRequiresRustClearing
-      priceAdded: 5000
+      priceAdded: 10000
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 682

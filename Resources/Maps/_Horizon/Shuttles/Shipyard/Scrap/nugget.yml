@@ -582,9 +582,9 @@ entities:
       id: Nugget
     - type: ImplicitRoof
     - type: ShipyardGridRequiresNewThrusters
-      priceAdded: 7000
+      priceAdded: 16000
     - type: ShipyardGridRequiresRustClearing
-      priceAdded: 4000
+      priceAdded: 8000
 - proto: Airlock
   entities:
   - uid: 2
@@ -2034,14 +2034,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,-5.5
       parent: 1
-- proto: ShipyardPriceMarkerAtmos5000
+- proto: ShipyardPriceMarkerAtmos15000
   entities:
   - uid: 346
     components:
     - type: Transform
       pos: 8.5,-4.5
       parent: 1
-- proto: ShipyardPriceMarkerShuttleConsole5000
+- proto: ShipyardPriceMarkerShuttleConsole20000
   entities:
   - uid: 347
     components:

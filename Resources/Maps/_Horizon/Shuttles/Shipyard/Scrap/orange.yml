@@ -585,9 +585,9 @@ entities:
       id: Orange
     - type: ImplicitRoof
     - type: ShipyardGridRequiresRustClearing
-      priceAdded: 3000
-    - type: ShipyardGridRequiresNewThrusters
       priceAdded: 6000
+    - type: ShipyardGridRequiresNewThrusters
+      priceAdded: 14000
 - proto: AirlockCargoGlass
   entities:
   - uid: 2
@@ -1848,14 +1848,14 @@ entities:
     - type: Transform
       pos: -0.4732375,3.615672
       parent: 1
-- proto: ShipyardPriceMarkerAtmos5000
+- proto: ShipyardPriceMarkerAtmos15000
   entities:
   - uid: 223
     components:
     - type: Transform
       pos: -0.5,5.5
       parent: 1
-- proto: ShipyardPriceMarkerShuttleConsole5000
+- proto: ShipyardPriceMarkerShuttleConsole20000
   entities:
   - uid: 228
     components:

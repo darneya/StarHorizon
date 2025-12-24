@@ -271,6 +271,10 @@ entities:
     - type: RadiationGridResistance
     - type: NavMap
     - type: ImplicitRoof
+    - type: ShipyardGridRequiresRustClearing
+      priceAdded: 5000
+    - type: ShipyardGridRequiresNewThrusters
+      priceAdded: 12000
 - proto: ActionToggleLight
   entities:
   - uid: 112
@@ -1269,14 +1273,14 @@ entities:
       parent: 1
     - type: Stack
       count: 5
-- proto: ShipyardPriceMarkerAtmos5000
+- proto: ShipyardPriceMarkerAtmos15000
   entities:
   - uid: 92
     components:
     - type: Transform
       pos: -1.5,-0.5
       parent: 1
-- proto: ShipyardPriceMarkerShuttleConsole5000
+- proto: ShipyardPriceMarkerShuttleConsole20000
   entities:
   - uid: 154
     components:

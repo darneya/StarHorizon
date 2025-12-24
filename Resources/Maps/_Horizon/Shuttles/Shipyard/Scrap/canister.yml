@@ -194,9 +194,9 @@ entities:
       id: Canister
     - type: ImplicitRoof
     - type: ShipyardGridRequiresRustClearing
-      priceAdded: 2000
-    - type: ShipyardGridRequiresNewThrusters
       priceAdded: 5000
+    - type: ShipyardGridRequiresNewThrusters
+      priceAdded: 12000
 - proto: AirAlarm
   entities:
   - uid: 62
