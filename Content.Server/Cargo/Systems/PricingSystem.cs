@@ -20,7 +20,8 @@ using System.Linq;
 using Content.Shared.Research.Prototypes;
 using Content.Server._NF.Cargo.Components; // Frontier
 using Content.Server.Materials.Components; // Frontier
-using Content.Shared.Cargo.Components; // Frontier
+using Content.Shared.Cargo.Components;
+using Content.Server._Horizon.Shipyard; // Frontier
 
 namespace Content.Server.Cargo.Systems;
 
@@ -439,6 +440,14 @@ public sealed class PricingSystem : EntitySystem
         var xform = Transform(grid);
         var price = 0.0;
         var enumerator = xform.ChildEnumerator;
+
+        // Horizon start
+        var ev = new GetAdditionalGridCostEvent();
+        RaiseLocalEvent(grid, ref ev);
+
+        price += ev.Price;
+        // Horizon end
+
         while (enumerator.MoveNext(out var child))
         {
             if (predicate is null || predicate(child))
