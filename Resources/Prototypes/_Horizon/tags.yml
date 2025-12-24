@@ -437,3 +437,14 @@
 
 - type: Tag
   id: UASMaterial
+
+
+# Shipyard
+- type: Tag
+  id: ShuttleConsole
+
+- type: Tag
+  id: RustedThruster
+
+- type: Tag
+  id: RustedWall
