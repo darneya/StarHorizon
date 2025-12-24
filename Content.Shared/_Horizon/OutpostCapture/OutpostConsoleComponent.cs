@@ -10,8 +10,16 @@ namespace Content.Shared._Horizon.OutpostCapture;
 public sealed partial class OutpostConsoleComponent : Component
 {
     [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public OutpostConsoleState State { get; set; } = OutpostConsoleState.Uncaptured;
+
+    [AutoNetworkedField]
     [ViewVariables(VVAccess.ReadOnly)]
-    public HashSet<NpcFactionPrototype>? FactionCaptured { get; set; }
+    public string? FactionCaptured { get; set; }
+
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan? CapturingTime { get; set; }
 
     [DataField]
     [AutoNetworkedField]
