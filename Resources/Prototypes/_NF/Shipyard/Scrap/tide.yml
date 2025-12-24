@@ -6,7 +6,7 @@
   price: 9700
   category: Small
   group: Scrap
-  shuttlePath: /Maps/_NF/Shuttles/Scrap/tide.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Scrap/tide.yml  # Horizon - замена карты
   guidebookPage: ShipyardTide
   class:
   - Scrapyard
@@ -17,7 +17,7 @@
 - type: gameMap
   id: Tide
   mapName: 'SV Tide'
-  mapPath: /Maps/_NF/Shuttles/Scrap/tide.yml
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Scrap/tide.yml  # Horizon - замена карты
   minPlayers: 0
   stations:
     Tide:

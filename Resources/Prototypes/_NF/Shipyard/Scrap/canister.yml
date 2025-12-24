@@ -10,7 +10,7 @@
   price: 8000
   category: Micro
   group: Scrap
-  shuttlePath: /Maps/_NF/Shuttles/Scrap/canister.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Scrap/canister.yml  # Horizon - замена карты
   guidebookPage: Null
   class:
   - Scrapyard
@@ -21,7 +21,7 @@
 - type: gameMap
   id: Canister
   mapName: 'UAC Canister'
-  mapPath: /Maps/_NF/Shuttles/Scrap/canister.yml
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Scrap/canister.yml  # Horizon - замена карты
   minPlayers: 0
   stations:
     Canister:
