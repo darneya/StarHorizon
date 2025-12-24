@@ -711,6 +711,12 @@
         node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  # Horizon start
+    - type: Tag
+      tags:
+      - Wall
+      - RustedWall
+  # Horizon end
 
 - type: entity
   parent: WallDiagonalBase
@@ -1127,6 +1133,12 @@
         node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  # Horizon start
+    - type: Tag
+      tags:
+      - Wall
+      - RustedWall
+  # Horizon end
 
 - type: entity
   parent: BaseWall
