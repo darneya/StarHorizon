@@ -160,5 +160,14 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         NavContainer.UpdateState(cState.NavState);
         // MapContainer.UpdateState(cState.MapState);
         DockContainer.UpdateState(coordinates?.EntityId, cState.DockState);
+        // Horizon start
+        if (cState.Broken)
+        {
+            SwitchMode(ShuttleConsoleMode.Dock);
+            DockModeButton.Pressed = true;
+            NavModeButton.Disabled = true;
+            MapModeButton.Disabled = true;
+        }
+        // Horizon end
     }
 }
