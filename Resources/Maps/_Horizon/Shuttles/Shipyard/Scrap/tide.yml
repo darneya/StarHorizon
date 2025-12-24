@@ -1407,14 +1407,14 @@ entities:
     - type: Transform
       pos: 4.5407724,3.3561268
       parent: 2
-- proto: ShipyardPriceMarkerAtmos5000
+- proto: ShipyardPriceMarkerAtmos15000
   entities:
   - uid: 129
     components:
     - type: Transform
       pos: 4.5,4.5
       parent: 2
-- proto: ShipyardPriceMarkerShuttleConsole5000
+- proto: ShipyardPriceMarkerShuttleConsole20000
   entities:
   - uid: 175
     components:
