@@ -1,3 +1,4 @@
+using Content.Shared._Horizon.OutpostCapture;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Horizon.FlavorText;
@@ -16,6 +17,9 @@ public sealed partial class CharacterFactionPrototype : IPrototype
 
     [DataField]
     public Color Color = Color.White;
+
+    [DataField]
+    public ProtoId<OutpostSpawnList> OutpostSpawnListProto;
 
     [DataField]
     public bool Roundstart = true;

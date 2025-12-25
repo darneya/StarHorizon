@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Horizon.OutpostCapture;
@@ -9,36 +10,39 @@ namespace Content.Shared._Horizon.OutpostCapture;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true)]
 public sealed partial class OutpostCaptureComponent : Component
 {
-    [AutoNetworkedField]
-    [ViewVariables(VVAccess.ReadOnly)]
-    public List<Entity<OutpostConsoleComponent>> CapturingConsoles;
-
-    [AutoNetworkedField]
-    [ViewVariables(VVAccess.ReadOnly)]
-    public int CapturedConsoles { get; set; }
-
-    [AutoNetworkedField]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public EntityUid? SpawningPointUid = null;
-
-    [DataField]
-    [AutoNetworkedField]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public int NeedCapturedConsoles = 1;
-
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<OutpostSpawnList>? SpawnList;
-
-    [ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan? ActualSpawnCooldown = null;
+    public int NeedCaptured = 1;
 
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan SpawnCooldown = TimeSpan.FromMinutes(1);
 
     [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public ProtoId<OutpostSpawnList> SpawnList = "default";
+
     [AutoNetworkedField]
     [ViewVariables(VVAccess.ReadOnly)]
-    public List<Entity<OutpostConsoleComponent>> LinkedConsoles;
+    public List<NetEntity> LinkedConsoles = [];
+
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public List<NetEntity> CapturedConsoles = [];
+
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public List<NetEntity> CapturingConsoles = [];
+
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public string? CapturedFaction;
+
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan? NextSpawn;
+
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityCoordinates? SpawnLocation;
 }

@@ -1,5 +1,5 @@
-using Content.Shared.NPC.Prototypes;
 using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._Horizon.OutpostCapture;
 
@@ -9,29 +9,39 @@ namespace Content.Shared._Horizon.OutpostCapture;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true)]
 public sealed partial class OutpostConsoleComponent : Component
 {
-    [AutoNetworkedField]
+    [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public OutpostConsoleState State { get; set; } = OutpostConsoleState.Uncaptured;
-
-    [AutoNetworkedField]
-    [ViewVariables(VVAccess.ReadOnly)]
-    public string? FactionCaptured { get; set; }
-
-    [AutoNetworkedField]
-    [ViewVariables(VVAccess.ReadOnly)]
-    public TimeSpan? CapturingTime { get; set; }
+    public bool CanUseAsSpawnPoint;
 
     [DataField]
-    [AutoNetworkedField]
     [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan CaptureTime = TimeSpan.FromSeconds(30);
 
     [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public string ContainerSlot = "id-card-slot";
+
     [AutoNetworkedField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public Color? CapturedColor { get; set; }
+    public OutpostConsoleState State = 0;
 
     [AutoNetworkedField]
     [ViewVariables(VVAccess.ReadOnly)]
-    public EntityUid? LinkedOutpost { get; set; }
+    public NetEntity? LinkedOutpost;
+
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public string? CapturedFaction;
+
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan? CapturingTime;
+}
+
+[Serializable, NetSerializable]
+public enum OutpostConsoleState : byte
+{
+    Uncaptured,
+    Capturing,
+    Captured,
 }

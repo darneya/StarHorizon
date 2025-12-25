@@ -1,218 +1,287 @@
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared.NPC.Prototypes;
-using Content.Shared.Storage;
+using Content.Shared._Horizon.FlavorText;
+using Content.Shared.Access.Components;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Horizon.OutpostCapture;
 
 public sealed class OutpostCaptureSystem : EntitySystem
 {
-    [Dependency] private readonly SharedTransformSystem _transform = null!;
-    [Dependency] private readonly IPrototypeManager _protoManager = null!;
-    [Dependency] private readonly ILogManager _log = default!;
+    [Dependency] private readonly SharedContainerSystem _containerSystem = null!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
 
+    [Dependency] private readonly SharedTransformSystem _transform = null!;
+    [Dependency] private readonly ILogManager _logManager = null!;
     private ISawmill _sawmill = null!;
 
     public override void Initialize()
     {
         SawmillInit();
 
-        SubscribeLocalEvent<OutpostCaptureComponent, ComponentRemove>(OnCompRemove);
-
         SubscribeLocalEvent<OutpostConsoleComponent, ComponentInit>(OnConsoleInit);
         SubscribeLocalEvent<OutpostConsoleComponent, ComponentRemove>(OnConsoleRemove);
 
-        SubscribeLocalEvent<OutpostConsoleComponent, OutpostChangeState>(OnMessage);
+        SubscribeLocalEvent<OutpostCaptureComponent, ComponentInit>(OnOutpostInit);
+        SubscribeLocalEvent<OutpostCaptureComponent, ComponentRemove>(OnOutpostRemove);
     }
 
+    #region Intialize
     private void SawmillInit()
     {
-        _sawmill = _log.GetSawmill("OutpostCapture");
+        _sawmill = _logManager.GetSawmill("OutpostCapture");
         _sawmill.Info("_outpostCaptureSystem start his work!");
     }
 
-    #region Component logic
-    private void OnCompRemove(Entity<OutpostCaptureComponent> entity, ref ComponentRemove args)
+    private void OnConsoleInit(Entity<OutpostConsoleComponent> console, ref ComponentInit args)
     {
-        if (entity.Comp.LinkedConsoles.Count == 0)
+        if (TryGetOutpost(console, out var outpost, out var outpostUid))
             return;
 
-        UnlinkConsoles(entity.Comp.LinkedConsoles); // Отключаем консоли от аванпоста
+        if (console.Comp.CanUseAsSpawnPoint &&
+            _transform.TryGetMapOrGridCoordinates(console, out var coords))
+            outpost.SpawnLocation = coords;
+
+        console.Comp.LinkedOutpost = GetNetEntity(outpostUid);
+        outpost.LinkedConsoles.Add(GetNetEntity(console));
     }
 
-    private void OnConsoleInit(Entity<OutpostConsoleComponent> entity, ref ComponentInit args)
+    private void OnConsoleRemove(Entity<OutpostConsoleComponent> console, ref ComponentRemove args)
     {
-        if (!TryGetOutpost(entity, out var outpost))
+        if (TryGetOutpost(console, out var outpost, out _))
             return;
 
-        outpost.LinkedConsoles.Add(entity);
+        console.Comp.LinkedOutpost = null;
+        outpost.LinkedConsoles.Remove(GetNetEntity(console));
+        outpost.CapturedConsoles.Remove(GetNetEntity(console));
     }
 
-    private void OnConsoleRemove(Entity<OutpostConsoleComponent> entity, ref ComponentRemove args)
+    private void OnOutpostInit(Entity<OutpostCaptureComponent> outpost, ref ComponentInit args)
     {
-        if (!TryGetOutpost(entity, out var outpost))
+        if (outpost.Comp.NeedCaptured <= 0)
+        {
+            RemComp<OutpostCaptureComponent>(outpost);
+            return;
+        }
+
+        outpost.Comp.NextSpawn = outpost.Comp.SpawnCooldown;
+    }
+
+    private void OnOutpostRemove(Entity<OutpostCaptureComponent> outpost, ref ComponentRemove args)
+    {
+        if (outpost.Comp.LinkedConsoles.Count <= 0 ||
+            outpost.Comp.CapturedConsoles.Count <= 0)
             return;
 
-        outpost.LinkedConsoles.Remove(entity);
+        UnlinkAllConsoles(outpost.Comp);
     }
 
-    public bool TryGetOutpost(Entity<OutpostConsoleComponent> entity, [NotNullWhen(true)] out OutpostCaptureComponent? outpost)
+    private bool TryGetOutpost(EntityUid uid,
+        [NotNullWhen(false)] out OutpostCaptureComponent? outpost,
+        [NotNullWhen(false)] out EntityUid? grid)
     {
         outpost = null;
-        var grid = _transform.GetGrid(Transform(entity).Coordinates);
-        return grid != null && TryComp(grid, out outpost);
+        grid = _transform.GetGrid(Transform(uid).Coordinates);
+        return grid == null || !TryComp(grid, out outpost);
     }
+    #endregion
 
-    public bool UnlinkConsoles(List<Entity<OutpostConsoleComponent>> consoles)
+    #region Public Methods
+    public void UnlinkAllConsoles(OutpostCaptureComponent outpost)
     {
-        var success = true;
-        foreach (var (console, _) in consoles)
+        foreach (var console in outpost.LinkedConsoles)
         {
-            if (!Exists(console))
-            {
-                _sawmill.Error($"Консоль в списке подключенных к аванпосту, под uid: {console} была удалена, но не очищена из списка.");
-                success = false;
+            if (TryGetEntity(console, out var actualConsole) ||
+                !TryComp<OutpostConsoleComponent>(actualConsole, out var consoleComp))
                 continue;
-            }
 
-            if (TryComp<OutpostConsoleComponent>(console, out var component))
-            {
-                component.LinkedOutpost = null;
-                component.FactionCaptured = null;
-            }
-            else
-            {
-                _sawmill.Error($"Консоль под uid: '{console}' потеряла компонент OutpostConsole, может удалили во время работы?");
-                success = false;
-            }
+            consoleComp.LinkedOutpost = null;
+            consoleComp.CapturedFaction = null;
+            consoleComp.CapturingTime = null;
         }
-
-        return success;
     }
-    #endregion
 
-    #region UI messages
-    private void OnMessage(Entity<OutpostConsoleComponent> entity, ref OutpostChangeState _)
+    public void UnlinkAllConsoles(EntityUid grid)
     {
-        var faction = new FactionComponent();
-        if (faction is null)
+        if (!TryComp<OutpostCaptureComponent>(grid, out var outpost))
             return;
 
-        switch (entity.Comp.State)
+        UnlinkAllConsoles(outpost);
+    }
+
+    public CharacterFactionPrototype? TryGetFactionInSlot(Entity<OutpostConsoleComponent> console)
+    {
+        var slot = _containerSystem.EnsureContainer<ContainerSlot>(console,
+            console.Comp.ContainerSlot,
+            out var existed);
+
+        if (!existed || slot.ContainedEntity == null)
+            return null;
+
+        var id = slot.ContainedEntity.Value;
+        if (!TryComp<IdCardComponent>(id, out var card) || card.JobPrototype == null)
+            return null;
+
+        var prototype = card.JobPrototype.Value;
+        if (_prototypeManager.TryIndex(prototype, out var index))
+            return null;
+
+        var faction = index?.ForceFaction;
+        return _prototypeManager.TryIndex(faction, out var factionIndex) ? null : factionIndex;
+    }
+
+    public bool CanChangeCaptureState(Entity<OutpostConsoleComponent> console,
+        [NotNullWhen(true)] out CharacterFactionPrototype? faction)
+    {
+        faction = TryGetFactionInSlot(console);
+        if (faction == null)
         {
-            case OutpostConsoleState.Capturing:
-                _sawmill.Info($"Stop capturing console! at console {entity.Owner}");
-                StopCapture(entity);
-                break;
-
-            case OutpostConsoleState.Uncaptured:
-                _sawmill.Info($"Start capturing point! at console {entity.Owner}");
-                StartCapture(entity, faction);
-                break;
-
-            case OutpostConsoleState.Captured:
-                _sawmill.Info($"Uncapturing captured console! at console {entity.Owner}");
-                StartCapture(entity, faction);
-                break;
-
-            default:
-                _sawmill.Error("Unknown outpost capture state!");
-                break;
+            _sawmill.Info("Capturing attempt failed, cause: Cant resolve faction!");
+            return false;
         }
+
+        if (console.Comp.LinkedOutpost == null)
+        {
+            _sawmill.Info("Capturing attempt failed, cause: Cant resolve outpost!");
+            return false;
+        }
+
+        if (console.Comp.CapturedFaction != faction.ID)
+            return true;
+
+        _sawmill.Info("Capturing attempt failed, cause: Dont give chance one faction capture outpost twice!");
+        return false;
     }
-
-    private void StopCapture(Entity<OutpostConsoleComponent> entity)
-    {
-        if (entity.Comp.LinkedOutpost == null
-            || !TryComp<OutpostCaptureComponent>(entity.Comp.LinkedOutpost, out var outpost))
-            return;
-
-        entity.Comp.CapturingTime = null;
-        entity.Comp.State = OutpostConsoleState.Uncaptured;
-        outpost.CapturingConsoles.Remove(entity);
-    }
-
-    private void StartCapture(Entity<OutpostConsoleComponent> entity, FactionComponent faction)
-    {
-        if (entity.Comp.LinkedOutpost == null
-            || !TryComp<OutpostCaptureComponent>(entity.Comp.LinkedOutpost, out var outpost))
-            return;
-
-        entity.Comp.FactionCaptured = faction.FactionName;
-        entity.Comp.CapturingTime = entity.Comp.CaptureTime;
-        entity.Comp.State = OutpostConsoleState.Capturing;
-        outpost.CapturingConsoles.Add(entity);
-    }
-
-    private static void SetConsoleCaptured(Entity<OutpostConsoleComponent> entity, OutpostCaptureComponent outpost)
-    {
-        outpost.CapturedConsoles += 1;
-        outpost.CapturingConsoles.Remove(entity);
-
-        entity.Comp.CapturingTime = null;
-        entity.Comp.State = OutpostConsoleState.Captured;
-    }
-    #endregion
-
-    #region OutpostLogic
 
     public override void Update(float deltaTime)
     {
         base.Update(deltaTime);
-        var inSeconds = TimeSpan.FromSeconds(deltaTime);
-        while (EntityManager.AllEntityQueryEnumerator<OutpostCaptureComponent>().MoveNext(out var outpost))
+        var secondPast = TimeSpan.FromSeconds(deltaTime);
+        var enumerable = EntityManager.EntityQueryEnumerator<OutpostCaptureComponent>();
+        while (enumerable.MoveNext(out var outpost))
         {
-            if (outpost.ActualSpawnCooldown != null)
-                outpost.ActualSpawnCooldown -= inSeconds;
-
-            foreach (var entity in outpost.CapturingConsoles)
-            {
-                if (!Exists(entity))
-                {
-                    outpost.CapturingConsoles.Remove(entity);
-                    outpost.LinkedConsoles.Remove(entity);
-                    continue;
-                }
-
-                entity.Comp.CapturingTime -= inSeconds;
-                if (entity.Comp.CapturingTime > TimeSpan.Zero)
-                    continue;
-
-                SetConsoleCaptured(entity, outpost);
-            }
-
-            if (outpost.CapturedConsoles < outpost.NeedCapturedConsoles
-                || outpost.SpawningPointUid == null
-                || outpost.SpawnList == null)
+            if (outpost.SpawnLocation == null || !_prototypeManager.TryIndex(outpost.SpawnList, out var index))
                 continue;
 
-            // ReSharper disable once InvertIf потому, что потому.
-            if (outpost.ActualSpawnCooldown == null || outpost.ActualSpawnCooldown <= TimeSpan.Zero)
+            foreach (var console in outpost.CapturingConsoles)
             {
-                var coords = Transform(outpost.SpawningPointUid.Value).Coordinates;
-                outpost.ActualSpawnCooldown = TrySpawnListItems(outpost.SpawnList.Value, coords, outpost.SpawnCooldown);
+                if (!TryGetEntity(console, out var actualConsole)
+                    || !TryComp<OutpostConsoleComponent>(actualConsole, out var consoleComp))
+                    continue;
+
+                consoleComp.CapturingTime -= secondPast;
+                if (consoleComp.CapturingTime > TimeSpan.Zero)
+                    continue;
+
+                consoleComp.CapturingTime = null;
+                outpost.CapturedConsoles.Add(console);
+                outpost.CapturingConsoles.Remove(console);
             }
+
+            if (outpost.CapturedConsoles.Count < outpost.NeedCaptured)
+            {
+                outpost.NextSpawn = outpost.SpawnCooldown;
+                outpost.CapturedFaction = null;
+                continue;
+            }
+
+            if (!TrySetCapturedFaction(outpost))
+                continue;
+
+            outpost.NextSpawn -= secondPast;
+            if (outpost.NextSpawn > TimeSpan.Zero)
+                continue;
+
+            TrySpawnItemsInList(index, outpost.SpawnLocation.Value);
         }
     }
+    #endregion
 
-    private TimeSpan? TrySpawnListItems(ProtoId<OutpostSpawnList> list, EntityCoordinates coords, TimeSpan cooldown)
+    #region Private Methods
+    private void ChangeCaptureState(Entity<OutpostConsoleComponent> console)
     {
-        var index = _protoManager.Index(list);
-        var spawnList = index.SpawnList;
-        foreach (var spawn in spawnList)
+        if (CanChangeCaptureState(console, out var faction) || faction == null)
+            return;
+
+        var oldFaction = console.Comp.CapturedFaction;
+        console.Comp.CapturedFaction = faction.ID;
+        switch (console.Comp.State)
         {
-            if (spawn.PrototypeId == null)
+            case OutpostConsoleState.Uncaptured:
+                _sawmill.Info($"Faction {faction}, start capturing console id - {console.Owner}");
+                break;
+
+            case OutpostConsoleState.Capturing:
+                _sawmill.Info($"Faction {faction}, intercepts capturing console faction, {oldFaction} on id - {console.Owner}");
+                return;
+
+            case OutpostConsoleState.Captured:
+                _sawmill.Info($"Faction {faction}, start recapturing console of faction, {oldFaction} on id - {console.Owner}");
+                break;
+
+            default:
+                _sawmill.Error("Don't know how to change default capture state!");
+                return;
+        }
+
+        console.Comp.State = OutpostConsoleState.Capturing;
+        StartCapture(GetNetEntity(console), console.Comp);
+    }
+
+    private void StartCapture(NetEntity netConsole, OutpostConsoleComponent console)
+    {
+        if (!TryGetEntity(console.LinkedOutpost, out var outpost) ||
+            !TryComp<OutpostCaptureComponent>(outpost, out var outpostCapture))
+            return;
+
+        console.CapturingTime = console.CaptureTime;
+        outpostCapture.CapturingConsoles.Add(netConsole);
+    }
+
+    private bool TrySetCapturedFaction(OutpostCaptureComponent outpost)
+    {
+        var factionList = new List<string>();
+        foreach (var console in outpost.CapturedConsoles)
+        {
+            if (!TryGetEntity(console, out var actualConsole)
+                || !TryComp<OutpostConsoleComponent>(actualConsole, out var consoleComp))
                 continue;
 
-            for (var i = spawn.GetAmount(); i != 0; i--)
+            if (consoleComp.CapturedFaction == null)
+                continue;
+
+            if (factionList.Contains(consoleComp.CapturedFaction))
+                continue;
+
+            factionList.Add(consoleComp.CapturedFaction);
+        }
+
+        if (factionList.Count is > 1 or 0 || !factionList.TryFirstOrDefault(out var faction))
+            return false;
+
+        if (!_prototypeManager.TryIndex<CharacterFactionPrototype>(faction, out var spawn))
+            return false;
+
+        outpost.CapturedFaction = spawn.ID;
+        outpost.SpawnList = spawn.OutpostSpawnListProto;
+        return true;
+    }
+
+    private void TrySpawnItemsInList(OutpostSpawnList list, EntityCoordinates location)
+    {
+        try
+        {
+            foreach (var entity in list.SpawnList)
             {
-                SpawnAtPosition(spawn.PrototypeId.Value, coords);
+                SpawnAtPosition(entity.PrototypeId, location);
             }
         }
-        return cooldown;
+        catch (Exception e)
+        {
+            _sawmill.Error(e.Message);
+        }
     }
     #endregion
 }
