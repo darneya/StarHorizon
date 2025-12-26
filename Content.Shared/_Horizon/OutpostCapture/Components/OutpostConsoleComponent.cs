@@ -2,7 +2,7 @@ using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Horizon.OutpostCapture;
+namespace Content.Shared._Horizon.OutpostCapture.Components;
 
 /// <summary>
 /// This is used for...
@@ -40,7 +40,15 @@ public sealed partial class OutpostConsoleComponent : Component
 
     [AutoNetworkedField]
     [ViewVariables(VVAccess.ReadOnly)]
+    public string? CapturedFactionName;
+
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan? CapturingTime;
+
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public int ProgressBar { get; set; }
 }
 
 [Serializable, NetSerializable]

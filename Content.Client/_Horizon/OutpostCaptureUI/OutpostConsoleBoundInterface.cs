@@ -5,7 +5,7 @@ using Robust.Client.UserInterface;
 namespace Content.Client._Horizon.OutpostCaptureUI;
 
 [UsedImplicitly]
-public sealed class OutpostCaptureUI(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
+public sealed class OutpostConsoleBoundInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {
     private OutpostCaptureWindow? _window;
     protected override void Open()
@@ -37,5 +37,7 @@ public sealed class OutpostCaptureUI(EntityUid owner, Enum uiKey) : BoundUserInt
 
         _window.ProgressBar.Value = state.Progress ?? 0;
         _window.CaptureButton.Disabled = state.Disabled;
+        _window.CaptureButton.Text = state.ButtonState;
+        _window.CaptureLabel.Text = state.LabelState;
     }
 }

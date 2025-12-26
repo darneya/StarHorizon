@@ -1,26 +1,25 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared._Horizon.FlavorText;
+using Content.Shared._Horizon.OutpostCapture.Components;
 using Content.Shared.Access.Components;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Storage;
 using Robust.Shared.Containers;
-using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._Horizon.OutpostCapture;
 
-public sealed class OutpostCaptureSystem : EntitySystem
+public class SharedOutpostCaptureSystem : EntitySystem
 {
-    [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = null!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
-
-    [Dependency] private readonly SharedTransformSystem _transform = null!;
-    [Dependency] private readonly ILogManager _logManager = null!;
-
-    [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = null!;
-    private ISawmill _sawmill = null!;
+    [Dependency] protected readonly IRobustRandom Random = null!;
+    [Dependency] protected readonly ItemSlotsSystem ItemSlotsSystem = null!;
+    [Dependency] protected readonly IPrototypeManager PrototypeManager = null!;
+    [Dependency] protected readonly SharedUserInterfaceSystem UiSystem = null!;
+    [Dependency] protected readonly SharedContainerSystem ContainerSystem = null!;
+    [Dependency] protected readonly SharedTransformSystem TransformSystem = null!;
+    protected ISawmill Sawmill = null!;
 
     public override void Initialize()
     {
@@ -29,6 +28,9 @@ public sealed class OutpostCaptureSystem : EntitySystem
         SubscribeLocalEvent<OutpostConsoleComponent, ComponentInit>(OnConsoleInit);
         SubscribeLocalEvent<OutpostConsoleComponent, ComponentRemove>(OnConsoleRemove);
 
+        SubscribeLocalEvent<OutpostConsoleComponent, EntInsertedIntoContainerMessage>(OnGetInsertedAttempt);
+        SubscribeLocalEvent<OutpostConsoleComponent, EntRemovedFromContainerMessage>(OnGetRemovedAttempt);
+
         SubscribeLocalEvent<OutpostCaptureComponent, ComponentInit>(OnOutpostInit);
         SubscribeLocalEvent<OutpostCaptureComponent, ComponentRemove>(OnOutpostRemove);
 
@@ -36,16 +38,15 @@ public sealed class OutpostCaptureSystem : EntitySystem
         subs =>
         {
             subs.Event<OpenBoundInterfaceMessage>((uid, comp, _) => UpdateConsole((uid, comp)));
-            subs.Event<OutpostCaptureUIStateCall>((uid, comp, _) => UpdateConsole((uid, comp)));
             subs.Event<OutpostCaptureButtonPressed>((uid, comp, _) => OnButtonPressed((uid, comp)));
         });
     }
 
-    #region Intialize
+    #region Init
     private void SawmillInit()
     {
-        _sawmill = _logManager.GetSawmill("OutpostCapture");
-        _sawmill.Info("_outpostCaptureSystem start his work!");
+        Sawmill = LogManager.GetSawmill("OutpostCapture");
+        Sawmill.Info("_outpostCaptureSystem start his work!");
     }
 
     private void OnConsoleInit(Entity<OutpostConsoleComponent> console, ref ComponentInit args)
@@ -54,12 +55,12 @@ public sealed class OutpostCaptureSystem : EntitySystem
             return;
 
         if (console.Comp.CanUseAsSpawnPoint &&
-            _transform.TryGetMapOrGridCoordinates(console, out var coords))
+            TransformSystem.TryGetMapOrGridCoordinates(console, out var coords))
             outpost.SpawnLocation = coords;
 
         console.Comp.LinkedOutpost = GetNetEntity(outpostUid);
         outpost.LinkedConsoles.Add(GetNetEntity(console));
-        _itemSlotsSystem.AddItemSlot(console, console.Comp.ContainerSlot, console.Comp.IdCardSlot);
+        ItemSlotsSystem.AddItemSlot(console, console.Comp.ContainerSlot, console.Comp.IdCardSlot);
     }
 
     private void OnConsoleRemove(Entity<OutpostConsoleComponent> console, ref ComponentRemove args)
@@ -70,7 +71,17 @@ public sealed class OutpostCaptureSystem : EntitySystem
         console.Comp.LinkedOutpost = null;
         outpost.LinkedConsoles.Remove(GetNetEntity(console));
         outpost.CapturedConsoles.Remove(GetNetEntity(console));
-        _itemSlotsSystem.RemoveItemSlot(console, console.Comp.IdCardSlot);
+        ItemSlotsSystem.RemoveItemSlot(console, console.Comp.IdCardSlot);
+    }
+
+    private void OnGetInsertedAttempt(Entity<OutpostConsoleComponent> console, ref EntInsertedIntoContainerMessage args)
+    {
+        UpdateConsole(console);
+    }
+
+    private void OnGetRemovedAttempt(Entity<OutpostConsoleComponent> console, ref EntRemovedFromContainerMessage args)
+    {
+        UpdateConsole(console);
     }
 
     private void OnOutpostInit(Entity<OutpostCaptureComponent> outpost, ref ComponentInit args)
@@ -93,17 +104,6 @@ public sealed class OutpostCaptureSystem : EntitySystem
         UnlinkAllConsoles(outpost.Comp);
     }
 
-    private bool TryGetOutpost(EntityUid uid,
-        [NotNullWhen(false)] out OutpostCaptureComponent? outpost,
-        [NotNullWhen(false)] out EntityUid? grid)
-    {
-        outpost = null;
-        grid = _transform.GetGrid(Transform(uid).Coordinates);
-        return grid == null || !TryComp(grid, out outpost);
-    }
-    #endregion
-
-    #region Public Methods
     public void UnlinkAllConsoles(OutpostCaptureComponent outpost)
     {
         foreach (var console in outpost.LinkedConsoles)
@@ -114,127 +114,79 @@ public sealed class OutpostCaptureSystem : EntitySystem
 
             consoleComp.LinkedOutpost = null;
             consoleComp.CapturedFaction = null;
+            consoleComp.CapturedFactionName = null;
             consoleComp.CapturingTime = null;
+            Dirty(actualConsole.Value, consoleComp);
         }
-    }
-
-    public void UnlinkAllConsoles(EntityUid grid)
-    {
-        if (!TryComp<OutpostCaptureComponent>(grid, out var outpost))
-            return;
-
-        UnlinkAllConsoles(outpost);
-    }
-
-    public CharacterFactionPrototype? TryGetFactionInSlot(Entity<OutpostConsoleComponent> console)
-    {
-        var slot = _containerSystem.EnsureContainer<ContainerSlot>(console,
-            console.Comp.ContainerSlot,
-            out var existed);
-
-        if (!existed || slot.ContainedEntity == null)
-            return null;
-
-        var id = slot.ContainedEntity.Value;
-        if (!TryComp<IdCardComponent>(id, out var card) || card.JobPrototype == null)
-            return null;
-
-        var prototype = card.JobPrototype.Value;
-        if (!_prototypeManager.TryIndex(prototype, out var index))
-            return null;
-
-        var faction = index.ForceFaction;
-        return !_prototypeManager.TryIndex(faction, out var factionIndex) ? null : factionIndex;
-    }
-
-    public bool CanChangeCaptureState(Entity<OutpostConsoleComponent> console,
-        [NotNullWhen(true)] out CharacterFactionPrototype? faction)
-    {
-        faction = TryGetFactionInSlot(console);
-        if (faction == null)
-        {
-            _sawmill.Info("Capturing attempt failed, cause: Cant resolve faction!");
-            return false;
-        }
-
-        if (console.Comp.LinkedOutpost == null)
-        {
-            _sawmill.Info("Capturing attempt failed, cause: Cant resolve outpost!");
-            return false;
-        }
-
-        if (console.Comp.CapturedFaction != faction.ID)
-            return true;
-
-        _sawmill.Info("Capturing attempt failed, cause: Dont give chance one faction capture outpost twice!");
-        return false;
-    }
-
-    public override void Update(float deltaTime)
-    {
-        base.Update(deltaTime);
-        var secondPast = TimeSpan.FromSeconds(deltaTime);
-        var enumerable = EntityManager.EntityQueryEnumerator<OutpostCaptureComponent>();
-        while (enumerable.MoveNext(out var outpost))
-        {
-            if (outpost.SpawnLocation == null || !_prototypeManager.TryIndex(outpost.SpawnList, out var index))
-                continue;
-
-            var updatedCapturedConsoles = new List<NetEntity>();
-            var updatedCapturingConsoles = new List<NetEntity>();
-            foreach (var console in outpost.CapturingConsoles)
-            {
-                if (!TryGetEntity(console, out var actualConsole)
-                    || !TryComp<OutpostConsoleComponent>(actualConsole, out var consoleComp))
-                    continue;
-
-                consoleComp.CapturingTime -= secondPast;
-                if (_uiSystem.HasUi(actualConsole.Value, CaptureUIKey.Key))
-                {
-                    var message = new ProgressBarUpdate(UpdateProgressBar((actualConsole.Value, consoleComp)));
-                    _uiSystem.ServerSendUiMessage(actualConsole.Value, CaptureUIKey.Key, message);
-                }
-
-                if (consoleComp.CapturingTime > TimeSpan.Zero)
-                {
-                    updatedCapturingConsoles.Add(console); // Not captured yet.
-                    continue;
-                }
-
-                consoleComp.CapturingTime = null;
-                updatedCapturedConsoles.Add(console); // Already captured.
-            }
-
-            outpost.CapturedConsoles = updatedCapturedConsoles;
-            outpost.CapturingConsoles = updatedCapturingConsoles;
-
-            if (outpost.CapturedConsoles.Count < outpost.NeedCaptured)
-            {
-                outpost.NextSpawn = outpost.SpawnCooldown;
-                outpost.CapturedFaction = null;
-                continue;
-            }
-
-            if (!TrySetCapturedFaction(outpost))
-                continue;
-
-            outpost.NextSpawn -= secondPast;
-            if (outpost.NextSpawn > TimeSpan.Zero)
-                continue;
-
-            TrySpawnItemsInList(index, outpost.SpawnLocation.Value);
-        }
-    }
-
-    public float? UpdateProgressBar(Entity<OutpostConsoleComponent> console)
-    {
-        var progress = (float?) (1f - console.Comp.CapturingTime / console.Comp.CaptureTime) * 100f;
-        progress = progress != null ? float.Clamp(progress.Value, 0f, 100f) : null;
-        return progress;
     }
     #endregion
 
-    #region Private Methods
+    #region Private methods
+    private bool TryGetOutpost(EntityUid uid,
+        [NotNullWhen(false)] out OutpostCaptureComponent? outpost,
+        [NotNullWhen(false)] out EntityUid? grid)
+    {
+        outpost = null;
+        grid = TransformSystem.GetGrid(Transform(uid).Coordinates);
+        return grid == null || !TryComp(grid, out outpost);
+    }
+
+    #region Messages
+    private void UpdateConsole(Entity<OutpostConsoleComponent> console)
+    {
+        var progress = UpdateProgressBar(console);
+        var buttonStateDisabled = !CanChangeCaptureState(console, out _);
+        var labelState = FormattedLabel(console);
+        var buttonState = FormattedButton(console);
+
+        var state = new OutpostUIState(progress, buttonStateDisabled, labelState, buttonState);
+        UiSystem.SetUiState(console.Owner, CaptureUIKey.Key, state);
+    }
+
+    private void OnButtonPressed(Entity<OutpostConsoleComponent> console)
+    {
+        ChangeCaptureState(console);
+        UpdateConsole(console); // Update console
+    }
+    #endregion
+
+    #region Formats
+    private string FormattedLabel(Entity<OutpostConsoleComponent> console)
+    {
+        switch (console.Comp.State)
+        {
+            case OutpostConsoleState.Uncaptured:
+                return $"{Loc.GetString("faction-uncaptured-state")}";
+
+            case OutpostConsoleState.Capturing:
+                return $"{Loc.GetString("faction-capturing-state-by")}, {Loc.GetString(console.Comp.CapturedFactionName ?? "faction-none")}";
+
+            case OutpostConsoleState.Captured:
+                return $"{Loc.GetString("faction-captured-state-by")}, {Loc.GetString(console.Comp.CapturedFactionName ?? "faction-none")}";
+
+            default:
+                Sawmill.Error($"Unknown {console.Comp.State} state!");
+                break;
+        }
+
+        return Loc.GetString("faction-default-string");
+    }
+
+    private string FormattedButton(Entity<OutpostConsoleComponent> console)
+    {
+        var faction = TryGetFactionInSlot(console, out var slot);
+        if (slot.ContainedEntity == null)
+            return $"{Loc.GetString("faction-insert-faction-id")}";
+
+        if (faction == null)
+            return $"{Loc.GetString("faction-id-card-not-belong-to-any-faction")}";
+
+        return faction.ID == console.Comp.CapturedFaction
+            ? $"{Loc.GetString("faction-cant-capture-already-captured-outpost")}"
+            : $"{Loc.GetString("faction-start-capture-outpost")}";
+    }
+    #endregion
+
     private void ChangeCaptureState(Entity<OutpostConsoleComponent> console)
     {
         if (!CanChangeCaptureState(console, out var faction))
@@ -242,27 +194,29 @@ public sealed class OutpostCaptureSystem : EntitySystem
 
         var oldFaction = console.Comp.CapturedFaction;
         console.Comp.CapturedFaction = faction.ID;
+        console.Comp.CapturedFactionName = faction.Name;
         switch (console.Comp.State)
         {
             case OutpostConsoleState.Uncaptured:
-                _sawmill.Info($"Faction {faction}, start capturing console id - {console.Owner}");
+                Sawmill.Info($"Faction {faction}, start capturing console id - {console.Owner}");
                 break;
 
             case OutpostConsoleState.Capturing:
-                _sawmill.Info($"Faction {faction}, intercepts capturing console faction, {oldFaction} on id - {console.Owner}");
-                return;
+                Sawmill.Info($"Faction {faction}, intercepts capturing console faction, {oldFaction} on id - {console.Owner}");
+                break;
 
             case OutpostConsoleState.Captured:
-                _sawmill.Info($"Faction {faction}, start recapturing console of faction, {oldFaction} on id - {console.Owner}");
+                Sawmill.Info($"Faction {faction}, start recapturing console of faction, {oldFaction} on id - {console.Owner}");
                 break;
 
             default:
-                _sawmill.Error("Don't know how to change default capture state!");
+                Sawmill.Error("Don't know how to change default capture state!");
                 return;
         }
 
         console.Comp.State = OutpostConsoleState.Capturing;
         StartCapture(GetNetEntity(console), console.Comp);
+        Dirty(console);
     }
 
     private void StartCapture(NetEntity netConsole, OutpostConsoleComponent console)
@@ -275,82 +229,88 @@ public sealed class OutpostCaptureSystem : EntitySystem
         if (outpostCapture.CapturedConsoles.Contains(netConsole))
             outpostCapture.CapturedConsoles.Remove(netConsole);
 
+        if (outpostCapture.CapturingConsoles.Contains(netConsole))
+            return;
+
         outpostCapture.CapturingConsoles.Add(netConsole);
     }
 
-    private bool TrySetCapturedFaction(OutpostCaptureComponent outpost)
+    private CharacterFactionPrototype? TryGetFactionInSlot(Entity<OutpostConsoleComponent> console, out ContainerSlot slot)
     {
-        var factionList = new List<string>();
-        foreach (var console in outpost.CapturedConsoles)
-        {
-            if (!TryGetEntity(console, out var actualConsole)
-                || !TryComp<OutpostConsoleComponent>(actualConsole, out var consoleComp))
-                continue;
+        slot = ContainerSystem.EnsureContainer<ContainerSlot>(console,
+            console.Comp.ContainerSlot,
+            out var existed);
 
-            if (consoleComp.CapturedFaction == null)
-                continue;
+        if (!existed || slot.ContainedEntity == null)
+            return null;
 
-            if (factionList.Contains(consoleComp.CapturedFaction))
-                continue;
+        var id = slot.ContainedEntity.Value;
+        if (!TryComp<IdCardComponent>(id, out var card) || card.JobPrototype == null)
+            return null;
 
-            factionList.Add(consoleComp.CapturedFaction);
-        }
+        var prototype = card.JobPrototype.Value;
+        if (!PrototypeManager.TryIndex(prototype, out var index))
+            return null;
 
-        if (factionList.Count is > 1 or 0)
-            return false;
-
-        if (!_prototypeManager.TryIndex<CharacterFactionPrototype>(factionList[0], out var spawn))
-            return false;
-
-        if (spawn.OutpostSpawnListProto == null)
-        {
-            _sawmill.Error($"{spawn?.ID} имеет пустой список для спавна, после захвата. Стоит проверить правильность прототипа.");
-            return false;
-        }
-
-
-        outpost.CapturedFaction = spawn.ID;
-        outpost.SpawnList = spawn.OutpostSpawnListProto.Value;
-        return true;
+        var faction = index.ForceFaction;
+        return !PrototypeManager.TryIndex(faction, out var factionIndex) ? null : factionIndex;
     }
 
-    private void TrySpawnItemsInList(OutpostSpawnList list, EntityCoordinates location)
+    private bool CanChangeCaptureState(Entity<OutpostConsoleComponent> console,
+        [NotNullWhen(true)] out CharacterFactionPrototype? faction)
     {
-        try
-        {
-            foreach (var entity in list.SpawnList)
-            {
-                SpawnAtPosition(entity.PrototypeId, location);
-            }
-        }
-        catch (Exception e)
-        {
-            _sawmill.Error(e.Message);
-        }
+        faction = TryGetFactionInSlot(console, out _);
+        if (faction == null)
+            return false;
+
+        if (console.Comp.LinkedOutpost == null)
+            return false;
+
+        return console.Comp.CapturedFaction != faction.ID;
     }
     #endregion
 
-    #region Messages
-    private void UpdateConsole(Entity<OutpostConsoleComponent> console)
+    public float? UpdateProgressBar(Entity<OutpostConsoleComponent> console)
     {
-        var progress = UpdateProgressBar(console);
-        var buttonStateDisabled = !CanChangeCaptureState(console, out _);
-
-        var state = new OutpostUIState(progress, buttonStateDisabled);
-        _uiSystem.SetUiState(console.Owner, CaptureUIKey.Key, state);
+        var progress = (float?) (1f - console.Comp.CapturingTime / console.Comp.CaptureTime) * 100f;
+        progress = progress != null ? float.Clamp(progress.Value, 0f, 100f) : null;
+        return progress;
     }
-
-    private void OnButtonPressed(Entity<OutpostConsoleComponent> console)
-    {
-        ChangeCaptureState(console);
-        UpdateConsole(console); // Update console
-    }
-    #endregion
 }
 
+[Prototype("outpostSpawn")]
+// ReSharper disable once PartialTypeWithSinglePart Ридер глупи.
+public sealed partial class OutpostSpawnPrototype : IPrototype
+{
+    [IdDataField]
+    public string ID { get; } = null!;
+
+    [DataField("spawn")]
+    public List<EntitySpawnEntry> SpawnList = [];
+}
+
+#region Serializable
 [Serializable, NetSerializable]
-public sealed class OutpostUIState(float? progress, bool disabled) : BoundUserInterfaceState
+public sealed class OutpostUIState(float? progress, bool disabled, string labelState, string buttonState) : BoundUserInterfaceState
 {
     public float? Progress => progress;
     public bool Disabled => disabled;
+    public string LabelState => labelState;
+    public string ButtonState => buttonState;
 }
+
+[Serializable, NetSerializable]
+public sealed class OutpostCaptureButtonPressed : BoundUserInterfaceMessage;
+
+[Serializable, NetSerializable]
+public sealed class ProgressBarUpdate(float? value) : BoundUserInterfaceMessage
+{
+    public float? Value = value;
+}
+
+[Serializable, NetSerializable]
+public enum CaptureUIKey : byte
+{
+    Key = 0,
+}
+#endregion

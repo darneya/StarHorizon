@@ -9,7 +9,7 @@
   - type: UserInterface
     interfaces:
       enum.CaptureUIKey.Key:
-        type: OutpostCaptureUI
+        type: OutpostConsoleBoundInterface
   - type: ItemSlots # TODO: move ItemSlot to be nullable, withdraw shouldn't have one at all
   - type: ContainerContainer
     containers:
@@ -21,6 +21,6 @@
 
 - type: outpostSpawn
   id: default
-  spawnList:
-  - id: CassetteTape
-    amount: 4 
+  spawn:
+    - id: CardDeckNanotrasen
+      amount: 4 

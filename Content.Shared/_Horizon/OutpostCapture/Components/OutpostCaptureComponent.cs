@@ -2,7 +2,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Horizon.OutpostCapture;
+namespace Content.Shared._Horizon.OutpostCapture.Components;
 
 /// <summary>
 /// Используется для регистрации grid, которые можно захватить
@@ -20,7 +20,7 @@ public sealed partial class OutpostCaptureComponent : Component
 
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<OutpostSpawnList> SpawnList = "default";
+    public ProtoId<OutpostSpawnPrototype> SpawnList = "default";
 
     [AutoNetworkedField]
     [ViewVariables(VVAccess.ReadOnly)]
