@@ -15,12 +15,12 @@
     containers:
       board: !type:Container
       id-card-slot: !type:ContainerSlot
-  - type: OutpostConsole
-    canUseAsSpawnPoint: true
-    captureTime: 10
+  - type: OutpostConsole # Логика тут!
+    canUseAsSpawnPoint: true # Будет ли использоватся в качестве точки для спавна ресурсов! Размещать такую одну на аванпост!
+    captureTime: 10 # Время захвата данной консоли, если она одна - время захвата всего аванпоста!
 
-- type: outpostSpawn
+- type: outpostSpawn # Прототип для спавна, собстна...
   id: default
   spawn:
-    - id: CardDeckNanotrasen
-      amount: 4 
+    - id: CardDeckNanotrasen # Хлам чтобы спавнить!
+      amount: 4 # Количество хлама собстна...
