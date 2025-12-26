@@ -17,7 +17,16 @@
     - UplinkWearables
     - UplinkJob
     - UplinkPointless
-    - UplinkGunnery # Horizon Gunnery
+    # Horizon start
+    - UplinkSyndicateBorgs
+    - UplinkSyndicateBorgsCombat
+    - UplinkSyndieMechas
+    - UplinkSyndicateGunneryEnergy
+    - UplinkSyndicateGunneryKinetic
+    - UplinkSyndicateGunneryMissile
+    - UplinkSyndicateGunneryAmmo
+    - UplinkSyndicateGunneryConsoles
+    # Horizon end
     currencyWhitelist:
     - Telecrystal
     balance:

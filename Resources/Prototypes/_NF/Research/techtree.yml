@@ -685,17 +685,17 @@
 # region Robotics & Mechs
 
 - type: technology
-  id: NFBasicRoboticsEquipment
-  name: nf-research-technology-basic-robotics-equipment
-  entityIcon: MechEquipmentFork
+  id: NFVim
+  name: nf-research-technology-vim
+  entityIcon: MechVim
   discipline: NFEngineering
   tier: 1
-  cost: 2500
+  cost: 5000
   recipeUnlocks:
-  - MechEquipmentFork
+  - VimHarness
   technologyPrerequisites:
   - NFBasicRobotics
-  position: 1, 27 # Horizon
+  position: 0, 27 # Horizon
 
 - type: technology
   id: NFBasicRobotics
@@ -709,31 +709,18 @@
   position: 0, 28 # Horizon
 
 - type: technology
-  id: NFVim
-  name: nf-research-technology-vim
-  entityIcon: MechVim
-  discipline: NFEngineering
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - VimHarness
-  technologyPrerequisites:
-  - NFBasicRobotics
-  position: 1, 29 # Horizon
-
-- type: technology
-  id: NFRoboticsEquipment
-  name: nf-research-technology-robotics-equipment
-  entityIcon: MechEquipmentGrabberSmall
+  id: RemoteControl
+  name: nf-research-technology-remote-control-monitoring
+  entityIcon: SurveillanceCameraMonitorCircuitboard
   discipline: NFEngineering
   tier: 1
   cost: 2500
   recipeUnlocks:
-  - MechEquipmentGrabberSmall
-  prerequisiteLineType: Diagonal
+  - RemoteControlDevice
+  - RemoteControllerCircuitboard
   technologyPrerequisites:
-  - NFBasicRoboticsEquipment
-  position: 1, 26 # Horizon
+  - NFBasicRobotics
+  position: 0, 29 # Horizon
 
 - type: technology
   id: NFRipleyAPLU
@@ -743,6 +730,9 @@
   tier: 1
   cost: 7500
   recipeUnlocks:
+  - MechEquipmentFork
+  - MechEquipmentGrabberSmall
+  - MechEquipmentGrabber
   - RipleyHarness
   - RipleyLArm
   - RipleyRArm
@@ -772,20 +762,7 @@
   prerequisiteLineType: Diagonal
   technologyPrerequisites:
   - NFVim
-  position: 1, 30 # Horizon
-
-- type: technology
-  id: NFAdvancedRoboticsEquipment
-  name: nf-research-technology-advanced-robotics-equipment
-  entityIcon: MechEquipmentGrabber
-  discipline: NFEngineering
-  tier: 1
-  cost: 5000
-  recipeUnlocks:
-  - MechEquipmentGrabber
-  technologyPrerequisites:
-  - NFRoboticsEquipment
-  position: 1, 25 # Horizon
+  position: 0, 26 # Horizon
 
 - type: technology
   id: NFHONKMech
@@ -803,22 +780,60 @@
   - HonkerCentralElectronics
   - HonkerPeripheralsElectronics
   - HonkerTargetingElectronics
-  technologyPrerequisites:
-  - NFCritterMechs
-  position: 1, 31 # Horizon
-
-- type: technology
-  id: NFHornRoboticsEquipment
-  name: nf-research-technology-horn-robotics-equipment
-  entityIcon: MechEquipmentHorn
-  discipline: NFEngineering
-  tier: 1
-  cost: 1000
-  recipeUnlocks:
   - MechEquipmentHorn
   technologyPrerequisites:
-  - NFHONKMech
-  position: 1, 32 # Horizon
+  - NFCritterMechs
+  position: 0, 25 # Horizon
+
+# region Combat Cyborgs
+
+- type: technology
+  id: CombatCyborgs
+  name: nf-research-technology-combat-cyborgs
+  entityIcon: BorgChassisSelectableCombat
+  discipline: NFEngineering
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - BorgModuleCombatPKA
+  - BorgModuleCombatEchis
+  - CyborgCombatEndoskeleton
+  researchTargets:
+  - TechnologyDiscCombatCyborgs
+  technologyPrerequisites:
+  - RemoteControl
+  position: 0, 30 # Horizon
+
+- type: technology
+  id: ProtoKineticCyborgTech
+  name: nf-research-technology-protokinetic-cyborg
+  entityIcon: WeaponProtoKineticRailgunBorg
+  discipline: NFSalvage
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - BorgModuleCombatPKAHeavy
+  - BorgModuleCombatPKARailgun
+  - BorgModuleCombatPKARepeater
+  - BorgModuleCombatPKAShotgun
+  technologyPrerequisites:
+  - CombatCyborgs
+  position: 1, 30 # Horizon
+
+- type: technology
+  id: OtherCombatModules
+  name: nf-research-technology-other-combat-modules
+  entityIcon: NFWeaponLightMachineGunL6C
+  discipline: NFArsenalMercenary
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - BorgModuleCombatLaserAdvanced
+  - BorgModuleCombatLaserHeavy
+  - BorgModuleCombatL6C
+  technologyPrerequisites:
+  - CombatCyborgs
+  position: 1, 31 # Horizon
 
 # region Entertainment & Comms
 
@@ -1846,6 +1861,8 @@
   technologyPrerequisites:
   - NFImprovedRifleAmmo
   position: 4, 64 # Horizon
+  researchTargets:
+  - TechnologyDiscArsenalAmmunition
 
 - type: technology
   id: NFBasicShuttleArmament

@@ -1,4 +1,6 @@
 using System.Linq;
+using Content.Shared._Horizon.Pain.Components;
+using Content.Shared._Horizon.Pain.Prototypes;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
@@ -56,6 +58,7 @@ public abstract class SharedWieldableSystem : EntitySystem
         SubscribeLocalEvent<WieldingBlockerComponent, WieldAttemptEvent>(OnBlockerAttempt);
         SubscribeLocalEvent<WieldingBlockerComponent, InventoryRelayedEvent<WieldAttemptEvent>>(OnBlockerAttempt);
         SubscribeLocalEvent<WieldingBlockerComponent, HeldRelayedEvent<WieldAttemptEvent>>(OnBlockerAttempt);
+        SubscribeLocalEvent<PainComponent, WieldAttemptEvent>(OnBlockerAttempt); //_Horizon
 
         SubscribeLocalEvent<MeleeRequiresWieldComponent, AttemptMeleeEvent>(OnMeleeAttempt);
         SubscribeLocalEvent<GunRequiresWieldComponent, ExaminedEvent>(OnExamineRequires);
@@ -240,6 +243,17 @@ public abstract class SharedWieldableSystem : EntitySystem
     {
         args.Cancelled = true;
     }
+
+    // _Horizon start
+    private void OnBlockerAttempt(Entity<PainComponent> ent, ref WieldAttemptEvent args)
+    {
+        if (ent.Comp.CurrentStage < PainStages.SeverePain)
+            return;
+
+        args.Cancelled = true;
+        _popup.PopupClient(Loc.GetString("wieldable-component-pain-blocked"), ent.Owner, ent.Owner, PopupType.MediumCaution);
+    }
+    // _Horizon end
 
     public bool CanWield(EntityUid uid, WieldableComponent component, EntityUid user, bool quiet = false)
     {

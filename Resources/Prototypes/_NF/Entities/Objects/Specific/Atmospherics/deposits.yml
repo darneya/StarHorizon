@@ -522,7 +522,9 @@
   suffix: DEBUG
   components:
   - type: Pinpointer
-    component: GasDeposit
+    whitelist: # Goob edit: pinpointer whitelist
+      components:
+      - GasDeposit
     targetName: GasDeposit
 
 - type: entity
