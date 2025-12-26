@@ -582,9 +582,9 @@ entities:
       id: Nugget
     - type: ImplicitRoof
     - type: ShipyardGridRequiresNewThrusters
-      priceAdded: 16000
+      priceAdded: 32000
     - type: ShipyardGridRequiresRustClearing
-      priceAdded: 8000
+      priceAdded: 16000
 - proto: Airlock
   entities:
   - uid: 2
