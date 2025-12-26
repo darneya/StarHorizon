@@ -585,9 +585,9 @@ entities:
       id: Orange
     - type: ImplicitRoof
     - type: ShipyardGridRequiresRustClearing
-      priceAdded: 6000
+      priceAdded: 12000
     - type: ShipyardGridRequiresNewThrusters
-      priceAdded: 14000
+      priceAdded: 24000
 - proto: AirlockCargoGlass
   entities:
   - uid: 2
