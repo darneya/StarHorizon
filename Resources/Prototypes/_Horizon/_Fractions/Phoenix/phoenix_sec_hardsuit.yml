@@ -19,7 +19,7 @@
         Blunt: 0.5
         Slash: 0.5
         Piercing: 0.5
-        Heat: 0.50
+        Heat: 0.5
         Caustic: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.95
@@ -49,4 +49,4 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-        Radiation: 0.2
+        Radiation: 0.8
