@@ -1,0 +1,22 @@
+<controls:OutpostCaptureWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Horizon.OutpostCaptureUI"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    MinSize="400 200" Resizable="False">
+    <BoxContainer SeparationOverride="10" Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+        <Label Name="CaptureLabel" HorizontalExpand="True"/>
+        <ProgressBar Name="ProgressBar"
+                     VerticalExpand="True"
+                     HorizontalExpand="True"
+                     MinValue="0"
+                     MaxValue="100"
+                     Value="0"
+                     MaxHeight="40"
+                     Access="Public">
+            <ProgressBar.ForegroundStyleBoxOverride>
+                <graphics:StyleBoxFlat BackgroundColor="#4287f5"/>
+            </ProgressBar.ForegroundStyleBoxOverride>
+        </ProgressBar>
+        <Button MinHeight="60" HorizontalExpand="True" Access="Public" Name="CaptureButton" Disabled="True"/>
+    </BoxContainer>
+</controls:OutpostCaptureWindow>

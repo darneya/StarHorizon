@@ -1,3 +1,4 @@
+using Content.Shared.Containers.ItemSlots;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -20,6 +21,10 @@ public sealed partial class OutpostConsoleComponent : Component
     [DataField]
     [ViewVariables(VVAccess.ReadWrite)]
     public string ContainerSlot = "id-card-slot";
+
+    [DataField]
+    [ViewVariables(VVAccess.ReadOnly)]
+    public ItemSlot IdCardSlot = new();
 
     [AutoNetworkedField]
     [ViewVariables(VVAccess.ReadWrite)]

@@ -7,8 +7,8 @@ namespace Content.Shared._Horizon.OutpostCapture;
 public sealed partial class OutpostSpawnList : IPrototype
 {
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; } = null!;
 
     [DataField("spawn")]
-    public List<EntitySpawnEntry> SpawnList = new();
+    public List<EntitySpawnEntry> SpawnList = [];
 }

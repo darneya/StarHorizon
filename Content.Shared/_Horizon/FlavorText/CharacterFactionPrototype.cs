@@ -19,7 +19,7 @@ public sealed partial class CharacterFactionPrototype : IPrototype
     public Color Color = Color.White;
 
     [DataField]
-    public ProtoId<OutpostSpawnList> OutpostSpawnListProto;
+    public ProtoId<OutpostSpawnList>? OutpostSpawnListProto;
 
     [DataField]
     public bool Roundstart = true;
