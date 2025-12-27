@@ -24,7 +24,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     [Dependency] private readonly IdCardSystem _idCard = default!;
 
     private Dictionary<int, ExpeditionGoal> _goals = new();
-    private Dictionary<int, KeyValuePair<EntityUid, ExpeditionGoal>> _claimedGoals = new();
+    private Dictionary<int, ExpeditionGoal> _claimedGoals = new();
     private int _nextId = 1;
     private TimeSpan _nextOffer;
 
@@ -91,10 +91,10 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     {
         foreach (var item in _claimedGoals.Values)
         {
-            if (!item.Value.TryComplete(args.Entity, EntityManager))
+            if (!item.TryComplete(args.Entity, EntityManager))
                 continue;
 
-            args.Price = item.Value.Reward;
+            args.Price = item.Reward;
             args.Handled = true;
             return;
         }
@@ -131,10 +131,10 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             RaiseLocalEvent(goal.ClaimEvent);
 
         var card = EnsureComp<ExpeditionGoalsIdCardComponent>(idCard);
-        card.AssignedGoals[goalId] = new(goal.Description, goal.IconEntity, goal.Reward);
+        card.AssignedGoals.Add(goalId);
         Dirty(idCard, card);
 
-        _claimedGoals[goalId] = new(idCard, goal);
+        _claimedGoals[goalId] = goal;
 
         GenerateGoals();
         UpdateUi();
@@ -154,13 +154,15 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
     public bool IsCompleted(EntityUid user, EntityUid target)
     {
-        _idCard.TryFindIdCard(user, out var card);
-        foreach (var item in _claimedGoals.Values)
+        if (!_idCard.TryFindIdCard(user, out var idCard) || !TryComp<ExpeditionGoalsIdCardComponent>(idCard.Owner, out var goalsCard))
+            return false;
+
+        foreach (var item in goalsCard.AssignedGoals)
         {
-            if (item.Key != card.Owner)
+            if (!_claimedGoals.TryGetValue(item, out var goal))
                 continue;
 
-            if (item.Value.TryComplete(target, EntityManager))
+            if (goal.TryComplete(target, EntityManager))
                 return true;
         }
 
@@ -177,7 +179,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         for (var i = 0; i < GoalsCount; i++)
         {
             var proto = _random.Pick(prototypes);
-            var goal = proto.Goal.Instantiate(_random);
+            var goal = proto.Goal.Instantiate(proto.RandomAmount.Next(_random) * proto.AmountMultiplier);
             _goals.Add(_nextId, goal);
             _nextId++;
         }

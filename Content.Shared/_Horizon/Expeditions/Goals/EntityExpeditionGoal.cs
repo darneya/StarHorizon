@@ -3,42 +3,10 @@ using Content.Shared.Stacks;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Tag;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Horizon.Expeditions;
-
-[Prototype]
-public sealed partial class ExpeditionGoalPrototype : IPrototype
-{
-    [IdDataField]
-    public string ID { get; set; } = default!;
-
-    [DataField(required: true)]
-    public ExpeditionGoal Goal = default!;
-}
-
-[Serializable, NetSerializable]
-[ImplicitDataDefinitionForInheritors]
-public abstract partial class ExpeditionGoal
-{
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
-    public string Description = default!;
-
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
-    public string IconEntity = default!;
-
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
-    public int Reward = default!;
-
-    [DataField(serverOnly: true), ViewVariables(VVAccess.ReadWrite)]
-    public object? ClaimEvent;
-
-    public abstract ExpeditionGoal Instantiate(IRobustRandom random);
-
-    public abstract bool TryComplete(EntityUid sellEntity, IEntityManager entMan);
-}
 
 [Serializable, NetSerializable]
 public sealed partial class EntityExpeditionGoal : ExpeditionGoal
@@ -46,16 +14,11 @@ public sealed partial class EntityExpeditionGoal : ExpeditionGoal
     [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public string RequiredTag = default!;
 
-    [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
-    public MinMax RandomAmount;
-
     [ViewVariables(VVAccess.ReadWrite)]
     public int RequiredAmount;
 
-    public override ExpeditionGoal Instantiate(IRobustRandom random)
+    public override ExpeditionGoal Instantiate(int amount)
     {
-        var amount = RandomAmount.Next(random);
-
         return new EntityExpeditionGoal()
         {
             Description = Loc.GetString(Description, ("amount", amount)),
