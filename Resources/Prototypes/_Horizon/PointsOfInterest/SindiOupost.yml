@@ -1,13 +1,13 @@
-# Author Info
-# GitHub: ???
-# Discord: ???
+# Информация об авторе шаттла
+# GitHub/Gitea: ???
+# Discord: amir7036
 
-# Maintainer Info
-# GitHub: https://git.starhorizon.ru/Astrolaris
+# Информация об сопровождающем
+# GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
 # Discord: astr0laris
 
-# Notes:
-# Syndicate Outpost POI
+# Прототип аванпоста:
+#
 - type: pointOfInterest
   id: SindiOutpost
   parent: BasePOI
@@ -16,10 +16,12 @@
   maximumDistance: 15000
   spawnGroup: Required
   gridPath: /Maps/_Horizon/POI/SindiOupost.yml
+  hideWarp: true
   addComponents:
-  - type: SolarPoweredGrid
-    trackOnInit: true
-    doNotCull: true
+  - type: IFF
+    color: "#C83737"
+    flags: [HideLabel, Hide]
+    readOnly: false
 
 - type: gameMap
   id: SindiOutpost
@@ -28,8 +30,22 @@
   minPlayers: 0
   stations:
     SindiOutpost:
-      stationProto: StandardFrontierOutpost
+      stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
           mapNameTemplate: "Syndicate Outpost"
+        - type: ExtraStationInformation
+          iconPath: /Textures/_Horizon/Interface/banner_syndicate_red.png
+          stationSubtext: 'frontier-lobby-syndicate-subtext'
+          stationDescription: 'frontier-lobby-syndicate-description'
+          lobbySortOrder: 7
+        - type: StationJobs
+          availableJobs:
+            SyndicateOfficerTeleCommunication: [ 1, 1 ]
+            SyndicateOperative: [ 3, 3 ]
+            SyndicateCargo: [ 4, 4 ]
+        - type: StationDeadDropReporting
+          messageSet: Syndicate
+        - type: StationDeadDropHintExempt
+        - type: TradeCrateWildcardDestination
         - type: BindToStationVariationPassExemption
