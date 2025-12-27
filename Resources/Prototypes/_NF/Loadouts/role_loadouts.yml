@@ -710,3 +710,45 @@
   - PrisonerPDA
   - PrisonerWallet
   - NFSpeciesSpecific
+
+- type: roleLoadout
+  id: JobSyndicateOfficerTeleCommunication
+  groups:
+  - Top
+  - Bottom
+  - Socks
+  - SyndicateJumpsuit
+  - SyndicateBack
+  - SyndicatePDA
+  - SyndicateHead
+  - SyndicateOuterClothing
+  - SyndicateEars
+  - SyndicateBoots
+
+- type: roleLoadout
+  id: JobSyndicateOperative
+  groups:
+  - Top
+  - Bottom
+  - Socks
+  - SyndicateJumpsuit
+  - SyndicateBack
+  - SyndicatePDA
+  - SyndicateHead
+  - SyndicateOuterClothing
+  - SyndicateEars
+  - SyndicateBoots
+
+- type: roleLoadout
+  id: JobSyndicateCargo
+  groups:
+  - Top
+  - Bottom
+  - Socks
+  - SyndicateJumpsuit
+  - SyndicateBack
+  - SyndicatePDA
+  - SyndicateHead
+  - SyndicateOuterClothing
+  - SyndicateEars
+  - SyndicateBoots
