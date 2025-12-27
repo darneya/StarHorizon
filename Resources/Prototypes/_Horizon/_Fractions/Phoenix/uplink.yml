@@ -242,7 +242,7 @@
   description: Контузионный взрывчатый заряд, предназначенный для разрушения больших объемов породы. Фракция Феникс.
   productEntity: SeismicChargePhoenix
   cost:
-    MaterialBluespace: 5
+    MaterialBluespace: 2
   categories:
   - UplinkPhoenixArmament
 
@@ -252,7 +252,7 @@
   description: Улучшенный протокинетический дробовик, уникальная разработка Инициативы Феникс для вооружения своих групп космических старателей.
   productEntity: WeaponProtoKineticShotgunPhoenix
   cost:
-    MaterialBluespace: 15
+    MaterialBluespace: 5
   categories:
   - UplinkPhoenixArmament
 
@@ -272,7 +272,7 @@
   description: Элитная сабля, символ власти капитанов Инициативы Феникс.
   productEntity: CaptainSabrePhoenix
   cost:
-    MaterialBluespace: 10
+    MaterialBluespace: 2
   categories:
   - UplinkPhoenixArmament
 
@@ -282,7 +282,7 @@
   description: Иконическое оружие всех войн,дешевое и легкодоступное
   productEntity: NFWeaponRifleAssaultAK4047
   cost:
-    MaterialBluespace: 15
+    MaterialBluespace: 8
   categories:
   - UplinkPhoenixArmament
 
@@ -352,7 +352,7 @@
   description: Ы)
   productEntity: MedkitRadiationFilled
   cost:
-    MaterialBluespace: 999
+    MaterialBluespace: 3
   categories:
   - UplinkPhoenixConsumables
 
@@ -377,12 +377,32 @@
   - UplinkPhoenixConsumables
 
 - type: listing
+  id: UplinkPhoenixCigarPhoenix
+  name: Сигара Феникса
+  description: Сигара с омнизином для агентов Инициативы Феникс.
+  productEntity: CigarPhoenix
+  cost:
+    MaterialBluespace: 2
+  categories:
+  - UplinkPhoenixConsumables
+
+- type: listing
   id: UplinkPhoenixNFMagazineRifle30Empty
   name: Магазин (.30 винтовочный, пустой)
   description: Пустой магазин для винтовок калибра .30.
   productEntity: NFMagazineRifle30Empty
   cost:
     MaterialBluespace: 1
+  categories:
+  - UplinkPhoenixConsumables
+
+- type: listing
+  id: UplinkPhoenixBoxT4ComponentsAssorted
+  name: Коробка с компонентами T4
+  description: Коробка с различными блюспейс компонентами.
+  productEntity: BoxT4ComponentsAssorted
+  cost:
+    MaterialBluespace: 5
   categories:
   - UplinkPhoenixConsumables
 
