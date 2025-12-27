@@ -97,7 +97,7 @@ public sealed class GameShutdownController
                     if (map.TryGet<ValueDataNode>("restartRound", out var restartNode))
                         restart = restartNode.AsBool();
 
-                    if (map.TryGet<ValueDataNode>("restartRound", out var restartAlwaysNode))
+                    if (map.TryGet<ValueDataNode>("restartRoundAlways", out var restartAlwaysNode))
                         restartAlways = restartAlwaysNode.AsBool();
 
                     if (map.TryGet("beforeShutdown", out var beforeShutdown) &&
