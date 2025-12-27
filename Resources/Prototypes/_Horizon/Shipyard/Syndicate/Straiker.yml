@@ -19,7 +19,7 @@
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/straiker.yml
   class:
   - Syndicate
-  - Assault
+  - Capital
   engine:
   - RTG
 
