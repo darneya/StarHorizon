@@ -33,7 +33,7 @@
     currencyWhitelist:
     - MaterialBluespace
     balance:
-      MaterialBluespace: 10
+      MaterialBluespace: 30
 
 - type: entity
   parent: [ BaseItem, StorePresetASUplink ]
