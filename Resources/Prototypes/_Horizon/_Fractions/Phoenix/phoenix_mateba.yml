@@ -1,7 +1,7 @@
 - type: entity
   name: револьвер матеба ИФ
   id: WeaponRevolverMatebaPhoenix
-  parent: NFWeaponRevolverWard45
+  parent: WeaponRevolverMateba
   description: Улучшенная версия револьвера Mateba для службы безопасности ИФ.
   suffix: Феникс, СБ
   components:

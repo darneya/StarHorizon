@@ -135,9 +135,6 @@
   parent: BaseBulletTrigger
   categories: [ HideSpawnMenu ]
   components:
-  - type: Tag
-    tags:
-    - Mining
   - type: Projectile
     damage:
       types:
@@ -162,6 +159,7 @@
     color: "#C92BCC"
   - type: GatheringProjectile
   - type: MiningGatheringSoft
+  - type: MiningGatheringHard
 
 # RUBICON
 

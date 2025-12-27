@@ -4,10 +4,3 @@
   keycode: 'я' # Horizon
   frequency: 9027
   color: "#b30202"
-
-- type: radioChannel
-  id: Phoenix
-  name: Феникс
-  keycode: 'х' # Horizon
-  frequency: 9028
-  color: "#ff6600"

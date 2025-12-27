@@ -28,9 +28,6 @@
     count: 5
   - type: Item
     size: Tiny
-  - type: Currency
-    price:
-      MaterialBluespace: 1
 
 - type: entity
   parent: MaterialBluespace

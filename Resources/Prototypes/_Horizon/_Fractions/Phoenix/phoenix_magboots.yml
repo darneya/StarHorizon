@@ -1,8 +1,8 @@
 - type: entity
-  parent: ClothingShoesBootsMagAdv
+  parent: ClothingShoesBootsMagBase
   id: ClothingShoesBootsMagPhoenix
   name: Магбутсы ИФ
-  description: Магбутсы промышленного класса, заказываемые Инициативой у NanoTransen
+  description: Магнитные ботинки службы безопасности ИФ.
   suffix: Феникс, работяги
   components:
   - type: Sprite

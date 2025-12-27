@@ -16,21 +16,21 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.3
-        Slash: 0.3
-        Piercing: 0.4
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.5
         Heat: 0.70
         Caustic: 0.8
   - type: ClothingSpeedModifier
-    walkModifier: 0.90
-    sprintModifier: 0.90
+    walkModifier: 0.85
+    sprintModifier: 0.75
 
 - type: entity
   parent: ClothingHeadHardsuitBase
   id: Phoenixbrighelmet
   categories: [ HideSpawnMenu ]
-  name: Ш13 "Панорама"
-  description: Шахтёрский шлем с расширенным смотровым стеклом, имеет встроенный ПНВ.
+  name: Шлем скафандра бригадира ИФ
+  description: Крепкий шлем промышленного класса, доработан дополнительным бронированием.
   components:
   - type: Sprite
     sprite: _Horizon/_Fractions/Phoenix/helmets/HellmetHardsuitBrig.rsi
@@ -49,4 +49,4 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-        Radiation: 0
+        Radiation: 1
