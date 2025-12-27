@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: ???
+# Discord: ???
+
+# Maintainer Info
+# GitHub: https://git.starhorizon.ru/Astrolaris
+# Discord: astr0laris
+
+# Notes:
+# Syndicate Deport POI
+- type: pointOfInterest
+  id: SindiDeport
+  parent: BasePOI
+  name: "Syndicate Deport"
+  minimumDistance: 7500
+  maximumDistance: 15000
+  spawnGroup: Required
+  gridPath: /Maps/_Horizon/POI/SindiDeport.yml
+  addComponents:
+  - type: SolarPoweredGrid
+    trackOnInit: true
+    doNotCull: true
+  - type: OutpostCapture
+    needCaptured: 1
+    spawnCooldown: 10
+    spawnList: FactionSyndicate
+
+- type: gameMap
+  id: SindiDeport
+  mapName: "Syndicate Deport"
+  mapPath: /Maps/_Horizon/POI/SindiDeport.yml
+  minPlayers: 0
+  stations:
+    SindiDeport:
+      stationProto: StandardFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Syndicate Deport"
+        - type: BindToStationVariationPassExemption
