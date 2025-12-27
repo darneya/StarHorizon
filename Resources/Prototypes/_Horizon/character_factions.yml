@@ -11,7 +11,6 @@
   desc: faction-frontier-desc
   color: "#263B99"
   roundstart: false
-  outpostSpawnListProto: FactionFrontier
 
 # region NFSD
 
@@ -30,14 +29,12 @@
   name: faction-siu-name
   desc: faction-siu-desc
   color: "#881DE0"
-  outpostSpawnListProto: FactionFrontier
 
 - type: characterFaction
   id: FactionArcadia
   name: faction-arcadia-name
   desc: faction-arcadia-desc
   color: "#881DE0"
-  outpostSpawnListProto: FactionFrontier
 
 # region Medical
 
@@ -47,21 +44,18 @@
   desc: faction-med-desc
   color: "#27BEF5"
   roundstart: false
-  outpostSpawnListProto: FactionFrontier
 
 - type: characterFaction
   id: FactionFSB
   name: faction-fsb-name
   desc: faction-fsb-desc
   color: "#27BEF5"
-  outpostSpawnListProto: FactionFrontier
 
 - type: characterFaction
   id: FactionCCC
   name: faction-ccc-name
   desc: faction-ccc-desc
   color: "#27BEF5"
-  outpostSpawnListProto: FactionFrontier
 
 # region Edison / Engineering
 
@@ -71,28 +65,24 @@
   desc: faction-edison-desc
   color: "#E0861D"
   roundstart: false
-  outpostSpawnListProto: FactionFrontier
 
 - type: characterFaction
   id: FactionLVHI
   name: faction-lvhi-name
   desc: faction-lvhi-desc
   color: "#E0861D"
-  outpostSpawnListProto: FactionFrontier
 
 - type: characterFaction
   id: FactionUAC
   name: faction-uac-name
   desc: faction-uac-desc
   color: "#E0861D"
-  outpostSpawnListProto: FactionFrontier
 
 - type: characterFaction
   id: FactionNakamura
   name: faction-nakamura-name
   desc: faction-nakamura-desc
   color: "#E0861D"
-  outpostSpawnListProto: FactionFrontier
 
 # region Pirate
 
