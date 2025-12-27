@@ -102,19 +102,23 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
     private void OnSold(ref EntitySoldEvent args)
     {
+        if (!_idCard.TryFindIdCard(args.Actor, out var idCard) || !TryComp<ExpeditionGoalsIdCardComponent>(idCard.Owner, out var goalsCard))
+            return;
+
         foreach (var sold in args.Sold)
         {
-            foreach (var item in _claimedGoals)
+            foreach (var item in goalsCard.AssignedGoals)
             {
-                if (!item.Value.Value.TryComplete(sold, EntityManager))
+                if (!_claimedGoals.TryGetValue(item, out var goal))
                     continue;
 
-                if (TryComp<ExpeditionGoalsIdCardComponent>(item.Value.Key, out var card))
-                {
-                    card.AssignedGoals.Remove(item.Key);
-                    Dirty(item.Value.Key, card);
-                }
+                if (!goal.TryComplete(sold, EntityManager))
+                    continue;
+
+                goalsCard.AssignedGoals.Remove(item);
             }
+
+            Dirty(idCard.Owner, goalsCard);
         }
     }
 
