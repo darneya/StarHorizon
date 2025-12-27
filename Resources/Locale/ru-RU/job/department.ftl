@@ -1,9 +1,9 @@
 department-Cargo = Отдел Снабжения
 department-Civilian = Гражданский Отдел
-department-Command = Командование
+# department-Command = Командование
 department-CentralCommand = Центральное Командование
 department-Medical = Медицинский Отдел
-department-Security = Служба Безопасности
+# department-Security = Служба Безопасности
 department-Science = Научный Отдел
 department-Silicon = Синтетики
 department-Specific = Специфические
