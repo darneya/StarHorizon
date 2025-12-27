@@ -10,7 +10,12 @@
     {
       "name": "icon"
     },
-
+    {
+      "name": "icon-on"
+    },
+    {
+      "name": "icon-unlit"
+    },
     {
       "name": "equipped-BACKPACK",
       "directions": 4
