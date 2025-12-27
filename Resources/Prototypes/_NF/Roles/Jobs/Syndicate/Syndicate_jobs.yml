@@ -1,7 +1,7 @@
 - type: job
   id: SyndicateOfficerTeleCommunication
   name: Офицер теле-коммуникаций
-  description: Основная еденица по распространению и доставке контрабанды.
+  description: Командующий в данном секторе всеми операциями Синдиката.
   playTimeTracker: JobSyndicateOfficerTeleCommunication
   forceFaction: FactionSyndicate # Horizon
   requirements:
@@ -11,6 +11,7 @@
       role: JobSeniorOfficer
       time: 10800 # 3 hours
   startingGear: BaseSyndicateOfficerTeleCommunicationGear
+  whitelisted: true
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
@@ -37,8 +38,8 @@
 
 - type: job
   id: SyndicateOperative
-  name: Оперативник Синдиката
-  description: Основная боевая еденица синдиката.
+  name: Оперативник
+  description: Основная боевая единица синдиката.
   playTimeTracker: JobSyndicateOperative
   forceFaction: FactionSyndicate # Horizon
   requirements:
@@ -48,6 +49,7 @@
       department: Security
       time: 10800 # 3 hours
   startingGear: BaseSyndicateOperativeGear
+  whitelisted: true
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
@@ -75,7 +77,7 @@
 - type: job
   id: SyndicateCargo
   name: Курьер
-  description: Основная еденица по распространению и доставке контрабанды.
+  description: Основная единица по распространению и доставке контрабанды.
   playTimeTracker: JobSyndicateCargo
   forceFaction: FactionSyndicate # Horizon
   requirements:
@@ -85,6 +87,7 @@
       department: Security
       time: 10800 # 3 hrs
   startingGear: BaseSyndicateCargoGear
+  whitelisted: true
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
