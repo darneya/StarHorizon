@@ -19,7 +19,7 @@
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/thera.yml
   class:
   - Syndicate
-  - Interceptor
+  - Fighter
   engine:
   - RTG
 
