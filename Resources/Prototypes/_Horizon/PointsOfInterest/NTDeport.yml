@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: ???
+# Discord: ???
+
+# Maintainer Info
+# GitHub: https://git.starhorizon.ru/Astrolaris
+# Discord: astr0laris
+
+# Notes:
+# NT Deport POI
+- type: pointOfInterest
+  id: NTDeport
+  parent: BasePOI
+  name: "NT Deport"
+  minimumDistance: 15000
+  maximumDistance: 20000
+  spawnGroup: Required
+  gridPath: /Maps/_Horizon/POI/NTDeport.yml
+  addComponents:
+  - type: SolarPoweredGrid
+    trackOnInit: true
+    doNotCull: true
+  - type: OutpostCapture
+    needCaptured: 1
+    spawnCooldown: 10
+    spawnList: FactionFrontier
+
+- type: gameMap
+  id: NTDeport
+  mapName: "NT Deport"
+  mapPath: /Maps/_Horizon/POI/NTDeport.yml
+  minPlayers: 0
+  stations:
+    NTDeport:
+      stationProto: StandardFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "NT Deport"
+        - type: BindToStationVariationPassExemption

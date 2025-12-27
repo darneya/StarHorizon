@@ -1,0 +1,39 @@
+# Author Info
+# GitHub: ???
+# Discord: ???
+
+# Maintainer Info
+# GitHub: https://git.starhorizon.ru/Astrolaris
+# Discord: astr0laris
+
+# Notes:
+# Pirate Deport POI
+- type: pointOfInterest
+  id: PirateDeport
+  parent: BasePOI
+  name: "Pirate Deport"
+  minimumDistance: 15000
+  maximumDistance: 20000
+  spawnGroup: Required
+  gridPath: /Maps/_Horizon/POI/PirateDeport.yml
+  addComponents:
+  - type: SolarPoweredGrid
+    trackOnInit: true
+    doNotCull: true
+  - type: OutpostCapture
+    needCaptured: 1
+    spawnCooldown: 10
+    spawnList: FactionPirate
+
+- type: gameMap
+  id: PirateDeport
+  mapName: "Pirate Deport"
+  mapPath: /Maps/_Horizon/POI/PirateDeport.yml
+  minPlayers: 0
+  stations:
+    PirateDeport:
+      stationProto: StandardFrontierOutpost
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "Pirate Deport"
+        - type: BindToStationVariationPassExemption
