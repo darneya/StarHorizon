@@ -20,10 +20,6 @@
   - type: SolarPoweredGrid
     trackOnInit: true
     doNotCull: true
-  - type: OutpostCapture
-    needCaptured: 1
-    spawnCooldown: 10
-    spawnList: FactionSyndicate
 
 - type: gameMap
   id: SindiOutpost
