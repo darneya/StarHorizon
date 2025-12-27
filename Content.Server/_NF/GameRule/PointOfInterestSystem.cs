@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Numerics;
-using Content.Server._Horizon.OutpostCapture;
 using Content.Server._NF.Trade;
 using Content.Server.GameTicking;
 using Content.Server.Maps;

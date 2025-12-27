@@ -279,9 +279,11 @@ public class SharedOutpostCaptureSystem : EntitySystem
 
     public void UpdateConsoles()
     {
-        var entityQuery = EntityManager.EntityQueryEnumerator<OutpostConsoleComponent>();
-        while (entityQuery.MoveNext(out var uid, out var console))
+        var outpostEnumerator = EntityManager.EntityQuery<OutpostConsoleComponent>().GetEnumerator();
+        while (outpostEnumerator.MoveNext())
         {
+            var uid = outpostEnumerator.Current.Owner;
+            var console = outpostEnumerator.Current;
             if (console.LinkedOutpost is not null)
                 continue;
 
@@ -296,6 +298,7 @@ public class SharedOutpostCaptureSystem : EntitySystem
             outpost.LinkedConsoles.Add(GetNetEntity(uid));
             ItemSlotsSystem.AddItemSlot(uid, console.ContainerSlot, console.IdCardSlot);
         }
+        outpostEnumerator.Dispose();
     }
 }
 
