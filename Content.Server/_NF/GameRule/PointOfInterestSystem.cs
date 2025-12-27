@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server._Horizon.OutpostCapture;
 using Content.Server._NF.Trade;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
@@ -11,6 +12,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server._NF.Station.Systems;
+using Content.Shared._Horizon.OutpostCapture;
 using Robust.Shared.EntitySerialization.Systems;
 
 namespace Content.Server._NF.GameRule;
@@ -256,6 +258,8 @@ public sealed class PointOfInterestSystem : EntitySystem
         _meta.SetEntityName(loadedGrid.Value, stationName, meta);
 
         EntityManager.AddComponents(loadedGrid.Value, proto.AddComponents);
+        var outpostSys = EntityManager.EntitySysManager.GetEntitySystem<SharedOutpostCaptureSystem>();
+        outpostSys.UpdateConsoles();
 
         // Rename warp points after set up if needed
         if (proto.NameWarp)
