@@ -22,7 +22,7 @@
 
 - type: entity
   parent: BaseMachineCircuitboard
-  id: MachineBLESCircuitboard
+  id: MachineBLEScuitboard
   name: Плата блока хранения энергии с блюспейс-усилением
   description: 'Это блок хранения энергии с блюспейс-усилением который позволяет хранить ОГО-ГО энернии с помощью блюспейс технологий в основном его просто зовут "БЛЭС"'
   components:
