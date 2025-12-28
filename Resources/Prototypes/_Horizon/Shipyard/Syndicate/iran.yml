@@ -1,6 +1,6 @@
 # Информация об авторе шаттла
 # GitHub/Gitea: ???
-# Discord: ???
+# Discord: amir7036
 
 # Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
@@ -11,7 +11,7 @@
 - type: vessel
   id: Iran
   parent: BaseVesselAntag
-  name: Helios
+  name: NRZH Iran
   description: Стандартный шаттл для отдыха и небольших экспедиций явно не скопированный с Кампера НТ.
   price: 50000
   category: Small
@@ -22,7 +22,6 @@
   - Civilian
   engine:
   - Plasma
-
 
 - type: gameMap
   id: Iran

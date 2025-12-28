@@ -257,8 +257,6 @@ public sealed class PointOfInterestSystem : EntitySystem
         _meta.SetEntityName(loadedGrid.Value, stationName, meta);
 
         EntityManager.AddComponents(loadedGrid.Value, proto.AddComponents);
-        var outpostSys = EntityManager.EntitySysManager.GetEntitySystem<SharedOutpostCaptureSystem>();
-        outpostSys.UpdateConsoles();
 
         // Rename warp points after set up if needed
         if (proto.NameWarp)

@@ -276,30 +276,6 @@ public class SharedOutpostCaptureSystem : EntitySystem
         progress = progress != null ? float.Clamp(progress.Value, 0f, 100f) : null;
         return progress;
     }
-
-    public void UpdateConsoles()
-    {
-        var outpostEnumerator = EntityManager.EntityQuery<OutpostConsoleComponent>().GetEnumerator();
-        while (outpostEnumerator.MoveNext())
-        {
-            var uid = outpostEnumerator.Current.Owner;
-            var console = outpostEnumerator.Current;
-            if (console.LinkedOutpost is not null)
-                continue;
-
-            if (TryGetOutpost(uid, out var outpost, out var outpostUid))
-                continue;
-
-            if (console.CanUseAsSpawnPoint &&
-                TransformSystem.TryGetMapOrGridCoordinates(uid, out var coords))
-                outpost.SpawnLocation = coords;
-
-            console.LinkedOutpost = GetNetEntity(outpostUid);
-            outpost.LinkedConsoles.Add(GetNetEntity(uid));
-            ItemSlotsSystem.AddItemSlot(uid, console.ContainerSlot, console.IdCardSlot);
-        }
-        outpostEnumerator.Dispose();
-    }
 }
 
 [Prototype("outpostSpawn")]

@@ -1,13 +1,13 @@
-# Author Info
-# GitHub: ???
-# Discord: ???
+# Информация об авторе шаттла
+# GitHub/Gitea: ???
+# Discord: amir7036
 
-# Maintainer Info
-# GitHub: https://git.starhorizon.ru/Astrolaris
+# Информация об сопровождающем
+# GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
 # Discord: astr0laris
 
-# Notes:
-# NT Deport POI
+# Прототип аванпоста:
+#
 - type: pointOfInterest
   id: NTDeport
   parent: BasePOI
@@ -15,20 +15,16 @@
   minimumDistance: 15000
   maximumDistance: 20000
   spawnGroup: Required
-  gridPath: /Maps/_Horizon/POI/NTDeport.yml
+  gridPath: /Maps/_Horizon/POI/nanotrasendeport.yml
   addComponents:
   - type: SolarPoweredGrid
     trackOnInit: true
     doNotCull: true
-  - type: OutpostCapture
-    needCaptured: 1
-    spawnCooldown: 10
-    spawnList: FactionFrontier
 
 - type: gameMap
   id: NTDeport
   mapName: "NT Deport"
-  mapPath: /Maps/_Horizon/POI/NTDeport.yml
+  mapPath: /Maps/_Horizon/POI/nanotrasendeport.yml
   minPlayers: 0
   stations:
     NTDeport:

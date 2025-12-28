@@ -1,6 +1,6 @@
 # Информация об авторе шаттла
 # GitHub/Gitea: ???
-# Discord: ???
+# Discord: amir7036
 
 # Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
@@ -11,7 +11,7 @@
 - type: vessel
   id: Straiker
   parent: BaseVesselAntag
-  name: Striker
+  name: Straiker
   description: Тяжелый синдикатовский линкор. Флагманский корабль для крупномасштабных операций с мощным вооружением и надежной броней.
   price: 120000
   category: Large
@@ -22,7 +22,6 @@
   - Capital
   engine:
   - RTG
-
 
 - type: gameMap
   id: Straiker

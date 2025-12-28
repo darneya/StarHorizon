@@ -1,6 +1,6 @@
 # Информация об авторе шаттла
 # GitHub/Gitea: ???
-# Discord: ???
+# Discord: amir7036
 
 # Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
@@ -9,31 +9,31 @@
 # Прототип шаттла:
 #
 - type: vessel
-  id: Licvit
+  id: Ister
   parent: BaseVesselAntag
-  name: Likvit
-  description: Стандартный шаттл синдиката, популярный среди одиноких оперативников за свою удобность и хорошую конструкцию.
+  name: NRZH Ister
+  description: Разведовательный шаттл синдиката имеющий меньший размер и большую возможность для манёвров, не обладает вооружением но может быть пригоден к его установке.
   price: 75000
   category: Small
   group: Syndicate
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/licvit.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/ister.yml
   class:
   - Syndicate
+  - Patrol
   engine:
   - RTG
 
-
 - type: gameMap
-  id: Licvit
-  mapName: 'Licvit'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/licvit.yml
+  id: Ister
+  mapName: 'Ister'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/ister.yml
   minPlayers: 0
   stations:
-    Licvit:
+    Ister:
       stationProto: StandardFrontierAntagVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Licvit {1}'
+          mapNameTemplate: 'Ister {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

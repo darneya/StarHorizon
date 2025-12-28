@@ -15,6 +15,9 @@ faction-nfsd-desc = Защитники прав и свобод Фронтира
 faction-pirate-name = Pirate
 faction-pirate-desc = Никто не любит пираторв и пираты никого не любят.
 
+faction-syndicate-name = Syndicate
+faction-syndicate-desc = Главные конкуренты в секторе
+
 faction-siu-name = Innovative Horizon of Progress
 faction-siu-desc =
     Корпорация специализирующаяся на исследовании аномальных явлениях и их пораждений.

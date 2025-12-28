@@ -1,6 +1,6 @@
 # Информация об авторе шаттла
 # GitHub/Gitea: ???
-# Discord: ???
+# Discord: amir7036
 
 # Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
@@ -9,32 +9,30 @@
 # Прототип шаттла:
 #
 - type: vessel
-  id: Thera
+  id: Licvit
   parent: BaseVesselAntag
-  name: Thera
-  description: Универсальный синдикатовский шаттл среднего класса с модульной конструкцией для различных операций.
-  price: 80000
-  category: Medium
+  name: Licvit
+  description: Стандартный шаттл синдиката, популярный среди одиноких оперативников за свою удобность и хорошую конструкцию.
+  price: 75000
+  category: Small
   group: Syndicate
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/thera.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/licvit.yml
   class:
   - Syndicate
-  - Fighter
   engine:
   - RTG
 
-
 - type: gameMap
-  id: Thera
-  mapName: 'Thera'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/thera.yml
+  id: Licvit
+  mapName: 'Licvit'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/licvit.yml
   minPlayers: 0
   stations:
-    Thera:
+    Licvit:
       stationProto: StandardFrontierAntagVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Thera {1}'
+          mapNameTemplate: 'Licvit {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

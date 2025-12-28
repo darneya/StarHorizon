@@ -1,6 +1,6 @@
 # Информация об авторе шаттла
 # GitHub/Gitea: ???
-# Discord: ???
+# Discord: amir7036
 
 # Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
@@ -9,32 +9,31 @@
 # Прототип шаттла:
 #
 - type: vessel
-  id: Ister
+  id: Thera
   parent: BaseVesselAntag
-  name: Liquidator
-  description: Разведовательный шаттл синдиката имеющий меньший размер и большую возможность для манёвров, не обладает вооружением но может быть пригоден к его установке.
-  price: 75000
-  category: Small
+  name: Thera
+  description: Универсальный синдикатовский шаттл среднего класса с модульной конструкцией для различных операций.
+  price: 80000
+  category: Medium
   group: Syndicate
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/ister.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/thera.yml
   class:
   - Syndicate
-  - Patrol
+  - Fighter
   engine:
   - RTG
 
-
 - type: gameMap
-  id: Ister
-  mapName: 'Ister'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/ister.yml
+  id: Thera
+  mapName: 'Thera'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/thera.yml
   minPlayers: 0
   stations:
-    Ister:
+    Thera:
       stationProto: StandardFrontierAntagVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Ister {1}'
+          mapNameTemplate: 'Thera {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
