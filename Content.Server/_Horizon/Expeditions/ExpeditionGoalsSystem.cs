@@ -30,14 +30,14 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
 
-    private Dictionary<int, ExpeditionGoal> _goals = new();
+    private Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> _goals = new();
     private Dictionary<int, ExpeditionGoal> _claimedGoals = new();
     private int _nextId = 1;
     private TimeSpan _nextOffer;
 
     public TimeSpan Cooldown = TimeSpan.FromMinutes(5);
 
-    public const int GoalsCount = 5;
+    public const int GoalsCount = 3;
 
     public override void Initialize()
     {
@@ -64,7 +64,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         if (!_idCard.TryFindIdCard(args.Actor, out var idCard))
             return;
 
-        TryClaimGoal(idCard.Owner, args.OptionId);
+        TryClaimGoal(idCard.Owner, args.OptionId, args.Specification);
     }
 
     private void OnUiReady(Entity<GoalsListCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
@@ -88,7 +88,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         _claimedGoals.Remove(cast.Id);
         _cartridgeLoader.UpdateUiState(GetEntity(args.MessageEvent.LoaderUid), null, null);
     }
-    
+
 
     private void OnSpawnEntities(SpawnExpeditionGoalEntityEvent args)
     {
@@ -155,9 +155,9 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         }
     }
 
-    private void ClaimGoal(EntityUid idCard, int goalId)
+    private void ClaimGoal(EntityUid idCard, int goalId, GoalSpecification specification)
     {
-        if (!_goals.TryGetValue(goalId, out var goal))
+        if (!_goals[specification].TryGetValue(goalId, out var goal))
             return;
 
         if (goal.ClaimEvent != null)
@@ -176,15 +176,15 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             _cartridgeLoader.UpdateUiState(container.Owner, null, null);
     }
 
-    private bool TryClaimGoal(EntityUid idCard, int goalId)
+    private bool TryClaimGoal(EntityUid idCard, int goalId, GoalSpecification specification)
     {
-        if (!_goals.TryGetValue(goalId, out var goal))
+        if (!_goals[specification].TryGetValue(goalId, out var goal))
             return false;
 
         if (TryComp<ExpeditionGoalsIdCardComponent>(idCard, out var card) && card.AssignedGoals.Count >= card.MaxGoals)
             return false;
 
-        ClaimGoal(idCard, goalId);
+        ClaimGoal(idCard, goalId, specification);
         return true;
     }
 
@@ -212,13 +212,23 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
         var prototypes = _proto.EnumeratePrototypes<ExpeditionGoalPrototype>().ToList();
 
-        for (var i = 0; i < GoalsCount; i++)
+        for (var j = 0; j < 4; j++)
         {
-            var proto = _random.Pick(prototypes);
-            var goal = proto.Goal.Instantiate(proto.RandomAmount.Next(_random) * proto.AmountMultiplier);
-            _goals.Add(_nextId, goal);
-            _nextId++;
+            var specification = (GoalSpecification)j;
+            _goals[specification] = new();
+            var specificated = prototypes.Where(x => x.Specification == specification).ToList();
+            if (specificated.Count <= 0)
+                continue;
+
+            for (var i = 0; i < GoalsCount; i++)
+            {
+                var proto = _random.Pick(specificated);
+                var goal = proto.Goal.Instantiate(proto.RandomAmount.Next(_random) * proto.AmountMultiplier);
+                _goals[specification].Add(_nextId, goal);
+                _nextId++;
+            }
         }
+
     }
 
     private void UpdateUi(EntityUid uid)

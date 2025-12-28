@@ -25,7 +25,7 @@ public sealed partial class ExpeditionGoalOption : PanelContainer
         Icon.SetEntity(entMan.Spawn(goal.IconEntity));
 
         LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);
-        BigPanel.PanelOverride = new StyleBoxFlat(new Color(30, 30, 34));
+        BigPanel.ModulateSelfOverride = new Color(30, 30, 34);
 
         ClaimButton.OnPressed += args => ClaimPressed?.Invoke();
     }

@@ -21,6 +21,9 @@ public sealed partial class ExpeditionGoalPrototype : IPrototype
     [DataField]
     public int AmountMultiplier = 1;
 
+    [DataField]
+    public GoalSpecification Specification = GoalSpecification.Expeditionary;
+
     [DataField(required: true)]
     public ExpeditionGoal Goal = default!;
 }
@@ -46,3 +49,11 @@ public abstract partial class ExpeditionGoal
     public abstract bool TryComplete(EntityUid sellEntity, IEntityManager entMan);
 }
 
+[Serializable, NetSerializable]
+public enum GoalSpecification : int
+{
+    Expeditionary = 0,
+    Mining = 1,
+    Crew = 2,
+    Medical = 3
+}

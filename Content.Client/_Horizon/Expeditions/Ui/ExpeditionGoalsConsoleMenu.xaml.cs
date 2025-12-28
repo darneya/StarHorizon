@@ -19,17 +19,35 @@ public sealed partial class ExpeditionGoalsConsoleMenu : FancyWindow,
     public TimeSpan NextOffer;
     public TimeSpan Cooldown = TimeSpan.FromMinutes(5);
 
+    public GoalSpecification CurrentSpecification = GoalSpecification.Expeditionary;
+    public Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> CachedGoals = new();
+
     public Action<int>? OnOptionSelected;
 
     public ExpeditionGoalsConsoleMenu()
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
+
+        for (var i = 0; i < 4; i++)
+        {
+            SpecificationButton.AddItem(Loc.GetString($"goal-specification-{(GoalSpecification)i}"), i);
+        }
+
+        SpecificationButton.OnItemSelected += args =>
+        {
+            CurrentSpecification = (GoalSpecification)args.Id;
+            SpecificationButton.Select(args.Id);
+            Populate();
+        };
     }
 
-    public void Populate(Dictionary<int, ExpeditionGoal> options)
+    public void Populate()
     {
         Container.DisposeAllChildren();
+
+        if (!CachedGoals.TryGetValue(CurrentSpecification, out var options))
+            return;
 
         foreach (var option in options)
         {

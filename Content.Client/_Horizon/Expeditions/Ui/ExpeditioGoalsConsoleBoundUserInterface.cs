@@ -18,7 +18,7 @@ public sealed partial class ExpeditionGoalsConsoleBoundUserInterface : BoundUser
         _menu = this.CreateWindow<ExpeditionGoalsConsoleMenu>();
         _menu.OnOptionSelected += optionId =>
         {
-            SendMessage(new ClaimExpeditionGoalMessage(optionId));
+            SendMessage(new ClaimExpeditionGoalMessage(optionId, _menu.CurrentSpecification));
         };
     }
 
@@ -35,6 +35,7 @@ public sealed partial class ExpeditionGoalsConsoleBoundUserInterface : BoundUser
         _menu.NextOffer = cast.OfferCooldown;
         _menu.Cooldown = cast.Cooldown;
 
-        _menu.Populate(cast.Goals);
+        _menu.CachedGoals = cast.Goals;
+        _menu.Populate();
     }
 }
