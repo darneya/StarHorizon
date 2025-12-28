@@ -47,6 +47,9 @@ public abstract partial class ExpeditionGoal
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public string RequiredStack = "Credit";
 
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public bool IsContraband = false;
+
     [DataField(serverOnly: true), ViewVariables(VVAccess.ReadWrite)]
     public object? ClaimEvent;
 

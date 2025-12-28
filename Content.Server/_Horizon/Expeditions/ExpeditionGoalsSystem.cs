@@ -182,6 +182,30 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         }
     }
 
+    public int GetContrabandBonus(EntityUid actor, EntityUid ent)
+    {
+        if (!_idCard.TryFindIdCard(actor, out var idCard) || !TryComp<ExpeditionGoalsIdCardComponent>(idCard.Owner, out var goalsCard))
+            return 0;
+
+        foreach (var item in goalsCard.AssignedGoals)
+        {
+            if (!_claimedGoals.TryGetValue(item, out var goal))
+                continue;
+
+            if (!goal.IsContraband)
+                continue;
+
+            if (goal.TryComplete(ent, EntityManager))
+            {
+                goalsCard.AssignedGoals.Remove(item);
+                Dirty(idCard.Owner, goalsCard);
+                return goal.Reward;
+            }
+        }
+
+        return 0;
+    }
+
     private void ClaimGoal(EntityUid idCard, int goalId, GoalSpecification specification)
     {
         if (!_goals[specification].TryGetValue(goalId, out var goal))

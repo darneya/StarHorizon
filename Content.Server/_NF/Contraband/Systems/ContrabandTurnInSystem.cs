@@ -16,6 +16,7 @@ using Content.Shared.Mobs.Components;
 using Robust.Shared.Prototypes;
 using Content.Server._NF.Cargo.Systems;
 using Content.Server.Hands.Systems;
+using Content.Server._Horizon.Expeditions;
 
 namespace Content.Server._NF.Contraband.Systems;
 
@@ -59,7 +60,7 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
             return;
         }
 
-        GetPalletGoods(gridUid, comp, out var toSell, out var amount);
+        GetPalletGoods(gridUid, comp, EntityUid.Invalid, out var toSell, out var amount);   // Horizon - добавил инвалида для актора
 
         _uiSystem.SetUiState(uid, ContrabandPalletConsoleUiKey.Contraband,
             new ContrabandPalletConsoleInterfaceState((int) amount, toSell.Count, true));
@@ -106,16 +107,16 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
         return pads;
     }
 
-    private void SellPallets(EntityUid gridUid, ContrabandPalletConsoleComponent component, EntityUid? station, out int amount)
+    private void SellPallets(EntityUid gridUid, ContrabandPalletConsoleComponent component, EntityUid actor, EntityUid? station, out int amount) // Horizon - добавил поле actor
     {
         station ??= _station.GetOwningStation(gridUid);
-        GetPalletGoods(gridUid, component, out var toSell, out amount);
+        GetPalletGoods(gridUid, component, actor, out var toSell, out amount);  // Horizon - добавил поле actor
 
         Log.Debug($"{component.Faction} sold {toSell.Count} contraband items for {amount}");
 
         if (station != null)
         {
-            var ev = new NFEntitySoldEvent(toSell, gridUid);
+            var ev = new NFEntitySoldEvent(toSell, gridUid, actor);  // Horizon - добавил поле actor
             RaiseLocalEvent(ref ev);
         }
 
@@ -125,7 +126,7 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
         }
     }
 
-    private void GetPalletGoods(EntityUid gridUid, ContrabandPalletConsoleComponent console, out HashSet<EntityUid> toSell, out int amount)
+    private void GetPalletGoods(EntityUid gridUid, ContrabandPalletConsoleComponent console, EntityUid actor, out HashSet<EntityUid> toSell, out int amount)    // Horizon - добавил поле actor
     {
         amount = 0;
         toSell = new HashSet<EntityUid>();
@@ -160,6 +161,8 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
                         continue;
                     amount += value;
                 }
+
+                amount += EntityManager.System<ExpeditionGoalsSystem>().GetContrabandBonus(actor, ent); // Horizon goals
             }
         }
     }
@@ -201,7 +204,7 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
             return;
         }
 
-        SellPallets(gridUid, component, null, out var price);
+        SellPallets(gridUid, component, args.Actor, null, out var price);   // Horizon - добавил поле actor
 
         var stackPrototype = _protoMan.Index<StackPrototype>(component.RewardType);
         var stackUid = _stack.Spawn(price, stackPrototype, args.Actor.ToCoordinates());
