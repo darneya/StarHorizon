@@ -72,7 +72,7 @@ entities:
     - type: Broadphase
     - type: OutpostCapture
       needCaptured: 1
-      spawnCooldown: 10
+      spawnCooldown: 1200
       spawnList: FactionFrontier
     - type: Physics
       bodyStatus: InAir
