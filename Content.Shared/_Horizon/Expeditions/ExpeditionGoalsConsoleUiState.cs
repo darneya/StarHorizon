@@ -6,12 +6,14 @@ namespace Content.Shared._Horizon.Expeditions;
 public sealed partial class ExpeditionGoalsConsoleUiState : BoundUserInterfaceState
 {
     public Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> Goals;
+    public List<GoalSpecification> AvailableSpecifications;
     public TimeSpan OfferCooldown;
     public TimeSpan Cooldown;
 
-    public ExpeditionGoalsConsoleUiState(Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> goals, TimeSpan cooldown, TimeSpan offerCooldown)
+    public ExpeditionGoalsConsoleUiState(Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> goals, List<GoalSpecification> availableSpecifications, TimeSpan cooldown, TimeSpan offerCooldown)
     {
         Goals = goals;
+        AvailableSpecifications = availableSpecifications;
         Cooldown = cooldown;
         OfferCooldown = offerCooldown;
     }

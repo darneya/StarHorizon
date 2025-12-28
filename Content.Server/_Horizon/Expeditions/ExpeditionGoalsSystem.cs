@@ -233,11 +233,11 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
     private void UpdateUi(EntityUid uid)
     {
-        if (!HasComp<ExpeditionGoalsConsoleComponent>(uid))
+        if (!TryComp<ExpeditionGoalsConsoleComponent>(uid, out var console))
             return;
 
         _ui.SetUiState(uid, ExpeditionGoalsConsoleUiKey.Key,
-            new ExpeditionGoalsConsoleUiState(_goals, Cooldown, _nextOffer));
+            new ExpeditionGoalsConsoleUiState(_goals, console.Categories, Cooldown, _nextOffer));
     }
 
     private void UpdateUi()
@@ -246,7 +246,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         while (query.MoveNext(out var uid, out var console))
         {
             _ui.SetUiState(uid, ExpeditionGoalsConsoleUiKey.Key,
-                new ExpeditionGoalsConsoleUiState(_goals, Cooldown, _nextOffer));
+                new ExpeditionGoalsConsoleUiState(_goals, console.Categories, Cooldown, _nextOffer));
         }
     }
 

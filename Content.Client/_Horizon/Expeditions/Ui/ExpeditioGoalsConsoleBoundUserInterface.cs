@@ -16,6 +16,10 @@ public sealed partial class ExpeditionGoalsConsoleBoundUserInterface : BoundUser
         base.Open();
 
         _menu = this.CreateWindow<ExpeditionGoalsConsoleMenu>();
+
+        if (IoCManager.Resolve<IEntityManager>().TryGetComponent<ExpeditionGoalsConsoleComponent>(Owner, out var component))
+            _menu.UpdateSpecifications(component.Categories);
+
         _menu.OnOptionSelected += optionId =>
         {
             SendMessage(new ClaimExpeditionGoalMessage(optionId, _menu.CurrentSpecification));

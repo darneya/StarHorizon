@@ -29,11 +29,6 @@ public sealed partial class ExpeditionGoalsConsoleMenu : FancyWindow,
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
-        for (var i = 0; i < 4; i++)
-        {
-            SpecificationButton.AddItem(Loc.GetString($"goal-specification-{(GoalSpecification)i}"), i);
-        }
-
         SpecificationButton.OnItemSelected += args =>
         {
             CurrentSpecification = (GoalSpecification)args.Id;
@@ -54,6 +49,16 @@ public sealed partial class ExpeditionGoalsConsoleMenu : FancyWindow,
             var optionControl = new ExpeditionGoalOption(option.Key, option.Value, _entMan);
             optionControl.ClaimPressed += () => OnOptionSelected?.Invoke(option.Key);
             Container.AddChild(optionControl);
+        }
+    }
+
+    public void UpdateSpecifications(List<GoalSpecification> specifications)
+    {
+        SpecificationButton.Clear();
+
+        foreach (var item in specifications)
+        {
+            SpecificationButton.AddItem(Loc.GetString($"goal-specification-{item}"), (int)item);
         }
     }
 

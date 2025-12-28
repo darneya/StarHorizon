@@ -55,5 +55,6 @@ public enum GoalSpecification : int
     Expeditionary = 0,
     Mining = 1,
     Crew = 2,
-    Medical = 3
+    Medical = 3,
+    Syndicate = 4
 }
