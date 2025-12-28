@@ -9,31 +9,31 @@
 # Прототип шаттла:
 #
 - type: vessel
-  id: Licvit
+  id: Thera
   parent: BaseVesselAntag
-  name: Likvit
-  description: Стандартный шаттл синдиката, популярный среди одиноких оперативников за свою удобность и хорошую конструкцию.
-  price: 75000
-  category: Small
+  name: Thera
+  description: Универсальный синдикатовский шаттл среднего класса с модульной конструкцией для различных операций.
+  price: 80000
+  category: Medium
   group: Syndicate
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/licvit.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/thera.yml
   class:
   - Syndicate
+  - Fighter
   engine:
   - RTG
 
-
 - type: gameMap
-  id: Licvit
-  mapName: 'Licvit'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/licvit.yml
+  id: Thera
+  mapName: 'Thera'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/thera.yml
   minPlayers: 0
   stations:
-    Licvit:
+    Thera:
       stationProto: StandardFrontierAntagVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Licvit {1}'
+          mapNameTemplate: 'Thera {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

@@ -9,27 +9,27 @@
 # Прототип аванпоста:
 #
 - type: pointOfInterest
-  id: SindiDeport
+  id: PirateDeport
   parent: BasePOI
-  name: "Syndicate Deport"
-  minimumDistance: 7500
-  maximumDistance: 15000
+  name: "Pirate Deport"
+  minimumDistance: 15000
+  maximumDistance: 20000
   spawnGroup: Required
-  gridPath: /Maps/_Horizon/POI/SindiDeport.yml
+  gridPath: /Maps/_Horizon/POI/piratedeport.yml
   addComponents:
   - type: SolarPoweredGrid
     trackOnInit: true
     doNotCull: true
 
 - type: gameMap
-  id: SindiDeport
-  mapName: "Syndicate Deport"
-  mapPath: /Maps/_Horizon/POI/SindiDeport.yml
+  id: PirateDeport
+  mapName: "Pirate Deport"
+  mapPath: /Maps/_Horizon/POI/piratedeport.yml
   minPlayers: 0
   stations:
-    SindiDeport:
+    PirateDeport:
       stationProto: StandardFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: "Syndicate Deport"
+          mapNameTemplate: "Pirate Deport"
         - type: BindToStationVariationPassExemption
