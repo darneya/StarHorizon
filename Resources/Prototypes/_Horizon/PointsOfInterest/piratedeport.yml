@@ -15,7 +15,7 @@
   minimumDistance: 15000
   maximumDistance: 20000
   spawnGroup: Required
-  gridPath: /Maps/_Horizon/POI/PirateDeport.yml
+  gridPath: /Maps/_Horizon/POI/piratedeport.yml
   addComponents:
   - type: SolarPoweredGrid
     trackOnInit: true
@@ -24,7 +24,7 @@
 - type: gameMap
   id: PirateDeport
   mapName: "Pirate Deport"
-  mapPath: /Maps/_Horizon/POI/PirateDeport.yml
+  mapPath: /Maps/_Horizon/POI/piratedeport.yml
   minPlayers: 0
   stations:
     PirateDeport:

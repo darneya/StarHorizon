@@ -9,32 +9,31 @@
 # Прототип шаттла:
 #
 - type: vessel
-  id: Varion
+  id: Iran
   parent: BaseVesselAntag
-  name: Varion
-  description: Компактный синдикатовский перехватчик. Разработан для быстрых маневров и точных ударов.
-  price: 55000
+  name: NRZH Iran
+  description: Стандартный шаттл для отдыха и небольших экспедиций явно не скопированный с Кампера НТ.
+  price: 50000
   category: Small
   group: Syndicate
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/varion.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/iran.yml
   class:
   - Syndicate
   - Civilian
   engine:
-  - RTG
-
+  - Plasma
 
 - type: gameMap
-  id: Varion
-  mapName: 'Varion'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/varion.yml
+  id: Iran
+  mapName: 'Iran'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/iran.yml
   minPlayers: 0
   stations:
-    Varion:
+    Iran:
       stationProto: StandardFrontierAntagVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Varion {1}'
+          mapNameTemplate: 'Iran {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

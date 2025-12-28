@@ -1,6 +1,6 @@
 # Информация об авторе шаттла
 # GitHub/Gitea: ???
-# Discord: amir7036
+# Discord: Wisdom
 
 # Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
@@ -9,31 +9,31 @@
 # Прототип шаттла:
 #
 - type: vessel
-  id: Licvit
+  id: Nighthawk
   parent: BaseVesselAntag
-  name: Likvit
-  description: Стандартный шаттл синдиката, популярный среди одиноких оперативников за свою удобность и хорошую конструкцию.
-  price: 75000
-  category: Small
+  name: Nighthawk
+  description: штурмовой шаттл синдиката.
+  price: 50000
+  category: Large
   group: Syndicate
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/licvit.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/nighthawk.yml
   class:
   - Syndicate
+  - Fighter
   engine:
   - RTG
 
-
 - type: gameMap
-  id: Licvit
-  mapName: 'Licvit'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/licvit.yml
+  id: Nighthawk
+  mapName: 'Nighthawk'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/nighthawk.yml
   minPlayers: 0
   stations:
-    Licvit:
+    Nighthawk:
       stationProto: StandardFrontierAntagVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Licvit {1}'
+          mapNameTemplate: 'Nighthawk {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

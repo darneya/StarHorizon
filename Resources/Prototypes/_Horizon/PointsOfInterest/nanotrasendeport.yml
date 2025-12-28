@@ -15,7 +15,7 @@
   minimumDistance: 15000
   maximumDistance: 20000
   spawnGroup: Required
-  gridPath: /Maps/_Horizon/POI/NTDeport.yml
+  gridPath: /Maps/_Horizon/POI/nanotrasendeport.yml
   addComponents:
   - type: SolarPoweredGrid
     trackOnInit: true
@@ -24,7 +24,7 @@
 - type: gameMap
   id: NTDeport
   mapName: "NT Deport"
-  mapPath: /Maps/_Horizon/POI/NTDeport.yml
+  mapPath: /Maps/_Horizon/POI/nanotrasendeport.yml
   minPlayers: 0
   stations:
     NTDeport:

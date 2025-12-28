@@ -15,7 +15,7 @@
   minimumDistance: 7500
   maximumDistance: 15000
   spawnGroup: Required
-  gridPath: /Maps/_Horizon/POI/SindiOupost.yml
+  gridPath: /Maps/_Horizon/POI/sindioupost.yml
   hideWarp: true
   addComponents:
   - type: IFF
@@ -26,11 +26,11 @@
 - type: gameMap
   id: SindiOutpost
   mapName: "Syndicate Outpost"
-  mapPath: /Maps/_Horizon/POI/SindiOupost.yml
+  mapPath: /Maps/_Horizon/POI/sindioupost.yml
   minPlayers: 0
   stations:
     SindiOutpost:
-      stationProto: RecordsFrontierOutpost
+      stationProto: StandardFrontierOutpost
       components:
         - type: StationNameSetup
           mapNameTemplate: "Syndicate Outpost"
@@ -44,8 +44,5 @@
             SyndicateOfficerTeleCommunication: [ 1, 1 ]
             SyndicateOperative: [ 3, 3 ]
             SyndicateCargo: [ 4, 4 ]
-        - type: StationDeadDropReporting
-          messageSet: Syndicate
         - type: StationDeadDropHintExempt
-        - type: TradeCrateWildcardDestination
         - type: BindToStationVariationPassExemption
