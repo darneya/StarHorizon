@@ -96,8 +96,8 @@
 
 - type: characterFaction
   id: FactionSyndicate
-  name: faction-nfsd-name
-  desc: faction-nfsd-desc
-  color: "#369926"
+  name: faction-syndicate-name
+  desc: faction-syndicate-desc
+  color: "#b51414"
   roundstart: false
   outpostSpawnListProto: FactionSyndicate
