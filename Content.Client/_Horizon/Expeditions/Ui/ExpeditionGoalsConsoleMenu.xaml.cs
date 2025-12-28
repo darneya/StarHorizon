@@ -19,10 +19,11 @@ public sealed partial class ExpeditionGoalsConsoleMenu : FancyWindow,
     public TimeSpan NextOffer;
     public TimeSpan Cooldown = TimeSpan.FromMinutes(5);
 
-    public GoalSpecification CurrentSpecification = GoalSpecification.Expeditionary;
+    public GoalSpecification CurrentSpecification = GoalSpecification.Crew;
     public Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> CachedGoals = new();
 
     public Action<int>? OnOptionSelected;
+    private Action<int>? _specificationSelect;
 
     public ExpeditionGoalsConsoleMenu()
     {
@@ -31,9 +32,7 @@ public sealed partial class ExpeditionGoalsConsoleMenu : FancyWindow,
 
         SpecificationButton.OnItemSelected += args =>
         {
-            CurrentSpecification = (GoalSpecification)args.Id;
-            SpecificationButton.Select(args.Id);
-            Populate();
+            _specificationSelect?.Invoke(args.Id);
         };
     }
 
@@ -56,10 +55,19 @@ public sealed partial class ExpeditionGoalsConsoleMenu : FancyWindow,
     {
         SpecificationButton.Clear();
 
-        foreach (var item in specifications)
+        for (var i = 0; i < specifications.Count; i++)
         {
-            SpecificationButton.AddItem(Loc.GetString($"goal-specification-{item}"), (int)item);
+            SpecificationButton.AddItem(Loc.GetString($"goal-specification-{specifications[i]}"), i);
         }
+
+        _specificationSelect = args =>
+        {
+            CurrentSpecification = specifications[args];
+            SpecificationButton.Select(args);
+            Populate();
+        };
+
+        CurrentSpecification = specifications.First();
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
