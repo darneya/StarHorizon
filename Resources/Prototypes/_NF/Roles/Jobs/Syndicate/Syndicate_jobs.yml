@@ -117,22 +117,22 @@
   id: BaseSyndicateOperativeGear
   equipment:
     pocket2: BaseUplinkRadio40TC
-  inventory:
-    back: DeathAcidifierImplanter
+    back: DeathRattleImplanter
+    eyes: ClothingEyesHudSyndicate
 
 - type: startingGear
   id: BaseSyndicateCargoGear
   equipment:
     pocket1: Telecrystal10
     pocket2: UplinkImplanter
-  inventory:
-    back: DeathAcidifierImplanter
+    back: DeathRattleImplanter
+    eyes: ClothingEyesHudSyndicate
 
 - type: startingGear
   id: BaseSyndicateOfficerTeleCommunicationGear
   equipment:
     pocket1: SyndicateEncryptionKeyMaster
     pocket2: BaseUplinkRadio40TC
-  inventory:
-    back: DeathAcidifierImplanter
+    back: DeathRattleImplanter
+    eyes: ClothingEyesHudSyndicate
 
