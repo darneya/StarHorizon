@@ -724,6 +724,7 @@
   - SyndicateOuterClothing
   - SyndicateEars
   - SyndicateBoots
+  - ContractorWallet
 
 - type: roleLoadout
   id: JobSyndicateOperative
@@ -738,6 +739,7 @@
   - SyndicateOuterClothing
   - SyndicateEars
   - SyndicateBoots
+  - ContractorWallet
 
 - type: roleLoadout
   id: JobSyndicateCargo
@@ -752,3 +754,4 @@
   - SyndicateOuterClothing
   - SyndicateEars
   - SyndicateBoots
+  - ContractorWallet
