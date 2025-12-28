@@ -65,5 +65,6 @@ public enum GoalSpecification : int
     Mining = 1,
     Crew = 2,
     Medical = 3,
-    Syndicate = 4
+    Syndicate = 4,
+    Pirates = 5
 }

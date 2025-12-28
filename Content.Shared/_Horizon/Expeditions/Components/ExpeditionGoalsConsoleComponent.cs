@@ -11,6 +11,7 @@ public sealed partial class ExpeditionGoalsConsoleComponent : Component
         GoalSpecification.Crew,
         GoalSpecification.Expeditionary,
         GoalSpecification.Mining,
-        GoalSpecification.Medical
+        GoalSpecification.Medical,
+        GoalSpecification.Syndicate
     };
 }

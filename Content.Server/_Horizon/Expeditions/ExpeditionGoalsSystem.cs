@@ -132,6 +132,9 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             if (args.Currency != item.RequiredStack)
                 continue;
 
+            if (item.IsContraband)
+                continue;
+
             args.Price = item.Reward;
             args.Handled = true;
             return;
@@ -145,9 +148,12 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
         foreach (var sold in args.Sold)
         {
-            foreach (var item in goalsCard.AssignedGoals)
+            foreach (var item in goalsCard.AssignedGoals.ToList())
             {
                 if (!_claimedGoals.TryGetValue(item, out var goal))
+                    continue;
+
+                if (goal.IsContraband)
                     continue;
 
                 if (!goal.TryComplete(sold, EntityManager))
@@ -167,7 +173,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
         foreach (var sold in args.Sold)
         {
-            foreach (var item in goalsCard.AssignedGoals)
+            foreach (var item in goalsCard.AssignedGoals.ToList())
             {
                 if (!_claimedGoals.TryGetValue(item, out var goal))
                     continue;
@@ -182,7 +188,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         }
     }
 
-    public int GetContrabandBonus(EntityUid actor, EntityUid ent)
+    public int GetContrabandBonus(EntityUid actor, EntityUid ent, string currency)
     {
         if (!_idCard.TryFindIdCard(actor, out var idCard) || !TryComp<ExpeditionGoalsIdCardComponent>(idCard.Owner, out var goalsCard))
             return 0;
@@ -195,12 +201,11 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             if (!goal.IsContraband)
                 continue;
 
+            if (goal.RequiredStack != currency)
+                continue;
+
             if (goal.TryComplete(ent, EntityManager))
-            {
-                goalsCard.AssignedGoals.Remove(item);
-                Dirty(idCard.Owner, goalsCard);
                 return goal.Reward;
-            }
         }
 
         return 0;
@@ -263,7 +268,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
         var prototypes = _proto.EnumeratePrototypes<ExpeditionGoalPrototype>().ToList();
 
-        for (var j = 0; j < 5; j++)
+        for (var j = 0; j <= (int)GoalSpecification.Pirates; j++)
         {
             var specification = (GoalSpecification)j;
             _goals[specification] = new();

@@ -28,6 +28,7 @@ public sealed partial class ReagentExpeditionGoal : ExpeditionGoal
             Reward = Reward,
             CurrencyStr = CurrencyStr,
             RequiredStack = RequiredStack,
+            IsContraband = IsContraband,
             RequiredReagent = RequiredReagent,
             RequiredAmount = amount,
             ClaimEvent = ClaimEvent

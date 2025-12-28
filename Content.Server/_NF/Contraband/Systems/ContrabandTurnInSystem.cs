@@ -50,7 +50,7 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
         SubscribeLocalEvent<ContrabandPalletConsoleComponent, BoundUIOpenedEvent>(OnPalletUIOpen);
     }
 
-    private void UpdatePalletConsoleInterface(EntityUid uid, ContrabandPalletConsoleComponent comp)
+    private void UpdatePalletConsoleInterface(EntityUid uid, ContrabandPalletConsoleComponent comp, EntityUid actor) // Horizon - добавил поле actor
     {
         var bui = _uiSystem.HasUi(uid, ContrabandPalletConsoleUiKey.Contraband);
         if (Transform(uid).GridUid is not EntityUid gridUid)
@@ -60,7 +60,7 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
             return;
         }
 
-        GetPalletGoods(gridUid, comp, EntityUid.Invalid, out var toSell, out var amount);   // Horizon - добавил инвалида для актора
+        GetPalletGoods(gridUid, comp, actor, out var toSell, out var amount);   // Horizon - добавил поле actor
 
         _uiSystem.SetUiState(uid, ContrabandPalletConsoleUiKey.Contraband,
             new ContrabandPalletConsoleInterfaceState((int) amount, toSell.Count, true));
@@ -70,7 +70,7 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
     {
         var player = args.Actor;
 
-        UpdatePalletConsoleInterface(uid, component);
+        UpdatePalletConsoleInterface(uid, component, args.Actor);   // Horizon - добавил поле actor
     }
 
     /// <summary>
@@ -85,7 +85,7 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
     {
         var player = args.Actor;
 
-        UpdatePalletConsoleInterface(uid, component);
+        UpdatePalletConsoleInterface(uid, component, args.Actor);   // Horizon - добавил поле actor
     }
 
     private List<(EntityUid Entity, ContrabandPalletComponent Component)> GetContrabandPallets(EntityUid gridUid)
@@ -155,14 +155,18 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
                     if (!comp.TurnInValues.ContainsKey(console.RewardType))
                         continue;
 
-                    toSell.Add(ent);
+                    //toSell.Add(ent);  // Horizon commented
                     var value = comp.TurnInValues[console.RewardType];
                     if (value <= 0)
                         continue;
                     amount += value;
                 }
 
-                amount += EntityManager.System<ExpeditionGoalsSystem>().GetContrabandBonus(actor, ent); // Horizon goals
+                // Horizon start
+                amount += EntityManager.System<ExpeditionGoalsSystem>().GetContrabandBonus(actor, ent, console.RewardType);
+                if (amount > 0)
+                    toSell.Add(ent);
+                // Horizon end
             }
         }
     }
@@ -210,6 +214,6 @@ public sealed partial class ContrabandTurnInSystem : SharedContrabandTurnInSyste
         var stackUid = _stack.Spawn(price, stackPrototype, args.Actor.ToCoordinates());
         if (!_hands.TryPickupAnyHand(args.Actor, stackUid))
             _transform.SetLocalRotation(stackUid, Angle.Zero); // Orient these to grid north instead of map north
-        UpdatePalletConsoleInterface(uid, component);
+        UpdatePalletConsoleInterface(uid, component, args.Actor);   // Horizon - добавил поле actor
     }
 }

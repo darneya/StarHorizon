@@ -26,6 +26,7 @@ public sealed partial class EntityExpeditionGoal : ExpeditionGoal
             Reward = Reward,
             CurrencyStr = CurrencyStr,
             RequiredStack = RequiredStack,
+            IsContraband = IsContraband,
             RequiredTag = RequiredTag,
             RequiredAmount = amount,
             ClaimEvent = ClaimEvent
