@@ -21,7 +21,7 @@ public sealed partial class ExpeditionGoalOption : PanelContainer
         TitleStripe.Text = Loc.GetString("expeditions-goal-title-label", ("id", idx));
 
         DescriptionLabel.SetMarkup(goal.Description);
-        RewardLabel.SetMarkup(Loc.GetString("expeditions-goal-reward-label", ("reward", goal.Reward)));
+        RewardLabel.SetMarkup(Loc.GetString("expeditions-goal-reward-label", ("reward", goal.Reward), ("currency", goal.CurrencyStr)));
         Icon.SetEntity(entMan.Spawn(goal.IconEntity));
 
         LayoutContainer.SetAnchorPreset(this, LayoutContainer.LayoutPreset.Wide);

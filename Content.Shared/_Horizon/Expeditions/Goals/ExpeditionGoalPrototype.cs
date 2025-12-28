@@ -41,6 +41,12 @@ public abstract partial class ExpeditionGoal
     [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public int Reward = default!;
 
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public string CurrencyStr = "$";
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public string RequiredStack = "Credit";
+
     [DataField(serverOnly: true), ViewVariables(VVAccess.ReadWrite)]
     public object? ClaimEvent;
 

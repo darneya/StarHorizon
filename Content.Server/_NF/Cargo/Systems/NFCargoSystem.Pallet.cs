@@ -134,7 +134,7 @@ public sealed partial class NFCargoSystem
 
     #region Station
 
-    private bool SellPallets(Entity<NFCargoPalletConsoleComponent> consoleUid, EntityUid gridUid, out double amount, out double noMultiplierAmount) // Frontier: first arg to Entity, add noMultiplierAmount
+    private bool SellPallets(Entity<NFCargoPalletConsoleComponent> consoleUid, EntityUid gridUid, EntityUid actor, out double amount, out double noMultiplierAmount) // Frontier: first arg to Entity, add noMultiplierAmount    // Horizon - добавил поля actor и cash
     {
         GetPalletGoods(consoleUid, gridUid, out var toSell, out amount, out noMultiplierAmount);
 
@@ -143,7 +143,7 @@ public sealed partial class NFCargoSystem
         if (toSell.Count == 0)
             return false;
 
-        var ev = new NFEntitySoldEvent(toSell, gridUid);
+        var ev = new NFEntitySoldEvent(toSell, gridUid, actor); // Horizon - добавил поле actor
         RaiseLocalEvent(ref ev);
 
         foreach (var ent in toSell)
@@ -185,7 +185,7 @@ public sealed partial class NFCargoSystem
                 if (_blacklistQuery.HasComponent(ent))
                     continue;
 
-                var price = _pricing.GetPrice(ent);
+                var price = _pricing.GetPrice(ent, currency: consoleUid.Comp.CashType);
                 if (price == 0)
                     continue;
                 toSell.Add(ent);
@@ -239,7 +239,7 @@ public sealed partial class NFCargoSystem
             return;
         }
 
-        if (!SellPallets(ent, gridUid, out var price, out var noMultiplierPrice))
+        if (!SellPallets(ent, gridUid, args.Actor, out var price, out var noMultiplierPrice)) // Horizon - добавил поле actor
             return;
 
         // Handle market modifiers & immune objects
@@ -265,4 +265,4 @@ public sealed partial class NFCargoSystem
 /// deleted but after the price has been calculated.
 /// </summary>
 [ByRefEvent]
-public readonly record struct NFEntitySoldEvent(HashSet<EntityUid> Sold, EntityUid Grid);
+public readonly record struct NFEntitySoldEvent(HashSet<EntityUid> Sold, EntityUid Grid, EntityUid Actor); // Horizon - добавил поле Actor

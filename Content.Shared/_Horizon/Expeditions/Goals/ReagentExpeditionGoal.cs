@@ -26,8 +26,11 @@ public sealed partial class ReagentExpeditionGoal : ExpeditionGoal
             Description = Loc.GetString(Description, ("amount", amount)),
             IconEntity = IconEntity,
             Reward = Reward,
+            CurrencyStr = CurrencyStr,
+            RequiredStack = RequiredStack,
             RequiredReagent = RequiredReagent,
-            RequiredAmount = amount
+            RequiredAmount = amount,
+            ClaimEvent = ClaimEvent
         };
     }
 

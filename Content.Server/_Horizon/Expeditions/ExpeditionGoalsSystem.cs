@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Server._Horizon.Planet;
+using Content.Server._NF.Cargo.Systems;
 using Content.Server.Access.Systems;
 using Content.Server.Cargo.Systems;
 using Content.Server.CartridgeLoader;
@@ -52,6 +53,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         SubscribeLocalEvent<SpawnExpeditionGoalEntityEvent>(OnSpawnEntities);
         SubscribeLocalEvent<PriceCalculationEvent>(GetPrice);
         SubscribeLocalEvent<EntitySoldEvent>(OnSold);
+        SubscribeLocalEvent<NFEntitySoldEvent>(OnSold);
     }
 
     private void OnConsoleInit(Entity<ExpeditionGoalsConsoleComponent> ent, ref MapInitEvent args)
@@ -127,6 +129,9 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             if (!item.TryComplete(args.Entity, EntityManager))
                 continue;
 
+            if (args.Currency != item.RequiredStack)
+                continue;
+
             args.Price = item.Reward;
             args.Handled = true;
             return;
@@ -134,6 +139,28 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     }
 
     private void OnSold(ref EntitySoldEvent args)
+    {
+        if (!_idCard.TryFindIdCard(args.Actor, out var idCard) || !TryComp<ExpeditionGoalsIdCardComponent>(idCard.Owner, out var goalsCard))
+            return;
+
+        foreach (var sold in args.Sold)
+        {
+            foreach (var item in goalsCard.AssignedGoals)
+            {
+                if (!_claimedGoals.TryGetValue(item, out var goal))
+                    continue;
+
+                if (!goal.TryComplete(sold, EntityManager))
+                    continue;
+
+                goalsCard.AssignedGoals.Remove(item);
+            }
+
+            Dirty(idCard.Owner, goalsCard);
+        }
+    }
+
+    private void OnSold(ref NFEntitySoldEvent args)
     {
         if (!_idCard.TryFindIdCard(args.Actor, out var idCard) || !TryComp<ExpeditionGoalsIdCardComponent>(idCard.Owner, out var goalsCard))
             return;
@@ -212,7 +239,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
         var prototypes = _proto.EnumeratePrototypes<ExpeditionGoalPrototype>().ToList();
 
-        for (var j = 0; j < 4; j++)
+        for (var j = 0; j < 5; j++)
         {
             var specification = (GoalSpecification)j;
             _goals[specification] = new();
