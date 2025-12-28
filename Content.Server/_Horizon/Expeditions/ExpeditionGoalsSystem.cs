@@ -2,11 +2,16 @@ using System.Linq;
 using Content.Server._Horizon.Planet;
 using Content.Server.Access.Systems;
 using Content.Server.Cargo.Systems;
+using Content.Server.CartridgeLoader;
 using Content.Shared._Horizon.Expeditions;
 using Content.Shared.Access.Components;
 using Content.Shared.Cargo;
+using Content.Shared.CartridgeLoader;
+using Content.Shared.PDA;
 using Content.Shared.Tag;
+using Robust.Server.Containers;
 using Robust.Server.GameObjects;
+using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -22,6 +27,8 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IdCardSystem _idCard = default!;
+    [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
+    [Dependency] private readonly ContainerSystem _container = default!;
 
     private Dictionary<int, ExpeditionGoal> _goals = new();
     private Dictionary<int, ExpeditionGoal> _claimedGoals = new();
@@ -38,6 +45,9 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
         SubscribeLocalEvent<ExpeditionGoalsConsoleComponent, MapInitEvent>(OnConsoleInit);
         SubscribeLocalEvent<ExpeditionGoalsConsoleComponent, ClaimExpeditionGoalMessage>(OnClaim);
+
+        SubscribeLocalEvent<GoalsListCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
+        SubscribeLocalEvent<GoalsListCartridgeComponent, CartridgeUiMessage>(OnCartridgeMessage);
 
         SubscribeLocalEvent<SpawnExpeditionGoalEntityEvent>(OnSpawnEntities);
         SubscribeLocalEvent<PriceCalculationEvent>(GetPrice);
@@ -56,6 +66,29 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
         TryClaimGoal(idCard.Owner, args.OptionId);
     }
+
+    private void OnUiReady(Entity<GoalsListCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
+    {
+        Dictionary<int, ExpeditionGoal> goals = new();
+
+        if (TryComp<PdaComponent>(args.Loader, out var pda) &&
+            pda.IdSlot?.ContainerSlot?.ContainedEntity is { Valid: true } card &&
+            TryComp<ExpeditionGoalsIdCardComponent>(card, out var goalCard))
+            goals = goalCard.AssignedGoals.Select(x => new KeyValuePair<int, ExpeditionGoal>(x, _claimedGoals[x])).ToDictionary();
+
+        var state = new GoalsListCartridgeUiState(goals);
+        _cartridgeLoader.UpdateCartridgeUiState(args.Loader, state);
+    }
+
+    private void OnCartridgeMessage(Entity<GoalsListCartridgeComponent> ent, ref CartridgeUiMessage args)
+    {
+        if (args.MessageEvent is not GoalsListRemoveMessage cast)
+            return;
+
+        _claimedGoals.Remove(cast.Id);
+        _cartridgeLoader.UpdateUiState(GetEntity(args.MessageEvent.LoaderUid), null, null);
+    }
+    
 
     private void OnSpawnEntities(SpawnExpeditionGoalEntityEvent args)
     {
@@ -138,6 +171,9 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
         GenerateGoals();
         UpdateUi();
+
+        if (_container.TryGetContainingContainer(idCard, out var container))
+            _cartridgeLoader.UpdateUiState(container.Owner, null, null);
     }
 
     private bool TryClaimGoal(EntityUid idCard, int goalId)
