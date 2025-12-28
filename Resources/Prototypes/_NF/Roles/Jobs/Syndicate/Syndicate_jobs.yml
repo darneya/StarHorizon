@@ -135,4 +135,5 @@
     pocket2: BaseUplinkRadio40TC
     back: DeathRattleImplanter
     eyes: ClothingEyesHudSyndicate
+    outerClothing: ClothingOuterHardsuitSyndieCommander
 

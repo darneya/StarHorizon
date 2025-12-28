@@ -30,7 +30,7 @@
   minPlayers: 0
   stations:
     SindiOutpost:
-      stationProto: StandardFrontierOutpost
+      stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
           mapNameTemplate: "Syndicate Outpost"
@@ -46,3 +46,6 @@
             SyndicateCargo: [ 4, 4 ]
         - type: StationDeadDropHintExempt
         - type: BindToStationVariationPassExemption
+        - type: StationDeadDropReporting
+          messageSet: Syndicate
+        - type: TradeCrateWildcardDestination
