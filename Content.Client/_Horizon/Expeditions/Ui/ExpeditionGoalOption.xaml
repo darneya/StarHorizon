@@ -35,7 +35,6 @@
         <Button Name="ClaimButton"
                 HorizontalExpand="True"
                 VerticalAlignment="Bottom"
-                ToggleMode="True"
                 Access="Public"
                 Text="{Loc 'offering-window-claim'}"/>
     </BoxContainer>

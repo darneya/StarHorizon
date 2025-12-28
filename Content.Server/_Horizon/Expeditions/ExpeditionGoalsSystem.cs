@@ -10,8 +10,10 @@ using Content.Shared.Cargo;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.PDA;
 using Content.Shared.Tag;
+using Robust.Server.Audio;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -30,6 +32,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     [Dependency] private readonly IdCardSystem _idCard = default!;
     [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
     private Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> _goals = new();
     private Dictionary<int, ExpeditionGoal> _claimedGoals = new();
@@ -66,7 +69,8 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         if (!_idCard.TryFindIdCard(args.Actor, out var idCard))
             return;
 
-        TryClaimGoal(idCard.Owner, args.OptionId, args.Specification);
+        if (!TryClaimGoal(idCard.Owner, args.OptionId, args.Specification))
+            _audio.PlayPvs(_audio.ResolveSound(new SoundCollectionSpecifier("CargoError")), ent.Owner);
     }
 
     private void OnUiReady(Entity<GoalsListCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
@@ -284,7 +288,6 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
                 _nextId++;
             }
         }
-
     }
 
     private void UpdateUi(EntityUid uid)

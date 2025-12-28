@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Client.Computer;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Horizon.Expeditions;
