@@ -19,7 +19,7 @@
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/nighthawk.yml
   class:
   - Syndicate
-  - Assault
+  - Fighter
   engine:
   - RTG
 
