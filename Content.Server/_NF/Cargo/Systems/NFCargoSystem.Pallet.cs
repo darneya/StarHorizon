@@ -35,7 +35,7 @@ public sealed partial class NFCargoSystem
 
     #region Console
 
-    private void UpdatePalletConsoleInterface(Entity<NFCargoPalletConsoleComponent> ent) // Frontier: EntityUid<Entity
+    private void UpdatePalletConsoleInterface(Entity<NFCargoPalletConsoleComponent> ent, EntityUid actor) // Frontier: EntityUid<Entity // Horizon - добавил поле actor
     {
         if (Transform(ent).GridUid is not EntityUid gridUid)
         {
@@ -45,7 +45,7 @@ public sealed partial class NFCargoSystem
         }
 
         // Modify prices based on modifier.
-        GetPalletGoods(ent, gridUid, out var toSell, out var amount, out var noModAmount);
+        GetPalletGoods(ent, gridUid, actor, out var toSell, out var amount, out var noModAmount);  // Horizon - добавил поле actor
         if (TryComp<MarketModifierComponent>(ent, out var priceMod))
         {
             amount *= priceMod.Mod;
@@ -58,7 +58,7 @@ public sealed partial class NFCargoSystem
 
     private void OnPalletUIOpen(Entity<NFCargoPalletConsoleComponent> ent, ref BoundUIOpenedEvent args)
     {
-        UpdatePalletConsoleInterface(ent);
+        UpdatePalletConsoleInterface(ent, args.Actor);  // Horizon - добавил поле actor
     }
 
     /// <summary>
@@ -71,7 +71,7 @@ public sealed partial class NFCargoSystem
 
     private void OnPalletAppraise(Entity<NFCargoPalletConsoleComponent> ent, ref CargoPalletAppraiseMessage args)
     {
-        UpdatePalletConsoleInterface(ent);
+        UpdatePalletConsoleInterface(ent, args.Actor);  // Horizon - добавил поле actor
     }
 
     #endregion
@@ -136,7 +136,7 @@ public sealed partial class NFCargoSystem
 
     private bool SellPallets(Entity<NFCargoPalletConsoleComponent> consoleUid, EntityUid gridUid, EntityUid actor, out double amount, out double noMultiplierAmount) // Frontier: first arg to Entity, add noMultiplierAmount    // Horizon - добавил поля actor и cash
     {
-        GetPalletGoods(consoleUid, gridUid, out var toSell, out amount, out noMultiplierAmount);
+        GetPalletGoods(consoleUid, gridUid, actor, out var toSell, out amount, out noMultiplierAmount); // Horizon - добавил поле actor
 
         Log.Debug($"Cargo sold {toSell.Count} entities for {amount} (plus {noMultiplierAmount} without mods)");
 
@@ -152,7 +152,7 @@ public sealed partial class NFCargoSystem
         return true;
     }
 
-    private void GetPalletGoods(Entity<NFCargoPalletConsoleComponent> consoleUid, EntityUid gridUid, out HashSet<EntityUid> toSell, out double amount, out double noMultiplierAmount) // Frontier: first arg to Entity, add noMultiplierAmount
+    private void GetPalletGoods(Entity<NFCargoPalletConsoleComponent> consoleUid, EntityUid gridUid, EntityUid actor, out HashSet<EntityUid> toSell, out double amount, out double noMultiplierAmount) // Frontier: first arg to Entity, add noMultiplierAmount // Horizon - добавил поле actor
     {
         amount = 0;
         noMultiplierAmount = 0;
@@ -185,7 +185,7 @@ public sealed partial class NFCargoSystem
                 if (_blacklistQuery.HasComponent(ent))
                     continue;
 
-                var price = _pricing.GetPrice(ent, currency: consoleUid.Comp.CashType);
+                var price = _pricing.GetPrice(ent, currency: consoleUid.Comp.CashType, user: actor);
                 if (price == 0)
                     continue;
                 toSell.Add(ent);
@@ -254,7 +254,7 @@ public sealed partial class NFCargoSystem
         if (!_hands.TryPickupAnyHand(args.Actor, stackUid))
             _transform.SetLocalRotation(stackUid, Angle.Zero); // Orient these to grid north instead of map north
         _audio.PlayPvs(ApproveSound, ent);
-        UpdatePalletConsoleInterface(ent);
+        UpdatePalletConsoleInterface(ent, args.Actor);  // Horizon - добавил поле actor
     }
 
     #endregion

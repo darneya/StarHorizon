@@ -128,18 +128,27 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
     private void GetPrice(ref PriceCalculationEvent args)
     {
-        foreach (var item in _claimedGoals.Values)
+        if (!args.User.HasValue)
+            return;
+
+        if (!_idCard.TryFindIdCard(args.User.Value, out var idCard) || !TryComp<ExpeditionGoalsIdCardComponent>(idCard.Owner, out var goalsCard))
+            return;
+
+        foreach (var item in goalsCard.AssignedGoals)
         {
-            if (!item.TryComplete(args.Entity, EntityManager))
+            if (!_claimedGoals.TryGetValue(item, out var goal))
                 continue;
 
-            if (args.Currency != item.RequiredStack)
+            if (!goal.TryComplete(args.Entity, EntityManager))
                 continue;
 
-            if (item.IsContraband)
+            if (args.Currency != goal.RequiredStack)
                 continue;
 
-            args.Price = item.Reward;
+            if (goal.IsContraband)
+                continue;
+
+            args.Price = goal.Reward;
             args.Handled = true;
             return;
         }
