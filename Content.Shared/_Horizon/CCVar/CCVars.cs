@@ -47,6 +47,6 @@ namespace Content.Shared._Horizon.CCVar
             CVarDef.Create("paths.default_shutdown_path", "shutdown_timers.yml", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
         public static readonly CVarDef<bool> ShutdownEnabled =
-            CVarDef.Create("paths.shutdown_enabled", true, CVar.SERVERONLY);
+            CVarDef.Create("paths.shutdown_enabled", false, CVar.SERVERONLY);
     }
 }

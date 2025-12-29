@@ -36,6 +36,9 @@ public sealed class GameShutdownController
     {
         _startTime = TimeSpan.Parse(DateTime.Now.ToString("HH:mm:ss"));
         _shutdown = _cfg.GetCVar(HorizonCCVars.ShutdownEnabled);
+        if (_shutdown == false)
+            return;
+        
         TryFoundShutdownTimers();
     }
 
