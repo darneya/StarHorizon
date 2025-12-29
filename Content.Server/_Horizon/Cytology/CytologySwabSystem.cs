@@ -35,7 +35,10 @@ public sealed class CytologySwabSystem : SharedCytologySwabSystem
             return;
 
         var availableSpace = swabSampleContainerComp.MaxSamples - swabSampleContainerComp.CellSamples.Count;
-        var collectedCells = dirtComp.CurrentCellSamples.Take(availableSpace).ToList();
+        var collectedCells = dirtComp.CurrentCellSamples
+            .Take(availableSpace)
+            .Select(cell => cell.Clone())
+            .ToList();
 
         swabSampleContainerComp.CellSamples.AddRange(collectedCells);
         dirtComp.CurrentCellSamples.RemoveAll(x => collectedCells.Contains(x));

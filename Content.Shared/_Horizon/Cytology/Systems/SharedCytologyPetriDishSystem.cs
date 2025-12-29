@@ -127,7 +127,9 @@ public abstract class SharedCytologyPetriDishSystem : EntitySystem
             _popupSystem.PopupClient(Loc.GetString("cytology-petri-dish-is-full"), petriDishUid, user);
             return false;
         }
-        var collectedCells = transferDeviceSampleContainerComp.CellSamples.Take(availableSpace).ToList();
+        var collectedCells = transferDeviceSampleContainerComp.CellSamples
+            .Take(availableSpace)
+            .ToList();
 
 
         petriDishSampleContainerComp.CellSamples.AddRange(collectedCells);

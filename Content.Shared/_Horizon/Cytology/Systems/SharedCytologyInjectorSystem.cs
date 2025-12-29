@@ -82,7 +82,12 @@ public sealed class SharedCytologyInjectorSystem : EntitySystem
 
 
         var availableSpace = injectorSampleContainerComp.MaxSamples - injectorSampleContainerComp.CellSamples.Count();
-        var collectedCells = sampleSourceComp.AvailableCellSamples.Take(availableSpace).ToList();
+
+        var collectedCells = sampleSourceComp.AvailableCellSamples
+            .Take(availableSpace)
+            .Select(cell => cell.Clone())
+            .ToList();
+
         collectedCells.ForEach(cell => SetHumanoidData(target, cell));
 
         injectorSampleContainerComp.CellSamples.AddRange(collectedCells);

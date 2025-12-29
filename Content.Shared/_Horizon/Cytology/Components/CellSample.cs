@@ -22,10 +22,28 @@ public sealed partial class CellSample
     [DataField]
     public HumanoidCharacterProfile? StoredProfile;
 
-    public CellSample(string protoID, float growProgress = 0f, HumanoidCharacterProfile? storedProfile = null)
+    /// <summary>
+    /// List of selected disk entity prototypes for this cell sample.
+    /// </summary>
+    [DataField]
+    public List<string>? SelectedDiskPrototypes;
+
+    public CellSample(string protoID, float growProgress = 0f, HumanoidCharacterProfile? storedProfile = null, List<string>? selectedDiskPrototypes = null)
     {
         ProtoID = protoID;
         GrowProgress = growProgress;
         StoredProfile = storedProfile;
+        SelectedDiskPrototypes = selectedDiskPrototypes;
+    }
+
+    public CellSample Clone()
+    {
+        return new CellSample
+        {
+            ProtoID = this.ProtoID,
+            GrowProgress = this.GrowProgress,
+            StoredProfile = this.StoredProfile,
+            SelectedDiskPrototypes = this.SelectedDiskPrototypes
+        };
     }
 }
