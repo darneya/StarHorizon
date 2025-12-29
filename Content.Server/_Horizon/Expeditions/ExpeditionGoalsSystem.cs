@@ -4,6 +4,7 @@ using Content.Server._NF.Cargo.Systems;
 using Content.Server.Access.Systems;
 using Content.Server.Cargo.Systems;
 using Content.Server.CartridgeLoader;
+using Content.Server.Popups;
 using Content.Shared._Horizon.Expeditions;
 using Content.Shared.Access.Components;
 using Content.Shared.Cargo;
@@ -33,6 +34,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
 
     private Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> _goals = new();
     private Dictionary<int, ExpeditionGoal> _claimedGoals = new();
@@ -70,7 +72,15 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             return;
 
         if (!TryClaimGoal(idCard.Owner, args.OptionId, args.Specification))
+        {
             _audio.PlayPvs(_audio.ResolveSound(new SoundCollectionSpecifier("CargoError")), ent.Owner);
+            _popup.PopupEntity(Loc.GetString("exp-goal-cannot-claim"), ent.Owner, args.Actor);
+        }
+        else
+        {
+            _audio.PlayPvs(_audio.ResolveSound(new SoundPathSpecifier("/Audio/Items/appraiser.ogg")), ent.Owner);
+            _popup.PopupEntity(Loc.GetString("exp-goal-claimed"), ent.Owner, args.Actor);
+        }
     }
 
     private void OnUiReady(Entity<GoalsListCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
