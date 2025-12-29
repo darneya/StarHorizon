@@ -54,3 +54,10 @@
   - type: Tag
     tags:
     - HideContextMenu
+  # Horizon start
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: PlasmaFishingLootTable
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Horizon end
