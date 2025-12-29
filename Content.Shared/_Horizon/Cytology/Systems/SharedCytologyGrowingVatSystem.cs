@@ -186,6 +186,13 @@ public abstract class SharedCytologyGrowingVatSystem : EntitySystem
 
         _humanoidSystem.LoadProfile(spawnedMob, profile);
         _metaDataSystem.SetEntityName(spawnedMob, profile.Name);
+
+        // Apply disk modifications if any disks are selected // TODO вынести отдельно
+        if (cell.SelectedDiskPrototypes != null && cell.SelectedDiskPrototypes.Count > 0)
+        {
+            var diskSystem = EntityManager.System<CytologyDiskSystem>();
+            diskSystem.ApplyDiskModifications(spawnedMob, cell.SelectedDiskPrototypes);
+        }
     }
 
     private void SetCellGrowProgress(CellSamplePrototype proto, CellSample cell, Dictionary<string, FixedPoint2> reagentLookup)
