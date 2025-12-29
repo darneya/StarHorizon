@@ -1,0 +1,11 @@
+- type: expeditionGoal
+  id: Cakes
+  specification: Crew
+  randomAmount:
+    min: 4
+    max: 6
+  goal: !type:EntityExpeditionGoal
+    description: exp-goal-cakes
+    iconEntity: FoodCakeBirthday
+    reward: 5000
+    requiredTag: Cake

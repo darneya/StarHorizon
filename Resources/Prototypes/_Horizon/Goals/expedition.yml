@@ -1,0 +1,12 @@
+- type: expeditionGoal
+  id: CarpToothMinor
+  specification: Expeditionary
+  randomAmount:
+    min: 3
+    max: 6
+  amountMultiplier: 10
+  goal: !type:EntityExpeditionGoal
+    description: exp-goal-carp-tooth
+    iconEntity: MobCarp
+    reward: 7500
+    requiredTag: ToothSpaceCarp
