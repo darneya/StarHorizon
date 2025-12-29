@@ -3,7 +3,7 @@
   biome: LavaLand
   mapName: shuttle-destination-lavaland
   mapLight: "#1a0005"
-  spawnRoundstart: true
+  spawnRoundstart: false
   addedComponents:
   - type: SpawnInRange
     spawns:
