@@ -1,4 +1,4 @@
-# component types: 
+# component types:
 # MovementSpeedModifier
 # MeleeWeaponDamage
 # MobHealth
@@ -21,10 +21,10 @@
   - type: CytologyDisk
     modifiers:
       - componentType: MobHealth
-        percentModifier: 1.3
+        percentModifier: 1.5
       - componentType: MovementSpeedModifier
         percentModifier: 0.5
-        
+
 - type: entity
   id: CytologyDiskMeleeDamage
   name: Melee disk
@@ -38,9 +38,9 @@
   - type: CytologyDisk
     modifiers:
       - componentType: MeleeWeaponDamage
-        percentModifier: 1.15
+        percentModifier: 1.5
       - componentType: HungerRate
-        percentModifier: 1.3
+        percentModifier: 1.5
 
 - type: entity
   id: CytologyDiskSpeedHunger
@@ -55,7 +55,7 @@
   - type: CytologyDisk
     modifiers:
       - componentType: MovementSpeedModifier
-        percentModifier: 1.2
+        percentModifier: 1.25
       - componentType: HungerRate
-        percentModifier: 1.3
+        percentModifier: 1.5
 
