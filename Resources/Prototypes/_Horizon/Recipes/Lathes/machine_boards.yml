@@ -12,3 +12,8 @@
   parent: [ BaseCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
   id: CytologyMicroscopeMachineCircuitboard
   result: CytologyMicroscopeMachineCircuitboard
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseMedicalMachineRecipeCategory ]
+  id: CytologySampleCombinatorMachineCircuitboard
+  result: CytologySampleCombinatorMachineCircuitboard
