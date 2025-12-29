@@ -17,7 +17,7 @@
         <SpriteView Name="Icon"
                     Scale="6 6"
                     Access="Public"
-                    Margin="-30"
+                    Margin="0"
                     HorizontalAlignment="Center"/>
         <ScrollContainer HorizontalExpand="True"
                          VerticalExpand="True"
