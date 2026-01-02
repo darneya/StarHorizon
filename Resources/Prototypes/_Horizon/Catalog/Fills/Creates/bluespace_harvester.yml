@@ -349,11 +349,11 @@
       - id: DakiLemird2
 
 #- type: entity
-#  id: CrateHarvesterUASAnomaly
+#  id: CrateHarvesterAnCoAnomaly
 #  parent: CrateDestructionSecure
-#  suffix: Bluespace Harvester, UASAnomaly
+#  suffix: Bluespace Harvester, AnCoAnomaly
 #  components:
 #  - type: StorageFill
 #    contents:
-#      - id: UASAnomaly
+#      - id: AnCoAnomaly
 

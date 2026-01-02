@@ -36,6 +36,12 @@
   desc: faction-arcadia-desc
   color: "#881DE0"
 
+- type: characterFaction
+  id: FactionAnCo
+  name: faction-anco-name
+  desc: faction-anco-desc
+  color: "#b30e0e"
+
 # region Medical
 
 - type: characterFaction

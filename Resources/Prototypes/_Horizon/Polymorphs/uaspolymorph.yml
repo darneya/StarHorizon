@@ -1,7 +1,0 @@
-- type: polymorph
-  id: uasNanitAcidPoly
-  configuration:
-    entity: uasNanitAcid
-    forced: true
-    inventory: Drop
-

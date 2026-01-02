@@ -1,13 +1,13 @@
 - type: randomHumanoidSettings
-  id: EventHumanoidUASAgent
+  id: EventHumanoidAnCoAgent
   parent: EventHumanoid
   components:
     - type: AntagImmune
 
 # советник
 - type: randomHumanoidSettings
-  id: GhostUASCounselor
-  parent: EventHumanoidUASAgent
+  id: GhostAnCoCounselor
+  parent: EventHumanoidAnCoAgent
   randomizeName: false
   speciesBlacklist:
   - Geth
@@ -18,24 +18,24 @@
   - Orc
   components:
     - type: GhostRole
-      name: советник UAS
-      description: uas-Counselor-agent-description
-      rules: uas-Counselor-agent-rule
+      name: советник AnCo
+      description: AnCo-Counselor-agent-description
+      rules: AnCo-Counselor-agent-rule
       raffle:
         settings: short
     - type: Loadout
-      prototypes: [ UASCounselorGear ]
+      prototypes: [ AnCoCounselorGear ]
     - type: RandomMetadata
       nameSegments:
         - "Советник"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: AutoImplant
       implants:
-      - UASTrakerImplant
+      - AnCoTrakerImplant
 # титан
 - type: randomHumanoidSettings
-  id: GhostUASTitan
-  parent: EventHumanoidUASAgent
+  id: GhostAnCoTitan
+  parent: EventHumanoidAnCoAgent
   randomizeName: false
   speciesBlacklist:
   - Geth
@@ -46,24 +46,24 @@
   - Orc
   components:
     - type: GhostRole
-      name: офицер Титан UAS
-      description: uas-Titan-agent-description
-      rules: uas-Titan-agent-rule
+      name: офицер Титан АнКо
+      description: AnCo-Titan-agent-description
+      rules: AnCo-Titan-agent-rule
       raffle:
         settings: short
     - type: Loadout
-      prototypes: [ UASTitanGear ]
+      prototypes: [ AnCoTitanGear ]
     - type: RandomMetadata
       nameSegments:
         - "Титан"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: AutoImplant
       implants:
-      - UASTrakerImplant
+      - AnCoTrakerImplant
 # паук
 - type: randomHumanoidSettings
-  id: GhostUASSpider
-  parent: EventHumanoidUASAgent
+  id: GhostAnCoSpider
+  parent: EventHumanoidAnCoAgent
   randomizeName: false
   speciesBlacklist:
   - Geth
@@ -74,24 +74,24 @@
   - Orc
   components:
     - type: GhostRole
-      name: офицер Паук UAS
-      description: uas-Spider-agent-description
-      rules: uas-Spider-agent-rule
+      name: офицер Паук АнКо
+      description: AnCo-Spider-agent-description
+      rules: AnCo-Spider-agent-rule
       raffle:
         settings: short
     - type: Loadout
-      prototypes: [ UASSpiderGear ]
+      prototypes: [ AnCoSpiderGear ]
     - type: RandomMetadata
       nameSegments:
         - "Паук"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: AutoImplant
       implants:
-      - UASTrakerImplant
+      - AnCoTrakerImplant
 # рыцарь
 - type: randomHumanoidSettings
-  id: GhostUASKnight
-  parent: EventHumanoidUASAgent
+  id: GhostAnCoKnight
+  parent: EventHumanoidAnCoAgent
   randomizeName: false
   speciesBlacklist:
   - Geth
@@ -102,24 +102,24 @@
   - Orc
   components:
     - type: GhostRole
-      name: офицер Рыцарь UAS
-      description: uas-Knight-agent-description
-      rules: uas-Knight-agent-rule
+      name: офицер Рыцарь АнКо
+      description: AnCo-Knight-agent-description
+      rules: AnCo-Knight-agent-rule
       raffle:
         settings: short
     - type: Loadout
-      prototypes: [ UASKnightGear ]
+      prototypes: [ AnCoKnightGear ]
     - type: RandomMetadata
       nameSegments:
         - "Рыцарь"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: AutoImplant
       implants:
-      - UASTrakerImplant
+      - AnCoTrakerImplant
 # офицер
 - type: randomHumanoidSettings
-  id: GhostUASOfficer
-  parent: EventHumanoidUASAgent
+  id: GhostAnCoOfficer
+  parent: EventHumanoidAnCoAgent
   randomizeName: false
   speciesBlacklist:
   - Geth
@@ -130,24 +130,24 @@
   - Orc
   components:
     - type: GhostRole
-      name: офицер UAS
-      description: uas-Officer-agent-description
-      rules: uas-Officer-agent-rule
+      name: офицер АнКо
+      description: AnCo-Officer-agent-description
+      rules: AnCo-Officer-agent-rule
       raffle:
         settings: short
     - type: Loadout
-      prototypes: [ UASOfficerGear ]
+      prototypes: [ AnCoOfficerGear ]
     - type: RandomMetadata
       nameSegments:
         - "Офицер"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: AutoImplant
       implants:
-      - UASTrakerImplant
+      - AnCoTrakerImplant
 # Кадет
 - type: randomHumanoidSettings
-  id: GhostUASCadet
-  parent: EventHumanoidUASAgent
+  id: GhostAnCoCadet
+  parent: EventHumanoidAnCoAgent
   randomizeName: false
   speciesBlacklist:
   - Geth
@@ -158,26 +158,26 @@
   - Orc
   components:
     - type: GhostRole
-      name: кадет UAS
-      description: uas-Cadet-agent-description
-      rules: uas-Cadet-agent-rule
+      name: кадет АнКо
+      description: AnCo-Cadet-agent-description
+      rules: AnCo-Cadet-agent-rule
       raffle:
         settings: short
     - type: Loadout
-      prototypes: [ UASCadetGear ]
+      prototypes: [ AnCoCadetGear ]
     - type: RandomMetadata
       nameSegments:
         - "Кадет"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: AutoImplant
       implants:
-      - UASTrakerImplant
+      - AnCoTrakerImplant
 # короче да, заново
 # Совет
 - type: entity
-  id: RandomHumanoidSpawnerUASCounselor
-  name: советник UAS
-  suffix: StarHorizon, UAS
+  id: RandomHumanoidSpawnerAnCoCounselor
+  name: советник АнКо
+  suffix: StarHorizon, AnCo
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -186,14 +186,14 @@
     - type: RandomMetadata
       nameSegments:
         - "Советник"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: RandomHumanoidSpawner
-      settings: GhostUASCounselor
+      settings: GhostAnCoCounselor
 # Титан
 - type: entity
-  id: RandomHumanoidSpawnerUASTitan
-  name: офицер Титан UAS
-  suffix: StarHorizon, UAS
+  id: RandomHumanoidSpawnerAnCoTitan
+  name: офицер Титан АнКо
+  suffix: StarHorizon, AnCo
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -202,15 +202,15 @@
     - type: RandomMetadata
       nameSegments:
         - "Титан"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: RandomHumanoidSpawner
-      settings: GhostUASTitan
+      settings: GhostAnCoTitan
 # Паук
 - type: entity
-  id: RandomHumanoidSpawnerUASSpider
+  id: RandomHumanoidSpawnerAnCoSpider
   categories: [ HideSpawnMenu ]
-  name: офицер Паук UAS
-  suffix: StarHorizon, UAS
+  name: офицер Паук АнКо
+  suffix: StarHorizon, AnCo
   components:
     - type: Sprite
       sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
@@ -218,15 +218,15 @@
     - type: RandomMetadata
       nameSegments:
         - "Паук"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: RandomHumanoidSpawner
-      settings: GhostUASSpider
+      settings: GhostAnCoSpider
 # Рыцарь
 - type: entity
-  id: RandomHumanoidSpawnerUASKnight
+  id: RandomHumanoidSpawnerAnCoKnight
   categories: [ HideSpawnMenu ]
-  name: офицер РыцарьUAS
-  suffix: StarHorizon, UAS
+  name: офицер Рыцарь АнКо
+  suffix: StarHorizon, AnCo
   components:
     - type: Sprite
       sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
@@ -234,15 +234,15 @@
     - type: RandomMetadata
       nameSegments:
         - "Рыцарь"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: RandomHumanoidSpawner
-      settings: GhostUASKnight
+      settings: GhostAnCoKnight
 # Офицер
 - type: entity
-  id: RandomHumanoidSpawnerUASOfficer
+  id: RandomHumanoidSpawnerAnCoOfficer
   categories: [ HideSpawnMenu ]
-  name: офицер UAS
-  suffix: StarHorizon, UAS
+  name: офицер АнКо
+  suffix: StarHorizon, AnCo
   components:
     - type: Sprite
       sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
@@ -250,15 +250,15 @@
     - type: RandomMetadata
       nameSegments:
         - "Офицер"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: RandomHumanoidSpawner
-      settings: GhostUASOfficer
+      settings: GhostAnCoOfficer
 # Кадет
 - type: entity
-  id: RandomHumanoidSpawnerUASCadet
+  id: RandomHumanoidSpawnerAnCoCadet
   categories: [ HideSpawnMenu ]
-  name: кадет UAS
-  suffix: StarHorizon, UAS
+  name: кадет АнКо
+  suffix: StarHorizon, AnCo
   components:
     - type: Sprite
       sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
@@ -266,6 +266,6 @@
     - type: RandomMetadata
       nameSegments:
         - "Кадет"
-        - NamesLastMilitaryUAS
+        - NamesLastMilitaryAnCo
     - type: RandomHumanoidSpawner
-      settings: GhostUASCadet
+      settings: GhostAnCoCadet
