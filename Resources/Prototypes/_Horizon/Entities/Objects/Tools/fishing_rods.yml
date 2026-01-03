@@ -25,7 +25,7 @@
 - type: entity
   id: FishingRodGoon
   suffix: Goon
-  parent: ADTFishingRod
+  parent: FishingRod
   name: fishing rod
   description: It's time to go fishing!
   components:
@@ -39,7 +39,7 @@
 # Makeshift rod
 - type: entity
   id: FishingRodMakeshift
-  parent: ADTFishingRod
+  parent: FishingRod
   name: makeshift fishing rod
   description: Probably would be hard to catch a fish using that.
   components:
@@ -59,7 +59,7 @@
 # Golden rod
 - type: entity
   id: FishingRodGolden
-  parent: ADTFishingRod
+  parent: FishingRod
   name: golden fishing rod
   description: Finally, you caught 250 fishes. Here's your trophey.
   components:
