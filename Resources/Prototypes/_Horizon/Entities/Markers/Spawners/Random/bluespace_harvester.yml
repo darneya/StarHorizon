@@ -671,7 +671,7 @@
     - WeaponPulseRifle
     - WeaponPulsePistol
     - WeaponLightMachineGunL6
-    - CrateHarvesterUASAnomaly
+    - CrateHarvesterAnCoAnomaly
     - CrateHarvesterLemird
     - CrateHarvesterSniper
     chance: 1.0

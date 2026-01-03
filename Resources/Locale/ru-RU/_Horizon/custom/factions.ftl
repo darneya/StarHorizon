@@ -29,6 +29,12 @@ faction-arcadia-desc =
     В настоящее время цели Arcadia Industries неизвестны.
     Однако они проявили большой интерес к Фронтиру и его ресурсам.
 
+faction-anco-name = AnroxComputer’s
+faction-anco-desc =
+    Корпорация специализирующаяся на предоставлении различных видов услуг и товаров.
+    Главная цель на фронтире, обеспечивать безопасность интересов AnroxComputer’s.
+    Верность. Решительность. Эффективность.
+
 faction-med-name = Medical Dispatch
 faction-med-desc = Отважные Врачи и Парамедики. Спасут из любой точки Фронтира, если вы не забыли выключить датчики.
 faction-fsb-name = Far Star Biotech

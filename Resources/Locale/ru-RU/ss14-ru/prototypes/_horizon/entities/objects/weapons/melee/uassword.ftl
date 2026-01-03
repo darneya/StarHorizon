@@ -1,3 +1,3 @@
-ent-UASSword = efs меч
+ent-AnCoSword = Ардониевый меч
     .desc = Сегментированный меч, созданный чтобы нарезать врагов на такие же сегменты.
-    .suffix = StarHorizon, UAS
+    .suffix = StarHorizon, AnCo

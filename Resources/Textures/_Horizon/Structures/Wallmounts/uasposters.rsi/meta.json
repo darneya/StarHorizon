@@ -24,6 +24,42 @@
         },
         {
             "name": "core"
+        },
+        {
+            "name": "anco"
+        },
+        {
+            "name": "ardon"
+        },
+        {
+            "name": "citadel"
+        },
+        {
+            "name": "dcs"
+        },
+        {
+            "name": "join"
+        },
+        {
+            "name": "miligalax"
+        },
+        {
+            "name": "money"
+        },
+        {
+            "name": "power"
+        },
+        {
+            "name": "sifina"
+        },
+        {
+            "name": "stardust"
+        },
+        {
+            "name": "load"
+        },
+        {
+            "name": "subea"
         }
     ]
 }

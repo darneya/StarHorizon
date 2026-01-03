@@ -15,6 +15,15 @@
         },
         {
             "name": "omega_defib"
+        },
+        {
+            "name": "omega_world"
+        },
+        {
+            "name": "omega_empty_world"
+        },
+        {
+            "name": "omega_defib_world"
         }
     ]
 }
