@@ -6841,7 +6841,7 @@
   id: SponsorShopDisk1
   name: диск исследовательских очков (10000)
   description: Диск для сервера НИО, содержащий 10000 очков.
-  cost: 2
+  cost: 3
   priority: 24
   state: icon
   prototypeId: ResearchDisk10000
@@ -6850,7 +6850,7 @@
   id: SponsorShopDisk2
   name: технологический подарок
   description: Маленькая коробочка с ценным диском технологий внутри.
-  cost: 5
+  cost: 7
   priority: 24
   state: present
   prototypeId: PresentTechDisk
@@ -6886,7 +6886,7 @@
   id: SponsorShopDisk6
   name: диск технологий [ПКА модули]
   description: Диск, содержащий технологию модулей для протокинетического вооружения.
-  cost: 10
+  cost: 15
   priority: 24
   state: rndmajordisk
   prototypeId: TechnologyDiscAdvancedPKAModules
@@ -6895,7 +6895,7 @@
   id: SponsorShopDisk7
   name: диск технологий [штурмовые мехи]
   description: Диск, содержащий технологию производства тяжелого боевого меха Дюранд.
-  cost: 10
+  cost: 15
   priority: 24
   state: rndmajordisk
   prototypeId: TechnologyDiscDurandTechnology
@@ -6904,7 +6904,7 @@
   id: SponsorShopDisk8
   name: диск технологий [экспериментальные мехи]
   description: Диск, содержащий технологию производства экспериментального меха Фазон.
-  cost: 10
+  cost: 15
   priority: 24
   state: rndmajordisk
   prototypeId: TechnologyDiscPhazonTechnology
@@ -6913,7 +6913,7 @@
   id: SponsorShopDisk9
   name: диск технологий [ботанический ДНК манипулятор]
   description: Диск, содержащий технологию манипулятора ДНК растений.
-  cost: 10
+  cost: 15
   priority: 24
   state: rndmajordisk
   prototypeId: TechnologyDiscHydroponicsDNAManip
@@ -6922,7 +6922,7 @@
   id: SponsorShopDisk10
   name: диск технологий [подствольные боеприпасы]
   description: Диск, содержащий технологию производства подствольных боеприпасов.
-  cost: 10
+  cost: 15
   priority: 24
   state: rndmajordisk
   prototypeId: TechnologyDiscArsenalAmmoModules
@@ -6931,7 +6931,7 @@
   id: SponsorShopDisk11
   name: диск технологий [арсенальные боеприпасы]
   description: Диск, содержащий технологию производства различных боеприпасов.
-  cost: 10
+  cost: 15
   priority: 24
   state: rndmajordisk
   prototypeId: TechnologyDiscArsenalAmmunition
@@ -6940,7 +6940,7 @@
   id: SponsorShopDisk12
   name: диск технологий [универсальный переводчик]
   description: Диск, содержащий технологию производства универсального переводчика.
-  cost: 10
+  cost: 15
   priority: 24
   state: rndmajordisk
   prototypeId: TechnologyDiscUniversalTranslator
@@ -6949,7 +6949,7 @@
   id: SponsorShopDisk13
   name: диск технологий [боевые киберконечности]
   description: Диск, содержащий технологию производства боевых киберконечностей.
-  cost: 10
+  cost: 15
   priority: 24
   state: rndmajordisk
   prototypeId: TechnologyDiscCombatCybernetics
@@ -6958,7 +6958,7 @@
   id: SponsorShopDisk14
   name: диск технологий [боевые киборги]
   description: Диск, содержащий технологию производства боевых киборгов.
-  cost: 10
+  cost: 15
   priority: 24
   state: rndmajordisk
   prototypeId: TechnologyDiscCombatCyborgs
