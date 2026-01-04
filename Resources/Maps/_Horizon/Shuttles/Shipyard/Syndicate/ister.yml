@@ -4,8 +4,8 @@ meta:
   engineVersion: 261.2.0
   forkId: ""
   forkVersion: ""
-  time: 12/26/2025 12:12:52
-  entityCount: 207
+  time: 12/27/2025 09:53:04
+  entityCount: 199
 maps: []
 grids:
 - 1
@@ -29,8 +29,6 @@ entities:
     - type: Transform
       pos: -0.453125,-0.546875
       parent: invalid
-    - type: BecomesStation
-      id: Ister
     - type: MapGrid
       chunks:
         0,0:
@@ -751,7 +749,7 @@ entities:
     - type: Transform
       pos: 4.5,-3.5
       parent: 1
-- proto: FaxMachineShipAntag
+- proto: FaxMachineBase
   entities:
   - uid: 45
     components:
@@ -776,36 +774,6 @@ entities:
       pos: 0.5,-3.5
       parent: 1
   - uid: 148
-    components:
-    - type: Transform
-      pos: 0.5,-3.5
-      parent: 1
-  - uid: 149
-    components:
-    - type: Transform
-      pos: 0.5,-3.5
-      parent: 1
-  - uid: 150
-    components:
-    - type: Transform
-      pos: 0.5,-3.5
-      parent: 1
-  - uid: 151
-    components:
-    - type: Transform
-      pos: 0.5,-3.5
-      parent: 1
-  - uid: 152
-    components:
-    - type: Transform
-      pos: 0.5,-3.5
-      parent: 1
-  - uid: 153
-    components:
-    - type: Transform
-      pos: 0.5,-3.5
-      parent: 1
-  - uid: 154
     components:
     - type: Transform
       pos: 0.5,-3.5
@@ -1035,18 +1003,6 @@ entities:
     - type: Transform
       pos: -0.5,-3.5
       parent: 1
-  - uid: 203
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 0.5,-2.5
-      parent: 1
-  - uid: 204
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,-2.5
-      parent: 1
   - uid: 205
     components:
     - type: Transform
@@ -1224,6 +1180,13 @@ entities:
     components:
     - type: Transform
       pos: 1.5,-0.5
+      parent: 1
+- proto: SuitStorageEVASyndicate
+  entities:
+  - uid: 54
+    components:
+    - type: Transform
+      pos: 0.5,-2.5
       parent: 1
 - proto: TableReinforced
   entities:
@@ -1592,14 +1555,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,-5.5
-      parent: 1
-    - type: DeltaPressure
-      gridUid: 1
-  - uid: 202
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,-2.5
       parent: 1
     - type: DeltaPressure
       gridUid: 1
