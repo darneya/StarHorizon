@@ -62,8 +62,6 @@
     - SponsorShopMask14
     - SponsorShopMask15
     - SponsorShopMask16
-    - SponsorShopMask17
-    - SponsorShopMask18
     - SponsorShopMask19
     - SponsorShopMask20
     - SponsorShopMask21
@@ -470,8 +468,6 @@
     - SponsorShopPlush63
     - SponsorShopPlush64
     - SponsorShopPlush65
-    - SponsorShopPlush66
-    - SponsorShopPlush67
 
 # Игры и инструменты
 - type: sponsorShopCategory
@@ -515,9 +511,6 @@
     - SponsorShopFlower15
     - SponsorShopFlower16
     - SponsorShopFlower17
-    - SponsorShopBouquet1
-    - SponsorShopBouquet2
-    - SponsorShopBouquet3
 
 # Очки
 - type: sponsorShopListing
@@ -877,22 +870,6 @@
   cost: 2
   priority: 2
   prototypeId: ClothingMaskNeckGaiterRed
-
-- type: sponsorShopListing
-  id: SponsorShopMask17
-  name: сексуальная маска клоуна
-  description: Некоторые шаловливые клоуны уверены, что именно так выглядит Хонкоматерь.
-  cost: 2
-  priority: 2
-  prototypeId: ClothingMaskSexyClown
-
-- type: sponsorShopListing
-  id: SponsorShopMask18
-  name: сексуальная маска мима
-  description: Эти румяные щёчки так и просятся, чтобы их потискали.
-  cost: 2
-  priority: 2
-  prototypeId: ClothingMaskSexyMime
 
 - type: sponsorShopListing
   id: SponsorShopMask19
@@ -3840,23 +3817,6 @@
   priority: 9
   prototypeId: PlushieGirl
 
-- type: sponsorShopListing
-  id: SponsorShopPlush66
-  name: игрушечный двойной меч
-  description: Новый пластиковый двойной меч от Sandy-Cat! Имеет реалистичный звук и почти отражает все пули! Вжух!
-  cost: 3
-  priority: 9
-  prototypeId: ToyEnergySwordDouble
-
-- type: sponsorShopListing
-  id: SponsorShopPlush67
-  name: игрушечный щит
-  description: Совершено новый щит версии "Sind V2" от Sandy-Cat! Отражает все выстрелы с игрушечной лазерной винтовки! Почти как настоящий!
-  cost: 3
-  priority: 9
-  state: eshield-icon
-  prototypeId: ToyEnergyShield
-
 # Игры и инструменты
 
 - type: sponsorShopListing
@@ -4116,27 +4076,3 @@
   priority: 11
   state: produce
   prototypeId: FloverTulipy
-
-- type: sponsorShopListing
-  id: SponsorShopBouquet1
-  name: букет
-  description: Стоит дарить это даме чаще.
-  cost: 2
-  priority: 11
-  prototypeId: Bouquet
-
-- type: sponsorShopListing
-  id: SponsorShopBouquet2
-  name: букет
-  description: Стоит дарить это даме чаще.
-  cost: 2
-  priority: 11
-  prototypeId: Bouquettwo
-
-- type: sponsorShopListing
-  id: SponsorShopBouquet3
-  name: букет
-  description: Стоит дарить это даме чаще.
-  cost: 2
-  priority: 11
-  prototypeId: Bouquetthree
