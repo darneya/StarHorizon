@@ -1,13 +1,14 @@
 # region Разделитель 1
 - type: sponsorShopCategory
   id: SponsorShopCategOne
-  name: "===== КОСМЕТИКА ====="
+  name: "КОСМЕТИКА"
   priority: 0
 
 # region Очки
 - type: sponsorShopCategory
   id: SponsorShopEyes
   name: очки
+  parent: SponsorShopCategOne
   priority: 1
   items:
     - SponsorShopEyes1
@@ -28,6 +29,7 @@
 - type: sponsorShopCategory
   id: SponsorShopNeck
   name: шарфы и украшения
+  parent: SponsorShopCategOne
   priority: 2
   items:
     - SponsorShopScarf1
@@ -84,6 +86,7 @@
 - type: sponsorShopCategory
   id: SponsorShopMask
   name: маски
+  parent: SponsorShopCategOne
   priority: 3
   items:
     - SponsorShopMask1
@@ -112,13 +115,14 @@
 # region Разделитель 2
 - type: sponsorShopCategory
   id: SponsorShopCategTwo
-  name: "== ВЕРХНЯЯ  ОДЕЖДА =="
+  name: "ВЕРХНЯЯ ОДЕЖДА"
   priority: 4
 
 # region Головные уборы
 - type: sponsorShopCategory
   id: SponsorShopHead
   name: головные уборы
+  parent: SponsorShopCategTwo
   priority: 5
   items:
     - SponsorShopBand1
@@ -188,6 +192,7 @@
 - type: sponsorShopCategory
   id: SponsorShopCloaks
   name: плащи
+  parent: SponsorShopCategTwo
   priority: 6
   items:
     - SponsorShopCloak1
@@ -228,6 +233,7 @@
 - type: sponsorShopCategory
   id: SponsorShopShoes
   name: обувь
+  parent: SponsorShopCategTwo
   priority: 7
   items:
     - SponsorShopShoes1
@@ -254,6 +260,7 @@
 - type: sponsorShopCategory
   id: SponsorShopHands
   name: перчатки
+  parent: SponsorShopCategTwo
   priority: 8
   items:
     - SponsorShopHands1
@@ -281,6 +288,7 @@
 - type: sponsorShopCategory
   id: SponsorShopUniforms
   name: юниформа
+  parent: SponsorShopCategTwo
   priority: 9
   items:
     - SponsorShopUniforms1
@@ -414,6 +422,7 @@
 - type: sponsorShopCategory
   id: SponsorShopOuter
   name: зимняя одежда
+  parent: SponsorShopCategTwo
   priority: 10
   items:
     - SponsorShopOuter1
@@ -446,13 +455,14 @@
 # region Разделитель 3
 - type: sponsorShopCategory
   id: SponsorShopCategThree
-  name: "=== НИЖНЯЯ ОДЕЖДА ==="
+  name: "НИЖНЯЯ ОДЕЖДА"
   priority: 11
 
 # region Бра
 - type: sponsorShopCategory
   id: SponsorShopBra
   name: бра
+  parent: SponsorShopCategThree
   priority: 12
   items:
     - SponsorShopBra1
@@ -483,6 +493,7 @@
 - type: sponsorShopCategory
   id: SponsorShopPanties
   name: трусики
+  parent: SponsorShopCategThree
   priority: 13
   items:
     - SponsorShopPanties1
@@ -522,6 +533,7 @@
 - type: sponsorShopCategory
   id: SponsorShopSocks
   name: чулки и носки
+  parent: SponsorShopCategThree
   priority: 14
   items:
     - SponsorShopSocks1
@@ -608,13 +620,14 @@
 # region Разделитель 4
 - type: sponsorShopCategory
   id: SponsorShopCategFour
-  name: "==== БЕЗДЕЛУШКИ ===="
+  name: "БЕЗДЕЛУШКИ"
   priority: 15
 
 # region Плюшки
 - type: sponsorShopCategory
   id: SponsorShopPlush
   name: плюшки
+  parent: SponsorShopCategFour
   priority: 16
   items:
     - SponsorShopPlush1
@@ -687,6 +700,7 @@
 - type: sponsorShopCategory
   id: SponsorShopGames
   name: подарки
+  parent: SponsorShopCategFour
   priority: 17
   items:
     - SponsorShopGame1
@@ -703,6 +717,7 @@
 - type: sponsorShopCategory
   id: SponsorShopFlowers
   name: цветы
+  parent: SponsorShopCategFour
   priority: 18
   items:
     - SponsorShopVase1
@@ -728,12 +743,13 @@
 # region Разделитель 5
 - type: sponsorShopCategory
   id: SponsorShopCategFive
-  name: "==== ПРОПИТАНИЕ ===="
+  name: "ПРОПИТАНИЕ"
   priority: 19
 
 - type: sponsorShopCategory
   id: SponsorShopFood
   name: еда
+  parent: SponsorShopCategFive
   priority: 20
   items:
     - SponsorShopFood1
@@ -763,6 +779,7 @@
 - type: sponsorShopCategory
   id: SponsorShopDrink
   name: напитки
+  parent: SponsorShopCategFive
   priority: 21
   items:
     - SponsorShopDrink1
@@ -814,6 +831,7 @@
 - type: sponsorShopCategory
   id: SponsorShopSmokes
   name: сигареты
+  parent: SponsorShopCategFive
   priority: 22
   items:
     - SponsorShopSmoke1
@@ -828,13 +846,14 @@
 # region Разделитель 6
 - type: sponsorShopCategory
   id: SponsorShopCategSix
-  name: "====== ПРОЧЕЕ ======"
+  name: "ТЕХНОЛОГИИ"
   priority: 23
 
 # region Плоскоблоки
 - type: sponsorShopCategory
   id: SponsorShopFlatpacks
   name: плоскоблоки
+  parent: SponsorShopCategSix
   priority: 24
   items:
     - SponsorShopFlatpack1
@@ -882,6 +901,7 @@
 - type: sponsorShopCategory
   id: SponsorShopDisks
   name: диски
+  parent: SponsorShopCategSix
   priority: 25
   items:
     - SponsorShopDisk1
@@ -898,17 +918,6 @@
     - SponsorShopDisk12
     - SponsorShopDisk13
     - SponsorShopDisk14
-
-
-
-
-
-
-
-
-
-
-
 
 # region Очки
 - type: sponsorShopListing
