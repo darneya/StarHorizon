@@ -4,6 +4,7 @@ using Content.Client.Hands.Systems;
 using Content.Shared.Interaction;
 using Content.Shared.RCD;
 using Content.Shared.RCD.Components;
+using Content.Shared.RCD.Systems;
 using Robust.Client.Placement;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
@@ -23,6 +24,7 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
 
+    private string _placementMode = typeof(AlignRCDConstruction).Name;
     private Direction _placementDirection = default;
 
     public override void Update(float frameTime)
@@ -45,13 +47,13 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
         var heldEntity = _hands.GetActiveItem(player);
 
         // Horizon start
-        if (player.HasValue)
+        if (player.Valid)
         {
             var ev = new GetRCDEntityEvent();
-            RaiseLocalEvent(player.Value, ref ev);
+            RaiseLocalEvent(player, ref ev);
 
-            if (ev.Entity.HasValue)
-                heldEntity = ev.Entity.Value;
+            if (ev.Entity is { Valid: true })
+                heldEntity = ev.Entity;
         }
         // Horizon end
 
