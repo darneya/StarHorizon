@@ -1,4 +1,5 @@
 using Content.Shared.Humanoid;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -17,7 +18,7 @@ public sealed partial class BarkPrototype : IPrototype
     public string Name = "Default";
 
     [DataField(required: true)]
-    public string Sound = "/Audio/Voice/Talk/speak_1.ogg";
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Voice/Talk/speak_1.ogg");
 }
 
 [DataDefinition]
@@ -26,12 +27,6 @@ public sealed partial class BarkData
 {
     [DataField]
     public ProtoId<BarkPrototype> Proto = SharedHumanoidAppearanceSystem.DefaultBark;
-
-    /// <summary>
-    /// Данное поле заполняется после инициализации барка, если не было задано в прототипе.
-    /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public string Sound = "";
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float MinVar = 0.1f;
@@ -83,7 +78,6 @@ public sealed partial class BarkData
         return new BarkData()
         {
             Proto = Proto,
-            Sound = Sound,
             Pitch = Pitch,
             MinVar = MinVar,
             MaxVar = MaxVar
@@ -93,7 +87,6 @@ public sealed partial class BarkData
     public bool MemberwiseEquals(BarkData other)
     {
         if (Proto != other.Proto) return false;
-        if (Sound != other.Sound) return false;
         if (Pitch != other.Pitch) return false;
         if (MinVar != other.MinVar) return false;
         if (MaxVar != other.MaxVar) return false;
