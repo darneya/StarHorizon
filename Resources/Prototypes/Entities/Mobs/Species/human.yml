@@ -41,6 +41,16 @@
       DeadPain: 500
     screamPrototype: screamHuman
     converterPrototype: human
+  - type: SpamProtection
+    maxTrackedMessages: 5
+    spamTriggerCount: 3
+    spamTimeThreshold: 1.0
+    muteDuration: 60
+  - type: OocSpamProtection
+    maxTrackedMessages: 5
+    spamTriggerCount: 3
+    spamTimeThreshold: 1.0
+    muteDuration: 60
 
 - type: painConverter
   id: human
