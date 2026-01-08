@@ -101,8 +101,6 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
 
     private void OnHeadsetReceive(EntityUid uid, HeadsetComponent component, ref RadioReceiveEvent args)
     {
-        if (TryComp(Transform(uid).ParentUid, out ActorComponent? actor))
-            _netMan.ServerSendMessage(_language.CanUnderstand(Transform(uid).ParentUid, args.Language) ? args.ChatMsg : args.UnknownLanguageChatMsg, actor.PlayerSession.Channel);   // Horizon languages
         // TODO: change this when a code refactor is done
         // this is currently done this way because receiving radio messages on an entity otherwise requires that entity
         // to have an ActiveRadioComponent
@@ -116,7 +114,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
         }
 
         if (TryComp(parent, out ActorComponent? actor))
-            _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
+            _netMan.ServerSendMessage(_language.CanUnderstand(Transform(uid).ParentUid, args.Language) ? args.ChatMsg : args.UnknownLanguageChatMsg, actor.PlayerSession.Channel);   // Horizon languages
     }
 
     private void OnEmpPulse(EntityUid uid, HeadsetComponent component, ref EmpPulseEvent args)
