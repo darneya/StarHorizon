@@ -1,5 +1,6 @@
 using Robust.Shared;
 using Robust.Shared.Configuration;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Horizon.CCVar
 {
@@ -38,5 +39,14 @@ namespace Content.Shared._Horizon.CCVar
 
         public static readonly CVarDef<bool> EnableCustomFonts =
             CVarDef.Create("lang.enable_fonts", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+        /// <summary>
+        ///     Paths to data
+        /// </summary>
+        public static readonly CVarDef<string> ShutdownTimersPath =
+            CVarDef.Create("paths.default_shutdown_path", "shutdown_timers.yml", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+        public static readonly CVarDef<bool> ShutdownEnabled =
+            CVarDef.Create("paths.shutdown_enabled", false, CVar.SERVERONLY);
     }
 }

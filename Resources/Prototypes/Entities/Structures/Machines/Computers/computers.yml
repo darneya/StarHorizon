@@ -198,6 +198,11 @@
       key_slots:
       - EncryptionKeyTraffic
   # End Frontier
+  # Horizon shipyard start
+  - type: Tag
+    tags:
+    - ShuttleConsole
+  # Horizon shipyard end
 
 - type: entity
   parent: BaseComputerShuttle

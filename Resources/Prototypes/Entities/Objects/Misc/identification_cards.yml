@@ -656,6 +656,8 @@
   - type: Sprite
     layers:
     - state: syndie
+  - type: PresetIdCard
+    job: SyndicateOperative
   - type: Access
     tags:
     - NuclearOperative

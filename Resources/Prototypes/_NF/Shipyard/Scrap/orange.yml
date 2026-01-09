@@ -6,7 +6,7 @@
   price: 18000 #Appraisal is 15800, +5% margin - TODO: fix this value, getting tests to pass - Whatstone
   category: Small
   group: Scrap
-  shuttlePath: /Maps/_NF/Shuttles/Scrap/orange.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Scrap/orange.yml  # Horizon - замена карты
   guidebookPage: Null
   class:
   - Scrapyard
@@ -27,7 +27,7 @@
 - type: gameMap
   id: Orange
   mapName: 'SV Orange'
-  mapPath: /Maps/_NF/Shuttles/Scrap/orange.yml
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Scrap/orange.yml  # Horizon - замена карты
   minPlayers: 0
   stations:
     Orange:

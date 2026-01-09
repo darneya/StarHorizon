@@ -30,6 +30,30 @@
       },
       {
         "name": "ripsoid"
+      },
+      {
+        "name": "default_world"
+      },
+      {
+        "name": "counselor_world"
+      },
+      {
+        "name": "titan_world"
+      },
+      {
+        "name": "spider_world"
+      },
+      {
+        "name": "knight_world"
+      },
+      {
+        "name": "officer_world"
+      },
+      {
+        "name": "cadet_world"
+      },
+      {
+        "name": "ripsoid_world"
       }
     ]
   }

@@ -98,6 +98,7 @@ impact.spark_energy = 2000000.0
 impact.slowdown = 8.0
 impact.min_throw_velocity = 1.0
 impact.inertia_scaling = 0.5
+mass_limit = 0
 
 [rules]
 time = 90.0
@@ -113,7 +114,7 @@ flavor_text = true
 flavor_text_length = 1024
 
 [ooc]
-enabled_admin = false
+enabled_admin = true
 
 ################################################################################
 ##### Metrics ##################################################################

@@ -1,3 +1,3 @@
-ent-UASGranade = efs граната
-    .desc = Граната, содержащая в себе EFS кристалл.
-    .suffix = StarHorizon, UAS
+ent-AnCoGranade = Ардониевая граната
+    .desc = Граната, содержащая в себе Ардониевый кристалл.
+    .suffix = StarHorizon, AnCo

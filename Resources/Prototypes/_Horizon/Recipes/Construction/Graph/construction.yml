@@ -35,3 +35,40 @@
           steps:
             - tool: Screwing
               doAfter: 10
+
+- type: constructionGraph
+  id: sinkrecipe  # This matches the graph referenced in SinkRecipe
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: sinkrecipe
+      steps:
+      - material: Steel
+        amount: 10
+      - tag: Bucket
+        icon:
+          sprite: Objects/Tools/bucket.rsi
+          state: icon
+        name: ведро
+      - material: BluespaceOre
+        doAfter: 10
+
+  - node: sinkrecipe
+    entity: Sink  # This should match the entity you want to build
+    edges:
+    - to: start
+      completed:
+        - !type:SpawnPrototype
+          prototype: SheetSteel1
+          amount: 10
+        - !type:SpawnPrototype
+          prototype: Bucket
+          amount: 1
+        - !type:SpawnPrototype
+          prototype: BluespaceOre1
+          amount: 1
+        - !type:DeleteEntity {}
+      steps:
+        - tool: Screwing
+          doAfter: 10

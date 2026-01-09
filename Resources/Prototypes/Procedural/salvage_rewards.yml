@@ -40,6 +40,9 @@
     TechnologyDiscUniversalTranslator: 0.05
     TechnologyDiscCombatCybernetics: 0.05
     TechnologyDiscCombatCyborgs: 0.05
+    CytologyDiskHealthSpeed: 0.05
+    CytologyDiskMeleeDamage: 0.05
+    CytologyDiskSpeedHunger: 0.05
     # cloning boards
     CloningPodMachineCircuitboard: 0.5
     MedicalScannerMachineCircuitboard: 0.5
@@ -89,6 +92,9 @@
     TechnologyDiscUniversalTranslator: 0.1
     TechnologyDiscCombatCybernetics: 0.1
     TechnologyDiscCombatCyborgs: 0.1
+    CytologyDiskHealthSpeed: 0.1
+    CytologyDiskMeleeDamage: 0.1
+    CytologyDiskSpeedHunger: 0.1
     # money
     SpaceCash2500: 1.0
     SpaceCash5000: 0.75
