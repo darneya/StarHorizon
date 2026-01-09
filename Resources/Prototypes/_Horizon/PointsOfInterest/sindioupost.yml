@@ -46,3 +46,4 @@
             SyndicateCargo: [ 4, 4 ]
         - type: StationDeadDropHintExempt
         - type: BindToStationVariationPassExemption
+        - type: NoMailStation # Horizon: Disable mail for Syndicate
