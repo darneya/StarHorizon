@@ -124,6 +124,7 @@
   - type: Transform
   - type: ExtraShuttleInformation
     hiddenWithoutOpenJobs: true
+  - type: NoMailStation # Horizon: Disable mail for players on antagonist vessels
 
 - type: entity
   id: StandardFrontierSecurityVessel
