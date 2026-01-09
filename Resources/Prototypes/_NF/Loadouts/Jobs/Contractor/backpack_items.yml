@@ -693,7 +693,7 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT1
-  price: 7500
+  price: 1500
   storage:
     back:
     - TowelColorNT
