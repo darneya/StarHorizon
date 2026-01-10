@@ -17,7 +17,8 @@ namespace Content.Server._Horizon.SponsorManager
         private readonly string _sponsorItemsFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/sponsor_items.txt";
 
         private static HashSet<string> _sponsors = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        private readonly Dictionary<string, int> _sponsorsAndBalances = new();
+        private readonly Dictionary<string, int> _sponsorsAndBalances = new(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, int> _sponsorSlots = new(StringComparer.OrdinalIgnoreCase);
 
         #region Check files
         public void LoadSponsorsInfoFile()
@@ -71,46 +72,53 @@ namespace Content.Server._Horizon.SponsorManager
 
         private void ProcessDiscordSponsors(string[] discordLines)
         {
-            var discordSponsors = discordLines
-                .Select(line => line.Split(',')[1].Trim().ToLowerInvariant())
-                .ToHashSet();
+            var discordSponsors = new Dictionary<string, (string originalCkey, string discordId)>(StringComparer.OrdinalIgnoreCase);
 
-            var currentSponsors = _sponsors.Select(s => s.ToLowerInvariant()).ToHashSet();
-
-            foreach (var discordSponsor in discordSponsors)
+            foreach (var line in discordLines)
             {
-                var line = discordLines
-                    .Select(l => l.Split(','))
-                    .FirstOrDefault(parts => parts.Length >= 3 && parts[1].Trim().Equals(discordSponsor, StringComparison.OrdinalIgnoreCase));
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
 
-                if (line != null && line.Length >= 4)
+                var parts = line.Split(',');
+                if (parts.Length < 3)
+                    continue;
+
+                var originalCkey = parts[1].Trim();
+                var normalizedCkey = NormalizeUserName(originalCkey);
+                var discordId = parts[2].Trim();
+
+                if (string.IsNullOrWhiteSpace(normalizedCkey) || string.IsNullOrWhiteSpace(discordId))
+                    continue;
+
+                // Используем нормализованный ckey как ключ для поиска
+                // Но сохраняем оригинальное имя для записи в файл
+                discordSponsors[normalizedCkey] = (originalCkey, discordId);
+            }
+
+            var currentSponsors = new HashSet<string>(_sponsors, StringComparer.OrdinalIgnoreCase);
+
+            // Добавляем или обновляем спонсоров из Discord
+            foreach (var (normalizedCkey, (originalCkey, discordId)) in discordSponsors)
+            {
+                var slots = CalculateSlots(discordId);
+                var tokens = CalculateTokens(discordId);
+
+                if (currentSponsors.Contains(normalizedCkey))
                 {
-                    var ckey = line[1].Trim();
-                    var discordId = line[2].Trim();
-                    var slots = CalculateSlots(discordId);
-                    var tokens = CalculateTokens(discordId);
-
-                    if (currentSponsors.Contains(discordSponsor))
-                    {
-                        SaveSponsors(ckey, slots, tokens);
-                    }
-                    else
-                    {
-                        AddSponsor(ckey, slots, tokens);
-                    }
+                    SaveSponsors(originalCkey, slots, tokens);
+                }
+                else
+                {
+                    AddSponsor(originalCkey, slots, tokens);
                 }
             }
 
+            // Удаляем спонсоров, которых больше нет в Discord списке
             foreach (var sponsor in currentSponsors)
             {
-                if (!discordSponsors.Contains(sponsor))
+                if (!discordSponsors.ContainsKey(sponsor))
                 {
-                    var originalSponsorName = _sponsors.FirstOrDefault(s => s.Equals(sponsor, StringComparison.OrdinalIgnoreCase));
-
-                    if (originalSponsorName != null)
-                    {
-                        RemoveSponsorFromFile(originalSponsorName);
-                    }
+                    RemoveSponsorFromFile(sponsor);
                 }
             }
         }
@@ -176,12 +184,25 @@ namespace Content.Server._Horizon.SponsorManager
         {
             _sponsors.Clear();
             _sponsorsAndBalances.Clear();
+            _sponsorSlots.Clear();
 
             foreach (var line in File.ReadLines(_sponsorsFilePath))
             {
-                var parts = line.Split(';');
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
 
-                var userName = parts[0].Trim();
+                var parts = line.Split(';');
+                if (parts.Length < 3)
+                    continue;
+
+                var userName = NormalizeUserName(parts[0].Trim());
+                if (string.IsNullOrWhiteSpace(userName))
+                    continue;
+
+                if (int.TryParse(parts[1], out var slots))
+                {
+                    _sponsorSlots[userName] = slots;
+                }
 
                 if (int.TryParse(parts[2], out var balance))
                 {
@@ -194,19 +215,42 @@ namespace Content.Server._Horizon.SponsorManager
 
         public void AddSponsor(string userName, int slot, int token)
         {
-            _sponsors.Add(userName);
+            var normalizedName = NormalizeUserName(userName);
+            _sponsors.Add(normalizedName);
+            _sponsorSlots[normalizedName] = slot;
+            _sponsorsAndBalances[normalizedName] = token;
 
+            // Передаем оригинальное имя для сохранения в файл
             SaveSponsors(userName, slot, token);
         }
 
         public void SaveSponsors(string userName, int slot, int token)
         {
+            var normalizedName = NormalizeUserName(userName);
+
             var lines = File.ReadAllLines(_sponsorsFilePath).ToList();
-            var index = lines.FindIndex(line => line.StartsWith(userName, StringComparison.Ordinal));
+            var index = lines.FindIndex(line =>
+            {
+                if (string.IsNullOrWhiteSpace(line))
+                    return false;
+
+                var parts = line.Split(';');
+                if (parts.Length == 0)
+                    return false;
+
+                var fileUserName = NormalizeUserName(parts[0].Trim());
+                return fileUserName.Equals(normalizedName, StringComparison.OrdinalIgnoreCase);
+            });
 
             if (index != -1)
             {
-                lines[index] = $"{userName};{slot};{token}";
+                // Сохраняем оригинальное имя из файла, чтобы не менять регистр
+                var existingLine = lines[index];
+                var existingParts = existingLine.Split(';');
+                var existingName = existingParts.Length > 0 ? existingParts[0].Trim() : userName;
+
+                // Используем оригинальное имя из файла, если оно есть
+                lines[index] = $"{existingName};{slot};{token}";
             }
             else
             {
@@ -215,16 +259,32 @@ namespace Content.Server._Horizon.SponsorManager
 
             File.WriteAllLines(_sponsorsFilePath, lines);
 
-            _sponsorsAndBalances[userName] = token;
+            // В памяти используем нормализованное имя для консистентности
+            _sponsors.Add(normalizedName);
+            _sponsorSlots[normalizedName] = slot;
+            _sponsorsAndBalances[normalizedName] = token;
         }
 
         public void RemoveSponsorFromFile(string userName)
         {
-            _sponsors.Remove(userName);
-            _sponsorsAndBalances.Remove(userName);
+            var normalizedName = NormalizeUserName(userName);
+            _sponsors.Remove(normalizedName);
+            _sponsorsAndBalances.Remove(normalizedName);
+            _sponsorSlots.Remove(normalizedName);
 
             var lines = File.ReadAllLines(_sponsorsFilePath).ToList();
-            var index = lines.FindIndex(line => line.StartsWith(userName, StringComparison.OrdinalIgnoreCase));
+            var index = lines.FindIndex(line =>
+            {
+                if (string.IsNullOrWhiteSpace(line))
+                    return false;
+
+                var parts = line.Split(';');
+                if (parts.Length == 0)
+                    return false;
+
+                var fileUserName = NormalizeUserName(parts[0].Trim());
+                return fileUserName.Equals(normalizedName, StringComparison.OrdinalIgnoreCase);
+            });
 
             if (index != -1)
             {
@@ -235,26 +295,25 @@ namespace Content.Server._Horizon.SponsorManager
         #endregion Read/Write File
 
         #region Methods of finding
+        private string NormalizeUserName(string userName)
+        {
+            return userName?.Trim() ?? string.Empty;
+        }
+
         public bool IsSponsor(string userName)
         {
-            return _sponsors.Contains(userName);
+            var normalizedName = NormalizeUserName(userName);
+            return _sponsors.Contains(normalizedName);
         }
 
         public int GetCharacterSlots(string userName)
         {
             var maxCharacterSlots = _cfg.GetCVar(CCVars.GameMaxCharacterSlots);
+            var normalizedName = NormalizeUserName(userName);
 
-            var line = File.ReadLines(_sponsorsFilePath)
-                .FirstOrDefault(l => l.Contains(userName));
-
-            if (line != null)
+            if (_sponsorSlots.TryGetValue(normalizedName, out var slot))
             {
-                var parts = line.Split(';');
-
-                if (int.TryParse(parts[1], out var slot))
-                {
-                    return maxCharacterSlots + slot;
-                }
+                return maxCharacterSlots + slot;
             }
 
             return maxCharacterSlots;
@@ -262,7 +321,8 @@ namespace Content.Server._Horizon.SponsorManager
 
         public int GetBalance(string userName)
         {
-            if (_sponsorsAndBalances.TryGetValue(userName, out var balance))
+            var normalizedName = NormalizeUserName(userName);
+            if (_sponsorsAndBalances.TryGetValue(normalizedName, out var balance))
             {
                 return balance;
             }
@@ -272,38 +332,58 @@ namespace Content.Server._Horizon.SponsorManager
 
         public void UpdateSponsorsAndBalances()
         {
-            _sponsorsAndBalances.Clear();
-
+            // Сначала обновляем данные из основного файла спонсоров
+            // Это синхронизирует все три структуры данных: _sponsors, _sponsorsAndBalances, _sponsorSlots
             foreach (var line in File.ReadLines(_sponsorsFilePath))
             {
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
+
                 var parts = line.Split(';');
+                if (parts.Length < 3)
+                    continue;
 
-                if (parts.Length >= 3)
+                var userName = NormalizeUserName(parts[0].Trim());
+                if (string.IsNullOrWhiteSpace(userName))
+                    continue;
+
+                // Добавляем/обновляем в HashSet спонсоров
+                _sponsors.Add(userName);
+
+                // Обновляем слоты
+                if (int.TryParse(parts[1], out var slots))
                 {
-                    var userName = parts[0].Trim();
+                    _sponsorSlots[userName] = slots;
+                }
 
-                    if (int.TryParse(parts[2], out var balance))
-                    {
-                        _sponsorsAndBalances[userName] = balance;
-                    }
+                // Обновляем балансы (начинаем с базового баланса из файла)
+                if (int.TryParse(parts[2], out var balance))
+                {
+                    _sponsorsAndBalances[userName] = balance;
                 }
             }
 
-
+            // Затем добавляем дополнительные токены из disposable.txt
             var disposableLines = SafeReadAllLines(_disposableFilePath);
 
             foreach (var line in disposableLines)
             {
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
+
                 var parts = line.Split(',');
-                if (parts.Length >= 2)
+                if (parts.Length < 3)
+                    continue;
+
+                var ckey = NormalizeUserName(parts[0].Trim());
+                if (string.IsNullOrWhiteSpace(ckey))
+                    continue;
+
+                if (int.TryParse(parts[2], out var additionalTokens))
                 {
-                    var ckey = parts[0].Trim();
-                    if (int.TryParse(parts[2], out var additionalTokens))
+                    if (_sponsorsAndBalances.ContainsKey(ckey))
                     {
-                        if (_sponsorsAndBalances.ContainsKey(ckey))
-                        {
-                            _sponsorsAndBalances[ckey] += additionalTokens;
-                        }
+                        _sponsorsAndBalances[ckey] += additionalTokens;
                     }
                 }
             }
@@ -312,26 +392,37 @@ namespace Content.Server._Horizon.SponsorManager
 
         public void DeductBalance(string userName, int cost)
         {
-            if (_sponsorsAndBalances.TryGetValue(userName, out var balance))
+            var normalizedName = NormalizeUserName(userName);
+            if (_sponsorsAndBalances.TryGetValue(normalizedName, out var balance))
             {
                 if (balance >= cost)
                 {
                     balance -= cost;
-                    _sponsorsAndBalances[userName] = balance;
+                    _sponsorsAndBalances[normalizedName] = balance;
                 }
             }
         }
 
         public string GetColor(string userName)
         {
-            var line = File.ReadLines(_dsSponsorsFilePath)
-                .FirstOrDefault(l => l.Contains(userName));
+            var normalizedName = NormalizeUserName(userName);
 
-            if (line != null)
+            var lines = SafeReadAllLines(_dsSponsorsFilePath);
+            foreach (var line in lines)
             {
-                var parts = line.Split(", ");
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
 
-                return parts[4];
+                var parts = line.Split(',');
+                if (parts.Length < 2)
+                    continue;
+
+                var ckey = NormalizeUserName(parts[1].Trim());
+                if (ckey.Equals(normalizedName, StringComparison.OrdinalIgnoreCase))
+                {
+                    if (parts.Length > 4)
+                        return parts[4].Trim();
+                }
             }
 
             return "#FF0000";
