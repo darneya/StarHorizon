@@ -25,7 +25,7 @@ public sealed class SponsorObserverSystem : EntitySystem
         if (EntityManager.TryGetComponent<MetaDataComponent>(entity, out var metaData) &&
             metaData.EntityPrototype != null &&
             _prototypeManager.TryIndex<EntityPrototype>(metaData.EntityPrototype.ID, out var prototype) &&
-            prototype.ID is "MobObserver" or "AdminObserver" or "MobCatShadowObserver")
+            prototype.ID is "MobObserver" or "AdminObserver")
         {
             if (EntityManager.TryGetComponent<SpriteComponent>(entity, out var spriteComponent))
             {
