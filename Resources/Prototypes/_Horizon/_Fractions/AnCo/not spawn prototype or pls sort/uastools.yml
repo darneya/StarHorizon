@@ -1,6 +1,6 @@
 - type: entity
   name: омега-инструмент АнКо
-  parent: BaseItem
+  parent: [BaseItem, BaseAnCoContraband]
   suffix: StarHorizon, AnCo
   categories: [ HideSpawnMenu ]
   id: AnCoOmegaTool

@@ -1,6 +1,5 @@
 - type: entity
   parent: [ClothingHandsGlovesSyntheticBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: AnCoGlovesIsolate
   suffix: StarHorizon, AnCo
   name: продвинутые перчатки АнКо
@@ -20,7 +19,6 @@
 
 - type: entity
   parent: AnCoGlovesIsolate
-  categories: [ HideSpawnMenu ]
   id: AnCoGloves
   suffix: StarHorizon, AnCo
   name: Ардониевые перчатки

@@ -21,3 +21,8 @@
     slots:
     - ears
     sprite: _StarHorizon/Clothing/Headset/uasears.rsi
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyAnCo
+

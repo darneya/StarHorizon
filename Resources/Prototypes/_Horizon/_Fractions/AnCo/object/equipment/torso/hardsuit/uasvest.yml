@@ -4,7 +4,7 @@
   id: AnCoVests
   suffix: StarHorizon, AnCo
   name: бронежилет АнКо
-  description: Бронежилет из казмия с прослойкой из EFS.
+  description: Бронежилет из казмия с прослойкой из Ардония.
   components:
   - type: Sprite
     sprite: _StarHorizon/Clothing/OuterClothing/Vests/uasvest.rsi

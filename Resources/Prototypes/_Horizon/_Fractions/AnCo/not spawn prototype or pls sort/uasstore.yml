@@ -8,8 +8,8 @@
 
 - type: stack
   id: CitadelCoin
-  name: токен запроса
-  icon: _Horizon/Objects/Specific/UAS/uascoin.rsi
+  name: Енды
+  icon: _Horizon/_Fractions/AnCo/Object/Misc/uascoin.rsi
   spawn: CitadelCoin1
 
 - type: entity
@@ -22,7 +22,7 @@
     count: 1
 
 - type: entity
-  name: токен запроса
+  name: Енды
   parent: [BaseItem, BaseAnCoContraband]
   categories: [ HideSpawnMenu ]
   id: CitadelCoin
@@ -30,10 +30,10 @@
   description: Кажется, он пульсирует подозрительно манящей энергией.
   components:
   - type: Sprite
-    sprite: _Horizon/Objects/Specific/UAS/uascoin.rsi
+    sprite: _Horizon/_Fractions/AnCo/Object/Misc/uascoin.rsi
     state: uascoin
   - type: Item
-    sprite: _Horizon/Objects/Specific/UAS/uascoin.rsi
+    sprite: _Horizon/_Fractions/AnCo/Object/Misc/uascoin.rsi
     size: Tiny
   - type: Stack
     count: 20

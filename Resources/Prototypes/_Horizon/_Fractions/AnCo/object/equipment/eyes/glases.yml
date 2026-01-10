@@ -1,6 +1,5 @@
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: ClothingEyesGlassesAnCo
   name: очки офицера АнКо
   suffix: StarHorizon, AnCo

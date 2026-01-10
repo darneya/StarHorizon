@@ -3,7 +3,6 @@
   description: Граната, содержащая в себе кристалл Ардония.
   suffix: StarHorizon, AnCo
   parent: [GrenadeBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: AnCoGranade
   components:
   - type: Sprite

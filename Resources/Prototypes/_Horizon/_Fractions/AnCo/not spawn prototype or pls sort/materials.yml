@@ -51,7 +51,6 @@
   parent: SheetArdonBase
   id: SheetArdon
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   components:
   - type: PhysicalComposition
     materialComposition:
@@ -130,7 +129,6 @@
   parent: SheetkazmieBase
   id: Sheetkazmie
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   components:
   - type: PhysicalComposition
     materialComposition:

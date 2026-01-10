@@ -4,7 +4,6 @@
   suffix: StarHorizon, AnCo
   description: Использует технологию подкожного распыления химикатов, подозрительно похожую на "гипоспрей".
   id: AnCohypo
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Medical/uashypospray.rsi
