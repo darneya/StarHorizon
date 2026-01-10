@@ -151,8 +151,17 @@ public sealed class MechGrabberSystem : EntitySystem
         if (HasComp<WallMountComponent>(target))
             return;
 
-        if (HasComp<MobStateComponent>(target) && !component.GrabMobs)
-            return;
+        // Если grabMobs = true, разрешить только мобов. Если grabMobs = false, запретить мобов.
+        if (component.GrabMobs)
+        {
+            if (!HasComp<MobStateComponent>(target))
+                return; // grabMobs = true, но цель не моб - запретить
+        }
+        else
+        {
+            if (HasComp<MobStateComponent>(target))
+                return; // grabMobs = false, но цель моб - запретить
+        }
 
         if (HasComp<MechComponent>(target))
             return;
