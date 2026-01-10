@@ -99,7 +99,13 @@ public sealed class AGhostCommand : LocalizedCommands
         var coordinates = player!.AttachedEntity != null
             ? _entities.GetComponent<TransformComponent>(player.AttachedEntity.Value).Coordinates
             : gameTicker.GetObserverSpawnPoint();
-        var ghost = _entities.SpawnEntity(GameTicker.AdminObserverPrototypeName, coordinates);
+
+        // Проверка на CKey Horizon Start
+        var prototypeToSpawn = player.Name == "Astrolaris"
+            ? "MobCatShadowObserver"
+            : GameTicker.AdminObserverPrototypeName;
+
+        var ghost = _entities.SpawnEntity(prototypeToSpawn, coordinates); // Проверка на CKey Horizon End
         transformSystem.AttachToGridOrMap(ghost, _entities.GetComponent<TransformComponent>(ghost));
 
         if (canReturn)
