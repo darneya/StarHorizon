@@ -63,7 +63,7 @@ namespace Content.Shared._Horizon.CCVar
         /// Время в секундах до автоматического удаления мусора.
         /// </summary>
         public static readonly CVarDef<float> TrashCleanupLifetime =
-            CVarDef.Create("trash.cleanup_lifetime", 1800f, CVar.SERVERONLY);
+            CVarDef.Create("trash.cleanup_lifetime", 600f, CVar.SERVERONLY);
         /// <summary>
         /// Задержка в секундах после начала раунда перед активацией очистки мусора.
         /// </summary>
