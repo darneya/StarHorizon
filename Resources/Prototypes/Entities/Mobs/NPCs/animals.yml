@@ -2365,6 +2365,16 @@
     heatDamage:
       types:
         Heat : 0.2 #per second, scales with temperature & other constants
+# Horizon start
+  - type: Hands
+  - type: ComplexInteraction
+  - type: Stripping
+  - type: Puller
+    needsHands: false
+  - type: Body
+    prototype: Aghost
+  - type: DoAfter
+# Horizon end
 
 - type: entity
   name: grenade penguin
