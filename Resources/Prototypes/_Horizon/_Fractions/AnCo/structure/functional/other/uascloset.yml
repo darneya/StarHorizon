@@ -4,7 +4,6 @@
   name: шкаф АнКо
   description: Стандартное хранилище корпорации АнКо
   suffix: StarHorizon, AnCo, Structure
-  categories: [ HideSpawnMenu ]
   components:
   - type: ResistLocker
   - type: Transform

@@ -98,52 +98,53 @@
   - type: Tag
     tags: []
 
-- type: entity
-  name: нанитовый медипен-дефибриллятор
-  suffix: StarHorizon, AnCo
-  parent: [ChemicalMedipen, BaseAnCoContraband]
-  id: NanitDefibMedipenAnCo
-  description: Одноразовый медипен-дефибриллятор. Содержит почти смертельную дозу нанитов.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi
-    layers:
-    - state: omega
-      map: ["enum.SolutionContainerLayers.Fill"]
-    - state: omega_defib
-  - type: SolutionContainerVisuals
-    maxFillLevels: 1
-    changeColor: false
-    emptySpriteName: omega_empty
-  - type: SolutionContainerManager
-    solutions:
-      pen:
-        maxVol: 29.5
-        reagents:
-        - ReagentId: AnConanits
-          Quantity: 29.5
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 29.5
-    onlyAffectsMobs: false
-    injectOnly: true
-  - type: StaticPrice
-    price: 500
-  - type: Tag
-    tags: []
-  - type: Defibrillator
-    doAfterDuration: 0
-    zapDelay: 600
-    zapHeal:
-      types:
-        Asphyxiation: -40
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellSmall
-        disableEject: true
+# - type: entity
+#   name: нанитовый медипен-дефибриллятор
+#   suffix: StarHorizon, AnCo
+#   parent: [ChemicalMedipen, BaseAnCoContraband]
+#   id: NanitDefibMedipenAnCo
+#   description: Одноразовый медипен-дефибриллятор. Содержит почти смертельную дозу нанитов.
+#   components:
+#   - type: Sprite
+#     sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi
+#     layers:
+#     - state: omega
+#       map: ["enum.SolutionContainerLayers.Fill"]
+#     - state: omega_defib
+#   - type: SolutionContainerVisuals
+#     maxFillLevels: 1
+#     changeColor: false
+#     emptySpriteName: omega_empty
+#   - type: SolutionContainerManager
+#     solutions:
+#       pen:
+#         maxVol: 29.5
+#         reagents:
+#         - ReagentId: AnConanits
+#           Quantity: 29.5
+#   - type: Hypospray
+#     solutionName: pen
+#     transferAmount: 29.5
+#     onlyAffectsMobs: false
+#     injectOnly: true
+#   - type: StaticPrice
+#     price: 500
+#   - type: Tag
+#     tags: []
+#   - type: Defibrillator
+#     doAfterDuration: 0
+#     zapDelay: 600
+#     zapHeal:
+#       types:
+#         Asphyxiation: -40
+#   - type: ContainerContainer
+#     containers:
+#       cell_slot: !type:ContainerSlot
+#   - type: ItemSlots
+#     slots:
+#       cell_slot:
+#         name: power-cell-slot-component-slot-name-default
+#         startingItem: PowerCellSmall
+#         disableEject: true
+
+# сломали пидоры

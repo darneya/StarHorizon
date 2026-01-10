@@ -1,6 +1,5 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: ClothingOuterHardsuitSpider
   suffix: StarHorizon, AnCo
   name: скафандр офицера Паука АнКо
@@ -36,7 +35,6 @@
 # титан
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: ClothingOuterHardsuitTitan
   suffix: StarHorizon, AnCo
   name: cкафандр офицера Титана АнКо
@@ -72,7 +70,6 @@
 # рыцарь
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: ClothingOuterHardsuitKnight
   suffix: StarHorizon, AnCo
   name: cкафандр офицера Рыцаря АнКо

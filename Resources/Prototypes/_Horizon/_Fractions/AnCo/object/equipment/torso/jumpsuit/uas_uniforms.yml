@@ -3,7 +3,6 @@
   description: Стандартный комбинезон АнКо без рукавов.
   name: комбинезон АнКо
   parent: [ClothingUniformBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: SuitAnCo
   components:
   - type: FactionClothing
@@ -22,7 +21,6 @@
   description: Защитный комбинезон АнКо с укреплёнными рёбрами из казмия.
   name: защитный комбинезон АнКо
   parent: SuitAnCo
-  categories: [ HideSpawnMenu ]
   id: SuitProtectiveAnCo
   components:
   - type: FactionClothing
@@ -37,7 +35,6 @@
   description: Стандартная юбка-комбинезон АнКо с укреплёнными рёбрами из Казмия.
   name: защитная юбка-комбинезон АнКо
   parent: SuitAnCo
-  categories: [ HideSpawnMenu ]
   id: SkirtProtectiveAnCo
   components:
   - type: FactionClothing
@@ -52,7 +49,6 @@
   description: Стандартная юбка-комбинезон АнКо без рукавов.
   name: юбка-комбинезон АнКо
   parent: SuitAnCo
-  categories: [ HideSpawnMenu ]
   id: SkirtAnCo
   components:
   - type: FactionClothing

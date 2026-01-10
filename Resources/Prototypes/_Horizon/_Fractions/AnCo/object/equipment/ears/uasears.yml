@@ -1,7 +1,6 @@
 
 - type: entity
   parent: [Clothing, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: ClothingHeadsetAnCo
   suffix: StarHorizon, AnCo
   name: гарнитура АнКо
