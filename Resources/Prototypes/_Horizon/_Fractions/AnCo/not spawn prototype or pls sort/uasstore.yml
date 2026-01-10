@@ -16,7 +16,6 @@
   parent: CitadelCoin
   id: CitadelCoin1
   suffix: StarHorizon, AnCo, 1 Енды
-  categories: [ HideSpawnMenu ]
   components:
   - type: Stack
     count: 1
@@ -24,7 +23,6 @@
 - type: entity
   name: Енды
   parent: [BaseItem, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: CitadelCoin
   suffix: StarHorizon, AnCo, 20 Енды
   description: Кажется, он пульсирует подозрительно манящей энергией.

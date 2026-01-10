@@ -1,7 +1,6 @@
 - type: entity
   parent: [VendingMachine, BaseAnCoContraband]
   suffix: StarHorizon, AnCo, Structure
-  categories: [ HideSpawnMenu ]
   id: AnCoVending
   name: униформат АнКо
   description: Обычный автомат с одеждой... Разве что экран другой.
