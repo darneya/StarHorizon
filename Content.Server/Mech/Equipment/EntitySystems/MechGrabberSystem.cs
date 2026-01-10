@@ -52,6 +52,7 @@ public sealed class MechGrabberSystem : EntitySystem
         SubscribeLocalEvent<MechGrabberComponent, GrabberDoAfterEvent>(OnMechGrab);
 
         SubscribeLocalEvent<MechGrabberComponent, EntityTerminatingEvent>(OnTerminating);   // Horizon Mech
+        SubscribeLocalEvent<MechGrabberComponent, EntRemovedFromContainerMessage>(OnEntityRemovedFromContainer); // Horizon Mech
     }
 
     private void OnGrabberMessage(EntityUid uid, MechGrabberComponent component, MechEquipmentUiMessageRelayEvent<MechGrabberEjectMessage> args)
@@ -86,17 +87,12 @@ public sealed class MechGrabberSystem : EntitySystem
             return;
 
         _container.Remove(toRemove, component.ItemContainer);
+        // Примечание: Удаление эффекта удушения теперь происходит в OnEntityRemovedFromContainer
+        // чтобы обработать все случаи удаления из контейнера (включая побег)
         var mechxform = Transform(mech);
         var xform = Transform(toRemove);
         _transform.AttachToGridOrMap(toRemove, xform);
         var (mechPos, mechRot) = _transform.GetWorldPositionRotation(mechxform);
-        // Horizon Mech start
-        if (component.SlowMetabolism)
-        {
-            var metabolicEvent = new ApplyMetabolicMultiplierEvent(toRemove, 0.4f, true);
-            RaiseLocalEvent(toRemove, ref metabolicEvent);
-        }
-        // Horizon Mech end
         var offset = mechPos + mechRot.RotateVec(component.DepositOffset);
         _transform.SetWorldPositionRotation(toRemove, offset, Angle.Zero);
         _mech.UpdateUserInterface(mech);
@@ -268,6 +264,24 @@ public sealed class MechGrabberSystem : EntitySystem
     private void OnTerminating(EntityUid uid, MechGrabberComponent comp, ref EntityTerminatingEvent args)   // Horizon Mech
     {
         _container.EmptyContainer(comp.ItemContainer, true);
+    }
+
+    private void OnEntityRemovedFromContainer(EntityUid uid, MechGrabberComponent component, EntRemovedFromContainerMessage args)
+    {
+        // Проверяем, что это удаление из нашего контейнера ItemContainer
+        if (args.Container != component.ItemContainer)
+            return;
+
+        // Если у слипера включён SlowMetabolism, убираем эффект удушения при выходе существа
+        // Это обрабатывает все случаи удаления из контейнера:
+        // - ручное удаление через UI (RemoveItem -> _container.Remove)
+        // - побег существа через TryRemoveFromContainer (EscapeMechSystem)
+        // - очистка контейнера при уничтожении оборудования
+        if (component.SlowMetabolism)
+        {
+            var metabolicEvent = new ApplyMetabolicMultiplierEvent(args.Entity, 0.4f, true);
+            RaiseLocalEvent(args.Entity, ref metabolicEvent);
+        }
     }
     // Horizon Mech end
 }
