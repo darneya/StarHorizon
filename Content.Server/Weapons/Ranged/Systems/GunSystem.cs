@@ -237,6 +237,9 @@ public sealed partial class GunSystem : SharedGunSystem
                         if (dmg != null)
                             dmg = Damageable.TryChangeDamage(hitEntity, dmg * Damageable.UniversalHitscanDamageModifier, origin: user);
 
+
+
+
                         // Horizon Mech start
                         if (hitscan.BloodlossModifier.HasValue)
                             _bloodstream.TryModifyBleedAmount(hitEntity, hitscan.BloodlossModifier.Value);
@@ -266,6 +269,11 @@ public sealed partial class GunSystem : SharedGunSystem
                                 Logs.Add(LogType.HitScanHit,
                                     $"{hitName:target} hit by hitscan dealing {dmg.GetTotal():damage} damage");
                             }
+
+                            // _Horizon start
+                            var bodyEv = new HitScanHitBodyEvent(dir, dmg);
+                            RaiseLocalEvent(hitEntity, ref bodyEv);
+                            // _Horizon end
                         }
                     }
                     else
