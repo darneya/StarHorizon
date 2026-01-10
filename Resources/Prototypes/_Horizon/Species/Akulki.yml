@@ -175,12 +175,28 @@
       points: 1
       required: false
     FacialHair:
-      points: 0
+      points: 1
+      required: false
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [ AkulkiEars ]
+    HeadSide:
+      points: 1
+      required: false
+    Chest:
+      points: 3
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
       required: false
     Tail:
       points: 1
       required: true
-      defaultMarkings: [ AkulkiTailSmooth ]
+      defaultMarkings: [ AkulkiTailSmoothPrime ]
 
 - type: speciesBaseSprites
   id: MobAkulkiSprites
@@ -201,6 +217,7 @@
     RFoot: MobAkulkiRFoot
     Tail: MobHumanoidAnyMarking
     HeadTop: MobAkulkiEars
+    HeadSide: MobHumanoidAnyMarking
 
 - type: humanoidBaseSprite
   id: MobAkulkiEars
