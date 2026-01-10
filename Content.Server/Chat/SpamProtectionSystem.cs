@@ -68,10 +68,13 @@ public sealed class SpamProtectionSystem : EntitySystem
             // Получаем сессию игрока
             var session = GetPlayerSession(args.Source);
 
+            // Сохраняем сообщение для логирования перед очисткой
+            var spamMessage = spamComp.RecentMessages[0] ?? args.Message;
+
             HandleSpam(args.Source, spamComp, session);
 
             // Логируем нарушение
-            LogSpamViolation(args.Source, spamComp.RecentMessages[0]);
+            LogSpamViolation(args.Source, spamMessage);
         }
     }
 
@@ -241,8 +244,21 @@ public sealed class SpamProtectionSystem : EntitySystem
 
     private void LogSpamViolation(EntityUid uid, string message)
     {
-        var playerName = Name(uid);
-        var shortMessage = message.Length > 50 ? message[..47] + "..." : message;
+        // Безопасное получение имени entity
+        string playerName;
+        if (TryComp<MetaDataComponent>(uid, out var meta))
+        {
+            playerName = meta.EntityName;
+        }
+        else
+        {
+            playerName = uid.ToString();
+        }
+
+        // Безопасная обработка сообщения
+        var shortMessage = string.IsNullOrEmpty(message) 
+            ? "[пустое сообщение]" 
+            : (message.Length > 50 ? message[..47] + "..." : message);
 
         Logger.Info($"{playerName} поперхнулся от спама: \"{shortMessage}\"");
     }

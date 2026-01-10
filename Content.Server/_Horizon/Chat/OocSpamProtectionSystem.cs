@@ -7,16 +7,15 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Content.Server.Chat.Systems;
-using Content.Server.Chat;
 using Robust.Shared.Localization;
 using Content.Shared.Speech;
 using Content.Server.Chat.Managers;
 using Content.Shared.Players;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Chat;
+namespace Content.Server._Horizon.Chat;
 
-[Access(typeof(OocSpamProtectionComponent), typeof(ChatSystem))]  // Разрешить доступ обоим
+[Access(typeof(OocSpamProtectionComponent), typeof(ChatSystem))]
 public sealed class OocSpamProtectionSystem : EntitySystem
 {
     [Dependency] private readonly IChatManager _chatManager = default!;
@@ -65,7 +64,15 @@ public sealed class OocSpamProtectionSystem : EntitySystem
         if (IsSpamming(comp, currentTime))
         {
             var session = GetPlayerSession(uid);
+
+            // Сохраняем сообщение для логирования перед очисткой
+            var spamMessage = comp.RecentMessages[0] ?? message;
+
             HandleOocSpam(uid, comp, session);
+
+            // Логируем нарушение
+            LogSpamViolation(uid, spamMessage);
+
             return false; // Блокируем сообщение
         }
 
@@ -118,9 +125,6 @@ public sealed class OocSpamProtectionSystem : EntitySystem
 
         // 2. Очищаем историю сообщений
         ClearMessageHistory(comp);
-
-        // 3. Логируем нарушение
-        LogSpamViolation(uid, comp.RecentMessages[0]);
     }
 
     private void ApplyMuteEffect(EntityUid uid, OocSpamProtectionComponent comp, ICommonSession? session)
@@ -162,8 +166,22 @@ public sealed class OocSpamProtectionSystem : EntitySystem
 
     private void LogSpamViolation(EntityUid uid, string message)
     {
-        var playerName = Name(uid);
-        var shortMessage = message.Length > 50 ? message[..47] + "..." : message;
+        // Безопасное получение имени entity
+        string playerName;
+        if (TryComp<MetaDataComponent>(uid, out var meta))
+        {
+            playerName = meta.EntityName;
+        }
+        else
+        {
+            playerName = uid.ToString();
+        }
+
+        // Безопасная обработка сообщения
+        var shortMessage = string.IsNullOrEmpty(message)
+            ? "[пустое сообщение]"
+            : (message.Length > 50 ? message[..47] + "..." : message);
+
         Logger.Info($"{playerName} получил мут в OOC за спам: \"{shortMessage}\"");
     }
 }

@@ -36,6 +36,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Content.Shared._Horizon.Language;
+using Content.Server._Horizon.Chat;
 
 namespace Content.Server.Chat.Systems;
 
