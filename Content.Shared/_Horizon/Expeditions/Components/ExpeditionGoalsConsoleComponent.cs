@@ -1,4 +1,5 @@
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Horizon.Expeditions;
 
@@ -6,12 +7,11 @@ namespace Content.Shared._Horizon.Expeditions;
 public sealed partial class ExpeditionGoalsConsoleComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public List<GoalSpecification> Categories = new()
+    public List<ProtoId<ExpeditionGoalCategoryPrototype>> Categories = new()
     {
-        GoalSpecification.Crew,
-        GoalSpecification.Expeditionary,
-        GoalSpecification.Mining,
-        GoalSpecification.Medical,
-        GoalSpecification.Syndicate
+        "Crew",
+        "Expeditionary",
+        "Mining",
+        "Medical",
     };
 }

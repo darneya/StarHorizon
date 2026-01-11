@@ -36,7 +36,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
 
-    private Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> _goals = new();
+    private Dictionary<ProtoId<ExpeditionGoalCategoryPrototype>, Dictionary<int, ExpeditionGoal>> _goals = new();
     private Dictionary<int, ExpeditionGoal> _claimedGoals = new();
     private int _nextId = 1;
     private TimeSpan _nextOffer;
@@ -234,7 +234,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         return 0;
     }
 
-    private void ClaimGoal(EntityUid idCard, int goalId, GoalSpecification specification)
+    private void ClaimGoal(EntityUid idCard, int goalId, ProtoId<ExpeditionGoalCategoryPrototype> specification)
     {
         if (!_goals[specification].TryGetValue(goalId, out var goal))
             return;
@@ -255,7 +255,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             _cartridgeLoader.UpdateUiState(container.Owner, null, null);
     }
 
-    private bool TryClaimGoal(EntityUid idCard, int goalId, GoalSpecification specification)
+    private bool TryClaimGoal(EntityUid idCard, int goalId, ProtoId<ExpeditionGoalCategoryPrototype> specification)
     {
         if (!_goals[specification].TryGetValue(goalId, out var goal))
             return false;
@@ -290,12 +290,12 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         _nextOffer = _timing.CurTime + Cooldown;
 
         var prototypes = _proto.EnumeratePrototypes<ExpeditionGoalPrototype>().ToList();
+        var categories = _proto.EnumeratePrototypes<ExpeditionGoalCategoryPrototype>().ToList();
 
-        for (var j = 0; j <= (int)GoalSpecification.Pirates; j++)
+        foreach (var item in categories)
         {
-            var specification = (GoalSpecification)j;
-            _goals[specification] = new();
-            var specificated = prototypes.Where(x => x.Specification == specification).ToList();
+            _goals[item] = new();
+            var specificated = prototypes.Where(x => x.Specification == item).ToList();
             if (specificated.Count <= 0)
                 continue;
 
@@ -303,7 +303,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             {
                 var proto = _random.Pick(specificated);
                 var goal = proto.Goal.Instantiate(proto.RandomAmount.Next(_random) * proto.AmountMultiplier);
-                _goals[specification].Add(_nextId, goal);
+                _goals[item].Add(_nextId, goal);
                 _nextId++;
             }
         }

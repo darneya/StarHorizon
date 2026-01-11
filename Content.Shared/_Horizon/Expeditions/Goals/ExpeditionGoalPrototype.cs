@@ -22,7 +22,7 @@ public sealed partial class ExpeditionGoalPrototype : IPrototype
     public int AmountMultiplier = 1;
 
     [DataField]
-    public GoalSpecification Specification = GoalSpecification.Expeditionary;
+    public ProtoId<ExpeditionGoalCategoryPrototype> Specification = "Crew";
 
     [DataField(required: true)]
     public ExpeditionGoal Goal = default!;
@@ -58,13 +58,10 @@ public abstract partial class ExpeditionGoal
     public abstract bool TryComplete(EntityUid sellEntity, IEntityManager entMan);
 }
 
-[Serializable, NetSerializable]
-public enum GoalSpecification : int
+[Prototype]
+public sealed partial class ExpeditionGoalCategoryPrototype : IPrototype
 {
-    Expeditionary = 0,
-    Mining = 1,
-    Crew = 2,
-    Medical = 3,
-    Syndicate = 4,
-    Pirates = 5
+    [IdDataField]
+    public string ID { get; set; } = default!;
 }
+

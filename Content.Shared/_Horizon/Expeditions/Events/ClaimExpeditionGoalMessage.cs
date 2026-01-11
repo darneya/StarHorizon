@@ -1,3 +1,4 @@
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Horizon.Expeditions;
@@ -6,9 +7,9 @@ namespace Content.Shared._Horizon.Expeditions;
 public sealed partial class ClaimExpeditionGoalMessage : BoundUserInterfaceMessage
 {
     public int OptionId;
-    public GoalSpecification Specification;
+    public ProtoId<ExpeditionGoalCategoryPrototype> Specification;
 
-    public ClaimExpeditionGoalMessage(int optionId, GoalSpecification specification)
+    public ClaimExpeditionGoalMessage(int optionId, ProtoId<ExpeditionGoalCategoryPrototype> specification)
     {
         OptionId = optionId;
         Specification = specification;

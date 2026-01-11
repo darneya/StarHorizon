@@ -1,3 +1,4 @@
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Horizon.Expeditions;
@@ -5,12 +6,13 @@ namespace Content.Shared._Horizon.Expeditions;
 [Serializable, NetSerializable]
 public sealed partial class ExpeditionGoalsConsoleUiState : BoundUserInterfaceState
 {
-    public Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> Goals;
-    public List<GoalSpecification> AvailableSpecifications;
+    public Dictionary<ProtoId<ExpeditionGoalCategoryPrototype>, Dictionary<int, ExpeditionGoal>> Goals;
+    public List<ProtoId<ExpeditionGoalCategoryPrototype>> AvailableSpecifications;
     public TimeSpan OfferCooldown;
     public TimeSpan Cooldown;
 
-    public ExpeditionGoalsConsoleUiState(Dictionary<GoalSpecification, Dictionary<int, ExpeditionGoal>> goals, List<GoalSpecification> availableSpecifications, TimeSpan cooldown, TimeSpan offerCooldown)
+    public ExpeditionGoalsConsoleUiState(Dictionary<ProtoId<ExpeditionGoalCategoryPrototype>, Dictionary<int, ExpeditionGoal>> goals,
+                                         List<ProtoId<ExpeditionGoalCategoryPrototype>> availableSpecifications, TimeSpan cooldown, TimeSpan offerCooldown)
     {
         Goals = goals;
         AvailableSpecifications = availableSpecifications;
