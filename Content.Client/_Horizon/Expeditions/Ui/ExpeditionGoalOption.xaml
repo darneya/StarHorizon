@@ -6,8 +6,7 @@
                 Name="BigPanel"
                 Margin="4">
     <BoxContainer Orientation="Vertical"
-                  VerticalExpand="True"
-                  Margin="5 5">
+                  VerticalExpand="True">
         <!-- Title box -->
         <controls:StripeBack>
             <Label Name="TitleStripe"
@@ -17,21 +16,24 @@
         <SpriteView Name="Icon"
                     Scale="6 6"
                     Access="Public"
-                    Margin="0"
-                    HorizontalAlignment="Center"/>
+                    Margin="4"/>
         <ScrollContainer HorizontalExpand="True"
                          VerticalExpand="True"
-                         MinHeight="92"
+                         HScrollEnabled="False"
+                         MinHeight="120"
                          Margin="4">
             <RichTextLabel Name="DescriptionLabel"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       MaxWidth="256"
+                       VerticalExpand="True"
+                       Access="Public"/>
+        </ScrollContainer>
+
+        <RichTextLabel Name="RewardLabel"
                        HorizontalExpand="True"
                        Margin="4"/>
-        </ScrollContainer>
-        <BoxContainer Orientation="Vertical" VerticalExpand="True" VerticalAlignment="Bottom" Name="ContentBox">
-            <RichTextLabel Name="RewardLabel"
-                           HorizontalExpand="True"
-                           Margin="4"/>
-        </BoxContainer>
+
         <Button Name="ClaimButton"
                 HorizontalExpand="True"
                 VerticalAlignment="Bottom"

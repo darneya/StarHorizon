@@ -33,6 +33,8 @@ public sealed partial class GoalsListUiFragment : PanelContainer
                 option.ClaimButton.Text = Loc.GetString("expedition-goal-remove-button");
                 option.Icon.Scale = new(4, 4);
 
+                option.DescriptionLabel.MaxWidth = 196;
+
                 option.ClaimPressed += () => RemovePressed?.Invoke(item.Key);
                 Goals.AddChild(option);
             }
