@@ -114,7 +114,7 @@ public sealed class SpeechBarksSystem : SharedSpeechBarksSystem
             }
 
             var pitch = _random.NextFloat(item.Pitch - 0.1f, item.Pitch + 0.1f);
-            var audioParams = AudioParams.Default.WithPitchScale(item.Pitch).WithVolume(item.Volume).WithPitchScale(pitch);
+            var audioParams = AudioParams.Default.WithVolume(item.Volume).WithPitchScale(pitch);
             item.BarksPlayed++;
             item.NextSound = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(item.DelayVariation.Item1, item.DelayVariation.Item2));
 
