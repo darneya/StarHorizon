@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingHeadHardsuitBase, BaseAnCoContraband, BaseToggleClothing]
+  parent: [ClothingHeadHardsuitBase, BaseAnCoContraband]
   id: ClothingHeadHardsuitSpider
   categories: [ HideSpawnMenu ]
   name: шлем офицера Паука АнКо
@@ -20,17 +20,17 @@
         Slash: 0.8
         Piercing: 0.8
         Heat: 0.8
-  - type: ToggleClothing
-    action: AnCoToggleInvisibilitySpider
-  - type: ComponentToggler
-    parent: true
-    components:
-    - type: Stealth
-      hadOutline: true
-    - type: StealthOnMove
-      minVisibility: -1
-      passiveVisibilityRate: -0.37
-      movementVisibilityRate: 1
+#  - type: ToggleClothing
+#    action: AnCoToggleInvisibilitySpider можете поплакаться об этом
+#  - type: ComponentToggler
+#    parent: true
+#    components:
+#    - type: Stealth
+#      hadOutline: true
+#    - type: StealthOnMove
+#      minVisibility: -1
+#      passiveVisibilityRate: -0.37
+#      movementVisibilityRate: 1
 
 - type: entity
   parent: [NFClothingHeadHardsuitWithLightBase, BaseAnCoContraband]

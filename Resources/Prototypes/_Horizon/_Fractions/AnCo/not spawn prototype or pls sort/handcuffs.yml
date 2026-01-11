@@ -4,7 +4,6 @@
   id: AnCoHandcuffs
   suffix: StarHorizon, AnCo
   parent: [BaseItem, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   components:
   - type: Item
     size: Small

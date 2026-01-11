@@ -1,6 +1,5 @@
 - type: entity
   parent: [ClothingBackpack, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: AnCosatchel
   suffix: StarHorizon, AnCo
   name: глубокая сумка АнКо
@@ -21,7 +20,6 @@
 
 - type: entity
   parent: [ClothingBackpack, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: AnCosatchelDEBUG
   suffix: StarHorizon, AnCo, DEBUG
   name: ОЧЕНЬ глубокая сумка АнКо

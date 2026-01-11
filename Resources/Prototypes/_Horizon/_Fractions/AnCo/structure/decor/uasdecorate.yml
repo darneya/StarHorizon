@@ -30,7 +30,7 @@
             Sheetkazmie:
               min: 1
               max: 5
-            SheetEFS:
+            SheetArdon:
               min: 1
               max: 3
 
@@ -67,6 +67,6 @@
             Sheetkazmie:
               min: 1
               max: 5
-            SheetEFS:
+            SheetArdon:
               min: 1
               max: 2

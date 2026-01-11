@@ -1,6 +1,5 @@
 - type: entity
   parent: [ClothingHeadBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: AnCoberet
   name: берет АнКо
   suffix: StarHorizon, AnCo
@@ -18,7 +17,6 @@
 
 - type: entity
   parent: [ClothingHeadBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: AnCocap
   name: фуражка AnCo
   suffix: StarHorizon, AnCo
