@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Content.Shared.Chat.Components;  // Добавьте эту строку
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
@@ -35,6 +36,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Content.Shared._Horizon.Language;
+using Content.Server._Horizon.Chat;
 
 namespace Content.Server.Chat.Systems;
 
@@ -61,6 +63,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
+    [Dependency] private readonly OocSpamProtectionSystem _oocSpamProtection = default!;
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -274,6 +277,13 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (player != null && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
+
+        // ДОБАВЬТЕ ПРОВЕРКУ НА СПАМ В OOC ЗДЕСЬ
+        if (TryComp<OocSpamProtectionComponent>(source, out var oocSpamComp))
+        {
+            if (!_oocSpamProtection.CheckOocSpam(source, message, oocSpamComp))
+                return; // Сообщение заблокировано за спам
+        }
 
         // It doesn't make any sense for a non-player to send in-game OOC messages, whereas non-players may be sending
         // in-game IC messages.
