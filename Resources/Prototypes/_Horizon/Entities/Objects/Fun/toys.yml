@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BasePlushie
   id: PlushieRoboMechanic
   name: плюшевый робототехник
@@ -52,6 +52,37 @@
   - type: Item
     size: Small
     sprite: _StarHorizon/Objects/Fun/plushiechemist.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDemocracyEagle
+  name: плюшевый орлёнок
+  description: Пушистый источник яркой и великой демократий!
+  suffix: StarHorizon
+  components:
+  - type: StaticPrice
+    price: 50
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Fun/plushiedemocracyeagle.rsi
+    state: eagle
+  - type: Item
+    size: Small
+    sprite: _StarHorizon/Objects/Fun/plushiedemocracyeagle.rsi
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_StarHorizon/Items/Toys/WHATTHEFUCKISTHEKILOMETER.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_StarHorizon/Items/Toys/WHATTHEFUCKISTHEKILOMETER.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_StarHorizon/Items/Toys/WHATTHEFUCKISTHEKILOMETER.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_StarHorizon/Items/Toys/WHATTHEFUCKISTHEKILOMETER.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_StarHorizon/Items/Toys/WHATTHEFUCKISTHEKILOMETER.ogg
 
 - type: entity
   parent: BasePlushie
