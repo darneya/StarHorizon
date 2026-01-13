@@ -38,8 +38,8 @@
       tableId: DungeonBluespaceEventsTable
     minimumTimeUntilFirstEvent: 600 # 10 minutes
     minMaxEventTiming:
-      min: 14400 # 240 minutes 4 hrs between events # Horizon
-      max: 18000 # 300 minutes 5 hrs between events # Horizon
+      min: 7200 # 120 minutes between events # Horizon
+      max: 10800 # 180 minutes between events # Horizon
 
 - type: entityTable
   id: DungeonBluespaceEventsTable
