@@ -1,6 +1,6 @@
-ent-UASBoots = боевые ботинки UAS
-    .desc = Ботинки с укреплённой подошвой из EFS кристалла.
-    .suffix = StarHorizon, UAS
-ent-UASClothingShoesBootsMag = магнитные ботинки UAS
+ent-AnCoBoots = боевые ботинки АнКо
+    .desc = Ботинки с укреплённой подошвой из Ардония кристалла.
+    .suffix = StarHorizon, AnCo
+ent-AnCoClothingShoesBootsMag = магнитные ботинки АнКо
     .desc = Ботинки облегчённой конструкции. Обладают продвинутой системой магнитов.
-    .suffix = StarHorizon, UAS
+    .suffix = StarHorizon, AnCo

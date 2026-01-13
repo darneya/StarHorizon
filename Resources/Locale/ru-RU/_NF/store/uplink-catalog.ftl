@@ -2,6 +2,7 @@ uplink-emp-grenade-launcher-bundle-name = Набор ЭМИ "Чайна-Лэйк
 uplink-emp-grenade-launcher-bundle-desc = Старый гранатомет "Чайна-Лэйк" в комплекте с 8 ЭМИ зарядами.
 uplink-spaceblade-syndicate-name = Набор "СпейсБлейд"
 uplink-spaceblade-syndicate-desc = Сделано из настоящего металла!
+
 uplink-security-hardsuit-name = Бронескафандр ДШНФ
 uplink-security-hardsuit-desc = Старый добрый скафандр, который уже лет двадцать носят офицеры ДШНФ. Тяжёлый, но надёжный.
 uplink-security-hardsuit-patrol-name = Патрульный скафандр ДШНФ
@@ -18,6 +19,7 @@ uplink-security-hardsuit-combat-name = Патрульный бронескафа
 uplink-security-hardsuit-combat-desc = Универсальный боевой скафандр для патрулирования космической среды. Подходит как для зачистки астероидов, так и для подавления бунтов в столовой.
 uplink-security-hardsuit-commmand-name = Командный боевой скафандр ДШНФ
 uplink-security-hardsuit-commmand-desc = Продвинутый боевой костюм для опытных командиров ДШНФ. Идеально подходит для героических речей и эффектных появлений.
+
 uplink-security-mk32-name = МК32
 uplink-security-mk32-desc = Служебный пистолет особого назначения, модель 32.
 uplink-security-lethalarmory-name = Ящик летального вооружения

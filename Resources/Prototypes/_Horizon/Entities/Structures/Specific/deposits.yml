@@ -43,10 +43,10 @@
   components:
   - type: OreDeposit
     oreCounts:
-      Coal1: 600
-      SteelOre1: 400
-      NFMobCoalCrab: 10
-      NFMobIronCrab: 10
+      Coal1: 1000
+      SteelOre1: 700
+      NFMobCoalCrab: 20
+      NFMobIronCrab: 20
     hardness: 1
   - type: Sprite
     color: "#9da398"
@@ -59,8 +59,8 @@
   components:
   - type: OreDeposit
     oreCounts:
-      SpaceQuartz1: 700
-      NFMobQuartzCrab: 15
+      SpaceQuartz1: 1500
+      NFMobQuartzCrab: 40
     hardness: 1
   - type: Sprite
     color: "#9da398"
@@ -73,12 +73,12 @@
   components:
   - type: OreDeposit
     oreCounts:
-      Coal1: 400
-      SteelOre1: 300
-      SpaceQuartz1: 300
-      NFMobCoalCrab: 5
-      NFMobIronCrab: 5
-      NFMobQuartzCrab: 5
+      Coal1: 700
+      SteelOre1: 500
+      SpaceQuartz1: 500
+      NFMobCoalCrab: 15
+      NFMobIronCrab: 15
+      NFMobQuartzCrab: 15
     hardness: 1
   - type: Sprite
     color: "#9da398"
@@ -91,11 +91,11 @@
   components:
   - type: OreDeposit
     oreCounts:
-      SpaceQuartz1: 300
-      GoldOre1: 150
-      SilverOre1: 150
-      NFMobGoldCrab: 10
-      NFMobSilverCrab: 10
+      SpaceQuartz1: 500
+      GoldOre1: 250
+      SilverOre1: 250
+      NFMobGoldCrab: 20
+      NFMobSilverCrab: 20
     hardness: 2
   - type: Sprite
     color: "#cfb10c"
@@ -108,13 +108,13 @@
   components:
   - type: OreDeposit
     oreCounts:
-      SpaceQuartz1: 300
-      PlasmaOre1: 200
-      UraniumOre1: 200
-      BananiumOre1: 150
-      NFMobPlasmaCrab: 10
-      NFMobUraniumCrab: 10
-      NFMobBananiumCrab: 10
+      SpaceQuartz1: 500
+      PlasmaOre1: 400
+      UraniumOre1: 400
+      BananiumOre1: 250
+      NFMobPlasmaCrab: 20
+      NFMobUraniumCrab: 20
+      NFMobBananiumCrab: 20
     hardness: 2
   - type: Sprite
     color: "#1dc436"
@@ -127,13 +127,13 @@
   components:
   - type: OreDeposit
     oreCounts:
-      TitanOre1: 100
-      PsycoreOre1: 100
-      Coal1: 300
-      SteelOre1: 200
-      NFMobCoalCrab: 10
-      NFMobIronCrab: 10
-      NFMobQuartzCrab: 10
+      TitanOre1: 200
+      PsycoreOre1: 200
+      Coal1: 500
+      SteelOre1: 400
+      NFMobCoalCrab: 20
+      NFMobIronCrab: 20
+      NFMobQuartzCrab: 20
     hardness: 4
   - type: Sprite
     color: "#590080"
@@ -146,13 +146,13 @@
   components:
   - type: OreDeposit
     oreCounts:
-      UraniumOre1: 100
-      ToriumOre1: 100
-      PlutoniumOre1: 50
-      NeptuniumOre1: 50
-      NFMobPlasmaCrab: 10
-      NFMobUraniumCrab: 10
-      NFMobBananiumCrab: 10
+      UraniumOre1: 200
+      ToriumOre1: 200
+      PlutoniumOre1: 100
+      NeptuniumOre1: 100
+      NFMobPlasmaCrab: 20
+      NFMobUraniumCrab: 20
+      NFMobBananiumCrab: 20
     hardness: 4
   - type: Sprite
     color: "#b31200"
@@ -165,13 +165,13 @@
   components:
   - type: OreDeposit
     oreCounts:
-      SpaceQuartz1: 200
-      DiamondOre1: 50
-      EmeraldOre1: 30
-      TopazOre1: 30
-      SapphireOre1: 30
-      RubyOre1: 30
-      NFMobGoldCrab: 15
+      SpaceQuartz1: 300
+      DiamondOre1: 100
+      EmeraldOre1: 50
+      TopazOre1: 50
+      SapphireOre1: 50
+      RubyOre1: 50
+      NFMobGoldCrab: 45
     hardness: 5
   - type: Sprite
     color: "#77e7d1"

@@ -821,6 +821,30 @@
   - ContractorRubberStampTrader
   - ContractorRubberStampClown
   - ContractorRubberStampMime
+    # Towels
+  - ContractorTowelColorGreen
+  - ContractorTowelColorDarkGreen
+  - ContractorTowelColorLightBlue
+  - ContractorTowelColorBlue
+  - ContractorTowelColorDarkBlue
+  - ContractorTowelColorTeal
+  - ContractorTowelColorWhite
+  - ContractorTowelColorPurple
+  - ContractorTowelColorBlack
+  - ContractorTowelColorMaroon
+  - ContractorTowelColorYellow
+  - ContractorTowelColorLightBrown
+  - ContractorTowelColorBrown
+  - ContractorTowelColorRed
+  - ContractorTowelColorOrange
+  - ContractorTowelColorPink
+  - ContractorTowelColorGray
+  - ContractorTowelColorMime
+  - ContractorTowelColorGold
+  - ContractorTowelColorSilver
+  - ContractorTowelColorNT
+  - ContractorTowelColorCentcom
+  - ContractorTowelColorSyndicate
 
 - type: loadoutGroup
   id: ContractorHandItems
@@ -886,12 +910,12 @@
   - ContractorNFBoxSurvivalNitrogen
   - ContractorNFBoxSurvivalExtended
   - ContractorNFBoxSurvivalExtendedNitrogen
-#  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
-#  - ContractorNFBoxSurvivalExtendedSheleg # Horizon Survival box
+  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
+  - ContractorNFBoxSurvivalExtendedSheleg # Horizon Survival box
   fallbacks:
   - ContractorNFBoxSurvival
   - ContractorNFBoxSurvivalNitrogen
-#  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
+  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
 
 - type: loadoutGroup
   id: ContractorEncryptionKey

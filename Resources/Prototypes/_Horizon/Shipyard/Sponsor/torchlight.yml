@@ -2,11 +2,11 @@
 # GitHub/Gitea: ???
 # Discord: amir7036
 
-# Информация об сопровождающем 
+# Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
-# Discord: astr0laris 
+# Discord: astr0laris
 
-# Прототип шаттла: 
+# Прототип шаттла:
 #
 - type: vessel
   id: TorchLight
@@ -21,6 +21,15 @@
   - Civilian
   engine:
   - Uranium
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+  # Horizon end
 
 - type: gameMap
   id: TorchLight
@@ -32,11 +41,11 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'TorchLight {1}'  
+          mapNameTemplate: 'TorchLight {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
-        - type: StationJobs 
+        - type: StationJobs
           availableJobs:
             ContractorInterview: [ 0, 0 ]
             PilotInterview: [ 0, 0 ]

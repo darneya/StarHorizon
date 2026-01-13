@@ -132,7 +132,7 @@
           type: WiresBoundUserInterface
   - type: RadarConsole
   - type: WorldLoader
-    radius: 256
+    radius: 192
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -198,6 +198,11 @@
       key_slots:
       - EncryptionKeyTraffic
   # End Frontier
+  # Horizon shipyard start
+  - type: Tag
+    tags:
+    - ShuttleConsole
+  # Horizon shipyard end
 
 - type: entity
   parent: BaseComputerShuttle
@@ -224,7 +229,7 @@
   - type: RadarConsole
     maxRange: 384
   - type: WorldLoader
-    radius: 1536
+    radius: 192
   - type: PointLight
     radius: 1.5
     energy: 1.6

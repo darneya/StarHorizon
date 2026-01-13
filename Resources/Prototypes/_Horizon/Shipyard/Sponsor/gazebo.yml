@@ -2,11 +2,11 @@
 # GitHub/Gitea: ???
 # Discord: amir7036
 
-# Информация об сопровождающем 
+# Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
-# Discord: Astrolaris 
+# Discord: Astrolaris
 
-# Прототип шаттла: 
+# Прототип шаттла:
 #
 - type: vessel
   id: Gazebo
@@ -22,6 +22,15 @@
   - Kitchen
   engine:
   - Uranium
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+  # Horizon end
 
 - type: gameMap
   id: Gazebo
@@ -33,11 +42,11 @@
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Gazebo {1}'  
+          mapNameTemplate: 'Gazebo {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
-        - type: StationJobs 
+        - type: StationJobs
           availableJobs:
             ContractorInterview: [ 0, 0 ]
             PilotInterview: [ 0, 0 ]

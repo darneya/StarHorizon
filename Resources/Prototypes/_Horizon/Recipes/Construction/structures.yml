@@ -24,6 +24,19 @@
   - !type:TileNotBlocked
 
 - type: construction
+  id: SinkRecipe
+  graph: sinkrecipe
+  startNode: start
+  targetNode: sinkrecipe
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: true
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
   id: AirlockExternalGlass
   graph: AirlockExternal
   startNode: start

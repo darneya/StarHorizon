@@ -95,6 +95,16 @@
   - type: Damageable
     damageModifierSet: Akulki
   - type: Wagging
+  # Horizon: Height traits support
+  - type: TallWhitelist
+    scale: 1.15
+    density: 170
+    cosmeticOnly: false
+  - type: ShortWhitelist
+    scale: 0.85
+    density: 130
+    cosmeticOnly: false
+  # Horizon end
 
   - type: Temperature
     heatDamageThreshold: 380
@@ -110,8 +120,8 @@
   - type: TemperatureSpeed
     thresholds:
       320: 0.3
-      311: 0.2
-      301: 0.1
+      311: 1
+      301: 1.1
 
   - type: Barotrauma
     damage:

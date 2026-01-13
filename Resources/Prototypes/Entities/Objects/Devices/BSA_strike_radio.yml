@@ -1,6 +1,6 @@
 - type: entity
   name: рация вызова блюспэйс артелерии
-  description: кажется она слишком похожа на рацию UAS. Перед тем как что нибудь в ней говорить подумайте об детях...
+  description: кажется она слишком похожа на рацию АнКо. Перед тем как что нибудь в ней говорить подумайте об детях...
   parent: BaseItem
   id: RadioBSA
   components:
@@ -26,10 +26,13 @@
     removeOnInteract: true
     triggerOnUse: true
 
+
+# Астро, это не ЮАС/АнКо шмотка, но в целом было бы не плохо (удален суффикс ЮАС)
+
 - type: entity
   name: голопроекция БСА удара
   description: Голопроекция БСА удара. Думаю тут лучше не задерживатся..
-  suffix: StarHorizon, UAS
+  suffix: StarHorizon
   id: BSAStrike
   placement:
     mode: SnapgridCenter
