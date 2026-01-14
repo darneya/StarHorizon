@@ -6,7 +6,7 @@
       sprite: _StarHorizon/Objects/Specific/Fishing/fishing_lure.rsi
       state: icon
     sound:
-      path: /Audio/ADT/Items/Fishing/fishing_rod_cast.ogg
+      path: /Audio/_StarHorizon/Misc/fishing_rod_cast.ogg
     itemIconStyle: BigAction
     useDelay: 2.5
   - type: TargetAction
@@ -23,7 +23,7 @@
       sprite: _StarHorizon/Objects/Specific/Fishing/goon_rod.rsi
       state: icon
     sound:
-      path: /Audio/ADT/Items/Fishing/fishing_rod_reel.ogg
+      path: /Audio/_StarHorizon/Misc/fishing_rod_reel.ogg
     itemIconStyle: NoItem
   - type: InstantAction
     event: !type:PullFishingLureActionEvent
