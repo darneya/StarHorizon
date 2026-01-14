@@ -4,6 +4,7 @@
   mapName: shuttle-destination-grasslands
   mapLight: "#413e2c"
   spawnRoundstart: true
+  mapPath: /Maps/_Horizon/Nonstations/grasslands-outpost.yml
   addedComponents:
   - type: SpawnInRange
     spawns:
@@ -54,13 +55,14 @@
   mapName: shuttle-destination-lavaland
   mapLight: "#1a0005"
   spawnRoundstart: true
+  mapPath: /Maps/_Horizon/Nonstations/lavaland-outpost.yml
   addedComponents:
   - type: SpawnInRange
     spawns:
       LavaDungeonRoomMarker:
         min: 7
         max: 9
-    minRange: 40
+    minRange: 80
     maxRange: 300
     minDistanceBetweenSpawns: 25
   - type: FTLDestination
@@ -107,6 +109,7 @@
   mapName: shuttle-destination-snow
   mapLight: "#2c4041"
   spawnRoundstart: true
+  mapPath: /Maps/_Horizon/Nonstations/iceland-outpost.yml
   addedComponents:
   - type: SpawnInRange
     spawns:

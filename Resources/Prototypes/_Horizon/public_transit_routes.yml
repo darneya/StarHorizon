@@ -1,0 +1,7 @@
+# - type: publicTransitRoute
+#   id: Planets
+#   routeNumber: 4
+#   dockTag: PlanetTaxiAirlock
+#   busVessels:
+#   - Cheetah
+#   liveryColor: "#aa7244"
