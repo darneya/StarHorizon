@@ -1,0 +1,12 @@
+- type: expeditionGoal
+  id: Omnizine
+  specification: Medical
+  randomAmount:
+    min: 3
+    max: 5
+  amountMultiplier: 10
+  goal: !type:ReagentExpeditionGoal
+    description: exp-goal-omnizine
+    iconEntity: ChemistryBottleOmnizine
+    reward: 15000
+    requiredReagent: Omnizine
