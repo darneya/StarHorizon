@@ -32,7 +32,7 @@ public sealed class FishingOverlay : Overlay
         _transform = _entManager.EntitySysManager.GetEntitySystem<SharedTransformSystem>();
         _progressColor = _entManager.System<ProgressColorSystem>();
 
-        var sprite = new SpriteSpecifier.Rsi(new("/Textures/ADT/Interface/Misc/fish_bar.rsi"), "icon");
+        var sprite = new SpriteSpecifier.Rsi(new("/Textures/_Horizon/Interface/fish_bar.rsi"), "icon");
         _barTexture = _entManager.EntitySysManager.GetEntitySystem<SpriteSystem>().Frame0(sprite);
     }
 
