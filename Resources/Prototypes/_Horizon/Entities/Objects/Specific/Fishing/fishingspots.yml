@@ -30,13 +30,13 @@
     noRot: true
   - type: Clickable
   - type: InteractionOutline
-  - type: Sprite
-    sprite: _Horizon/Objects/Specific/Fishing/fishing_spot.rsi
-    state: water
-  - type: Icon
-    sprite: _Horizon/Objects/Specific/Fishing/fishing_spot.rsi
-    state: water
+#   - type: Sprite
+#     sprite: _Horizon/Objects/Specific/Fishing/fishing_spot.rsi
+#     state: water
+#   - type: Icon
+#     sprite: _Horizon/Objects/Specific/Fishing/fishing_spot.rsi
+#     state: water
 
-- type: entity
-  id: FishingSpotWater
-  parent: BaseFishingSpot
+# - type: entity
+#   id: FishingSpotWater
+#   parent: BaseFishingSpot
