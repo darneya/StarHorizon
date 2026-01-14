@@ -118,7 +118,7 @@
       allowedTiles:
         - FloorBasalt
       entities:
-        - NFBasaltRoomMarker
+        - LavaDungeonRoomMarker
 
     # floor ents
     - !type:BiomeEntityLayer
