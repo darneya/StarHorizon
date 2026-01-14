@@ -11,10 +11,10 @@ namespace Content.Server._Horizon.SponsorManager
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         private FileSystemWatcher _watcher = default!;
 
-        private readonly string _sponsorsFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/sponsors.txt";
-        private readonly string _dsSponsorsFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/discord_sponsors.txt";
-        private readonly string _disposableFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/disposable.txt";
-        private readonly string _sponsorItemsFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/sponsor_items.txt";
+        private readonly string _sponsorsFilePath = "../ss14_data/sponsorSystem/sponsors.txt";
+        private readonly string _dsSponsorsFilePath = "../ss14_data/sponsorSystem/discord_sponsors.txt";
+        private readonly string _disposableFilePath = "../ss14_data/sponsorSystem/disposable.txt";
+        private readonly string _sponsorItemsFilePath = "../ss14_data/sponsorSystem/sponsor_items.txt";
 
         private static HashSet<string> _sponsors = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly Dictionary<string, int> _sponsorsAndBalances = new(StringComparer.OrdinalIgnoreCase);
@@ -50,7 +50,7 @@ namespace Content.Server._Horizon.SponsorManager
         {
             _watcher = new FileSystemWatcher()
             {
-                Path = Directory.GetCurrentDirectory() + @"/Resources/Prototypes/_Horizon/Sponsors/SponsorInfo",
+                Path = Path.GetFullPath("../ss14_data/sponsorSystem"),
                 Filter = "discord_sponsors.txt",
                 NotifyFilter = NotifyFilters.LastWrite,
             };
