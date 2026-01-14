@@ -186,6 +186,9 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             }
 
             Dirty(idCard.Owner, goalsCard);
+
+            if (_container.TryGetContainingContainer(idCard.Owner, out var container) && TryComp<CartridgeLoaderComponent>(container.Owner, out var loader))
+                _cartridgeLoader.UpdateUiState(container.Owner, null, loader);
         }
     }
 
@@ -208,6 +211,9 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             }
 
             Dirty(idCard.Owner, goalsCard);
+
+            if (_container.TryGetContainingContainer(idCard.Owner, out var container) && TryComp<CartridgeLoaderComponent>(container.Owner, out var loader))
+                _cartridgeLoader.UpdateUiState(container.Owner, null, loader);
         }
     }
 
