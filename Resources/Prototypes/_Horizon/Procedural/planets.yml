@@ -4,14 +4,15 @@
   mapName: shuttle-destination-grasslands
   mapLight: "#413e2c"
   spawnRoundstart: true
+  mapPath: /Maps/_Horizon/Nonstations/grasslands-outpost.yml
   addedComponents:
   - type: SpawnInRange
     spawns:
       GenericDungeonMarker:
-        min: 10
-        max: 25
+        min: 3
+        max: 5
     minRange: 150
-    maxRange: 1500
+    maxRange: 1000
     minDistanceBetweenSpawns: 120
   - type: FTLDestination
   - type: WeatherCycle
@@ -34,6 +35,13 @@
       duration:
         min: 400
         max: 800
+  - type: LightCycle
+    minLevel: "#675d8d"
+    clipLevel: "#948671"
+    maxLevel: "#fffcc2"
+    clipLight: 2
+    maxLightLevel: 6
+    minLightLevel: 0.4
   atmosphere:
     volume: 2500
     temperature: 293.15
@@ -52,15 +60,16 @@
   id: Lavaland
   biome: LavaLand
   mapName: shuttle-destination-lavaland
-  mapLight: "#1a0005"
+  mapLight: "#664940"
   spawnRoundstart: true
+  mapPath: /Maps/_Horizon/Nonstations/lavaland-outpost.yml
   addedComponents:
   - type: SpawnInRange
     spawns:
       LavaDungeonRoomMarker:
         min: 7
         max: 9
-    minRange: 40
+    minRange: 80
     maxRange: 300
     minDistanceBetweenSpawns: 25
   - type: FTLDestination
@@ -70,20 +79,24 @@
         min: 400
         max: 600
     - weather: AshfallLight # ash starts to fall, 30 second warning
-      message: ash-storm-telegraph
       duration:
         min: 30
         max: 30
     - weather: Ashfall # 1-2 minutes of damaging storm
-      message: ash-storm-alert
       duration:
         min: 60
         max: 120
     - weather: AshfallLight # ash clears away for 30 seconds
-      message: ash-storm-clearing
       duration:
         min: 30
         max: 30
+  - type: LightCycle
+    minLevel: "#8d745d"
+    clipLevel: "#7c4534"
+    maxLevel: "#913f39"
+    clipLight: 2
+    maxLightLevel: 1.25
+    minLightLevel: 1
   atmosphere:
     volume: 2500
     temperature: 313.15 # 40C
@@ -107,14 +120,15 @@
   mapName: shuttle-destination-snow
   mapLight: "#2c4041"
   spawnRoundstart: true
+  mapPath: /Maps/_Horizon/Nonstations/iceland-outpost.yml
   addedComponents:
   - type: SpawnInRange
     spawns:
       SnowDungeonMarker:
-        min: 10
-        max: 17
-    minRange: 40
-    maxRange: 800
+        min: 3
+        max: 4
+    minRange: 120
+    maxRange: 900
     minDistanceBetweenSpawns: 50
   - type: FTLDestination
   - type: WeatherCycle
@@ -142,6 +156,13 @@
       duration:
         min: 10
         max: 30
+  - type: LightCycle
+    minLevel: "#49445c"
+    clipLevel: "#545a77"
+    maxLevel: "#f6ffc2"
+    clipLight: 2
+    maxLightLevel: 2
+    minLightLevel: 0.2
   atmosphere:
     volume: 2500
     temperature: 273.15

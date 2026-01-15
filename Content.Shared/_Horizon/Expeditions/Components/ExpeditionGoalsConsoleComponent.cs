@@ -10,8 +10,10 @@ public sealed partial class ExpeditionGoalsConsoleComponent : Component
     public List<ProtoId<ExpeditionGoalCategoryPrototype>> Categories = new()
     {
         "Crew",
+        "Science",
+        "Engineer",
         "Expeditionary",
-        "Mining",
+        "Security",
         "Medical",
     };
 }

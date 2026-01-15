@@ -2,6 +2,15 @@
   id: Crew
 
 - type: expeditionGoalCategory
+  id: Science
+
+- type: expeditionGoalCategory
+  id: Engineer
+
+- type: expeditionGoalCategory
+  id: Security
+
+- type: expeditionGoalCategory
   id: Expeditionary
 
 - type: expeditionGoalCategory
