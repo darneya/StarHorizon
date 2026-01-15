@@ -11,8 +11,8 @@
       GenericDungeonMarker:
         min: 3
         max: 5
-    minRange: 150
-    maxRange: 1000
+    minRange: 120
+    maxRange: 500
     minDistanceBetweenSpawns: 120
   - type: FTLDestination
   - type: WeatherCycle
@@ -128,7 +128,7 @@
         min: 3
         max: 4
     minRange: 120
-    maxRange: 900
+    maxRange: 450
     minDistanceBetweenSpawns: 50
   - type: FTLDestination
   - type: WeatherCycle
