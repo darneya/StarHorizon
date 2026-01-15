@@ -71,14 +71,17 @@ namespace Content.Shared._Horizon.CCVar
         public static readonly CVarDef<float> TrashCleanupStartDelay =
             CVarDef.Create("trash.cleanup_start_delay", 600f, CVar.SERVERONLY);
 
-        /*
-         * Очистка гридов (Grid Cleanup)
-         */
-
         /// <summary>
         /// Включение/отключение автоматического удаления мелких гридов.
         /// </summary>
         public static readonly CVarDef<bool> AutoGridCleanupEnabled =
             CVarDef.Create("shuttle.grid_cleanup_enabled", true, CVar.SERVERONLY | CVar.ARCHIVE);
+
+        /// <summary>
+        /// Включение/отключение автоматического удаления брошенных шаттлов.
+        /// </summary>
+        public static readonly CVarDef<bool> AutoDeleteEnabled =
+            CVarDef.Create("shuttle.autodelete_enabled", true, CVar.SERVERONLY | CVar.ARCHIVE,
+                "Отключить или включить автоудаление шаттлов.");
     }
 }
