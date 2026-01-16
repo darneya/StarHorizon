@@ -9393,7 +9393,7 @@ entities:
       pos: 0.5,5.5
       parent: 1
     - type: WarpPoint
-      location: Лаваленд - Шахтёрский Аванпост
+      location: Шахтёрский Аванпост Лаваленда
 - proto: Grille
   entities:
   - uid: 1250

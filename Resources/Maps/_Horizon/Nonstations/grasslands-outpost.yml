@@ -9117,7 +9117,7 @@ entities:
       pos: 0.5,5.5
       parent: 1
     - type: WarpPoint
-      location: Лаваленд - Шахтёрский Аванпост
+      location: Лесной Аванпост
 - proto: Grille
   entities:
   - uid: 1250

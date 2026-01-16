@@ -1,6 +1,6 @@
 - type: planet
   id: Grasslands
-  biome: Grasslands
+  biome: GrasslandsMobs
   mapName: shuttle-destination-grasslands
   mapLight: "#413e2c"
   spawnRoundstart: true
@@ -116,7 +116,7 @@
 
 - type: planet
   id: Snow
-  biome: Snow
+  biome: SnowMobs
   mapName: shuttle-destination-snow
   mapLight: "#2c4041"
   spawnRoundstart: true
