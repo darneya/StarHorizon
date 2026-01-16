@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Content.Shared._Horizon.CCVar;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 
@@ -11,10 +12,10 @@ namespace Content.Server._Horizon.SponsorManager
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         private FileSystemWatcher _watcher = default!;
 
-        private readonly string _sponsorsFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/sponsors.txt";
-        private readonly string _dsSponsorsFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/discord_sponsors.txt";
-        private readonly string _disposableFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/disposable.txt";
-        private readonly string _sponsorItemsFilePath = "Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/sponsor_items.txt";
+        private string _sponsorsFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemSponsorsPath);
+        private string _dsSponsorsFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemDiscordSponsorsPath);
+        private string _disposableFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemDisposablePath);
+        private string _sponsorItemsFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath);
 
         private static HashSet<string> _sponsors = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly Dictionary<string, int> _sponsorsAndBalances = new(StringComparer.OrdinalIgnoreCase);
@@ -48,10 +49,14 @@ namespace Content.Server._Horizon.SponsorManager
         #region File Watcher
         public void FileWatcher()
         {
+            var discordSponsorsPath = _dsSponsorsFilePath;
+            var directoryPath = Path.GetDirectoryName(discordSponsorsPath);
+            var fileName = Path.GetFileName(discordSponsorsPath);
+
             _watcher = new FileSystemWatcher()
             {
-                Path = Directory.GetCurrentDirectory() + @"/Resources/Prototypes/_Horizon/Sponsors/SponsorInfo",
-                Filter = "discord_sponsors.txt",
+                Path = Path.GetFullPath(directoryPath ?? "../ss14_data/sponsorSystem"),
+                Filter = fileName ?? "discord_sponsors.txt",
                 NotifyFilter = NotifyFilters.LastWrite,
             };
 
