@@ -49,6 +49,30 @@ namespace Content.Shared._Horizon.CCVar
         public static readonly CVarDef<bool> ShutdownEnabled =
             CVarDef.Create("paths.shutdown_enabled", false, CVar.SERVERONLY);
 
+        /// <summary>
+        ///     Path to sponsors.txt file
+        /// </summary>
+        public static readonly CVarDef<string> SponsorSystemSponsorsPath =
+            CVarDef.Create("sponsor.sponsors_path", "../ss14_data/sponsorSystem/sponsors.txt", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Path to discord_sponsors.txt file
+        /// </summary>
+        public static readonly CVarDef<string> SponsorSystemDiscordSponsorsPath =
+            CVarDef.Create("sponsor.discord_sponsors_path", "../ss14_data/sponsorSystem/discord_sponsors.txt", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Path to disposable.txt file
+        /// </summary>
+        public static readonly CVarDef<string> SponsorSystemDisposablePath =
+            CVarDef.Create("sponsor.disposable_path", "../ss14_data/sponsorSystem/disposable.txt", CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Path to sponsor_items.txt file
+        /// </summary>
+        public static readonly CVarDef<string> SponsorSystemItemsPath =
+            CVarDef.Create("sponsor.items_path", "../ss14_data/sponsorSystem/sponsor_items.txt", CVar.SERVERONLY);
+
         /*
          * Очистка мусора (Trash Cleanup)
          */
