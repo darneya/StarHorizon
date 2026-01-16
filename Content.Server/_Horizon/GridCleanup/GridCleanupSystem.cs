@@ -5,20 +5,26 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Maths;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Log;
+using Robust.Server.Player;
+using Robust.Shared.Player;
 using Content.Server.Salvage.Expeditions;
 using Content.Server.Gateway.Components;
+using Content.Server.Mind;
+using Content.Shared.Ghost;
 using Content.Shared._Horizon.CCVar;
 
 namespace Content.Server._Horizon.GridCleanup;
 
 /// <summary>
-/// Автоматически удаляет мелкие гриды (менее 10 тайлов) после задержки в 300 секунд.
+/// Автоматически удаляет мелкие гриды (менее 10 тайлов) после задержки в 600 секунд.
 /// </summary>
 public sealed class GridCleanupSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
 
     private readonly ISawmill _sawmill = Logger.GetSawmill("gridcleanup");
 
@@ -26,9 +32,19 @@ public sealed class GridCleanupSystem : EntitySystem
     private const int MinimumTiles = 10;
 
     // The delay before cleaning up a small grid (in seconds)
-    private const float CleanupDelay = 300f;
+    private const float CleanupDelay = 600f;
+
+    // Interval for rechecking grids that were skipped due to players (in seconds)
+    private const float RecheckInterval = 60f;
+
     // Dictionary to track grids scheduled for deletion
     private readonly Dictionary<EntityUid, TimeSpan> _pendingCleanup = new();
+
+    // Set of grids that were skipped due to players - need to be rechecked periodically
+    private readonly HashSet<EntityUid> _skippedDueToPlayers = new();
+
+    // Last time we rechecked skipped grids
+    private TimeSpan _lastRecheckTime = TimeSpan.Zero;
 
     public override void Initialize()
     {
@@ -110,6 +126,18 @@ public sealed class GridCleanupSystem : EntitySystem
             return;
         }
 
+        // Check if there are players on the grid
+        if (HasPlayersOnGrid(gridUid))
+        {
+            _sawmill.Debug($"CheckGrid: Skipping grid {gridUid} - players present");
+            // Add to recheck list so we can check again when players leave
+            _skippedDueToPlayers.Add(gridUid);
+            return;
+        }
+
+        // Remove from recheck list if it was there (players left)
+        _skippedDueToPlayers.Remove(gridUid);
+
         // Count tiles
         var tileCount = CountTiles((gridUid, grid));
 
@@ -127,6 +155,9 @@ public sealed class GridCleanupSystem : EntitySystem
         if (_pendingCleanup.ContainsKey(gridUid))
             return;
 
+        // Remove from recheck list if it was there
+        _skippedDueToPlayers.Remove(gridUid);
+
         var targetTime = _timing.CurTime + TimeSpan.FromSeconds(CleanupDelay);
         _pendingCleanup[gridUid] = targetTime;
     }
@@ -135,11 +166,22 @@ public sealed class GridCleanupSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        if (!IsCleanupEnabled() || _pendingCleanup.Count == 0)
+        if (!IsCleanupEnabled())
+            return;
+
+        var currentTime = _timing.CurTime;
+
+        // Periodically recheck grids that were skipped due to players
+        if (currentTime - _lastRecheckTime >= TimeSpan.FromSeconds(RecheckInterval))
+        {
+            _lastRecheckTime = currentTime;
+            RecheckSkippedGrids();
+        }
+
+        if (_pendingCleanup.Count == 0)
             return;
 
         // Check if any grids need to be cleaned up
-        var currentTime = _timing.CurTime;
         var toRemove = new List<EntityUid>();
 
         foreach (var (gridUid, targetTime) in _pendingCleanup)
@@ -185,6 +227,16 @@ public sealed class GridCleanupSystem : EntitySystem
             // Verify it still has a grid component
             if (!TryComp<MapGridComponent>(gridUid, out var grid))
             {
+                toRemove.Add(gridUid);
+                continue;
+            }
+
+            // Check if there are players on the grid before deletion
+            if (HasPlayersOnGrid(gridUid))
+            {
+                _sawmill.Debug($"Update: Removing grid {gridUid} from cleanup queue - players present");
+                // Add to recheck list so we can check again when players leave
+                _skippedDueToPlayers.Add(gridUid);
                 toRemove.Add(gridUid);
                 continue;
             }
@@ -244,5 +296,120 @@ public sealed class GridCleanupSystem : EntitySystem
         }
 
         return tileCount;
+    }
+
+    /// <summary>
+    /// Checks if there are any players on the grid or its children.
+    /// </summary>
+    private bool HasPlayersOnGrid(EntityUid uid)
+    {
+        var xform = Transform(uid);
+        var childEnumerator = xform.ChildEnumerator;
+
+        while (childEnumerator.MoveNext(out var child))
+        {
+            // Ghosts don't prevent grid cleanup
+            if (HasComp<GhostComponent>(child))
+                continue;
+
+            // Check if we have a player entity that's either still around or alive and may come back
+            if (_mind.TryGetMind(child, out _, out var mindComp)
+                && (mindComp.UserId != null && _player.ValidSessionId(mindComp.UserId.Value)
+                || !_mind.IsCharacterDeadPhysically(mindComp)))
+            {
+                return true;
+            }
+
+            // Recursively check children
+            if (HasPlayersOnGrid(child))
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Rechecks grids that were previously skipped due to players.
+    /// If players have left and grid is still small, adds it back to cleanup queue.
+    /// </summary>
+    private void RecheckSkippedGrids()
+    {
+        if (_skippedDueToPlayers.Count == 0)
+            return;
+
+        var toRemove = new List<EntityUid>();
+
+        foreach (var gridUid in _skippedDueToPlayers)
+        {
+            // Check if grid still exists
+            if (!EntityManager.EntityExists(gridUid))
+            {
+                toRemove.Add(gridUid);
+                continue;
+            }
+
+            // Skip if already in cleanup queue
+            if (_pendingCleanup.ContainsKey(gridUid))
+            {
+                toRemove.Add(gridUid);
+                continue;
+            }
+
+            // Skip gateway destination grids
+            if (HasComp<GatewayGeneratorDestinationComponent>(gridUid))
+            {
+                toRemove.Add(gridUid);
+                continue;
+            }
+
+            // Skip if this is a planet expedition grid
+            if (HasComp<SalvageExpeditionComponent>(gridUid))
+            {
+                toRemove.Add(gridUid);
+                continue;
+            }
+
+            // Skip if the parent map has a SalvageExpeditionComponent
+            var transform = Transform(gridUid);
+            var mapId = transform.MapID;
+            var mapUid = _mapSystem.GetMapOrInvalid(mapId);
+
+            if (mapUid != EntityUid.Invalid && HasComp<SalvageExpeditionComponent>(mapUid))
+            {
+                toRemove.Add(gridUid);
+                continue;
+            }
+
+            // Check if players are still present
+            if (HasPlayersOnGrid(gridUid))
+            {
+                // Players still present, keep in recheck list
+                continue;
+            }
+
+            // Players left, check if grid is still small
+            if (!TryComp<MapGridComponent>(gridUid, out var grid))
+            {
+                toRemove.Add(gridUid);
+                continue;
+            }
+
+            var tileCount = CountTiles((gridUid, grid));
+            if (tileCount < MinimumTiles)
+            {
+                // Grid is still small and players left, schedule for cleanup
+                _sawmill.Debug($"RecheckSkippedGrids: Re-adding grid {gridUid} to cleanup queue with {tileCount} tiles (players left)");
+                ScheduleGridCleanup(gridUid);
+            }
+
+            // Remove from recheck list (either scheduled or no longer small)
+            toRemove.Add(gridUid);
+        }
+
+        // Clean up removed grids
+        foreach (var gridUid in toRemove)
+        {
+            _skippedDueToPlayers.Remove(gridUid);
+        }
     }
 }
