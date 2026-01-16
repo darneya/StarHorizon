@@ -11,6 +11,7 @@ using Content.Server.Salvage.Expeditions;
 using Content.Server.Gateway.Components;
 using Content.Server.Mind;
 using Content.Shared.Ghost;
+using Content.Shared.Parallax.Biomes;
 using Content.Shared._Horizon.CCVar;
 
 namespace Content.Server._Horizon.GridCleanup;
@@ -120,10 +121,22 @@ public sealed class GridCleanupSystem : EntitySystem
         var mapId = transform.MapID;
         var mapUid = _mapSystem.GetMapOrInvalid(mapId);
 
-        if (mapUid != EntityUid.Invalid && HasComp<SalvageExpeditionComponent>(mapUid))
+        if (mapUid != EntityUid.Invalid)
         {
-            //_sawmill.Debug($"CheckGrid: Skipping grid {gridUid} on expedition map {mapUid}");
-            return;
+            // Skip if map has SalvageExpeditionComponent
+            if (HasComp<SalvageExpeditionComponent>(mapUid))
+            {
+                //_sawmill.Debug($"CheckGrid: Skipping grid {gridUid} on expedition map {mapUid}");
+                return;
+            }
+
+            // Skip if map has BiomeComponent - biomes generate tiles dynamically
+            // and LocalAABB may be inaccurate until tiles are generated
+            if (HasComp<BiomeComponent>(mapUid))
+            {
+                _sawmill.Debug($"CheckGrid: Skipping grid {gridUid} on biome map {mapUid} - tiles generated dynamically");
+                return;
+            }
         }
 
         // Check if there are players on the grid
@@ -212,16 +225,27 @@ public sealed class GridCleanupSystem : EntitySystem
                 continue;
             }
 
-            // Skip if the parent map has an expedition component
+            // Skip if the parent map has an expedition component or biome component
             var xform = Transform(gridUid);
             var mapId = xform.MapID;
             var mapUid = _mapSystem.GetMapOrInvalid(mapId);
 
-            if (mapUid != EntityUid.Invalid && HasComp<SalvageExpeditionComponent>(mapUid))
+            if (mapUid != EntityUid.Invalid)
             {
-                _sawmill.Debug($"Update: Removing grid {gridUid} on expedition map {mapUid} from cleanup queue");
-                toRemove.Add(gridUid);
-                continue;
+                if (HasComp<SalvageExpeditionComponent>(mapUid))
+                {
+                    _sawmill.Debug($"Update: Removing grid {gridUid} on expedition map {mapUid} from cleanup queue");
+                    toRemove.Add(gridUid);
+                    continue;
+                }
+
+                // Skip if map has BiomeComponent - biomes generate tiles dynamically
+                if (HasComp<BiomeComponent>(mapUid))
+                {
+                    _sawmill.Debug($"Update: Removing grid {gridUid} on biome map {mapUid} from cleanup queue - tiles generated dynamically");
+                    toRemove.Add(gridUid);
+                    continue;
+                }
             }
 
             // Verify it still has a grid component
@@ -369,15 +393,25 @@ public sealed class GridCleanupSystem : EntitySystem
                 continue;
             }
 
-            // Skip if the parent map has a SalvageExpeditionComponent
+            // Skip if the parent map has a SalvageExpeditionComponent or BiomeComponent
             var transform = Transform(gridUid);
             var mapId = transform.MapID;
             var mapUid = _mapSystem.GetMapOrInvalid(mapId);
 
-            if (mapUid != EntityUid.Invalid && HasComp<SalvageExpeditionComponent>(mapUid))
+            if (mapUid != EntityUid.Invalid)
             {
-                toRemove.Add(gridUid);
-                continue;
+                if (HasComp<SalvageExpeditionComponent>(mapUid))
+                {
+                    toRemove.Add(gridUid);
+                    continue;
+                }
+
+                // Skip if map has BiomeComponent - biomes generate tiles dynamically
+                if (HasComp<BiomeComponent>(mapUid))
+                {
+                    toRemove.Add(gridUid);
+                    continue;
+                }
             }
 
             // Check if players are still present
