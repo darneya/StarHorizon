@@ -9,7 +9,7 @@ public sealed class BluespaceHarvesterBundleSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
 
-    private readonly ISawmill _sawmill = Logger.GetSawmill("bluespaceHarvester.bundle");
+    private readonly ISawmill _sawmill = Logger.GetSawmill("TEST.bluespaceHarvester.bundle");
 
     public override void Initialize()
     {

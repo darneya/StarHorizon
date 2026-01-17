@@ -27,7 +27,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;
 
-    private readonly ISawmill _sawmill = Logger.GetSawmill("bluespaceHarvester");
+    private readonly ISawmill _sawmill = Logger.GetSawmill("TEST.bluespaceHarvester");
 
     private readonly List<BluespaceHarvesterTap> _taps =
     [

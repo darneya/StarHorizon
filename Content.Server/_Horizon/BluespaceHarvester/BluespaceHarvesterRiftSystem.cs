@@ -7,7 +7,7 @@ public sealed class BluespaceHarvesterRiftSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
 
-    private readonly ISawmill _sawmill = Logger.GetSawmill("bluespaceHarvester.rift");
+    private readonly ISawmill _sawmill = Logger.GetSawmill("TEST.bluespaceHarvester.rift");
 
     public override void Update(float frameTime)
     {
