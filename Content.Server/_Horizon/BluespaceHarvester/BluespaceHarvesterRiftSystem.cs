@@ -1,10 +1,13 @@
 using Robust.Shared.Random;
+using Robust.Shared.Log;
 
 namespace Content.Server._Horizon.BluespaceHarvester;
 
 public sealed class BluespaceHarvesterRiftSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
+
+    private readonly ISawmill _sawmill = Logger.GetSawmill("bluespaceHarvester.rift");
 
     public override void Update(float frameTime)
     {
@@ -20,7 +23,9 @@ public sealed class BluespaceHarvesterRiftSystem : EntitySystem
                 comp.PassiveSpawnAccumulator += _random.NextFloat(comp.PassiveSpawnCooldown / 2f);
 
                 // Random, not particularly dangerous mob.
-                Spawn(_random.Pick(comp.PassiveSpawn), xform.Coordinates);
+                var spawnPrototype = _random.Pick(comp.PassiveSpawn);
+                _sawmill.Debug($"Bluespace harvester rift {ToPrettyString(uid)} passive spawn: {spawnPrototype}");
+                Spawn(spawnPrototype, xform.Coordinates);
             }
 
             comp.SpawnAccumulator += frameTime;
@@ -55,6 +60,7 @@ public sealed class BluespaceHarvesterRiftSystem : EntitySystem
             // If we cannot choose anything, this means that we have used up all the danger sufficient before spawn.
             if (pickable.Count == 0)
             {
+                _sawmill.Debug($"Bluespace harvester rift {ToPrettyString(ent.Owner)} no spawnable entities available. Remaining danger: {rift.Danger}");
                 rift.Danger = 0; // This will disable pointless spawn attempts.
                 break;
             }
@@ -64,6 +70,7 @@ public sealed class BluespaceHarvesterRiftSystem : EntitySystem
             // because they still have a whole cart of ordinary ones.
             var pick = _random.Pick(pickable);
             rift.Danger -= pick.Cost; // Deduct the risk spent on the purchase.
+            _sawmill.Info($"Bluespace harvester rift {ToPrettyString(ent.Owner)} spawning {pick.Id} for {pick.Cost} danger. Remaining: {rift.Danger}");
             Spawn(pick.Id, xfrom.Coordinates);
         }
     }
