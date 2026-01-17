@@ -1,15 +1,14 @@
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Destructible.Thresholds;
-using Content.Shared.Stacks;
 using Content.Shared.Storage.Components;
 using Content.Shared.Storage.EntitySystems;
-using Content.Shared.Tag;
-using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Horizon.Expeditions;
 
+/// <summary>
+/// Цель, требующая определённое число реагента
+/// </summary>
 [Serializable, NetSerializable]
 public sealed partial class ReagentExpeditionGoal : ExpeditionGoal
 {

@@ -85,10 +85,12 @@ public sealed class PlanetSystem : EntitySystem
         if (!_mapLoader.TryLoadGrid(dummyMap, vessel.ShuttlePath, out var grid))
             return;
 
+        // Добавляем нужные компоненты
         var taxi = EnsureComp<PlanetTaxiComponent>(grid.Value);
         var shuttle = EnsureComp<ShuttleComponent>(grid.Value);
         EnsureComp<PreventPilotComponent>(grid.Value);
 
+        // Выставляем текст на экранах
         var netComp = EnsureComp<DeviceNetworkComponent>(grid.Value);
         _deviceNetwork.SetTransmitFrequency(grid.Value, 10000, netComp);
         var payload = new NetworkPayload
@@ -98,6 +100,7 @@ public sealed class PlanetSystem : EntitySystem
         };
         _deviceNetwork.QueuePacket(grid.Value, null, payload, 10000, device: netComp);
 
+        // Удаляем лишнее без удаления энтити
         var children = Transform(grid.Value.Owner).ChildEnumerator;
         while (children.MoveNext(out var uid))
             RemComp<BusScheduleComponent>(uid);
