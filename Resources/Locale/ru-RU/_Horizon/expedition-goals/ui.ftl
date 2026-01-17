@@ -1,7 +1,7 @@
 expedition-goal-remove-button = Отказаться
 expeditions-goal-title-label = Задача #{ $id }
 expeditions-goal-reward-label = Награда: { $reward }{ $currency }
-expeditions-goal-entity-reward-label = Бонус: { $entity }
+expeditions-goal-reward-entity-label = Бонус: { $entity }
 expedition-goal-not-assigned = Отсутствует
 goals-console-specification-label = Вид задач:
 
@@ -9,4 +9,7 @@ goal-specification-Expeditionary = Экспедиционные
 goal-specification-Mining = Шахтёрские
 goal-specification-Crew = Общие
 goal-specification-Medical = Медицинские
+goal-specification-Engineer = Инженерные
+goal-specification-Science = Научные
+goal-specification-Security = Безопасность
 goal-specification-Syndicate = Синдикат

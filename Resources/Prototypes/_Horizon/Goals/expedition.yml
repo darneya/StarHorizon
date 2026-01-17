@@ -70,3 +70,16 @@
     iconEntity: Shiv
     reward: 4000
     requiredTag: Shiv
+
+- type: expeditionGoal
+  id: BountyGalaxyThistle
+  specification: Expeditionary
+  randomAmount:
+    min: 6
+    max: 12
+  goal: !type:EntityExpeditionGoal
+    description: bounty-description-galaxythistle
+    iconEntity: FoodGalaxythistle
+    reward: 12000
+    requiredTag: Galaxythistle
+

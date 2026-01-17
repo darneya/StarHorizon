@@ -2,6 +2,7 @@
 - type: expeditionGoal
   id: BountyBaseballBat
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 4
     max: 10
@@ -14,6 +15,7 @@
 - type: expeditionGoal
   id: BountyBread
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 1
     max: 5
@@ -26,6 +28,7 @@
 - type: expeditionGoal
   id: BountyPie
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 1
     max: 5
@@ -38,6 +41,7 @@
 - type: expeditionGoal
   id: BountyPancake
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 6
     max: 13
@@ -50,6 +54,7 @@
 - type: expeditionGoal
   id: BountyCardboardBox
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 10
     max: 15
@@ -62,6 +67,7 @@
 - type: expeditionGoal
   id: BountyCarrot
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 5
     max: 10
@@ -74,18 +80,20 @@
 - type: expeditionGoal
   id: BountyCarrotFries
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 3
     max: 7
   goal: !type:EntityExpeditionGoal
     description: bounty-description-carrot-fries
-    iconEntity: FoodCarrotFries
+    iconEntity: FoodMealFriesCarrot
     reward: 7000
     requiredTag: CarrotFries
 
 - type: expeditionGoal
   id: BountyCorn
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 5
     max: 10
@@ -96,20 +104,9 @@
     requiredTag: Corn
 
 - type: expeditionGoal
-  id: BountyGalaxyThistle
-  specification: Expeditionary
-  randomAmount:
-    min: 6
-    max: 12
-  goal: !type:EntityExpeditionGoal
-    description: bounty-description-galaxythistle
-    iconEntity: FoodGalaxythistle
-    reward: 12000
-    requiredTag: Galaxythistle
-
-- type: expeditionGoal
   id: BountyVegetable
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 4
     max: 14
@@ -122,6 +119,7 @@
 - type: expeditionGoal
   id: BountyLemon
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 5
     max: 15
@@ -134,6 +132,7 @@
 - type: expeditionGoal
   id: BountyLime
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 4
     max: 10
@@ -146,6 +145,7 @@
 - type: expeditionGoal
   id: BountyBanana
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 6
     max: 9
@@ -158,6 +158,7 @@
 - type: expeditionGoal
   id: BountyFruit
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 10
     max: 15
@@ -170,6 +171,7 @@
 - type: expeditionGoal
   id: BountyBandana
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 5
     max: 8
@@ -182,6 +184,7 @@
 - type: expeditionGoal
   id: BountyHiVizVest
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 3
     max: 3
@@ -194,6 +197,7 @@
 - type: expeditionGoal
   id: BountyWarmCloth
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 5
     max: 8
@@ -206,6 +210,7 @@
 - type: expeditionGoal
   id: BountyCottonBoll
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 4
     max: 9
@@ -218,6 +223,7 @@
 - type: expeditionGoal
   id: BountyFigurine
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 4
     max: 6
@@ -230,6 +236,7 @@
 - type: expeditionGoal
   id: BountyBedsheet
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 4
     max: 8
@@ -242,6 +249,7 @@
 - type: expeditionGoal
   id: BountyPercussion
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 3
     max: 4
@@ -254,18 +262,20 @@
 - type: expeditionGoal
   id: BountyFlower
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 3
     max: 3
   goal: !type:EntityExpeditionGoal
     description: bounty-description-flower
-    iconEntity: FlowerRose
+    iconEntity: ClothingHeadHatFlowerWreath
     reward: 2000
     requiredTag: Flower
 
 - type: expeditionGoal
   id: BountySoap
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 3
     max: 6
@@ -278,6 +288,7 @@
 - type: expeditionGoal
   id: BountyTrash
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 10
     max: 20
@@ -290,18 +301,20 @@
 - type: expeditionGoal
   id: BountyRing
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 1
     max: 2
   goal: !type:EntityExpeditionGoal
     description: bounty-description-ring
-    iconEntity: RingGold
+    iconEntity: GoldRingDiamond
     reward: 12500
     requiredTag: Ring
 
 - type: expeditionGoal
   id: BountyBeer
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 3
     max: 6
@@ -314,6 +327,7 @@
 - type: expeditionGoal
   id: BountyWine
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 2
     max: 3
@@ -326,42 +340,46 @@
 - type: expeditionGoal
   id: BountyFood
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 20
     max: 30
   goal: !type:EntityExpeditionGoal
     description: bounty-description-food
-    iconEntity: FoodMeatRaw
+    iconEntity: FoodMeat
     reward: 4000
     requiredTag: Meat
 
 - type: expeditionGoal
   id: BountyClownMask
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 1
     max: 1
   goal: !type:EntityExpeditionGoal
     description: bounty-description-clown-costume
-    iconEntity: ClothingUniformBase
+    iconEntity: ClothingUniformJumpsuitClown
     reward: 1700
     requiredTag: ClownSuit
 
 - type: expeditionGoal
   id: BountySteak
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 4
     max: 8
   goal: !type:EntityExpeditionGoal
     description: bounty-description-steak
-    iconEntity: FoodMeatSteak
+    iconEntity: FoodMeatCooked
     reward: 3200
     requiredTag: Steak
 
 - type: expeditionGoal
   id: BountyChili
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 3
     max: 6
@@ -374,6 +392,7 @@
 - type: expeditionGoal
   id: BountySoup
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 3
     max: 6
@@ -386,6 +405,7 @@
 - type: expeditionGoal
   id: BountyDonut
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 7
     max: 10
@@ -398,6 +418,7 @@
 - type: expeditionGoal
   id: BountyMonkeyCube
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 3
     max: 5
@@ -410,6 +431,7 @@
 - type: expeditionGoal
   id: BountyCrayon
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 12
     max: 24
@@ -422,6 +444,7 @@
 - type: expeditionGoal
   id: BountyPen
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 5
     max: 8
@@ -434,6 +457,7 @@
 - type: expeditionGoal
   id: BountyToolbox
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 3
     max: 6
@@ -446,6 +470,7 @@
 - type: expeditionGoal
   id: BountyLabeler
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 4
     max: 6
@@ -458,6 +483,7 @@
 - type: expeditionGoal
   id: BountyMouse
   specification: Crew
+  rewardEntity: MobHuman
   randomAmount:
     min: 2
     max: 5
