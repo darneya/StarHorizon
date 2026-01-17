@@ -446,3 +446,6 @@
 
 - type: Tag
   id: RustedWall
+
+- type: Tag
+  id: ChubbyBomb
