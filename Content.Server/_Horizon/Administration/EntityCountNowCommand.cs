@@ -17,8 +17,8 @@ public sealed class EntityCountNowCommand : IConsoleCommand
     private static readonly ISawmill _sawmill = Logger.GetSawmill("entityCountNow");
 
     public string Command => "entityCountNow";
-    public string Description => "Counts entities for all existing tags and outputs the result to console and log (only tags with count > 0).";
-    public string Help => "Usage: entityCountNow";
+    public string Description => "Counts entities for all existing tags or searches tags by partial match. Outputs to console and log.";
+    public string Help => "Usage: entityCountNow [searchTerm] - if searchTerm provided, shows only tags containing it";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
@@ -28,7 +28,6 @@ public sealed class EntityCountNowCommand : IConsoleCommand
 
         while (query.MoveNext(out var uid, out var tagComponent))
         {
-            // Проходим по всем тегам текущей сущности
             foreach (var tag in tagComponent.Tags)
             {
                 var tagString = tag.ToString();
@@ -37,9 +36,13 @@ public sealed class EntityCountNowCommand : IConsoleCommand
             }
         }
 
-        // Фильтруем теги, где количество > 0, и сортируем по количеству (по убыванию)
+        // Определяем, есть ли параметр поиска
+        var searchTerm = args.Length > 0 ? args[0] : null;
+
+        // Фильтруем теги: сначала по количеству > 0, затем по поисковому запросу (если есть)
         var filteredTags = tagCounts
             .Where(kvp => kvp.Value > 0)
+            .Where(kvp => searchTerm == null || kvp.Key.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
             .OrderByDescending(kvp => kvp.Value)
             .ThenBy(kvp => kvp.Key)
             .ToList();
@@ -47,13 +50,27 @@ public sealed class EntityCountNowCommand : IConsoleCommand
         string message;
         if (filteredTags.Count == 0)
         {
-            message = "Не найдено сущностей с тегами.";
+            if (searchTerm != null)
+            {
+                message = $"Не найдено тегов, содержащих '{searchTerm}'.";
+            }
+            else
+            {
+                message = "Не найдено сущностей с тегами.";
+            }
         }
         else
         {
-            // Формируем сообщение с результатами
             var messageBuilder = new System.Text.StringBuilder();
-            messageBuilder.AppendLine("Количество сущностей по тегам:");
+            if (searchTerm != null)
+            {
+                messageBuilder.AppendLine($"Найдено тегов, содержащих '{searchTerm}':");
+            }
+            else
+            {
+                messageBuilder.AppendLine("Количество сущностей по тегам:");
+            }
+
             foreach (var (tag, count) in filteredTags)
             {
                 messageBuilder.AppendLine($"  {tag}: {count}");
