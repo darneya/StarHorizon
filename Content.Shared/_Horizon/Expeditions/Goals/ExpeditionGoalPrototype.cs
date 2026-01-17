@@ -6,14 +6,24 @@ using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
 namespace Content.Shared._Horizon.Expeditions;
 
 [Prototype]
-public sealed partial class ExpeditionGoalPrototype : IPrototype
+public sealed partial class ExpeditionGoalPrototype : IPrototype, IInheritingPrototype
 {
     [IdDataField]
     public string ID { get; set; } = default!;
+
+    /// <inheritdoc />
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<ExpeditionGoalPrototype>))]
+    public string[]? Parents { get; }
+
+    /// <inheritdoc />
+    [NeverPushInheritance]
+    [AbstractDataField]
+    public bool Abstract { get; }
 
     [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public MinMax RandomAmount;
@@ -23,6 +33,9 @@ public sealed partial class ExpeditionGoalPrototype : IPrototype
 
     [DataField]
     public ProtoId<ExpeditionGoalCategoryPrototype> Specification = "Crew";
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public string? RewardEntity;
 
     [DataField(required: true)]
     public ExpeditionGoal Goal = default!;
@@ -46,6 +59,9 @@ public abstract partial class ExpeditionGoal
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public string RequiredStack = "Credit";
+
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public string? RewardEntity;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public bool IsContraband = false;

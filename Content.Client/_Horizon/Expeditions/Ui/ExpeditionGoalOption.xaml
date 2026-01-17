@@ -33,6 +33,10 @@
         <RichTextLabel Name="RewardLabel"
                        HorizontalExpand="True"
                        Margin="4"/>
+        <RichTextLabel Name="AdditionalRewardLabel"
+                       HorizontalExpand="True"
+                       Visible="False"
+                       Margin="4"/>
 
         <Button Name="ClaimButton"
                 HorizontalExpand="True"

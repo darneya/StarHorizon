@@ -4,6 +4,7 @@ using Content.Server._NF.Cargo.Systems;
 using Content.Server.Access.Systems;
 using Content.Server.Cargo.Systems;
 using Content.Server.CartridgeLoader;
+using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Shared._Horizon.Expeditions;
 using Content.Shared.Access.Components;
@@ -35,6 +36,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly HandsSystem _hands = default!;
 
     private Dictionary<ProtoId<ExpeditionGoalCategoryPrototype>, Dictionary<int, ExpeditionGoal>> _goals = new();
     private Dictionary<int, ExpeditionGoal> _claimedGoals = new();
@@ -182,6 +184,12 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
                 if (!goal.TryComplete(sold, EntityManager))
                     continue;
 
+                if (goal.RewardEntity != null)
+                {
+                    var ent = Spawn(goal.RewardEntity, Transform(args.Actor).Coordinates);
+                    _hands.TryPickupAnyHand(args.Actor, ent);
+                }
+
                 goalsCard.AssignedGoals.Remove(item);
             }
 
@@ -206,6 +214,12 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
                 if (!goal.TryComplete(sold, EntityManager))
                     continue;
+
+                if (goal.RewardEntity != null)
+                {
+                    var ent = Spawn(goal.RewardEntity, Transform(args.Actor).Coordinates);
+                    _hands.TryPickupAnyHand(args.Actor, ent);
+                }
 
                 goalsCard.AssignedGoals.Remove(item);
             }
@@ -309,6 +323,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             {
                 var proto = _random.Pick(specificated);
                 var goal = proto.Goal.Instantiate(proto.RandomAmount.Next(_random) * proto.AmountMultiplier);
+                goal.RewardEntity = proto.RewardEntity;
                 _goals[item].Add(_nextId, goal);
                 _nextId++;
             }
