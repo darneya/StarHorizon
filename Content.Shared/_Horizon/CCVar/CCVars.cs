@@ -70,5 +70,12 @@ namespace Content.Shared._Horizon.CCVar
         /// </summary>
         public static readonly CVarDef<float> TrashCleanupStartDelay =
             CVarDef.Create("trash.cleanup_start_delay", 600f, CVar.SERVERONLY);
+
+        /*
+         * Планетки
+         */
+        public static readonly CVarDef<bool> SpawnPlanets =
+            CVarDef.Create("game.spawn_roundstart_planets", false, CVar.SERVERONLY);
+
     }
 }
