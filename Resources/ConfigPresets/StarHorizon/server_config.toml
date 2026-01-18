@@ -121,7 +121,7 @@ enabled_admin = true
 
 [metrics]
 enabled = true
-host = "0.0.0.0"
+host = "%metrics_host%"
 port = 9001
 #runtime = false
 
