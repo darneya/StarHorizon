@@ -7,7 +7,7 @@
   components:
   - type: Fish
   - type: StaticPrice
-    price: 250
+    price: 500
   - type: Butcherable
     spawned:
       - id: FoodMeatFish
@@ -21,7 +21,7 @@
   description: Water-born creature from the infinite sea... Or toilet.
   components:
   - type: StaticPrice
-    price: 750
+    price: 2000
 
 - type: entity
   id: FishAlien

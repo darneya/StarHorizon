@@ -72,6 +72,11 @@
     children:
       - !type:NestedSelector
         tableId: BasicFishingLootTable
+        weight: 80
+      - !type:NestedSelector
+        tableId: RareFishTable
+        weight: 20
+
 
 - type: entityTable
   id: PlasmaFishingLootTable
@@ -79,3 +84,8 @@
     children:
       - !type:NestedSelector
         tableId: BasicFishingLootTable
+        weight: 80
+      - !type:NestedSelector
+        tableId: RareFishTable
+        weight: 20
+
