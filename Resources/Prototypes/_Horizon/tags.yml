@@ -446,3 +446,8 @@
 
 - type: Tag
   id: RustedWall
+
+# Airlock
+
+- type: Tag
+  id: PlanetTaxiAirlock

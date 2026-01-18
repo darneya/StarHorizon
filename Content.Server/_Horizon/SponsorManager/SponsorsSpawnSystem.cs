@@ -1,11 +1,15 @@
 using System.IO;
 using System.Linq;
 using Content.Server.GameTicking.Events;
+using Content.Shared._Horizon.CCVar;
+using Robust.Shared.Configuration;
 
 namespace Content.Server._Horizon.SponsorManager
 {
     public sealed class SponsorsSpawnSystem : EntitySystem
     {
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
+
         private readonly Dictionary<string, string[]> _sponsorItems = new();
 
         public override void Initialize()
@@ -28,7 +32,8 @@ namespace Content.Server._Horizon.SponsorManager
         {
             _sponsorItems.Clear();
 
-            foreach (var line in File.ReadLines("Resources/Prototypes/_Horizon/Sponsors/SponsorInfo/sponsor_items.txt"))
+            var sponsorItemsPath = _cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath);
+            foreach (var line in File.ReadLines(sponsorItemsPath))
             {
                 var separatorIndex = line.IndexOf(',');
                 if (separatorIndex == -1)

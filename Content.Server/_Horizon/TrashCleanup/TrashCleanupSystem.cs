@@ -43,7 +43,7 @@ public sealed class TrashCleanupSystem : EntitySystem
     /// <summary>
     /// Теги, определяющие сущности для очистки.
     /// </summary>
-    private static readonly string[] CleanupTags = { "Trash", "Cartridge" };
+    private static readonly string[] CleanupTags = { "Cartridge" };
 
     /// <summary>
     /// Префикс ID прототипа для мусорных сущностей.
