@@ -4,18 +4,21 @@ using System.Threading.Tasks;
 using Content.Shared._Horizon.CCVar;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
+using Robust.Shared.ContentPack;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Horizon.SponsorManager
 {
     public sealed class SponsorManager
     {
         [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private readonly IResourceManager _resourceManager = default!;
         private FileSystemWatcher _watcher = default!;
 
-        private string _sponsorsFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemSponsorsPath);
-        private string _dsSponsorsFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemDiscordSponsorsPath);
-        private string _disposableFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemDisposablePath);
-        private string _sponsorItemsFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath);
+        private ResPath _sponsorsFilePath => new ResPath(_cfg.GetCVar(HorizonCCVars.SponsorSystemSponsorsPath)).ToRootedPath();
+        private ResPath _dsSponsorsFilePath => new ResPath(_cfg.GetCVar(HorizonCCVars.SponsorSystemDiscordSponsorsPath)).ToRootedPath();
+        private ResPath _disposableFilePath => new ResPath(_cfg.GetCVar(HorizonCCVars.SponsorSystemDisposablePath)).ToRootedPath();
+        private ResPath _sponsorItemsFilePath => new ResPath(_cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath)).ToRootedPath();
 
         private static HashSet<string> _sponsors = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly Dictionary<string, int> _sponsorsAndBalances = new(StringComparer.OrdinalIgnoreCase);
@@ -30,18 +33,13 @@ namespace Content.Server._Horizon.SponsorManager
             EnsureFileExists(_sponsorItemsFilePath);
         }
 
-        private void EnsureFileExists(string filePath)
+        private void EnsureFileExists(ResPath filePath)
         {
-            var directoryPath = Path.GetDirectoryName(filePath);
+            _resourceManager.UserData.CreateDir(filePath.Directory);
 
-            if (!Directory.Exists(directoryPath))
+            if (!_resourceManager.UserData.Exists(filePath))
             {
-                Directory.CreateDirectory(directoryPath!);
-            }
-
-            if (!File.Exists(filePath))
-            {
-                File.WriteAllText(filePath, string.Empty);
+                _resourceManager.UserData.WriteAllText(filePath, string.Empty);
             }
         }
         #endregion Check files
@@ -50,18 +48,26 @@ namespace Content.Server._Horizon.SponsorManager
         public void FileWatcher()
         {
             var discordSponsorsPath = _dsSponsorsFilePath;
-            var directoryPath = Path.GetDirectoryName(discordSponsorsPath);
-            var fileName = Path.GetFileName(discordSponsorsPath);
+            var directoryPath = discordSponsorsPath.Directory;
+            var fileName = discordSponsorsPath.Filename;
 
-            _watcher = new FileSystemWatcher()
+            // Получаем реальный путь файловой системы из UserData
+            var rootDir = _resourceManager.UserData.RootDir;
+            if (rootDir != null)
             {
-                Path = Path.GetFullPath(directoryPath ?? "../ss14_data/sponsorSystem"),
-                Filter = fileName ?? "discord_sponsors.txt",
-                NotifyFilter = NotifyFilters.LastWrite,
-            };
+                var relativeDirPath = directoryPath.ToRelativeSystemPath();
+                var fullDirectoryPath = Path.GetFullPath(Path.Combine(rootDir, relativeDirPath));
 
-            _watcher.Changed += SyncSponsorsFiles;
-            _watcher.EnableRaisingEvents = true;
+                _watcher = new FileSystemWatcher()
+                {
+                    Path = fullDirectoryPath,
+                    Filter = fileName,
+                    NotifyFilter = NotifyFilters.LastWrite,
+                };
+
+                _watcher.Changed += SyncSponsorsFiles;
+                _watcher.EnableRaisingEvents = true;
+            }
         }
         #endregion File Watcher
 
@@ -128,14 +134,13 @@ namespace Content.Server._Horizon.SponsorManager
             }
         }
 
-        private string[] SafeReadAllLines(string filePath, int maxRetries = 3, int delay = 1000)
+        private string[] SafeReadAllLines(ResPath filePath, int maxRetries = 3, int delay = 1000)
         {
             for (int attempt = 0; attempt < maxRetries; attempt++)
             {
                 try
                 {
-                    using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                    using var sr = new StreamReader(fs);
+                    using var sr = _resourceManager.UserData.OpenText(filePath);
 
                     var lines = new List<string>();
                     string? line;
@@ -191,7 +196,12 @@ namespace Content.Server._Horizon.SponsorManager
             _sponsorsAndBalances.Clear();
             _sponsorSlots.Clear();
 
-            foreach (var line in File.ReadLines(_sponsorsFilePath))
+            if (!_resourceManager.UserData.Exists(_sponsorsFilePath))
+                return;
+
+            using var reader = _resourceManager.UserData.OpenText(_sponsorsFilePath);
+            string? line;
+            while ((line = reader.ReadLine()) != null)
             {
                 if (string.IsNullOrWhiteSpace(line))
                     continue;
@@ -233,7 +243,17 @@ namespace Content.Server._Horizon.SponsorManager
         {
             var normalizedName = NormalizeUserName(userName);
 
-            var lines = File.ReadAllLines(_sponsorsFilePath).ToList();
+            var lines = new List<string>();
+            if (_resourceManager.UserData.Exists(_sponsorsFilePath))
+            {
+                using var reader = _resourceManager.UserData.OpenText(_sponsorsFilePath);
+                string? line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    lines.Add(line);
+                }
+            }
+
             var index = lines.FindIndex(line =>
             {
                 if (string.IsNullOrWhiteSpace(line))
@@ -262,7 +282,12 @@ namespace Content.Server._Horizon.SponsorManager
                 lines.Add($"{userName};{slot};{token}");
             }
 
-            File.WriteAllLines(_sponsorsFilePath, lines);
+            _resourceManager.UserData.CreateDir(_sponsorsFilePath.Directory);
+            using var writer = _resourceManager.UserData.OpenWriteText(_sponsorsFilePath);
+            foreach (var line in lines)
+            {
+                writer.WriteLine(line);
+            }
 
             // В памяти используем нормализованное имя для консистентности
             _sponsors.Add(normalizedName);
@@ -277,7 +302,19 @@ namespace Content.Server._Horizon.SponsorManager
             _sponsorsAndBalances.Remove(normalizedName);
             _sponsorSlots.Remove(normalizedName);
 
-            var lines = File.ReadAllLines(_sponsorsFilePath).ToList();
+            if (!_resourceManager.UserData.Exists(_sponsorsFilePath))
+                return;
+
+            var lines = new List<string>();
+            using (var reader = _resourceManager.UserData.OpenText(_sponsorsFilePath))
+            {
+                string? line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    lines.Add(line);
+                }
+            }
+
             var index = lines.FindIndex(line =>
             {
                 if (string.IsNullOrWhiteSpace(line))
@@ -294,7 +331,11 @@ namespace Content.Server._Horizon.SponsorManager
             if (index != -1)
             {
                 lines.RemoveAt(index);
-                File.WriteAllLines(_sponsorsFilePath, lines);
+                using var writer = _resourceManager.UserData.OpenWriteText(_sponsorsFilePath);
+                foreach (var line in lines)
+                {
+                    writer.WriteLine(line);
+                }
             }
         }
         #endregion Read/Write File
@@ -339,32 +380,37 @@ namespace Content.Server._Horizon.SponsorManager
         {
             // Сначала обновляем данные из основного файла спонсоров
             // Это синхронизирует все три структуры данных: _sponsors, _sponsorsAndBalances, _sponsorSlots
-            foreach (var line in File.ReadLines(_sponsorsFilePath))
+            if (_resourceManager.UserData.Exists(_sponsorsFilePath))
             {
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
-
-                var parts = line.Split(';');
-                if (parts.Length < 3)
-                    continue;
-
-                var userName = NormalizeUserName(parts[0].Trim());
-                if (string.IsNullOrWhiteSpace(userName))
-                    continue;
-
-                // Добавляем/обновляем в HashSet спонсоров
-                _sponsors.Add(userName);
-
-                // Обновляем слоты
-                if (int.TryParse(parts[1], out var slots))
+                using var reader = _resourceManager.UserData.OpenText(_sponsorsFilePath);
+                string? line;
+                while ((line = reader.ReadLine()) != null)
                 {
-                    _sponsorSlots[userName] = slots;
-                }
+                    if (string.IsNullOrWhiteSpace(line))
+                        continue;
 
-                // Обновляем балансы (начинаем с базового баланса из файла)
-                if (int.TryParse(parts[2], out var balance))
-                {
-                    _sponsorsAndBalances[userName] = balance;
+                    var parts = line.Split(';');
+                    if (parts.Length < 3)
+                        continue;
+
+                    var userName = NormalizeUserName(parts[0].Trim());
+                    if (string.IsNullOrWhiteSpace(userName))
+                        continue;
+
+                    // Добавляем/обновляем в HashSet спонсоров
+                    _sponsors.Add(userName);
+
+                    // Обновляем слоты
+                    if (int.TryParse(parts[1], out var slots))
+                    {
+                        _sponsorSlots[userName] = slots;
+                    }
+
+                    // Обновляем балансы (начинаем с базового баланса из файла)
+                    if (int.TryParse(parts[2], out var balance))
+                    {
+                        _sponsorsAndBalances[userName] = balance;
+                    }
                 }
             }
 
