@@ -87,3 +87,13 @@ quick_lottery = true
 
 [gateway]
 generator_enabled = false
+
+################################################################################
+##### Sponsor System ###########################################################
+
+[sponsor]
+# Paths to sponsor system files
+sponsors_path = "../ss14_data/sponsorSystem/sponsors.txt"
+discord_sponsors_path = "../ss14_data/sponsorSystem/discord_sponsors.txt"
+disposable_path = "../ss14_data/sponsorSystem/disposable.txt"
+items_path = "../ss14_data/sponsorSystem/sponsor_items.txt"
