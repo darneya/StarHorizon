@@ -34,8 +34,9 @@
     ClothingOuterEVASuitPilot: 5
     ClothingOuterHardsuitPilot: 3
     ClothingShoesBootsPilot: 3
-    MediaPlayer: 5 # Horizon
     # Horizon start
+    FishingRod: 20
+    MediaPlayer: 5
     ArachnidTranslator: 5
     NekomimeticTranslator: 5
     DraconicTranslator: 5
@@ -84,8 +85,9 @@
     ClothingOuterEVASuitPilot: 5
     ClothingOuterHardsuitPilot: 3
     ClothingShoesBootsPilot: 3
-    MediaPlayer: 4294967295 # Infinite # Horizon
     # Horizon start
+    FishingRod: 4294967295
+    MediaPlayer: 4294967295
     ArachnidTranslator: 4294967295
     NekomimeticTranslator: 4294967295
     DraconicTranslator: 4294967295
