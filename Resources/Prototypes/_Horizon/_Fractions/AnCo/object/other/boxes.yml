@@ -83,10 +83,10 @@
   - type: SpawnItemsOnUse
     items:
     - id: SuitProtectiveAnCo
-#    - id: AnCoDroneOff
-#    - id: AnCoDroneOff
-#    - id: AnCoDroneOff
-#    - id: AnCoDroneOff
+    - id: AnCoDroneOff
+    - id: AnCoDroneOff
+    - id: AnCoDroneOff
+    - id: AnCoDroneOff
 # Xigovir: а что тут не так? это же буквально ящик с жучками
     - id: AnCoopenbox
 

@@ -1,6 +1,5 @@
 - type: entity
-  parent: ClothingNeckBase
-  categories: [ HideSpawnMenu ]
+  parent: [ClothingNeckBase, BaseAnCoContraband]
   id: ClothingNeckCloakAnCo
   suffix: StarHorizon, AnCo
   name: плащ АнКо
@@ -17,7 +16,6 @@
 
 - type: entity
   parent: ClothingNeckCloakAnCo
-  categories: [ HideSpawnMenu ]
   id: AnCoGloryMedal
   name: Медаль АнКо
   suffix: StarHorizon, AnCo
@@ -33,7 +31,6 @@
 
 - type: entity
   parent: ClothingNeckCloakAnCo
-  categories: [ HideSpawnMenu ]
   id: AnCoGloryMedalMiliGalax
   name: Медаль МилиГалакс
   suffix: StarHorizon, AnCo
@@ -49,7 +46,6 @@
 
 - type: entity
   parent: ClothingNeckCloakAnCo
-  categories: [ HideSpawnMenu ]
   id: AnCoGloryMedalSubea
   name: Медаль Subea
   suffix: StarHorizon, AnCo
@@ -65,7 +61,6 @@
 
 - type: entity
   parent: ClothingNeckCloakAnCo
-  categories: [ HideSpawnMenu ]
   id: AnCoGloryMedalStarDust
   name: Медаль StarDust
   suffix: StarHorizon, AnCo

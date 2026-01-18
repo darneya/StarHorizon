@@ -1,8 +1,7 @@
 - type: entity
   name: омега-инструмент АнКо
-  parent: BaseItem
+  parent: [BaseItem, BaseAnCoContraband]
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   id: AnCoOmegaTool
   description: Мульти-инструмент модели "Омега" от корпорации АнКо.
   components:

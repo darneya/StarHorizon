@@ -48,7 +48,7 @@
     - LogProbeCartridge
     - RubberStampDetective
     - ContrabandForensicsModule
-
+    - ShipVoucherFrontierDetective
 - type: chameleonOutfit
   id: NFDetectiveChameleonOutfit
   job: NFDetective

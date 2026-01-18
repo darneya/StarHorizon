@@ -4,7 +4,6 @@
   name: шкаф АнКо
   description: Стандартное хранилище корпорации АнКо
   suffix: StarHorizon, AnCo, Structure
-  categories: [ HideSpawnMenu ]
   components:
   - type: ResistLocker
   - type: Transform
@@ -80,7 +79,6 @@
   id: ClosetAnCoDebug
   name: шкаф со структурами АнКо
   parent: ClosetBaseAnCo
-  categories: [ HideSpawnMenu ]
   suffix: StarHorizon, AnCo, DEBUG
   description: Блюспейс хранилище со всеми вещами структурами АнКо
   components:
@@ -102,7 +100,6 @@
   name: шкаф с снаряжением Офицера
   parent: ClosetBaseAnCo
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -121,7 +118,6 @@
   name: шкаф с снаряжением Паука
   parent: ClosetBaseAnCo
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -139,7 +135,6 @@
   name: шкаф с снаряжением Рыцаря
   parent: ClosetBaseAnCo
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:

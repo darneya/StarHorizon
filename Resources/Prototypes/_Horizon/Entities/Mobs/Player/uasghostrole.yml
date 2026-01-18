@@ -27,8 +27,8 @@
       prototypes: [ AnCoCounselorGear ]
     - type: RandomMetadata
       nameSegments:
-        - "Советник"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: AutoImplant
       implants:
       - AnCoTrakerImplant
@@ -55,8 +55,8 @@
       prototypes: [ AnCoTitanGear ]
     - type: RandomMetadata
       nameSegments:
-        - "Титан"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: AutoImplant
       implants:
       - AnCoTrakerImplant
@@ -83,8 +83,8 @@
       prototypes: [ AnCoSpiderGear ]
     - type: RandomMetadata
       nameSegments:
-        - "Паук"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: AutoImplant
       implants:
       - AnCoTrakerImplant
@@ -111,8 +111,8 @@
       prototypes: [ AnCoKnightGear ]
     - type: RandomMetadata
       nameSegments:
-        - "Рыцарь"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: AutoImplant
       implants:
       - AnCoTrakerImplant
@@ -139,8 +139,8 @@
       prototypes: [ AnCoOfficerGear ]
     - type: RandomMetadata
       nameSegments:
-        - "Офицер"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: AutoImplant
       implants:
       - AnCoTrakerImplant
@@ -167,8 +167,8 @@
       prototypes: [ AnCoCadetGear ]
     - type: RandomMetadata
       nameSegments:
-        - "Кадет"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: AutoImplant
       implants:
       - AnCoTrakerImplant
@@ -178,15 +178,14 @@
   id: RandomHumanoidSpawnerAnCoCounselor
   name: советник АнКо
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
       state: counselor
     - type: RandomMetadata
       nameSegments:
-        - "Советник"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: RandomHumanoidSpawner
       settings: GhostAnCoCounselor
 # Титан
@@ -194,21 +193,19 @@
   id: RandomHumanoidSpawnerAnCoTitan
   name: офицер Титан АнКо
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
       state: titan
     - type: RandomMetadata
       nameSegments:
-        - "Титан"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: RandomHumanoidSpawner
       settings: GhostAnCoTitan
 # Паук
 - type: entity
   id: RandomHumanoidSpawnerAnCoSpider
-  categories: [ HideSpawnMenu ]
   name: офицер Паук АнКо
   suffix: StarHorizon, AnCo
   components:
@@ -217,14 +214,13 @@
       state: spider
     - type: RandomMetadata
       nameSegments:
-        - "Паук"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: RandomHumanoidSpawner
       settings: GhostAnCoSpider
 # Рыцарь
 - type: entity
   id: RandomHumanoidSpawnerAnCoKnight
-  categories: [ HideSpawnMenu ]
   name: офицер Рыцарь АнКо
   suffix: StarHorizon, AnCo
   components:
@@ -233,14 +229,13 @@
       state: knight
     - type: RandomMetadata
       nameSegments:
-        - "Рыцарь"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: RandomHumanoidSpawner
       settings: GhostAnCoKnight
 # Офицер
 - type: entity
   id: RandomHumanoidSpawnerAnCoOfficer
-  categories: [ HideSpawnMenu ]
   name: офицер АнКо
   suffix: StarHorizon, AnCo
   components:
@@ -249,14 +244,13 @@
       state: officer
     - type: RandomMetadata
       nameSegments:
-        - "Офицер"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: RandomHumanoidSpawner
       settings: GhostAnCoOfficer
 # Кадет
 - type: entity
   id: RandomHumanoidSpawnerAnCoCadet
-  categories: [ HideSpawnMenu ]
   name: кадет АнКо
   suffix: StarHorizon, AnCo
   components:
@@ -265,7 +259,7 @@
       state: cadet
     - type: RandomMetadata
       nameSegments:
-        - "Кадет"
-        - NamesLastMilitaryAnCo
+        - NamesFirst
+        - NamesLast
     - type: RandomHumanoidSpawner
       settings: GhostAnCoCadet

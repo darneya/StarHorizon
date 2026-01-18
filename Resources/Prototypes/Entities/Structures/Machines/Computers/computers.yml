@@ -132,7 +132,7 @@
           type: WiresBoundUserInterface
   - type: RadarConsole
   - type: WorldLoader
-    radius: 256
+    radius: 192
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -229,7 +229,7 @@
   - type: RadarConsole
     maxRange: 384
   - type: WorldLoader
-    radius: 1536
+    radius: 192
   - type: PointLight
     radius: 1.5
     energy: 1.6
