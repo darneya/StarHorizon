@@ -9,6 +9,7 @@ using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
+using Content.Shared._Horizon.CCVar;
 using Content.Shared._Horizon.Planet;
 using Content.Shared._NF.Shipyard.Prototypes;
 using Content.Shared.DeviceNetwork;
@@ -17,6 +18,7 @@ using Content.Shared.Parallax.Biomes;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
+using Robust.Shared.Configuration;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -39,6 +41,7 @@ public sealed class PlanetSystem : EntitySystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DeviceNetworkSystem _deviceNetwork = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private List<(Vector2i, Tile)> _setTiles = new();
     public Dictionary<ProtoId<PlanetPrototype>, EntityUid> LoadedPlanets = new();
@@ -54,6 +57,9 @@ public sealed class PlanetSystem : EntitySystem
 
     private void OnRoundStarted(RoundStartingEvent ev)
     {
+        if (!_cfg.GetCVar(HorizonCCVars.SpawnPlanets))
+            return;
+
         foreach (var proto in _proto.EnumeratePrototypes<PlanetPrototype>())
         {
             if (!proto.SpawnRoundstart)
@@ -70,16 +76,21 @@ public sealed class PlanetSystem : EntitySystem
 
     private void OnStationsGenerated(StationsGeneratedEvent args)
     {
+        if (!_cfg.GetCVar(HorizonCCVars.SpawnPlanets))
+            return;
+
         var vessel = _proto.Index<VesselPrototype>("Cheetah");
         var dummyMapUid = _map.CreateMap(out var dummyMap);
 
         if (!_mapLoader.TryLoadGrid(dummyMap, vessel.ShuttlePath, out var grid))
             return;
 
+        // Добавляем нужные компоненты
         var taxi = EnsureComp<PlanetTaxiComponent>(grid.Value);
         var shuttle = EnsureComp<ShuttleComponent>(grid.Value);
         EnsureComp<PreventPilotComponent>(grid.Value);
 
+        // Выставляем текст на экранах
         var netComp = EnsureComp<DeviceNetworkComponent>(grid.Value);
         _deviceNetwork.SetTransmitFrequency(grid.Value, 10000, netComp);
         var payload = new NetworkPayload
@@ -89,6 +100,7 @@ public sealed class PlanetSystem : EntitySystem
         };
         _deviceNetwork.QueuePacket(grid.Value, null, payload, 10000, device: netComp);
 
+        // Удаляем лишнее без удаления энтити
         var children = Transform(grid.Value.Owner).ChildEnumerator;
         while (children.MoveNext(out var uid))
             RemComp<BusScheduleComponent>(uid);

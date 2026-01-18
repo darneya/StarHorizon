@@ -55,6 +55,6 @@
     max: 2
   goal: !type:EntityExpeditionGoal
     description: bounty-description-microwave-machine-board
-    iconEntity: KitchenMicrowaveMachineCircuitboard
+    iconEntity: MicrowaveMachineCircuitboard
     reward: 4000
     requiredTag: MicrowaveMachineBoard

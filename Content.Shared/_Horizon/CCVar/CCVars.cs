@@ -107,5 +107,11 @@ namespace Content.Shared._Horizon.CCVar
         public static readonly CVarDef<bool> AutoDeleteEnabled =
             CVarDef.Create("shuttle.autodelete_enabled", true, CVar.SERVERONLY | CVar.ARCHIVE,
                 "Отключить или включить автоудаление шаттлов.");
+        /*
+         * Планетки
+         */
+        public static readonly CVarDef<bool> SpawnPlanets =
+            CVarDef.Create("game.spawn_roundstart_planets", false, CVar.SERVERONLY);
+
     }
 }

@@ -1,15 +1,12 @@
-using System.Linq;
 using Content.Client.UserInterface.Fragments;
 using Content.Shared._Horizon.Expeditions;
 using Content.Shared.CartridgeLoader;
-using Content.Shared.CartridgeLoader.Cartridges;
-using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
 
 namespace Content.Client._Horizon.Expeditions.Ui;
 
 /// <summary>
-///     UI fragment responsible for displaying NanoTask controls in a PDA and coordinating with the NanoTaskCartridgeSystem for state
+/// UI фрагмент, хранящий в себе цели
 /// </summary>
 public sealed partial class GoalsListUi : UIFragment
 {

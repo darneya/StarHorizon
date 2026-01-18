@@ -4,9 +4,9 @@ using Content.Server._NF.Cargo.Systems;
 using Content.Server.Access.Systems;
 using Content.Server.Cargo.Systems;
 using Content.Server.CartridgeLoader;
+using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Shared._Horizon.Expeditions;
-using Content.Shared.Access.Components;
 using Content.Shared.Cargo;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.PDA;
@@ -15,7 +15,6 @@ using Robust.Server.Audio;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
-using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -35,6 +34,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly HandsSystem _hands = default!;
 
     private Dictionary<ProtoId<ExpeditionGoalCategoryPrototype>, Dictionary<int, ExpeditionGoal>> _goals = new();
     private Dictionary<int, ExpeditionGoal> _claimedGoals = new();
@@ -43,6 +43,9 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
     public TimeSpan Cooldown = TimeSpan.FromMinutes(5);
 
+    /// <summary>
+    /// Количество целей на категорию
+    /// </summary>
     public const int GoalsCount = 3;
 
     public override void Initialize()
@@ -87,6 +90,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
     {
         Dictionary<int, ExpeditionGoal> goals = new();
 
+        // Проклятое получение всех целей с КПК
         if (TryComp<PdaComponent>(args.Loader, out var pda) &&
             pda.IdSlot?.ContainerSlot?.ContainedEntity is { Valid: true } card &&
             TryComp<ExpeditionGoalsIdCardComponent>(card, out var goalCard))
@@ -114,7 +118,6 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             return;
         }
 
-        // getting all markers
         var markers = EntityManager.AllEntities<TagComponent>().Where(x => _tag.HasTag(x.Owner, args.SpawnerTag) && Transform(x).Coordinates.EntityId == planetUid).ToList();
         _random.Shuffle(markers);
 
@@ -138,6 +141,7 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
 
     private void GetPrice(ref PriceCalculationEvent args)
     {
+        // Нам нужен юзер для проверки по КПК
         if (!args.User.HasValue)
             return;
 
@@ -152,9 +156,11 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             if (!goal.TryComplete(args.Entity, EntityManager))
                 continue;
 
+            // Проверяем, соответствует ли валюта
             if (args.Currency != goal.RequiredStack)
                 continue;
 
+            // Контрабандные бонусы получаются отдельно
             if (goal.IsContraband)
                 continue;
 
@@ -176,17 +182,26 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
                 if (!_claimedGoals.TryGetValue(item, out var goal))
                     continue;
 
+                // Если цель контрабандная, на обычной консоли она не выполнится
                 if (goal.IsContraband)
                     continue;
 
                 if (!goal.TryComplete(sold, EntityManager))
                     continue;
 
+                // Выдаём доп награду
+                if (goal.RewardEntity != null)
+                {
+                    var ent = Spawn(goal.RewardEntity, Transform(args.Actor).Coordinates);
+                    _hands.TryPickupAnyHand(args.Actor, ent);
+                }
+
                 goalsCard.AssignedGoals.Remove(item);
             }
 
             Dirty(idCard.Owner, goalsCard);
 
+            // Обновление UI КПК
             if (_container.TryGetContainingContainer(idCard.Owner, out var container) && TryComp<CartridgeLoaderComponent>(container.Owner, out var loader))
                 _cartridgeLoader.UpdateUiState(container.Owner, null, loader);
         }
@@ -207,16 +222,31 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
                 if (!goal.TryComplete(sold, EntityManager))
                     continue;
 
+                // Выдаём доп награду
+                if (goal.RewardEntity != null)
+                {
+                    var ent = Spawn(goal.RewardEntity, Transform(args.Actor).Coordinates);
+                    _hands.TryPickupAnyHand(args.Actor, ent);
+                }
+
                 goalsCard.AssignedGoals.Remove(item);
             }
 
             Dirty(idCard.Owner, goalsCard);
 
+            // Обновление UI КПК
             if (_container.TryGetContainingContainer(idCard.Owner, out var container) && TryComp<CartridgeLoaderComponent>(container.Owner, out var loader))
                 _cartridgeLoader.UpdateUiState(container.Owner, null, loader);
         }
     }
 
+    /// <summary>
+    /// Получает бонус для контрабандных целей
+    /// </summary>
+    /// <param name="actor"></param>
+    /// <param name="ent"></param>
+    /// <param name="currency"></param>
+    /// <returns></returns>
     public int GetContrabandBonus(EntityUid actor, EntityUid ent, string currency)
     {
         if (!_idCard.TryFindIdCard(actor, out var idCard) || !TryComp<ExpeditionGoalsIdCardComponent>(idCard.Owner, out var goalsCard))
@@ -240,6 +270,12 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         return 0;
     }
 
+    /// <summary>
+    /// Принимает цель с определённым айди
+    /// </summary>
+    /// <param name="idCard">Карта, к которой будет привязана цель</param>
+    /// <param name="goalId">Айди цели</param>
+    /// <param name="specification">Категория</param>
     private void ClaimGoal(EntityUid idCard, int goalId, ProtoId<ExpeditionGoalCategoryPrototype> specification)
     {
         if (!_goals[specification].TryGetValue(goalId, out var goal))
@@ -261,6 +297,13 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             _cartridgeLoader.UpdateUiState(container.Owner, null, null);
     }
 
+    /// <summary>
+    /// Пытается принять цель с определённым id
+    /// </summary>
+    /// <param name="idCard">Карта, к которой будет привязана цель</param>
+    /// <param name="goalId">Айди цели</param>
+    /// <param name="specification">Категория</param>
+    /// <returns>Принята цель, или нет</returns>
     private bool TryClaimGoal(EntityUid idCard, int goalId, ProtoId<ExpeditionGoalCategoryPrototype> specification)
     {
         if (!_goals[specification].TryGetValue(goalId, out var goal))
@@ -273,6 +316,12 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         return true;
     }
 
+    /// <summary>
+    /// Выполняет ли указанная сущность какую-либо из целей
+    /// </summary>
+    /// <param name="user"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
     public bool IsCompleted(EntityUid user, EntityUid target)
     {
         if (!_idCard.TryFindIdCard(user, out var idCard) || !TryComp<ExpeditionGoalsIdCardComponent>(idCard.Owner, out var goalsCard))
@@ -290,6 +339,9 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
         return false;
     }
 
+    /// <summary>
+    /// Генерирует новые цели, удаляя предыдущие
+    /// </summary>
     private void GenerateGoals()
     {
         _goals.Clear();
@@ -309,12 +361,20 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             {
                 var proto = _random.Pick(specificated);
                 var goal = proto.Goal.Instantiate(proto.RandomAmount.Next(_random) * proto.AmountMultiplier);
+
+                // Добавляю отдельно сущность
+                goal.RewardEntity = proto.RewardEntity;
+
+                // Добавление цели в список
                 _goals[item].Add(_nextId, goal);
                 _nextId++;
             }
         }
     }
 
+    /// <summary>
+    /// Обновляет UI одной конкретной консоли
+    /// </summary>
     private void UpdateUi(EntityUid uid)
     {
         if (!TryComp<ExpeditionGoalsConsoleComponent>(uid, out var console))
@@ -324,6 +384,9 @@ public sealed class ExpeditionGoalsSystem : EntitySystem
             new ExpeditionGoalsConsoleUiState(_goals, console.Categories, Cooldown, _nextOffer));
     }
 
+    /// <summary>
+    /// Обновляет UI всех консолей с целями
+    /// </summary>
     private void UpdateUi()
     {
         var query = EntityQueryEnumerator<ExpeditionGoalsConsoleComponent>();
