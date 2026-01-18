@@ -80,10 +80,6 @@ namespace Content.Server._Horizon.SponsorManager
             }
         }
 
-        /// <summary>
-        /// Normalizes a path from CVar to ensure it's relative to UserData directory.
-        /// Removes leading '/' characters to prevent absolute path issues on Linux.
-        /// </summary>
         private ResPath NormalizePath(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
@@ -92,10 +88,10 @@ namespace Content.Server._Horizon.SponsorManager
             // Remove all leading '/' characters to ensure path is treated as relative to UserData
             // This prevents issues when paths are configured with absolute paths like /ss14_data/...
             var normalized = path.TrimStart('/');
-            
+
             if (string.IsNullOrWhiteSpace(normalized))
                 throw new ArgumentException("Path cannot be only slashes", nameof(path));
-            
+
             // Create ResPath and ensure it's rooted (for ResPath's internal structure)
             // This creates a ResPath like /sponsorSystem/sponsor_items.txt which is relative to UserData root
             return new ResPath(normalized).ToRootedPath();
