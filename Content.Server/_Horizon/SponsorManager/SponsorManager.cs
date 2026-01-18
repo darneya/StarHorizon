@@ -24,10 +24,6 @@ namespace Content.Server._Horizon.SponsorManager
         private ResPath _disposableFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemDisposablePath));
         private ResPath _sponsorItemsFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath));
 
-        /// <summary>
-        /// Normalizes a path from CVar to ensure it's relative to UserData directory.
-        /// Removes leading '/' characters to prevent absolute path issues on Linux.
-        /// </summary>
         private ResPath NormalizePath(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
