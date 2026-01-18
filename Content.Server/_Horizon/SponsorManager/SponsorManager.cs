@@ -1,47 +1,115 @@
+using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Shared._Horizon.CCVar;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
+using Robust.Shared.ContentPack;
+using Robust.Shared.Log;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Horizon.SponsorManager
 {
     public sealed class SponsorManager
     {
         [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private readonly IResourceManager _resourceManager = default!;
+        [Dependency] private readonly ILogManager _logManager = default!;
         private FileSystemWatcher _watcher = default!;
+        private ISawmill _sawmill = default!;
 
-        private string _sponsorsFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemSponsorsPath);
-        private string _dsSponsorsFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemDiscordSponsorsPath);
-        private string _disposableFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemDisposablePath);
-        private string _sponsorItemsFilePath => _cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath);
+        private ResPath _sponsorsFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemSponsorsPath));
+        private ResPath _dsSponsorsFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemDiscordSponsorsPath));
+        private ResPath _disposableFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemDisposablePath));
+        private ResPath _sponsorItemsFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath));
+
+        /// <summary>
+        /// Normalizes a path from CVar to ensure it's relative to UserData directory.
+        /// Removes leading '/' characters to prevent absolute path issues on Linux.
+        /// </summary>
+        private ResPath NormalizePath(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+                throw new ArgumentException("Path cannot be null or empty", nameof(path));
+
+            // Remove all leading '/' characters to ensure path is treated as relative to UserData
+            // This prevents issues when paths are configured with absolute paths like /ss14_data/...
+            var normalized = path.TrimStart('/');
+
+            if (string.IsNullOrWhiteSpace(normalized))
+                throw new ArgumentException("Path cannot be only slashes", nameof(path));
+
+            // Create ResPath and ensure it's rooted (for ResPath's internal structure)
+            // This creates a ResPath like /sponsorSystem/sponsors.txt which is relative to UserData root
+            return new ResPath(normalized).ToRootedPath();
+        }
 
         private static HashSet<string> _sponsors = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly Dictionary<string, int> _sponsorsAndBalances = new(StringComparer.OrdinalIgnoreCase);
         private readonly Dictionary<string, int> _sponsorSlots = new(StringComparer.OrdinalIgnoreCase);
 
+        public void Initialize()
+        {
+            _sawmill = _logManager.GetSawmill("sponsor");
+            _sawmill.Info("SponsorManager initialized successfully");
+        }
+
         #region Check files
         public void LoadSponsorsInfoFile()
         {
-            EnsureFileExists(_dsSponsorsFilePath);
-            EnsureFileExists(_sponsorsFilePath);
-            EnsureFileExists(_disposableFilePath);
-            EnsureFileExists(_sponsorItemsFilePath);
+            try
+            {
+                EnsureFileExists(_dsSponsorsFilePath);
+                EnsureFileExists(_sponsorsFilePath);
+                EnsureFileExists(_disposableFilePath);
+                EnsureFileExists(_sponsorItemsFilePath);
+                _sawmill.Info("Sponsor system files checked/created successfully");
+            }
+            catch (Exception ex)
+            {
+                _sawmill.Error($"Failed to load sponsor info files: {ex}");
+                throw;
+            }
         }
 
-        private void EnsureFileExists(string filePath)
+        private void EnsureFileExists(ResPath filePath)
         {
-            var directoryPath = Path.GetDirectoryName(filePath);
-
-            if (!Directory.Exists(directoryPath))
+            try
             {
-                Directory.CreateDirectory(directoryPath!);
+                // Log the path being processed for debugging
+                _sawmill.Debug($"Ensuring file exists: {filePath}");
+
+                // Log UserData root directory if available
+                var rootDir = _resourceManager.UserData.RootDir;
+                if (rootDir != null)
+                {
+                    _sawmill.Debug($"UserData root directory: {rootDir}");
+                }
+
+                // Create directory if it doesn't exist
+                _resourceManager.UserData.CreateDir(filePath.Directory);
+
+                // Create file if it doesn't exist
+                if (!_resourceManager.UserData.Exists(filePath))
+                {
+                    _resourceManager.UserData.WriteAllText(filePath, string.Empty);
+                    _sawmill.Debug($"Created empty sponsor file: {filePath}");
+                }
             }
-
-            if (!File.Exists(filePath))
+            catch (UnauthorizedAccessException ex)
             {
-                File.WriteAllText(filePath, string.Empty);
+                var rootDir = _resourceManager.UserData.RootDir ?? "unknown (virtual provider)";
+                _sawmill.Error($"Permission denied when creating file: {filePath}. " +
+                              $"UserData root: {rootDir}. " +
+                              $"Error: {ex.Message}. " +
+                              $"Make sure the server process has write permissions to the UserData directory.");
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _sawmill.Error($"Failed to ensure file exists: {filePath}, Error: {ex}");
+                throw;
             }
         }
         #endregion Check files
@@ -49,30 +117,60 @@ namespace Content.Server._Horizon.SponsorManager
         #region File Watcher
         public void FileWatcher()
         {
-            var discordSponsorsPath = _dsSponsorsFilePath;
-            var directoryPath = Path.GetDirectoryName(discordSponsorsPath);
-            var fileName = Path.GetFileName(discordSponsorsPath);
-
-            _watcher = new FileSystemWatcher()
+            try
             {
-                Path = Path.GetFullPath(directoryPath ?? "../ss14_data/sponsorSystem"),
-                Filter = fileName ?? "discord_sponsors.txt",
-                NotifyFilter = NotifyFilters.LastWrite,
-            };
+                var discordSponsorsPath = _dsSponsorsFilePath;
+                var directoryPath = discordSponsorsPath.Directory;
+                var fileName = discordSponsorsPath.Filename;
 
-            _watcher.Changed += SyncSponsorsFiles;
-            _watcher.EnableRaisingEvents = true;
+                // Получаем реальный путь файловой системы из UserData
+                var rootDir = _resourceManager.UserData.RootDir;
+                if (rootDir != null)
+                {
+                    var relativeDirPath = directoryPath.ToRelativeSystemPath();
+                    var fullDirectoryPath = Path.GetFullPath(Path.Combine(rootDir, relativeDirPath));
+
+                    _watcher = new FileSystemWatcher()
+                    {
+                        Path = fullDirectoryPath,
+                        Filter = fileName,
+                        NotifyFilter = NotifyFilters.LastWrite,
+                    };
+
+                    _watcher.Changed += SyncSponsorsFiles;
+                    _watcher.EnableRaisingEvents = true;
+                    _sawmill.Info($"FileSystemWatcher initialized for {fullDirectoryPath}/{fileName}");
+                }
+                else
+                {
+                    _sawmill.Warning("FileSystemWatcher not initialized: UserData.RootDir is null (virtual provider)");
+                }
+            }
+            catch (Exception ex)
+            {
+                _sawmill.Error($"Failed to initialize FileSystemWatcher: {ex}");
+            }
         }
         #endregion File Watcher
 
         #region Discord
         private void SyncSponsorsFiles(object sender, FileSystemEventArgs e)
         {
-            ReadSponsorsFile();
+            try
+            {
+                _sawmill.Info($"Discord sponsors file changed: {e.FullPath}, syncing...");
+                ReadSponsorsFile();
 
-            var discordLines = SafeReadAllLines(_dsSponsorsFilePath);
+                var discordLines = SafeReadAllLines(_dsSponsorsFilePath);
+                _sawmill.Debug($"Read {discordLines.Length} lines from discord_sponsors.txt");
 
-            ProcessDiscordSponsors(discordLines);
+                ProcessDiscordSponsors(discordLines);
+                _sawmill.Info("Discord sponsors synchronization completed successfully");
+            }
+            catch (Exception ex)
+            {
+                _sawmill.Error($"Failed to sync Discord sponsors file: {ex}");
+            }
         }
 
         private void ProcessDiscordSponsors(string[] discordLines)
@@ -103,6 +201,8 @@ namespace Content.Server._Horizon.SponsorManager
             var currentSponsors = new HashSet<string>(_sponsors, StringComparer.OrdinalIgnoreCase);
 
             // Добавляем или обновляем спонсоров из Discord
+            var updatedCount = 0;
+            var addedCount = 0;
             foreach (var (normalizedCkey, (originalCkey, discordId)) in discordSponsors)
             {
                 var slots = CalculateSlots(discordId);
@@ -111,31 +211,39 @@ namespace Content.Server._Horizon.SponsorManager
                 if (currentSponsors.Contains(normalizedCkey))
                 {
                     SaveSponsors(originalCkey, slots, tokens);
+                    updatedCount++;
                 }
                 else
                 {
                     AddSponsor(originalCkey, slots, tokens);
+                    addedCount++;
                 }
             }
 
             // Удаляем спонсоров, которых больше нет в Discord списке
+            var removedCount = 0;
             foreach (var sponsor in currentSponsors)
             {
                 if (!discordSponsors.ContainsKey(sponsor))
                 {
                     RemoveSponsorFromFile(sponsor);
+                    removedCount++;
                 }
+            }
+
+            if (addedCount > 0 || updatedCount > 0 || removedCount > 0)
+            {
+                _sawmill.Info($"Discord sync completed: {addedCount} added, {updatedCount} updated, {removedCount} removed");
             }
         }
 
-        private string[] SafeReadAllLines(string filePath, int maxRetries = 3, int delay = 1000)
+        private string[] SafeReadAllLines(ResPath filePath, int maxRetries = 3, int delay = 1000)
         {
             for (int attempt = 0; attempt < maxRetries; attempt++)
             {
                 try
                 {
-                    using var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                    using var sr = new StreamReader(fs);
+                    using var sr = _resourceManager.UserData.OpenText(filePath);
 
                     var lines = new List<string>();
                     string? line;
@@ -146,9 +254,17 @@ namespace Content.Server._Horizon.SponsorManager
                     }
                     return lines.ToArray();
                 }
-                catch (IOException)
+                catch (IOException ex)
                 {
-                    Task.Delay(delay).Wait();
+                    if (attempt < maxRetries - 1)
+                    {
+                        _sawmill.Debug($"Failed to read file {filePath} (attempt {attempt + 1}/{maxRetries}), retrying...");
+                        Task.Delay(delay).Wait();
+                    }
+                    else
+                    {
+                        _sawmill.Error($"Failed to read file {filePath} after {maxRetries} attempts: {ex}");
+                    }
                 }
             }
 
@@ -187,114 +303,199 @@ namespace Content.Server._Horizon.SponsorManager
         #region Read/Write File
         public void ReadSponsorsFile()
         {
-            _sponsors.Clear();
-            _sponsorsAndBalances.Clear();
-            _sponsorSlots.Clear();
-
-            foreach (var line in File.ReadLines(_sponsorsFilePath))
+            try
             {
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
+                _sponsors.Clear();
+                _sponsorsAndBalances.Clear();
+                _sponsorSlots.Clear();
 
-                var parts = line.Split(';');
-                if (parts.Length < 3)
-                    continue;
-
-                var userName = NormalizeUserName(parts[0].Trim());
-                if (string.IsNullOrWhiteSpace(userName))
-                    continue;
-
-                if (int.TryParse(parts[1], out var slots))
+                if (!_resourceManager.UserData.Exists(_sponsorsFilePath))
                 {
-                    _sponsorSlots[userName] = slots;
+                    _sawmill.Debug($"Sponsors file does not exist: {_sponsorsFilePath}");
+                    return;
                 }
 
-                if (int.TryParse(parts[2], out var balance))
+                var sponsorCount = 0;
+                using var reader = _resourceManager.UserData.OpenText(_sponsorsFilePath);
+                string? line;
+                while ((line = reader.ReadLine()) != null)
                 {
-                    _sponsorsAndBalances[userName] = balance;
+                    if (string.IsNullOrWhiteSpace(line))
+                        continue;
+
+                    var parts = line.Split(';');
+                    if (parts.Length < 3)
+                        continue;
+
+                    var userName = NormalizeUserName(parts[0].Trim());
+                    if (string.IsNullOrWhiteSpace(userName))
+                        continue;
+
+                    if (int.TryParse(parts[1], out var slots))
+                    {
+                        _sponsorSlots[userName] = slots;
+                    }
+
+                    if (int.TryParse(parts[2], out var balance))
+                    {
+                        _sponsorsAndBalances[userName] = balance;
+                    }
+
+                    _sponsors.Add(userName);
+                    sponsorCount++;
                 }
 
-                _sponsors.Add(userName);
+                _sawmill.Debug($"Loaded {sponsorCount} sponsors from file");
+            }
+            catch (Exception ex)
+            {
+                _sawmill.Error($"Failed to read sponsors file: {ex}");
             }
         }
 
         public void AddSponsor(string userName, int slot, int token)
         {
-            var normalizedName = NormalizeUserName(userName);
-            _sponsors.Add(normalizedName);
-            _sponsorSlots[normalizedName] = slot;
-            _sponsorsAndBalances[normalizedName] = token;
+            try
+            {
+                var normalizedName = NormalizeUserName(userName);
+                _sponsors.Add(normalizedName);
+                _sponsorSlots[normalizedName] = slot;
+                _sponsorsAndBalances[normalizedName] = token;
 
-            // Передаем оригинальное имя для сохранения в файл
-            SaveSponsors(userName, slot, token);
+                // Передаем оригинальное имя для сохранения в файл
+                SaveSponsors(userName, slot, token);
+                _sawmill.Info($"Added new sponsor: {userName} (slots: {slot}, tokens: {token})");
+            }
+            catch (Exception ex)
+            {
+                _sawmill.Error($"Failed to add sponsor {userName}: {ex}");
+                throw;
+            }
         }
 
         public void SaveSponsors(string userName, int slot, int token)
         {
-            var normalizedName = NormalizeUserName(userName);
-
-            var lines = File.ReadAllLines(_sponsorsFilePath).ToList();
-            var index = lines.FindIndex(line =>
+            try
             {
-                if (string.IsNullOrWhiteSpace(line))
-                    return false;
+                var normalizedName = NormalizeUserName(userName);
 
-                var parts = line.Split(';');
-                if (parts.Length == 0)
-                    return false;
+                var lines = new List<string>();
+                if (_resourceManager.UserData.Exists(_sponsorsFilePath))
+                {
+                    using var reader = _resourceManager.UserData.OpenText(_sponsorsFilePath);
+                    string? line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        lines.Add(line);
+                    }
+                }
 
-                var fileUserName = NormalizeUserName(parts[0].Trim());
-                return fileUserName.Equals(normalizedName, StringComparison.OrdinalIgnoreCase);
-            });
+                var index = lines.FindIndex(line =>
+                {
+                    if (string.IsNullOrWhiteSpace(line))
+                        return false;
 
-            if (index != -1)
-            {
-                // Сохраняем оригинальное имя из файла, чтобы не менять регистр
-                var existingLine = lines[index];
-                var existingParts = existingLine.Split(';');
-                var existingName = existingParts.Length > 0 ? existingParts[0].Trim() : userName;
+                    var parts = line.Split(';');
+                    if (parts.Length == 0)
+                        return false;
 
-                // Используем оригинальное имя из файла, если оно есть
-                lines[index] = $"{existingName};{slot};{token}";
+                    var fileUserName = NormalizeUserName(parts[0].Trim());
+                    return fileUserName.Equals(normalizedName, StringComparison.OrdinalIgnoreCase);
+                });
+
+                if (index != -1)
+                {
+                    // Сохраняем оригинальное имя из файла, чтобы не менять регистр
+                    var existingLine = lines[index];
+                    var existingParts = existingLine.Split(';');
+                    var existingName = existingParts.Length > 0 ? existingParts[0].Trim() : userName;
+
+                    // Используем оригинальное имя из файла, если оно есть
+                    lines[index] = $"{existingName};{slot};{token}";
+                    _sawmill.Debug($"Updated sponsor in file: {userName} (slots: {slot}, tokens: {token})");
+                }
+                else
+                {
+                    lines.Add($"{userName};{slot};{token}");
+                    _sawmill.Debug($"Added sponsor to file: {userName} (slots: {slot}, tokens: {token})");
+                }
+
+                _resourceManager.UserData.CreateDir(_sponsorsFilePath.Directory);
+                using var writer = _resourceManager.UserData.OpenWriteText(_sponsorsFilePath);
+                foreach (var line in lines)
+                {
+                    writer.WriteLine(line);
+                }
+
+                // В памяти используем нормализованное имя для консистентности
+                _sponsors.Add(normalizedName);
+                _sponsorSlots[normalizedName] = slot;
+                _sponsorsAndBalances[normalizedName] = token;
             }
-            else
+            catch (Exception ex)
             {
-                lines.Add($"{userName};{slot};{token}");
+                _sawmill.Error($"Failed to save sponsor {userName}: {ex}");
+                throw;
             }
-
-            File.WriteAllLines(_sponsorsFilePath, lines);
-
-            // В памяти используем нормализованное имя для консистентности
-            _sponsors.Add(normalizedName);
-            _sponsorSlots[normalizedName] = slot;
-            _sponsorsAndBalances[normalizedName] = token;
         }
 
         public void RemoveSponsorFromFile(string userName)
         {
-            var normalizedName = NormalizeUserName(userName);
-            _sponsors.Remove(normalizedName);
-            _sponsorsAndBalances.Remove(normalizedName);
-            _sponsorSlots.Remove(normalizedName);
-
-            var lines = File.ReadAllLines(_sponsorsFilePath).ToList();
-            var index = lines.FindIndex(line =>
+            try
             {
-                if (string.IsNullOrWhiteSpace(line))
-                    return false;
+                var normalizedName = NormalizeUserName(userName);
+                _sponsors.Remove(normalizedName);
+                _sponsorsAndBalances.Remove(normalizedName);
+                _sponsorSlots.Remove(normalizedName);
 
-                var parts = line.Split(';');
-                if (parts.Length == 0)
-                    return false;
+                if (!_resourceManager.UserData.Exists(_sponsorsFilePath))
+                {
+                    _sawmill.Debug($"Cannot remove sponsor {userName}: file does not exist");
+                    return;
+                }
 
-                var fileUserName = NormalizeUserName(parts[0].Trim());
-                return fileUserName.Equals(normalizedName, StringComparison.OrdinalIgnoreCase);
-            });
+                var lines = new List<string>();
+                using (var reader = _resourceManager.UserData.OpenText(_sponsorsFilePath))
+                {
+                    string? line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        lines.Add(line);
+                    }
+                }
 
-            if (index != -1)
+                var index = lines.FindIndex(line =>
+                {
+                    if (string.IsNullOrWhiteSpace(line))
+                        return false;
+
+                    var parts = line.Split(';');
+                    if (parts.Length == 0)
+                        return false;
+
+                    var fileUserName = NormalizeUserName(parts[0].Trim());
+                    return fileUserName.Equals(normalizedName, StringComparison.OrdinalIgnoreCase);
+                });
+
+                if (index != -1)
+                {
+                    lines.RemoveAt(index);
+                    using var writer = _resourceManager.UserData.OpenWriteText(_sponsorsFilePath);
+                    foreach (var line in lines)
+                    {
+                        writer.WriteLine(line);
+                    }
+                    _sawmill.Info($"Removed sponsor from file: {userName}");
+                }
+                else
+                {
+                    _sawmill.Debug($"Sponsor {userName} not found in file for removal");
+                }
+            }
+            catch (Exception ex)
             {
-                lines.RemoveAt(index);
-                File.WriteAllLines(_sponsorsFilePath, lines);
+                _sawmill.Error($"Failed to remove sponsor {userName}: {ex}");
+                throw;
             }
         }
         #endregion Read/Write File
@@ -337,60 +538,80 @@ namespace Content.Server._Horizon.SponsorManager
 
         public void UpdateSponsorsAndBalances()
         {
-            // Сначала обновляем данные из основного файла спонсоров
-            // Это синхронизирует все три структуры данных: _sponsors, _sponsorsAndBalances, _sponsorSlots
-            foreach (var line in File.ReadLines(_sponsorsFilePath))
+            try
             {
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
-
-                var parts = line.Split(';');
-                if (parts.Length < 3)
-                    continue;
-
-                var userName = NormalizeUserName(parts[0].Trim());
-                if (string.IsNullOrWhiteSpace(userName))
-                    continue;
-
-                // Добавляем/обновляем в HashSet спонсоров
-                _sponsors.Add(userName);
-
-                // Обновляем слоты
-                if (int.TryParse(parts[1], out var slots))
+                // Сначала обновляем данные из основного файла спонсоров
+                // Это синхронизирует все три структуры данных: _sponsors, _sponsorsAndBalances, _sponsorSlots
+                var sponsorCount = 0;
+                if (_resourceManager.UserData.Exists(_sponsorsFilePath))
                 {
-                    _sponsorSlots[userName] = slots;
-                }
-
-                // Обновляем балансы (начинаем с базового баланса из файла)
-                if (int.TryParse(parts[2], out var balance))
-                {
-                    _sponsorsAndBalances[userName] = balance;
-                }
-            }
-
-            // Затем добавляем дополнительные токены из disposable.txt
-            var disposableLines = SafeReadAllLines(_disposableFilePath);
-
-            foreach (var line in disposableLines)
-            {
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
-
-                var parts = line.Split(',');
-                if (parts.Length < 3)
-                    continue;
-
-                var ckey = NormalizeUserName(parts[0].Trim());
-                if (string.IsNullOrWhiteSpace(ckey))
-                    continue;
-
-                if (int.TryParse(parts[2], out var additionalTokens))
-                {
-                    if (_sponsorsAndBalances.ContainsKey(ckey))
+                    using var reader = _resourceManager.UserData.OpenText(_sponsorsFilePath);
+                    string? line;
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        _sponsorsAndBalances[ckey] += additionalTokens;
+                        if (string.IsNullOrWhiteSpace(line))
+                            continue;
+
+                        var parts = line.Split(';');
+                        if (parts.Length < 3)
+                            continue;
+
+                        var userName = NormalizeUserName(parts[0].Trim());
+                        if (string.IsNullOrWhiteSpace(userName))
+                            continue;
+
+                        // Добавляем/обновляем в HashSet спонсоров
+                        _sponsors.Add(userName);
+
+                        // Обновляем слоты
+                        if (int.TryParse(parts[1], out var slots))
+                        {
+                            _sponsorSlots[userName] = slots;
+                        }
+
+                        // Обновляем балансы (начинаем с базового баланса из файла)
+                        if (int.TryParse(parts[2], out var balance))
+                        {
+                            _sponsorsAndBalances[userName] = balance;
+                        }
+
+                        sponsorCount++;
                     }
                 }
+
+                // Затем добавляем дополнительные токены из disposable.txt
+                var disposableLines = SafeReadAllLines(_disposableFilePath);
+                var additionalTokensCount = 0;
+
+                foreach (var line in disposableLines)
+                {
+                    if (string.IsNullOrWhiteSpace(line))
+                        continue;
+
+                    var parts = line.Split(',');
+                    if (parts.Length < 3)
+                        continue;
+
+                    var ckey = NormalizeUserName(parts[0].Trim());
+                    if (string.IsNullOrWhiteSpace(ckey))
+                        continue;
+
+                    if (int.TryParse(parts[2], out var additionalTokens))
+                    {
+                        if (_sponsorsAndBalances.ContainsKey(ckey))
+                        {
+                            _sponsorsAndBalances[ckey] += additionalTokens;
+                            additionalTokensCount++;
+                        }
+                    }
+                }
+
+                _sawmill.Info($"Updated sponsors and balances: {sponsorCount} sponsors loaded, {additionalTokensCount} additional tokens applied");
+            }
+            catch (Exception ex)
+            {
+                _sawmill.Error($"Failed to update sponsors and balances: {ex}");
+                throw;
             }
         }
 
@@ -404,7 +625,16 @@ namespace Content.Server._Horizon.SponsorManager
                 {
                     balance -= cost;
                     _sponsorsAndBalances[normalizedName] = balance;
+                    _sawmill.Debug($"Deducted {cost} tokens from {userName}, new balance: {balance}");
                 }
+                else
+                {
+                    _sawmill.Warning($"Insufficient balance for {userName}: has {balance}, needs {cost}");
+                }
+            }
+            else
+            {
+                _sawmill.Warning($"Attempted to deduct balance for non-sponsor: {userName}");
             }
         }
 

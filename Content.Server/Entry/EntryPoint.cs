@@ -117,8 +117,10 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
                 IoCManager.Resolve<ServerApi>().Initialize();
-                IoCManager.Resolve<SponsorManager>().LoadSponsorsInfoFile(); // _Horizon
-                IoCManager.Resolve<SponsorManager>().ReadSponsorsFile(); // _Horizon
+                var sponsorManager = IoCManager.Resolve<SponsorManager>();
+                sponsorManager.Initialize(); // _Horizon
+                sponsorManager.LoadSponsorsInfoFile(); // _Horizon
+                sponsorManager.ReadSponsorsFile(); // _Horizon
                 IoCManager.Resolve<MiniAuthManager>();
 
                 _voteManager.Initialize();
