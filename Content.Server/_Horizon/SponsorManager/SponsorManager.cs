@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,10 +19,31 @@ namespace Content.Server._Horizon.SponsorManager
         private FileSystemWatcher _watcher = default!;
         private ISawmill _sawmill = default!;
 
-        private ResPath _sponsorsFilePath => new ResPath(_cfg.GetCVar(HorizonCCVars.SponsorSystemSponsorsPath)).ToRootedPath();
-        private ResPath _dsSponsorsFilePath => new ResPath(_cfg.GetCVar(HorizonCCVars.SponsorSystemDiscordSponsorsPath)).ToRootedPath();
-        private ResPath _disposableFilePath => new ResPath(_cfg.GetCVar(HorizonCCVars.SponsorSystemDisposablePath)).ToRootedPath();
-        private ResPath _sponsorItemsFilePath => new ResPath(_cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath)).ToRootedPath();
+        private ResPath _sponsorsFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemSponsorsPath));
+        private ResPath _dsSponsorsFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemDiscordSponsorsPath));
+        private ResPath _disposableFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemDisposablePath));
+        private ResPath _sponsorItemsFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath));
+
+        /// <summary>
+        /// Normalizes a path from CVar to ensure it's relative to UserData directory.
+        /// Removes leading '/' characters to prevent absolute path issues on Linux.
+        /// </summary>
+        private ResPath NormalizePath(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+                throw new ArgumentException("Path cannot be null or empty", nameof(path));
+
+            // Remove all leading '/' characters to ensure path is treated as relative to UserData
+            // This prevents issues when paths are configured with absolute paths like /ss14_data/...
+            var normalized = path.TrimStart('/');
+
+            if (string.IsNullOrWhiteSpace(normalized))
+                throw new ArgumentException("Path cannot be only slashes", nameof(path));
+
+            // Create ResPath and ensure it's rooted (for ResPath's internal structure)
+            // This creates a ResPath like /sponsorSystem/sponsors.txt which is relative to UserData root
+            return new ResPath(normalized).ToRootedPath();
+        }
 
         private static HashSet<string> _sponsors = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly Dictionary<string, int> _sponsorsAndBalances = new(StringComparer.OrdinalIgnoreCase);
@@ -55,13 +77,34 @@ namespace Content.Server._Horizon.SponsorManager
         {
             try
             {
+                // Log the path being processed for debugging
+                _sawmill.Debug($"Ensuring file exists: {filePath}");
+
+                // Log UserData root directory if available
+                var rootDir = _resourceManager.UserData.RootDir;
+                if (rootDir != null)
+                {
+                    _sawmill.Debug($"UserData root directory: {rootDir}");
+                }
+
+                // Create directory if it doesn't exist
                 _resourceManager.UserData.CreateDir(filePath.Directory);
 
+                // Create file if it doesn't exist
                 if (!_resourceManager.UserData.Exists(filePath))
                 {
                     _resourceManager.UserData.WriteAllText(filePath, string.Empty);
                     _sawmill.Debug($"Created empty sponsor file: {filePath}");
                 }
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                var rootDir = _resourceManager.UserData.RootDir ?? "unknown (virtual provider)";
+                _sawmill.Error($"Permission denied when creating file: {filePath}. " +
+                              $"UserData root: {rootDir}. " +
+                              $"Error: {ex.Message}. " +
+                              $"Make sure the server process has write permissions to the UserData directory.");
+                throw;
             }
             catch (Exception ex)
             {

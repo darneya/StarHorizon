@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Linq;
 using Content.Server.GameTicking.Events;
@@ -41,7 +42,7 @@ namespace Content.Server._Horizon.SponsorManager
             {
                 _sponsorItems.Clear();
 
-                var sponsorItemsPath = new ResPath(_cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath)).ToRootedPath();
+                var sponsorItemsPath = NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemItemsPath));
 
                 if (!_resourceManager.UserData.Exists(sponsorItemsPath))
                 {
@@ -77,6 +78,27 @@ namespace Content.Server._Horizon.SponsorManager
             {
                 _sawmill.Error($"Failed to load sponsor items: {ex}");
             }
+        }
+
+        /// <summary>
+        /// Normalizes a path from CVar to ensure it's relative to UserData directory.
+        /// Removes leading '/' characters to prevent absolute path issues on Linux.
+        /// </summary>
+        private ResPath NormalizePath(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path))
+                throw new ArgumentException("Path cannot be null or empty", nameof(path));
+
+            // Remove all leading '/' characters to ensure path is treated as relative to UserData
+            // This prevents issues when paths are configured with absolute paths like /ss14_data/...
+            var normalized = path.TrimStart('/');
+            
+            if (string.IsNullOrWhiteSpace(normalized))
+                throw new ArgumentException("Path cannot be only slashes", nameof(path));
+            
+            // Create ResPath and ensure it's rooted (for ResPath's internal structure)
+            // This creates a ResPath like /sponsorSystem/sponsor_items.txt which is relative to UserData root
+            return new ResPath(normalized).ToRootedPath();
         }
     }
 }
