@@ -126,9 +126,9 @@ port = 9001
 #runtime = false
 
 [loki]
-enabled = false
-#address = "http://127.0.0.1:3100"
-#name = "aavikko_ss14_main"
+enabled = true
+address = "%loki_address%"
+name = "%loki_name%"
 
 ################################################################################
 ##### Discord ##################################################################
