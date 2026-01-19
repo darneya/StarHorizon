@@ -12,8 +12,8 @@
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
-  - type: Advertise
-    pack: ClothesMateAds
+  - type: DatasetVocalizer
+    dataset: ClothesMateAds
   - type: MarketModifier
     mod: 1
   - type: SpeakOnUIClosed
