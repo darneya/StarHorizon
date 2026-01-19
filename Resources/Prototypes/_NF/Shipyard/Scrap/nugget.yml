@@ -16,7 +16,7 @@
   price: 15950 # +1450 from 10% Markup
   category: Small
   group: Scrap
-  shuttlePath: /Maps/_NF/Shuttles/Scrap/nugget.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Scrap/nugget.yml  # Horizon - замена карты
   guidebookPage: Null
   class:
   - Scrapyard
@@ -36,7 +36,7 @@
 - type: gameMap
   id: Nugget
   mapName: 'SV Nugget'
-  mapPath: /Maps/_NF/Shuttles/Scrap/nugget.yml
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Scrap/nugget.yml  # Horizon - замена карты
   minPlayers: 0
   stations:
     Nugget:

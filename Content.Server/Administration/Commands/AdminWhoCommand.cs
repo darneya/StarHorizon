@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using Content.Server.Administration.Managers;
 using Content.Server.Afk;
 using Content.Shared.Administration;
@@ -7,8 +7,8 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Administration.Commands;
 
-[AdminCommand(AdminFlags.AdminWho)]
-public sealed class AdminWhoCommand : LocalizedCommands
+[AnyCommand]
+public sealed class AdminWhoCommand : IConsoleCommand
 {
     [Dependency] private readonly IAfkManager _afkManager = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;

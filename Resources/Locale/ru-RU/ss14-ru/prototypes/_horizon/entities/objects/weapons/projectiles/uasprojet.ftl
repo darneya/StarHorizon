@@ -1,10 +1,10 @@
-ent-StandartLaserUAS = UAS Bullet
+ent-StandartLaserAnCo = AnCo Bullet
     .desc = { ent-EmitterBolt.desc }
-ent-StandartDisablerUAS = UAS Bullet Disabler
+ent-StandartDisablerAnCo = AnCo Bullet Disabler
     .desc = { ent-EmitterBolt.desc }
-ent-SniperDisablerUAS = UAS Bullet Disabler
-    .desc = { ent-StandartDisablerUAS.desc }
-ent-BulletDisablerSmgUAS = Bullet Disabler Smg UAS
-    .desc = { ent-StandartDisablerUAS.desc }
-ent-StandartExplodesUAS = UAS Bullet Boom
+ent-SniperDisablerAnCo = AnCo Bullet Disabler
+    .desc = { ent-StandartDisablerAnCo.desc }
+ent-BulletDisablerSmgAnCo = Bullet Disabler Smg AnCo
+    .desc = { ent-StandartDisablerAnCo.desc }
+ent-StandartExplodesAnCo = AnCo Bullet Boom
     .desc = { ent-BaseBulletTrigger.desc }

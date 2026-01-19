@@ -371,8 +371,84 @@
 # ===== XENOMORPHS =====
 
 - type: cellSample
-  id: CellSampleXeno
-  name: клетки ксено
+  id: CellSampleXenomorphLarva
+  name: клетки личинки
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidH"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Enzyme": 2
+  suppressiveChemicals:
+    "FrostOil": -3
+    "SulfuricAcid": -1
+  spawnMobByPrototype:
+  - MobXenomorphLarva
+  textureState: "violet"
+
+- type: cellSample
+  id: CellSampleXenomorphDrone
+  name: клетки дрона
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidH"
+  supplementaryChemicals:
+    "Vitamin": 3
+    "Enzyme": 3
+  suppressiveChemicals:
+    "FrostOil": -4
+    "SulfuricAcid": -2
+  spawnMobByPrototype:
+  - MobXenomorphDrone
+  textureState: "violet"
+
+- type: cellSample
+  id: CellSampleXenomorphPraetorian
+  name: клетки преторианца
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidK"
+  supplementaryChemicals:
+    "Vitamin": 3
+    "Enzyme": 4
+  suppressiveChemicals:
+    "FrostOil": -5
+    "SulfuricAcid": -4
+  spawnMobByPrototype:
+  - MobXenomorphPraetorian
+  textureState: "violet"
+
+- type: cellSample
+  id: CellSampleXenomorphHunter
+  name: клетки охотника
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidW"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Enzyme": 2
+  suppressiveChemicals:
+    "FrostOil": -3
+    "SulfuricAcid": -2
+  spawnMobByPrototype:
+  - MobXenomorphHunter
+  textureState: "violet"
+
+- type: cellSample
+  id: CellSampleXenomorphSentinel
+  name: клетки защитника
   growthRateInSeconds: 100
   viralSusceptibility: 2
   requiredChemicals:
@@ -383,10 +459,31 @@
     "Vitamin": 2
     "Enzyme": 3
   suppressiveChemicals:
+    "FrostOil": -3
+    "SulfuricAcid": -2
+  spawnMobByPrototype:
+  - MobXenomorphSentinel
+  textureState: "violet"
+
+# ===== XENOMORPHS (NPC) =====
+
+- type: cellSample
+  id: CellSampleXenoRouny
+  name: клетки Руни
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidH"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Enzyme": 3
+  suppressiveChemicals:
     "FrostOil": -4
     "SulfuricAcid": -3
   spawnMobByPrototype:
-  - MobXeno
+  - MobXenoRouny
   textureState: "violet"
 
 - type: cellSample
@@ -428,14 +525,33 @@
   textureState: "violet"
 
 - type: cellSample
-  id: CellSampleXenoRavager
-  name: клетки разрушителя
+  id: CellSampleXeno
+  name: клетки норника
   growthRateInSeconds: 100
   viralSusceptibility: 2
   requiredChemicals:
   - "Protein"
   - "Nutriment"
-  - "XenoidAcidK"
+  - "XenoidAcidW"
+  supplementaryChemicals:
+    "Vitamin": 2
+    "Enzyme": 3
+  suppressiveChemicals:
+    "FrostOil": -4
+    "SulfuricAcid": -3
+  spawnMobByPrototype:
+  - MobXeno
+  textureState: "violet"
+
+- type: cellSample
+  id: CellSampleXenoRavager
+  name: клетки разорителя
+  growthRateInSeconds: 100
+  viralSusceptibility: 2
+  requiredChemicals:
+  - "Protein"
+  - "Nutriment"
+  - "XenoidAcidH"
   supplementaryChemicals:
     "Vitamin": 2
     "Enzyme": 3
@@ -463,25 +579,6 @@
     "SulfuricAcid": -2
   spawnMobByPrototype:
   - MobXenoRunner
-  textureState: "violet"
-
-- type: cellSample
-  id: CellSampleXenoRouny
-  name: клетки Руни
-  growthRateInSeconds: 100
-  viralSusceptibility: 2
-  requiredChemicals:
-  - "Protein"
-  - "Nutriment"
-  - "XenoidAcidH"
-  supplementaryChemicals:
-    "Vitamin": 2
-    "Enzyme": 3
-  suppressiveChemicals:
-    "FrostOil": -4
-    "SulfuricAcid": -3
-  spawnMobByPrototype:
-  - MobXenoRouny
   textureState: "violet"
 
 - type: cellSample

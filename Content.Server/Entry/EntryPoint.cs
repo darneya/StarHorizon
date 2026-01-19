@@ -1,3 +1,4 @@
+using Content.Server._Horizon;
 using Content.Server._Horizon.SponsorManager;
 using Content.Server._NF.Auth;
 using Content.Server.Acz;
@@ -53,6 +54,7 @@ namespace Content.Server.Entry
         private IServerDbManager? _dbManager;
         private IWatchlistWebhookManager _watchlistWebhookManager = default!;
         private IConnectionManager? _connectionManager;
+        private GameShutdownController _gameShutdownController = null!;
 
         /// <inheritdoc />
         public override void Init()
@@ -101,6 +103,7 @@ namespace Content.Server.Entry
                 _sysMan = IoCManager.Resolve<IEntitySystemManager>();
                 _dbManager = IoCManager.Resolve<IServerDbManager>();
                 _watchlistWebhookManager = IoCManager.Resolve<IWatchlistWebhookManager>();
+                _gameShutdownController = IoCManager.Resolve<GameShutdownController>();
 
                 logManager.GetSawmill("Storage").Level = LogLevel.Info;
                 logManager.GetSawmill("db.ef").Level = LogLevel.Info;
@@ -108,14 +111,17 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IAdminLogManager>().Initialize();
                 IoCManager.Resolve<IConnectionManager>().Initialize();
                 _dbManager.Init();
+                _gameShutdownController.Init();
                 IoCManager.Resolve<IServerPreferencesManager>().Init();
                 IoCManager.Resolve<INodeGroupFactory>().Initialize();
                 IoCManager.Resolve<ContentNetworkResourceManager>().Initialize();
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
                 IoCManager.Resolve<ServerApi>().Initialize();
-                IoCManager.Resolve<SponsorManager>().LoadSponsorsInfoFile(); // _Horizon
-                IoCManager.Resolve<SponsorManager>().ReadSponsorsFile(); // _Horizon
+                var sponsorManager = IoCManager.Resolve<SponsorManager>();
+                sponsorManager.Initialize(); // _Horizon
+                sponsorManager.LoadSponsorsInfoFile(); // _Horizon
+                sponsorManager.ReadSponsorsFile(); // _Horizon
                 IoCManager.Resolve<MiniAuthManager>();
 
                 _voteManager.Initialize();
@@ -181,6 +187,7 @@ namespace Content.Server.Entry
                 {
                     _euiManager.SendUpdates();
                     _voteManager.Update();
+                    _gameShutdownController.Update();
                     break;
                 }
 
@@ -189,6 +196,7 @@ namespace Content.Server.Entry
                     _playTimeTracking?.Update();
                     _watchlistWebhookManager.Update();
                     _connectionManager?.Update();
+                    _gameShutdownController.Update();
                     break;
             }
         }

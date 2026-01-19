@@ -55,6 +55,7 @@ public abstract partial class SharedBuckleSystem
         SubscribeLocalEvent<BuckleComponent, StandAttemptEvent>(OnBuckleStandAttempt);
         SubscribeLocalEvent<BuckleComponent, ThrowPushbackAttemptEvent>(OnBuckleThrowPushbackAttempt);
         SubscribeLocalEvent<BuckleComponent, UpdateCanMoveEvent>(OnBuckleUpdateCanMove);
+        SubscribeLocalEvent<BuckleComponent, UnbuckleDoAfterEvent>(OnUnbuckleDoAfter); // WD EDIT
 
         SubscribeLocalEvent<BuckleComponent, BuckleDoAfterEvent>(OnBuckleDoafter);
         SubscribeLocalEvent<BuckleComponent, DoAfterAttemptEvent<BuckleDoAfterEvent>>((uid, comp, ev) =>
@@ -186,6 +187,16 @@ public abstract partial class SharedBuckleSystem
         if (component.Buckled)
             args.Cancel();
     }
+
+    // WD EDIT START
+    private void OnUnbuckleDoAfter(EntityUid uid, BuckleComponent component, UnbuckleDoAfterEvent args)
+    {
+        if (args.Cancelled || !CanUnbuckle((uid, component), uid, true, out var strap))
+            return;
+
+        Unbuckle((uid, component), strap, uid);
+    }
+    // WD EDIT END
 
     public bool IsBuckled(EntityUid uid, BuckleComponent? component = null)
     {
@@ -427,6 +438,14 @@ public abstract partial class SharedBuckleSystem
 
         if (!CanUnbuckle(buckle, user, popup, out var strap))
             return false;
+
+        // WD EDIT START
+        if (buckle.Owner == user && strap.Comp.SelfUnBuckleDelay != TimeSpan.Zero)
+        {
+            var doAfter = new DoAfterArgs(EntityManager, buckle.Owner, strap.Comp.SelfUnBuckleDelay, new UnbuckleDoAfterEvent(), buckle.Owner);
+            return _doAfter.TryStartDoAfter(doAfter);
+        }
+        // WD EDIT END
 
         Unbuckle(buckle!, strap, user);
         return true;

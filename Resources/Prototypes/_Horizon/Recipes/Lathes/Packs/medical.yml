@@ -5,6 +5,7 @@
   recipes:
   - CytologyGrowingVatMachineCircuitboard
   - CytologyMicroscopeMachineCircuitboard
+  - CytologySampleCombinatorComputerCircuitboard
 
 - type: latheRecipePack
   id: CytologyEquipment

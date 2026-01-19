@@ -15,6 +15,9 @@ faction-nfsd-desc = Защитники прав и свобод Фронтира
 faction-pirate-name = Pirate
 faction-pirate-desc = Никто не любит пираторв и пираты никого не любят.
 
+faction-syndicate-name = Syndicate
+faction-syndicate-desc = Главные конкуренты в секторе
+
 faction-siu-name = Innovative Horizon of Progress
 faction-siu-desc =
     Корпорация специализирующаяся на исследовании аномальных явлениях и их пораждений.
@@ -25,6 +28,12 @@ faction-arcadia-desc =
     Относительно новая фракция в пределах Фронтира и в остальной части большей галактики.
     В настоящее время цели Arcadia Industries неизвестны.
     Однако они проявили большой интерес к Фронтиру и его ресурсам.
+
+faction-anco-name = AnroxComputer’s
+faction-anco-desc =
+    Корпорация специализирующаяся на предоставлении различных видов услуг и товаров.
+    Главная цель на фронтире, обеспечивать безопасность интересов AnroxComputer’s.
+    Верность. Решительность. Эффективность.
 
 faction-med-name = Medical Dispatch
 faction-med-desc = Отважные Врачи и Парамедики. Спасут из любой точки Фронтира, если вы не забыли выключить датчики.

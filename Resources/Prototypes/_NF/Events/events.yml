@@ -21,10 +21,10 @@
   - type: StationEvent
     startAudio:
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_breaker_flip.ogg
-    weight: 7
-    earliestStart: 15 # Frontier
+    weight: 2 # Horizon
+    earliestStart: 120 # Horizon
     duration: 1
-    minimumPlayers: 1 # Horizon TempTweak
+    minimumPlayers: 20 # Horizon
   - type: BreakerFlipRule
 
 - type: entity
@@ -32,7 +32,12 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
+<<<<<<< HEAD
     earliestStart: 15 # Frontier
+=======
+    weight: 2 # Horizon
+    earliestStart: 120 # Horizon
+>>>>>>> origin/master
     startAnnouncement: station-event-power-grid-check-nf-start-announcement # Frontier: add nf-
     endAnnouncement: station-event-power-grid-check-nf-end-announcement # Frontier: add nf-
     startAudio:
@@ -46,6 +51,7 @@
     weight: 5
     duration: 60
     maxDuration: 120
+    minimumPlayers: 20 # Horizon
   - type: PowerGridCheckRule
 
 - type: entity

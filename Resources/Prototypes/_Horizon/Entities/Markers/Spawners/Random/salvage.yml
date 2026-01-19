@@ -17,4 +17,7 @@
     - TechnologyDiscUniversalTranslator
     - TechnologyDiscCombatCybernetics
     - TechnologyDiscCombatCyborgs
+    - CytologyDiskHealthSpeed
+    - CytologyDiskMeleeDamage
+    - CytologyDiskSpeedHunger
     offset: 0.0

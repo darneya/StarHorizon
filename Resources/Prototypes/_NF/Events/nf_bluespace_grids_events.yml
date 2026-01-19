@@ -15,6 +15,7 @@
     weight: 5
     duration: 1350
     maxDuration: 1560
+    minimumPlayers: 20 # Horizon
     reoccurrenceDelay: 180 # 3 hours # Horizon TempTweak
 #    requiredJobs: # Horizon TempTweak
 #      Sheriff: 1 # Horizon TempTweak
@@ -58,6 +59,7 @@
     weight: 5
     duration: 1020
     maxDuration: 1350
+    minimumPlayers: 20 # Horizon
     reoccurrenceDelay: 180 # 3 hours # Horizon TempTweak
   - type: BluespaceErrorRule
     groups:
@@ -127,6 +129,7 @@
       Frontier: 0.25
       Medical: 0.25
       Edison: 0.25
+
 - type: entity
   id: BluespaceSyndicateFTLInterception
   parent: BaseStationEventShortDelay
@@ -140,7 +143,7 @@
     endAudio:
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_leave.ogg
     earliestStart: 30 # 0,5 hours # Horizon TempTweak
-    minimumPlayers: 1 # Horizon TempTweak
+    minimumPlayers: 20 # Horizon
     weight: 1
     duration: 1800
     maxDuration: 2400
@@ -179,7 +182,7 @@
     endAudio:
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_leave.ogg
     earliestStart: 30 # 0,5 hours # Horizon TempTweak
-    minimumPlayers: 1 # Horizon TempTweak
+    minimumPlayers: 20 # Horizon
     weight: 1
     duration: 900
     maxDuration: 1200
@@ -218,7 +221,7 @@
     endAudio:
       path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_leave.ogg
     earliestStart: 30 # 0,5 hours # Horizon TempTweak
-    minimumPlayers: 1 # Horizon TempTweak
+    minimumPlayers: 20 # Horizon
     weight: 1
     duration: 1800
     maxDuration: 2400

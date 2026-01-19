@@ -20,6 +20,7 @@
   desc: faction-nfsd-desc
   color: "#369926"
   roundstart: false
+  outpostSpawnListProto: FactionNFSD
 
 # region Experimental
 
@@ -34,6 +35,12 @@
   name: faction-arcadia-name
   desc: faction-arcadia-desc
   color: "#881DE0"
+
+- type: characterFaction
+  id: FactionAnCo
+  name: faction-anco-name
+  desc: faction-anco-desc
+  color: "#b30e0e"
 
 # region Medical
 
@@ -91,3 +98,12 @@
   desc: faction-pirate-desc
   color: "#ff0d00"
   roundstart: false
+  outpostSpawnListProto: FactionPirate
+
+- type: characterFaction
+  id: FactionSyndicate
+  name: faction-syndicate-name
+  desc: faction-syndicate-desc
+  color: "#b51414"
+  roundstart: false
+  outpostSpawnListProto: FactionSyndicate

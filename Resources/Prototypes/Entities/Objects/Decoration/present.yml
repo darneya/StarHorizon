@@ -378,6 +378,10 @@
         orGroup: GiftPool
       - id: RGBStaff
         orGroup: GiftPool
+      # WD EDIT START
+      - id: FaceHuggerToys
+        orGroup: GiftPool
+      # WD EDIT END
     sound:
       path: /Audio/Effects/unwrap.ogg
 
@@ -483,6 +487,12 @@
       - id: TechnologyDiscCombatCybernetics
         orGroup: TechDiskPool
       - id: TechnologyDiskCombatCyborgs
+        orGroup: TechDiskPool
+      - id: CytologyDiskHealthSpeed
+        orGroup: TechDiskPool
+      - id: CytologyDiskMeleeDamage
+        orGroup: TechDiskPool
+      - id: CytologyDiskSpeedHunger
         orGroup: TechDiskPool
     sound:
       path: /Audio/Effects/unwrap.ogg

@@ -106,6 +106,9 @@
   - pausemap
   - unpausemap
   - restart
+
+- Flags: PERMISSIONS
+  Commands:
   - shutdown
 
 - Flags: SPAWN

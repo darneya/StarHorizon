@@ -198,6 +198,11 @@
       key_slots:
       - EncryptionKeyTraffic
   # End Frontier
+  # Horizon shipyard start
+  - type: Tag
+    tags:
+    - ShuttleConsole
+  # Horizon shipyard end
 
 - type: entity
   parent: BaseComputerShuttle
@@ -222,9 +227,9 @@
     tags:
       - Syndicate
   - type: RadarConsole
-    maxRange: 384
+    maxRange: 256
   - type: WorldLoader
-    radius: 1536
+    radius: 256
   - type: PointLight
     radius: 1.5
     energy: 4.0

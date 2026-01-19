@@ -1,3 +1,4 @@
+using Content.Server._Horizon;
 using Content.Server._Horizon.SponsorManager;
 using Content.Server._NF.Auth;
 using Content.Server._Harmony.JoinQueue; // Harmony Queue
@@ -40,6 +41,7 @@ namespace Content.Server.IoC
     {
         public static void Register()
         {
+            IoCManager.Register<GameShutdownController>();
             IoCManager.Register<IChatManager, ChatManager>();
             IoCManager.Register<ISharedChatManager, ChatManager>();
             IoCManager.Register<IChatSanitizationManager, ChatSanitizationManager>();

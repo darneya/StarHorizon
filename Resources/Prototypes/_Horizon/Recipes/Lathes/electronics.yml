@@ -49,3 +49,13 @@
     Steel: 800
     Glass: 900
     Gold: 100
+    
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: MachineBluespaceHarvesterCircuitboard
+  result: MachineBluespaceHarvesterCircuitboard
+
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: MachineBLESCircuitboard
+  result: MachineBLESCircuitboard

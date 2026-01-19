@@ -118,7 +118,8 @@ public static class ServerPackaging
                     $"/p:TargetOs={platform.TargetOs}",
                     "/t:Rebuild",
                     "/p:FullRelease=true",
-                    "/m"
+                    "/m",
+                    "/p:WarningLevel=0"
                 }
             });
 

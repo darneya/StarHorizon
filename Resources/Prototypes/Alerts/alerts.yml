@@ -27,6 +27,7 @@
     - alertType: Rooted
     - alertType: Pacified
     - alertType: Stealthy
+    - category: Counter # WD EDIT
 
 - type: entity
   id: AlertSpriteView

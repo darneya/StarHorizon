@@ -50,6 +50,7 @@
     - FrontierUplinkCoin10
     - RubberStampDetective
     - ContrabandForensicsModule
+    - ShipVoucherFrontierDetective
   cartridges:
   - LogProbeCartridge
 
