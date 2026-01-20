@@ -1,33 +1,32 @@
 - type: entity
-  id: AnCoWarningFabricator
+  id: AnCoEmergencyFabricator
   parent: [BaseStructure, BaseAnCoContraband]
   name: аварийный фабрикатор
-  description: Данный фабрикатор имеет необходимое количество материалов, для записанных чертежей.
+  description: Одноразовый фабрикатор для экстренного получения снаряжения. Выберите нужные наборы и подтвердите выбор.
   suffix: StarHorizon, AnCo, Structure
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/uasprotoplat.rsi
-    snapCardinals: true
+    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/onefabtic.rsi
     layers:
     - state: icon
-      map: ["enum.LatheVisualLayers.IsRunning"]
-    - state: unlit
-      shader: unshaded
-      map: ["enum.PowerDeviceVisualLayers.Powered"]
-    - state: inserting
-      map: ["enum.MaterialStorageVisualLayers.Inserting"]
-  - type: Machine
-    board: AnCoAnomalyCircuitboard
-  - type: MaterialStorage
-    whitelist:
-      tags:
-        - AnCoMaterial
-  - type: Lathe
+      map: ["enum.AnCoDisposableFabricatorVisualLayers.IsWorking"]
+  - type: AnCoDisposableFabricator
+    possibleSets:
+    - ExampleToolsSet
+    maxSelectedSets: 1
+    workDuration: 3.3
     idleState: icon
-    runningState: building
-    unlitIdleState: unlit
-    staticPacks:
-    - AnCoStandartCraft
+    workingState: work
+  - type: AnCoDisposableFabricatorVisuals
+    idleState: icon
+    workingState: work
+  - type: Appearance
+  - type: ActivatableUI
+    key: enum.AnCoDisposableFabricatorUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.AnCoDisposableFabricatorUIKey.Key:
+        type: AnCoDisposableFabricatorBoundUserInterface
 
 - type: anCoDisposableFabricatorSet
   id: ExampleToolsSet
