@@ -28,7 +28,6 @@
   parent: [ChemicalMedipen, BaseAnCoContraband]
   id: CombatMedipenAnCo
   description: Предназначен для лечения обширных повреждений. Внимание, может вызвать рвоту!
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uasmedipen.rsi
@@ -70,7 +69,6 @@
   parent: [ChemicalMedipen, BaseAnCoContraband]
   id: NanitMedipenAnCo
   description: Медипен, содержащий наниты. Используйте на свой страх и риск.
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uasmedipen.rsi

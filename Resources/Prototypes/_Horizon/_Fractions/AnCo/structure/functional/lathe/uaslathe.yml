@@ -54,7 +54,6 @@
   name: микросхема АнКо
   suffix: StarHorizon, AnCo
   description: Красная прозрачная микросхема. Вы ощущаете исходящее от неё тепло.
-  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Horizon/_Fractions/AnCo/Objects/Misc/uasciruitboard.rsi

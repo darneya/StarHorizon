@@ -2,7 +2,7 @@
 - type: entity
   id: BaseWeaponAnCo
   parent: [BaseItem, BaseAnCoContraband]
-  abstract: true
+  categories: [ HideSpawnMenu ]
   suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Sprite
@@ -32,7 +32,6 @@
   id: BaseWeaponPowerCellAnCo
   parent: [BaseItem, BaseAnCoContraband]
   categories: [ HideSpawnMenu ]
-  abstract: true
   suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Sprite

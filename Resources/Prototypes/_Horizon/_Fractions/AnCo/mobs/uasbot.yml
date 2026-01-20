@@ -4,7 +4,6 @@
   name: защитный бот АнКо
   description: Бот необходимый для защиты важного оборудования АнКо
   parent: [ MobElementalBase, MobCombat, BaseItem ]
-  categories: [ HideSpawnMenu ]
   components:
   - type: Item
     size: Small
@@ -102,7 +101,6 @@
   name: отключенный защитный бот АнКо
   suffix: StarHorizon, AnCo
   parent: BaseItem
-  categories: [ HideSpawnMenu ]
   components:
   - type: DeleteOnTrigger
   - type: OnUseTimerTrigger

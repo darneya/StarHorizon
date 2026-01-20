@@ -1,6 +1,5 @@
 - type: entity
   parent: [ClothingShoesMilitaryBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: AnCoBoots
   suffix: StarHorizon, AnCo
   name: боевые ботинки АнКо
@@ -19,7 +18,6 @@
 
 - type: entity
   parent: [ClothingShoesBootsMagBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: AnCoClothingShoesBootsMag
   name: магнитные ботинки АнКо
   suffix: StarHorizon, AnCo

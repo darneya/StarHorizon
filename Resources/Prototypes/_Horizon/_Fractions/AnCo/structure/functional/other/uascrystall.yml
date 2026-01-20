@@ -4,7 +4,6 @@
   suffix: StarHorizon, AnCo, Structure
   name: кристалл Ардония
   description: Вы ощущаете исходящий от этого кристалла жар.
-  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Horizon/_Fractions/AnCo/Structures/Decoration/uascrystall.rsi
