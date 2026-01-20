@@ -48,3 +48,16 @@
     price: 75
 
 
+
+- type: entity
+  id: CrateBaseAnCoSpider
+  parent: CrateBaseAnCo
+  suffix: StarHorizon, AnCo, Structure
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitSpider
+        amount: 1
+      - id: JetpackVoidFilled
+        amount: 1

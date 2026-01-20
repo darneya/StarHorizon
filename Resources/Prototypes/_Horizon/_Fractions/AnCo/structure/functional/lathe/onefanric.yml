@@ -36,9 +36,4 @@
     sprite: Objects/Tools/toolbox_gold.rsi
     state: icon
   content:
-  - Crowbar
-  - Wrench
-  - Screwdriver
-  - Wirecutter
-  - Welder
-  - Multitool
+  - CrateBaseAnCoSpider
