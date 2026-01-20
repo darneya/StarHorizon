@@ -332,7 +332,7 @@
     zeroVisible: true
 
 - type: entity
-  name: лазерная винтовка AnCo
+  name: лазерная винтовка АнКо
   parent: BaseWeaponPowerCellAnCo
   id: LaserAnCoGun
   description: Специально созданная под Ардониевые ячейки, винтовка с высокой скорострельностью.
