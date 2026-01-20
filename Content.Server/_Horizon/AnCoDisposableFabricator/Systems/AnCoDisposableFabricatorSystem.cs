@@ -70,6 +70,7 @@ public sealed class AnCoDisposableFabricatorSystem : EntitySystem
         comp.WorkEndTime = _timing.CurTime + TimeSpan.FromSeconds(comp.WorkDuration);
 
         _appearance.SetData(uid, AnCoDisposableFabricatorVisuals.IsWorking, true);
+        _audio.PlayPvs(comp.WorkingSound, uid);
     }
 
     private void FinishWork(EntityUid uid, AnCoDisposableFabricatorComponent comp)
@@ -85,7 +86,6 @@ public sealed class AnCoDisposableFabricatorSystem : EntitySystem
             }
         }
 
-        _audio.PlayPvs(comp.ApproveSound, coordinates);
         QueueDel(uid);
     }
 
