@@ -91,9 +91,9 @@
     sprite: _NF/Objects/Storage/Pouches/pouch.rsi
   - type: SpawnItemsOnUse
     items:
-      - id: CombatKnife
       - id: SpaceCash500
       - id: TreasureCoinSilver
+      - id: CombatKnife
       # Bonus Loot T3
       - id: SpaceCash500
         prob: 0.8
@@ -101,7 +101,7 @@
         prob: 0.8
       - id: SpawnDungeonLootMaterialsBasicFull
         prob: 0.7
-      - id: 
+      - id:
     sound:
       path: /Audio/Items/jumpsuit_equip.ogg
 
@@ -118,7 +118,6 @@
     sprite: _NF/Objects/Storage/Pouches/pouch.rsi
   - type: SpawnItemsOnUse
     items:
-      - id: Cutlass
       - id: SpaceCash1000
       - id: TreasureCoinSilver
       # Bonus Loot T3
@@ -142,7 +141,6 @@
     sprite: _NF/Objects/Storage/Pouches/pouch.rsi
   - type: SpawnItemsOnUse
     items:
-      - id: Cutlass
       - id: SpaceCash500
       - id: TreasureCoinSilver
       # Bonus Loot T3
@@ -169,9 +167,9 @@
   - type: SpawnItemsOnUse
     items:
       - id: BoxFolderClipboard
-      - id: NFWeaponLauncherPirateCannon
       - id: NFCannonBall
         amount: 2
+      - id: NFWeaponLauncherPirateCannon
       - id: SpaceCash2500
       - id: TreasureCoinGold
         amount: 3
@@ -206,7 +204,6 @@
     items:
       - id: SpaceCash2500
       - id: TreasureCoinGold
-      - id: CaptainSabre
         amount: 3
       # Bonus Loot T3
       - id: SpaceCash1000
@@ -244,8 +241,7 @@
         amount: 2
       - id: TreasureCoinSilver3
         amount: 2
-      - id: EnergyCutlass
-        
+      - id: NFWeaponEnergyPistolLaserX01Multiphase
       # Bonus Loot T3
       - id: SpaceCash2500
         prob: 0.8

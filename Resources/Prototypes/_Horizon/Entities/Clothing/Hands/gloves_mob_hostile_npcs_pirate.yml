@@ -45,8 +45,6 @@
       gloves:
       - sprite: Clothing/Hands/Gloves/fingerless.rsi
         state: equipped-HAND
-      - sprite: Objects/Weapons/Melee/combat_knife.rsi
-        state: inhand-left
 
 - type: entity
   parent: ClothingHandsGlovesColorBlackPirateRevolver
@@ -60,8 +58,6 @@
       gloves:
       - sprite: Clothing/Hands/Gloves/fingerless.rsi
         state: equipped-HAND
-      - sprite: Objects/Weapons/Melee/cutlass.rsi
-        state: inhand-left
 
 - type: entity
   parent: ClothingHandsGlovesColorBlackPirateRevolver
@@ -76,7 +72,8 @@
       - sprite: Clothing/Hands/Gloves/fingerless.rsi
         state: equipped-HAND
       - sprite: Objects/Weapons/Guns/Launchers/pirate_cannon.rsi
-        state: inhand-left
+        state: inhand-right
+
 
 - type: entity
   parent: ClothingHandsGlovesColorBlackPirateRevolver
@@ -90,8 +87,6 @@
       gloves:
       - sprite: Clothing/Hands/Gloves/fingerless.rsi
         state: equipped-HAND
-      - sprite: Objects/Weapons/Melee/captain_sabre.rsi
-        state: inhand-right
 
 - type: entity
   parent: ClothingHandsGlovesColorBlackPirateRevolver
@@ -105,8 +100,5 @@
       gloves:
       - sprite: Clothing/Hands/Gloves/fingerless.rsi
         state: equipped-HAND
-      - sprite: Objects/Weapons/Melee/e_cutlass.rsi
-        state: inhand-right
-      - sprite: Objects/Weapons/Melee/e_cutlass.rsi
-        state: inhand-right-blade
-        color: "#e95151"
+      - sprite: _DV/Objects/Weapons/Guns/Battery/multiphase_energygun.rsi
+        state: lethal-inhand-right

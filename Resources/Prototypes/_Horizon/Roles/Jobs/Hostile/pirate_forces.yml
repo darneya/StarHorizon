@@ -37,7 +37,9 @@
     shoes: ClothingShoesBootsPirate
     gloves: ClothingHandsGlovesColorBlackCombatKnife
     ears: ClothingHeadsetFreelance
-    pocket2: ClothingPocketPirateMatrosLootA
+    pocket2: ClothingPocketPirateMatrosLootB
+  inhand:
+  - CombatKnife
 
 - type: startingGear
   id: PirateAbordajGearA
@@ -49,6 +51,8 @@
     ears: ClothingHeadsetFreelance
     outerClothing: ClothingOuterCoatPirate
     pocket2: ClothingPocketPirateAbordajLootA
+  inhand:
+  - Cutlass
 
 - type: startingGear
   id: PirateAbordajGearB
@@ -60,6 +64,8 @@
     ears: ClothingHeadsetFreelance
     outerClothing: ClothingOuterCoatPirate
     pocket2: ClothingPocketPirateAbordajLootA
+  inhand:
+  - Cutlass
 
 - type: startingGear
   id: PirateAbordajGearC
@@ -69,10 +75,12 @@
     shoes: ClothingShoesBootsMagPirateFilled
     gloves: ClothingHandsGlovesColorBlackCutlass
     ears: ClothingHeadsetFreelance
-    outerClothing: ClothingOuterEVASuitPirate 
+    outerClothing: ClothingOuterEVASuitPirate
     back: JetpackBlackFilled
     suitstorage: NFTankO2N2EqualFilled
     pocket2: ClothingPocketPirateEVALootA
+  inhand:
+  - Cutlass
 
 - type: startingGear
   id: PirateQuartermasterGearA
@@ -97,8 +105,10 @@
     belt: ClothingBeltSheath
     gloves: ClothingHandsGlovesColorBlackPirateSabre
     ears: ClothingHeadsetFreelance
-    outerClothing: ClothingOuterCoatPirateCaptain 
+    outerClothing: ClothingOuterCoatPirateCaptain
     pocket2: ClothingPocketPirateBotsmanLootA
+  inhand:
+  - CaptainSabre
 
 - type: startingGear
   id: PirateCaptainGearA
@@ -106,5 +116,5 @@
     head: ClothingHeadHelmetHardsuitPirateCap
     gloves: ClothingHandsGlovesColorBlackPirateCutlassEnergy
     neck: ClothingNeckCloakPirateCap
-    outerClothing: ClothingOuterHardsuitPirateCap 
+    outerClothing: ClothingOuterHardsuitPirateCap
     pocket2: ClothingPocketPirateCaptainLootA

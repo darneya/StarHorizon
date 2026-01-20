@@ -1,3 +1,54 @@
+# Human NPC without inventory when alive (like Explorers)
+- type: entity
+  save: false
+  suffix: AI, Hostile
+  abstract: true
+  parent:
+  - NFMobAtmos
+  - MobMovementSpeedModifierMelee
+  - MobStaminaFodder
+  - MobBloodstream
+  - MobFlammable
+  - MobEnhancedMovement
+  - BaseMobSpecies
+  - BaseC3MobHuman
+  - NFBaseMobRestrictions
+  id: MobHumanoidHostileBaseNoInventory
+  components:
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  - type: MobMover
+  - type: StandingState
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: MobThresholds
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      40: 0.7
+      60: 0.5
+  - type: Blindable
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatRotten
+      amount: 2
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: Carriable # Carrying system from nyanotrasen.
+  - type: Advertise
+    pack: syndicatehumanoidchatter
+    minimumWait: 120
+    maximumWait: 240
+    nextAdvertisementTime: 0
+  - type: FTLKnockdownImmune
+  - type: Respirator
+    updateInterval: 99999 # Shouldn't run often, if ever.
+    suffocationThreshold: -100 # Should never happen.
+    damage:
+      types: {}
+    damageRecovery:
+      types: {}
 #region base
 - type: entity
   name: pirate mob ranged
@@ -10,6 +61,7 @@
   - MobHumanoidHostileBase
   - MobHumanoidInvetory
   - MobHumanoidHostileAISimpleRanged
+  - MobHumanoidHostileBaseNoInventory
   id: MobPirateBase
   components:
   - type: Body
@@ -35,7 +87,7 @@
 #region Humans
 # Корсар-наёмник??
 #-
-# Матрос 
+# Матрос
 - type: entity
   name: Матрос
   parent: MobPirateBase
@@ -109,10 +161,6 @@
   - type: RandomHumanoidAppearance
     randomizeName: true
   - type: RandomMetadata
-  - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 1
-    rechargeSound:
-      path: /Audio/_NF/Effects/silence.ogg
   - type: Advertise
     pack: spacepiratehumanoidchatter
     minimumWait: 30
@@ -168,9 +216,9 @@
     - type: Loadout
       prototypes:
         - PirateAbordajGearB
-  
+
 - type: entity
-  parent: 
+  parent:
   - MobPirateAbordajA
   - MobMovementSpeedModifierRanged
   id: MobPirateAbordajC
@@ -178,10 +226,10 @@
   components:
     - type: Loadout
       prototypes:
-        - PirateAbordajGearC  
+        - PirateAbordajGearC
 
 - type: entity
-  parent: 
+  parent:
   - MobPirateMatrosA
   - MobMovementSpeedModifierRanged
   id: MobPirateQuartermaster
@@ -208,7 +256,7 @@
       soundGunshot: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
 
 - type: entity
-  parent: 
+  parent:
   - MobPirateAbordajA
   - MobMovementSpeedModifierRanged
   id: MobPirateBotsman
@@ -226,8 +274,8 @@
           Structural: 20
 
 - type: entity
-  parent: 
-  - MobPirateAbordajA
+  parent:
+  - MobPirateBase
   - MobMovementSpeedModifierRanged
   id: MobPirateCaptain
   description: Капитан пиратов. Опытный лидер и смертоносный боец. Вооружён энергетическим оружием, демонстрирующим его статус и технологические возможности экипажа.
@@ -236,11 +284,23 @@
     - type: Loadout
       prototypes:
         - PirateCaptainGearA
-    - type: MeleeWeapon
-      damage:
-        types:
-          Slash: 10
-          Heat: 10
-          Structural: 30
-      soundHit:
-       path: /Audio/Weapons/eblade1.ogg
+    - type: ProjectileBatteryAmmoProvider
+      proto: NFBulletLaserHeavy
+      fireCost: 100
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 50
+    - type: Battery
+      maxCharge: 600
+      startingCharge: 600
+    - type: Gun
+      showExamineText: false
+      fireRate: 1
+      minAngle: 5
+      maxAngle: 20
+      angleIncrease: 1
+      angleDecay: 3
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+      soundGunshot: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
