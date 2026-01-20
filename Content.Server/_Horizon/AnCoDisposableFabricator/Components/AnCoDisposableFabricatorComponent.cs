@@ -22,8 +22,11 @@ public sealed partial class AnCoDisposableFabricatorComponent : Component
     [DataField]
     public List<int> SelectedSets = new();
 
+    /// <summary>
+    /// Sound played during the work animation.
+    /// </summary>
     [DataField]
-    public SoundCollectionSpecifier ApproveSound = new SoundCollectionSpecifier("storageRustle");
+    public SoundPathSpecifier WorkingSound = new SoundPathSpecifier("/Audio/Effects/hydraulic_press.ogg");
 
     /// <summary>
     /// Max number of sets you can select.
