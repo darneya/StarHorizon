@@ -6,6 +6,7 @@
   - NFMobNoEquipmentOnGib
   - MobStaminaFodder
   - MobHumanoidHostileBase
+  - MobHumanoidInvetory
   id: MobCrawfordBase
   components:
   - type: Body
