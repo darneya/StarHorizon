@@ -8,13 +8,13 @@
   },
   "states": [
     {
-        "name": "uascloset"
+        "name": "uascrate"
     },
     {
-        "name": "uascloset_open"
+        "name": "uascrate_open"
     },
     {
-        "name": "uascloset_door"
+        "name": "uascrate_door"
     }
   ]
 }
