@@ -2,8 +2,8 @@
   name: Ардониевый меч
   parent: [BaseItem, BaseAnCoContraband]
   id: AnCoSword
-  suffix: StarHorizon, AnCo
   description: Сегментированный меч, созданный чтобы нарезать врагов на такие же сегменты.
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Sharp
   - type: Sprite

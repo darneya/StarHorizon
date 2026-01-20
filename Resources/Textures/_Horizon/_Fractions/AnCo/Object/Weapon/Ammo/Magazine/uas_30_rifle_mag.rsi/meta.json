@@ -5,22 +5,22 @@
   "size": {
     "x": 32,
     "y": 32
-   },
-   "states" : [
+  },
+    "states": [
         {
-            "name": "StanLas"
+            "name": "icon"
         },
         {
-            "name": "DisablerUAS"
+            "name": "base"
         },
         {
-            "name": "Ballistic"
+            "name": "mag-1"
         },
         {
-            "name": "BallisticRifle"
+            "name": "mag-2"
         },
         {
-            "name": "StanLasBoom"
+            "name": "mag-3"
         }
     ]
 }

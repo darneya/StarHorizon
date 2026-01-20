@@ -1,6 +1,44 @@
 
 - type: entity
   name: AnCo Bullet
+  id: StandartBallisticAnCoPistol
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Weapons/Guns/Projectiles/uasproj.rsi
+    layers:
+    - state: Ballistic
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Heat: 5
+        Piercing: 10
+  - type: PointLight
+    color: "#F05A5A"
+
+- type: entity
+  name: AnCo Bullet
+  id: StandartBallisticAnCoRifle
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Weapons/Guns/Projectiles/uasproj.rsi
+    layers:
+    - state: BallisticRifle
+      shader: unshaded
+  - type: Projectile
+    damage:
+      types:
+        Heat: 8
+        Piercing: 12
+  - type: PointLight
+    color: "#F05A5A"
+
+- type: entity
+  name: AnCo Bullet
   id: StandartLaserAnCo
   parent: EmitterBolt
   categories: [ HideSpawnMenu ]

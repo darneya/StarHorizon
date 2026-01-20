@@ -2,7 +2,6 @@
   name: шоковая дубинка АнКо
   parent: [BaseItem, BaseAnCoContraband]
   id: WeaponStunprodAnCo
-  suffix: StarHorizon, AnCo
   description: Шоковая дубинка, разработанная с использованием утекшей технологии NanoTrasen. Имеет улучшенную систему энергопотребления.
   components:
   - type: Sprite

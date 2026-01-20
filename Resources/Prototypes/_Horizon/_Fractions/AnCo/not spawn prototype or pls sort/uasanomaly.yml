@@ -1,10 +1,9 @@
 - type: entity
   id: AnCoAnomaly
   parent: BaseAnomaly
-  suffix: StarHorizon, AnCo
+  suffix: StarHorizon, AnCo, Anomaly
   name: аномалия
   description: От аномалии исходит отчётливый скрежет металла...
-  categories: [ HideSpawnMenu ]
   components:
   - type: Anomaly
     corePrototype: AnCoAnomalyCircuitboard
