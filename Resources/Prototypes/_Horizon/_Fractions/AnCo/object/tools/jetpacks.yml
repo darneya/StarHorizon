@@ -19,6 +19,7 @@
   id: JetpackAnCoFilled
   parent: JetpackAnCo
   suffix: StarHorizon, AnCo, Filled
+  description: джетпак с сжатым кислородом
   components:
   - type: GasTank
     outputPressure: 21.3
@@ -27,4 +28,4 @@
       volume: 5
       temperature: 293.15
       moles:
-        - 2.050689525 # oxygen
+        - 4.050689525 # oxygen

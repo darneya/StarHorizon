@@ -14,7 +14,7 @@
     possibleSets:
     - ExampleToolsSet
     maxSelectedSets: 1
-    workDuration: 3.3
+    workDuration: 3.1
     idleState: icon
     workingState: work
   - type: AnCoDisposableFabricatorVisuals
@@ -27,13 +27,14 @@
     interfaces:
       enum.AnCoDisposableFabricatorUIKey.Key:
         type: AnCoDisposableFabricatorBoundUserInterface
+  - type: InteractionOutline
 
 - type: anCoDisposableFabricatorSet
   id: ExampleToolsSet
-  name: anco-disposable-fabricator-set-tools-name
-  description: anco-disposable-fabricator-set-tools-desc
+  name: Шаблон скафандра Паука
+  description: Стандартный шаблон легкого скафандра
   sprite:
-    sprite: Objects/Tools/toolbox_gold.rsi
+    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/uasspider.rsi
     state: icon
   content:
   - CrateBaseAnCoSpider

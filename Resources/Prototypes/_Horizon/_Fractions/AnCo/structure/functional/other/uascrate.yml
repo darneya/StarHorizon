@@ -8,6 +8,7 @@
   - type: ResistLocker
   - type: Transform
     noRot: true
+    anchored: True
   - type: Sprite
     noRot: true
     sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/uascrate.rsi
@@ -59,5 +60,5 @@
     contents:
       - id: ClothingOuterHardsuitSpider
         amount: 1
-      - id: JetpackVoidFilled
+      - id: JetpackAnCoFilled
         amount: 1
