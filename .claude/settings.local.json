@@ -2,9 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(find:*)",
-      "Bash(for file in crawlerla_*)",
-      "Bash(dir /b /ad \"c:\\\\Program Files \\(x86\\)\\\\GitHub\\\\StarHorizon\\\\Resources\\\\Prototypes\\\\_Horizon\\\\_Fractions\\\\AnCo\")",
-      "Bash(ls:*)"
+      "Bash(for file in crawlerla_*)"
     ],
     "deny": [],
     "ask": []
