@@ -214,7 +214,7 @@
   name: Набор для взлома
   description: Ящик, содержащий набор для взлома шлюзов.
   productEntity: AnCoBoxStoreHack
-  icon: { sprite: _Horizon/Objects/Tools/uasomegatool.rsi, state: icon }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Tools/uasomegatool.rsi, state: icon }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
@@ -228,7 +228,7 @@
   name: Набор с жуками
   description: Ящик, содержащий набор из 4 жуков и комбинезон.
   productEntity: AnCoBoxStoreBug
-  icon: { sprite: _Horizon/Mobs/Elemental/uasbot.rsi, state: icon }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Mobs/uasbot.rsi, state: icon }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
@@ -242,7 +242,7 @@
   name: Набор c нелетальным снаряжением
   description: Ящик, содержащий набор c нелетальным снаряжением.
   productEntity: AnCoBoxStoreStun
-  icon: { sprite: _Horizon/Objects/Misc/uashandcuffs.rsi, state: handcuff }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Misc/uashandcuffs.rsi, state: handcuff }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
@@ -302,7 +302,7 @@
   name: Боевой медипен
   description: Медипен, предназначен для лечения обширных повреждений. Внимание, может вызвать рвоту.
   productEntity: CombatMedipenAnCo
-  icon: { sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi, state: omega }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uasmedipen.rsi, state: omega }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
@@ -316,7 +316,7 @@
   name: Нанитовый медипен
   description: Медипен, содержащий наниты. Используйте на свой страх и риск.
   productEntity: NanitMedipenAnCo
-  icon: { sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi, state: omega }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uasmedipen.rsi, state: omega }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
@@ -330,7 +330,7 @@
   name: Контейнер с нанитами
   description: Сверхпрочный контейнер хранящий в себе нанитов.
   productEntity: ReliableContainerAnConanits
-  icon: { sprite: _Horizon/Objects/Specific/Chemistry/uascontainer.rsi, state: container }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Chemistry/uascontainer.rsi, state: container }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2

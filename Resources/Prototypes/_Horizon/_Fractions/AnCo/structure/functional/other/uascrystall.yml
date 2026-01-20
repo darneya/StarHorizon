@@ -7,7 +7,7 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      sprite: _Horizon/Structures/Decoration/uascrystall.rsi
+      sprite: _Horizon/_Fractions/AnCo/Structures/Decoration/uascrystall.rsi
       state: EFS
       noRot: true
     - type: Physics

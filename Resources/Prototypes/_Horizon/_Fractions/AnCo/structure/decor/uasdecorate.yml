@@ -6,7 +6,7 @@
   description: Баннер с электронным логотипом корпорации АнКо.
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Decoration/uasbanner.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Decoration/uasbanner.rsi
     layers:
     - state: banner_UAS
     - state: banner_UAS_unshaded
@@ -43,7 +43,7 @@
   components:
   - type: Rotatable
   - type: Sprite
-    sprite: _Horizon/Structures/Decoration/uasripsoidstatue.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Decoration/uasripsoidstatue.rsi
     layers:
     - state: ripsi
     - state: ripsi_unshaded

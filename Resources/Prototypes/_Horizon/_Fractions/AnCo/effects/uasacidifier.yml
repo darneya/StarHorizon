@@ -11,7 +11,7 @@
   - type: Physics
     bodyType: Static
   - type: Sprite
-    sprite: _Horizon/Effects/uaseffect.rsi
+    sprite: _Horizon/_Fractions/AnCo/Effects/uaseffect.rsi
     state: acid
   - type: Fixtures
     fixtures:

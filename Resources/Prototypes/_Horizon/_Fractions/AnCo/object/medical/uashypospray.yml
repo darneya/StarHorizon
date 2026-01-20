@@ -6,10 +6,10 @@
   id: AnCohypo
   components:
   - type: Sprite
-    sprite: _Horizon/Objects/Specific/Medical/uashypospray.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uashypospray.rsi
     state: hypo
   - type: Item
-    sprite: _Horizon/Objects/Specific/Medical/uashypospray.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uashypospray.rsi
     state: hypo
   - type: SolutionContainerManager
     solutions:
@@ -31,7 +31,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uasmedipen.rsi
     layers:
     - state: omega
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -73,7 +73,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uasmedipen.rsi
     layers:
     - state: omega
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -106,7 +106,7 @@
 #   description: Одноразовый медипен-дефибриллятор. Содержит почти смертельную дозу нанитов.
 #   components:
 #   - type: Sprite
-#     sprite: _Horizon/Objects/Specific/Medical/uasmedipen.rsi
+#     sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uasmedipen.rsi
 #     layers:
 #     - state: omega
 #       map: ["enum.SolutionContainerLayers.Fill"]

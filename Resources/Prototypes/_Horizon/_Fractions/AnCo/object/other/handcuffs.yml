@@ -9,10 +9,10 @@
     size: Small
     storedRotation: 90
   - type: Handcuff
-    cuffedRSI: _Horizon/Objects/Misc/uashandcuffs.rsi
+    cuffedRSI: _Horizon/_Fractions/AnCo/Objects/Misc/uashandcuffs.rsi
     bodyIconState: body-overlay
   - type: Sprite
-    sprite: _Horizon/Objects/Misc/uashandcuffs.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/uashandcuffs.rsi
     state: handcuff
   - type: Tag
     tags:

@@ -2,7 +2,7 @@
 - type: stack
   id: Ardon
   name: кристалл Ардония
-  icon: { sprite: /Textures/_Horizon/Objects/Materials/uasmaterial.rsi, state: efs }
+  icon: { sprite: /Textures/_Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi, state: efs }
   spawn: SheetArdon1
   maxCount: 30
 
@@ -10,7 +10,7 @@
   id: Ardon
   stackEntity: SheetArdon1
   name: кристалл Ардония
-  icon: { sprite: /Textures/_Horizon/Objects/Materials/uasmaterial.rsi, state: efs }
+  icon: { sprite: /Textures/_Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi, state: efs }
   color: "#B30E0E"
   price: 0.15 # $15 for one unit
 
@@ -34,9 +34,9 @@
   suffix: StarHorizon, AnCo
   components:
   - type: Sprite
-    sprite: _Horizon/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
   - type: Item
-    sprite: _Horizon/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
     size: Normal
   - type: StaticPrice
     price: 0
@@ -78,7 +78,7 @@
 - type: stack
   id: Kazmie
   name: куб казмия
-  icon: { sprite: /Textures/_Horizon/Objects/Materials/uasmaterial.rsi, state: kazmie }
+  icon: { sprite: /Textures/_Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi, state: kazmie }
   spawn: Sheetkazmie1
   maxCount: 30
 
@@ -86,7 +86,7 @@
   id: Kazmie
   stackEntity: Sheetkazmie1
   name: казмий
-  icon: { sprite: /Textures/_Horizon/Objects/Materials/uasmaterial.rsi, state: kazmie }
+  icon: { sprite: /Textures/_Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi, state: kazmie }
   color: "#2b2f35"
   price: 0.15 # $15 for one unit
 
@@ -111,9 +111,9 @@
   suffix: StarHorizon, AnCo
   components:
   - type: Sprite
-    sprite: _Horizon/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
   - type: Item
-    sprite: _Horizon/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
     size: Normal
   - type: StaticPrice
     price: 0
