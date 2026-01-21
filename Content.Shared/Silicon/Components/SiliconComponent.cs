@@ -3,6 +3,7 @@ using Content.Shared.Silicon.Systems;
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Prototypes;
 using Content.Shared.Alert;
+using Content.Shared.CCVar;
 
 namespace Content.Shared.Silicon.Components;
 
@@ -24,7 +25,7 @@ public sealed partial class SiliconComponent : Component
     /// </summary>
     /// <remarks>
     ///     Time between drains can be specified in
-    ///     <see cref="SimpleStationCcvars.SiliconNpc"/>
+    ///     <see cref="CCVars.SiliconNpcUpdateTime"/>
     /// </remarks>
     public TimeSpan LastDrainTime = TimeSpan.Zero;
 

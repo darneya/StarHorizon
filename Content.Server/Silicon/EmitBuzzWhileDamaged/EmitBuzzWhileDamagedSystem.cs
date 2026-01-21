@@ -9,7 +9,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Mobs.Components;
 
-namespace Content.Server.Silicon.EmitBuzzOnCrit;
+namespace Content.Server.Silicon.EmitBuzzWhileDamaged;
 
 /// <summary>
 /// This handles the buzzing popup and sound of a silicon based race when it is pretty damaged.

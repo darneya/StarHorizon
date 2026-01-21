@@ -62,7 +62,7 @@ public sealed class WeldingHealableSystem : SharedWeldingHealableSystem
                 Delay = args.Delay
             });
     }
-    private async void Repair(EntityUid uid, WeldingHealableComponent healableComponent, InteractUsingEvent args)
+    private void Repair(EntityUid uid, WeldingHealableComponent healableComponent, InteractUsingEvent args)
     {
         if (args.Handled
             || !EntityManager.TryGetComponent(args.Used, out WeldingHealingComponent? component)

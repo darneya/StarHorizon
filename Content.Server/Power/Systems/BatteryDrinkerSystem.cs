@@ -1,4 +1,3 @@
-using System.Linq;
 using Content.Server.Power.Components;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.DoAfter;
@@ -94,7 +93,9 @@ public sealed class BatteryDrinkerSystem : EntitySystem
             return;
 
         var source = args.Target.Value;
-        var drinkerBattery = container.ContainedEntities.First();
+        if (container.ContainedEntities.Count == 0)
+            return;
+        var drinkerBattery = container.ContainedEntities[0];
         var amountToDrink = drinkerComp.DrinkMultiplier * 1000;
 
         amountToDrink = MathF.Min(amountToDrink, sourceBattery.CurrentCharge);
