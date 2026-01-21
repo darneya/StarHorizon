@@ -180,7 +180,7 @@
   suffix: StarHorizon, AnCo
   components:
     - type: Sprite
-      sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
+      sprite: _Horizon/_Fractions/AnCo/Markers/uasmarkers.rsi
       state: counselor
     - type: RandomMetadata
       nameSegments:
@@ -195,7 +195,7 @@
   suffix: StarHorizon, AnCo
   components:
     - type: Sprite
-      sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
+      sprite: _Horizon/_Fractions/AnCo/Markers/uasmarkers.rsi
       state: titan
     - type: RandomMetadata
       nameSegments:
@@ -210,7 +210,7 @@
   suffix: StarHorizon, AnCo
   components:
     - type: Sprite
-      sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
+      sprite: _Horizon/_Fractions/AnCo/Markers/uasmarkers.rsi
       state: spider
     - type: RandomMetadata
       nameSegments:
@@ -225,7 +225,7 @@
   suffix: StarHorizon, AnCo
   components:
     - type: Sprite
-      sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
+      sprite: _Horizon/_Fractions/AnCo/Markers/uasmarkers.rsi
       state: knight
     - type: RandomMetadata
       nameSegments:
@@ -240,7 +240,7 @@
   suffix: StarHorizon, AnCo
   components:
     - type: Sprite
-      sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
+      sprite: _Horizon/_Fractions/AnCo/Markers/uasmarkers.rsi
       state: officer
     - type: RandomMetadata
       nameSegments:
@@ -255,7 +255,7 @@
   suffix: StarHorizon, AnCo
   components:
     - type: Sprite
-      sprite: _Horizon/Markers/Jobs/uasmarkers.rsi
+      sprite: _Horizon/_Fractions/AnCo/Markers/uasmarkers.rsi
       state: cadet
     - type: RandomMetadata
       nameSegments:

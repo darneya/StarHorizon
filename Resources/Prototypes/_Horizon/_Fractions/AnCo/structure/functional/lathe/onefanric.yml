@@ -12,7 +12,10 @@
       map: ["enum.AnCoDisposableFabricatorVisualLayers.IsWorking"]
   - type: AnCoDisposableFabricator
     possibleSets:
-    - ExampleToolsSet
+    - SampleHumanities
+    - SampleHardSuitPetal
+    - SampleHardSuitDusk
+    - SampleHardSuitGranite
     maxSelectedSets: 1
     workDuration: 3.1
     idleState: icon
@@ -33,11 +36,41 @@
   - type: InteractionOutline
 
 - type: anCoDisposableFabricatorSet
-  id: ExampleToolsSet
+  id: SampleHardSuitPetal
   name: Шаблон скафандра Лепесток
-  description: Стандартный шаблон легкого скафандра
+  description: Стандартный шаблон ЛО скафандра
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Clothing/HardSuit/petal.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/petal.rsi
     state: icon
   content:
   - CrateBaseAnCoPetal
+
+- type: anCoDisposableFabricatorSet
+  id: SampleHardSuitDusk
+  name: Шаблон скафандра Сумрак
+  description: Стандартный шаблон ЛО скафандра
+  sprite:
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/dusk.rsi
+    state: icon
+  content:
+  - CrateBaseAnCoDusk
+
+- type: anCoDisposableFabricatorSet
+  id: SampleHardSuitGranite
+  name: Шаблон скафандра Гранит
+  description: Стандартный шаблон СО скафандра
+  sprite:
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/granite.rsi
+    state: icon
+  content:
+  - CrateBaseAnCoGranite
+
+- type: anCoDisposableFabricatorSet
+  id: SampleHumanities
+  name: Гумманитарная помощь
+  description: Шаблон суточного пропитания и медикаментов
+  sprite:
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/ration.rsi
+    state: icon
+  content:
+  - CrateBaseAnCoHumanities
