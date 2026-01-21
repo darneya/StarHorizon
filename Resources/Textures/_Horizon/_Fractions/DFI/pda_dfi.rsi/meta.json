@@ -8,10 +8,31 @@
   },
   "states": [
     {
-      "name": "pda-dfi"
+      "name": "pda",
+      "delays":
+      [
+          [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+          ]
+      ]
     },
     {
-      "name": "pda-dfi_world"
+      "name": "pda_world"
+    },
+    {
+      "name": "id_overlay"
+    },
+    {
+      "name": "light_overlay"
+    },
+    {
+      "name": "id_overlay_world"
+    },
+    {
+      "name": "light_overlay_world"
     }
   ]
 }

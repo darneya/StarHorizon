@@ -12,7 +12,16 @@
     },
     "states": [
         {
-            "name": "crypto-base"
+            "name": "crypto-base",
+            "delays":
+            [
+                [
+                    0.25,
+                    0.25,
+                    0.25,
+                    0.25
+                ]
+            ]
         }
     ]
 }

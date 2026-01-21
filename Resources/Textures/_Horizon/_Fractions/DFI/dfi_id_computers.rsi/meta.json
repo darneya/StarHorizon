@@ -8,13 +8,35 @@
   },
   "states": [
     {
-      "name": "dfi_id"
+      "name": "dfi_id",
+      "directions": 4,
+      "delays":
+      [
+        [
+            0.5,
+            0.5
+        ],
+        [
+            0.5,
+            0.5
+        ],
+        [
+            0.5,
+            0.5
+        ],
+        [
+            0.5,
+            0.5
+        ]
+      ]
     },
     {
-      "name": "dfi_id_key"
+      "name": "dfi_id_key",
+      "directions": 4
     },
     {
-      "name": "dfi_id_key_off"
+      "name": "dfi_id_key_off",
+      "directions": 4
     }
   ]
 }
