@@ -247,12 +247,16 @@
       sprite: Objects/Misc/ensnare.rsi
     - type: Speech
       speechSounds: Pai
+    - type: TypingIndicator
+      proto: ipc
     - type: Vocal
       wilhelm: "/Audio/Voice/IPC/wilhelm.ogg"
       sounds:
-        Male: UnisexIPC
-        Female: UnisexIPC
-        Unsexed: UnisexIPC
+        Male: MaleIPC
+        Female: FemaleIPC
+        Unsexed: MaleIPC
+    - type: BodyEmotes
+      soundsId: IPCBodyEmotes
     - type: MeleeWeapon
       hidden: true
       soundHit:
@@ -274,8 +278,6 @@
     - type: Pullable
     - type: Puller
 
-    - type: BodyEmotes
-      soundsId: GeneralBodyEmotes
     - type: DamageVisuals
       thresholds: [ 10, 20, 30, 50, 70, 100 ]
       targetLayers:

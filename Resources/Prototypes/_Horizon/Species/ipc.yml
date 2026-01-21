@@ -12,12 +12,13 @@
   minAge: 1
   maxAge: 240
   oldAge: 50
-  youngAge: 50
-  maleFirstNames: IpcFirst
-  femaleFirstNames: IpcFirst
-  maleLastNames: IpcLast # Corvax-LastnameGender
-  femaleLastNames: IpcLast # Corvax-LastnameGender
+  youngAge: 1
+  maleFirstNames: NamesIpcFirstMale
+  femaleFirstNames: NamesIpcFirstFemale
+  LastNames: NamesIpcLast
   sexes:
+  - Male
+  - Female
   - Unsexed
   # Horizon start
   defaultLanguages:

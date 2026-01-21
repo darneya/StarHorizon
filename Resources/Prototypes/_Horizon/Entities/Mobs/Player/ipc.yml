@@ -68,10 +68,17 @@
   - type: SiliconDownOnDead
   - type: Inventory
     templateId: ipc
+    speciesId: ipc
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
   - type: Silicon
     entityType: enum.SiliconType.Player
     batteryPowered: true
-    drainPerSecond: 1.5
+    drainPerSecond: 0.5
     chargeThresholdMid: 0.80
     chargeThresholdLow: 0.35
     chargeThresholdCritical: 0.10
