@@ -557,7 +557,7 @@
     offset: 0.0
     rarePrototypes:
     - VendingMachineArcadia
-    - UASVending # Horizon
+    - AnCoVending # Horizon
     #- VendingMachineSec
     #- VendingMachineSecDrobe
     - SpawnDungeonMachineFrame

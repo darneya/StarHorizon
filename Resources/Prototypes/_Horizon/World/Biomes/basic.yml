@@ -80,7 +80,7 @@
   chunkComponents:
   - type: NoiseRangeCarver
     ranges:
-    - 0.5, 0.7 # Horizon
+    - 0.4, 0.6 # Horizon
   - type: SimpleDebrisSelector
     debrisTable:
     # Extra Enormous
@@ -317,15 +317,15 @@
       orGroup: debris
     # Massive
     - id: NFAsteroidIceDebrisMassive
-      prob: 0.6
+      prob: 0.5
       orGroup: debris
     # Extra Massive
     - id: NFAsteroidIceDebrisExtraMassive
-      prob: 1
+      prob: 0.7
       orGroup: debris
     # Gigantic
     - id: NFAsteroidIceDebrisGigantic
-      prob: 0.6
+      prob: 0.5
       orGroup: debris
     # Extra Gigantic
     - id: NFAsteroidIceDebrisExtraGigantic
@@ -360,23 +360,23 @@
   chunkComponents:
   - type: NoiseRangeCarver
     ranges:
-    - 0.6, 0.9 # Horizon
+    - 0.4, 0.5 # Horizon
   - type: SimpleDebrisSelector
     debrisTable:
     # Enormous
     - id: NFAsteroidChromiteDebrisEnormousFar
-      prob: 1
+      prob: 0.6
       orGroup: debris
     # Massive
     - id: NFAsteroidIceDebrisEnormous
-      prob: 1
+      prob: 0.6
       orGroup: debris
     # Extra Enormous
     - id: NFAsteroidChromiteDebrisExtraEnormousFar
-      prob: 0.8
+      prob: 0.7
       orGroup: debris
     - id: NFAsteroidIceDebrisExtraEnormous
-      prob: 0.8
+      prob: 0.7
       orGroup: debris
     # Massive
     - id: NFAsteroidChromiteDebrisMassiveFar

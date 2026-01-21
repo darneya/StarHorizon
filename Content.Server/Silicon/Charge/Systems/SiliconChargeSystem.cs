@@ -48,11 +48,10 @@ public sealed class SiliconChargeSystem : EntitySystem
             return false;
 
         // try get a battery directly on the inserted entity
-        if (TryComp(silicon, out batteryComp)
+        if (TryComp<BatteryComponent>(silicon, out batteryComp)
             || _powerCell.TryGetBatteryFromSlot(silicon, out batteryComp))
             return true;
 
-        //DebugTools.Assert("SiliconComponent does not contain Battery");
         return false;
     }
 
@@ -62,7 +61,7 @@ public sealed class SiliconChargeSystem : EntitySystem
             return;
 
         if (component.EntityType.GetType() != typeof(SiliconType))
-            DebugTools.Assert("SiliconComponent.EntityType is not a SiliconType enum.");
+            DebugTools.Assert(false, "SiliconComponent.EntityType is not a SiliconType enum.");
     }
 
     public override void Update(float frameTime)
@@ -153,7 +152,7 @@ public sealed class SiliconChargeSystem : EntitySystem
     {
         if (!TryComp<TemperatureComponent>(silicon, out var temperComp)
             || !TryComp<ThermalRegulatorComponent>(silicon, out var thermalComp))
-            return 0;
+            return 1f;
 
         // If the Silicon is hot, drain the battery faster, if it's cold, drain it slower, capped.
         var upperThresh = thermalComp.NormalBodyTemperature + thermalComp.ThermalRegulationTemperatureThreshold;

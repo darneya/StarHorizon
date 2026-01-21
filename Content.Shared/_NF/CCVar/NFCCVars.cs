@@ -36,7 +36,7 @@ public sealed class NFCCVars
     /// The time in seconds after which a cryosleeping body is considered expired and can be deleted from the storage map.
     /// </summary>
     public static readonly CVarDef<float> CryoExpirationTime =
-        CVarDef.Create("nf14.uncryo.maxtime", 180 * 60f, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("nf14.uncryo.maxtime", 1440 * 60f, CVar.SERVER | CVar.REPLICATED); // StarHorizon: Changed from 3 hours (180 minutes) to 24 hours (1440 minutes)
 
     /*
      *  Game

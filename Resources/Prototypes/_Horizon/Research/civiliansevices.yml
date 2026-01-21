@@ -11,6 +11,8 @@
   technologyPrerequisites:
   - NFAdvancedHydroponicsStorge
   position: 3, 46
+  researchTargets:
+  - TechnologyDiscHydroponicsDNAManip
 
 - type: technology
   id: HydroponicsDNAManip
@@ -25,8 +27,6 @@
   technologyPrerequisites:
   - HydroponicsAdv
   position: 4, 46
-  researchTargets:
-  - TechnologyDiscHydroponicsDNAManip
 
 - type: technology
   id: UniversalTranslator
@@ -39,7 +39,7 @@
   - UniversalTranslator
   technologyPrerequisites:
   - NFAdvancedEntertainment
-  position: 3, 39 # Horizon
+  position: 3, 40
   researchTargets:
   - TechnologyDiscUniversalTranslator
 
@@ -54,9 +54,7 @@
   - RareTranslator
   technologyPrerequisites:
   - UniversalTranslator
-  position: 4, 39 # Horizon
-  researchTargets:
-  - TechnologyDiscRareTranslator
+  position: 3, 39
 
 - type: technology
   id: TranslatorImplants
@@ -80,7 +78,5 @@
   - GoblinSpeakTranslatorImplanter
   - HarpySpeakTranslatorImplanter
   technologyPrerequisites:
-  - NFAdvancedEntertainment
-  position: 3, 41 # Horizon
-  researchTargets:
-  - TechnologyDiscTranslatorImplants
+  - UniversalTranslator
+  position: 3, 41

@@ -1,3 +1,5 @@
+using Content.Server._Horizon;
+using Content.Server._Horizon.SponsorManager;
 using Content.Server._NF.Auth;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -37,6 +39,7 @@ namespace Content.Server.IoC
     {
         public static void Register()
         {
+            IoCManager.Register<GameShutdownController>();
             IoCManager.Register<IChatManager, ChatManager>();
             IoCManager.Register<ISharedChatManager, ChatManager>();
             IoCManager.Register<IChatSanitizationManager, ChatSanitizationManager>();
@@ -78,6 +81,8 @@ namespace Content.Server.IoC
             IoCManager.Register<MultiServerKickManager>();
             IoCManager.Register<CVarControlManager>();
             IoCManager.Register<MiniAuthManager>(); //Frontier
+            IoCManager.Register<SponsorManager>(); // _Horizon
+
 
             IoCManager.Register<DiscordLink>();
             IoCManager.Register<DiscordChatLink>();

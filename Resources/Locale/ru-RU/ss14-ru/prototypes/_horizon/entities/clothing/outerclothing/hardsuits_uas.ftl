@@ -1,9 +1,9 @@
-ent-ClothingOuterHardsuitSpider = скафандр офицера Паука UAS
+ent-ClothingOuterHardsuitSpider = скафандр офицера Паука АнКо
     .desc = Скафандр, созданный из продвинутых композитов и предназначенный для боевых миссий.
-    .suffix = StarHorizon, UAS
-ent-ClothingOuterHardsuitTitan = cкафандр офицера Титана UAS
-    .desc = Тяжёлый скафандр UAS. Выбор тех, для кого защита важнее скорости.
-    .suffix = StarHorizon, UAS
-ent-ClothingOuterHardsuitKnight = cкафандр офицера Рыцаря UAS
+    .suffix = StarHorizon, AnCo
+ent-ClothingOuterHardsuitTitan = cкафандр офицера Титана АнКо
+    .desc = Тяжёлый скафандр АнКо. Выбор тех, для кого защита важнее скорости.
+    .suffix = StarHorizon, AnCo
+ent-ClothingOuterHardsuitKnight = cкафандр офицера Рыцаря АнКо
     .desc = Это как доспехи, только герметичные!
-    .suffix = StarHorizon, UAS
+    .suffix = StarHorizon, AnCo

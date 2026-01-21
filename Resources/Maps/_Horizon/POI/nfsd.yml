@@ -32234,11 +32234,6 @@ entities:
     - type: Transform
       pos: 2.5,16.5
       parent: 1
-  - uid: 4998
-    components:
-    - type: Transform
-      pos: -0.5,2.5
-      parent: 1
 - proto: SpawnPointBailiff
   entities:
   - uid: 1338
@@ -37368,11 +37363,35 @@ entities:
     - type: Transform
       pos: 8.5,-14.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
   - uid: 5051
     components:
     - type: Transform
       pos: -7.5,-14.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
 - proto: WeaponTurretM220
   entities:
   - uid: 166
@@ -37381,39 +37400,123 @@ entities:
       rot: 3.141592653589793 rad
       pos: 26.5,29.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
   - uid: 4997
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -24.5,29.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
   - uid: 5025
     components:
     - type: Transform
       pos: -3.5,-36.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
   - uid: 5026
     components:
     - type: Transform
       pos: 4.5,-36.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
   - uid: 5027
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 7.5,-15.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
   - uid: 5028
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -6.5,-15.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
   - uid: 5050
     components:
     - type: Transform
       pos: 0.5,38.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
 - proto: WeaponTurretVanyk
   entities:
   - uid: 5036
@@ -37421,21 +37524,69 @@ entities:
     - type: Transform
       pos: -29.5,17.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
   - uid: 5037
     components:
     - type: Transform
       pos: 30.5,17.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
   - uid: 5048
     components:
     - type: Transform
       pos: -8.5,38.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
   - uid: 5049
     components:
     - type: Transform
       pos: 9.5,38.5
       parent: 1
+    - type: DisableToolUse
+      digging: True
+      rolling: True
+      honking: True
+      sawing: True
+      slicing: True
+      pulsing: True
+      welding: True
+      cutting: True
+      screwing: True
+      prying: True
+      anchoring: True
 - proto: WindoorSecure
   entities:
   - uid: 185

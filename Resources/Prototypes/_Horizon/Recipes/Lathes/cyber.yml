@@ -164,3 +164,95 @@
     Steel: 200
     Plasma: 100
     Glass: 200
+
+# Combat Borg Modules
+
+- type: latheRecipe
+  id: BorgModuleCombatPKA
+  result: BorgModuleCombatPKA
+  category: Robotics
+  completetime: 5
+  materials:
+    Titan: 500
+    Uranium: 200
+
+- type: latheRecipe
+  id: BorgModuleCombatEchis
+  result: BorgModuleCombatEchis
+  category: Robotics
+  completetime: 5
+  materials:
+    Titan: 500
+    Uranium: 200
+
+- type: latheRecipe
+  id: BorgModuleCombatLaserAdvanced
+  result: BorgModuleCombatLaserAdvanced
+  category: Robotics
+  completetime: 5
+  materials:
+    Titan: 500
+    Uranium: 200
+
+- type: latheRecipe
+  id: BorgModuleCombatPKAHeavy
+  result: BorgModuleCombatPKAHeavy
+  category: Robotics
+  completetime: 5
+  materials:
+    Titan: 750
+    Uranium: 300
+
+- type: latheRecipe
+  id: BorgModuleCombatPKARailgun
+  result: BorgModuleCombatPKARailgun
+  category: Robotics
+  completetime: 5
+  materials:
+    Titan: 750
+    Uranium: 300
+
+- type: latheRecipe
+  id: BorgModuleCombatPKARepeater
+  result: BorgModuleCombatPKARepeater
+  category: Robotics
+  completetime: 5
+  materials:
+    Titan: 750
+    Uranium: 300
+
+- type: latheRecipe
+  id: BorgModuleCombatPKAShotgun
+  result: BorgModuleCombatPKAShotgun
+  category: Robotics
+  completetime: 5
+  materials:
+    Titan: 750
+    Uranium: 300
+
+- type: latheRecipe
+  id: BorgModuleCombatL6C
+  result: BorgModuleCombatL6C
+  category: Robotics
+  completetime: 5
+  materials:
+    Titan: 500
+    Uranium: 250
+
+- type: latheRecipe
+  id: BorgModuleCombatLaserHeavy
+  result: BorgModuleCombatLaserHeavy
+  category: Robotics
+  completetime: 5
+  materials:
+    Titan: 500
+    Uranium: 250
+
+- type: latheRecipe
+  id: BorgModuleCombatCloakingDevice
+  result: BorgModuleCombatCloakingDevice
+  category: Robotics
+  completetime: 5
+  materials:
+    Titan: 400
+    Uranium: 200

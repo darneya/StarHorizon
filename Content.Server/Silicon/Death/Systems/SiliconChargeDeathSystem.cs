@@ -24,7 +24,7 @@ public sealed class SiliconDeathSystem : EntitySystem
     {
         if (!_silicon.TryGetSiliconBattery(uid, out var batteryComp))
         {
-            SiliconDead(uid, siliconDeadComp, batteryComp, uid);
+            SiliconDead(uid, siliconDeadComp, null, uid);
             return;
         }
 
@@ -49,6 +49,9 @@ public sealed class SiliconDeathSystem : EntitySystem
         EntityManager.EnsureComponent<ForcedSleepingComponent>(uid);
 
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoidAppearanceComponent))
+        {
+            // Handle humanoid appearance if needed
+        }
 
         siliconDeadComp.Dead = true;
 

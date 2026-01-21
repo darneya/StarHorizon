@@ -10,7 +10,7 @@
       - state: slug
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
-    proto: NFShotgunPiercingSpread
+    proto: NFPelletShotgunPiercingSpread
   - type: SpentAmmoVisuals
     state: "slug"
 
@@ -24,6 +24,6 @@
     - state: slug
       map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
-    proto: NFShotgunPsycoreSpread
+    proto: NFPelletShotgunPsycoreSpread
   - type: SpentAmmoVisuals
     state: "slug"
