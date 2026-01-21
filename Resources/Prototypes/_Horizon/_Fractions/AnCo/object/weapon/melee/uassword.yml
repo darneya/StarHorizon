@@ -7,7 +7,7 @@
   components:
   - type: Sharp
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Melee/uassword.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/uassword.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -60
@@ -26,4 +26,4 @@
     spread: 45
   - type: Item
     size: Normal
-    sprite: _StarHorizon/Objects/Weapons/Melee/uassword.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/uassword.rsi

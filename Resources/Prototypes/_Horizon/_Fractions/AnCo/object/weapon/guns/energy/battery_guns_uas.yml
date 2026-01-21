@@ -76,7 +76,7 @@
   - type: Item
     size: Large
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasmachinedisabler.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasmachinedisabler.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
@@ -117,7 +117,7 @@
   - type: Item
     size: Ginormous
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasminigun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasminigun.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -158,7 +158,7 @@
   - type: Item
     size: Ginormous
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasgranadegun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasgranadegun.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -204,7 +204,7 @@
     - type: Item
       size: Large
     - type: Sprite
-      sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uassniperdisabler.rsi
+      sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uassniperdisabler.rsi
       layers:
         - state: base
           map: ["enum.GunVisualLayers.Base"]
@@ -249,7 +249,7 @@
     size: Huge
   - type: Wieldable
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasripsoidcannon.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasripsoidcannon.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -284,7 +284,7 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasconsulgun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasconsulgun.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -319,7 +319,7 @@
   - type: Gun
     fireRate: 2
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasmachinegun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasmachinegun.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
@@ -340,7 +340,7 @@
   - type: Gun
     fireRate: 3
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasriflegun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasriflegun.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]

@@ -6,7 +6,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Projectiles/uasproj.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Projectiles/uasproj.rsi
     layers:
     - state: Ballistic
       shader: unshaded
@@ -25,7 +25,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Projectiles/uasproj.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Projectiles/uasproj.rsi
     layers:
     - state: BallisticRifle
       shader: unshaded
@@ -44,7 +44,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Projectiles/uasproj.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Projectiles/uasproj.rsi
     layers:
     - state: StanLas
       shader: unshaded
@@ -62,7 +62,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Projectiles/uasproj.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Projectiles/uasproj.rsi
     layers:
     - state: DisablerUAS
       shader: unshaded
@@ -127,7 +127,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Projectiles/uasproj.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Projectiles/uasproj.rsi
     layers:
       - state: StanLasBoom
   - type: ExplodeOnTrigger

@@ -112,7 +112,7 @@
   name: Набор одежды агента АнКо
   description: Ящик, содержащий набор униформы агента АнКо.
   productEntity: AnCoBoxStoreUniform
-  icon: { sprite: _StarHorizon/Clothing/Uniforms/Jumpsuit/uasuniform.rsi, state: icon }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Clothing/Uniforms/uasuniform.rsi, state: icon }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
@@ -126,7 +126,7 @@
   name: Набор аксессуаров АнКо
   description: Ящик, содержащий набор аксессуаров АнКо.
   productEntity: AnCoBoxStoreAccessory
-  icon: { sprite: _StarHorizon/Clothing/Neck/Cloaks/uascloak.rsi, state: icon }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Cloaks/uascloak.rsi, state: icon }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
@@ -142,7 +142,7 @@
   name: Набор с модифицированным ПП
   description: Ящик, содержащий модифицированный ПП АнКо.
   productEntity: AnCoBoxStoreLasGun
-  icon: { sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasmachinegun.rsi, state: icon }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasmachinegun.rsi, state: icon }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
@@ -156,7 +156,7 @@
   name: Набор с лазерной винтовкой
   description: Ящик, содержащий лазерную винтовку АнКо.
   productEntity: AnCoBoxStoreLasGunKnight
-  icon: { sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasriflegun.rsi, state: icon }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasriflegun.rsi, state: icon }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
@@ -170,7 +170,7 @@
   name: Энергетический Ардониевый меч
   description: Сегментированный меч, созданный чтобы нарезать врагов на такие же сегменты.
   productEntity: AnCoSword
-  icon: { sprite: _StarHorizon/Objects/Weapons/Melee/uassword.rsi, state: icon }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/uassword.rsi, state: icon }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
@@ -184,7 +184,7 @@
   name: Энергетический пулемет
   description: Энергетический пулемет с огромным боевым потенциалом.
   productEntity: WeaponLaserMinigunAnCo
-  icon: { sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasminigun.rsi, state: icon }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasminigun.rsi, state: icon }
   discountCategory: usualDiscounts
   discountDownTo:
     CitadelCoin: 2
