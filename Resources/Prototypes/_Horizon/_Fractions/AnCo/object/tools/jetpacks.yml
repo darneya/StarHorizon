@@ -8,6 +8,11 @@
     sprite: _Horizon/_Fractions/AnCo/Objects/Tanks/Jetpacks/ancojet.rsi
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Objects/Tanks/Jetpacks/ancojet.rsi
+  - type: Jetpack
+    moleUsage: 0.00085
+    accelerarion: 10
+    friction: 100
+    weightlessModifier: 2
   - type: Clothing
     sprite: _Horizon/_Fractions/AnCo/Objects/Tanks/Jetpacks/ancojet.rsi
     slots:
