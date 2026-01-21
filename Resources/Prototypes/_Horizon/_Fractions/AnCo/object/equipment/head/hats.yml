@@ -6,9 +6,9 @@
   description: Берет только для настоящих патриотов. Слава АнКо!
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/Head/Hats/uasberet.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/Hats/uasberet.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/Head/Hats/uasberet.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/Hats/uasberet.rsi
   - type: Tag
     tags:
     - HamsterWearable
@@ -23,9 +23,9 @@
   description: Фуражка для настоящих патриотов. Слава АнКо!
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/Head/Hats/uascap.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/Hats/uascap.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/Head/Hats/uascap.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/Hats/uascap.rsi
   - type: Tag
     tags:
     - HamsterWearable

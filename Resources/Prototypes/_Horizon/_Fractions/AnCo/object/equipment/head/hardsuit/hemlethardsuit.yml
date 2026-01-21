@@ -7,9 +7,9 @@
   suffix: StarHorizon
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/Head/Hardsuits/uasspiderh.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/Hardsuits/uasspiderh.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/Head/Hardsuits/uasspiderh.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/Hardsuits/uasspiderh.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -41,9 +41,9 @@
   suffix: StarHorizon
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/Head/Hardsuits/uastitanh.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/Hardsuits/uastitanh.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/Head/Hardsuits/uastitanh.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/Hardsuits/uastitanh.rsi
   - type: PointLight
     color: "#B30E0E"
   - type: PressureProtection
@@ -66,9 +66,9 @@
   suffix: StarHorizon
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/Head/Hardsuits/uasknighth.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/Hardsuits/uasknighth.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/Head/Hardsuits/uasknighth.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/Hardsuits/uasknighth.rsi
   - type: PointLight
     color: "#F05A5A"
   - type: PressureProtection
