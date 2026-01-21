@@ -1,6 +1,6 @@
 - type: entity
   name: бронированный контейнер с нанитами
-  parent: BaseItem
+  parent: [BaseItem, BaseAnCoContraband]
   description: Сверхпрочный контейнер для хранения опасных веществ.
   id: ReliableContainerAnConanits
   suffix: StarHorizon, AnCo

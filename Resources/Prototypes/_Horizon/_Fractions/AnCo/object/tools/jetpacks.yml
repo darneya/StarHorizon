@@ -19,7 +19,7 @@
   id: JetpackAnCoFilled
   parent: JetpackAnCo
   suffix: StarHorizon, AnCo, Filled
-  description: джетпак с сжатым кислородом
+  description: укрепленный джетпак, внимание, не нагревайте.
   components:
   - type: GasTank
     outputPressure: 21.3

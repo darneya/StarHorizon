@@ -31,10 +31,10 @@
 
 - type: anCoDisposableFabricatorSet
   id: ExampleToolsSet
-  name: Шаблон скафандра Паука
+  name: Шаблон скафандра Лепесток
   description: Стандартный шаблон легкого скафандра
   sprite:
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/uasspider.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/HardSuit/petal.rsi
     state: icon
   content:
-  - CrateBaseAnCoSpider
+  - CrateBaseAnCoPetal

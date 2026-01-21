@@ -1,6 +1,6 @@
 - type: entity
   id: CrateBaseAnCo
-  parent: CrateGeneric
+  parent: [CrateGeneric, BaseAnCoContraband]
   name: аварийное хранилище АнКо
   description: ящик для хранения продукции аварийного фабрикатора.
   suffix: StarHorizon, AnCo, Structure
@@ -51,14 +51,14 @@
 
 
 - type: entity
-  id: CrateBaseAnCoSpider
+  id: CrateBaseAnCoPetal
   parent: CrateBaseAnCo
   suffix: StarHorizon, AnCo, Structure
   category: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
-      - id: ClothingOuterHardsuitSpider
+      - id: ClothingOuterHardsuitPetal
         amount: 1
       - id: JetpackAnCoFilled
         amount: 1

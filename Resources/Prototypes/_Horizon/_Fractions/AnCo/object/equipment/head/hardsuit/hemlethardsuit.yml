@@ -83,3 +83,24 @@
         Heat: 0.90
         Radiation: 0.85
         Caustic: 0.90
+
+# 99% добавьте защиты от удушься
+
+- type: entity
+  parent: [ClothingHeadEVAHelmetBase, BaseAnCoContraband]
+  id: ClothingHeadHardsuitPetal
+  categories: [ HideSpawnMenu ]
+  name: шлем скафандра Лепесток
+  description: шлем обладающий просторным куполом, идеальный выбор для работы.
+  suffix: StarHorizon
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/HardSuit/petal.rsi
+  - type: Clothing
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Head/HardSuit/petal.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1

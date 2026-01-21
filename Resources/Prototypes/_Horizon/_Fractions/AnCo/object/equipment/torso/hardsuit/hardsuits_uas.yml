@@ -101,3 +101,28 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitKnight
+
+# самое имбовый скафандр из всех
+
+- type: entity
+  parent: [NFClothingOuterEVASuitBase, BaseAnCoContraband]
+  id: ClothingOuterHardsuitPetal
+  suffix: StarHorizon, AnCo
+  name: Лепесток
+  description: продвинутый E.V.A. для работ в космическом пространстве
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Clothing/HardSuit/petal.rsi
+  - type: Clothing
+    sprite: _Horizon/_Fractions/AnCo/Clothing/HardSuit/petal.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitPetal
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
