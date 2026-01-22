@@ -12,6 +12,8 @@
       map: ["enum.AnCoDisposableFabricatorVisualLayers.IsWorking"]
   - type: AnCoDisposableFabricator
     possibleSets:
+    - SamplePistol
+    - SampleAmmo35
     - SampleHumanities
     - SampleHardSuitPetal
     - SampleHardSuitDusk
@@ -74,3 +76,23 @@
     state: icon
   content:
   - CrateBaseAnCoHumanities
+
+- type: anCoDisposableFabricatorSet
+  id: SamplePistol
+  name: Средства самообороны
+  description: Шаблон пистолета и боеприпасов
+  sprite:
+    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Guns/uas-semiauto-pistol.rsi
+    state: icon
+  content:
+  - CrateBaseAnCoPistol
+
+- type: anCoDisposableFabricatorSet
+  id: SampleAmmo35
+  name: Шаблон боеприпасов
+  description: Шаблон боеприпасов .35 калибра
+  sprite:
+    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Magazine/uas_35_pistol_mag.rsi
+    state: icon
+  content:
+  - CrateBaseAnCoAmmo35

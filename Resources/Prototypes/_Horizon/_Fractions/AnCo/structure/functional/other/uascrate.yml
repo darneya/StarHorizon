@@ -103,3 +103,25 @@
         amount: 1
       - id: CombatMedipenAnCo
         amount: 2
+
+- type: entity
+  id: CrateBaseAnCoPistol
+  parent: CrateBaseAnCo
+  suffix: StarHorizon, AnCo, Structure
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolAnCo
+        amount: 1
+
+- type: entity
+  id: CrateBaseAnCoAmmo35
+  parent: CrateBaseAnCo
+  suffix: StarHorizon, AnCo, Structure
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistol35
+        amount: 2
