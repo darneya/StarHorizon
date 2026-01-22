@@ -12,9 +12,13 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,1
   - type: Gun
-    minAngle: 0
-    maxAngle: 15
+    minAngle: 10
+    maxAngle: 30
     projectileSpeed: 60
     availableModes:
     - SemiAuto
@@ -46,6 +50,12 @@
         whitelist:
           tags:
             - AnCoBulletRifle20
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunRequiresWield
+  - type: GunWieldBonus
+    minAngle: -5
+    maxAngle: -20
 
 - type: entity
   name: Жароплюй
@@ -61,9 +71,13 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,1
   - type: Gun
-    minAngle: 0
-    maxAngle: 15
+    minAngle: 10
+    maxAngle: 30
     selectedMode: FullAuto
     availableModes:
       - FullAuto
@@ -95,3 +109,9 @@
         whitelist:
           tags:
             - AnCoBulletRifle20
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunRequiresWield
+  - type: GunWieldBonus
+    minAngle: -5
+    maxAngle: -10

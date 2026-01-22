@@ -12,7 +12,12 @@
       map: ["enum.AnCoDisposableFabricatorVisualLayers.IsWorking"]
   - type: AnCoDisposableFabricator
     possibleSets:
-    - ExampleToolsSet
+    - SamplePistol
+    - SampleAmmo35
+    - SampleHumanities
+    - SampleHardSuitPetal
+    - SampleHardSuitDusk
+    - SampleHardSuitGranite
     maxSelectedSets: 1
     workDuration: 3.1
     idleState: icon
@@ -33,11 +38,61 @@
   - type: InteractionOutline
 
 - type: anCoDisposableFabricatorSet
-  id: ExampleToolsSet
+  id: SampleHardSuitPetal
   name: Шаблон скафандра Лепесток
-  description: Стандартный шаблон легкого скафандра
+  description: Стандартный шаблон ЛО скафандра
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Clothing/HardSuit/petal.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/petal.rsi
     state: icon
   content:
   - CrateBaseAnCoPetal
+
+- type: anCoDisposableFabricatorSet
+  id: SampleHardSuitDusk
+  name: Шаблон скафандра Сумрак
+  description: Стандартный шаблон ЛО скафандра
+  sprite:
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/dusk.rsi
+    state: icon
+  content:
+  - CrateBaseAnCoDusk
+
+- type: anCoDisposableFabricatorSet
+  id: SampleHardSuitGranite
+  name: Шаблон скафандра Гранит
+  description: Стандартный шаблон СО скафандра
+  sprite:
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/granite.rsi
+    state: icon
+  content:
+  - CrateBaseAnCoGranite
+
+- type: anCoDisposableFabricatorSet
+  id: SampleHumanities
+  name: Гумманитарная помощь
+  description: Шаблон суточного пропитания и медикаментов
+  sprite:
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/ration.rsi
+    state: icon
+  content:
+  - CrateBaseAnCoHumanities
+
+- type: anCoDisposableFabricatorSet
+  id: SamplePistol
+  name: Средства самообороны
+  description: Шаблон пистолета и боеприпасов
+  sprite:
+    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Guns/uas-semiauto-pistol.rsi
+    state: icon
+  content:
+  - CrateBaseAnCoPistol
+
+- type: anCoDisposableFabricatorSet
+  id: SampleAmmo35
+  name: Шаблон боеприпасов
+  description: Шаблон боеприпасов .35 калибра
+  sprite:
+    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Magazine/uas_35_pistol_mag.rsi
+    state: icon
+  content:
+  - CrateBaseAnCoAmmo35

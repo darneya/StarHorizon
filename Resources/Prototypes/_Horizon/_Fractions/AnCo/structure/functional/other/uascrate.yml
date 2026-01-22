@@ -62,3 +62,66 @@
         amount: 1
       - id: JetpackAnCoFilled
         amount: 1
+
+- type: entity
+  id: CrateBaseAnCoDusk
+  parent: CrateBaseAnCo
+  suffix: StarHorizon, AnCo, Structure
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitDusk
+        amount: 1
+      - id: GasTankAnCo
+        amount: 1
+
+- type: entity
+  id: CrateBaseAnCoGranite
+  parent: CrateBaseAnCo
+  suffix: StarHorizon, AnCo, Structure
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitGranite
+        amount: 1
+      - id: GasTankAnCo
+        amount: 1
+
+- type: entity
+  id: CrateBaseAnCoHumanities
+  parent: CrateBaseAnCo
+  suffix: StarHorizon, AnCo, Structure
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: ReliableContainerAnConanits
+        amount: 1
+      - id: BoxRationAnCo
+        amount: 1
+      - id: CombatMedipenAnCo
+        amount: 2
+
+- type: entity
+  id: CrateBaseAnCoPistol
+  parent: CrateBaseAnCo
+  suffix: StarHorizon, AnCo, Structure
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolAnCo
+        amount: 1
+
+- type: entity
+  id: CrateBaseAnCoAmmo35
+  parent: CrateBaseAnCo
+  suffix: StarHorizon, AnCo, Structure
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistol35
+        amount: 2

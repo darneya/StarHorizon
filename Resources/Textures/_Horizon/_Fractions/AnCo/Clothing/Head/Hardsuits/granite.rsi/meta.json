@@ -8,16 +8,11 @@
   },
   "states": [
     {
-      "name": "invisibility"
+      "name": "icon"
     },
     {
-        "name": "shield"
-    },
-    {
-        "name": "acid"
-    },
-    {
-        "name": "drone"
+      "name": "equipped-HELMET",
+      "directions": 4
     }
   ]
 }

@@ -6,6 +6,7 @@
   components:
   - type: Tag
     tags:
+      - NFCartridgePistol35
       - Cartridge
       - AnCoBulletPistol35
   - type: CartridgeAmmo
@@ -26,6 +27,7 @@
   components:
   - type: Tag
     tags:
+      - NFCartridgeRifle20
       - Cartridge
       - AnCoBulletRifle20
   - type: CartridgeAmmo
@@ -46,6 +48,7 @@
   components:
   - type: Tag
     tags:
+      - NFCartridgeRifle30
       - Cartridge
       - AnCoBulletRifle30
   - type: CartridgeAmmo
