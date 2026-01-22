@@ -36,4 +36,16 @@ public sealed partial class FactionAccessComponent : Component
     /// </summary>
     [DataField]
     public LocId? DeniedMessage = "faction-access-denied";
+
+    /// <summary>
+    /// Whether this entity can be unlocked/locked by faction members using an ID card.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool CanToggleLock = true;
+
+    /// <summary>
+    /// Whether this entity is currently unlocked (accessible to everyone).
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Unlocked;
 }

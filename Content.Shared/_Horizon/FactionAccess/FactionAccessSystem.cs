@@ -1,4 +1,8 @@
 using Content.Shared._Horizon.FlavorText;
+using Content.Shared.Access.Components;
+using Content.Shared.Interaction;
+using Content.Shared.Inventory.Events;
+using Content.Shared.PDA;
 using Content.Shared.Popups;
 using Content.Shared.UserInterface;
 
@@ -6,7 +10,8 @@ namespace Content.Shared._Horizon.FactionAccess;
 
 /// <summary>
 /// System that handles faction-based access checks.
-/// Blocks ActivatableUI opening if the user doesn't belong to an allowed faction.
+/// Blocks ActivatableUI opening and equipment if the user doesn't belong to an allowed faction.
+/// Can be unlocked/locked by faction members using an ID card.
 /// </summary>
 public sealed class FactionAccessSystem : EntitySystem
 {
@@ -17,6 +22,50 @@ public sealed class FactionAccessSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<FactionAccessComponent, ActivatableUIOpenAttemptEvent>(OnUIOpenAttempt);
+        SubscribeLocalEvent<FactionAccessComponent, BeingEquippedAttemptEvent>(OnEquipAttempt);
+        SubscribeLocalEvent<FactionAccessComponent, InteractUsingEvent>(OnInteractUsing);
+    }
+
+    private void OnInteractUsing(Entity<FactionAccessComponent> ent, ref InteractUsingEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!ent.Comp.CanToggleLock)
+            return;
+
+        // Check if using an ID card or PDA with ID card
+        if (!HasComp<IdCardComponent>(args.Used) && !HasComp<PdaComponent>(args.Used))
+            return;
+
+        // Check if user belongs to allowed faction
+        if (!IsFactionMember(args.User, ent))
+            return;
+
+        // Toggle lock state
+        ent.Comp.Unlocked = !ent.Comp.Unlocked;
+        Dirty(ent);
+
+        var message = ent.Comp.Unlocked
+            ? Loc.GetString("faction-access-unlocked")
+            : Loc.GetString("faction-access-locked");
+        _popup.PopupClient(message, ent, args.User);
+
+        args.Handled = true;
+    }
+
+    /// <summary>
+    /// Checks if user is a member of any allowed faction (for lock toggling).
+    /// </summary>
+    private bool IsFactionMember(EntityUid user, Entity<FactionAccessComponent> target)
+    {
+        if (target.Comp.AllowedFactions.Count == 0)
+            return false;
+
+        if (!TryComp<CharacterFactionMemberComponent>(user, out var factionMember))
+            return false;
+
+        return target.Comp.AllowedFactions.Contains(factionMember.Faction);
     }
 
     private void OnUIOpenAttempt(Entity<FactionAccessComponent> ent, ref ActivatableUIOpenAttemptEvent args)
@@ -32,6 +81,19 @@ public sealed class FactionAccessSystem : EntitySystem
         }
     }
 
+    private void OnEquipAttempt(Entity<FactionAccessComponent> ent, ref BeingEquippedAttemptEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        if (!IsAllowed(args.Equipee, ent))
+        {
+            args.Cancel();
+            if (ent.Comp.DeniedMessage != null)
+                args.Reason = ent.Comp.DeniedMessage;
+        }
+    }
+
     /// <summary>
     /// Checks if a user is allowed to access an entity with FactionAccessComponent.
     /// </summary>
@@ -40,8 +102,19 @@ public sealed class FactionAccessSystem : EntitySystem
         if (!target.Comp.Enabled)
             return true;
 
+        // If unlocked, everyone can access
+        if (target.Comp.Unlocked)
+            return true;
+
+        // No restrictions if both lists are empty
+        if (target.Comp.AllowedFactions.Count == 0 && target.Comp.DeniedFactions.Count == 0)
+            return true;
+
         if (!TryComp<CharacterFactionMemberComponent>(user, out var factionMember))
-            return false;
+        {
+            // No faction - only allow if no AllowedFactions specified
+            return target.Comp.AllowedFactions.Count == 0;
+        }
 
         var userFaction = factionMember.Faction;
 
@@ -49,7 +122,7 @@ public sealed class FactionAccessSystem : EntitySystem
             return false;
 
         if (target.Comp.AllowedFactions.Count == 0)
-            return false;
+            return true;
 
         return target.Comp.AllowedFactions.Contains(userFaction);
     }

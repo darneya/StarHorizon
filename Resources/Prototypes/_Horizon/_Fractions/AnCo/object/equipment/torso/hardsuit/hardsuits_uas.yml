@@ -31,6 +31,9 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitSpider
+  - type: FactionAccess
+    allowedFactions:
+    - FactionAnCo
 
 # титан
 - type: entity

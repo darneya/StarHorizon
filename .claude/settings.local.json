@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(find:*)",
-      "Bash(for file in crawlerla_*)"
+      "Bash(for file in crawlerla_*)",
+      "Bash(dotnet build:*)"
     ],
     "deny": [],
     "ask": []
