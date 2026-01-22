@@ -1,3 +1,3 @@
 ent-LockableButtonDFI = { ent-LockableButton }
-    .suffix = DFI
+    .suffix = StarHorizon, DFI
     .desc = { ent-LockableButton.desc }

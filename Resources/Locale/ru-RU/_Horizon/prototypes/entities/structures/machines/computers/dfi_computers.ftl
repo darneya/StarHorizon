@@ -1,3 +1,3 @@
 ent-ComputerIdDFI = Консоль ID карт DFI
-    .suffix = DFI
-    .desc = Терминал для программирования ID карт агентов DFI.
+    .suffix = StarHorizon, DFI
+    .desc = Терминал для настройки ID карт агентов DFI.

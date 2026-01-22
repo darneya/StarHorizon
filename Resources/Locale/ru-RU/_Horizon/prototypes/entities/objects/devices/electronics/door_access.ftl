@@ -1,3 +1,3 @@
 ent-DoorElectronicsDFI = { ent-DoorElectronics }
-    .suffix = DFI, Закрыто
+    .suffix = StarHorizon, DFI, Закрыто
     .desc = { ent-DoorElectronics.desc }

@@ -1,3 +1,3 @@
 ent-PDADFI = КПК агента DFI
-    .suffix = DFI
+    .suffix = StarHorizon, DFI
     .desc = КПК, используемый агентами DFI.
