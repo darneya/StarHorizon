@@ -53,25 +53,25 @@ namespace Content.Shared._Horizon.CCVar
         ///     Path to sponsors.txt file
         /// </summary>
         public static readonly CVarDef<string> SponsorSystemSponsorsPath =
-            CVarDef.Create("sponsor.sponsors_path", "../ss14_data/sponsorSystem/sponsors.txt", CVar.SERVERONLY);
+            CVarDef.Create("sponsor.sponsors_path", "sponsorSystem/sponsors.txt", CVar.SERVERONLY);
 
         /// <summary>
         ///     Path to discord_sponsors.txt file
         /// </summary>
         public static readonly CVarDef<string> SponsorSystemDiscordSponsorsPath =
-            CVarDef.Create("sponsor.discord_sponsors_path", "../ss14_data/sponsorSystem/discord_sponsors.txt", CVar.SERVERONLY);
+            CVarDef.Create("sponsor.discord_sponsors_path", "sponsorSystem/discord_sponsors.txt", CVar.SERVERONLY);
 
         /// <summary>
         ///     Path to disposable.txt file
         /// </summary>
         public static readonly CVarDef<string> SponsorSystemDisposablePath =
-            CVarDef.Create("sponsor.disposable_path", "../ss14_data/sponsorSystem/disposable.txt", CVar.SERVERONLY);
+            CVarDef.Create("sponsor.disposable_path", "sponsorSystem/disposable.txt", CVar.SERVERONLY);
 
         /// <summary>
         ///     Path to sponsor_items.txt file
         /// </summary>
         public static readonly CVarDef<string> SponsorSystemItemsPath =
-            CVarDef.Create("sponsor.items_path", "../ss14_data/sponsorSystem/sponsor_items.txt", CVar.SERVERONLY);
+            CVarDef.Create("sponsor.items_path", "sponsorSystem/sponsor_items.txt", CVar.SERVERONLY);
 
         /*
          * Очистка мусора (Trash Cleanup)
