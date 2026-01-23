@@ -6,11 +6,11 @@
   description: Перчатки из волокна Ардония со вшитой защитной пластиной.
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/Hands/Gloves/uasglovesisolate.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Hands/Gloves/uasglovesisolate.rsi
   - type: Tag
     tags: [] # Выносим с ВЛа для хамелеонки
   - type: Clothing
-    sprite: _StarHorizon/Clothing/Hands/Gloves/uasglovesisolate.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Hands/Gloves/uasglovesisolate.rsi
   - type: Insulated
   - type: Fiber
     fiberMaterial: красные переливающиеся
@@ -25,8 +25,8 @@
   description: Перчатки из волокна Ардония. Кажется, они тёплые.
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/Hands/Gloves/uasgloves.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Hands/Gloves/uasgloves.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/Hands/Gloves/uasgloves.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Hands/Gloves/uasgloves.rsi
   - type: StaticPrice
     price: 5000
