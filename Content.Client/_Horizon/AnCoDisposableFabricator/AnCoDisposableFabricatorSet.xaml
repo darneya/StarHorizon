@@ -4,7 +4,7 @@
 	<!-- Name and button -->
 	<PanelContainer Margin="5 5 0 5">
 			<PanelContainer.PanelOverride>
-				<gfx:StyleBoxFlat BackgroundColor="#620505" />
+				<gfx:StyleBoxFlat BackgroundColor="#3c0000" />
 			</PanelContainer.PanelOverride>
 			<BoxContainer Orientation="Vertical" HorizontalExpand="True">
 			<GridContainer Margin="5" Columns="2" MinSize="600 0">

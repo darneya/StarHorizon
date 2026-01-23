@@ -17,6 +17,6 @@ public sealed partial class AnCoDisposableFabricatorSet : Control
         SetName.Text = Loc.GetString(set.Name);
         SetDescription.Text = Loc.GetString(set.Description);
         SetButton.Text = Loc.GetString(set.Selected ? "anco-disposable-fabricator-button-deselect" : "anco-disposable-fabricator-button-select");
-        SetButton.ModulateSelfOverride = set.Selected ? new Color(240, 90, 90) : new Color(179, 14, 14);
+        SetButton.ModulateSelfOverride = set.Selected ? new Color(240, 90, 90) : new Color(98, 5, 5);
     }
 }
