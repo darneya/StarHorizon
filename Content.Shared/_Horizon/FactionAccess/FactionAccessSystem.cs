@@ -38,8 +38,8 @@ public sealed class FactionAccessSystem : EntitySystem
         if (!HasComp<IdCardComponent>(args.Used) && !HasComp<PdaComponent>(args.Used))
             return;
 
-        // Check if user belongs to allowed faction
-        if (!IsFactionMember(args.User, ent))
+        // Check if ID card has required access
+        if (!HasUnlockAccess(args.Used, ent))
             return;
 
         // Toggle lock state
@@ -55,17 +55,33 @@ public sealed class FactionAccessSystem : EntitySystem
     }
 
     /// <summary>
-    /// Checks if user is a member of any allowed faction (for lock toggling).
+    /// Checks if the ID card (or PDA with ID card) has the required access to toggle lock.
     /// </summary>
-    private bool IsFactionMember(EntityUid user, Entity<FactionAccessComponent> target)
+    private bool HasUnlockAccess(EntityUid used, Entity<FactionAccessComponent> target)
     {
-        if (target.Comp.AllowedFactions.Count == 0)
+        if (target.Comp.UnlockAccess == null)
             return false;
 
-        if (!TryComp<CharacterFactionMemberComponent>(user, out var factionMember))
+        // Get the ID card entity (from PDA if needed)
+        EntityUid? idCard = null;
+
+        if (TryComp<IdCardComponent>(used, out _))
+        {
+            idCard = used;
+        }
+        else if (TryComp<PdaComponent>(used, out var pda) && pda.ContainedId != null)
+        {
+            idCard = pda.ContainedId.Value;
+        }
+
+        if (idCard == null)
             return false;
 
-        return target.Comp.AllowedFactions.Contains(factionMember.Faction);
+        // Check if ID card has the required access
+        if (!TryComp<AccessComponent>(idCard, out var access))
+            return false;
+
+        return access.Tags.Contains(target.Comp.UnlockAccess.Value);
     }
 
     private void OnUIOpenAttempt(Entity<FactionAccessComponent> ent, ref ActivatableUIOpenAttemptEvent args)

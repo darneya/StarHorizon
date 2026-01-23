@@ -1,4 +1,5 @@
 using Content.Shared._Horizon.FlavorText;
+using Content.Shared.Access;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -38,10 +39,17 @@ public sealed partial class FactionAccessComponent : Component
     public LocId? DeniedMessage = "faction-access-denied";
 
     /// <summary>
-    /// Whether this entity can be unlocked/locked by faction members using an ID card.
+    /// Whether this entity can be unlocked/locked using an ID card with required access.
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool CanToggleLock = true;
+
+    /// <summary>
+    /// Access level required to unlock/lock this entity.
+    /// If null, uses AllowedFactions check instead.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public ProtoId<AccessLevelPrototype>? UnlockAccess = "AnCo";
 
     /// <summary>
     /// Whether this entity is currently unlocked (accessible to everyone).
