@@ -1,6 +1,5 @@
 - type: entity
   parent: [BaseStructure, AnCoStore, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: BaseAnCoUplink
   name: консоль запроса АнКо
   description: Подозрительная консоль без монитора.
@@ -56,6 +55,6 @@
             Sheetkazmie:
               min: 1
               max: 5
-            SheetEFS:
+            SheetArdon:
               min: 3
               max: 5

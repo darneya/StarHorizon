@@ -449,3 +449,8 @@
 
 - type: Tag
   id: ChubbyBomb
+
+# Airlock
+
+- type: Tag
+  id: PlanetTaxiAirlock

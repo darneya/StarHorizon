@@ -70,7 +70,6 @@
 - type: entity
   name: пп-дизейблер АнКо
   parent: BaseWeaponAnCo
-  categories: [ HideSpawnMenu ]
   id: WeaponDisablerSMGAnCo
   suffix: StarHorizon, AnCo
   description: Улучшенная модель дизейблера с уменьшенной в угоду повышенной скорострельности мощностью.
@@ -112,7 +111,6 @@
 - type: entity
   name: Ардониевый пулемет АнКо
   parent: BaseWeaponAnCo
-  categories: [ HideSpawnMenu ]
   suffix: StarHorizon, AnCo
   id: WeaponLaserMinigunAnCo
   description: Первая попытка АнКо создать машину смерти, хоть и в форме пулемёта.
@@ -154,7 +152,6 @@
 - type: entity
   name: Ардониевый гранатомет АнКо
   parent: BaseWeaponAnCo
-  categories: [ HideSpawnMenu ]
   suffix: StarHorizon, AnCo
   id: WeaponLaserGranadeAnCo
   description: Первая попытка АнКо создать машину смерти, хоть и в форме гранатомёта.
@@ -200,7 +197,6 @@
 - type: entity
   name: винтовка-дизейблер АнКо
   parent: BaseWeaponAnCo
-  categories: [ HideSpawnMenu ]
   id: WeaponDisablerSniperAnCo
   suffix: StarHorizon, AnCo
   description: Энергоёмкое EFS-устройство, используемое только в крайних случаях.
@@ -246,7 +242,6 @@
 - type: entity
   name: рипсоидная винтовка АнКо
   parent: BaseWeaponAnCo
-  categories: [ HideSpawnMenu ]
   id: AnCoRipsoidCannon
   suffix: StarHorizon, AnCo
   description: Рипсоидная винтовка с расширенной батареей.
@@ -283,7 +278,6 @@
 - type: entity
   name: пистолет совета АнКо
   parent: BaseWeaponAnCo
-  categories: [ HideSpawnMenu ]
   id: AnCoCounselorGun
   suffix: StarHorizon, AnCo
   description: Особая модификация рипсоидной винтовки, созданная для защиты совета.
@@ -319,7 +313,6 @@
 - type: entity
   name: модифицированный ПП АнКо
   parent: BaseWeaponPowerCellAnCo
-  categories: [ HideSpawnMenu ]
   id: PMLaserAnCoGun
   description: Лазерный ПП, модернизированный в сторону мощности, хоть и в ущерб автономному электроснабжению.
   components:
@@ -340,7 +333,6 @@
 - type: entity
   name: лазерная винтовка AnCo
   parent: BaseWeaponPowerCellAnCo
-  categories: [ HideSpawnMenu ]
   id: LaserAnCoGun
   description: Специально созданная под Ардониевые ячейки, винтовка с высокой скорострельностью.
   components:

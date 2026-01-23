@@ -10,7 +10,7 @@ using Robust.Shared.Timing;
 namespace Content.Server._Horizon.TrashCleanup;
 
 /// <summary>
-/// Система автоматического удаления мусорных сущностей через настраиваемое время.
+/// Система автоматического удаления мусорных сущностей с периодической очисткой.
 /// Активируется только после задержки от начала раунда.
 /// </summary>
 public sealed class TrashCleanupSystem : EntitySystem
@@ -22,7 +22,7 @@ public sealed class TrashCleanupSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
 
     private bool _enabled;
-    private float _lifetime;
+    private float _cleanupInterval;
     private float _startDelay;
 
     /// <summary>
@@ -36,38 +36,31 @@ public sealed class TrashCleanupSystem : EntitySystem
     private bool _isActive;
 
     /// <summary>
+    /// Время последней очистки.
+    /// </summary>
+    private TimeSpan _lastCleanupTime;
+
+    /// <summary>
     /// Теги, определяющие сущности для очистки.
     /// </summary>
-    private static readonly string[] CleanupTags = { "Trash", "Cartridge" };
+    private static readonly string[] CleanupTags = { "Cartridge" };
 
     /// <summary>
     /// Префикс ID прототипа для мусорных сущностей.
     /// </summary>
     private const string TrashPrefix = "Trash";
 
-    /// <summary>
-    /// Как часто проверять истёкший мусор (в секундах).
-    /// </summary>
-    private const float CheckInterval = 5f;
-
-    private float _timeSinceLastCheck;
-
     public override void Initialize()
     {
         base.Initialize();
 
         _cfg.OnValueChanged(HorizonCCVars.TrashCleanupEnabled, OnEnabledChanged, true);
-        _cfg.OnValueChanged(HorizonCCVars.TrashCleanupLifetime, OnLifetimeChanged, true);
+        _cfg.OnValueChanged(HorizonCCVars.TrashCleanupInterval, OnIntervalChanged, true);
         _cfg.OnValueChanged(HorizonCCVars.TrashCleanupStartDelay, OnStartDelayChanged, true);
 
         // Подписываемся на события раунда
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarting);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestart);
-
-        // Подписываемся на инициализацию TagComponent для отлова сущностей с тегом Trash
-        SubscribeLocalEvent<TagComponent, MapInitEvent>(OnTagMapInit);
-        // Подписываемся на инициализацию метаданных для отлова сущностей с префиксом Trash в ID прототипа
-        SubscribeLocalEvent<MetaDataComponent, MapInitEvent>(OnMetaMapInit);
     }
 
     private void OnEnabledChanged(bool value)
@@ -89,10 +82,10 @@ public sealed class TrashCleanupSystem : EntitySystem
         }
     }
 
-    private void OnLifetimeChanged(float value)
+    private void OnIntervalChanged(float value)
     {
-        _lifetime = value;
-        Log.Info($"TrashCleanup: Время жизни установлено на {value} секунд.");
+        _cleanupInterval = value;
+        Log.Info($"TrashCleanup: Интервал очистки установлен на {value} секунд.");
     }
 
     private void OnStartDelayChanged(float value)
@@ -105,6 +98,7 @@ public sealed class TrashCleanupSystem : EntitySystem
     {
         _roundStartTime = _timing.CurTime;
         _isActive = false;
+        _lastCleanupTime = TimeSpan.Zero;
 
         if (_enabled)
             Log.Info($"TrashCleanup: Раунд {ev.Id} начался. Система активируется через {_startDelay} секунд.");
@@ -114,61 +108,7 @@ public sealed class TrashCleanupSystem : EntitySystem
     {
         _isActive = false;
         _roundStartTime = TimeSpan.Zero;
-    }
-
-    private void OnTagMapInit(EntityUid uid, TagComponent component, MapInitEvent args)
-    {
-        if (!_enabled || !_isActive)
-            return;
-
-        // Проверяем, есть ли у сущности какой-либо из тегов очистки
-        var hasCleanupTag = false;
-        foreach (var tag in CleanupTags)
-        {
-            if (_tag.HasTag(uid, tag))
-            {
-                hasCleanupTag = true;
-                break;
-            }
-        }
-
-        if (!hasCleanupTag)
-            return;
-
-        AddTrashTimer(uid);
-    }
-
-    private void OnMetaMapInit(EntityUid uid, MetaDataComponent component, MapInitEvent args)
-    {
-        if (!_enabled || !_isActive)
-            return;
-
-        // Пропускаем, если таймер уже есть (от события тега)
-        if (HasComp<TrashTimerComponent>(uid))
-            return;
-
-        // Проверяем, начинается ли ID прототипа с "Trash"
-        var prototypeId = component.EntityPrototype?.ID;
-        if (prototypeId == null || !prototypeId.StartsWith(TrashPrefix, StringComparison.OrdinalIgnoreCase))
-            return;
-
-        AddTrashTimer(uid);
-    }
-
-    private void AddTrashTimer(EntityUid uid)
-    {
-        if (HasComp<TrashTimerComponent>(uid))
-            return;
-
-        // Не добавляем таймер предметам в контейнерах (в руках, рюкзаках и т.д.)
-        if (_container.IsEntityInContainer(uid))
-            return;
-
-        var timer = EnsureComp<TrashTimerComponent>(uid);
-        timer.DespawnTime = _timing.CurTime + TimeSpan.FromSeconds(_lifetime);
-
-        var name = MetaData(uid).EntityName;
-        Log.Debug($"TrashCleanup: Добавлен таймер для '{name}' ({uid}), будет удалён в {timer.DespawnTime}");
+        _lastCleanupTime = TimeSpan.Zero;
     }
 
     public override void Update(float frameTime)
@@ -185,6 +125,7 @@ public sealed class TrashCleanupSystem : EntitySystem
             if (timeSinceRoundStart.TotalSeconds >= _startDelay)
             {
                 _isActive = true;
+                _lastCleanupTime = _timing.CurTime;
                 Log.Info($"TrashCleanup: Система активирована после {_startDelay} секунд задержки.");
             }
             else
@@ -196,31 +137,64 @@ public sealed class TrashCleanupSystem : EntitySystem
         if (!_isActive)
             return;
 
-        _timeSinceLastCheck += frameTime;
-        if (_timeSinceLastCheck < CheckInterval)
+        // Проверяем, нужно ли выполнить очистку
+        var curTime = _timing.CurTime;
+        var timeSinceLastCleanup = curTime - _lastCleanupTime;
+
+        if (timeSinceLastCleanup.TotalSeconds < _cleanupInterval)
             return;
 
-        _timeSinceLastCheck = 0f;
+        // Выполняем очистку
+        _lastCleanupTime = curTime;
+        PerformCleanup();
+    }
 
-        var curTime = _timing.CurTime;
+    private void PerformCleanup()
+    {
         var deletedCount = 0;
+        var query = EntityQueryEnumerator<TagComponent>();
+        var entitiesToDelete = new List<EntityUid>();
 
-        var query = EntityQueryEnumerator<TrashTimerComponent>();
-        while (query.MoveNext(out var uid, out var timer))
+        // Собираем все сущности с нужными тегами, которые не в контейнерах
+        while (query.MoveNext(out var uid, out var tagComponent))
         {
-            if (curTime < timer.DespawnTime)
+            // Пропускаем сущности в контейнерах (в руках, рюкзаках и т.д.)
+            if (_container.IsEntityInContainer(uid))
                 continue;
 
-            // Не удаляем, если сущность в контейнере (в руках, рюкзаке и т.д.)
-            if (_container.IsEntityInContainer(uid))
+            // Проверяем, есть ли у сущности какой-либо из тегов очистки
+            var hasCleanupTag = false;
+            foreach (var tag in CleanupTags)
             {
-                // Сбрасываем таймер - проверим позже, когда выбросят
-                timer.DespawnTime = curTime + TimeSpan.FromSeconds(_lifetime);
-                continue;
+                if (_tag.HasTag(uid, tag))
+                {
+                    hasCleanupTag = true;
+                    break;
+                }
             }
 
+            // Также проверяем префикс прототипа для мусора
+            if (!hasCleanupTag)
+            {
+                var meta = MetaData(uid);
+                var prototypeId = meta.EntityPrototype?.ID;
+                if (prototypeId != null && prototypeId.StartsWith(TrashPrefix, StringComparison.OrdinalIgnoreCase))
+                {
+                    hasCleanupTag = true;
+                }
+            }
+
+            if (hasCleanupTag)
+            {
+                entitiesToDelete.Add(uid);
+            }
+        }
+
+        // Удаляем собранные сущности
+        foreach (var uid in entitiesToDelete)
+        {
             var name = MetaData(uid).EntityName;
-            Log.Debug($"TrashCleanup: Удаление '{name}' ({uid}) - время жизни истекло.");
+            Log.Debug($"TrashCleanup: Удаление '{name}' ({uid}).");
             QueueDel(uid);
             deletedCount++;
         }

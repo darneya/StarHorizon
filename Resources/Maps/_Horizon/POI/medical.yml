@@ -4,8 +4,8 @@ meta:
   engineVersion: 261.2.0
   forkId: ""
   forkVersion: ""
-  time: 12/23/2025 07:06:03
-  entityCount: 2172
+  time: 01/11/2026 09:47:31
+  entityCount: 2173
 maps: []
 grids:
 - 1
@@ -6401,14 +6401,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -7.5,6.5
       parent: 1
-- proto: ComputerShipyard
-  entities:
-  - uid: 919
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,-20.5
-      parent: 1
 - proto: ComputerShipyardMedical
   entities:
   - uid: 286
@@ -6416,6 +6408,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 6.5,-8.5
+      parent: 1
+  - uid: 919
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,-20.5
       parent: 1
 - proto: ComputerTabletopComms
   entities:
@@ -6789,6 +6787,12 @@ entities:
     - type: Transform
       pos: 6.5,-18.5
       parent: 1
+  - uid: 1467
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,-24.5
+      parent: 1
   - uid: 1474
     components:
     - type: Transform
@@ -6800,6 +6804,11 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,11.5
+      parent: 1
+  - uid: 1478
+    components:
+    - type: Transform
+      pos: -0.5,-23.5
       parent: 1
 - proto: DisposalJunction
   entities:
@@ -7260,12 +7269,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,-24.5
       parent: 1
-  - uid: 1467
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,-24.5
-      parent: 1
   - uid: 1468
     components:
     - type: Transform
@@ -7326,11 +7329,11 @@ entities:
     - type: Transform
       pos: 6.5,20.5
       parent: 1
-  - uid: 1478
+  - uid: 2173
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -1.5,-24.5
+      pos: -1.5,-23.5
       parent: 1
 - proto: DisposalUnit
   entities:

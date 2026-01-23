@@ -1,10 +1,9 @@
 - type: entity
   parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: AnCoVests
   suffix: StarHorizon, AnCo
   name: бронежилет АнКо
-  description: Бронежилет из казмия с прослойкой из EFS.
+  description: Бронежилет из казмия с прослойкой из Ардония.
   components:
   - type: Sprite
     sprite: _StarHorizon/Clothing/OuterClothing/Vests/uasvest.rsi
@@ -26,7 +25,6 @@
 
 - type: entity
   parent: [ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseAnCoContraband, ClothingOuterCoatHoSTrench]
-  categories: [ HideSpawnMenu ]
   id: AnCocoastconsul
   suffix: StarHorizon, AnCo
   name: плащ совета АнКо

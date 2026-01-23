@@ -1,11 +1,10 @@
 
 - type: entity
   id: AnCoFabricator
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseAnCoContraband]
   name: фабрикатор АнКо
   description: Как вы его собрали?
   suffix: StarHorizon, AnCo, Structure
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Machines/uasprotoplat.rsi

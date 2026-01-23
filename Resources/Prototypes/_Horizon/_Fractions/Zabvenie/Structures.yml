@@ -339,7 +339,7 @@
     sprite: _Horizon/_Fractions/Zabvenie/items/trophies.rsi
     state: base03
   - type: StaticPrice
-    price: 3500
+    price: 50
 
 # region Мраконевые Спавнеры 
 - type: entity

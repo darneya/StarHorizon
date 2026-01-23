@@ -910,12 +910,12 @@
   - ContractorNFBoxSurvivalNitrogen
   - ContractorNFBoxSurvivalExtended
   - ContractorNFBoxSurvivalExtendedNitrogen
-#  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
-#  - ContractorNFBoxSurvivalExtendedSheleg # Horizon Survival box
+  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
+  - ContractorNFBoxSurvivalExtendedSheleg # Horizon Survival box
   fallbacks:
   - ContractorNFBoxSurvival
   - ContractorNFBoxSurvivalNitrogen
-#  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
+  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
 
 - type: loadoutGroup
   id: ContractorEncryptionKey
