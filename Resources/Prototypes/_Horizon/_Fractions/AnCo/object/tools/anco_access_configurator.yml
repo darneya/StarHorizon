@@ -5,6 +5,8 @@
   suffix: StarHorizon, AnCo
   description: Используется для настройки уровней доступа шлюзов и других устройств АнКо.
   components:
+    - type: Sprite
+      sprite: _Horizon/_Fractions/AnCo/Objects/Devices/ancoconfiguration.rsi
     - type: AccessOverrider
       accessLevels:
       - AnCo
