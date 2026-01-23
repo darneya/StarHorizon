@@ -1,0 +1,8 @@
+- type: accessLevel
+  id: AnCo
+  name: id-card-access-level-anco
+
+- type: accessGroup
+  id: AllAnCo
+  tags:
+  - AnCo
