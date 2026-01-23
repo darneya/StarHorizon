@@ -46,6 +46,7 @@
         whitelist:
           tags:
             - AnCoBulletPistol35
+  - type: DualWield
 
 - type: entity
   name: Роевик
@@ -96,3 +97,4 @@
         whitelist:
           tags:
             - AnCoBulletPistol35
+  - type: DualWield
