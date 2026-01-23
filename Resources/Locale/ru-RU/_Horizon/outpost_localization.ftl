@@ -9,3 +9,20 @@ faction-cant-capture-already-captured-outpost = Фракция уже владе
 faction-start-capture-outpost = Запустить захват консоли
 
 faction-none = Fraction Unknown
+
+outpost-first-capture-by = Фракция {$factionName} начала захват {$outpostName ->
+    [empty] одного из аванпостов
+    *[other] аванпоста {$outpostName}
+    } 
+outpost-capture-fall-controlled-by = Фракция {$oldFactionName} {$outpostName -> 
+    [empty] потеряла контроль над одним из аванпостов
+    *[other] {$oldFactionName} потеряла контроль над аванпостом {$outpostName}
+    }  
+outpost-capture-by-controlled-by = Фракция {$factionName} начала захват {$outpostName ->
+    [empty] одного из аванпостов под контролем {$oldFactionName}
+    *[other] аванпоста {$outpostName} под контролем {$oldFactionName}
+    }
+outpost-intercept-by-controlled-by = Фракция {$factionName} перехватила захват фракции {$outpostName ->
+    [empty] {$oldFactionName} во время захвата одного из аванпостов
+    *[other] {$oldFactionName} во время захвата аванпостов {$outpostName}
+}
