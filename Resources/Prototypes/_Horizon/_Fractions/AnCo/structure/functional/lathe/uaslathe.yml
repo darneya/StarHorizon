@@ -7,7 +7,7 @@
   suffix: StarHorizon, AnCo, Structure
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Machines/uasprotoplat.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/uasprotoplat.rsi
     snapCardinals: true
     layers:
     - state: icon
@@ -54,10 +54,9 @@
   name: микросхема АнКо
   suffix: StarHorizon, AnCo
   description: Красная прозрачная микросхема. Вы ощущаете исходящее от неё тепло.
-  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      sprite: _Horizon/Objects/Misc/uasciruitboard.rsi
+      sprite: _Horizon/_Fractions/AnCo/Objects/Misc/uasciruitboard.rsi
       state: boardproto
     - type: Item
       storedRotation: -90

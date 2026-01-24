@@ -15,9 +15,6 @@ public sealed partial class EntityExpeditionGoal : ExpeditionGoal
     [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public string RequiredTag = default!;
 
-    [ViewVariables(VVAccess.ReadWrite)]
-    public int RequiredAmount;
-
     public override ExpeditionGoal Instantiate(int amount)
     {
         return new EntityExpeditionGoal()

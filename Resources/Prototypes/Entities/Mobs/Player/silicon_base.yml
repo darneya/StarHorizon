@@ -248,7 +248,7 @@
     - type: Speech
       speechSounds: Pai
     - type: TypingIndicator
-      proto: ipc
+      proto: robot
     - type: Vocal
       wilhelm: "/Audio/Voice/IPC/wilhelm.ogg"
       sounds:

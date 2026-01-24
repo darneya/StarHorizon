@@ -152,7 +152,7 @@ directory = "replays/"
 ##### Sponsor System ###########################################################
 
 [sponsor]
-# Paths to sponsor system files (relative to UserData directory)
+# Paths to sponsor system files
 sponsors_path = "sponsorSystem/sponsors.txt"
 discord_sponsors_path = "sponsorSystem/discord_sponsors.txt"
 disposable_path = "sponsorSystem/disposable.txt"

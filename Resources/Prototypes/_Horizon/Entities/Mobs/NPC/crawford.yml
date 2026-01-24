@@ -1,0 +1,44 @@
+- type: entity
+  name: Crawford Mob
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  parent:
+  - NFMobNoEquipmentOnGib
+  - MobStaminaFodder
+  - MobHumanoidHostileBase
+  - MobHumanoidInvetory
+  id: MobCrawfordBase
+  components:
+  - type: Body
+    prototype: HumanSyntheticOrgans # New set of synthetic organs grants faster removal of toxins from bloodstream
+    requiredLegs: 2
+  - type: NpcFactionMember
+    factions:
+    - Crawford
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+  - type: Advertise
+    pack: crawfordhumanoidchatter
+    minimumWait: 30
+    maximumWait: 120
+    nextAdvertisementTime: 10
+  - type: AutoWakeUp
+
+- type: entity
+  name: Дипломат НТ "Кроуфорд"
+  parent: MobCrawfordBase
+  id: MobCrawfordFollower
+  description: Элегантно одетый в чёрный смокинг дипломат, он следует за вами
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Loadout
+      prototypes:
+        - CrawfordGearA
+    - type: NpcFactionMember
+      factions:
+        - Crawford
+    - type: Dialogue
+      dialogueTree: CrawfordDialogue
+      canFollowAfterDialogue: true
+    - type: DialogueState  # Добавляем компонент состояния

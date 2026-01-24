@@ -2,11 +2,11 @@
   name: шоковая дубинка АнКо
   parent: [BaseItem, BaseAnCoContraband]
   id: WeaponStunprodAnCo
-  suffix: StarHorizon, AnCo
   description: Шоковая дубинка, разработанная с использованием утекшей технологии NanoTrasen. Имеет улучшенную систему энергопотребления.
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Melee/uasstunbaton.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/uasstunbaton.rsi
     layers:
     - state: stunbaton_off
       map: [ "enum.ToggleableVisuals.Layer" ]
@@ -54,7 +54,7 @@
     heldPrefix: off
     size: Normal
   - type: Clothing
-    sprite: _StarHorizon/Objects/Weapons/Melee/uasstunbaton.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/uasstunbaton.rsi
     slots:
     - Belt
   - type: DisarmMalus
