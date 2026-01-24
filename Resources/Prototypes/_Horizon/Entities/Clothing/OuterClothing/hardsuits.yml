@@ -500,3 +500,16 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: TraumaTeamHelmetPilot
+
+- type: entity
+  parent: ClothingOuterHardsuitSyndie
+  id: ClothingOuterHardsuitLostSpacesuitWar
+  name: утерянный скафандр войны
+  description: Древний боевой скафандр, технологии производства которого давно были утеряны. Как эти больные ублюдки смогли его достать?
+  components:
+  - type: Sprite
+    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/lostspacesuitwar.rsi
+  - type: Clothing
+    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/lostspacesuitwar.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLostSpacesuitWar
