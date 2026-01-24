@@ -30,6 +30,9 @@
                        Access="Public"/>
         </ScrollContainer>
 
+        <RichTextLabel Name="RequiredAmountLabel"
+                       HorizontalExpand="True"
+                       Margin="4"/>
         <RichTextLabel Name="RewardLabel"
                        HorizontalExpand="True"
                        Margin="4"/>

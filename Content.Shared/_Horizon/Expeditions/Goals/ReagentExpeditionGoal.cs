@@ -15,9 +15,6 @@ public sealed partial class ReagentExpeditionGoal : ExpeditionGoal
     [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
     public string RequiredReagent = default!;
 
-    [ViewVariables(VVAccess.ReadWrite)]
-    public int RequiredAmount;
-
     public override ExpeditionGoal Instantiate(int amount)
     {
         return new ReagentExpeditionGoal()

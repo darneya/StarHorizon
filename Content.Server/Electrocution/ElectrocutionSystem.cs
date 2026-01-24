@@ -63,6 +63,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
 
     [ValidatePrototypeId<DamageTypePrototype>]
     private const string DamageType = "Shock";
+    public const float ElectrifiedDamagePerWatt = 0.0015f; // This information is allowed to be public, and was needed in BatteryElectrocuteChargeSystem.cs
 
     private static readonly ProtoId<TagPrototype> WindowTag = "Window";
 
@@ -304,7 +305,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
             || !DoCommonElectrocution(uid, sourceUid, shockDamage, time, refresh, siemensCoefficient, statusEffects))
             return false;
 
-        RaiseLocalEvent(uid, new ElectrocutedEvent(uid, sourceUid, siemensCoefficient), true);
+        RaiseLocalEvent(uid, new ElectrocutedEvent(uid, sourceUid, siemensCoefficient, shockDamage), true);
         return true;
     }
 
@@ -354,7 +355,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         electrocutionComponent.Electrocuting = uid;
         electrocutionComponent.Source = sourceUid;
 
-        RaiseLocalEvent(uid, new ElectrocutedEvent(uid, sourceUid, siemensCoefficient), true);
+        RaiseLocalEvent(uid, new ElectrocutedEvent(uid, sourceUid, siemensCoefficient, shockDamage), true);
 
         return true;
     }
