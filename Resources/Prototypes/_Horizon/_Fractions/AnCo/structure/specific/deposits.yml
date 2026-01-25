@@ -21,7 +21,7 @@
   id: OreDepositKazieOreBig
   parent: OreDepositKazieOre
   name: глубокая жила с казмием
-  description: Рудная жила с
+  description: Рудная жила уходящая глубоко под землю
   suffix: StarHorizon, AnCo, Material
   components:
   - type: OreDeposit
