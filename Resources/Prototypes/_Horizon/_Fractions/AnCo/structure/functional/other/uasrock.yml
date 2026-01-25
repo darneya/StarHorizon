@@ -41,7 +41,7 @@
                 collection: MetalBreak
             - !type:SpawnEntitiesBehavior
               spawn:
-                Sheetkazmie:
+                KazmieOre1:
                   min: 1
                   max: 5
             - !type:DoActsBehavior
