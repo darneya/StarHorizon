@@ -40,6 +40,9 @@
         harddisk_micro: ""
   - type: StaticPrice
     price: 275
+  - type: Tag
+    tags:
+      - CryptominerDisk
 
 - type: entity
   parent: BaseItem

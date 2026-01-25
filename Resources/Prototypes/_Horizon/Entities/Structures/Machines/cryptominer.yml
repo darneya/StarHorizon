@@ -1,0 +1,119 @@
+- type: entity
+  id: Cryptominer
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: cryptominer
+  description: A cryptocurrency mining device. Consumes power and generates heat. Earned credits are automatically transferred to the station's bank account.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Cryptominer
+    creditsPerSecond: 10
+    powerConsumption: 500
+    heatEnergyPerSecond: 5000
+    warningTemperature: 373.15
+    overheatTemperature: 423.15
+    criticalTemperature: 473.15
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/miner.rsi
+    snapCardinals: true
+    layers:
+      - state: base
+        map: [ "enum.CryptominerVisualLayers.Base" ]
+      - state: level-1
+        map: [ "enum.CryptominerVisualLayers.Level" ]
+        visible: false
+        shader: unshaded
+      - state: lock
+        map: [ "enum.CryptominerVisualLayers.Lock" ]
+      - state: disk-1
+        map: [ "enum.CryptominerVisualLayers.Disks" ]
+        visible: false
+  - type: Appearance
+  - type: Matchbox
+  - type: ItemSlots
+    slots:
+      disk_slot_1:
+        name: cryptominer-slot-disk-1
+        whitelist:
+          tags:
+            - CryptominerDisk
+      disk_slot_2:
+        name: cryptominer-slot-disk-2
+        whitelist:
+          tags:
+            - CryptominerDisk
+      disk_slot_3:
+        name: cryptominer-slot-disk-3
+        whitelist:
+          tags:
+            - CryptominerDisk
+      disk_slot_4:
+        name: cryptominer-slot-disk-4
+        whitelist:
+          tags:
+            - CryptominerDisk
+  - type: ApcPowerReceiver
+    powerLoad: 500
+  - type: ExtensionCableReceiver
+  - type: ActivatableUI
+    key: enum.CryptominerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CryptominerUiKey.Key:
+        type: CryptominerBoundUserInterface
+  - type: Machine
+    board: CryptominerMachineCircuitboard
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 2
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/server_fans.ogg
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      disk_slot_1: !type:ContainerSlot
+      disk_slot_2: !type:ContainerSlot
+      disk_slot_3: !type:ContainerSlot
+      disk_slot_4: !type:ContainerSlot
+
+# Circuitboard for construction
+- type: entity
+  id: CryptominerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: cryptominer machine board
+  description: A machine printed circuit board for a cryptominer.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: Cryptominer
+    requirements:
+      MatterBin: 2
+      Capacitor: 2
+    materialRequirements:
+      Steel: 5
+      Cable: 5
