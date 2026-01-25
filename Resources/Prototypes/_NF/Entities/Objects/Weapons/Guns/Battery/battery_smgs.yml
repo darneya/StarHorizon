@@ -11,6 +11,11 @@
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun.rsi
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/Battery/energygun.rsi
+  - type: FactionAccess
+    allowedFactions:
+    - FactionAnCo
+    blacklistedFactions:
+    - FactionNFSD
 
 #region Diasblers
 - type: entity

@@ -1,5 +1,8 @@
 using Content.Shared._Horizon.FlavorText;
 using Content.Shared.Access;
+using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -52,8 +55,45 @@ public sealed partial class FactionAccessComponent : Component
     public ProtoId<AccessLevelPrototype>? UnlockAccess = "AnCo";
 
     /// <summary>
-    /// Whether this entity is currently unlocked (accessible to everyone).
+    /// Whether this entity is currently unlocked (accessible to everyone except blacklisted).
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool Unlocked;
+
+    /// <summary>
+    /// Factions that can NEVER use this entity, even when unlocked.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public HashSet<ProtoId<CharacterFactionPrototype>> BlacklistedFactions = new();
+
+    /// <summary>
+    /// If true, blacklisted factions will be damaged when trying to shoot this weapon (like Clumsy).
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool ExplodeOnBlacklist = true;
+
+    /// <summary>
+    /// Damage dealt to blacklisted faction members when they try to shoot.
+    /// </summary>
+    [DataField]
+    public DamageSpecifier? BlacklistDamage = new()
+    {
+        DamageDict = new Dictionary<string, FixedPoint2>
+        {
+            { "Blunt", 10 },
+            { "Heat", 15 }
+        }
+    };
+
+    /// <summary>
+    /// Stun time for blacklisted faction members when they try to shoot.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public TimeSpan BlacklistStunTime = TimeSpan.FromSeconds(3);
+
+    /// <summary>
+    /// Sound played when blacklisted faction member tries to shoot.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier BlacklistSound = new SoundPathSpecifier("/Audio/Weapons/Guns/Gunshots/bang.ogg");
 }
