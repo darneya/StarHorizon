@@ -214,6 +214,12 @@ public sealed class GatewayGeneratorSystem : EntitySystem
 
                 _biome.AddMarkerLayer(ent.Owner, biomeComp, layer.Id);
             }
+
+            // Horizon
+            foreach (var dungeonLayer in generatorComp.DungeonLayers)
+            {
+                _biome.AddMarkerLayer(ent.Owner, biomeComp, dungeonLayer.Id);
+            }
         }
     }
 }
