@@ -1,4 +1,5 @@
 using Robust.Shared.GameObjects;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager.Attributes;
 
 namespace Content.Shared.Procedural;
@@ -10,10 +11,10 @@ public sealed partial class DungeonSpawnComponent : Component
     /// Указывает какой пресет использовать для генерации данжа
     /// </summary>
     [DataField("dungeonPreset", required: true)]
-    public string DungeonPreset { get; set; } = string.Empty;
+    public ProtoId<DungeonConfigPrototype> DungeonPreset { get; set; }
 
     /// <summary>
-    /// Генерация структур по сидам, если пусто сид выбирается рамдомно
+    /// Генерация структур по сидам, если пусто сид выбирается рандомно
     /// </summary>
     [DataField("seed")]
     public int? Seed { get; set; }
