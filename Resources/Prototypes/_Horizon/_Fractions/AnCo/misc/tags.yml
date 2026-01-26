@@ -33,3 +33,9 @@
 
 - type: Tag
   id: AnCoTin
+
+- type: Tag
+  id: AnCoMaterial
+
+- type: Tag
+  id: AnCoOre

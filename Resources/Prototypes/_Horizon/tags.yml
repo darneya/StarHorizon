@@ -131,9 +131,6 @@
 - type: Tag
   id: PowerAnCo
 
-- type: Tag
-  id: AnCoMaterial
-
 # Ripley_mk2
 
 - type: Tag
