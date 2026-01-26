@@ -8,8 +8,11 @@ using Content.Shared.PDA;
 using Content.Shared.Popups;
 using Content.Shared.Stunnable;
 using Content.Shared.UserInterface;
+using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Horizon.FactionAccess;
 
@@ -24,6 +27,8 @@ public sealed class FactionAccessSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -58,25 +63,28 @@ public sealed class FactionAccessSystem : EntitySystem
             ent.Comp.BlacklistedFactions.Contains(factionMember.Faction))
         {
             args.Cancel();
+            DisableGun(ent, ent.Comp.BlacklistStunTime);
+
+            // Only server handles all effects to prevent duplication
+            if (!_net.IsServer)
+                return;
+
+            // Skip if already knocked down (prevents spam)
+            if (HasComp<KnockedDownComponent>(args.User))
+                return;
 
             if (ent.Comp.ExplodeOnBlacklist)
             {
-                // Deal damage
                 if (ent.Comp.BlacklistDamage != null)
                     _damageable.TryChangeDamage(args.User, ent.Comp.BlacklistDamage, origin: args.User);
 
-                // Stun
                 _stun.TryParalyze(args.User, ent.Comp.BlacklistStunTime, true);
-
-                // Play sound
                 _audio.PlayPvs(ent.Comp.BlacklistSound, args.User);
-
-                // Show popup
-                _popup.PopupClient(Loc.GetString("faction-access-blacklist-explode"), ent, args.User);
+                _popup.PopupEntity(Loc.GetString("faction-access-blacklist-explode"), ent, args.User);
             }
             else if (ent.Comp.DeniedMessage != null)
             {
-                _popup.PopupClient(Loc.GetString(ent.Comp.DeniedMessage), ent, args.User);
+                _popup.PopupEntity(Loc.GetString(ent.Comp.DeniedMessage), ent, args.User);
             }
 
             return;
@@ -85,8 +93,26 @@ public sealed class FactionAccessSystem : EntitySystem
         if (!IsAllowed(args.User, ent))
         {
             args.Cancel();
-            if (ent.Comp.DeniedMessage != null)
-                _popup.PopupClient(Loc.GetString(ent.Comp.DeniedMessage), ent, args.User);
+            DisableGun(ent, ent.Comp.BlacklistStunTime);
+
+            if (_net.IsServer && ent.Comp.DeniedMessage != null)
+                _popup.PopupEntity(Loc.GetString(ent.Comp.DeniedMessage), ent, args.User);
+        }
+    }
+
+    /// <summary>
+    /// Temporarily disables the gun by setting NextFire to a future time.
+    /// </summary>
+    private void DisableGun(EntityUid gun, TimeSpan duration)
+    {
+        if (!TryComp<GunComponent>(gun, out var gunComp))
+            return;
+
+        var nextFire = _timing.CurTime + duration;
+        if (gunComp.NextFire < nextFire)
+        {
+            gunComp.NextFire = nextFire;
+            Dirty(gun, gunComp);
         }
     }
 
