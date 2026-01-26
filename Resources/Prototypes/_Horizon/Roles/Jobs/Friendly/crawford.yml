@@ -10,3 +10,9 @@
     neck: ClothingNeckTieDet
   inhand:
     - PokerCase
+
+- type: startingGear
+  id: LemirdGearA
+  equipment:
+    jumpsuit: UniformSchoolgirlRed
+    shoes: ClothingShoesBlackDress
