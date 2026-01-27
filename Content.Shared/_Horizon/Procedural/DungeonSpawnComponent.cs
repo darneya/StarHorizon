@@ -1,8 +1,8 @@
+using Content.Shared.Procedural;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Manager.Attributes;
 
-namespace Content.Shared.Procedural;
+namespace Content.Shared._Horizon.Procedural;
 
 [RegisterComponent]
 public sealed partial class DungeonSpawnComponent : Component
