@@ -47,6 +47,7 @@
       - FakeMindShieldImplant
       - RadioImplant
       - RadioImplantFreelance # Frontier
+      - ExtractImplant
       deimplantFailureDamage:
         types:
           Cellular: 50
