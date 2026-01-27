@@ -3,6 +3,7 @@
          xmlns:humanoid="clr-namespace:Content.Client.Humanoid"
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
          xmlns:ui="clr-namespace:Content.Client.Lobby.UI"
+         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
          HorizontalExpand="True">
         <!-- Left side -->
         <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -162,9 +163,27 @@
                 End Frontier -->
                 <BoxContainer Orientation="Vertical" Margin="10">
                     <!-- Traits -->
-                    <ScrollContainer VerticalExpand="True">
-                        <BoxContainer Name="TraitsList" Orientation="Vertical" />
-                    </ScrollContainer>
+                    <!-- Horiazon - переписан фрагмент с трейтами -->
+                    <TabContainer Name="TraitsTab" Margin="8 8" VerticalExpand="True" HorizontalExpand="True">
+                        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
+                            <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="6 6 6 8">
+                                <controls:StripeBack SetHeight="60" HorizontalExpand="True">
+                                    <BoxContainer Orientation="Horizontal" >
+                                        <Button Name="TraitsPositive" Text="{Loc 'humanoid-profile-editor-traits-positive'}" HorizontalExpand="True" StyleClasses="OpenRight" Margin="4"/>
+                                        <Button Name="TraitsNeutral" Text="{Loc 'humanoid-profile-editor-traits-neutral'}" HorizontalExpand="True" StyleClasses="ButtonSquare" Margin="4"/>
+                                        <Button Name="TraitsNegative" Text="{Loc 'humanoid-profile-editor-traits-negative'}" HorizontalExpand="True" StyleClasses="OpenLeft" Margin="4"/>
+                                        <RichTextLabel Name="QuirksPointsLabel" Text="0 оч." Margin="4 10 4 4" VerticalAlignment="Top"/>
+                                    </BoxContainer>
+                                </controls:StripeBack>
+                            </BoxContainer>
+                            <ScrollContainer HScrollEnabled="False" VerticalExpand="True" HorizontalExpand="True" Margin="4">
+                                <BoxContainer Name="QuirksList" Orientation="Vertical" />
+                            </ScrollContainer>
+                        </BoxContainer>
+                        <ScrollContainer VerticalExpand="True" Margin="8 2 8 6">
+                            <BoxContainer Name="TraitsList" Orientation="Vertical" />
+                        </ScrollContainer>
+                    </TabContainer>
                 </BoxContainer>
                 <BoxContainer Name="MarkingsTab" Orientation="Vertical" Margin="10">
                     <!-- Markings -->
