@@ -102,6 +102,12 @@ public abstract partial class ExpeditionGoal
     public object? ClaimEvent;
 
     /// <summary>
+    /// Необходимое количество для выполнения цели
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public int RequiredAmount;
+
+    /// <summary>
     /// Создаёт инстанцию <see cref="ExpeditionGoal"/> на основе данного
     /// </summary>
     /// <param name="amount"></param>

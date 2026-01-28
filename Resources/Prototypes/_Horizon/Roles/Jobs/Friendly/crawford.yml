@@ -1,0 +1,12 @@
+# Captain
+- type: startingGear
+  id: CrawfordGearA
+  equipment:
+    head: ClothingHeadHatTophat
+    jumpsuit: ClothingUniformJumpsuitBlacksm
+    shoes: ClothingShoesBootsLaceup
+    gloves: WristwatchGold
+    eyes: ClothingEyesGlasses
+    neck: ClothingNeckTieDet
+  inhand:
+    - PokerCase

@@ -4,10 +4,9 @@
   suffix: StarHorizon, AnCo, Structure
   name: глыба казмия
   description: Монолитный кусок казмия. Кажется очень прочным.
-  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      sprite: _Horizon/Structures/Decoration/uasrock.rsi
+      sprite: _Horizon/_Fractions/AnCo/Structures/Decoration/uasrock.rsi
       state: UASRock
       noRot: true
     - type: Anchorable

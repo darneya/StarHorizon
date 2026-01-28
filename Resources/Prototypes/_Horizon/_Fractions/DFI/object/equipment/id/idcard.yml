@@ -1,0 +1,23 @@
+- type: entity
+  parent: IDCardStandard
+  id: DFIAgentID
+  suffix: DFI
+  name: DFI agent ID card
+  description: An ID card for DFI agents.
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/DFI/id_card_dfi.rsi
+    layers:
+    - state: default
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: _Horizon/_Fractions/DFI/id_card_dfi.rsi
+  - type: Item
+    size: Small
+    sprite: _Horizon/_Fractions/DFI/id_card_dfi.rsi
+  - type: IdCard
+    jobTitle: DFI Agent
+  - type: Access
+    tags:
+    - DFI

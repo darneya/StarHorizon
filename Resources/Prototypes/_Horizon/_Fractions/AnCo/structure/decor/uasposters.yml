@@ -6,7 +6,7 @@
   description: Флагманский  продукт "Рипсоид". Ни боли, ни страха.
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: ripsoid
 
 - type: entity
@@ -17,7 +17,7 @@
   description: Лучшие шаттлы во всей галактике! Всего за-...
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: ships
 
 - type: entity
@@ -28,7 +28,7 @@
   description: Усердно работайте на лучшую корпорацию в галактике, и она полюбит вас!
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: uaslogo
 
 - type: entity
@@ -39,7 +39,7 @@
   description: Два лучших продукта АнКо! Реактор и мини-реактор на EFS. Меньше размер - больше энергии!
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: reactor
 
 - type: entity
@@ -50,7 +50,7 @@
   description: Плакат предупреждает вас о том, что Ардоний очень горячий.
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: temperature
 
 - type: entity
@@ -61,7 +61,7 @@
   description: Продукт под номером "53743", что был снят с производства.
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: core
 
 # новые постеры
@@ -74,7 +74,7 @@
   description: Корпорат уничтожит каждого на своем пути, ради вас, ради корпорации
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: power
 
 - type: entity
@@ -85,7 +85,7 @@
   description: Цитадель место доступное только избранным, только для тех кто знает слишком много
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: citadel
 
 - type: entity
@@ -96,7 +96,7 @@
   description: Наши главные дочерние компании MiliGalax, StarDust и Subea, именно на этих трех китах держится корпорация
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: anco
 
 - type: entity
@@ -107,7 +107,7 @@
   description: ДКБ следит за вами, за каждым вашим шагом, все ради вашей же безопасности конечно
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: dcs
 
 - type: entity
@@ -118,7 +118,7 @@
   description: Мифический корабль который больше самого Горизонта Событий
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: sifina
 
 - type: entity
@@ -129,7 +129,7 @@
   description: Активы корпорации растут и все благодаря вам, вы наш лучший сотрудник!
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: money
 
 - type: entity
@@ -140,7 +140,7 @@
   description: Они наше оружие, они наша защита, они наши великие воины
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: miligalax
 
 - type: entity
@@ -151,7 +151,7 @@
   description: Каждый грам Ардония и Казмия который вы держите и видите произвели именно они
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: stardust
 
 - type: entity
@@ -162,7 +162,7 @@
   description: Они производят лучшие лекарства, импланты, и спасают жизни даже обреченных на смерть сотрудников
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: subea
 
 - type: entity
@@ -173,7 +173,7 @@
   description: Вот сейчас все будет. А. Постойте, это просто плакат
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: load
 
 - type: entity
@@ -184,7 +184,7 @@
   description: Ардоний это достояние корпорации, он его кровь и нейроны, и мы должны защитить его любой ценой, от рук врагов корпорации
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: ardon
 
 - type: entity
@@ -195,5 +195,5 @@
   description: Вступи в АнКо, к лучшим из лучших, бесплатное проживание, пропитание и простой карьерный рост
   components:
   - type: Sprite
-    sprite: _Horizon/Structures/Wallmounts/uasposters.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/uasposters.rsi
     state: join
