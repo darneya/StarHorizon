@@ -6,16 +6,16 @@ role-timer-blacklisted-factions = Ваш персонаж не должен пр
 faction-none-name = Фракция не указана
 faction-none-desc = Вы не принадлежите ни к какой фракции.
 
-faction-frontier-name = Frontier Outpost
+faction-frontier-name = Аванпост Фронтира
 faction-frontier-desc = Обеспечивают работу самой главной верфи Фронтира. Ведь Фронтир это сердце.
 
-faction-nfsd-name = NFSD
+faction-nfsd-name = ДШНФ
 faction-nfsd-desc = Защитники прав и свобод Фронтира. Следят за Законом и защищают Фронтир от вторжения пиратов и синдиката.
 
-faction-pirate-name = Pirate
+faction-pirate-name = Пираты
 faction-pirate-desc = Никто не любит пираторв и пираты никого не любят.
 
-faction-syndicate-name = Syndicate
+faction-syndicate-name = Синдикат
 faction-syndicate-desc = Главные конкуренты в секторе
 
 faction-siu-name = Innovative Horizon of Progress
@@ -35,7 +35,7 @@ faction-anco-desc =
     Главная цель на фронтире, обеспечивать безопасность интересов AnroxComputer’s.
     Верность. Решительность. Эффективность.
 
-faction-med-name = Medical Dispatch
+faction-med-name = Медицинский Диспансер
 faction-med-desc = Отважные Врачи и Парамедики. Спасут из любой точки Фронтира, если вы не забыли выключить датчики.
 faction-fsb-name = Far Star Biotech
 faction-fsb-desc = Передовая Научно-Медицинская компания, известная своими новшествами.
@@ -46,7 +46,7 @@ faction-ccc-desc =
     Ставит во главу угла безупречное качество и высочайшую эффективность.
     Стремятся завоевать доверие и создать лояльную клиентскую базу.
 
-faction-edison-name = Edison Powerplant
+faction-edison-name = Электростанция Эдисона
 faction-edison-desc = Нужно. Больше. Энергии. Могут добыть Электричество даже из воздуха.
 faction-lvhi-name = Längstad-Voigt Heavy Industries
 faction-lvhi-desc = Горнодобывающая компания известная прежде всего лучшими технологиями в этой области.
