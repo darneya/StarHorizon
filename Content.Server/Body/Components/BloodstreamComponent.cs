@@ -1,3 +1,4 @@
+using Content.Server._Horizon.Traits;
 using Content.Server.Body.Systems;
 using Content.Server.Chemistry.EntitySystems;
 using Content.Shared.Alert;
@@ -12,7 +13,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Body.Components
 {
-    [RegisterComponent, Access(typeof(BloodstreamSystem), typeof(ReactionMixerSystem))]
+    [RegisterComponent, Access(typeof(BloodstreamSystem), typeof(ReactionMixerSystem), typeof(ModifyBloodstream))]  // Horizon tweak - added trait modifier access
     public sealed partial class BloodstreamComponent : Component
     {
         public static string DefaultChemicalsSolutionName = "chemicals";
