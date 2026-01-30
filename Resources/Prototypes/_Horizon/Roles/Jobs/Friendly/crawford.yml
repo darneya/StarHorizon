@@ -16,3 +16,16 @@
   equipment:
     jumpsuit: UniformSchoolgirlRed
     shoes: ClothingShoesBlackDress
+
+- type: startingGear
+  id: MiifriGearA
+  equipment:
+    head: ClothingHeadHatFlowerWreath
+    jumpsuit: ClothingUniformJumpskirtOperative
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesColorBlack
+    eyes: ClothingEyesGlassesSunglasses
+    neck: ClothingNeckScarfStripedSyndieRed
+    outerClothing: ClothingOuterCoatDetectiveLoadout
+  inhand:
+    - PlushieAmmaYakiama

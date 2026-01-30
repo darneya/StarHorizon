@@ -35,3 +35,21 @@
     - MobLemird
     chance: 1
     offset: 0.0
+
+- type: entity
+  name: спавнер Мифри
+  id: SpawnMobMiifri
+  parent: MarkerBase
+  suffix: AI, Friendly
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+      - sprite: _NF/Mobs/Species/Templates/human.rsi
+        state: human
+  - type: RandomSpawner
+    prototypes:
+    - MobMiifri
+    chance: 1
+    offset: 0.0

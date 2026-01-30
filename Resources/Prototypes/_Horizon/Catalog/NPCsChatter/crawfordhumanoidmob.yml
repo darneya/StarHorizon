@@ -9,3 +9,9 @@
   values:
     prefix: advertisement-lemird-
     count: 63
+
+- type: localizedDataset
+  id: miifrihumanoidchatter
+  values:
+    prefix: advertisement-miifri-
+    count: 44

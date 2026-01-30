@@ -168,3 +168,40 @@
     - type: Grammar
       attributes:
         gender: Female
+
+- type: entity
+  name: Мифри
+  parent: MobLemirdBase
+  id: MobMiifri
+  description: ..Она пахнет розами, облитые дешёвым вином...
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Loadout
+      prototypes:
+        - MiifriGearA
+    - type: NpcFactionMember
+      factions:
+        - Crawford
+    - type: LemirdFollow
+      followDistance: 2.0
+      maxFollowDistance: 200.0
+      onlyFirstTarget: true
+    - type: FixedAppearance
+      hairStyleId: "HumanHairLong2"
+      hairColor: "#ae6db2"
+      facialHairStyleId: "FacialHairShaved"
+      facialHairColor: "#FF2400"
+      eyeColor: "#00a2b2"
+      skinColor: "#FFDBB4"
+      sex: Female
+      gender: Female
+      age: 20
+      species: Human
+    - type: Grammar
+      attributes:
+        gender: Female
+    - type: Advertise
+      pack: miifrihumanoidchatter
+      minimumWait: 30
+      maximumWait: 30
+      nextAdvertisementTime: 30
