@@ -4,7 +4,7 @@
   markingCategory: Tail
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: tail_smooth_primary
 
 - type: marking
@@ -13,7 +13,7 @@
   markingCategory: Tail
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: tail_smooth
 
 - type: marking
@@ -22,7 +22,7 @@
   markingCategory: Tail
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: tail_spikes
 
 - type: marking
@@ -31,7 +31,7 @@
   markingCategory: Tail
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: tail_spikes_wagging
 
 - type: marking
@@ -40,7 +40,7 @@
   markingCategory: Tail
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: tail_smooth_wagging
 
 - type: marking
@@ -49,7 +49,7 @@
   markingCategory: HeadTop
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: ears
 
 - type: marking
@@ -58,7 +58,7 @@
   markingCategory: HeadTop
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: ears_long
 
 - type: marking
@@ -67,7 +67,7 @@
   markingCategory: HeadTop
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: ears_low
 
 - type: marking
@@ -76,7 +76,7 @@
   markingCategory: HeadTop
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: ears_top
 
 - type: marking
@@ -85,7 +85,7 @@
   markingCategory: Chest
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: body_tiger_fat
 
 - type: marking
@@ -94,7 +94,7 @@
   markingCategory: HeadSide
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: frills_aquatic
 
 - type: marking
@@ -103,7 +103,7 @@
   markingCategory: HeadSide
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: frills_axolotl
 
 - type: marking
@@ -112,7 +112,7 @@
   markingCategory: HeadSide
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: frills_big
 
 - type: marking
@@ -121,7 +121,7 @@
   markingCategory: HeadSide
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: frills_gills
 
 - type: marking
@@ -130,7 +130,7 @@
   markingCategory: HeadSide
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: frills_neckfull
 
 - type: marking
@@ -139,7 +139,7 @@
   markingCategory: HeadSide
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: frills_sharp
 
 - type: marking
@@ -148,7 +148,7 @@
   markingCategory: HeadSide
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: frills_short
 
 - type: marking
@@ -157,7 +157,7 @@
   markingCategory: HeadSide
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: frills_simple
 
 - type: marking
@@ -166,5 +166,5 @@
   markingCategory: HeadSide
   speciesRestriction: [Akulki]
   sprites:
-  - sprite: _StarHorizon/Mobs/Species/Akulki/markings.rsi
+  - sprite: _StarHorizon/Mobs/Species/Akulki/Markings.rsi
     state: frills_wide
