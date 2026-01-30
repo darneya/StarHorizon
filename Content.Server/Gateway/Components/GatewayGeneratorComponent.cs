@@ -65,12 +65,5 @@ public sealed partial class GatewayGeneratorComponent : Component
         "OreBananium",
         "OreArtifactFragment",
     };
-
-    /// Horizon Dungeon
-    [DataField]
-    public List<ProtoId<BiomeMarkerLayerPrototype>> DungeonLayers = new()
-    {
-        "MineshaftDungeons",
-    };
 }
 
