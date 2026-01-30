@@ -1,11 +1,9 @@
-using Content.Server.Procedural;
-using Content.Shared._Horizon.Procedural;
 using Content.Shared.Procedural;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
-namespace Content.Server._Horizon.Procedural;
+namespace Content.Server.Procedural;
 
 public sealed class DungeonSpawnSystem : EntitySystem
 {
