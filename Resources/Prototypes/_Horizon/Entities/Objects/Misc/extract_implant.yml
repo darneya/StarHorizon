@@ -41,5 +41,5 @@
     itemIconStyle: BigAction
     priority: -20
     icon:
-      sprite: Objects/Specific/Medical/bodybag.rsi
-      state: folded
+      sprite: Objects/Specific/Medical/Morgue/bodybags.rsi
+      state: bag
