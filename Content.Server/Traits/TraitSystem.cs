@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -32,7 +33,7 @@ public sealed class TraitSystem : EntitySystem
             return;
         }
 
-        foreach (var traitId in args.Profile.TraitPreferences)
+        foreach (var traitId in args.Profile.TraitPreferences.OrderBy(x => _prototypeManager.Index(x).Priority))    // Horizon - сортировка по приоритету
         {
             if (!_prototypeManager.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
             {
@@ -44,8 +45,26 @@ public sealed class TraitSystem : EntitySystem
                 _whitelistSystem.IsBlacklistPass(traitPrototype.Blacklist, args.Mob))
                 continue;
 
+            // Horizon traits start
+            bool canApply = true;
+            foreach (var requirement in traitPrototype.Requirments)
+            {
+                if (!requirement.CanApply(args.Profile, EntityManager))
+                    canApply = false;
+            }
+
+            if (!canApply)
+                continue;
+
+            foreach (var effect in traitPrototype.Effects)
+            {
+                effect.DoEffect(args.Mob, EntityManager);
+            }
+            // Horizon traits end
+
             // Add all components required by the prototype
-            EntityManager.AddComponents(args.Mob, traitPrototype.Components, false);
+            if (traitPrototype.Components != null)  // Horizon tweak - nullable check
+                EntityManager.AddComponents(args.Mob, traitPrototype.Components, false);
 
             // Add item required by the trait
             if (traitPrototype.TraitGear == null)

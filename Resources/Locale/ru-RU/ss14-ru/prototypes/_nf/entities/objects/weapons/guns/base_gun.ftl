@@ -1,5 +1,5 @@
 ent-NFBaseItemWeaponGun = { ent-BaseC1Contraband }
-    .suffix = Frontier
+    .suffix = Фронтир
     .desc = { ent-BaseC1Contraband.desc }
 ent-NFBaseItemWeaponGunMagazineFed = { ent-NFBaseItemWeaponGun }
     .desc = { ent-NFBaseItemWeaponGun.desc }
