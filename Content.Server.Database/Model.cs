@@ -418,6 +418,19 @@ namespace Content.Server.Database
         public string FacialHairColor { get; set; } = null!;
         public string EyeColor { get; set; } = null!;
         public string SkinColor { get; set; } = null!;
+
+        // _Horizon: Hair gradient start
+        public bool HairGradientEnabled { get; set; }
+        public string HairGradientSecondaryColor { get; set; } = "#FFFFFF";
+        public int HairGradientDirection { get; set; }
+        public bool FacialHairGradientEnabled { get; set; }
+        public string FacialHairGradientSecondaryColor { get; set; } = "#FFFFFF";
+        public int FacialHairGradientDirection { get; set; }
+        public bool AllMarkingsGradientEnabled { get; set; }
+        public string AllMarkingsGradientSecondaryColor { get; set; } = "#FFFFFF";
+        public int AllMarkingsGradientDirection { get; set; }
+        // _Horizon: Hair gradient end
+
         public int SpawnPriority { get; set; } = 0;
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();

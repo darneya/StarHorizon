@@ -284,7 +284,16 @@ namespace Content.Server.Database
                     Color.FromHex(profile.FacialHairColor),
                     Color.FromHex(profile.EyeColor),
                     Color.FromHex(profile.SkinColor),
-                    markings
+                    markings,
+                    profile.HairGradientEnabled,
+                    Color.FromHex(profile.HairGradientSecondaryColor),
+                    profile.HairGradientDirection,
+                    profile.FacialHairGradientEnabled,
+                    Color.FromHex(profile.FacialHairGradientSecondaryColor),
+                    profile.FacialHairGradientDirection,
+                    profile.AllMarkingsGradientEnabled,
+                    Color.FromHex(profile.AllMarkingsGradientSecondaryColor),
+                    profile.AllMarkingsGradientDirection
                 ),
                 spawnPriority,
                 jobs,
@@ -325,6 +334,16 @@ namespace Content.Server.Database
             profile.FacialHairColor = appearance.FacialHairColor.ToHex();
             profile.EyeColor = appearance.EyeColor.ToHex();
             profile.SkinColor = appearance.SkinColor.ToHex();
+            // _Horizon: Hair gradient
+            profile.HairGradientEnabled = appearance.HairGradientEnabled;
+            profile.HairGradientSecondaryColor = appearance.HairGradientSecondaryColor.ToHex();
+            profile.HairGradientDirection = appearance.HairGradientDirection;
+            profile.FacialHairGradientEnabled = appearance.FacialHairGradientEnabled;
+            profile.FacialHairGradientSecondaryColor = appearance.FacialHairGradientSecondaryColor.ToHex();
+            profile.FacialHairGradientDirection = appearance.FacialHairGradientDirection;
+            profile.AllMarkingsGradientEnabled = appearance.AllMarkingsGradientEnabled;
+            profile.AllMarkingsGradientSecondaryColor = appearance.AllMarkingsGradientSecondaryColor.ToHex();
+            profile.AllMarkingsGradientDirection = appearance.AllMarkingsGradientDirection;
             profile.SpawnPriority = (int) humanoid.SpawnPriority;
             profile.Markings = markings;
             profile.Slot = slot;
