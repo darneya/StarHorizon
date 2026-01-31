@@ -278,6 +278,19 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         return new(color.RByte, color.GByte, color.BByte);
     }
 
+    /// <summary>
+    /// Horizon: Quantize color to a limited number of levels per channel so only displayable colors are shown in gradient sliders/preview.
+    /// </summary>
+    public static Color QuantizeGradientColor(Color c, int levelsPerChannel = 8)
+    {
+        if (levelsPerChannel <= 1) return c;
+        var step = 255f / (levelsPerChannel - 1);
+        byte R = (byte) Math.Clamp((int) (Math.Round(c.RByte / step) * step), 0, 255);
+        byte G = (byte) Math.Clamp((int) (Math.Round(c.GByte / step) * step), 0, 255);
+        byte B = (byte) Math.Clamp((int) (Math.Round(c.BByte / step) * step), 0, 255);
+        return new Color(R, G, B, c.AByte);
+    }
+
     public static HumanoidCharacterAppearance EnsureValid(HumanoidCharacterAppearance appearance, string species, Sex sex)
     {
         var hairStyleId = appearance.HairStyleId;

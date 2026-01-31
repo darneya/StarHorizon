@@ -241,13 +241,13 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         // _Horizon: Hair gradient
         humanoid.HairGradientEnabled = profile.Appearance.HairGradientEnabled;
-        humanoid.HairGradientSecondaryColor = profile.Appearance.HairGradientSecondaryColor;
+        humanoid.HairGradientSecondaryColor = HumanoidCharacterAppearance.QuantizeGradientColor(profile.Appearance.HairGradientSecondaryColor);
         humanoid.HairGradientDirection = profile.Appearance.HairGradientDirection;
         humanoid.FacialHairGradientEnabled = profile.Appearance.FacialHairGradientEnabled;
-        humanoid.FacialHairGradientSecondaryColor = profile.Appearance.FacialHairGradientSecondaryColor;
+        humanoid.FacialHairGradientSecondaryColor = HumanoidCharacterAppearance.QuantizeGradientColor(profile.Appearance.FacialHairGradientSecondaryColor);
         humanoid.FacialHairGradientDirection = profile.Appearance.FacialHairGradientDirection;
         humanoid.AllMarkingsGradientEnabled = profile.Appearance.AllMarkingsGradientEnabled;
-        humanoid.AllMarkingsGradientSecondaryColor = profile.Appearance.AllMarkingsGradientSecondaryColor;
+        humanoid.AllMarkingsGradientSecondaryColor = HumanoidCharacterAppearance.QuantizeGradientColor(profile.Appearance.AllMarkingsGradientSecondaryColor);
         humanoid.AllMarkingsGradientDirection = profile.Appearance.AllMarkingsGradientDirection;
 
         UpdateSprite((uid, humanoid, Comp<SpriteComponent>(uid)));

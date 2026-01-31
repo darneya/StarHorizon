@@ -854,6 +854,11 @@ namespace Content.Client.Lobby.UI
         }
 
         /// <summary>
+        /// Horizon: Wrapper so gradient sliders use the same quantized palette as the preview.
+        /// </summary>
+        private static Color QuantizeGradientColor(Color c) => HumanoidCharacterAppearance.QuantizeGradientColor(c);
+
+        /// <summary>
         /// Refresh all loadouts.
         /// </summary>
         public void RefreshLoadouts()
@@ -1722,15 +1727,15 @@ namespace Content.Client.Lobby.UI
                 Profile.Species,
                 1);
 
-            // _Horizon: Sync gradient UI
+            // _Horizon: Sync gradient UI (quantized so sliders show only displayable colors)
             HairGradientToggle.Pressed = Profile.Appearance.HairGradientEnabled;
-            HairGradientSecondColorSelector.Color = Profile.Appearance.HairGradientSecondaryColor;
+            HairGradientSecondColorSelector.Color = QuantizeGradientColor(Profile.Appearance.HairGradientSecondaryColor);
             HairGradientDirectionSelector.SelectId(Profile.Appearance.HairGradientDirection);
             FacialHairGradientToggle.Pressed = Profile.Appearance.FacialHairGradientEnabled;
-            FacialHairGradientSecondColorSelector.Color = Profile.Appearance.FacialHairGradientSecondaryColor;
+            FacialHairGradientSecondColorSelector.Color = QuantizeGradientColor(Profile.Appearance.FacialHairGradientSecondaryColor);
             FacialHairGradientDirectionSelector.SelectId(Profile.Appearance.FacialHairGradientDirection);
             AllMarkingsGradientToggle.Pressed = Profile.Appearance.AllMarkingsGradientEnabled;
-            AllMarkingsGradientSecondColorSelector.Color = Profile.Appearance.AllMarkingsGradientSecondaryColor;
+            AllMarkingsGradientSecondColorSelector.Color = QuantizeGradientColor(Profile.Appearance.AllMarkingsGradientSecondaryColor);
             AllMarkingsGradientDirectionSelector.SelectId(Profile.Appearance.AllMarkingsGradientDirection);
         }
 
@@ -1767,7 +1772,9 @@ namespace Content.Client.Lobby.UI
             HairGradientSecondColorSelector.OnColorChanged += _ =>
             {
                 if (Profile is null) return;
-                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(Profile.Appearance.HairGradientEnabled, HairGradientSecondColorSelector.Color, Profile.Appearance.HairGradientDirection));
+                var quantized = QuantizeGradientColor(HairGradientSecondColorSelector.Color);
+                HairGradientSecondColorSelector.Color = quantized;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(Profile.Appearance.HairGradientEnabled, quantized, Profile.Appearance.HairGradientDirection));
                 SetDirty();
                 ReloadProfilePreview();
             };
@@ -1790,7 +1797,9 @@ namespace Content.Client.Lobby.UI
             FacialHairGradientSecondColorSelector.OnColorChanged += _ =>
             {
                 if (Profile is null) return;
-                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(Profile.Appearance.FacialHairGradientEnabled, FacialHairGradientSecondColorSelector.Color, Profile.Appearance.FacialHairGradientDirection));
+                var quantized = QuantizeGradientColor(FacialHairGradientSecondColorSelector.Color);
+                FacialHairGradientSecondColorSelector.Color = quantized;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(Profile.Appearance.FacialHairGradientEnabled, quantized, Profile.Appearance.FacialHairGradientDirection));
                 SetDirty();
                 ReloadProfilePreview();
             };
@@ -1813,7 +1822,9 @@ namespace Content.Client.Lobby.UI
             AllMarkingsGradientSecondColorSelector.OnColorChanged += _ =>
             {
                 if (Profile is null) return;
-                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithAllMarkingsGradient(Profile.Appearance.AllMarkingsGradientEnabled, AllMarkingsGradientSecondColorSelector.Color, Profile.Appearance.AllMarkingsGradientDirection));
+                var quantized = QuantizeGradientColor(AllMarkingsGradientSecondColorSelector.Color);
+                AllMarkingsGradientSecondColorSelector.Color = quantized;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithAllMarkingsGradient(Profile.Appearance.AllMarkingsGradientEnabled, quantized, Profile.Appearance.AllMarkingsGradientDirection));
                 SetDirty();
                 ReloadProfilePreview();
             };
