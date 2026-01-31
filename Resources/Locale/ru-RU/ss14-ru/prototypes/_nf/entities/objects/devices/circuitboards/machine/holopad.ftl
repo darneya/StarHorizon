@@ -1,2 +1,2 @@
-ent-NFHolopadShipMachineCircuitboard = bluespace holopad machine board
-    .desc = A machine printed circuit board for a bluespace holopad.
+ent-NFHolopadShipMachineCircuitboard = плата блюспейс голопада
+    .desc = Машинная печатная плата для блюспейс голопада.

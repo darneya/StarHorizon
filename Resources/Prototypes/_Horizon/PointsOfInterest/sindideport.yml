@@ -11,7 +11,7 @@
 - type: pointOfInterest
   id: SindicateDeport
   parent: BasePOI
-  name: "Syndicate Deport"
+  name: "Точка Продажи Синдиката"
   minimumDistance: 15000
   maximumDistance: 20000
   spawnGroup: Required
@@ -23,7 +23,7 @@
 
 - type: gameMap
   id: SindicateDeport
-  mapName: "Syndicate Deport"
+  mapName: "Точка Продажи Синдиката"
   mapPath: /Maps/_Horizon/POI/sindideport.yml
   minPlayers: 0
   stations:
@@ -31,6 +31,6 @@
       stationProto: StandardFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: "Syndicate Deport"
+          mapNameTemplate: "Точка Продажи Синдиката"
         - type: BindToStationVariationPassExemption
         - type: NoMailStation # Horizon: Disable mail for Syndicate
