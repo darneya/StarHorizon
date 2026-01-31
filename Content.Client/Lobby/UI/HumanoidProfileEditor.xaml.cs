@@ -511,6 +511,9 @@ namespace Content.Client.Lobby.UI
 
             //TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab")); // Frontier
 
+            StartupQuirks();    // Horizon tweak
+            RefreshQuirks();    // Horizon tweak
+
             RefreshTraits();
 
             #region Markings
@@ -656,6 +659,11 @@ namespace Content.Client.Lobby.UI
             // Create UI view from model
             foreach (var (categoryId, categoryTraits) in traitGroups)
             {
+                // Horizon tweak start
+                if (categoryId == QuirksCategory)
+                    continue;
+                // Horizon tweak end
+
                 TraitCategoryPrototype? category = null;
 
                 if (categoryId != TraitCategoryPrototype.Default)
@@ -913,6 +921,7 @@ namespace Content.Client.Lobby.UI
             RefreshLoadouts();
             RefreshSpecies();
             RefreshTraits();
+            RefreshQuirks();    // Horizon tweak
             RefreshFlavorText();
             ReloadPreview();
 
@@ -1387,6 +1396,7 @@ namespace Content.Client.Lobby.UI
             RefreshLoadouts();
             // Frontier: In case there's species restrictions for traits
             RefreshTraits(); // Frontier
+            RefreshQuirks();    // Horizon tweak
             UpdateSexControls(); // update sex for new species
             UpdateSpeciesGuidebookIcon();
             ReloadPreview();

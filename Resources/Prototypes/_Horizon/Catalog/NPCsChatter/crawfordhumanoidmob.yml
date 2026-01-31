@@ -3,3 +3,15 @@
   values:
     prefix: advertisement-crawford-
     count: 21
+
+- type: localizedDataset
+  id: lemirdhumanoidchatter
+  values:
+    prefix: advertisement-lemird-
+    count: 63
+
+- type: localizedDataset
+  id: miifrihumanoidchatter
+  values:
+    prefix: advertisement-miifri-
+    count: 63

@@ -15,7 +15,7 @@
 - type: entity
   parent: CrateBaseSecure
   id: CrateIndustrialSecure
-  name: bluespace industrial crate
+  name: индустриальный блюспейс ящик
   components:
   - type: CargoSellBlacklist
   - type: Icon
@@ -28,7 +28,7 @@
 - type: entity
   parent: CrateBaseSecure
   id: CrateTechnologicalSecure
-  name: bluespace technological crate
+  name: технологический блюспейс ящик
   components:
   - type: CargoSellBlacklist
   - type: Icon
@@ -41,7 +41,7 @@
 - type: entity
   parent: CrateBaseSecure
   id: CrateBiologicalSecure
-  name: bluespace biological crate
+  name: биологический блюспейс ящик
   components:
   - type: CargoSellBlacklist
   - type: Icon
@@ -54,7 +54,7 @@
 - type: entity
   parent: CrateBaseSecure
   id: CrateDestructionSecure
-  name: bluespace destruction crate
+  name: оружейный блюспейс ящик
   components:
   - type: CargoSellBlacklist
   - type: Icon
@@ -67,7 +67,7 @@
 - type: entity
   parent: CrateBaseSecure
   id: CrateLimitedSecure
-  name: bluespace limited crate
+  name: чёрнорыночный блюспейс ящик
   components:
   - type: CargoSellBlacklist
   - type: Icon
