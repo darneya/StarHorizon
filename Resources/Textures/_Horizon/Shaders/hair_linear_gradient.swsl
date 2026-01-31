@@ -29,7 +29,9 @@ void fragment()
     else                      // right -> left
         t = 1.0 - UV2.x;
 
-    highp float tt = clamp(t, 0.0, 1.0);
+    // Sharper transition: blend in a narrower band (middle ~25%) instead of full linear
+    highp float edge = 0.375;
+    highp float tt = smoothstep(edge, 1.0 - edge, clamp(t, 0.0, 1.0));
     highp vec3 gradColor = mix(color1, color2, tt);
 
     // Preserve original hair texture fully, tint with base color (color1)
