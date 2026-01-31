@@ -1237,6 +1237,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithMarkings(markings.GetForwardEnumerator().ToList()));
+            UpdateGradientContainersVisibility();
             ReloadProfilePreview();
         }
 
@@ -1737,6 +1738,42 @@ namespace Content.Client.Lobby.UI
             AllMarkingsGradientToggle.Pressed = Profile.Appearance.AllMarkingsGradientEnabled;
             AllMarkingsGradientSecondColorSelector.Color = QuantizeGradientColor(Profile.Appearance.AllMarkingsGradientSecondaryColor);
             AllMarkingsGradientDirectionSelector.SelectId(Profile.Appearance.AllMarkingsGradientDirection);
+
+            UpdateGradientContainersVisibility();
+        }
+
+        /// <summary>
+        /// Show gradient blocks only when applicable: hair when hair selected, beard when beard selected, accessories when any markings.
+        /// Disables the gradient in profile when the block is hidden.
+        /// </summary>
+        private void UpdateGradientContainersVisibility()
+        {
+            if (Profile is null) return;
+
+            var hasHair = Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle;
+            if (!hasHair)
+            {
+                HairGradientContainer.Visible = false;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(false, Profile.Appearance.HairGradientSecondaryColor, Profile.Appearance.HairGradientDirection));
+            }
+            else
+            {
+                HairGradientContainer.Visible = true;
+            }
+
+            var hasFacialHair = Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle;
+            if (!hasFacialHair)
+            {
+                FacialHairGradientContainer.Visible = false;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(false, Profile.Appearance.FacialHairGradientSecondaryColor, Profile.Appearance.FacialHairGradientDirection));
+            }
+            else
+            {
+                FacialHairGradientContainer.Visible = true;
+            }
+
+            // Градиент на аксессуары всегда доступен (настройки сохраняются, эффект применится при добавлении маркировок)
+            AllMarkingsGradientContainer.Visible = true;
         }
 
         private void InitializeGradientControls()
