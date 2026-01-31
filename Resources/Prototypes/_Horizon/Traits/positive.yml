@@ -1,0 +1,124 @@
+- type: trait
+  id: WillToLive
+  name: trait-will-to-live-name
+  description: trait-will-to-live-desc
+  category: HorizonQuirks
+  cost: 1
+  effects:
+  - !type:ModifyHealth
+    healthChange:
+      Dead: 10
+
+- type: trait
+  id: Tenacity
+  name: trait-tenacity-name
+  description: trait-tenacity-desc
+  category: HorizonQuirks
+  cost: 1
+  effects:
+  - !type:ModifyHealth
+    healthChange:
+      Critical: 5
+      Dead: 5
+
+- type: trait
+  id: PryingArm
+  name: trait-prying-name
+  description: trait-prying-desc
+  category: HorizonQuirks
+  cost: 2
+  components:
+  - type: Prying
+    speedModifier: 0.4
+
+- type: trait
+  id: Vigor
+  name: trait-vigor-name
+  description: trait-vigor-desc
+  category: HorizonQuirks
+  cost: 6
+  effects:
+  - !type:ModifyStamina
+    critThresholdModifier: 1.1
+    cooldownModifier: 1.2
+    afterCritDecayMultiplier: 0.9
+    stunModifier: 0.8
+
+- type: trait
+  id: MartialArtist
+  name: trait-martial-artist-name
+  description: trait-martial-artist-desc
+  category: HorizonQuirks
+  cost: 5
+  priority: 2
+  effects:
+  - !type:ModifyMelee
+    damageModifier: 1.2
+    speedModifier: 1.25
+    rangeModifier: 1.1
+
+- type: trait
+  id: Steadfast
+  name: trait-steadfast-name
+  description: trait-steadfast-desc
+  category: HorizonQuirks
+  cost: 3
+  effects:
+  - !type:ModifyDamageSlowdown
+    modifier: 0.15
+
+- type: trait
+  id: StrikingCalluses
+  name: trait-striking-calluses-name
+  description: trait-striking-calluses-desc
+  category: HorizonQuirks
+  cost: 2
+  priority: 2
+  effects:
+  - !type:ModifyMelee
+    damageModifier: 1.4
+
+- type: trait
+  id: TemperatureTolerance
+  name: trait-temperature-tolerance-name
+  description: trait-temperature-tolerance-desc
+  category: HorizonQuirks
+  cost: 1
+  components:
+  - type: Temperature
+    heatDamageThreshold: 355
+    coldDamageThreshold: 225
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 0.1 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 1.5 #per second, scales with temperature & other constants
+
+- type: trait
+  id: PlateletFactories
+  name: trait-platelet-factories-name
+  description: trait-platelet-factories-desc
+  category: HorizonQuirks
+  cost: 10
+  components:
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 100
+    damage:
+      groups:
+        Brute: -0.13
+        Burn: -0.13
+        Toxin: -0.13
+
+- type: trait
+  id: TrapAvoider
+  name: trait-trap-avoider-name
+  description: trait-trap-avoider-desc
+  category: HorizonQuirks
+  cost: 3
+  components:
+  - type: ProtectedFromStepTriggers
