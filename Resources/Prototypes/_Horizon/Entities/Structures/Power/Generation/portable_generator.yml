@@ -1,8 +1,14 @@
 - type: entity
+  name: star pacman portable generator
+  description: |-
+    A prototype of experimental generator. Use with caution.
+    Runs off plutonium and is rated for up to 240 kW.
+    Extremely radioactive without protection.
   parent:
   - PortableGeneratorSuperPacman
   - BaseC2ContrabandUnredeemable # Need a doctor's note to run this.
   id: PortableGeneratorStarPacman
+  suffix: Plutonium, Rad+, 120 kW
   components:
     - type: Sprite
       sprite: _Horizon/Structures/Power/Generation/portable_generator.rsi

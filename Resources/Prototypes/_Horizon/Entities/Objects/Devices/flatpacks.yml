@@ -2,6 +2,8 @@
 - type: entity
   parent: TubaInstrumentFlatpack
   id: DrumsetInstrumentFlatpack
+  name: упакованная ударная установка
+  description: Упаковка, содержащая ударную установку .
   components:
   - type: Flatpack
     entity: DrumsetInstrument
@@ -9,6 +11,8 @@
 - type: entity
   parent: OreProcessorFlatpack
   id: OreProcessorFuelFlatpack
+  name: fuel processor flatpack
+  description: A flatpack used for constructing an fuel processor.
   components:
   - type: Flatpack
     entity: OreProcessorFuel
@@ -16,6 +20,8 @@
 - type: entity
   parent: PortableGeneratorJrPacmanFlatpack
   id: PortableGeneratorStarPacmanFlatpack
+  name: star pacman portable generator flatpack
+  description: A flatpack used for constructing an star pacman portable generator.
   components:
   - type: Flatpack
     entity: PortableGeneratorStarPacman

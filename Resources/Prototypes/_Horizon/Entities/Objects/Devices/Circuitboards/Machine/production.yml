@@ -1,6 +1,8 @@
 - type: entity
   parent: BaseMachineCircuitboard
   id: MachineBluespaceHarvesterCircuitboard
+  name: Блюспейс Харвестер (машинная плата)
+  description: A machine board for a Bluespace Harvester
   components:
   - type: Sprite
     sprite: _Horizon/Bluespace/module.rsi
@@ -21,6 +23,8 @@
 - type: entity
   parent: BaseMachineCircuitboard
   id: MachineBLESCircuitboard
+  name: Плата блока хранения энергии с блюспейс-усилением
+  description: 'Это блок хранения энергии с блюспейс-усилением который позволяет хранить ОГО-ГО энернии с помощью блюспейс технологий в основном его просто зовут "БЛЭС"'
   components:
   - type: Sprite
     sprite: Objects/Misc/module.rsi

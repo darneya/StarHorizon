@@ -2,6 +2,7 @@
 
 - type: entity
   id: BaseOreDeposit
+  name: Base Ore Deposit
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -37,6 +38,8 @@
 - type: entity
   id: OreDepositSteelMetal
   parent: BaseOreDeposit
+  name: жила с рудными металлами (сталь)
+  description: Рудная жила с металлами для машиностроения.
   components:
   - type: OreDeposit
     oreCounts:
@@ -51,6 +54,8 @@
 - type: entity
   id: OreDepositQuarzMetal
   parent: BaseOreDeposit
+  name: жила с рудными металлами (кварц)
+  description: Рудная жила с металлами для машиностроения.
   components:
   - type: OreDeposit
     oreCounts:
@@ -63,6 +68,8 @@
 - type: entity
   id: OreDepositMixedMetal
   parent: BaseOreDeposit
+  name: жила с рудными металлами (смешанными)
+  description: Рудная жила с металлами для машиностроения.
   components:
   - type: OreDeposit
     oreCounts:
@@ -79,6 +86,8 @@
 - type: entity
   id: OreDepositPreciousMetal
   parent: BaseOreDeposit
+  name: жила с драгоценными металлами
+  description: "Рудная жила с драгоценными металлами. Нужно больше золот..."
   components:
   - type: OreDeposit
     oreCounts:
@@ -94,6 +103,8 @@
 - type: entity
   id: OreDepositCommonRadioactive
   parent: BaseOreDeposit
+  name: жила с радиоактивными металлами
+  description: Рудная жила... Осторожно! Фонит!
   components:
   - type: OreDeposit
     oreCounts:
@@ -111,6 +122,8 @@
 - type: entity
   id: OreDepositRareMetal
   parent: BaseOreDeposit
+  name: жила с редкими металлами
+  description: Рудная жила с редкими металлами для машиностроения.
   components:
   - type: OreDeposit
     oreCounts:
@@ -128,6 +141,8 @@
 - type: entity
   id: OreDepositRareRadioactive
   parent: BaseOreDeposit
+  name: жила с редкими радиоактивными металлами
+  description: Рудная жила... Осторожно! Фонит!
   components:
   - type: OreDeposit
     oreCounts:
@@ -145,6 +160,8 @@
 - type: entity
   id: OreDepositPreciousGem
   parent: BaseOreDeposit
+  name: жила с драгоценными камнями
+  description: Алмазы? Алмазы! Жила Слишком похожа из одной кубической игры...
   components:
   - type: OreDeposit
     oreCounts:
@@ -162,6 +179,9 @@
 - type: entity
   id: OreDepositLemi
   parent: BaseOreDeposit
+  name: жила с лемирдиумом
+  suffix: Абуз
+  description: "Легендарная жила! Будьте аккуратны! Она вас зажмет своими ляжк... ААААААА!"
   components:
   - type: OreDeposit
     oreCounts:
@@ -177,6 +197,8 @@
 - type: entity
   id: Level1OreScanner
   parent: BaseItem
+  name: Basic Ore Scanner
+  description: A basic ore scanner.
   components:
   - type: OreScanner
     scanLevel: 1
@@ -192,6 +214,8 @@
 - type: entity
   id: Level2OreScanner
   parent: Level1OreScanner
+  name: Standard Ore Scanner
+  description: A standard ore scanner.
   components:
   - type: OreScanner
     scanLevel: 2
@@ -199,6 +223,8 @@
 - type: entity
   id: Level3OreScanner
   parent: Level1OreScanner
+  name: Advanced Ore Scanner
+  description: An advanced ore scanner.
   components:
   - type: OreScanner
     scanLevel: 3
@@ -206,6 +232,8 @@
 - type: entity
   id: Level4OreScanner
   parent: Level1OreScanner
+  name: Expert Ore Scanner
+  description: An expert ore scanner.
   components:
   - type: OreScanner
     scanLevel: 4
@@ -213,6 +241,8 @@
 - type: entity
   id: Level5OreScanner
   parent: Level1OreScanner
+  name: локатор рудных месторождений
+  description: Сканирует месторождения и отображает информацию по состоянию руды внутри него.
   components:
   - type: OreScanner
     scanLevel: 5

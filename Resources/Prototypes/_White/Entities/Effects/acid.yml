@@ -1,5 +1,7 @@
 - type: entity
   id: XenomorphAcid
+  name: corrosive acid
+  description: Burbling corrosive stuff. I wouldn't want to touch it.
   components:
   - type: Sprite
     sprite: _RMC14/Interface/Actions/xenomorph.rsi # TODO: move it
