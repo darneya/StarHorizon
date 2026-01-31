@@ -6,7 +6,9 @@ using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
+using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -237,6 +239,17 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.SkinColor = profile.Appearance.SkinColor;
         humanoid.EyeColor = profile.Appearance.EyeColor;
 
+        // _Horizon: Hair gradient
+        humanoid.HairGradientEnabled = profile.Appearance.HairGradientEnabled;
+        humanoid.HairGradientSecondaryColor = profile.Appearance.HairGradientSecondaryColor;
+        humanoid.HairGradientDirection = profile.Appearance.HairGradientDirection;
+        humanoid.FacialHairGradientEnabled = profile.Appearance.FacialHairGradientEnabled;
+        humanoid.FacialHairGradientSecondaryColor = profile.Appearance.FacialHairGradientSecondaryColor;
+        humanoid.FacialHairGradientDirection = profile.Appearance.FacialHairGradientDirection;
+        humanoid.AllMarkingsGradientEnabled = profile.Appearance.AllMarkingsGradientEnabled;
+        humanoid.AllMarkingsGradientSecondaryColor = profile.Appearance.AllMarkingsGradientSecondaryColor;
+        humanoid.AllMarkingsGradientDirection = profile.Appearance.AllMarkingsGradientDirection;
+
         UpdateSprite((uid, humanoid, Comp<SpriteComponent>(uid)));
     }
 
@@ -403,13 +416,42 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             // Okay so if the marking prototype is modified but we load old marking data this may no longer be valid
             // and we need to check the index is correct.
             // So if that happens just default to white?
-            if (colors != null && j < colors.Count)
+            var layerColor = (colors != null && j < colors.Count) ? colors[j] : Color.White;
+
+            // _Horizon: Hair gradient — apply gradient shader when enabled for this layer type
+            var bodyPart = markingPrototype.BodyPart;
+            var applyHairGradient = bodyPart == HumanoidVisualLayers.Hair && humanoid.HairGradientEnabled;
+            var applyFacialHairGradient = bodyPart == HumanoidVisualLayers.FacialHair && humanoid.FacialHairGradientEnabled;
+            var applyAllMarkingsGradient = humanoid.AllMarkingsGradientEnabled
+                && bodyPart != HumanoidVisualLayers.Head
+                && bodyPart != HumanoidVisualLayers.HeadTop
+                && bodyPart != HumanoidVisualLayers.HeadSide;
+
+            if (applyHairGradient || applyFacialHairGradient || applyAllMarkingsGradient)
             {
-                _sprite.LayerSetColor((entity.Owner, sprite), layerId, colors[j]);
+                var secondaryColor = bodyPart == HumanoidVisualLayers.Hair ? humanoid.HairGradientSecondaryColor
+                    : bodyPart == HumanoidVisualLayers.FacialHair ? humanoid.FacialHairGradientSecondaryColor
+                    : humanoid.AllMarkingsGradientSecondaryColor;
+                var direction = (float)(bodyPart == HumanoidVisualLayers.Hair ? humanoid.HairGradientDirection
+                    : bodyPart == HumanoidVisualLayers.FacialHair ? humanoid.FacialHairGradientDirection
+                    : humanoid.AllMarkingsGradientDirection);
+
+                var shaderProto = _prototypeManager.Index<ShaderPrototype>("HairGradient");
+                var shaderInstance = shaderProto.InstanceUnique();
+                shaderInstance.SetParameter("color1", new Robust.Shared.Maths.Vector3(layerColor.R, layerColor.G, layerColor.B));
+                shaderInstance.SetParameter("color2", new Robust.Shared.Maths.Vector3(secondaryColor.R, secondaryColor.G, secondaryColor.B));
+                shaderInstance.SetParameter("direction", direction);
+                sprite.LayerSetShader(layerId, shaderInstance, "HairGradient");
+                _sprite.LayerSetColor((entity.Owner, sprite), layerId, Color.White);
             }
             else
             {
-                _sprite.LayerSetColor((entity.Owner, sprite), layerId, Color.White);
+                // Restore marking shader when gradient is not applied
+                if (markingPrototype.Shader != null)
+                    sprite.LayerSetShader(layerId, markingPrototype.Shader);
+                else if (_sprite.LayerMapTryGet((entity.Owner, sprite), layerId, out var layerIdx, false))
+                    sprite.LayerSetShader(layerIdx, null, null);
+                _sprite.LayerSetColor((entity.Owner, sprite), layerId, layerColor);
             }
 
             if (humanoid.MarkingsDisplacement.TryGetValue(markingPrototype.BodyPart, out var displacementData) && markingPrototype.CanBeDisplaced)
