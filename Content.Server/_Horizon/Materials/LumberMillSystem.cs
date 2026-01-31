@@ -1,9 +1,11 @@
+using System.Linq;
 using Content.Server.Botany.Components;
 using Content.Server.Stack;
 using Content.Server.Wires;
 using Content.Shared._Horizon.Materials;
 using Content.Shared.Interaction;
 using Content.Shared.Power;
+using Content.Shared.Storage;
 using Content.Shared.Stacks;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
@@ -41,6 +43,27 @@ public sealed class LumberMillSystem : SharedLumberMillSystem
     {
         if (!args.Powered)
             TryFinishProcessItem(entity.Owner, null, entity.Comp);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        var query = EntityQueryEnumerator<LumberMillComponent, StorageComponent>();
+        while (query.MoveNext(out var uid, out var mill, out var storage))
+        {
+            if (HasComp<ActiveLumberMillComponent>(uid))
+                continue;
+            if (!CanStart(uid, mill))
+                continue;
+            if (storage.Container.ContainedEntities.Count == 0)
+                continue;
+            var item = storage.Container.ContainedEntities.FirstOrDefault();
+            if (item == EntityUid.Invalid)
+                continue;
+            if (!Container.Remove(item, storage.Container))
+                continue;
+            TryStartProcessItem(uid, item, mill, user: null, predictSound: false);
+        }
     }
 
     public override void FinishProcessAndSpawnOutput(EntityUid uid, EntityUid item, float completion, LumberMillComponent? component = null)

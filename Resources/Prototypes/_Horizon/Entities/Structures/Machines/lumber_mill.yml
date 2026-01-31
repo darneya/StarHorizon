@@ -50,9 +50,27 @@
     soundCooldown: 0
   - type: ContainerContainer
     containers:
+      storagebase: !type:Container
+        ents: []
       active-lumber-mill-container: !type:Container
       machine_board: !type:Container
       machine_parts: !type:Container
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,7,2
+    quickInsert: false
+    areaInsert: false
+    clickInsert: false
+    openOnActivate: false
+    storageInsertSound: null
+    whitelist:
+      components:
+      - Log
+  - type: MagnetPickup
+    range: 0.30
+    magnetEnabled: true
+    magnetCanBeEnabled: true
   - type: StaticPrice
     price: 400
   - type: ApcPowerReceiver

@@ -10,6 +10,7 @@
   id: CargoBoardsStatic
   recipes:
   - OreProcessorMachineCircuitboard
+  - LumberMillMachineCircuitboard # Horizon
   # - SalvageMagnetMachineCircuitboard # Frontier: no point
 
 ## Dynamic
