@@ -1,8 +1,6 @@
 - type: entity
   id: ComputerExpeditionGoals
   parent: BaseComputerAiAccess
-  name: expedition goals computer
-  description: Used to manage currently active bounties.
   components:
   - type: Sprite
     layers:
@@ -35,8 +33,6 @@
 - type: entity
   id: CargoExpeditionGoalsComputerCircuitboard
   parent: BaseComputerCircuitboard
-  name: cargo bounty computer board
-  description: A computer printed circuit board for a cargo bounty computer.
   components:
   - type: Sprite
     state: cpu_supply

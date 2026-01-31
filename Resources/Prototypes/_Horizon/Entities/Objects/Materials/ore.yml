@@ -2,7 +2,6 @@
   abstract: true
   parent: BaseItem
   id: OreBaseFar
-  description: A piece of unrefined ore.
   components:
   - type: Sprite
     sprite: _Horizon/Objects/Materials/ore.rsi
@@ -27,8 +26,6 @@
 - type: entity
   parent: OreBaseFar
   id: PsycoreOre
-  name: псикор руда
-  suffix: Полный
   components:
   - type: Sprite
     state: psycore
@@ -56,7 +53,6 @@
 - type: entity
   parent: PsycoreOre
   id: PsycoreOre1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -64,7 +60,6 @@
 - type: entity
   parent: PsycoreOre
   id: PsycoreOre5
-  suffix: 5
   components:
   - type: Stack
     count: 5
@@ -72,8 +67,6 @@
 - type: entity
   parent: OreBaseFar
   id: TitanOre
-  name: титановая руда
-  suffix: Полный
   components:
   - type: Sprite
     state: titan
@@ -101,7 +94,6 @@
 - type: entity
   parent: TitanOre
   id: TitanOre1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -109,7 +101,6 @@
 - type: entity
   parent: TitanOre
   id: TitanOre5
-  suffix: 5
   components:
   - type: Stack
     count: 5
@@ -117,8 +108,6 @@
 - type: entity
   parent: OreBaseFar
   id: EmeraldOre
-  name: изумрудная руда
-  suffix: Полный
   components:
   - type: Stack
     stackType: EmeraldOre
@@ -146,7 +135,6 @@
 - type: entity
   parent: EmeraldOre
   id: EmeraldOre1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -154,8 +142,6 @@
 - type: entity
   parent: OreBaseFar
   id: RubyOre
-  name: рубиновая руда
-  suffix: Полный
   components:
   - type: Stack
     stackType: RubyOre
@@ -183,7 +169,6 @@
 - type: entity
   parent: RubyOre
   id: RubyOre1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -191,8 +176,6 @@
 - type: entity
   parent: OreBaseFar
   id: SapphireOre
-  name: сапфировая руда
-  suffix: Полный
   components:
   - type: Stack
     stackType: SapphireOre
@@ -220,7 +203,6 @@
 - type: entity
   parent: SapphireOre
   id: SapphireOre1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -228,8 +210,6 @@
 - type: entity
   parent: OreBaseFar
   id: TopazOre
-  name: топазовая руда
-  suffix: Полный
   components:
   - type: Stack
     stackType: TopazOre
@@ -257,7 +237,6 @@
 - type: entity
   parent: TopazOre
   id: TopazOre1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -265,8 +244,6 @@
 - type: entity
   parent: OreBaseFar
   id: ToriumOre
-  name: ториевая руда
-  suffix: Полный
   components:
   - type: Stack
     stackType: ToriumOre
@@ -303,7 +280,6 @@
 - type: entity
   parent: ToriumOre
   id: ToriumOre1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -311,7 +287,6 @@
 - type: entity
   parent: ToriumOre
   id: ToriumOre5
-  suffix: 5
   components:
   - type: Stack
     count: 5
@@ -319,8 +294,6 @@
 - type: entity
   parent: OreBaseFar
   id: PlutoniumOre
-  name: плутоневая руда
-  suffix: Полный
   components:
   - type: Stack
     stackType: PlutoniumOre
@@ -357,7 +330,6 @@
 - type: entity
   parent: PlutoniumOre
   id: PlutoniumOre1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -365,7 +337,6 @@
 - type: entity
   parent: PlutoniumOre
   id: PlutoniumOre5
-  suffix: 5
   components:
   - type: Stack
     count: 5
@@ -373,8 +344,6 @@
 - type: entity
   parent: OreBaseFar
   id: NeptuniumOre
-  name: нептуновая руда
-  suffix: Полный
   components:
   - type: Stack
     stackType: NeptuniumOre
@@ -411,7 +380,6 @@
 - type: entity
   parent: NeptuniumOre
   id: NeptuniumOre1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -419,7 +387,6 @@
 - type: entity
   parent: NeptuniumOre
   id: NeptuniumOre5
-  suffix: 5
   components:
   - type: Stack
     count: 5

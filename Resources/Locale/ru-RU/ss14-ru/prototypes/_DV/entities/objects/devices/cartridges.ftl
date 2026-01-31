@@ -1,2 +1,2 @@
-ent-MailMetricsCartridge = mail metrics cartridge
-    .desc = A cartridge that tracks statistics related to mail deliveries.
+ent-MailMetricsCartridge = картридж почтовой аналитики
+    .desc = Картридж, отслеживающий статистику, связанную с доставкой почты.

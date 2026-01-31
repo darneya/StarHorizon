@@ -113,7 +113,6 @@
 - type: entity
   id: EdisonMothershipComputer
   parent: BaseMothershipComputer
-  name: edison shipyard console
   components:
   - type: ShipyardListing
     shuttles:

@@ -2,9 +2,6 @@
 - type: entity
   parent: BaseItem
   id: FuelPlasmaPure
-  name: fuel-grade pure plasma
-  description: A rod made of desaturated plasma, suitable for fuel.
-  suffix: 20
   components:
   - type: Material
   - type: PhysicalComposition
@@ -27,7 +24,6 @@
 - type: entity
   parent: FuelPlasmaPure
   id: FuelPlasmaPure1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -37,9 +33,6 @@
 - type: entity
   parent: BaseItem
   id: FuelPlasmaUnstable
-  name: fuel-grade unstable plasma
-  description: A rod made of desaturated plasma, suitable for fuel.
-  suffix: 20
   components:
   - type: Material
   - type: PhysicalComposition
@@ -64,7 +57,6 @@
 - type: entity
   parent: FuelPlasmaUnstable
   id: FuelPlasmaUnstable1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -74,9 +66,6 @@
 - type: entity
   parent: BaseItem
   id: FuelUraniumPure
-  name: fuel-grade pure uranium
-  description: A rod made of semi-processed uranium, suitable for fuel.
-  suffix: 20
   components:
   - type: Material
   - type: PhysicalComposition
@@ -99,7 +88,6 @@
 - type: entity
   parent: FuelUraniumPure
   id: FuelUraniumPure1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -109,9 +97,6 @@
 - type: entity
   parent: BaseItem
   id: FuelUraniumUnstable
-  name: fuel-grade unstable uranium
-  description: A rod made of semi-processed uranium, suitable for fuel.
-  suffix: 20
   components:
   - type: Material
   - type: PhysicalComposition
@@ -136,7 +121,6 @@
 - type: entity
   parent: FuelUraniumUnstable
   id: FuelUraniumUnstable1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -146,9 +130,6 @@
 - type: entity
   parent: BaseItem
   id: FuelBananiumPure
-  name: fuel-grade pure bananium
-  description: A rod made from pressed bananium peels, suitable for fuel.
-  suffix: 20
   components:
   - type: Material
   - type: PhysicalComposition
@@ -171,7 +152,6 @@
 - type: entity
   parent: FuelBananiumPure
   id: FuelBananiumPure1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -181,9 +161,6 @@
 - type: entity
   parent: BaseItem
   id: FuelBananiumUnstable
-  name: fuel-grade unstable bananium
-  description: A rod made from pressed bananium peels, suitable for fuel.
-  suffix: 20
   components:
   - type: Material
   - type: PhysicalComposition
@@ -208,7 +185,6 @@
 - type: entity
   parent: FuelBananiumUnstable
   id: FuelBananiumUnstable1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -218,9 +194,6 @@
 - type: entity
   parent: BaseItem
   id: FuelPlutonium
-  name: fuel-grade plutonium
-  description: A rod made from plutonium, suitable for fuel.
-  suffix: 20
   components:
   - type: Material
   - type: PhysicalComposition
@@ -243,7 +216,6 @@
 - type: entity
   parent: FuelPlutonium
   id: FuelPlutonium1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -253,9 +225,6 @@
 - type: entity
   parent: BaseItem
   id: FuelPlutoniumPure
-  name: fuel-grade pure plutonium
-  description: A rod made from plutonium, suitable for fuel.
-  suffix: 20
   components:
   - type: Material
   - type: PhysicalComposition
@@ -278,7 +247,6 @@
 - type: entity
   parent: FuelPlutoniumPure
   id: FuelPlutoniumPure1
-  suffix: Single
   components:
   - type: Stack
     count: 1
@@ -288,9 +256,6 @@
 - type: entity
   parent: BaseItem
   id: FuelPlutoniumUnstable
-  name: fuel-grade unstable plutonium
-  description: A rod made from plutonium, suitable for fuel.
-  suffix: 20
   components:
   - type: Material
   - type: PhysicalComposition
@@ -315,7 +280,6 @@
 - type: entity
   parent: FuelPlutoniumUnstable
   id: FuelPlutoniumUnstable1
-  suffix: Single
   components:
   - type: Stack
     count: 1

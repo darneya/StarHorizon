@@ -2,7 +2,6 @@
   abstract: true
   parent: BaseItem
   id: SheetOtherBaseFar
-  description: A sheet of material, used often on the station in various applications.
   components:
   - type: Sprite
     sprite: _Horizon/Objects/Materials/Sheets/other.rsi
@@ -30,8 +29,6 @@
 - type: entity
   parent: SheetOtherBaseFar
   id: SheetTorium
-  name: торий
-  suffix: Полный
   components:
   - type: Material
   - type: PhysicalComposition
@@ -69,7 +66,6 @@
 - type: entity
   parent: SheetTorium
   id: SheetTorium1
-  suffix: Single
   components:
   - type: Sprite
     state: torium
@@ -79,7 +75,6 @@
 - type: entity
   parent: SheetTorium
   id: SheetTorium10
-  suffix: 10
   components:
   - type: Sprite
     state: torium
@@ -89,8 +84,6 @@
 - type: entity
   parent: SheetOtherBaseFar
   id: SheetPlutonium
-  name: плутоний
-  suffix: Полный
   components:
   - type: Material
   - type: PhysicalComposition
@@ -128,7 +121,6 @@
 - type: entity
   parent: SheetPlutonium
   id: SheetPlutonium1
-  suffix: Single
   components:
   - type: Sprite
     state: plutonium
@@ -138,7 +130,6 @@
 - type: entity
   parent: SheetPlutonium
   id: SheetPlutonium10
-  suffix: 10
   components:
   - type: Sprite
     state: plutonium
@@ -148,8 +139,6 @@
 - type: entity
   parent: SheetOtherBaseFar
   id: SheetNeptunium
-  name: нептуний
-  suffix: Полный
   components:
   - type: Material
   - type: PhysicalComposition
@@ -187,7 +176,6 @@
 - type: entity
   parent: SheetNeptunium
   id: SheetNeptunium1
-  suffix: Single
   components:
   - type: Sprite
     state: neptunium
@@ -197,7 +185,6 @@
 - type: entity
   parent: SheetNeptunium
   id: SheetNeptunium10
-  suffix: 10
   components:
   - type: Sprite
     state: neptunium
