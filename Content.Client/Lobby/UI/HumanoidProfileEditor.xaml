@@ -4,7 +4,6 @@
          xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
          xmlns:ui="clr-namespace:Content.Client.Lobby.UI"
          xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
-         xmlns:horizon="clr-namespace:Content.Client._Horizon.Lobby.UI"
          HorizontalExpand="True">
         <!-- Left side -->
         <BoxContainer Orientation="Vertical" Margin="10 10 10 10" HorizontalExpand="True">
@@ -133,8 +132,8 @@
                                     <CheckBox Name="HairGradientToggle" />
                                     <Label Text="{Loc 'humanoid-profile-editor-hair-gradient-enable'}" VerticalAlignment="Center" />
                                 </BoxContainer>
-                                <BoxContainer Orientation="Horizontal" Name="HairGradientColorRow">
-                                    <horizon:GradientColorSliders Name="HairGradientSecondColorSelector" />
+                                <BoxContainer Orientation="Horizontal" Name="HairGradientColorRow" HorizontalExpand="True">
+                                    <ColorSelectorSliders Name="HairGradientSecondColorSelector" MinSize="420 110" HorizontalExpand="True" />
                                 </BoxContainer>
                                 <BoxContainer Orientation="Horizontal">
                                     <Label Text="{Loc 'humanoid-profile-editor-hair-gradient-direction'}" VerticalAlignment="Center" />
@@ -148,8 +147,8 @@
                                     <CheckBox Name="FacialHairGradientToggle" />
                                     <Label Text="{Loc 'humanoid-profile-editor-hair-gradient-enable'}" VerticalAlignment="Center" />
                                 </BoxContainer>
-                                <BoxContainer Orientation="Horizontal" Name="FacialHairGradientColorRow">
-                                    <horizon:GradientColorSliders Name="FacialHairGradientSecondColorSelector" />
+                                <BoxContainer Orientation="Horizontal" Name="FacialHairGradientColorRow" HorizontalExpand="True">
+                                    <ColorSelectorSliders Name="FacialHairGradientSecondColorSelector" MinSize="420 110" HorizontalExpand="True" />
                                 </BoxContainer>
                                 <BoxContainer Orientation="Horizontal">
                                     <Label Text="{Loc 'humanoid-profile-editor-hair-gradient-direction'}" VerticalAlignment="Center" />
@@ -163,8 +162,8 @@
                                     <CheckBox Name="AllMarkingsGradientToggle" />
                                     <Label Text="{Loc 'humanoid-profile-editor-hair-gradient-enable'}" VerticalAlignment="Center" />
                                 </BoxContainer>
-                                <BoxContainer Orientation="Horizontal" Name="AllMarkingsGradientColorRow">
-                                    <horizon:GradientColorSliders Name="AllMarkingsGradientSecondColorSelector" />
+                                <BoxContainer Orientation="Horizontal" Name="AllMarkingsGradientColorRow" HorizontalExpand="True">
+                                    <ColorSelectorSliders Name="AllMarkingsGradientSecondColorSelector" MinSize="420 110" HorizontalExpand="True" />
                                 </BoxContainer>
                                 <BoxContainer Orientation="Horizontal">
                                     <Label Text="{Loc 'humanoid-profile-editor-hair-gradient-direction'}" VerticalAlignment="Center" />

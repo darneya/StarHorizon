@@ -944,6 +944,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             _entManager.System<HumanoidAppearanceSystem>().LoadProfile(PreviewDummy, Profile);
+            SpriteView.InvalidateMeasure();
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
@@ -1773,6 +1774,7 @@ namespace Content.Client.Lobby.UI
             HairGradientDirectionSelector.OnItemSelected += args =>
             {
                 if (Profile is null) return;
+                HairGradientDirectionSelector.SelectId(args.Id);
                 Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(Profile.Appearance.HairGradientEnabled, Profile.Appearance.HairGradientSecondaryColor, args.Id));
                 SetDirty();
                 ReloadProfilePreview();
@@ -1795,6 +1797,7 @@ namespace Content.Client.Lobby.UI
             FacialHairGradientDirectionSelector.OnItemSelected += args =>
             {
                 if (Profile is null) return;
+                FacialHairGradientDirectionSelector.SelectId(args.Id);
                 Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(Profile.Appearance.FacialHairGradientEnabled, Profile.Appearance.FacialHairGradientSecondaryColor, args.Id));
                 SetDirty();
                 ReloadProfilePreview();
@@ -1817,6 +1820,7 @@ namespace Content.Client.Lobby.UI
             AllMarkingsGradientDirectionSelector.OnItemSelected += args =>
             {
                 if (Profile is null) return;
+                AllMarkingsGradientDirectionSelector.SelectId(args.Id);
                 Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithAllMarkingsGradient(Profile.Appearance.AllMarkingsGradientEnabled, Profile.Appearance.AllMarkingsGradientSecondaryColor, args.Id));
                 SetDirty();
                 ReloadProfilePreview();
