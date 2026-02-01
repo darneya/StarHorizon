@@ -4,8 +4,8 @@ meta:
   engineVersion: 261.2.0
   forkId: ""
   forkVersion: ""
-  time: 12/29/2025 18:03:32
-  entityCount: 430
+  time: 01/11/2026 09:48:51
+  entityCount: 432
 maps: []
 grids:
 - 1
@@ -1502,6 +1502,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 5.5,3.5
       parent: 1
+- proto: FaxMachineShipAntag
+  entities:
+  - uid: 243
+    components:
+    - type: Transform
+      pos: -0.5,4.5
+      parent: 1
 - proto: FireAxeCabinetFilled
   entities:
   - uid: 431
@@ -1668,6 +1675,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,0.5
+      parent: 1
+- proto: NFHolopadShipAntag
+  entities:
+  - uid: 347
+    components:
+    - type: Transform
+      pos: 0.5,2.5
       parent: 1
 - proto: NFMagazineGrenadeFrag
   entities:

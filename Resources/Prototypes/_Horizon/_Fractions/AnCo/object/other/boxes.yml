@@ -7,10 +7,10 @@
   description: Закрытый ящик с логотипом корпорации.
   components:
   - type: Sprite
-    sprite: _Horizon/Objects/Storage/uasbox.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/uasbox.rsi
     state: uasbox
   - type: Item
-    sprite: _Horizon/Objects/Storage/uasbox.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/uasbox.rsi
     state: uasbox
     size: Huge
   - type: SpawnItemsOnUse
@@ -25,10 +25,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Horizon/Objects/Storage/uasbox.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/uasbox.rsi
     state: uasboxopen
   - type: Item
-    sprite: _Horizon/Objects/Storage/uasbox.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/uasbox.rsi
     state: uasboxopen
     size: Huge
 
@@ -83,10 +83,10 @@
   - type: SpawnItemsOnUse
     items:
     - id: SuitProtectiveAnCo
-#    - id: AnCoDroneOff
-#    - id: AnCoDroneOff
-#    - id: AnCoDroneOff
-#    - id: AnCoDroneOff
+    - id: AnCoDroneOff
+    - id: AnCoDroneOff
+    - id: AnCoDroneOff
+    - id: AnCoDroneOff
 # Xigovir: а что тут не так? это же буквально ящик с жучками
     - id: AnCoopenbox
 
@@ -152,3 +152,60 @@
     - id: AnCoHandcuffs
     - id: AnCoHandcuffs
     - id: AnCoopenbox
+
+# это тоже коробочка, не ебите мозги
+
+- type: entity
+  id: BoxRationAnCo
+  parent: [BaseItem, BaseAnCoContraband]
+  name: Суточное питание сотрудника
+  description: Ничто не может передать так хорошо философию чего либо, кроме как еда.
+  suffix: StarHorizon, AnCo, Food
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/ration.rsi
+    state: icon
+  - type: Appearance
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: PhysicalComposition
+    materialComposition:
+      Ardon: 100
+      Kazmie: 300
+  - type: StaticPrice
+    price: 10
+  - type: Tag
+    tags:
+    - BoxCardboard
+  - type: ContainerContainer
+    containers:
+      water: !type:ContainerSlot
+      nutriblock1: !type:ContainerSlot
+      nutriblock2: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      water:
+        ejectOnInteract: false
+        whitelist:
+          tags:
+          - AnCoWater
+      nutriblock1:
+        ejectOnInteract: false
+        whitelist:
+          tags:
+          - AnCoTin
+      nutriblock2:
+        ejectOnInteract: false
+        whitelist:
+          tags:
+          - AnCoTin
+  - type: ContainerFill
+    containers:
+      water:
+      - DrinkWaterAnCoBottleFull
+      nutriblock1:
+      - FoodAnCoTin
+      nutriblock2:
+      - FoodAnCoTin

@@ -5,11 +5,11 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Horizon/Objects/Misc/uasidcard.rsi
+    sprite: _Horizon/_Fractions/AnCo/Object/Misc/uasidcard.rsi
   - type: Clothing
     slots:
     - idcard
-    sprite: _Horizon/Objects/Misc/uasidcard.rsi
+    sprite: _Horizon/_Fractions/AnCo/Object/Misc/uasidcard.rsi
   - type: Item
     size: Small
 
@@ -18,7 +18,6 @@
   parent: AnCoStandartID
   id: AnCoCounselorID
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   name: карта Совета АнКо
   description: Карта с необходимыми для членов АнКо доступами.
   components:
@@ -33,13 +32,13 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Титан
 - type: entity
   parent: AnCoStandartID
   id: AnCoTitanID
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   name: карта офицера Титана АнКо
   description: Карта с необходимыми для членов АнКо доступами.
   components:
@@ -54,13 +53,13 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Паук
 - type: entity
   parent: AnCoStandartID
   id: AnCoSpiderID
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   name: карта офицера Паука АнКо
   description: Карта с необходимыми для членов АнКо доступами.
   components:
@@ -75,13 +74,13 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Рыцарь
 - type: entity
   parent: AnCoStandartID
   id: AnCoKnightID
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   name: карта офицера Рыцаря АнКо
   description: Карта с необходимыми для членов АнКо доступами.
   components:
@@ -96,13 +95,13 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Офицер
 - type: entity
   parent: AnCoStandartID
   id: AnCoOfficerID
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   name: карта Офицера АнКо
   description: Карта с необходимыми для членов АнКо доступами.
   components:
@@ -117,13 +116,13 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Кадет
 - type: entity
   parent: AnCoStandartID
   id: AnCoCadetID
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   name: карта кадета АнКо
   description: Карта с необходимыми для членов АнКо доступами.
   components:
@@ -138,13 +137,13 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Рипсоид, не спрашивайте кто это такой, это трансбот. Xigovir очень крутой и.. боже он черный!! В шахту его!!!
 - type: entity
   parent: AnCoStandartID
   id: AnCoRipsoidID
   suffix: StarHorizon, AnCo
-  categories: [ HideSpawnMenu ]
   name: карта Рипсоида АнКо
   description: Карта с необходимыми для членов АнКо доступами.
   components:
@@ -159,3 +158,4 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo

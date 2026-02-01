@@ -1,15 +1,14 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: ClothingOuterHardsuitSpider
-  suffix: StarHorizon, AnCo
+  suffix: StarHorizon, AnCo, HardSuit
   name: скафандр офицера Паука АнКо
   description: Скафандр, созданный из продвинутых композитов и предназначенный для боевых миссий.
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/uasspider.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uasspider.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/uasspider.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uasspider.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
@@ -32,20 +31,22 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitSpider
+  - type: FactionAccess
+    allowedFactions:
+    - FactionAnCo
 
 # титан
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: ClothingOuterHardsuitTitan
-  suffix: StarHorizon, AnCo
+  suffix: StarHorizon, AnCo, HardSuit
   name: cкафандр офицера Титана АнКо
   description: Тяжёлый скафандр АнКо. Выбор тех, для кого защита важнее скорости.
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/uastitan.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uastitan.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/uastitan.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uastitan.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
@@ -68,20 +69,22 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitTitan
+  - type: FactionAccess
+    allowedFactions:
+    - FactionAnCo
 
 # рыцарь
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: ClothingOuterHardsuitKnight
-  suffix: StarHorizon, AnCo
+  suffix: StarHorizon, AnCo, HardSuit
   name: cкафандр офицера Рыцаря АнКо
   description: Это как доспехи, только герметичные!
   components:
   - type: Sprite
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/uasknight.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uasknight.rsi
   - type: Clothing
-    sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/uasknight.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uasknight.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
@@ -104,3 +107,96 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitKnight
+  - type: FactionAccess
+    allowedFactions:
+    - FactionAnCo
+
+# самое имбовый скафандр из всех
+
+- type: entity
+  parent: [NFClothingOuterEVASuitBase, BaseAnCoContraband]
+  id: ClothingOuterHardsuitPetal
+  suffix: StarHorizon, AnCo, HardSuit
+  name: Лепесток
+  description: продвинутый E.V.A. для работ в космическом пространстве
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/petal.rsi
+  - type: Clothing
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/petal.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitPetal
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+
+- type: entity
+  parent: [NFClothingOuterEVASuitBase, BaseAnCoContraband]
+  id: ClothingOuterHardsuitGranite
+  suffix: StarHorizon, AnCo, HardSuit
+  name: Гранит
+  description: продвинутый E.V.A. для работ в космическом пространстве
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/granite.rsi
+  - type: Clothing
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/granite.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitGranite
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.80
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.5
+        Heat: 0.4
+        Radiation: 0.5
+        Caustic: 0.5
+
+
+- type: entity
+  parent: [NFClothingOuterEVASuitBase, BaseAnCoContraband]
+  id: ClothingOuterHardsuitDusk
+  suffix: StarHorizon, AnCo, HardSuit
+  name: Сумрак
+  description: продвинутый E.V.A. для работ в космическом пространстве
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/dusk.rsi
+  - type: Clothing
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/dusk.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: Tag
+    tags: [] # Выносим с ВЛа для хамелеонки
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitDusk
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.6
+        Heat: 0.4
+        Radiation: 0.5
+        Caustic: 0.5

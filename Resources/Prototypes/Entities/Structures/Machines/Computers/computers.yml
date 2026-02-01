@@ -227,9 +227,9 @@
     tags:
       - Syndicate
   - type: RadarConsole
-    maxRange: 384
+    maxRange: 256
   - type: WorldLoader
-    radius: 1536
+    radius: 256
   - type: PointLight
     radius: 1.5
     energy: 1.6

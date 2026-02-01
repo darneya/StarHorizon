@@ -1,6 +1,5 @@
 - type: entity
   parent: [BaseHardBomb, BaseAnCoContraband, BaseItem]
-  categories: [ HideSpawnMenu ]
   id: AnCohardBomb
   name: мобильная бомба АнКо
   suffix: StarHorizon, AnCo
@@ -9,7 +8,7 @@
     - type: Item
       size: Normal
     - type: Sprite
-      sprite: _Horizon/Structures/Machines/uasbombs.rsi
+      sprite: _Horizon/_Fractions/AnCo/Structures/Machines/uasbombs.rsi
       noRot: true
       layers:
         - state: uas-bomb
@@ -50,7 +49,7 @@
     - type: Item
       size: Normal
     - type: Sprite
-      sprite: _Horizon/Structures/Machines/uasbombs.rsi
+      sprite: _Horizon/_Fractions/AnCo/Structures/Machines/uasbombs.rsi
       noRot: true
       layers:
         - state: uas-bomb-R
@@ -81,7 +80,6 @@
   id: AnCoBombOfficer
   suffix: StarHorizon, AnCo
   name: мобильный маяк запроса снаряжения Офицера
-  categories: [ HideSpawnMenu ]
   components:
     - type: SpawnOnTrigger
       proto: ClosetOfficer
@@ -91,7 +89,6 @@
   id: AnCoBombSpider
   suffix: StarHorizon, AnCo
   name: мобильный маяк запроса снаряжения Паука
-  categories: [ HideSpawnMenu ]
   components:
     - type: SpawnOnTrigger
       proto: ClosetSpider
@@ -101,7 +98,6 @@
   id: AnCoBombKnight
   suffix: StarHorizon, AnCo
   name: мобильный маяк запроса снаряжения Рыцаря
-  categories: [ HideSpawnMenu ]
   components:
     - type: SpawnOnTrigger
       proto: ClosetKnight

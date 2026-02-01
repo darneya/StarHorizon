@@ -12,6 +12,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Log;
 
 namespace Content.Server._Horizon.BluespaceHarvester;
 
@@ -25,6 +26,8 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambientSound = default!;
+
+    private readonly ISawmill _sawmill = Logger.GetSawmill("TEST.bluespaceHarvester");
 
     private readonly List<BluespaceHarvesterTap> _taps =
     [
@@ -58,11 +61,13 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
 
     private void OnStartup(Entity<BluespaceHarvesterComponent> ent, ref ComponentStartup args)
     {
+        _sawmill.Info($"Bluespace harvester {ToPrettyString(ent)} started on map {Transform(ent).MapID}");
         UpdateCount();
     }
 
     private void OnRemove(Entity<BluespaceHarvesterComponent> ent, ref ComponentRemove args)
     {
+        _sawmill.Info($"Bluespace harvester {ToPrettyString(ent)} removed from map {Transform(ent).MapID}");
         UpdateCount();
     }
 
@@ -118,6 +123,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
                 // If there is insufficient production,
                 // it will reset itself (turn off) and you will need to start it again,
                 // this will not allow you to set it to maximum and enjoy life
+                _sawmill.Warning($"Bluespace harvester {ToPrettyString(uid)} reset due to insufficient power. Received: {harvester.ReceivedPower}, Required: {GetUsagePower(harvester.CurrentLevel)}, Level: {harvester.CurrentLevel}");
                 Reset(uid, harvester);
             }
 
@@ -146,6 +152,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
             // If the danger points exceeded the DangerLimit and we were lucky enough to create a portal, then they will be created.
             if (harvester.Danger > harvester.DangerLimit && _random.NextFloat(0.0f, 1.0f) <= GetRiftChance(uid, harvester))
             {
+                _sawmill.Info($"Bluespace harvester {ToPrettyString(uid)} spawning rifts. Danger: {harvester.Danger}, Limit: {harvester.DangerLimit}");
                 SpawnRifts(uid, harvester);
             }
 
@@ -159,6 +166,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
 
     private void OnDestruction(Entity<BluespaceHarvesterComponent> harvester, ref DestructionEventArgs args)
     {
+        _sawmill.Warning($"Bluespace harvester {ToPrettyString(harvester.Owner)} destroyed, spawning emergency rifts");
         SpawnRifts(harvester.Owner, harvester.Comp);
     }
 
@@ -166,8 +174,12 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
     {
         // If we switch off, we don't need to be switched on.
         if (!harvester.Comp.Reset)
+        {
+            _sawmill.Debug($"Bluespace harvester {ToPrettyString(harvester.Owner)} target level change rejected: harvester is reset");
             return;
+        }
 
+        _sawmill.Info($"Bluespace harvester {ToPrettyString(harvester.Owner)} target level changed from {harvester.Comp.TargetLevel} to {args.TargetLevel}");
         harvester.Comp.TargetLevel = args.TargetLevel;
         UpdateUI(harvester.Owner, harvester.Comp);
     }
@@ -175,16 +187,26 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
     private void OnBuy(Entity<BluespaceHarvesterComponent> harvester, ref BluespaceHarvesterBuyMessage args)
     {
         if (!harvester.Comp.Reset)
+        {
+            _sawmill.Debug($"Bluespace harvester {ToPrettyString(harvester.Owner)} purchase rejected: harvester is reset");
             return;
+        }
 
         if (!TryGetCategory(harvester.Owner, args.Category, out var info, harvester.Comp))
+        {
+            _sawmill.Warning($"Bluespace harvester {ToPrettyString(harvester.Owner)} purchase failed: category {args.Category} not found");
             return;
+        }
 
         var category = (BluespaceHarvesterCategoryInfo) info;
 
         if (harvester.Comp.Points < category.Cost)
+        {
+            _sawmill.Debug($"Bluespace harvester {ToPrettyString(harvester.Owner)} purchase rejected: insufficient points. Have: {harvester.Comp.Points}, Need: {category.Cost}");
             return;
+        }
 
+        _sawmill.Info($"Bluespace harvester {ToPrettyString(harvester.Owner)} purchased {category.PrototypeId} for {category.Cost} points. Remaining: {harvester.Comp.Points - category.Cost}");
         harvester.Comp.Points -= category.Cost; // Damn capitalism.
         SpawnLoot(harvester.Owner, category.PrototypeId, harvester.Comp);
     }
@@ -294,10 +316,13 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
                 break;
         }
 
+        _sawmill.Debug($"Bluespace harvester {ToPrettyString(uid)} spawning loot {prototype} at {newCoords}");
         _audio.PlayPvs(harvester.SpawnSound, uid);
         Spawn(harvester.SpawnEffect, newCoords);
 
-        return Spawn(prototype, newCoords);
+        var result = Spawn(prototype, newCoords);
+        _sawmill.Debug($"Bluespace harvester {ToPrettyString(uid)} spawned {ToPrettyString(result)}");
+        return result;
     }
 
     private int GetPointGeneration(EntityUid uid, BluespaceHarvesterComponent? harvester = null)
@@ -365,6 +390,7 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
         if (!Resolve(uid, ref harvester))
             return;
 
+        _sawmill.Info($"Bluespace harvester {ToPrettyString(uid)} reset. Danger increased by {harvester.DangerFromReset} (now {harvester.Danger + harvester.DangerFromReset})");
         harvester.Danger += harvester.DangerFromReset;
         harvester.Reset = false;
         harvester.TargetLevel = 0;
@@ -383,14 +409,21 @@ public sealed class BluespaceHarvesterSystem : EntitySystem
         int currentDanger = danger ?? harvester.Danger;
 
         var count = _random.Next(harvester.RiftCount);
+        _sawmill.Info($"Bluespace harvester {ToPrettyString(uid)} spawning {count} rifts with total danger {currentDanger}");
+
         for (var i = 0; i < count; i++)
         {
             // Haha loot!
             var entity = SpawnLoot(uid, harvester.Rift, harvester);
             if (entity == null)
+            {
+                _sawmill.Warning($"Bluespace harvester {ToPrettyString(uid)} failed to spawn rift {i + 1}/{count}");
                 continue;
+            }
 
-            EnsureComp<BluespaceHarvesterRiftComponent>((EntityUid) entity).Danger = currentDanger / count;
+            var riftDanger = currentDanger / count;
+            EnsureComp<BluespaceHarvesterRiftComponent>((EntityUid) entity).Danger = riftDanger;
+            _sawmill.Debug($"Bluespace harvester {ToPrettyString(uid)} spawned rift {ToPrettyString(entity)} with danger {riftDanger}");
         }
 
         // We gave all the danger to the rifts.

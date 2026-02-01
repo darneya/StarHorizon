@@ -1,2 +1,2 @@
-ent-MobSheleg = Urist McIce
+ent-MobSheleg = Урист МакШелег
     .desc = { ent-BaseMobSheleg.desc }

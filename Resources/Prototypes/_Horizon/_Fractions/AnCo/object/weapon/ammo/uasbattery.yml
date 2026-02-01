@@ -37,10 +37,9 @@
   id: AnCoEnergyCore
   suffix: StarHorizon, AnCo
   parent: BasePowerCellAnCo
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _StarHorizon/Objects/Power/uascore.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Power/uascore.rsi
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: core

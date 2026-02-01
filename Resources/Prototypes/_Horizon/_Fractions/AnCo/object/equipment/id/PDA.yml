@@ -1,15 +1,15 @@
 - type: entity
   parent: [BasePDA, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: PDAAnCo
   suffix: StarHorizon, AnCo
   name: кпк агента АнКо
   description: Ничем не отличимый от других, за исключением ручки, КПК.
   components:
   - type: Sprite
-    sprite: _Horizon/Objects/Devices/uaspda.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Devices/uaspda.rsi
   - type: Pda
     penSlot:
+      startingItem: PenAnCo
       priority: -1
       whitelist:
         tags:
@@ -26,7 +26,6 @@
   id: PDACadetAnCo
   suffix: Aavikko, AnCo
   name: кпк Кадета АнКо
-  categories: [ HideSpawnMenu ]
   components:
   - type: Pda
     id: AnCoCadetID
@@ -37,7 +36,6 @@
   id: PDARipsoidAnCo
   suffix: Aavikko, AnCo
   name: кпк Рипсоида АнКо
-  categories: [ HideSpawnMenu ]
   components:
   - type: Pda
     id: AnCoRipsoidID
@@ -48,7 +46,6 @@
   id: PDAOfficerAnCo
   suffix: Aavikko, AnCo
   name: кпк Офицера АнКо
-  categories: [ HideSpawnMenu ]
   components:
   - type: Pda
     id: AnCoOfficerID
@@ -59,7 +56,6 @@
   id: PDASpiderAnCo
   suffix: Aavikko, AnCo
   name: кпк Офицера Паука АнКо
-  categories: [ HideSpawnMenu ]
   components:
   - type: Pda
     id: AnCoSpiderID
@@ -70,7 +66,6 @@
   id: PDAKnightAnCo
   suffix: Aavikko, AnCo
   name: кпк Офицера Рыцаря АнКо
-  categories: [ HideSpawnMenu ]
   components:
   - type: Pda
     id: AnCoKnightID
@@ -81,7 +76,6 @@
   id: PDATitanAnCo
   suffix: Aavikko, AnCo
   name: кпк Офицера Титана АнКо
-  categories: [ HideSpawnMenu ]
   components:
   - type: Pda
     id: AnCoTitanID
@@ -92,7 +86,6 @@
   id: PDACounselorAnCo
   suffix: Aavikko, AnCo
   name: кпк Советника АнКо
-  categories: [ HideSpawnMenu ]
   components:
   - type: Pda
     id: AnCoCounselorID

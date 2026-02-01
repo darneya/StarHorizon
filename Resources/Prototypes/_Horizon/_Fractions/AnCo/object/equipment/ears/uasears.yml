@@ -1,7 +1,6 @@
 
 - type: entity
   parent: [Clothing, BaseAnCoContraband]
-  categories: [ HideSpawnMenu ]
   id: ClothingHeadsetAnCo
   suffix: StarHorizon, AnCo
   name: гарнитура АнКо
@@ -11,7 +10,7 @@
   - type: EncryptionKeyHolder
     keySlots: 4
   - type: Sprite
-    sprite: _StarHorizon/Clothing/Headset/uasears.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Headset/uasears.rsi
     state: icon
   - type: Tag
     tags: [] # Выносим с ВЛа для хамелеонки
@@ -20,4 +19,9 @@
   - type: Clothing
     slots:
     - ears
-    sprite: _StarHorizon/Clothing/Headset/uasears.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Headset/uasears.rsi
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyAnCo
+
