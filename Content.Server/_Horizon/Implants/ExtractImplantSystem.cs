@@ -66,13 +66,11 @@ public sealed class ExtractImplantSystem : EntitySystem
             if (mobState.CurrentState != MobState.Dead)
             {
                 _mobState.ChangeMobState(target, MobState.Dead, mobState);
-                args.Handled = true;
                 return;
             }
         }
 
         ActivateExtraction(uid, component, target);
-        args.Handled = true;
     }
 
     private void ActivateExtraction(EntityUid implantUid, ExtractImplantComponent component, EntityUid target)
@@ -120,7 +118,7 @@ public sealed class ExtractImplantSystem : EntitySystem
         base.Update(frameTime);
 
         var query = EntityQueryEnumerator<ExtractImplantComponent, SubdermalImplantComponent>();
-        while (query.MoveNext(out _, out var extractComp, out var subdermalComp))
+        while (query.MoveNext(out var implantUid, out var extractComp, out var subdermalComp))
         {
             if (!extractComp.Activated || extractComp.BodyBag == null)
                 continue;
@@ -148,12 +146,12 @@ public sealed class ExtractImplantSystem : EntitySystem
                     var timeRemaining = expedition.EndTime - _timing.CurTime;
                     if (timeRemaining.TotalSeconds <= 5.0)
                     {
-                        TeleportToTelepad(extractComp, bodyBagXform);
+                        TeleportToTelepad(implantUid, extractComp, bodyBagXform);
                     }
                 }
                 else
                 {
-                    TeleportToTelepad(extractComp, bodyBagXform);
+                    TeleportToTelepad(implantUid, extractComp, bodyBagXform);
                 }
             }
             else if (extractComp.TeleportAnywhere)
@@ -164,7 +162,12 @@ public sealed class ExtractImplantSystem : EntitySystem
                 if (extractComp.TeleportTime != null && _timing.CurTime < extractComp.TeleportTime.Value)
                     continue;
 
-                TeleportToTelepad(extractComp, bodyBagXform);
+                TeleportToTelepad(implantUid, extractComp, bodyBagXform);
+            }
+            else
+            {
+                ResetImplant(extractComp);
+                QueueDel(implantUid);
             }
         }
     }
@@ -176,7 +179,7 @@ public sealed class ExtractImplantSystem : EntitySystem
         component.TeleportTime = null;
     }
 
-    private void TeleportToTelepad(ExtractImplantComponent extractComp, TransformComponent bodyBagXform)
+    private void TeleportToTelepad(EntityUid implantUid, ExtractImplantComponent extractComp, TransformComponent bodyBagXform)
     {
         var bodyBagMapUid = bodyBagXform.MapUid;
         if (bodyBagMapUid == null)
@@ -255,6 +258,7 @@ public sealed class ExtractImplantSystem : EntitySystem
             }
 
             ResetImplant(extractComp);
+            QueueDel(implantUid);
         }
     }
 }
