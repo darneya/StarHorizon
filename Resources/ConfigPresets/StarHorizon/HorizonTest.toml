@@ -113,7 +113,6 @@ enabled = true
 
 [sponsor]
 # Paths to sponsor system files
-sponsors_path = "../ss14_data/sponsorSystem/sponsors.txt"
-discord_sponsors_path = "../ss14_data/sponsorSystem/discord_sponsors.txt"
-disposable_path = "../ss14_data/sponsorSystem/disposable.txt"
+discord_sponsors_path = "../ss14_data/sponsorSystem/warp/discord_sponsors.txt"
+disposable_path = "../ss14_data/sponsorSystem/warp/disposable.txt"
 items_path = "../ss14_data/sponsorSystem/sponsor_items.txt"
