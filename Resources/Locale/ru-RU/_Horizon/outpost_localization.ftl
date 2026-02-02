@@ -9,6 +9,7 @@ faction-cant-capture-already-captured-outpost = Фракция уже владе
 faction-start-capture-outpost = Запустить захват консоли
 
 faction-none = Fraction Unknown
+faction-unknown = неизвестная
 
 outpost-first-capture-by = Фракция {$factionName} начала захват {$outpostName ->
     [empty] одного из аванпостов
