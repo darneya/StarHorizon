@@ -1,0 +1,48 @@
+# Имплантер
+
+- type: entity
+  id: AnCoExtractImplanter
+  name: имплантер аварийной эвакуации
+  parent: BaseImplantOnlyImplanterAnCo
+  components:
+  - type: Implanter
+    implant: AnCoExtractImplant
+
+# Имплант
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: AnCoExtractImplant
+  name: Аварийная капсула
+  description: Имплант который кристаллизирует носителя после его смерти для спасения.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: AnCoActionActivateExtractImplant
+  - type: TriggerImplantAction
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: ExtractImplant
+    teleportAnywhere: true
+    teleportEffect: "BluespaceAnCoTeleport"
+    telepadPrototypeId: "AnCoExtractTelepad"
+    bodyBagPrototype: "AnCoCrystallExtract"
+# Действия
+
+- type: entity
+  parent: [BaseSuicideAction, BaseImplantAction]
+  id: AnCoActionActivateExtractImplant
+  name: Аварийная кристаллизация
+  description: Кристаллизирует вас для экстренного спасения.
+  components:
+  - type: LimitedCharges
+    maxCharges: 1
+  - type: Action
+    checkCanInteract: false
+    useDelay: 1
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/ancocrystall.rsi
+      state: box
