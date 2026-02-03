@@ -11,9 +11,13 @@ namespace Content.Client._Horizon.Traits;
 public sealed partial class QuirkEntry : Control
 {
     public Action<bool>? OnTraitToggled;
-    public QuirkEntry(string name, string description, int cost, HumanoidProfileEditor.QuirkCategory category, bool isSelected, bool canApply)
+    public string ProtoId;
+
+    public QuirkEntry(string id, string name, string description, int cost, HumanoidProfileEditor.QuirkCategory category, bool isSelected, bool canApply)
     {
         RobustXamlLoader.Load(this);
+
+        ProtoId = id;
 
         var color = category switch
         {
@@ -37,5 +41,21 @@ public sealed partial class QuirkEntry : Control
 
         QuirkNameLabel.SetMarkup($"{Loc.GetString(name)} [color={color.ToHex()}]{costSymbol}{Loc.GetString("humanoid-profile-editor-quirks-cost", ("cost", cost))}[/color]");
         QuirkDescLabel.SetMarkup(Loc.GetString(description));
+    }
+
+    public void UpdateEntry(bool isSelected, bool canApply)
+    {
+        if (!canApply)
+        {
+            ToggleQuirkButton.ToolTip = isSelected ? Loc.GetString("humanoid-profile-editor-quirks-cannot-remove") :
+                                                     Loc.GetString("humanoid-profile-editor-quirks-cannot-add");
+        }
+        else
+        {
+            ToggleQuirkButton.ToolTip = null;
+        }
+
+        ToggleQuirkButton.Disabled = !canApply;
+        ToggleQuirkButton.Pressed = isSelected;
     }
 }

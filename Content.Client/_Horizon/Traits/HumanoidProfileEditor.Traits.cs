@@ -9,6 +9,7 @@ namespace Content.Client.Lobby.UI;
 public sealed partial class HumanoidProfileEditor
 {
     private QuirkCategory _selectedQuirkCategory = QuirkCategory.Positive;
+    private List<TraitPrototype> _cachedQuirks = new();
     private const string QuirksCategory = "HorizonQuirks";
 
     private void StartupQuirks()
@@ -66,52 +67,74 @@ public sealed partial class HumanoidProfileEditor
         var quirks = _prototypeManager
             .EnumeratePrototypes<TraitPrototype>()
             .Where(q => q.Category == QuirksCategory)
-            .OrderBy(q => Loc.GetString(q.Name));
-        foreach (var quirk in quirks)
+            .OrderBy(q => Loc.GetString(q.Name))
+            .ToList();
+
+        if (_cachedQuirks.Equals(quirks))
         {
-            bool skip = false;
-
-            foreach (var item in quirk.Requirments)
+            foreach (var item in QuirksList.Children)
             {
-                if (!item.CanApply(Profile, _entManager))
-                    skip = true;
+                if (item is not QuirkEntry entry)
+                    continue;
+
+                var quirk = _prototypeManager.Index<TraitPrototype>(entry.ProtoId);
+
+                bool hasTrait = Profile.TraitPreferences.Contains(quirk.ID);
+                bool canApply = count + (hasTrait ? -quirk.Cost : quirk.Cost) <= 0;
+
+                entry.UpdateEntry(hasTrait, canApply);
             }
+        }
+        else
+        {
+            _cachedQuirks = quirks;
 
-            if (skip)
+            foreach (var quirk in quirks)
             {
-                Profile = Profile.WithoutTraitPreference(quirk.ID, _prototypeManager);
+                bool skip = false;
 
-                SetDirty();
-                UpdateSaveButton();
-                continue;
+                foreach (var item in quirk.Requirments)
+                {
+                    if (!item.CanApply(Profile, _entManager))
+                        skip = true;
+                }
+
+                if (skip)
+                {
+                    Profile = Profile.WithoutTraitPreference(quirk.ID, _prototypeManager);
+
+                    SetDirty();
+                    UpdateSaveButton();
+                    continue;
+                }
+
+                var cost = -quirk.Cost;
+                var category = cost switch
+                {
+                    > 0 => QuirkCategory.Negative,
+                    < 0 => QuirkCategory.Positive,
+                    _ => QuirkCategory.Neutral
+                };
+
+                if (category != _selectedQuirkCategory)
+                    continue;
+
+                bool hasTrait = Profile.TraitPreferences.Contains(quirk.ID);
+                bool canApply = count + (hasTrait ? -quirk.Cost : quirk.Cost) <= 0;
+                var quirkButton = new QuirkEntry(quirk.ID, quirk.Name, quirk.Description ?? "", cost, category, hasTrait, canApply)
+                {
+                    Margin = new Thickness(0, 2)
+                };
+                quirkButton.OnTraitToggled += isSelected =>
+                {
+                    Profile = isSelected ? Profile.WithTraitPreference(quirk.ID, _prototypeManager) : Profile.WithoutTraitPreference(quirk.ID, _prototypeManager);
+
+                    SetDirty();
+                    RefreshQuirks();
+                    UpdateSaveButton();
+                };
+                QuirksList.AddChild(quirkButton);
             }
-
-            var cost = -quirk.Cost;
-            var category = cost switch
-            {
-                > 0 => QuirkCategory.Negative,
-                < 0 => QuirkCategory.Positive,
-                _ => QuirkCategory.Neutral
-            };
-
-            if (category != _selectedQuirkCategory)
-                continue;
-
-            bool hasTrait = Profile.TraitPreferences.Contains(quirk.ID);
-            bool canApply = count + (hasTrait ? -quirk.Cost : quirk.Cost) <= 0;
-            var quirkButton = new QuirkEntry(quirk.Name, quirk.Description ?? "", cost, category, hasTrait, canApply)
-            {
-                Margin = new Thickness(0, 2)
-            };
-            quirkButton.OnTraitToggled += isSelected =>
-            {
-                Profile = isSelected ? Profile.WithTraitPreference(quirk.ID, _prototypeManager) : Profile.WithoutTraitPreference(quirk.ID, _prototypeManager);
-
-                SetDirty();
-                RefreshQuirks();
-                UpdateSaveButton();
-            };
-            QuirksList.AddChild(quirkButton);
         }
     }
 

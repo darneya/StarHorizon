@@ -2,6 +2,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using Content.Client._Horizon.Lobby.UI;
+using Content.Client._Horizon.Traits;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI.Loadouts;
 using Content.Client.Lobby.UI.Roles;
@@ -676,18 +677,18 @@ namespace Content.Client.Lobby.UI
                     TraitsList.AddChild(new Label
                     {
                         Text = Loc.GetString(category.Name),
-                        Margin = new Thickness(0, 10, 0, 0),
+                        Margin = new Thickness(6, 10, 6, 0),    // Horizon tweak - margin changed
                         StyleClasses = { StyleBase.StyleClassLabelHeading },
                     });
                 }
 
-                List<TraitPreferenceSelector?> selectors = new();
+                List<FancyTraitPreferenceSelector?> selectors = new();  // Horizon tweak - fancy selector
                 var selectionCount = 0;
 
                 foreach (var traitProto in categoryTraits)
                 {
                     var trait = _prototypeManager.Index<TraitPrototype>(traitProto);
-                    var selector = new TraitPreferenceSelector(trait);
+                    var selector = new FancyTraitPreferenceSelector(trait); // Horizon tweak - fancy selector
 
                     selector.Preference = Profile?.TraitPreferences.Contains(trait.ID) == true;
                     if (selector.Preference)
@@ -716,7 +717,8 @@ namespace Content.Client.Lobby.UI
                     TraitsList.AddChild(new Label
                     {
                         Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount) ,("max", category.MaxTraitPoints)),
-                        FontColorOverride = Color.Gray
+                        FontColorOverride = Color.Gray,
+                        Margin = new(6, 2)  // Horizon tweak - margin added
                     });
                 }
 
@@ -730,6 +732,9 @@ namespace Content.Client.Lobby.UI
                     {
                         selector.Checkbox.Label.FontColorOverride = Color.Red;
                     }
+
+                    // Horizon tweak
+                    selector.UpdateName(category is { MaxTraitPoints: < 0 } || (category != null && selector.Cost + selectionCount > category.MaxTraitPoints));
 
                     TraitsList.AddChild(selector);
                 }
