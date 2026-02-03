@@ -109,18 +109,6 @@ namespace Content.Shared.Maps
         [DataField("mobFriction")]
         public float? MobFriction { get; private set; }
 
-        /// <summary>
-        ///     No-input friction override for mob mover in <see cref="SharedMoverController"/>
-        /// </summary>
-        [DataField("mobFrictionNoInput")]
-        public float? MobFrictionNoInput { get; private set; }
-
-        /// <summary>
-        /// Effective mass of this tile for grid impacts.
-        /// </summary>
-        [DataField]
-        public float Mass = 1000f;
-
         // <Mono>
         /// <summary>
         /// Vertices for drawing purposes. Has to be a convex shape.
