@@ -6,6 +6,7 @@
   physicalDesc: Пульсирующее
   flavor: medicine
   color: "#f03c3c"
+  worksOnTheDead: true
   metabolisms:
     Medicine:
       metabolismRate: 1
