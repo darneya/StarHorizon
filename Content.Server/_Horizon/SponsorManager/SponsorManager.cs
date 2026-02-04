@@ -16,7 +16,6 @@ namespace Content.Server._Horizon.SponsorManager
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IResourceManager _resourceManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
-        private FileSystemWatcher _watcher = default!;
         private ISawmill _sawmill = default!;
 
         private ResPath _sponsorsFilePath => NormalizePath(_cfg.GetCVar(HorizonCCVars.SponsorSystemSponsorsPath));
@@ -110,62 +109,27 @@ namespace Content.Server._Horizon.SponsorManager
         }
         #endregion Check files
 
-        #region File Watcher
-        public void FileWatcher()
+        #region Discord (sync only at round start)
+        /// <summary>
+        /// Синхронизирует список спонсоров из discord_sponsors с основным файлом и памятью.
+        /// Вызывается только при старте раунда, чтобы изменения файла во время раунда не сбрасывали балансы.
+        /// </summary>
+        public void SyncDiscordSponsorsAtRoundStart()
         {
             try
             {
-                var discordSponsorsPath = _dsSponsorsFilePath;
-                var directoryPath = discordSponsorsPath.Directory;
-                var fileName = discordSponsorsPath.Filename;
-
-                // Получаем реальный путь файловой системы из UserData
-                var rootDir = _resourceManager.UserData.RootDir;
-                if (rootDir != null)
-                {
-                    var relativeDirPath = directoryPath.ToRelativeSystemPath();
-                    var fullDirectoryPath = Path.GetFullPath(Path.Combine(rootDir, relativeDirPath));
-
-                    _watcher = new FileSystemWatcher()
-                    {
-                        Path = fullDirectoryPath,
-                        Filter = fileName,
-                        NotifyFilter = NotifyFilters.LastWrite,
-                    };
-
-                    _watcher.Changed += SyncSponsorsFiles;
-                    _watcher.EnableRaisingEvents = true;
-                    _sawmill.Info($"FileSystemWatcher initialized for {fullDirectoryPath}/{fileName}");
-                }
-                else
-                {
-                    _sawmill.Warning("FileSystemWatcher not initialized: UserData.RootDir is null (virtual provider)");
-                }
-            }
-            catch (Exception ex)
-            {
-                _sawmill.Error($"Failed to initialize FileSystemWatcher: {ex}");
-            }
-        }
-        #endregion File Watcher
-
-        #region Discord
-        private void SyncSponsorsFiles(object sender, FileSystemEventArgs e)
-        {
-            try
-            {
-                _sawmill.Info($"Discord sponsors file changed: {e.FullPath}, syncing...");
+                _sawmill.Info("Syncing Discord sponsors at round start...");
                 ReadSponsorsFile();
 
                 var discordLines = SafeReadAllLines(_dsSponsorsFilePath);
-                _sawmill.Debug($"Read {discordLines.Length} lines from discord_sponsors.txt");
+                _sawmill.Debug($"Read {discordLines.Length} lines from discord_sponsors");
 
                 ProcessDiscordSponsors(discordLines);
-                _sawmill.Info("Discord sponsors synchronization completed successfully");
+                _sawmill.Info("Discord sponsors sync at round start completed");
             }
             catch (Exception ex)
             {
-                _sawmill.Error($"Failed to sync Discord sponsors file: {ex}");
+                _sawmill.Error($"Failed to sync Discord sponsors at round start: {ex}");
             }
         }
 
@@ -196,7 +160,7 @@ namespace Content.Server._Horizon.SponsorManager
 
             var currentSponsors = new HashSet<string>(_sponsors, StringComparer.OrdinalIgnoreCase);
 
-            // Добавляем или обновляем спонсоров из Discord
+            // Добавляем или обновляем спонсоров из Discord (для существующих сохраняем текущий баланс)
             var updatedCount = 0;
             var addedCount = 0;
             foreach (var (normalizedCkey, (originalCkey, discordId)) in discordSponsors)
@@ -206,6 +170,7 @@ namespace Content.Server._Horizon.SponsorManager
 
                 if (currentSponsors.Contains(normalizedCkey))
                 {
+                    // При старте раунда восстанавливаем полный лимит токенов по тиру
                     SaveSponsors(originalCkey, slots, tokens);
                     updatedCount++;
                 }
@@ -621,6 +586,8 @@ namespace Content.Server._Horizon.SponsorManager
                 {
                     balance -= cost;
                     _sponsorsAndBalances[normalizedName] = balance;
+                    var slots = _sponsorSlots.TryGetValue(normalizedName, out var s) ? s : 0;
+                    SaveSponsors(userName, slots, balance);
                     _sawmill.Debug($"Deducted {cost} tokens from {userName}, new balance: {balance}");
                 }
                 else

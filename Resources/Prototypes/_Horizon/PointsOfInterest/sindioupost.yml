@@ -11,9 +11,9 @@
 - type: pointOfInterest
   id: SindiOutpost
   parent: BasePOI
-  name: "Syndicate Outpost"
-  minimumDistance: 10000
-  maximumDistance: 20000
+  name: "Аванпост Синдиката"
+  minimumDistance: 12000
+  maximumDistance: 15000
   spawnGroup: Required
   gridPath: /Maps/_Horizon/POI/sindioupost.yml
   hideWarp: true
@@ -25,7 +25,7 @@
 
 - type: gameMap
   id: SindiOutpost
-  mapName: "Syndicate Outpost"
+  mapName: "Аванпост Синдиката"
   mapPath: /Maps/_Horizon/POI/sindioupost.yml
   minPlayers: 0
   stations:
@@ -33,7 +33,7 @@
       stationProto: StandardFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: "Syndicate Outpost"
+          mapNameTemplate: "Аванпост Синдиката"
         - type: ExtraStationInformation
           iconPath: /Textures/_Horizon/Interface/banner_syndicate_red.png
           stationSubtext: 'frontier-lobby-syndicate-subtext'

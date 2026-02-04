@@ -1,7 +1,7 @@
 - type: entity
   id: BluespaceHarvesterRift
-  name: redspace rift
-  description: Run! Run while you can! Just run!
+  name: разлом красного космоса
+  description: БЕГИ ФОРЕСТ! БЕГИ!
   placement:
     mode: SnapgridCenter
   components:
@@ -85,7 +85,7 @@
     netsync: false
   - type: NavMapBeacon
     color: "#ff0000"
-    text: redspace rift
+    text: разлом красного космоса
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic

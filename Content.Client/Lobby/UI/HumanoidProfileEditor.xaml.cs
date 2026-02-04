@@ -443,6 +443,9 @@ namespace Content.Client.Lobby.UI
                 ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
+            // _Horizon: Hair gradient controls
+            InitializeGradientControls();
+
             #endregion Hair
 
             #region SpawnPriority
@@ -510,6 +513,9 @@ namespace Content.Client.Lobby.UI
             #endregion Jobs
 
             //TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab")); // Frontier
+
+            StartupQuirks();    // Horizon tweak
+            RefreshQuirks();    // Horizon tweak
 
             RefreshTraits();
 
@@ -656,6 +662,11 @@ namespace Content.Client.Lobby.UI
             // Create UI view from model
             foreach (var (categoryId, categoryTraits) in traitGroups)
             {
+                // Horizon tweak start
+                if (categoryId == QuirksCategory)
+                    continue;
+                // Horizon tweak end
+
                 TraitCategoryPrototype? category = null;
 
                 if (categoryId != TraitCategoryPrototype.Default)
@@ -843,6 +854,11 @@ namespace Content.Client.Lobby.UI
         }
 
         /// <summary>
+        /// Horizon: Wrapper so gradient sliders use the same quantized palette as the preview.
+        /// </summary>
+        private static Color QuantizeGradientColor(Color c) => HumanoidCharacterAppearance.QuantizeGradientColor(c);
+
+        /// <summary>
         /// Refresh all loadouts.
         /// </summary>
         public void RefreshLoadouts()
@@ -913,6 +929,7 @@ namespace Content.Client.Lobby.UI
             RefreshLoadouts();
             RefreshSpecies();
             RefreshTraits();
+            RefreshQuirks();    // Horizon tweak
             RefreshFlavorText();
             ReloadPreview();
 
@@ -932,6 +949,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             _entManager.System<HumanoidAppearanceSystem>().LoadProfile(PreviewDummy, Profile);
+            SpriteView.InvalidateMeasure();
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
@@ -1219,6 +1237,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithMarkings(markings.GetForwardEnumerator().ToList()));
+            UpdateGradientContainersVisibility();
             ReloadProfilePreview();
         }
 
@@ -1387,6 +1406,7 @@ namespace Content.Client.Lobby.UI
             RefreshLoadouts();
             // Frontier: In case there's species restrictions for traits
             RefreshTraits(); // Frontier
+            RefreshQuirks();    // Horizon tweak
             UpdateSexControls(); // update sex for new species
             UpdateSpeciesGuidebookIcon();
             ReloadPreview();
@@ -1707,6 +1727,152 @@ namespace Content.Client.Lobby.UI
                 facialHairMarking,
                 Profile.Species,
                 1);
+
+            // _Horizon: Sync gradient UI (quantized so sliders show only displayable colors)
+            HairGradientToggle.Pressed = Profile.Appearance.HairGradientEnabled;
+            HairGradientSecondColorSelector.Color = QuantizeGradientColor(Profile.Appearance.HairGradientSecondaryColor);
+            HairGradientDirectionSelector.SelectId(Profile.Appearance.HairGradientDirection);
+            FacialHairGradientToggle.Pressed = Profile.Appearance.FacialHairGradientEnabled;
+            FacialHairGradientSecondColorSelector.Color = QuantizeGradientColor(Profile.Appearance.FacialHairGradientSecondaryColor);
+            FacialHairGradientDirectionSelector.SelectId(Profile.Appearance.FacialHairGradientDirection);
+            AllMarkingsGradientToggle.Pressed = Profile.Appearance.AllMarkingsGradientEnabled;
+            AllMarkingsGradientSecondColorSelector.Color = QuantizeGradientColor(Profile.Appearance.AllMarkingsGradientSecondaryColor);
+            AllMarkingsGradientDirectionSelector.SelectId(Profile.Appearance.AllMarkingsGradientDirection);
+
+            UpdateGradientContainersVisibility();
+        }
+
+        /// <summary>
+        /// Show gradient blocks only when applicable: hair when hair selected, beard when beard selected, accessories when any markings.
+        /// Disables the gradient in profile when the block is hidden.
+        /// </summary>
+        private void UpdateGradientContainersVisibility()
+        {
+            if (Profile is null) return;
+
+            var hasHair = Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle;
+            if (!hasHair)
+            {
+                HairGradientContainer.Visible = false;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(false, Profile.Appearance.HairGradientSecondaryColor, Profile.Appearance.HairGradientDirection));
+            }
+            else
+            {
+                HairGradientContainer.Visible = true;
+            }
+
+            var hasFacialHair = Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle;
+            if (!hasFacialHair)
+            {
+                FacialHairGradientContainer.Visible = false;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(false, Profile.Appearance.FacialHairGradientSecondaryColor, Profile.Appearance.FacialHairGradientDirection));
+            }
+            else
+            {
+                FacialHairGradientContainer.Visible = true;
+            }
+
+            // Градиент на аксессуары всегда доступен (настройки сохраняются, эффект применится при добавлении маркировок)
+            AllMarkingsGradientContainer.Visible = true;
+        }
+
+        private void InitializeGradientControls()
+        {
+            // Direction options: 0 = bottom-top, 1 = top-bottom, 2 = left-right, 3 = right-left
+            var dirOptions = new List<string>
+            {
+                Loc.GetString("humanoid-profile-editor-hair-gradient-dir-bottom-top"),
+                Loc.GetString("humanoid-profile-editor-hair-gradient-dir-top-bottom"),
+                Loc.GetString("humanoid-profile-editor-hair-gradient-dir-left-right"),
+                Loc.GetString("humanoid-profile-editor-hair-gradient-dir-right-left"),
+            };
+            HairGradientDirectionSelector.AddItem(dirOptions[0], 0);
+            HairGradientDirectionSelector.AddItem(dirOptions[1], 1);
+            HairGradientDirectionSelector.AddItem(dirOptions[2], 2);
+            HairGradientDirectionSelector.AddItem(dirOptions[3], 3);
+            FacialHairGradientDirectionSelector.AddItem(dirOptions[0], 0);
+            FacialHairGradientDirectionSelector.AddItem(dirOptions[1], 1);
+            FacialHairGradientDirectionSelector.AddItem(dirOptions[2], 2);
+            FacialHairGradientDirectionSelector.AddItem(dirOptions[3], 3);
+            AllMarkingsGradientDirectionSelector.AddItem(dirOptions[0], 0);
+            AllMarkingsGradientDirectionSelector.AddItem(dirOptions[1], 1);
+            AllMarkingsGradientDirectionSelector.AddItem(dirOptions[2], 2);
+            AllMarkingsGradientDirectionSelector.AddItem(dirOptions[3], 3);
+
+            HairGradientToggle.OnToggled += args =>
+            {
+                if (Profile is null) return;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(args.Pressed, Profile.Appearance.HairGradientSecondaryColor, Profile.Appearance.HairGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            HairGradientSecondColorSelector.OnColorChanged += _ =>
+            {
+                if (Profile is null) return;
+                var quantized = QuantizeGradientColor(HairGradientSecondColorSelector.Color);
+                HairGradientSecondColorSelector.Color = quantized;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(Profile.Appearance.HairGradientEnabled, quantized, Profile.Appearance.HairGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            HairGradientDirectionSelector.OnItemSelected += args =>
+            {
+                if (Profile is null) return;
+                HairGradientDirectionSelector.SelectId(args.Id);
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(Profile.Appearance.HairGradientEnabled, Profile.Appearance.HairGradientSecondaryColor, args.Id));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+
+            FacialHairGradientToggle.OnToggled += args =>
+            {
+                if (Profile is null) return;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(args.Pressed, Profile.Appearance.FacialHairGradientSecondaryColor, Profile.Appearance.FacialHairGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            FacialHairGradientSecondColorSelector.OnColorChanged += _ =>
+            {
+                if (Profile is null) return;
+                var quantized = QuantizeGradientColor(FacialHairGradientSecondColorSelector.Color);
+                FacialHairGradientSecondColorSelector.Color = quantized;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(Profile.Appearance.FacialHairGradientEnabled, quantized, Profile.Appearance.FacialHairGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            FacialHairGradientDirectionSelector.OnItemSelected += args =>
+            {
+                if (Profile is null) return;
+                FacialHairGradientDirectionSelector.SelectId(args.Id);
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(Profile.Appearance.FacialHairGradientEnabled, Profile.Appearance.FacialHairGradientSecondaryColor, args.Id));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+
+            AllMarkingsGradientToggle.OnToggled += args =>
+            {
+                if (Profile is null) return;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithAllMarkingsGradient(args.Pressed, Profile.Appearance.AllMarkingsGradientSecondaryColor, Profile.Appearance.AllMarkingsGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            AllMarkingsGradientSecondColorSelector.OnColorChanged += _ =>
+            {
+                if (Profile is null) return;
+                var quantized = QuantizeGradientColor(AllMarkingsGradientSecondColorSelector.Color);
+                AllMarkingsGradientSecondColorSelector.Color = quantized;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithAllMarkingsGradient(Profile.Appearance.AllMarkingsGradientEnabled, quantized, Profile.Appearance.AllMarkingsGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            AllMarkingsGradientDirectionSelector.OnItemSelected += args =>
+            {
+                if (Profile is null) return;
+                AllMarkingsGradientDirectionSelector.SelectId(args.Id);
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithAllMarkingsGradient(Profile.Appearance.AllMarkingsGradientEnabled, Profile.Appearance.AllMarkingsGradientSecondaryColor, args.Id));
+                SetDirty();
+                ReloadProfilePreview();
+            };
         }
 
         private void UpdateCMarkingsHair()

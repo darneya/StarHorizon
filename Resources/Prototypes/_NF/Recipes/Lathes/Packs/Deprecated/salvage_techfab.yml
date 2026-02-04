@@ -45,6 +45,7 @@
     - NFScrapProcessorCircuitboard
     - MaterialReclaimerMachineCircuitboard
     - OreProcessorMachineCircuitboard
+    - LumberMillMachineCircuitboard # Horizon
   # Salvage techfab
     - ClothingOuterEVASuitCargo
     - ClothingOuterEVASuitSalvage
