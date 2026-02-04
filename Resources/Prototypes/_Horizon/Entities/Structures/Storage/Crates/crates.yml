@@ -11,3 +11,68 @@
     sprite: _StarHorizon/Structures/Storage/buhanka.rsi
   - type: Sprite
     sprite: _StarHorizon/Structures/Storage/buhanka.rsi
+
+- type: entity
+  parent: CrateBaseSecure
+  id: CrateIndustrialSecure
+  name: индустриальный блюспейс ящик
+  components:
+  - type: CargoSellBlacklist
+  - type: Icon
+    sprite: _Horizon/Bluespace/Crates/industrial_secure.rsi
+  - type: Sprite
+    sprite: _Horizon/Bluespace/Crates/industrial_secure.rsi
+  - type: AccessReader
+    access: [["Engineering"]]
+
+- type: entity
+  parent: CrateBaseSecure
+  id: CrateTechnologicalSecure
+  name: технологический блюспейс ящик
+  components:
+  - type: CargoSellBlacklist
+  - type: Icon
+    sprite: _Horizon/Bluespace/Crates/technological_secure.rsi
+  - type: Sprite
+    sprite: _Horizon/Bluespace/Crates/technological_secure.rsi
+  - type: AccessReader
+    access: [["Research"]]
+
+- type: entity
+  parent: CrateBaseSecure
+  id: CrateBiologicalSecure
+  name: биологический блюспейс ящик
+  components:
+  - type: CargoSellBlacklist
+  - type: Icon
+    sprite: _Horizon/Bluespace/Crates/biological_secure.rsi
+  - type: Sprite
+    sprite: _Horizon/Bluespace/Crates/biological_secure.rsi
+  - type: AccessReader
+    access: [["Research"], ["Chemistry"]]
+
+- type: entity
+  parent: CrateBaseSecure
+  id: CrateDestructionSecure
+  name: оружейный блюспейс ящик
+  components:
+  - type: CargoSellBlacklist
+  - type: Icon
+    sprite: _Horizon/Bluespace/Crates/destruction_secure.rsi
+  - type: Sprite
+    sprite: _Horizon/Bluespace/Crates/destruction_secure.rsi
+  - type: AccessReader
+    access: [["Armory"]]
+
+- type: entity
+  parent: CrateBaseSecure
+  id: CrateLimitedSecure
+  name: чёрнорыночный блюспейс ящик
+  components:
+  - type: CargoSellBlacklist
+  - type: Icon
+    sprite: _Horizon/Bluespace/Crates/limited_secure.rsi
+  - type: Sprite
+    sprite: _Horizon/Bluespace/Crates/limited_secure.rsi
+  - type: AccessReader
+    access: [["Command"]]

@@ -81,6 +81,40 @@
     - id: BookSpaceEncyclopedia
     - id: NFHyperlinkBookSpaceLaw # Frontier: BookSpaceLaw<NFHyperlinkBookSpaceLaw
     - id: BookTheBookOfControl
+    # Horizon start
+    - id: BookLanguageGalacticCommonBadSpeak
+    - id: BookLanguageArachnidBadSpeak
+    - id: BookLanguageNekomimeticBadSpeak
+    - id: BookLanguageDraconicBadSpeak
+    - id: BookLanguageCanilunztBadSpeak
+    - id: BookLanguageSikTajBadSpeak
+    - id: BookLanguageNianBadSpeak
+    - id: BookLanguageSolCommonBadSpeak
+    - id: BookLanguageDwarfBadSpeak
+    - id: BookLanguageCintaTajBadSpeak
+    - id: BookLanguageGutterBadSpeak
+    - id: BookLanguageNeoRusskiyaBadSpeak
+    - id: BookLanguageClownishBadSpeak
+    - id: BookLanguageGalacticCommonUnderstand
+    - id: BookLanguageArachnidUnderstand
+    - id: BookLanguageNekomimeticUnderstand
+    - id: BookLanguageDraconicUnderstand
+    - id: BookLanguageCanilunztUnderstand
+    - id: BookLanguageSikTajUnderstand
+    - id: BookLanguageNianUnderstand
+    - id: BookLanguageSolCommonUnderstand
+    - id: BookLanguageDwarfUnderstand
+    - id: BookLanguageCintaTajUnderstand
+    - id: BookLanguageGutterUnderstand
+    - id: BookLanguageNeoRusskiyaUnderstand
+    - id: BookLanguageClownishUnderstand
+    - id: BookLanguageSignLanguageUnderstand
+    - id: BookLanguageRootSpeakUnderstand
+    - id: BookLanguageBubblishUnderstand
+    - id: BookLanguageVoxPidginUnderstand
+    - id: BookLanguageGoblinUnderstand
+    - id: BookLanguageHarpyUnderstand
+    # Horizon end
 
 - type: entityTable
   id: RandomBookTable

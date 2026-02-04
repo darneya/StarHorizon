@@ -115,6 +115,9 @@
   id: BorgModuleCargo
 
 - type: Tag
+  id: BorgModuleCombat
+
+- type: Tag
   id: BorgModuleEngineering
 
 - type: Tag
@@ -1510,3 +1513,12 @@
   id: XenoborgModuleStealth
 
 # ALPHABETICAL
+
+- type: Tag
+  id: UnderwearB
+
+- type: Tag
+  id: UnderwearT
+
+- type: Tag
+  id: Socks

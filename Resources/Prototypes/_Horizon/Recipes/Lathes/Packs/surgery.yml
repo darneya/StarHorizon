@@ -64,8 +64,30 @@
   - RightArmCyberEngi
   - LeftArmCyberAtmos
   - RightArmCyberAtmos
-  - LeftArmCyberLazer
-  - RightArmCyberLazer
+  - LeftArmProtoCyberWeaponShotgunSawn
+  - RightArmProtoCyberWeaponShotgunSawn
+  - LeftArmProtoCyberWeaponEnergyPistolLaser
+  - RightArmProtoCyberWeaponEnergyPistolLaser
+  - LeftArmProtoCyberWeaponPkaSawn
+  - RightArmProtoCyberWeaponPkaSawn
+  - LeftArmProtoCyberWeaponEnergyPistolDisabler
+  - RightArmProtoCyberWeaponEnergyPistolDisabler
+  - LeftArmCyberWeaponProtoKineticAccelerator
+  - RightArmCyberWeaponProtoKineticAccelerator
+  - LeftArmCyberWeaponEnergySubMachineGunDisabler
+  - RightArmCyberWeaponEnergySubMachineGunDisabler
+  - LeftArmCyberWeaponEnergyPistolLaserAdvanced
+  - RightArmCyberWeaponEnergyPistolLaserAdvanced
+  - LeftArmCyberWeaponShotgunAdvanced
+  - RightArmCyberWeaponShotgunAdvanced
+  - LeftArmCyberClawRending
+  - RightArmCyberClawRending
+  - LeftArmCyberClawPiersing
+  - RightArmCyberClawPiersing
+  - LeftArmCyberClawPoison
+  - RightArmCyberClawPoison
+  - LeftArmCyberLash
+  - RightArmCyberLash
 
 - type: latheRecipePack
   id: StarlightSurgeryImplants
@@ -87,3 +109,16 @@
   - HeatUpgradeSubcutaneousArmor
   - RadiationSubcutaneousArmor
   - UpgradedSubcutaneousArmor
+  - GalacticCommonTranslatorImplanter
+  - ArachnidTranslatorImplanter
+  - NekomimeticTranslatorImplanter
+  - DraconicTranslatorImplanter
+  - CanilunztTranslatorImplanter
+  - SikTajTranslatorImplanter
+  - NianTranslatorImplanter
+  - SolCommonTranslatorImplanter
+  - DwarfTranslatorImplanter
+  - NeoRusskiyaTranslatorImplanter
+  - ClownishTranslatorImplanter
+  - GoblinSpeakTranslatorImplanter
+  - HarpySpeakTranslatorImplanter

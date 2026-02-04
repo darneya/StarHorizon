@@ -268,6 +268,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
     private void UpdateState(EntityUid consoleUid, ref DockingInterfaceState? dockState)
     {
+        // Horizon start
+        if (!TryComp<ShuttleConsoleComponent>(consoleUid, out var consoleComp))
+            return;
+        // Horizon end
         EntityUid? entity = consoleUid;
 
         var getShuttleEv = new ConsoleShuttleEvent
@@ -302,7 +306,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         if (_ui.HasUi(consoleUid, ShuttleConsoleUiKey.Key))
         {
-            _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, new ShuttleBoundUserInterfaceState(navState, mapState, dockState));
+            _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, new ShuttleBoundUserInterfaceState(navState, mapState, dockState, consoleComp.Broken)); // Horizon
         }
     }
 
@@ -425,6 +429,13 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         if (!Resolve(entity, ref entity.Comp1, ref entity.Comp2))
             return new NavInterfaceState(SharedRadarConsoleSystem.DefaultMaxRange, GetNetCoordinates(coordinates), angle, docks, InertiaDampeningMode.Dampen, ServiceFlags.None, null, NetEntity.Invalid, true); // Frontier: add inertial dampening, target
 
+        // Frontier: safely handle deleted target entities
+        NetEntity? targetNetEntity = null;
+        if (entity.Comp1.TargetEntity != null && TryGetNetEntity(entity.Comp1.TargetEntity.Value, out var netEntity))
+        {
+            targetNetEntity = netEntity;
+        }
+
         return new NavInterfaceState(
             entity.Comp1.MaxRange,
             GetNetCoordinates(coordinates),
@@ -433,7 +444,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
             _shuttle.NfGetInertiaDampeningMode(entity), // Frontier
             _shuttle.NfGetServiceFlags(entity), // Frontier
             entity.Comp1.Target, // Frontier
-            GetNetEntity(entity.Comp1.TargetEntity), // Frontier
+            targetNetEntity, // Frontier
             entity.Comp1.HideTarget); // Frontier
     }
 

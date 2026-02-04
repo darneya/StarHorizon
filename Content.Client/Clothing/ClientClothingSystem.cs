@@ -48,6 +48,9 @@ public sealed class ClientClothingSystem : ClothingSystem
         {"pocket1", "POCKET1"},
         {"pocket2", "POCKET2"},
         {"suitstorage", "SUITSTORAGE"},
+        {"socks", "SOCKS"}, // HORIZON TWEAK
+        {"underweart", "UNDERWEART"}, // HORIZON TWEAK
+        {"underwearb", "UNDERWEARB"}, // HORIZON TWEAK
     };
 
     [Dependency] private readonly IResourceCache _cache = default!;
@@ -341,7 +344,6 @@ public sealed class ClientClothingSystem : ClothingSystem
                     layer.State = speciesLayer;
             }
             // End Frontier: species-specific layering
-
             if (displacementData is not null)
             {
                 // Frontier: revise race check

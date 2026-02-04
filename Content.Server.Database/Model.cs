@@ -418,10 +418,24 @@ namespace Content.Server.Database
         public string FacialHairColor { get; set; } = null!;
         public string EyeColor { get; set; } = null!;
         public string SkinColor { get; set; } = null!;
+
+        // _Horizon: Hair gradient start
+        public bool HairGradientEnabled { get; set; }
+        public string HairGradientSecondaryColor { get; set; } = "#FFFFFF";
+        public int HairGradientDirection { get; set; }
+        public bool FacialHairGradientEnabled { get; set; }
+        public string FacialHairGradientSecondaryColor { get; set; } = "#FFFFFF";
+        public int FacialHairGradientDirection { get; set; }
+        public bool AllMarkingsGradientEnabled { get; set; }
+        public string AllMarkingsGradientSecondaryColor { get; set; } = "#FFFFFF";
+        public int AllMarkingsGradientDirection { get; set; }
+        // _Horizon: Hair gradient end
+
         public int SpawnPriority { get; set; } = 0;
         public List<Job> Jobs { get; } = new();
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
+        public List<Language> Languages { get; } = new(); // Horizon Languages
 
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
@@ -429,6 +443,9 @@ namespace Content.Server.Database
 
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
+        public int ErpStatus { get; set; } // _Horizon
+        public string Faction { get; set; } = null!; // _Horizon
+        public string OOCFlavorText { get; set; } = null!; // _Horizon
     }
 
     public class Job
@@ -467,6 +484,17 @@ namespace Content.Server.Database
 
         public string TraitName { get; set; } = null!;
     }
+
+    // Horizon languages start
+    public class Language
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+
+        public string LanguageName { get; set; } = null!;
+    }
+    // Horizon languages end
 
     #region Loadouts
 

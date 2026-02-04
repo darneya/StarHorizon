@@ -1,3 +1,3 @@
-ent-WeaponStunprodUAS = шоковая дубинка UAS
+ent-WeaponStunprodAnCo = шоковая дубинка АнКо
     .desc = Шоковая дубинка, разработанная с использованием утекшей технологии NanoTrasen. Имеет улучшенную систему энергопотребления.
-    .suffix = StarHorizon, UAS
+    .suffix = StarHorizon, AnCo, Weapon

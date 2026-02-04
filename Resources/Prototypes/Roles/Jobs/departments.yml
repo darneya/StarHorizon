@@ -12,7 +12,7 @@
   name: department-Civilian
   description: department-NFCivilian-description # Frontier
   color: "#9FED58"
-  weight: 90
+  weight: 100
   roles:
   # - Bartender # Frontier
   # - Botanist # Frontier
@@ -122,7 +122,7 @@
   name: department-Security
   description: department-NFSecurity-description # Frontier
   color: "#5C7D4D" # Frontier: DE3A3A<5C7D4D
-  weight: 60 # Frontier: 20<1 - accounted for in jobs
+  weight: 85 # Frontier: 20<1 - accounted for in jobs
   roles:
 #  - Detective # Frontier
 #  - HeadOfSecurity # Frontier

@@ -639,3 +639,9 @@ binds:
   key: X
   mod1: Shift
 # endregion Frontier
+# region Horizon
+- function: OpenLanguagesMenu
+  type: State
+  key: L
+
+# endregion Horizon

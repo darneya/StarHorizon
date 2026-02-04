@@ -7,11 +7,11 @@ namespace Content.Shared.Humanoid
     public enum HumanoidVisualLayers : byte
     {
         Special, // for the cat ears
+        Face,
         Tail,
+        Wings,
         Hair,
         FacialHair,
-        UndergarmentTop,
-        UndergarmentBottom,
         Chest,
         Head,
         Snout,
@@ -32,6 +32,8 @@ namespace Content.Shared.Humanoid
         Fire,
         LArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
         RArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
+        UndergarmentTop,
+        UndergarmentBottom,
 
         Other,
     }

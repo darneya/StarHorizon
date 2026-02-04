@@ -4,10 +4,11 @@
   description: job-description-plant-manager
   playTimeTracker: JobPlantManager
   salary: 60000 # Horizon
+  forceFaction: FactionEdison # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 72000 # Frontier - 20 hrs (the real condition here is the whitelist)
-  whitelisted: false # Horizon
+  whitelisted: true
   startingGear: PlantManagerGear
   alwaysUseSpawner: true
   icon: "JobIconPlantManager"

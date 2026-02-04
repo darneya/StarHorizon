@@ -1416,3 +1416,63 @@
       Min: 1
       Max: 4
       PotencyDivisor: 25
+
+- type: seed
+  id: bluespaceTomato
+  name: seeds-bluespace-tomato-name
+  noun: seeds-noun-seeds
+  displayName: seeds-bluespace-tomato-display-name
+  plantRsi: _Horizon/Objects/Specific/Hydroponics/bluespace_tomato.rsi
+  packetPrototype: BlueTomatoSeeds
+  productPrototypes:
+  - FoodBluespaceTomato
+  harvestRepeat: Repeat
+  lifespan: 25
+  maturation: 8
+  production: 6
+  yield: 2
+  potency: 10
+  waterConsumption: 0.5
+  nutrientConsumption: 0.6
+  idealLight: 8
+  idealHeat: 298
+  splatPrototype: PuddleSplatter
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 3
+      PotencyDivisor: 20
+    Singulo:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+
+- type: seed
+  id: peach
+  name: seeds-peach-name
+  noun: seeds-noun-seeds
+  displayName: seeds-peach-display-name
+  plantRsi: _Horizon/Objects/Specific/Hydroponics/peach.rsi
+  packetPrototype: PeachSeeds
+  productPrototypes:
+  - FoodPeach
+  harvestRepeat: Repeat
+  lifespan: 55
+  maturation: 6
+  production: 6
+  yield: 3
+  potency: 10
+  idealLight: 8
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 20
+    Sugar:
+      Min: 1
+      Max: 7
+      PotencyDivisor: 10

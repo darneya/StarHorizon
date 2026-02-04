@@ -2,12 +2,13 @@ uplink-emp-grenade-launcher-bundle-name = Набор ЭМИ "Чайна-Лэйк
 uplink-emp-grenade-launcher-bundle-desc = Старый гранатомет "Чайна-Лэйк" в комплекте с 8 ЭМИ зарядами.
 uplink-spaceblade-syndicate-name = Набор "СпейсБлейд"
 uplink-spaceblade-syndicate-desc = Сделано из настоящего металла!
+
 uplink-security-hardsuit-name = Бронескафандр ДШНФ
 uplink-security-hardsuit-desc = Старый добрый скафандр, который уже лет двадцать носят офицеры ДШНФ. Тяжёлый, но надёжный.
 uplink-security-hardsuit-patrol-name = Патрульный скафандр ДШНФ
 uplink-security-hardsuit-patrol-desc = Облегчённая версия бронескафандра ДШНФ. Всё ещё лучше, чем утилизационные скафандры.
-uplink-security-hardsuit-brigmedic-name = Бронескафандр бригмедика ДШНФ
-uplink-security-hardsuit-brigmedic-desc = Облегчённый бронескафандр, который обычно используется бригмедики. В нём удобно оказывать помощь, но вот от прямых попаданий он не спасёт.
+uplink-security-hardsuit-brigmedic-name = Бронескафандр коронера ДШНФ
+uplink-security-hardsuit-brigmedic-desc = Облегчённый бронескафандр, который обычно используется коронеры. В нём удобно оказывать помощь, но вот от прямых попаданий он не спасёт.
 uplink-security-hardsuit-warden-name = Бронескафандр бейлифа ДШНФ
 uplink-security-hardsuit-warden-desc = Модернизированный бронескафандр ДШНФ, который обычно выдают бейлифу. В нём побольше пластали, чем в старой версии, но и потяжелее будет.
 uplink-security-hardsuit-experimental-name = Экспериментальный боевой скафандр
@@ -18,6 +19,7 @@ uplink-security-hardsuit-combat-name = Патрульный бронескафа
 uplink-security-hardsuit-combat-desc = Универсальный боевой скафандр для патрулирования космической среды. Подходит как для зачистки астероидов, так и для подавления бунтов в столовой.
 uplink-security-hardsuit-commmand-name = Командный боевой скафандр ДШНФ
 uplink-security-hardsuit-commmand-desc = Продвинутый боевой костюм для опытных командиров ДШНФ. Идеально подходит для героических речей и эффектных появлений.
+
 uplink-security-mk32-name = МК32
 uplink-security-mk32-desc = Служебный пистолет особого назначения, модель 32.
 uplink-security-lethalarmory-name = Ящик летального вооружения

@@ -58,5 +58,9 @@ namespace Content.Server.Shuttles.Components
             "device-button-7",
             "device-button-8"
         };
+
+        // Horizon tweak: is the console broken
+        [ViewVariables(VVAccess.ReadWrite), DataField("broken")]
+        public bool Broken = false;
     }
 }

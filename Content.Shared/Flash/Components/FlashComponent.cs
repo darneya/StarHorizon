@@ -44,12 +44,4 @@ namespace Content.Shared.Flash.Components
         public float Probability = 1f;
     }
 
-    [Serializable, NetSerializable]
-    public enum FlashVisuals : byte
-    {
-        BaseLayer,
-        LightLayer,
-        Burnt,
-        Flashing,
-    }
 }

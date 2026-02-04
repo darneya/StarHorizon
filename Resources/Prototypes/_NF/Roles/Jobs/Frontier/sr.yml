@@ -4,13 +4,11 @@
   description: job-description-sr
   playTimeTracker: JobHeadOfPersonnel
   salary: 80000 # Horizon
+  forceFaction: FactionFrontier # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 72000 # 20 hrs
-    - !type:RoleTimeRequirement
-      role: JobSecurityGuard
-      time: 10800 # 3 hrs as security guard
-  #  whitelisted: true # Horizon TempTweak
+  whitelisted: true
   startingGear: SrGear
   alwaysUseSpawner: true
   icon: "JobIconHeadOfPersonnel"

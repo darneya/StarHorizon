@@ -1,4 +1,3 @@
-
 # Mech gygax
 
 - type: Tag
@@ -128,6 +127,12 @@
 
 - type: Tag
   id: PhazonHead
+
+- type: Tag
+  id: PowerAnCo
+
+- type: Tag
+  id: AnCoMaterial
 
 # Ripley_mk2
 
@@ -391,9 +396,6 @@
 - type: Tag
   id: CartridgeMinigunERT15
 
-- type: Tag
-  id: PowerUAS
-
 # Far Ores Section Tags
 
 - type: Tag
@@ -435,5 +437,20 @@
 - type: Tag
   id: OreNeptunium
 
+# Shipyard
 - type: Tag
-  id: UASMaterial
+  id: ShuttleConsole
+
+- type: Tag
+  id: RustedThruster
+
+- type: Tag
+  id: RustedWall
+
+- type: Tag
+  id: ChubbyBomb
+
+# Airlock
+
+- type: Tag
+  id: PlanetTaxiAirlock

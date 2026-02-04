@@ -2,11 +2,11 @@
 # GitHub/Gitea: ???
 # Discord: helloohelloo
 
-# Информация об сопровождающем 
+# Информация об сопровождающем
 # GitHub/Gitea: https://git.starhorizon.ru/Astrolaris
 # Discord: astr0laris
 
-# Прототип шаттла: 
+# Прототип шаттла:
 #
 - type: vessel
   id: Ophiophagus
@@ -24,6 +24,18 @@
   - Science
   engine:
   - AME
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionNFSD"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Ophiophagus

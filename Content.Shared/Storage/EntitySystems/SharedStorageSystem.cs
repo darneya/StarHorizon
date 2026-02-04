@@ -383,23 +383,26 @@ public abstract class SharedStorageSystem : EntitySystem
     public void OpenStorageUI(EntityUid uid, EntityUid actor, StorageComponent? storageComp = null, bool silent = true)
     {
         // Handle recursively opening nested storages.
-        if (ContainerSystem.TryGetContainingContainer(uid, out var container) &&
-            UI.IsUiOpen(container.Owner, StorageComponent.StorageUiKey.Key, actor))
-        {
-            _nestedCheck = true;
-            HideStorageWindow(container.Owner, actor);
-            OpenStorageUIInternal(uid, actor, storageComp, silent: true);
-            _nestedCheck = false;
-        }
-        else
-        {
-            // If you need something more sophisticated for multi-UI you'll need to code some smarter
-            // interactions.
-            if (_openStorageLimit == 1)
-                UI.CloseUserUis<StorageComponent.StorageUiKey>(actor);
+        //if (ContainerSystem.TryGetContainingContainer(uid, out var container) &&
+        //    UI.IsUiOpen(container.Owner, StorageComponent.StorageUiKey.Key, actor))
+        //{
+        //    _nestedCheck = true;
+        //    HideStorageWindow(container.Owner, actor);
+        //    OpenStorageUIInternal(uid, actor, storageComp, silent: true);
+        //    _nestedCheck = false;
+        //}
+        //else
+        //{
+        //    // If you need something more sophisticated for multi-UI you'll need to code some smarter
+        //    // interactions.
+        //    if (_openStorageLimit == 1)
+        //        UI.CloseUserUis<StorageComponent.StorageUiKey>(actor);
+        // Horizon: Allow multiple nested storage windows to be open simultaneously
+        // Only close all storage windows if the limit is set to 1
+        if (_openStorageLimit == 1)
+            UI.CloseUserUis<StorageComponent.StorageUiKey>(actor);
 
-            OpenStorageUIInternal(uid, actor, storageComp, silent: silent);
-        }
+        OpenStorageUIInternal(uid, actor, storageComp, silent: silent);
     }
 
     /// <summary>
@@ -512,24 +515,12 @@ public abstract class SharedStorageSystem : EntitySystem
         }
         else
         {
-            // Frontier: cherry-pick upstream#35075
-            // OpenStorageUI(uid, args.User, storageComp, false);
-            if (ContainerSystem.TryGetContainingContainer((args.Target, null, null), out var container) &&
-                UI.IsUiOpen(container.Owner, StorageComponent.StorageUiKey.Key, args.User))
-            {
-                _nestedCheck = true;
-                HideStorageWindow(container.Owner, args.User);
-                OpenStorageUI(uid, args.User, storageComp, false);
-                _nestedCheck = false;
-            }
-            else
-            {
-                if (_openStorageLimit == 1)
-                    UI.CloseUserUis<StorageComponent.StorageUiKey>(args.User);
+            // Horizon: Allow multiple nested storage windows to be open simultaneously
+            // Only close all storage windows if the limit is set to 1
+            if (_openStorageLimit == 1)
+                UI.CloseUserUis<StorageComponent.StorageUiKey>(args.User);
 
-                OpenStorageUI(uid, args.User, storageComp, false);
-            }
-            // End Frontier: cherry-pick upstream#35075
+            OpenStorageUI(uid, args.User, storageComp, false);
         }
 
         args.Handled = true;
@@ -808,7 +799,8 @@ public abstract class SharedStorageSystem : EntitySystem
             return;
         }
 
-        HideStorageWindow(storage.Owner, player.Owner);
+        // Horizon: Allow multiple nested storage windows to be open simultaneously
+        // Removed hiding parent storage window
         OpenStorageUI(item.Owner, player.Owner, silent: true);
         _nestedCheck = false;
     }

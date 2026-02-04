@@ -1,0 +1,137 @@
+- type: trait
+  id: Deaf
+  name: trait-deaf-name
+  description: trait-deaf-desc
+  category: HorizonQuirks
+  cost: -8
+  components:
+  - type: DeafTrait
+
+- type: trait
+  id: Sluggish
+  name: trait-sluggish-name
+  description: trait-sluggish-desc
+  category: HorizonQuirks
+  cost: -5
+  effects:
+  - !type:ModifySpeed
+    walkModifier: 0.84
+    sprintModifier: 0.84
+
+- type: trait
+  id: SnailPaced
+  name: trait-snail-name
+  description: trait-snail-desc
+  category: HorizonQuirks
+  cost: -8
+  effects:
+  - !type:ModifySpeed
+    walkModifier: 0.68
+    sprintModifier: 0.68
+
+- type: trait
+  id: BloodDeficiency
+  name: trait-blood-defiency-name
+  description: trait-blood-defiency-desc
+  category: HorizonQuirks
+  cost: -4
+  effects:
+  - !type:ModifyBloodstream
+    refreshModifier: 0.22
+
+- type: trait
+  id: Hemophilia
+  name: trait-hemophilia-name
+  description: trait-hemophilia-desc
+  category: HorizonQuirks
+  cost: -4
+  effects:
+  - !type:ModifyBloodstream
+    bleedReductionModifier: 0.5
+
+- type: trait
+  id: WillToDie
+  name: trait-will-to-die-name
+  description: trait-will-to-die-desc
+  category: HorizonQuirks
+  cost: -1
+  effects:
+  - !type:ModifyHealth
+    healthChange:
+      Dead: -15
+
+- type: trait
+  id: GlassJaw
+  name: trait-glass-jaw-name
+  description: trait-glass-jaw-desc
+  category: HorizonQuirks
+  cost: -2
+  effects:
+  - !type:ModifyHealth
+    healthChange:
+      Critical: -10
+      Dead: -10
+
+- type: trait
+  id: BadKnees
+  name: trait-bad-knees-name
+  description: trait-bad-knees-desc
+  category: HorizonQuirks
+  cost: -4
+  effects:
+  - !type:ModifyStamina
+    stunModifier: 1.7
+
+- type: trait
+  id: Lethargy
+  name: trait-lethargy-name
+  description: trait-lethargy-desc
+  category: HorizonQuirks
+  cost: -4
+  effects:
+  - !type:ModifyStamina
+    critThresholdModifier: 0.85
+    cooldownModifier: 0.8
+    afterCritDecayMultiplier: 1.3
+
+- type: trait
+  id: Feeble
+  name: trait-feeble-name
+  description: trait-feeble-desc
+  category: HorizonQuirks
+  cost: -4
+  effects:
+  - !type:ModifyDamageSlowdown
+    modifier: -0.1
+
+- type: trait
+  id: Redshirt
+  name: trait-redshirt-name
+  description: trait-redshirt-desc
+  category: HorizonQuirks
+  cost: -8
+  effects:
+  - !type:ModifyHealth
+    healthChange:
+      Critical: -5
+      Dead: -100
+
+- type: trait
+  id: BrittleBoneDisease
+  name: trait-brittle-bone-name
+  description: trait-brittle-bone-desc
+  category: HorizonQuirks
+  cost: -6
+  effects:
+  - !type:ModifyHealth
+    healthChange:
+      Critical: -50
+
+- type: trait
+  id: LowPainTolerance
+  name: trait-low-pain-tolerance-name
+  description: trait-low-pain-tolerance-desc
+  category: HorizonQuirks
+  cost: -3
+  components:
+  - type: LowPainTolerance
