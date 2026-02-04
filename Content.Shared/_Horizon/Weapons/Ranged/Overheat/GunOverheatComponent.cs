@@ -47,6 +47,12 @@ public sealed partial class GunOverheatComponent : Component
     public bool Overheated;
 
     /// <summary>
+    /// Визуальный эффект покраснения
+    /// </summary>
+    [DataField]
+    public bool VisualOverheat = true;
+
+    /// <summary>
     /// Спам попаутами что оружие перегрето
     /// </summary>
     [DataField]

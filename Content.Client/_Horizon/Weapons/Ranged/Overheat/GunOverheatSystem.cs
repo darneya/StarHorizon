@@ -1,3 +1,4 @@
+using Content.Client.Weapons.Ranged.Components;
 using Content.Shared._Horizon.Weapons.Ranged.Overheat;
 using Robust.Client.GameObjects;
 
@@ -23,8 +24,20 @@ public sealed class GunOverheatSystem : SharedGunOverheatSystem
 
     private void UpdateOverheatVisuals(EntityUid uid, GunOverheatComponent overheat, SpriteComponent sprite)
     {
+        if (!overheat.VisualOverheat)
+            return;
+
         var heat = overheat.CurrentHeat;
         var color = Color.InterpolateBetween(Color.White, Color.Red, heat);
         _sprite.SetColor((uid, sprite), color);
+
+        // Включаем unshaded слои при перегреве
+        var showUnshaded = overheat.Overheated;
+
+        if (_sprite.LayerMapTryGet((uid, sprite), GunVisualLayers.BaseUnshaded, out _, false))
+            _sprite.LayerSetVisible((uid, sprite), GunVisualLayers.BaseUnshaded, showUnshaded);
+
+        if (_sprite.LayerMapTryGet((uid, sprite), GunVisualLayers.MagUnshaded, out _, false))
+            _sprite.LayerSetVisible((uid, sprite), GunVisualLayers.MagUnshaded, showUnshaded);
     }
 }
