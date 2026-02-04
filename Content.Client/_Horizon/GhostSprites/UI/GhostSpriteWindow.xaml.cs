@@ -75,7 +75,7 @@ public sealed partial class GhostSpriteWindow : DefaultWindow
         // Create name label
         var nameLabel = new Label
         {
-            Text = Loc.GetString(prototype.Name),
+            Text = prototype.Name,
             HorizontalAlignment = HAlignment.Center,
             Margin = new Thickness(0, 4, 0, 0)
         };

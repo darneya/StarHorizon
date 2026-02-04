@@ -33,9 +33,17 @@ public sealed class GhostSpriteSystem : EntitySystem
 
         foreach (var proto in _prototypeManager.EnumeratePrototypes<GhostSpritePrototype>())
         {
+            // Check individual sprites first - if allowedPlayers is set, only those players can use it
+            if (proto.IsIndividual)
+            {
+                if (!proto.AllowedPlayers.Contains(playerName))
+                    continue;
+            }
             // Skip sponsor-only sprites for non-sponsors
-            if (proto.SponsorOnly && !isSponsor)
+            else if (proto.SponsorOnly && !isSponsor)
+            {
                 continue;
+            }
 
             sprites.Add(proto.ID);
         }
@@ -47,6 +55,7 @@ public sealed class GhostSpriteSystem : EntitySystem
     private void OnChangeGhostSpriteRequest(ChangeGhostSpriteRequestEvent msg, EntitySessionEventArgs args)
     {
         var session = args.SenderSession;
+        var playerName = session.Name;
 
         // Validate: player must have an attached entity
         if (session.AttachedEntity is not { Valid: true } playerEntity)
@@ -60,8 +69,12 @@ public sealed class GhostSpriteSystem : EntitySystem
         if (!_prototypeManager.TryIndex<GhostSpritePrototype>(msg.SpriteId, out var prototype))
             return;
 
-        // Validate: sponsor-only sprites require sponsor status
-        if (prototype.SponsorOnly && !_sponsorManager.IsSponsor(session.Name))
+        // Validate: individual sprites can only be used by allowed players
+        if (prototype.IsIndividual && !prototype.AllowedPlayers.Contains(playerName))
+            return;
+
+        // Validate: sponsor-only sprites require sponsor status (only if not individual)
+        if (!prototype.IsIndividual && prototype.SponsorOnly && !_sponsorManager.IsSponsor(playerName))
             return;
 
         // Apply the sprite change

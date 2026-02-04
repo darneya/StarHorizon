@@ -36,4 +36,17 @@ public sealed partial class GhostSpritePrototype : IPrototype
     /// </summary>
     [DataField("sponsorOnly")]
     public bool SponsorOnly { get; private set; } = false;
+
+    /// <summary>
+    /// List of player ckeys who can use this sprite.
+    /// If empty, the sprite is available based on other restrictions (sponsorOnly, etc.).
+    /// If specified, ONLY these players can use this sprite (individual sprites).
+    /// </summary>
+    [DataField("allowedPlayers")]
+    public List<string> AllowedPlayers { get; private set; } = new();
+
+    /// <summary>
+    /// Returns true if this is an individual sprite (restricted to specific players).
+    /// </summary>
+    public bool IsIndividual => AllowedPlayers.Count > 0;
 }
