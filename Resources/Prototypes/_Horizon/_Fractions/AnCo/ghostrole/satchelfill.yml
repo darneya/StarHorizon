@@ -72,10 +72,8 @@
     - id: AnCoBombSpider
     - id: AnCoBombKnight
     - id: AnCoBoxKitUniform
-    - id: SheetArdon1
-    - id: SheetArdon
-    - id: Sheetkazmie1
-    - id: Sheetkazmie
+    - id: ArdonSheet1
+    - id: KazmieSheet1
     - id: AnCoCrab
     - id: AnCoDrone
     - id: AnCoDroneOff

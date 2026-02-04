@@ -8,10 +8,28 @@
     },
     "states": [
       {
-        "name": "efs"
+        "name": "ardonore"
+      },
+      {
+        "name": "kazmieore"
+      },
+      {
+        "name": "ardon"
+      },
+      {
+        "name": "ardon_2"
+      },
+      {
+        "name": "ardon_3"
       },
       {
         "name": "kazmie"
+      },
+      {
+        "name": "kazmie_2"
+      },
+      {
+        "name": "kazmie_3"
       }
     ]
   }

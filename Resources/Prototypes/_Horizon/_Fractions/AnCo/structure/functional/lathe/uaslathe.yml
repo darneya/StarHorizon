@@ -65,8 +65,8 @@
     - type: MachineBoard
       prototype: AnCoFabricator
       stackRequirements:
-        Ardon: 5
-        Kazmie: 20
+        ArdonSheetStack: 5
+        KazmieSheetStack: 20
       requirements:
         MatterBin: 3
         Manipulator: 3

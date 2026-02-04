@@ -1,10 +1,18 @@
 using Content.Shared._Horizon.FlavorText;
 using Content.Shared.Access.Components;
+using Content.Shared.Damage;
+using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
 using Content.Shared.PDA;
 using Content.Shared.Popups;
+using Content.Shared.Stunnable;
 using Content.Shared.UserInterface;
+using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Weapons.Ranged.Events;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network;
+using Robust.Shared.Timing;
 
 namespace Content.Shared._Horizon.FactionAccess;
 
@@ -16,6 +24,11 @@ namespace Content.Shared._Horizon.FactionAccess;
 public sealed class FactionAccessSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly SharedStunSystem _stun = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
 
     public override void Initialize()
     {
@@ -24,6 +37,83 @@ public sealed class FactionAccessSystem : EntitySystem
         SubscribeLocalEvent<FactionAccessComponent, ActivatableUIOpenAttemptEvent>(OnUIOpenAttempt);
         SubscribeLocalEvent<FactionAccessComponent, BeingEquippedAttemptEvent>(OnEquipAttempt);
         SubscribeLocalEvent<FactionAccessComponent, InteractUsingEvent>(OnInteractUsing);
+        SubscribeLocalEvent<FactionAccessComponent, ShotAttemptedEvent>(OnShotAttempt);
+        SubscribeLocalEvent<FactionAccessComponent, ExaminedEvent>(OnExamined);
+    }
+
+    private void OnExamined(Entity<FactionAccessComponent> ent, ref ExaminedEvent args)
+    {
+        if (!ent.Comp.CanToggleLock)
+            return;
+
+        var status = ent.Comp.Unlocked
+            ? Loc.GetString("faction-access-examine-unlocked")
+            : Loc.GetString("faction-access-examine-locked");
+
+        args.PushMarkup(status);
+    }
+
+    private void OnShotAttempt(Entity<FactionAccessComponent> ent, ref ShotAttemptedEvent args)
+    {
+        if (args.Cancelled)
+            return;
+
+        // Check if user is blacklisted - explode like Clumsy
+        if (TryComp<CharacterFactionMemberComponent>(args.User, out var factionMember) &&
+            ent.Comp.BlacklistedFactions.Contains(factionMember.Faction))
+        {
+            args.Cancel();
+            DisableGun(ent, ent.Comp.BlacklistStunTime);
+
+            // Only server handles all effects to prevent duplication
+            if (!_net.IsServer)
+                return;
+
+            // Skip if already knocked down (prevents spam)
+            if (HasComp<KnockedDownComponent>(args.User))
+                return;
+
+            if (ent.Comp.ExplodeOnBlacklist)
+            {
+                if (ent.Comp.BlacklistDamage != null)
+                    _damageable.TryChangeDamage(args.User, ent.Comp.BlacklistDamage, origin: args.User);
+
+                _stun.TryParalyze(args.User, ent.Comp.BlacklistStunTime, true);
+                _audio.PlayPvs(ent.Comp.BlacklistSound, args.User);
+                _popup.PopupEntity(Loc.GetString("faction-access-blacklist-explode"), ent, args.User);
+            }
+            else if (ent.Comp.DeniedMessage != null)
+            {
+                _popup.PopupEntity(Loc.GetString(ent.Comp.DeniedMessage), ent, args.User);
+            }
+
+            return;
+        }
+
+        if (!IsAllowed(args.User, ent))
+        {
+            args.Cancel();
+            DisableGun(ent, ent.Comp.BlacklistStunTime);
+
+            if (_net.IsServer && ent.Comp.DeniedMessage != null)
+                _popup.PopupEntity(Loc.GetString(ent.Comp.DeniedMessage), ent, args.User);
+        }
+    }
+
+    /// <summary>
+    /// Temporarily disables the gun by setting NextFire to a future time.
+    /// </summary>
+    private void DisableGun(EntityUid gun, TimeSpan duration)
+    {
+        if (!TryComp<GunComponent>(gun, out var gunComp))
+            return;
+
+        var nextFire = _timing.CurTime + duration;
+        if (gunComp.NextFire < nextFire)
+        {
+            gunComp.NextFire = nextFire;
+            Dirty(gun, gunComp);
+        }
     }
 
     private void OnInteractUsing(Entity<FactionAccessComponent> ent, ref InteractUsingEvent args)
@@ -118,7 +208,14 @@ public sealed class FactionAccessSystem : EntitySystem
         if (!target.Comp.Enabled)
             return true;
 
-        // If unlocked, everyone can access
+        // Check blacklist first - blacklisted factions can NEVER access, even when unlocked
+        if (TryComp<CharacterFactionMemberComponent>(user, out var factionMember))
+        {
+            if (target.Comp.BlacklistedFactions.Contains(factionMember.Faction))
+                return false;
+        }
+
+        // If unlocked, everyone (except blacklisted) can access
         if (target.Comp.Unlocked)
             return true;
 
@@ -126,7 +223,7 @@ public sealed class FactionAccessSystem : EntitySystem
         if (target.Comp.AllowedFactions.Count == 0 && target.Comp.DeniedFactions.Count == 0)
             return true;
 
-        if (!TryComp<CharacterFactionMemberComponent>(user, out var factionMember))
+        if (factionMember == null)
         {
             // No faction - only allow if no AllowedFactions specified
             return target.Comp.AllowedFactions.Count == 0;

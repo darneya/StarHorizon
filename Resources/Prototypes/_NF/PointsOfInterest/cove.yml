@@ -12,8 +12,8 @@
   id: Cove
   parent: BasePOI
   name: Пиратская Бухта
-  minimumDistance: 10000
-  maximumDistance: 20000
+  minimumDistance: 12000
+  maximumDistance: 15000
   spawnGamePreset: [ NFPirate ]
   spawnGroup: Required
   gridPath: /Maps/_Horizon/POI/cove.yml # Horizon-Maps
