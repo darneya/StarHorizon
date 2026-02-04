@@ -1477,6 +1477,20 @@
           - NukeOpsUplink
 
 - type: listing
+  id: UplinkCodeSpeakTranslatorImplanter
+  name: языковой имплант кодового языка
+  description: Одноразовый шприц, предназначенный исключительно для введения подкожных имплантов.
+  icon: { sprite: Objects/Specific/Medical/implanter.rsi, state: implanter0 }
+  productEntity: CodeSpeakTranslatorImplanter
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkImplants
+
+- type: listing
   id: UplinkDeathRattle
   name: uplink-deathrattle-implant-name
   description: uplink-deathrattle-implant-desc
