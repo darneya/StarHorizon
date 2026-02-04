@@ -28,16 +28,61 @@
 # ============================================
 
 - type: ghostSprite
-  id: GhostSpriteEvilNeko
-  name: EvilNeko
-  rsiPath: _Horizon/Sponsors/Ghosts/sponsors/evilneko.rsi
+  id: GhostSpriteRunTime
+  name: Рантайм
+  rsiPath: _Horizon/Sponsors/Ghosts/sponsors/runtime.rsi
   state: animated
   sponsorOnly: true
+
+- type: ghostSprite
+  id: GhostSpriteHarpy
+  name: Гарпия
+  rsiPath: _Horizon/Sponsors/Ghosts/sponsors/harpy.rsi
+  state: animated
+  sponsorOnly: true
+
+- type: ghostSprite
+  id: GhostSpriteAmerica
+  name: Америка
+  rsiPath: _Horizon/Sponsors/Ghosts/sponsors/america.rsi
+  state: animated
+  sponsorOnly: true
+
+- type: ghostSprite
+  id: GhostSpriteJoker
+  name: Джокер
+  rsiPath: _Horizon/Sponsors/Ghosts/sponsors/joker.rsi
+  state: animated
+  sponsorOnly: true
+
+- type: ghostSprite
+  id: GhostSpriteJudge
+  name: Судья
+  rsiPath: _Horizon/Sponsors/Ghosts/sponsors/judge.rsi
+  state: animated
+  sponsorOnly: true
+
+- type: ghostSprite
+  id: GhostSpriteHellsing
+  name: Hellsing
+  rsiPath: _Horizon/Sponsors/Ghosts/sponsors/hellsing.rsi
+  state: animated
+  sponsorOnly: true
+
 
 # ============================================
 # INDIVIDUAL - Available only to specific players by ckey
 # These are personal sprites for specific players
 # ============================================
+
+- type: ghostSprite
+  id: GhostSpriteIndividualEvilNeko
+  name: EvilNeko (Личный)
+  rsiPath: _Horizon/Sponsors/Ghosts/individual/evilneko.rsi
+  state: animated
+  allowedPlayers:
+    - EvilNeko
+    - localhost@EvilNeko
 
 - type: ghostSprite
   id: GhostSpriteIndividualJoulerk
@@ -47,14 +92,6 @@
   allowedPlayers:
     - Joulerk
     - localhost@Joulerk
-
-- type: ghostSprite
-  id: GhostSpriteIndividualJoker
-  name: Джокер (Личный)
-  rsiPath: _Horizon/Sponsors/Ghosts/individual/joker.rsi
-  state: animated
-  allowedPlayers:
-    - EXPERRIENCEE
 
 - type: ghostSprite
   id: GhostSpriteIndividualUAS
@@ -82,7 +119,7 @@
 
 - type: ghostSprite
   id: GhostSpriteIndividualKitsunes
-  name: Кицунэ (Личный)
+  name: Kitsunes (Личный)
   rsiPath: _Horizon/Sponsors/Ghosts/individual/kitsunes.rsi
   state: animated
   allowedPlayers:
