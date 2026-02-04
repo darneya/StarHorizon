@@ -42,6 +42,7 @@ namespace Content.Server._Horizon.SponsorManager
         private static HashSet<string> _sponsors = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly Dictionary<string, int> _sponsorsAndBalances = new(StringComparer.OrdinalIgnoreCase);
         private readonly Dictionary<string, int> _sponsorSlots = new(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, string> _sponsorColors = new(StringComparer.OrdinalIgnoreCase);
 
         public void Initialize()
         {
@@ -120,6 +121,7 @@ namespace Content.Server._Horizon.SponsorManager
                 _sponsors.Clear();
                 _sponsorsAndBalances.Clear();
                 _sponsorSlots.Clear();
+                _sponsorColors.Clear();
 
                 var discordLines = SafeReadAllLines(_dsSponsorsFilePath);
                 _sawmill.Debug($"Read {discordLines.Length} lines from discord_sponsors");
@@ -154,7 +156,15 @@ namespace Content.Server._Horizon.SponsorManager
 
                 var slots = CalculateSlots(discordId);
                 var tokens = CalculateTokens(discordId);
-                SetSponsorData(originalCkey, slots, tokens);
+
+                // Parse color from parts[4] if available (format: something,ckey,discordId,something,#color)
+                string? color = null;
+                if (parts.Length > 4 && !string.IsNullOrWhiteSpace(parts[4]))
+                {
+                    color = parts[4].Trim();
+                }
+
+                SetSponsorData(originalCkey, slots, tokens, color);
                 count++;
             }
 
@@ -229,12 +239,17 @@ namespace Content.Server._Horizon.SponsorManager
         /// <summary>
         /// Обновляет данные спонсора только в памяти (без записи в файл).
         /// </summary>
-        private void SetSponsorData(string userName, int slot, int token)
+        private void SetSponsorData(string userName, int slot, int token, string? color = null)
         {
             var normalizedName = NormalizeUserName(userName);
             _sponsors.Add(normalizedName);
             _sponsorSlots[normalizedName] = slot;
             _sponsorsAndBalances[normalizedName] = token;
+
+            if (!string.IsNullOrWhiteSpace(color))
+            {
+                _sponsorColors[normalizedName] = color;
+            }
         }
 
         public void AddSponsor(string userName, int slot, int token)
@@ -257,6 +272,7 @@ namespace Content.Server._Horizon.SponsorManager
             _sponsors.Remove(normalizedName);
             _sponsorsAndBalances.Remove(normalizedName);
             _sponsorSlots.Remove(normalizedName);
+            _sponsorColors.Remove(normalizedName);
             _sawmill.Debug($"Removed sponsor from memory: {userName}");
         }
         #endregion Memory-only sponsor data
@@ -363,26 +379,16 @@ namespace Content.Server._Horizon.SponsorManager
             }
         }
 
-        public string GetColor(string userName)
+        /// <summary>
+        /// Возвращает цвет спонсора из кеша. Если цвет не установлен, возвращает null.
+        /// </summary>
+        public string? GetColor(string userName)
         {
             var normalizedName = NormalizeUserName(userName);
 
-            var lines = SafeReadAllLines(_dsSponsorsFilePath);
-            foreach (var line in lines)
+            if (_sponsorColors.TryGetValue(normalizedName, out var color))
             {
-                if (string.IsNullOrWhiteSpace(line))
-                    continue;
-
-                var parts = line.Split(',');
-                if (parts.Length < 2)
-                    continue;
-
-                var ckey = NormalizeUserName(parts[1].Trim());
-                if (ckey.Equals(normalizedName, StringComparison.OrdinalIgnoreCase))
-                {
-                    if (parts.Length > 4)
-                        return parts[4].Trim();
-                }
+                return color;
             }
 
             return "#FF0000";
