@@ -25,9 +25,6 @@
     workDuration: 3.1
     idleState: icon
     workingState: work
-#  - type: FactionAccess Astrolaris: используй в качестве примера
-#    allowedFactions:
-#    - FactionAnCo
   - type: AnCoDisposableFabricatorVisuals
     idleState: icon
     workingState: work

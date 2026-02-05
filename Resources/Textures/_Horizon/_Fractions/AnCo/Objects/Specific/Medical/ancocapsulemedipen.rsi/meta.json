@@ -8,16 +8,20 @@
    },
    "states" : [
       {
+         "name" : "hypo"
+      },
+      {
+         "name" : "cartridge"
+      },
+      {
          "delays" : [
             [
-               0.2,
                0.2,
                0.2,
                0.2
             ]
          ],
-         "directions" : 1,
-         "name" : "hypo"
+         "name" : "hypo-anim"
       }
    ]
 }
