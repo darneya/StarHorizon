@@ -135,3 +135,110 @@
   cost: -3
   components:
   - type: LowPainTolerance
+
+- type: trait
+  id: AmputatedLegs
+  name: trait-amputated-legs-name
+  description: trait-amputated-legs-desc
+  category: HorizonQuirks
+  cost: -8
+  components:
+    - type: BuckleOnMapInit
+      prototype: VehicleWheelchair
+    - type: LegsParalyzed
+  effects:
+    - !type:ModifyBodyParts
+      partType: Leg
+      symmetry: Left
+      protoId: null
+      slotId: null
+    - !type:ModifyBodyParts
+      partType: Leg
+      symmetry: Right
+      protoId: null
+      slotId: null
+
+- type: trait
+  id: AmputatedArm
+  name: trait-amputated-arm-name
+  description: trait-amputated-arm-desc
+  category: HorizonQuirks
+  cost: -4
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: null
+      slotId: null
+
+# Cybernetic Full Body Augmentation
+- type: trait
+  id: CyberneticAugmentation
+  name: trait-cybernetic-augmentation-name
+  description: trait-cybernetic-augmentation-desc
+  category: HorizonQuirks
+  cost: 0
+  effects:
+    - !type:ModifyOrgans
+      protoId: OrganCyberHeart
+      slotId: heart
+    - !type:ModifyOrgans
+      protoId: OrganCyberLungs
+      slotId: lungs
+    - !type:ModifyOrgans
+      protoId: OrganCyberLiver
+      slotId: liver
+    - !type:ModifyOrgans
+      protoId: OrganCyberStomach
+      slotId: stomach
+    - !type:ModifyOrgans
+      protoId: OrganCyberKidneys
+      slotId: kidneys
+
+# Bionic Full Body Augmentation
+- type: trait
+  id: BionicAugmentation
+  name: trait-bionic-augmentation-name
+  description: trait-bionic-augmentation-desc
+  category: HorizonQuirks
+  cost: 0
+  effects:
+    - !type:ModifyOrgans
+      protoId: OrganBioHeart
+      slotId: heart
+    - !type:ModifyOrgans
+      protoId: OrganBioLungs
+      slotId: lungs
+    - !type:ModifyOrgans
+      protoId: OrganBioLiver
+      slotId: liver
+    - !type:ModifyOrgans
+      protoId: OrganBioStomach
+      slotId: stomach
+    - !type:ModifyOrgans
+      protoId: OrganBioKidneys
+      slotId: kidneys
+
+# Bluespace Full Body Augmentation
+- type: trait
+  id: BluespaceAugmentation
+  name: trait-bluespace-augmentation-name
+  description: trait-bluespace-augmentation-desc
+  category: HorizonQuirks
+  cost: 0
+  effects:
+    - !type:ModifyOrgans
+      protoId: OrganBsHeart
+      slotId: heart
+    - !type:ModifyOrgans
+      protoId: OrganBsLungs
+      slotId: lungs
+    - !type:ModifyOrgans
+      protoId: OrganBsLiver
+      slotId: liver
+    - !type:ModifyOrgans
+      protoId: OrganBsStomach
+      slotId: stomach
+    - !type:ModifyOrgans
+      protoId: OrganBsKidneys
+      slotId: kidneys
