@@ -147,6 +147,13 @@
     autoRecharge: true
     autoRechargeRate: 100
   - type: MultiHandedItem
+  - type: FactionAccess
+    allowedFactions:
+    - FactionAnCo
+    blacklistedFactions:
+    - FactionDFI
+    - FactionTTI
+    - FactionSIU
 
 - type: entity
   name: Ардониевый гранатомет АнКо
@@ -192,6 +199,13 @@
     autoRecharge: true
     autoRechargeRate: 50
   - type: MultiHandedItem
+  - type: FactionAccess
+    allowedFactions:
+    - FactionAnCo
+    blacklistedFactions:
+    - FactionDFI
+    - FactionTTI
+    - FactionSIU
 
 - type: entity
   name: винтовка-дизейблер АнКо
@@ -273,6 +287,13 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 10
+  - type: FactionAccess
+    allowedFactions:
+    - FactionAnCo
+    blacklistedFactions:
+    - FactionDFI
+    - FactionTTI
+    - FactionSIU
 
 - type: entity
   name: пистолет совета АнКо
@@ -308,6 +329,13 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 5
+  - type: FactionAccess
+    allowedFactions:
+    - FactionAnCo
+    blacklistedFactions:
+    - FactionDFI
+    - FactionTTI
+    - FactionSIU
 
 - type: entity
   name: модифицированный ПП АнКо
@@ -350,5 +378,63 @@
     magState: mag
     steps: 1
     zeroVisible: true
+  - type: FactionAccess
+    allowedFactions:
+    - FactionAnCo
+    blacklistedFactions:
+    - FactionDFI
+    - FactionTTI
+    - FactionSIU
 
+# оверхеат ганс
 
+- type: entity
+  parent: [BaseWeaponAnCo, BaseAnCoContraband]
+  id: AnCoWeaponHeater
+  name: энергетическая винтовка
+  description: Экспериментальная энергетическая винтовка, системы безопасности ослаблены.
+  suffix: StarHorizon, AnCo, Weapon
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/ancoheatgun.rsi
+    layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-unshaded-0
+          map: ["enum.GunVisualLayers.MagUnshaded"]
+          shader: unshaded
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,3,1
+  - type: Gun
+    fireRate: 2
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    projectileSpeed: 25
+  - type: Battery
+    maxCharge: 500
+    startingCharge: 500
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 50
+  - type: StaticPrice
+    price: 500
+  - type: ProjectileBatteryAmmoProvider
+    proto: StandartLaserAnCo
+    fireCost: 50
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+  - type: GunOverheat
+    heatPerShot: 0.2
+    cooldownRate: 0.05
+    visualOverheat: false
+    unlockThreshold: 0
+    overheatThreshold: 1
+    touchDamage:
+      types:
+        Heat: 20
+  - type: Wieldable
+    unwieldOnUse: true

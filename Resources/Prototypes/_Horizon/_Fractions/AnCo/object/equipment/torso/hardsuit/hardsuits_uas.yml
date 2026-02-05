@@ -34,6 +34,10 @@
   - type: FactionAccess
     allowedFactions:
     - FactionAnCo
+    blacklistedFactions:
+    - FactionDFI
+    - FactionTTI
+    - FactionSIU
 
 # титан
 - type: entity
@@ -72,6 +76,10 @@
   - type: FactionAccess
     allowedFactions:
     - FactionAnCo
+    blacklistedFactions:
+    - FactionDFI
+    - FactionTTI
+    - FactionSIU
 
 # рыцарь
 - type: entity
@@ -110,6 +118,10 @@
   - type: FactionAccess
     allowedFactions:
     - FactionAnCo
+    blacklistedFactions:
+    - FactionDFI
+    - FactionTTI
+    - FactionSIU
 
 # самое имбовый скафандр из всех
 

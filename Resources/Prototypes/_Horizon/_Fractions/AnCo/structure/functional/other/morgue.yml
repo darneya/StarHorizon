@@ -59,8 +59,8 @@
   id: CrystallExtract
   parent: AnCoEFSCrystal
   suffix: StarHorizon, AnCo, Structure
-  name: кристалл Ардония
-  description: Вы ощущаете исходящий от этого кристалла жар.
+  name: капсула спасения
+  description: Вы ощущаете себя кристаллом ардония.
   components:
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/ancoboximplant.rsi

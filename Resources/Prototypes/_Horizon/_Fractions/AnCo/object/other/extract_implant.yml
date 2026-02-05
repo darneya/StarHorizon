@@ -28,6 +28,8 @@
     teleportEffect: "BluespaceAnCoTeleport"
     telepadPrototypeId: "AnCoExtractTelepad"
     bodyBagPrototype: "AnCoCrystallExtract"
+    teleportDelay: 10
+
 # Действия
 
 - type: entity
@@ -44,5 +46,5 @@
     itemIconStyle: BigAction
     priority: -20
     icon:
-      sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/ancocrystall.rsi
-      state: box
+      sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/ancoboximplant.rsi
+      state: icon
