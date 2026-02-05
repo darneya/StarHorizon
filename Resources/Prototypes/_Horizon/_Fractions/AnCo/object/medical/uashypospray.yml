@@ -62,6 +62,7 @@
 
 - type: entity
   name: инжект-капсула
+  categories: [ HideSpawnMenu ]
   parent: BaseItem
   suffix: StarHorizon, AnCo
   description: Капсула для инжектирования веществ в кровь

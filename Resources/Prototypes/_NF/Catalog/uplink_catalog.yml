@@ -42,7 +42,7 @@
   productEntity: NFWeaponRifleAssaultXM40
   discountCategory: rareDiscounts
   cost:
-    Telecrystal: 20
+    Telecrystal: 60
   categories:
   - UplinkWeaponry
 
@@ -142,7 +142,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Launchers/china_lake.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateFilledEmpGrenadeLauncher
   cost:
-    Telecrystal: 25
+    Telecrystal: 20
   categories:
   - UplinkWeaponry
 
