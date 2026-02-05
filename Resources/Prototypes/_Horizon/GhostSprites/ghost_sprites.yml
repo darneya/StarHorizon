@@ -124,3 +124,12 @@
   state: animated
   allowedPlayers:
     - DesBy
+
+- type: ghostSprite
+  id: GhostSpriteIndividualV3rnios
+  name: V3rnios (Личный)
+  rsiPath: _Horizon/Sponsors/Ghosts/individual/v3rnios.rsi
+  state: animated
+  allowedPlayers:
+    - v3rnios
+    - localhost@Joulerk
