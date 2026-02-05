@@ -1,22 +1,39 @@
 # === Базовый прототип ===
+# Торговые товары - объекты пола, которые нельзя брать в руки, только таскать
 - type: entity
   abstract: true
-  parent: BaseItem
+  parent: BaseStructureDynamic
   id: BaseHorizonTradeItem
+  placement:
+    mode: SnapgridCenter
   components:
-  - type: Item
-    size: Normal
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    noRot: true
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.25,-0.29,0.25,0.32"
-        density: 40
+          bounds: "-0.35,-0.35,0.35,0.35"
+        density: 80
         mask:
         - CrateMask
         layer:
         - MachineLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: RequireProjectileTarget
 
 # === Военные товары ===
 
