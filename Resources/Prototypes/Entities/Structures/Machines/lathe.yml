@@ -309,6 +309,7 @@
     - SHEngineeringBoards # Horizon
     - MonoAdvancedShuttleComponents # Horizon
     - CytologyBoards # Horizon
+    - HorizonTradeFabricatorBoardsPack # Horizon - платы торговых фабрикаторов
   - type: EmagLatheRecipes
     emagDynamicPacks: [] # Frontier: empty list
     # - SecurityBoards # Frontier

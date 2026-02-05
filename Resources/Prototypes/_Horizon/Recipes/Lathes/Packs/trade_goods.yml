@@ -1,0 +1,82 @@
+# Пакеты рецептов торговых товаров
+# Подключаются к разным типам торговых фабрикаторов
+
+# === Полный пакет (все товары) ===
+- type: latheRecipePack
+  id: HorizonTradeGoodsPack
+  recipes:
+  # Военные товары
+  - TradeGoodAmmoRecipe
+  - TradeGoodGunpartsRecipe
+  - TradeGoodMiltechRecipe
+  - TradeGoodAlloysRecipe
+  # Промышленные товары
+  - TradeGoodScrapRecipe
+  - TradeGoodGoodScrapRecipe
+  - TradeGoodPlasmaRecipe
+  - TradeGoodCyberneticsRecipe
+  # Продовольствие
+  - TradeGoodFlourRecipe
+  - TradeGoodRiceRecipe
+  - TradeGoodSugarRecipe
+  - TradeGoodScopRecipe
+  - TradeGoodAlcoholRecipe
+  - TradeGoodWineRecipe
+  - TradeGoodVodkaRecipe
+  # Медицина
+  - TradeGoodAntibioticsRecipe
+  # Текстиль
+  - TradeGoodFabricsRecipe
+  # Контрабанда
+  - TradeGoodDrugsRecipe
+  - TradeGoodOrgansRecipe
+  # Товары Союза
+  - TradeGoodUnionWeaponRecipe
+  - TradeGoodUnionArmorRecipe
+  - TradeGoodUnionBallisticRecipe
+
+# === Военный пакет (AnCo специализация) ===
+- type: latheRecipePack
+  id: HorizonTradeGoodsMilitaryPack
+  recipes:
+  # Военные товары
+  - TradeGoodAmmoRecipe
+  - TradeGoodGunpartsRecipe
+  - TradeGoodMiltechRecipe
+  - TradeGoodAlloysRecipe
+  # Кибернетика
+  - TradeGoodCyberneticsRecipe
+  # Товары Союза
+  - TradeGoodUnionWeaponRecipe
+  - TradeGoodUnionArmorRecipe
+  - TradeGoodUnionBallisticRecipe
+  # Контрабанда (только AnCo)
+  - TradeGoodDrugsRecipe
+  - TradeGoodOrgansRecipe
+
+# === Промышленный пакет (DFI специализация) ===
+- type: latheRecipePack
+  id: HorizonTradeGoodsIndustrialPack
+  recipes:
+  # Промышленные товары
+  - TradeGoodScrapRecipe
+  - TradeGoodGoodScrapRecipe
+  - TradeGoodPlasmaRecipe
+  - TradeGoodAlloysRecipe
+  # Текстиль
+  - TradeGoodFabricsRecipe
+
+# === Продовольственный пакет ===
+- type: latheRecipePack
+  id: HorizonTradeGoodsFoodPack
+  recipes:
+  # Продовольствие
+  - TradeGoodFlourRecipe
+  - TradeGoodRiceRecipe
+  - TradeGoodSugarRecipe
+  - TradeGoodScopRecipe
+  - TradeGoodAlcoholRecipe
+  - TradeGoodWineRecipe
+  - TradeGoodVodkaRecipe
+  # Медицина
+  - TradeGoodAntibioticsRecipe

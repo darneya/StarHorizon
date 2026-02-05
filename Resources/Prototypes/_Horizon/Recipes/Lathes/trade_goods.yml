@@ -1,0 +1,189 @@
+# Рецепты производства торговых товаров
+# Для использования в промышленных латтах
+
+# === Военные товары ===
+
+- type: latheRecipe
+  id: TradeGoodAmmoRecipe
+  result: TradeGoodAmmo
+  completetime: 2
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
+  id: TradeGoodGunpartsRecipe
+  result: TradeGoodGunparts
+  completetime: 2
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
+  id: TradeGoodMiltechRecipe
+  result: TradeGoodMiltech
+  completetime: 2
+  materials:
+    Steel: 1000
+    Gold: 300
+    Silver: 200
+
+- type: latheRecipe
+  id: TradeGoodAlloysRecipe
+  result: TradeGoodAlloys
+  completetime: 2
+  materials:
+    Steel: 1000
+    Plasma: 500
+
+# === Промышленные товары ===
+
+- type: latheRecipe
+  id: TradeGoodScrapRecipe
+  result: TradeGoodScrap
+  completetime: 2
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  id: TradeGoodGoodScrapRecipe
+  result: TradeGoodGoodScrap
+  completetime: 2
+  materials:
+    Steel: 1000
+    Glass: 500
+
+- type: latheRecipe
+  id: TradeGoodPlasmaRecipe
+  result: TradeGoodPlasma
+  completetime: 2
+  materials:
+    Steel: 500
+    Plasma: 1000
+
+- type: latheRecipe
+  id: TradeGoodCyberneticsRecipe
+  result: TradeGoodCybernetics
+  completetime: 2
+  materials:
+    Steel: 500
+    Glass: 500
+    Gold: 200
+
+# === Продовольствие ===
+
+- type: latheRecipe
+  id: TradeGoodFlourRecipe
+  result: TradeGoodFlour
+  completetime: 2
+  materials:
+    Biomass: 20
+
+- type: latheRecipe
+  id: TradeGoodRiceRecipe
+  result: TradeGoodRice
+  completetime: 2
+  materials:
+    Biomass: 20
+
+- type: latheRecipe
+  id: TradeGoodSugarRecipe
+  result: TradeGoodSugar
+  completetime: 2
+  materials:
+    Biomass: 20
+
+- type: latheRecipe
+  id: TradeGoodScopRecipe
+  result: TradeGoodScop
+  completetime: 2
+  materials:
+    Biomass: 50
+
+- type: latheRecipe
+  id: TradeGoodAlcoholRecipe
+  result: TradeGoodAlcohol
+  completetime: 2
+  materials:
+    Biomass: 30
+    Glass: 500
+
+- type: latheRecipe
+  id: TradeGoodWineRecipe
+  result: TradeGoodWine
+  completetime: 2
+  materials:
+    Biomass: 50
+    Glass: 1000
+
+- type: latheRecipe
+  id: TradeGoodVodkaRecipe
+  result: TradeGoodVodka
+  completetime: 2
+  materials:
+    Biomass: 50
+    Glass: 500
+
+# === Медицина ===
+
+- type: latheRecipe
+  id: TradeGoodAntibioticsRecipe
+  result: TradeGoodAntibiotics
+  completetime: 2
+  materials:
+    Biomass: 30
+    Glass: 500
+
+# === Текстиль ===
+
+- type: latheRecipe
+  id: TradeGoodFabricsRecipe
+  result: TradeGoodFabrics
+  completetime: 2
+  materials:
+    Cloth: 1000
+    Plastic: 500
+
+# === Контрабанда ===
+
+- type: latheRecipe
+  id: TradeGoodDrugsRecipe
+  result: TradeGoodDrugs
+  completetime: 2
+  materials:
+    Biomass: 50
+    Glass: 1000
+
+- type: latheRecipe
+  id: TradeGoodOrgansRecipe
+  result: TradeGoodOrgans
+  completetime: 3
+  materials:
+    Biomass: 100
+    Glass: 500
+
+# === Антиквариат (не крафтится - только находится) ===
+# TradeGoodNanoTrasen, TradeGoodOldCyber, TradeGoodOldParts
+# Эти товары не могут быть произведены, только найдены при исследовании
+
+# === Товары Союза ===
+
+- type: latheRecipe
+  id: TradeGoodUnionWeaponRecipe
+  result: TradeGoodUnionWeapon
+  completetime: 2
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
+  id: TradeGoodUnionArmorRecipe
+  result: TradeGoodUnionArmor
+  completetime: 2
+  materials:
+    Steel: 1000
+
+- type: latheRecipe
+  id: TradeGoodUnionBallisticRecipe
+  result: TradeGoodUnionBallistic
+  completetime: 2
+  materials:
+    Steel: 1000
+    Uranium: 500

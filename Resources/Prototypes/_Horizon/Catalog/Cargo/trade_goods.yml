@@ -1,0 +1,284 @@
+# Карго продукты - торговые товары
+# Система фракционной торговли: market (общий), anco (военные/кибернетика), dfi (промышленные)
+
+# === Общий рынок (market) - доступны везде ===
+
+# Базовые товары
+- type: cargoProduct
+  id: TradeGoodScrapProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  product: TradeGoodScrap
+  cost: 450
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodFlourProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  product: TradeGoodFlour
+  cost: 400
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodRiceProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  product: TradeGoodRice
+  cost: 400
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodSugarProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  product: TradeGoodSugar
+  cost: 400
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodAlcoholProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  product: TradeGoodAlcohol
+  cost: 650
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodFabricsProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles4.rsi
+    state: engi-base
+  product: TradeGoodFabrics
+  cost: 1200
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+# Средние товары
+- type: cargoProduct
+  id: TradeGoodAmmoProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  product: TradeGoodAmmo
+  cost: 900
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodGunpartsProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  product: TradeGoodGunparts
+  cost: 1200
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodGoodScrapProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  product: TradeGoodGoodScrap
+  cost: 1000
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodScopProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  product: TradeGoodScop
+  cost: 1800
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodWineProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles4.rsi
+    state: engi-base
+  product: TradeGoodWine
+  cost: 1500
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodVodkaProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  product: TradeGoodVodka
+  cost: 1800
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+- type: cargoProduct
+  id: TradeGoodAntibioticsProduct
+  icon:
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  product: TradeGoodAntibiotics
+  cost: 1800
+  category: cargoproduct-category-name-tradegoods
+  group: market
+
+# === Товары AnCo (специализация: военные, кибернетика) ===
+
+- type: cargoProduct
+  id: TradeGoodMiltechAnCo
+  icon:
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  product: TradeGoodMiltech
+  cost: 4000
+  category: cargoproduct-category-name-tradegoods
+  group: anco
+
+- type: cargoProduct
+  id: TradeGoodCyberneticsAnCo
+  icon:
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  product: TradeGoodCybernetics
+  cost: 2200
+  category: cargoproduct-category-name-tradegoods
+  group: anco
+
+- type: cargoProduct
+  id: TradeGoodUnionWeaponAnCo
+  icon:
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  product: TradeGoodUnionWeapon
+  cost: 1000
+  category: cargoproduct-category-name-tradegoods
+  group: anco
+
+- type: cargoProduct
+  id: TradeGoodUnionArmorAnCo
+  icon:
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  product: TradeGoodUnionArmor
+  cost: 1000
+  category: cargoproduct-category-name-tradegoods
+  group: anco
+
+- type: cargoProduct
+  id: TradeGoodUnionBallisticAnCo
+  icon:
+    sprite: _NF/Objects/Tools/bundles5.rsi
+    state: engi-base
+  product: TradeGoodUnionBallistic
+  cost: 1800
+  category: cargoproduct-category-name-tradegoods
+  group: anco
+
+# Контрабанда AnCo (только для AnCo)
+- type: cargoProduct
+  id: TradeGoodDrugsAnCo
+  icon:
+    sprite: _NF/Objects/Tools/bundles5.rsi
+    state: engi-base
+  product: TradeGoodDrugs
+  cost: 3000
+  category: cargoproduct-category-name-tradegoods
+  group: anco
+
+- type: cargoProduct
+  id: TradeGoodOrgansAnCo
+  icon:
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  product: TradeGoodOrgans
+  cost: 5000
+  category: cargoproduct-category-name-tradegoods
+  group: anco
+
+# === Товары DFI (специализация: промышленные, плазма, сплавы) ===
+
+- type: cargoProduct
+  id: TradeGoodPlasmaDFI
+  icon:
+    sprite: _NF/Objects/Tools/bundles5.rsi
+    state: engi-base
+  product: TradeGoodPlasma
+  cost: 2500
+  category: cargoproduct-category-name-tradegoods
+  group: dfi
+
+- type: cargoProduct
+  id: TradeGoodAlloysDFI
+  icon:
+    sprite: _NF/Objects/Tools/bundles4.rsi
+    state: engi-base
+  product: TradeGoodAlloys
+  cost: 3000
+  category: cargoproduct-category-name-tradegoods
+  group: dfi
+
+# Антиквариат DFI (специализация на исследованиях)
+- type: cargoProduct
+  id: TradeGoodNanoTrasenDFI
+  icon:
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  product: TradeGoodNanoTrasen
+  cost: 3500
+  category: cargoproduct-category-name-tradegoods
+  group: dfi
+
+- type: cargoProduct
+  id: TradeGoodOldCyberDFI
+  icon:
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  product: TradeGoodOldCyber
+  cost: 4000
+  category: cargoproduct-category-name-tradegoods
+  group: dfi
+
+- type: cargoProduct
+  id: TradeGoodOldPartsDFI
+  icon:
+    sprite: _NF/Objects/Tools/bundles4.rsi
+    state: engi-base
+  product: TradeGoodOldParts
+  cost: 4000
+  category: cargoproduct-category-name-tradegoods
+  group: dfi
+
+# === Торговые акты (редкие, только через DFI) ===
+
+- type: cargoProduct
+  id: TradeDeed10kProduct
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: paper
+  product: TradeDeed10k
+  cost: 12000
+  category: cargoproduct-category-name-tradegoods
+  group: dfi
+
+- type: cargoProduct
+  id: TradeDeedExoticProduct
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: paper_stamp-centcom
+  product: TradeDeedExotic
+  cost: 30000
+  category: cargoproduct-category-name-tradegoods
+  group: dfi

@@ -1,0 +1,365 @@
+# === Базовый прототип ===
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseHorizonTradeItem
+  components:
+  - type: Item
+    size: Normal
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.29,0.25,0.32"
+        density: 40
+        mask:
+        - CrateMask
+        layer:
+        - MachineLayer
+
+# === Военные товары ===
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodAmmo
+  name: Запечатанный ящик боеприпасов
+  description: Герметично запечатанный ящик с довоенными боеприпасами. Наклейка на боку указывает на консоль экспорта.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodGunparts
+  name: Запечатанный ящик оружейных деталей
+  description: Герметично запечатанный ящик с разнообразными оружейными деталями. Наклейка на боку указывает на консоль экспорта.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodMiltech
+  name: Поставка военной кибернетики
+  description: Запечатанный ящик с военными кибернетическими деталями. Бесполезны сами по себе, требуют специализированной обработки. Наклейка указывает на Shinohara Heavy Industries.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 3500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodAlloys
+  name: Поставка высокосортных сплавов
+  description: Запечатанный ящик со специализированными пластальными сплавами. Чаще всего используются в военных судах.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles4.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 2500
+
+# === Промышленные товары ===
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodScrap
+  name: Запечатанный ящик лома
+  description: Герметично запечатанный ящик с разнообразным ломом. Наклейка на боку указывает на консоль экспорта.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodGoodScrap
+  name: Запечатанная поставка компонентов
+  description: Запечатанная поставка пригодных к использованию компонентов. Полурабочая электроника, в основном целые обшивочные плиты...
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 800
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodPlasma
+  name: Запечатанный ящик плазменного топлива
+  description: Герметично запечатанный ящик с переработанными плазменными топливными стержнями, топливными насосами и жидкостными канистрами.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles5.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodCybernetics
+  name: Запечатанный ящик кибернетических деталей
+  description: Герметично запечатанный ящик с высококачественными протезами и запчастями. Наклейка на боку указывает на консоль экспорта.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 1800
+
+# === Продовольствие ===
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodFlour
+  name: Мешок экспортной муки
+  description: Мешок экспортной муки высшего сорта.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodRice
+  name: Мешок экспортного риса
+  description: Мешок экспортного риса высшего сорта.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodSugar
+  name: Мешок экспортного сахара
+  description: Мешок экспортного сахара высшего сорта.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 300
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodScop
+  name: Запечатанный ящик СКОП
+  description: Ящик с одноклеточными органическими белками - сокращённо СКОП. Обычно в форме синтетического мяса.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodAlcohol
+  name: Ящик алкоголя
+  description: Запечатанный ящик пива, изготовленного из синтетической органики.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodWine
+  name: Запечатанная поставка вина
+  description: Запечатанный ящик выдержанного, качественного вина. Наклейка предупреждает, что продукт является имитацией.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles4.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 1200
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodVodka
+  name: Ящик водки
+  description: Запечатанный ящик дистиллированной картофельной водки марки "Ченгридз". Наклейка указывает на консоль экспорта.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 1500
+
+# === Медицина ===
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodAntibiotics
+  name: Запечатанный кейс антибиотиков
+  description: Герметично запечатанный кейс с высококачественными антибиотиками. Наклейка на боку указывает на консоль экспорта.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 1500
+
+# === Текстиль ===
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodFabrics
+  name: Запечатанная поставка тканей
+  description: Запечатанная поставка качественных имперских тканей.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles4.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 1000
+
+# === Контрабанда ===
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodDrugs
+  name: Защищённый химический ящик
+  description: Защищённый ящик с "весёлыми химическими побочными продуктами". Без идентификационных наклеек, невозможно определить место производства.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles5.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodOrgans
+  name: Немаркированная поставка
+  description: Защищённый ящик с реконструированными гуманоидными органами, внутренность охлаждается для предотвращения гниения. Без идентификационных наклеек.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 4000
+
+# === Антиквариат ===
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodNanoTrasen
+  name: Корпоративный ящик NanoTrasen
+  description: Антикварный грузовой ящик, полный потребительских товаров NanoTrasen, которые так и не были доставлены. Сам по себе не стоит много, но коллекционеры могут заплатить приличную сумму.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 3000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodOldCyber
+  name: Антикварный ящик кибернетики
+  description: Антикварный грузовой ящик, полный кибернетики NanoTrasen и запчастей, которые так и не были доставлены. Большая часть сломана, но запечатанные ящики перепродаются мусорщикам по приличной цене.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 3500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodOldParts
+  name: Антикварный ящик запчастей
+  description: Антикварный грузовой ящик, полный механических изделий NanoTrasen и запчастей, которые так и не были доставлены. Большая часть сломана, но запечатанные ящики перепродаются мусорщикам по приличной цене.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles4.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 3500
+
+# === Товары Союза ===
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodUnionWeapon
+  name: Ящик оружейных деталей Союза
+  description: Ящик с массово производимыми оружейными деталями, изготовленными Союзом.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 800
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodUnionArmor
+  name: Ящик бронедеталей Союза
+  description: Ящик с массово производимыми бронедеталями, изготовленными Союзом.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 800
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodUnionBallistic
+  name: Запечатанный ящик баллистики Союза
+  description: Ящик с деталями баллистического вооружения производства Союза.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles5.rsi
+    state: engi-base
+  - type: StaticPrice
+    price: 1500
+
+# === Торговые акты ===
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeed10k
+  name: Акт о доставке
+  description: Напечатанный акт о доставке. Угловатые буквы сообщают, что этот акт стоит десять тысяч кредитов Союза на официальной сертифицированной станции.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: paper
+  - type: Item
+    size: Tiny
+  - type: StaticPrice
+    price: 10000
+
+- type: entity
+  parent: BaseItem
+  id: TradeDeedExotic
+  name: Экзотический акт о доставке
+  description: Напечатанный акт о доставке редких товаров. Угловатые буквы сообщают, что этот акт стоит двадцать пять тысяч кредитов Союза на официальной сертифицированной станции.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: paper_stamp-centcom
+  - type: Item
+    size: Tiny
+  - type: StaticPrice
+    price: 25000
