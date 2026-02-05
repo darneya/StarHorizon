@@ -36,6 +36,7 @@
   - type: RequireProjectileTarget
 
 # === Военные товары ===
+# Военные товары дороже на ANCO, дешевле на DFI
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -46,8 +47,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 750
+  - type: HorizonFactionPrice
+    priceMarket: 600
+    priceAnco: 900      # +50% - ANCO нужны боеприпасы
+    priceDfi: 500       # -17% - DFI производит свои
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -58,8 +61,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles2.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 1000
+  - type: HorizonFactionPrice
+    priceMarket: 800
+    priceAnco: 1200     # +50%
+    priceDfi: 700       # -12%
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -70,8 +75,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles3.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 3500
+  - type: HorizonFactionPrice
+    priceMarket: 2800
+    priceAnco: 4200     # +50%
+    priceDfi: 2500      # -11%
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -82,10 +89,13 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles4.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 2500
+  - type: HorizonFactionPrice
+    priceMarket: 2000
+    priceAnco: 3000     # +50%
+    priceDfi: 1800      # -10%
 
 # === Промышленные товары ===
+# Промышленные товары дороже на DFI, сбалансированы на других
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -96,8 +106,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 300
+  - type: HorizonFactionPrice
+    priceMarket: 250
+    priceAnco: 200      # -20%
+    priceDfi: 400       # +60% - DFI перерабатывает лом
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -108,8 +120,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles2.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 800
+  - type: HorizonFactionPrice
+    priceMarket: 650
+    priceAnco: 550      # -15%
+    priceDfi: 1000      # +54% - DFI ценит компоненты
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -120,8 +134,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles5.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 2000
+  - type: HorizonFactionPrice
+    priceMarket: 1600
+    priceAnco: 1400     # -12%
+    priceDfi: 2400      # +50% - DFI нужна энергия
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -132,10 +148,13 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles3.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 1800
+  - type: HorizonFactionPrice
+    priceMarket: 1500
+    priceAnco: 1300     # -13%
+    priceDfi: 2200      # +47%
 
 # === Продовольствие ===
+# Еда дороже на Market, дешевле в промышленных зонах
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -146,8 +165,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 300
+  - type: HorizonFactionPrice
+    priceMarket: 400    # +33% - рынок ценит еду
+    priceAnco: 250
+    priceDfi: 200
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -158,8 +179,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 300
+  - type: HorizonFactionPrice
+    priceMarket: 400
+    priceAnco: 250
+    priceDfi: 200
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -170,8 +193,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 300
+  - type: HorizonFactionPrice
+    priceMarket: 400
+    priceAnco: 250
+    priceDfi: 200
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -182,8 +207,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles2.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 1500
+  - type: HorizonFactionPrice
+    priceMarket: 2000   # +33%
+    priceAnco: 1200
+    priceDfi: 1000
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -194,8 +221,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 500
+  - type: HorizonFactionPrice
+    priceMarket: 650
+    priceAnco: 400
+    priceDfi: 350
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -206,8 +235,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles4.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 1200
+  - type: HorizonFactionPrice
+    priceMarket: 1600   # +33%
+    priceAnco: 1000
+    priceDfi: 800
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -218,8 +249,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 1500
+  - type: HorizonFactionPrice
+    priceMarket: 2000   # +33%
+    priceAnco: 1200
+    priceDfi: 1000
 
 # === Медицина ===
 
@@ -232,8 +265,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles3.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 1500
+  - type: HorizonFactionPrice
+    priceMarket: 1800   # +20%
+    priceAnco: 1500
+    priceDfi: 1200
 
 # === Текстиль ===
 
@@ -246,10 +281,13 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles4.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 1000
+  - type: HorizonFactionPrice
+    priceMarket: 1300   # +30%
+    priceAnco: 800
+    priceDfi: 700
 
 # === Контрабанда ===
+# Контрабанда дороже на DFI (чёрный рынок)
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -260,8 +298,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles5.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 2500
+  - type: HorizonFactionPrice
+    priceMarket: 1500
+    priceAnco: 2000
+    priceDfi: 3500      # +133% - чёрный рынок DFI
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -272,10 +312,13 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles3.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 4000
+  - type: HorizonFactionPrice
+    priceMarket: 2500
+    priceAnco: 3000
+    priceDfi: 5500      # +120% - чёрный рынок DFI
 
 # === Антиквариат ===
+# Антиквариат дороже на Market (коллекционеры)
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -286,8 +329,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles2.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 3000
+  - type: HorizonFactionPrice
+    priceMarket: 4000   # +33% - коллекционеры
+    priceAnco: 2500
+    priceDfi: 2000
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -298,8 +343,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles3.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 3500
+  - type: HorizonFactionPrice
+    priceMarket: 4500   # +29%
+    priceAnco: 3000
+    priceDfi: 2500
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -310,10 +357,13 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles4.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 3500
+  - type: HorizonFactionPrice
+    priceMarket: 4500
+    priceAnco: 3000
+    priceDfi: 2500
 
 # === Товары Союза ===
+# Товары Союза дороже на ANCO
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -324,8 +374,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles2.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 800
+  - type: HorizonFactionPrice
+    priceMarket: 650
+    priceAnco: 1000     # +54%
+    priceDfi: 550
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -336,8 +388,10 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles3.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 800
+  - type: HorizonFactionPrice
+    priceMarket: 650
+    priceAnco: 1000     # +54%
+    priceDfi: 550
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -348,10 +402,13 @@
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles5.rsi
     state: engi-base
-  - type: StaticPrice
-    price: 1500
+  - type: HorizonFactionPrice
+    priceMarket: 1200
+    priceAnco: 1800     # +50%
+    priceDfi: 1000
 
 # === Торговые акты ===
+# Акты используют StaticPrice т.к. это бумажные документы, не зависящие от станции
 
 - type: entity
   parent: BaseItem
@@ -364,8 +421,10 @@
     state: paper
   - type: Item
     size: Tiny
-  - type: StaticPrice
-    price: 10000
+  - type: HorizonFactionPrice
+    priceMarket: 10000
+    priceAnco: 10000
+    priceDfi: 10000
 
 - type: entity
   parent: BaseItem
@@ -378,5 +437,7 @@
     state: paper_stamp-centcom
   - type: Item
     size: Tiny
-  - type: StaticPrice
-    price: 25000
+  - type: HorizonFactionPrice
+    priceMarket: 25000
+    priceAnco: 25000
+    priceDfi: 25000
