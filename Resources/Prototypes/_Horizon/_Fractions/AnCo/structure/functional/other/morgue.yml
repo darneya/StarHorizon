@@ -1,8 +1,8 @@
 - type: entity
-  id: AnCoCrystallExtract
+  id: AnCoCrystallExtractBox
   parent: AnCoEFSCrystal
   suffix: StarHorizon, AnCo, Structure
-  name: кристалл Ардония
+  name: капсула спасения
   description: Вы ощущаете исходящий от этого кристалла жар.
   components:
   - type: Sprite
@@ -42,7 +42,7 @@
               collection: GlassBreak
           - !type:SpawnEntitiesBehavior
             spawn:
-              SheetArdon:
+              ArdonSheet1:
                 min: 1
                 max: 3
           - !type:DoActsBehavior
@@ -56,19 +56,15 @@
     energy: 0
 
 - type: entity
-  id: CrystallExtract
+  id: AnCoCrystallExtract
   parent: AnCoEFSCrystal
   suffix: StarHorizon, AnCo, Structure
-  name: капсула спасения
+  name: кристалл Ардония
   description: Вы ощущаете себя кристаллом ардония.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/ancoboximplant.rsi
-    layers:
-    - state: base
-      map: ["enum.StorageVisualLayers.Base"]
-    - state: closed
-      map: ["enum.StorageVisualLayers.Door"]
+    sprite: _Horizon/_Fractions/AnCo/Structures/Specific/crystallardon.rsi
+    state: crystall
   - type: EntityStorage
     capacity: 1
     isCollidableWhenOpen: true
@@ -99,15 +95,15 @@
               collection: GlassBreak
           - !type:SpawnEntitiesBehavior
             spawn:
-              SheetArdon:
+              ArdonOre1:
                 min: 1
                 max: 3
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-  - type: EntityStorageVisuals
-    stateBaseClosed: base
-    stateDoorOpen: open
-    stateDoorClosed: closed
+  - type: Weldable
+    fuel: 1000
+    time: 600
+    isWelded: true
   - type: PointLight
     radius: 0
     energy: 0

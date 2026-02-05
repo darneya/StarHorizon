@@ -75,7 +75,7 @@
 
 - type: entity
   parent: ArdonOre
-  id: StarHorizon, AnCo, Material, ArdonOre1
+  id: ArdonOre1
   suffix: StarHorizon, AnCo, Material, Single
   components:
   - type: Sprite
