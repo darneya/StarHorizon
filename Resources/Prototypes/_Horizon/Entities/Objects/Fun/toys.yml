@@ -825,3 +825,24 @@
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Effects/Footsteps/slime1.ogg
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieShadowLord
+  name: Владыка Теней
+  description: Плюшевая игрушка сшитая из дорогих материалов и частицы тьмы. Идеален для объятий и подрывов государств.
+  suffix: StarHorizon
+  components:
+  - type: StaticPrice
+    price: 150
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Fun/plushieshadowlord.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _StarHorizon/Objects/Fun/plushieshadowlord.rsi
+  - type: PointLight
+    netsync: false
+    radius: 1.5
+    energy: 1.0
+    color: "#4B0082"
