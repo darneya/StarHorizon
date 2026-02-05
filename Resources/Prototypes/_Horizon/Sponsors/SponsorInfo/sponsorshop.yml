@@ -4513,6 +4513,14 @@
   priority: 16
   prototypeId: PlushieGirl
 
+- type: sponsorShopListing
+  id: SponsorShopPlush66
+  name: Владыка Теней
+  description: Плюшевая игрушка сшитая из дорогих материалов и частицы тьмы. Идеален для объятий и подрывов государств.
+  cost: 1
+  priority: 16
+  prototypeId: PlushieShadowLord
+
 # region Игры и инструменты
 
 - type: sponsorShopListing
