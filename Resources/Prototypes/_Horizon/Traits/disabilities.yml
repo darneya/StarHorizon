@@ -141,7 +141,7 @@
   name: trait-amputated-arm-name
   description: trait-amputated-arm-desc
   category: HorizonQuirks
-  cost: -5ц
+  cost: -5
   effects:
     - !type:ModifyBodyParts
       partType: Arm
@@ -283,6 +283,8 @@
     - !type:ModifyOrgans
       protoId: EyeImplantNight
       slotId: eyes
+
+- type: trait
   id: BadShooter
   name: trait-bad-shooter-name
   description: trait-bad-shooter-desc
