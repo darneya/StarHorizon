@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared._Horizon.FoodBoost;
+using Content.Shared.Cargo.Components;
 using Content.Shared.Damage;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Nutrition;
@@ -33,6 +34,8 @@ public sealed class FoodBoostSystem : SharedFoodBoostSystem
             { "Poison", -1 },
         }
     };
+
+    private const double PriceBonus = 200;
 
     public override void Initialize()
     {
@@ -106,6 +109,9 @@ public sealed class FoodBoostSystem : SharedFoodBoostSystem
             comp.RegenAmount = _regenAmount;
             comp.Duration = comp.Advanced ? _advancedRegenDuration : _midRegenDuration;
         }
+
+        var staticPrice = EnsureComp<StaticPriceComponent>(target);
+        staticPrice.Price += PriceBonus;
 
         Dirty(target, comp);
     }
