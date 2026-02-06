@@ -135,3 +135,13 @@
   cost: -3
   components:
   - type: LowPainTolerance
+
+- type: trait
+  id: BadShooter
+  name: trait-bad-shooter-name
+  description: trait-bad-shooter-desc
+  category: HorizonQuirks
+  cost: -4
+  components:
+  - type: RangedWeaponSpreadModifiers
+    modifier: 1.4
