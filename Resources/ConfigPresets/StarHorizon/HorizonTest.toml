@@ -34,7 +34,9 @@ rules_file = "FrontierRuleset"
 lobby_name = "StarHorizon"
 
 [console]
-login_host_user = "Makot"
+# Указать CKey игрока, который по-умолчанию и не зависимо ни от чего
+# будет иметь НАИВЫСШИЕ права на сервере (HOST)
+login_host_user = "EvilBug"
 
 [admin]
 see_own_notes = true
