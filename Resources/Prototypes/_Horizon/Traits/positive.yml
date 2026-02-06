@@ -138,6 +138,7 @@
   name: trait-cook-name
   description: trait-cook-desc
   category: HorizonQuirks
+  group: Chef
   cost: 3
   components:
   - type: Chef
@@ -147,6 +148,7 @@
   name: trait-chef-name
   description: trait-chef-desc
   category: HorizonQuirks
+  group: Chef
   cost: 5
   components:
   - type: Chef
