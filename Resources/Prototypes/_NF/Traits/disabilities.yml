@@ -29,7 +29,7 @@
   name: trait-unclonable-name
   description: trait-unclonable-desc
   category: HorizonQuirks # Horizon tweak
-  cost: -2 # Horizon tweak
+  cost: -6 # Horizon tweak
   components:
     - type: Unclonable
 
