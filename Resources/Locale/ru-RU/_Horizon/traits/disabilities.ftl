@@ -14,13 +14,13 @@ trait-hemophilia-name = Гемофилия
 trait-hemophilia-desc = Натуральное заживление кровотечения у вас длится в 2 раза дольше нормы.
 
 trait-will-to-die-name = Тяга к смерти
-trait-will-to-die-desc = Ваш порог смерти уменьшается на 15 единиц.
+trait-will-to-die-desc = Ваш порог смерти уменьшается на 20 единиц.
 
 trait-glass-jaw-name = Хрупкость
-trait-glass-jaw-desc = Ваш порог критического состояниея уменьшается на 10 единиц.
+trait-glass-jaw-desc = Ваш порог критического состояния уменьшается на 20 единиц.
 
 trait-bad-knees-name = Слабые колени
-trait-bad-knees-desc = Ваше время оглушения от потери выносливости становится гораздо дольше.
+trait-bad-knees-desc = Ваше время оглушения от потери выносливости становится гораздо дольше, в 1,5 раза.
 
 trait-lethargy-name = Малая выносливость
 trait-lethargy-desc = Ваша выносливость становится меньше, и восстанавливается хуже.
@@ -40,31 +40,5 @@ trait-low-pain-tolerance-desc = Вы получаете дополнительн
 trait-amputated-arm-name = Ампутированная рука
 trait-amputated-arm-desc = Ваша правая рука была ампутирована.
 
-trait-cybernetic-augmentation-name = Кибернетическая аугментация
-trait-cybernetic-augmentation-desc = Ваше тело было полностью модифицировано кибернетическими имплантами. Все конечности и органы заменены на кибернетические.
-
-trait-bionic-augmentation-name = Бионическая аугментация
-trait-bionic-augmentation-desc = Ваше тело было полностью модифицировано бионическими имплантами. Все конечности и органы заменены на бионические.
-
-trait-bluespace-augmentation-name = Блюспейс аугментация
-trait-bluespace-augmentation-desc = Ваше тело было полностью модифицировано блюспейс технологиями. Все конечности и органы заменены на блюспейс версии.
-
-trait-eye-implant-welding-name = Сварочный глазной имплант
-trait-eye-implant-welding-desc = Ваши глаза защищены от сварки.
-
-trait-eye-implant-diagnostic-name = Инженерный глазной имплант
-trait-eye-implant-diagnostic-desc = Вы можете видеть состояние механизмов без диагностического визора.
-
-trait-eye-implant-medical-name = Медицинский глазной имплант
-trait-eye-implant-medical-desc = Вы можете видеть состояние здоровья гуманоидах без медицинского визора.
-
-trait-eye-implant-chemical-name = Химический глазной имплант
-trait-eye-implant-chemical-desc = Вы можете видеть информацию о реагентах без химического визора.
-
-trait-eye-implant-security-name = Охранный глазной имплант
-trait-eye-implant-security-desc = Вы можете видеть информацию о гуманоидах без охранного визора.
-
-trait-eye-implant-night-name = Имплант ночного зрения
-trait-eye-implant-night-desc = Вы можете видеть в темноте без очков.
 trait-bad-shooter-name = Плохой стрелок
 trait-bad-shooter-desc = По тем или иным причинам вы очень плохо контролируете отдачу оружия.

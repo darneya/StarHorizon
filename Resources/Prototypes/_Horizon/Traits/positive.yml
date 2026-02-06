@@ -1,3 +1,5 @@
+# region Positive
+
 - type: trait
   id: WillToLive
   name: trait-will-to-live-name
@@ -123,22 +125,27 @@
   components:
   - type: ProtectedFromStepTriggers
 
+# region TraitCombat
+
 - type: trait
   id: GoodShooter
   name: trait-good-shooter-name
   description: trait-good-shooter-desc
   category: HorizonQuirks
+  group: TraitCombat
   cost: 6
   components:
   - type: RangedWeaponSpreadModifiers
     modifier: 0.55
+
+# region TraitChef
 
 - type: trait
   id: Cook
   name: trait-cook-name
   description: trait-cook-desc
   category: HorizonQuirks
-  group: Chef
+  group: TraitChef
   cost: 3
   components:
   - type: Chef
@@ -148,8 +155,157 @@
   name: trait-chef-name
   description: trait-chef-desc
   category: HorizonQuirks
-  group: Chef
+  group: TraitChef
   cost: 5
   components:
   - type: Chef
     advanced: true
+
+# region TraitEyes
+
+- type: trait
+  id: EyeImplantWeldingTrait
+  name: trait-eye-implant-welding-name
+  description: trait-eye-implant-welding-desc
+  category: HorizonQuirks
+  group: TraitEyes
+  cost: 3
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantWelding
+      slotId: eye_implant
+
+- type: trait
+  id: EyeImplantDiagnosticTrait
+  name: trait-eye-implant-diagnostic-name
+  description: trait-eye-implant-diagnostic-desc
+  category: HorizonQuirks
+  group: TraitEyes
+  cost: 5
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantDiagnostic
+      slotId: eye_implant
+
+- type: trait
+  id: EyeImplantMedicalTrait
+  name: trait-eye-implant-medical-name
+  description: trait-eye-implant-medical-desc
+  category: HorizonQuirks
+  group: TraitEyes
+  cost: 5
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantMedical
+      slotId: eye_implant
+
+- type: trait
+  id: EyeImplantChemicalTrait
+  name: trait-eye-implant-chemical-name
+  description: trait-eye-implant-chemical-desc
+  category: HorizonQuirks
+  group: TraitEyes
+  cost: 5
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantChemical
+      slotId: eye_implant
+
+- type: trait
+  id: EyeImplantSecurityTrait
+  name: trait-eye-implant-security-name
+  description: trait-eye-implant-security-desc
+  category: HorizonQuirks
+  group: TraitEyes
+  cost: 5
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantSecurity
+      slotId: eye_implant
+
+- type: trait
+  id: EyeImplantNightTrait
+  name: trait-eye-implant-night-name
+  description: trait-eye-implant-night-desc
+  category: HorizonQuirks
+  group: TraitEyes
+  cost: 10
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantNight
+      slotId: eye_implant
+
+
+# region TraitOrgans
+
+- type: trait
+  id: CyberneticAugmentation
+  name: trait-cybernetic-augmentation-name
+  description: trait-cybernetic-augmentation-desc
+  category: HorizonQuirks
+  group: TraitAugmentation
+  cost: 10
+  effects:
+    - !type:ModifyOrgans
+      protoId: OrganCyberHeart
+      slotId: heart
+    - !type:ModifyOrgans
+      protoId: OrganCyberLungs
+      slotId: lungs
+    - !type:ModifyOrgans
+      protoId: OrganCyberLiver
+      slotId: liver
+    - !type:ModifyOrgans
+      protoId: OrganCyberStomach
+      slotId: stomach
+    - !type:ModifyOrgans
+      protoId: OrganCyberKidneys
+      slotId: kidneys
+
+- type: trait
+  id: BionicAugmentation
+  name: trait-bionic-augmentation-name
+  description: trait-bionic-augmentation-desc
+  category: HorizonQuirks
+  group: TraitAugmentation
+  cost: 10
+  effects:
+    - !type:ModifyOrgans
+      protoId: OrganBioHeart
+      slotId: heart
+    - !type:ModifyOrgans
+      protoId: OrganBioLungs
+      slotId: lungs
+    - !type:ModifyOrgans
+      protoId: OrganBioLiver
+      slotId: liver
+    - !type:ModifyOrgans
+      protoId: OrganBioStomach
+      slotId: stomach
+    - !type:ModifyOrgans
+      protoId: OrganBioKidneys
+      slotId: kidneys
+
+- type: trait
+  id: BluespaceAugmentation
+  name: trait-bluespace-augmentation-name
+  description: trait-bluespace-augmentation-desc
+  category: HorizonQuirks
+  group: TraitAugmentation
+  cost: 10
+  effects:
+    - !type:ModifyOrgans
+      protoId: OrganBsHeart
+      slotId: heart
+    - !type:ModifyOrgans
+      protoId: OrganBsLungs
+      slotId: lungs
+    - !type:ModifyOrgans
+      protoId: OrganBsLiver
+      slotId: liver
+    - !type:ModifyOrgans
+      protoId: OrganBsStomach
+      slotId: stomach
+    - !type:ModifyOrgans
+      protoId: OrganBsKidneys
+      slotId: kidneys

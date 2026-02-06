@@ -36,3 +36,30 @@ trait-cook-desc = Приготовленная вами в хороших усл
 
 trait-chef-name = Шеф-повар
 trait-chef-desc = Приготовленная вами в хороших условиях еда имеет усиленные положительные эффекты.
+
+trait-cybernetic-augmentation-name = Кибернетическая аугментация
+trait-cybernetic-augmentation-desc = Ваше тело было полностью модифицировано кибернетическими имплантами. Все органы заменены на кибернетические.
+
+trait-bionic-augmentation-name = Бионическая аугментация
+trait-bionic-augmentation-desc = Ваше тело было полностью модифицировано бионическими имплантами. Все органы заменены на бионические.
+
+trait-bluespace-augmentation-name = Блюспейс аугментация
+trait-bluespace-augmentation-desc = Ваше тело было полностью модифицировано блюспейс технологиями. Все органы заменены на блюспейс версии.
+
+trait-eye-implant-welding-name = Сварочный глазной имплант
+trait-eye-implant-welding-desc = Ваши глаза защищены от сварки.
+
+trait-eye-implant-diagnostic-name = Инженерный глазной имплант
+trait-eye-implant-diagnostic-desc = Вы можете видеть состояние механизмов без диагностического визора.
+
+trait-eye-implant-medical-name = Медицинский глазной имплант
+trait-eye-implant-medical-desc = Вы можете видеть состояние здоровья гуманоидах без медицинского визора.
+
+trait-eye-implant-chemical-name = Химический глазной имплант
+trait-eye-implant-chemical-desc = Вы можете видеть информацию о реагентах без химического визора.
+
+trait-eye-implant-security-name = Охранный глазной имплант
+trait-eye-implant-security-desc = Вы можете видеть информацию о гуманоидах без охранного визора.
+
+trait-eye-implant-night-name = Имплант ночного зрения
+trait-eye-implant-night-desc = Вы можете видеть в темноте без очков.

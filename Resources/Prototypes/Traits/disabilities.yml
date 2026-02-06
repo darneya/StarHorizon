@@ -6,6 +6,7 @@
   description: trait-blindness-desc
   traitGear: WhiteCane
   category: HorizonQuirks # Horizon tweak
+  group: TraitEyes # Horizon tweak
   cost: -6 # Horizon tweak
   whitelist:
     components:
@@ -19,6 +20,7 @@
   description: trait-poor-vision-desc
   traitGear: ClothingEyesGlasses
   category: HorizonQuirks # Horizon tweak
+  group: TraitEyes # Horizon tweak
   cost: -1 # Horizon tweak
   whitelist:
     components:
