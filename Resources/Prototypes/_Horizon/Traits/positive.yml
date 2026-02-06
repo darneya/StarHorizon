@@ -122,3 +122,34 @@
   cost: 3
   components:
   - type: ProtectedFromStepTriggers
+
+- type: trait
+  id: GoodShooter
+  name: trait-good-shooter-name
+  description: trait-good-shooter-desc
+  category: HorizonQuirks
+  cost: 6
+  components:
+  - type: RangedWeaponSpreadModifiers
+    modifier: 0.55
+
+- type: trait
+  id: Cook
+  name: trait-cook-name
+  description: trait-cook-desc
+  category: HorizonQuirks
+  group: Chef
+  cost: 3
+  components:
+  - type: Chef
+
+- type: trait
+  id: Chef
+  name: trait-chef-name
+  description: trait-chef-desc
+  category: HorizonQuirks
+  group: Chef
+  cost: 5
+  components:
+  - type: Chef
+    advanced: true

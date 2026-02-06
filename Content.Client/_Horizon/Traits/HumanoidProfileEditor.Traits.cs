@@ -91,15 +91,7 @@ public sealed partial class HumanoidProfileEditor
 
             foreach (var quirk in quirks)
             {
-                bool skip = false;
-
-                foreach (var item in quirk.Requirments)
-                {
-                    if (!item.CanApply(Profile, _entManager))
-                        skip = true;
-                }
-
-                if (skip)
+                if (!quirk.RequirmentsMet(Profile, _entManager))
                 {
                     Profile = Profile.WithoutTraitPreference(quirk.ID, _prototypeManager);
 
@@ -120,8 +112,8 @@ public sealed partial class HumanoidProfileEditor
                     continue;
 
                 bool hasTrait = Profile.TraitPreferences.Contains(quirk.ID);
-                bool canApply = count + (hasTrait ? -quirk.Cost : quirk.Cost) <= 0;
-                var quirkButton = new QuirkEntry(quirk.ID, quirk.Name, quirk.Description ?? "", cost, category, hasTrait, canApply)
+
+                var quirkButton = new QuirkEntry(quirk.ID, quirk.Name, quirk.Description ?? "", cost, category, hasTrait, CanApplyQuirk(quirk, count))
                 {
                     Margin = new Thickness(0, 2)
                 };
@@ -136,6 +128,37 @@ public sealed partial class HumanoidProfileEditor
                 QuirksList.AddChild(quirkButton);
             }
         }
+    }
+
+    private string? CanApplyQuirk(TraitPrototype trait, int points)
+    {
+        if (Profile == null)
+            return null;
+
+        string? reason = null;
+
+        bool canApply = points + (Profile.TraitPreferences.Contains(trait.ID) ? -trait.Cost : trait.Cost) <= 0;
+
+        if (!canApply)
+        {
+            reason = Profile.TraitPreferences.Contains(trait.ID) ? Loc.GetString("humanoid-profile-editor-quirks-cannot-remove") :
+                                                                   Loc.GetString("humanoid-profile-editor-quirks-cannot-add");
+        }
+
+        if (trait.Group != null && !Profile.TraitPreferences.Contains(trait.ID))
+        {
+            foreach (var item in Profile.TraitPreferences)
+            {
+                var proto = _prototypeManager.Index(item);
+                if (proto.Group == null)
+                    continue;
+
+                if (proto.Group == trait.Group)
+                    reason = Loc.GetString($"humanoid-profile-editor-quirks-cannot-add-group-{proto.Group}");
+            }
+        }
+
+        return reason;
     }
 
     public enum QuirkCategory
