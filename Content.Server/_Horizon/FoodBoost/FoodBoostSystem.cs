@@ -17,11 +17,11 @@ public sealed class FoodBoostSystem : SharedFoodBoostSystem
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
-    private float _midMoveSpeedMod = 1.05f;
-    private float _advancedMoveSpeedMod = 1.1f;
+    private const float MidMoveSpeedMod = 1.05f;
+    private const float AdvancedMoveSpeedMod = 1.1f;
 
-    private float _midRegenDuration = 30f;
-    private float _advancedRegenDuration = 60f;
+    private const float MidRegenDuration = 30f;
+    private const float AdvancedRegenDuration = 60f;
     private DamageSpecifier _regenAmount = new()
     {
         DamageDict = new()
@@ -103,11 +103,11 @@ public sealed class FoodBoostSystem : SharedFoodBoostSystem
         comp.Advanced = advancedBoost && !dirty;
 
         if (_random.Prob(0.5f))
-            comp.MoveSpeedModifier = comp.Advanced ? _advancedMoveSpeedMod : _midMoveSpeedMod;
+            comp.MoveSpeedModifier = comp.Advanced ? AdvancedMoveSpeedMod : MidMoveSpeedMod;
         else
         {
             comp.RegenAmount = _regenAmount;
-            comp.Duration = comp.Advanced ? _advancedRegenDuration : _midRegenDuration;
+            comp.Duration = comp.Advanced ? AdvancedRegenDuration : MidRegenDuration;
         }
 
         var staticPrice = EnsureComp<StaticPriceComponent>(target);
