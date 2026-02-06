@@ -135,3 +135,151 @@
   cost: -3
   components:
   - type: LowPainTolerance
+
+- type: trait
+  id: AmputatedArm
+  name: trait-amputated-arm-name
+  description: trait-amputated-arm-desc
+  category: HorizonQuirks
+  cost: -5ц
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: null
+      slotId: null
+
+- type: trait
+  id: CyberneticAugmentation
+  name: trait-cybernetic-augmentation-name
+  description: trait-cybernetic-augmentation-desc
+  category: HorizonQuirks
+  cost: 10
+  effects:
+    - !type:ModifyOrgans
+      protoId: OrganCyberHeart
+      slotId: heart
+    - !type:ModifyOrgans
+      protoId: OrganCyberLungs
+      slotId: lungs
+    - !type:ModifyOrgans
+      protoId: OrganCyberLiver
+      slotId: liver
+    - !type:ModifyOrgans
+      protoId: OrganCyberStomach
+      slotId: stomach
+    - !type:ModifyOrgans
+      protoId: OrganCyberKidneys
+      slotId: kidneys
+
+- type: trait
+  id: BionicAugmentation
+  name: trait-bionic-augmentation-name
+  description: trait-bionic-augmentation-desc
+  category: HorizonQuirks
+  cost: 10
+  effects:
+    - !type:ModifyOrgans
+      protoId: OrganBioHeart
+      slotId: heart
+    - !type:ModifyOrgans
+      protoId: OrganBioLungs
+      slotId: lungs
+    - !type:ModifyOrgans
+      protoId: OrganBioLiver
+      slotId: liver
+    - !type:ModifyOrgans
+      protoId: OrganBioStomach
+      slotId: stomach
+    - !type:ModifyOrgans
+      protoId: OrganBioKidneys
+      slotId: kidneys
+
+- type: trait
+  id: BluespaceAugmentation
+  name: trait-bluespace-augmentation-name
+  description: trait-bluespace-augmentation-desc
+  category: HorizonQuirks
+  cost: 10
+  effects:
+    - !type:ModifyOrgans
+      protoId: OrganBsHeart
+      slotId: heart
+    - !type:ModifyOrgans
+      protoId: OrganBsLungs
+      slotId: lungs
+    - !type:ModifyOrgans
+      protoId: OrganBsLiver
+      slotId: liver
+    - !type:ModifyOrgans
+      protoId: OrganBsStomach
+      slotId: stomach
+    - !type:ModifyOrgans
+      protoId: OrganBsKidneys
+      slotId: kidneys
+
+- type: trait
+  id: EyeImplantWeldingTrait
+  name: trait-eye-implant-welding-name
+  description: trait-eye-implant-welding-desc
+  category: HorizonQuirks
+  cost: 5
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantWelding
+      slotId: eyes
+
+- type: trait
+  id: EyeImplantDiagnosticTrait
+  name: trait-eye-implant-diagnostic-name
+  description: trait-eye-implant-diagnostic-desc
+  category: HorizonQuirks
+  cost: 5
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantDiagnostic
+      slotId: eyes
+
+- type: trait
+  id: EyeImplantMedicalTrait
+  name: trait-eye-implant-medical-name
+  description: trait-eye-implant-medical-desc
+  category: HorizonQuirks
+  cost: 5
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantMedical
+      slotId: eyes
+
+- type: trait
+  id: EyeImplantChemicalTrait
+  name: trait-eye-implant-chemical-name
+  description: trait-eye-implant-chemical-desc
+  category: HorizonQuirks
+  cost: 5
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantChemical
+      slotId: eyes
+
+- type: trait
+  id: EyeImplantSecurityTrait
+  name: trait-eye-implant-security-name
+  description: trait-eye-implant-security-desc
+  category: HorizonQuirks
+  cost: 5
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantSecurity
+      slotId: eyes
+
+- type: trait
+  id: EyeImplantNightTrait
+  name: trait-eye-implant-night-name
+  description: trait-eye-implant-night-desc
+  category: HorizonQuirks
+  cost: 15
+  effects:
+    - !type:ModifyOrgans
+      protoId: EyeImplantNight
+      slotId: eyes

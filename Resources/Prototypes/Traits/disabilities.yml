@@ -43,7 +43,7 @@
   name: trait-unrevivable-name
   description: trait-unrevivable-desc
   category: HorizonQuirks # Horizon tweak
-  cost: -3 # Horizon tweak
+  cost: -9 # Horizon tweak
   components:
     - type: Unrevivable
       cloneable: true
