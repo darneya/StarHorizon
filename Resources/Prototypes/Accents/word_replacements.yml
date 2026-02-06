@@ -606,7 +606,7 @@
     accent-skeleton-words-7: accent-skeleton-words-replace-7
     accent-skeleton-words-8: accent-skeleton-words-replace-8
     accent-skeleton-words-9: accent-skeleton-words-replace-9
-
+#Horizon start
 - type: accent
   id: french
   wordReplacements:
@@ -698,3 +698,4 @@
     accent-french-words-68: accent-french-words-replace-68
     accent-french-words-69: accent-french-words-replace-69
     accent-french-words-69-2: accent-french-words-replace-69
+#Horizon end

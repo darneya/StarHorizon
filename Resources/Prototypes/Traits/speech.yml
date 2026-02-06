@@ -74,7 +74,7 @@
   category: SpeechTraits
   cost: 1
   components:
-  - type: ReplacementAccent
+  - type: ReplacementAccent #Horizon
     accent: french
 
 - type: trait
