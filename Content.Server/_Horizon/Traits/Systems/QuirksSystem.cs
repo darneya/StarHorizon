@@ -112,6 +112,7 @@ public sealed class QuirksSystem : SharedQuirksSystem
             {
                 var organ = container.ContainedEntities.First();
                 _body.RemoveOrgan(organ);
+                QueueDel(organ);
             }
 
             // Add new organ to the specific slot
