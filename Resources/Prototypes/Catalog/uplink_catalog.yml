@@ -1726,7 +1726,23 @@
     whitelist:
       tags:
       - NukeOpsUplink
-
+# Horizon start
+- type: listing
+  id: UplinkHardsuitCBURNInterdyne
+  name: Экзоскафандр CBURN Inderdyne
+  description: Скрещенная версия элитного скафандра Cybersun и технологий био-защиты Interdyne
+  icon: { sprite: /Textures/_Horizon/Clothing/OuterClothing/Hardsuits/InterdyneCBURN.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelInterdyneCBURNHardsuitBundle
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+# Horizon end
 - type: listing
   id: UplinkClothingEyesHudSyndicate
   name: uplink-clothing-eyes-hud-syndicate-name
