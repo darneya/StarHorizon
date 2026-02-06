@@ -227,7 +227,7 @@
   effects:
     - !type:ModifyOrgans
       protoId: EyeImplantWelding
-      slotId: eyes
+      slotId: eye_implant
 
 - type: trait
   id: EyeImplantDiagnosticTrait
@@ -238,7 +238,7 @@
   effects:
     - !type:ModifyOrgans
       protoId: EyeImplantDiagnostic
-      slotId: eyes
+      slotId: eye_implant
 
 - type: trait
   id: EyeImplantMedicalTrait
@@ -249,7 +249,7 @@
   effects:
     - !type:ModifyOrgans
       protoId: EyeImplantMedical
-      slotId: eyes
+      slotId: eye_implant
 
 - type: trait
   id: EyeImplantChemicalTrait
@@ -260,7 +260,7 @@
   effects:
     - !type:ModifyOrgans
       protoId: EyeImplantChemical
-      slotId: eyes
+      slotId: eye_implant
 
 - type: trait
   id: EyeImplantSecurityTrait
@@ -271,7 +271,7 @@
   effects:
     - !type:ModifyOrgans
       protoId: EyeImplantSecurity
-      slotId: eyes
+      slotId: eye_implant
 
 - type: trait
   id: EyeImplantNightTrait
@@ -282,7 +282,7 @@
   effects:
     - !type:ModifyOrgans
       protoId: EyeImplantNight
-      slotId: eyes
+      slotId: eye_implant
 
 - type: trait
   id: BadShooter

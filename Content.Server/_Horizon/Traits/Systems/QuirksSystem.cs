@@ -4,6 +4,7 @@ using Content.Server.Body.Systems;
 using Content.Shared._Horizon.Traits;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Part;
+using Content.Shared.Body.Systems;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 
@@ -98,16 +99,27 @@ public sealed class QuirksSystem : SharedQuirksSystem
 
         foreach (var part in parts)
         {
-            if (!_container.TryGetContainer(part.Id, organId, out var container) || container.ContainedEntities.Count <= 0)
+            // Check if this part has the specified organ slot
+            if (!_body.CanInsertOrgan(part.Id, organId))
                 continue;
 
-            var organ = container.ContainedEntities.First();
-            _body.RemoveOrgan(organ);
+            // Get the container for this organ slot
+            if (!_container.TryGetContainer(part.Id, SharedBodySystem.GetOrganContainerId(organId), out var container))
+                continue;
 
+            // Remove existing organ if present
+            if (container.ContainedEntities.Count > 0)
+            {
+                var organ = container.ContainedEntities.First();
+                _body.RemoveOrgan(organ);
+            }
+
+            // Add new organ to the specific slot
             var newOrgan = Spawn(protoId, Transform(uid).Coordinates);
-            _body.AddOrganToFirstValidSlot(part.Id, newOrgan);
-
-            success = true;
+            if (_body.InsertOrgan(part.Id, newOrgan, organId))
+                success = true;
+            else
+                QueueDel(newOrgan); // Clean up if insertion failed
         }
 
         return success;
