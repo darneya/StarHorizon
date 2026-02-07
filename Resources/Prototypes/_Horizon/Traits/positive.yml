@@ -321,6 +321,12 @@
   cost: 2
   effects:
     - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
+    - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
       protoId: RightArmCyberReaper
@@ -334,6 +340,12 @@
   group: TraitArm
   cost: 2
   effects:
+    - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
     - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
@@ -349,6 +361,12 @@
   cost: 5
   effects:
     - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
+    - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
       protoId: RightArmCyberEngi
@@ -362,6 +380,12 @@
   group: TraitArm
   cost: 2
   effects:
+    - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
     - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
@@ -377,6 +401,12 @@
   cost: 2
   effects:
     - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
+    - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
       protoId: RightArmCyberAstro
@@ -390,6 +420,12 @@
   group: TraitArm
   cost: 2
   effects:
+    - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
     - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
@@ -406,6 +442,12 @@
   cost: 3
   effects:
     - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
+    - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
       protoId: RightArmProtoCyberWeaponShotgunSawn
@@ -419,6 +461,12 @@
   group: TraitArm
   cost: 3
   effects:
+    - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
     - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
@@ -434,6 +482,12 @@
   cost: 3
   effects:
     - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
+    - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
       protoId: RightArmProtoCyberWeaponPkaSawn
@@ -447,6 +501,12 @@
   group: TraitArm
   cost: 3
   effects:
+    - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
     - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
@@ -462,6 +522,12 @@
   cost: 7
   effects:
     - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
+    - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
       protoId: RightArmCyberWeaponProtoKineticAccelerator
@@ -475,6 +541,12 @@
   group: TraitArm
   cost: 7
   effects:
+    - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
     - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
@@ -490,6 +562,12 @@
   cost: 7
   effects:
     - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
+    - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
       protoId: RightArmCyberWeaponEnergyPistolLaserAdvanced
@@ -503,6 +581,12 @@
   group: TraitArm
   cost: 8
   effects:
+    - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
     - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
@@ -518,6 +602,12 @@
   cost: 7
   effects:
     - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
+    - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
       protoId: RightArmCyberClawRending
@@ -531,6 +621,12 @@
   group: TraitArm
   cost: 7
   effects:
+    - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
     - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
@@ -546,6 +642,12 @@
   cost: 8
   effects:
     - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
+    - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
       protoId: RightArmCyberClawPoison
@@ -559,6 +661,12 @@
   group: TraitArm
   cost: 7
   effects:
+    - !type:ModifyBodyParts
+      partType: Hand
+      symmetry: Right
+      protoId: RightHandCyber
+      slotId: right hand
+      parentPartType: Arm
     - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
