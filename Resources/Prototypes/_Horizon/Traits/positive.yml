@@ -534,7 +534,7 @@
     - !type:ModifyBodyParts
       partType: Arm
       symmetry: Right
-      protoId: RightArmCyberClawPiersing
+      protoId: RightArmCyberClawPiercing
       slotId: right arm
 
 - type: trait
