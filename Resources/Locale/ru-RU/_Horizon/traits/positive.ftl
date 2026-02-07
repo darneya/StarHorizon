@@ -19,8 +19,20 @@ trait-steadfast-desc = Замедление от урона становится
 trait-striking-calluses-name = Крепкие кулаки
 trait-striking-calluses-desc = Ваши безоружные удары становятся сильнее.
 
-trait-temperature-tolerance-name = Устойчивость к температурам
+trait-temperature-tolerance-name = Закалка
 trait-temperature-tolerance-desc = Вы более устойчивы к экстремальным температурным условиям.
+
+trait-temperature-cold-hearted-name = Хладнокровный
+trait-temperature-cold-hearted-desc = Ваше тело достаточно закалено, чтобы выдержать значительную прохладу.
+
+trait-temperature-cold-blood-name = Ледяная кровь
+trait-temperature-cold-blood-desc = Вы и есть холод и лед. Ваше тело может выдержать предельно экстремальные холодные температуры.
+
+trait-temperature-flame-heart-name = Горячее сердце
+trait-temperature-flame-heart-desc = Вы на столько раскалены, что можете выдерживать достаточно сильный жар.
+
+trait-temperature-flame-blood-name = Пламенные вены
+trait-temperature-flame-blood-desc = Ваше тело на столько натренировано, что вы можете выдерживать значительные превышения температуры.
 
 trait-platelet-factories-name = Регенерация
 trait-platelet-factories-desc = Ваше тело пассивно регенерирует полученный урон.
