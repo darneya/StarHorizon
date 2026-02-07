@@ -5,11 +5,11 @@
   description: Скрещенная версия элитного скафандра Cybersun и технологий био-защиты Interdyne
   components:
   - type: Sprite
-    sprite: _Horizon\Clothing\OuterClothing\Hardsuits\InterdyneCBURN.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Hardsuits/InterdyneCBURN.rsi
   - type: Item
     size: Huge
   - type: Clothing
-    sprite: _Horizon\Clothing\OuterClothing\Hardsuits\InterdyneCBURN.rsi
+    sprite: _Horizon/Clothing/OuterClothing/Hardsuits/InterdyneCBURN.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
@@ -44,10 +44,10 @@
   description: Скрещенная версия элитного скафандра Cybersun и технологий био-защиты Interdyne
   components:
   - type: Sprite
-    sprite: _Horizon\Clothing\Head\Hardsuits\InterdyneCBURNhelm.rsi
+    sprite: _Horizon/Clothing/Head/Hardsuits/InterdyneCBURNhelm.rsi
   - type: Clickable
   - type: Clothing
-    sprite: _Horizon\Clothing\Head\Hardsuits\InterdyneCBURNhelm.rsi
+    sprite: _Horizon/Clothing/Head/Hardsuits/InterdyneCBURNhelm.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
