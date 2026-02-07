@@ -1,11 +1,10 @@
 - type: entity
   name: Ардониевый меч
-  parent: [BaseItem, BaseAnCoContraband]
+  parent: BaseAnCoSharpWeapon
   id: AnCoSword
   description: Сегментированный меч, созданный чтобы нарезать врагов на такие же сегменты.
   suffix: StarHorizon, AnCo, Weapon
   components:
-  - type: Sharp
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/uassword.rsi
     state: icon
@@ -18,12 +17,6 @@
         Heat: 10 # что вы ожидали от расскаленного клинка ?
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
-  - type: Reflect
-    enabled: true
-    reflectProb: .3
-    soundOnReflect:
-      collection: ImpactReflectedBulletEnergy
-    spread: 45
   - type: Item
     size: Normal
     sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/uassword.rsi
