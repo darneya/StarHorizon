@@ -1494,7 +1494,26 @@
       blacklist:
         components:
           - SurplusBundle
-
+#Horizon start
+- type: listing
+  id: UplinkLangBox
+  name: языковой набор синдиката
+  description: Имплантер кодового языка и универсальный переводчик в комплекте
+  productEntity: BoxDeathLangImplants
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkImplants
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
+#Horizon end
 - type: listing
   id: UplinkFakeMindshield
   name: uplink-fake-mindshield-name
