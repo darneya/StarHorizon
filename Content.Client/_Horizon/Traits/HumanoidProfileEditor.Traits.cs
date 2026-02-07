@@ -49,13 +49,13 @@ public sealed partial class HumanoidProfileEditor
             };
 
             button.OnPressed += _ =>
-        {
+            {
                 _selectedQuirkCategory = category;
-            RefreshQuirks();
-        };
+                RefreshQuirks();
+            };
 
             QuirkCategories.AddChild(button);
-    }
+        }
 
         _quirksPointsLabel = new()
         {
@@ -89,8 +89,9 @@ public sealed partial class HumanoidProfileEditor
 
         var quirks = _prototypeManager
             .EnumeratePrototypes<TraitPrototype>()
-            .Where(q => q.Category == QuirksCategory)
-            .OrderBy(q => Loc.GetString(q.Name))
+            .Where(q => _quirksCategories.Contains(q.Category ?? ""))
+            .OrderBy(q => MathF.Abs(q.Cost))
+            .ThenBy(q => Loc.GetString(q.Name))
             .ToList();
 
         if (_cachedQuirks.Equals(quirks))
