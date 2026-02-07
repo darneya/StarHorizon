@@ -5,6 +5,7 @@
   name: trait-pacifist-name
   description: trait-pacifist-desc
   category: HorizonQuirks # Horizon tweak
+  group: TraitCombat # Horizon tweak
   cost: -6 # Horizon tweak
   components:
   - type: Pacified

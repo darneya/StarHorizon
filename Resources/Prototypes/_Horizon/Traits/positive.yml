@@ -309,3 +309,258 @@
     - !type:ModifyOrgans
       protoId: OrganBsKidneys
       slotId: kidneys
+
+# region TraitArm
+
+- type: trait
+  id: CyberArmReaperRight
+  name: trait-cyber-arm-reaper-name
+  description: trait-cyber-arm-reaper-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 2
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberReaper
+      slotId: right arm
+
+- type: trait
+  id: CyberArmMechwrightRight
+  name: trait-cyber-arm-mechwright-name
+  description: trait-cyber-arm-mechwright-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 2
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberMechwright
+      slotId: right arm
+
+- type: trait
+  id: CyberArmEngiRight
+  name: trait-cyber-arm-engi-name
+  description: trait-cyber-arm-engi-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 5
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberEngi
+      slotId: right arm
+
+- type: trait
+  id: CyberArmAtmosRight
+  name: trait-cyber-arm-atmos-name
+  description: trait-cyber-arm-atmos-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 2
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberAtmos
+      slotId: right arm
+
+- type: trait
+  id: CyberArmAstroRight
+  name: trait-cyber-arm-astro-name
+  description: trait-cyber-arm-astro-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 2
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberAstro
+      slotId: right arm
+
+- type: trait
+  id: CyberArmGardenRight
+  name: trait-cyber-arm-garden-name
+  description: trait-cyber-arm-garden-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 2
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberGarden
+      slotId: right arm
+
+# Basic Combat Arms - Shotgun Sawn
+- type: trait
+  id: CyberArmWeaponShotgunSawnRight
+  name: trait-cyber-arm-weapon-shotgun-sawn-name
+  description: trait-cyber-arm-weapon-shotgun-sawn-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 3
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmProtoCyberWeaponShotgunSawn
+      slotId: right arm
+
+- type: trait
+  id: CyberArmWeaponEnergyPistolLaserRight
+  name: trait-cyber-arm-weapon-energy-pistol-laser-name
+  description: trait-cyber-arm-weapon-energy-pistol-laser-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 3
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmProtoCyberWeaponEnergyPistolLaser
+      slotId: right arm
+
+- type: trait
+  id: CyberArmWeaponPkaSawnRight
+  name: trait-cyber-arm-weapon-pka-sawn-name
+  description: trait-cyber-arm-weapon-pka-sawn-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 3
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmProtoCyberWeaponPkaSawn
+      slotId: right arm
+
+- type: trait
+  id: CyberArmWeaponEnergyPistolDisablerRight
+  name: trait-cyber-arm-weapon-energy-pistol-disabler-name
+  description: trait-cyber-arm-weapon-energy-pistol-disabler-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 3
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmProtoCyberWeaponEnergyPistolDisabler
+      slotId: right arm
+
+- type: trait
+  id: CyberArmWeaponProtoKineticAcceleratorRight
+  name: trait-cyber-arm-weapon-proto-kinetic-accelerator-name
+  description: trait-cyber-arm-weapon-proto-kinetic-accelerator-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 7
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberWeaponProtoKineticAccelerator
+      slotId: right arm
+
+- type: trait
+  id: CyberArmWeaponEnergySmgDisablerRight
+  name: trait-cyber-arm-weapon-energy-smg-disabler-name
+  description: trait-cyber-arm-weapon-energy-smg-disabler-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 7
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberWeaponEnergySubMachineGunDisabler
+      slotId: right arm
+
+- type: trait
+  id: CyberArmWeaponEnergyPistolLaserAdvancedRight
+  name: trait-cyber-arm-weapon-energy-pistol-laser-advanced-name
+  description: trait-cyber-arm-weapon-energy-pistol-laser-advanced-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 7
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberWeaponEnergyPistolLaserAdvanced
+      slotId: right arm
+
+- type: trait
+  id: CyberArmWeaponShotgunAdvancedRight
+  name: trait-cyber-arm-weapon-shotgun-advanced-name
+  description: trait-cyber-arm-weapon-shotgun-advanced-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 8
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberWeaponShotgunAdvanced
+      slotId: right arm
+
+- type: trait
+  id: CyberArmClawRendingRight
+  name: trait-cyber-arm-claw-rending-name
+  description: trait-cyber-arm-claw-rending-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 7
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberClawRending
+      slotId: right arm
+
+- type: trait
+  id: CyberArmClawPiersingRight
+  name: trait-cyber-arm-claw-piercing-name
+  description: trait-cyber-arm-claw-piercing-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 7
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberClawPiersing
+      slotId: right arm
+
+- type: trait
+  id: CyberArmClawPoisonRight
+  name: trait-cyber-arm-claw-poison-name
+  description: trait-cyber-arm-claw-poison-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 8
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberClawPoison
+      slotId: right arm
+
+- type: trait
+  id: CyberArmLashRight
+  name: trait-cyber-arm-lash-name
+  description: trait-cyber-arm-lash-desc
+  category: HorizonQuirks
+  group: TraitArm
+  cost: 7
+  effects:
+    - !type:ModifyBodyParts
+      partType: Arm
+      symmetry: Right
+      protoId: RightArmCyberLash
+      slotId: right arm
