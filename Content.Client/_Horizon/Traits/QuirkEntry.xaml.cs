@@ -13,7 +13,7 @@ public sealed partial class QuirkEntry : Control
     public Action<bool>? OnTraitToggled;
     public string ProtoId;
 
-    public QuirkEntry(string id, string name, string description, int cost, HumanoidProfileEditor.QuirkCategory category, bool isSelected, string? denyReason)
+    public QuirkEntry(string id, string name, string description, int cost, HumanoidProfileEditor.QuirkColoration category, bool isSelected, string? denyReason)
     {
         RobustXamlLoader.Load(this);
 
@@ -21,9 +21,9 @@ public sealed partial class QuirkEntry : Control
 
         var color = category switch
         {
-            HumanoidProfileEditor.QuirkCategory.Positive => Color.LimeGreen,
-            HumanoidProfileEditor.QuirkCategory.Negative => Color.Crimson,
-            HumanoidProfileEditor.QuirkCategory.Neutral => Color.LightGray
+            HumanoidProfileEditor.QuirkColoration.Positive => Color.LimeGreen,
+            HumanoidProfileEditor.QuirkColoration.Negative => Color.Crimson,
+            HumanoidProfileEditor.QuirkColoration.Neutral => Color.LightGray
         };
 
         var costSymbol = cost switch
