@@ -117,7 +117,10 @@ namespace Content.Server._Horizon.SponsorManager
         {
             try
             {
-                _sawmill.Info("Syncing Discord sponsors (memory only)...");
+                var rootDir = _resourceManager.UserData.RootDir;
+                _sawmill.Info($"Syncing Discord sponsors (memory only)...");
+                _sawmill.Info($"Sponsors file path: {_dsSponsorsFilePath}, UserData root: {rootDir}");
+
                 _sponsors.Clear();
                 _sponsorsAndBalances.Clear();
                 _sponsorSlots.Clear();
@@ -127,7 +130,7 @@ namespace Content.Server._Horizon.SponsorManager
                 _sawmill.Debug($"Read {discordLines.Length} lines from discord_sponsors");
 
                 ProcessDiscordSponsors(discordLines);
-                _sawmill.Info("Discord sponsors sync completed");
+                _sawmill.Info($"Discord sponsors sync completed. Total sponsors in memory: {_sponsors.Count}");
             }
             catch (Exception ex)
             {
@@ -168,8 +171,7 @@ namespace Content.Server._Horizon.SponsorManager
                 count++;
             }
 
-            if (count > 0)
-                _sawmill.Info($"Discord sync: {count} sponsors loaded into memory");
+            _sawmill.Info($"Discord sync: {count} sponsors loaded into memory");
         }
 
         private string[] SafeReadAllLines(ResPath filePath, int maxRetries = 3, int delay = 1000)
