@@ -5,7 +5,7 @@
   name: trait-blindness-name
   description: trait-blindness-desc
   traitGear: WhiteCane
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   group: TraitEyes # Horizon tweak
   cost: -6 # Horizon tweak
   whitelist:
@@ -19,7 +19,7 @@
   name: trait-poor-vision-name
   description: trait-poor-vision-desc
   traitGear: ClothingEyesGlasses
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   group: TraitEyes # Horizon tweak
   cost: -1 # Horizon tweak
   whitelist:
@@ -33,7 +33,7 @@
   id: Narcolepsy
   name: trait-narcolepsy-name
   description: trait-narcolepsy-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   cost: -6 # Horizon tweak
   components:
     - type: Narcolepsy
@@ -44,7 +44,7 @@
   id: Unrevivable
   name: trait-unrevivable-name
   description: trait-unrevivable-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   cost: -9 # Horizon tweak
   components:
     - type: Unrevivable
@@ -54,7 +54,7 @@
   id: Monochromancy
   name: trait-monochromancy-name
   description: trait-monochromancy-desc
-  category: HorizonQuirks  # Horizon tweak
+  category: HorizonNeutral  # Horizon tweak
   components:
   - type: BlackAndWhiteOverlay
 
@@ -62,7 +62,7 @@
   id: Muted
   name: trait-muted-name
   description: trait-muted-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   cost: -6 # Horizon tweak
   blacklist:
     components:
@@ -74,7 +74,7 @@
   id: Paracusia
   name: trait-paracusia-name
   description: trait-paracusia-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   cost: -1 # Horizon tweak
   components:
     - type: Paracusia
@@ -88,7 +88,7 @@
   id: PainNumbness
   name: trait-painnumbness-name
   description: trait-painnumbness-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   cost: -3 # Horizon tweak
   components:
   - type: PainNumbness

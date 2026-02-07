@@ -4,7 +4,7 @@
   id: Stinky
   name: trait-stinky-name
   description: trait-stinky-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   cost: -1 # Horizon tweak
   components:
     - type: StinkyTrait
@@ -13,7 +13,7 @@
   id: Clumsy
   name: trait-clumsy-name
   description: trait-clumsy-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   cost: -5 # Horizon tweak
   components:
     - type: Clumsy
@@ -28,7 +28,7 @@
   id: Unclonable
   name: trait-unclonable-name
   description: trait-unclonable-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   cost: -6 # Horizon tweak
   components:
     - type: Unclonable
@@ -38,7 +38,7 @@
   id: WheelchairBound
   name: trait-wheelchair-bound-name
   description: trait-wheelchair-bound-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   cost: -7 # Horizon tweak
   blacklist:
     components:

@@ -4,7 +4,7 @@
   id: WillToLive
   name: trait-will-to-live-name
   description: trait-will-to-live-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   cost: 1
   effects:
   - !type:ModifyHealth
@@ -15,7 +15,7 @@
   id: Tenacity
   name: trait-tenacity-name
   description: trait-tenacity-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   cost: 1
   effects:
   - !type:ModifyHealth
@@ -27,7 +27,7 @@
   id: PryingArm
   name: trait-prying-name
   description: trait-prying-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   cost: 2
   components:
   - type: Prying
@@ -37,7 +37,7 @@
   id: Vigor
   name: trait-vigor-name
   description: trait-vigor-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   cost: 6
   effects:
   - !type:ModifyStamina
@@ -50,7 +50,7 @@
   id: MartialArtist
   name: trait-martial-artist-name
   description: trait-martial-artist-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   cost: 5
   priority: 2
   effects:
@@ -63,7 +63,7 @@
   id: Steadfast
   name: trait-steadfast-name
   description: trait-steadfast-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   cost: 3
   effects:
   - !type:ModifyDamageSlowdown
@@ -73,7 +73,7 @@
   id: StrikingCalluses
   name: trait-striking-calluses-name
   description: trait-striking-calluses-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   cost: 2
   priority: 2
   effects:
@@ -84,7 +84,7 @@
   id: TemperatureTolerance
   name: trait-temperature-tolerance-name
   description: trait-temperature-tolerance-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   cost: 1
   components:
   - type: Temperature
@@ -103,7 +103,7 @@
   id: PlateletFactories
   name: trait-platelet-factories-name
   description: trait-platelet-factories-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   cost: 10
   components:
   - type: PassiveDamage
@@ -120,7 +120,7 @@
   id: TrapAvoider
   name: trait-trap-avoider-name
   description: trait-trap-avoider-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   cost: 3
   components:
   - type: ProtectedFromStepTriggers
@@ -131,7 +131,7 @@
   id: GoodShooter
   name: trait-good-shooter-name
   description: trait-good-shooter-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitCombat
   cost: 6
   components:
@@ -144,7 +144,7 @@
   id: Cook
   name: trait-cook-name
   description: trait-cook-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitChef
   cost: 3
   components:
@@ -154,7 +154,7 @@
   id: Chef
   name: trait-chef-name
   description: trait-chef-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitChef
   cost: 5
   components:
@@ -167,7 +167,7 @@
   id: EyeImplantWeldingTrait
   name: trait-eye-implant-welding-name
   description: trait-eye-implant-welding-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitEyes
   cost: 3
   effects:
@@ -179,7 +179,7 @@
   id: EyeImplantDiagnosticTrait
   name: trait-eye-implant-diagnostic-name
   description: trait-eye-implant-diagnostic-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitEyes
   cost: 5
   effects:
@@ -191,7 +191,7 @@
   id: EyeImplantMedicalTrait
   name: trait-eye-implant-medical-name
   description: trait-eye-implant-medical-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitEyes
   cost: 5
   effects:
@@ -203,7 +203,7 @@
   id: EyeImplantChemicalTrait
   name: trait-eye-implant-chemical-name
   description: trait-eye-implant-chemical-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitEyes
   cost: 5
   effects:
@@ -215,7 +215,7 @@
   id: EyeImplantSecurityTrait
   name: trait-eye-implant-security-name
   description: trait-eye-implant-security-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitEyes
   cost: 5
   effects:
@@ -227,7 +227,7 @@
   id: EyeImplantNightTrait
   name: trait-eye-implant-night-name
   description: trait-eye-implant-night-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitEyes
   cost: 10
   effects:
@@ -242,7 +242,7 @@
   id: CyberneticAugmentation
   name: trait-cybernetic-augmentation-name
   description: trait-cybernetic-augmentation-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitAugmentation
   cost: 10
   effects:
@@ -266,7 +266,7 @@
   id: BionicAugmentation
   name: trait-bionic-augmentation-name
   description: trait-bionic-augmentation-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitAugmentation
   cost: 10
   effects:
@@ -290,7 +290,7 @@
   id: BluespaceAugmentation
   name: trait-bluespace-augmentation-name
   description: trait-bluespace-augmentation-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitAugmentation
   cost: 10
   effects:
@@ -316,7 +316,7 @@
   id: CyberArmReaperRight
   name: trait-cyber-arm-reaper-name
   description: trait-cyber-arm-reaper-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 2
   effects:
@@ -330,7 +330,7 @@
   id: CyberArmMechwrightRight
   name: trait-cyber-arm-mechwright-name
   description: trait-cyber-arm-mechwright-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 2
   effects:
@@ -344,7 +344,7 @@
   id: CyberArmEngiRight
   name: trait-cyber-arm-engi-name
   description: trait-cyber-arm-engi-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 5
   effects:
@@ -358,7 +358,7 @@
   id: CyberArmAtmosRight
   name: trait-cyber-arm-atmos-name
   description: trait-cyber-arm-atmos-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 2
   effects:
@@ -372,7 +372,7 @@
   id: CyberArmAstroRight
   name: trait-cyber-arm-astro-name
   description: trait-cyber-arm-astro-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 2
   effects:
@@ -386,7 +386,7 @@
   id: CyberArmGardenRight
   name: trait-cyber-arm-garden-name
   description: trait-cyber-arm-garden-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 2
   effects:
@@ -401,7 +401,7 @@
   id: CyberArmWeaponShotgunSawnRight
   name: trait-cyber-arm-weapon-shotgun-sawn-name
   description: trait-cyber-arm-weapon-shotgun-sawn-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 3
   effects:
@@ -415,7 +415,7 @@
   id: CyberArmWeaponEnergyPistolLaserRight
   name: trait-cyber-arm-weapon-energy-pistol-laser-name
   description: trait-cyber-arm-weapon-energy-pistol-laser-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 3
   effects:
@@ -429,7 +429,7 @@
   id: CyberArmWeaponPkaSawnRight
   name: trait-cyber-arm-weapon-pka-sawn-name
   description: trait-cyber-arm-weapon-pka-sawn-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 3
   effects:
@@ -443,7 +443,7 @@
   id: CyberArmWeaponEnergyPistolDisablerRight
   name: trait-cyber-arm-weapon-energy-pistol-disabler-name
   description: trait-cyber-arm-weapon-energy-pistol-disabler-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 3
   effects:
@@ -457,7 +457,7 @@
   id: CyberArmWeaponProtoKineticAcceleratorRight
   name: trait-cyber-arm-weapon-proto-kinetic-accelerator-name
   description: trait-cyber-arm-weapon-proto-kinetic-accelerator-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 7
   effects:
@@ -471,7 +471,7 @@
   id: CyberArmWeaponEnergySmgDisablerRight
   name: trait-cyber-arm-weapon-energy-smg-disabler-name
   description: trait-cyber-arm-weapon-energy-smg-disabler-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 7
   effects:
@@ -485,7 +485,7 @@
   id: CyberArmWeaponEnergyPistolLaserAdvancedRight
   name: trait-cyber-arm-weapon-energy-pistol-laser-advanced-name
   description: trait-cyber-arm-weapon-energy-pistol-laser-advanced-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 7
   effects:
@@ -499,7 +499,7 @@
   id: CyberArmWeaponShotgunAdvancedRight
   name: trait-cyber-arm-weapon-shotgun-advanced-name
   description: trait-cyber-arm-weapon-shotgun-advanced-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 8
   effects:
@@ -513,7 +513,7 @@
   id: CyberArmClawRendingRight
   name: trait-cyber-arm-claw-rending-name
   description: trait-cyber-arm-claw-rending-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 7
   effects:
@@ -527,7 +527,7 @@
   id: CyberArmClawPiersingRight
   name: trait-cyber-arm-claw-piercing-name
   description: trait-cyber-arm-claw-piercing-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 7
   effects:
@@ -541,7 +541,7 @@
   id: CyberArmClawPoisonRight
   name: trait-cyber-arm-claw-poison-name
   description: trait-cyber-arm-claw-poison-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 8
   effects:
@@ -555,7 +555,7 @@
   id: CyberArmLashRight
   name: trait-cyber-arm-lash-name
   description: trait-cyber-arm-lash-desc
-  category: HorizonQuirks
+  category: HorizonPositive
   group: TraitArm
   cost: 7
   effects:
