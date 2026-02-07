@@ -61,7 +61,7 @@
 - type: characterFaction
   id: FactionTTI
   name: Trauma Team
-  desc: тоже самое что и АнКо, только голубые.
+  desc: Элитная медицинская корпорация, специализирующаяся на оперативной помощи.
   color: "#27BEF5"
   roundstart: false
 
