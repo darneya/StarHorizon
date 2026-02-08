@@ -100,6 +100,7 @@
   state: animated
   allowedPlayers:
     - Xigovir
+    - localhost@Xigovir
 
 - type: ghostSprite
   id: GhostSpriteIndividualBaron
@@ -108,6 +109,7 @@
   state: animated
   allowedPlayers:
     - TheGypsyBaron
+    - localhost@CTheGypsyBaron
 
 - type: ghostSprite
   id: GhostSpriteIndividualCvartet
@@ -116,6 +118,7 @@
   state: animated
   allowedPlayers:
     - Cvartet
+    - localhost@Cvartet
 
 - type: ghostSprite
   id: GhostSpriteIndividualKitsunes
@@ -124,3 +127,13 @@
   state: animated
   allowedPlayers:
     - DesBy
+    - localhost@DesBy
+
+- type: ghostSprite
+  id: GhostSpriteIndividualSistina
+  name: Sistina (Личный)
+  rsiPath: _Horizon/Sponsors/Ghosts/individual/fox.rsi
+  state: animated
+  allowedPlayers:
+    - Sistina
+    - localhost@Sistina
