@@ -831,7 +831,7 @@
   id: PlushieShadowLord
   name: Владыка Теней
   description: Плюшевая игрушка сшитая из дорогих материалов и частицы тьмы. Идеален для объятий и подрывов государств.
-  suffix: StarHorizon
+  suffix: StarHorizon, Sponsor
   components:
   - type: StaticPrice
     price: 150
@@ -846,3 +846,67 @@
     radius: 1.5
     energy: 1.0
     color: "#4B0082"
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieWisdom
+  name: Плюшевый агент
+  description: Плюшевая игрушка, агент синдиката.
+  suffix: StarHorizon, Sponsor
+  components:
+  - type: StaticPrice
+    price: 150
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Fun/plushiewisdom.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _StarHorizon/Objects/Fun/plushiewisdom.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMalanisa
+  name: Плюшевая катунианка
+  description: Плюшевая игрушка, катунианка.
+  suffix: StarHorizon, Sponsor
+  components:
+  - type: StaticPrice
+    price: 150
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Fun/plushiemalanisa.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _StarHorizon/Objects/Fun/plushiemalanisa.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieVulpa
+  name: Плюшевая вульпа
+  description: Плюшевая игрушка, вульпа.
+  suffix: StarHorizon, Sponsor
+  components:
+  - type: StaticPrice
+    price: 150
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Fun/plushievulpa.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _StarHorizon/Objects/Fun/plushievulpa.rsi
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieChel
+  name: Плюшевый человек
+  description: Плюшевая игрушка, человек.
+  suffix: StarHorizon, Sponsor
+  components:
+  - type: StaticPrice
+    price: 150
+  - type: Sprite
+    sprite: _StarHorizon/Objects/Fun/plushiechel.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _StarHorizon/Objects/Fun/plushiechel.rsi
