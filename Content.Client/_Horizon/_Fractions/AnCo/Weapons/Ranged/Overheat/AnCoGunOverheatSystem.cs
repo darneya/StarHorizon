@@ -1,13 +1,13 @@
 using Content.Client.Weapons.Ranged.Components;
-using Content.Shared._Horizon.Weapons.Ranged.Overheat;
+using Content.Shared._Horizon._Fractions.AnCo.Weapons.Ranged.Overheat;
 using Robust.Client.GameObjects;
 
-namespace Content.Client._Horizon.Weapons.Ranged.Overheat;
+namespace Content.Client._Horizon._Fractions.AnCo.Weapons.Ranged.Overheat;
 
 /// <summary>
 /// Добавляет визуальный эффект покраснения при перегреве.
 /// </summary>
-public sealed class GunOverheatSystem : SharedGunOverheatSystem
+public sealed class AnCoGunOverheatSystem : AnCoSharedGunOverheatSystem
 {
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
@@ -15,14 +15,14 @@ public sealed class GunOverheatSystem : SharedGunOverheatSystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<GunOverheatComponent, SpriteComponent>();
+        var query = EntityQueryEnumerator<AnCoGunOverheatComponent, SpriteComponent>();
         while (query.MoveNext(out var uid, out var overheat, out var sprite))
         {
             UpdateOverheatVisuals(uid, overheat, sprite);
         }
     }
 
-    private void UpdateOverheatVisuals(EntityUid uid, GunOverheatComponent overheat, SpriteComponent sprite)
+    private void UpdateOverheatVisuals(EntityUid uid, AnCoGunOverheatComponent overheat, SpriteComponent sprite)
     {
         if (!overheat.VisualOverheat)
             return;
