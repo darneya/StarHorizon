@@ -76,13 +76,13 @@
 # ============================================
 
 - type: ghostSprite
-  id: GhostSpriteIndividualEvilNeko
-  name: EvilNeko (Личный)
+  id: GhostSpriteIndividualEvilBug
+  name: EvilBug (Личный)
   rsiPath: _Horizon/Sponsors/Ghosts/individual/evilneko.rsi
   state: animated
   allowedPlayers:
-    - EvilNeko
-    - localhost@EvilNeko
+    - EvilBug
+    - localhost@EvilBug
 
 - type: ghostSprite
   id: GhostSpriteIndividualJoulerk
