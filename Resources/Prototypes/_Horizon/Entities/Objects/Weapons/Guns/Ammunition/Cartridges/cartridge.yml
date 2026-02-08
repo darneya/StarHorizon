@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: BaseCartridgeBarrettM8270
   parent: BaseItem
   abstract: true
@@ -319,3 +319,23 @@
         Heat: 2
   - type: IgnitionSource
     ignited: true
+
+- type: entity
+  id: CartridgeTermobarRocket
+  name: Термобарическая ракета
+  parent: [BaseItem]
+  description: Термобарическая ракета используемая для военных преступлений.
+  components:
+  - type: Tag
+    tags:
+      - CartridgeTermobarRocket
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: TermobaricRocket
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    state: rpg
+  - type: StaticPrice
+    price: 20
