@@ -8,10 +8,10 @@ public sealed class AnCoSpreadModifierSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<AnCoRangedWeaponSpreadModifiersComponent, AnCoGetRecoilModifiersEvent>(OnGetModifier);
+        SubscribeLocalEvent<RangedWeaponSpreadModifiersComponent, AnCoGetRecoilModifiersEvent>(OnGetModifier);
     }
 
-    private void OnGetModifier(Entity<AnCoRangedWeaponSpreadModifiersComponent> ent, ref AnCoGetRecoilModifiersEvent args)
+    private void OnGetModifier(Entity<RangedWeaponSpreadModifiersComponent> ent, ref AnCoGetRecoilModifiersEvent args)
     {
         args.Modifier *= ent.Comp.Modifier;
     }
