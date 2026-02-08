@@ -12,7 +12,7 @@
   - type: CartridgeAmmo
     proto: StandartBallisticAnCoPistol
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Bullet/_35_pistol.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Bullet/35_pistol.rsi
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
@@ -33,7 +33,7 @@
   - type: CartridgeAmmo
     proto: StandartBallisticAnCoRifle
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Bullet/_20_rifle.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Bullet/20_rifle.rsi
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
@@ -54,7 +54,7 @@
   - type: CartridgeAmmo
     proto: BulletPistol
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Bullet/_30_rifle.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Bullet/30_rifle.rsi
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
@@ -74,7 +74,7 @@
   - type: CartridgeAmmo
     proto: BulletPistol
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Bullet/_70_sniper.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Bullet/70_sniper.rsi
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
@@ -94,7 +94,7 @@
   - type: CartridgeAmmo
     proto: BulletPistol
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Bullet/_50_shotgun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Bullet/50_shotgun.rsi
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]

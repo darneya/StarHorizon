@@ -1,5 +1,5 @@
 - type: entity
-  name: боевой нож AnCo
+  name: боевой нож АнКо
   parent: BaseAnCoSharpWeapon
   id: AnCoKnife
   description: Компактный боевой нож, идеальный для ближнего боя и метания.

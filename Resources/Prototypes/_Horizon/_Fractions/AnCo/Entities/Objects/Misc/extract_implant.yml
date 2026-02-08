@@ -31,7 +31,7 @@
   - type: TriggerOnMobstateChange
     mobState:
     - Dead
-  - type: ExtractImplant
+  - type: AnCoExtractImplant
     teleportAnywhere: true
     teleportEffect: "BluespaceAnCoTeleport"
     telepadPrototypeId: "AnCoExtractTelepad"
@@ -51,7 +51,7 @@
   - type: TriggerOnMobstateChange
     mobState:
     - Dead
-  - type: ExtractImplant
+  - type: AnCoExtractImplant
     teleportAnywhere: true
     teleportEffect: "BluespaceAnCoTeleport"
     telepadPrototypeId: "AnCoExtractTelepad"

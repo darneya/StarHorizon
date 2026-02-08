@@ -1,5 +1,5 @@
 - type: entity
-  name: сапёрная лопата AnCo
+  name: сапёрная лопата АнКо
   parent: BaseAnCoWeapon
   id: AnCoShovel
   description: Универсальный инструмент для окапывания и ближнего боя. При хвате двумя руками может использоваться как импровизированный щит.
@@ -10,7 +10,7 @@
     sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/shovel.rsi
     state: icon
   - type: MeleeWeapon
-    wideAnimationRotation: 45
+    wideAnimationRotation: 225
     damage:
       types:
         Blunt: 10
@@ -91,7 +91,7 @@
         path: /Audio/Items/wirecutter.ogg
       changeSound:
         path: /Audio/Items/shovel_dig.ogg
-  - type: BlockingOnWield
+  - type: AnCoBlockingOnWield
   - type: Blocking
     passiveBlockModifier:
       coefficients:

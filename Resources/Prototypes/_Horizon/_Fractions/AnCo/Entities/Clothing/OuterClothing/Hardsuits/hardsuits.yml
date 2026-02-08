@@ -31,7 +31,7 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitSpider
-  - type: FactionAccess
+  - type: AnCoFactionAccess
     allowedFactions:
     - FactionAnCo
     blacklistedFactions:
@@ -73,7 +73,7 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitTitan
-  - type: FactionAccess
+  - type: AnCoFactionAccess
     allowedFactions:
     - FactionAnCo
     blacklistedFactions:
@@ -115,7 +115,7 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitKnight
-  - type: FactionAccess
+  - type: AnCoFactionAccess
     allowedFactions:
     - FactionAnCo
     blacklistedFactions:

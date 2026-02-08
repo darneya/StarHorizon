@@ -23,7 +23,7 @@
   - type: TriggerOnMobstateChange
     mobState:
     - Dead
-  - type: ExtractImplant
+  - type: AnCoExtractImplant
 
 # Действия
 

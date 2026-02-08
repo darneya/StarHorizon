@@ -34,6 +34,6 @@
     damageModifierSet: StructuralMetallicStrong
   - type: ApcPowerReceiver
     powerLoad: 500
-  - type: ExtractTelepad
+  - type: AnCoExtractTelepad
   - type: Appearance
   - type: CollideOnAnchor

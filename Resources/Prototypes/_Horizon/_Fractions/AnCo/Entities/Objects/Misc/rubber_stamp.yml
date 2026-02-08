@@ -9,7 +9,7 @@
     stampedColor: "#b30e0e"
     stampState: "paper_stamp-anco"
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/stamps.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/stamps.rsi
     state: stamp
 
 - type: entity
@@ -23,7 +23,7 @@
     stampedColor: "#b30e0e"
     stampState: "paper_stamp-dipp"
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/stamps.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/stamps.rsi
     state: stamp
 
 - type: entity
@@ -37,7 +37,7 @@
     stampedColor: "#b30e0e"
     stampState: "paper_stamp-dcs"
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/stamps.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/stamps.rsi
     state: stamp
 
 - type: entity
@@ -51,7 +51,7 @@
     stampedColor: "#b30e0e"
     stampState: "paper_stamp-stardust"
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/stamps.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/stamps.rsi
     state: stamp
 
 - type: entity
@@ -65,7 +65,7 @@
     stampedColor: "#b30e0e"
     stampState: "paper_stamp-miligalax"
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/stamps.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/stamps.rsi
     state: stamp
 
 - type: entity
@@ -79,5 +79,5 @@
     stampedColor: "#b30e0e"
     stampState: "paper_stamp-subea"
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/stamps.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/stamps.rsi
     state: stamp

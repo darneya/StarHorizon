@@ -1,5 +1,5 @@
 - type: entity
-  name: боевой молот AnCo
+  name: боевой молот АнКо
   parent: BaseAnCoWeapon
   id: AnCoHammer
   description: Тяжёлый боевой молот, способный крушить врагов и структуры.

@@ -1,6 +1,6 @@
 - type: entity
   id: AnCoAxe
-  name: топор AnCo
+  name: топор АнКо
   parent: BaseAnCoSharpWeapon
   description: Почему бы не сражаться с огнём топором, когда можно сражаться огнём и топором? Теперь с прорезиненной рукоятью!
   suffix: StarHorizon, AnCo, Weapon
@@ -11,8 +11,8 @@
     sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/axe.rsi
     state: icon
   - type: MeleeWeapon
-    wideAnimationRotation: 90
-    swingLeft: true
+    wideAnimationRotation: -135
+    swingLeft: false
     attackRate: 0.75
     damage:
       types:

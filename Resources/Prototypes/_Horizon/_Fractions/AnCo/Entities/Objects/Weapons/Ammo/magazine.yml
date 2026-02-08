@@ -19,7 +19,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Magazine/_50_shotgun_mag.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Magazine/50_shotgun_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -61,7 +61,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Magazine/_35_pistol_mag.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Magazine/35_pistol_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -104,7 +104,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Magazine/_20_rifle_mag.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Magazine/20_rifle_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -147,7 +147,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Magazine/_30_rifle_mag.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Magazine/30_rifle_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -190,7 +190,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Magazine/_70_sniper_mag.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Magazine/70_sniper_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]

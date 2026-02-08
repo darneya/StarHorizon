@@ -9,7 +9,7 @@
 - type: stack
   id: CitadelCoin
   name: Енды
-  icon: _Horizon/_Fractions/AnCo/Object/Misc/coin.rsi
+  icon: _Horizon/_Fractions/AnCo/Objects/Misc/coin.rsi
   spawn: CitadelCoin1
 
 - type: entity
@@ -28,10 +28,10 @@
   description: Кажется, он пульсирует подозрительно манящей энергией.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/coin.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/coin.rsi
     state: ancocoin
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/coin.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/coin.rsi
     size: Tiny
   - type: Stack
     count: 20

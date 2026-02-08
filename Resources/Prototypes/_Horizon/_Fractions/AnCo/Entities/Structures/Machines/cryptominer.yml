@@ -6,7 +6,7 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: Cryptominer
+  - type: AnCoCryptominer
     creditsPerSecond: 10
     powerConsumption: 500
     heatEnergyPerSecond: 5000

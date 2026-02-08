@@ -1,5 +1,5 @@
 - type: entity
-  name: ардонивоё копьё AnCo
+  name: ардонивоё копьё АнКо
   parent: BaseAnCoSharpWeapon
   id: AnCoSpearPlasma
   description: Копьё с плазменным наконечником.
@@ -68,7 +68,7 @@
   - type: UseDelay
   - type: StaminaDamageOnCollide
     damage: 60
-  - type: IgniteOnThrowHit
+  - type: AnCoIgniteOnThrowHit
     fireStacks: 2
   - type: Appearance
   - type: SolutionContainerVisuals

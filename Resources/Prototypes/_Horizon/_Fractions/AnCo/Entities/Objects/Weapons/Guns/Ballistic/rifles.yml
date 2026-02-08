@@ -6,7 +6,7 @@
   suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Guns/semiauto-rifle.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Ballistic/semiauto-rifle.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -65,7 +65,7 @@
   suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Guns/fullauto-rifle.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Ballistic/fullauto-rifle.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]

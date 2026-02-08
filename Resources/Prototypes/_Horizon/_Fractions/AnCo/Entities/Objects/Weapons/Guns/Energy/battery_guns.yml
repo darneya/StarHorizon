@@ -147,7 +147,7 @@
     autoRecharge: true
     autoRechargeRate: 100
   - type: MultiHandedItem
-  - type: FactionAccess
+  - type: AnCoFactionAccess
     allowedFactions:
     - FactionAnCo
     blacklistedFactions:
@@ -199,7 +199,7 @@
     autoRecharge: true
     autoRechargeRate: 50
   - type: MultiHandedItem
-  - type: FactionAccess
+  - type: AnCoFactionAccess
     allowedFactions:
     - FactionAnCo
     blacklistedFactions:
@@ -287,7 +287,7 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 10
-  - type: FactionAccess
+  - type: AnCoFactionAccess
     allowedFactions:
     - FactionAnCo
     blacklistedFactions:
@@ -329,7 +329,7 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 5
-  - type: FactionAccess
+  - type: AnCoFactionAccess
     allowedFactions:
     - FactionAnCo
     blacklistedFactions:
@@ -378,7 +378,7 @@
     magState: mag
     steps: 1
     zeroVisible: true
-  - type: FactionAccess
+  - type: AnCoFactionAccess
     allowedFactions:
     - FactionAnCo
     blacklistedFactions:
@@ -427,7 +427,7 @@
   - type: MagazineVisuals
     magState: mag
     steps: 4
-  - type: GunOverheat
+  - type: AnCoGunOverheat
     heatPerShot: 0.2
     cooldownRate: 0.05
     visualOverheat: false

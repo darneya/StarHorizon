@@ -6,7 +6,7 @@
   id: PenAnCo
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/pen.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Misc/pen.rsi
     state: anco-pen
   - type: MeleeWeapon
     wideAnimationRotation: 0

@@ -82,7 +82,7 @@
   name: Средства самообороны
   description: Шаблон пистолета и боеприпасов
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Guns/semiauto-pistol.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Ballistic/semiauto-pistol.rsi
     state: icon
   content:
   - CrateBaseAnCoPistol
@@ -92,7 +92,7 @@
   name: Шаблон боеприпасов
   description: Шаблон боеприпасов .35 калибра
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Ammo/Magazine/_35_pistol_mag.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Magazine/35_pistol_mag.rsi
     state: icon
   content:
   - CrateBaseAnCoAmmo35
