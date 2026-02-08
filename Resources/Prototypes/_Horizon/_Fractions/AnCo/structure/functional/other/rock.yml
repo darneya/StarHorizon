@@ -6,7 +6,7 @@
   description: Монолитный кусок казмия. Кажется очень прочным.
   components:
     - type: Sprite
-      sprite: _Horizon/_Fractions/AnCo/Structures/Decoration/uasrock.rsi
+      sprite: _Horizon/_Fractions/AnCo/Structures/Decoration/rock.rsi
       state: UASRock
       noRot: true
     - type: Anchorable

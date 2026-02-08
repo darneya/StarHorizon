@@ -5,11 +5,11 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/uasidcard.rsi
+    sprite: _Horizon/_Fractions/AnCo/Object/Misc/idcard.rsi
   - type: Clothing
     slots:
     - idcard
-    sprite: _Horizon/_Fractions/AnCo/Object/Misc/uasidcard.rsi
+    sprite: _Horizon/_Fractions/AnCo/Object/Misc/idcard.rsi
   - type: Item
     size: Small
 

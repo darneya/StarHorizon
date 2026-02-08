@@ -6,7 +6,7 @@
   suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/uassword.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/sword.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -60
@@ -19,4 +19,4 @@
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item
     size: Normal
-    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/uassword.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/sword.rsi

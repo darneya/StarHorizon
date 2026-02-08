@@ -6,11 +6,11 @@
   description: Плащ с логотипом корпорации на спине. Слава АнКо!
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Cloaks/uascloak.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Cloaks/cloak.rsi
   - type: Tag
     tags: [] # Выносим с ВЛа для хамелеонки
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Cloaks/uascloak.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Cloaks/cloak.rsi
   - type: StaticPrice
     price: 100000
 
@@ -22,9 +22,9 @@
   description: Медаль, выдаваемая только за крупные заслуги перед корпорацией AnCo
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/uasmedalanco.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/medal.rsi
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/uasmedalanco.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/medal.rsi
   - type: Tag
     tags:
       - Medal
@@ -37,9 +37,9 @@
   description: Выдается лишь лучшим воинам, которые одержали победу даже над самой смертью
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/uasmedalmiligalax.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/medalmiligalax.rsi
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/uasmedalmiligalax.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/medalmiligalax.rsi
   - type: Tag
     tags:
       - Medal
@@ -52,9 +52,9 @@
   description: Выдается лишь лучшим ученым в медицинской сфере или лучшим медикам сотворившим чудо
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/uasmedalsubea.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/medalsubea.rsi
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/uasmedalsubea.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/medalsubea.rsi
   - type: Tag
     tags:
       - Medal
@@ -67,9 +67,9 @@
   description: Выдается за астрономическую оптимизацию логистики или за открытия в сфере Ардония
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/uasmedalstardust.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/medalstardust.rsi
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/uasmedalstardust.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Neck/Medals/medalstardust.rsi
   - type: Tag
     tags:
       - Medal

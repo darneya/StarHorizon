@@ -8,7 +8,7 @@
   - type: Execution
     doAfterDuration: 4.0
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/ancoaxe.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/axe.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 90
@@ -30,7 +30,7 @@
   - type: Item
     size: Ginormous
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/ancoaxe.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/axe.rsi
     quickEquip: false
     slots:
     - back

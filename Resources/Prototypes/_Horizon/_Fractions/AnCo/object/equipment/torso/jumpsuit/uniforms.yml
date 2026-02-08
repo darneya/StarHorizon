@@ -10,9 +10,9 @@
   - type: Tag
     tags: [] # Выносим с ВЛа для хамелеонки
   - type: Sprite
-    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/uasuniform.rsi
+    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/uniform.rsi
   - type: Clothing
-    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/uasuniform.rsi
+    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/uniform.rsi
   - type: StaticPrice
     price: 5000
 
@@ -26,9 +26,9 @@
   - type: FactionClothing
     faction: AnCoSecurBot
   - type: Sprite
-    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/uasjumpsuith.rsi
+    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/jumpsuith.rsi
   - type: Clothing
-    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/uasjumpsuith.rsi
+    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/jumpsuith.rsi
 
 - type: entity
   suffix: StarHorizon, AnCo
@@ -40,9 +40,9 @@
   - type: FactionClothing
     faction: AnCoSecurBot
   - type: Sprite
-    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/uasjumpskirth.rsi
+    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/jumpskirth.rsi
   - type: Clothing
-    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/uasjumpskirth.rsi
+    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/jumpskirth.rsi
 
 - type: entity
   suffix: StarHorizon, AnCo
@@ -54,9 +54,9 @@
   - type: FactionClothing
     faction: AnCoSecurBot
   - type: Sprite
-    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/uasjumpskirt.rsi
+    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/jumpskirt.rsi
   - type: Clothing
-    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/uasjumpskirt.rsi
+    sprite:  _Horizon/_Fractions/AnCo/Clothing/Uniforms/jumpskirt.rsi
 
 - type: entity
   suffix: StarHorizon, AnCo

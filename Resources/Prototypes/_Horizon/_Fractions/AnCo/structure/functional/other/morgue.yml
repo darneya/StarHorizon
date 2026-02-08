@@ -6,7 +6,7 @@
   description: Вы ощущаете исходящий от этого кристалла жар.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/ancoboximplant.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/boximplant.rsi
     layers:
     - state: base
       map: ["enum.StorageVisualLayers.Base"]

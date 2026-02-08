@@ -5,12 +5,12 @@
   suffix: StarHorizon, AnCo, Empty
   components:
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Objects/Tanks/Jetpacks/ancojet.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Tanks/Jetpacks/jet.rsi
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Tanks/Jetpacks/ancojet.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Tanks/Jetpacks/jet.rsi
     weightlessModifier: 2
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Objects/Tanks/Jetpacks/ancojet.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Tanks/Jetpacks/jet.rsi
     slots:
       - Back
       - suitStorage

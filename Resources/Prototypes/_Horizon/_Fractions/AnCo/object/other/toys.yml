@@ -6,7 +6,7 @@
   description: Плюшевый Советник АнКо, но кто они такие?
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/uasplushene.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/plushene.rsi
     state: Luma
   - type: EmitSoundOnActivate
     sound:
@@ -30,7 +30,7 @@
   description: Плюшевый Рипсоид, машина смерти в виде игрушки
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/uasplushene.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/plushene.rsi
     state: ripsi
   - type: EmitSoundOnActivate
     sound:
@@ -54,7 +54,7 @@
   description: Он только с виду такой страшный, но в душе он мягкий и теплый
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/uasplushene.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/plushene.rsi
     state: titan
   - type: EmitSoundOnActivate
     sound:
@@ -78,7 +78,7 @@
   description: Рыцарь как из легенд, только без щита и меча
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/uasplushene.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/plushene.rsi
     state: knight
   - type: EmitSoundOnActivate
     sound:
@@ -102,7 +102,7 @@
   description: Огромная грозная машина теперь маленькая и мягкая
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/uasplushene.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/plushene.rsi
     state: cyclop
   - type: EmitSoundOnActivate
     sound:
@@ -126,7 +126,7 @@
   description: Плюшевый инженер сделал огромный вклад в корпорацию и теперь он.. Плюшевый
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/uasplushene.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Fun/plushene.rsi
     state: engineer
   - type: EmitSoundOnActivate
     sound:

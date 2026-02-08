@@ -19,7 +19,7 @@
     pack: GenericVendGoodbyes
   - type: Speech
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/VendingMachines/uasclothing.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/VendingMachines/clothing.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]

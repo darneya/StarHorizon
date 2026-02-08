@@ -15,9 +15,9 @@
   components:
   - type: Item
     size: Tiny
-    sprite: _Horizon/_Fractions/AnCo/Objects/Devices/uasencryptionkeys.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Devices/encryptionkeys.rsi
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Devices/uasencryptionkeys.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Devices/encryptionkeys.rsi
     state: crypto-base
   - type: EncryptionKey
     channels:

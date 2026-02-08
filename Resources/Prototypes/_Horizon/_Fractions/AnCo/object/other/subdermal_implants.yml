@@ -8,7 +8,7 @@
   - type: Transform
     anchored: True
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Effects/uaseffect.rsi
+    sprite: _Horizon/_Fractions/AnCo/Effects/effect.rsi
     noRot: true
     layers:
     - state: teleport

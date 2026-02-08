@@ -6,7 +6,7 @@
   - type: InstantAction
     useDelay: 10
     icon:
-      sprite: _Horizon/_Fractions/AnCo/Interface/Actions/uasaction.rsi
+      sprite: _Horizon/_Fractions/AnCo/Interface/Actions/action.rsi
       state: invisibility
     itemIconStyle: NoItem
     event: !type:ToggleActionEvent
@@ -19,7 +19,7 @@
   - type: InstantAction
     useDelay: 10
     icon:
-      sprite: _Horizon/_Fractions/AnCo/Interface/Actions/uasaction.rsi
+      sprite: _Horizon/_Fractions/AnCo/Interface/Actions/action.rsi
       state: shield
     itemIconStyle: NoItem
     event: !type:ToggleActionEvent
@@ -36,7 +36,7 @@
     itemIconStyle: NoItem
     priority: -20
     icon:
-      sprite: _Horizon/_Fractions/AnCo/Interface/Actions/uasaction.rsi
+      sprite: _Horizon/_Fractions/AnCo/Interface/Actions/action.rsi
       state: acid
     event: !type:ActivateImplantEvent
 
@@ -52,7 +52,7 @@
     itemIconStyle: NoItem
     priority: -19
     icon:
-      sprite: _Horizon/_Fractions/AnCo/Interface/Actions/uasaction.rsi
+      sprite: _Horizon/_Fractions/AnCo/Interface/Actions/action.rsi
       state: drone
     event: !type:ActivateImplantEvent
 

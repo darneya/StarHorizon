@@ -82,7 +82,7 @@
   name: Средства самообороны
   description: Шаблон пистолета и боеприпасов
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Guns/uas-semiauto-pistol.rsi
+    sprite: _Horizon/_Fractions/AnCo/Object/Weapon/Guns/semiauto-pistol.rsi
     state: icon
   content:
   - CrateBaseAnCoPistol

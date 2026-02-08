@@ -39,7 +39,7 @@
   parent: BasePowerCellAnCo
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Power/uascore.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Power/core.rsi
     layers:
     - map: [ "enum.PowerCellVisualLayers.Base" ]
       state: core

@@ -43,7 +43,7 @@
   description: Красная прозрачная микросхема. Вы ощущаете исходящее от неё тепло.
   components:
     - type: Sprite
-      sprite: _Horizon/_Fractions/AnCo/Objects/Misc/uasciruitboard.rsi
+      sprite: _Horizon/_Fractions/AnCo/Objects/Misc/ciruitboard.rsi
       state: boarddrill
     - type: Item
       storedRotation: -90

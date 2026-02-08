@@ -8,7 +8,7 @@
   - type: Item
     size: Small
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Mobs/uasbot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: crab-bot
   - type: HTN
     rootTask:
@@ -108,10 +108,10 @@
   - type: SpawnOnTrigger
     proto: AnCoDrone
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Mobs/uasbot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: crab-off
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Mobs/uasbot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: crab-off
   - type: EmitSoundOnActivate
     sound:
@@ -127,7 +127,7 @@
   suffix: StarHorizon, AnCo
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Mobs/uasbot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: combat-bot
   - type: MeleeWeapon
     hidden: true
@@ -177,10 +177,10 @@
   - type: SpawnOnTrigger
     proto: AnCoDroneCombat
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Mobs/uasbot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: combat-off
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Mobs/uasbot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: combat-off
   - type: EmitSoundOnActivate
     sound:
@@ -196,7 +196,7 @@
   suffix: StarHorizon, AnCo
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Mobs/uasbot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: mine-bot
   - type: MeleeWeapon
     hidden: true
@@ -254,10 +254,10 @@
   - type: SpawnOnTrigger
     proto: AnCoDroneMine
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Mobs/uasbot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: mine-off
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Mobs/uasbot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: mine-off
   - type: EmitSoundOnActivate
     sound:

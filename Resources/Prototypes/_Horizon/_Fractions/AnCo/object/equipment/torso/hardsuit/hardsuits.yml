@@ -6,9 +6,9 @@
   description: Скафандр, созданный из продвинутых композитов и предназначенный для боевых миссий.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uasspider.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/spider.rsi
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uasspider.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/spider.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
@@ -48,9 +48,9 @@
   description: Тяжёлый скафандр АнКо. Выбор тех, для кого защита важнее скорости.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uastitan.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/titan.rsi
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uastitan.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/titan.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
@@ -90,9 +90,9 @@
   description: Это как доспехи, только герметичные!
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uasknight.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/knight.rsi
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/uasknight.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/knight.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000

@@ -18,7 +18,7 @@
   suffix: StarHorizon, AnCo, Material, Single
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi
     state: kazmieore
   - type: Stack
     stackType: KazmieOreStack
@@ -38,7 +38,7 @@
     materialComposition:
       RawKazmie: 100
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi
     state: kazmieore
   - type: Tag
     tags:
@@ -54,7 +54,7 @@
   stackEntity: KazmieOre1
   name: куб казмия
   unit: куски необработанного казмия
-  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi, state: kazmieore }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi, state: kazmieore }
   price: 0.05
 
 # ----------
@@ -79,7 +79,7 @@
   suffix: StarHorizon, AnCo, Material, Single
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi
     state: ardonore
   - type: Stack
     stackType: ArdonOreStack
@@ -99,7 +99,7 @@
     materialComposition:
       RawArdon: 100
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi
     state: ardonore
   - type: Tag
     tags:
@@ -115,7 +115,7 @@
   stackEntity: ArdonOre1
   name: ардониевый кристалл
   unit: кристаллы необработанного ардония
-  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi, state: ardonore }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi, state: ardonore }
   price: 0.05
 
 # ----------
@@ -139,7 +139,7 @@
   suffix: StarHorizon, AnCo, Material, Single
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi
     state: ardon_3
   - type: Stack
     stackType: ArdonSheetStack
@@ -164,13 +164,13 @@
     - ardon_2
     - ardon_3
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi
     state: ardon_3
     layers:
     - state: ardon_3
       map: ["base"]
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi
     heldPrefix: ardon
   - type: Appearance
   - type: Tag
@@ -187,7 +187,7 @@
   stackEntity: ArdonSheet1
   name: лист ардония
   unit: листы обработанного ардония
-  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi, state: ardon_3 }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi, state: ardon_3 }
   price: 0.05
 
 # ----------
@@ -211,7 +211,7 @@
   suffix: StarHorizon, AnCo, Material, Single
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi
     state: kazmie-stack-3
   - type: Stack
     stackType: KazmieSheetStack
@@ -236,13 +236,13 @@
     - kazmie_2
     - kazmie_3
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi
     state: kazmie_3
     layers:
     - state: kazmie_3
       map: ["base"]
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi
     heldPrefix: kazmie
   - type: Appearance
   - type: Tag
@@ -259,7 +259,7 @@
   stackEntity: KazmieSheet1
   name: лист казмия
   unit: листы темного казмия
-  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Materials/uasmaterial.rsi, state: kazmie_3 }
+  icon: { sprite: _Horizon/_Fractions/AnCo/Objects/Materials/material.rsi, state: kazmie_3 }
   price: 0.05
 
 # ----------

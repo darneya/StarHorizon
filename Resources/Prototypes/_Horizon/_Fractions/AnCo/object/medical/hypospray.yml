@@ -6,10 +6,10 @@
   id: AnCohypo
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uashypospray.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/hypospray.rsi
     state: hypo
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uashypospray.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/hypospray.rsi
     state: hypo
   - type: SolutionContainerManager
     solutions:
@@ -30,7 +30,7 @@
   id: AnCohypocapsule
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/ancocapsulemedipen.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/capsulemedipen.rsi
     layers:
       - state: hypo
       - state: hypo-anim
@@ -71,7 +71,7 @@
   - type: Item
     size: Tiny
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/ancocapsulemedipen.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/capsulemedipen.rsi
     layers:
       - state: cartridge
   - type: SolutionCartridge
@@ -107,7 +107,7 @@
   description: Предназначен для лечения обширных повреждений. Внимание, может вызвать рвоту!
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uasmedipen.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/medipen.rsi
     layers:
     - state: omega
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -148,7 +148,7 @@
   description: Медипен, содержащий наниты. Используйте на свой страх и риск.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uasmedipen.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/medipen.rsi
     layers:
     - state: omega
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -181,7 +181,7 @@
 #   description: Одноразовый медипен-дефибриллятор. Содержит почти смертельную дозу нанитов.
 #   components:
 #   - type: Sprite
-#     sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/uasmedipen.rsi
+#     sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/medipen.rsi
 #     layers:
 #     - state: omega
 #       map: ["enum.SolutionContainerLayers.Fill"]

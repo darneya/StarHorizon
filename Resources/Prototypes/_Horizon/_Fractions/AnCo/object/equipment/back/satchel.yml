@@ -6,7 +6,7 @@
   description: Сумка с углубленными карманами на удобном магнитном крепеже.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Back/Satchels/uassatchel.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Back/Satchels/satchel.rsi
   - type: Tag
     tags: [] # Выносим с ВЛа для хамелеонки
   - type: Storage
@@ -26,7 +26,7 @@
   description: Сумка с дохуя углубленными карманами на удобном магнитном крепеже.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Back/Satchels/uassatchel.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Back/Satchels/satchel.rsi
   - type: Storage
     maxItemSize: Ginormous
     grid:

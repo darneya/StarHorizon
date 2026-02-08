@@ -7,7 +7,7 @@
   components:
   - type: Sharp
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/ancoshovel.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/shovel.rsi
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 45
@@ -25,7 +25,7 @@
         Slash: 5
   - type: Item
     size: Large
-    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/ancoshovel.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/shovel.rsi
   - type: Tag
     tags:
     - BotanyShovel
@@ -48,7 +48,7 @@
     entries:
     - behavior: Digging
       sprite:
-        sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/ancoshovel.rsi
+        sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/shovel.rsi
         state: icon
       useSound:
         path: /Audio/Items/shovel_dig.ogg
@@ -56,7 +56,7 @@
         path: /Audio/Items/shovel_dig.ogg
     - behavior: Screwing
       sprite:
-        sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/ancoshovel.rsi
+        sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/shovel.rsi
         state: icon
       useSound:
         path: /Audio/Items/screwdriver.ogg
@@ -64,7 +64,7 @@
         path: /Audio/Items/shovel_dig.ogg
     - behavior: Anchoring
       sprite:
-        sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/ancoshovel.rsi
+        sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/shovel.rsi
         state: icon
       useSound:
         path: /Audio/Items/ratchet.ogg
@@ -74,7 +74,7 @@
       - Prying
       - Axing
       sprite:
-        sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/ancoshovel.rsi
+        sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/shovel.rsi
         state: icon
       useSound:
         path: /Audio/Items/crowbar.ogg
@@ -85,7 +85,7 @@
       - Slicing
       - Sawing
       sprite:
-        sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/ancoshovel.rsi
+        sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/shovel.rsi
         state: icon
       useSound:
         path: /Audio/Items/wirecutter.ogg

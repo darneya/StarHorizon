@@ -6,7 +6,7 @@
   description: Вы ощущаете исходящий от этого кристалла жар.
   components:
     - type: Sprite
-      sprite: _Horizon/_Fractions/AnCo/Structures/Decoration/uascrystall.rsi
+      sprite: _Horizon/_Fractions/AnCo/Structures/Decoration/crystall.rsi
       state: EFS
       noRot: true
     - type: Physics

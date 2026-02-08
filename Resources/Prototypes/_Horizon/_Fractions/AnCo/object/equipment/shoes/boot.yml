@@ -6,9 +6,9 @@
   description: Ботинки с укреплённой подошвой из кристалла Ардония.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Shoes/Boots/uasboot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Shoes/Boots/boot.rsi
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Shoes/Boots/uasboot.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Shoes/Boots/boot.rsi
   - type: Tag
     tags: [] # Выносим с ВЛа для хамелеонки
   - type: ClothingSlowOnDamageModifier
@@ -24,12 +24,12 @@
   description: Ботинки облегчённой конструкции. Обладают продвинутой системой магнитов.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Shoes/Boots/uasmagboots.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Shoes/Boots/magboots.rsi
     layers:
     - state: icon
       map: [ "enum.ToggleableVisuals.Layer" ]
   - type: Clothing
-    sprite: _Horizon/_Fractions/AnCo/Clothing/Shoes/Boots/uasmagboots.rsi
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Shoes/Boots/magboots.rsi
   - type: Tag
     tags: [] # Выносим с ВЛа для хамелеонки
   - type: StaticPrice

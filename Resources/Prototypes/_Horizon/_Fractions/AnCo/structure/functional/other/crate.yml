@@ -11,7 +11,7 @@
     anchored: True
   - type: Sprite
     noRot: true
-    sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/uascrate.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/crate.rsi
     layers:
     - state: uascrate
       map: ["enum.StorageVisualLayers.Base"]

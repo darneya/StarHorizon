@@ -7,7 +7,7 @@
   - type: Action
     useDelay: 30
     icon:
-      sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/ancosabre.rsi
+      sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/sabre.rsi
       state: icon
     itemIconStyle: NoItem
   - type: InstantAction

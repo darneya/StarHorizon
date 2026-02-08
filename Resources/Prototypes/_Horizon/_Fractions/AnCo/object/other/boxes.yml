@@ -7,10 +7,10 @@
   description: Закрытый ящик с логотипом корпорации.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/uasbox.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/box.rsi
     state: uasbox
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/uasbox.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/box.rsi
     state: uasbox
     size: Huge
   - type: SpawnItemsOnUse
@@ -25,10 +25,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/uasbox.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/box.rsi
     state: uasboxopen
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/uasbox.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/box.rsi
     state: uasboxopen
     size: Huge
 

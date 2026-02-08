@@ -6,7 +6,7 @@
   description: Ничем не отличимый от других, за исключением ручки, КПК.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Devices/uaspda.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Devices/pda.rsi
   - type: Pda
     penSlot:
       startingItem: PenAnCo

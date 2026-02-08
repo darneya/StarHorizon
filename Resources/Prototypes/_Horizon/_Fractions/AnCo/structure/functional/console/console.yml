@@ -9,7 +9,7 @@
   components:
   - type: InteractionOutline
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/uasuplink.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/uplink.rsi
     layers:
     - state: uasuplink
   - type: UserInterface

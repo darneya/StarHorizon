@@ -9,7 +9,7 @@
     corePrototype: AnCoAnomalyCircuitboard
     coreInertPrototype: AnCoAnomalyCircuitboard
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Anomaly/uasanomaly.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Anomaly/anomaly.rsi
     layers:
     - state: anom
       map: ["enum.AnomalyVisualLayers.Base"]

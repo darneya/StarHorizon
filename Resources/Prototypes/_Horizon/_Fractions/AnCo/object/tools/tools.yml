@@ -6,10 +6,10 @@
   description: Мульти-инструмент модели "Омега" от корпорации АнКо.
   components:
   - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Tools/uasomegatool.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Tools/omegatool.rsi
     state: omnitool-screwing
   - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Objects/Tools/uasomegatool.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Tools/omegatool.rsi
     size: Normal
   - type: Tag
     tags:
@@ -27,7 +27,7 @@
     entries:
       - behavior: Screwing
         sprite:
-          sprite: _Horizon/_Fractions/AnCo/Objects/Tools/uasomegatool.rsi
+          sprite: _Horizon/_Fractions/AnCo/Objects/Tools/omegatool.rsi
           state: omnitool-screwing
         useSound:
           path: /Audio/Items/drill_use.ogg
@@ -35,7 +35,7 @@
           path: /Audio/Items/change_drill.ogg
       - behavior: Prying
         sprite:
-          sprite: _Horizon/_Fractions/AnCo/Objects/Tools/uasomegatool.rsi
+          sprite: _Horizon/_Fractions/AnCo/Objects/Tools/omegatool.rsi
           state: omnitool-prying
         useSound:
           path: /Audio/Items/jaws_pry.ogg
@@ -43,7 +43,7 @@
           path: /Audio/Items/change_drill.ogg
       - behavior: Anchoring
         sprite:
-          sprite: _Horizon/_Fractions/AnCo/Objects/Tools/uasomegatool.rsi
+          sprite: _Horizon/_Fractions/AnCo/Objects/Tools/omegatool.rsi
           state: omnitool-wrenching
         useSound:
           path: /Audio/Items/ratchet.ogg
@@ -51,7 +51,7 @@
           path: /Audio/Items/change_drill.ogg
       - behavior: Cutting
         sprite:
-          sprite: _Horizon/_Fractions/AnCo/Objects/Tools/uasomegatool.rsi
+          sprite: _Horizon/_Fractions/AnCo/Objects/Tools/omegatool.rsi
           state: omnitool-snipping
         useSound:
           path: /Audio/Items/jaws_cut.ogg
@@ -59,7 +59,7 @@
           path: /Audio/Items/change_drill.ogg
       - behavior: Pulsing
         sprite:
-          sprite: _Horizon/_Fractions/AnCo/Objects/Tools/uasomegatool.rsi
+          sprite: _Horizon/_Fractions/AnCo/Objects/Tools/omegatool.rsi
           state: omnitool-pulsing
         changeSound:
           path: /Audio/Items/change_drill.ogg

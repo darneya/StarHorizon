@@ -74,7 +74,7 @@
     itemIconStyle: BigAction
     priority: -20
     icon:
-      sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/ancoboximplant.rsi
+      sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/boximplant.rsi
       state: icon
 
 - type: entity
