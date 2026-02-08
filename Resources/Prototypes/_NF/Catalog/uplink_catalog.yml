@@ -165,7 +165,7 @@
   name: Термобарическая ракета
   description: Термобарическая ракета используемая для военных преступлений.
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi, state: rpg }
-  productEntity: CartridgeTermobarRocket 
+  productEntity: CartridgeTermobarRocket
   cost:
     Telecrystal: 15
   categories:

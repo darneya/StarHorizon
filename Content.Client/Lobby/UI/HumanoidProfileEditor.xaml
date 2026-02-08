@@ -213,11 +213,7 @@
                         <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
                             <BoxContainer Orientation="Horizontal" HorizontalExpand="True" Margin="6 6 6 8">
                                 <controls:StripeBack SetHeight="60" HorizontalExpand="True">
-                                    <BoxContainer Orientation="Horizontal" >
-                                        <Button Name="TraitsPositive" Text="{Loc 'humanoid-profile-editor-traits-positive'}" HorizontalExpand="True" StyleClasses="OpenRight" Margin="4"/>
-                                        <Button Name="TraitsNeutral" Text="{Loc 'humanoid-profile-editor-traits-neutral'}" HorizontalExpand="True" StyleClasses="ButtonSquare" Margin="4"/>
-                                        <Button Name="TraitsNegative" Text="{Loc 'humanoid-profile-editor-traits-negative'}" HorizontalExpand="True" StyleClasses="OpenLeft" Margin="4"/>
-                                        <RichTextLabel Name="QuirksPointsLabel" Text="0 оч." Margin="4 10 4 4" VerticalAlignment="Top"/>
+                                    <BoxContainer Orientation="Horizontal" Name="QuirkCategories" >
                                     </BoxContainer>
                                 </controls:StripeBack>
                             </BoxContainer>

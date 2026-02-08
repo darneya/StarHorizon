@@ -17,10 +17,14 @@ public sealed partial class ModifyBodyParts : BaseTraitEffect
     [DataField]
     public string? SlotId = null;
 
+    [DataField]
+    public BodyPartType? ParentPartType;
+
+
     public override void DoEffect(EntityUid uid, IEntityManager entMan)
     {
         var comp = entMan.EnsureComponent<TraitPendingBodyModificationComponent>(uid);
-        var data = new PartReplacement(PartType, Symmetry, ProtoId, SlotId);
+        var data = new PartReplacement(PartType, ParentPartType, Symmetry, ProtoId, SlotId);
         comp.Parts.Add(data);
     }
 }

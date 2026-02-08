@@ -56,8 +56,9 @@ public sealed class TraitSystem : EntitySystem
             if (!canApply)
                 continue;
 
-            foreach (var effect in traitPrototype.Effects)
+            for (var i = 0; i < traitPrototype.Effects.Count; i++)
             {
+                var effect = traitPrototype.Effects[i];
                 effect.DoEffect(args.Mob, EntityManager);
             }
             // Horizon traits end
