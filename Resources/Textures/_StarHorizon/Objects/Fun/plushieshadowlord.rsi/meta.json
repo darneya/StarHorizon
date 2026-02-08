@@ -1,14 +1,15 @@
 {
   "version": 1,
-  "license": "CC BY-NC-ND 3.0",
-  "copyright": "Sprites by StarHorizon",
+  "license": "CLA with hosting restrictions",
+  "copyright": "Sprites by ravenreaper DS:256194220132401153",
   "size": {
     "x": 32,
     "y": 32
   },
-  "states": [
-    {
-      "name": "icon"
-    }
-  ]
+    "states": [
+        {
+            "name": "icon"
+        }
+    ]
 }
+
