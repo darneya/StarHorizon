@@ -664,7 +664,7 @@ namespace Content.Client.Lobby.UI
             foreach (var (categoryId, categoryTraits) in traitGroups)
             {
                 // Horizon tweak start
-                if (categoryId == QuirksCategory)
+                if (_quirksCategories.Contains(categoryId))
                     continue;
                 // Horizon tweak end
 

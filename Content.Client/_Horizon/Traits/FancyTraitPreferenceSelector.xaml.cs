@@ -46,9 +46,9 @@ public sealed partial class FancyTraitPreferenceSelector : Control
         PreferenceChanged?.Invoke(Preference);
     }
 
-    public void UpdateName(bool canSelect)
+    public void UpdateName(bool locked)
     {
-        NameLabel.SetMarkup($"[color={(canSelect ? "white" : "crimson")}]{_nameString}[/color]");
+        NameLabel.SetMarkup($"[color={((locked && !Checkbox.Pressed) ? "crimson" : "white")}]{_nameString}[/color]");
     }
 
     protected override void FrameUpdate(FrameEventArgs args)

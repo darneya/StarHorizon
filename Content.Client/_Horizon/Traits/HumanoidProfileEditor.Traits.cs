@@ -8,9 +8,16 @@ namespace Content.Client.Lobby.UI;
 
 public sealed partial class HumanoidProfileEditor
 {
-    private QuirkCategory _selectedQuirkCategory = QuirkCategory.Positive;
+    private string _selectedQuirkCategory = "HorizonPositive";
+
+    private RichTextLabel? _quirksPointsLabel;
     private List<TraitPrototype> _cachedQuirks = new();
-    private const string QuirksCategory = "HorizonQuirks";
+    private List<string> _quirksCategories = new()
+    {
+        "HorizonPositive",
+        "HorizonNeutral",
+        "HorizonNegative"
+    };
 
     private void StartupQuirks()
     {
@@ -19,27 +26,43 @@ public sealed partial class HumanoidProfileEditor
 
         ButtonGroup categoryGroup = new(false);
 
-        TraitsPositive.Group = categoryGroup;
-        TraitsNegative.Group = categoryGroup;
-        TraitsNeutral.Group = categoryGroup;
+        QuirkCategories.RemoveAllChildren();
 
-        TraitsPositive.Pressed = true;
+        for (var i = 0; i < _quirksCategories.Count; i++)
+        {
+            var styleClasses = "ButtonSquare";
+            if (i == _quirksCategories.Count - 1)
+                styleClasses = "OpenLeft";
+            else if (i == 0)
+                styleClasses = "OpenRight";
 
-        TraitsPositive.OnPressed += _ =>
+            var category = _quirksCategories[i];
+
+            var button = new Button()
+            {
+                Text = Loc.GetString(_prototypeManager.Index<TraitCategoryPrototype>(category).Name),
+                HorizontalExpand = true,
+                StyleClasses = { styleClasses },
+                Margin = new(4),
+                Pressed = i == 0,
+                Group = categoryGroup
+            };
+
+            button.OnPressed += _ =>
+            {
+                _selectedQuirkCategory = category;
+                RefreshQuirks();
+            };
+
+            QuirkCategories.AddChild(button);
+        }
+
+        _quirksPointsLabel = new()
         {
-            _selectedQuirkCategory = QuirkCategory.Positive;
-            RefreshQuirks();
+            Margin = new(4, 10, 4, 4),
+            VerticalAlignment = VAlignment.Top
         };
-        TraitsNegative.OnPressed += _ =>
-        {
-            _selectedQuirkCategory = QuirkCategory.Negative;
-            RefreshQuirks();
-        };
-        TraitsNeutral.OnPressed += _ =>
-        {
-            _selectedQuirkCategory = QuirkCategory.Neutral;
-            RefreshQuirks();
-        };
+        QuirkCategories.AddChild(_quirksPointsLabel);
     }
 
     private void RefreshQuirks()
@@ -54,7 +77,7 @@ public sealed partial class HumanoidProfileEditor
         {
             // If trait not found or another category don't count its points.
             if (!_prototypeManager.TryIndex<TraitPrototype>(trait, out var otherProto) ||
-                otherProto.Category != QuirksCategory)
+                !_quirksCategories.Contains(otherProto.Category ?? ""))
             {
                 continue;
             }
@@ -62,12 +85,13 @@ public sealed partial class HumanoidProfileEditor
             count += otherProto.Cost;
         }
 
-        QuirksPointsLabel.SetMarkup(Loc.GetString("humanoid-profile-editor-quirks-points-label", ("points", -count)));
+        _quirksPointsLabel?.SetMarkup(Loc.GetString("humanoid-profile-editor-quirks-points-label", ("points", -count)));
 
         var quirks = _prototypeManager
             .EnumeratePrototypes<TraitPrototype>()
-            .Where(q => q.Category == QuirksCategory)
-            .OrderBy(q => Loc.GetString(q.Name))
+            .Where(q => _quirksCategories.Contains(q.Category ?? ""))
+            .OrderBy(q => MathF.Abs(q.Cost))
+            .ThenBy(q => Loc.GetString(q.Name))
             .ToList();
 
         if (_cachedQuirks.Equals(quirks))
@@ -91,15 +115,7 @@ public sealed partial class HumanoidProfileEditor
 
             foreach (var quirk in quirks)
             {
-                bool skip = false;
-
-                foreach (var item in quirk.Requirments)
-                {
-                    if (!item.CanApply(Profile, _entManager))
-                        skip = true;
-                }
-
-                if (skip)
+                if (!quirk.RequirmentsMet(Profile, _entManager))
                 {
                     Profile = Profile.WithoutTraitPreference(quirk.ID, _prototypeManager);
 
@@ -109,19 +125,19 @@ public sealed partial class HumanoidProfileEditor
                 }
 
                 var cost = -quirk.Cost;
-                var category = cost switch
+                var coloration = cost switch
                 {
-                    > 0 => QuirkCategory.Negative,
-                    < 0 => QuirkCategory.Positive,
-                    _ => QuirkCategory.Neutral
+                    > 0 => QuirkColoration.Negative,
+                    < 0 => QuirkColoration.Positive,
+                    _ => QuirkColoration.Neutral
                 };
 
-                if (category != _selectedQuirkCategory)
+                if (quirk.Category != _selectedQuirkCategory)
                     continue;
 
                 bool hasTrait = Profile.TraitPreferences.Contains(quirk.ID);
-                bool canApply = count + (hasTrait ? -quirk.Cost : quirk.Cost) <= 0;
-                var quirkButton = new QuirkEntry(quirk.ID, quirk.Name, quirk.Description ?? "", cost, category, hasTrait, canApply)
+
+                var quirkButton = new QuirkEntry(quirk.ID, quirk.Name, quirk.Description ?? "", cost, coloration, hasTrait, CanApplyQuirk(quirk, count))
                 {
                     Margin = new Thickness(0, 2)
                 };
@@ -138,7 +154,38 @@ public sealed partial class HumanoidProfileEditor
         }
     }
 
-    public enum QuirkCategory
+    private string? CanApplyQuirk(TraitPrototype trait, int points)
+    {
+        if (Profile == null)
+            return null;
+
+        string? reason = null;
+
+        bool canApply = points + (Profile.TraitPreferences.Contains(trait.ID) ? -trait.Cost : trait.Cost) <= 0;
+
+        if (!canApply)
+        {
+            reason = Profile.TraitPreferences.Contains(trait.ID) ? Loc.GetString("humanoid-profile-editor-quirks-cannot-remove") :
+                                                                   Loc.GetString("humanoid-profile-editor-quirks-cannot-add");
+        }
+
+        if (trait.Group != null && !Profile.TraitPreferences.Contains(trait.ID))
+        {
+            foreach (var item in Profile.TraitPreferences)
+            {
+                var proto = _prototypeManager.Index(item);
+                if (proto.Group == null)
+                    continue;
+
+                if (proto.Group == trait.Group)
+                    reason = Loc.GetString($"humanoid-profile-editor-quirks-cannot-add-group-{proto.Group}");
+            }
+        }
+
+        return reason;
+    }
+
+    public enum QuirkColoration
     {
         Positive,
         Negative,
