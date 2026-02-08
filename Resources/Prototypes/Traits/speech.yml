@@ -74,7 +74,8 @@
   category: SpeechTraits
   cost: 1
   components:
-  - type: FrenchAccent
+  - type: ReplacementAccent #Horizon
+    accent: french
 
 - type: trait
   id: SpanishAccent

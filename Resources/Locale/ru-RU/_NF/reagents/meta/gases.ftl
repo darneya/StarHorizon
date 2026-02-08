@@ -1,2 +1,2 @@
-reagent-name-respiron = respiron
-reagent-desc-respiron = A synthetic "universal air", capable of sustaining all known respirant life forms.
+reagent-name-respiron = Респирон
+reagent-desc-respiron = Синтетический "универсальный воздух", способный поддерживать все известные дышащие формы жизни.
