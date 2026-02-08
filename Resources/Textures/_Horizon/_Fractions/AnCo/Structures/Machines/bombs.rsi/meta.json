@@ -8,13 +8,13 @@
     },
     "states": [
         {
-            "name": "uas-bomb"
+            "name": "anco-bomb"
         },
         {
-            "name": "uas-bomb-wires"
+            "name": "anco-bomb-wires"
         },
         {
-            "name": "uas-bomb-active",
+            "name": "anco-bomb-active",
             "delays": [
                 [
                     0.1,
@@ -33,10 +33,10 @@
             ]
         },
         {
-            "name": "uas-bomb-R"
+            "name": "anco-bomb-R"
         },
         {
-            "name": "uas-bomb-active-R",
+            "name": "anco-bomb-active-R",
             "delays": [
                 [
                     0.25,

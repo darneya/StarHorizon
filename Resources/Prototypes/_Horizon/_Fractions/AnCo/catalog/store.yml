@@ -29,7 +29,7 @@
   components:
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Object/Misc/coin.rsi
-    state: uascoin
+    state: ancocoin
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Object/Misc/coin.rsi
     size: Tiny

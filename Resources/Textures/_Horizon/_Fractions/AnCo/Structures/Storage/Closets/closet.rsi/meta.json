@@ -8,13 +8,13 @@
   },
   "states": [
     {
-        "name": "uascloset"
+        "name": "ancocloset"
     },
     {
-        "name": "uascloset_open"
+        "name": "ancocloset_open"
     },
     {
-        "name": "uascloset_door"
+        "name": "ancocloset_door"
     },
     {
         "name": "welded"

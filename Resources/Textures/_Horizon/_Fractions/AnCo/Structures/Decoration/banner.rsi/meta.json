@@ -8,7 +8,7 @@
    },
    "states" : [
       {
-        "name": "banner_UAS",
+        "name": "banner_AnCo",
         "delays": [
           [
             0.5,
@@ -19,7 +19,7 @@
         ]
       },
       {
-        "name": "banner_UAS_unshaded",
+        "name": "banner_AnCo_unshaded",
         "delays": [
           [
             0.5,

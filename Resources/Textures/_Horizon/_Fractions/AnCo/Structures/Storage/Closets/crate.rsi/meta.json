@@ -8,13 +8,13 @@
   },
   "states": [
     {
-        "name": "uascrate"
+        "name": "ancocrate"
     },
     {
-        "name": "uascrate_open"
+        "name": "ancocrate_open"
     },
     {
-        "name": "uascrate_door"
+        "name": "ancocrate_door"
     }
   ]
 }

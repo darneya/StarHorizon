@@ -8,10 +8,10 @@
   },
   "states": [
     {
-        "name": "uasbox"
+        "name": "ancobox"
     },
     {
-        "name": "uasboxopen"
+        "name": "ancoboxopen"
     }
   ]
 }
