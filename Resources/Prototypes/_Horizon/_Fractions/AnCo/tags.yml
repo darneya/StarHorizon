@@ -45,3 +45,8 @@
 
 - type: Tag
   id: AnCoCapsule
+
+# Cryptominer
+
+- type: Tag
+  id: CryptominerDisk

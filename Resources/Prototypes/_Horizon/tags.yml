@@ -448,8 +448,3 @@
 
 - type: Tag
   id: PlanetTaxiAirlock
-
-# Cryptominer
-
-- type: Tag
-  id: CryptominerDisk
