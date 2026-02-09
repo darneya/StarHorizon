@@ -122,6 +122,7 @@ namespace Content.Server.Entry
                 sponsorManager.LoadSponsorsInfoFile(); // _Horizon
                 sponsorManager.SyncDiscordSponsorsAtRoundStart(); // _Horizon
                 sponsorManager.UpdateSponsorsAndBalances(); // _Horizon
+                sponsorManager.StartWatching(); // _Horizon
                 IoCManager.Resolve<MiniAuthManager>();
 
                 _voteManager.Initialize();
