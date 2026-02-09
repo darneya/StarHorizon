@@ -134,7 +134,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi, state: icon }
   productEntity: NFSpeedLoaderPistol45
   cost:
-    Telecrystal: 3 #Horizon ВЫ ПРИКИНЬТЕ, НА МАГАЗИН .45 ЦЕНА 1 ТК, А НА СПИДЛОАДЕР 3 АХУЕТЬ
+    Telecrystal: 3 #Horizon
   categories:
   - UplinkAmmo
 
