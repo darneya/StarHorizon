@@ -7,7 +7,7 @@
   productEntity: NFWeaponPistolViper
   discountCategory: rareDiscounts
   cost:
-    Telecrystal: 3
+    Telecrystal: 2
   categories:
   - UplinkWeaponry
 
@@ -30,7 +30,7 @@
   productEntity: NFWeaponRevolverRS9
   discountCategory: rareDiscounts
   cost:
-    Telecrystal: 6
+    Telecrystal: 5
   categories:
   - UplinkWeaponry
 
@@ -42,7 +42,7 @@
   productEntity: NFWeaponRifleAssaultXM40
   discountCategory: rareDiscounts
   cost:
-    Telecrystal: 40
+    Telecrystal: 45
   categories:
   - UplinkWeaponry
 
@@ -68,7 +68,7 @@
   productEntity: NFWeaponPistolCobra
   discountCategory: rareDiscounts
   cost:
-    Telecrystal: 4
+    Telecrystal: 6 #Horizon Она все таки работает на .45, поднимаем цену
   categories:
   - UplinkWeaponry
 
@@ -95,13 +95,24 @@
   - UplinkAmmo
 
 - type: listing
+  id: UplinkNFPistol.30Magazine
+  name: магазин для винтовок .30
+  description: Магазин для автоматических и полу-автоматических винтовок калибра .30 на 30 патрон.
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi, state: base }
+  productEntity: NFMagazineRifle30
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+- type: listing
   id: UplinkNFMagazinePistolSubMachineGun
   name: uplink-pistol-magazine-c20r-name
   description: uplink-pistol-magazine-c20r-desc
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi, state: red-icon }
   productEntity: NFMagazineSubMachineGun35
   cost:
-    Telecrystal: 2
+    Telecrystal: 1 #Horizon Для среднего оружия цена должна быть приемлима
   categories:
   - UplinkAmmo
 
@@ -112,7 +123,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi, state: red-icon }
   productEntity: NFMagazinePistol45
   cost:
-    Telecrystal: 1
+    Telecrystal: 3 #Horizon .45 магазин, цену повысим
   categories:
   - UplinkAmmo
 
@@ -123,7 +134,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/SpeedLoaders/Magnum/magnum_speed_loader.rsi, state: icon }
   productEntity: NFSpeedLoaderPistol45
   cost:
-    Telecrystal: 3
+    Telecrystal: 3 #Horizon ВЫ ПРИКИНЬТЕ, НА МАГАЗИН .45 ЦЕНА 1 ТК, А НА СПИДЛОАДЕР 3 АХУЕТЬ
   categories:
   - UplinkAmmo
 
@@ -132,9 +143,9 @@
   name: uplink-mosin-ammo-name
   description: uplink-mosin-ammo-desc
   icon: { sprite: /Textures/_NF/Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi, state: icon-30 }
-  productEntity: NFAmmunitionBoxRifle30
+  productEntity: NFAmmunitionBoxBigRifle30Overpressure
   cost:
-    Telecrystal: 1
+    Telecrystal: 2
   categories:
   - UplinkAmmo
 
@@ -154,9 +165,9 @@
   name: Термобарическая ракета
   description: Термобарическая ракета используемая для военных преступлений.
   icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi, state: rpg }
-  productEntity: CartridgeTermobarRocket 
+  productEntity: CartridgeTermobarRocket
   cost:
-    Telecrystal: 10
+    Telecrystal: 15
   categories:
   - UplinkAmmo
 
@@ -168,7 +179,7 @@
   icon: { sprite: /Textures/Objects/Weapons/Guns/Launchers/china_lake.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateFilledEmpGrenadeLauncher
   cost:
-    Telecrystal: 25
+    Telecrystal: 17
   categories:
   - UplinkWeaponry
 

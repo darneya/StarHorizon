@@ -75,9 +75,9 @@
   discountDownTo:
     Telecrystal: 15
   cost:
-    Telecrystal: 20
+    Telecrystal: 25
   categories:
-  - UplinkWeaponry
+  - UplinkWeaponry # ЧЕ ЗА ХУЙНЯ ПОЧЕМУ ВЫРЕЗАЛИ ИЗ ОСНОВНОГО КАТАЛОГА И ДОБАВИЛИ В ДРУГОЙ ЁБАНА БОБАНА ЧЕ НАХУЙ
 
 # region Attachements
 
@@ -171,7 +171,7 @@
   description: uplink-syndicate-borg-medical-desc
   productEntity: BorgChassisSyndicateMedical
   cost:
-    Telecrystal: 50
+    Telecrystal: 45 #юзлес борг
   categories:
     - UplinkSyndicateBorgs
 
@@ -181,7 +181,7 @@
   description: uplink-syndicate-borg-saboteur-desc
   productEntity: BorgChassisSyndicateSaboteur
   cost:
-    Telecrystal: 55
+    Telecrystal: 50 #юзлес борг
   categories:
     - UplinkSyndicateBorgs
 
@@ -433,7 +433,7 @@
   description: uplink-syndicate-weapon-turret-l85-desc
   productEntity: WeaponTurretL85Autocannon
   cost:
-    Telecrystal: 45
+    Telecrystal: 20
   categories:
   - UplinkSyndicateGunneryKinetic
 
@@ -453,7 +453,7 @@
   description: uplink-syndicate-weapon-turret-ak570-desc
   productEntity: WeaponTurretAK570
   cost:
-    Telecrystal: 105
+    Telecrystal: 45
   categories:
   - UplinkSyndicateGunneryKinetic
 
