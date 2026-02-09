@@ -1,0 +1,31 @@
+- type: salvageFaction
+  id: InfernoSilicons
+  desc: salvage-faction-anco-anomaly
+  entries:
+    - proto: MobRogueSiliconScrap
+      cost: 2
+    - proto: SpawnMobRogueDronesT1
+      cost: 3
+      prob: 0.3
+    - proto: MobRogueSiliconHerder
+      cost: 3
+    - proto: MobRogueSiliconHunter
+      cost: 4
+    - proto: MobRogueSiliconCatcher
+      cost: 4
+      prob: 0.4
+    - proto: MobRogueSiliconTesla
+      cost: 5
+    - proto: MobRogueSiliconScrapFlayer
+      cost: 3
+      prob: 0.2
+    - proto: MobRogueSiliconBoss
+      cost: 5
+      prob: 0.1
+    - proto: MobRogueSiliconGuardian
+      cost: 10
+      prob: 0.1
+  configs:
+    DefenseStructure: CybersunDataMiner
+    Megafauna: MobRogueSiliconGuardian
+    Difficulties: Inferno

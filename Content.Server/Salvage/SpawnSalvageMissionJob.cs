@@ -287,6 +287,11 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
             case SalvageMissionType.Elimination:
                 await SetupElimination(mission, dungeon, grid, random);
                 break;
+            case SalvageMissionType.Combined:
+                // Combined mission: setup both structures and megafauna
+                await SetupStructure(mission, dungeon, grid, random);
+                await SetupElimination(mission, dungeon, grid, random);
+                break;
             default:
                 _sawmill.Warning($"No setup function for salvage mission type {_missionParams.MissionType}!");
                 break;

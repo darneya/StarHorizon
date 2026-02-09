@@ -71,4 +71,10 @@ public sealed partial class AnCoGunOverheatComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier? TouchSound = new SoundPathSpecifier("/Audio/Effects/lightburn.ogg");
+
+    /// <summary>
+    /// Звук при перегреве оружия
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? OverheatSound;
 }

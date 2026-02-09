@@ -152,6 +152,29 @@ public sealed partial class SalvageSystem
                     Announce(args.MapUid, Loc.GetString("salvage-expedition-announcement-elimination", ("target", name), ("count", elimination.Megafauna.Count)));
                 }
                 break;
+            case SalvageMissionType.Combined:
+                // Announce both objectives for combined missions
+                if (TryComp<SalvageDestructionExpeditionComponent>(args.MapUid, out var combinedDestruction)
+                    && combinedDestruction.Structures.Count > 0
+                    && TryComp(combinedDestruction.Structures[0], out MetaDataComponent? combinedStructureMeta)
+                    && combinedStructureMeta.EntityPrototype != null)
+                {
+                    var structName = combinedStructureMeta.EntityPrototype.Name;
+                    if (string.IsNullOrWhiteSpace(structName))
+                        structName = Loc.GetString("salvage-expedition-announcement-destruction-entity-fallback");
+                    Announce(args.MapUid, Loc.GetString("salvage-expedition-announcement-destruction", ("structure", structName), ("count", combinedDestruction.Structures.Count)));
+                }
+                if (TryComp<SalvageEliminationExpeditionComponent>(args.MapUid, out var combinedElimination)
+                    && combinedElimination.Megafauna.Count > 0
+                    && TryComp(combinedElimination.Megafauna[0], out MetaDataComponent? combinedTargetMeta)
+                    && combinedTargetMeta.EntityPrototype != null)
+                {
+                    var targetName = combinedTargetMeta.EntityPrototype.Name;
+                    if (string.IsNullOrWhiteSpace(targetName))
+                        targetName = Loc.GetString("salvage-expedition-announcement-elimination-entity-fallback");
+                    Announce(args.MapUid, Loc.GetString("salvage-expedition-announcement-elimination", ("target", targetName), ("count", combinedElimination.Megafauna.Count)));
+                }
+                break;
             default:
                 break; // No announcement
         }
@@ -327,8 +350,20 @@ public sealed partial class SalvageSystem
 
             if (structure.Structures.Count == 0)
             {
-                comp.Completed = true;
-                Announce(uid, Loc.GetString("salvage-expedition-completed"));
+                // For Combined missions, check if elimination is also complete
+                if (comp.MissionParams.MissionType == SalvageMissionType.Combined)
+                {
+                    if (TryComp<SalvageEliminationExpeditionComponent>(uid, out var elimination) && elimination.Megafauna.Count == 0)
+                    {
+                        comp.Completed = true;
+                        Announce(uid, Loc.GetString("salvage-expedition-completed"));
+                    }
+                }
+                else
+                {
+                    comp.Completed = true;
+                    Announce(uid, Loc.GetString("salvage-expedition-completed"));
+                }
             }
         }
 
@@ -357,8 +392,20 @@ public sealed partial class SalvageSystem
 
             if (elimination.Megafauna.Count == 0)
             {
-                comp.Completed = true;
-                Announce(uid, Loc.GetString("salvage-expedition-completed"));
+                // For Combined missions, check if destruction is also complete
+                if (comp.MissionParams.MissionType == SalvageMissionType.Combined)
+                {
+                    if (TryComp<SalvageDestructionExpeditionComponent>(uid, out var destruction) && destruction.Structures.Count == 0)
+                    {
+                        comp.Completed = true;
+                        Announce(uid, Loc.GetString("salvage-expedition-completed"));
+                    }
+                }
+                else
+                {
+                    comp.Completed = true;
+                    Announce(uid, Loc.GetString("salvage-expedition-completed"));
+                }
             }
         }
         // End Frontier: mission-specific logic

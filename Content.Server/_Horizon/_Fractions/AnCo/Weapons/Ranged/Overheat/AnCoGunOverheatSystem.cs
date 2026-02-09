@@ -42,6 +42,9 @@ public sealed class AnCoGunOverheatSystem : AnCoSharedGunOverheatSystem
         }
 
         _popup.PopupEntity(Loc.GetString("gun-overheat-blocked"), ent);
+
+        if (ent.Comp.OverheatSound != null)
+            _audio.PlayPvs(ent.Comp.OverheatSound, ent);
     }
 
     protected override void OnOverheatPopup(Entity<AnCoGunOverheatComponent> ent)

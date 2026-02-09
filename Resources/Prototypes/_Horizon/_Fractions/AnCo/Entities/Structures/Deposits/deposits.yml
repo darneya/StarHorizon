@@ -9,8 +9,6 @@
     oreCounts:
       KazmieOre1: 100
     hardness: 3
-    drawdepth: FloorTiles
-    sprite: _Horizon/_Fractions/AnCo/Structures/Specific/kazmie.rsi
   - type: Sprite
     drawdepth: FloorTiles
     sprite: _Horizon/_Fractions/AnCo/Structures/Specific/kazmie.rsi
@@ -28,8 +26,3 @@
     oreCounts:
       KazmieOre1: 1000
     hardness: 4
-    drawdepth: FloorTiles
-    sprite: _Horizon/_Fractions/AnCo/Structures/Specific/kazmie.rsi
-
-
-

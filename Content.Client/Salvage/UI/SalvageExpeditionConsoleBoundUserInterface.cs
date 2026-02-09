@@ -90,10 +90,11 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
                 HorizontalAlignment = Control.HAlignment.Left,
             });
 
+            var isInferno = missionParams.Difficulty == "Inferno";
             offering.AddContent(new Label
             {
-                Text = difficultyProto.RecommendedPlayers.ToString(),
-                FontColorOverride = StyleNano.NanoGold,
+                Text = isInferno ? Loc.GetString("salvage-expedition-difficulty-players-error") : difficultyProto.RecommendedPlayers.ToString(),
+                FontColorOverride = isInferno ? Color.Red : StyleNano.NanoGold,
                 HorizontalAlignment = Control.HAlignment.Left,
                 Margin = new Thickness(0f, 0f, 0f, 5f),
             });
