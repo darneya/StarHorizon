@@ -191,18 +191,23 @@ namespace Content.Server._Horizon.SponsorManager
                 Timeout.Infinite);
         }
 
-        // diff-based
+        /// <summary>
+        /// Additive-only resync: reads discord_sponsors.txt and adds only NEW sponsors
+        /// that are not yet in memory. Existing sponsors are never touched or removed.
+        /// Removal of sponsors only happens at round start via SyncDiscordSponsorsAtRoundStart().
+        /// Must be called on the main thread.
+        /// </summary>
         public void ResyncSponsors()
         {
             try
             {
-                _sawmill.Info("Hot-reload triggered: resyncing sponsors from file...");
+                _sawmill.Info("Hot-reload triggered: checking for new sponsors in file...");
 
-                var newSponsors = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
                 var newBalances = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
                 var newSlots = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
                 var newColors = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
+                // Read file and collect only sponsors NOT already in memory
                 var discordLines = SafeReadAllLines(_dsSponsorsFilePath);
                 foreach (var line in discordLines)
                 {
@@ -220,7 +225,10 @@ namespace Content.Server._Horizon.SponsorManager
                     if (string.IsNullOrWhiteSpace(normalizedCkey) || string.IsNullOrWhiteSpace(discordId))
                         continue;
 
-                    newSponsors.Add(normalizedCkey);
+                    // Skip sponsors already in memory
+                    if (_sponsors.Contains(normalizedCkey))
+                        continue;
+
                     newSlots[normalizedCkey] = CalculateSlots(discordId);
                     newBalances[normalizedCkey] = CalculateTokens(discordId);
 
@@ -228,6 +236,13 @@ namespace Content.Server._Horizon.SponsorManager
                         newColors[normalizedCkey] = parts[4].Trim();
                 }
 
+                if (newBalances.Count == 0)
+                {
+                    _sawmill.Info("Hot-reload: no new sponsors found in file");
+                    return;
+                }
+
+                // Apply disposable.txt bonus tokens to new sponsors only
                 var disposableLines = SafeReadAllLines(_disposableFilePath);
                 foreach (var line in disposableLines)
                 {
@@ -246,48 +261,18 @@ namespace Content.Server._Horizon.SponsorManager
                         newBalances[ckey] += additionalTokens;
                 }
 
-                var added = newSponsors.Except(_sponsors, StringComparer.OrdinalIgnoreCase).ToList();
-                var removed = _sponsors.Except(newSponsors, StringComparer.OrdinalIgnoreCase).ToList();
-                var existing = _sponsors.Intersect(newSponsors, StringComparer.OrdinalIgnoreCase).ToList();
-
-                foreach (var name in removed)
-                {
-                    _sponsors.Remove(name);
-                    _sponsorsAndBalances.Remove(name);
-                    _sponsorSlots.Remove(name);
-                    _sponsorColors.Remove(name);
-                }
-
-                foreach (var name in added)
+                // Add new sponsors to memory
+                foreach (var (name, balance) in newBalances)
                 {
                     _sponsors.Add(name);
-                    _sponsorsAndBalances[name] = newBalances.GetValueOrDefault(name);
+                    _sponsorsAndBalances[name] = balance;
                     _sponsorSlots[name] = newSlots.GetValueOrDefault(name);
 
                     if (newColors.TryGetValue(name, out var color))
                         _sponsorColors[name] = color;
                 }
 
-                foreach (var name in existing)
-                {
-                    _sponsorSlots[name] = newSlots.GetValueOrDefault(name);
-
-                    if (newColors.TryGetValue(name, out var color))
-                        _sponsorColors[name] = color;
-                    else
-                        _sponsorColors.Remove(name);
-                }
-
-                // Logging
-                if (added.Count > 0)
-                    _sawmill.Info($"Hot-reload: added {added.Count} sponsor(s): {string.Join(", ", added)}");
-
-                if (removed.Count > 0)
-                    _sawmill.Info($"Hot-reload: removed {removed.Count} sponsor(s): {string.Join(", ", removed)}");
-
-                if (added.Count == 0 && removed.Count == 0)
-                    _sawmill.Info("Hot-reload: no sponsor changes detected");
-
+                _sawmill.Info($"Hot-reload: added {newBalances.Count} new sponsor(s): {string.Join(", ", newBalances.Keys)}");
                 _sawmill.Info($"Hot-reload complete. Total sponsors in memory: {_sponsors.Count}");
             }
             catch (Exception ex)
