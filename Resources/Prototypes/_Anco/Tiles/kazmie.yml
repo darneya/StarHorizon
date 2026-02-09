@@ -1,0 +1,11 @@
+# Kazmie tile
+- type: tile
+  id: FloorKazmie
+  name: tiles-kazmie-floor
+  sprite: /Textures/_Horizon/_Fractions/AnCo/Tiles/kazmie.png
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepAsteroid
+  heatCapacity: 10000
+  weather: true
+  indestructible: true

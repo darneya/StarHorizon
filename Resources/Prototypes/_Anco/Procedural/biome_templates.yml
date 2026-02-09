@@ -7,7 +7,7 @@
         frequency: 1
         seed: 2
       allowedTiles:
-        - FloorBasalt
+        - FloorKazmie
       entities:
         - BasaltOne # Astrolaris: Нужно добавить ардонивые светяшки (пыль)
         - BasaltTwo
@@ -17,7 +17,7 @@
 
     - !type:BiomeDecalLayer
       allowedTiles:
-        - FloorBasalt
+        - FloorKazmie
       threshold: 0.9
       divisions: 1
       noise:
@@ -41,7 +41,7 @@
         noiseType: OpenSimplex2
         frequency: 1
       allowedTiles:
-        - FloorBasalt
+        - FloorKazmie
       entities:
         - AnCoRock
         - AnCoEFSCrystal
@@ -54,7 +54,7 @@
         noiseType: OpenSimplex2
         frequency: 1
       allowedTiles:
-        - FloorBasalt
+        - FloorKazmie
       entities:
         - OreDepositKazieOre
 
@@ -65,7 +65,7 @@
         noiseType: OpenSimplex2
         frequency: 1
       allowedTiles:
-        - FloorBasalt
+        - FloorKazmie
       entities:
         - OreDepositKazieOreBig
 
@@ -79,13 +79,13 @@
         lacunarity: 2
         gain: 0.4
       allowedTiles:
-        - FloorBasalt
+        - FloorKazmie
       entities:
         - FloorLavaEntity # Astrolaris: Сюда ардонивое озеро
 
     - !type:BiomeEntityLayer
       allowedTiles:
-        - FloorBasalt
+        - FloorKazmie
       threshold: -0.20 # Astrolaris: Меньше камня, пустоши лол
       noise:
         seed: 0
@@ -102,4 +102,4 @@
       id: Loot
     - !type:BiomeTileLayer
       threshold: -1
-      tile: FloorBasalt
+      tile: FloorKazmie
