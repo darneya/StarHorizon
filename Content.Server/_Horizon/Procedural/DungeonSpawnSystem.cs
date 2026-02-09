@@ -7,7 +7,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._Horizon.Procedural;
 
-public sealed class DungeonSpawnSystem : EntitySystem
+public sealed class AnCoDungeonMarkerSystem : EntitySystem
 {
     [Dependency] private readonly DungeonSystem _dungeon = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
@@ -17,10 +17,10 @@ public sealed class DungeonSpawnSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<DungeonSpawnComponent, MapInitEvent>(OnDungeonSpawnMapInit);
+        SubscribeLocalEvent<AnCoDungeonMarkerComponent, MapInitEvent>(OnDungeonSpawnMapInit);
     }
 
-    private void OnDungeonSpawnMapInit(EntityUid uid, DungeonSpawnComponent component, MapInitEvent args)
+    private void OnDungeonSpawnMapInit(EntityUid uid, AnCoDungeonMarkerComponent component, MapInitEvent args)
     {
         var xform = Transform(uid);
 

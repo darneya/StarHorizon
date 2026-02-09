@@ -5,7 +5,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Horizon.Procedural;
 
 [RegisterComponent]
-public sealed partial class DungeonSpawnComponent : Component
+public sealed partial class AnCoDungeonMarkerComponent : Component
 {
     /// <summary>
     /// Указывает какой пресет использовать для генерации данжа
