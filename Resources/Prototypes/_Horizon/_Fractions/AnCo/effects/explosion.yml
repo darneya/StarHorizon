@@ -15,7 +15,7 @@
   id: Termobar
   damagePerIntensity:
     types:
-      Heat: 15
+      Heat: 12
   tileBreakChance: [0]
   tileBreakIntensity: [0]
   lightColor: Orange

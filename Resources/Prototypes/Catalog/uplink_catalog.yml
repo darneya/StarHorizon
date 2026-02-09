@@ -105,9 +105,9 @@
   productEntity: ClothingHandsGlovesNorthStar
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 3
   cost:
-    Telecrystal: 8
+    Telecrystal: 6
   categories:
   - UplinkWeaponry
 
@@ -119,9 +119,9 @@
   productEntity: ClothingHandsKnuckleDustersSyndicate
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 4
   cost:
-    Telecrystal: 6
+    Telecrystal: 8
   categories:
   - UplinkWeaponry
 
@@ -184,9 +184,9 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledSMG
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 10
+    Telecrystal: 6
   cost:
-    Telecrystal: 17
+    Telecrystal: 12
   categories:
   - UplinkWeaponry
 
@@ -226,9 +226,9 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledLMG
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 24
+    Telecrystal: 12
   cost:
-    Telecrystal: 30
+    Telecrystal: 20
   categories:
   - UplinkWeaponry
 
@@ -274,9 +274,9 @@
   productEntity: SyndieMiniBomb
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 4
   cost:
-    Telecrystal: 6
+    Telecrystal: 8
   categories:
     - UplinkExplosives
 
@@ -313,9 +313,9 @@
   productEntity: MobGrenadePenguin
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 5
-  cost:
     Telecrystal: 10
+  cost:
+    Telecrystal: 15
   categories:
     - UplinkExplosives
   conditions:
@@ -660,7 +660,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 5
+    Telecrystal: 4
   categories:
   - UplinkChemicals
 
@@ -709,7 +709,7 @@
   description: uplink-cigarettes-desc
   productEntity: CigPackSyndicate
   cost:
-    Telecrystal: 1
+    Telecrystal: 2
   categories:
   - UplinkChemicals
 
@@ -720,9 +720,9 @@
   productEntity: ClothingBackpackDuffelSyndicateMedicalBundleFilled
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 16
+    Telecrystal: 15
   cost:
-    Telecrystal: 24
+    Telecrystal: 20
   categories:
   - UplinkChemicals
   conditions:
@@ -746,7 +746,7 @@
   discountDownTo:
     Telecrystal: 1
   cost:
-    Telecrystal: 3
+    Telecrystal: 2
   categories:
   - UplinkDeception
 
@@ -759,7 +759,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 5
+    Telecrystal: 4
   categories:
   - UplinkDeception
 
@@ -772,7 +772,7 @@
   discountDownTo:
     Telecrystal: 4
   cost:
-    Telecrystal: 7
+    Telecrystal: 4
   categories:
   - UplinkDeception
 
@@ -867,9 +867,9 @@
   productEntity: ClothingBackpackDuffelSyndicateDecoyKitFilled
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 1
   cost:
-    Telecrystal: 6
+    Telecrystal: 1 #Horizon - это же литерали хуйня фор фан
   categories:
   - UplinkDeception
 
