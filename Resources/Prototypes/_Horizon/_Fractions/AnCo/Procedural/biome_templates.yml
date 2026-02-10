@@ -9,11 +9,11 @@
       allowedTiles:
         - FloorKazmie
       entities:
-        - BasaltOne # Astrolaris: Нужно добавить ардонивые светяшки (пыль)
-        - BasaltTwo
-        - BasaltThree
-        - BasaltFour
-        - BasaltFive
+        - ArdonBasaltOne
+        - ArdonBasaltTwo
+        - ArdonBasaltThree
+        - ArdonBasaltFour
+        - ArdonBasaltFive
 
     - !type:BiomeDecalLayer
       allowedTiles:
@@ -81,7 +81,7 @@
       allowedTiles:
         - FloorKazmie
       entities:
-        - FloorLavaEntity # Astrolaris: Сюда ардонивое озеро
+        - AnCoFloorLavaEntityArdon
 
     - !type:BiomeEntityLayer
       allowedTiles:
@@ -97,7 +97,7 @@
         cellularDistanceFunction: Euclidean
         cellularReturnType: Distance2
       entities:
-        - WallRockBasalt
+        - AnCoWallRockBasalt
     - !type:BiomeDummyLayer
       id: Loot
     - !type:BiomeTileLayer
