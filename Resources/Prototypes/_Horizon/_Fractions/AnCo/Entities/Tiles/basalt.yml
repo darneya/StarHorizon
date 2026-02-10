@@ -2,6 +2,7 @@
   id: ArdonBasaltOne
   name: базальт ардония
   description: Базальт из вросшего искусственного ардония
+  suffix: StarHorizon, AnCo, Structure
   placement:
     mode: SnapgridCenter
   components:
