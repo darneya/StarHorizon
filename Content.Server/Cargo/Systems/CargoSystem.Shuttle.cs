@@ -1,11 +1,14 @@
 using System.Linq;
 using Content.Server.Cargo.Components;
+using Content.Server._Horizon.MarketSaturation; // Horizon - насыщение рынка
+using Content.Shared._Horizon.MarketSaturation; // Horizon - насыщение рынка
 using Content.Shared.Cargo;
 using Content.Shared.Cargo.BUI;
 using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Events;
 using Content.Shared.Cargo.Prototypes;
 using Content.Shared.CCVar;
+using Content.Shared.Stacks; // Horizon
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -154,6 +157,42 @@ public sealed partial class CargoSystem
         goods = new HashSet<(EntityUid, OverrideSellComponent?, double)>();
         toSell = new HashSet<EntityUid>();
 
+        // Horizon: Получаем станцию для применения насыщения рынка
+        var owningStation = _station.GetOwningStation(gridUid);
+        MarketSaturationComponent? saturationComp = null;
+        if (owningStation != null)
+            TryComp(owningStation.Value, out saturationComp);
+
+        // Horizon: Первый проход — считаем количество предметов каждого типа на паллетах
+        var pendingCounts = new Dictionary<string, int>();
+        if (saturationComp != null)
+        {
+            foreach (var (palletUid, _, _) in GetCargoPallets(gridUid, BuySellType.Sell))
+            {
+                _setEnts.Clear();
+                _lookup.GetEntitiesIntersecting(palletUid, _setEnts, LookupFlags.Dynamic | LookupFlags.Sundries);
+
+                foreach (var ent in _setEnts)
+                {
+                    if (_xformQuery.TryGetComponent(ent, out var xf) && (xf.Anchored || !CanSell(ent, xf)))
+                        continue;
+                    if (_blacklistQuery.HasComponent(ent))
+                        continue;
+
+                    var proto = MetaData(ent).EntityPrototype?.ID;
+                    if (proto == null)
+                        continue;
+
+                    var cnt = 1;
+                    if (TryComp<StackComponent>(ent, out var stk))
+                        cnt = stk.Count;
+
+                    pendingCounts[proto] = pendingCounts.GetValueOrDefault(proto) + cnt;
+                }
+            }
+        }
+        // Horizon конец
+
         foreach (var (palletUid, _, _) in GetCargoPallets(gridUid, BuySellType.Sell))
         {
             // Containers should already get the sell price of their children so can skip those.
@@ -181,6 +220,23 @@ public sealed partial class CargoSystem
                     continue;
 
                 var price = _pricing.GetPrice(ent);
+
+                // Horizon: Применяем насыщение рынка — учитываем и ранее проданные, и текущие товары на паллете
+                if (saturationComp != null)
+                {
+                    var protoId = MetaData(ent).EntityPrototype?.ID;
+                    if (protoId != null && pendingCounts.TryGetValue(protoId, out var pendingCount))
+                    {
+                        var existingSold = saturationComp.SaturationData.TryGetValue(protoId, out var satData)
+                            ? satData.TotalSold
+                            : 0;
+                        var totalWithPending = existingSold + pendingCount;
+                        var multiplier = MarketSaturationSystem.GetMultiplier(totalWithPending, saturationComp);
+                        price = Math.Round(price * multiplier);
+                    }
+                }
+                // Horizon конец
+
                 if (price == 0)
                     continue;
                 toSell.Add(ent);
