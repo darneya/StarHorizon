@@ -132,8 +132,8 @@ public sealed class SalvageExpeditionConsoleBoundUserInterface : BoundUserInterf
 
             offering.AddContent(new Label
             {
-                Text = mission.Duration.ToString(),
-                FontColorOverride = StyleNano.NanoGold,
+                Text = isInferno ? Loc.GetString("salvage-expedition-difficulty-players-error") : mission.Duration.ToString(),
+                FontColorOverride = isInferno ? Color.Red : StyleNano.NanoGold,
                 HorizontalAlignment = Control.HAlignment.Left,
                 Margin = new Thickness(0f, 0f, 0f, 5f),
             });

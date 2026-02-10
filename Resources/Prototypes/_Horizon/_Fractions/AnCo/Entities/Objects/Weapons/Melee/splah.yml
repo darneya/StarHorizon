@@ -2,7 +2,7 @@
   name: тесак АнКо
   parent: BaseAnCoSharpWeapon
   id: AnCoSplah
-  description:
+  description: Что то на уровне тесака НТ но в АнКо стиле
   suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Execution

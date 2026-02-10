@@ -7,3 +7,7 @@
   color: "#FF450096"
   recommendedPlayers: 6
   destructionStructures: 18
+  endSound:
+    collection: AnCoInfernoEnd
+    params:
+      volume: -5
