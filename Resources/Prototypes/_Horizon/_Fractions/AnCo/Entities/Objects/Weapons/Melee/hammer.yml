@@ -1,8 +1,8 @@
 - type: entity
-  name: боевой молот АнКо
+  name: казмиевый молот АнКо
   parent: BaseAnCoWeapon
   id: AnCoHammer
-  description: Тяжёлый боевой молот, способный крушить врагов и структуры.
+  description: Тяжёлый казмиевый молот, способный накапливать кинетическую энергию и при полном заполнений высвобождает её.
   suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Sprite
