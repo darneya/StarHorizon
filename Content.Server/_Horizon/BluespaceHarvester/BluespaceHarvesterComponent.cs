@@ -118,25 +118,25 @@ public sealed partial class BluespaceHarvesterComponent : Component
         new BluespaceHarvesterCategoryInfo
         {
             PrototypeId = "RandomHarvesterBiologicalLoot",
-            Cost = 30000,
+            Cost = 5000,
             Type = BluespaceHarvesterCategory.Biological,
         },
         new BluespaceHarvesterCategoryInfo()
         {
             PrototypeId = "RandomHarvesterTechnologicalLoot",
-            Cost = 50000,
+            Cost = 6000,
             Type = BluespaceHarvesterCategory.Technological,
         },
         new BluespaceHarvesterCategoryInfo
         {
             PrototypeId = "RandomHarvesterIndustrialLoot",
-            Cost = 75000,
+            Cost = 8000,
             Type = BluespaceHarvesterCategory.Industrial,
         },
         new BluespaceHarvesterCategoryInfo()
         {
             PrototypeId = "RandomHarvesterDestructionLoot",
-            Cost = 100000,
+            Cost = 10000,
             Type = BluespaceHarvesterCategory.Destruction,
         },
     };
