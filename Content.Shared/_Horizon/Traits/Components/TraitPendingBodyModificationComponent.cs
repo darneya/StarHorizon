@@ -16,13 +16,15 @@ public sealed partial class TraitPendingBodyModificationComponent : Component
 public sealed class PartReplacement
 {
     public BodyPartType PartType;
+    public BodyPartType? ParentPartType;
     public BodyPartSymmetry Symmetry;
     public string? ProtoId = null;
     public string? SlotId = null;
 
-    public PartReplacement(BodyPartType partType, BodyPartSymmetry symmetry, string? protoId = null, string? slotId = null)
+    public PartReplacement(BodyPartType partType, BodyPartType? parentPartType, BodyPartSymmetry symmetry, string? protoId = null, string? slotId = null)
     {
         PartType = partType;
+        ParentPartType = parentPartType;
         Symmetry = symmetry;
         ProtoId = protoId;
         SlotId = slotId;

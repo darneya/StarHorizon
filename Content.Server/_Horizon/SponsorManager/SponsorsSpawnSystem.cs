@@ -3,6 +3,9 @@ using System.IO;
 using System.Linq;
 using Content.Server.GameTicking.Events;
 using Content.Shared._Horizon.CCVar;
+using Content.Shared.GameTicking;
+using Content.Shared.Hands.Components;
+using Content.Shared.Hands.EntitySystems;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Log;
@@ -14,8 +17,9 @@ namespace Content.Server._Horizon.SponsorManager
     {
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IResourceManager _resourceManager = default!;
+        [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
 
-        private readonly Dictionary<string, string[]> _sponsorItems = new();
+        private readonly Dictionary<string, string[]> _sponsorItems = new(StringComparer.OrdinalIgnoreCase);
         private ISawmill _sawmill = default!;
 
         public override void Initialize()
@@ -24,6 +28,7 @@ namespace Content.Server._Horizon.SponsorManager
             _sawmill = Logger.GetSawmill("sponsor");
             _sawmill.Info("SponsorsSpawnSystem initialized");
             SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarting);
+            SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
         }
 
         public string[] GetItemsForPlayer(string playerName)
@@ -34,6 +39,45 @@ namespace Content.Server._Horizon.SponsorManager
         private void OnRoundStarting(RoundStartingEvent ev)
         {
             LoadSponsorItems();
+        }
+
+        private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent ev)
+        {
+            var playerName = ev.Player.Name;
+
+            var items = GetItemsForPlayer(playerName);
+            if (items.Length == 0)
+            {
+                _sawmill.Debug($"No sponsor items for player {playerName}");
+                return;
+            }
+
+            if (!TryComp<HandsComponent>(ev.Mob, out var handsComponent))
+            {
+                _sawmill.Warning($"Player {playerName} has no HandsComponent, cannot give sponsor items");
+                return;
+            }
+
+            var coords = Transform(ev.Mob).Coordinates;
+
+            foreach (var itemProtoId in items)
+            {
+                try
+                {
+                    var spawnedItem = EntityManager.SpawnEntity(itemProtoId, coords);
+
+                    if (!_handsSystem.TryPickupAnyHand(ev.Mob, spawnedItem, handsComp: handsComponent))
+                    {
+                        _handsSystem.PickupOrDrop(ev.Mob, spawnedItem, handsComp: handsComponent);
+                    }
+
+                    _sawmill.Info($"Spawned sponsor item {itemProtoId} for player {playerName}");
+                }
+                catch (Exception ex)
+                {
+                    _sawmill.Error($"Failed to spawn sponsor item {itemProtoId} for player {playerName}: {ex.Message}");
+                }
+            }
         }
 
         private void LoadSponsorItems()
@@ -72,7 +116,7 @@ namespace Content.Server._Horizon.SponsorManager
                     _sawmill.Debug($"Loaded sponsor items for {playerName}: {string.Join(", ", items)}");
                 }
 
-                _sawmill.Info($"Loaded sponsor items for {loadedCount} players");
+                _sawmill.Info($"Loaded sponsor items for {loadedCount} players from file");
             }
             catch (Exception ex)
             {
@@ -80,20 +124,16 @@ namespace Content.Server._Horizon.SponsorManager
             }
         }
 
+
         private ResPath NormalizePath(string path)
         {
             if (string.IsNullOrWhiteSpace(path))
                 throw new ArgumentException("Path cannot be null or empty", nameof(path));
-
-            // Remove all leading '/' characters to ensure path is treated as relative to UserData
-            // This prevents issues when paths are configured with absolute paths like /ss14_data/...
             var normalized = path.TrimStart('/');
 
             if (string.IsNullOrWhiteSpace(normalized))
                 throw new ArgumentException("Path cannot be only slashes", nameof(path));
 
-            // Create ResPath and ensure it's rooted (for ResPath's internal structure)
-            // This creates a ResPath like /sponsorSystem/sponsor_items.txt which is relative to UserData root
             return new ResPath(normalized).ToRootedPath();
         }
     }

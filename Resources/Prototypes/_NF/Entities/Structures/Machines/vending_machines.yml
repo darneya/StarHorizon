@@ -298,6 +298,16 @@
       energy: 1.6
       color: "#ff033e"
 
+# Horizon start - POI version with infinite stock
+- type: entity
+  parent: [BaseStructureDisableAnchoring, NonLethalVendingMachine]
+  id: NonLethalVendingMachinePOI
+  suffix: POI
+  components:
+    - type: VendingMachine
+      pack: NonLethalVendPOIInventory
+# Horizon end
+
 - type: entity
   parent: VendingMachine
   id: VendingMachineAutoTuneVend
@@ -803,7 +813,7 @@
   suffix: POI
   components:
   - type: VendingMachine
-    pack: CigaretteMachineInventory
+    pack: CigaretteMachinePOIInventory # Horizon - infinite stock
 
 - type: entity
   parent: [VendingMachineBooze, BaseStructureDisableAnchoring]
@@ -811,7 +821,7 @@
   suffix: POI
   components:
   - type: VendingMachine
-    pack: BoozeOMatInventory
+    pack: BoozeOMatPOIInventory # Horizon - infinite stock
 
 - type: entity
   parent: [VendingMachineCuddlyCritterVend, BaseStructureDisableAnchoring]

@@ -168,3 +168,6 @@ ent-FoodDiamondCarrot = алмазная морковь
 ent-FoodBluespaceTomato = блюспейс-томат
     .desc = Будь осторожен с ним.
     .suffix = Horizon
+ent-FoodPeach = персик
+    .desc = Превосходен с кремом
+    .suffix = Horizon

@@ -10,3 +10,16 @@
   lightColor: "#F05A5A"
   texturePath: /Textures/_StarHorizon/Effects/uasexplodes.rsi
   fireStates: 10
+
+- type: explosion
+  id: Termobar
+  damagePerIntensity:
+    types:
+      Heat: 12
+  tileBreakChance: [0]
+  tileBreakIntensity: [0]
+  lightColor: Orange
+  texturePath: /Textures/Effects/fire.rsi
+  fireStates: 3
+
+# Люме, я насрал сюда, прости

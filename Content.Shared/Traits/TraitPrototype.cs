@@ -73,6 +73,9 @@ public sealed partial class TraitPrototype : IPrototype
     [DataField]
     public int Priority = 1;
 
+    [DataField]
+    public string? Group;
+
     public bool RequirmentsMet(HumanoidCharacterProfile profile, IEntityManager entMan)
     {
         foreach (var requirement in Requirments)

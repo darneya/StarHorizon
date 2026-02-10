@@ -274,6 +274,9 @@
 - type: Tag
   id: CartridgeRocket
 
+- type: Tag #Horizon
+  id: CartridgeTermobarRocket
+
 # Allows you to walk over tile entities such as lava without steptrigger
 - type: Tag
   id: Catwalk

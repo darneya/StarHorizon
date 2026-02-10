@@ -1,5 +1,4 @@
 using Content.Shared._Horizon.Traits;
-using Content.Shared.Body.Part;
 
 namespace Content.Server._Horizon.Traits;
 
