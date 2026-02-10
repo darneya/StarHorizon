@@ -1,0 +1,19 @@
+﻿- type: entity
+  id: AnCoAirlockGlass
+  parent: AirlockGlass
+  name: стеклянный шлюз АнКо
+  suffix: StarHorizon, AnCo, Structure
+  description: зачем им окна?
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Airlocks/airlockglass.rsi
+
+- type: entity
+  id: AnCoAirlock
+  parent: Airlock
+  name: шлюз АнКо
+  suffix: StarHorizon, AnCo, Structure
+  description: шлюз созданный для воровства секретов, и возможно людей.
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Airlocks/airlock.rsi
