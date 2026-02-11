@@ -231,18 +231,27 @@ public sealed partial class NFCargoSystem
 
                 var price = _pricing.GetPrice(ent, currency: consoleUid.Comp.CashType, user: actor);
 
-                // Horizon: Применяем насыщение рынка — учитываем и ранее проданные, и текущие товары на паллете
+                // Horizon: Применяем насыщение рынка и рыночные события
                 if (saturationComp != null)
                 {
                     var protoId = MetaData(ent).EntityPrototype?.ID;
-                    if (protoId != null && pendingCounts.TryGetValue(protoId, out var pendingCount))
+                    if (protoId != null)
                     {
-                        var existingSold = saturationComp.SaturationData.TryGetValue(protoId, out var satData)
-                            ? satData.TotalSold
-                            : 0;
-                        var totalWithPending = existingSold + pendingCount;
-                        var multiplier = MarketSaturationSystem.GetMultiplier(totalWithPending, saturationComp);
-                        price = Math.Round(price * multiplier);
+                        // Насыщение рынка
+                        if (pendingCounts.TryGetValue(protoId, out var pendingCount))
+                        {
+                            var existingSold = saturationComp.SaturationData.TryGetValue(protoId, out var satData)
+                                ? satData.TotalSold
+                                : 0;
+                            var totalWithPending = existingSold + pendingCount;
+                            var multiplier = MarketSaturationSystem.GetMultiplier(totalWithPending, saturationComp);
+                            price = Math.Round(price * multiplier);
+                        }
+
+                        // Рыночные события — модификатор цены от активных событий
+                        var eventMod = MarketEventSystem.GetEventModifier(protoId, saturationComp);
+                        if (eventMod != 1.0)
+                            price = Math.Round(price * eventMod);
                     }
                 }
                 // Horizon конец

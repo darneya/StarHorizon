@@ -45,4 +45,11 @@ public sealed partial class MarketSaturationComponent : Component
     /// </summary>
     [DataField]
     public double MinPriceMultiplier = 0.0;
+
+    /// <summary>
+    /// Список активных рыночных событий на этой станции.
+    /// События добавляются системой MarketEventSystem и автоматически удаляются по истечении времени.
+    /// </summary>
+    [DataField]
+    public List<ActiveMarketEvent> ActiveEvents = new();
 }
