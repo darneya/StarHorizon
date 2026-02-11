@@ -259,9 +259,6 @@
   - type: Charger
     chargeRate: 30
     slotId: entity_storage
-    whitelist:
-      components:
-      - BorgChassis
   - type: Construction
     containers:
     - machine_parts
@@ -302,9 +299,6 @@
             state: borgcharger1
   - type: EntityStorage
     capacity: 1
-    whitelist:
-      components:
-      - BorgChassis
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container

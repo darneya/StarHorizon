@@ -97,6 +97,11 @@
   - type: ActiveRadio
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyTraffic
   - type: DeadStartupButton
     sound:
       path: /Audio/Effects/Silicon/startup.ogg

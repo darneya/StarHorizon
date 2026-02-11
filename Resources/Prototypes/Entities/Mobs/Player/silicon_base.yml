@@ -156,22 +156,22 @@
           state: "creampie_human"
           visible: false
 
-    #- type: Bloodstream This is left commented out because it's not necessary for a robot, but you may want it.
-    #  damageBleedModifiers: BloodlossIPC
-    #  bloodReagent: Oil
-    #  bleedReductionAmount: 0
-    #  bloodMaxVolume: 500
-    #  chemicalMaxVolume: 0
-    #  bleedPuddleThreshold: 3
-    #  bleedRefreshAmount: 0
-    #  bloodLossThreshold: 0
-    #  maxBleedAmount: 14
-    #  bloodlossDamage:
-    #    types:
-    #      Burn: 1.5
-    #  bloodlossHealDamage:
-    #    types:
-    #      Burn: 0
+    - type: Bloodstream
+      damageBleedModifiers: BloodlossHuman
+      bloodReagent: Oil
+      bleedReductionAmount: 0
+      bloodMaxVolume: 500
+      chemicalMaxVolume: 0
+      bleedPuddleThreshold: 3
+      bleedRefreshAmount: 0
+      bloodLossThreshold: 0
+      maxBleedAmount: 14
+      bloodlossDamage:
+        types:
+          Burn: 1.5
+      bloodlossHealDamage:
+        types:
+          Burn: 0
     - type: Flashable
     - type: Flammable
       fireSpread: true
@@ -184,8 +184,8 @@
     #     types:
     #       Blunt: 0.28 #per second, scales with pressure and other constants.
     - type: Identity
-    #  soundHit:
-    #    path: /Audio/Effects/metalbreak.ogg
+      soundHit:
+        path: /Audio/Effects/metalbreak.ogg
     - type: RangedDamageSound
       soundGroups:
         Brute:

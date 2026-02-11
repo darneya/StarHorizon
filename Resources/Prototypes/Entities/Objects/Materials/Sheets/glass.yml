@@ -85,6 +85,10 @@
         reagents:
         - ReagentId: Silicon
           Quantity: 10
+  # Estacao Pirata - IPC Healing
+  - type: BlindHealing
+    damageContainers:
+      - Silicon
 
 - type: entity
   parent: SheetGlass
