@@ -15,7 +15,7 @@
   youngAge: 1
   maleFirstNames: NamesIpcFirstMale
   femaleFirstNames: NamesIpcFirstFemale
-  LastNames: NamesIpcLast
+  lastNames: NamesIpcLast
   sexes:
   - Male
   - Female
@@ -80,8 +80,6 @@
   id: MobIPCSprites
   sprites:
     Head: MobIPCHead
-    Hair: MobHumanoidAnyMarking
-    FacialHair: MobHumanoidAnyMarking
     Face: MobIPCScreen
     Chest: MobIPCTorso
     Eyes: MobHumanoidEyes
