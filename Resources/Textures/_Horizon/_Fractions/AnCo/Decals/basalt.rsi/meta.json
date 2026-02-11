@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CLA with hosting restrictions",
+  "copyright": "Sprited by Xigovir DS:623559319543349268",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "basalt1"
+    },
+    {
+      "name": "basalt2"
+    },
+    {
+      "name": "basalt3"
+    },
+    {
+      "name": "basalt4"
+    },
+    {
+      "name": "basalt5"
+    },
+    {
+      "name": "basalt6"
+    },
+    {
+      "name": "basalt7"
+    },
+    {
+      "name": "basalt8"
+    },
+    {
+      "name": "basalt9"
+    }
+  ]
+}

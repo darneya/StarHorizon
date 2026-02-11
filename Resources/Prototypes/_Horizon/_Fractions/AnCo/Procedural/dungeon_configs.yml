@@ -15,11 +15,11 @@
   - !type:DungeonEntranceDunGen
     count: 2
     tile: FloorMiningDark
-    contents: NFMiningAirlock
+    contents: AnCoAirlockGlass
 
   - !type:RoomEntranceDunGen
     tile: FloorMiningDark
-    contents: NFBaseAirlock
+    contents: AnCoAirlockGlass
 
   - !type:EntranceFlankDunGen
     tile: FloorMiningDark
@@ -41,12 +41,12 @@
   - !type:JunctionDunGen
     width: 1
     tile: FloorMiningDark
-    contents: NFBaseAirlock
+    contents: AnCoAirlockGlass
 
   - !type:JunctionDunGen
     width: 3
     tile: FloorMiningDark
-    contents: NFBaseAirlock
+    contents: AnCoAirlockGlass
 
   - !type:AutoCablingDunGen
     entity: CableApcExtension
@@ -78,3 +78,10 @@
     children:
     - id: GrilleDungeon
     - id: AnCoWindowArdon
+
+- type: entityTable
+  id: AnCoAirlockGlass
+  table: !type:AllSelector
+    children:
+    - id: CableApcExtension
+    - id: AnCoAirlockGlass

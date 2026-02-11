@@ -1,6 +1,6 @@
 - type: entity
   parent: AnCoPlayerSiliconBase
-  id: BaseRipsoidUAS
+  id: BaseRipsoidAnCo
   name: Рипсоид
   suffix: StarHorizon
   description: Гибрид машины и человека, созданный во имя прогресса
