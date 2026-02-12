@@ -72,6 +72,8 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+  - type: StaticPrice
+    price: 4000
 
 - type: entity
   id: MagazinePistol35
@@ -115,6 +117,8 @@
     steps: 3
     zeroVisible: false
   - type: Appearance
+  - type: StaticPrice
+    price: 4000
 
 - type: entity
   id: MagazineRifle20

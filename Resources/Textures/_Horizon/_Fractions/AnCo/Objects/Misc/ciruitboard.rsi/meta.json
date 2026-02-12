@@ -11,7 +11,19 @@
         "name": "boardproto"
       },
       {
+        "name": "boardweapon"
+      },
+      {
+        "name": "boardsuit"
+      },
+      {
+        "name": "boardother"
+      },
+      {
         "name": "boarddrill"
+      },
+      {
+        "name": "boardcrypto"
       }
     ]
   }

@@ -29,3 +29,5 @@
     qualities:
     - Slicing
   - type: AnCoSabre
+  - type: StaticPrice
+    price: 6000

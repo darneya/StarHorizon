@@ -29,3 +29,5 @@
   - type: Tool
     qualities:
     - Slicing
+  - type: StaticPrice
+    price: 2500

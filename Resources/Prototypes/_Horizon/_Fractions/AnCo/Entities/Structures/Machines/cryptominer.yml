@@ -100,20 +100,3 @@
       disk_slot_3: !type:ContainerSlot
       disk_slot_4: !type:ContainerSlot
 
-# Circuitboard for construction
-- type: entity
-  id: CryptominerMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: cryptominer machine board
-  description: A machine printed circuit board for a cryptominer.
-  components:
-  - type: Sprite
-    state: engineering
-  - type: MachineBoard
-    prototype: Cryptominer
-    requirements:
-      MatterBin: 2
-      Capacitor: 2
-    materialRequirements:
-      Steel: 5
-      Cable: 5

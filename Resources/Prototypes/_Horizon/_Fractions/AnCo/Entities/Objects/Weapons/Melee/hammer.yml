@@ -31,3 +31,5 @@
     staminaDamagePercent: 0.5
     throwStrength: 10
     distance: 5
+  - type: StaticPrice
+    price: 8000

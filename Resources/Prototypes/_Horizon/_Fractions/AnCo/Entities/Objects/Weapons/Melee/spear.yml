@@ -78,3 +78,5 @@
     inHandsMaxFillLevels: 1
     equippedFillBaseName: -fill-
     equippedMaxFillLevels: 1
+  - type: StaticPrice
+    price: 6000

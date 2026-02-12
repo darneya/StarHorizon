@@ -12,7 +12,7 @@
     normalState: normal-unshaded
     denyState: deny-unshaded
   - type: Advertise
-    pack: ClothesMateAds
+    pack: AnCoClothesMateAds
   - type: MarketModifier
     mod: 1
   - type: SpeakOnUIClosed
@@ -87,3 +87,79 @@
     LumaPlushina: 1
     EngiPlushin: 1
 
+- type: entity
+  parent: [VendingMachine, BaseAnCoContraband]
+  suffix: StarHorizon, AnCo, Structure
+  id: AnCoVendingWeapon
+  name: боемат АнКо
+  description: Обычный автомат с оружием... Разве что экран другой.
+  components:
+  - type: VendingMachine
+    pack: VendingMachineAnCoWeapon
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: Advertise
+    pack: AnCoWeaponMateAds
+  - type: MarketModifier
+    mod: 5
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Speech
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/VendingMachines/weapon.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.8
+    energy: 1.6
+    color: "#F05A5A"
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:SpawnEntitiesBehavior
+            spawn:
+              KazmieSheet1:
+                min: 1
+                max: 5
+              ArdonSheet1:
+                min: 1
+                max: 3
+
+- type: vendingMachineInventory
+  id: VendingMachineAnCoWeapon
+  startingInventory:
+   AnCoEnergyCore: 6
+   MagazineRifle20: 12
+   MagazinePistol35: 12
+   AnCoWeaponHeater: 3
+   PMLaserAnCoGun: 3
+   WeaponPistolAnCo: 3
+   WeaponAutoPistolAnCo: 3
+   WeaponRiflesAnCo: 3
+   AnCoKnife: 3
+   AnCoLine: 1
+   AnCoSabre: 2
+   AnCoSplah: 2
+   AnCoSpearPlasma: 1
+   AnCoAxe: 2
+   AnCoShovel: 1
+   AnCoHammer: 2

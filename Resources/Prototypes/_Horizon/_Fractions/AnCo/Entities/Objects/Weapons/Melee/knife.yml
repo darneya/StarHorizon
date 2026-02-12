@@ -48,3 +48,5 @@
     maxCharges: 1
   - type: AutoRecharge
     rechargeDuration: 300
+  - type: StaticPrice
+    price: 5000
