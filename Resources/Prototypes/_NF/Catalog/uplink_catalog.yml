@@ -42,7 +42,7 @@
   productEntity: NFWeaponRifleAssaultXM40
   discountCategory: rareDiscounts
   cost:
-    Telecrystal: 45
+    Telecrystal: 20
   categories:
   - UplinkWeaponry
 
