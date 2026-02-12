@@ -5,3 +5,20 @@
   - !type:AiInteractWireAction
   - !type:PowerWireAction
   - !type:AccessWireAction
+
+- type: wireLayout
+  id: WeaponCaseHack
+  dummyWires: 0
+  wires:
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction
+  - !type:WeaponCaseHackWireAction

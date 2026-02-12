@@ -4,8 +4,8 @@
   snapCardinals: true
   defaultSnap: false
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Decals/basalt.rsi
-    state: basalt1
+    sprite: _Horizon/_Fractions/AnCo/Decals/kazmie.rsi
+    state: kazmie1
 
 - type: decal
   id: kazmie2
@@ -13,8 +13,8 @@
   snapCardinals: true
   defaultSnap: false
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Decals/basalt.rsi
-    state: basalt2
+    sprite: _Horizon/_Fractions/AnCo/Decals/kazmie.rsi
+    state: kazmie2
 
 - type: decal
   id: kazmie3
@@ -22,8 +22,8 @@
   snapCardinals: true
   defaultSnap: false
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Decals/basalt.rsi
-    state: basalt3
+    sprite: _Horizon/_Fractions/AnCo/Decals/kazmie.rsi
+    state: kazmie3
 
 - type: decal
   id: kazmie4
@@ -31,8 +31,8 @@
   snapCardinals: true
   defaultSnap: false
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Decals/basalt.rsi
-    state: basalt4
+    sprite: _Horizon/_Fractions/AnCo/Decals/kazmie.rsi
+    state: kazmie4
 
 - type: decal
   id: kazmie5
@@ -40,8 +40,8 @@
   snapCardinals: true
   defaultSnap: false
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Decals/basalt.rsi
-    state: basalt5
+    sprite: _Horizon/_Fractions/AnCo/Decals/kazmie.rsi
+    state: kazmie5
 
 - type: decal
   id: kazmie6
@@ -49,8 +49,8 @@
   snapCardinals: true
   defaultSnap: false
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Decals/basalt.rsi
-    state: basalt6
+    sprite: _Horizon/_Fractions/AnCo/Decals/kazmie.rsi
+    state: kazmie6
 
 - type: decal
   id: kazmie7
@@ -58,8 +58,8 @@
   snapCardinals: true
   defaultSnap: false
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Decals/basalt.rsi
-    state: basalt7
+    sprite: _Horizon/_Fractions/AnCo/Decals/kazmie.rsi
+    state: kazmie7
 
 - type: decal
   id: kazmie8
@@ -67,8 +67,8 @@
   snapCardinals: true
   defaultSnap: false
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Decals/basalt.rsi
-    state: basalt8
+    sprite: _Horizon/_Fractions/AnCo/Decals/kazmie.rsi
+    state: kazmie8
 
 - type: decal
   id: kazmie9
@@ -76,5 +76,5 @@
   snapCardinals: true
   defaultSnap: false
   sprite:
-    sprite: _Horizon/_Fractions/AnCo/Decals/basalt.rsi
-    state: basalt9
+    sprite: _Horizon/_Fractions/AnCo/Decals/kazmie.rsi
+    state: kazmie9

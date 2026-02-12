@@ -9,11 +9,11 @@
       allowedTiles:
         - FloorKazmie
       entities:
-        - ArdonBasaltOne
-        - ArdonBasaltTwo
-        - ArdonBasaltThree
-        - ArdonBasaltFour
-        - ArdonBasaltFive
+        - ArdonKazmieOne
+        - ArdonKazmieTwo
+        - ArdonKazmieThree
+        - ArdonKazmieFour
+        - ArdonKazmieFive
 
     - !type:BiomeDecalLayer
       allowedTiles:
@@ -24,15 +24,15 @@
         seed: 1
         frequency: 1
       decals:
-        - Basalt1
-        - Basalt2
-        - Basalt3
-        - Basalt4
-        - Basalt5
-        - Basalt6
-        - Basalt7
-        - Basalt8
-        - Basalt9
+        - Kazmie1
+        - Kazmie2
+        - Kazmie3
+        - Kazmie4
+        - Kazmie5
+        - Kazmie6
+        - Kazmie7
+        - Kazmie8
+        - Kazmie9
 
     - !type:BiomeEntityLayer
       threshold: 0.90
@@ -97,7 +97,7 @@
         cellularDistanceFunction: Euclidean
         cellularReturnType: Distance2
       entities:
-        - AnCoWallRockBasalt
+        - AnCoWallRockKazmie
     - !type:BiomeDummyLayer
       id: Loot
     - !type:BiomeTileLayer
