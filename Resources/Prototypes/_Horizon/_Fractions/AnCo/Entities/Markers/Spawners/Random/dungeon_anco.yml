@@ -1,0 +1,244 @@
+- type: entity
+  name: спавнер вендинга АнКо
+  id: SpawnAnCoVendingRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Horizon/_Fractions/AnCo/Structures/Machines/VendingMachines/clothing.rsi
+        state: "off"
+  - type: RandomSpawner
+    prototypes:
+    - AnCoVending
+    - AnCoVendingWeapon
+    chance: 1
+    offset: 0.0
+
+- type: entity
+  name: спавнер оборудования АнКо
+  id: SpawnAnCoEquipmentRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Horizon/_Fractions/AnCo/Structures/Machines/VendingMachines/clothing.rsi
+        state: "off"
+  - type: RandomSpawner
+    prototypes:
+    - AnCoVending
+    - AnCoVending
+    - AnCoVending
+    - AnCoVendingWeapon
+    - AnCoVendingWeapon
+    - AnCoVendingWeapon
+    chance: 0.3
+    offset: 0.0
+    rarePrototypes:
+    - AnCoEmergencyFabricator
+    rareChance: 0.10
+
+- type: entity
+  name: спавнер оружия ближнего боя АнКо
+  id: SpawnAnCoMeleeWeaponRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/knife.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+    - AnCoKnife
+    - AnCoSpearPlasma
+    - AnCoSplah
+    - AnCoShovel
+    - AnCoLine
+    chance: 0.5
+    offset: 0.0
+    rarePrototypes:
+    - AnCoSabre
+    - AnCoHammer
+    - AnCoAxe
+    rareChance: 0.10
+
+- type: entity
+  name: спавнер скафандров АнКо
+  id: SpawnAnCoHardsuitRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/petal.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+    - ClothingOuterHardsuitPetal
+    - ClothingOuterHardsuitGranite
+    - ClothingOuterHardsuitDusk
+    chance: 0.30
+    offset: 0.0
+
+- type: entity
+  name: спавнер еды АнКо
+  id: SpawnAnCoFoodRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Horizon/_Fractions/AnCo/Objects/Food/snacks.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+    - FoodAnCoTin
+    - FoodAnCoTin
+    - DrinkWaterAnCoBottleFull
+    - DrinkWaterAnCoBottleFull
+    chance: 0.5
+    offset: 0.0
+    rarePrototypes:
+    - BoxRationAnCo
+    rareChance: 0.10
+
+# Случайный спавнер ендов - 50% ничего, 10% 1 енда, 10% 2 енды, 10% 3 енды, 10% 4 енды, 10% 5 ендов
+- type: entity
+  name: спавнер ендов АнКо
+  id: SpawnAnCoEndsRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Horizon/_Fractions/AnCo/Objects/Misc/coin.rsi
+        state: ancocoin
+  - type: RandomSpawner
+    prototypes:
+    - CitadelCoin1
+    - CitadelCoin2
+    - CitadelCoin3
+    - CitadelCoin4
+    - CitadelCoin5
+    chance: 0.5
+    offset: 0.0
+
+- type: entity
+  name: спавнер медицины АнКо
+  id: SpawnAnCoMedicalRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/medipen.rsi
+        state: omega
+  - type: RandomSpawner
+    prototypes:
+    - CombatMedipenAnCo
+    - CombatMedipenAnCo
+    - AnCohypo
+    chance: 1
+    offset: 0.0
+    rarePrototypes:
+    - NanitMedipenAnCo
+    rareChance: 0.15
+
+- type: entity
+  name: спавнер плюшек АнКо
+  id: SpawnAnCoPlushiesRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Horizon/_Fractions/AnCo/Objects/Fun/plushene.rsi
+        state: ripsi
+  - type: RandomSpawner
+    prototypes:
+    - LumaPlushina
+    - RipsiPlushin
+    - TitanPlushin
+    - KnightPlushin
+    - CyclopPlushin
+    - EngiPlushin
+    chance: 1
+    offset: 0.0
+
+- type: entity
+  name: спавнер патронов АнКо
+  id: SpawnAnCoAmmoRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_magnum.rsi
+        state: base
+  - type: RandomSpawner
+    prototypes:
+    - MagazinePistol35
+    - MagazinePistol35
+    - MagazineRifle20
+    - MagazineRifle20
+    - AnCoEnergyCore
+    chance: 1
+    offset: 0.0
+
+- type: entity
+  name: спавнер кейсов с оружием АнКо
+  id: SpawnAnCoWeaponCrateRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselong.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+    - AnCoWeaponCasePistol
+    - AnCoWeaponCaseAutoPistol
+    - AnCoWeaponCaseRifle
+    - AnCoWeaponCaseAutoRifle
+    - AnCoWeaponCaseLaserPP
+    - AnCoWeaponCaseLaserRifle
+    - AnCoWeaponCaseHeater
+    - AnCoWeaponCaseDisabler
+    - AnCoWeaponCaseMelee
+    - AnCoWeaponCaseGrenade
+    chance: 1
+    offset: 0.0
+
+- type: entity
+  name: спавнер кейсов АнКо
+  id: SpawnAnCoWeaponCaseRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselong.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+    - AnCoWeaponCaseLong
+    - AnCoWeaponCaseShort
+    - AnCoWeaponCaseAmmo
+    - AnCoWeaponCaseExplosives
+    - AnCoWeaponCaseHeavy
+    chance: 1
+    offset: 0.0
