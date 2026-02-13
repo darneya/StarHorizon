@@ -151,4 +151,6 @@
   - type: StaticPrice
     price: 100
   - type: BlockWeather
+  - type: RadiationBlocker
+    resistance: 4
 
