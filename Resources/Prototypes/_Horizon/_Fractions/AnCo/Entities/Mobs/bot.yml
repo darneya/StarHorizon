@@ -5,8 +5,6 @@
   description: Бот необходимый для защиты важного оборудования АнКо
   parent: [ BaseMob, MobCombat]
   components:
-  - type: Item
-    size: Small
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: crab-bot
@@ -353,6 +351,18 @@
     thresholds:
       0: Alive
       60: Dead
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+
 
 
 - type: entity
@@ -378,6 +388,9 @@
         Heat: 5
   - type: StaminaDamageOnHit
     damage: 40
+  - type: LemirdFollow
+    followDistance: 2.0
+    maxFollowDistance: 200.0
 
 - type: entity
   id: AnCoFlyDroneMedium
