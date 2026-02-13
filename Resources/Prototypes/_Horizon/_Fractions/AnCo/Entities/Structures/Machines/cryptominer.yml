@@ -7,9 +7,9 @@
     mode: SnapgridCenter
   components:
   - type: AnCoCryptominer
-    creditsPerSecond: 10
+    baseCreditsPerSecond: 50
     powerConsumption: 500
-    heatEnergyPerSecond: 5000
+    baseHeatEnergyPerSecond: 5000
     warningTemperature: 373.15
     overheatTemperature: 423.15
     criticalTemperature: 473.15

@@ -7,10 +7,17 @@ namespace Content.Shared._Horizon._Fractions.AnCo.Cryptominer;
 public sealed partial class AnCoCryptominerComponent : Component
 {
     /// <summary>
-    /// Credits generated per second when running.
+    /// Credits generated per minute per disk.
+    /// Total credits = BaseCreditsPerMinute * DiskCount
     /// </summary>
     [DataField, AutoNetworkedField]
-    public int CreditsPerSecond = 10;
+    public int BaseCreditsPerMinute = 50;
+
+    /// <summary>
+    /// Timer for credit generation (counts up to 60 seconds).
+    /// </summary>
+    [ViewVariables]
+    public float CreditGenerationTimer;
 
     /// <summary>
     /// Power consumption in watts.
@@ -19,10 +26,11 @@ public sealed partial class AnCoCryptominerComponent : Component
     public float PowerConsumption = 500f;
 
     /// <summary>
-    /// Heat energy added to the atmosphere per second in joules.
+    /// Heat energy added to the atmosphere per second per disk in joules.
+    /// Total heat = BaseHeatEnergyPerSecond * DiskCount
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float HeatEnergyPerSecond = 5000f;
+    public float BaseHeatEnergyPerSecond = 5000f;
 
     /// <summary>
     /// Temperature at which the miner shows a warning state (100°C).
@@ -143,7 +151,12 @@ public enum CryptominerState : byte
     /// <summary>
     /// Miner cannot operate due to low atmospheric pressure.
     /// </summary>
-    NoAtmosphere
+    NoAtmosphere,
+
+    /// <summary>
+    /// Miner cannot operate without disks inserted.
+    /// </summary>
+    NoDisks
 }
 
 [Serializable, NetSerializable]

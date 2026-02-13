@@ -34,9 +34,9 @@ public sealed partial class AnCoCryptominerMenu : FancyWindow
         // Update efficiency
         EfficiencyLabel.Text = $"{state.Efficiency * 100:F0}%";
 
-        // Update credits info
-        var effectiveCredits = (int)(state.CreditsPerSecond * state.Efficiency);
-        CreditsPerSecondLabel.Text = $"{effectiveCredits}";
+        // Update credits info (per-minute)
+        var effectiveCreditsPerMinute = (int)(state.CreditsPerSecond * state.Efficiency);
+        CreditsPerSecondLabel.Text = $"{effectiveCreditsPerMinute}";
         TotalCreditsLabel.Text = $"{state.TotalCreditsEarned}";
 
         // Update power
@@ -53,7 +53,10 @@ public sealed partial class AnCoCryptominerMenu : FancyWindow
         TemperatureBar.ModulateSelfOverride = GetStateColor(state.State);
 
         // Update toggle button text
-        ToggleButton.Text = state.State == CryptominerState.Off || state.State == CryptominerState.NoAtmosphere
+        var isOff = state.State == CryptominerState.Off ||
+                    state.State == CryptominerState.NoAtmosphere ||
+                    state.State == CryptominerState.NoDisks;
+        ToggleButton.Text = isOff
             ? Loc.GetString("cryptominer-window-toggle-on")
             : Loc.GetString("cryptominer-window-toggle-off");
 
@@ -70,6 +73,7 @@ public sealed partial class AnCoCryptominerMenu : FancyWindow
             CryptominerState.Overheat => Loc.GetString("cryptominer-state-overheat"),
             CryptominerState.Critical => Loc.GetString("cryptominer-state-critical"),
             CryptominerState.NoAtmosphere => Loc.GetString("cryptominer-state-no-atmosphere"),
+            CryptominerState.NoDisks => Loc.GetString("cryptominer-state-no-disks"),
             _ => "Unknown"
         };
     }
@@ -84,6 +88,7 @@ public sealed partial class AnCoCryptominerMenu : FancyWindow
             CryptominerState.Overheat => Color.Orange,
             CryptominerState.Critical => Color.Red,
             CryptominerState.NoAtmosphere => Color.Cyan,
+            CryptominerState.NoDisks => Color.Purple,
             _ => Color.White
         };
     }

@@ -21,6 +21,38 @@
     count: 1
 
 - type: entity
+  parent: CitadelCoin
+  id: CitadelCoin2
+  suffix: StarHorizon, AnCo, 2 Енды
+  components:
+  - type: Stack
+    count: 2
+
+- type: entity
+  parent: CitadelCoin
+  id: CitadelCoin3
+  suffix: StarHorizon, AnCo, 3 Енды
+  components:
+  - type: Stack
+    count: 3
+
+- type: entity
+  parent: CitadelCoin
+  id: CitadelCoin4
+  suffix: StarHorizon, AnCo, 4 Енды
+  components:
+  - type: Stack
+    count: 4
+
+- type: entity
+  parent: CitadelCoin
+  id: CitadelCoin5
+  suffix: StarHorizon, AnCo, 5 Енды
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
   name: Енды
   parent: [BaseItem, BaseAnCoContraband]
   id: CitadelCoin

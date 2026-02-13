@@ -50,7 +50,7 @@ public sealed class AnCoCryptominerVisualizerSystem : VisualizerSystem<AnCoCrypt
         if (!sprite.LayerMapTryGet(CryptominerVisualLayers.Level, out var levelLayer))
             return;
 
-        if (state == CryptominerState.Off || state == CryptominerState.NoAtmosphere)
+        if (state == CryptominerState.Off || state == CryptominerState.NoAtmosphere || state == CryptominerState.NoDisks)
         {
             sprite.LayerSetVisible(levelLayer, false);
             return;

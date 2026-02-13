@@ -3,8 +3,8 @@ cryptominer-window-title = Криптомайнер
 cryptominer-window-status = Статус:
 cryptominer-window-temperature = Температура:
 cryptominer-window-efficiency = Эффективность:
-cryptominer-window-credits-per-second = Кредитов/сек:
-cryptominer-window-total-credits = Всего заработано:
+cryptominer-window-credits-per-second = Ендов/мин:
+cryptominer-window-total-credits = Всего добыто:
 cryptominer-window-power = Энергопотребление:
 cryptominer-window-temperature-bar = Температура
 cryptominer-window-toggle-on = Включить
@@ -21,7 +21,7 @@ cryptominer-state-no-atmosphere = Нет атмосферы
 
 # Entity
 ent-Cryptominer = криптомайнер
-    .desc = Устройство для майнинга криптовалюты. Потребляет энергию и выделяет тепло. Заработанные кредиты автоматически переводятся на счёт станции.
+    .desc = Устройство для майнинга криптовалюты. Потребляет энергию и выделяет тепло. Добытые енды записываются на диски.
 
 ent-CryptominerMachineCircuitboard = плата криптомайнера
     .desc = Печатная плата для криптомайнера.
