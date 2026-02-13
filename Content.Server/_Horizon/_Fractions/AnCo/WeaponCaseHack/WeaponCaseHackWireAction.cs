@@ -1,13 +1,13 @@
 using System.Linq;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Wires;
-using Content.Shared._Horizon.WeaponCaseHack;
+using Content.Shared._Horizon._Fractions.AnCo.WeaponCaseHack;
 using Content.Shared.Lock;
 using Content.Shared.Popups;
 using Content.Shared.Wires;
 using Robust.Shared.Log;
 
-namespace Content.Server._Horizon.WeaponCaseHack;
+namespace Content.Server._Horizon._Fractions.AnCo.WeaponCaseHack;
 
 public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<WeaponCaseHackComponent>
 {

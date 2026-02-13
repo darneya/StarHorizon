@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Horizon.WeaponCaseHack;
+namespace Content.Shared._Horizon._Fractions.AnCo.WeaponCaseHack;
 
 /// <summary>
 /// Component for weapon cases that can be hacked via wires.
