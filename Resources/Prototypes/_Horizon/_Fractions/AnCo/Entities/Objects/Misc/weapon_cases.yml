@@ -1,0 +1,26 @@
+- type: entity
+  name: оружейный кейс АнКо
+  parent: [WeaponCaseLong,BaseAnCoContraband]
+  id: AnCoWeaponCaseLong
+  description: Прочный ящик для безопасности вашего оружия, а не вас.
+  suffix: StarHorizon, AnCo
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselong.rsi
+  - type: Item
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselong.rsi
+  - type: WeaponCaseHack
+  - type: Lock
+    locked: true
+  - type: AccessReader
+    access: [[ "AnCo" ]]
+  - type: WiresPanel
+  - type: Wires
+    boardName: wires-board-name-weapon-case
+    layoutId: WeaponCaseHack
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface

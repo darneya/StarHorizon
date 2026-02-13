@@ -40,21 +40,6 @@
       - WeaponCaseInsertable
       tags:
       - Cartridge
-  - type: WeaponCaseHack
-  - type: Lock
-    locked: true
-  - type: AccessReader
-    access: [[ "AnCo" ]]
-  - type: WiresPanel
-  - type: Wires
-    boardName: wires-board-name-weapon-case
-    layoutId: WeaponCaseHack
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
-      enum.WiresUiKey.Key:
-        type: WiresBoundUserInterface
 
 - type: entity
   name: weapon case
