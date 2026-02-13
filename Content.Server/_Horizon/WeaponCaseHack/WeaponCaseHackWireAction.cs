@@ -179,76 +179,32 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
         if (letters.Contains('X') && letters.Contains('Z') && letters.Contains('Y'))
             return (WireColor.Fuchsia, WireColor.Cyan, false);
 
-        // Rule7: Встречается слово "LUMA" (pulseFirst)
-        if (serial.Contains("LUMA"))
+        // Rule7: Содержит буквы L,U,M,A в любом порядке (pulseFirst)
+        if (letters.Contains('L') && letters.Contains('U') && letters.Contains('M') && letters.Contains('A'))
             return (WireColor.Brown, WireColor.Gold, true);
 
-        // Rule8: Серийник симметричен (cutFirst)
+        // Rule8: Содержит буквы A,S,T,R + цифра 0 в любом порядке (cutFirst)
+        if (letters.Contains('A') && letters.Contains('S') && letters.Contains('T') && letters.Contains('R') && digits.Contains('0'))
+            return (WireColor.Gray, WireColor.Cyan, false);
+
+        // Rule9: Серийник симметричен (cutFirst)
         if (IsPalindrome(cleanSerial))
             return (WireColor.Purple, WireColor.Navy, false);
 
-        // Rule9: Все цифры одинаковые (pulseFirst)
+        // Rule10: Все цифры одинаковые (pulseFirst)
         if (digitValues.Count >= 4 && digitValues.All(d => d == digitValues[0]))
             return (WireColor.Purple, WireColor.Green, true);
 
-        // Rule10: Все буквы одинаковые (cutFirst)
+        // Rule11: Все буквы одинаковые (cutFirst)
         if (letters.Length >= 4 && letters.All(c => c == letters[0]))
             return (WireColor.Purple, WireColor.Brown, false);
 
-        // Rule11: Все цифры простые (2,3,5,7) (pulseFirst)
+        // Rule12: Все цифры простые (2,3,5,7) (pulseFirst)
         var primes = new HashSet<int> { 2, 3, 5, 7 };
         if (digitValues.Count >= 4 && digitValues.All(d => primes.Contains(d)))
             return (WireColor.Blue, WireColor.Pink, true);
 
-        // Rule12: Первая буква гласная и последняя цифра нечётная (cutFirst)
-        if (letters.Length > 0 && vowels.Contains(letters[0]) && digitValues.Count > 0 && digitValues[^1] % 2 == 1)
-            return (WireColor.Red, WireColor.Green, false);
-
-        // Rule13: Более двух одинаковых символов (3+) (pulseFirst)
-        if (HasMoreThanTwoSameSymbols(cleanSerial))
-            return (WireColor.Gold, WireColor.Navy, true);
-
-        // Rule14: Первая буква и первая цифра чётные (cutFirst)
-        if (letters.Length > 0 && IsEvenLetter(letters[0]) && digitValues.Count > 0 && digitValues[0] % 2 == 0)
-            return (WireColor.Green, WireColor.Orange, false);
-
-        // Rule15: Первая цифра = количество гласных (pulseFirst)
-        if (digitValues.Count > 0 && digitValues[0] == vowelCount)
-            return (WireColor.Pink, WireColor.Cyan, true);
-
-        // Rule16: Первая буква = последней цифре (A=1, B=2, ...) (cutFirst)
-        if (letters.Length > 0 && digitValues.Count > 0)
-        {
-            var letterValue = letters[0] - 'A' + 1;
-            if (letterValue == digitValues[^1])
-                return (WireColor.Blue, WireColor.Brown, false);
-        }
-
-        // Rule17: Есть повтор буквы (pulseFirst)
-        if (letters.GroupBy(c => c).Any(g => g.Count() > 1))
-            return (WireColor.Orange, WireColor.Red, true);
-
-        // Rule18: Последняя буква раньше F (cutFirst)
-        if (letters.Length >= 4 && letters[3] < 'F')
-            return (WireColor.Pink, WireColor.Purple, false);
-
-        // Rule19: Буквы идут в обратном порядке (pulseFirst)
-        if (IsReverseAlphabetical(letters))
-            return (WireColor.Orange, WireColor.Blue, true);
-
-        // Rule20: Буквы идут по алфавиту (cutFirst)
-        if (IsAlphabetical(letters))
-            return (WireColor.Blue, WireColor.Gold, false);
-
-        // Rule21: Есть буква Z (pulseFirst)
-        if (letters.Contains('Z'))
-            return (WireColor.Brown, WireColor.Fuchsia, true);
-
-        // Rule22: Есть буква A (cutFirst)
-        if (letters.Contains('A'))
-            return (WireColor.Red, WireColor.Navy, false);
-
-        // Rule23: Произведение цифр > 200 (pulseFirst)
+        // Rule13: Произведение цифр > 200 (pulseFirst)
         if (digitValues.Count > 0)
         {
             var product = digitValues.Aggregate(1, (a, b) => a * b);
@@ -256,60 +212,102 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
                 return (WireColor.Brown, WireColor.Green, true);
         }
 
-        // Rule24: Последняя цифра нечётная (cutFirst)
-        if (digitValues.Count > 0 && digitValues[^1] % 2 == 1)
-            return (WireColor.Orange, WireColor.Pink, false);
+        // Rule14: Сумма первых двух цифр = сумме последних двух (cutFirst)
+        if (digitValues.Count >= 4 && digitValues[0] + digitValues[1] == digitValues[2] + digitValues[3])
+            return (WireColor.Cyan, WireColor.Pink, false);
 
-        // Rule25: Последняя цифра чётная (pulseFirst)
-        if (digitValues.Count > 0 && digitValues[^1] % 2 == 0)
-            return (WireColor.Red, WireColor.Cyan, true);
+        // Rule15: Все цифры чётные (0,2,4,6,8) (pulseFirst)
+        var evens = new HashSet<int> { 0, 2, 4, 6, 8 };
+        if (digitValues.Count >= 4 && digitValues.All(d => evens.Contains(d)))
+            return (WireColor.Navy, WireColor.Pink, true);
 
-        // Rule26: Первая цифра больше последней (cutFirst)
+        // Rule16: Все цифры нечётные (1,3,5,7,9) (cutFirst)
+        var odds = new HashSet<int> { 1, 3, 5, 7, 9 };
+        if (digitValues.Count >= 4 && digitValues.All(d => odds.Contains(d)))
+            return (WireColor.Pink, WireColor.Navy, false);
+
+        // Rule17: Первая + последняя цифра = 10 (pulseFirst)
+        if (digitValues.Count >= 2 && digitValues[0] + digitValues[^1] == 10)
+            return (WireColor.Gold, WireColor.Purple, true);
+
+        // Rule18: Разность первой и последней > 5 (cutFirst)
+        if (digitValues.Count >= 2 && Math.Abs(digitValues[0] - digitValues[^1]) > 5)
+            return (WireColor.Red, WireColor.Cyan, false);
+
+        // Rule19: Цифры образуют возрастающую последовательность (pulseFirst)
+        if (IsAscendingSequence(digitValues))
+            return (WireColor.Cyan, WireColor.Orange, true);
+
+        // Rule20: Более двух одинаковых символов (3+) (pulseFirst)
+        if (HasMoreThanTwoSameSymbols(cleanSerial))
+            return (WireColor.Gold, WireColor.Navy, true);
+
+        // Rule21: Есть повтор буквы (pulseFirst)
+        if (letters.GroupBy(c => c).Any(g => g.Count() > 1))
+            return (WireColor.Orange, WireColor.Red, true);
+
+        // Rule22: Есть буква Z (pulseFirst)
+        if (letters.Contains('Z'))
+            return (WireColor.Brown, WireColor.Fuchsia, true);
+
+        // Rule23: Есть буква A (cutFirst)
+        if (letters.Contains('A'))
+            return (WireColor.Red, WireColor.Navy, false);
+
+        // Rule24: Первая цифра больше последней (cutFirst)
         if (digitValues.Count >= 2 && digitValues[0] > digitValues[^1])
             return (WireColor.Blue, WireColor.Orange, false);
 
-        // Rule27: Цифры в обратном порядке (pulseFirst)
+        // Rule25: Цифры в обратном порядке (pulseFirst)
         if (IsReverseOrdered(digitValues))
             return (WireColor.Fuchsia, WireColor.Red, true);
 
-        // Rule28: Все цифры разные (cutFirst)
+        // Rule26: Все цифры разные (cutFirst)
         if (digitValues.Distinct().Count() == digitValues.Count && digitValues.Count >= 4)
             return (WireColor.Cyan, WireColor.Brown, false);
 
-        // Rule29: Две одинаковые цифры подряд (pulseFirst)
+        // Rule27: Две одинаковые цифры подряд (pulseFirst)
         for (int i = 0; i < digitValues.Count - 1; i++)
         {
             if (digitValues[i] == digitValues[i + 1])
                 return (WireColor.Navy, WireColor.Gold, true);
         }
 
-        // Rule30: Есть цифра 9 (cutFirst)
+        // Rule28: Есть цифра 9 (cutFirst)
         if (digitValues.Contains(9))
             return (WireColor.Green, WireColor.Purple, false);
 
-        // Rule31: Есть цифра 0 (pulseFirst)
+        // Rule29: Есть цифра 0 (pulseFirst)
         if (digitValues.Contains(0))
             return (WireColor.Orange, WireColor.Navy, true);
 
-        // Rule32: Первая буква позже M (cutFirst)
-        if (letters.Length > 0 && letters[0] > 'M')
-            return (WireColor.Cyan, WireColor.Blue, false);
-
-        // Rule33: Сумма цифр делится на 3 (pulseFirst)
+        // Rule30: Сумма цифр делится на 3 (pulseFirst)
         if (digitSum % 3 == 0)
             return (WireColor.Gray, WireColor.Red, true);
 
-        // Rule34: Содержит "ERP" (cutFirst)
-        if (serial.Contains("ERP"))
-            return (WireColor.Pink, WireColor.Brown, false);
-
-        // Rule35: Сумма цифр < 10 (pulseFirst)
+        // Rule31: Сумма цифр < 10 (pulseFirst)
         if (digitSum < 10)
             return (WireColor.Gold, WireColor.Fuchsia, true);
 
-        // Rule36: Сумма цифр > 25 (cutFirst)
+        // Rule32: Сумма цифр > 25 (cutFirst)
         if (digitSum > 25)
             return (WireColor.Brown, WireColor.Pink, false);
+
+        // Rule33: Содержит кириллицу (редкое ~1%) (pulseFirst)
+        if (serial.Any(c => c >= 'А' && c <= 'я' || c == 'Ё' || c == 'ё'))
+            return (WireColor.Purple, WireColor.Gold, true);
+
+        // Rule34: Содержит "ERP" или буквы E,R,P в любом порядке (cutFirst)
+        if (serial.Contains("ERP") || (letters.Contains('E') && letters.Contains('R') && letters.Contains('P')))
+            return (WireColor.Pink, WireColor.Brown, false);
+
+        // Rule35: Содержит буквы E,V,I,L в любом порядке (pulseFirst)
+        if (letters.Contains('E') && letters.Contains('V') && letters.Contains('I') && letters.Contains('L'))
+            return (WireColor.Fuchsia, WireColor.Gray, true);
+
+        // Rule36: Содержит буквы B,U,G в любом порядке (cutFirst)
+        if (letters.Contains('B') && letters.Contains('U') && letters.Contains('G'))
+            return (WireColor.Orange, WireColor.Green, false);
 
         // Rule37: Сумма цифр нечётная (pulseFirst)
         if (digitSum % 2 == 1)
@@ -362,6 +360,18 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
         for (int i = 0; i < s.Length - 1; i++)
         {
             if (s[i] <= s[i + 1])
+                return false;
+        }
+        return true;
+    }
+
+    private static bool IsAscendingSequence(List<int> digits)
+    {
+        if (digits.Count < 4)
+            return false;
+        for (int i = 0; i < digits.Count - 1; i++)
+        {
+            if (digits[i] + 1 != digits[i + 1])
                 return false;
         }
         return true;

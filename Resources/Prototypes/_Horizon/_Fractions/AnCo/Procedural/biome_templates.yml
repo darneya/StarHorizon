@@ -9,11 +9,11 @@
       allowedTiles:
         - FloorKazmie
       entities:
-        - ArdonKazmieOne
-        - ArdonKazmieTwo
-        - ArdonKazmieThree
-        - ArdonKazmieFour
-        - ArdonKazmieFive
+        - ArdonBasaltOne
+        - ArdonBasaltTwo
+        - ArdonBasaltThree
+        - ArdonBasaltFour
+        - ArdonBasaltFive
 
     - !type:BiomeDecalLayer
       allowedTiles:
@@ -97,7 +97,7 @@
         cellularDistanceFunction: Euclidean
         cellularReturnType: Distance2
       entities:
-        - AnCoWallRockKazmie
+        - AnCoWallRockBasalt
     - !type:BiomeDummyLayer
       id: Loot
     - !type:BiomeTileLayer

@@ -1,0 +1,338 @@
+# Inferno difficulty versions of Rogue Silicon mobs
+# - All units can see through walls
+# - Melee units don't retreat after attack
+# - All units can pry doors open
+# - All units can smash walls (CombatMode required)
+
+# ============ MELEE UNITS - NO RETREAT ============
+
+- type: entity
+  parent: MobRogueSiliconScrap
+  id: MobRogueSiliconScrapInferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleMeleeHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: CombatMode
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Heat: 4
+        Blunt: 6
+        Structural: 40
+    soundHit:
+      collection: MetalThud
+  - type: Tool
+    speedModifier: 2.0
+    qualities:
+      - Prying
+    hideQualities: true
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 2.0
+
+- type: entity
+  parent: MobRogueSiliconHerder
+  id: MobRogueSiliconHerderInferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleMeleeHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: CombatMode
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 6
+        Shock: 7
+        Structural: 40
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Tool
+    speedModifier: 2.0
+    qualities:
+      - Prying
+    hideQualities: true
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 2.0
+
+- type: entity
+  parent: MobRogueSiliconScrapFlayer
+  id: MobRogueSiliconScrapFlayerInferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleMeleeHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: CombatMode
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 12
+        Structural: 40
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Tool
+    speedModifier: 2.0
+    qualities:
+      - Prying
+    hideQualities: true
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 2.0
+
+# ============ RANGED UNITS - WALL VISION ============
+
+- type: entity
+  parent: MobRogueSiliconHunter
+  id: MobRogueSiliconHunterInferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+  - type: CombatMode
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Heat: 4
+        Blunt: 6
+        Structural: 40
+    soundHit:
+      collection: MetalThud
+  - type: Tool
+    speedModifier: 2.0
+    qualities:
+      - Prying
+    hideQualities: true
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 2.0
+
+- type: entity
+  parent: MobRogueSiliconTesla
+  id: MobRogueSiliconTeslaInferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+  - type: CombatMode
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Heat: 4
+        Blunt: 6
+        Structural: 40
+    soundHit:
+      collection: MetalThud
+  - type: Tool
+    speedModifier: 2.0
+    qualities:
+      - Prying
+    hideQualities: true
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 2.0
+
+- type: entity
+  parent: MobRogueSiliconGuardian
+  id: MobRogueSiliconGuardianInferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+  - type: CombatMode
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Heat: 4
+        Blunt: 6
+        Structural: 40
+    soundHit:
+      collection: MetalThud
+  - type: Tool
+    speedModifier: 2.0
+    qualities:
+      - Prying
+    hideQualities: true
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 2.0
+
+- type: entity
+  parent: MobRogueSiliconBoss
+  id: MobRogueSiliconBossInferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+  - type: CombatMode
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Heat: 4
+        Blunt: 6
+        Structural: 40
+    soundHit:
+      collection: MetalThud
+  - type: Tool
+    speedModifier: 2.0
+    qualities:
+      - Prying
+    hideQualities: true
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 2.0
+
+- type: entity
+  parent: MobRogueSiliconCatcher
+  id: MobRogueSiliconCatcherInferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+  - type: CombatMode
+  - type: MeleeWeapon
+    attackRate: 1.0
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Heat: 4
+        Blunt: 6
+        Structural: 40
+    soundHit:
+      collection: MetalThud
+  - type: Tool
+    speedModifier: 2.0
+    qualities:
+      - Prying
+    hideQualities: true
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 2.0
