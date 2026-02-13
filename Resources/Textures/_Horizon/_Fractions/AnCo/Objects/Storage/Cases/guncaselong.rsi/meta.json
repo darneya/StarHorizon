@@ -1,5 +1,5 @@
 {
- "version": 1,
+  "version": 1,
   "license": "CLA with hosting restrictions",
   "copyright": "Sprited by Xigovir DS:623559319543349268",
   "size": {
@@ -8,19 +8,24 @@
   },
   "states": [
     {
-      "name": "icon"
-    },
-    {
-      "name": "equipped-INNERCLOTHING",
-      "directions": 4
-    },
-    {
       "name": "inhand-left",
       "directions": 4
     },
     {
       "name": "inhand-right",
       "directions": 4
+    },
+    {
+      "name": "icon"
+    },
+    {
+      "name": "icon-open"
+    },
+    {
+      "name": "unshaded",
+      "delays": [
+        [ 0.2, 0.1, 0.1, 0.2 ]
+      ]
     }
   ]
 }
