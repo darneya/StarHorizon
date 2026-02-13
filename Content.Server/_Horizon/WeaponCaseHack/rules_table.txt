@@ -1,0 +1,65 @@
+ТАБЛИЦА ПРАВИЛ ВЗЛОМА ОРУЖЕЙНОГО КЕЙСА
+========================================
+
+Формат серийного номера: XXXX-0000 (4 буквы, дефис, 4 цифры)
+
+Порядок действий:
+- "Pulse → Cut" = сначала пульсировать, потом резать
+- "Cut → Pulse" = сначала резать, потом пульсировать
+
+================================================================================
+#   | Условие                                      | Cut     | Pulse   | Порядок
+================================================================================
+1   | Содержит буквы AnCo в любом порядке          | Gray    | Purple  | Pulse → Cut
+2   | Содержит SS                                  | Blue    | Red     | Cut → Pulse
+3   | Содержит NT                                  | Red     | Blue    | Pulse → Cut
+4   | Содержит 3026                                | Pink    | Gold    | Cut → Pulse
+5   | Первая и последняя буквы одинаковые          | Purple  | Orange  | Pulse → Cut
+6   | X, Z и Y одновременно                        | Fuchsia | Cyan    | Cut → Pulse
+7   | Буквы L,U,M,A в любом порядке                | Brown   | Gold    | Pulse → Cut
+8   | Буквы A,S,T,R + цифра 0 в любом порядке      | Gray    | Cyan    | Cut → Pulse
+9   | Серийник симметричен                         | Purple  | Navy    | Cut → Pulse
+10  | Все цифры одинаковые                         | Purple  | Green   | Pulse → Cut
+11  | Все буквы одинаковые                         | Purple  | Brown   | Cut → Pulse
+12  | Все цифры простые (2,3,5,7)                  | Blue    | Pink    | Pulse → Cut
+13  | Произведение цифр > 200                      | Brown   | Green   | Pulse → Cut
+14  | Сумма первых двух = сумме последних          | Cyan    | Pink    | Cut → Pulse
+15  | Все цифры чётные (0,2,4,6,8)                 | Navy    | Pink    | Pulse → Cut
+16  | Все цифры нечётные (1,3,5,7,9)               | Pink    | Navy    | Cut → Pulse
+17  | Первая + последняя цифра = 10                | Gold    | Purple  | Pulse → Cut
+18  | Разность первой и последней > 5              | Red     | Cyan    | Cut → Pulse
+19  | Цифры образуют возрастающую последов. (1234) | Cyan    | Orange  | Pulse → Cut
+20  | Более двух одинаковых символов (3+)          | Gold    | Navy    | Pulse → Cut
+21  | Есть повтор буквы                            | Orange  | Red     | Pulse → Cut
+22  | Есть буква Z                                 | Brown   | Fuchsia | Pulse → Cut
+23  | Есть буква A                                 | Red     | Navy    | Cut → Pulse
+24  | Первая цифра больше последней                | Blue    | Orange  | Cut → Pulse
+25  | Цифры в обратном порядке                     | Fuchsia | Red     | Pulse → Cut
+26  | Все цифры разные                             | Cyan    | Brown   | Cut → Pulse
+27  | Две одинаковые цифры подряд                  | Navy    | Gold    | Pulse → Cut
+28  | Есть цифра 9                                 | Green   | Purple  | Cut → Pulse
+29  | Есть цифра 0                                 | Orange  | Navy    | Pulse → Cut
+30  | Сумма цифр делится на 3                      | Gray    | Red     | Pulse → Cut
+31  | Сумма цифр < 10                              | Gold    | Fuchsia | Pulse → Cut
+32  | Сумма цифр > 25                              | Brown   | Pink    | Cut → Pulse
+33  | Содержит кириллицу (редкое ~1%)              | Purple  | Gold    | Pulse → Cut
+34  | Содержит "ERP" или буквы E,R,P               | Pink    | Brown   | Cut → Pulse
+35  | Содержит буквы E,V,I,L в любом порядке       | Fuchsia | Gray    | Pulse → Cut
+36  | Содержит буквы B,U,G в любом порядке         | Orange  | Green   | Cut → Pulse
+37  | Сумма цифр нечётная                          | Red     | Gold    | Pulse → Cut
+38  | Сумма цифр чётная                            | Blue    | Green   | Cut → Pulse
+================================================================================
+
+ЦВЕТА ПРОВОДОВ:
+- Red (Красный)
+- Blue (Синий)
+- Green (Зелёный)
+- Orange (Оранжевый)
+- Brown (Коричневый)
+- Gold (Золотой)
+- Gray (Серый)
+- Cyan (Голубой)
+- Navy (Тёмно-синий)
+- Purple (Фиолетовый)
+- Pink (Розовый)
+- Fuchsia (Фуксия)

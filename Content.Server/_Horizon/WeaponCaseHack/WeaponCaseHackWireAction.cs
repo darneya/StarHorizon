@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Explosion.EntitySystems;
 using Content.Server.Wires;
 using Content.Shared._Horizon.WeaponCaseHack;
 using Content.Shared.Lock;
@@ -76,12 +77,19 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
         }
         else
         {
-            comp.CutCompleted = false;
-            comp.PulseCompleted = false;
-            EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("weapon-case-hack-wrong-wire"), wire.Owner, user);
+            // Взрыв и удаление ящика при неправильном проводе
+            ExplodeAndDestroy(wire.Owner, user);
+            return true;
         }
 
         return true;
+    }
+
+    private void ExplodeAndDestroy(EntityUid uid, EntityUid user)
+    {
+        EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("weapon-case-hack-explosion"), uid, user);
+        EntityManager.System<ExplosionSystem>().QueueExplosion(uid, "Default", 5f, 1f, 3f, canCreateVacuum: false);
+        EntityManager.QueueDeleteEntity(uid);
     }
 
     public override bool Mend(EntityUid user, Wire wire, WeaponCaseHackComponent comp)
@@ -132,9 +140,8 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
         }
         else
         {
-            comp.CutCompleted = false;
-            comp.PulseCompleted = false;
-            EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("weapon-case-hack-wrong-wire"), wire.Owner, user);
+            // Взрыв и удаление ящика при неправильном проводе
+            ExplodeAndDestroy(wire.Owner, user);
         }
     }
 

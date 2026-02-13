@@ -1,0 +1,73 @@
+- type: entity
+  id: CurrencyExchangeTerminal
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: currency exchange terminal
+  description: A terminal for exchanging mined cryptocurrency credits for station credits. Exchange rates fluctuate based on market conditions.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: CurrencyExchange
+    baseExchangeRate: 1.0
+    minExchangeRate: 0.5
+    maxExchangeRate: 2.0
+    rateVolatility: 0.05
+    updateInterval: 60
+    commission: 0.05
+  - type: Sprite
+    sprite: _NF/Structures/Machines/atm/atm.rsi
+    snapCardinals: true
+    layers:
+      - state: icon
+        map: [ "base" ]
+      - state: unshaded
+        shader: unshaded
+  - type: Appearance
+  - type: ItemSlots
+    slots:
+      disk_slot:
+        name: currency-exchange-slot-disk
+        whitelist:
+          tags:
+            - CryptominerDisk
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: ExtensionCableReceiver
+  - type: ActivatableUI
+    key: enum.CurrencyExchangeUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CurrencyExchangeUiKey.Key:
+        type: CurrencyExchangeBoundUserInterface
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 2
+  - type: AmbientOnPowered
+  - type: AmbientSound
+    volume: -12
+    range: 3
+    sound:
+      path: /Audio/Ambience/Objects/server_fans.ogg
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+      disk_slot: !type:ContainerSlot

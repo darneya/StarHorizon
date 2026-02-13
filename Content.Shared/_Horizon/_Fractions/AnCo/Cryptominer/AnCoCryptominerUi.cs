@@ -10,11 +10,12 @@ public sealed class CryptominerBoundUserInterfaceState : BoundUserInterfaceState
     public readonly float WarningTemperature;
     public readonly float OverheatTemperature;
     public readonly float CriticalTemperature;
-    public readonly int CreditsPerSecond;
+    public readonly float CreditsPerSecond;
     public readonly int TotalCreditsEarned;
     public readonly float Efficiency;
     public readonly float PowerConsumption;
     public readonly bool IsPowered;
+    public readonly int DiskCount;
 
     public CryptominerBoundUserInterfaceState(
         CryptominerState state,
@@ -22,11 +23,12 @@ public sealed class CryptominerBoundUserInterfaceState : BoundUserInterfaceState
         float warningTemperature,
         float overheatTemperature,
         float criticalTemperature,
-        int creditsPerSecond,
+        float creditsPerSecond,
         int totalCreditsEarned,
         float efficiency,
         float powerConsumption,
-        bool isPowered)
+        bool isPowered,
+        int diskCount)
     {
         State = state;
         CurrentTemperature = currentTemperature;
@@ -38,6 +40,7 @@ public sealed class CryptominerBoundUserInterfaceState : BoundUserInterfaceState
         Efficiency = efficiency;
         PowerConsumption = powerConsumption;
         IsPowered = isPowered;
+        DiskCount = diskCount;
     }
 }
 

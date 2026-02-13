@@ -1,33 +1,25 @@
 using Content.Server.Atmos.EntitySystems;
-using Content.Server.Cargo.Systems;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Server.Station.Systems;
 using Content.Shared._Horizon._Fractions.AnCo.Cryptominer;
-using Content.Shared.Cargo.Components;
-using Content.Shared.Cargo.Prototypes;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Power;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
 namespace Content.Server._Horizon._Fractions.AnCo.Cryptominer;
 
 public sealed class AnCoCryptominerSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly PowerReceiverSystem _power = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly CargoSystem _cargo = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
 
     private float _updateTimer;
-    private const float UpdateTime = 1.0f;
+    private const float UpdateTime = 1.0f; // Status/temperature update interval
+    private const float CreditGenerationInterval = 60.0f; // Credits are generated once per minute
 
     public override void Initialize()
     {
@@ -84,19 +76,27 @@ public sealed class AnCoCryptominerSystem : EntitySystem
         if (!_power.IsPowered(uid))
             return;
 
-        if (miner.State == CryptominerState.Off || miner.State == CryptominerState.NoAtmosphere)
+        if (miner.State == CryptominerState.Off || miner.State == CryptominerState.NoAtmosphere || miner.State == CryptominerState.NoDisks)
         {
-            // Check atmosphere before turning on
-            var environment = _atmosphere.GetContainingMixture(uid, true);
-            var pressure = environment?.Pressure ?? 0f;
-
-            if (pressure < miner.MinimumPressure)
+            // Check disks first - cannot operate without disks
+            if (miner.DiskCount <= 0)
             {
-                miner.State = CryptominerState.NoAtmosphere;
+                miner.State = CryptominerState.NoDisks;
             }
             else
             {
-                miner.State = CryptominerState.Normal;
+                // Check atmosphere before turning on
+                var environment = _atmosphere.GetContainingMixture(uid, true);
+                var pressure = environment?.Pressure ?? 0f;
+
+                if (pressure < miner.MinimumPressure)
+                {
+                    miner.State = CryptominerState.NoAtmosphere;
+                }
+                else
+                {
+                    miner.State = CryptominerState.Normal;
+                }
             }
         }
         else
@@ -135,6 +135,17 @@ public sealed class AnCoCryptominerSystem : EntitySystem
             else
             {
                 miner.CurrentPressure = 0f;
+            }
+
+            // Check for no disks - cannot operate without disks
+            if (miner.DiskCount <= 0 && miner.State != CryptominerState.Off)
+            {
+                miner.State = CryptominerState.NoDisks;
+                miner.Efficiency = 0f;
+                Dirty(uid, miner);
+                UpdateAppearance(uid, miner);
+                UpdateUI(uid, miner);
+                continue;
             }
 
             // Check for low atmosphere - cannot operate in vacuum
@@ -182,26 +193,29 @@ public sealed class AnCoCryptominerSystem : EntitySystem
             // Calculate efficiency based on temperature
             CalculateEfficiency(miner);
 
-            // Add heat to the environment
+            // Add heat to the environment (scales linearly with disk count)
             if (environment != null)
             {
-                var heatToAdd = miner.HeatEnergyPerSecond * UpdateTime;
+                var heatToAdd = miner.BaseHeatEnergyPerSecond * miner.DiskCount * UpdateTime;
                 _atmosphere.AddHeat(environment, heatToAdd);
             }
 
-            // Generate credits
-            var creditsGenerated = miner.CreditsPerSecond * miner.Efficiency * UpdateTime;
-            miner.AccumulatedCredits += creditsGenerated;
+            // Accumulate time for credit generation
+            miner.CreditGenerationTimer += UpdateTime;
 
-            // Transfer whole credits to station bank
-            if (miner.AccumulatedCredits >= 1.0f)
+            // Generate credits once per minute (scales linearly with disk count: 1 disk = 50, 4 disks = 200)
+            if (miner.CreditGenerationTimer >= CreditGenerationInterval)
             {
-                var wholeCredits = (int)miner.AccumulatedCredits;
-                miner.AccumulatedCredits -= wholeCredits;
-                miner.TotalCreditsEarned += wholeCredits;
+                miner.CreditGenerationTimer -= CreditGenerationInterval;
 
-                // Add credits to station bank
-                AddCreditsToStation(uid, wholeCredits);
+                var creditsGenerated = (int)(miner.BaseCreditsPerMinute * miner.DiskCount * miner.Efficiency);
+
+                if (creditsGenerated > 0)
+                {
+                    // Add credits to disks
+                    var actuallyStored = AddCreditsToDisks(uid, creditsGenerated);
+                    miner.TotalCreditsEarned += actuallyStored;
+                }
             }
 
             if (miner.PreviousState != miner.State)
@@ -278,18 +292,51 @@ public sealed class AnCoCryptominerSystem : EntitySystem
         }
     }
 
-    private static readonly ProtoId<CargoAccountPrototype> CargoAccount = "Cargo";
-
-    private void AddCreditsToStation(EntityUid minerUid, int amount)
+    /// <summary>
+    /// Distributes credits evenly across all inserted disks.
+    /// Returns the number of credits actually stored.
+    /// </summary>
+    private int AddCreditsToDisks(EntityUid minerUid, int amount)
     {
-        var station = _station.GetOwningStation(minerUid);
-        if (station == null)
-            return;
+        var disks = new List<(EntityUid Uid, CryptominerDiskComponent Disk)>();
 
-        if (!TryComp<StationBankAccountComponent>(station, out var bank))
-            return;
+        // Collect all disks with CryptominerDiskComponent
+        var disk1 = _itemSlots.GetItemOrNull(minerUid, AnCoCryptominerComponent.DiskSlot1);
+        var disk2 = _itemSlots.GetItemOrNull(minerUid, AnCoCryptominerComponent.DiskSlot2);
+        var disk3 = _itemSlots.GetItemOrNull(minerUid, AnCoCryptominerComponent.DiskSlot3);
+        var disk4 = _itemSlots.GetItemOrNull(minerUid, AnCoCryptominerComponent.DiskSlot4);
 
-        _cargo.UpdateBankAccount((station.Value, bank), amount, CargoAccount);
+        if (disk1 != null && TryComp<CryptominerDiskComponent>(disk1, out var diskComp1))
+            disks.Add((disk1.Value, diskComp1));
+        if (disk2 != null && TryComp<CryptominerDiskComponent>(disk2, out var diskComp2))
+            disks.Add((disk2.Value, diskComp2));
+        if (disk3 != null && TryComp<CryptominerDiskComponent>(disk3, out var diskComp3))
+            disks.Add((disk3.Value, diskComp3));
+        if (disk4 != null && TryComp<CryptominerDiskComponent>(disk4, out var diskComp4))
+            disks.Add((disk4.Value, diskComp4));
+
+        if (disks.Count == 0)
+            return 0;
+
+        var totalStored = 0;
+        var creditsPerDisk = amount / disks.Count;
+        var remainder = amount % disks.Count;
+
+        foreach (var (diskUid, disk) in disks)
+        {
+            var toAdd = creditsPerDisk + (remainder > 0 ? 1 : 0);
+            if (remainder > 0)
+                remainder--;
+
+            var availableSpace = disk.MaxCredits - disk.StoredCredits;
+            var actualAdd = Math.Min(toAdd, availableSpace);
+
+            disk.StoredCredits += actualAdd;
+            totalStored += actualAdd;
+            Dirty(diskUid, disk);
+        }
+
+        return totalStored;
     }
 
     private void UpdateAppearance(EntityUid uid, AnCoCryptominerComponent miner)
@@ -302,17 +349,21 @@ public sealed class AnCoCryptominerSystem : EntitySystem
     {
         var isPowered = _power.IsPowered(uid);
 
+        // Calculate effective credits per minute (linear: diskCount * baseCredits)
+        var effectiveCreditsPerMinute = miner.BaseCreditsPerMinute * miner.DiskCount;
+
         var state = new CryptominerBoundUserInterfaceState(
             miner.State,
             miner.CurrentTemperature,
             miner.WarningTemperature,
             miner.OverheatTemperature,
             miner.CriticalTemperature,
-            miner.CreditsPerSecond,
+            effectiveCreditsPerMinute,
             miner.TotalCreditsEarned,
             miner.Efficiency,
             miner.PowerConsumption,
-            isPowered
+            isPowered,
+            miner.DiskCount
         );
 
         _ui.SetUiState(uid, CryptominerUiKey.Key, state);
