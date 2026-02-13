@@ -1,31 +1,22 @@
 - type: entity
-  id: AnCoCrab
-  suffix: StarHorizon, AnCo, Anomaly
+  id: BaseAnCoCrab
+  suffix: StarHorizon, AnCo,
   name: защитный бот АнКо
   description: Бот необходимый для защиты важного оборудования АнКо
-  parent: [ MobElementalBase, MobCombat, BaseItem ]
+  parent: [ BaseMob, MobCombat]
   components:
   - type: Item
     size: Small
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
     state: crab-bot
+    drawdepth: Mobs
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
   - type: NpcFactionMember
     factions:
       - AnCoSecurBot
-  - type: MeleeWeapon
-    hidden: true
-    soundHit:
-      path: /Audio/Effects/sparks4.ogg
-    damage:
-      types:
-        Blunt: 2
-        Heat: 3
-  - type: StaminaDamageOnHit
-    damage: 25
   - type: MovementSpeedModifier
     baseWalkSpeed : 2
     baseSprintSpeed : 4
@@ -53,12 +44,61 @@
   # - type: NpcFactionMember
   #   factions:
   #     - AnCoMaster
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      20: Dead
+
+- type: entity
+  id: AnCoCrab
+  suffix: StarHorizon, AnCo, Mob, Anomaly
+  name: защитный бот АнКо
+  description: Бот необходимый для защиты важного оборудования АнКо
+  parent: [ BaseAnCoCrab]
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
+    state: crab-bot
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+      - AnCoSecurBot
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/sparks4.ogg
+    damage:
+      types:
+        Blunt: 2
+        Heat: 3
+  - type: StaminaDamageOnHit
+    damage: 25
+
 
 # дрон
 - type: entity
   id: AnCoDrone
   parent: AnCoCrab
-  suffix: StarHorizon, AnCo
+  suffix: StarHorizon, AnCo, Mob
   components:
   - type: MeleeWeapon
     hidden: true
@@ -95,11 +135,16 @@
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Machines/button.ogg
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead
+
 
 - type: entity
   id: AnCoDroneOff
   name: отключенный защитный бот АнКо
-  suffix: StarHorizon, AnCo
+  suffix: StarHorizon, AnCo, Mob
   parent: BaseItem
   components:
   - type: DeleteOnTrigger
@@ -124,7 +169,7 @@
   parent: AnCoCrab
   name: боевой бот АнКо
   description: Бот с модификацией мантибул и корпуса, предназначен для боевых действий.
-  suffix: StarHorizon, AnCo
+  suffix: StarHorizon, AnCo, Mob
   components:
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
@@ -164,11 +209,16 @@
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Machines/button.ogg
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+
 
 - type: entity
   id: AnCoDroneCombatOff
   name: отключенный боевой бот АнКо
-  suffix: StarHorizon, AnCo
+  suffix: StarHorizon, AnCo, Mob
   parent: BaseItem
   components:
   - type: DeleteOnTrigger
@@ -193,7 +243,7 @@
   parent: AnCoCrab
   name: бот бомба АнКо
   description: Бот с модификацией корпуса с зарядом Ардония, предназначен для боевых действий.
-  suffix: StarHorizon, AnCo
+  suffix: StarHorizon, AnCo, Mob
   components:
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
@@ -241,11 +291,16 @@
     intensitySlope: 3
     totalIntensity: 40
     canCreateVacuum: false
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+
 
 - type: entity
   id: AnCoDroneMineOff
   name: отключенный бот бомба АнКо
-  suffix: StarHorizon, AnCo
+  suffix: StarHorizon, AnCo, Mob
   parent: BaseItem
   components:
   - type: DeleteOnTrigger
@@ -263,4 +318,115 @@
     sound:
       path: /Audio/Machines/button.ogg
 
+# летяги, наверное
 
+- type: entity
+  id: BaseAnCoFlyDrone
+  parent: BaseAnCoCrab
+  suffix: StarHorizon, AnCo, Mob
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Mobs/flybot.rsi
+    state: flysmall
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          KazmieSheet1:
+            min: 1
+            max: 1
+          ArdonSheet1:
+            min: 0
+            max: 1
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead
+
+
+- type: entity
+  id: AnCoFlyDroneSmall
+  parent: BaseAnCoFlyDrone
+  suffix: StarHorizon, AnCo, Mob
+  name: дрон компаньен АнКо
+  description: Теперь у вас есть друг по лучше этих наземных жуков. Бе!
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Mobs/flybot.rsi
+    state: flysmall
+  - type: Item
+    sprite: _Horizon/_Fractions/AnCo/Mobs/flybot.rsi
+    state: flymedium
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/sparks4.ogg
+    damage:
+      types:
+        Blunt: 5
+        Heat: 5
+  - type: StaminaDamageOnHit
+    damage: 40
+
+- type: entity
+  id: AnCoFlyDroneMedium
+  parent: BaseAnCoFlyDrone
+  suffix: StarHorizon, AnCo, Mob
+  name: грузовой дрон АнКо
+  description: Как он вмещает в себя столько мусора?
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Mobs/flybot.rsi
+    state: flymedium
+  - type: Item
+    sprite: _Horizon/_Fractions/AnCo/Mobs/flybot.rsi
+    state: flymedium
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/sparks4.ogg
+    damage:
+      types:
+        Blunt: 5
+        Heat: 5
+  - type: StaminaDamageOnHit
+    damage: 40
+
+- type: entity
+  id: AnCoFlyDroneHuge
+  parent: BaseAnCoFlyDrone
+  suffix: StarHorizon, AnCo, Mob
+  name: боевой дрон АнКо
+  description: Зачем давать дрону зубы если можно дать пушки?
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Mobs/flybot.rsi
+    state: flyhuge
+  - type: Item
+    sprite: _Horizon/_Fractions/AnCo/Mobs/flybot.rsi
+    state: flyhuge
+  - type: Gun
+    fireRate: 1.5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+  - type: BallisticAmmoProvider
+    proto: StandartBallisticAnCoPistol
+    capacity: 100
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
