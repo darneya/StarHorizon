@@ -2,6 +2,7 @@
   id: Cryptominer
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: cryptominer
+  suffix: StarHorizon, AnCo, Structure
   description: A cryptocurrency mining device. Consumes power and generates heat. Earned credits are automatically transferred to the station's bank account.
   placement:
     mode: SnapgridCenter
