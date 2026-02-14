@@ -174,11 +174,8 @@ public sealed class AnCoCryptominerSystem : EntitySystem
             }
 
             // Update state based on temperature
-            miner.PreviousState = miner.State;
+            var previousState = miner.State;
             UpdateTemperatureState(uid, miner);
-
-            // Update vent state based on temperature transitions
-            UpdateVentState(miner);
 
             // If critical, the miner shuts down
             if (miner.State == CryptominerState.Critical)
@@ -218,7 +215,7 @@ public sealed class AnCoCryptominerSystem : EntitySystem
                 }
             }
 
-            if (miner.PreviousState != miner.State)
+            if (previousState != miner.State)
             {
                 UpdateAppearance(uid, miner);
             }
@@ -274,24 +271,6 @@ public sealed class AnCoCryptominerSystem : EntitySystem
         }
     }
 
-    private void UpdateVentState(AnCoCryptominerComponent miner)
-    {
-        // Open vent when entering Overheat or Critical state
-        if ((miner.State == CryptominerState.Overheat || miner.State == CryptominerState.Critical) &&
-            miner.PreviousState != CryptominerState.Overheat &&
-            miner.PreviousState != CryptominerState.Critical)
-        {
-            miner.IsVentOpen = true;
-        }
-        // Close vent when leaving Overheat/Critical state
-        else if ((miner.PreviousState == CryptominerState.Overheat || miner.PreviousState == CryptominerState.Critical) &&
-                 miner.State != CryptominerState.Overheat &&
-                 miner.State != CryptominerState.Critical)
-        {
-            miner.IsVentOpen = false;
-        }
-    }
-
     /// <summary>
     /// Distributes credits evenly across all inserted disks.
     /// Returns the number of credits actually stored.
@@ -342,7 +321,6 @@ public sealed class AnCoCryptominerSystem : EntitySystem
     private void UpdateAppearance(EntityUid uid, AnCoCryptominerComponent miner)
     {
         _appearance.SetData(uid, CryptominerVisuals.State, miner.State);
-        _appearance.SetData(uid, CryptominerVisuals.IsVentOpen, miner.IsVentOpen);
     }
 
     private void UpdateUI(EntityUid uid, AnCoCryptominerComponent miner)

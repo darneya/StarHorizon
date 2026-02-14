@@ -80,17 +80,6 @@ public sealed partial class AnCoCryptominerComponent : Component
     [ViewVariables]
     public float AccumulatedCredits;
 
-    /// <summary>
-    /// Whether the vent is currently open (for overheat cooling).
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool IsVentOpen;
-
-    /// <summary>
-    /// Previous state for tracking state transitions.
-    /// </summary>
-    [ViewVariables]
-    public CryptominerState PreviousState = CryptominerState.Off;
 
     /// <summary>
     /// Number of disk drives currently inserted (0-4).
@@ -163,7 +152,6 @@ public enum CryptominerState : byte
 public enum CryptominerVisuals : byte
 {
     State,
-    IsVentOpen,
     DiskCount
 }
 

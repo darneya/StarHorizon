@@ -1,24 +1,10 @@
 using Content.Shared._Horizon._Fractions.AnCo.Cryptominer;
-using Robust.Client.Animations;
 using Robust.Client.GameObjects;
-using Robust.Shared.Animations;
 
 namespace Content.Client._Horizon._Fractions.AnCo.Cryptominer;
 
 public sealed class AnCoCryptominerVisualizerSystem : VisualizerSystem<AnCoCryptominerComponent>
 {
-    [Dependency] private readonly AnimationPlayerSystem _animationPlayer = default!;
-
-    private const string OpenAnimationKey = "cryptominer_open";
-    private const string CloseAnimationKey = "cryptominer_close";
-
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        SubscribeLocalEvent<AnCoCryptominerComponent, AnimationCompletedEvent>(OnAnimationCompleted);
-    }
-
     protected override void OnAppearanceChange(EntityUid uid, AnCoCryptominerComponent component, ref AppearanceChangeEvent args)
     {
         if (args.Sprite == null)
@@ -27,17 +13,14 @@ public sealed class AnCoCryptominerVisualizerSystem : VisualizerSystem<AnCoCrypt
         if (!AppearanceSystem.TryGetData<CryptominerState>(uid, CryptominerVisuals.State, out var state, args.Component))
             state = CryptominerState.Off;
 
-        if (!AppearanceSystem.TryGetData<bool>(uid, CryptominerVisuals.IsVentOpen, out var isVentOpen, args.Component))
-            isVentOpen = false;
-
         if (!AppearanceSystem.TryGetData<int>(uid, CryptominerVisuals.DiskCount, out var diskCount, args.Component))
             diskCount = 0;
 
         // Update base layers based on state
         UpdateLevelLayer(args.Sprite, state);
 
-        // Handle lock/vent animations
-        HandleVentState(uid, args.Sprite, state, isVentOpen, component);
+        // Handle lock visibility (no animation)
+        UpdateLockLayer(args.Sprite, state);
 
         // Update disk layer based on count
         UpdateDiskLayer(args.Sprite, diskCount);
@@ -68,121 +51,23 @@ public sealed class AnCoCryptominerVisualizerSystem : VisualizerSystem<AnCoCrypt
         sprite.LayerSetState(levelLayer, levelState);
     }
 
-    private void HandleVentState(EntityUid uid, SpriteComponent sprite, CryptominerState state, bool isVentOpen, AnCoCryptominerComponent component)
+    private void UpdateLockLayer(SpriteComponent sprite, CryptominerState state)
     {
         if (!sprite.LayerMapTryGet(CryptominerVisualLayers.Lock, out var lockLayer))
             return;
 
-        var wasVentOpen = component.IsVentOpen;
-        component.IsVentOpen = isVentOpen;
+        // Lock is visible when NOT overheating (Off, Normal, Warning, NoAtmosphere, NoDisks)
+        // Lock is hidden when overheating (Overheat, Critical)
+        var isOverheating = state == CryptominerState.Overheat || state == CryptominerState.Critical;
 
-        // Vent should be closed for Off, Normal, Warning
-        // Vent should be open for Overheat, Critical
-        if (isVentOpen && !wasVentOpen)
+        if (isOverheating)
         {
-            // Play open animation
-            PlayOpenAnimation(uid, sprite, lockLayer);
-        }
-        else if (!isVentOpen && wasVentOpen)
-        {
-            // Play close animation
-            PlayCloseAnimation(uid, sprite, lockLayer);
-        }
-        else if (!isVentOpen)
-        {
-            // Ensure lock is visible when vent is closed
-            sprite.LayerSetVisible(lockLayer, true);
-            sprite.LayerSetState(lockLayer, "lock");
+            sprite.LayerSetVisible(lockLayer, false);
         }
         else
         {
-            // Ensure lock is hidden when vent is open
-            sprite.LayerSetVisible(lockLayer, false);
-        }
-    }
-
-    private void PlayOpenAnimation(EntityUid uid, SpriteComponent sprite, int lockLayer)
-    {
-        if (_animationPlayer.HasRunningAnimation(uid, OpenAnimationKey))
-            return;
-
-        // First hide the lock, then switch to open animation
-        sprite.LayerSetVisible(lockLayer, false);
-        sprite.LayerSetState(lockLayer, "open");
-        sprite.LayerSetAutoAnimated(lockLayer, true);
-        sprite.LayerSetVisible(lockLayer, true);
-
-        // Animation length: 10 frames * 0.2 sec = 2 seconds
-        var animation = new Animation
-        {
-            Length = TimeSpan.FromSeconds(2.0),
-            AnimationTracks =
-            {
-                new AnimationTrackComponentProperty
-                {
-                    ComponentType = typeof(SpriteComponent),
-                    Property = nameof(SpriteComponent.Visible),
-                    KeyFrames =
-                    {
-                        new AnimationTrackProperty.KeyFrame(true, 0f),
-                        new AnimationTrackProperty.KeyFrame(true, 2.0f)
-                    }
-                }
-            }
-        };
-
-        _animationPlayer.Play(uid, animation, OpenAnimationKey);
-    }
-
-    private void PlayCloseAnimation(EntityUid uid, SpriteComponent sprite, int lockLayer)
-    {
-        if (_animationPlayer.HasRunningAnimation(uid, CloseAnimationKey))
-            return;
-
-        sprite.LayerSetVisible(lockLayer, true);
-        sprite.LayerSetState(lockLayer, "close");
-        sprite.LayerSetAutoAnimated(lockLayer, true);
-
-        // Animation length: 10 frames * 0.2 sec = 2 seconds
-        var animation = new Animation
-        {
-            Length = TimeSpan.FromSeconds(2.0),
-            AnimationTracks =
-            {
-                new AnimationTrackComponentProperty
-                {
-                    ComponentType = typeof(SpriteComponent),
-                    Property = nameof(SpriteComponent.Visible),
-                    KeyFrames =
-                    {
-                        new AnimationTrackProperty.KeyFrame(true, 0f),
-                        new AnimationTrackProperty.KeyFrame(true, 2.0f)
-                    }
-                }
-            }
-        };
-
-        _animationPlayer.Play(uid, animation, CloseAnimationKey);
-    }
-
-    private void OnAnimationCompleted(EntityUid uid, AnCoCryptominerComponent component, AnimationCompletedEvent args)
-    {
-        if (!TryComp<SpriteComponent>(uid, out var sprite))
-            return;
-
-        if (!sprite.LayerMapTryGet(CryptominerVisualLayers.Lock, out var lockLayer))
-            return;
-
-        if (args.Key == OpenAnimationKey)
-        {
-            // Hide lock layer after open animation
-            sprite.LayerSetVisible(lockLayer, false);
-        }
-        else if (args.Key == CloseAnimationKey)
-        {
-            // Show lock state after close animation
+            sprite.LayerSetVisible(lockLayer, true);
             sprite.LayerSetState(lockLayer, "lock");
-            sprite.LayerSetAutoAnimated(lockLayer, false);
         }
     }
 

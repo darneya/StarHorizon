@@ -7,18 +7,18 @@
   - !type:AccessWireAction
 
 - type: wireLayout
-  id: WeaponCaseHack
+  id: AnCoWeaponCaseHack
   dummyWires: 0
   wires:
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
-  - !type:WeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction
+  - !type:AnCoWeaponCaseHackWireAction

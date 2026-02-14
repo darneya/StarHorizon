@@ -9,13 +9,13 @@ using Robust.Shared.Log;
 
 namespace Content.Server._Horizon._Fractions.AnCo.WeaponCaseHack;
 
-public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<WeaponCaseHackComponent>
+public sealed partial class AnCoWeaponCaseHackWireAction : ComponentWireAction<AnCoWeaponCaseHackComponent>
 {
     public override Color Color { get; set; } = Color.Red;
-    public override string Name { get; set; } = "wire-name-weapon-case-hack";
+    public override string Name { get; set; } = "wire-name-anco-weapon-case-hack";
 
     private bool _isFirstWire;
-    public override object? StatusKey => _isFirstWire ? WeaponCaseHackWireActionKey.Status : null;
+    public override object? StatusKey => _isFirstWire ? AnCoWeaponCaseHackWireActionKey.Status : null;
 
     public override bool AddWire(Wire wire, int count)
     {
@@ -23,7 +23,7 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
         return true;
     }
 
-    public override StatusLightState? GetLightState(Wire wire, WeaponCaseHackComponent comp)
+    public override StatusLightState? GetLightState(Wire wire, AnCoWeaponCaseHackComponent comp)
     {
         if (!_isFirstWire)
             return null;
@@ -34,7 +34,7 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
         return lockComp.Locked ? StatusLightState.On : StatusLightState.Off;
     }
 
-    public override bool Cut(EntityUid user, Wire wire, WeaponCaseHackComponent comp)
+    public override bool Cut(EntityUid user, Wire wire, AnCoWeaponCaseHackComponent comp)
     {
         if (!EntityManager.TryGetComponent<LockComponent>(wire.Owner, out var lockComp) || !lockComp.Locked)
             return true;
@@ -48,16 +48,14 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
 
         var (cutColor, pulseColor, pulseFirst) = GetCorrectWireColors(serialNumber);
 
-        Logger.Info($"[WeaponCaseHack] Serial: {serialNumber}, Cut: {cutColor}, Pulse: {pulseColor}, PulseFirst: {pulseFirst}, Action: Cut {wire.Color}");
+        Logger.Info($"[AnCoWeaponCaseHack] Serial: {serialNumber}, Cut: {cutColor}, Pulse: {pulseColor}, PulseFirst: {pulseFirst}, Action: Cut {wire.Color}");
 
         if (wire.Color == cutColor)
         {
-            // Если нужно сначала пульсировать, а пульс ещё не сделан - ошибка порядка
+            // Если нужно сначала пульсировать, а пульс ещё не сделан - взрыв
             if (pulseFirst && !comp.PulseCompleted)
             {
-                comp.CutCompleted = false;
-                comp.PulseCompleted = false;
-                EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("weapon-case-hack-wrong-order-pulse-first"), wire.Owner, user);
+                ExplodeAndDestroy(wire.Owner, user, comp);
                 return true;
             }
 
@@ -66,38 +64,43 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
             if (comp.PulseCompleted)
             {
                 EntityManager.System<LockSystem>().Unlock(wire.Owner, user);
-                EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("weapon-case-hack-success"), wire.Owner, user);
+                EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("anco-weapon-case-hack-success"), wire.Owner, user);
                 comp.CutCompleted = false;
                 comp.PulseCompleted = false;
             }
             else
             {
-                EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("weapon-case-hack-cut-success"), wire.Owner, user);
+                EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("anco-weapon-case-hack-cut-success"), wire.Owner, user);
             }
         }
         else
         {
             // Взрыв и удаление ящика при неправильном проводе
-            ExplodeAndDestroy(wire.Owner, user);
+            ExplodeAndDestroy(wire.Owner, user, comp);
             return true;
         }
 
         return true;
     }
 
-    private void ExplodeAndDestroy(EntityUid uid, EntityUid user)
+    private void ExplodeAndDestroy(EntityUid uid, EntityUid user, AnCoWeaponCaseHackComponent comp)
     {
-        EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("weapon-case-hack-explosion"), uid, user);
-        EntityManager.System<ExplosionSystem>().QueueExplosion(uid, "Default", 5f, 1f, 3f, canCreateVacuum: false);
+        EntityManager.System<ExplosionSystem>().QueueExplosion(
+            uid,
+            comp.ExplosionPrototype,
+            comp.ExplosionIntensity,
+            comp.ExplosionSlope,
+            comp.ExplosionMaxTileIntensity,
+            canCreateVacuum: false);
         EntityManager.QueueDeleteEntity(uid);
     }
 
-    public override bool Mend(EntityUid user, Wire wire, WeaponCaseHackComponent comp)
+    public override bool Mend(EntityUid user, Wire wire, AnCoWeaponCaseHackComponent comp)
     {
         return true;
     }
 
-    public override void Pulse(EntityUid user, Wire wire, WeaponCaseHackComponent comp)
+    public override void Pulse(EntityUid user, Wire wire, AnCoWeaponCaseHackComponent comp)
     {
         if (!EntityManager.TryGetComponent<LockComponent>(wire.Owner, out var lockComp) || !lockComp.Locked)
             return;
@@ -111,16 +114,14 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
 
         var (cutColor, pulseColor, pulseFirst) = GetCorrectWireColors(serialNumber);
 
-        Logger.Info($"[WeaponCaseHack] Serial: {serialNumber}, Cut: {cutColor}, Pulse: {pulseColor}, PulseFirst: {pulseFirst}, Action: Pulse {wire.Color}");
+        Logger.Info($"[AnCoWeaponCaseHack] Serial: {serialNumber}, Cut: {cutColor}, Pulse: {pulseColor}, PulseFirst: {pulseFirst}, Action: Pulse {wire.Color}");
 
         if (wire.Color == pulseColor)
         {
-            // Если нужно сначала резать, а резка ещё не сделана - ошибка порядка
+            // Если нужно сначала резать, а резка ещё не сделана - взрыв
             if (!pulseFirst && !comp.CutCompleted)
             {
-                comp.CutCompleted = false;
-                comp.PulseCompleted = false;
-                EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("weapon-case-hack-wrong-order-cut-first"), wire.Owner, user);
+                ExplodeAndDestroy(wire.Owner, user, comp);
                 return;
             }
 
@@ -129,19 +130,19 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
             if (comp.CutCompleted)
             {
                 EntityManager.System<LockSystem>().Unlock(wire.Owner, user);
-                EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("weapon-case-hack-success"), wire.Owner, user);
+                EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("anco-weapon-case-hack-success"), wire.Owner, user);
                 comp.CutCompleted = false;
                 comp.PulseCompleted = false;
             }
             else
             {
-                EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("weapon-case-hack-pulse-success"), wire.Owner, user);
+                EntityManager.System<SharedPopupSystem>().PopupEntity(Loc.GetString("anco-weapon-case-hack-pulse-success"), wire.Owner, user);
             }
         }
         else
         {
             // Взрыв и удаление ящика при неправильном проводе
-            ExplodeAndDestroy(wire.Owner, user);
+            ExplodeAndDestroy(wire.Owner, user, comp);
         }
     }
 
@@ -211,11 +212,11 @@ public sealed partial class WeaponCaseHackWireAction : ComponentWireAction<Weapo
         if (digitValues.Count >= 4 && digitValues.All(d => primes.Contains(d)))
             return (WireColor.Blue, WireColor.Pink, true);
 
-        // Rule13: Произведение цифр > 200 (pulseFirst)
+        // Rule13: Произведение цифр < 300 (pulseFirst)
         if (digitValues.Count > 0)
         {
             var product = digitValues.Aggregate(1, (a, b) => a * b);
-            if (product > 200)
+            if (product < 300)
                 return (WireColor.Brown, WireColor.Green, true);
         }
 

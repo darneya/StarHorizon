@@ -9,7 +9,7 @@
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselong.rsi
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselong.rsi
-  - type: WeaponCaseHack
+  - type: AnCoWeaponCaseHack
   - type: Lock
     locked: true
   - type: AccessReader
@@ -17,7 +17,7 @@
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
-    layoutId: WeaponCaseHack
+    layoutId: AnCoWeaponCaseHack
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -36,7 +36,7 @@
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaseshort.rsi
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaseshort.rsi
-  - type: WeaponCaseHack
+  - type: AnCoWeaponCaseHack
   - type: Lock
     locked: true
   - type: AccessReader
@@ -44,7 +44,7 @@
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
-    layoutId: WeaponCaseHack
+    layoutId: AnCoWeaponCaseHack
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -63,7 +63,7 @@
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/ammocaseshort.rsi
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/ammocaseshort.rsi
-  - type: WeaponCaseHack
+  - type: AnCoWeaponCaseHack
   - type: Lock
     locked: true
   - type: AccessReader
@@ -71,7 +71,7 @@
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
-    layoutId: WeaponCaseHack
+    layoutId: AnCoWeaponCaseHack
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -90,7 +90,7 @@
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/explosivescaseshort.rsi
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/explosivescaseshort.rsi
-  - type: WeaponCaseHack
+  - type: AnCoWeaponCaseHack
   - type: Lock
     locked: true
   - type: AccessReader
@@ -98,7 +98,7 @@
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
-    layoutId: WeaponCaseHack
+    layoutId: AnCoWeaponCaseHack
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -117,7 +117,7 @@
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaseheavy.rsi
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaseheavy.rsi
-  - type: WeaponCaseHack
+  - type: AnCoWeaponCaseHack
   - type: Lock
     locked: true
   - type: AccessReader
@@ -125,7 +125,7 @@
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
-    layoutId: WeaponCaseHack
+    layoutId: AnCoWeaponCaseHack
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
