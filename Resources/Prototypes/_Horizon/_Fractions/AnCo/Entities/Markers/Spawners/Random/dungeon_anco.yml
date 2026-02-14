@@ -6,7 +6,7 @@
   components:
   - type: Sprite
     layers:
-      - state: green
+      - state: red
       - sprite: _Horizon/_Fractions/AnCo/Structures/Machines/VendingMachines/clothing.rsi
         state: "off"
   - type: RandomSpawner
@@ -24,7 +24,7 @@
   components:
   - type: Sprite
     layers:
-      - state: green
+      - state: red
       - sprite: _Horizon/_Fractions/AnCo/Structures/Machines/VendingMachines/clothing.rsi
         state: "off"
   - type: RandomSpawner
@@ -49,7 +49,7 @@
   components:
   - type: Sprite
     layers:
-      - state: green
+      - state: red
       - sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Melee/knife.rsi
         state: icon
   - type: RandomSpawner
@@ -75,7 +75,7 @@
   components:
   - type: Sprite
     layers:
-      - state: green
+      - state: red
       - sprite: _Horizon/_Fractions/AnCo/Clothing/OuterClothing/Hardsuits/petal.rsi
         state: icon
   - type: RandomSpawner
@@ -94,7 +94,7 @@
   components:
   - type: Sprite
     layers:
-      - state: green
+      - state: red
       - sprite: _Horizon/_Fractions/AnCo/Objects/Food/snacks.rsi
         state: icon
   - type: RandomSpawner
@@ -118,7 +118,7 @@
   components:
   - type: Sprite
     layers:
-      - state: green
+      - state: red
       - sprite: _Horizon/_Fractions/AnCo/Objects/Misc/coin.rsi
         state: ancocoin
   - type: RandomSpawner
@@ -139,7 +139,7 @@
   components:
   - type: Sprite
     layers:
-      - state: green
+      - state: red
       - sprite: _Horizon/_Fractions/AnCo/Objects/Specific/Medical/medipen.rsi
         state: omega
   - type: RandomSpawner
@@ -161,7 +161,7 @@
   components:
   - type: Sprite
     layers:
-      - state: green
+      - state: red
       - sprite: _Horizon/_Fractions/AnCo/Objects/Fun/plushene.rsi
         state: ripsi
   - type: RandomSpawner
@@ -183,9 +183,9 @@
   components:
   - type: Sprite
     layers:
-      - state: green
-      - sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_magnum.rsi
-        state: base
+      - state: red
+      - sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Magazine/50_shotgun_mag.rsi
+        state: icon
   - type: RandomSpawner
     prototypes:
     - MagazinePistol35
@@ -204,7 +204,7 @@
   components:
   - type: Sprite
     layers:
-      - state: green
+      - state: red
       - sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselong.rsi
         state: icon
   - type: RandomSpawner
@@ -230,7 +230,7 @@
   components:
   - type: Sprite
     layers:
-      - state: green
+      - state: red
       - sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselong.rsi
         state: icon
   - type: RandomSpawner

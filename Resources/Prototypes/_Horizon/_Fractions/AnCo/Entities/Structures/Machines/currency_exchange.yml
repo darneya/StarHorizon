@@ -1,65 +1,68 @@
 - type: entity
-  id: CurrencyExchangeTerminal
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
-  name: currency exchange terminal
-  description: A terminal for exchanging mined cryptocurrency credits for station credits. Exchange rates fluctuate based on market conditions.
+  id: AnCoEndiDispanser
+  parent: [ BaseMachinePowered, ConstructibleMachine, BaseAnCoContraband ]
+  name: валюто обменник АнКо
+  suffix: StarHorizon, AnCo, Structure
+  description: Обменяет ваши жалкие деньги на крутые Енды.
   placement:
     mode: SnapgridCenter
   components:
-  - type: CurrencyExchange
-    baseExchangeRate: 1.0
-    minExchangeRate: 0.5
-    maxExchangeRate: 2.0
-    rateVolatility: 0.05
-    updateInterval: 60
-    commission: 0.05
   - type: Sprite
-    sprite: _NF/Structures/Machines/atm/atm.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/endimachine.rsi
     snapCardinals: true
     layers:
-      - state: icon
-        map: [ "base" ]
-      - state: unshaded
-        shader: unshaded
-  - type: Appearance
-  - type: ItemSlots
-    slots:
-      disk_slot:
-        name: currency-exchange-slot-disk
-        whitelist:
-          tags:
-            - CryptominerDisk
-  - type: ApcPowerReceiver
-    powerLoad: 200
-  - type: ExtensionCableReceiver
-  - type: ActivatableUI
-    key: enum.CurrencyExchangeUiKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.CurrencyExchangeUiKey.Key:
-        type: CurrencyExchangeBoundUserInterface
+    - state: base
+    - state: base-unshaded
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+      visible: False
+    - state: disk-unshaded
+      visible: False
+      shader: unshaded
+  - type: Icon
+    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/endimachine.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 150
+        damage: 250
       behaviors:
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 75
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          SheetSteel1:
+          KazmieSheet1:
             min: 1
             max: 2
+          ArdonSheet1:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: ApcPowerReceiver
+    powerLoad: 250
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
   - type: AmbientOnPowered
   - type: AmbientSound
     volume: -12
@@ -70,4 +73,32 @@
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
-      disk_slot: !type:ContainerSlot
+      disk_slot_1: !type:ContainerSlot
+  - type: ExtensionCableReceiver
+  - type: ActivatableUI
+    key: enum.CurrencyExchangeUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CurrencyExchangeUiKey.Key:
+        type: CurrencyExchangeBoundUserInterface
+  - type: ItemSlots
+    slots:
+      disk_slot_1:
+        name: currency-exchange-slot-disk
+        whitelist:
+          tags:
+            - CryptominerDisk
+  - type: CurrencyExchange
+    baseExchangeRate: 1.0
+    minExchangeRate: 0.5
+    maxExchangeRate: 2.0
+    rateVolatility: 0.05
+    updateInterval: 60
+    commission: 0.05
+  - type: ItemMapper
+    mapLayers:
+      disk-unshaded:
+        minCount: 1
+        whitelist:
+          components:
+          - CryptominerDisk
