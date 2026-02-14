@@ -1,6 +1,6 @@
 - type: entity
   id: AnCoEndiDispanser
-  parent: [ BaseMachinePowered, ConstructibleMachine, BaseAnCoContraband ]
+  parent: [ BaseMachinePowered, BaseStructureDisableToolUse, BaseStructureIndestructible, BaseAnCoContraband ]
   name: валюто обменник АнКо
   suffix: StarHorizon, AnCo, Structure
   description: Обменяет ваши жалкие деньги на крутые Енды.
@@ -35,25 +35,6 @@
         - MachineMask
         layer:
         - MachineLayer
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 250
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          KazmieSheet1:
-            min: 1
-            max: 2
-          ArdonSheet1:
-            min: 1
-            max: 2
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
   - type: ApcPowerReceiver
     powerLoad: 250
   - type: Appearance
@@ -73,7 +54,7 @@
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
-      disk_slot_1: !type:ContainerSlot
+      disk_slot: !type:ContainerSlot
   - type: ExtensionCableReceiver
   - type: ActivatableUI
     key: enum.CurrencyExchangeUiKey.Key
@@ -83,7 +64,7 @@
         type: CurrencyExchangeBoundUserInterface
   - type: ItemSlots
     slots:
-      disk_slot_1:
+      disk_slot:
         name: currency-exchange-slot-disk
         whitelist:
           tags:
