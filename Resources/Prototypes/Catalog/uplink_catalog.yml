@@ -1387,19 +1387,19 @@
   categories:
     - UplinkImplants
 
-- type: listing
-  id: UplinkRadioImplanter
-  name: uplink-radio-implanter-name
-  description: uplink-radio-implanter-desc
-  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: synd_label }
-  productEntity: RadioImplanter
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 1
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkImplants
+#- type: listing
+#  id: UplinkRadioImplanter
+#  name: uplink-radio-implanter-name
+#  description: uplink-radio-implanter-desc
+#  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: synd_label }
+#  productEntity: RadioImplanter
+#  discountCategory: usualDiscounts
+#  discountDownTo:
+#    Telecrystal: 1
+#  cost:
+#    Telecrystal: 2
+#  categories:
+#  - UplinkImplants
 
 # - type: listing
 #   id: UplinkMicroBombImplanter
