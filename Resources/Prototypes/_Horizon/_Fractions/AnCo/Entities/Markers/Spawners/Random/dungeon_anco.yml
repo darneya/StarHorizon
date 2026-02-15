@@ -209,12 +209,8 @@
     - AnCoWeaponCaseDisablerSniper
     - AnCoWeaponCaseHeater
     - AnCoWeaponCaseDisabler
-    - AnCoWeaponCaseCounselorGun
     - AnCoWeaponCaseMelee
     - AnCoWeaponCaseGrenade
-    - AnCoWeaponCaseRipsoidCannon
-    - AnCoWeaponCaseLaserMinigun
-    - AnCoWeaponCaseLaserGranade
     chance: 1
     offset: 0.0
 
@@ -260,12 +256,10 @@
     - AnCoClothingMaskBio
     - AnCoClothingMaskCombat
     - AnCoClothingShoesBootsMag
-    - AnCocoastconsul
     - AnCoGloves
     - AnCoGlovesIsolate
     - AnCosatchel
     - AnCoVests
-    - ClothingHeadHardsuitGranite
     - HydrosuitAnCo
     - HydrosuitLessAnCo
     - SkirtAnCo
