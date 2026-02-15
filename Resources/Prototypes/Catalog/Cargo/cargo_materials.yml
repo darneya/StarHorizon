@@ -44,7 +44,7 @@
     sprite: Objects/Materials/Sheets/metal.rsi
     state: plasteel_3
   product: CrateMaterialPlasteel
-  cost: 6000 # Horizon
+  cost: 10000 # Horizon
   category: cargoproduct-category-name-materials
   group: market
 
@@ -54,7 +54,7 @@
     sprite: Objects/Materials/ingots.rsi
     state: gold_3
   product: CrateMaterialGold
-  cost: 6000 # Horizon
+  cost: 9000 # Horizon
   category: cargoproduct-category-name-materials
   group: market
 
@@ -64,7 +64,7 @@
     sprite: Objects/Materials/ingots.rsi
     state: silver_3
   product: CrateMaterialSilver
-  cost: 6000 # Horizon
+  cost: 9000 # Horizon
   category: cargoproduct-category-name-materials
   group: market
 
