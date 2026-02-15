@@ -19,7 +19,6 @@ chat-manager-whisper-headset-on-message = Вы не можете шептать 
 chat-manager-server-wrap-message = СЕРВЕР: [bold]{ $message }[/bold]
 chat-manager-sender-announcement = Центральное Командование
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]Объявление { $sender }:[/font][font size=12]{ "\u000A" }{ $message }[/bold][/font]
-
 # Horizon tweak - используем свою локаль для речи и шёпота
 # chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]"[BubbleContent]{ $message }[/BubbleContent]"[/font]
 # chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }, [font={ $fontType } size={ $fontSize }]"[BubbleContent][bold]{ $message }[/bold][/BubbleContent]"[/font]
@@ -124,4 +123,9 @@ chat-speech-verb-cluwne-3 = смеётся
 chat-speech-verb-electricity-1 = трещит
 chat-speech-verb-name-electricity = Электрический
 chat-speech-verb-electricity-2 = жужжит
+chat-speech-verb-name-wawa = Вава
+chat-speech-verb-wawa-1 = произносит нараспев
+chat-speech-verb-wawa-2 = утверждает
+chat-speech-verb-wawa-3 = объявляет
+chat-speech-verb-wawa-4 = размышляет
 chat-speech-verb-electricity-3 = скрипит

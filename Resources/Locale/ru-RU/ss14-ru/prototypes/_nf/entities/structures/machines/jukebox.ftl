@@ -7,3 +7,6 @@ ent-JukeboxWallmount = { ent-BaseStructureWallmount }
 ent-JukeboxWallmountShip = { ent-BaseStructureDisableToolUse }
     .suffix = Настенный, Шаттл
     .desc = { ent-BaseStructureDisableToolUse.desc }
+ent-JukeboxEmpty = { ent-Jukebox }
+    .suffix = Пустой
+    .desc = { ent-Jukebox.desc }

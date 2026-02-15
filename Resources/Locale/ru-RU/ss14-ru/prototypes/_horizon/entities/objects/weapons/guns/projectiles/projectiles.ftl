@@ -14,3 +14,5 @@ ent-BulletKineticShotgunSpread = { ent-BulletKinetic }
     .desc = Not too bad, but you still don't want to get hit by it.
 ent-BulletKineticShotgunPellet = { ent-BulletKinetic }
     .desc = Not too bad, but you still don't want to get hit by it.
+ent-SyringeBasic = basic syrige
+    .desc = Not too bad, but you still don't want to get hit by it.
