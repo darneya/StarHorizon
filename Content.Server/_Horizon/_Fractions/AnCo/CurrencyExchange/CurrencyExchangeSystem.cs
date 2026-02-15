@@ -1,15 +1,10 @@
-using Content.Server.Cargo.Systems;
-using Content.Server.Station.Systems;
+using Content.Server.Stack;
 using Content.Shared._Horizon._Fractions.AnCo.CurrencyExchange;
 using Content.Shared._Horizon._Fractions.AnCo.Cryptominer;
-using Content.Shared.Cargo.Components;
-using Content.Shared.Cargo.Prototypes;
 using Content.Shared.Containers.ItemSlots;
 using Robust.Server.GameObjects;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._Horizon._Fractions.AnCo.CurrencyExchange;
@@ -19,15 +14,12 @@ public sealed class CurrencyExchangeSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly CargoSystem _cargo = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly StackSystem _stack = default!;
 
     private float _globalUpdateTimer;
     private const float GlobalUpdateInterval = 60f;
-
-    private static readonly ProtoId<CargoAccountPrototype> CargoAccount = "Cargo";
 
     public override void Initialize()
     {
@@ -78,8 +70,8 @@ public sealed class CurrencyExchangeSystem : EntitySystem
         diskComp.StoredCredits -= args.Amount;
         Dirty(disk.Value, diskComp);
 
-        // Add to station bank
-        AddCreditsToStation(uid, netCredits);
+        // Spawn credits under the terminal
+        SpawnCredits(uid, netCredits);
 
         // Play exchange sound
         _audio.PlayPvs("/Audio/Machines/printer.ogg", uid);
@@ -108,13 +100,22 @@ public sealed class CurrencyExchangeSystem : EntitySystem
         diskComp.StoredCredits = 0;
         Dirty(disk.Value, diskComp);
 
-        // Add to station bank
-        AddCreditsToStation(uid, netCredits);
+        // Spawn credits under the terminal
+        SpawnCredits(uid, netCredits);
 
         // Play exchange sound
         _audio.PlayPvs("/Audio/Machines/printer.ogg", uid);
 
         UpdateUI(uid, component);
+    }
+
+    private void SpawnCredits(EntityUid terminalUid, int amount)
+    {
+        if (amount <= 0)
+            return;
+
+        var coordinates = Transform(terminalUid).Coordinates;
+        _stack.Spawn(amount, "Credit", coordinates);
     }
 
     public override void Update(float frameTime)
@@ -162,18 +163,6 @@ public sealed class CurrencyExchangeSystem : EntitySystem
             component.RateTrend = -component.RateTrend;
 
         Dirty(uid, component);
-    }
-
-    private void AddCreditsToStation(EntityUid exchangeUid, int amount)
-    {
-        var station = _station.GetOwningStation(exchangeUid);
-        if (station == null)
-            return;
-
-        if (!TryComp<StationBankAccountComponent>(station, out var bank))
-            return;
-
-        _cargo.UpdateBankAccount((station.Value, bank), amount, CargoAccount);
     }
 
     private void UpdateAppearance(EntityUid uid, CurrencyExchangeComponent component)

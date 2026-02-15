@@ -213,9 +213,8 @@
     - AnCoWeaponCaseAutoPistol
     - AnCoWeaponCaseRifle
     - AnCoWeaponCaseAutoRifle
-    - AnCoWeaponCaseLaserPP
     - AnCoWeaponCaseLaserRifle
-    - AnCoWeaponCaseHeater
+#    - AnCoWeaponCaseHeater
     - AnCoWeaponCaseDisabler
     - AnCoWeaponCaseMelee
     - AnCoWeaponCaseGrenade

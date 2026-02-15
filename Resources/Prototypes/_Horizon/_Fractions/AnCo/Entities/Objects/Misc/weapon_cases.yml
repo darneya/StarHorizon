@@ -188,19 +188,6 @@
         amount: 2
 
 - type: entity
-  id: AnCoWeaponCaseLaserPP
-  parent: AnCoWeaponCaseShort
-  suffix: StarHorizon, AnCo, LaserPP
-  category: [ HideSpawnMenu ]
-  components:
-  - type: StorageFill
-    contents:
-      - id: WeaponLaserPistolAnCo
-        amount: 1
-      - id: AnCoEnergyCore
-        amount: 2
-
-- type: entity
   id: AnCoWeaponCaseLaserRifle
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, LaserRifle
@@ -213,18 +200,18 @@
       - id: AnCoEnergyCore
         amount: 2
 
-- type: entity
-  id: AnCoWeaponCaseHeater
-  parent: AnCoWeaponCaseLong
-  suffix: StarHorizon, AnCo, Heater
-  category: [ HideSpawnMenu ]
-  components:
-  - type: StorageFill
-    contents:
-      - id: WeaponGunHeaterAnCo
-        amount: 1
-      - id: AnCoEnergyCore
-        amount: 2
+#- type: entity
+#  id: AnCoWeaponCaseHeater
+#  parent: AnCoWeaponCaseLong
+#  suffix: StarHorizon, AnCo, Heater
+#  category: [ HideSpawnMenu ]
+#  components:
+#  - type: StorageFill
+#    contents:
+#      - id: WeaponGunHeaterAnCo
+#        amount: 1
+#      - id: AnCoEnergyCore
+#        amount: 2
 
 - type: entity
   id: AnCoWeaponCaseDisabler
