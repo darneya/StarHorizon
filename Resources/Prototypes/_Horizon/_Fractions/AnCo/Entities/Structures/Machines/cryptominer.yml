@@ -105,3 +105,67 @@
       disk_slot_3: !type:ContainerSlot
       disk_slot_4: !type:ContainerSlot
 
+- type: entity
+  parent: CybersunDataMiner
+  id: AnCoMines
+  name: сервер АнКо
+  suffix: StarHorizon, AnCo, Dungeon
+  description: Древний сервер для анализа метаданных блюспейса.
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Machines/miner.rsi
+    snapCardinals: true
+    layers:
+      - state: base
+        map: [ "enum.CryptominerVisualLayers.Base" ]
+      - state: base-unshaded
+        shader: unshaded
+      - state: level-1
+        shader: unshaded
+      - state: lock
+      - state: disk-4
+        shader: unshaded
+  - type: PointLight
+    radius: 3
+    energy: 3
+    color: "#cc0000"
+    castShadows: false
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SpawnAnCominerDrop:
+            min: 1
+            max: 1
+
+- type: entity
+  name: спавнер лута с майнера АнКо
+  id: SpawnAnCominerDrop
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Horizon/_Fractions/AnCo/Structures/Machines/miner.rsi
+        state: base
+  - type: RandomSpawner
+    prototypes:
+    - AnCoDiskCryptonimer
+    chance: 0.2
+    offset: 0.0
+    rarePrototypes:
+    - CryptominerMachineCircuitboard
+    rareChance: 0.1

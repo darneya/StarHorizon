@@ -10,6 +10,10 @@
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselong.rsi
   - type: AnCoWeaponCaseHack
+    explosionIntensity: 16
+    explosionSlope: 2
+    explosionMaxTileIntensity: 2
+    explosionPrototype: AnCoExplodes
   - type: Lock
     locked: true
   - type: AccessReader
@@ -37,6 +41,10 @@
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaseshort.rsi
   - type: AnCoWeaponCaseHack
+    explosionIntensity: 16
+    explosionSlope: 2
+    explosionMaxTileIntensity: 2
+    explosionPrototype: AnCoExplodes
   - type: Lock
     locked: true
   - type: AccessReader
@@ -64,6 +72,10 @@
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/ammocaseshort.rsi
   - type: AnCoWeaponCaseHack
+    explosionIntensity: 16
+    explosionSlope: 2
+    explosionMaxTileIntensity: 2
+    explosionPrototype: AnCoExplodes
   - type: Lock
     locked: true
   - type: AccessReader
@@ -91,6 +103,10 @@
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/explosivescaseshort.rsi
   - type: AnCoWeaponCaseHack
+    explosionIntensity: 16
+    explosionSlope: 2
+    explosionMaxTileIntensity: 2
+    explosionPrototype: AnCoExplodes
   - type: Lock
     locked: true
   - type: AccessReader
@@ -118,6 +134,10 @@
   - type: Item
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaseheavy.rsi
   - type: AnCoWeaponCaseHack
+    explosionIntensity: 16
+    explosionSlope: 2
+    explosionMaxTileIntensity: 2
+    explosionPrototype: AnCoExplodes
   - type: Lock
     locked: true
   - type: AccessReader
