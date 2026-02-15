@@ -202,15 +202,21 @@
     - AnCoWeaponCaseAutoPistol
     - AnCoWeaponCaseRifle
     - AnCoWeaponCaseAutoRifle
-    - AnCoWeaponCaseLaserRifle
     - AnCoWeaponCaseLaserGun
     - AnCoWeaponCasePMLaserGun
     - AnCoWeaponCaseDisablerSMG
     - AnCoWeaponCaseDisablerSniper
     - AnCoWeaponCaseHeater
-    - AnCoWeaponCaseDisabler
-    - AnCoWeaponCaseMelee
+    - AnCoWeaponCaseSabre
+    - AnCoWeaponCaseMeleeLine
+    - AnCoWeaponCaseMeleeSplah
+    - AnCoWeaponCaseMeleeKnife
     - AnCoWeaponCaseGrenade
+#    - AnCoWeaponCaseMeleeSword
+#    - AnCoWeaponCaseCounselorGun
+#    - AnCoWeaponCaseRipsoidCannon
+#    - AnCoWeaponCaseLaserMinigun
+#    - AnCoWeaponCaseLaserGranade
     chance: 1
     offset: 0.0
 
