@@ -35,8 +35,135 @@
         acts: ["Destruction"]
   - type: RequireProjectileTarget
 
-# === Военные товары ===
-# Военные товары дороже на ANCO, дешевле на DFI
+# === Инженерные товары ===
+# Инженерные товары, что производятся на Эдисоне
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsEngineerTools
+  name: запечатанный ящик инструментов
+  description: "Запечатанный ящик с всеми необходимыми инструментами для инженерных работ."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceCargo: 500
+    priceMarket: 5000
+    priceMarketNT: 10000
+    priceMarketPirates: 5000
+    priceMarketSyndie: 5000
+    priceBaseSyndie: 5000
+    priceBasePirates: 5000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsEngineerFuel
+  name: запечатанный ящик топлива
+  description: "Запечатанный ящик космического топлива."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: engi-fuel
+  - type: HorizonFactionPrice
+    priceCargo: 500
+    priceMarket: 5000
+    priceMarketNT: 10000
+    priceMarketPirates: 5000
+    priceMarketSyndie: 5000
+    priceBaseSyndie: 7500
+    priceBasePirates: 7500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsEngineerElec
+  name: запечатанный ящик электроники
+  description: "Запечатанный ящик разнообразной электроники и продвинутого электроинструмента."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: engi-elec
+  - type: HorizonFactionPrice
+    priceCargo: 500
+    priceMarket: 5000
+    priceMarketNT: 10000
+    priceMarketPirates: 5000
+    priceMarketSyndie: 5000
+    priceBaseSyndie: 7500
+    priceBasePirates: 7500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsEngineerFuelContr
+  name: запечатанный ящик контрабандного топлива
+  description: "Запечатанный ящик контрабандного космического топлива."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: engi-fuel
+  - type: HorizonFactionPrice
+    priceCargo: 15000
+    priceMarket: 7500
+    priceMarketNT: 10000
+    priceMarketPirates: 5000
+    priceMarketSyndie: 5000
+    priceBaseSyndie: 5000
+    priceBasePirates: 5000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsEngineerElecContr
+  name: запечатанный ящик контрабандной электроники
+  description: "Запечатанный ящик разнообразной электроники и продвинутого электроинструмента."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: engi-elec
+  - type: HorizonFactionPrice
+    priceCargo: 15000
+    priceMarket: 7500
+    priceMarketNT: 10000
+    priceMarketPirates: 5000
+    priceMarketSyndie: 5000
+    priceBaseSyndie: 5000
+    priceBasePirates: 5000
+
+# === Медицинские товары ===
+# Медицинские товары, что производятся на мед диспансере
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsMedicine
+  name: запечатанный ящик медикаментов
+  description: "Запечатанный ящик с всеми необходимыми медикаментами, для оказания первой медицинской помощи."
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceMarket: 1800   # +20%
+    priceAnco: 1500
+    priceDfi: 1200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - type: entity
   parent: BaseHorizonTradeItem
