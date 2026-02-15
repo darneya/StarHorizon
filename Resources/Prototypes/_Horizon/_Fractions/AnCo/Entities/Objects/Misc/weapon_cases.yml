@@ -208,53 +208,161 @@
         amount: 2
 
 - type: entity
-  id: AnCoWeaponCaseLaserRifle
+  id: AnCoWeaponCaseLaserGun
   parent: AnCoWeaponCaseLong
-  suffix: StarHorizon, AnCo, LaserRifle
+  suffix: StarHorizon, AnCo, LaserGun
   category: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
-      - id: WeaponLaserRifleAnCo
+      - id: LaserAnCoGun
         amount: 1
       - id: AnCoEnergyCore
         amount: 2
 
+- type: entity
+  id: AnCoWeaponCasePMLaserGun
+  parent: AnCoWeaponCaseLong
+  suffix: StarHorizon, AnCo, PMLaserGun
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: PMLaserAnCoGun
+        amount: 1
+      - id: AnCoEnergyCore
+        amount: 2
+
+- type: entity
+  id: AnCoWeaponCaseDisablerSMG
+  parent: AnCoWeaponCaseLong
+  suffix: StarHorizon, AnCo, DisablerSMG
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponDisablerSMGAnCo
+        amount: 1
+
+- type: entity
+  id: AnCoWeaponCaseDisablerSniper
+  parent: AnCoWeaponCaseLong
+  suffix: StarHorizon, AnCo, DisablerSniper
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponDisablerSniperAnCo
+        amount: 1
+
+- type: entity
+  id: AnCoWeaponCaseCounselorGun
+  parent: AnCoWeaponCaseShort
+  suffix: StarHorizon, AnCo, CounselorGun
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: AnCoCounselorGun
+        amount: 1
+
+- type: entity
+  id: AnCoWeaponCaseRipsoidCannon
+  parent: AnCoWeaponCaseShort
+  suffix: StarHorizon, AnCo, RipsoidCannon
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: AnCoRipsoidCannon
+        amount: 1
+
 #- type: entity
-#  id: AnCoWeaponCaseHeater
-#  parent: AnCoWeaponCaseLong
-#  suffix: StarHorizon, AnCo, Heater
+#  id: AnCoWeaponCaseLaserMinigun
+#  parent: AnCoWeaponCaseHeavy
+#  suffix: StarHorizon, AnCo, LaserMinigun
 #  category: [ HideSpawnMenu ]
 #  components:
 #  - type: StorageFill
 #    contents:
-#      - id: WeaponGunHeaterAnCo
+#      - id: WeaponLaserMinigunAnCo
 #        amount: 1
-#      - id: AnCoEnergyCore
-#        amount: 2
+
+#- type: entity
+#  id: AnCoWeaponCaseLaserGranade
+#  parent: AnCoWeaponCaseHeavy
+#  suffix: StarHorizon, AnCo, LaserGranade
+#  category: [ HideSpawnMenu ]
+#  components:
+#  - type: StorageFill
+#    contents:
+#      - id: WeaponLaserGranadeAnCo
+#        amount: 1
 
 - type: entity
-  id: AnCoWeaponCaseDisabler
-  parent: AnCoWeaponCaseShort
-  suffix: StarHorizon, AnCo, Disabler
+  id: AnCoWeaponCaseHeater
+  parent: AnCoWeaponCaseLong
+  suffix: StarHorizon, AnCo, Heater
   category: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
-      - id: WeaponDisablerAnCo
+      - id: AnCoWeaponHeater
         amount: 1
-      - id: AnCoEnergyCore
-        amount: 2
 
 - type: entity
-  id: AnCoWeaponCaseMelee
+  id: AnCoWeaponCaseSabre
   parent: AnCoWeaponCaseShort
-  suffix: StarHorizon, AnCo, Melee
+  suffix: StarHorizon, AnCo, Sabre
   category: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
       - id: AnCoSabre
+        amount: 1
+
+- type: entity
+  id: AnCoWeaponCaseMeleeLine
+  parent: AnCoWeaponCaseShort
+  suffix: StarHorizon, AnCo, Line
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: AnCoLine
+        amount: 1
+
+- type: entity
+  id: AnCoWeaponCaseMeleeSword
+  parent: AnCoWeaponCaseShort
+  suffix: StarHorizon, AnCo, Sword
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: AnCoSword
+        amount: 1
+
+- type: entity
+  id: AnCoWeaponCaseMeleeSplah
+  parent: AnCoWeaponCaseShort
+  suffix: StarHorizon, AnCo, Splah
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: AnCoSplah
+        amount: 1
+
+- type: entity
+  id: AnCoWeaponCaseMeleeKnife
+  parent: AnCoWeaponCaseShort
+  suffix: StarHorizon, AnCo, Knife
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: AnCoKnife
         amount: 1
 
 - type: entity

@@ -2,7 +2,7 @@
   name: Ардонивый нож АнКо
   parent: BaseAnCoSharpWeapon
   id: AnCoKnife
-  description: Компактный боевой нож, идеальный для ближнего боя и метания. Имеет втроеную технологию быстрой телепортации для быстрого отступления
+  description: Компактный боевой нож, идеальный для ближнего боя и метания.
   suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Tag
@@ -43,10 +43,18 @@
   - type: Tool
     qualities:
     - Slicing
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  name: Продвинутый ардонивый нож АнКо
+  parent: AnCoKnife
+  id: AnCoKnifeDash
+  description: Компактный боевой нож, идеальный для ближнего боя и метания. Имеет втроеную технологию быстрой телепортации для быстрого отступления
+  suffix: StarHorizon, AnCo, Weapon, Dash
+  components:
   - type: DashAbility
   - type: LimitedCharges
     maxCharges: 1
   - type: AutoRecharge
     rechargeDuration: 300
-  - type: StaticPrice
-    price: 5000

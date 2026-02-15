@@ -15,7 +15,7 @@
     attackRate: 30
     damage:
       types:
-        Slash: 3
+        Slash: 5
     autoAttack: false
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg

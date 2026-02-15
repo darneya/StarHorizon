@@ -53,7 +53,7 @@
 - type: entity
   id: CrateBaseAnCoPetal
   parent: CrateBaseAnCo
-  suffix: StarHorizon, AnCo, Structure
+  suffix: StarHorizon, AnCo, Structure, Petal
   category: [ HideSpawnMenu ]
   components:
   - type: StorageFill
@@ -66,7 +66,7 @@
 - type: entity
   id: CrateBaseAnCoDusk
   parent: CrateBaseAnCo
-  suffix: StarHorizon, AnCo, Structure
+  suffix: StarHorizon, AnCo, Structure, Dusk
   category: [ HideSpawnMenu ]
   components:
   - type: StorageFill
@@ -79,7 +79,7 @@
 - type: entity
   id: CrateBaseAnCoGranite
   parent: CrateBaseAnCo
-  suffix: StarHorizon, AnCo, Structure
+  suffix: StarHorizon, AnCo, Structure, Granite
   category: [ HideSpawnMenu ]
   components:
   - type: StorageFill
@@ -92,7 +92,7 @@
 - type: entity
   id: CrateBaseAnCoHumanities
   parent: CrateBaseAnCo
-  suffix: StarHorizon, AnCo, Structure
+  suffix: StarHorizon, AnCo, Structure, Humanities
   category: [ HideSpawnMenu ]
   components:
   - type: StorageFill
@@ -107,7 +107,7 @@
 - type: entity
   id: CrateBaseAnCoPistol
   parent: CrateBaseAnCo
-  suffix: StarHorizon, AnCo, Structure
+  suffix: StarHorizon, AnCo, Structure, Pistol
   category: [ HideSpawnMenu ]
   components:
   - type: StorageFill
@@ -118,7 +118,7 @@
 - type: entity
   id: CrateBaseAnCoAmmo35
   parent: CrateBaseAnCo
-  suffix: StarHorizon, AnCo, Structure
+  suffix: StarHorizon, AnCo, Structure, Ammo35
   category: [ HideSpawnMenu ]
   components:
   - type: StorageFill
