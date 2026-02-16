@@ -36,6 +36,34 @@
     },
     {
         "name": "mine-icon"
+    },
+    {
+        "name": "titan-icon"
+    },
+    {
+      "name": "titan-bot",
+      "directions": 4
+    },
+    {
+        "name": "cyclop-icon"
+    },
+    {
+      "name": "cyclop-bot",
+      "directions": 4
+    },
+    {
+        "name": "begemoth-icon"
+    },
+    {
+      "name": "begemoth-bot",
+      "directions": 4
+    },
+    {
+        "name": "mush-icon"
+    },
+    {
+      "name": "mush-bot",
+      "directions": 4
     }
   ]
 }

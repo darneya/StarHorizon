@@ -153,6 +153,37 @@
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
 
+- type: entity
+  name: оружейный кейс холодного оружия АнКо
+  parent: [WeaponCaseLong, BaseAnCoContraband]
+  id: AnCoWeaponCaselongmelee
+  description: Массивный кейс для тяжёлого вооружения.
+  suffix: StarHorizon, AnCo, Long
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselongmelee.rsi
+  - type: Item
+    sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaselongmelee.rsi
+  - type: AnCoWeaponCaseHack
+    explosionIntensity: 16
+    explosionSlope: 2
+    explosionMaxTileIntensity: 2
+    explosionPrototype: AnCoExplodes
+  - type: Lock
+    locked: true
+  - type: AccessReader
+    access: [[ "AnCo" ]]
+  - type: WiresPanel
+  - type: Wires
+    boardName: wires-board-name-weapon-case
+    layoutId: AnCoWeaponCaseHack
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+
 # Заполненные кейсы с оружием
 
 - type: entity
