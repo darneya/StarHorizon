@@ -1,16 +1,27 @@
-# Inferno difficulty versions of Rogue Silicon mobs
-# - All units can see through walls
-# - Melee units don't retreat after attack
-# - All units can pry doors open
-# - All units can smash walls (CombatMode required)
-
-# ============ MELEE UNITS - NO RETREAT ============
-
 - type: entity
-  parent: MobRogueSiliconScrap
-  id: MobRogueSiliconScrapInferno
+  parent: BaseAnCoCrab
+  id: AnCoCrabInferno
+  name: защитный бот АнКо
+  suffix: Inferno
   categories: [ HideSpawnMenu ]
   components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+      - DoorBumpOpener
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile
   - type: HTN
     rootTask:
        task: InfernoSimpleMeleeHostileCompound
@@ -21,36 +32,53 @@
         true
       NavPry: !type:Bool
         true
-      NavSmash: !type:Bool
-        true
+      VisionRadius: !type:Single
+        30
+      AggroVisionRadius: !type:Single
+        30
   - type: CombatMode
   - type: MeleeWeapon
-    attackRate: 1.0
-    altDisarm: false
-    angle: 0
-    animation: WeaponArcPunch
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/sparks4.ogg
     damage:
       types:
-        Heat: 4
-        Blunt: 6
-        Structural: 40
-    soundHit:
-      collection: MetalThud
+        Blunt: 5
+        Heat: 8
   - type: Tool
-    speedModifier: 2.0
+    speedModifier: 5.0
     qualities:
       - Prying
     hideQualities: true
   - type: Prying
     pryPowered: true
     force: true
-    speedModifier: 2.0
+    speedModifier: 5.0
 
 - type: entity
-  parent: MobRogueSiliconHerder
-  id: MobRogueSiliconHerderInferno
+  parent: AnCoDroneCombat
+  id: AnCoDroneCombatInferno
+  name: боевой бот АнКо
+  suffix: Inferno
   categories: [ HideSpawnMenu ]
   components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+      - DoorBumpOpener
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile
   - type: HTN
     rootTask:
        task: InfernoSimpleMeleeHostileCompound
@@ -61,36 +89,110 @@
         true
       NavPry: !type:Bool
         true
-      NavSmash: !type:Bool
-        true
+      VisionRadius: !type:Single
+        30
+      AggroVisionRadius: !type:Single
+        30
   - type: CombatMode
   - type: MeleeWeapon
-    attackRate: 1.0
-    altDisarm: false
-    angle: 0
-    animation: WeaponArcPunch
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/sparks4.ogg
     damage:
       types:
-        Blunt: 6
-        Shock: 7
-        Structural: 40
-    soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
+        Blunt: 15
+        Heat: 15
   - type: Tool
-    speedModifier: 2.0
+    speedModifier: 5.0
     qualities:
       - Prying
     hideQualities: true
   - type: Prying
     pryPowered: true
     force: true
-    speedModifier: 2.0
+    speedModifier: 5.0
 
 - type: entity
-  parent: MobRogueSiliconScrapFlayer
-  id: MobRogueSiliconScrapFlayerInferno
+  parent: AnCoDroneMine
+  id: AnCoDroneMineInferno
+  name: бот бомба АнКо
+  suffix: Inferno
   categories: [ HideSpawnMenu ]
   components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Tag
+    tags:
+      - DoorBumpOpener
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleMeleeHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      VisionRadius: !type:Single
+        30
+      AggroVisionRadius: !type:Single
+        30
+  - type: CombatMode
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/sparks4.ogg
+    damage:
+      types:
+        Blunt: 10
+        Heat: 10
+  - type: Tool
+    speedModifier: 5.0
+    qualities:
+      - Prying
+    hideQualities: true
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 5.0
+
+- type: entity
+  parent: AnCoFlyDroneSmall
+  id: AnCoFlyDroneSmallInferno
+  name: дрон компаньен АнКо
+  suffix: Inferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 50
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: Tag
+    tags:
+      - DoorBumpOpener
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile
   - type: HTN
     rootTask:
        task: InfernoSimpleMeleeHostileCompound
@@ -101,37 +203,53 @@
         true
       NavPry: !type:Bool
         true
-      NavSmash: !type:Bool
-        true
+      VisionRadius: !type:Single
+        30
+      AggroVisionRadius: !type:Single
+        30
   - type: CombatMode
   - type: MeleeWeapon
-    attackRate: 1.0
-    altDisarm: false
-    angle: 0
-    animation: WeaponArcClaw
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/sparks4.ogg
     damage:
       types:
-        Slash: 12
-        Structural: 40
-    soundHit:
-      path: /Audio/Weapons/bladeslice.ogg
+        Blunt: 10
+        Heat: 10
   - type: Tool
-    speedModifier: 2.0
+    speedModifier: 5.0
     qualities:
       - Prying
     hideQualities: true
   - type: Prying
     pryPowered: true
     force: true
-    speedModifier: 2.0
-
-# ============ RANGED UNITS - WALL VISION ============
+    speedModifier: 5.0
 
 - type: entity
-  parent: MobRogueSiliconHunter
-  id: MobRogueSiliconHunterInferno
+  parent: AnCoFlyDroneHuge
+  id: AnCoFlyDroneHugeInferno
+  name: боевой дрон АнКо
+  suffix: Inferno
   categories: [ HideSpawnMenu ]
   components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 50
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: Tag
+    tags:
+      - DoorBumpOpener
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile
   - type: HTN
     rootTask:
        task: InfernoSimpleRangedHostileCompound
@@ -142,197 +260,30 @@
         true
       NavPry: !type:Bool
         true
-      NavSmash: !type:Bool
-        true
-      SoundTargetInLOS: !type:SoundPathSpecifier
-        path: /Audio/Effects/double_beep.ogg
+      VisionRadius: !type:Single
+        30
+      AggroVisionRadius: !type:Single
+        30
   - type: CombatMode
   - type: MeleeWeapon
-    attackRate: 1.0
-    altDisarm: false
-    angle: 0
-    animation: WeaponArcPunch
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/sparks4.ogg
     damage:
       types:
-        Heat: 4
-        Blunt: 6
-        Structural: 40
-    soundHit:
-      collection: MetalThud
+        Blunt: 10
+        Heat: 10
+  - type: Gun
+    fireRate: 2.5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
   - type: Tool
-    speedModifier: 2.0
+    speedModifier: 5.0
     qualities:
       - Prying
     hideQualities: true
   - type: Prying
     pryPowered: true
     force: true
-    speedModifier: 2.0
-
-- type: entity
-  parent: MobRogueSiliconTesla
-  id: MobRogueSiliconTeslaInferno
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: HTN
-    rootTask:
-       task: InfernoSimpleRangedHostileCompound
-    blackboard:
-      NavClimb: !type:Bool
-        true
-      NavInteract: !type:Bool
-        true
-      NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
-        true
-      SoundTargetInLOS: !type:SoundPathSpecifier
-        path: /Audio/Effects/double_beep.ogg
-  - type: CombatMode
-  - type: MeleeWeapon
-    attackRate: 1.0
-    altDisarm: false
-    angle: 0
-    animation: WeaponArcPunch
-    damage:
-      types:
-        Heat: 4
-        Blunt: 6
-        Structural: 40
-    soundHit:
-      collection: MetalThud
-  - type: Tool
-    speedModifier: 2.0
-    qualities:
-      - Prying
-    hideQualities: true
-  - type: Prying
-    pryPowered: true
-    force: true
-    speedModifier: 2.0
-
-- type: entity
-  parent: MobRogueSiliconGuardian
-  id: MobRogueSiliconGuardianInferno
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: HTN
-    rootTask:
-       task: InfernoSimpleRangedHostileCompound
-    blackboard:
-      NavClimb: !type:Bool
-        true
-      NavInteract: !type:Bool
-        true
-      NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
-        true
-      SoundTargetInLOS: !type:SoundPathSpecifier
-        path: /Audio/Effects/double_beep.ogg
-  - type: CombatMode
-  - type: MeleeWeapon
-    attackRate: 1.0
-    altDisarm: false
-    angle: 0
-    animation: WeaponArcPunch
-    damage:
-      types:
-        Heat: 4
-        Blunt: 6
-        Structural: 40
-    soundHit:
-      collection: MetalThud
-  - type: Tool
-    speedModifier: 2.0
-    qualities:
-      - Prying
-    hideQualities: true
-  - type: Prying
-    pryPowered: true
-    force: true
-    speedModifier: 2.0
-
-- type: entity
-  parent: MobRogueSiliconBoss
-  id: MobRogueSiliconBossInferno
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: HTN
-    rootTask:
-       task: InfernoSimpleRangedHostileCompound
-    blackboard:
-      NavClimb: !type:Bool
-        true
-      NavInteract: !type:Bool
-        true
-      NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
-        true
-      SoundTargetInLOS: !type:SoundPathSpecifier
-        path: /Audio/Effects/double_beep.ogg
-  - type: CombatMode
-  - type: MeleeWeapon
-    attackRate: 1.0
-    altDisarm: false
-    angle: 0
-    animation: WeaponArcPunch
-    damage:
-      types:
-        Heat: 4
-        Blunt: 6
-        Structural: 40
-    soundHit:
-      collection: MetalThud
-  - type: Tool
-    speedModifier: 2.0
-    qualities:
-      - Prying
-    hideQualities: true
-  - type: Prying
-    pryPowered: true
-    force: true
-    speedModifier: 2.0
-
-- type: entity
-  parent: MobRogueSiliconCatcher
-  id: MobRogueSiliconCatcherInferno
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: HTN
-    rootTask:
-       task: InfernoSimpleRangedHostileCompound
-    blackboard:
-      NavClimb: !type:Bool
-        true
-      NavInteract: !type:Bool
-        true
-      NavPry: !type:Bool
-        true
-      NavSmash: !type:Bool
-        true
-      SoundTargetInLOS: !type:SoundPathSpecifier
-        path: /Audio/Effects/double_beep.ogg
-  - type: CombatMode
-  - type: MeleeWeapon
-    attackRate: 1.0
-    altDisarm: false
-    angle: 0
-    animation: WeaponArcPunch
-    damage:
-      types:
-        Heat: 4
-        Blunt: 6
-        Structural: 40
-    soundHit:
-      collection: MetalThud
-  - type: Tool
-    speedModifier: 2.0
-    qualities:
-      - Prying
-    hideQualities: true
-  - type: Prying
-    pryPowered: true
-    force: true
-    speedModifier: 2.0
+    speedModifier: 5.0

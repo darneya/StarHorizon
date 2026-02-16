@@ -2,30 +2,19 @@
   id: InfernoSilicons
   desc: salvage-faction-anco-anomaly
   entries:
-    - proto: MobRogueSiliconScrapInferno  # Inferno - no retreat
+    - proto: AnCoCrabInferno
       cost: 2
-    - proto: SpawnMobRogueDronesT1
+    - proto: AnCoDroneCombatInferno
+      cost: 3
+    - proto: AnCoDroneMineInferno
       cost: 3
       prob: 0.3
-    - proto: MobRogueSiliconHerderInferno  # Inferno - no retreat
+    - proto: AnCoFlyDroneSmallInferno
       cost: 3
-    - proto: MobRogueSiliconHunterInferno  # Inferno - wall vision
-      cost: 4
-    - proto: MobRogueSiliconCatcherInferno  # Inferno - wall vision
-      cost: 4
+    - proto: AnCoFlyDroneHugeInferno
+      cost: 5
       prob: 0.4
-    - proto: MobRogueSiliconTeslaInferno  # Inferno - wall vision
-      cost: 5
-    - proto: MobRogueSiliconScrapFlayerInferno  # Inferno - no retreat
-      cost: 3
-      prob: 0.2
-    - proto: MobRogueSiliconBossInferno  # Inferno - wall vision
-      cost: 5
-      prob: 0.1
-    - proto: MobRogueSiliconGuardianInferno  # Inferno - wall vision
-      cost: 10
-      prob: 0.1
   configs:
-    DefenseStructure: CybersunDataMiner
-    Megafauna: MobRogueSiliconGuardianInferno
+    DefenseStructure: AnCoMines
+    Megafauna: AnCoFlyDroneHugeInferno
     Difficulties: Inferno

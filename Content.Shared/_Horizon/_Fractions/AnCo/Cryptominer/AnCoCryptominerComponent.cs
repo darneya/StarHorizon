@@ -63,12 +63,6 @@ public sealed partial class AnCoCryptominerComponent : Component
     public float CurrentTemperature;
 
     /// <summary>
-    /// Total credits earned by this miner.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public int TotalCreditsEarned;
-
-    /// <summary>
     /// Efficiency multiplier based on temperature (1.0 = 100%, 0.0 = 0%).
     /// </summary>
     [ViewVariables, AutoNetworkedField]

@@ -35,11 +35,11 @@
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
-    - UASRadio
+    - AnCoRadio
   - type: ActiveRadio
     channels:
     - Binary
-    - UASRadio
+    - AnCoRadio
   - type: Repairable
     doAfterDelay: 20
   - type: Body

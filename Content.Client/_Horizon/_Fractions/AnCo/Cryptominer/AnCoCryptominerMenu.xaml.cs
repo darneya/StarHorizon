@@ -37,7 +37,6 @@ public sealed partial class AnCoCryptominerMenu : FancyWindow
         // Update credits info (per-minute)
         var effectiveCreditsPerMinute = (int)(state.CreditsPerSecond * state.Efficiency);
         CreditsPerSecondLabel.Text = $"{effectiveCreditsPerMinute}";
-        TotalCreditsLabel.Text = $"{state.TotalCreditsEarned}";
 
         // Update power
         PowerLabel.Text = state.IsPowered

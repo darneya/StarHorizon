@@ -210,8 +210,7 @@ public sealed class AnCoCryptominerSystem : EntitySystem
                 if (creditsGenerated > 0)
                 {
                     // Add credits to disks
-                    var actuallyStored = AddCreditsToDisks(uid, creditsGenerated);
-                    miner.TotalCreditsEarned += actuallyStored;
+                    AddCreditsToDisks(uid, creditsGenerated);
                 }
             }
 
@@ -337,7 +336,6 @@ public sealed class AnCoCryptominerSystem : EntitySystem
             miner.OverheatTemperature,
             miner.CriticalTemperature,
             effectiveCreditsPerMinute,
-            miner.TotalCreditsEarned,
             miner.Efficiency,
             miner.PowerConsumption,
             isPowered,

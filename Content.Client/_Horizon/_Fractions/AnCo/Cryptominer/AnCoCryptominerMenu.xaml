@@ -20,9 +20,6 @@
             <Label Text="{Loc 'cryptominer-window-credits-per-second'}" StyleClasses="StatusFieldTitle"/>
             <Label Name="CreditsPerSecondLabel" Text="10"/>
 
-            <Label Text="{Loc 'cryptominer-window-total-credits'}" StyleClasses="StatusFieldTitle"/>
-            <Label Name="TotalCreditsLabel" Text="0"/>
-
             <Label Text="{Loc 'cryptominer-window-power'}" StyleClasses="StatusFieldTitle"/>
             <Label Name="PowerLabel" Text="500 W"/>
         </GridContainer>

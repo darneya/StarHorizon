@@ -1,6 +1,3 @@
-# HTN tasks for Inferno difficulty NPCs - can see through walls
-
-# Utility query for Inferno RANGED - NO LOS check, can target through walls
 - type: utilityQuery
   id: InfernoNearbyGunTargets
   query:
@@ -22,9 +19,7 @@
         preset: TargetHealth
     - !type:TargetAccessibleCon
       curve: !type:BoolCurve
-    # NO TargetInLOSOrCurrentCon - can see through walls!
 
-# Utility query for Inferno MELEE - NO LOS check, can target through walls
 - type: utilityQuery
   id: InfernoNearbyMeleeTargets
   query:
@@ -40,16 +35,14 @@
         preset: TargetHealth
     - !type:TargetAccessibleCon
       curve: !type:BoolCurve
-    # NO TargetInLOSOrCurrentCon - can see through walls!
 
-# Gun combat compound that ignores walls for LOS checks
 - type: htnCompound
   id: InfernoGunCombatCompound
   branches:
     - tasks:
         - !type:HTNPrimitiveTask
           operator: !type:UtilityOperator
-            proto: InfernoNearbyGunTargets  # Uses Inferno query without LOS check
+            proto: InfernoNearbyGunTargets
 
         - !type:HTNPrimitiveTask
           operator: !type:MoveToOperator
@@ -71,14 +64,13 @@
               key: Target
           operator: !type:GunOperator
             targetKey: Target
-            opaqueKey: true  # Can see through walls
+            opaqueKey: true
           services:
             - !type:UtilityService
               id: RangedService
-              proto: InfernoNearbyGunTargets  # Uses Inferno query without LOS check
+              proto: InfernoNearbyGunTargets
               key: Target
 
-# Innate ranged combat for Inferno - can see through walls
 - type: htnCompound
   id: InfernoInnateRangedCombatCompound
   branches:
@@ -89,7 +81,6 @@
         - !type:HTNCompoundTask
           task: InfernoGunCombatCompound
 
-# Main compound for Inferno ranged hostiles
 - type: htnCompound
   id: InfernoSimpleRangedHostileCompound
   branches:
@@ -98,23 +89,18 @@
           task: InfernoInnateRangedCombatCompound
     - tasks:
         - !type:HTNCompoundTask
-          task: InfernoMeleeCombatCompound  # Inferno melee - no retreat
-    - tasks:
-        - !type:HTNCompoundTask
-          task: IdleCompound
+          task: InfernoMeleeCombatCompound
 
-# Melee combat for Inferno - NO RETREAT, CAN SEE THROUGH WALLS
 - type: htnCompound
   id: InfernoMeleeCombatCompound
   branches:
     - tasks:
         - !type:HTNPrimitiveTask
           operator: !type:UtilityOperator
-            proto: InfernoNearbyMeleeTargets  # Can see through walls
+            proto: InfernoNearbyMeleeTargets
         - !type:HTNCompoundTask
           task: InfernoMeleeAttackTargetCompound
 
-# Melee attack without retreat (no JukeOperator Away), wall vision
 - type: htnCompound
   id: InfernoMeleeAttackTargetCompound
   branches:
@@ -130,7 +116,6 @@
             targetKey: TargetCoordinates
             pathfindKey: TargetPathfind
             rangeKey: MeleeRange
-        # NO JukeOperator Away - stay in melee range!
         - !type:HTNPrimitiveTask
           operator: !type:MeleeOperator
             targetKey: Target
@@ -143,16 +128,12 @@
           services:
             - !type:UtilityService
               id: MeleeService
-              proto: InfernoNearbyMeleeTargets  # Can see through walls
+              proto: InfernoNearbyMeleeTargets
               key: Target
 
-# Main compound for Inferno MELEE hostiles (Scrap, Herder, Flayer)
 - type: htnCompound
   id: InfernoSimpleMeleeHostileCompound
   branches:
     - tasks:
         - !type:HTNCompoundTask
           task: InfernoMeleeCombatCompound
-    - tasks:
-        - !type:HTNCompoundTask
-          task: IdleCompound

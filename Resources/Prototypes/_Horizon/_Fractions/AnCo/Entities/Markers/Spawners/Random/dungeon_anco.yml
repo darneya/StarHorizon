@@ -87,7 +87,7 @@
     offset: 0.0
     rarePrototypes:
     - BoxRationAnCo
-    rareChance: 0.5
+    rareChance: 0.2
 
 - type: entity
   name: спавнер ендов АнКо
@@ -288,7 +288,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: _Horizon/_Fractions/AnCo/Structures/Machines/ancofab.rsi
+      - sprite: _Horizon/_Fractions/AnCo/Structures/Machines/onefabtic.rsi
         state: icon
   - type: RandomSpawner
     prototypes:
@@ -300,7 +300,7 @@
     offset: 0.0
     rarePrototypes:
     - AnCoEmergencyFabricator
-    rareChance: 0.30
+    rareChance: 0.20
 
 - type: entity
   name: Случайный плакат АнКо
