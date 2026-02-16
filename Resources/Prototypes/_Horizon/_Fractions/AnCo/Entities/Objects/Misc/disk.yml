@@ -1,7 +1,7 @@
 - type: entity
   id: AnCoDiskCryptonimer
   name: ардониевый диск
-  parent: [ BaseItem, BaseAnCoContraband ]
+  parent: [ BaseItem, BaseAnCoContraband]
   suffix: StarHorizon, AnCo
   description: Диск с системой записи информации на ардониеваую микроструктурную матрицу
   components:

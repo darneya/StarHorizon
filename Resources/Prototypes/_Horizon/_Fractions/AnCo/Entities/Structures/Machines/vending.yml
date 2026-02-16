@@ -103,7 +103,7 @@
   - type: Advertise
     pack: AnCoWeaponMateAds
   - type: MarketModifier
-    mod: 5
+    mod: 15
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Speech

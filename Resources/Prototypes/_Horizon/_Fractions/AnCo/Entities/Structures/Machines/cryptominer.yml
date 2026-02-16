@@ -1,6 +1,6 @@
 - type: entity
   id: Cryptominer
-  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  parent: [ BaseMachinePowered, ConstructibleMachine, BaseAnCoContraband ]
   name: cryptominer
   suffix: StarHorizon, AnCo, Structure
   description: A cryptocurrency mining device. Consumes power and generates heat. Earned credits are automatically transferred to the station's bank account.
@@ -106,7 +106,7 @@
       disk_slot_4: !type:ContainerSlot
 
 - type: entity
-  parent: CybersunDataMiner
+  parent: [CybersunDataMiner, BaseAnCoContraband]
   id: AnCoMines
   name: сервер АнКо
   suffix: StarHorizon, AnCo, Dungeon
