@@ -38,7 +38,137 @@
   - type: StaticPrice
     price: 2500
 
-# Военный торговый фабрикатор (специализация AnCo)
+# === Инженерный торговый фабрикатор ===
+- type: entity
+  parent: TradeFabricator
+  id: TradeFabricatorEngineer
+  name: инженерный торговый фабрикатор
+  description: Фабрикатор для производства инженерных торговых товаров. Специализируется на инструментах, топливе и электронике.
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: engineering
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: TradeFabricatorEngineerCircuitboard
+  - type: Lathe
+    staticPacks:
+    - HorizonTradeGoodsEngineerPack
+
+# === Медицинский торговый фабрикатор ===
+- type: entity
+  parent: TradeFabricator
+  id: TradeFabricatorMedical
+  name: медицинский торговый фабрикатор
+  description: Фабрикатор для производства медицинских торговых товаров. Специализируется на медикаментах, химикатах и имплантах.
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: medical
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: TradeFabricatorMedicalCircuitboard
+  - type: Lathe
+    staticPacks:
+    - HorizonTradeGoodsMedicalPack
+
+# === Научный торговый фабрикатор ===
+- type: entity
+  parent: TradeFabricator
+  id: TradeFabricatorScience
+  name: научный торговый фабрикатор
+  description: Фабрикатор для производства научных торговых товаров. Специализируется на лабораторном оборудовании и реагентах.
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: science
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: TradeFabricatorScienceCircuitboard
+  - type: Lathe
+    staticPacks:
+    - HorizonTradeGoodsSciencePack
+
+# === Сервисный торговый фабрикатор ===
+- type: entity
+  parent: TradeFabricator
+  id: TradeFabricatorService
+  name: сервисный торговый фабрикатор
+  description: Фабрикатор для производства сервисных торговых товаров. Специализируется на провизии, напитках и предметах роскоши.
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: mcservice
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: TradeFabricatorServiceCircuitboard
+  - type: Lathe
+    staticPacks:
+    - HorizonTradeGoodsServicePack
+
+# === Универсальный торговый фабрикатор ===
+- type: entity
+  parent: TradeFabricator
+  id: TradeFabricatorGeneral
+  name: универсальный торговый фабрикатор
+  description: Фабрикатор для производства товаров общего назначения. Простые, но востребованные товары.
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: cargo
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: TradeFabricatorGeneralCircuitboard
+  - type: Lathe
+    staticPacks:
+    - HorizonTradeGoodsGeneralPack
+
+# === Военный торговый фабрикатор (специализация AnCo) ===
 - type: entity
   parent: TradeFabricator
   id: TradeFabricatorMilitary
@@ -64,7 +194,7 @@
     staticPacks:
     - HorizonTradeGoodsMilitaryPack
 
-# Промышленный торговый фабрикатор (специализация DFI)
+# === Промышленный торговый фабрикатор (специализация DFI) ===
 - type: entity
   parent: TradeFabricator
   id: TradeFabricatorIndustrial
@@ -90,7 +220,7 @@
     staticPacks:
     - HorizonTradeGoodsIndustrialPack
 
-# Продовольственный торговый фабрикатор
+# === Продовольственный торговый фабрикатор ===
 - type: entity
   parent: TradeFabricator
   id: TradeFabricatorFood

@@ -17,6 +17,93 @@
     materialRequirements:
       Steel: 5
 
+# Инженерный торговый фабрикатор
+- type: entity
+  id: TradeFabricatorEngineerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата инженерного торгового фабрикатора
+  description: Печатная плата для инженерного торгового фабрикатора.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: TradeFabricatorEngineer
+    requirements:
+      MatterBin: 2
+      Manipulator: 2
+    materialRequirements:
+      Steel: 5
+
+# Медицинский торговый фабрикатор
+- type: entity
+  id: TradeFabricatorMedicalCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата медицинского торгового фабрикатора
+  description: Печатная плата для медицинского торгового фабрикатора.
+  components:
+  - type: Sprite
+    state: medical
+  - type: MachineBoard
+    prototype: TradeFabricatorMedical
+    requirements:
+      MatterBin: 2
+      Manipulator: 2
+    materialRequirements:
+      Steel: 5
+      Glass: 2
+
+# Научный торговый фабрикатор
+- type: entity
+  id: TradeFabricatorScienceCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата научного торгового фабрикатора
+  description: Печатная плата для научного торгового фабрикатора.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: TradeFabricatorScience
+    requirements:
+      MatterBin: 2
+      Manipulator: 2
+    materialRequirements:
+      Steel: 5
+      Gold: 1
+
+# Сервисный торговый фабрикатор
+- type: entity
+  id: TradeFabricatorServiceCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата сервисного торгового фабрикатора
+  description: Печатная плата для сервисного торгового фабрикатора.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: TradeFabricatorService
+    requirements:
+      MatterBin: 2
+      Manipulator: 1
+    materialRequirements:
+      Steel: 5
+
+# Универсальный торговый фабрикатор
+- type: entity
+  id: TradeFabricatorGeneralCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата универсального торгового фабрикатора
+  description: Печатная плата для универсального торгового фабрикатора.
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: TradeFabricatorGeneral
+    requirements:
+      MatterBin: 2
+      Manipulator: 1
+    materialRequirements:
+      Steel: 5
+
 # Военный торговый фабрикатор
 - type: entity
   id: TradeFabricatorMilitaryCircuitboard
