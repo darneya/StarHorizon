@@ -5,6 +5,36 @@
 - type: latheRecipePack
   id: HorizonTradeGoodsPack
   recipes:
+  # Инженерные товары
+  - TradeGoodsEngineerToolsRecipe
+  - TradeGoodsEngineerFuelRecipe
+  - TradeGoodsEngineerElecRecipe
+  - TradeGoodsEngineerFuelContrRecipe
+  - TradeGoodsEngineerElecContrRecipe
+  # Медицинские товары
+  - TradeGoodsMedBaseRecipe
+  - TradeGoodsMedChemRecipe
+  - TradeGoodsMedImplantsRecipe
+  - TradeGoodsMedOrgansRecipe
+  - TradeGoodsMedNarcRecipe
+  # Научные товары
+  - TradeGoodsSciBaseRecipe
+  - TradeGoodsSciChemicalsRecipe
+  - TradeGoodsSciArtifactsRecipe
+  - TradeGoodsSciXenoRecipe
+  - TradeGoodsSciProtoRecipe
+  # Сервисные товары
+  - TradeGoodsServiceFoodRecipe
+  - TradeGoodsServiceBeverageRecipe
+  - TradeGoodsServiceBotanyRecipe
+  - TradeGoodsServiceCleaningRecipe
+  - TradeGoodsServiceLuxuryRecipe
+  # Товары общего назначения
+  - TradeGoodsGeneralSuppliesRecipe
+  - TradeGoodsGeneralClothingRecipe
+  - TradeGoodsGeneralToolsRecipe
+  - TradeGoodsGeneralElectronicsRecipe
+  - TradeGoodsGeneralPartsRecipe
   # Военные товары
   - TradeGoodAmmoRecipe
   - TradeGoodGunpartsRecipe
@@ -34,6 +64,72 @@
   - TradeGoodUnionWeaponRecipe
   - TradeGoodUnionArmorRecipe
   - TradeGoodUnionBallisticRecipe
+
+# === Инженерный пакет ===
+- type: latheRecipePack
+  id: HorizonTradeGoodsEngineerPack
+  recipes:
+  - TradeGoodsEngineerToolsRecipe
+  - TradeGoodsEngineerFuelRecipe
+  - TradeGoodsEngineerElecRecipe
+  - TradeGoodsEngineerFuelContrRecipe
+  - TradeGoodsEngineerElecContrRecipe
+  - TradeGoodPlasmaRecipe
+  - TradeGoodAlloysRecipe
+  - TradeGoodsGeneralToolsRecipe
+  - TradeGoodsGeneralPartsRecipe
+
+# === Медицинский пакет ===
+- type: latheRecipePack
+  id: HorizonTradeGoodsMedicalPack
+  recipes:
+  - TradeGoodsMedBaseRecipe
+  - TradeGoodsMedChemRecipe
+  - TradeGoodsMedImplantsRecipe
+  - TradeGoodsMedOrgansRecipe
+  - TradeGoodsMedNarcRecipe
+  - TradeGoodAntibioticsRecipe
+  - TradeGoodCyberneticsRecipe
+
+# === Научный пакет ===
+- type: latheRecipePack
+  id: HorizonTradeGoodsSciencePack
+  recipes:
+  - TradeGoodsSciBaseRecipe
+  - TradeGoodsSciChemicalsRecipe
+  - TradeGoodsSciArtifactsRecipe
+  - TradeGoodsSciXenoRecipe
+  - TradeGoodsSciProtoRecipe
+
+# === Сервисный пакет ===
+- type: latheRecipePack
+  id: HorizonTradeGoodsServicePack
+  recipes:
+  - TradeGoodsServiceFoodRecipe
+  - TradeGoodsServiceBeverageRecipe
+  - TradeGoodsServiceBotanyRecipe
+  - TradeGoodsServiceCleaningRecipe
+  - TradeGoodsServiceLuxuryRecipe
+  - TradeGoodFlourRecipe
+  - TradeGoodRiceRecipe
+  - TradeGoodSugarRecipe
+  - TradeGoodScopRecipe
+  - TradeGoodAlcoholRecipe
+  - TradeGoodWineRecipe
+  - TradeGoodVodkaRecipe
+
+# === Пакет общего назначения ===
+- type: latheRecipePack
+  id: HorizonTradeGoodsGeneralPack
+  recipes:
+  - TradeGoodsGeneralSuppliesRecipe
+  - TradeGoodsGeneralClothingRecipe
+  - TradeGoodsGeneralToolsRecipe
+  - TradeGoodsGeneralElectronicsRecipe
+  - TradeGoodsGeneralPartsRecipe
+  - TradeGoodFabricsRecipe
+  - TradeGoodScrapRecipe
+  - TradeGoodGoodScrapRecipe
 
 # === Военный пакет (AnCo специализация) ===
 - type: latheRecipePack

@@ -40,6 +40,39 @@
     },
     {
       "name": "unlocked"
+    },
+    {
+      "name": "engi_base"
+    },
+    {
+      "name": "engi_elec"
+    },
+    {
+      "name": "engi_electcontr"
+    },
+    {
+      "name": "engi_fuel"
+    },
+    {
+      "name": "engi_fuelcontr"
+    },
+    {
+      "name": "med_base"
+    },
+    {
+      "name": "med_chem"
+    },
+    {
+      "name": "med_implants"
+    },
+    {
+      "name": "med_narc"
+    },
+    {
+      "name": "med_organs"
+    },
+    {
+      "name": "sci_base"
     }
   ]
 }

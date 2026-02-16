@@ -46,7 +46,7 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: engi-base
+    state: engi_base
   - type: HorizonFactionPrice
     priceCargo: 500
     priceMarket: 5000
@@ -64,7 +64,7 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: engi-fuel
+    state: engi_fuel
   - type: HorizonFactionPrice
     priceCargo: 500
     priceMarket: 5000
@@ -82,7 +82,7 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: engi-elec
+    state: engi_elec
   - type: HorizonFactionPrice
     priceCargo: 500
     priceMarket: 5000
@@ -100,7 +100,7 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: engi-fuel
+    state: engi_fuelcontr
   - type: HorizonFactionPrice
     priceCargo: 15000
     priceMarket: 7500
@@ -118,7 +118,7 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: engi-elec
+    state: engi_electcontr
   - type: HorizonFactionPrice
     priceCargo: 15000
     priceMarket: 7500
@@ -133,37 +133,388 @@
 
 - type: entity
   parent: BaseHorizonTradeItem
-  id: TradeGoodsMedicine
+  id: TradeGoodsMedBase
   name: запечатанный ящик медикаментов
-  description: "Запечатанный ящик с всеми необходимыми медикаментами, для оказания первой медицинской помощи."
+  description: "Запечатанный ящик с базовыми медикаментами для оказания первой медицинской помощи."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: med_base
+  - type: HorizonFactionPrice
+    priceCargo: 400
+    priceMarket: 4000
+    priceMarketNT: 8000
+    priceMarketPirates: 6000
+    priceMarketSyndie: 6000
+    priceBaseSyndie: 5000
+    priceBasePirates: 5000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsMedChem
+  name: запечатанный ящик химикатов
+  description: "Запечатанный ящик с медицинскими химикатами и реагентами."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: med_chem
+  - type: HorizonFactionPrice
+    priceCargo: 600
+    priceMarket: 6000
+    priceMarketNT: 12000
+    priceMarketPirates: 8000
+    priceMarketSyndie: 8000
+    priceBaseSyndie: 7000
+    priceBasePirates: 7000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsMedImplants
+  name: запечатанный ящик имплантов
+  description: "Запечатанный ящик с медицинскими имплантами и протезами."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: med_implants
+  - type: HorizonFactionPrice
+    priceCargo: 800
+    priceMarket: 8000
+    priceMarketNT: 15000
+    priceMarketPirates: 10000
+    priceMarketSyndie: 10000
+    priceBaseSyndie: 9000
+    priceBasePirates: 9000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsMedOrgans
+  name: запечатанный ящик органов
+  description: "Криогенный ящик с синтетическими органами для трансплантации."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: med_organs
+  - type: HorizonFactionPrice
+    priceCargo: 1000
+    priceMarket: 10000
+    priceMarketNT: 18000
+    priceMarketPirates: 12000
+    priceMarketSyndie: 12000
+    priceBaseSyndie: 11000
+    priceBasePirates: 11000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsMedNarc
+  name: запечатанный ящик наркотиков
+  description: "Защищённый ящик с контролируемыми медицинскими препаратами. Требует лицензии."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: med_narc
+  - type: HorizonFactionPrice
+    priceCargo: 12000
+    priceMarket: 6000
+    priceMarketNT: 8000
+    priceMarketPirates: 4000
+    priceMarketSyndie: 4000
+    priceBaseSyndie: 3500
+    priceBasePirates: 3500
+
+# === Научные товары ===
+# Научные товары, что производятся в научных лабораториях
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsSciBase
+  name: запечатанный ящик научного оборудования
+  description: "Запечатанный ящик с базовым научным оборудованием и расходными материалами."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: sci_base
+  - type: HorizonFactionPrice
+    priceCargo: 500
+    priceMarket: 5000
+    priceMarketNT: 12000
+    priceMarketPirates: 6000
+    priceMarketSyndie: 6000
+    priceBaseSyndie: 5500
+    priceBasePirates: 5500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsSciChemicals
+  name: запечатанный ящик лабораторных реагентов
+  description: "Запечатанный ящик с редкими химическими реагентами для исследований."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: sci_base
+  - type: HorizonFactionPrice
+    priceCargo: 700
+    priceMarket: 7000
+    priceMarketNT: 14000
+    priceMarketPirates: 8000
+    priceMarketSyndie: 8000
+    priceBaseSyndie: 7500
+    priceBasePirates: 7500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsSciArtifacts
+  name: запечатанный ящик артефактов
+  description: "Защищённый ящик с неисследованными артефактами для научного анализа."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: sci_base
+  - type: HorizonFactionPrice
+    priceCargo: 1200
+    priceMarket: 12000
+    priceMarketNT: 20000
+    priceMarketPirates: 15000
+    priceMarketSyndie: 15000
+    priceBaseSyndie: 14000
+    priceBasePirates: 14000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsSciXeno
+  name: запечатанный ящик ксенобиологических образцов
+  description: "Биозащитный ящик с образцами инопланетных организмов."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: sci_base
+  - type: HorizonFactionPrice
+    priceCargo: 1500
+    priceMarket: 15000
+    priceMarketNT: 25000
+    priceMarketPirates: 18000
+    priceMarketSyndie: 18000
+    priceBaseSyndie: 17000
+    priceBasePirates: 17000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsSciProto
+  name: запечатанный ящик прототипов
+  description: "Защищённый ящик с экспериментальными прототипами технологий."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: sci_base
+  - type: HorizonFactionPrice
+    priceCargo: 2000
+    priceMarket: 18000
+    priceMarketNT: 30000
+    priceMarketPirates: 22000
+    priceMarketSyndie: 22000
+    priceBaseSyndie: 20000
+    priceBasePirates: 20000
+
+# === Сервисные товары ===
+# Товары сервисного отдела
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsServiceFood
+  name: запечатанный ящик провизии
+  description: "Запечатанный ящик с готовой едой и продовольственными припасами."
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceCargo: 300
+    priceMarket: 3000
+    priceMarketNT: 5000
+    priceMarketPirates: 4000
+    priceMarketSyndie: 4000
+    priceBaseSyndie: 3500
+    priceBasePirates: 3500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsServiceBeverage
+  name: запечатанный ящик напитков
+  description: "Запечатанный ящик с разнообразными напитками и алкоголем."
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceCargo: 350
+    priceMarket: 3500
+    priceMarketNT: 6000
+    priceMarketPirates: 4500
+    priceMarketSyndie: 4500
+    priceBaseSyndie: 4000
+    priceBasePirates: 4000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsServiceBotany
+  name: запечатанный ящик семян
+  description: "Запечатанный ящик с семенами и ботаническими материалами."
   components:
   - type: Sprite
     sprite: _NF/Objects/Tools/bundles3.rsi
     state: engi-base
   - type: HorizonFactionPrice
-    priceMarket: 1800   # +20%
+    priceCargo: 400
+    priceMarket: 4000
+    priceMarketNT: 7000
+    priceMarketPirates: 5000
+    priceMarketSyndie: 5000
+    priceBaseSyndie: 4500
+    priceBasePirates: 4500
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsServiceCleaning
+  name: запечатанный ящик чистящих средств
+  description: "Запечатанный ящик с чистящими средствами и уборочным инвентарём."
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles4.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceCargo: 200
+    priceMarket: 2000
+    priceMarketNT: 3500
+    priceMarketPirates: 2500
+    priceMarketSyndie: 2500
+    priceBaseSyndie: 2200
+    priceBasePirates: 2200
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsServiceLuxury
+  name: запечатанный ящик предметов роскоши
+  description: "Запечатанный ящик с предметами роскоши и развлечениями."
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles5.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceCargo: 800
+    priceMarket: 8000
+    priceMarketNT: 15000
+    priceMarketPirates: 10000
+    priceMarketSyndie: 10000
+    priceBaseSyndie: 9000
+    priceBasePirates: 9000
+
+# === Товары общего назначения ===
+# Универсальные товары
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsGeneralSupplies
+  name: запечатанный ящик припасов
+  description: "Запечатанный ящик с универсальными припасами и расходными материалами."
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceCargo: 250
+    priceMarket: 2500
+    priceMarketNT: 4000
+    priceMarketPirates: 3000
+    priceMarketSyndie: 3000
+    priceBaseSyndie: 2800
+    priceBasePirates: 2800
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsGeneralClothing
+  name: запечатанный ящик одежды
+  description: "Запечатанный ящик с униформой и рабочей одеждой."
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles2.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceCargo: 300
+    priceMarket: 3000
+    priceMarketNT: 5000
+    priceMarketPirates: 3500
+    priceMarketSyndie: 3500
+    priceBaseSyndie: 3200
+    priceBasePirates: 3200
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsGeneralTools
+  name: запечатанный ящик инструментов общего назначения
+  description: "Запечатанный ящик с инструментами для различных работ."
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles3.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceCargo: 350
+    priceMarket: 3500
+    priceMarketNT: 6000
+    priceMarketPirates: 4000
+    priceMarketSyndie: 4000
+    priceBaseSyndie: 3700
+    priceBasePirates: 3700
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsGeneralElectronics
+  name: запечатанный ящик бытовой электроники
+  description: "Запечатанный ящик с бытовой электроникой и гаджетами."
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles4.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceCargo: 450
+    priceMarket: 4500
+    priceMarketNT: 8000
+    priceMarketPirates: 5500
+    priceMarketSyndie: 5500
+    priceBaseSyndie: 5000
+    priceBasePirates: 5000
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsGeneralParts
+  name: запечатанный ящик запчастей
+  description: "Запечатанный ящик с универсальными запчастями и комплектующими."
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Tools/bundles5.rsi
+    state: engi-base
+  - type: HorizonFactionPrice
+    priceCargo: 400
+    priceMarket: 4000
+    priceMarketNT: 7000
+    priceMarketPirates: 5000
+    priceMarketSyndie: 5000
+    priceBaseSyndie: 4500
+    priceBasePirates: 4500
+
+# === Старые товары (оставляем для совместимости) ===
+
+- type: entity
+  parent: BaseHorizonTradeItem
+  id: TradeGoodsMedicine
+  name: запечатанный ящик медикаментов
+  description: "Запечатанный ящик с всеми необходимыми медикаментами, для оказания первой медицинской помощи."
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    state: med_base
+  - type: HorizonFactionPrice
+    priceMarket: 1800
     priceAnco: 1500
     priceDfi: 1200
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -176,8 +527,8 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 600
-    priceAnco: 900      # +50% - ANCO нужны боеприпасы
-    priceDfi: 500       # -17% - DFI производит свои
+    priceAnco: 900
+    priceDfi: 500
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -190,8 +541,8 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 800
-    priceAnco: 1200     # +50%
-    priceDfi: 700       # -12%
+    priceAnco: 1200
+    priceDfi: 700
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -204,8 +555,8 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 2800
-    priceAnco: 4200     # +50%
-    priceDfi: 2500      # -11%
+    priceAnco: 4200
+    priceDfi: 2500
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -218,8 +569,8 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 2000
-    priceAnco: 3000     # +50%
-    priceDfi: 1800      # -10%
+    priceAnco: 3000
+    priceDfi: 1800
 
 # === Промышленные товары ===
 # Промышленные товары дороже на DFI, сбалансированы на других
@@ -235,8 +586,8 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 250
-    priceAnco: 200      # -20%
-    priceDfi: 400       # +60% - DFI перерабатывает лом
+    priceAnco: 200
+    priceDfi: 400
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -249,8 +600,8 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 650
-    priceAnco: 550      # -15%
-    priceDfi: 1000      # +54% - DFI ценит компоненты
+    priceAnco: 550
+    priceDfi: 1000
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -263,8 +614,8 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 1600
-    priceAnco: 1400     # -12%
-    priceDfi: 2400      # +50% - DFI нужна энергия
+    priceAnco: 1400
+    priceDfi: 2400
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -277,8 +628,8 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 1500
-    priceAnco: 1300     # -13%
-    priceDfi: 2200      # +47%
+    priceAnco: 1300
+    priceDfi: 2200
 
 # === Продовольствие ===
 # Еда дороже на Market, дешевле в промышленных зонах
@@ -293,7 +644,7 @@
     sprite: _NF/Objects/Tools/bundles.rsi
     state: engi-base
   - type: HorizonFactionPrice
-    priceMarket: 400    # +33% - рынок ценит еду
+    priceMarket: 400
     priceAnco: 250
     priceDfi: 200
 
@@ -335,7 +686,7 @@
     sprite: _NF/Objects/Tools/bundles2.rsi
     state: engi-base
   - type: HorizonFactionPrice
-    priceMarket: 2000   # +33%
+    priceMarket: 2000
     priceAnco: 1200
     priceDfi: 1000
 
@@ -363,7 +714,7 @@
     sprite: _NF/Objects/Tools/bundles4.rsi
     state: engi-base
   - type: HorizonFactionPrice
-    priceMarket: 1600   # +33%
+    priceMarket: 1600
     priceAnco: 1000
     priceDfi: 800
 
@@ -377,7 +728,7 @@
     sprite: _NF/Objects/Tools/bundles.rsi
     state: engi-base
   - type: HorizonFactionPrice
-    priceMarket: 2000   # +33%
+    priceMarket: 2000
     priceAnco: 1200
     priceDfi: 1000
 
@@ -393,7 +744,7 @@
     sprite: _NF/Objects/Tools/bundles3.rsi
     state: engi-base
   - type: HorizonFactionPrice
-    priceMarket: 1800   # +20%
+    priceMarket: 1800
     priceAnco: 1500
     priceDfi: 1200
 
@@ -409,7 +760,7 @@
     sprite: _NF/Objects/Tools/bundles4.rsi
     state: engi-base
   - type: HorizonFactionPrice
-    priceMarket: 1300   # +30%
+    priceMarket: 1300
     priceAnco: 800
     priceDfi: 700
 
@@ -428,7 +779,7 @@
   - type: HorizonFactionPrice
     priceMarket: 1500
     priceAnco: 2000
-    priceDfi: 3500      # +133% - чёрный рынок DFI
+    priceDfi: 3500
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -442,7 +793,7 @@
   - type: HorizonFactionPrice
     priceMarket: 2500
     priceAnco: 3000
-    priceDfi: 5500      # +120% - чёрный рынок DFI
+    priceDfi: 5500
 
 # === Антиквариат ===
 # Антиквариат дороже на Market (коллекционеры)
@@ -457,7 +808,7 @@
     sprite: _NF/Objects/Tools/bundles2.rsi
     state: engi-base
   - type: HorizonFactionPrice
-    priceMarket: 4000   # +33% - коллекционеры
+    priceMarket: 4000
     priceAnco: 2500
     priceDfi: 2000
 
@@ -471,7 +822,7 @@
     sprite: _NF/Objects/Tools/bundles3.rsi
     state: engi-base
   - type: HorizonFactionPrice
-    priceMarket: 4500   # +29%
+    priceMarket: 4500
     priceAnco: 3000
     priceDfi: 2500
 
@@ -503,7 +854,7 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 650
-    priceAnco: 1000     # +54%
+    priceAnco: 1000
     priceDfi: 550
 
 - type: entity
@@ -517,7 +868,7 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 650
-    priceAnco: 1000     # +54%
+    priceAnco: 1000
     priceDfi: 550
 
 - type: entity
@@ -531,7 +882,7 @@
     state: engi-base
   - type: HorizonFactionPrice
     priceMarket: 1200
-    priceAnco: 1800     # +50%
+    priceAnco: 1800
     priceDfi: 1000
 
 # === Торговые акты ===
