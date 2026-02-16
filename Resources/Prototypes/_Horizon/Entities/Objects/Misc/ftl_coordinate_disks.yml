@@ -1,0 +1,29 @@
+- type: entity
+  name: Диск с данными
+  parent: CoordinatesDisk
+  id: CoordinatesDiskSyndicate
+  description: Стариный диск с неизвестными данными. Кто вообще пользуется дисководами?
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/cd.rsi
+    layers:
+    - state: icon
+      color: "#C83737"
+  - type: ShuttleDestinationCoordinates
+  - type: AutoLinkCoordinatesDisk
+    targetStationId: SindiOutpost
+
+- type: entity
+  name: Изношеный диск
+  parent: CoordinatesDisk
+  id: CoordinatesDiskPirate
+  description: Потрёпаный диск с неизвестными данными. Кто вообще пользуется дисководами?
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/cd.rsi
+    layers:
+    - state: icon
+      color: "#8B4513"
+  - type: ShuttleDestinationCoordinates
+  - type: AutoLinkCoordinatesDisk
+    targetStationId: Cove
