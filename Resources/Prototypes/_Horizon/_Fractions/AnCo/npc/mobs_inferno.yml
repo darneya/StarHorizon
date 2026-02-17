@@ -22,9 +22,9 @@
       NavPry: !type:Bool
         true
       VisionRadius: !type:Single
-        30
+        20
       AggroVisionRadius: !type:Single
-        30
+        20
   - type: CombatMode
   - type: MeleeWeapon
     hidden: true
@@ -68,9 +68,9 @@
       NavPry: !type:Bool
         true
       VisionRadius: !type:Single
-        30
+        20
       AggroVisionRadius: !type:Single
-        30
+        20
   - type: CombatMode
   - type: MeleeWeapon
     hidden: true
@@ -114,9 +114,9 @@
       NavInteract: !type:Bool
         true
       VisionRadius: !type:Single
-        30
+        20
       AggroVisionRadius: !type:Single
-        30
+        20
   - type: CombatMode
   - type: MeleeWeapon
     hidden: true
@@ -160,9 +160,9 @@
       NavPry: !type:Bool
         true
       VisionRadius: !type:Single
-        30
+        20
       AggroVisionRadius: !type:Single
-        30
+        20
   - type: CombatMode
   - type: MeleeWeapon
     hidden: true
@@ -206,9 +206,9 @@
       NavPry: !type:Bool
         true
       VisionRadius: !type:Single
-        30
+        20
       AggroVisionRadius: !type:Single
-        30
+        20
   - type: CombatMode
   - type: MeleeWeapon
     hidden: true

@@ -1,8 +1,8 @@
 - type: salvageDifficulty
   id: Inferno
   lootTable: InfernoSalvageLoot
-  lootBudget: 100
-  mobBudget: 300
+  lootBudget: 80
+  mobBudget: 240
   modifierBudget: 5
   color: "#FF450096"
   recommendedPlayers: 6
