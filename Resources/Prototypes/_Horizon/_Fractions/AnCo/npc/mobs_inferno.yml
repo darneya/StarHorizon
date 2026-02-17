@@ -56,7 +56,7 @@
     speedModifier: 5.0
 
 - type: entity
-  parent: AnCoDroneCombat
+  parent: AnCoDroneCombatDungeon
   id: AnCoDroneCombatInferno
   name: боевой бот АнКо
   suffix: Inferno
@@ -113,7 +113,7 @@
     speedModifier: 5.0
 
 - type: entity
-  parent: AnCoDroneMine
+  parent: AnCoDroneMineDungeon
   id: AnCoDroneMineInferno
   name: бот бомба АнКо
   suffix: Inferno
@@ -170,7 +170,7 @@
     speedModifier: 5.0
 
 - type: entity
-  parent: AnCoFlyDroneSmall
+  parent: AnCoFlyDroneSmallDungeon
   id: AnCoFlyDroneSmallInferno
   name: дрон компаньен АнКо
   suffix: Inferno
@@ -227,7 +227,7 @@
     speedModifier: 5.0
 
 - type: entity
-  parent: AnCoFlyDroneHuge
+  parent: AnCoFlyDroneHugeDungeon
   id: AnCoFlyDroneHugeInferno
   name: боевой дрон АнКо
   suffix: Inferno
