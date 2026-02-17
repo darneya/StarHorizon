@@ -1,2 +1,2 @@
-ent-BorgChassisServiceKerfus = service cyborg
-    .desc = { ent-BorgChassisSelectable.desc }
+ent-BorgChassisServiceKerfus = керфус-официант
+    .desc = Миленькая сервисная помощница. Обеспечивает экипаж закусками, напитками и развлечениями. Специалист по вкусняшкам и хорошему настроению!

@@ -1,2 +1,2 @@
-ent-RemoteControlDevice = remote control device
-    .desc = A gadget which can remote control
+ent-RemoteControlDevice = устройство удаленного управления
+    .desc = Используется для установки связи между существом и монитором удаленного управления

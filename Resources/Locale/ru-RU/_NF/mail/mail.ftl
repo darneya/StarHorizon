@@ -1,4 +1,3 @@
-ent-BaseMailLarge = посылка
 mail-large-item-name-unaddressed = посылка
 mail-large-item-name-addressed = посылка ({ $recipient })
 mail-large-desc-far = Большая посылка.

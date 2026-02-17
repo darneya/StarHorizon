@@ -1,2 +1,2 @@
-ent-BluespaceHarvester = bluespace harvester
-    .desc = Uses huge amounts of energy to extract matter from all corners of the universe.
+ent-BluespaceHarvester = блюспейс харвестер
+    .desc = Использует огромное количество энергии для извлечения материи из всех уголков вселенной.

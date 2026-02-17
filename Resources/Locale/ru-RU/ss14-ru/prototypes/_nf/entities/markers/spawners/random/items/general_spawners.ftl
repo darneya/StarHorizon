@@ -1,5 +1,3 @@
-ent-MarkerBasePlaceFree = { ent-MarkerBase }
-    .desc = { ent-MarkerBase.desc }
 ent-SpawnDungeonLootBureaucracy = случайный хлам
     .suffix = Лут Фронтира, Бюрократия
     .desc = { ent-MarkerBasePlaceFree.desc }

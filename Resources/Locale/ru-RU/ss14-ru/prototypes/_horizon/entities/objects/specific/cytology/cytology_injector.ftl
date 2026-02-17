@@ -1,2 +1,2 @@
-ent-CytologyInjector = injector
-    .desc = The injector to collect cells
+ent-CytologyInjector = инъектор
+    .desc = Инъектор для сбора клеток из биологических существ

@@ -1,2 +1,2 @@
-ent-CytologyGrowingVat = growing vat
-    .desc = growing vat
+ent-CytologyGrowingVat = чан для выращивания
+    .desc = Используется для выращивания клеток.

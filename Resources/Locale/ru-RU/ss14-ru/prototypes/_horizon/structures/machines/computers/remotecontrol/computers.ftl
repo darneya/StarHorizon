@@ -1,2 +1,2 @@
-ent-RemoteControllerComputer = remote controller computer
-    .desc = Allows to remotely acess and control different mechanisms.
+ent-RemoteControllerComputer = монитор удаленного управления
+    .desc = Позволяет установить связь с подключенным существом

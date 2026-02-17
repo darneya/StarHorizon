@@ -1,10 +1,10 @@
-ent-SpawnMobCatClippy = Clippy Spawner
+ent-SpawnMobCatClippy = Спавнер Скрепки
     .desc = { ent-MarkerBase.desc }
-ent-SpawnMobCatCurie = Curie Spawner
+ent-SpawnMobCatCurie = Спавнер Кюри
     .desc = { ent-MarkerBase.desc }
-ent-SpawnMobCatClarpy = Clarpy Spawner
+ent-SpawnMobCatClarpy = Спавнер Клярпи
     .desc = { ent-MarkerBase.desc }
-ent-SpawnMobCatCappy = Cappy Spawner
+ent-SpawnMobCatCappy = Спавнер Каппи
     .desc = { ent-MarkerBase.desc }
-ent-SpawnMobKoboldYipyip = Yip Yip Spawner
+ent-SpawnMobKoboldYipyip = Спавнер Йип-Йип
     .desc = { ent-MarkerBase.desc }

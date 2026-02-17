@@ -1,2 +1,2 @@
-ent-CytologyPetriDish = petri dish
-    .desc = A sterile petri dish for holding cell samples for analysis.
+ent-CytologyPetriDish = чашка Петри
+    .desc = Стерильна чашка Петри для сбора образцов и последующего анализа

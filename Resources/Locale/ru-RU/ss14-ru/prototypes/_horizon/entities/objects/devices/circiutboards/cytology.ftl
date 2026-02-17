@@ -1,6 +1,6 @@
-ent-CytologyGrowingVatMachineCircuitboard = cytology growing vat machine board
-    .desc = A machine printed circuit board for a cytology growing vat.
-ent-CytologyMicroscopeMachineCircuitboard = cytology microscope machine board
-    .desc = A machine printed circuit board for a cytology microscope.
-ent-CytologySampleCombinatorComputerCircuitboard = cytology sample combinator machine board
-    .desc = A machine printed circuit board for a cytology sample combinator.
+ent-CytologyGrowingVatMachineCircuitboard = чан для выращивания (машинная плата)
+    .desc = Печатная плата чана для выращивания клеток.
+ent-CytologyMicroscopeMachineCircuitboard = микроскоп (машинная плата)
+    .desc = Печатная плата цитологического микроскопа.
+ent-CytologySampleCombinatorComputerCircuitboard = комбинатор образцов (машинная плата)
+    .desc = Печатная плата комбинатора образцов.

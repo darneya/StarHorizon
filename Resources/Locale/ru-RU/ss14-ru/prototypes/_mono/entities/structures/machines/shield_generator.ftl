@@ -1,4 +1,4 @@
-ent-ShieldGeneratorBase = Генератор щита
+ent-ShieldGeneratorBase = генератор щита
     .desc = { ent-BaseMachinePowered.desc }
 ent-ShieldGeneratorSmall = MS-100 "Страж" Генератор щита
     .desc = { ent-ShieldGeneratorBase.desc }
