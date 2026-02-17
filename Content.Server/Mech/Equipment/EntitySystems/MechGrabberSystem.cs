@@ -280,7 +280,7 @@ public sealed class MechGrabberSystem : EntitySystem
         // - очистка контейнера при уничтожении оборудования
         if (component.SlowMetabolism)
         {
-            var metabolicEvent = new ApplyMetabolicMultiplierEvent(args.Entity, 0.4f, true);
+            var metabolicEvent = new ApplyMetabolicMultiplierEvent(0.4f);
             RaiseLocalEvent(args.Entity, ref metabolicEvent);
         }
     }
