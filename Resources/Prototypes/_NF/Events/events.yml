@@ -32,12 +32,8 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-<<<<<<< HEAD
-    earliestStart: 15 # Frontier
-=======
     weight: 2 # Horizon
     earliestStart: 120 # Horizon
->>>>>>> origin/master
     startAnnouncement: station-event-power-grid-check-nf-start-announcement # Frontier: add nf-
     endAnnouncement: station-event-power-grid-check-nf-end-announcement # Frontier: add nf-
     startAudio:
@@ -48,7 +44,6 @@
   #    path: /Audio/_NF/Announcements/PocketSizedAndy/andy1_power_onnf.ogg  ##PowerGridCheckRule handles end audio, leaving this incase that breaks
   #    params:
   #     volume: -4
-    weight: 5
     duration: 60
     maxDuration: 120
     minimumPlayers: 20 # Horizon
