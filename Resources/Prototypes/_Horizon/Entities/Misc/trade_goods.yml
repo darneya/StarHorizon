@@ -187,24 +187,6 @@
 
 - type: entity
   parent: BaseHorizonTradeItem
-  id: TradeGoodsSciXeno
-  name: запечатанный ящик ксенобиологических образцов
-  description: "Биозащитный ящик с образцами инопланетных организмов."
-  components:
-  - type: Sprite
-    sprite: _Horizon/Structures/Specific/trade.rsi
-    state: sci_base
-  - type: HorizonFactionPrice
-    priceCargo: 1500
-    priceMarket: 15000
-    priceMarketNT: 25000
-    priceMarketPirates: 18000
-    priceMarketSyndie: 18000
-    priceBaseSyndie: 17000
-    priceBasePirates: 17000
-
-- type: entity
-  parent: BaseHorizonTradeItem
   id: TradeGoodsSciProto
   name: запечатанный ящик прототипов
   description: "Защищённый ящик с экспериментальными прототипами технологий."
@@ -221,7 +203,7 @@
     priceBaseSyndie: 20000
     priceBasePirates: 20000
 
-# Service
+# Service + General
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -297,26 +279,6 @@
 
 - type: entity
   parent: BaseHorizonTradeItem
-  id: TradeGoodsServiceLuxury
-  name: запечатанный ящик предметов роскоши
-  description: "Запечатанный ящик с предметами роскоши и развлечениями."
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles5.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceCargo: 800
-    priceMarket: 8000
-    priceMarketNT: 15000
-    priceMarketPirates: 10000
-    priceMarketSyndie: 10000
-    priceBaseSyndie: 9000
-    priceBasePirates: 9000
-
-# General
-
-- type: entity
-  parent: BaseHorizonTradeItem
   id: TradeGoodsGeneralSupplies
   name: запечатанный ящик припасов
   description: "Запечатанный ящик с универсальными припасами и расходными материалами."
@@ -351,57 +313,7 @@
     priceBaseSyndie: 3200
     priceBasePirates: 3200
 
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodsGeneralTools
-  name: запечатанный ящик инструментов общего назначения
-  description: "Запечатанный ящик с инструментами для различных работ."
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles3.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceCargo: 350
-    priceMarket: 3500
-    priceMarketNT: 6000
-    priceMarketPirates: 4000
-    priceMarketSyndie: 4000
-    priceBaseSyndie: 3700
-    priceBasePirates: 3700
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodsGeneralElectronics
-  name: запечатанный ящик бытовой электроники
-  description: "Запечатанный ящик с бытовой электроникой и гаджетами."
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles4.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceCargo: 450
-    priceMarket: 4500
-    priceMarketNT: 8000
-    priceMarketPirates: 5500
-    priceMarketSyndie: 5500
-    priceBaseSyndie: 5000
-    priceBasePirates: 5000
-
-# === Старые товары (оставляем для совместимости) ===
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodsMedicine
-  name: запечатанный ящик медикаментов
-  description: "Запечатанный ящик с всеми необходимыми медикаментами, для оказания первой медицинской помощи."
-  components:
-  - type: Sprite
-    sprite: _Horizon/Structures/Specific/trade.rsi
-    state: med_base
-  - type: HorizonFactionPrice
-    priceMarket: 1800
-    priceAnco: 1500
-    priceDfi: 1200
+# NFSD
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -431,19 +343,8 @@
     priceAnco: 1200
     priceDfi: 700
 
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodMiltech
-  name: Поставка военной кибернетики
-  description: Запечатанный ящик с военными кибернетическими деталями. Бесполезны сами по себе, требуют специализированной обработки. Наклейка указывает на Shinohara Heavy Industries.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles3.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 2800
-    priceAnco: 4200
-    priceDfi: 2500
+
+#
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -458,9 +359,6 @@
     priceMarket: 2000
     priceAnco: 3000
     priceDfi: 1800
-
-# === Промышленные товары ===
-# Промышленные товары дороже на DFI, сбалансированы на других
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -490,151 +388,6 @@
     priceAnco: 550
     priceDfi: 1000
 
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodPlasma
-  name: Запечатанный ящик плазменного топлива
-  description: Герметично запечатанный ящик с переработанными плазменными топливными стержнями, топливными насосами и жидкостными канистрами.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles5.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 1600
-    priceAnco: 1400
-    priceDfi: 2400
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodCybernetics
-  name: Запечатанный ящик кибернетических деталей
-  description: Герметично запечатанный ящик с высококачественными протезами и запчастями. Наклейка на боку указывает на консоль экспорта.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles3.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 1500
-    priceAnco: 1300
-    priceDfi: 2200
-
-# === Продовольствие ===
-# Еда дороже на Market, дешевле в промышленных зонах
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodFlour
-  name: Мешок экспортной муки
-  description: Мешок экспортной муки высшего сорта.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 400
-    priceAnco: 250
-    priceDfi: 200
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodRice
-  name: Мешок экспортного риса
-  description: Мешок экспортного риса высшего сорта.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 400
-    priceAnco: 250
-    priceDfi: 200
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodSugar
-  name: Мешок экспортного сахара
-  description: Мешок экспортного сахара высшего сорта.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 400
-    priceAnco: 250
-    priceDfi: 200
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodScop
-  name: Запечатанный ящик СКОП
-  description: Ящик с одноклеточными органическими белками - сокращённо СКОП. Обычно в форме синтетического мяса.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles2.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 2000
-    priceAnco: 1200
-    priceDfi: 1000
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodAlcohol
-  name: Ящик алкоголя
-  description: Запечатанный ящик пива, изготовленного из синтетической органики.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 650
-    priceAnco: 400
-    priceDfi: 350
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodWine
-  name: Запечатанная поставка вина
-  description: Запечатанный ящик выдержанного, качественного вина. Наклейка предупреждает, что продукт является имитацией.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles4.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 1600
-    priceAnco: 1000
-    priceDfi: 800
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodVodka
-  name: Ящик водки
-  description: Запечатанный ящик дистиллированной картофельной водки марки "Ченгридз". Наклейка указывает на консоль экспорта.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 2000
-    priceAnco: 1200
-    priceDfi: 1000
-
-# === Медицина ===
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodAntibiotics
-  name: Запечатанный кейс антибиотиков
-  description: Герметично запечатанный кейс с высококачественными антибиотиками. Наклейка на боку указывает на консоль экспорта.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles3.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 1800
-    priceAnco: 1500
-    priceDfi: 1200
-
 # === Текстиль ===
 
 - type: entity
@@ -650,37 +403,6 @@
     priceMarket: 1300
     priceAnco: 800
     priceDfi: 700
-
-# === Контрабанда ===
-# Контрабанда дороже на DFI (чёрный рынок)
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodDrugs
-  name: Защищённый химический ящик
-  description: Защищённый ящик с "весёлыми химическими побочными продуктами". Без идентификационных наклеек, невозможно определить место производства.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles5.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 1500
-    priceAnco: 2000
-    priceDfi: 3500
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodOrgans
-  name: Немаркированная поставка
-  description: Защищённый ящик с реконструированными гуманоидными органами, внутренность охлаждается для предотвращения гниения. Без идентификационных наклеек.
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles3.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 2500
-    priceAnco: 3000
-    priceDfi: 5500
 
 # === Антиквариат ===
 # Антиквариат дороже на Market (коллекционеры)
@@ -771,38 +493,3 @@
     priceMarket: 1200
     priceAnco: 1800
     priceDfi: 1000
-
-# === Торговые акты ===
-# Акты используют StaticPrice т.к. это бумажные документы, не зависящие от станции
-
-- type: entity
-  parent: BaseItem
-  id: TradeDeed10k
-  name: Акт о доставке
-  description: Напечатанный акт о доставке. Угловатые буквы сообщают, что этот акт стоит десять тысяч кредитов, на официальной сертифицированной станции.
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    state: paper
-  - type: Item
-    size: Tiny
-  - type: HorizonFactionPrice
-    priceMarket: 10000
-    priceAnco: 10000
-    priceDfi: 10000
-
-- type: entity
-  parent: BaseItem
-  id: TradeDeedExotic
-  name: Экзотический акт о доставке
-  description: Напечатанный акт о доставке редких товаров. Угловатые буквы сообщают, что этот акт стоит двадцать пять тысяч кредитов, на официальной сертифицированной станции.
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    state: paper_stamp-centcom
-  - type: Item
-    size: Tiny
-  - type: HorizonFactionPrice
-    priceMarket: 25000
-    priceAnco: 25000
-    priceDfi: 25000
