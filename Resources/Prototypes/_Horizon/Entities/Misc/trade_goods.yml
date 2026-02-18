@@ -1,5 +1,5 @@
-# === Базовый прототип ===
-# Торговые товары - объекты пола, которые нельзя брать в руки, только таскать
+# Base
+
 - type: entity
   abstract: true
   parent: BaseStructureDynamic
@@ -35,8 +35,7 @@
         acts: ["Destruction"]
   - type: RequireProjectileTarget
 
-# === Инженерные товары ===
-# Инженерные товары, что производятся на Эдисоне
+# Engineer
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -92,44 +91,7 @@
     priceBaseSyndie: 7500
     priceBasePirates: 7500
 
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodsEngineerFuelContr
-  name: запечатанный ящик контрабандного топлива
-  description: "Запечатанный ящик контрабандного космического топлива."
-  components:
-  - type: Sprite
-    sprite: _Horizon/Structures/Specific/trade.rsi
-    state: engi_fuelcontr
-  - type: HorizonFactionPrice
-    priceCargo: 15000
-    priceMarket: 7500
-    priceMarketNT: 10000
-    priceMarketPirates: 5000
-    priceMarketSyndie: 5000
-    priceBaseSyndie: 5000
-    priceBasePirates: 5000
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodsEngineerElecContr
-  name: запечатанный ящик контрабандной электроники
-  description: "Запечатанный ящик разнообразной электроники и продвинутого электроинструмента."
-  components:
-  - type: Sprite
-    sprite: _Horizon/Structures/Specific/trade.rsi
-    state: engi_electcontr
-  - type: HorizonFactionPrice
-    priceCargo: 15000
-    priceMarket: 7500
-    priceMarketNT: 10000
-    priceMarketPirates: 5000
-    priceMarketSyndie: 5000
-    priceBaseSyndie: 5000
-    priceBasePirates: 5000
-
-# === Медицинские товары ===
-# Медицинские товары, что производятся на мед диспансере
+# Med
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -185,44 +147,7 @@
     priceBaseSyndie: 9000
     priceBasePirates: 9000
 
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodsMedOrgans
-  name: запечатанный ящик органов
-  description: "Криогенный ящик с синтетическими органами для трансплантации."
-  components:
-  - type: Sprite
-    sprite: _Horizon/Structures/Specific/trade.rsi
-    state: med_organs
-  - type: HorizonFactionPrice
-    priceCargo: 1000
-    priceMarket: 10000
-    priceMarketNT: 18000
-    priceMarketPirates: 12000
-    priceMarketSyndie: 12000
-    priceBaseSyndie: 11000
-    priceBasePirates: 11000
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodsMedNarc
-  name: запечатанный ящик наркотиков
-  description: "Защищённый ящик с контролируемыми медицинскими препаратами. Требует лицензии."
-  components:
-  - type: Sprite
-    sprite: _Horizon/Structures/Specific/trade.rsi
-    state: med_narc
-  - type: HorizonFactionPrice
-    priceCargo: 12000
-    priceMarket: 6000
-    priceMarketNT: 8000
-    priceMarketPirates: 4000
-    priceMarketSyndie: 4000
-    priceBaseSyndie: 3500
-    priceBasePirates: 3500
-
-# === Научные товары ===
-# Научные товары, что производятся в научных лабораториях
+# Sci
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -241,24 +166,6 @@
     priceMarketSyndie: 6000
     priceBaseSyndie: 5500
     priceBasePirates: 5500
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodsSciChemicals
-  name: запечатанный ящик лабораторных реагентов
-  description: "Запечатанный ящик с редкими химическими реагентами для исследований."
-  components:
-  - type: Sprite
-    sprite: _Horizon/Structures/Specific/trade.rsi
-    state: sci_base
-  - type: HorizonFactionPrice
-    priceCargo: 700
-    priceMarket: 7000
-    priceMarketNT: 14000
-    priceMarketPirates: 8000
-    priceMarketSyndie: 8000
-    priceBaseSyndie: 7500
-    priceBasePirates: 7500
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -314,8 +221,7 @@
     priceBaseSyndie: 20000
     priceBasePirates: 20000
 
-# === Сервисные товары ===
-# Товары сервисного отдела
+# Service
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -407,8 +313,7 @@
     priceBaseSyndie: 9000
     priceBasePirates: 9000
 
-# === Товары общего назначения ===
-# Универсальные товары
+# General
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -481,24 +386,6 @@
     priceMarketSyndie: 5500
     priceBaseSyndie: 5000
     priceBasePirates: 5000
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodsGeneralParts
-  name: запечатанный ящик запчастей
-  description: "Запечатанный ящик с универсальными запчастями и комплектующими."
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles5.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceCargo: 400
-    priceMarket: 4000
-    priceMarketNT: 7000
-    priceMarketPirates: 5000
-    priceMarketSyndie: 5000
-    priceBaseSyndie: 4500
-    priceBasePirates: 4500
 
 # === Старые товары (оставляем для совместимости) ===
 
@@ -892,7 +779,7 @@
   parent: BaseItem
   id: TradeDeed10k
   name: Акт о доставке
-  description: Напечатанный акт о доставке. Угловатые буквы сообщают, что этот акт стоит десять тысяч кредитов Союза на официальной сертифицированной станции.
+  description: Напечатанный акт о доставке. Угловатые буквы сообщают, что этот акт стоит десять тысяч кредитов, на официальной сертифицированной станции.
   components:
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
@@ -908,7 +795,7 @@
   parent: BaseItem
   id: TradeDeedExotic
   name: Экзотический акт о доставке
-  description: Напечатанный акт о доставке редких товаров. Угловатые буквы сообщают, что этот акт стоит двадцать пять тысяч кредитов Союза на официальной сертифицированной станции.
+  description: Напечатанный акт о доставке редких товаров. Угловатые буквы сообщают, что этот акт стоит двадцать пять тысяч кредитов, на официальной сертифицированной станции.
   components:
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
