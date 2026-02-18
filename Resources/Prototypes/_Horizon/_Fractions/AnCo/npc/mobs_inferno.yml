@@ -219,7 +219,7 @@
         Blunt: 10
         Heat: 10
   - type: Gun
-    fireRate: 2.5
+    fireRate: 4
     selectedMode: FullAuto
     availableModes:
     - FullAuto

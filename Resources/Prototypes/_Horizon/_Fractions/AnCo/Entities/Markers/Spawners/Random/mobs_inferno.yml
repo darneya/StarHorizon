@@ -1,0 +1,69 @@
+- type: entity
+  name: спавнер защитного бота АнКо
+  id: SpawnAnCoCrabInferno
+  parent: MarkerBase
+  suffix: AI, Hostile, AnCo, Inferno
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - AnCoCrabInferno
+
+- type: entity
+  name: спавнер боевого бота АнКо
+  id: SpawnAnCoDroneCombatInferno
+  parent: MarkerBase
+  suffix: AI, Hostile, AnCo, Inferno
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - AnCoDroneCombatInferno
+
+- type: entity
+  name: спавнер бота-бомбы АнКо
+  id: SpawnAnCoDroneMineInferno
+  parent: MarkerBase
+  suffix: AI, Hostile, AnCo, Inferno
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - AnCoDroneMineInferno
+
+- type: entity
+  name: спавнер дрона-компаньона АнКо
+  id: SpawnAnCoFlyDroneSmallInferno
+  parent: MarkerBase
+  suffix: AI, Hostile, AnCo, Inferno
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - AnCoFlyDroneSmallInferno
+
+- type: entity
+  name: спавнер боевого дрона АнКо
+  id: SpawnAnCoFlyDroneHugeInferno
+  parent: MarkerBase
+  suffix: AI, Hostile, AnCo, Inferno
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - AnCoFlyDroneHugeInferno
