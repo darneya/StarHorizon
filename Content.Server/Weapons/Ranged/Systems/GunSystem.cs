@@ -27,7 +27,7 @@ using Content.Shared.Examine; // Frontier
 using Content.Shared.Power; // Frontier
 using Content.Server.Body.Systems;
 using Content.Shared.Mech.Components;
-using Content.Server._Horizon._Fractions.AnCo.Weapons;
+using Content.Server._Horizon.Weapons;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -387,7 +387,7 @@ public sealed partial class GunSystem : SharedGunSystem
         var modifiedValue = 0.5f;
         if (user.HasValue)
         {
-            var ev = new AnCoGetRecoilModifiersEvent(component);
+            var ev = new GetRecoilModifiersEvent(component);
             RaiseLocalEvent(user.Value, ref ev);
 
             modifiedValue *= ev.Modifier;

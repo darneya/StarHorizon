@@ -1,4 +1,4 @@
-namespace Content.Server._Horizon._Fractions.AnCo.Weapons.Components;
+namespace Content.Server._Horizon.Weapons;
 
 [RegisterComponent]
 public sealed partial class RangedWeaponSpreadModifiersComponent : Component
