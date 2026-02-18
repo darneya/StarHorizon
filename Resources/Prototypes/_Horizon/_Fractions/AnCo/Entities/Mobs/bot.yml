@@ -40,6 +40,7 @@
   - type: NpcFactionMember
     factions:
       - HostileUniversally
+  - type: Transform
 
 - type: entity
   id: BaseAnCoFlyDrone
@@ -82,6 +83,7 @@
   - type: NpcFactionMember
     factions:
       - HostileUniversally
+  - type: Transform
 
 - type: entity
   id: BaseAnCoMech
@@ -125,7 +127,7 @@
   - type: NpcFactionMember
     factions:
       - HostileUniversally
-
+  - type: Transform
 # конец Base
 # начало отключенные версии
 - type: entity
@@ -493,6 +495,25 @@
     damage:
       types:
         Blunt: 20
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          KazmieSheet1:
+            min: 0
+            max: 10
+          ArdonSheet1:
+            min: 0
+            max: 10
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   id: AnCoMechMushDungeon
@@ -537,7 +558,7 @@
   parent: [ BaseAnCoMech]
   components:
   - type: Gun
-    fireRate: 1.5
+    fireRate: 5
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -546,12 +567,12 @@
       ballistic-ammo: !type:Container
   - type: BallisticAmmoProvider
     proto: StandartLaserAnCo
-    capacity: 100
+    capacity: 1000
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 500
+        damage: 700
       behaviors:
       - !type:PlaySoundBehavior
         sound:

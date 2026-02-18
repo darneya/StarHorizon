@@ -1,16 +1,44 @@
 - type: entity
-  parent: BaseAnCoCrab
+  id: BaseAnCoIfterno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+      - DoorBumpOpener
+  - type: NpcFactionMember
+    factions:
+      - SimpleHostile
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleMeleeHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        20
+  - type: Tool
+    speedModifier: 5.0
+    qualities:
+      - Prying
+    hideQualities: true
+  - type: Prying
+    pryPowered: true
+    force: true
+    speedModifier: 5.0
+
+- type: entity
+  parent: [AnCoDroneDungeon, BaseAnCoIfterno]
   id: AnCoCrabInferno
   name: защитный бот АнКо
   suffix: Inferno
   categories: [ HideSpawnMenu ]
   components:
-  - type: Tag
-    tags:
-      - DoorBumpOpener
-  - type: NpcFactionMember
-    factions:
-      - SimpleHostile
   - type: HTN
     rootTask:
        task: InfernoSimpleMeleeHostileCompound
@@ -25,38 +53,14 @@
         20
       AggroVisionRadius: !type:Single
         20
-  - type: CombatMode
-  - type: MeleeWeapon
-    hidden: true
-    soundHit:
-      path: /Audio/Effects/sparks4.ogg
-    damage:
-      types:
-        Blunt: 5
-        Heat: 8
-  - type: Tool
-    speedModifier: 5.0
-    qualities:
-      - Prying
-    hideQualities: true
-  - type: Prying
-    pryPowered: true
-    force: true
-    speedModifier: 5.0
 
 - type: entity
-  parent: AnCoDroneCombatDungeon
+  parent: [AnCoDroneCombatDungeon, BaseAnCoIfterno]
   id: AnCoDroneCombatInferno
   name: боевой бот АнКо
   suffix: Inferno
   categories: [ HideSpawnMenu ]
   components:
-  - type: Tag
-    tags:
-      - DoorBumpOpener
-  - type: NpcFactionMember
-    factions:
-      - SimpleHostile
   - type: HTN
     rootTask:
        task: InfernoSimpleMeleeHostileCompound
@@ -71,38 +75,14 @@
         20
       AggroVisionRadius: !type:Single
         20
-  - type: CombatMode
-  - type: MeleeWeapon
-    hidden: true
-    soundHit:
-      path: /Audio/Effects/sparks4.ogg
-    damage:
-      types:
-        Blunt: 15
-        Heat: 15
-  - type: Tool
-    speedModifier: 5.0
-    qualities:
-      - Prying
-    hideQualities: true
-  - type: Prying
-    pryPowered: true
-    force: true
-    speedModifier: 5.0
 
 - type: entity
-  parent: AnCoDroneMineDungeon
+  parent: [AnCoDroneMineDungeon, BaseAnCoIfterno]
   id: AnCoDroneMineInferno
   name: бот бомба АнКо
   suffix: Inferno
   categories: [ HideSpawnMenu ]
   components:
-  - type: Tag
-    tags:
-      - DoorBumpOpener
-  - type: NpcFactionMember
-    factions:
-      - SimpleHostile
   - type: HTN
     rootTask:
        task: InfernoSimpleMeleeHostileCompound
@@ -117,38 +97,14 @@
         20
       AggroVisionRadius: !type:Single
         20
-  - type: CombatMode
-  - type: MeleeWeapon
-    hidden: true
-    soundHit:
-      path: /Audio/Effects/sparks4.ogg
-    damage:
-      types:
-        Blunt: 10
-        Heat: 10
-  - type: Tool
-    speedModifier: 5.0
-    qualities:
-      - Prying
-    hideQualities: true
-  - type: Prying
-    pryPowered: true
-    force: true
-    speedModifier: 5.0
 
 - type: entity
-  parent: AnCoFlyDroneSmallDungeon
+  parent: [AnCoFlyDroneSmallDungeon, BaseAnCoIfterno]
   id: AnCoFlyDroneSmallInferno
   name: дрон компаньен АнКо
   suffix: Inferno
   categories: [ HideSpawnMenu ]
   components:
-  - type: Tag
-    tags:
-      - DoorBumpOpener
-  - type: NpcFactionMember
-    factions:
-      - SimpleHostile
   - type: HTN
     rootTask:
        task: InfernoSimpleMeleeHostileCompound
@@ -163,38 +119,14 @@
         20
       AggroVisionRadius: !type:Single
         20
-  - type: CombatMode
-  - type: MeleeWeapon
-    hidden: true
-    soundHit:
-      path: /Audio/Effects/sparks4.ogg
-    damage:
-      types:
-        Blunt: 10
-        Heat: 10
-  - type: Tool
-    speedModifier: 5.0
-    qualities:
-      - Prying
-    hideQualities: true
-  - type: Prying
-    pryPowered: true
-    force: true
-    speedModifier: 5.0
 
 - type: entity
-  parent: AnCoFlyDroneHugeDungeon
+  parent: [AnCoFlyDroneHugeDungeon, BaseAnCoIfterno]
   id: AnCoFlyDroneHugeInferno
   name: боевой дрон АнКо
   suffix: Inferno
   categories: [ HideSpawnMenu ]
   components:
-  - type: Tag
-    tags:
-      - DoorBumpOpener
-  - type: NpcFactionMember
-    factions:
-      - SimpleHostile
   - type: HTN
     rootTask:
        task: InfernoSimpleRangedHostileCompound
@@ -210,25 +142,92 @@
       AggroVisionRadius: !type:Single
         20
   - type: CombatMode
-  - type: MeleeWeapon
-    hidden: true
-    soundHit:
-      path: /Audio/Effects/sparks4.ogg
-    damage:
-      types:
-        Blunt: 10
-        Heat: 10
   - type: Gun
     fireRate: 4
     selectedMode: FullAuto
     availableModes:
     - FullAuto
-  - type: Tool
-    speedModifier: 5.0
-    qualities:
-      - Prying
-    hideQualities: true
-  - type: Prying
-    pryPowered: true
-    force: true
-    speedModifier: 5.0
+
+- type: entity
+  parent: [AnCoMechTitanDungeon, BaseAnCoIfterno]
+  id: AnCoMechTitanInferno
+  suffix: Inferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        20
+
+- type: entity
+  parent: [AnCoMechCyclopDungeon, BaseAnCoIfterno]
+  id: AnCoMechCyclopInferno
+  suffix: Inferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        20
+
+- type: entity
+  parent: [AnCoMechBegemothDungeon, BaseAnCoIfterno]
+  id: AnCoMechBegemothInferno
+  suffix: Inferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        20
+
+- type: entity
+  parent: [AnCoMechMushDungeon, BaseAnCoIfterno]
+  id: AnCoMechMushInferno
+  suffix: Inferno
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HTN
+    rootTask:
+       task: InfernoSimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        20
