@@ -70,7 +70,7 @@
       SouthEast: BrickTileWhiteInnerSe
       NorthWest: BrickTileWhiteInnerNw
       NorthEast: BrickTileWhiteInnerNe
-    color: "#b32828" # TechniRed
+    color: "#b3282896" # TechniRed
 
 - type: entityTable
   id: AnCoWindowArdon

@@ -52,7 +52,7 @@
             targetKey: TargetCoordinates
             pathfindKey: TargetPathfind
             stopOnLineOfSight: true
-            rangeKey: MeleeRange
+            rangeKey: RangedRange
 
         - !type:HTNPrimitiveTask
           operator: !type:JukeOperator

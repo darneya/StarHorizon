@@ -123,11 +123,11 @@
         type: WiresBoundUserInterface
 
 - type: entity
-  name: тяжёлый оружейный кейс АнКо
+  name: тяжёлый кейс АнКо
   parent: [WeaponCaseHeavy, BaseAnCoContraband]
   id: AnCoWeaponCaseHeavy
-  description: Массивный кейс для тяжёлого вооружения.
-  suffix: StarHorizon, AnCo, Heavy
+  description: Массивный кейс АнКо.
+  suffix: StarHorizon, AnCo, Big
   components:
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Objects/Storage/Cases/guncaseheavy.rsi
@@ -152,6 +152,13 @@
         type: StorageBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+    - 0,0,7,5
+    whitelist:
+      components:
+      - Item
 
 - type: entity
   name: оружейный кейс холодного оружия АнКо

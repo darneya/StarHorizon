@@ -132,3 +132,36 @@
   - type: ConditionalSpawner
     prototypes:
     - AnCoMechMushInferno
+
+- type: entity
+  name: случайный спавнер мобов АнКо Инферно
+  id: SpawnAnCoInfernoMobsRandom
+  parent: MarkerBase
+  suffix: StarHorizon, AnCo, Dungeon
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Horizon/_Fractions/AnCo/Mobs/bot.rsi
+        state: crab-icon
+  - type: RandomSpawner
+    # Базовые мобы (часто)
+    prototypes:
+    - AnCoCrabInferno
+    - AnCoCrabInferno
+    - AnCoCrabInferno
+    - AnCoDroneCombatInferno
+    - AnCoDroneCombatInferno
+    - AnCoDroneMineInferno
+    - AnCoFlyDroneSmallInferno
+    - AnCoFlyDroneSmallInferno
+    # Редкие мобы (средний шанс)
+    rarePrototypes:
+    - AnCoFlyDroneHugeInferno
+    - AnCoMechTitanInferno
+    - AnCoMechCyclopInferno
+    - AnCoMechBegemothInferno
+    - AnCoMechMushInferno
+    rareChance: 0.35
+    chance: 1.0
+    offset: 0.0
