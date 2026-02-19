@@ -154,3 +154,23 @@
   - type: RadiationBlocker
     resistance: 4
 
+- type: entity
+  id: AnCoWindowArdonDungeon
+  parent: AnCoWindowArdon
+  name: ардониевое окно
+  suffix: StarHorizon, AnCo, Dungeon
+  description: Окно для любителей подглядывать секреты.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
