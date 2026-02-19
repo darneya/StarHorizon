@@ -84,4 +84,4 @@
   table: !type:AllSelector
     children:
     - id: CableApcExtension
-    - id: AnCoAirlockGlassDungeon
+    - id: AnCoAirlock

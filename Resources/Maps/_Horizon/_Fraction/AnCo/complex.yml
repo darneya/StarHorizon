@@ -4,8 +4,8 @@ meta:
   engineVersion: 261.2.0
   forkId: ""
   forkVersion: ""
-  time: 02/18/2026 20:34:09
-  entityCount: 2653
+  time: 02/19/2026 14:41:08
+  entityCount: 2631
 maps:
 - 1653
 grids:
@@ -360,11 +360,6 @@ entities:
             2579: 17,8
             2580: 15,8
         - node:
-            color: '#9FED5896'
-            id: Bot
-          decals:
-            684: 16,32
-        - node:
             color: '#B32828FF'
             id: Bot
           decals:
@@ -373,6 +368,9 @@ entities:
             1948: 12,40
             1949: 13,40
             1950: 14,40
+            2704: 16,32
+            2705: 16,30
+            2706: 18,32
         - node:
             color: '#E3090CFF'
             id: Bot
@@ -4292,61 +4290,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 26.5,6.5
       parent: 1653
-- proto: AnCoClothingMaskBio
-  entities:
-  - uid: 776
-    components:
-    - type: Transform
-      parent: 774
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 780
-    components:
-    - type: Transform
-      parent: 778
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1776
-    components:
-    - type: Transform
-      parent: 1775
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: AnCoClothingMaskCombat
-  entities:
-  - uid: 783
-    components:
-    - type: Transform
-      parent: 781
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1598
-    components:
-    - type: Transform
-      parent: 1597
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1986
-    components:
-    - type: Transform
-      parent: 1984
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: AnCoClothingShoesBootsMag
-  entities:
-  - uid: 2197
-    components:
-    - type: Transform
-      parent: 2193
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: AnCoCrystallExtract
   entities:
   - uid: 71
@@ -4589,13 +4532,6 @@ entities:
     - type: Transform
       pos: 2.5,25.5
       parent: 1653
-- proto: AnCoFabricator
-  entities:
-  - uid: 557
-    components:
-    - type: Transform
-      pos: 34.5,22.5
-      parent: 1653
 - proto: AnCoFloorLavaEntityArdon
   entities:
   - uid: 245
@@ -4826,22 +4762,6 @@ entities:
     - type: Transform
       pos: 15.5,18.5
       parent: 1653
-- proto: AnCoGranade
-  entities:
-  - uid: 1397
-    components:
-    - type: Transform
-      parent: 1396
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: AnCoKnife
-  entities:
-  - uid: 2604
-    components:
-    - type: Transform
-      pos: 14.588508,47.446617
-      parent: 1653
 - proto: AnCoMines
   entities:
   - uid: 1727
@@ -4877,14 +4797,6 @@ entities:
     components:
     - type: Transform
       pos: 0.5255351,3.5145497
-      parent: 1653
-- proto: AnCoPosterAnCologo
-  entities:
-  - uid: 1308
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 9.5,7.5
       parent: 1653
 - proto: AnCoPosterPower
   entities:
@@ -5675,15 +5587,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 34.5,24.5
       parent: 1653
-- proto: AnCoVests
-  entities:
-  - uid: 1672
-    components:
-    - type: Transform
-      parent: 1671
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: AnCoWallKazmie
   entities:
   - uid: 611
@@ -6471,11 +6374,67 @@ entities:
     - type: Transform
       pos: 30.5,22.5
       parent: 1653
+    - type: Storage
+      storedItems:
+        782:
+          position: 1,1
+          _rotation: South
+        783:
+          position: 5,3
+          _rotation: South
+        1308:
+          position: 3,3
+          _rotation: South
+        1396:
+          position: 6,1
+          _rotation: South
+        1397:
+          position: 1,4
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 782
+          - 783
+          - 1308
+          - 1396
+          - 1397
   - uid: 36
     components:
     - type: Transform
       pos: 30.5,18.5
       parent: 1653
+    - type: Storage
+      storedItems:
+        1426:
+          position: 6,2
+          _rotation: South
+        1427:
+          position: 4,1
+          _rotation: South
+        1476:
+          position: 1,2
+          _rotation: South
+        1495:
+          position: 2,4
+          _rotation: South
+        1508:
+          position: 4,3
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 1427
+          - 1495
+          - 1476
+          - 1508
+          - 1426
   - uid: 54
     components:
     - type: Transform
@@ -7176,6 +7135,21 @@ entities:
     - type: Transform
       pos: 46.5,40.5
       parent: 1653
+  - uid: 1817
+    components:
+    - type: Transform
+      pos: 5.5,14.5
+      parent: 1653
+  - uid: 1818
+    components:
+    - type: Transform
+      pos: 5.5,13.5
+      parent: 1653
+  - uid: 1823
+    components:
+    - type: Transform
+      pos: 5.5,15.5
+      parent: 1653
   - uid: 1896
     components:
     - type: Transform
@@ -7190,6 +7164,23 @@ entities:
     components:
     - type: Transform
       pos: 46.5,38.5
+      parent: 1653
+- proto: BedsheetBlack
+  entities:
+  - uid: 775
+    components:
+    - type: Transform
+      pos: 5.5,15.5
+      parent: 1653
+  - uid: 778
+    components:
+    - type: Transform
+      pos: 5.5,13.5
+      parent: 1653
+  - uid: 1558
+    components:
+    - type: Transform
+      pos: 5.5,14.5
       parent: 1653
 - proto: BedsheetSpawner
   entities:
@@ -11275,355 +11266,247 @@ entities:
     - type: Transform
       pos: 41.650818,38.431118
       parent: 1653
+  - uid: 782
+    components:
+    - type: Transform
+      parent: 35
+    - type: Physics
+      canCollide: False
+  - uid: 783
+    components:
+    - type: Transform
+      parent: 35
+    - type: Physics
+      canCollide: False
   - uid: 1150
     components:
     - type: Transform
       pos: 48.268814,4.4387217
       parent: 1653
+  - uid: 1308
+    components:
+    - type: Transform
+      parent: 35
+    - type: Physics
+      canCollide: False
+  - uid: 1396
+    components:
+    - type: Transform
+      parent: 35
+    - type: Physics
+      canCollide: False
+  - uid: 1397
+    components:
+    - type: Transform
+      parent: 35
+    - type: Physics
+      canCollide: False
+  - uid: 1426
+    components:
+    - type: Transform
+      parent: 36
+    - type: Physics
+      canCollide: False
+  - uid: 1427
+    components:
+    - type: Transform
+      parent: 36
+    - type: Physics
+      canCollide: False
+  - uid: 1476
+    components:
+    - type: Transform
+      parent: 36
+    - type: Physics
+      canCollide: False
+  - uid: 1495
+    components:
+    - type: Transform
+      parent: 36
+    - type: Physics
+      canCollide: False
+  - uid: 1508
+    components:
+    - type: Transform
+      parent: 36
+    - type: Physics
+      canCollide: False
   - uid: 1583
     components:
     - type: Transform
       pos: 48.72194,4.4387217
       parent: 1653
-- proto: ClosetBaseAnCo
+- proto: ClosetAnCoFillDungeon
   entities:
-  - uid: 202
-    components:
-    - type: Transform
-      pos: 10.5,6.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-  - uid: 342
-    components:
-    - type: Transform
-      pos: 30.5,38.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-  - uid: 774
-    components:
-    - type: Transform
-      pos: 26.5,32.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 775
-          - 776
-  - uid: 778
-    components:
-    - type: Transform
-      pos: 26.5,30.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 779
-          - 780
-  - uid: 781
+  - uid: 211
     components:
     - type: Transform
       pos: 22.5,32.5
       parent: 1653
     - type: Physics
       bodyType: Static
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 782
-          - 783
-  - uid: 1396
+  - uid: 342
     components:
     - type: Transform
-      pos: 30.5,40.5
+      pos: 22.5,30.5
       parent: 1653
     - type: Physics
       bodyType: Static
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 1397
-  - uid: 1476
+  - uid: 557
     components:
     - type: Transform
-      pos: 16.5,40.5
+      pos: 26.5,32.5
       parent: 1653
     - type: Physics
       bodyType: Static
-  - uid: 1495
-    components:
-    - type: Transform
-      pos: 8.5,42.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-  - uid: 1508
-    components:
-    - type: Transform
-      pos: 24.5,40.5
-      parent: 1653
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.48
-            - 0.25,-0.48
-            - 0.25,0.48
-            - -0.25,0.48
-          mask:
-          - Impassable
-          - TableLayer
-          - LowImpassable
-          layer:
-          - BulletImpassable
-          - Opaque
-          density: 75
-          hard: True
-          restitution: 0
-          friction: 0.4
-    - type: EntityStorage
-      open: True
-      removedMasks: 20
-    - type: PlaceableSurface
-      isPlaceable: True
-    - type: Physics
-      bodyType: Static
-  - uid: 1558
-    components:
-    - type: Transform
-      pos: 32.5,38.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-  - uid: 1597
-    components:
-    - type: Transform
-      pos: 18.5,32.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 1598
-  - uid: 1632
-    components:
-    - type: Transform
-      pos: 18.5,40.5
-      parent: 1653
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.48
-            - 0.25,-0.48
-            - 0.25,0.48
-            - -0.25,0.48
-          mask:
-          - Impassable
-          - TableLayer
-          - LowImpassable
-          layer:
-          - BulletImpassable
-          - Opaque
-          density: 75
-          hard: True
-          restitution: 0
-          friction: 0.4
-    - type: EntityStorage
-      open: True
-      removedMasks: 20
-    - type: PlaceableSurface
-      isPlaceable: True
-    - type: Physics
-      bodyType: Static
-  - uid: 1671
-    components:
-    - type: Transform
-      pos: 16.5,32.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 1672
-  - uid: 1775
+  - uid: 774
     components:
     - type: Transform
       pos: 16.5,30.5
       parent: 1653
     - type: Physics
       bodyType: Static
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 1776
-  - uid: 1807
+  - uid: 779
     components:
     - type: Transform
       pos: 12.5,48.5
       parent: 1653
     - type: Physics
       bodyType: Static
+  - uid: 781
+    components:
+    - type: Transform
+      pos: 18.5,32.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1597
+    components:
+    - type: Transform
+      pos: 16.5,40.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1598
+    components:
+    - type: Transform
+      pos: 10.5,44.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1632
+    components:
+    - type: Transform
+      pos: 24.5,40.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1671
+    components:
+    - type: Transform
+      pos: 32.5,38.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1672
+    components:
+    - type: Transform
+      pos: 18.5,40.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1775
+    components:
+    - type: Transform
+      pos: 14.5,44.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1776
+    components:
+    - type: Transform
+      pos: 14.5,43.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1807
+    components:
+    - type: Transform
+      pos: 14.5,42.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
   - uid: 1809
     components:
     - type: Transform
-      pos: 12.5,47.5
+      pos: 14.5,47.5
       parent: 1653
     - type: Physics
       bodyType: Static
   - uid: 1811
     components:
     - type: Transform
-      pos: 12.5,46.5
-      parent: 1653
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.48
-            - 0.25,-0.48
-            - 0.25,0.48
-            - -0.25,0.48
-          mask:
-          - Impassable
-          - TableLayer
-          - LowImpassable
-          layer:
-          - BulletImpassable
-          - Opaque
-          density: 75
-          hard: True
-          restitution: 0
-          friction: 0.4
-    - type: EntityStorage
-      open: True
-      removedMasks: 20
-    - type: PlaceableSurface
-      isPlaceable: True
-    - type: Physics
-      bodyType: Static
-  - uid: 1813
-    components:
-    - type: Transform
-      pos: 14.5,47.5
-      parent: 1653
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.48
-            - 0.25,-0.48
-            - 0.25,0.48
-            - -0.25,0.48
-          mask:
-          - Impassable
-          - TableLayer
-          - LowImpassable
-          layer:
-          - BulletImpassable
-          - Opaque
-          density: 75
-          hard: True
-          restitution: 0
-          friction: 0.4
-    - type: EntityStorage
-      open: True
-      removedMasks: 20
-    - type: PlaceableSurface
-      isPlaceable: True
-    - type: Physics
-      bodyType: Static
-  - uid: 1815
-    components:
-    - type: Transform
-      pos: 10.5,42.5
+      pos: 8.5,42.5
       parent: 1653
     - type: Physics
       bodyType: Static
-  - uid: 1816
+  - uid: 1812
     components:
     - type: Transform
       pos: 12.5,42.5
       parent: 1653
     - type: Physics
       bodyType: Static
-  - uid: 1818
+  - uid: 1813
     components:
     - type: Transform
-      pos: 14.5,42.5
+      pos: 12.5,47.5
       parent: 1653
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.48
-            - 0.25,-0.48
-            - 0.25,0.48
-            - -0.25,0.48
-          mask:
-          - Impassable
-          - TableLayer
-          - LowImpassable
-          layer:
-          - BulletImpassable
-          - Opaque
-          density: 75
-          hard: True
-          restitution: 0
-          friction: 0.4
-    - type: EntityStorage
-      open: True
-      removedMasks: 20
-    - type: PlaceableSurface
-      isPlaceable: True
     - type: Physics
       bodyType: Static
-  - uid: 1823
+  - uid: 1814
+    components:
+    - type: Transform
+      pos: 14.5,46.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1815
+    components:
+    - type: Transform
+      pos: 8.5,44.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1816
+    components:
+    - type: Transform
+      pos: 8.5,43.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1825
+    components:
+    - type: Transform
+      pos: 10.5,43.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1826
+    components:
+    - type: Transform
+      pos: 10.5,42.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1832
     components:
     - type: Transform
       pos: 12.5,44.5
       parent: 1653
     - type: Physics
       bodyType: Static
-  - uid: 1825
+  - uid: 1834
     components:
     - type: Transform
       pos: 12.5,43.5
@@ -11633,140 +11516,61 @@ entities:
   - uid: 1836
     components:
     - type: Transform
-      pos: 14.5,46.5
+      pos: 12.5,46.5
       parent: 1653
     - type: Physics
       bodyType: Static
-  - uid: 1841
+  - uid: 1839
     components:
     - type: Transform
       pos: 14.5,48.5
       parent: 1653
     - type: Physics
       bodyType: Static
-  - uid: 1859
+  - uid: 1840
     components:
     - type: Transform
-      pos: 14.5,43.5
+      pos: 16.5,32.5
       parent: 1653
     - type: Physics
       bodyType: Static
-  - uid: 1876
+  - uid: 1841
     components:
     - type: Transform
-      pos: 14.5,44.5
-      parent: 1653
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.48
-            - 0.25,-0.48
-            - 0.25,0.48
-            - -0.25,0.48
-          mask:
-          - Impassable
-          - TableLayer
-          - LowImpassable
-          layer:
-          - BulletImpassable
-          - Opaque
-          density: 75
-          hard: True
-          restitution: 0
-          friction: 0.4
-    - type: EntityStorage
-      open: True
-      removedMasks: 20
-    - type: PlaceableSurface
-      isPlaceable: True
-    - type: Physics
-      bodyType: Static
-  - uid: 1901
-    components:
-    - type: Transform
-      pos: 10.5,44.5
+      pos: 30.5,40.5
       parent: 1653
     - type: Physics
       bodyType: Static
-  - uid: 1964
-    components:
-    - type: Transform
-      pos: 8.5,44.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-  - uid: 1965
-    components:
-    - type: Transform
-      pos: 10.5,43.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-  - uid: 1975
-    components:
-    - type: Transform
-      pos: 8.5,43.5
-      parent: 1653
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.48
-            - 0.25,-0.48
-            - 0.25,0.48
-            - -0.25,0.48
-          mask:
-          - Impassable
-          - TableLayer
-          - LowImpassable
-          layer:
-          - BulletImpassable
-          - Opaque
-          density: 75
-          hard: True
-          restitution: 0
-          friction: 0.4
-    - type: EntityStorage
-      open: True
-      removedMasks: 20
-    - type: PlaceableSurface
-      isPlaceable: True
-    - type: Physics
-      bodyType: Static
-  - uid: 1984
-    components:
-    - type: Transform
-      pos: 22.5,30.5
-      parent: 1653
-    - type: Physics
-      bodyType: Static
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 1985
-          - 1986
-  - uid: 2193
+  - uid: 1842
     components:
     - type: Transform
       pos: 24.5,38.5
       parent: 1653
     - type: Physics
       bodyType: Static
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 2197
+  - uid: 1859
+    components:
+    - type: Transform
+      pos: 26.5,30.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+  - uid: 1876
+    components:
+    - type: Transform
+      pos: 30.5,38.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
+- proto: ClosetBaseAnCo
+  entities:
+  - uid: 202
+    components:
+    - type: Transform
+      pos: 10.5,6.5
+      parent: 1653
+    - type: Physics
+      bodyType: Static
 - proto: ClothingHeadHatCardinal
   entities:
   - uid: 2132
@@ -13587,36 +13391,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 40.5,6.5
       parent: 1653
-- proto: GasTankAnCo
-  entities:
-  - uid: 775
-    components:
-    - type: Transform
-      parent: 774
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 779
-    components:
-    - type: Transform
-      parent: 778
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 782
-    components:
-    - type: Transform
-      parent: 781
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 1985
-    components:
-    - type: Transform
-      parent: 1984
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: GeneratorRTG
   entities:
   - uid: 288
@@ -14072,21 +13846,6 @@ entities:
       parent: 1653
 - proto: MedicalBed
   entities:
-  - uid: 211
-    components:
-    - type: Transform
-      pos: 5.5,14.5
-      parent: 1653
-  - uid: 1426
-    components:
-    - type: Transform
-      pos: 5.5,15.5
-      parent: 1653
-  - uid: 1427
-    components:
-    - type: Transform
-      pos: 5.5,13.5
-      parent: 1653
   - uid: 2111
     components:
     - type: Transform
@@ -16048,108 +15807,6 @@ entities:
     - type: Transform
       pos: 15.5,30.5
       parent: 1653
-- proto: SpawnAnCoClothingRandom
-  entities:
-  - uid: 1812
-    components:
-    - type: Transform
-      pos: 8.514921,43.482124
-      parent: 1653
-  - uid: 1814
-    components:
-    - type: Transform
-      pos: 8.587837,43.37796
-      parent: 1653
-  - uid: 1817
-    components:
-    - type: Transform
-      pos: 14.518755,42.430042
-      parent: 1653
-  - uid: 1826
-    components:
-    - type: Transform
-      pos: 8.619087,43.294624
-      parent: 1653
-  - uid: 1832
-    components:
-    - type: Transform
-      pos: 14.518755,42.430042
-      parent: 1653
-  - uid: 1834
-    components:
-    - type: Transform
-      pos: 12.643755,46.425186
-      parent: 1653
-  - uid: 1839
-    components:
-    - type: Transform
-      pos: 14.560422,42.40921
-      parent: 1653
-  - uid: 1840
-    components:
-    - type: Transform
-      pos: 14.550005,44.586292
-      parent: 1653
-  - uid: 1842
-    components:
-    - type: Transform
-      pos: 14.518755,44.53421
-      parent: 1653
-  - uid: 1879
-    components:
-    - type: Transform
-      pos: 14.550005,44.586292
-      parent: 1653
-  - uid: 1904
-    components:
-    - type: Transform
-      pos: 12.643755,46.425186
-      parent: 1653
-  - uid: 1905
-    components:
-    - type: Transform
-      pos: 12.643755,46.425186
-      parent: 1653
-  - uid: 1906
-    components:
-    - type: Transform
-      pos: 14.456255,47.4356
-      parent: 1653
-  - uid: 1963
-    components:
-    - type: Transform
-      pos: 14.456255,47.4356
-      parent: 1653
-  - uid: 2561
-    components:
-    - type: Transform
-      pos: 18.464725,40.546646
-      parent: 1653
-  - uid: 2562
-    components:
-    - type: Transform
-      pos: 18.464725,40.546646
-      parent: 1653
-  - uid: 2563
-    components:
-    - type: Transform
-      pos: 24.51846,40.515396
-      parent: 1653
-  - uid: 2601
-    components:
-    - type: Transform
-      pos: 24.58096,40.53102
-      parent: 1653
-  - uid: 2602
-    components:
-    - type: Transform
-      pos: 18.495975,40.53102
-      parent: 1653
-  - uid: 2603
-    components:
-    - type: Transform
-      pos: 24.61221,40.53102
-      parent: 1653
 - proto: SpawnAnCoEndsRandom
   entities:
   - uid: 487
@@ -16218,6 +15875,11 @@ entities:
     - type: Transform
       pos: 21.5,36.5
       parent: 1653
+  - uid: 776
+    components:
+    - type: Transform
+      pos: 34.5,22.5
+      parent: 1653
   - uid: 1472
     components:
     - type: Transform
@@ -16242,6 +15904,116 @@ entities:
     components:
     - type: Transform
       pos: 2.5,3.5
+      parent: 1653
+- proto: SpawnAnCoFoodRandom
+  entities:
+  - uid: 559
+    components:
+    - type: Transform
+      pos: 1.5,40.5
+      parent: 1653
+  - uid: 1145
+    components:
+    - type: Transform
+      pos: 5.5,38.5
+      parent: 1653
+  - uid: 1352
+    components:
+    - type: Transform
+      pos: 18.5,19.5
+      parent: 1653
+  - uid: 1353
+    components:
+    - type: Transform
+      pos: 19.5,19.5
+      parent: 1653
+  - uid: 1666
+    components:
+    - type: Transform
+      pos: 1.5,38.5
+      parent: 1653
+  - uid: 1724
+    components:
+    - type: Transform
+      pos: 1.5,40.5
+      parent: 1653
+  - uid: 1957
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,1.5
+      parent: 1653
+  - uid: 1981
+    components:
+    - type: Transform
+      pos: 3.5,32.5
+      parent: 1653
+  - uid: 1982
+    components:
+    - type: Transform
+      pos: 1.5,32.5
+      parent: 1653
+- proto: SpawnAnCoHardsuitRandom
+  entities:
+  - uid: 596
+    components:
+    - type: Transform
+      pos: 30.5,2.5
+      parent: 1653
+  - uid: 836
+    components:
+    - type: Transform
+      pos: 20.5,2.5
+      parent: 1653
+  - uid: 1355
+    components:
+    - type: Transform
+      pos: 32.5,2.5
+      parent: 1653
+  - uid: 1462
+    components:
+    - type: Transform
+      pos: 18.5,44.5
+      parent: 1653
+  - uid: 1463
+    components:
+    - type: Transform
+      pos: 18.5,46.5
+      parent: 1653
+  - uid: 1518
+    components:
+    - type: Transform
+      pos: 22.5,2.5
+      parent: 1653
+  - uid: 1599
+    components:
+    - type: Transform
+      pos: 18.5,45.5
+      parent: 1653
+  - uid: 1602
+    components:
+    - type: Transform
+      pos: 54.5,40.5
+      parent: 1653
+  - uid: 1692
+    components:
+    - type: Transform
+      pos: 22.496225,40.56953
+      parent: 1653
+  - uid: 2010
+    components:
+    - type: Transform
+      pos: 20.5,44.5
+      parent: 1653
+  - uid: 2011
+    components:
+    - type: Transform
+      pos: 20.5,46.5
+      parent: 1653
+  - uid: 2264
+    components:
+    - type: Transform
+      pos: 20.5,45.5
       parent: 1653
 - proto: SpawnAnCoInfernoMobsRandom
   entities:
@@ -16465,116 +16237,6 @@ entities:
     - type: Transform
       pos: 11.5,45.5
       parent: 1653
-- proto: SpawnAnCoFoodRandom
-  entities:
-  - uid: 559
-    components:
-    - type: Transform
-      pos: 1.5,40.5
-      parent: 1653
-  - uid: 1145
-    components:
-    - type: Transform
-      pos: 5.5,38.5
-      parent: 1653
-  - uid: 1352
-    components:
-    - type: Transform
-      pos: 18.5,19.5
-      parent: 1653
-  - uid: 1353
-    components:
-    - type: Transform
-      pos: 19.5,19.5
-      parent: 1653
-  - uid: 1666
-    components:
-    - type: Transform
-      pos: 1.5,38.5
-      parent: 1653
-  - uid: 1724
-    components:
-    - type: Transform
-      pos: 1.5,40.5
-      parent: 1653
-  - uid: 1957
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,1.5
-      parent: 1653
-  - uid: 1981
-    components:
-    - type: Transform
-      pos: 3.5,32.5
-      parent: 1653
-  - uid: 1982
-    components:
-    - type: Transform
-      pos: 1.5,32.5
-      parent: 1653
-- proto: SpawnAnCoHardsuitRandom
-  entities:
-  - uid: 596
-    components:
-    - type: Transform
-      pos: 30.5,2.5
-      parent: 1653
-  - uid: 836
-    components:
-    - type: Transform
-      pos: 20.5,2.5
-      parent: 1653
-  - uid: 1355
-    components:
-    - type: Transform
-      pos: 32.5,2.5
-      parent: 1653
-  - uid: 1462
-    components:
-    - type: Transform
-      pos: 18.5,44.5
-      parent: 1653
-  - uid: 1463
-    components:
-    - type: Transform
-      pos: 18.5,46.5
-      parent: 1653
-  - uid: 1518
-    components:
-    - type: Transform
-      pos: 22.5,2.5
-      parent: 1653
-  - uid: 1599
-    components:
-    - type: Transform
-      pos: 18.5,45.5
-      parent: 1653
-  - uid: 1602
-    components:
-    - type: Transform
-      pos: 54.5,40.5
-      parent: 1653
-  - uid: 1692
-    components:
-    - type: Transform
-      pos: 22.496225,40.56953
-      parent: 1653
-  - uid: 2010
-    components:
-    - type: Transform
-      pos: 20.5,44.5
-      parent: 1653
-  - uid: 2011
-    components:
-    - type: Transform
-      pos: 20.5,46.5
-      parent: 1653
-  - uid: 2264
-    components:
-    - type: Transform
-      pos: 20.5,45.5
-      parent: 1653
 - proto: SpawnAnCoMechTitanInferno
   entities:
   - uid: 2608
@@ -16677,6 +16339,11 @@ entities:
     components:
     - type: Transform
       pos: 26.5,20.5
+      parent: 1653
+  - uid: 780
+    components:
+    - type: Transform
+      pos: 9.5,7.5
       parent: 1653
   - uid: 798
     components:
@@ -16921,13 +16588,6 @@ entities:
     components:
     - type: Transform
       pos: 14.525674,40.558178
-      parent: 1653
-- proto: SpawnDungeonLootArmoryGuns
-  entities:
-  - uid: 2627
-    components:
-    - type: Transform
-      pos: 4.8167386,43.759712
       parent: 1653
 - proto: SpawnDungeonLootArmoryMelee
   entities:
