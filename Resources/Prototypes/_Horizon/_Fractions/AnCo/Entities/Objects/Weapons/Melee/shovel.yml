@@ -137,3 +137,54 @@
             max: 5
   - type: StaticPrice
     price: 7000
+
+- type: entity
+  name: казмиевая лопата АнКо
+  parent: AnCoShovel
+  id: AnCoShovelDEBUG
+  description: Универсальный инструмент для копания, скручивания, раскручивания, резания, нарезки, вскрытия. Да и в конце концов универсальный щит для защиты и оглушения.
+  suffix: StarHorizon, AnCo, Weapon, Боньк
+  components:
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          KazmieSheet:
+            min: 1
+            max: 5
+  - type: Blocking
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
+        Heat: 1
+        Cold: 1
+        Energy: 1
+        Radiation: 1
+    activeBlockModifier:
+      coefficients:
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
+        Heat: 1
+        Cold: 1
+        Energy: 1
+        Radiation: 1
+      flatReductions:
+        Blunt: 9999
+        Slash: 9999
+        Piercing: 9999
+        Heat: 9999
+        Cold: 9999
+        Energy: 9999
+        Radiation: 9999
