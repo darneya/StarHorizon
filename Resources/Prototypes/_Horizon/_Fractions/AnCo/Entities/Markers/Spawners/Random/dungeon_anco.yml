@@ -294,10 +294,10 @@
         state: icon
   - type: RandomSpawner
     prototypes:
-    - AnCoFabricator
-    - AnCoWeaponFabricator
-    - AnCoSuitFabricator
-    - AnCoOtherFabricator
+    - AnCoFabricatorDisableToolUse
+    - AnCoWeaponFabricatorDisableToolUse
+    - AnCoSuitFabricatorDisableToolUse
+    - AnCoOtherFabricatorDisableToolUse
     chance: 1
     offset: 0.0
     rarePrototypes:

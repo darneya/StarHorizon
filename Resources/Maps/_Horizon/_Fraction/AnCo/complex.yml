@@ -4634,7 +4634,7 @@ entities:
     - type: Transform
       pos: 2.5,25.5
       parent: 1653
-- proto: AnCoFabricator
+- proto: AnCoFabricatorDisableToolUse
   entities:
   - uid: 557
     components:
@@ -4914,7 +4914,7 @@ entities:
     - type: Transform
       pos: 0.5255351,3.5145497
       parent: 1653
-- proto: AnCoOtherFabricator
+- proto: AnCoOtherFabricatorDisableToolUse
   entities:
   - uid: 768
     components:
@@ -5204,7 +5204,7 @@ entities:
     - type: Transform
       pos: 30.5,36.5
       parent: 1653
-- proto: AnCoSuitFabricator
+- proto: AnCoSuitFabricatorDisableToolUse
   entities:
   - uid: 772
     components:
@@ -6701,7 +6701,7 @@ entities:
     - type: Transform
       pos: 34.5,19.5
       parent: 1653
-- proto: AnCoWeaponFabricator
+- proto: AnCoWeaponFabricatorDisableToolUse
   entities:
   - uid: 771
     components:
@@ -11463,7 +11463,7 @@ entities:
     - type: Transform
       pos: 48.72194,4.4387217
       parent: 1653
-- proto: ClosetBaseAnCo
+- proto: ClosetAnCoFillDungeon
   entities:
   - uid: 202
     components:
@@ -14479,7 +14479,7 @@ entities:
 
         [bold]Предназначен:[/bold] ПД-АнКо
 
-        [bold]Составитель:[/bold] 
+        [bold]Составитель:[/bold]
 
         [bold]Должность:[/bold]
 

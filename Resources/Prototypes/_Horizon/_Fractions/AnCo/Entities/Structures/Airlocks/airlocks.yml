@@ -9,6 +9,25 @@
     sprite: _Horizon/_Fractions/AnCo/Structures/Airlocks/airlockglass.rsi
 
 - type: entity
+  id: AnCoAirlockGlassDungeon
+  parent: AnCoAirlockGlass
+  name: стеклянный шлюз АнКо
+  suffix: StarHorizon, AnCo, Dungeon
+  description: зачем им окна?
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Airlocks/airlockglass.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+
+- type: entity
   id: AnCoAirlock
   parent: Airlock
   name: шлюз АнКо

@@ -77,11 +77,11 @@
   table: !type:AllSelector
     children:
     - id: GrilleDungeon
-    - id: AnCoWindowArdon
+    - id: AnCoWindowArdonDungeon
 
 - type: entityTable
   id: AnCoAirlockGlass
   table: !type:AllSelector
     children:
     - id: CableApcExtension
-    - id: AnCoAirlockGlass
+    - id: AnCoAirlockGlassDungeon
