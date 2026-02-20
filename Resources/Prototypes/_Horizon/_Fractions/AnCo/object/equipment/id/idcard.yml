@@ -32,6 +32,7 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Титан
 - type: entity
@@ -52,6 +53,7 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Паук
 - type: entity
@@ -72,6 +74,7 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Рыцарь
 - type: entity
@@ -92,6 +95,7 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Офицер
 - type: entity
@@ -112,6 +116,7 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Кадет
 - type: entity
@@ -132,6 +137,7 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo
 
 # Рипсоид, не спрашивайте кто это такой, это трансбот. Xigovir очень крутой и.. боже он черный!! В шахту его!!!
 - type: entity
@@ -152,3 +158,4 @@
   - type: Access
     tags:
     - Maintenance
+    - AnCo

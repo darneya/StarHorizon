@@ -1,59 +1,101 @@
 <Document>
-  # IZAKAYA-CLASS RESTAURANT SHUTTLE
+  # РЕСТОРАННЫЙ ШАТТЛ КЛАССА IZAKAYA
   <Box>
   <GuideEntityEmbed Entity="SignKitchen" Caption=""/>
-  <GuideEntityEmbed Entity="KitchenDeepFryer" Caption="Frying"/>
-  <GuideEntityEmbed Entity="KitchenElectricRange" Caption="Cooking"/>
-  <GuideEntityEmbed Entity="VendingMachineBooze" Caption="Bartendry"/>
-  <GuideEntityEmbed Entity="SignBar" Caption=""/>
+  <GuideEntityEmbed Entity="KitchenAssembler" Caption=""/>
+  <GuideEntityEmbed Entity="KitchenMicrowave" Caption=""/>
+  <GuideEntityEmbed Entity="KitchenDeepFryer" Caption=""/>
+  <GuideEntityEmbed Entity="KitchenElectricRange" Caption=""/>
+  <GuideEntityEmbed Entity="SignKitchen" Caption=""/>
   </Box>
   <Box>
   <GuideEntityEmbed Entity="ShuttleMapIzakaya" Caption=""/>
   </Box>
-    [color=#a4885c]Ship Size:[/color] Medium
+  <Box>
+  <GuideEntityEmbed Entity="SignBar" Caption=""/>
+  <GuideEntityEmbed Entity="BoozeDispenser" Caption=""/>
+  <GuideEntityEmbed Entity="VendingMachineBooze" Caption=""/>
+  <GuideEntityEmbed Entity="SodaDispenser" Caption=""/>
+  <GuideEntityEmbed Entity="SignBar" Caption=""/>
+  </Box>
+    [color=#a4885c]Размер корабля:[/color] Средний
 
-  [color=#a4885c]Recommended Crew:[/color] 4-8
+  [color=#a4885c]Рекомендуемый экипаж:[/color] 4-8
 
-  [color=#a4885c]Power Gen Type:[/color] Uranium
+  [color=#a4885c]Тип генератора питания:[/color] Урановый
 
-  [color=#a4885c]Expeditions:[/color] None
+  [color=#a4885c]Экспедиции:[/color] Нет
 
-  [color=#a4885c]IFF Console:[/color] None
+  [color=#a4885c]Консоль IFF:[/color] Нет
 
-  "A medium-size, japanese-inspired restaurant/pub ship with a large dining area, and equally large kitchen."
+  "Ресторан/паб среднего размера в японском стиле с большой обеденной зоной и такой же большой кухней."
 
-  "This restaurant shuttle seats up to 28 customers in the dining area, providing the shuttle the capability to seat people all over the sector at once."
+  "Этот ресторанный шаттл вмещает до 28 клиентов в обеденной зоне, что позволяет шаттлу одновременно обслуживать людей по всему сектору."
 
-  "The kitchen has a main cooking area can be used by up to 2 chefs comfortably, a separate beverages area to be used by a bartender, a food storage to store ingredients,
-  and a freezer to butcher meats and store ingredients long-term."
+  "На кухне есть основная зона для приготовления пищи, которой могут комфортно пользоваться до 2 поваров, отдельная зона для напитков для бармена, кладовая для хранения ингредиентов, морозильная камера для разделки мяса и долгосрочного хранения ингредиентов, а также зона для фритюра."
 
-  "The in-house botany has 10 hydrophonics tray and an animal pen, it is located near the kitchen for ease of transport"
+  "Внутренняя ботаника имеет 5 гидропонных лотков и загон для животных, она расположена рядом с кухней для удобства транспортировки."
 
-  [italic]Brought to you by Settler's Shipbuilding Firm.[/italic]
+  [italic]Предоставлено Settler's LLC.[/italic]
 
-  # Ship Functions
+  # КОНТРОЛЬНЫЙ СПИСОК ПЕРЕД ВЫЛЕТОМ
 
-  # Entertainment
+  ## 1. Электропитание
 
-  [textlink="Food Recipes" link="FoodRecipes"/]
+  ## 1.1. Аккумуляторные модули
+  <Box>
+  <GuideEntityEmbed Entity="SMESBasic"/>
+  <GuideEntityEmbed Entity="SubstationBasic"/>
+  <GuideEntityEmbed Entity="APCBasic"/>
+  </Box>
 
-  [textlink="Drinks" link="Drinks"/]
+  - Проверьте, что блок СМЭС закреплен на полу.
+  - Проверьте, что блок подстанции закреплен на полу.
+  - Проверьте, что главный автомат блока ЛКП включен.
+  - Проверьте текущую нагрузку блока ЛКП (Вт).
 
-  [textlink="Botany" link="Botany"/]
+  ## 1.2. Генераторный блок S.U.P.E.R.P.A.C.M.A.N.
+  <Box>
+  <GuideEntityEmbed Entity="PortableGeneratorSuperPacmanShuttle"/>
+  <GuideEntityEmbed Entity="FuelUranium"/>
+  </Box>
 
-  # Piloting
+  - Проверьте, что генераторные блоки S.U.P.E.R.P.A.C.M.A.N. закреплены на полу.
+  - Проверьте, что генераторные блоки S.U.P.E.R.P.A.C.M.A.N. имеют топливо. Для длительных полетов убедитесь, что у вас достаточно запасов топлива для поддержания выработки электроэнергии во время полета.
+  - Проверьте, что генераторные блоки S.U.P.E.R.P.A.C.M.A.N. настроены на выход HV.
+  - Установите целевую мощность на 28-30 [bold]кВт[/bold].
+  - Запустите генераторные блоки S.U.P.E.R.P.A.C.M.A.N.
 
-  [textlink="Piloting" link="Piloting"/]
+  ## 2. Атмосферные системы
 
-  [textlink="Sector Topology" link="SectorTopology"/]
+  ## 2.1. Распределительная петля
+  <Box>
+  <GuideEntityEmbed Entity="OxygenCanister"/>
+  <GuideEntityEmbed Entity="NitrogenCanister"/>
+  <GuideEntityEmbed Entity="GasPort"/>
+  <GuideEntityEmbed Entity="GasMixer"/>
+  </Box>
 
-  # Hiring crew
+  - Проверьте, что баллон с O2 закреплен на соединительном порту.
+  - Проверьте, что оба баллона с N2 закреплены на соединительном порту.
+  - Проверьте, что газовый смеситель настроен на правильное соотношение смешивания (21% Кислорода, 79% Азота).
+  - Проверьте, что газовый смеситель установлен на 101 кПа.
+  - Убедитесь, что газовый смеситель включен.
 
-  [textlink="Hiring" link="Hiring"/]
+  ## 2.2. Петля отходов
 
-  As a Captain of a Nanotrasen vessel, you have the authority to hire, fire, demote, or promote crew members at will.
+  <Box>
+  <GuideEntityEmbed Entity="AirAlarm"/>
+  </Box>
 
-  # PREFLIGHT CHECKLIST
+  - Убедитесь, что все трубы петли отходов правильно установлены.
 
-  [textlink="Preflight Checklist" link="PreflightChecklist"/]
+  ## 3. Прочие проверки
+  <Box>
+  <GuideEntityEmbed Entity="Gyroscope"/>
+  <GuideEntityEmbed Entity="GravityGeneratorMini"/>
+  </Box>
+
+  - Проверьте, что гироскоп закреплен, подключен к питанию и включен.
+  - Проверьте, что мини-гравитационный генератор закреплен, подключен к питанию и включен.
 </Document>

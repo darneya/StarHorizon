@@ -121,7 +121,9 @@ namespace Content.Server.Entry
                 var sponsorManager = IoCManager.Resolve<SponsorManager>();
                 sponsorManager.Initialize(); // _Horizon
                 sponsorManager.LoadSponsorsInfoFile(); // _Horizon
-                sponsorManager.ReadSponsorsFile(); // _Horizon
+                sponsorManager.SyncDiscordSponsorsAtRoundStart(); // _Horizon
+                sponsorManager.UpdateSponsorsAndBalances(); // _Horizon
+                sponsorManager.StartWatching(); // _Horizon
                 IoCManager.Resolve<MiniAuthManager>();
 
                 _voteManager.Initialize();

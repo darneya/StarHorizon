@@ -1,5 +1,5 @@
-ent-ClothingHeadHatBeretEliteCmo = chief medical officer's beret
-    .desc = Turquoise beret with a cross on the front. The sight of it calms you down and makes it clear that you will be cured.
+ent-ClothingHeadHatBeretEliteCmo = берет главного врача
+    .desc = Бирюзовый берет с крестом спереди. Вид его успокаивает и даёт понять, что вас вылечат.
 ent-ClothingHeadHatGoldCaptain = золотая капитанская каска
     .desc = Выдаётся почётным и опытным членам экипажа.
     .suffix = StarHorizon

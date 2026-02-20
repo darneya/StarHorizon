@@ -2,7 +2,6 @@
   id: NFBasicCalmEventsTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
-    - id: NFBreakerFlip
     - id: NFIonStorm
     - id: NFPowerGridCheck
     - id: NFRandomSentience
@@ -13,19 +12,6 @@
     - id: NFBluespaceSyndicateCrate
     - id: NFBluespaceBrokenMcDelivery
     - id: NFSmugglingFax
-
-- type: entity
-  id: NFBreakerFlip
-  parent: BaseGameRule
-  components:
-  - type: StationEvent
-    startAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_breaker_flip.ogg
-    weight: 2 # Horizon
-    earliestStart: 120 # Horizon
-    duration: 1
-    minimumPlayers: 20 # Horizon
-  - type: BreakerFlipRule
 
 - type: entity
   id: NFPowerGridCheck

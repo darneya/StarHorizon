@@ -34,6 +34,14 @@ public sealed partial class LimbSystem //: SharedLimbSystem
         return true;
     }
 
+    public bool TryAttachLimb(Entity<HumanoidAppearanceComponent?> body, string slot, Entity<BodyPartComponent> part, Entity<BodyPartComponent> limb)
+    {
+        if (!Resolve(body.Owner, ref body.Comp, false))
+            return false;
+
+        return AttachLimb((body.Owner, body.Comp), slot, part, limb);
+    }
+
     public bool AttachItem(EntityUid body, string slot, Entity<BodyPartComponent> part, Entity<MetaDataComponent> item)
     {
         var marker = EnsureComp<CustomLimbMarkerComponent>(item);
@@ -72,6 +80,18 @@ public sealed partial class LimbSystem //: SharedLimbSystem
             RemoveLimbVisual(body, limb);
             RemoveLimb(body, limb);
         }
+    }
+
+    public bool TryAmputate(Entity<TransformComponent?, HumanoidAppearanceComponent?, BodyComponent?> body, Entity<TransformComponent?, MetaDataComponent?, BodyPartComponent?> limb)
+    {
+        if (!Resolve(body.Owner, ref body.Comp1, ref body.Comp2, ref body.Comp3, false))
+            return false;
+
+        if (!Resolve(limb.Owner, ref limb.Comp1, ref limb.Comp2, ref limb.Comp3, false))
+            return false;
+
+        Amputate((body.Owner, body.Comp1, body.Comp2, body.Comp3), (limb.Owner, limb.Comp1, limb.Comp2, limb.Comp3));
+        return true;
     }
 
     private void AddItemLimb(EntityUid body, string slot, Entity<MetaDataComponent> item)

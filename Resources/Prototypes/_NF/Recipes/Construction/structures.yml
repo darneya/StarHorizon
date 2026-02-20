@@ -14,8 +14,6 @@
 
 - type: construction
   id: GaslockRecipe
-  name: Gaslock
-  description: Connects gas pipes on separate ships or stations together.
   graph: GaslockConstruction  
   startNode: start
   targetNode: building  

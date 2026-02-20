@@ -192,14 +192,14 @@
     requiredTag: Scarf
 
 - type: expeditionGoal
-  id: BountyCottonBoll
+  id: BountyCottonBol
   specification: Crew
   randomAmount:
     min: 4
     max: 9
   goal: !type:EntityExpeditionGoal
     description: bounty-description-cotton-boll
-    iconEntity: CottonBoll
+    iconEntity: CottonBol
     reward: 8600
     requiredTag: CottonBoll
 

@@ -1,21 +1,22 @@
-ent-WallRockChromiteEmerald = { ent-NFWallRockChromiteOre }
+ent-WallRockChromiteEmerald = { ent-WallRockChromite }
     .desc = Жила руды, богатая изумрудами.
     .suffix = Изумруд
-ent-WallRockChromiteRuby = { ent-NFWallRockChromiteOre }
+ent-WallRockChromiteRuby = { ent-WallRockChromite }
     .desc = Жила руды, богатая рубинами.
     .suffix = Рубин
-ent-WallRockChromiteSapphire = { ent-NFWallRockChromiteOre }
+ent-WallRockChromiteSapphire = { ent-WallRockChromite }
     .desc = Жила руды, богатая сапфирами.
     .suffix = Сапфир
-ent-WallRockChromiteTopaz = { ent-NFWallRockChromiteOre }
+ent-WallRockChromiteTopaz = { ent-WallRockChromite }
     .desc = Жила руды, богатая топазами.
     .suffix = Топаз
-ent-WallRockChromitePsycore = { ent-NFWallRockChromiteOre }
+ent-WallRockChromitePsycore = { ent-WallRockChromite }
     .desc = Жила руды, богатая псикором.
     .suffix = Псикор
-ent-WallRockChromiteTitan = { ent-NFWallRockChromiteOre }
+ent-WallRockChromiteTitan = { ent-WallRockChromite }
     .desc = Жила руды, богатая титаном.
     .suffix = Титан
+<<<<<<< HEAD
 ent-WallRockChromitePlutonium = { ent-NFWallRockChromiteOre }
     .desc = An ore vein rich with plutonium.
     .suffix = Plutonium
@@ -25,3 +26,14 @@ ent-WallRockChromiteNeptunium = { ent-NFWallRockChromiteOre }
 ent-WallRockChromiteTorium = { ent-NFWallRockChromiteOre }
     .desc = An ore vein rich with torium.
     .suffix = Torium
+=======
+ent-WallRockChromiteNeptunium = { ent-WallRockChromite }
+    .desc = Жила руды, богатая нептунием.
+    .suffix = Нептуний
+ent-WallRockChromitePlutonium = { ent-WallRockChromite }
+    .desc = Жила руды, богатая плутонием.
+    .suffix = Плутоний
+ent-WallRockChromiteTorium = { ent-WallRockChromite }
+    .desc = Жила руды, богатая торием.
+    .suffix = Торий
+>>>>>>> origin/develop

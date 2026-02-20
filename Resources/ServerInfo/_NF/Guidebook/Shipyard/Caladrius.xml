@@ -1,45 +1,37 @@
 <Document>
-# CALADRIUS-CLASS HOSPITAL SHUTTLE
-<Box>
-  <GuideEntityEmbed Entity="BannerMedical" Caption="Recover"/>
-  <GuideEntityEmbed Entity="NFPosterContrabandFsbLogo" Caption="Research"/>
-  <GuideEntityEmbed Entity="BannerEngineering" Caption="Restore"/>
-</Box>
-<Box>
-<GuideEntityEmbed Entity="ShuttleMapCaladrius" Caption=""/>
-</Box>
-[color=#a4885c]Ship Size:[/color] Large - Carrier
+  # ГОСПИТАЛЬНЫЙ ШАТТЛ КЛАССА CALADRIUS
+  <Box>
+    <GuideEntityEmbed Entity="BannerMedical" Caption="Восстановить"/>
+    <GuideEntityEmbed Entity="NFPosterContrabandFsbLogo" Caption="Исследования"/>
+    <GuideEntityEmbed Entity="BannerEngineering" Caption="Восстановить"/>
+  </Box>
+  <Box>
+  <GuideEntityEmbed Entity="ShuttleMapCaladrius" Caption=""/>
+  </Box>
+  [color=#a4885c]Размер корабля:[/color] Большой
 
-[color=#a4885c]Recommended Crew:[/color] 4-10
+  [color=#a4885c]Рекомендуемый экипаж:[/color] 5-10
 
-[color=#a4885c]Power Gen Type:[/color] Bananium
+  [color=#a4885c]Тип генератора питания:[/color] ДАМ
 
-# Shuttle Brief
+  [color=#a4885c]Экспедиции:[/color] Нет
 
-"The Caladrius is the Far Star Corporations's premier expeditionary medical carrier. Designed for large scale colonization support, humanitarian relief, post-disaster investigation and recovery operations."
+  [color=#a4885c]Консоль IFF:[/color] Нет
 
-# Ship Functions
+  "Caladrius — это флагманский экспедиционный медицинский авианосец корпорации Far Star Biotech. Разработан для поддержки крупномасштабной колонизации, гуманитарной помощи, расследований после катастроф и восстановительных операций."
 
-<Box>
-  <GuideEntityEmbed Entity="ButtonFrameCautionSecurity" Caption="Bolt Exterior Airlocks"/>
-  <GuideEntityEmbed Entity="ButtonFrameCaution" Caption="Actuate Blast Doors"/>
-  <GuideEntityEmbed Entity="ButtonFrameGrey" Caption="Actuate Shutters"/>
-</Box>
+  # Функции корабля
 
-# Medical
+  <Box>
+    <GuideEntityEmbed Entity="ButtonFrameCautionSecurity" Caption="Запереть внешние шлюзы"/>
+    <GuideEntityEmbed Entity="ButtonFrameCaution" Caption="Привести в действие взрывозащитные двери"/>
+    <GuideEntityEmbed Entity="ButtonFrameGrey" Caption="Привести в действие ставни"/>
+  </Box>
 
-[textlink="Medicine" link="Medical Doctor"/]
+  # ШТАТ CALADRIUS
 
-[textlink="Chemistry" link="Chemist"/]
-
-[textlink="Chemicals" link="Chemicals"/]
-
-[textlink="Cryogenics" link="Cryogenics"/]
-
-# CALADRIUS STAFFING
-
-<Box>
-<GuideEntityEmbed Entity="RandomHumanoidVisitorCMO" Caption=""/>
+  <Box>
+  <GuideEntityEmbed Entity="RandomHumanoidVisitorCMO" Caption=""/>
 </Box>
 <Box>
   <GuideEntityEmbed Entity="RandomHumanoidVisitorParamedic" Caption=""/>
@@ -60,33 +52,81 @@
   <GuideEntityEmbed Entity="RandomHumanoidVisitorChaplain" Caption=""/>
 </Box>
 
-# PREFLIGHT CHECKLIST
+  # КОНТРОЛЬНЫЙ СПИСОК ПЕРЕД ВЫЛЕТОМ
 
-Thruster Power Systems
+  ## 1. Электропитание
+
+  ## 1.1 Силовые системы двигателей
 <Box>
- <GuideEntityEmbed Entity="ButtonFrameCaution" Caption="Toggle Thruster Power"/>
+  <GuideEntityEmbed Entity="ButtonFrameCaution" Caption="Включить/Выключить питание двигателей"/>
 </Box>
 
-- Adjacent to the power monitoring station in the primary power nacelle are the controls to toggle thruster power.
-- Engineers are advised to power down thrusters for maintenance or by commander directive.
+  - Рядом со станцией мониторинга питания в основной силовой гондоле находятся органы управления для включения/выключения питания двигателей.
+  - Инженерам рекомендуется отключать питание двигателей для технического обслуживания или по указанию командира.
 
-# Piloting
+  ## 1.2. Аккумуляторные модули
+<Box>
+  <GuideEntityEmbed Entity="SMESBasic"/>
+  <GuideEntityEmbed Entity="SubstationBasic"/>
+  <GuideEntityEmbed Entity="APCBasic"/>
+  </Box>
 
-[textlink="Piloting" link="Piloting"/]
+  - Проверьте, что блоки СМЭС закреплены на полу.
+  - Проверьте, что блок подстанции закреплен на полу.
+  - Проверьте, что главный автомат блока ЛКП включен.
+  - Проверьте текущую нагрузку блока ЛКП* (Вт).
 
-[textlink="Sector Topology" link="SectorTopology"/]
+  ## 1.3. Генераторный блок D-K Jr.
+  <Box>
+    <GuideEntityEmbed Entity="PortableGeneratorDKJr"/>
+    <GuideEntityEmbed Entity="FuelBananium"/>
+    <GuideEntityEmbed Entity="SignRadiation"/>
+  </Box>
 
-# Hiring crew
+  - Проверьте, закреплен ли генераторный блок D-K Jr. на полу.
+  - Проверьте, есть ли у генераторного блока D-K Jr. топливо. Для длительных полетов убедитесь, что у вас достаточно запасов топлива для поддержания выработки электроэнергии во время полета.
+  - Проверьте, настроен ли генераторный блок D-K Jr. на выход HV.
+  - Установите целевую мощность на 45 [bold]кВт[/bold].
+  - Запустите генераторный блок D-K Jr.
+  - Закройте радиационную защиту.
 
-[textlink="Hiring" link="Hiring"/]
+  ## 2. Атмосферные системы
 
-As a Captain of a Nanotrasen vessel, you have the authority to hire, fire, demote, or promote crew members at will.
+  ## 2.1. Распределительная петля
+  <Box>
+  <GuideEntityEmbed Entity="OxygenCanister"/>
+  <GuideEntityEmbed Entity="NitrogenCanister"/>
+  <GuideEntityEmbed Entity="GasPort"/>
+  <GuideEntityEmbed Entity="GasMixer"/>
+  <GuideEntityEmbed Entity="GasPressurePump"/>
+  </Box>
 
-# PREFLIGHT CHECKLIST
+  - Проверьте, что баллон с O2 закреплен на соединительном порту.
+  - Проверьте, что баллон с N2 закреплен на соединительном порту.
+  - Проверьте, что газовый смеситель настроен на правильное соотношение смешивания (21% Кислорода, 79% Азота).
+  - Проверьте, что газовый смеситель установлен на 101 кПа.
+  - Включите газовый смеситель.
 
-[textlink="Preflight Checklist" link="PreflightChecklist"/]
+  ## 2.2. Петля отходов
+  <Box>
+  <GuideEntityEmbed Entity="GasPressurePump"/>
+  </Box>
 
-- To utilize the Caladrius waste gas capture system the outboard pump must be deactivated and gasses routed into appropriate capture systems.
-- This system is best maintained by a trained atmospherics technician.
+  - Включите насос петли отходов (расположен в атмосферном отсеке).
+  - Обратите внимание, что Caladrius оснащен системой сбора отходящих газов. Доступ к ней осуществляется через порт в спасательном отсеке.
+  - Для использования системы сбора отходящих газов Caladrius внешний насос должен быть деактивирован, а газы направлены в соответствующие системы сбора.
+  - Эту систему лучше всего обслуживает обученный атмосферный техник.
 
+  ## 3. Прочие проверки
+  <Box>
+  <GuideEntityEmbed Entity="Gyroscope"/>
+  <GuideEntityEmbed Entity="GravityGeneratorMini"/>
+  <GuideEntityEmbed Entity="BlastDoor"/>
+  </Box>
+
+  - Проверьте, что гироскоп закреплен, подключен к питанию и включен.
+  - Проверьте, что мини-гравитационный генератор закреплен, подключен к питанию и включен.
+  - Проверьте, что взрывозащитные двери закрыты и закреплены.
+  - Убедитесь, что все соответствующие точки доступа к судну отмечены и должным образом защищены.
+  - Убедитесь, что ваш полет будет приятным и продуктивным. Все инструменты для обеспечения этого результата предоставлены, если использовать их надлежащим образом.
 </Document>

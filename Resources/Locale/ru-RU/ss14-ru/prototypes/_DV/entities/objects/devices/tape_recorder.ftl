@@ -1,10 +1,10 @@
-ent-TapeRecorder = tape recorder
-    .desc = Anything said into this device can and will be used against you in a court of space law.
+ent-TapeRecorder = диктофон
+    .desc = Всё сказанное в это устройство может и будет использовано против вас в космическом суде.
 ent-TapeRecorderFilled = { ent-TapeRecorder }
-    .suffix = Filled
+    .suffix = Заполненный
     .desc = { ent-TapeRecorder.desc }
-ent-CassetteTape = cassette tape
-    .desc = A magnetic tape that can hold up to two minutes of content on either side.
+ent-CassetteTape = кассета
+.desc = Магнитная лента, которая может хранить до двух минут контента на каждой стороне.
 ent-CassetteTapeInterview = { ent-CassetteTape }
-    .suffix = Interview with Garry Smosh
+    .suffix = Интервью с Гарри Смошем
     .desc = { ent-CassetteTape.desc }

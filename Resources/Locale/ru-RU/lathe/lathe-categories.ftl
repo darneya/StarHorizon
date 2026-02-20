@@ -4,6 +4,7 @@ lathe-category-circuitry = Электроника
 lathe-category-machines = Машины
 lathe-category-lights = Лампы
 lathe-category-mechs = Мехи
+lathe-category-shipammo = Корабельные снаряды
 lathe-category-tiles = Плитки
 lathe-category-parts = Компоненты
 lathe-category-robotics = Робототехника

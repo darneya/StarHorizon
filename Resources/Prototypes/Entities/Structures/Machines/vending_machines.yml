@@ -293,6 +293,8 @@
     guides:
     - Bartender
     - Drinks
+  - type: PirateBountyItem
+    id: BoozeDispenser # Horizon: алкомат и бухломат считаются автоматом с алкоголем для задачи пиратов
 
 - type: entity
   parent: VendingMachineBooze

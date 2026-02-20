@@ -153,7 +153,6 @@ directory = "replays/"
 
 [sponsor]
 # Paths to sponsor system files
-sponsors_path = "sponsorSystem/sponsors.txt"
-discord_sponsors_path = "sponsorSystem/discord_sponsors.txt"
-disposable_path = "sponsorSystem/disposable.txt"
+discord_sponsors_path = "sponsorSystem/warp/discord_sponsors.txt"
+disposable_path = "sponsorSystem/warp/disposable.txt"
 items_path = "sponsorSystem/sponsor_items.txt"

@@ -1,2 +1,2 @@
-ent-CourierPDA = mail carrier PDA
-    .desc = Smells like unopened letters.
+ent-CourierPDA = КПК почтальона
+    .desc = Пахнет нераспечатанными письмами.

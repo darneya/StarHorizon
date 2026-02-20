@@ -42,6 +42,8 @@
     sprite: _NF/Clothing/OuterClothing/Hardsuits/private_security.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitPrivateSecurity
+  - type: StaminaResistance
+    damageCoefficient: 0.8
 
 # Pilot Hardsuit - Spationaut stats
 - type: entity
@@ -99,6 +101,8 @@
     sprite: _NF/Clothing/OuterClothing/Hardsuits/maxim_prototype.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  - type: StaminaResistance
+    damageCoefficient: 0.8
   - type: Armor
     modifiers:
       coefficients:
@@ -158,6 +162,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdBronze
   - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: StaminaResistance
     damageCoefficient: 0.5
   - type: Armor
     modifiers:
@@ -271,6 +277,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdCombat
   - type: ExplosionResistance
     damageCoefficient: 0.4
+  - type: StaminaResistance
+    damageCoefficient: 0.5
   - type: Armor
     modifiers:
       coefficients:
@@ -299,6 +307,8 @@
     clothingPrototype: ClothingHeadHelmetHardsuitNfsdCommand
   - type: ExplosionResistance
     damageCoefficient: 0.4
+  - type: StaminaResistance
+    damageCoefficient: 0.5
   - type: Armor
     modifiers:
       coefficients:
@@ -333,6 +343,8 @@
         Caustic: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.8
+  - type: StaminaResistance
+    damageCoefficient: 0.8
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
@@ -366,6 +378,8 @@
         Caustic: 0.05
   - type: ExplosionResistance
     damageCoefficient: 0.8
+  - type: StaminaResistance
+    damageCoefficient: 0.5
   - type: PressureProtection
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
@@ -399,6 +413,8 @@
         Heat: 0.50
         Radiation: 0.4
         Caustic: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.85
     sprintModifier: 0.75

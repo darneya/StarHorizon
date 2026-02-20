@@ -612,7 +612,7 @@ namespace Content.Shared.Preferences
 
             if (configManager.GetCVar(CCVars.RestrictedNames))
             {
-                name = Regex.Replace(name, @"[^A-Z,a-z,А-Я,а-я,0-9, -, ']", string.Empty); // Horizon
+                name = Regex.Replace(name, @"[^A-Z,a-z,А-Я,а-я,0-9 ,'-]", string.Empty); // Horizon (hyphen at end = literal)
                 /*
                  * 0041-005A  Basic Latin: Uppercase Latin Alphabet
                  * 0061-007A  Basic Latin: Lowercase Latin Alphabet

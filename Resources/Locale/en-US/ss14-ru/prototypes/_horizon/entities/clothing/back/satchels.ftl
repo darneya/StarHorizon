@@ -1,12 +1,12 @@
-ent-ClothingBackpackSatchelEliteCMO = medical satchel
-    .desc = A sterile satchel used in medical departments.
+ent-ClothingBackpackSatchelEliteCMO = сумка элитного главного врача
+    .desc = Стерильная сумка из белоснежного шёлка с золотой окантовкой. Предназначена для высококлассных специалистов.
     .suffix = StarHorizon
 ent-ClothingBackpackSatchelEliteCMOFilled = сумка элитного главного врача
     .desc = Стерильная сумка из белоснежного шёлка с золотой окантовкой. Предназначена для высококлассных специалистов.
-    .suffix = StarHorizon, Filled
+    .suffix = StarHorizon, Заполненная
 ent-ClothingBackpackSatchelSalvageFilled = сумка утилизатора
     .desc = Прочная сумка для хранения добычи.
-    .suffix = StarHorizon, Filled
+    .suffix = StarHorizon, Заполненная
 ent-ClothingBackpackSatchelBlueshield = сумка офицера "Синий щит"
     .desc = В неё удобно сбрасывать магазины.
     .suffix = StarHorizon

@@ -1,5 +1,6 @@
 expedition-goal-remove-button = Отказаться
 expeditions-goal-title-label = Задача #{ $id }
+expeditions-goal-required-amount-label = Нужно количество для заказа: { $amount }
 expeditions-goal-reward-label = Награда: { $reward }{ $currency }
 expeditions-goal-reward-entity-label = Бонус: { $entity }
 expedition-goal-not-assigned = Отсутствует

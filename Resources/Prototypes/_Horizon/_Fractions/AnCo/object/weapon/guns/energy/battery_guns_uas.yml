@@ -1,9 +1,9 @@
 # бейс вейпон сас. Xigovir: скоро эта сборка набухнет от САС пушек
 - type: entity
   id: BaseWeaponAnCo
-  suffix: StarHorizon, AnCo
   parent: [BaseItem, BaseAnCoContraband]
-  abstract: true
+  categories: [ HideSpawnMenu ]
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Sprite
   - type: Item
@@ -30,10 +30,9 @@
 
 - type: entity
   id: BaseWeaponPowerCellAnCo
-  suffix: StarHorizon, AnCo
   parent: [BaseItem, BaseAnCoContraband]
   categories: [ HideSpawnMenu ]
-  abstract: true
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Sprite
   - type: Item
@@ -71,13 +70,13 @@
   name: пп-дизейблер АнКо
   parent: BaseWeaponAnCo
   id: WeaponDisablerSMGAnCo
-  suffix: StarHorizon, AnCo
   description: Улучшенная модель дизейблера с уменьшенной в угоду повышенной скорострельности мощностью.
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Item
     size: Large
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasmachinedisabler.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasmachinedisabler.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
@@ -111,14 +110,14 @@
 - type: entity
   name: Ардониевый пулемет АнКо
   parent: BaseWeaponAnCo
-  suffix: StarHorizon, AnCo
   id: WeaponLaserMinigunAnCo
   description: Первая попытка АнКо создать машину смерти, хоть и в форме пулемёта.
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Item
     size: Ginormous
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasminigun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasminigun.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -152,14 +151,14 @@
 - type: entity
   name: Ардониевый гранатомет АнКо
   parent: BaseWeaponAnCo
-  suffix: StarHorizon, AnCo
   id: WeaponLaserGranadeAnCo
   description: Первая попытка АнКо создать машину смерти, хоть и в форме гранатомёта.
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Item
     size: Ginormous
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasgranadegun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasgranadegun.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -198,14 +197,14 @@
   name: винтовка-дизейблер АнКо
   parent: BaseWeaponAnCo
   id: WeaponDisablerSniperAnCo
-  suffix: StarHorizon, AnCo
   description: Энергоёмкое EFS-устройство, используемое только в крайних случаях.
+  suffix: StarHorizon, AnCo, Weapon
   components:
     - type: AmmoCounter
     - type: Item
       size: Large
     - type: Sprite
-      sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uassniperdisabler.rsi
+      sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uassniperdisabler.rsi
       layers:
         - state: base
           map: ["enum.GunVisualLayers.Base"]
@@ -243,14 +242,14 @@
   name: рипсоидная винтовка АнКо
   parent: BaseWeaponAnCo
   id: AnCoRipsoidCannon
-  suffix: StarHorizon, AnCo
   description: Рипсоидная винтовка с расширенной батареей.
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Item
     size: Huge
   - type: Wieldable
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasripsoidcannon.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasripsoidcannon.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -279,13 +278,13 @@
   name: пистолет совета АнКо
   parent: BaseWeaponAnCo
   id: AnCoCounselorGun
-  suffix: StarHorizon, AnCo
   description: Особая модификация рипсоидной винтовки, созданная для защиты совета.
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasconsulgun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasconsulgun.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -315,11 +314,12 @@
   parent: BaseWeaponPowerCellAnCo
   id: PMLaserAnCoGun
   description: Лазерный ПП, модернизированный в сторону мощности, хоть и в ущерб автономному электроснабжению.
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Gun
     fireRate: 2
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasmachinegun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasmachinegun.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
@@ -331,15 +331,16 @@
     zeroVisible: true
 
 - type: entity
-  name: лазерная винтовка AnCo
+  name: лазерная винтовка АнКо
   parent: BaseWeaponPowerCellAnCo
   id: LaserAnCoGun
   description: Специально созданная под Ардониевые ячейки, винтовка с высокой скорострельностью.
+  suffix: StarHorizon, AnCo, Weapon
   components:
   - type: Gun
     fireRate: 3
   - type: Sprite
-    sprite: _StarHorizon/Objects/Weapons/Guns/Battery/uasriflegun.rsi
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Battery/uasriflegun.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]

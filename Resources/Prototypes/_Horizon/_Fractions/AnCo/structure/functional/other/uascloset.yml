@@ -11,7 +11,7 @@
     noRot: true
   - type: Sprite
     noRot: true
-    sprite: _Horizon/Structures/Storage/Closets/uascloset.rsi
+    sprite: _Horizon/_Fractions/AnCo/Structures/Storage/Closets/uascloset.rsi
     layers:
     - state: uascloset
       map: ["enum.StorageVisualLayers.Base"]

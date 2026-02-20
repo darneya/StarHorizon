@@ -274,7 +274,33 @@
       - id: ClothingHandsGlovesCombat
       - id: DoubleEmergencyOxygenTankFilled
       - id: DoubleEmergencyNitrogenTankFilled
+# Horizon start
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelInterdyneCBURNHardsuitBundle
+  name: вещьмешок экзоскафандра CBURN Interdyne
+  description: "Содержит экзоскафандр CBURN Interdyne для любителей биологического оружия"
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitInterdyne
+      - id: ClothingMaskGasSyndicate
+      - id: ClothingHandsGlovesCombat
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: DoubleEmergencyNitrogenTankFilled
 
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledSunfire
+  name: Набор Солнцепёка
+  description: "Да сгинут враги синдиката в адском пламени термобарического снаряда"
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponLauncherSunfire 
+      - id: CartridgeTermobarRocket 
+        amount: 4
+# Horizon end
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
   id: ClothingBackpackDuffelSyndicateHardsuitExtrasBundle

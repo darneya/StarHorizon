@@ -726,6 +726,7 @@
   - SyndicateOuterClothing
   - SyndicateEars
   - SyndicateBoots
+  - ContractorBoxSurvival
   - ContractorWallet
 
 - type: roleLoadout
@@ -741,6 +742,7 @@
   - SyndicateOuterClothing
   - SyndicateEars
   - SyndicateBoots
+  - ContractorBoxSurvival
   - ContractorWallet
 
 - type: roleLoadout
@@ -756,4 +758,5 @@
   - SyndicateOuterClothing
   - SyndicateEars
   - SyndicateBoots
+  - ContractorBoxSurvival
   - ContractorWallet

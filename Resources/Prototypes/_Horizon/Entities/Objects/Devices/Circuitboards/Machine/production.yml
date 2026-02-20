@@ -1,7 +1,7 @@
-﻿- type: entity
+- type: entity
   parent: BaseMachineCircuitboard
   id: MachineBluespaceHarvesterCircuitboard
-  name: Bluespace Harvester board
+  name: Блюспейс Харвестер (машинная плата)
   description: A machine board for a Bluespace Harvester
   components:
   - type: Sprite

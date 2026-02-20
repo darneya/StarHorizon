@@ -14,14 +14,20 @@ ent-DrinkPineappleBlast = { ent-DrinkGlass }
     .suffix = ананасовый пирог
     .desc = { ent-DrinkGlass.desc }
 ent-DrinkTorpedoJuice = { ent-DrinkGlass }
-    .suffix = сок Торпеда
+    .suffix = сок "Торпеда"
     .desc = { ent-DrinkGlass.desc }
 ent-DrinkBeesKnees = { ent-DrinkGlass }
     .suffix = пчелиные колени
     .desc = { ent-DrinkGlass.desc }
+<<<<<<< HEAD
 ent-CondimentCup = приправочная чашка
     .desc = Хрупкая чашка, которую можно заполнить приправами. Гарантия аннулируется, если заполнить другими вещами.
 ent-DrinkDisposableCup = одноразовая чашка
+=======
+ent-CondimentCup = стаканчик для приправ
+    .desc = Хлипкий стаканчик, который можно наполнить приправами. Гарантия аннулируется, если наполнен другими вещами.
+ent-DrinkDisposableCup = одноразовый стаканчик
+>>>>>>> origin/develop
     .desc = { ent-DrinkBase.desc }
 ent-DrinkDisposableMcCup = { ent-DrinkDisposableCup }
     .desc = { ent-DrinkDisposableCup.desc }

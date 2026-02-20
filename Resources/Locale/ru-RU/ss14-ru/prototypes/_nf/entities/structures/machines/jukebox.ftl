@@ -1,12 +1,15 @@
-ent-JukeboxPOI = { ent-BaseStructureDisableToolUse }
+ent-JukeboxPOI = { ent-Jukebox }
     .suffix = POI
-    .desc = { ent-BaseStructureDisableToolUse.desc }
-ent-JukeboxWallmount = { ent-BaseStructureWallmount }
+    .desc = { ent-Jukebox.desc }
+ent-JukeboxWallmount = { ent-Jukebox }
     .suffix = Настенный
-    .desc = { ent-BaseStructureWallmount.desc }
-ent-JukeboxWallmountShip = { ent-BaseStructureDisableToolUse }
+    .desc = { ent-Jukebox.desc }
+ent-JukeboxWallmountShip = { ent-Jukebox }
     .suffix = Настенный, Шаттл
+<<<<<<< HEAD
     .desc = { ent-BaseStructureDisableToolUse.desc }
 ent-JukeboxEmpty = { ent-Jukebox }
     .suffix = Пустой
+=======
+>>>>>>> origin/develop
     .desc = { ent-Jukebox.desc }

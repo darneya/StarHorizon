@@ -210,6 +210,8 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.9 # Horizon
     sprintModifier: 0.8 # Horizon
+  - type: StaminaResistance
+    damageCoefficient: 0.8
   - type: Armor
     modifiers:
       coefficients:
@@ -251,6 +253,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.4
+  - type: StaminaResistance
+    damageCoefficient: 0.5
   - type: Armor
     modifiers:
       coefficients:
@@ -314,6 +318,8 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.4
+  - type: StaminaResistance
+    damageCoefficient: 0.8
   - type: Armor
     modifiers:
       coefficients:
@@ -500,6 +506,8 @@
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: StaminaResistance
     damageCoefficient: 0.5
   - type: Armor
     modifiers:
@@ -859,6 +867,7 @@
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
+
   - type: Armor
     modifiers:
       coefficients:
@@ -989,7 +998,7 @@
   - type: FireProtection
     reduction: 0.8
   - type: StaminaResistance
-    damageCoefficient: 0.15 # Needs 21 hits with a disabler to stun :godo:
+    damageCoefficient: 0.1
   - type: Armor
     modifiers:
       coefficients:
@@ -1025,6 +1034,8 @@
     coolingCoefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.7
+  - type: StaminaResistance
+    damageCoefficient: 0.8
   - type: Armor
     modifiers:
       coefficients:

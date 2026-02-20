@@ -109,4 +109,6 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> PlaytimeMinutesToday =
         CVarDef.Create("playtime.minutes_today", 0f, CVar.CLIENTONLY | CVar.ARCHIVE);
+    public static readonly CVarDef<float> SiliconNpcUpdateTime =
+        CVarDef.Create("silicon.npcupdatetime", 1.5f, CVar.SERVERONLY);
 }
