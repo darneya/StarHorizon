@@ -1,9 +1,9 @@
-ent-GrasslandsFaunaSpawner = grasslands fauna spawner
+ent-GrasslandsFaunaSpawner = спавнер лесной фауны
     .desc = { ent-MarkerBase.desc }
-ent-LavalandFaunaSpawner = lavaland fauna spawner
+ent-LavalandFaunaSpawner = спавнер лавовой фауны
     .desc = { ent-MarkerBase.desc }
-ent-IcelandFaunaSpawner = iceland fauna spawner
+ent-IcelandFaunaSpawner = спавнер ледяной фауны
     .desc = { ent-MarkerBase.desc }
-ent-SpawnMobArgocytes = xeno spawner
-    .suffix = AI, Hostile
+ent-SpawnMobArgocytes = спавнер аргоцита
     .desc = { ent-MarkerBase.desc }
+    .suffix = Случайный

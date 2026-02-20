@@ -27,13 +27,9 @@ ent-NFBulletKinetic = { ent-BulletKinetic }
 ent-NFBulletKineticShuttle = { ent-BulletKineticShuttle }
 .desc = { ent-BulletKineticShuttle.desc }
 ent-NFBulletCharge = { ent-BulletCharge }
-<<<<<<< HEAD
     .desc = { ent-BulletCharge.desc }
 ent-NFBulletChargeGlaive = { ent-BulletChargeGlaive }
     .desc = { ent-BulletChargeGlaive.desc }
-=======
-.desc = { ent-BulletCharge.desc }
->>>>>>> origin/develop
 ent-NFAnomalousParticleDelta = { ent-AnomalousParticleDelta }
 .desc = { ent-AnomalousParticleDelta.desc }
 ent-NFAnomalousParticleDeltaStrong = { ent-AnomalousParticleDeltaStrong }

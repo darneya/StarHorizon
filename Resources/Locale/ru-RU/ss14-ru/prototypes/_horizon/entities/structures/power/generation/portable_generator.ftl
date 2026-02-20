@@ -1,6 +1,6 @@
-ent-PortableGeneratorStarPacman = star pacman portable generator
+ent-PortableGeneratorStarPacman = портативный генератор Star Pacman
     .desc =
-        A prototype of experimental generator. Use with caution.
-        Runs off plutonium and is rated for up to 240 kW.
-        Extremely radioactive without protection.
-    .suffix = Plutonium, Rad+, 120 kW
+        Прототип экспериментального генератора. Использовать с осторожностью.
+        Работает на плутонии и рассчитан на мощность до 240 кВт.
+        Чрезвычайно радиоактивен без защиты.
+    .suffix = Плутоний, Рад+, 120 кВт

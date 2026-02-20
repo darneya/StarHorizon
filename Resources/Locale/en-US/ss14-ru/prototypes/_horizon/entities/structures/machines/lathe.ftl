@@ -1,2 +1,2 @@
-ent-OreProcessorFuel = fuel processor
-    .desc = An ore processor specifically designed for mass-producing metals in industrial applications.
+ent-OreProcessorFuel = топливный преобразователь
+    .desc = Топливный преобразователь, специально разработанный для массового производства топлива в промышленных целях.

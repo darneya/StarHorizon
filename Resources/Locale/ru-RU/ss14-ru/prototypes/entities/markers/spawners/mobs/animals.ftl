@@ -10,13 +10,9 @@ ent-SpawnMobCatSpace = спавнер космической кошки
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobCockroach = спавнер таракана
     .desc = { ent-MarkerBase.desc }
-<<<<<<< HEAD
 ent-SpawnMobMoproach = Moproach Spawner
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobCow = Cow Spawner
-=======
-ent-SpawnMobCow = спавнер коровы
->>>>>>> origin/develop
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobCrab = спавнер краба
     .desc = { ent-MarkerBase.desc }

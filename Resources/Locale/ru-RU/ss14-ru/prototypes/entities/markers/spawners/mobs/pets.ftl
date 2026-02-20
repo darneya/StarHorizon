@@ -43,16 +43,11 @@ ent-SpawnMobKangarooWillow = спавнер Уиллоу
 ent-SpawnMobMonkeyPunpun = спавнер Пун-Пуна
     .suffix = Питомец бармена
     .desc = { ent-MarkerBase.desc }
-<<<<<<< HEAD
-ent-SpawnMobPollyParrot = Polly the parrot Spawner
-    .suffix = CE Pet
+ent-SpawnMobPollyParrot = спавнер Полли
+    .suffix = Питомец СИ
     .desc = { ent-MarkerBase.desc }
-ent-SpawnMobPossumMorty = Possum Morty Spawner
-    .suffix = Morgue Pet
-=======
 ent-SpawnMobPossumMorty = спавнер Морти
     .suffix = Питомец патологоанатомов
->>>>>>> origin/develop
     .desc = { ent-MarkerBase.desc }
 ent-SpawnMobRaccoonMorticia = спавнер Мортиши
     .suffix = Питомец КМа

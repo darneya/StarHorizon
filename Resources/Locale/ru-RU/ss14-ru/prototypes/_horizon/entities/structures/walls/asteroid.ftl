@@ -16,17 +16,6 @@ ent-WallRockChromitePsycore = { ent-WallRockChromite }
 ent-WallRockChromiteTitan = { ent-WallRockChromite }
     .desc = Жила руды, богатая титаном.
     .suffix = Титан
-<<<<<<< HEAD
-ent-WallRockChromitePlutonium = { ent-NFWallRockChromiteOre }
-    .desc = An ore vein rich with plutonium.
-    .suffix = Plutonium
-ent-WallRockChromiteNeptunium = { ent-NFWallRockChromiteOre }
-    .desc = An ore vein rich with neptunium.
-    .suffix = Neptunium
-ent-WallRockChromiteTorium = { ent-NFWallRockChromiteOre }
-    .desc = An ore vein rich with torium.
-    .suffix = Torium
-=======
 ent-WallRockChromiteNeptunium = { ent-WallRockChromite }
     .desc = Жила руды, богатая нептунием.
     .suffix = Нептуний
@@ -36,4 +25,3 @@ ent-WallRockChromitePlutonium = { ent-WallRockChromite }
 ent-WallRockChromiteTorium = { ent-WallRockChromite }
     .desc = Жила руды, богатая торием.
     .suffix = Торий
->>>>>>> origin/develop

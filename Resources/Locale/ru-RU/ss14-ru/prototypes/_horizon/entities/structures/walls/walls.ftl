@@ -17,16 +17,6 @@ ent-WallChromiteCobblebrickTitan = { ent-NFWallChromiteCobblebrick }
     .desc = Жила руды, богатая титаном. Чрезвычайно твердая.
     .suffix = Титан
 ent-WallChromiteCobblebrickPlutonium = { ent-NFWallChromiteCobblebrick }
-<<<<<<< HEAD
-    .desc = An ore vein rich with plutonium. Extremely hard.
-    .suffix = Plutonium
-ent-WallChromiteCobblebrickNeptunium = { ent-NFWallChromiteCobblebrick }
-    .desc = An ore vein rich with neptunium. Extremely hard.
-    .suffix = Neptunium
-ent-WallChromiteCobblebrickTorium = { ent-NFWallChromiteCobblebrick }
-    .desc = An ore vein rich with torium. Extremely hard.
-    .suffix = Torium
-=======
     .desc = Жила руды, богатая плутонием. Чрезвычайно твердая.
     .suffix = Плутоний
 ent-WallChromiteCobblebrickNeptunium = { ent-NFWallChromiteCobblebrick }
@@ -35,4 +25,3 @@ ent-WallChromiteCobblebrickNeptunium = { ent-NFWallChromiteCobblebrick }
 ent-WallChromiteCobblebrickTorium = { ent-NFWallChromiteCobblebrick }
     .desc = Жила руды, богатая торием. Чрезвычайно твердая.
     .suffix = Торий
->>>>>>> origin/develop

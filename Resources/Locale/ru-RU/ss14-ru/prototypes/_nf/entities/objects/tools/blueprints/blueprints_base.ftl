@@ -1,7 +1,6 @@
 ent-NFBaseBlueprint = { ent-BaseBlueprint }
     .desc = { ent-BaseBlueprint.desc }
 ent-NFBaseBlueprintFaxable = чертёж
-<<<<<<< HEAD
     .desc = Чертёж со схемами. Может быть вставлен в автолат или отправлен по факсу.
 ent-NFBlueprintGeneral = чертёж
     .desc = Чертёж со схемами. Может быть вставлен в протолат или техфаб, или отправлен по факсу.
@@ -19,23 +18,6 @@ ent-NFBlueprintArsenalMercenary = военный чертёж
     .desc = Чертёж с боевыми схемами. Может быть вставлен в техфаб NFSD или наёмников, или отправлен по факсу.
 ent-NFBlueprintArsenalNfsd = ограниченный военный чертёж
     .desc = Чертёж с боевыми схемами. Может быть вставлен в техфаб NFSD или отправлен по факсу.
-=======
-    .desc = Чертеж со схемами. Его можно вставить в автолат или отправить по факсу.
-ent-NFBlueprintEngineering = инженерный чертёж
-    .desc = Чертеж с инженерными схемами. Его можно вставить в инженерный техфаб или отправить по факсу.
-ent-NFBlueprintSalvage = утилизаторский чертёж
-    .desc = Чертеж со схемами для утилизаторов. Его можно вставить в техфаб утилизаторов или отправить по факсу.
-ent-NFBlueprintScience = научный чертёж
-    .desc = Чертеж с научными схемами. Его можно вставить в протолат или отправить по факсу.
-ent-NFBlueprintService = сервисный чертёж
-    .desc = Чертеж с сервисными схемами. Его можно вставить в сервисный техфаб или отправить по факсу.
-ent-NFBlueprintMedical = медицинский чертёж
-    .desc = Чертеж с медицинскими схемами. Его можно вставить в медицинский техфаб или отправить по факсу.
-ent-NFBlueprintArsenalMercenary = боевой чертёж
-    .desc = Чертеж с боевыми схемами. Его можно вставить в техфаб ДШНФ или наёмников, или отправить по факсу.
-ent-NFBlueprintArsenalNfsd = ограниченный боевой чертёж
-    .desc = Чертеж с боевыми схемами. Его можно вставить в техфаб ДШНФ или отправить по факсу.
->>>>>>> origin/develop
 ent-NFBaseBlueprintExpedition = { ent-BaseC3Contraband }
     .desc = { ent-BaseC3Contraband.desc }
 ent-NFBaseBlueprintExpeditionSalvage = { ent-NFBaseBlueprintExpedition }
