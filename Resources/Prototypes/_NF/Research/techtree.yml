@@ -1181,7 +1181,7 @@
   - BiomassReclaimerMachineCircuitboard
   technologyPrerequisites:
   - NFBiogenerator
-  position: 3, 44 # Horizon
+  position: 4, 45 # Horizon
 
 # region Power / Shuttle
 
@@ -1593,7 +1593,7 @@
   prerequisiteLineType: Diagonal
   technologyPrerequisites:
   - NFExcavation
-  position: 2, 37
+  position: 2, 55
 
 - type: technology
   id: NFIndustrialOreProcessor
@@ -1606,7 +1606,7 @@
   - OreProcessorIndustrialMachineCircuitboard
   technologyPrerequisites:
   - NFOreProcessor
-  position: 3, 37
+  position: 3, 55
 
 - type: technology
   id: NFSalvageWeapons
@@ -1703,7 +1703,7 @@
   - SmallBluespaceAirTank
   technologyPrerequisites:
   - NFAdvancedPersonalPropulsion
-  position: 3, 36
+  position: 3, 74
 # region Munitions
 
 - type: technology
@@ -1906,7 +1906,7 @@
   - NFAmmunitionBoxBigRifle30Overpressure
   technologyPrerequisites:
   - NFImprovedRifleAmmo
-  position: 4, 64 # Horizon
+  position: 3, 64 # Horizon
   researchTargets:
   - TechnologyDiscArsenalAmmunition
 
@@ -1928,4 +1928,4 @@
   technologyPrerequisites:
   - NFImprovedSalvageWeapons
   - NFExplosiveTechnology
-  position: 4, 60 # Horizon
+  position: 4, 59 # Horizon
