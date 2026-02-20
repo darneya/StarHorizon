@@ -17,6 +17,7 @@ mail-item-name-unaddressed = посылка
 mail-item-name-addressed = посылка ({ $recipient })
 # Frontier: Wizden#38234 compliance
 ent-BaseMail = почта
+    .desc = { ent-BaseItem.desc }
 command-mailto-description = Поставить в очередь отправку посылки получателю. Пример использования: `mailto 1234 5678 false false`. Содержимое целевого контейнера будет перенесено в почтовую посылку.
 command-mailto-help = Использование: { $command } <идентификатор получателя> <идентификатор контейнера> [хрупкость: true или false] [приоритет: true или false] [большой размер: true или false, опционально]
 command-mailto-no-mailreceiver = Целевой сущности-получателю не хватает { $requiredComponent }.

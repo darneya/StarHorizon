@@ -1,4 +1,4 @@
-ent-PrintedRingBase = { "" }
+ent-PrintedRingBase = кольцо
     .suffix = Напечатанное
     .desc = { "" }
 ent-NFSilverRingPrinted = { ent-PrintedRingBase }
