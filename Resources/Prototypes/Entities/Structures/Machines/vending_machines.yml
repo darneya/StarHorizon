@@ -2202,8 +2202,6 @@
 #     offState: off
 #     brokenState: broken
 #     normalState: normal-unshaded
-#   - type: Advertise
-#     pack: PrideDrobeAds
 #   - type: SpeakOnUIClosed
 #     pack: PrideDrobeGoodbyes
 #   - type: Speech
