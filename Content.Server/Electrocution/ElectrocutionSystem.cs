@@ -61,6 +61,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
     private static readonly ProtoId<StatusEffectPrototype> StatusEffectKey = "Electrocution";
     private static readonly ProtoId<DamageTypePrototype> DamageType = "Shock";
     private static readonly ProtoId<TagPrototype> WindowTag = "Window";
+    public const float ElectrifiedDamagePerWatt = 0.0015f; // This information is allowed to be public, and was needed in BatteryElectrocuteChargeSystem.cs
 
     // Multiply and shift the log scale for shock damage.
     private const float RecursiveDamageMultiplier = 0.75f;

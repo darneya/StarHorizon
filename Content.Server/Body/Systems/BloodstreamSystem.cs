@@ -2,6 +2,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Forensics;
+using Content.Shared.FixedPoint;
 
 namespace Content.Server.Body.Systems;
 
@@ -55,4 +56,18 @@ public sealed class BloodstreamSystem : SharedBloodstreamSystem
         else
             Log.Error("Unable to set bloodstream DNA, solution entity could not be resolved");
     }
+
+    // Horizon start
+    public void SetBloodRefreshAmount(EntityUid uid, BloodstreamComponent comp, FixedPoint2 value)
+    {
+        comp.BloodRefreshAmount = value;
+        Dirty(uid, comp);
+    }
+
+    public void SetBleedReductionAmount(EntityUid uid, BloodstreamComponent comp, float value)
+    {
+        comp.BleedReductionAmount = value;
+        Dirty(uid, comp);
+    }
+    // Horizon end
 }
