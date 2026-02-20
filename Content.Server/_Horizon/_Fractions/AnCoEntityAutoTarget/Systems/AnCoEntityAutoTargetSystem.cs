@@ -9,7 +9,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using System.Numerics;
 
-namespace Content.Server._Horizon.AnCoAutoGuidedBullet.Systems;
+namespace Content.Server._Horizon._Fractions.AnCoEntityAutoTarget.Systems;
 
 /// <summary>
 /// Система отвечающая за то, чтобы добавить пулям оружия компонент автоматического наведения.
@@ -85,6 +85,9 @@ public sealed class AnCoEntityAutoTargetSystem : EntitySystem
         var bulletPos = _transform.GetWorldPosition(transform);
         EntityUid? closestTarget = null;
         var minDistance = range;
+
+        if (!(range > 0.01f))
+            return null;
 
         var entities = _lookup.GetEntitiesInRange(transform.MapPosition, range);
 
