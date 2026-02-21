@@ -4,7 +4,8 @@
   id: Pacifist
   name: trait-pacifist-name
   description: trait-pacifist-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
+  group: TraitCombat # Horizon tweak
   cost: -6 # Horizon tweak
   components:
   - type: Pacified
@@ -13,7 +14,7 @@
   id: LightweightDrunk
   name: trait-lightweight-name
   description: trait-lightweight-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNegative # Horizon tweak
   cost: -1 # Horizon tweak
   components:
   - type: LightweightDrunk
@@ -23,6 +24,6 @@
   id: Snoring
   name: trait-snoring-name
   description: trait-snoring-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonNeutral # Horizon tweak
   components:
   - type: Snoring

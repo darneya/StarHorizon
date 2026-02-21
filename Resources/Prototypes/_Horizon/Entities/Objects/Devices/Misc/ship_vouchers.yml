@@ -143,5 +143,6 @@
     - state: blue
     - state: voucherstationguard
   - type: ShipyardVoucher
+    consoleType: Security
     access:
     - Detective 

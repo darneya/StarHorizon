@@ -167,10 +167,10 @@ public class SharedOutpostCaptureSystem : EntitySystem
                 return $"{Loc.GetString("faction-uncaptured-state")}";
 
             case OutpostConsoleState.Capturing:
-                return $"{Loc.GetString("faction-capturing-state-by")} {Loc.GetString(console.Comp.CapturedFactionName ?? "faction-none")}!";
+                return $"{Loc.GetString("faction-capturing-state-by")} {Loc.GetString("faction-unknown")}!";
 
             case OutpostConsoleState.Captured:
-                return $"{Loc.GetString("faction-captured-state-by")} {Loc.GetString(console.Comp.CapturedFactionName ?? "faction-none")}!";
+                return $"{Loc.GetString("faction-captured-state-by")} {Loc.GetString("faction-unknown")}!";
 
             default:
                 Sawmill.Error($"Unknown {console.Comp.State} state!");
