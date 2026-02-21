@@ -167,3 +167,5 @@ ent-FoodDiamondCarrot = diamondcarrot
     .suffix = Horizon
 ent-FoodBluespaceTomato = bluespace tomato
     .desc = Be careful with it.
+ent-FoodPeach = peach
+    .desc = Perfect with cream.

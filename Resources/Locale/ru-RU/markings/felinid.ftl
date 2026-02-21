@@ -48,4 +48,4 @@ marking-BunnyEarsBasic-ears_bunny_outer = Внешняя часть ушка
 marking-BunnyEarsBasic-ears_bunny_inner = Внутренняя часть ушка
 marking-BunnyTailBasic = Кроличий хвост
 marking-BunnyTailBasic-basic_outer = Кроличий хвост
-marking-BunnyTailBasic-tail_bunny = Кроличий хвост  
+marking-BunnyTailBasic-tail_bunny = Кроличий хвост

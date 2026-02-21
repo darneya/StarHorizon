@@ -19,3 +19,6 @@ ent-AnCoBoxStoreLasGunKnight = { ent-AnCoBox }
     .desc = { ent-AnCoBox.desc }
 ent-AnCoBoxStoreStun = { ent-AnCoBox }
     .desc = { ent-AnCoBox.desc }
+ent-BoxRationAnCo = Суточное питание сотрудника
+    .desc = Ничто не может передать так хорошо философию чего либо, кроме как еда.
+    .suffix = StarHorizon, AnCo, Food
