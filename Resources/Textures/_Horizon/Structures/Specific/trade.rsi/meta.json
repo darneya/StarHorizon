@@ -1,4 +1,4 @@
-{
+с{
   "version": 1,
   "license": "CLA",
   "copyright": "Sprites by TheGypsyBaron DS:701266770429739008",
@@ -57,6 +57,9 @@
       "name": "engi_fuelcontr"
     },
     {
+      "name": "engi_tool"
+    },
+    {
       "name": "med_base"
     },
     {
@@ -73,6 +76,90 @@
     },
     {
       "name": "sci_base"
+    },
+    {
+      "name": "sci_artefact"
+    },
+    {
+      "name": "sci_equipment"
+    },
+    {
+      "name": "sci_prototype"
+    },
+    {
+      "name": "anco_ballistic"
+    },
+    {
+      "name": "anco_base"
+    },
+    {
+      "name": "anco_gun_detail"
+    },
+    {
+      "name": "anco_shield"
+    },
+    {
+      "name": "anco_smuggling"
+    },
+    {
+      "name": "nfsd_ammo"
+    },
+    {
+      "name": "nfsd_base"
+    },
+    {
+      "name": "nfsd_gun_detail"
+    },
+    {
+      "name": "nt_base"
+    },
+    {
+      "name": "nt_cyber"
+    },
+    {
+      "name": "nt_detal"
+    },
+    {
+      "name": "nt_nt"
+    },
+    {
+      "name": "serv_base"
+    },
+    {
+      "name": "serv_eat"
+    },
+    {
+      "name": "serv_seed"
+    },
+    {
+      "name": "serv_soap"
+    },
+    {
+      "name": "serv_suit"
+    },
+    {
+      "name": "serv_supplay"
+    },
+    {
+      "name": "serv_water"
+    },
+    {
+      "name": "smuggling_base"
+    },
+    {
+      "name": "steel_alloys"
+    },
+    {
+      "name": "steel_base"
+    },
+    {
+      "name": "steel_scrap"
+    },
+    {
+      "name": "steel_textile"
+    },
+    {
+      "name": "med_medical"
     }
   ]
 }
