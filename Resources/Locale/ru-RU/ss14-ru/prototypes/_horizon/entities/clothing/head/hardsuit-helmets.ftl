@@ -1,12 +1,3 @@
-ent-ClothingHeadHardsuitSpider = шлем офицера Паука АнКо
-    .desc = Прочный, похожий на леденец шлем.
-    .suffix = StarHorizon
-ent-ClothingHeadHardsuitTitan = шлем офицера Титана АнКо
-    .desc = Шлем, сделанный из пластин чрезвычайно прочного материала. В нём Вы чувствуете себя, как в танке.
-    .suffix = StarHorizon
-ent-ClothingHeadHardsuitKnight = шлем офицера Рыцаря АнКо
-    .desc = Шлем скафандра Паука с дополнительной бронёй.
-    .suffix = StarHorizon
 ent-ClothingHeadHelmetHardsuitCentcom = шлем скафандра Центком
     .desc = Специализированный шлем для скафандра Центком.
     .suffix = StarHorizon

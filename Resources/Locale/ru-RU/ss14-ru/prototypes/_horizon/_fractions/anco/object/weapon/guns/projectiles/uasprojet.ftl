@@ -1,0 +1,14 @@
+ent-StandartBallisticAnCoPistol = AnCo Bullet
+    .desc = { ent-BaseBullet.desc }
+ent-StandartBallisticAnCoRifle = AnCo Bullet
+    .desc = { ent-BaseBullet.desc }
+ent-StandartLaserAnCo = AnCo Bullet
+    .desc = { ent-EmitterBolt.desc }
+ent-StandartDisablerAnCo = AnCo Bullet Disabler
+    .desc = { ent-EmitterBolt.desc }
+ent-SniperDisablerAnCo = AnCo Bullet Disabler
+    .desc = { ent-StandartDisablerAnCo.desc }
+ent-BulletDisablerSmgAnCo = Bullet Disabler Smg AnCo
+    .desc = { ent-StandartDisablerAnCo.desc }
+ent-StandartExplodesAnCo = AnCo Bullet Boom
+    .desc = { ent-BaseBulletTrigger.desc }
