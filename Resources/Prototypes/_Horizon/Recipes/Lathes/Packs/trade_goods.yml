@@ -9,61 +9,34 @@
   - TradeGoodsEngineerToolsRecipe
   - TradeGoodsEngineerFuelRecipe
   - TradeGoodsEngineerElecRecipe
-  - TradeGoodsEngineerFuelContrRecipe
-  - TradeGoodsEngineerElecContrRecipe
   # Медицинские товары
   - TradeGoodsMedBaseRecipe
   - TradeGoodsMedChemRecipe
   - TradeGoodsMedImplantsRecipe
-  - TradeGoodsMedOrgansRecipe
-  - TradeGoodsMedNarcRecipe
   # Научные товары
   - TradeGoodsSciBaseRecipe
-  - TradeGoodsSciChemicalsRecipe
   - TradeGoodsSciArtifactsRecipe
-  - TradeGoodsSciXenoRecipe
   - TradeGoodsSciProtoRecipe
   # Сервисные товары
   - TradeGoodsServiceFoodRecipe
   - TradeGoodsServiceBeverageRecipe
   - TradeGoodsServiceBotanyRecipe
   - TradeGoodsServiceCleaningRecipe
-  - TradeGoodsServiceLuxuryRecipe
   # Товары общего назначения
   - TradeGoodsGeneralSuppliesRecipe
   - TradeGoodsGeneralClothingRecipe
-  - TradeGoodsGeneralToolsRecipe
-  - TradeGoodsGeneralElectronicsRecipe
-  - TradeGoodsGeneralPartsRecipe
   # Военные товары
   - TradeGoodAmmoRecipe
   - TradeGoodGunpartsRecipe
-  - TradeGoodMiltechRecipe
   - TradeGoodAlloysRecipe
   # Промышленные товары
   - TradeGoodScrapRecipe
-  - TradeGoodGoodScrapRecipe
-  - TradeGoodPlasmaRecipe
-  - TradeGoodCyberneticsRecipe
-  # Продовольствие
-  - TradeGoodFlourRecipe
-  - TradeGoodRiceRecipe
-  - TradeGoodSugarRecipe
-  - TradeGoodScopRecipe
-  - TradeGoodAlcoholRecipe
-  - TradeGoodWineRecipe
-  - TradeGoodVodkaRecipe
-  # Медицина
-  - TradeGoodAntibioticsRecipe
   # Текстиль
   - TradeGoodFabricsRecipe
-  # Контрабанда
-  - TradeGoodDrugsRecipe
-  - TradeGoodOrgansRecipe
   # Товары Союза
-  - TradeGoodUnionWeaponRecipe
-  - TradeGoodUnionArmorRecipe
-  - TradeGoodUnionBallisticRecipe
+  - TradeGoodAnCoWeaponRecipe
+  - TradeGoodAnCoArmorRecipe
+  - TradeGoodAnCoBallisticRecipe
 
 # === Инженерный пакет ===
 - type: latheRecipePack
@@ -72,12 +45,7 @@
   - TradeGoodsEngineerToolsRecipe
   - TradeGoodsEngineerFuelRecipe
   - TradeGoodsEngineerElecRecipe
-  - TradeGoodsEngineerFuelContrRecipe
-  - TradeGoodsEngineerElecContrRecipe
-  - TradeGoodPlasmaRecipe
   - TradeGoodAlloysRecipe
-  - TradeGoodsGeneralToolsRecipe
-  - TradeGoodsGeneralPartsRecipe
 
 # === Медицинский пакет ===
 - type: latheRecipePack
@@ -86,19 +54,13 @@
   - TradeGoodsMedBaseRecipe
   - TradeGoodsMedChemRecipe
   - TradeGoodsMedImplantsRecipe
-  - TradeGoodsMedOrgansRecipe
-  - TradeGoodsMedNarcRecipe
-  - TradeGoodAntibioticsRecipe
-  - TradeGoodCyberneticsRecipe
 
 # === Научный пакет ===
 - type: latheRecipePack
   id: HorizonTradeGoodsSciencePack
   recipes:
   - TradeGoodsSciBaseRecipe
-  - TradeGoodsSciChemicalsRecipe
   - TradeGoodsSciArtifactsRecipe
-  - TradeGoodsSciXenoRecipe
   - TradeGoodsSciProtoRecipe
 
 # === Сервисный пакет ===
@@ -109,14 +71,6 @@
   - TradeGoodsServiceBeverageRecipe
   - TradeGoodsServiceBotanyRecipe
   - TradeGoodsServiceCleaningRecipe
-  - TradeGoodsServiceLuxuryRecipe
-  - TradeGoodFlourRecipe
-  - TradeGoodRiceRecipe
-  - TradeGoodSugarRecipe
-  - TradeGoodScopRecipe
-  - TradeGoodAlcoholRecipe
-  - TradeGoodWineRecipe
-  - TradeGoodVodkaRecipe
 
 # === Пакет общего назначения ===
 - type: latheRecipePack
@@ -124,12 +78,8 @@
   recipes:
   - TradeGoodsGeneralSuppliesRecipe
   - TradeGoodsGeneralClothingRecipe
-  - TradeGoodsGeneralToolsRecipe
-  - TradeGoodsGeneralElectronicsRecipe
-  - TradeGoodsGeneralPartsRecipe
   - TradeGoodFabricsRecipe
   - TradeGoodScrapRecipe
-  - TradeGoodGoodScrapRecipe
 
 # === Военный пакет (AnCo специализация) ===
 - type: latheRecipePack
@@ -138,17 +88,11 @@
   # Военные товары
   - TradeGoodAmmoRecipe
   - TradeGoodGunpartsRecipe
-  - TradeGoodMiltechRecipe
   - TradeGoodAlloysRecipe
-  # Кибернетика
-  - TradeGoodCyberneticsRecipe
   # Товары Союза
-  - TradeGoodUnionWeaponRecipe
-  - TradeGoodUnionArmorRecipe
-  - TradeGoodUnionBallisticRecipe
-  # Контрабанда (только AnCo)
-  - TradeGoodDrugsRecipe
-  - TradeGoodOrgansRecipe
+  - TradeGoodAnCoWeaponRecipe
+  - TradeGoodAnCoArmorRecipe
+  - TradeGoodAnCoBallisticRecipe
 
 # === Промышленный пакет (DFI специализация) ===
 - type: latheRecipePack
@@ -156,23 +100,6 @@
   recipes:
   # Промышленные товары
   - TradeGoodScrapRecipe
-  - TradeGoodGoodScrapRecipe
-  - TradeGoodPlasmaRecipe
   - TradeGoodAlloysRecipe
   # Текстиль
   - TradeGoodFabricsRecipe
-
-# === Продовольственный пакет ===
-- type: latheRecipePack
-  id: HorizonTradeGoodsFoodPack
-  recipes:
-  # Продовольствие
-  - TradeGoodFlourRecipe
-  - TradeGoodRiceRecipe
-  - TradeGoodSugarRecipe
-  - TradeGoodScopRecipe
-  - TradeGoodAlcoholRecipe
-  - TradeGoodWineRecipe
-  - TradeGoodVodkaRecipe
-  # Медицина
-  - TradeGoodAntibioticsRecipe

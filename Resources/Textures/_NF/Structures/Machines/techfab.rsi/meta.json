@@ -12,6 +12,15 @@
             "name": "icon"
         },
         {
+            "name": "engineering"
+        },
+        {
+            "name": "medical"
+        },
+        {
+            "name": "science"
+        },
+        {
             "name": "cargo"
         },
         {

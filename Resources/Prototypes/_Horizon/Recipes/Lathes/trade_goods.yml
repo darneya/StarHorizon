@@ -407,21 +407,21 @@
 # === Товары Союза ===
 
 - type: latheRecipe
-  id: TradeGoodUnionWeaponRecipe
+  id: TradeGoodAnCoWeaponRecipe
   result: TradeGoodUnionWeapon
   completetime: 2
   materials:
     Steel: 400
 
 - type: latheRecipe
-  id: TradeGoodUnionArmorRecipe
+  id: TradeGoodAnCoArmorRecipe
   result: TradeGoodUnionArmor
   completetime: 2
   materials:
     Steel: 400
 
 - type: latheRecipe
-  id: TradeGoodUnionBallisticRecipe
+  id: TradeGoodAnCoBallisticRecipe
   result: TradeGoodUnionBallistic
   completetime: 3
   materials:
