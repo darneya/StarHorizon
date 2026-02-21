@@ -32,6 +32,7 @@ seed-dna-row-Seedless = Безсемянный
 seed-dna-row-Viable = Жизнеспособный
 seed-dna-row-Ligneous = Светящийся
 seed-dna-row-CanScream = Кричащий
+
 # Необходимо заполнить для локализации химикатов
 # seed-dna-chemical-??? = ???
 
@@ -42,4 +43,6 @@ seed-dna-chemicalProp-Inherent = Неотъемлемый
 
 # Необходимо заполнить для локализации газов
 
+
 # seed-dna-gas-??? = ???
+

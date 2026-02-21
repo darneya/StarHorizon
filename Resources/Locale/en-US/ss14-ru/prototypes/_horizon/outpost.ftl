@@ -1,2 +1,2 @@
-ent-DefaultOutpostConsole = { ent-BaseComputer }
+ent-DefaultOutpostConsole = Консоль аванпоста
     .desc = { ent-BaseComputer.desc }

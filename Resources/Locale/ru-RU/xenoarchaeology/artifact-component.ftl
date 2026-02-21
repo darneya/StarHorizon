@@ -1,4 +1,5 @@
 ### Глаголы
+
 cmd-parse-failure-unlocknode-arg-num = Неверное количество аргументов
 cmd-parse-failure-unlocknode-invalid-entity = Указанный netEntity не является допустимым узлом
 artifact-verb-make-always-active = Сделать артефакт всегда активным
