@@ -45,7 +45,10 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: engi_base
+    layers:
+    - state: engi_base
+    - state: smuggling_base
+    - state: engi_tool
   - type: HorizonFactionPrice
     priceCargo: 500
     priceMarket: 5000
@@ -63,7 +66,10 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: engi_fuel
+    layers:
+    - state: engi_base
+    - state: smuggling_base
+    - state: engi_fuel
   - type: HorizonFactionPrice
     priceCargo: 500
     priceMarket: 5000
@@ -81,7 +87,10 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: engi_elec
+    layers:
+    - state: engi_base
+    - state: smuggling_base
+    - state: engi_elec
   - type: HorizonFactionPrice
     priceCargo: 500
     priceMarket: 5000
@@ -101,7 +110,10 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: med_base
+    layers:
+    - state: med_base
+    - state: smuggling_base
+    - state: med_medical
   - type: HorizonFactionPrice
     priceCargo: 400
     priceMarket: 4000
@@ -119,7 +131,10 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: med_chem
+    layers:
+    - state: med_base
+    - state: smuggling_base
+    - state: med_chem
   - type: HorizonFactionPrice
     priceCargo: 600
     priceMarket: 6000
@@ -137,7 +152,10 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: med_implants
+    layers:
+    - state: med_base
+    - state: smuggling_base
+    - state: med_implants
   - type: HorizonFactionPrice
     priceCargo: 800
     priceMarket: 8000
@@ -157,7 +175,10 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: sci_base
+    layers:
+    - state: sci_base
+    - state: smuggling_base
+    - state: sci_equipment
   - type: HorizonFactionPrice
     priceCargo: 500
     priceMarket: 5000
@@ -175,7 +196,10 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: sci_base
+    layers:
+    - state: sci_base
+    - state: smuggling_base
+    - state: sci_artefact
   - type: HorizonFactionPrice
     priceCargo: 1200
     priceMarket: 12000
@@ -193,7 +217,10 @@
   components:
   - type: Sprite
     sprite: _Horizon/Structures/Specific/trade.rsi
-    state: sci_base
+    layers:
+    - state: sci_base
+    - state: smuggling_base
+    - state: sci_prototype
   - type: HorizonFactionPrice
     priceCargo: 2000
     priceMarket: 18000
@@ -212,8 +239,11 @@
   description: "Запечатанный ящик с готовой едой и продовольственными припасами."
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: serv_base
+    - state: smuggling_base
+    - state: serv_eat
   - type: HorizonFactionPrice
     priceCargo: 300
     priceMarket: 3000
@@ -230,8 +260,11 @@
   description: "Запечатанный ящик с разнообразными напитками и алкоголем."
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles2.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: serv_base
+    - state: smuggling_base
+    - state: serv_water
   - type: HorizonFactionPrice
     priceCargo: 350
     priceMarket: 3500
@@ -248,8 +281,11 @@
   description: "Запечатанный ящик с семенами и ботаническими материалами."
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles3.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: serv_base
+    - state: smuggling_base
+    - state: serv_seed
   - type: HorizonFactionPrice
     priceCargo: 400
     priceMarket: 4000
@@ -266,8 +302,11 @@
   description: "Запечатанный ящик с чистящими средствами и уборочным инвентарём."
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles4.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: serv_base
+    - state: smuggling_base
+    - state: serv_soap
   - type: HorizonFactionPrice
     priceCargo: 200
     priceMarket: 2000
@@ -284,8 +323,11 @@
   description: "Запечатанный ящик с универсальными припасами и расходными материалами."
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: serv_base
+    - state: smuggling_base
+    - state: serv_supplay
   - type: HorizonFactionPrice
     priceCargo: 250
     priceMarket: 2500
@@ -302,8 +344,11 @@
   description: "Запечатанный ящик с униформой и рабочей одеждой."
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles2.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: serv_base
+    - state: smuggling_base
+    - state: serv_suit
   - type: HorizonFactionPrice
     priceCargo: 300
     priceMarket: 3000
@@ -322,8 +367,11 @@
   description: Герметично запечатанный ящик с довоенными боеприпасами. Наклейка на боку указывает на консоль экспорта.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: nfsd_base
+    - state: smuggling_base
+    - state: nfsd_ammo
   - type: HorizonFactionPrice
     priceMarket: 600
     priceAnco: 900
@@ -336,8 +384,11 @@
   description: Герметично запечатанный ящик с разнообразными оружейными деталями. Наклейка на боку указывает на консоль экспорта.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles2.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: nfsd_base
+    - state: smuggling_base
+    - state: nfsd_gun_detail
   - type: HorizonFactionPrice
     priceMarket: 800
     priceAnco: 1200
@@ -353,8 +404,11 @@
   description: Запечатанный ящик со специализированными пластальными сплавами. Чаще всего используются в военных судах.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles4.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: steel_base
+    - state: smuggling_base
+    - state: steel_alloys
   - type: HorizonFactionPrice
     priceMarket: 2000
     priceAnco: 3000
@@ -367,26 +421,15 @@
   description: Герметично запечатанный ящик с разнообразным ломом. Наклейка на боку указывает на консоль экспорта.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: steel_base
+    - state: smuggling_base
+    - state: steel_scrap
   - type: HorizonFactionPrice
     priceMarket: 250
     priceAnco: 200
     priceDfi: 400
-
-- type: entity
-  parent: BaseHorizonTradeItem
-  id: TradeGoodGoodScrap
-  name: Запечатанная поставка компонентов
-  description: Запечатанная поставка пригодных к использованию компонентов. Полурабочая электроника, в основном целые обшивочные плиты...
-  components:
-  - type: Sprite
-    sprite: _NF/Objects/Tools/bundles2.rsi
-    state: engi-base
-  - type: HorizonFactionPrice
-    priceMarket: 650
-    priceAnco: 550
-    priceDfi: 1000
 
 # === Текстиль ===
 
@@ -397,8 +440,11 @@
   description: Запечатанная поставка качественных имперских тканей.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles4.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: steel_base
+    - state: smuggling_base
+    - state: steel_textile
   - type: HorizonFactionPrice
     priceMarket: 1300
     priceAnco: 800
@@ -414,8 +460,11 @@
   description: Антикварный грузовой ящик, полный потребительских товаров NanoTrasen, которые так и не были доставлены. Сам по себе не стоит много, но коллекционеры могут заплатить приличную сумму.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles2.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: nt_base
+    - state: smuggling_base
+    - state: nt_nt
   - type: HorizonFactionPrice
     priceMarket: 4000
     priceAnco: 2500
@@ -428,8 +477,11 @@
   description: Антикварный грузовой ящик, полный кибернетики NanoTrasen и запчастей, которые так и не были доставлены. Большая часть сломана, но запечатанные ящики перепродаются мусорщикам по приличной цене.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles3.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: nt_base
+    - state: smuggling_base
+    - state: nt_cyber
   - type: HorizonFactionPrice
     priceMarket: 4500
     priceAnco: 3000
@@ -442,53 +494,65 @@
   description: Антикварный грузовой ящик, полный механических изделий NanoTrasen и запчастей, которые так и не были доставлены. Большая часть сломана, но запечатанные ящики перепродаются мусорщикам по приличной цене.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles4.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: nt_base
+    - state: smuggling_base
+    - state: nt_detal
   - type: HorizonFactionPrice
     priceMarket: 4500
     priceAnco: 3000
     priceDfi: 2500
 
 # === Товары Союза ===
-# Товары Союза дороже на ANCO
+# Товары АнКо дороже на ANCO
 
 - type: entity
-  parent: BaseHorizonTradeItem
+  parent: [BaseHorizonTradeItem, BaseAnCoContraband]
   id: TradeGoodUnionWeapon
-  name: Ящик оружейных деталей Союза
-  description: Ящик с массово производимыми оружейными деталями, изготовленными Союзом.
+  name: Ящик оружейных деталей АнКо
+  description: Ящик с массово производимыми оружейными деталями, изготовленными AnroxComputer`s.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles2.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: anco_base
+    - state: anco_smuggling
+    - state: anco_gun_detail
   - type: HorizonFactionPrice
     priceMarket: 650
     priceAnco: 1000
     priceDfi: 550
 
 - type: entity
-  parent: BaseHorizonTradeItem
+  parent: [BaseHorizonTradeItem, BaseAnCoContraband]
   id: TradeGoodUnionArmor
-  name: Ящик бронедеталей Союза
-  description: Ящик с массово производимыми бронедеталями, изготовленными Союзом.
+  name: Ящик бронедеталей АнКо
+  description: Ящик с массово производимыми бронедеталями, изготовленными AnroxComputer`s.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles3.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: anco_base
+    - state: anco_smuggling
+    - state: anco_shield
   - type: HorizonFactionPrice
     priceMarket: 650
     priceAnco: 1000
     priceDfi: 550
 
 - type: entity
-  parent: BaseHorizonTradeItem
+  parent: [BaseHorizonTradeItem, BaseAnCoContraband]
   id: TradeGoodUnionBallistic
-  name: Запечатанный ящик баллистики Союза
-  description: Ящик с деталями баллистического вооружения производства Союза.
+  name: Запечатанный ящик баллистики АнКо
+  description: Ящик с деталями баллистического вооружения производства AnroxComputer`s.
   components:
   - type: Sprite
-    sprite: _NF/Objects/Tools/bundles5.rsi
-    state: engi-base
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: anco_base
+    - state: anco_smuggling
+    - state: anco_ballistic
   - type: HorizonFactionPrice
     priceMarket: 1200
     priceAnco: 1800
