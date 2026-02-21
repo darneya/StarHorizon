@@ -2,7 +2,7 @@
 # Специализированный латт для производства экспортных товаров
 
 - type: entity
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseStructureDisableToolUse]
   id: TradeFabricator
   name: торговый фабрикатор
   description: Промышленный фабрикатор для производства экспортных торговых товаров. Превращает сырьё в запечатанные ящики для межфракционной торговли.
@@ -37,6 +37,7 @@
   - type: OreSiloClient
   - type: StaticPrice
     price: 2500
+
 
 # === Инженерный торговый фабрикатор ===
 - type: entity
