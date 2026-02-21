@@ -17,6 +17,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Chemistry.EntitySystems.Hypospray;
+using Content.Shared.Body.Components;
 using Content.Server.Body.Components;
 using System.Linq;
 using Robust.Server.Audio;
