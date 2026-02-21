@@ -1,0 +1,9 @@
+ent-AnCoAirlockGlass = стеклянный шлюз АнКо
+    .desc = зачем им окна?
+    .suffix = StarHorizon, AnCo, Structure
+ent-AnCoAirlockGlassDungeon = стеклянный шлюз АнКо
+    .desc = зачем им окна?
+    .suffix = StarHorizon, AnCo, Dungeon
+ent-AnCoAirlock = шлюз АнКо
+    .desc = шлюз созданный для воровства секретов, и возможно людей.
+    .suffix = StarHorizon, AnCo, Structure
