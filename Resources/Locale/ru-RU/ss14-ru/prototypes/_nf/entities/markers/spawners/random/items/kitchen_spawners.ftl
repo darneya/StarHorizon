@@ -1,6 +1,9 @@
 ent-SpawnDungeonLootClutterKitchen = случайных хлам
     .suffix = Лут Фронтира, Кухня
     .desc = { ent-MarkerBasePlaceFree.desc }
+ent-SpawnPoiLootClutterKitchen = random clutter
+    .suffix = Loot (Frontier), Kitchen
+    .desc = { ent-MarkerBasePlaceFree.desc }
 ent-SpawnDungeonLootCutlery = случайные столовые приборы
     .suffix = Лут Фронтира
     .desc = { ent-MarkerBasePlaceFree.desc }
