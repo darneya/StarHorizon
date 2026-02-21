@@ -1,9 +1,6 @@
 ent-SpawnDungeonClutterMedical = случайный хлам
     .suffix = Лут Фронтира, Медицина
     .desc = { ent-MarkerBasePlaceFree.desc }
-ent-SpawnPoiClutterMedical = random clutter
-    .suffix = Loot (Frontier), Medical
-    .desc = { ent-MarkerBasePlaceFree.desc }
 ent-SpawnDungeonLootKitsFirstAid = случайная аптечка
     .suffix = Лут Фронтира
     .desc = { ent-MarkerBasePlaceFree.desc }

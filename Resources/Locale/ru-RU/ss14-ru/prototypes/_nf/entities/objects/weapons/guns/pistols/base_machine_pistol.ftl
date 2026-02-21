@@ -4,3 +4,4 @@ ent-NFBaseWeaponFrameMachinePistolNanotrasen = { ent-NFBaseWeaponFrameMachinePis
     .desc = { ent-NFBaseWeaponFrameMachinePistol.desc }
 ent-NFBaseWeaponFrameMachinePistolGorlex = { ent-BaseC3SyndicateContraband }
     .desc = { ent-BaseC3SyndicateContraband.desc }
+

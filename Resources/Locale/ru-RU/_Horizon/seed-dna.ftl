@@ -42,6 +42,4 @@ seed-dna-chemicalProp-Inherent = Неотъемлемый
 
 # Необходимо заполнить для локализации газов
 
-
 # seed-dna-gas-??? = ???
-

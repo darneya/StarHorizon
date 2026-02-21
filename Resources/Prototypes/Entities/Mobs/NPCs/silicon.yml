@@ -156,7 +156,6 @@
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
 <<<<<<< HEAD
-<<<<<<< HEAD
   - type: Advertise
     pack: FirebotAd
   - type: NoSlip
@@ -165,11 +164,6 @@
   - type: DatasetVocalizer
     dataset: FirebotAd
 >>>>>>> beb1f861c699be5d9d23bac3a50c2f6d0a08c4b8
-=======
-  - type: Vocalizer
-  - type: DatasetVocalizer
-    dataset: FirebotAd
->>>>>>> origin/develop
 
 - type: entity
   parent: MobSiliconBase

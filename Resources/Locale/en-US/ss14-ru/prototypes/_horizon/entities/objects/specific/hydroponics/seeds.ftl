@@ -156,5 +156,3 @@ ent-DiamondcarrotSeeds = пакет семян (алмазная морковь)
     .desc = { ent-SeedBase.desc }
 ent-BluespaceTomatoSeeds = packet of blue tomato seeds
     .desc = { ent-SeedBase.desc }
-ent-PeachSeeds = пакет косточек персика
-    .desc = { ent-SeedBase.desc }

@@ -1,2 +1,0 @@
-marking-WingsRobotic = Робокрылья
-

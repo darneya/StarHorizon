@@ -1,7 +1,3 @@
-ent-BaseFish = fish
-    .desc = Water-born creature from the infinite sea... Or toilet.
-ent-BaseFishRare = rare fish
-    .desc = Water-born creature from the infinite sea... Or toilet.
 ent-FishAlien = рыба пришелец
     .desc = Выглядит так, будто она вас похитит и украдет ваши органы.
 ent-FishAngler = морской черт
