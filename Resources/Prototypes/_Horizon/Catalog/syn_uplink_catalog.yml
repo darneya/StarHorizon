@@ -75,7 +75,7 @@
   discountDownTo:
     Telecrystal: 15
   cost:
-    Telecrystal: 20
+    Telecrystal: 25
   categories:
   - UplinkWeaponry
 
@@ -171,7 +171,7 @@
   description: uplink-syndicate-borg-medical-desc
   productEntity: BorgChassisSyndicateMedical
   cost:
-    Telecrystal: 50
+    Telecrystal: 45
   categories:
     - UplinkSyndicateBorgs
 
@@ -181,7 +181,7 @@
   description: uplink-syndicate-borg-saboteur-desc
   productEntity: BorgChassisSyndicateSaboteur
   cost:
-    Telecrystal: 55
+    Telecrystal: 50
   categories:
     - UplinkSyndicateBorgs
 

@@ -695,6 +695,11 @@
     - SponsorShopPlush63
     - SponsorShopPlush64
     - SponsorShopPlush65
+    - SponsorShopPlush66
+    - SponsorShopPlush67
+    - SponsorShopPlush68
+    - SponsorShopPlush69
+    - SponsorShopPlush70
 
 # region Игры и инструменты
 - type: sponsorShopCategory
@@ -4512,6 +4517,46 @@
   cost: 1
   priority: 16
   prototypeId: PlushieGirl
+
+- type: sponsorShopListing
+  id: SponsorShopPlush66
+  name: Владыка Теней
+  description: Плюшевая игрушка сшитая из дорогих материалов и частицы тьмы. Идеален для объятий и подрывов государств.
+  cost: 1
+  priority: 16
+  prototypeId: PlushieShadowLord
+
+- type: sponsorShopListing
+  id: SponsorShopPlush67
+  name: Плюшевый агент
+  description: Плюшевая игрушка, агент синдиката.
+  cost: 1
+  priority: 16
+  prototypeId: PlushieWisdom
+
+- type: sponsorShopListing
+  id: SponsorShopPlush68
+  name: Плюшевая катунианка
+  description: Плюшевая игрушка, катунианка.
+  cost: 1
+  priority: 16
+  prototypeId: PlushieMalanisa
+
+- type: sponsorShopListing
+  id: SponsorShopPlush69
+  name: Плюшевая вульпа
+  description: Плюшевая игрушка, вульпа.
+  cost: 1
+  priority: 16
+  prototypeId: PlushieVulpa
+
+- type: sponsorShopListing
+  id: SponsorShopPlush70
+  name: Плюшевый человек
+  description: Плюшевая игрушка, человек.
+  cost: 1
+  priority: 16
+  prototypeId: PlushieChel
 
 # region Игры и инструменты
 
