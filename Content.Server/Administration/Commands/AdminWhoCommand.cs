@@ -1,7 +1,6 @@
 using System.Text;
 using Content.Server.Administration.Managers;
 using Content.Server.Afk;
-using Content.Shared._Horizon; // Horizon
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Robust.Shared.Utility;
@@ -46,7 +45,7 @@ public sealed class AdminWhoCommand : IConsoleCommand
 
             sb.Append(admin.Name);
             if (adminData.Title is { } title)
-                sb.Append($": [{TextNormalizer.GetFormatting(title)}]"); // Horizon
+                sb.Append($": [{FormattedMessage.RemoveMarkupPermissive(title)}]"); // Horizon
 
             if (adminData.Stealth)
                 sb.Append(" (S)");
