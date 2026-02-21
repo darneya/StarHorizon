@@ -1,6 +1,7 @@
 using System.Text;
 using Content.Server.Administration.Managers;
 using Content.Server.Afk;
+using Content.Shared._Horizon; // Horizon
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 using Robust.Shared.Utility;
@@ -45,7 +46,7 @@ public sealed class AdminWhoCommand : IConsoleCommand
 
             sb.Append(admin.Name);
             if (adminData.Title is { } title)
-                sb.Append($": [{title}]");
+                sb.Append($": [{TextNormalizer.GetFormatting(title)}]"); // Horizon
 
             if (adminData.Stealth)
                 sb.Append(" (S)");
@@ -55,7 +56,7 @@ public sealed class AdminWhoCommand : IConsoleCommand
                 if (afk.IsAfk(admin))
                     sb.Append(" [AFK]");
             }
-        }
+        } 
 
         shell.WriteLine(sb.ToString());
     }

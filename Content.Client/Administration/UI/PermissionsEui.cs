@@ -14,6 +14,7 @@ using Robust.Shared.IoC;
 using Robust.Shared.Localization;
 using Robust.Shared.Maths;
 using Robust.Shared.Utility;
+using Content.Shared._Horizon; // Horizon
 using static Content.Shared.Administration.PermissionsEuiMsg;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
@@ -214,6 +215,7 @@ namespace Content.Client.Administration.UI
                 al.AddChild(new Label { Text = name });
 
                 var titleControl = new Label { Text = admin.Title ?? Loc.GetString("permissions-eui-edit-admin-title-control-text").ToLowerInvariant() };
+                titleControl.Text = TextNormalizer.GetFormatting(titleControl.Text); // Horizon
                 if (admin.Title == null) // none
                 {
                     titleControl.StyleClasses.Add(StyleBase.StyleClassItalic);
@@ -237,7 +239,7 @@ namespace Content.Client.Administration.UI
                     rank = Loc.GetString("permissions-eui-edit-no-rank-text").ToLowerInvariant();
                 }
 
-                var rankControl = new Label { Text = rank };
+                var rankControl = new Label { Text = TextNormalizer.GetFormatting(rank) }; // Horizon
                 if (italic)
                 {
                     rankControl.StyleClasses.Add(StyleBase.StyleClassItalic);
@@ -270,7 +272,7 @@ namespace Content.Client.Administration.UI
             {
                 var rank = kv.Value;
                 var flagsText = string.Join(' ', AdminFlagsHelper.FlagsToNames(rank.Flags).Select(f => $"+{f}"));
-                _menu.AdminRanksList.AddChild(new Label { Text = rank.Name });
+                _menu.AdminRanksList.AddChild(new Label { Text = TextNormalizer.GetFormatting(rank.Name) }); // Horizon
                 _menu.AdminRanksList.AddChild(new Label
                 {
                     Text = flagsText,
