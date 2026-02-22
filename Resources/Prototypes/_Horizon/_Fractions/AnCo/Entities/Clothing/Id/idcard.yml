@@ -31,6 +31,14 @@
     jobIcon: JobIconCounselorAnCo
   - type: Access
     tags:
+    - AccessAnCoCounselor
+    - AccessAnCoTitan
+    - AccessAnCoKnight
+    - AccessAnCoSpider
+    - AccessAnCoOfficer
+    - AccessAnCoCadet
+    - AccessAnCoRipsoid
+    - AccessAnCoWelcome
     - Maintenance
     - AnCo
 
@@ -52,6 +60,13 @@
     jobIcon: JobIconTitanAnCo
   - type: Access
     tags:
+    - AccessAnCoTitan
+    - AccessAnCoKnight
+    - AccessAnCoSpider
+    - AccessAnCoOfficer
+    - AccessAnCoCadet
+    - AccessAnCoRipsoid
+    - AccessAnCoWelcome
     - Maintenance
     - AnCo
 
@@ -73,6 +88,11 @@
     jobIcon: JobIconSpiderAnCo
   - type: Access
     tags:
+    - AccessAnCoSpider
+    - AccessAnCoOfficer
+    - AccessAnCoCadet
+    - AccessAnCoRipsoid
+    - AccessAnCoWelcome
     - Maintenance
     - AnCo
 
@@ -94,6 +114,11 @@
     jobIcon: JobIconKnightAnCo
   - type: Access
     tags:
+    - AccessAnCoKnight
+    - AccessAnCoOfficer
+    - AccessAnCoCadet
+    - AccessAnCoRipsoid
+    - AccessAnCoWelcome
     - Maintenance
     - AnCo
 
@@ -115,6 +140,10 @@
     jobIcon: JobIconOfficerAnCo
   - type: Access
     tags:
+    - AccessAnCoOfficer
+    - AccessAnCoCadet
+    - AccessAnCoRipsoid
+    - AccessAnCoWelcome
     - Maintenance
     - AnCo
 
@@ -136,6 +165,9 @@
     jobIcon: JobIconCadetAnCo
   - type: Access
     tags:
+    - AccessAnCoCadet
+    - AccessAnCoRipsoid
+    - AccessAnCoWelcome
     - Maintenance
     - AnCo
 
@@ -157,5 +189,29 @@
     jobIcon: JobIconRipsoidAnCo
   - type: Access
     tags:
+    - AccessAnCoRipsoid
+    - AccessAnCoWelcome
     - Maintenance
     - AnCo
+
+# остальные карточки
+
+- type: entity
+  parent: AnCoStandartID
+  id: AnCoWelcomeID
+  suffix: StarHorizon, AnCo
+  name: карта Гостя АнКо
+  description: Карта с необходимыми для членов АнКо доступами.
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: welcome
+  - type: Item
+  - type: IdCard
+    jobTitle: Гость АнКо
+    jobIcon: JobIconWelcomeAnCo
+  - type: Access
+    tags:
+    - AccessAnCoWelcome
+    - Maintenance
