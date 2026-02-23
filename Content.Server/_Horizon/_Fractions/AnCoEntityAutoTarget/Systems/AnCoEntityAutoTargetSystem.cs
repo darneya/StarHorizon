@@ -1,5 +1,4 @@
-using Content.Server._Horizon.AnCoAutoGuidedBullet.Components;
-using Content.Server.Administration.Commands;
+using Content.Server._Horizon.AnCoEntityAutoTarget.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;

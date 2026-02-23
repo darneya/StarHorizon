@@ -1,5 +1,3 @@
-using Content.Shared.Whitelist;
-
 namespace Content.Server._Horizon.AnCoEntityAutoTarget.Components;
 
 /// <summary>
