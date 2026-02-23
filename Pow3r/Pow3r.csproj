@@ -7,7 +7,7 @@
 
     <ItemGroup>
       <PackageReference Include="ImGui.NET" />
-      <PackageReference Include="OpenTK" Version="4.9.4" />
+      <PackageReference Include="OpenTK" />
       <PackageReference Include="Veldrid" />
       <PackageReference Include="Veldrid.SPIRV" />
     </ItemGroup>
