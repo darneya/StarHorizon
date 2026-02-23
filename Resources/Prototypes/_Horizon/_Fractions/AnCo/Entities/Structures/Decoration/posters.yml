@@ -197,3 +197,25 @@
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/posters.rsi
     state: join
+
+- type: entity
+  parent: PosterBase
+  id: AnCoPosterCorporate
+  suffix: StarHorizon, AnCo
+  name: Корпорат помнит вас
+  description: Корпорат помнит героев. Героев несущих свет Ардония в каждый уголок галактики.
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/posters.rsi
+    state: corporate
+
+- type: entity
+  parent: PosterBase
+  id: AnCoPosterErotic
+  suffix: StarHorizon, AnCo
+  name: Новый выпуск G&G
+  description: Встречайте новую модель журнала G&G. Ищите ее в 37 выпуске!
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Wallmounts/posters.rsi
+    state: erotic
