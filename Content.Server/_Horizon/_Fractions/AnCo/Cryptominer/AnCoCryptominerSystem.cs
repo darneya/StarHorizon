@@ -135,6 +135,8 @@ public sealed class AnCoCryptominerSystem : EntitySystem
             else
             {
                 miner.CurrentPressure = 0f;
+                // In vacuum temperature is undefined; reset so UI does not show stale value
+                miner.CurrentTemperature = 0f;
             }
 
             // Check for no disks - cannot operate without disks
@@ -326,7 +328,7 @@ public sealed class AnCoCryptominerSystem : EntitySystem
     {
         var isPowered = _power.IsPowered(uid);
 
-        // Calculate effective credits per minute (linear: diskCount * baseCredits)
+        // Effective credits per minute (base rate, before efficiency)
         var effectiveCreditsPerMinute = miner.BaseCreditsPerMinute * miner.DiskCount;
 
         var state = new CryptominerBoundUserInterfaceState(

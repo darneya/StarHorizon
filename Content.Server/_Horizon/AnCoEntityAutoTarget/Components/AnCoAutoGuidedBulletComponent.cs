@@ -1,6 +1,6 @@
 using Content.Shared.Whitelist;
 
-namespace Content.Server._Horizon.AnCoAutoGuidedBullet.Components;
+namespace Content.Server._Horizon.AnCoEntityAutoTarget.Components;
 
 /// <summary>
 /// Компонент который добавляется пулям для автоматической наводки на цель.

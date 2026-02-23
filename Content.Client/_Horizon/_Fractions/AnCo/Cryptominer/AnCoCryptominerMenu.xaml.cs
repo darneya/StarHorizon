@@ -34,8 +34,8 @@ public sealed partial class AnCoCryptominerMenu : FancyWindow
         // Update efficiency
         EfficiencyLabel.Text = $"{state.Efficiency * 100:F0}%";
 
-        // Update credits info (per-minute)
-        var effectiveCreditsPerMinute = (int)(state.CreditsPerSecond * state.Efficiency);
+        // Update credits info (per-minute, with current efficiency)
+        var effectiveCreditsPerMinute = (int)(state.CreditsPerMinute * state.Efficiency);
         CreditsPerSecondLabel.Text = $"{effectiveCreditsPerMinute}";
 
         // Update power
@@ -45,7 +45,10 @@ public sealed partial class AnCoCryptominerMenu : FancyWindow
 
         // Update temperature bar (normalized between 293K and critical temp)
         var minTemp = 293.15f; // Room temperature
-        var normalizedTemp = (state.CurrentTemperature - minTemp) / (state.CriticalTemperature - minTemp);
+        var range = state.CriticalTemperature - minTemp;
+        var normalizedTemp = range > 0.001f
+            ? (state.CurrentTemperature - minTemp) / range
+            : 0f;
         TemperatureBar.Value = Math.Clamp(normalizedTemp, 0f, 1f);
 
         // Color the temperature bar based on state
@@ -73,7 +76,7 @@ public sealed partial class AnCoCryptominerMenu : FancyWindow
             CryptominerState.Critical => Loc.GetString("cryptominer-state-critical"),
             CryptominerState.NoAtmosphere => Loc.GetString("cryptominer-state-no-atmosphere"),
             CryptominerState.NoDisks => Loc.GetString("cryptominer-state-no-disks"),
-            _ => "Unknown"
+            _ => Loc.GetString("cryptominer-state-unknown")
         };
     }
 
