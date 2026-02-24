@@ -17,7 +17,7 @@
   - type: Lock
     locked: true
   - type: AccessReader
-    access: [[ "AnCo" ]]
+    access: [[ "AccessAnCoOfficer" ]]
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
@@ -48,7 +48,7 @@
   - type: Lock
     locked: true
   - type: AccessReader
-    access: [[ "AnCo" ]]
+    access: [[ "AccessAnCoCadet" ]]
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
@@ -79,7 +79,7 @@
   - type: Lock
     locked: true
   - type: AccessReader
-    access: [[ "AnCo" ]]
+    access: [[ "AccessAnCoCadet" ]]
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
@@ -110,7 +110,7 @@
   - type: Lock
     locked: true
   - type: AccessReader
-    access: [[ "AnCo" ]]
+    access: [[ "AccessAnCoOfficer" ]]
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
@@ -141,7 +141,7 @@
   - type: Lock
     locked: true
   - type: AccessReader
-    access: [[ "AnCo" ]]
+    access: [[ "AccessAnCoKnight" ]]
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
@@ -179,7 +179,7 @@
   - type: Lock
     locked: true
   - type: AccessReader
-    access: [[ "AnCo" ]]
+    access: [[ "AccessAnCoOfficer" ]]
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-weapon-case
