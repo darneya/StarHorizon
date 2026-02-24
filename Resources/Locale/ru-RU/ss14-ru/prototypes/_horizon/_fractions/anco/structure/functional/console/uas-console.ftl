@@ -3,4 +3,4 @@ ent-BaseAnCoUplink = консоль запроса АнКо
     .suffix = StarHorizon, AnCo, Structure
 ent-ComputerIdAnCo = ID консоль АнКо
     .desc = Терминал для программирования ID-карт сотрудников корпорации АнКо.
-    .suffix = StarHorizon, AnCo
+    .suffix = StarHorizon, AnCo, Structure

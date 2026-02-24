@@ -1,4 +1,4 @@
-namespace Content.Server._Horizon.AnCoAutoGuidedBullet.Components;
+namespace Content.Server._Horizon.AnCoEntityAutoTarget.Components;
 
 [RegisterComponent]
 public sealed partial class AnCoGunAutoTargetComponent : Component

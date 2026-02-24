@@ -7,6 +7,54 @@
   components:
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Structures/Airlocks/airlockglass.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            KazmieSheet1:
+              min: 1
+              max: 5
+            ArdonSheet1:
+              min: 3
+              max: 5
+
+- type: entity
+  id: AnCoAirlockGlassOpen
+  parent: AnCoAirlockGlass
+  name: открытый стеклянный шлюз АнКо
+  suffix: StarHorizon, AnCo, Structure
+  description: зачем им большие окна?
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Airlocks/airlockopen.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            KazmieSheet1:
+              min: 1
+              max: 5
+            ArdonSheet1:
+              min: 3
+              max: 5
 
 - type: entity
   id: AnCoAirlockGlassDungeon
@@ -26,6 +74,25 @@
         - FullTileMask
         layer:
         - WallLayer
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            KazmieSheet1:
+              min: 1
+              max: 5
+            ArdonSheet1:
+              min: 3
+              max: 5
 
 - type: entity
   id: AnCoAirlock
@@ -36,3 +103,22 @@
   components:
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Structures/Airlocks/airlock.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalBreak
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            KazmieSheet1:
+              min: 1
+              max: 5
+            ArdonSheet1:
+              min: 3
+              max: 5

@@ -48,3 +48,10 @@
   icon:
     sprite: /Textures/_Horizon/_Fractions/AnCo/Interface/Misc/jobicon.rsi
     state: ripsoid
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconWelcomeAnCo
+  icon:
+    sprite: /Textures/_Horizon/_Fractions/AnCo/Interface/Misc/jobicon.rsi
+    state: welcome

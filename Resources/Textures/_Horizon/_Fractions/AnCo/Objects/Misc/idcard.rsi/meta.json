@@ -32,6 +32,9 @@
         "name": "ripsoid"
       },
       {
+        "name": "welcome"
+      },
+      {
         "name": "default_world"
       },
       {
@@ -54,6 +57,9 @@
       },
       {
         "name": "ripsoid_world"
+      },
+      {
+        "name": "welcome_world"
       }
     ]
   }

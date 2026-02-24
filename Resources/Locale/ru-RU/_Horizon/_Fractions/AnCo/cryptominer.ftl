@@ -18,6 +18,8 @@ cryptominer-state-warning = Предупреждение
 cryptominer-state-overheat = Перегрев
 cryptominer-state-critical = Критический
 cryptominer-state-no-atmosphere = Нет атмосферы
+cryptominer-state-no-disks = Нет дисков
+cryptominer-state-unknown = Неизвестно
 
 # Entity
 ent-Cryptominer = криптомайнер
