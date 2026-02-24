@@ -43,7 +43,7 @@
   - type: Repairable
     doAfterDelay: 20
   - type: Body
-    prototype: Aghost
+    prototype: IPC
   - type: CombatMode
   - type: StatusEffects
     allowed:
