@@ -122,3 +122,66 @@
             ArdonSheet1:
               min: 3
               max: 5
+
+# для шаттлов йоу
+
+- type: entity
+  id: AnCoAirlockGlassShuttle
+  parent: AirlockGlassShuttle
+  name: стеклянный стыковочный шлюз АнКо
+  suffix: StarHorizon, AnCo, Structure
+  description: Идеальный шлюз для того, что бы выбрасывать трупы предателей.
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Airlocks/shuttleglass.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  id: AnCoAirlockShuttle
+  parent: AirlockShuttle
+  name: стыковочный шлюз АнКо
+  suffix: StarHorizon, AnCo, Structure
+  description: Идеальный шлюз для того, что бы выбрасывать трупы предателей.
+  components:
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Structures/Airlocks/shuttle.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalSlam
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+# прочность казмиевой стены
