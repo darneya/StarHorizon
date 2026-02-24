@@ -93,7 +93,7 @@ namespace Content.Shared._Horizon.CCVar
         /// Включение/отключение автоматического удаления мелких гридов.
         /// </summary>
         public static readonly CVarDef<bool> AutoGridCleanupEnabled =
-            CVarDef.Create("shuttle.grid_cleanup_enabled", false, CVar.SERVERONLY | CVar.ARCHIVE);
+            CVarDef.Create("shuttle.grid_cleanup_enabled", true, CVar.SERVERONLY | CVar.ARCHIVE);
 
         /// <summary>
         /// Включение/отключение автоматического удаления брошенных шаттлов.
