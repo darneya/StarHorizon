@@ -15,12 +15,8 @@ using Content.Shared.Popups;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee.Events;
-using Robust.Shared.Audio.Systems;
 using Content.Shared.Chemistry.EntitySystems.Hypospray;
 using Content.Shared.Body.Components;
-using Content.Server.Body.Components;
-using System.Linq;
-using Robust.Server.Audio;
 using Content.Shared.DoAfter; // Frontier
 using Content.Shared._DV.Chemistry.Components; // Frontier
 using Robust.Shared.Audio.Systems;
