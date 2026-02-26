@@ -35,5 +35,20 @@ public enum HorizonFaction : byte
     /// <summary>
     /// DFI faction stations.
     /// </summary>
-    Dfi
+    Dfi,
+
+    /// <summary>
+    /// Syndicate faction stations.
+    /// </summary>
+    Syndicate,
+
+    /// <summary>
+    /// Pirate faction stations.
+    /// </summary>
+    Pirate,
+
+    /// <summary>
+    /// NanoTraisen faction stations.
+    /// </summary>
+    NanoTraisen
 }

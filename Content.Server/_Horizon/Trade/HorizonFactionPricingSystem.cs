@@ -35,8 +35,11 @@ public sealed class HorizonFactionPricingSystem : EntitySystem
         // Set price based on faction
         ev.Price = faction switch
         {
-            HorizonFaction.Anco => ent.Comp.PriceAnco,
+            HorizonFaction.AnCo => ent.Comp.PriceAnCo,
             HorizonFaction.Dfi => ent.Comp.PriceDfi,
+            HorizonFaction.Syndicate => ent.Comp.PriceSyndicate,
+            HorizonFaction.Pirate => ent.Comp.PricePirate,
+            HorizonFaction.NanoTraisen => ent.Comp.PriceNanoTraisen,
             _ => ent.Comp.PriceMarket
         };
 
@@ -59,6 +62,9 @@ public sealed class HorizonFactionPricingSystem : EntitySystem
         {
             HorizonFaction.Anco => priceComp.PriceAnco,
             HorizonFaction.Dfi => priceComp.PriceDfi,
+            HorizonFaction.Syndicate => ent.Comp.PriceSyndicate,
+            HorizonFaction.Pirate => ent.Comp.PricePirate,
+            HorizonFaction.NanoTraisen => ent.Comp.PriceNanoTraisen,
             _ => priceComp.PriceMarket
         };
     }

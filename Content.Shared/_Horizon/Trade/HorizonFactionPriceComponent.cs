@@ -25,4 +25,22 @@ public sealed partial class HorizonFactionPriceComponent : Component
     /// </summary>
     [DataField]
     public int PriceDfi;
+
+    /// <summary>
+    /// Price when sold at NanoTraisen stations.
+    /// </summary>
+    [DataField]
+    public int PriceNanoTraisen;
+
+    /// <summary>
+    /// Price when sold at Pirate stations.
+    /// </summary>
+    [DataField]
+    public int PricePirate;
+
+    /// <summary>
+    /// Price when sold at Syndicate stations.
+    /// </summary>
+    [DataField]
+    public int PriceSyndicate;
 }
