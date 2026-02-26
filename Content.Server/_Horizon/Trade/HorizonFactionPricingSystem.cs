@@ -1,4 +1,3 @@
-using Content.Server.Cargo.Systems;
 using Content.Server.Station.Systems;
 using Content.Shared._Horizon.Trade;
 using Content.Shared.Cargo;
@@ -6,13 +5,12 @@ using Content.Shared.Cargo;
 namespace Content.Server._Horizon.Trade;
 
 /// <summary>
-/// Система расчета цены торговых товаров на основе стоимости ресурсов.
-/// Формула: цена = (стоимость ресурсов × 5) × множитель_фракции
+/// Система расчета цены торговых товаров на основе базовой цены PriceMarket.
+/// Формула: цена = PriceMarket × множитель_фракции
 /// </summary>
 public sealed class HorizonFactionPricingSystem : EntitySystem
 {
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly PricingSystem _pricing = default!;
 
     public override void Initialize()
     {
@@ -27,11 +25,8 @@ public sealed class HorizonFactionPricingSystem : EntitySystem
         if (ev.Handled)
             return;
 
-        // Получаем стоимость ресурсов в ящике
-        var resourcePrice = _pricing.GetPrice(ent.Owner, includeContents: true);
-
-        // Базовая цена = стоимость ресурсов × 5
-        var basePrice = resourcePrice * 5.0;
+        // Базовая цена = PriceMarket (фиксированная цена для Market)
+        var basePrice = ent.Comp.PriceMarket;
 
         // Получаем станцию, на которой продается ящик
         var owningStation = _station.GetOwningStation(ent);
@@ -60,16 +55,17 @@ public sealed class HorizonFactionPricingSystem : EntitySystem
 
     /// <summary>
     /// Получить множитель цены для конкретной фракции.
+    /// PriceMarket — базовая цена, остальные значения — множители от неё.
     /// </summary>
     private double GetFactionMultiplier(HorizonFactionPriceComponent comp, HorizonFaction faction)
     {
         return faction switch
         {
-            HorizonFaction.AnCo => comp.PriceAnCo > 0 ? comp.PriceAnCo / comp.PriceMarket : 1.0,
-            HorizonFaction.Dfi => comp.PriceDfi > 0 ? comp.PriceDfi / comp.PriceMarket : 1.0,
-            HorizonFaction.Syndicate => comp.PriceSyndicate > 0 ? comp.PriceSyndicate / comp.PriceMarket : 1.0,
-            HorizonFaction.Pirate => comp.PricePirate > 0 ? comp.PricePirate / comp.PriceMarket : 1.0,
-            HorizonFaction.NanoTraisen => comp.PriceNanoTraisen > 0 ? comp.PriceNanoTraisen / comp.PriceMarket : 1.0,
+            HorizonFaction.AnCo => comp.PriceAnCo > 0 ? comp.PriceAnCo : 1.0,
+            HorizonFaction.Dfi => comp.PriceDfi > 0 ? comp.PriceDfi : 1.0,
+            HorizonFaction.Syndicate => comp.PriceSyndicate > 0 ? comp.PriceSyndicate : 1.0,
+            HorizonFaction.Pirate => comp.PricePirate > 0 ? comp.PricePirate : 1.0,
+            HorizonFaction.NanoTraisen => comp.PriceNanoTraisen > 0 ? comp.PriceNanoTraisen : 1.0,
             _ => 1.0
         };
     }
@@ -82,9 +78,7 @@ public sealed class HorizonFactionPricingSystem : EntitySystem
         if (!TryComp<HorizonFactionPriceComponent>(uid, out var priceComp))
             return 0;
 
-        var resourcePrice = _pricing.GetPrice(uid, includeContents: true);
-        var basePrice = resourcePrice * 5.0;
-
+        var basePrice = priceComp.PriceMarket;
         var multiplier = GetFactionMultiplier(priceComp, faction);
         return basePrice * multiplier;
     }
