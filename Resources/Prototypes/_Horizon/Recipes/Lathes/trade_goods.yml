@@ -427,3 +427,62 @@
   materials:
     Steel: 600
     Uranium: 300
+
+# === контраба-плачет по рп ===
+# === пираты ===
+- type: latheRecipe
+  id: TradeGoodPirateWaterRecipe
+  result: TradeGoodPirateWater
+  completetime: 2
+  materials:
+    Biomass: 50
+    Glass: 500
+    Plastic: 200
+
+- type: latheRecipe
+  id: TradeGoodPirateGoldRecipe
+  result: TradeGoodPirateGold
+  completetime: 3
+  materials:
+    Steel: 200
+    Gold: 1000
+    Silver: 500
+    Diamond: 500
+
+- type: latheRecipe
+  id: TradeGoodPirateNarcRecipe
+  result: TradeGoodPirateNarc
+  completetime: 2
+  materials:
+    Biomass: 75
+    Glass: 500
+    Plastic: 300
+
+# === синдикат ===
+
+- type: latheRecipe
+  id: TradeGoodSyndicateFuelRecipe
+  result: TradeGoodSyndicateFuel
+  completetime: 2
+  materials:
+    Bananium: 300
+    Plasma: 300
+    Uranium: 300
+
+- type: latheRecipe
+  id: TradeGoodSyndicateSubsRecipe
+  result: TradeGoodSyndicateSubs
+  completetime: 2
+  materials:
+    Biomass: 50
+    Glass: 500
+    Plastic: 500
+
+- type: latheRecipe
+  id: TradeGoodSyndicateDetalRecipe
+  result: TradeGoodSyndicateDetal
+  completetime: 2
+  materials:
+    Steel: 200
+    Gold: 300
+    Plasteel: 500

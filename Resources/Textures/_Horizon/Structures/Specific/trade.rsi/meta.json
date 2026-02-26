@@ -44,6 +44,15 @@
       "name": "smuggling_base"
     },
     {
+      "name": "contraband_base"
+    },
+    {
+      "name": "pirate_base"
+    },
+    {
+      "name": "synd_base"
+    },
+    {
       "name": "engi_tool"
     },
     {

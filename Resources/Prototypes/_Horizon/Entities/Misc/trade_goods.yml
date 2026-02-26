@@ -34,7 +34,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: RequireProjectileTarget
-
+  - type: InteractionOutline
 # Engineer
 
 - type: entity
@@ -574,3 +574,117 @@
     priceNanoTraisen: 1.0
     pricePirate: 1.2
     priceSyndicate: 1.3
+
+- type: entity
+  parent: [BaseHorizonTradeItem]
+  id: TradeGoodSyndicateFuel
+  name: Ящик контрабандного топлива
+  description: Ящик с контрабандным топливом
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: synd_base
+    - state: contraband_base
+    - state: engi_fuelcontr
+  - type: HorizonFactionPrice
+    priceMarket: 1.3
+    priceAnCo: 0.8
+    priceNanoTraisen: 1.3
+    pricePirate: 1.2
+    priceSyndicate: 0.5
+
+- type: entity
+  parent: [BaseHorizonTradeItem]
+  id: TradeGoodSyndicateDetal
+  name: Ящик контрабандных деталей
+  description: Ящик с контрабандными деталями для оружия
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: synd_base
+    - state: contraband_base
+    - state: nfsd_gun_detail
+  - type: HorizonFactionPrice
+    priceMarket: 1.3
+    priceAnCo: 1.5
+    priceNanoTraisen: 1.3
+    pricePirate: 0.8
+    priceSyndicate: 0.5
+
+- type: entity
+  parent: [BaseHorizonTradeItem]
+  id: TradeGoodSyndicateSubs
+  name: Ящик контрабандных веществ
+  description: Ящик с контрабандными химическими веществами
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: synd_base
+    - state: contraband_base
+    - state: med_chem
+  - type: HorizonFactionPrice
+    priceMarket: 1.3
+    priceAnCo: 1.5
+    priceNanoTraisen: 1.3
+    pricePirate: 0.8
+    priceSyndicate: 0.5
+
+- type: entity
+  parent: [BaseHorizonTradeItem]
+  id: TradeGoodPirateNarc
+  name: Ящик контрабандных наркотиков
+  description: Ящик с контрабандными припаса наркотических веществ
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: pirate_base
+    - state: contraband_base
+    - state: med_narc
+  - type: HorizonFactionPrice
+    priceMarket: 1.3
+    priceAnCo: 1.1
+    priceNanoTraisen: 1.3
+    pricePirate: 0.5
+    priceSyndicate: 0.8
+
+- type: entity
+  parent: [BaseHorizonTradeItem]
+  id: TradeGoodPirateWater
+  name: Ящик контрабандных алкогольных напитков
+  description: Ящик с контрабандной выпивкой
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: pirate_base
+    - state: contraband_base
+    - state: serv_water
+  - type: HorizonFactionPrice
+    priceMarket: 1.3
+    priceAnCo: 1.1
+    priceNanoTraisen: 1.3
+    pricePirate: 0.5
+    priceSyndicate: 0.8
+
+- type: entity
+  parent: [BaseHorizonTradeItem]
+  id: TradeGoodPirateGold
+  name: Ящик контрабандных украшений
+  description: Ящик с контрабандными украшениями.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Structures/Specific/trade.rsi
+    layers:
+    - state: pirate_base
+    - state: contraband_base
+    - state: steel_alloys
+  - type: HorizonFactionPrice
+    priceMarket: 1.3
+    priceAnCo: 1.1
+    priceNanoTraisen: 1.3
+    pricePirate: 0.5
+    priceSyndicate: 0.8

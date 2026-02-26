@@ -155,3 +155,41 @@
       Manipulator: 1
     materialRequirements:
       Steel: 5
+
+# Пиратский торговый фабрикатор
+
+- type: entity
+  id: TradeFabricatorPirateCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата пиратского торгового фабрикатора
+  description: Печатная плата для пиратского торгового фабрикатора.
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: TradeFabricatorMilitary
+    requirements:
+      MatterBin: 2
+      Manipulator: 2
+    materialRequirements:
+      Steel: 5
+      Plasteel: 2
+
+# Синдикатовский торговый фабрикатор
+
+- type: entity
+  id: TradeFabricatorSyndicateCircuitboard
+  parent: BaseMachineCircuitboard
+  name: плата синдикатского торгового фабрикатора
+  description: Печатная плата для синдикатского торгового фабрикатора.
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: TradeFabricatorMilitary
+    requirements:
+      MatterBin: 2
+      Manipulator: 2
+    materialRequirements:
+      Steel: 5
+      Plasteel: 2
