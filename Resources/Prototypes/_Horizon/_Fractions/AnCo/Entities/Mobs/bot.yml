@@ -8,7 +8,7 @@
 
 - type: entity
   id: AnCoFlyDroneSmallDungeon
-  parent: BaseAnCoFlyDrone
+  parent: BaseAnCoMob
   suffix: StarHorizon, AnCo, Dungeon
   name: дрон компаньен АнКо
   description: Теперь у вас есть друг по лучше этих наземных жуков. Бе!
@@ -66,7 +66,7 @@
 
 - type: entity
   id: AnCoFlyDroneMediumDungeon
-  parent: BaseAnCoFlyDrone
+  parent: BaseAnCoMob
   suffix: StarHorizon, AnCo, Dungeon
   name: грузовой дрон АнКо
   description: Как он вмещает в себя столько мусора?
@@ -124,20 +124,16 @@
 
 - type: entity
   id: AnCoFlyDroneHugeDungeon
-  parent: BaseAnCoFlyDrone
+  parent: [BaseAnCoMob, MobHumanoidHostileAISimpleRanged]
   suffix: StarHorizon, AnCo, Dungeon
   name: боевой дрон АнКо
   description: Зачем давать дрону зубы если можно дать пушки?
   components:
   - type: Sprite
-  - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Mobs/flybot.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: flyhuge
-  - type: Item
-    sprite: _Horizon/_Fractions/AnCo/Mobs/flybot.rsi
-    state: flyhuge
   - type: Gun
     fireRate: 1.5
     selectedMode: FullAuto
