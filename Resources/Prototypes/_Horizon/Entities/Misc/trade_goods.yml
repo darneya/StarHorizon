@@ -54,8 +54,8 @@
     priceMarket: 5000
     priceMarketNT: 10000
     priceMarketPirates: 5000
-    priceMarketSyndie: 5000
-    priceBaseSyndie: 5000
+    priceMarketSyndicate: 5000
+    priceBaseSyndicate: 5000
     priceBasePirates: 5000
 
 - type: entity
@@ -75,8 +75,8 @@
     priceMarket: 5000
     priceMarketNT: 10000
     priceMarketPirates: 5000
-    priceMarketSyndie: 5000
-    priceBaseSyndie: 7500
+    priceMarketSyndicate: 5000
+    priceBaseSyndicate: 7500
     priceBasePirates: 7500
 
 - type: entity
@@ -96,8 +96,8 @@
     priceMarket: 5000
     priceMarketNT: 10000
     priceMarketPirates: 5000
-    priceMarketSyndie: 5000
-    priceBaseSyndie: 7500
+    priceMarketSyndicate: 5000
+    priceBaseSyndicate: 7500
     priceBasePirates: 7500
 
 # Med
@@ -119,8 +119,8 @@
     priceMarket: 4000
     priceMarketNT: 8000
     priceMarketPirates: 6000
-    priceMarketSyndie: 6000
-    priceBaseSyndie: 5000
+    priceMarketSyndicate: 6000
+    priceBaseSyndicate: 5000
     priceBasePirates: 5000
 
 - type: entity
@@ -140,8 +140,8 @@
     priceMarket: 6000
     priceMarketNT: 12000
     priceMarketPirates: 8000
-    priceMarketSyndie: 8000
-    priceBaseSyndie: 7000
+    priceMarketSyndicate: 8000
+    priceBaseSyndicate: 7000
     priceBasePirates: 7000
 
 - type: entity
@@ -161,8 +161,8 @@
     priceMarket: 8000
     priceMarketNT: 15000
     priceMarketPirates: 10000
-    priceMarketSyndie: 10000
-    priceBaseSyndie: 9000
+    priceMarketSyndicate: 10000
+    priceBaseSyndicate: 9000
     priceBasePirates: 9000
 
 # Sci
@@ -184,8 +184,8 @@
     priceMarket: 5000
     priceMarketNT: 12000
     priceMarketPirates: 6000
-    priceMarketSyndie: 6000
-    priceBaseSyndie: 5500
+    priceMarketSyndicate: 6000
+    priceBaseSyndicate: 5500
     priceBasePirates: 5500
 
 - type: entity
@@ -205,8 +205,8 @@
     priceMarket: 12000
     priceMarketNT: 20000
     priceMarketPirates: 15000
-    priceMarketSyndie: 15000
-    priceBaseSyndie: 14000
+    priceMarketSyndicate: 15000
+    priceBaseSyndicate: 14000
     priceBasePirates: 14000
 
 - type: entity
@@ -226,8 +226,8 @@
     priceMarket: 18000
     priceMarketNT: 30000
     priceMarketPirates: 22000
-    priceMarketSyndie: 22000
-    priceBaseSyndie: 20000
+    priceMarketSyndicate: 22000
+    priceBaseSyndicate: 20000
     priceBasePirates: 20000
 
 # Service + General
@@ -249,8 +249,8 @@
     priceMarket: 3000
     priceMarketNT: 5000
     priceMarketPirates: 4000
-    priceMarketSyndie: 4000
-    priceBaseSyndie: 3500
+    priceMarketSyndicate: 4000
+    priceBaseSyndicate: 3500
     priceBasePirates: 3500
 
 - type: entity
@@ -270,8 +270,8 @@
     priceMarket: 3500
     priceMarketNT: 6000
     priceMarketPirates: 4500
-    priceMarketSyndie: 4500
-    priceBaseSyndie: 4000
+    priceMarketSyndicate: 4500
+    priceBaseSyndicate: 4000
     priceBasePirates: 4000
 
 - type: entity
@@ -291,8 +291,8 @@
     priceMarket: 4000
     priceMarketNT: 7000
     priceMarketPirates: 5000
-    priceMarketSyndie: 5000
-    priceBaseSyndie: 4500
+    priceMarketSyndicate: 5000
+    priceBaseSyndicate: 4500
     priceBasePirates: 4500
 
 - type: entity
@@ -312,8 +312,8 @@
     priceMarket: 2000
     priceMarketNT: 3500
     priceMarketPirates: 2500
-    priceMarketSyndie: 2500
-    priceBaseSyndie: 2200
+    priceMarketSyndicate: 2500
+    priceBaseSyndicate: 2200
     priceBasePirates: 2200
 
 - type: entity
@@ -333,8 +333,8 @@
     priceMarket: 2500
     priceMarketNT: 4000
     priceMarketPirates: 3000
-    priceMarketSyndie: 3000
-    priceBaseSyndie: 2800
+    priceMarketSyndicate: 3000
+    priceBaseSyndicate: 2800
     priceBasePirates: 2800
 
 - type: entity
@@ -354,8 +354,8 @@
     priceMarket: 3000
     priceMarketNT: 5000
     priceMarketPirates: 3500
-    priceMarketSyndie: 3500
-    priceBaseSyndie: 3200
+    priceMarketSyndicate: 3500
+    priceBaseSyndicate: 3200
     priceBasePirates: 3200
 
 # NFSD
@@ -375,7 +375,6 @@
   - type: HorizonFactionPrice
     priceMarket: 600
     priceAnco: 900
-    priceDfi: 500
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -392,7 +391,6 @@
   - type: HorizonFactionPrice
     priceMarket: 800
     priceAnco: 1200
-    priceDfi: 700
 
 
 #
@@ -412,7 +410,6 @@
   - type: HorizonFactionPrice
     priceMarket: 2000
     priceAnco: 3000
-    priceDfi: 1800
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -429,7 +426,6 @@
   - type: HorizonFactionPrice
     priceMarket: 250
     priceAnco: 200
-    priceDfi: 400
 
 # === Текстиль ===
 
@@ -448,7 +444,6 @@
   - type: HorizonFactionPrice
     priceMarket: 1300
     priceAnco: 800
-    priceDfi: 700
 
 # === Антиквариат ===
 # Антиквариат дороже на Market (коллекционеры)
@@ -468,7 +463,6 @@
   - type: HorizonFactionPrice
     priceMarket: 4000
     priceAnco: 2500
-    priceDfi: 2000
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -485,7 +479,6 @@
   - type: HorizonFactionPrice
     priceMarket: 4500
     priceAnco: 3000
-    priceDfi: 2500
 
 - type: entity
   parent: BaseHorizonTradeItem
@@ -502,7 +495,6 @@
   - type: HorizonFactionPrice
     priceMarket: 4500
     priceAnco: 3000
-    priceDfi: 2500
 
 # === Товары Союза ===
 # Товары АнКо дороже на ANCO
@@ -522,7 +514,6 @@
   - type: HorizonFactionPrice
     priceMarket: 650
     priceAnco: 1000
-    priceDfi: 550
 
 - type: entity
   parent: [BaseHorizonTradeItem, BaseAnCoContraband]
@@ -539,7 +530,6 @@
   - type: HorizonFactionPrice
     priceMarket: 650
     priceAnco: 1000
-    priceDfi: 550
 
 - type: entity
   parent: [BaseHorizonTradeItem, BaseAnCoContraband]
@@ -556,4 +546,3 @@
   - type: HorizonFactionPrice
     priceMarket: 1200
     priceAnco: 1800
-    priceDfi: 1000
