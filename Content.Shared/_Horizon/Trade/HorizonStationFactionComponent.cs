@@ -33,14 +33,14 @@ public enum HorizonFaction : byte
     AnCo,
 
     /// <summary>
-    /// DFI faction stations.
-    /// </summary>
-    Dfi,
-
-    /// <summary>
     /// Syndicate faction stations.
     /// </summary>
     Syndicate,
+
+    /// <summary>
+    /// Frontier faction stations.
+    /// </summary>
+    Frontier,
 
     /// <summary>
     /// Pirate faction stations.

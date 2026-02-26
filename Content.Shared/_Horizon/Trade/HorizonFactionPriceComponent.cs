@@ -17,35 +17,30 @@ public sealed partial class HorizonFactionPriceComponent : Component
 
     /// <summary>
     /// Множитель цены для фракции AnCo.
-    /// Итоговая цена = PriceMarket × PriceAnCo.
     /// </summary>
     [DataField]
     public double PriceAnCo = 1.0;
 
     /// <summary>
-    /// Множитель цены для фракции DFI.
-    /// Итоговая цена = PriceMarket × PriceDfi.
-    /// </summary>
-    [DataField]
-    public double PriceDfi = 1.0;
-
-    /// <summary>
     /// Множитель цены для фракции NanoTraisen.
-    /// Итоговая цена = PriceMarket × PriceNanoTraisen.
     /// </summary>
     [DataField]
     public double PriceNanoTraisen = 1.0;
 
     /// <summary>
+    /// Множитель цены для фракции Frontier.
+    /// </summary>
+    [DataField]
+    public double PriceFrontier = 1.0;
+
+    /// <summary>
     /// Множитель цены для фракции Pirate.
-    /// Итоговая цена = PriceMarket × PricePirate.
     /// </summary>
     [DataField]
     public double PricePirate = 1.0;
 
     /// <summary>
     /// Множитель цены для фракции Syndicate.
-    /// Итоговая цена = PriceMarket × PriceSyndicate.
     /// </summary>
     [DataField]
     public double PriceSyndicate = 1.0;

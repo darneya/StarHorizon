@@ -62,8 +62,8 @@ public sealed class HorizonFactionPricingSystem : EntitySystem
         return faction switch
         {
             HorizonFaction.AnCo => comp.PriceAnCo > 0 ? comp.PriceAnCo : 1.0,
-            HorizonFaction.Dfi => comp.PriceDfi > 0 ? comp.PriceDfi : 1.0,
             HorizonFaction.Syndicate => comp.PriceSyndicate > 0 ? comp.PriceSyndicate : 1.0,
+            HorizonFaction.Frontier => comp.PriceFrontier > 0 ? comp.PriceFrontier : 1.0,
             HorizonFaction.Pirate => comp.PricePirate > 0 ? comp.PricePirate : 1.0,
             HorizonFaction.NanoTraisen => comp.PriceNanoTraisen > 0 ? comp.PriceNanoTraisen : 1.0,
             _ => 1.0
