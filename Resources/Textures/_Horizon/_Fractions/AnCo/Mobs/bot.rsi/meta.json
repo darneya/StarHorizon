@@ -64,6 +64,18 @@
     {
       "name": "mush-bot",
       "directions": 4
+    },
+    {
+        "name": "mush-death"
+    },
+    {
+        "name": "begemoth-death"
+    },
+    {
+        "name": "titan-death"
+    },
+    {
+        "name": "cyclop-death"
     }
   ]
 }
