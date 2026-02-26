@@ -15,10 +15,10 @@ public sealed partial class HorizonFactionPriceComponent : Component
     public int PriceMarket;
 
     /// <summary>
-    /// Price when sold at ANCO stations.
+    /// Price when sold at AnCo stations.
     /// </summary>
     [DataField]
-    public int PriceAnco;
+    public int PriceAnCo;
 
     /// <summary>
     /// Price when sold at DFI stations.

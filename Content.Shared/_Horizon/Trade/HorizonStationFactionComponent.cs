@@ -30,7 +30,7 @@ public enum HorizonFaction : byte
     /// <summary>
     /// ANCO corporation stations.
     /// </summary>
-    Anco,
+    AnCo,
 
     /// <summary>
     /// DFI faction stations.

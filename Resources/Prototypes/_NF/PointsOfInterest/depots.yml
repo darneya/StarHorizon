@@ -66,6 +66,4 @@
   stations:
     CargoDepotAlt:
       stationProto: StandardFrontierOutpost
-      components: &cargoStationComponents
-        - type: HorizonStationFaction
-          faction: Market
+      components: *cargoStationComponents

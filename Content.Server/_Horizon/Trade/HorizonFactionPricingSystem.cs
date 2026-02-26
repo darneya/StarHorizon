@@ -60,11 +60,11 @@ public sealed class HorizonFactionPricingSystem : EntitySystem
 
         return faction switch
         {
-            HorizonFaction.Anco => priceComp.PriceAnco,
+            HorizonFaction.AnCo => priceComp.PriceAnCo,
             HorizonFaction.Dfi => priceComp.PriceDfi,
-            HorizonFaction.Syndicate => ent.Comp.PriceSyndicate,
-            HorizonFaction.Pirate => ent.Comp.PricePirate,
-            HorizonFaction.NanoTraisen => ent.Comp.PriceNanoTraisen,
+            HorizonFaction.Syndicate => priceComp.PriceSyndicate,
+            HorizonFaction.Pirate => priceComp.PricePirate,
+            HorizonFaction.NanoTraisen => priceComp.PriceNanoTraisen,
             _ => priceComp.PriceMarket
         };
     }
