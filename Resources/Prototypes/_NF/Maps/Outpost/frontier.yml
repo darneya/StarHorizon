@@ -21,7 +21,7 @@
           stationDescription: 'frontier-lobby-frontier-description'
           lobbySortOrder: 1
         - type: HorizonStationFaction
-          faction: Market
+          faction: Frontier
         - type: StationJobs
           availableJobs:
             Contractor: [ -1, -1 ]
