@@ -8,6 +8,7 @@
     factions:
       - HostileUniversally
   - type: Transform
+  - type: Appearance
   - type: LagCompensation
   - type: Clickable
   - type: Damageable
