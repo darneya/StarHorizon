@@ -3,44 +3,51 @@ using Robust.Shared.GameStates;
 namespace Content.Shared._Horizon.Trade;
 
 /// <summary>
-/// Defines different prices for an entity based on the faction of the station where it's sold.
+/// Компонент для хранения множителей цены торговых товаров в зависимости от фракции.
+/// Цена рассчитывается как: (стоимость ресурсов × 5) × множитель_фракции
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 public sealed partial class HorizonFactionPriceComponent : Component
 {
     /// <summary>
-    /// Price when sold at Market stations (default).
+    /// Базовая цена для расчета множителей (Market).
+    /// Используется как основа для расчета множителей других фракций.
     /// </summary>
     [DataField]
-    public int PriceMarket;
+    public double PriceMarket = 1.0;
 
     /// <summary>
-    /// Price when sold at AnCo stations.
+    /// Множитель цены для фракции AnCo.
+    /// Если 0, используется значение PriceMarket.
     /// </summary>
     [DataField]
-    public int PriceAnCo;
+    public double PriceAnCo = 1.0;
 
     /// <summary>
-    /// Price when sold at DFI stations.
+    /// Множитель цены для фракции DFI.
+    /// Если 0, используется значение PriceMarket.
     /// </summary>
     [DataField]
-    public int PriceDfi;
+    public double PriceDfi = 1.0;
 
     /// <summary>
-    /// Price when sold at NanoTraisen stations.
+    /// Множитель цены для фракции NanoTraisen.
+    /// Если 0, используется значение PriceMarket.
     /// </summary>
     [DataField]
-    public int PriceNanoTraisen;
+    public double PriceNanoTraisen = 1.0;
 
     /// <summary>
-    /// Price when sold at Pirate stations.
+    /// Множитель цены для фракции Pirate.
+    /// Если 0, используется значение PriceMarket.
     /// </summary>
     [DataField]
-    public int PricePirate;
+    public double PricePirate = 1.0;
 
     /// <summary>
-    /// Price when sold at Syndicate stations.
+    /// Множитель цены для фракции Syndicate.
+    /// Если 0, используется значение PriceMarket.
     /// </summary>
     [DataField]
-    public int PriceSyndicate;
+    public double PriceSyndicate = 1.0;
 }
