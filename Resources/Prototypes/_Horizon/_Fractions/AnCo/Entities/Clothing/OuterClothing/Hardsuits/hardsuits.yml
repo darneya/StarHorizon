@@ -148,6 +148,8 @@
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
 
 - type: entity
   parent: [NFClothingOuterEVASuitBase, BaseAnCoContraband]
@@ -180,7 +182,8 @@
         Heat: 0.4
         Radiation: 0.5
         Caustic: 0.5
-
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
 
 - type: entity
   parent: [NFClothingOuterEVASuitBase, BaseAnCoContraband]
@@ -213,6 +216,8 @@
         Heat: 0.4
         Radiation: 0.5
         Caustic: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
 
 - type: entity
   parent: ClothingOuterHardsuitKnight
