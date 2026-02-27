@@ -177,6 +177,9 @@
     tags:
       - AnCoMaterial
       - Sheet
+  - type: FloorTile
+    outputs:
+    - FloorArdon
 
 # конец спавн этити
 
