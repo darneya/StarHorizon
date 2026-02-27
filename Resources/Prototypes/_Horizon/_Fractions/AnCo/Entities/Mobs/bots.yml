@@ -52,7 +52,6 @@
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Machines/button.ogg
-  - type: Item
 
 - type: entity
   id: AnCoDroneDungeon
@@ -96,7 +95,8 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
-
+  - type: Item
+    size: Small
 
 
 - type: entity
@@ -141,6 +141,8 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+  - type: Item
+    size: Small
 
 - type: entity
   id: AnCoDroneMineDungeon
@@ -189,6 +191,8 @@
     intensitySlope: 3
     totalIntensity: 40
     canCreateVacuum: false
+  - type: Item
+    size: Small
 
 - type: entity
   id: AnCoDrone
@@ -329,3 +333,22 @@
   - type: NpcFactionMember
     factions:
      - AnCoSecurBot
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 20
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          KazmieSheet1:
+            min: 0
+            max: 1
+          ArdonSheet1:
+            min: 0
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

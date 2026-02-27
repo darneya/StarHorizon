@@ -122,6 +122,7 @@
     - FactionDFI
     - FactionTTI
     - FactionSIU
+  - type: CatWearable
 
 # самое имбовый скафандр из всех
 
@@ -212,3 +213,16 @@
         Heat: 0.4
         Radiation: 0.5
         Caustic: 0.5
+
+- type: entity
+  parent: ClothingOuterHardsuitKnight
+  id: ClothingOuterHardsuitKnightCat
+  name: Котовый скафандр Рыцаря
+  suffix: StarHorizon, AnCo, HardSuit, Cat
+  components:
+  - type: Tag
+    tags:
+    - PetOnly
+  - type: CatWearable
+  - type: AnCoFactionAccess
+    allowedFactions: []

@@ -83,6 +83,7 @@
         Heat: 0.90
         Radiation: 0.85
         Caustic: 0.90
+  - type: CatWearable
 
 # 99% добавьте защиты от удушься
 
