@@ -24,6 +24,7 @@ ent-AnCoCounselorGun = пистолет совета АнКо
     .suffix = StarHorizon, AnCo, Weapon
 ent-PMLaserAnCoGun = модифицированный ПП АнКо
     .desc = Лазерный ПП, модернизированный в сторону мощности, хоть и в ущерб автономному электроснабжению.
+    .suffix = StarHorizon, AnCo, Weapon
 ent-LaserAnCoGun = лазерная винтовка AnCo
     .desc = Специально созданная под Ардониевые ячейки, винтовка с высокой скорострельностью.
     .suffix = StarHorizon, AnCo, Weapon
