@@ -75,6 +75,7 @@
     sprintModifier: 0.97
 
 # Pink sneakers
+- type: entity
   parent: ClothingShoesBaseButcherable
   id: ClothingShoesColorPink
   name: розовые кросовки
