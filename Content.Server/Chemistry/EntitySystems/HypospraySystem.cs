@@ -12,9 +12,14 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Timing;
 using Content.Shared.Weapons.Melee.Events;
+<<<<<<< HEAD:Content.Server/Chemistry/EntitySystems/HypospraySystem.cs
 using Content.Server.Body.Components;
 using System.Linq;
 using Robust.Server.Audio;
+=======
+using Content.Shared.Chemistry.EntitySystems.Hypospray;
+using Content.Shared.Body.Components;
+>>>>>>> master:Content.Shared/Chemistry/EntitySystems/HypospraySystem.cs
 using Content.Shared.DoAfter; // Frontier
 using Content.Shared._DV.Chemistry.Components; // Frontier
 
@@ -225,6 +230,9 @@ public sealed class HypospraySystem : SharedHypospraySystem
 
         var ev = new TransferDnaEvent { Donor = target, Recipient = uid };
         RaiseLocalEvent(target, ref ev);
+
+        var afterinjectev = new AfterHyposprayInjectsEvent { User = user, Target = target }; //Goobedit
+        RaiseLocalEvent(uid, ref afterinjectev);
 
         // same LogType as syringes...
         _adminLogger.Add(LogType.ForceFeed, $"{EntityManager.ToPrettyString(user):user} injected {EntityManager.ToPrettyString(target):target} with a solution {SharedSolutionContainerSystem.ToPrettyString(removedSolution):removedSolution} using a {EntityManager.ToPrettyString(uid):using}");

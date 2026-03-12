@@ -47,6 +47,11 @@
       - FakeMindShieldImplant
       - RadioImplant
       - RadioImplantFreelance # Frontier
+<<<<<<< HEAD
+=======
+      - ChameleonControllerImplant
+      - ExtractImplant
+>>>>>>> master
       deimplantFailureDamage:
         types:
           Cellular: 50

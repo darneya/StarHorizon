@@ -45,7 +45,7 @@ public sealed class AdminWhoCommand : IConsoleCommand
 
             sb.Append(admin.Name);
             if (adminData.Title is { } title)
-                sb.Append($": [{title}]");
+                sb.Append($": [{FormattedMessage.RemoveMarkupPermissive(title)}]"); // Horizon
 
             if (adminData.Stealth)
                 sb.Append(" (S)");
@@ -55,7 +55,7 @@ public sealed class AdminWhoCommand : IConsoleCommand
                 if (afk.IsAfk(admin))
                     sb.Append(" [AFK]");
             }
-        }
+        } 
 
         shell.WriteLine(sb.ToString());
     }

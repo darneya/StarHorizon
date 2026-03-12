@@ -38,7 +38,8 @@ using Content.Server._NF.Salvage.Expeditions; // Frontier
 using Content.Server.Station.Components; // Frontier
 using Content.Server.Station.Systems; // Frontier
 using Content.Server.Shuttles.Systems;
-using Content.Server._NF.Salvage.Expeditions.Structure; // Frontier
+using Content.Server._NF.Salvage.Expeditions.Structure;
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.Salvage;
 
@@ -211,6 +212,12 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
         expedition.EndTime = _timing.CurTime + mission.Duration;
         expedition.MissionParams = _missionParams;
 
+        if (difficultyProto.EndSound != null)
+        {
+            expedition.Sound = difficultyProto.EndSound;
+            expedition.SelectedSong = _entManager.System<SharedAudioSystem>().ResolveSound(difficultyProto.EndSound);
+        }
+
         var landingPadRadius = 4; // Frontier: 24<4 - using this as a margin (4-16), not a radius
         var minDungeonOffset = landingPadRadius + 4;
 
@@ -285,6 +292,11 @@ public sealed class SpawnSalvageMissionJob : Job<bool>
                 await SetupStructure(mission, dungeon, grid, random);
                 break;
             case SalvageMissionType.Elimination:
+                await SetupElimination(mission, dungeon, grid, random);
+                break;
+            case SalvageMissionType.Combined:
+                // Combined mission: setup both structures and megafauna
+                await SetupStructure(mission, dungeon, grid, random);
                 await SetupElimination(mission, dungeon, grid, random);
                 break;
             default:
