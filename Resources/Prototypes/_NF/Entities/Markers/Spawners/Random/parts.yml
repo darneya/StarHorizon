@@ -71,7 +71,7 @@
   - type: RandomSpawner
     prototypes:
     - QuadraticCapacitorStockPart
-    - FemtoManipulatorStockPart
+    - PicoManipulatorStockPart
     - BluespaceMatterBinStockPart
     chance: 0.95
     offset: 0.5

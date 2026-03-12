@@ -16,6 +16,7 @@ ent-ClarkeHead = голова кларка
     .desc = голова кларка
 ent-ClarkeChassis = шасси кларка
     .desc = Незавершенная конструкция меха Кларк.
+
 ent-BaseOdysseusPart = { ent-BaseMechPart }
     .desc = { ent-BaseMechPart.desc }
 ent-BaseOdysseusPartItem = { ent-BaseOdysseusPart }
@@ -36,6 +37,7 @@ ent-OdysseusHead = голова одиссея
     .desc = голова одиссея
 ent-OdysseusChassis = шасси одиссея
     .desc = Незавершенная конструкция меха Одиссей.
+
 ent-BaseGygaxPart = { ent-BaseMechPart }
     .desc = { ent-BaseMechPart.desc }
 ent-BaseGygaxPartItem = { ent-BaseGygaxPart }
@@ -56,6 +58,7 @@ ent-GygaxHead = голова гигакса
     .desc = голова гигакса
 ent-GygaxChassis = шасси гигакса
     .desc = Незавершенная конструкция меха Гигакс.
+
 ent-BaseDurandPart = { ent-BaseMechPart }
     .desc = { ent-BaseMechPart.desc }
 ent-BaseDurandPartItem = { ent-BaseDurandPart }
@@ -76,6 +79,7 @@ ent-DurandHead = голова дюранда
     .desc = голова дюранда
 ent-DurandChassis = шасси дюранда
     .desc = Незавершенная конструкция меха Дюранд.
+
 ent-BasePhazonPart = { ent-BaseMechPart }
     .desc = { ent-BaseMechPart.desc }
 ent-BasePhazonPartItem = { ent-BasePhazonPart }
@@ -96,6 +100,7 @@ ent-PhazonHead = голова фазона
     .desc = голова фазона
 ent-PhazonChassis = шасси фазона
     .desc = Незавершенная конструкция меха Фазон.
+
 ent-RipleyMk2ModificationKit = набор модификации рипли (Мк2)
     .desc = Набор инструментов и модулей для модификации Рипли (Мк2).
 ent-MechRipleyAluminizerUpgradeKit = набор модификации рипли (Белый)

@@ -7,6 +7,3 @@ ent-WallWoodDiagonal = деревянная стена
 ent-WallUraniumDiagonal = урановая стена
     .suffix = Диагональ
     .desc = { ent-WallUranium.desc }
-ent-WallUraniumDiagonalIndestructible = урановая стена
-    .suffix = Диагональ, Неуничтожаемая
-    .desc = { ent-BaseWallDiagonal.desc }

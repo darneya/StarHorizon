@@ -51,10 +51,10 @@ public sealed partial class MarketSystem
         if (args.Actor is not { Valid: true } player)
             return;
 
-        if (!HasComp<BankAccountComponent>(player))
+        if (!TryComp<BankAccountComponent>(player, out var bankAccount))
             return;
 
-        TrySpawnCrate(crateMachineUid, player, consoleUid, component, consoleComponent, marketMod);
+        TrySpawnCrate(crateMachineUid, player, consoleUid, component, consoleComponent, marketMod, bankAccount);
     }
 
     private void TrySpawnCrate(EntityUid crateMachineUid,
@@ -62,13 +62,15 @@ public sealed partial class MarketSystem
         EntityUid consoleUid,
         CrateMachineComponent component,
         MarketConsoleComponent consoleComponent,
-        float marketMod)
+        float marketMod,
+        BankAccountComponent playerBank)
     {
         if (!TryComp<MarketItemSpawnerComponent>(crateMachineUid, out var itemSpawner))
             return;
 
         var cartBalance = Math.Max(0, MarketDataExtensions.GetMarketValue(consoleComponent.CartDataList, marketMod));
-        cartBalance += consoleComponent.TransactionCost;
+        if (playerBank.Balance < cartBalance)
+            return;
 
         // Withdraw spesos from player
         if (!_bankSystem.TryBankWithdraw(player, cartBalance))

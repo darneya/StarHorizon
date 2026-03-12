@@ -1,10 +1,8 @@
-# region Negative
-
 - type: trait
   id: Deaf
   name: trait-deaf-name
   description: trait-deaf-desc
-  category: HorizonNegative
+  category: HorizonQuirks
   cost: -8
   components:
   - type: DeafTrait
@@ -13,7 +11,7 @@
   id: Sluggish
   name: trait-sluggish-name
   description: trait-sluggish-desc
-  category: HorizonNegative
+  category: HorizonQuirks
   cost: -5
   effects:
   - !type:ModifySpeed
@@ -24,7 +22,7 @@
   id: SnailPaced
   name: trait-snail-name
   description: trait-snail-desc
-  category: HorizonNegative
+  category: HorizonQuirks
   cost: -8
   effects:
   - !type:ModifySpeed
@@ -35,7 +33,7 @@
   id: BloodDeficiency
   name: trait-blood-defiency-name
   description: trait-blood-defiency-desc
-  category: HorizonNegative
+  category: HorizonQuirks
   cost: -4
   effects:
   - !type:ModifyBloodstream
@@ -45,7 +43,7 @@
   id: Hemophilia
   name: trait-hemophilia-name
   description: trait-hemophilia-desc
-  category: HorizonNegative
+  category: HorizonQuirks
   cost: -4
   effects:
   - !type:ModifyBloodstream
@@ -55,39 +53,40 @@
   id: WillToDie
   name: trait-will-to-die-name
   description: trait-will-to-die-desc
-  category: HorizonNegative
-  cost: -3
+  category: HorizonQuirks
+  cost: -1
   effects:
   - !type:ModifyHealth
     healthChange:
-      Dead: -20
+      Dead: -15
 
 - type: trait
   id: GlassJaw
   name: trait-glass-jaw-name
   description: trait-glass-jaw-desc
-  category: HorizonNegative
-  cost: -3
+  category: HorizonQuirks
+  cost: -2
   effects:
   - !type:ModifyHealth
     healthChange:
-      Critical: -20
+      Critical: -10
+      Dead: -10
 
 - type: trait
   id: BadKnees
   name: trait-bad-knees-name
   description: trait-bad-knees-desc
-  category: HorizonNegative
-  cost: -3
+  category: HorizonQuirks
+  cost: -4
   effects:
   - !type:ModifyStamina
-    stunModifier: 1.5
+    stunModifier: 1.7
 
 - type: trait
   id: Lethargy
   name: trait-lethargy-name
   description: trait-lethargy-desc
-  category: HorizonNegative
+  category: HorizonQuirks
   cost: -4
   effects:
   - !type:ModifyStamina
@@ -99,7 +98,7 @@
   id: Feeble
   name: trait-feeble-name
   description: trait-feeble-desc
-  category: HorizonNegative
+  category: HorizonQuirks
   cost: -4
   effects:
   - !type:ModifyDamageSlowdown
@@ -109,8 +108,8 @@
   id: Redshirt
   name: trait-redshirt-name
   description: trait-redshirt-desc
-  category: HorizonNegative
-  cost: -10
+  category: HorizonQuirks
+  cost: -8
   effects:
   - !type:ModifyHealth
     healthChange:
@@ -121,7 +120,7 @@
   id: BrittleBoneDisease
   name: trait-brittle-bone-name
   description: trait-brittle-bone-desc
-  category: HorizonNegative
+  category: HorizonQuirks
   cost: -6
   effects:
   - !type:ModifyHealth
@@ -132,36 +131,7 @@
   id: LowPainTolerance
   name: trait-low-pain-tolerance-name
   description: trait-low-pain-tolerance-desc
-  category: HorizonNegative
+  category: HorizonQuirks
   cost: -3
   components:
   - type: LowPainTolerance
-
-# region TraitArm
-
-- type: trait
-  id: AmputatedArm
-  name: trait-amputated-arm-name
-  description: trait-amputated-arm-desc
-  category: HorizonNegative
-  group: TraitArm
-  cost: -3
-  effects:
-    - !type:ModifyBodyParts
-      partType: Arm
-      symmetry: Right
-      protoId: null
-      slotId: null
-
-# region TraitCombat
-
-- type: trait
-  id: BadShooter
-  name: trait-bad-shooter-name
-  description: trait-bad-shooter-desc
-  category: HorizonNegative
-  group: TraitCombat
-  cost: -5
-  components:
-  - type: RangedWeaponSpreadModifiers
-    modifier: 1.4

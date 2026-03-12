@@ -1,5 +1,3 @@
-ent-CratePlants = plant crate
-    .desc = A variety pack of potted plants to spruce up your station!
 ent-CrateFunPlushie = plushie crate
     .desc = A buncha soft plushies. Throw them around and then wonder how you're gonna explain this purchase to NT.
 ent-CrateFunLizardPlushieBulk = bulk lizard plushie crate
@@ -48,5 +46,3 @@ ent-CrateFunMysteryFigurines = mystery figure crate
     .desc = A collection of 10 Mystery Figurine boxes. Duplicates non refundable.
 ent-CrateFunDartsSet = dartboard box set
     .desc = A box with everything you need for a fun game of darts.
-ent-CrateFunScurret = hydrated scurret
-    .desc = Wait, what?

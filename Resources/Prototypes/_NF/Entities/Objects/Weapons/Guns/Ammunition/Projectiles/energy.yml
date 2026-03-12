@@ -63,7 +63,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Shock: 0
+        Heat: 0
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -78,7 +78,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Shock: 2
+        Heat: 2
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -95,7 +95,7 @@
     impactEffect: BulletImpactEffectDisabler
     damage:
       types:
-        Shock: 1
+        Heat: 1
     soundHit:
       collection: WeakHit
     forceSound: true

@@ -25,6 +25,5 @@ two-way-lever-right = push right
 two-way-lever-cant = can't push the lever that way!
 
 recycler-count-items = Recycled {$items} objects.
-lumber-mill-count-items = Processed {$count} items.
 
 machine-already-in-use = {CAPITALIZE(THE($machine))} is already in use.

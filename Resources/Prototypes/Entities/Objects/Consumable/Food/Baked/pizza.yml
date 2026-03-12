@@ -298,8 +298,6 @@
   - type: Sprite
     layers:
     - state: donkpocket-slice
-  - type: Item
-    heldPrefix: donkpocket-slice
   - type: SolutionContainerManager
     solutions:
       food:
@@ -364,8 +362,6 @@
   - type: Sprite
     layers:
     - state: dank-slice
-  - type: Item
-    heldPrefix: dank-slice
   - type: SolutionContainerManager
     solutions:
       food:
@@ -416,8 +412,6 @@
   - type: Sprite
     layers:
     - state: sassysage-slice
-  - type: Item
-    heldPrefix: sassysage-slice
   - type: Tag
     tags:
     - Meat
@@ -464,8 +458,6 @@
   - type: Sprite
     layers:
     - state: pineapple-slice
-  - type: Item
-    heldPrefix: pineapple-slice
   - type: Tag
     tags:
     - Meat
@@ -528,8 +520,6 @@
   - type: Sprite
     layers:
     - state: arnold-slice
-  - type: Item
-    heldPrefix: arnold-slice
   - type: SolutionContainerManager
     solutions:
       food:
@@ -567,8 +557,6 @@
   - type: Sprite
     layers:
     - state: moldy-slice
-  - type: Item
-    heldPrefix: moldy-slice
   - type: Tag
     tags:
     - Trash
@@ -637,8 +625,6 @@
   - type: Sprite
     layers:
     - state: uranium-slice
-  - type: Item
-    heldPrefix: uranium-slice
   - type: Tag
     tags:
     - Meat
@@ -708,8 +694,6 @@
   - type: Sprite
     layers:
     - state: cotton-slice
-  - type: Item
-    heldPrefix: cotton-slice
   - type: Tag
     tags:
     - ClothMade
@@ -770,8 +754,6 @@
   - type: Sprite
     layers:
     - state: worldpeas-slice
-  - type: Item
-    heldPrefix: worldpeas-slice
   - type: SolutionContainerManager
     solutions:
       food:

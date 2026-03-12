@@ -49,9 +49,6 @@
         },
         {
             "name": "vouchervalet"
-        },
-        {
-            "name": "voucherstationtrafficcontroller"
         }
     ]
 }

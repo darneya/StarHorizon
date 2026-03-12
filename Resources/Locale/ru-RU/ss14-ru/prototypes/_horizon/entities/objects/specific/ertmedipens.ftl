@@ -1,5 +1,5 @@
-ent-ChemicalMedipenERTJugg = химический медипен
-    .desc = Стерильный инъектор для быстрого введения лекарств пациентам. Этот нельзя заправлять.
+ent-ChemicalMedipenERTJugg = chemical medipen
+    .desc = A sterile injector for rapid administration of drugs to patients. This one can't be refilled.
 ent-ERTRedMedipen = медипен "Израненный Страж"
     .desc = Устройство медицинского назначения для поддержания жизни в боевых условиях и лечения большинства видов повреждений.
     .suffix = StarHorizon

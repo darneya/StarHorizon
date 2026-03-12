@@ -38,12 +38,10 @@
     belt: NFMailBag
   storage:
     back:
+    - EncryptionKeyService # Frontier
     - HandheldCrewMonitor # Frontier
     - ShipVoucherFrontierMailCarrier # Frontier
-  encryptionKeys:
-  - EncryptionKeyService
-  cartridges:
-  - MailMetricsCartridge
+    - MailMetricsCartridge # Frontier
 
 - type: chameleonOutfit
   id: MailCarrierChameleonOutfit

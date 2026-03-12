@@ -26,5 +26,3 @@ ent-ClothingOuterCoatArcadiaTrenchOpened = arcadia flak trenchcoat
     .desc = { ent-ClothingOuterStorageFoldableBaseOpened.desc }
 ent-ClothingOuterWizardBrick = brick wizard coat
     .desc = ClothingOuterWizardBrick
-ent-ClothingOuterFakeWizard = fake wizard robe
-    .desc = A rather dull, blue robe meant to mimick real wizard robes.

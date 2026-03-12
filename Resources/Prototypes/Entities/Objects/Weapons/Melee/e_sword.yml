@@ -98,8 +98,6 @@
       path: /Audio/_Horizon/Medical/Surgery/scalpel1.ogg
     endSound:
       path: /Audio/_Horizon/Medical/Surgery/scalpel2.ogg
-  - type: StaticPrice
-    price: 2500
 
 - type: entity
   name: energy dagger
@@ -161,7 +159,7 @@
   - type: PointLight
     enabled: false
     radius: 1.5
-    energy: 2.7
+    energy: 1.5
     color: white
     netsync: false
   - type: Scalpel
@@ -227,7 +225,7 @@
   - type: PointLight
     enabled: false
     radius: 1.5
-    energy: 2.7
+    energy: 1.5
     color: white
     netsync: false
   - type: MeleeWeapon

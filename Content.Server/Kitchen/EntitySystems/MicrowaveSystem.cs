@@ -43,8 +43,6 @@ using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Robust.Shared.Utility;
 using Content.Shared._NF.Kitchen.Components; // Frontier
-using Content.Shared.Construction.Components; // Frontier
-using Content.Server._Horizon.FoodBoost; // Horizon
 
 namespace Content.Server.Kitchen.EntitySystems
 {
@@ -72,9 +70,9 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly IPrototypeManager _prototype = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedSuicideSystem _suicide = default!;
-        [Dependency] private readonly FoodBoostSystem _foodBoost = default!;
 
-        private static readonly EntProtoId MalfunctionSpark = "Spark";
+        [ValidatePrototypeId<EntityPrototype>]
+        private const string MalfunctionSpark = "Spark";
 
         private static readonly ProtoId<TagPrototype> MetalTag = "Metal";
         private static readonly ProtoId<TagPrototype> PlasticTag = "Plastic";
@@ -146,7 +144,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
         private void OnActiveMicrowaveRemove(Entity<ActiveMicrowaveComponent> ent, ref EntRemovedFromContainerMessage args)
         {
-            RemCompDeferred<ActivelyMicrowavedComponent>(args.Entity);
+            EntityManager.RemoveComponentDeferred<ActivelyMicrowavedComponent>(args.Entity);
         }
 
         // Stop items from transforming through constructiongraphs while being microwaved.
@@ -652,11 +650,6 @@ namespace Content.Server.Kitchen.EntitySystems
             activeComp.CookTimeRemaining = component.CurrentCookTimerTime * component.FinalCookTimeMultiplier; // Frontier: CookTimeMultiplier<FinalCookTimeMultiplier
             activeComp.TotalTime = component.CurrentCookTimerTime; //this doesn't scale so that we can have the "actual" time
             activeComp.PortionedRecipe = portionedRecipe;
-            // Horizon start
-            activeComp.ApplyBoost = TryComp<ChefComponent>(user, out var chef);
-            activeComp.ApplyAdvancedBoost = chef != null && chef.Advanced;
-            // Horizon end
-
             //Scale tiems with cook times
             component.CurrentCookTimeEnd = _gameTiming.CurTime + TimeSpan.FromSeconds(component.CurrentCookTimerTime * component.FinalCookTimeMultiplier); // Frontier: CookTimeMultiplier<FinalCookTimeMultiplier
             if (malfunctioning)
@@ -752,12 +745,7 @@ namespace Content.Server.Kitchen.EntitySystems
                         // Frontier: ResultCount - support multiple results per recipe
                         for (var r = 0; r < active.PortionedRecipe.Item1.ResultCount; r++)
                         {
-                            var result = Spawn(active.PortionedRecipe.Item1.Result, coords);
-
-                            // Horizon start
-                            if (active.ApplyBoost)
-                                _foodBoost.ApplyBoost(result, active.ApplyAdvancedBoost);
-                            // Horizon end
+                            Spawn(active.PortionedRecipe.Item1.Result, coords);
                         }
                         // End Frontier
                     }
@@ -802,7 +790,7 @@ namespace Content.Server.Kitchen.EntitySystems
             if (!HasContents(ent.Comp) || HasComp<ActiveMicrowaveComponent>(ent))
                 return;
 
-            _container.Remove(GetEntity(args.EntityID), ent.Comp.Storage);
+            _container.Remove(EntityManager.GetEntity(args.EntityID), ent.Comp.Storage);
             UpdateUserInterfaceState(ent, ent.Comp);
         }
 

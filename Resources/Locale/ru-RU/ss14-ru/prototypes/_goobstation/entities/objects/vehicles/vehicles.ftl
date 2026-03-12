@@ -13,5 +13,5 @@ ent-VehicleWheelchair = кресло-коляска
 ent-VehicleWheelchairFolded = { ent-VehicleWheelchair }
     .suffix = Сложенный
     .desc = { ent-VehicleWheelchair.desc }
-ent-VehicleHoverchair = ховерстул
-    .desc = Люксовый ховерстул богачей, откидывайтесь на спину и расслабляйтесь.
+ent-VehicleHoverchair = hoverchair
+    .desc = A luxury hoverchair, kick back and relax.

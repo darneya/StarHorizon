@@ -6,6 +6,7 @@ marking-KatunianRLegScar1 = Шрам (Правый)
 marking-KatunianLLegScar1 = Шрам (Левый)
 marking-KatunianLArmScar1 = Шрам (Левый)
 marking-KatunianRArmScar1 = Шрам (Правый)
+
 marking-KatunianEarsBase1 = Обычные ушки
 marking-KatunianEarsBase2 = Надорванное (Правый)
 marking-KatunianEarsBase3 = Надорванное (Левый)
@@ -20,3 +21,4 @@ marking-KatunianEarsBase11 = Серьги (Золотые)
 marking-KatunianEarsBase12 = Серьги (Серебряные)
 marking-KatunianEarsBase13 = Серьги (Красные)
 marking-KatunianEarsBase14 = Серьги (Желтые)
+

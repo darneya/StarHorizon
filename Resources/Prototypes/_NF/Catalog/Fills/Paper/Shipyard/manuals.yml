@@ -102,12 +102,12 @@
 
 - type: entity
   parent: ShipyardInfoBase
-  id: ShipyardStringerInfo
-  name: Stringer user manual
+  id: ShipyardLegmanInfo
+  name: Legman user manual
   components:
   - type: GuideHelp
     guides:
-    - ShipyardStringer
+    - ShipyardLegman
 
 - type: entity
   parent: ShipyardInfoBase

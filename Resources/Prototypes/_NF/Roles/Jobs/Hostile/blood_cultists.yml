@@ -5,12 +5,12 @@
     head: ClothingHeadHelmetCult
     shoes: ClothingShoesCult
     gloves: ClothingHandsGlovesCombat
-    neck: ClothingNeckScarfBloodCult
+    neck: BedsheetCult
     outerClothing: ClothingOuterArmorCult
     belt: ClothingBeltCultWebbing
-    back: ClothingBackpackBloodCultLootPriest
+    back: ClothingBackpackBloodCultLootA
   inhand:
-    - WeaponInertStaffCultistLightning
+    - WizardStaffMeleeBlood
 
 # Acolyte
 - type: startingGear
@@ -60,13 +60,12 @@
     head: ClothingHeadHatHoodBloodCulthoodUnremoveable
     shoes: ClothingShoesCult
     mask: ClothingMaskRaven
-    neck: ClothingNeckScarfBloodCult
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterCoatBloodCultRobes
-    back: ClothingBackpackBloodCultZealotLootCaster
+    back: ClothingBackpackBloodCultLootC
     belt: ClothingBeltCultWebbing
   inhand:
-    - WeaponInertStaffCultistBoltDark
+    - WizardStaffMeleeBlood
 
 # Janitor (Caster)
 - type: startingGear
@@ -78,6 +77,6 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterCoatCultJanitor
     belt: ClothingBeltCultForceField
-    back: ClothingBackpackBloodCultLootJanitor
+    back: ClothingBackpackBloodCultLootA
   inhand:
-    - WeaponInertStaffCultistSoap
+    - EldritchBlade

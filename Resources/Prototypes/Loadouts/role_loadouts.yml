@@ -164,7 +164,6 @@
   - ChaplainJumpsuit
   - CommonBackpack
   - ChaplainOuterClothing
-  - ChaplainBible
   - Glasses
   - Survival
   - Trinkets
@@ -579,23 +578,43 @@
   id: JobMedicalDoctor
   groups:
   # Horizon start
-  - GroupTankHarness
-  - MedicalDoctorHead
-  - MedicalMask
-  - MedicalDoctorJumpsuit
+  # - GroupTankHarness
+  # - MedicalDoctorHead
+  # - MedicalMask
+  # - MedicalDoctorJumpsuit
+  # - MedicalGloves
+  # - MedicalBackpack
+  # - MedicalDoctorOuterClothing
+  # - MedicalShoes
+  # - MedicalDoctorPDA
+  # - MedicalEyewear
+  # - SurvivalMedical
+  # - Trinkets
+  # - GroupSpeciesBreathToolMedical
+  - ContractorHead
+  - ContractorNeck
+  - ContractorJumpsuit
   - TopCMO
   - BottomCMO
   - Socks
-  - MedicalGloves
-  - MedicalBackpack
-  - MedicalDoctorOuterClothing
-  - MedicalShoes
+  - ContractorGloves
+  - ContractorBackpack
+  - ContractorOuterClothing
+  - ContractorForcedOuterClothing
+  - ContractorShoes
+  - ContractorFace
+  - ContractorGlasses
   - ContractorBelt
-  - MedicalDoctorPDA
-  - MedicalEyewear
-  - SurvivalMedical
-  - Trinkets
-  - GroupSpeciesBreathToolMedical
+  - ContractorEars
+  - ContractorEncryptionKey
+  - ContractorBoxSurvival
+  - ContractorPDA
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+  - NFSpeciesSpecific
   # Horizon end
 
 - type: roleLoadout
@@ -618,44 +637,82 @@
   id: JobChemist
   groups:
   # Horizon start
-  - GroupTankHarness
-  - MedicalMask
-  - ChemistJumpsuit
+  # - GroupTankHarness
+  # - MedicalMask
+  # - ChemistJumpsuit
+  # - MedicalGloves
+  # - ChemistBackpack
+  # - ChemistOuterClothing
+  # - MedicalShoes
+  # - SurvivalMedical
+  # - Trinkets
+  # - GroupSpeciesBreathToolMedical
+  - ContractorHead
+  - ContractorNeck
+  - ContractorJumpsuit
   - TopCMO
   - BottomCMO
   - Socks
-  - MedicalGloves
-  - ChemistBackpack
-  - ChemistOuterClothing
-  - MedicalShoes
+  - ContractorGloves
+  - ContractorBackpack
+  - ContractorOuterClothing
+  - ContractorForcedOuterClothing
+  - ContractorShoes
+  - ContractorFace
+  - ContractorGlasses
   - ContractorBelt
-  - ChemistPDA
-  - SurvivalMedical
-  - Trinkets
-  - GroupSpeciesBreathToolMedical
+  - ContractorEars
+  - ContractorEncryptionKey
+  - ContractorBoxSurvival
+  - ContractorPDA
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+  - NFSpeciesSpecific
   # Horizon end
 
 - type: roleLoadout
   id: JobParamedic
   groups:
   # Horizon start
-  - GroupTankHarness
-  - ParamedicHead
-  - MedicalMask
-  - ParamedicJumpsuit
+  # - GroupTankHarness
+  # - ParamedicHead
+  # - MedicalMask
+  # - ParamedicJumpsuit
+  # - MedicalGloves
+  # - MedicalBackpack
+  # - ParamedicOuterClothing
+  # - ParamedicShoes
+  # - MedicalEyewear
+  # - SurvivalMedical
+  # - Trinkets
+  # - GroupSpeciesBreathToolMedical
+  - ContractorHead
+  - ContractorNeck
+  - ContractorJumpsuit
   - TopCMO
   - BottomCMO
   - Socks
-  - MedicalGloves
-  - MedicalBackpack
-  - ParamedicOuterClothing
-  - ParamedicShoes
+  - ContractorGloves
+  - ContractorBackpack
+  - ContractorOuterClothing
+  - ContractorForcedOuterClothing
+  - ContractorShoes
+  - ContractorFace
+  - ContractorGlasses
   - ContractorBelt
-  - ParamedicPDA
-  - MedicalEyewear
-  - SurvivalMedical
-  - Trinkets
-  - GroupSpeciesBreathToolMedical
+  - ContractorEars
+  - ContractorEncryptionKey
+  - ContractorBoxSurvival
+  - ContractorPDA
+  - ContractorWallet
+  - ContractorCartridge
+  - ContractorImplanter
+  - ContractorBackpackItems
+  - ContractorHandItems
+  - NFSpeciesSpecific
   # Horizon end
 
 # Wildcards

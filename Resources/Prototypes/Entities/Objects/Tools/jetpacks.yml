@@ -138,8 +138,6 @@
   - type: Jetpack
     radarBlip: false
   # End Frontier: emaggable jetpacks
-#  - type: StaticPrice # Frontier
-#    price: 1000 # Frontier
 
 # Filled black
 - type: entity
@@ -209,8 +207,6 @@
   components:
     - type: Item
       sprite: Objects/Tanks/Jetpacks/mini.rsi
-      shape: # Frontier
-      - 0,0,3,2 # Frontier
     - type: Sprite
       sprite: Objects/Tanks/Jetpacks/mini.rsi
     - type: Clothing

@@ -12,8 +12,8 @@
   id: PirateDeport
   parent: BasePOI
   name: "Точка Продажи Пиратов"
-  minimumDistance: 12000
-  maximumDistance: 15000
+  minimumDistance: 15000
+  maximumDistance: 20000
   spawnGroup: Required
   gridPath: /Maps/_Horizon/POI/piratedeport.yml
   addComponents:

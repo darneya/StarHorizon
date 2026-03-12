@@ -11,16 +11,6 @@
   -     0,   500  # ammonia
   -     0,   200  # nitrous oxide
   -     0,     0  # frezon
-  -     0,     0  # bz 9
-  -     0,     0  # pluoxium 10
-  -     0,     0  # hydrogen 11
-  -     0,     0  # nitrium 12
-  -     0,     0  # healium 13
-  -     0,     0  # hyper-noblium 14
-  -     0,     0  # proto-nitrate 15
-  -     0,     0  # zauker 16
-  -     0,     0  # halon 17
-  -     0,   200  # helium
 
 - type: gasDeposit
   id: MostlyNitrogen
@@ -34,16 +24,6 @@
   -     0,   500  # ammonia
   -     0,   200  # nitrous oxide
   -     0,     0  # frezon
-  -     0,     0  # bz 9
-  -     0,     0  # pluoxium 10
-  -     0,     0  # hydrogen 11
-  -     0,     0  # nitrium 12
-  -     0,     0  # healium 13
-  -     0,     0  # hyper-noblium 14
-  -     0,     0  # proto-nitrate 15
-  -     0,     0  # zauker 16
-  -     0,     0  # halon 17
-  -     0,   200  # helium
 
 - type: gasDeposit
   id: MostlyOxygen
@@ -57,16 +37,6 @@
   -     0,   500  # ammonia
   -     0,   200  # nitrous oxide
   -     0,     0  # frezon
-  -     0,     0  # bz 9
-  -     0,     0  # pluoxium 10
-  -     0,     0  # hydrogen 11
-  -     0,     0  # nitrium 12
-  -     0,     0  # healium 13
-  -     0,     0  # hyper-noblium 14
-  -     0,     0  # proto-nitrate 15
-  -     0,     0  # zauker 16
-  -     0,     0  # halon 17
-  -     0,   200  # helium
 
 - type: gasDeposit
   id: MostlyCarbonDioxide
@@ -80,16 +50,6 @@
   -     0,   500  # ammonia
   -     0,   200  # nitrous oxide
   -     0,     0  # frezon
-  -     0,     0  # bz 9
-  -     0,     0  # pluoxium 10
-  -     0,     0  # hydrogen 11
-  -     0,     0  # nitrium 12
-  -     0,     0  # healium 13
-  -     0,     0  # hyper-noblium 14
-  -     0,     0  # proto-nitrate 15
-  -     0,     0  # zauker 16
-  -     0,     0  # halon 17
-  -     0,   200  # helium
 
 - type: gasDeposit
   id: MostlyNitrousOxide
@@ -103,16 +63,6 @@
   -     0,   500  # ammonia
   - 20000, 25000  # n2o
   -     0,     0  # frezon
-  -     0,     0  # bz 9
-  -     0,     0  # pluoxium 10
-  -     0,     0  # hydrogen 11
-  -     0,     0  # nitrium 12
-  -     0,     0  # healium 13
-  -     0,     0  # hyper-noblium 14
-  -     0,     0  # proto-nitrate 15
-  -     0,     0  # zauker 16
-  -     0,     0  # halon 17
-  -     0,   200  # helium
 
 - type: gasDeposit
   id: MostlyAmmonia
@@ -126,16 +76,6 @@
   - 20000, 25000  # ammonia
   -     0,   500  # n2o
   -     0,     0  # frezon
-  -     0,     0  # bz 9
-  -     0,     0  # pluoxium 10
-  -     0,     0  # hydrogen 11
-  -     0,     0  # nitrium 12
-  -     0,     0  # healium 13
-  -     0,     0  # hyper-noblium 14
-  -     0,     0  # proto-nitrate 15
-  -     0,     0  # zauker 16
-  -     0,     0  # halon 17
-  -     0,   200  # helium
 
 - type: gasDeposit
   id: MostlyWaterVapor
@@ -149,16 +89,6 @@
   -     0,   500  # ammonia
   -     0,   500  # n2o
   -     0,     0  # frezon
-  -     0,     0  # bz 9
-  -     0,     0  # pluoxium 10
-  -     0,     0  # hydrogen 11
-  -     0,     0  # nitrium 12
-  -     0,     0  # healium 13
-  -     0,     0  # hyper-noblium 14
-  -     0,     0  # proto-nitrate 15
-  -     0,     0  # zauker 16
-  -     0,     0  # halon 17
-  -     0,   200  # helium
 
 - type: gasDeposit
   id: MostlyPlasma
@@ -171,17 +101,7 @@
   -     0,  3000  # water vapor
   -     0,  2000  # ammonia
   -     0,  1000  # n2o
-  -     0,     0  # frezon 8
-  -     0,     0  # bz 9
-  -     0,     0  # pluoxium 10
-  -     0,     0  # hydrogen 11
-  -     0,     0  # nitrium 12
-  -     0,     0  # healium 13
-  -     0,     0  # hyper-noblium 14
-  -     0,     0  # proto-nitrate 15
-  -     0,     0  # zauker 16
-  -     0,     0  # halon 17
-  -     0,   200  # helium
+  -     0,     0  # frezon
 
 - type: gasDeposit
   id: MuddleEven
@@ -194,40 +114,20 @@
   -  2000,  4000  # water vapor
   -  2000,  4000  # ammonia
   -  2000,  4000  # n2o
-  -     0,     0  # frezon 8
-  -     0,     0  # bz 9
-  -     0,     0  # pluoxium 10
-  -     0,     0  # hydrogen 11
-  -     0,     0  # nitrium 12
-  -     0,     0  # healium 13
-  -     0,     0  # hyper-noblium 14
-  -     0,     0  # proto-nitrate 15
-  -     0,     0  # zauker 16
-  -     0,     0  # halon 17
-  -  2000,  4000  # helium
+  -     0,     0  # frezon
 
 - type: gasDeposit
   id: MuddlePlasma
   gases:
-  -  2000,  4000  # oxygen 0
-  -  2000,  4000  # nitrogen 1
-  -  2000,  4000  # carbon dioxide 2
-  -  4000,  8000  # plasma 3
-  -     0,   300  # tritium 4
-  -  1000,  2000  # water vapor 5
-  -  1000,  2000  # ammonia 6
-  -  2000,  4000  # n2o 7
-  -     0,     0  # frezon 8
-  -     0,     0  # bz 9
-  -     0,     0  # pluoxium 10
-  -     0,     0  # hydrogen 11
-  -     0,     0  # nitrium 12
-  -     0,     0  # healium 13
-  -     0,     0  # hyper-noblium 14
-  -     0,     0  # proto-nitrate 15
-  -     0,     0  # zauker 16
-  -     0,     0  # halon 17
-  -  2000,  4000  # helium 18
+  -  2000,  4000  # oxygen
+  -  2000,  4000  # nitrogen
+  -  2000,  4000  # carbon dioxide
+  -  4000,  8000  # plasma
+  -     0,   300  # tritium
+  -  1000,  2000  # water vapor
+  -  1000,  2000  # ammonia
+  -  2000,  4000  # n2o
+  -     0,     0  # frezon
 
 # Horizon start
 
@@ -349,14 +249,14 @@
 - type: gasDeposit
   id: MostlyHelium
   gases:
-  -     0,  1000  # oxygen 0
+  -     0,  2000  # oxygen 0
   -     0,  2000  # nitrogen 1
-  -     0,   200  # carbon dioxide 2
+  -     0,   500  # carbon dioxide 2
   -     0,   200  # plasma 3
   -     0,    50  # tritium 4
-  -     0,  3000  # water vapor 5
-  -     0,  2000  # ammonia 6
-  -     0,  1000  # n2o 7
+  -     0,   500  # water vapor 5
+  -     0,   500  # ammonia 6
+  -     0,   500  # n2o 7
   -     0,     0  # frezon 8
   -     0,     0  # bz 9
   -     0,     0  # pluoxium 10
@@ -367,6 +267,6 @@
   -     0,     0  # proto-nitrate 15
   -     0,     0  # zauker 16
   -     0,     0  # halon 17
-  -  7500, 12500  # helium 18
+  -  3000,  9000  # helium 18
 
 # Horizon end

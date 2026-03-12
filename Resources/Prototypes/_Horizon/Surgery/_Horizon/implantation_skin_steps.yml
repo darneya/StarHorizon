@@ -71,7 +71,6 @@
   - type: SurgeryStep
     duration: 12
   - type: SurgeryStepOrganExtract
-    slot: skin_implant
     organ:
     - type: SkinImplant
   - type: Sprite

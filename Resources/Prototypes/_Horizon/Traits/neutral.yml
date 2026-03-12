@@ -2,7 +2,7 @@
   id: Talons
   name: trait-talons-name
   description: trait-talons-desc
-  category: HorizonNeutral
+  category: HorizonQuirks
   cost: 0
   components:
   - type: MeleeWeapon
@@ -18,7 +18,7 @@
   id: Claws
   name: trait-claws-name
   description: trait-claws-desc
-  category: HorizonNeutral
+  category: HorizonQuirks
   cost: 0
   components:
   - type: MeleeWeapon
@@ -34,7 +34,7 @@
   id: NaturalWeaponRemoval
   name: trait-natural-weapon-removal-name
   description: trait-natural-weapon-removal-desc
-  category: HorizonNeutral
+  category: HorizonQuirks
   cost: 0
   components:
   - type: MeleeWeapon

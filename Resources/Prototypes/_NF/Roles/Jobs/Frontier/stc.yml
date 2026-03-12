@@ -38,10 +38,10 @@
     back:
     - Flash
     - RubberStampStc
-    - BoxFolderStc
+    - EncryptionKeyStationMaster
     - ShipVoucherFrontierStc
   encryptionKeys:
-  - EncryptionKeyStationMaster
+  - BoxFolderStc
 
 - type: chameleonOutfit
   id: StationTrafficControllerChameleonOutfit

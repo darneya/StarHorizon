@@ -6,7 +6,7 @@ using Content.Shared.Movement.Systems;
 
 namespace Content.Shared._Horizon.Traits;
 
-public abstract class SharedQuirksSystem : EntitySystem
+public sealed partial class SharedQuirksSystem : EntitySystem
 {
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
 

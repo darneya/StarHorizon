@@ -36,8 +36,6 @@ namespace Content.Client.HealthAnalyzer.UI
         private readonly IPrototypeManager _prototypes;
         private readonly IResourceCache _cache;
 
-        public Action? OnPrintPatientRecord; // Frontier: Allow printing hardcopy of patient information
-
         public HealthAnalyzerWindow()
         {
             RobustXamlLoader.Load(this);
@@ -47,8 +45,6 @@ namespace Content.Client.HealthAnalyzer.UI
             _spriteSystem = _entityManager.System<SpriteSystem>();
             _prototypes = dependencies.Resolve<IPrototypeManager>();
             _cache = dependencies.Resolve<IResourceCache>();
-
-            PrintRecordButton.OnPressed += (_) => OnPrintPatientRecord?.Invoke(); // Frontier
         }
 
         public void Populate(HealthAnalyzerScannedUserMessage msg)
@@ -59,7 +55,6 @@ namespace Content.Client.HealthAnalyzer.UI
                 || !_entityManager.TryGetComponent<DamageableComponent>(target, out var damageable))
             {
                 NoPatientDataText.Visible = true;
-                PrintButtonsContainer.Visible = false; // Frontier
                 return;
             }
 
@@ -74,8 +69,6 @@ namespace Content.Client.HealthAnalyzer.UI
                 : Loc.GetString("health-analyzer-window-entity-unknown-text");
 
             ScanModeLabel.FontColorOverride = msg.ScanMode.HasValue && msg.ScanMode.Value ? Color.Green : Color.Red;
-
-            PrintButtonsContainer.Visible = msg is { Printable: true, ScanMode: true }; // Frontier
 
             // Patient Information
 

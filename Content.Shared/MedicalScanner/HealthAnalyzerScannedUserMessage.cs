@@ -15,9 +15,8 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     public bool? Bleeding;
     public bool? Unrevivable;
     public bool? Unclonable; // Frontier
-    public bool Printable; // Frontier
 
-    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, bool? unclonable, bool printable = false) // Frontier: added unclonable, printable
+    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, bool? unclonable) // Frontier: added unclonable
     {
         TargetEntity = targetEntity;
         Temperature = temperature;
@@ -26,7 +25,6 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
         Bleeding = bleeding;
         Unrevivable = unrevivable;
         Unclonable = unclonable; // Frontier
-        Printable = printable; // Frontier
     }
 }
 

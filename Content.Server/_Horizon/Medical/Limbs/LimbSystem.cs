@@ -13,7 +13,6 @@ using Robust.Server.Containers;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Horizon.Medical.Limbs;
-
 public sealed partial class LimbSystem //: SharedLimbSystem
 {
     [Dependency] private readonly ContainerSystem _containers = null!;
@@ -32,14 +31,6 @@ public sealed partial class LimbSystem //: SharedLimbSystem
         AddLimbVisual(body, limb);
         AddLimb(body, slot, limb);
         return true;
-    }
-
-    public bool TryAttachLimb(Entity<HumanoidAppearanceComponent?> body, string slot, Entity<BodyPartComponent> part, Entity<BodyPartComponent> limb)
-    {
-        if (!Resolve(body.Owner, ref body.Comp, false))
-            return false;
-
-        return AttachLimb((body.Owner, body.Comp), slot, part, limb);
     }
 
     public bool AttachItem(EntityUid body, string slot, Entity<BodyPartComponent> part, Entity<MetaDataComponent> item)
@@ -82,18 +73,6 @@ public sealed partial class LimbSystem //: SharedLimbSystem
         }
     }
 
-    public bool TryAmputate(Entity<TransformComponent?, HumanoidAppearanceComponent?, BodyComponent?> body, Entity<TransformComponent?, MetaDataComponent?, BodyPartComponent?> limb)
-    {
-        if (!Resolve(body.Owner, ref body.Comp1, ref body.Comp2, ref body.Comp3, false))
-            return false;
-
-        if (!Resolve(limb.Owner, ref limb.Comp1, ref limb.Comp2, ref limb.Comp3, false))
-            return false;
-
-        Amputate((body.Owner, body.Comp1, body.Comp2, body.Comp3), (limb.Owner, limb.Comp1, limb.Comp2, limb.Comp3));
-        return true;
-    }
-
     private void AddItemLimb(EntityUid body, string slot, Entity<MetaDataComponent> item)
     {
         var layer = VisualLayers.GetLayer(slot);
@@ -125,8 +104,8 @@ public sealed partial class LimbSystem //: SharedLimbSystem
             return;
         }
 
-        _hands.AddHand(bodyId, handId, HandLocation.Middle);
-        _hands.DoPickup(bodyId, handId, itemId, hands);
+        _hands.AddHand(bodyId, handId, HandLocation.Middle, hands);
+        _hands.DoPickup(bodyId, hands.Hands[handId], itemId, hands);
         EnsureComp<UnremoveableComponent>(itemId);
     }
 
@@ -136,11 +115,11 @@ public sealed partial class LimbSystem //: SharedLimbSystem
             return;
 
         if (!TryComp<HandsComponent>(bodyId, out var hands)
-            || !_hands.TryGetHand(bodyId, handId, out var hand))
+            || !_hands.TryGetHand(bodyId, handId, out var hand, hands))
             return;
 
         RemComp<UnremoveableComponent>(itemId);
-        _hands.DoDrop(itemId, handId);
+        _hands.DoDrop(itemId, hand);
         _hands.RemoveHand(bodyId, handId);
     }
 }

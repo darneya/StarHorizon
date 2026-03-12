@@ -262,11 +262,9 @@ namespace Content.Shared.Preferences
         /// </summary>
         /// <param name="species">The species to use in this default profile. The default species is <see cref="SharedHumanoidAppearanceSystem.DefaultSpecies"/>.</param>
         /// <returns>Humanoid character profile with default settings.</returns>
-        public static HumanoidCharacterProfile DefaultWithSpecies(string? species = null)
+        public static HumanoidCharacterProfile DefaultWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
         {
             var proto = IoCManager.Resolve<IPrototypeManager>();    // Horizon Languages
-            species ??= SharedHumanoidAppearanceSystem.DefaultSpecies;
-
             return new()
             {
                 Species = species,
@@ -289,10 +287,8 @@ namespace Content.Shared.Preferences
             return RandomWithSpecies(species: species, balance: balance);
         }
 
-        public static HumanoidCharacterProfile RandomWithSpecies(string? species = null, int balance = DefaultBalance) // Frontier: add balance arg
+        public static HumanoidCharacterProfile RandomWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies, int balance = DefaultBalance)
         {
-            species ??= SharedHumanoidAppearanceSystem.DefaultSpecies;
-
             var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
             var random = IoCManager.Resolve<IRobustRandom>();
 
@@ -612,7 +608,7 @@ namespace Content.Shared.Preferences
 
             if (configManager.GetCVar(CCVars.RestrictedNames))
             {
-                name = Regex.Replace(name, @"[^A-Z,a-z,А-Я,а-я,0-9 ,'-]", string.Empty); // Horizon (hyphen at end = literal)
+                name = Regex.Replace(name, @"[^A-Z,a-z,А-Я,а-я,0-9, -, ']", string.Empty); // Horizon
                 /*
                  * 0041-005A  Basic Latin: Uppercase Latin Alphabet
                  * 0061-007A  Basic Latin: Lowercase Latin Alphabet

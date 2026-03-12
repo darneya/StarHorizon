@@ -1,10 +1,10 @@
 # Author Info
-# GitHub: Mace70903
-# Discord: mace_70903
+# GitHub:
+# Discord: Tjsip
 
 # Maintainer Info
-# GitHub: Mace70903
-# Discord: mace_70903
+# GitHub: ???
+# Discord: ???
 
 # Notes:
 #
@@ -19,6 +19,8 @@
   addComponents:
   - type: IFF
     color: "#ae7d57"
+  - type: ProtectedGrid
+    preventEmpEvents: true
   - type: StationTransit
     routes:
       SpawnPoints: 10
@@ -35,7 +37,7 @@
         - type: StationNameSetup
           mapNameTemplate: 'Аванпост ДШНФ'
         - type: ExtraStationInformation
-          iconPath: /Textures/_NF/Interface/StationIcons/nfsd-banner.png
+          iconPath: /Textures/_NF/Structures/Decoration/banner.rsi/nfsd-banner.png
           stationSubtext: 'frontier-lobby-nfsd-subtext'
           stationDescription: 'frontier-lobby-nfsd-description'
           lobbySortOrder: 2
@@ -50,7 +52,6 @@
             Cadet: [ 3, 3 ] # Horizon
             # Others:
             PublicAffairsLiaison: [ 1, 1 ]
-            Prisoner: [ 0, 0 ]
           tags:
           - HeadOfPersonnel
           - HeadOfSecurity

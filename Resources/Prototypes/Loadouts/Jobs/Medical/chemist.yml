@@ -25,12 +25,6 @@
   equipment:
     back: ClothingBackpackDuffelChemistry
 
-# ID
-- type: loadout
-  id: ChemistPDA
-  equipment:
-    id: ChemistryPDA
-
 # Outer clothing
 - type: loadout
   id: ChemistLabCoat

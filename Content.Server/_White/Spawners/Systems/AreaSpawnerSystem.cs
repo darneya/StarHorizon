@@ -21,7 +21,6 @@ public sealed class AreaSpawnerSystem : EntitySystem
 
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
 
     private readonly List<Vector2> _offsets = new List<Vector2>
     {
@@ -107,7 +106,7 @@ public sealed class AreaSpawnerSystem : EntitySystem
         }
 
         var coords = xform.Coordinates.Offset(offset);
-        var tile = _turf.GetTileRef(coords);
+        var tile = coords.GetTileRef(EntityManager, _mapManager);
 
         if (!tile.HasValue || tile.Value.Tile.IsEmpty)
         {

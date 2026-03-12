@@ -806,7 +806,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtBlackElegantDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtRedElegantDress
@@ -817,7 +816,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtRedElegantDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtGreenElegantDress
@@ -828,7 +826,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtGreenElegantDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtBlueElegantDress
@@ -839,7 +836,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtBlueElegantDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtPurpleElegantDress
@@ -850,7 +846,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtPurpleElegantDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtCyanStripedDress
@@ -861,7 +856,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtCyanStripedDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtRedStripedDress
@@ -872,7 +866,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtRedStripedDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtGreenStripedDress
@@ -883,7 +876,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtGreenStripedDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtPinkStripedDress
@@ -894,7 +886,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtPinkStripedDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtOrangeStripedDress
@@ -905,7 +896,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtOrangeStripedDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtPurpleTurtleneckDress
@@ -916,7 +906,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtPurpleTurtleneckDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtRedTurtleneckDress
@@ -927,7 +916,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtRedTurtleneckDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtGreenTurtleneckDress
@@ -938,7 +926,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtGreenTurtleneckDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtBlueTurtleneckDress
@@ -949,7 +936,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtBlueTurtleneckDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtYellowTurtleneckDress
@@ -960,7 +946,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtYellowTurtleneckDress
-  groupBy: "dresses"
 
 - type: loadout
   id: ContractorClothingUniformJumpskirtYellowOldDress
@@ -971,7 +956,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformJumpskirtYellowOldDress
-  groupBy: "dresses"
 
 # Punk stuff
 - type: loadout
@@ -983,7 +967,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomPunkCroptop
-  groupBy: "punkJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformRandomPunkTanktop
@@ -994,51 +977,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomPunkTanktop
-  groupBy: "punkJumpsuit"
-
-- type: loadout
-  id: ContractorClothingUniformRandomPunkCroptopShorts
-  name: punk croptop with shorts (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformRandomPunkCroptopShorts
-  groupBy: "punkJumpsuit"
-
-- type: loadout
-  id: ContractorClothingUniformRandomPunkTanktopShorts
-  name: punk tanktop with shorts (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformRandomPunkTanktopShorts
-  groupBy: "punkJumpsuit"
-
-- type: loadout
-  id: ContractorClothingUniformRandomPunkPantsOnly
-  name: punk pants (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformRandomPunkPantsOnly
-  groupBy: "punkJumpsuit"
-
-- type: loadout
-  id: ContractorClothingUniformRandomPunkShortsOnly
-  name: punk shorts (random)
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformRandomPunkShortsOnly
-  groupBy: "punkJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformRandomArmlessNoSkirt
@@ -1049,7 +987,46 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomArmlessNoSkirt
-  groupBy: "colorfulJumpsuit"
+
+- type: loadout
+  id: ContractorClothingUniformRandomPunkCroptopShorts
+  name: punk croptop with shorts (random)
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformRandomPunkCroptopShorts
+
+- type: loadout
+  id: ContractorClothingUniformRandomPunkTanktopShorts
+  name: punk tanktop with shorts (random)
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformRandomPunkTanktopShorts
+
+- type: loadout
+  id: ContractorClothingUniformRandomPunkPantsOnly
+  name: punk pants (random)
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformRandomPunkPantsOnly
+
+- type: loadout
+  id: ContractorClothingUniformRandomPunkShortsOnly
+  name: punk shorts (random)
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ContractorT1
+  price: 500
+  equipment:
+    jumpsuit: ClothingUniformRandomPunkShortsOnly
 
 - type: loadout
   id: ContractorClothingUniformRandomArmless
@@ -1060,7 +1037,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomArmless
-  groupBy: "colorfulJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformRandomStandard
@@ -1071,7 +1047,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomStandard
-  groupBy: "colorfulJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformRandomShorts
@@ -1082,7 +1057,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomShorts
-  groupBy: "colorfulJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformRandomShirt
@@ -1093,7 +1067,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingUniformRandomShirt
-  groupBy: "colorfulJumpsuit"
 
 - type: loadout
   id: ContractorClothingSkirtUniformRandomArmless
@@ -1104,7 +1077,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingSkirtUniformRandomArmless
-  groupBy: "colorfulJumpsuit"
 
 - type: loadout
   id: ContractorClothingSkirtUniformRandomStandard
@@ -1115,7 +1087,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingSkirtUniformRandomStandard
-  groupBy: "colorfulJumpsuit"
 
 - type: loadout
   id: ContractorClothingSkirtUniformRandomBra
@@ -1126,7 +1097,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingSkirtUniformRandomBra
-  groupBy: "colorfulJumpsuit"
 
 - type: loadout
   id: ContractorClothingSkirtUniformRandomShorts
@@ -1137,7 +1107,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingSkirtUniformRandomShorts
-  groupBy: "colorfulJumpsuit"
 
 - type: loadout
   id: ContractorClothingSkirtUniformRandomShirt
@@ -1148,7 +1117,6 @@
   price: 500
   equipment:
     jumpsuit: ClothingSkirtUniformRandomShirt
-  groupBy: "colorfulJumpsuit"
 
 # Horizon start
 # Expedition RND stuff
@@ -1578,7 +1546,6 @@
   price: 675
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryContractor
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryContractorTac
@@ -1588,7 +1555,6 @@
   price: 675
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryContractorTac
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryCaptain
@@ -1598,7 +1564,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryCaptain
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryAtmospherics
@@ -1608,7 +1573,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryAtmospherics
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryEngineering
@@ -1618,7 +1582,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryEngineering
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryEngineeringChief
@@ -1628,7 +1591,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryEngineeringChief
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitarySalvageSpecialist
@@ -1638,7 +1600,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitarySalvageSpecialist
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryCargo
@@ -1648,7 +1609,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryCargo
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryQM
@@ -1658,7 +1618,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryQM
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryParamedic
@@ -1668,7 +1627,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryParamedic
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryMedicalDoctor
@@ -1678,7 +1636,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryMedicalDoctor
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryChemistry
@@ -1688,7 +1645,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryChemistry
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryVirology
@@ -1698,7 +1654,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryVirology
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryGenetics
@@ -1708,7 +1663,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryGenetics
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryCMO
@@ -1718,7 +1672,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryCMO
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryScientist
@@ -1728,7 +1681,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryScientist
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryResearchDirector
@@ -1738,7 +1690,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryResearchDirector
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryService
@@ -1748,7 +1699,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryService
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryHydroponics
@@ -1758,7 +1708,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryHydroponics
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorGrey
@@ -1768,7 +1717,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorGrey
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorBlack
@@ -1778,7 +1726,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorBlack
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorBlue
@@ -1788,7 +1735,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorBlue
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorDarkBlue
@@ -1798,7 +1744,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorDarkBlue
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorTeal
@@ -1808,7 +1753,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorTeal
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorGreen
@@ -1818,7 +1762,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorGreen
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorDarkGreen
@@ -1828,7 +1771,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorDarkGreen
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorOrange
@@ -1838,7 +1780,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorOrange
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorPink
@@ -1848,7 +1789,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorPink
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorRed
@@ -1858,7 +1798,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorRed
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorYellow
@@ -1868,7 +1807,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorYellow
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorPurple
@@ -1878,7 +1816,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorPurple
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorLightBrown
@@ -1888,7 +1825,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorLightBrown
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorBrown
@@ -1898,7 +1834,6 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorBrown
-  groupBy: "militaryJumpsuit"
 
 - type: loadout
   id: ContractorClothingUniformJumpsuitMilitaryColorMaroon
@@ -1908,4 +1843,3 @@
   price: 1250
   equipment:
     jumpsuit: ClothingUniformJumpsuitMilitaryColorMaroon
-  groupBy: "militaryJumpsuit"

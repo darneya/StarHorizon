@@ -2,7 +2,6 @@ using Content.Shared._RMC14.Wieldable.Components;
 using Content.Shared._RMC14.Wieldable.Events;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
@@ -26,7 +25,6 @@ public sealed class RMCWieldableSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly UseDelaySystem _useDelaySystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     private const string WieldUseDelayID = "RMCWieldDelay";
 
@@ -125,8 +123,7 @@ public sealed class RMCWieldableSystem : EntitySystem
         if (!TryComp(wieldableUid, out TransformComponent? transformComponent) ||
             !transformComponent.ParentUid.Valid ||
             !TryComp(transformComponent.ParentUid, out HandsComponent? handsComponent) ||
-            !_hands.TryGetActiveItem(transformComponent.ParentUid, out var activeEnt) || // Frontier: reformat to use the hand system
-            activeEnt != wieldableUid)
+            handsComponent.ActiveHandEntity != wieldableUid)
         {
             return;
         }

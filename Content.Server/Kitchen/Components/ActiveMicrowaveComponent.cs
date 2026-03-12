@@ -22,12 +22,4 @@ public sealed partial class ActiveMicrowaveComponent : Component
 
     [ViewVariables]
     public (FoodRecipePrototype?, int) PortionedRecipe;
-
-    // Horizon start
-    [ViewVariables]
-    public bool ApplyBoost = false;
-
-    [ViewVariables]
-    public bool ApplyAdvancedBoost = false;
-    // Horizon end
 }

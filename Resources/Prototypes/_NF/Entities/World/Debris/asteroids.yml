@@ -1,4 +1,4 @@
-# Asteroid types & loot tables
+﻿# Asteroid types & loot tables
 # region Rock Table
 - type: entity
   id: NFBaseAsteroidDebris
@@ -116,6 +116,16 @@
           orGroup: deposit
         - id: GasDepositWaterVaporLarge
           orGroup: deposit
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
+          orGroup: deposit
+        - id: OreDepositPreciousMetal
+          orGroup: deposit
+        - id: OreDepositCommonRadioactive
+          orGroup: deposit
 # endregion Snow Table
 
 # region Andesite Table
@@ -161,9 +171,16 @@
           orGroup: deposit
         - id: GasDepositAmmonia
           orGroup: deposit
-        - id: GasDepositHelium
+        - id: OreDepositSteelMetal
           orGroup: deposit
-
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
+          orGroup: deposit
+        - id: OreDepositPreciousMetal
+          orGroup: deposit
+        - id: OreDepositCommonRadioactive
+          orGroup: deposit
 # endregion Andesite Table
 
 # region Basalt Table
@@ -209,7 +226,15 @@
           orGroup: deposit
         - id: GasDepositMuddleEvenVerySmall
           orGroup: deposit
-        - id: GasDepositHelium
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
+          orGroup: deposit
+        - id: OreDepositPreciousMetal
+          orGroup: deposit
+        - id: OreDepositCommonRadioactive
           orGroup: deposit
 # endregion Basalt Table
 
@@ -256,7 +281,15 @@
           orGroup: deposit
         - id: GasDepositNitrogenLarge
           orGroup: deposit
-        - id: GasDepositHeliumLarge
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
+          orGroup: deposit
+        - id: OreDepositPreciousMetal
+          orGroup: deposit
+        - id: OreDepositCommonRadioactive
           orGroup: deposit
 # endregion Sand Table
 
@@ -362,7 +395,15 @@
           orGroup: deposit
         - id: GasDepositAirSmall
           orGroup: deposit
-        - id: GasDepositHelium
+        - id: OreDepositSteelMetal
+          orGroup: deposit
+        - id: OreDepositQuarzMetal
+          orGroup: deposit
+        - id: OreDepositMixedMetal
+          orGroup: deposit
+        - id: OreDepositPreciousMetal
+          orGroup: deposit
+        - id: OreDepositCommonRadioactive
           orGroup: deposit
 # endregion AsteroidRock Table
 

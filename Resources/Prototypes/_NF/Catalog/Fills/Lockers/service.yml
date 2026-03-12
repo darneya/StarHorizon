@@ -35,12 +35,12 @@
   - type: StorageFill
     contents:
       - id: CrowbarPocket
-      - id: RuminantCubeBox
+      - id: VariantCubeBox
       - id: SprayBottleWater
       - id: ReagentContainerFlour
-        amount: 3
+        amount: 2
       - id: ReagentContainerRice
-        amount: 3
+        amount: 2
       - id: ReagentContainerSugar
       - id: ReagentContainerSalt
       - id: ReagentContainerPepper
@@ -48,4 +48,3 @@
       - id: DrinkMilkCarton
         amount: 2
       - id: DrinkSoyMilkCarton
-      - id: FoodContainerEgg

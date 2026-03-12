@@ -3,7 +3,6 @@ ai-wire-snipped = Был перерезан провод, координаты {
 wire-name-ai-vision-light = ИИВ
 wire-name-ai-act-light = ИИС
 station-ai-takeover = ИИ захват
-station-ai-eye-name = Око ИИ - { $name }
 # Radial actions
 ai-open = Открыть действия
 ai-close = Закрыть действия

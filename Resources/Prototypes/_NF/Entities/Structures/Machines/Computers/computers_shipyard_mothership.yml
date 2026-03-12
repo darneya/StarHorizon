@@ -104,7 +104,7 @@
     - Construct
     - Adder
     - Loader
-    - Stringer
+    - Legman
     - Liquidator
     - Honker
 
@@ -122,4 +122,3 @@
     - Gasbender
     - Ambition
     - Hammer
-    - Gaslight

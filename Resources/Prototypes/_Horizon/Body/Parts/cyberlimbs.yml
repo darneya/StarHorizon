@@ -883,7 +883,7 @@
 # Claw Piercing Arms
 
 - type: entity
-  id: LeftArmCyberClawPiercing
+  id: LeftArmCyberClawPiersing
   name: "left piercing claw arm"
   parent: [PartCyber, BaseLeftArm]
   components:
@@ -902,10 +902,10 @@
     sound:
       path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
-    - CyberClawPiercing
+    - CyberClawPiersing
 
 - type: entity
-  id: RightArmCyberClawPiercing
+  id: RightArmCyberClawPiersing
   name: "right piercing claw arm"
   parent: [PartCyber, BaseRightArm]
   components:
@@ -924,7 +924,7 @@
     sound:
       path: /Audio/_Horizon/Medical/Cyber/deploy.ogg
     items:
-    - CyberClawPiercing
+    - CyberClawPiersing
 
 # Claw Poison Arms
 

@@ -1,7 +1,6 @@
 using Content.Shared._Horizon.Language;
 using Content.Shared.Atmos;
 using Content.Shared.Camera;
-using Content.Shared.Cuffs;
 using Content.Shared.Hands.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Projectiles;
@@ -25,7 +24,6 @@ public abstract partial class SharedHandsSystem
         SubscribeLocalEvent<HandsComponent, WieldAttemptEvent>(RefRelayEvent);
         SubscribeLocalEvent<HandsComponent, UnwieldAttemptEvent>(RefRelayEvent);
         SubscribeLocalEvent<HandsComponent, GetLanguagesEvent>(RefRelayEvent);  // Horizon languages
-        SubscribeLocalEvent<HandsComponent, TargetHandcuffedEvent>(RefRelayEvent);
     }
 
     private void RelayEvent<T>(Entity<HandsComponent> entity, ref T args) where T : EntityEventArgs
@@ -43,7 +41,7 @@ public abstract partial class SharedHandsSystem
     {
         var ev = new HeldRelayedEvent<T>(args);
 
-        foreach (var held in EnumerateHeld(entity.AsNullable()))
+        foreach (var held in EnumerateHeld(entity, entity.Comp))
         {
             RaiseLocalEvent(held, ref ev);
         }
