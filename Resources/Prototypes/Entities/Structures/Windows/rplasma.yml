@@ -3,15 +3,6 @@
   name: reinforced plasma window
   parent: WindowRCDResistant
   components:
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb {}
-        mask:
-        - FullTileMask
-        layer:
-        - GlassLayer
   - type: Sprite
     drawdepth: WallTops
     sprite: _NF/Structures/Windows/reinforced_plasma_window.rsi # Frontier

@@ -114,8 +114,6 @@
     sprite: _StarHorizon/Clothing/Uniforms/Jumpsuit/pilot.rsi
   - type: Clothing
     sprite: _StarHorizon/Clothing/Uniforms/Jumpsuit/pilot.rsi
-<<<<<<< HEAD
-=======
 
 - type: entity
   parent: ClothingUniformBase
@@ -140,4 +138,3 @@
     sprite: _Horizon/Clothing/Uniforms/Jumpsuit/jeans_jumpsuit_tshirt.rsi
   - type: Clothing
     sprite: _Horizon/Clothing/Uniforms/Jumpsuit/jeans_jumpsuit_tshirt.rsi
->>>>>>> master

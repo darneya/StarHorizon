@@ -78,7 +78,7 @@ public sealed class AnCoFactionAccessSystem : EntitySystem
                 if (ent.Comp.BlacklistDamage != null)
                     _damageable.TryChangeDamage(args.User, ent.Comp.BlacklistDamage, origin: args.User);
 
-                _stun.TryAddParalyzeDuration(args.User, ent.Comp.BlacklistStunTime);
+                _stun.TryParalyze(args.User, ent.Comp.BlacklistStunTime, true);
                 _audio.PlayPvs(ent.Comp.BlacklistSound, args.User);
                 _popup.PopupEntity(Loc.GetString("faction-access-blacklist-explode"), ent, args.User);
             }

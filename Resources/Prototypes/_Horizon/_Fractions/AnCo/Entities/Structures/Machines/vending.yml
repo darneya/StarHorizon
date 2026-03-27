@@ -11,13 +11,8 @@
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
-<<<<<<< HEAD:Resources/Prototypes/_Horizon/_Fractions/AnCo/structure/functional/other/uasvending.yml
   - type: Advertise
     pack: ClothesMateAds
-=======
-  - type: DatasetVocalizer
-    dataset: AnCoClothesMateAds
->>>>>>> master:Resources/Prototypes/_Horizon/_Fractions/AnCo/Entities/Structures/Machines/vending.yml
   - type: MarketModifier
     mod: 1
   - type: SpeakOnUIClosed
@@ -105,8 +100,8 @@
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
-  - type: DatasetVocalizer
-    dataset: AnCoWeaponMateAds
+  - type: Advertise
+    pack: SecTechAds
   - type: MarketModifier
     mod: 15
   - type: SpeakOnUIClosed

@@ -825,8 +825,6 @@
   - type: EmitSoundOnLand
     sound:
       path: /Audio/Effects/Footsteps/slime1.ogg
-<<<<<<< HEAD
-=======
 
 - type: entity
   parent: BasePlushie
@@ -1001,4 +999,3 @@
         density: 30
         mask:
         - ItemMask
->>>>>>> master
