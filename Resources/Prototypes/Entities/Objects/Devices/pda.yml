@@ -1491,6 +1491,14 @@
        pda-pirate
   - type: Icon
     state: pda-pirate
+  # Horiozn
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - BountyContractsCartridge
+      - AstroNavCartridge
 
 - type: entity
   parent: [ BaseMedicalPDA, BaseC3SyndicateContrabandNoValue ] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContrabandNoValue
