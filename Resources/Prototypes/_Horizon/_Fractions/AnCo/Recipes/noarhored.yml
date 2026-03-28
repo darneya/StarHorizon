@@ -19,6 +19,11 @@
     honking: true
     rolling: true
     digging: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 0
 
 - type: entity
   id: AnCoEmergencyFabricatorDisableToolUse
@@ -41,6 +46,11 @@
     honking: true
     rolling: true
     digging: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 0
 
 - type: entity
   id: AnCoWeaponFabricatorDisableToolUse
@@ -63,6 +73,11 @@
     honking: true
     rolling: true
     digging: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 0
 
 - type: entity
   id: AnCoSuitFabricatorDisableToolUse
@@ -85,6 +100,11 @@
     honking: true
     rolling: true
     digging: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 0
 
 - type: entity
   id: AnCoOtherFabricatorDisableToolUse
@@ -107,3 +127,8 @@
     honking: true
     rolling: true
     digging: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 0

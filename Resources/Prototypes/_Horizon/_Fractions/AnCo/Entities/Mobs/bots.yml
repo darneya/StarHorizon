@@ -52,6 +52,7 @@
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Machines/button.ogg
+  - type: DoAfter
 
 - type: entity
   id: AnCoDroneDungeon
