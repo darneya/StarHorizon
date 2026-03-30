@@ -1,38 +1,3 @@
-# region ДСФБ Импульсное оружие
-
-- type: listing
-  id: UplinkDSFBPulsePistol
-  name: Импульсный пистолет ДСФБ
-  description: Компактный импульсный пистолет, поставляемый в сектор для нужд ДСФБ. На рукоятке выгравирована эмблема Департамента Специальных Федеральных Бригад.
-  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi, state: icon }
-  productEntity: DSFBWeaponEnergyPistolPulse
-  cost:
-    Telecrystal: 20
-  categories:
-  - UplinkWeaponry
-
-- type: listing
-  id: UplinkDSFBPulseRifle
-  name: Импульсная винтовка ДСФБ
-  description: Стандартная импульсная винтовка, адаптированная для подразделений ДСФБ. Надёжное и мощное энергетическое оружие для полевых операций.
-  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_rifle.rsi, state: icon }
-  productEntity: DSFBWeaponEnergyRiflePulse
-  cost:
-    Telecrystal: 25
-  categories:
-  - UplinkWeaponry
-
-- type: listing
-  id: UplinkDSFBPulseCarbine
-  name: Импульсный карабин ДСФБ
-  description: Высокотехнологичный импульсный карабин, разработанный специально для штурмовых операций ДСФБ. Сочетает компактность с высокой огневой мощью.
-  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi, state: icon }
-  productEntity: DSFBWeaponEnergyRifleAssaultPulseCarbine
-  cost:
-    Telecrystal: 35
-  categories:
-  - UplinkWeaponry
-
 # region Legasy
 
 - type: listing
@@ -67,16 +32,16 @@
   categories:
   - UplinkPointless
 
-- type: listing
-  id: UplinkCursedKatana
-  name: Проклятая катана
-  description: Символ безжалостной силы, эта катана была выкована в огне ненависти и предательства. Каждый раз, когда она касается врага, её жажда разрушения лишь усиливается. Используйте её с умом, иначе она может забрать вашу душу.
-  icon: { sprite: /Textures/_Horizon/Objects/Weapons/Melee/cursedkatana.rsi, state: icon }
-  productEntity: ClothingBeltCursedKatanaSheathFilled
-  cost:
-    Telecrystal: 10
-  categories:
-  - UplinkWeaponry
+#- type: listing
+#  id: UplinkCursedKatana
+#  name: Проклятая катана
+#  description: Символ безжалостной силы, эта катана была выкована в огне ненависти и предательства. Каждый раз, когда она касается врага, её жажда разрушения лишь усиливается. Используйте её с умом, иначе она может забрать вашу душу.
+#  icon: { sprite: /Textures/_Horizon/Objects/Weapons/Melee/cursedkatana.rsi, state: icon }
+#  productEntity: ClothingBeltCursedKatanaSheathFilled
+#  cost:
+#    Telecrystal: 10
+#  categories:
+#  - UplinkWeaponry
 
 - type: listing
   id: UplinkBarrettBundle
