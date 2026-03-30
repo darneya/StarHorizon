@@ -55,15 +55,59 @@
   - UplinkWeaponry
 
 - type: listing
+  id: UplinkMagazineSniperBarrettM82AR
+  name: магазин Barrett M82 (.70 бронированные)
+  description: магазин Barrett M82 (.70 бронированные)
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: sred }
+  productEntity: MagazineSniperBarrettM82AR
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazineBarrettM82HighVelocity
+  name: магазин Barrett M82 (.70 высокоскорострельные)
+  description: магазин Barrett M82 (.70 высокоскорострельные)
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: red }
+  productEntity: MagazineBarrettM82HighVelocity
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazineSniperBarrettM82
+  name: магазин Barrett M82 (.70 крупнокалиберные)
+  description: магазин Barrett M82 (.70 крупнокалиберные)
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: red }
+  productEntity: MagazineSniperBarrettM82
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+
+- type: listing
   id: UplinkWeaponMakarov
   name: Макаров
   description: По-настоящему классическое и надежное огнестрельное оружие, был создан для самообороны и военного использования. Этот компактный пистолет использует патроны калибра 9x18 мм, сочетая в себе простоту, удобство ношения и непревзойденную надежность.
-  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: base }
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: red }
   productEntity: BaseWeaponMakarov
   cost:
     Telecrystal: 5
   categories:
   - UplinkWeaponry
+
+- type: listing
+  id: UplinkMagazinePistols9x18
+  name: магазин Макарова (9x18 mm)
+  description: магазин Макарова (9x18 mm)
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: slug }
+  productEntity: MagazinePistols9x18
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
 
 - type: listing
   id: UplinkGrenadeLauncherBundle
