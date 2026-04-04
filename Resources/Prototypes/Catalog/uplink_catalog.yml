@@ -1749,35 +1749,6 @@
     Telecrystal: 4
   categories:
   - UplinkWearables
-#Horizon start
-- type: listing
-  id: UplinkHardsuitExperementalSyndy
-  name: "Рамзи"
-  description: Эксперементальный скафандр синдиката,так и не попавший на рынки.
-  icon: { sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/syndicateramzi.rsi, state: icon }
-  productEntity: ClothingOuterExperementalSyndy
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 4
-  cost:
-    Telecrystal: 6
-  categories:
-  - UplinkWearables
-
-- type: listing
-  id: UplinkHardsuitExperementalSyndy
-  name: скафандр ученого Cybersun
-  description: Редкий и очень дорогой скафандр который обеспечивает почти полную защиту от всех внешних угроз.
-  icon: { sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/syndicatecybersun.rsi, state: icon }
-  productEntity: ClothingOuterExperementalSyndy
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 4
-  cost:
-    Telecrystal: 8
-  categories:
-  - UplinkWearables
-#Horizon end
 - type: listing
   id: UplinkHardsuitSyndie
   name: uplink-hardsuit-syndie-name

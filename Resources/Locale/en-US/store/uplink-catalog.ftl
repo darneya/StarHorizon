@@ -499,3 +499,19 @@ uplink-smuggler-satchel-desc = A handy, suspicious looking satchel. Just flat en
 
 uplink-acolyte-armor-name = Acolyte Armor
 uplink-acolyte-armor-desc = The must have of any self respecting cult leader. An evil looking piece of armor, made of bones, and surprisingly resistant to damage.
+
+# StarHorizon — syn_uplink_catalog
+uplink-magazine-sniper-barrett-m82-ar-name = Barrett M82 magazine (.70 armor-piercing)
+uplink-magazine-sniper-barrett-m82-ar-desc = A magazine loaded with .70 armor-piercing rounds for the Barrett M82.
+uplink-magazine-barrett-m82-high-velocity-name = Barrett M82 magazine (.70 high-velocity)
+uplink-magazine-barrett-m82-high-velocity-desc = A magazine loaded with .70 high-velocity rounds for the Barrett M82.
+uplink-magazine-sniper-barrett-m82-name = Barrett M82 magazine (.70 anti-materiel)
+uplink-magazine-sniper-barrett-m82-desc = A magazine loaded with .70 anti-materiel rounds for the Barrett M82.
+uplink-weapon-makarov-name = Makarov
+uplink-weapon-makarov-desc = A classic, reliable firearm for self-defense and military use. This compact pistol fires 9x18mm rounds and combines simplicity, concealability, and rugged dependability.
+uplink-magazine-pistols-9x18-name = Makarov magazine (9x18mm)
+uplink-magazine-pistols-9x18-desc = A standard magazine for the Makarov pistol.
+uplink-hardsuit-experimental-syndy-ramzi-name = Ramzi
+uplink-hardsuit-experimental-syndy-ramzi-desc = An experimental Syndicate hardsuit that never made it to market.
+uplink-hardsuit-cybersun-research-name = Cybersun research hardsuit
+uplink-hardsuit-cybersun-research-desc = A rare and very expensive hardsuit that offers near-total protection from external threats.

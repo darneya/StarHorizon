@@ -191,9 +191,9 @@
 
 - type: entity
   parent: [ClothingOuterHardsuitBase]
-  id: ClothingOuterExperementalSyndy
+  id: ClothingOuterExperimentalSyndy
   name: "Рамзи"
-  description: Эксперементальный скафандр синдиката,так и не попавший на рынки.
+  description: Экспериментальный скафандр синдиката, так и не попавший на рынки.
   suffix: StarHorizon
   components:
   - type: Sprite
@@ -219,7 +219,7 @@
     sprintModifier: 0.90
   - type: HeldSpeedModifier
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitExperementalSyndy
+    clothingPrototype: ClothingHeadHelmetHardsuitExperimentalSyndy
 
 
 - type: entity

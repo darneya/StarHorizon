@@ -1,4 +1,4 @@
-# region Legasy
+# region Legacy
 
 - type: listing
   id: UplinkNightVision
@@ -56,8 +56,8 @@
 
 - type: listing
   id: UplinkMagazineSniperBarrettM82AR
-  name: магазин Barrett M82 (.70 бронированные)
-  description: магазин Barrett M82 (.70 бронированные)
+  name: uplink-magazine-sniper-barrett-m82-ar-name
+  description: uplink-magazine-sniper-barrett-m82-ar-desc
   icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: sred }
   productEntity: MagazineSniperBarrettM82AR
   cost:
@@ -67,8 +67,8 @@
 
 - type: listing
   id: UplinkMagazineBarrettM82HighVelocity
-  name: магазин Barrett M82 (.70 высокоскорострельные)
-  description: магазин Barrett M82 (.70 высокоскорострельные)
+  name: uplink-magazine-barrett-m82-high-velocity-name
+  description: uplink-magazine-barrett-m82-high-velocity-desc
   icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: red }
   productEntity: MagazineBarrettM82HighVelocity
   cost:
@@ -78,8 +78,8 @@
 
 - type: listing
   id: UplinkMagazineSniperBarrettM82
-  name: магазин Barrett M82 (.70 крупнокалиберные)
-  description: магазин Barrett M82 (.70 крупнокалиберные)
+  name: uplink-magazine-sniper-barrett-m82-name
+  description: uplink-magazine-sniper-barrett-m82-desc
   icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: red }
   productEntity: MagazineSniperBarrettM82
   cost:
@@ -89,8 +89,8 @@
 
 - type: listing
   id: UplinkWeaponMakarov
-  name: Макаров
-  description: По-настоящему классическое и надежное огнестрельное оружие, был создан для самообороны и военного использования. Этот компактный пистолет использует патроны калибра 9x18 мм, сочетая в себе простоту, удобство ношения и непревзойденную надежность.
+  name: uplink-weapon-makarov-name
+  description: uplink-weapon-makarov-desc
   icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: red }
   productEntity: BaseWeaponMakarov
   cost:
@@ -100,14 +100,42 @@
 
 - type: listing
   id: UplinkMagazinePistols9x18
-  name: магазин Макарова (9x18 mm)
-  description: магазин Макарова (9x18 mm)
+  name: uplink-magazine-pistols-9x18-name
+  description: uplink-magazine-pistols-9x18-desc
   icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: slug }
   productEntity: MagazinePistols9x18
   cost:
     Telecrystal: 3
   categories:
   - UplinkAmmo
+
+- type: listing
+  id: UplinkHardsuitExperimentalSyndyRamzi
+  name: uplink-hardsuit-experimental-syndy-ramzi-name
+  description: uplink-hardsuit-experimental-syndy-ramzi-desc
+  icon: { sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/syndicateramzi.rsi, state: icon }
+  productEntity: ClothingOuterExperimentalSyndy
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkHardsuitCybersunResearch
+  name: uplink-hardsuit-cybersun-research-name
+  description: uplink-hardsuit-cybersun-research-desc
+  icon: { sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/syndicatecybersun.rsi, state: icon }
+  productEntity: ClothingOuterCybersunResearch
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkWearables
 
 - type: listing
   id: UplinkGrenadeLauncherBundle
