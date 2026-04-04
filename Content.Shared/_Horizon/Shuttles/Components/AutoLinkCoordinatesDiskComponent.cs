@@ -1,3 +1,5 @@
+#nullable enable
+
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Horizon.Shuttles.Components;

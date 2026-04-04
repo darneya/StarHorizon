@@ -11,8 +11,8 @@
 - type: pointOfInterest
   id: SindiOutpost
   parent: BasePOI
-  name: "Аванпост Синдиката"
-  mapName: "ОШИБКА"
+  name: poi-sindi-outpost-name
+  mapName: poi-sindi-outpost-map
   minimumDistance: 12000
   maximumDistance: 15000
   spawnGroup: Required

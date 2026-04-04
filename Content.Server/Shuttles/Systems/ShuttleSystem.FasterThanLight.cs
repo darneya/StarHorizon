@@ -203,14 +203,10 @@ public sealed partial class ShuttleSystem
         if (!Exists(mapUid))
             return false;
 
-        // StarHorizon-Start
-        if (TryComp<FTLDestinationComponent>(mapUid, out component))
-        {
-            return true;
-        }
-
         component = EnsureComp<FTLDestinationComponent>(mapUid);
-        // StarHorizon-End
+
+        if (component.Enabled == enabled && component.RequireCoordinateDisk == requireDisk && component.BeaconsOnly == beaconsOnly)
+            return true;
 
         component.Enabled = enabled;
         component.RequireCoordinateDisk = requireDisk;

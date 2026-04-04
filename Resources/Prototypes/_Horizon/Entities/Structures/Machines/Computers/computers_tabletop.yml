@@ -10,8 +10,6 @@
 - type: entity
   parent: ComputerTabletopShuttleAntag
   id: ComputerTabletopShuttleAntagSyndicate
-  name: консоль управления шаттлом
-  description: Используется для пилотирования шаттла.
   suffix: Syndicate, Disk
   components:
   - type: ItemSlots
@@ -30,8 +28,6 @@
 - type: entity
   parent: ComputerTabletopShuttleAntag
   id: ComputerTabletopShuttleAntagPirate
-  name: консоль управления шаттлом
-  description: Используется для пилотирования шаттла.
   suffix: Pirate, Disk
   components:
   - type: ItemSlots

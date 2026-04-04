@@ -1,8 +1,8 @@
 - type: entity
-  name: Диск с данными
   parent: CoordinatesDisk
   id: CoordinatesDiskSyndicate
-  description: Стариный диск с неизвестными данными. Кто вообще пользуется дисководами?
+  name: syndicate coordinates disk
+  description: An old disk with unknown data. Who still uses optical drives?
   components:
   - type: Sprite
     sprite: Objects/Misc/cd.rsi
@@ -14,10 +14,10 @@
     targetStationId: SindiOutpost
 
 - type: entity
-  name: Изношеный диск
   parent: CoordinatesDisk
   id: CoordinatesDiskPirate
-  description: Потрёпаный диск с неизвестными данными. Кто вообще пользуется дисководами?
+  name: worn coordinates disk
+  description: A worn disk with unknown data. Who still uses optical drives?
   components:
   - type: Sprite
     sprite: Objects/Misc/cd.rsi

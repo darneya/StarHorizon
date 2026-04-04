@@ -5,7 +5,7 @@ using Content.Shared.Shuttles.Components;
 namespace Content.Server._Horizon.Shuttles.Systems;
 
 /// <summary>
-/// Handles automatic linking of coordinate disks to station maps by BecomesStation ID.
+/// Links coordinate disks to a station map by BecomesStation ID when either the disk or the station appears.
 /// </summary>
 public sealed class AutoLinkCoordinatesDiskSystem : EntitySystem
 {
@@ -13,30 +13,46 @@ public sealed class AutoLinkCoordinatesDiskSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<AutoLinkCoordinatesDiskComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<AutoLinkCoordinatesDiskComponent, ComponentStartup>(OnDiskStartup);
+        SubscribeLocalEvent<BecomesStationComponent, ComponentStartup>(OnStationStartup);
     }
 
-    private void OnStartup(Entity<AutoLinkCoordinatesDiskComponent> ent, ref ComponentStartup args)
+    private void OnDiskStartup(Entity<AutoLinkCoordinatesDiskComponent> ent, ref ComponentStartup args)
     {
-        // Find grid with matching BecomesStation ID and get its map
+        TryLinkDisk(ent);
+    }
+
+    private void OnStationStartup(Entity<BecomesStationComponent> ent, ref ComponentStartup args)
+    {
+        var query = EntityQueryEnumerator<AutoLinkCoordinatesDiskComponent>();
+        while (query.MoveNext(out var uid, out var disk))
+        {
+            if (disk.TargetStationId != ent.Comp.Id)
+                continue;
+
+            TryLinkDisk((uid, disk));
+        }
+    }
+
+    private void TryLinkDisk(Entity<AutoLinkCoordinatesDiskComponent> ent)
+    {
+        if (!TryComp<ShuttleDestinationCoordinatesComponent>(ent, out var coords) || coords.Destination != null)
+            return;
+
         var query = EntityQueryEnumerator<BecomesStationComponent, TransformComponent>();
 
         while (query.MoveNext(out _, out var becomesStation, out var xform))
         {
-            if (becomesStation.Id == ent.Comp.TargetStationId)
-            {
-                // Found the station grid, get its map and set destination
-                if (xform.MapUid != null)
-                {
-                    var coordsComp = EnsureComp<ShuttleDestinationCoordinatesComponent>(ent);
-                    coordsComp.Destination = xform.MapUid.Value;
-                    Dirty(ent, coordsComp);
-                    return;
-                }
-            }
-        }
+            if (becomesStation.Id != ent.Comp.TargetStationId)
+                continue;
 
-        // Station not found - this is expected if POI hasn't spawned yet
-        // The disk will remain without destination
+            if (xform.MapUid == null)
+                continue;
+
+            coords = EnsureComp<ShuttleDestinationCoordinatesComponent>(ent);
+            coords.Destination = xform.MapUid.Value;
+            Dirty(ent, coords);
+            return;
+        }
     }
 }

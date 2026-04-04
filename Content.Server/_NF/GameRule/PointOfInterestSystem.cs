@@ -12,7 +12,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server._NF.Station.Systems;
 using Content.Shared._Horizon.OutpostCapture;
-using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map.Components;
 
@@ -81,7 +80,8 @@ public sealed class PointOfInterestSystem : EntitySystem
             rotationOffset += rotation;
             // Append letter to depot name.
 
-            string overrideName = proto.Name;
+            var baseName = ResolvePoiDisplayName(proto.Name);
+            string overrideName = baseName;
             if (i < 26)
                 overrideName += $" {(char)('A' + i)}"; // " A" ... " Z"
             else
@@ -255,7 +255,7 @@ public sealed class PointOfInterestSystem : EntitySystem
             var newMapUid = _mapSystem.CreateMap(out var newMapId);
 
             // Set map name - use MapName if specified, otherwise use Name
-            string mapName = proto.MapName ?? proto.Name;
+            string mapName = ResolvePoiDisplayName(proto.MapName ?? proto.Name);
             if (!string.IsNullOrEmpty(overrideName))
                 mapName = overrideName;
             _meta.SetEntityName(newMapUid, mapName);
@@ -283,7 +283,7 @@ public sealed class PointOfInterestSystem : EntitySystem
         gridUid = loadedGrid;
         List<EntityUid> gridList = [loadedGrid];
 
-        string stationName = string.IsNullOrEmpty(overrideName) ? proto.Name : overrideName;
+        string stationName = string.IsNullOrEmpty(overrideName) ? ResolvePoiDisplayName(proto.Name) : overrideName;
 
         EntityUid? stationUid = null;
         if (_proto.TryIndex<GameMapPrototype>(proto.ID, out var stationProto))
@@ -305,6 +305,14 @@ public sealed class PointOfInterestSystem : EntitySystem
         }
 
         return true;
+    }
+
+    /// <summary>
+    /// Fluent message id if the string exists in the bundle; otherwise the raw prototype value (legacy POIs).
+    /// </summary>
+    private string ResolvePoiDisplayName(string value)
+    {
+        return Loc.TryGetString(value, out var localized) ? localized : value;
     }
 
     private Vector2 GetRandomPOICoord(float unscaledMinRange, float unscaledMaxRange, float clearance)
