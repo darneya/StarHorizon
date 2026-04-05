@@ -2,7 +2,7 @@
   id: Paladin
   parent: BaseVessel
   name: NSF Paladin
-  description: A small security assault craft designed for space combat equipped with an EXP-2100g mounted grenade launcher.
+  description: Малый охранный шаттл оснащенный корабельным орудием для атаки.
   price: 34220
   category: Small
   group: Security

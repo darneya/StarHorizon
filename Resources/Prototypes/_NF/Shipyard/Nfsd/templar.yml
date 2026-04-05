@@ -2,7 +2,7 @@
   id: Templar
   parent: BaseVessel
   name: NSF Templar
-  description: A small security assault craft designed for combat interdiction operations.
+  description: Малый охранный шаттл предназначенный для ведения боя.
   price: 24220
   category: Small
   group: Security
