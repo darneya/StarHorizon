@@ -25,6 +25,19 @@
        state: SyndicateOperative
 
 - type: entity
+  id: SpawnSyndicateMedic
+  parent: SpawnPointJobBase
+  name: Спавн Медика Синдиката
+  components:
+  - type: SpawnPoint
+    job_id: SyndicateMedic
+  - type: Sprite
+    layers:
+     - state: green
+     - sprite: _StarHorizon/Markers/Jobs/syndicate.rsi
+       state: SyndicateMedic
+
+- type: entity
   id: SpawnSyndicateCargo
   parent: SpawnPointJobBase
   name: Спавн Курьера Синдиката

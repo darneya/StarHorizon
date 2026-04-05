@@ -9,7 +9,13 @@
       sprite: _Horizon/_Fractions/AnCo/Objects/Devices/configuration.rsi
     - type: AccessOverrider
       accessLevels:
+      - AccessAnCoKnight
+      - AccessAnCoSpider
+      - AccessAnCoOfficer
+      - AccessAnCoCadet
+      - AccessAnCoRipsoid
       - AnCo
+      - AccessAnCoWelcome
       - Maintenance
       - External
       - Service
@@ -29,3 +35,27 @@
       denialSound:
         path: /Audio/Machines/custom_deny.ogg
       doAfter: 0.5
+
+- type: entity
+  parent: AccessConfiguratorAnCo
+  id: AccessConfiguratorAnCoDEBUG
+  suffix: StarHorizon, AnCo, DEBUG
+  components:
+    - type: AccessOverrider
+      accessLevels:
+      - AnCo
+      - AccessAnCoCounselor
+      - AccessAnCoTitan
+      - AccessAnCoKnight
+      - AccessAnCoSpider
+      - AccessAnCoOfficer
+      - AccessAnCoCadet
+      - AccessAnCoRipsoid
+      - AccessAnCoWelcome
+      - Maintenance
+      - External
+      - Service
+      - Medical
+      - Engineering
+      - Janitor
+      - Captain

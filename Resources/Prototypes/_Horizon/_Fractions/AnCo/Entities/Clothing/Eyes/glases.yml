@@ -17,3 +17,23 @@
     coverage: EYES
   - type: StaticPrice
     price: 50000
+
+- type: entity
+  name: прибор ночного видения АнКо
+  id: ClothingEyesVisionAnCo
+  suffix: StarHorizon, AnCo
+  parent: ClothingEyesVision
+  description: Визор и прибор ночного видения в одном флаконе
+  components:
+  - type: Item
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Eyes/glassesnight.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Horizon/_Fractions/AnCo/Clothing/Eyes/glassesnight.rsi
+  - type: FlashImmunity
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: PNV
+  - type: ShowHealthBars

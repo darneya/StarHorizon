@@ -15,7 +15,7 @@
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
-  icon: "SyndicateJob"
+  icon: "JobIconSyndicateOfficer"
   supervisors: Офицеру теле-коммуникаций и Оперативнику
   weight: 20
   displayWeight: 20
@@ -63,7 +63,55 @@
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
-  icon: "SyndicateJob"
+  icon: "JobIconSyndicateOperative"
+  supervisors: Офицеру теле-коммуникаций
+  weight: 20
+  displayWeight: 20
+  setPreference: true
+  newPlayerMessage: false
+  access:
+   - NuclearOperative
+   - SyndicateAgent
+  accessGroups:
+  - GeneralAccess
+  special:
+  - !type:RemoveComponentSpecial
+    components:
+    - type: NpcFactionMember
+  - !type:AddComponentSpecial
+    components:
+    - type: NukeOperative
+    - type: NpcFactionMember
+      factions:
+      - Syndicate
+      - NFSyndicate
+    - type: SpecialSectorStationRecord # must be given on spawn
+      recordGeneration: FalseRecord
+    - type: DisableSuitSensors
+  - !type:GiveItemOnHolidaySpecial # Even pirates get a piece of cake.
+    holiday: FrontierBirthday
+    prototype: FrontierBirthdayGift
+  - !type:AddImplantSpecial
+    implants: [ DeathRattleImplant ]
+
+- type: job
+  id: SyndicateMedic
+  name: Медик
+  description: Основная медик синдиката.
+  playTimeTracker: JobSyndicateMedic
+  forceFaction: FactionSyndicate # Horizon
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 216000 # 60 hours # Horizon
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 10800 # 3 hours
+  startingGear: BaseSyndicateMedicGear
+  whitelisted: true
+  alwaysUseSpawner: true
+  hideConsoleVisibility: true
+  canBeAntag: true
+  icon: "JobIconSyndicateMedic"
   supervisors: Офицеру теле-коммуникаций
   weight: 20
   displayWeight: 20
@@ -111,7 +159,7 @@
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
-  icon: "SyndicateJob"
+  icon: "JobIconSyndicateDelivery"
   supervisors: Офицеру теле-коммуникаций и Оперативнику
   weight: 20
   displayWeight: 20
@@ -164,3 +212,10 @@
     eyes: ClothingEyesHudSyndicate
     outerClothing: ClothingOuterHardsuitSyndieCommander
 
+- type: startingGear
+  id: BaseSyndicateMedicGear
+  equipment:
+    pocket1: SyndiHypo
+    pocket2: BaseUplinkRadio40TC
+    eyes: ClothingEyesHudSyndicateAgent
+    outerClothing: ClothingOuterHardsuitSyndieMedic
