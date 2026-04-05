@@ -17,7 +17,7 @@
   category: Medium
   group: Security
   access: Sergeant
-  shuttlePath: /Maps/_NF/Shuttles/Nfsd/hypnos.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/hypnos.yml # Horizon
   class:
   - Pursuit
   engine:
@@ -38,7 +38,7 @@
 - type: gameMap
   id: Hypnos
   mapName: 'NSF Hypnos'
-  mapPath: /Maps/_NF/Shuttles/Nfsd/hypnos.yml
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/hypnos.yml # Horizon
   minPlayers: 0
   stations:
     Hypnos:

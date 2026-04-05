@@ -17,7 +17,7 @@
   category: Small
   group: Security
   access: Detective
-  shuttlePath: /Maps/_NF/Shuttles/Nfsd/heimdall.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/heimdall.yml # Horizon
   guidebookPage: Null
   class:
   - Detective
@@ -39,7 +39,7 @@
 - type: gameMap
   id: Heimdall
   mapName: 'NSF Heimdall'
-  mapPath: /Maps/_NF/Shuttles/Nfsd/heimdall.yml
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/heimdall.yml # Horizon
   minPlayers: 0
   stations:
     Heimdall:
