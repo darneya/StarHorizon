@@ -11,18 +11,24 @@
 - type: pointOfInterest
   id: Cove
   parent: BasePOI
-  name: Пиратская Бухта
-  minimumDistance: 10000
-  maximumDistance: 20000
+  name: poi-cove-name
+  mapName: poi-cove-map
+  minimumDistance: 12000
+  maximumDistance: 15000
   spawnGamePreset: [ NFPirate ]
   spawnGroup: Required
+  anotherMap: true
   gridPath: /Maps/_Horizon/POI/cove.yml # Horizon-Maps
   hideWarp: true
+  addMapComponents:
+  - type: FTLDestination
+    requireCoordinateDisk: true
   addComponents:
   - type: IFF
     color: "#C83737"
-    flags: [HideLabel, Hide]
+    flags: [HideLabel]
     readOnly: false
+  - type: FTLBeacon
 
 - type: gameMap
   id: Cove
