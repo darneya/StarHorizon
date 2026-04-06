@@ -35,7 +35,8 @@
         maxVol: 20
   - type: UseDelay
     delay: 2.5
-  - type: Injector
+  - type: Hypospray
+    onlyAffectsMobs: false
     transferAmount: 10
 
 - type: entity
