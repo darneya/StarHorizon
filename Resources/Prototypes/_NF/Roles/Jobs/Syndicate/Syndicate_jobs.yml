@@ -96,8 +96,8 @@
 
 - type: job
   id: SyndicateMedic
-  name: Медик
-  description: Основная медик синдиката.
+  name: job-name-horizon-syndicate-medic
+  description: job-description-horizon-syndicate-medic
   playTimeTracker: JobSyndicateMedic
   forceFaction: FactionSyndicate # Horizon
   requirements:

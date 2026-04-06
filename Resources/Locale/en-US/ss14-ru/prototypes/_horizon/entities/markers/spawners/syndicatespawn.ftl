@@ -1,6 +1,8 @@
-ent-SpawnSyndicateOfficerTeleCommunication = Спавн Офицера Теле-коммуникации
+ent-SpawnSyndicateOfficerTeleCommunication = syndicate telecommunications officer spawn
     .desc = { ent-SpawnPointJobBase.desc }
-ent-SpawnSyndicateOperative = Спавн Оперативника Синдиката
+ent-SpawnSyndicateOperative = syndicate operative spawn
     .desc = { ent-SpawnPointJobBase.desc }
-ent-SpawnSyndicateCargo = Спавн Курьера Синдиката
+ent-SpawnSyndicateMedic = syndicate medic spawn
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnSyndicateCargo = syndicate cargo technician spawn
     .desc = { ent-SpawnPointJobBase.desc }

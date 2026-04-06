@@ -33,7 +33,7 @@
 # КПК
 - type: loadoutGroup
   id: SyndicatePDA
-  name: КПК Синдиката
+  name: loadout-group-syndicate-pda
   loadouts:
   - LoadoutSyndicateSyndiPDA
   fallbacks:
@@ -41,7 +41,7 @@
 
 - type: loadoutGroup
   id: SyndicatePDAOfficer
-  name: КПК Синдиката
+  name: loadout-group-syndicate-pda
   loadouts:
   - LoadoutSyndicateSyndiPDAOfficer
   fallbacks:
@@ -49,7 +49,7 @@
 
 - type: loadoutGroup
   id: SyndicatePDAOperative
-  name: КПК Синдиката
+  name: loadout-group-syndicate-pda
   loadouts:
   - LoadoutSyndicateSyndiPDAOperative
   fallbacks:
@@ -57,7 +57,7 @@
 
 - type: loadoutGroup
   id: SyndicatePDAMedic
-  name: КПК Синдиката
+  name: loadout-group-syndicate-pda
   loadouts:
   - LoadoutSyndicateSyndiPDAMedic
   fallbacks:
@@ -65,7 +65,7 @@
 
 - type: loadoutGroup
   id: SyndicatePDADelivery
-  name: КПК Синдиката
+  name: loadout-group-syndicate-pda
   loadouts:
   - LoadoutSyndicateSyndiPDADelivery
   fallbacks:
