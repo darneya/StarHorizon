@@ -9,33 +9,33 @@
 # Прототип шаттла:
 #
 - type: vessel
-  id: Flatline
+  id: Hatchery
   parent: BaseVessel
-  name: FSB Flatline
-  description: Старинный шаттл, что был отреставрирован For Star Biotech, имеет все необходимое для экстренной помощи и даже больше.
-  price: 45000 # 33357, наценка верфи 30% = 43364
+  name: ORS type 8R2 "Hatchery"
+  description: Средний медицинский шаттл с цитологической и ксеноархеологической лабораториями.
+  price: 140000 # 105461, наценка верфи 30% = 137099
   category: Medium
   group: Medical
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Medical/flatline.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Medical/hatcheryors.yml
   class:
   - Medical
-  - Chemistry
-  - Botany
+  - Science
   engine:
+  - Bananium
   - Uranium
-  - Solar
+
 
 - type: gameMap
-  id: Flatline
-  mapName: 'FSB Flatline'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Medical/flatline.yml
+  id: Hatchery
+  mapName: 'ORS type 8R2 "Hatchery"'
+  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Medical/hatcheryors.yml
   minPlayers: 0
   stations:
-    Flatline:
+    Hatchery:
       stationProto: StandardFrontierVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Flatline {1}'
+          mapNameTemplate: 'type 8R2 "Hatchery" {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
@@ -44,3 +44,5 @@
             ContractorInterview: [ 0, 0 ]
             PilotInterview: [ 0, 0 ]
             MercenaryInterview: [ 0, 0 ]
+
+
