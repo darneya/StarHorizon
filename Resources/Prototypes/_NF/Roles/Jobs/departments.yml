@@ -36,6 +36,5 @@
   roles:
   - SyndicateOfficerTeleCommunication
   - SyndicateOperative
-  - SyndicateMedic
   - SyndicateCargo
   # Horizon end

@@ -6,7 +6,7 @@
   name: machine pistol
   components:
   - type: Gun
-    projectileSpeed: 50
+    projectileSpeed: 22.5
     minAngle: 3.1
     maxAngle: 15.5
     angleIncrease: 0.8

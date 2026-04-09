@@ -38,8 +38,6 @@
   - KazmieSheet1
   - MagazinePistol35
   - MagazineRifle20
-  - MagazineRifle30
-  - MagazineAnCoShotgun50
   - AnCoEnergyCore
   - PDAAnCo
   - AnCoOmegaTool
@@ -79,22 +77,6 @@
   materials:
     Ardon: 3000
     Kazmie: 3000
-
-- type: latheRecipe
-  id: MagazineRifle30
-  result: MagazineRifle30
-  completetime: 10
-  materials:
-    Ardon: 4000
-    Kazmie: 4000
-
-- type: latheRecipe
-  id: MagazineAnCoShotgun50
-  result: MagazineAnCoShotgun50
-  completetime: 10
-  materials:
-    Ardon: 4000
-    Kazmie: 4000
 
 - type: latheRecipe
   id: AnCoEnergyCore

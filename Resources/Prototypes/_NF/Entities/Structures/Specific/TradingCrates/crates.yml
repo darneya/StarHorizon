@@ -32,7 +32,7 @@
           bounds: "-0.4,-0.4,0.4,0.29"
         density: 150 # Heavy
         mask:
-        - CrateMask
+        - SmallMobMask
         layer:
         - MachineLayer
 
@@ -76,7 +76,7 @@
           bounds: "-0.4,-0.4,0.4,0.29"
         density: 550 # Very heavy — express crate, higher value justifies mass
         mask:
-        - CrateMask
+        - SmallMobMask
         layer:
         - MachineLayer
 

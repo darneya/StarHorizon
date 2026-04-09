@@ -8,19 +8,6 @@
     - type: AccessOverrider
       accessLevels:
       - DFI
-      - DFI-Cadet
-      - DFI-Officer
-      - DFI-IU
-      - DFI-CAU
-      - DFI-ShiftManager
-      - DFI-Evidence
-      - DFI-Observation
-      - DFI-Special
-      - DFI-CIC
-      - DFI-Armory
-      - DFI-APS
-      - DFI-TRC
-      - Security
       - Service
       - Medical
       - Maintenance

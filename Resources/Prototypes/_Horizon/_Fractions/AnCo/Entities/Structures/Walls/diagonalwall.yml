@@ -33,6 +33,3 @@
         node: girder
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  - type: Construction
-    graph: WallKazmie
-    node: wallkazmiediagonaly

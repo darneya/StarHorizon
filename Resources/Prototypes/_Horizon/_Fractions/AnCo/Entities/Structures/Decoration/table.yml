@@ -50,9 +50,6 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepTile
-  - type: Construction
-    graph: TableAnCo
-    node: tableardon
 
 - type: entity
   id: AnCoTableKazmie
@@ -95,6 +92,3 @@
   - type: IconSmooth
     key: metaltable
     base: state_
-  - type: Construction
-    graph: TableAnCo
-    node: tablekazmie

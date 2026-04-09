@@ -137,7 +137,7 @@
     - NanitMedipenAnCo
     - NanitMedipenAnCo
     - NanitMedipenAnCo
-    - AnCohypoNerf
+    - AnCohypo
     - AnCohypocapsule
     rareChance: 0.10
 
@@ -180,13 +180,9 @@
     prototypes:
     - MagazinePistol35
     - MagazinePistol35
-    - MagazinePistol35
-    - MagazineRifle20
     - MagazineRifle20
     - MagazineRifle20
     - AnCoEnergyCore
-    - MagazineRifle30
-    - MagazineAnCoShotgun50
     chance: 1
     offset: 0.0
 
@@ -217,10 +213,6 @@
     - AnCoWeaponCaseMeleeSplah
     - AnCoWeaponCaseMeleeKnife
     - AnCoWeaponCaseGrenade
-    - AnCoWeaponCaseMachineGun
-    - AnCoWeaponCaseCarabine
-    - AnCoWeaponCaseShotGun
-    - AnCoWeaponCaseAutoShotGun
 #    - AnCoWeaponCaseMeleeSword
 #    - AnCoWeaponCaseCounselorGun
 #    - AnCoWeaponCaseRipsoidCannon

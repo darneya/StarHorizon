@@ -344,19 +344,3 @@ uplink-fake-mindshield-name = Фальшивая защита разума
 uplink-fake-mindshield-desc = Переключаемый имплант, способный имитировать те же сигналы, что и настоящий имплант защиты разума, обманывая соответствующие дисплеи и заставляя их думать, что у вас есть защита разума (имплантер бренда Нанотрейзен не предоставляется).
 uplink-mauler-name = Боевой мех маулер
 uplink-mauler-desc = Украденный и перекрашенный Синдикатом Мародёр в комплекте с 3 орудиями.
-
-# StarHorizon — syn_uplink_catalog
-uplink-magazine-sniper-barrett-m82-ar-name = магазин Barrett M82 (.70 бронебойные)
-uplink-magazine-sniper-barrett-m82-ar-desc = магазин Barrett M82 (.70 бронебойные)
-uplink-magazine-barrett-m82-high-velocity-name = магазин Barrett M82 (.70 высокоскоростные)
-uplink-magazine-barrett-m82-high-velocity-desc = магазин Barrett M82 (.70 высокоскоростные)
-uplink-magazine-sniper-barrett-m82-name = магазин Barrett M82 (.70 крупнокалиберные)
-uplink-magazine-sniper-barrett-m82-desc = магазин Barrett M82 (.70 крупнокалиберные)
-uplink-weapon-makarov-name = Макаров
-uplink-weapon-makarov-desc = По-настоящему классическое и надёжное огнестрельное оружие, созданное для самообороны и военного применения. Этот компактный пистолет использует патроны калибра 9×18 мм, сочетая простоту, удобство ношения и непревзойдённую надёжность.
-uplink-magazine-pistols-9x18-name = магазин Макарова (9×18 мм)
-uplink-magazine-pistols-9x18-desc = магазин Макарова (9×18 мм)
-uplink-hardsuit-experimental-syndy-ramzi-name = Рамзи
-uplink-hardsuit-experimental-syndy-ramzi-desc = Экспериментальный скафандр синдиката, так и не попавший на рынки.
-uplink-hardsuit-cybersun-research-name = скафандр учёного Cybersun
-uplink-hardsuit-cybersun-research-desc = Редкий и очень дорогой скафандр, обеспечивающий почти полную защиту от внешних угроз.

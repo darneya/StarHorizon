@@ -62,9 +62,6 @@
   id: JobSyndicateOperative
 
 - type: playTimeTracker
-  id: JobSyndicateMedic
-
-- type: playTimeTracker
   id: JobSyndicateCargo
 
 - type: playTimeTracker

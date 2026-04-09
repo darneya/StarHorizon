@@ -44,5 +44,5 @@
     damageOverlay:
       sprite: Structures/Windows/cracks_diagonal.rsi
   - type: Construction
-    graph: WindowArdon
-    node: ardonwindowdiagonaly
+    graph: WindowDiagonal
+    node: reinforcedPlasmaWindowDiagonal

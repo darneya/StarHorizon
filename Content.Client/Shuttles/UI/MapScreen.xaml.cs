@@ -2,7 +2,6 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.Shuttles.Systems;
 using Content.Shared._NF.Shuttles.Components;
-using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
@@ -117,11 +116,15 @@ public sealed partial class MapScreen : BoxContainer
         MapRadar.InFtl = true;
         MapFTLState.Text = Loc.GetString($"shuttle-console-ftl-state-{_state.ToString()}");
 
-        // Horizon: only show FTL when this shuttle is allowed to use FTL (authoritative rules stay on server).
+        //frontier - we only allow pre-approved vessels to FTL
         if (!_entManager.HasComponent<ShuttleFTLComponent>(_shuttleEntity))
+        {
             MapFTLButton.Visible = false;
+        }
         else
+        {
             MapFTLButton.Visible = true;
+        }
 
         switch (_state)
         {

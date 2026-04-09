@@ -17,57 +17,6 @@
         Piercing: 10
   - type: PointLight
     color: "#F05A5A"
-  - type: Tracer
-    color: "#f05a5a"
-    length: 50
-
-- type: entity
-  name: AnCo Bullet
-  id: StandartBallisticAnCoRifle30
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Projectiles/proj.rsi
-    layers:
-    - state: BallisticRifle30
-      shader: unshaded
-  - type: Projectile
-    damage:
-      types:
-        Heat: 12
-        Piercing: 8
-  - type: Tracer
-    color: "#f05a5a"
-    length: 5
-
-- type: entity
-  name: AnCo Bullet
-  id: StandartBallisticAnCoShotgun
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Projectiles/proj.rsi
-    layers:
-    - state: BallisticShotGun
-      shader: unshaded
-  - type: Projectile
-    damage:
-      types:
-        Heat: 7
-        Piercing: 3
-  - type: Tracer
-    color: "#f05a5a"
-    length: 3
-
-- type: entity
-  categories: [ HideSpawnMenu ]
-  id: StandartBallisticAnCoShotgunSpread
-  parent: [NFBasePelletShotgunSpread, StandartBallisticAnCoShotgun]
-  components:
-  - type: ProjectileSpread
-    proto: StandartBallisticAnCoShotgun
 
 - type: entity
   name: AnCo Bullet
@@ -87,9 +36,6 @@
         Piercing: 12
   - type: PointLight
     color: "#F05A5A"
-  - type: Tracer
-    color: "#f05a5a"
-    length: 3
 
 - type: entity
   name: AnCo Bullet
@@ -192,14 +138,3 @@
     maxIntensity: 10
   - type: PointLight
     color: "#F05A5A"
-
-- type: entity
-  id: EMPStandartExplodesAnCo
-  name: AnCo Bullet Boom
-  parent: StandartExplodesAnCo
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: EmpOnTrigger
-    range: 1
-    energyConsumption: 2700000
-

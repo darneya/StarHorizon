@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   name: BaseWeaponSniperBarrettM82
   parent: BaseItem
   id: BaseSniperBarrettM82
@@ -20,12 +20,9 @@
     - Back
   - type: AmmoCounter
   - type: Gun
-    projectileSpeed: 60
-    minAngle: 0.2
-    maxAngle: 6
-    angleIncrease: 5.8
-    angleDecay: 5.8
-    fireRate: 0.6
+    fireRate: 0.4
+    minAngle: 50
+    maxAngle: 60
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -94,7 +91,7 @@
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: Wieldable
-    wieldTime: 1.5
+    wieldTime: 2.5
   - type: GunWieldBonus
     minAngle: -50
     maxAngle: -60
@@ -107,11 +104,6 @@
     - Back
   - type: EmitSoundOnLand
     sound: /Audio/_Horizon/Weapons/Guns/Barrettm82/barrettm82_onland.ogg
-  - type: EyeCursorOffset
-    maxOffset: 10
-    pvsIncrease: 1
-  - type: NFWeaponDetails
-    class: weapon-details-class-sniper
   # Horizon Attachment start
   - type: AttachableHolder
     slots:

@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using Content.Server._Horizon.Pinpointer;
-using Content.Shared._NF.Pinpointer;
 using Content.Shared.Interaction;
 using Content.Shared.Pinpointer;
 using System.Linq;
@@ -15,7 +12,6 @@ namespace Content.Server.Pinpointer;
 public sealed class PinpointerSystem : SharedPinpointerSystem
 {
     [Dependency] private readonly AlertsSystem _alerts = default!; // WD EDIT
-    [Dependency] private readonly PinpointerTargetLinkSystem _pinpointerTargetLinks = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
@@ -45,8 +41,6 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
     {
         if (component.Alert.HasValue)
             _alerts.ClearAlert(uid, component.Alert.Value);
-
-        _pinpointerTargetLinks.CleanupLinksOnPinpointerShutdown(uid, component);
     }
     // WD EDIT END
 
@@ -81,36 +75,6 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
             LocateTarget(uid, component);
 
         args.Handled = true;
-    }
-
-    public override void SetTarget(EntityUid uid, EntityUid? target, PinpointerComponent? pinpointer = null)
-    {
-        if (!Resolve(uid, ref pinpointer))
-            return;
-
-        var previousTargets = new HashSet<EntityUid>(pinpointer.Targets);
-        base.SetTarget(uid, target, pinpointer);
-
-        if (!Resolve(uid, ref pinpointer))
-            return;
-
-        var ev = new PinpointerTargetsModifiedEvent(previousTargets);
-        RaiseLocalEvent(uid, ref ev);
-    }
-
-    public override void SetTargets(EntityUid uid, List<EntityUid> targets, PinpointerComponent? pinpointer = null)
-    {
-        if (!Resolve(uid, ref pinpointer))
-            return;
-
-        var previousTargets = new HashSet<EntityUid>(pinpointer.Targets);
-        base.SetTargets(uid, targets, pinpointer);
-
-        if (!Resolve(uid, ref pinpointer))
-            return;
-
-        var ev = new PinpointerTargetsModifiedEvent(previousTargets);
-        RaiseLocalEvent(uid, ref ev);
     }
 
     private void OnLocateTarget(ref FTLCompletedEvent ev)
@@ -364,12 +328,7 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         if (!Resolve(uid, ref pinpointer))
             return;
 
-        var previousTargets = new HashSet<EntityUid>(pinpointer.Targets);
         pinpointer.Targets.Clear();
-
-        var ev = new PinpointerTargetsModifiedEvent(previousTargets);
-        RaiseLocalEvent(uid, ref ev);
-
         UpdateDirectionToTarget(uid, pinpointer);
         UpdateAppearance(uid, pinpointer);
     }

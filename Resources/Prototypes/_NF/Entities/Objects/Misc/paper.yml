@@ -121,11 +121,6 @@
   suffix: Red
   description: 'A piece of red paper.'
   components:
-    - type: Tag
-      tags:
-      - Document
-      - Paper
-      - Trash
     - type: Sprite
       sprite: Objects/Misc/bureaucracy.rsi
       layers:

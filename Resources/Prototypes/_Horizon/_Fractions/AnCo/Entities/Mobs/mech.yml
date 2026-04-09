@@ -19,7 +19,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: BallisticAmmoProvider
-    proto: EMPStandartExplodesAnCo
+    proto: StandartExplodesAnCo
     capacity: 100
   - type: Destructible
     thresholds:
