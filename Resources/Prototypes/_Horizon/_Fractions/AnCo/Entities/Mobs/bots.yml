@@ -192,6 +192,9 @@
     intensitySlope: 3
     totalIntensity: 40
     canCreateVacuum: false
+  - type: EmpOnTrigger
+    range: 2
+    energyConsumption: 2700000
   - type: Item
     size: Small
 

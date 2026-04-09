@@ -721,7 +721,7 @@
   - Socks
   - SyndicateJumpsuit
   - SyndicateBack
-  - SyndicatePDA
+  - SyndicatePDAOfficer
   - SyndicateHead
   - SyndicateOuterClothing
   - SyndicateEars
@@ -737,7 +737,23 @@
   - Socks
   - SyndicateJumpsuit
   - SyndicateBack
-  - SyndicatePDA
+  - SyndicatePDAOperative
+  - SyndicateHead
+  - SyndicateOuterClothing
+  - SyndicateEars
+  - SyndicateBoots
+  - ContractorBoxSurvival
+  - ContractorWallet
+
+- type: roleLoadout
+  id: JobSyndicateMedic
+  groups:
+  - Top
+  - Bottom
+  - Socks
+  - SyndicateJumpsuit
+  - SyndicateBack
+  - SyndicatePDAMedic
   - SyndicateHead
   - SyndicateOuterClothing
   - SyndicateEars
@@ -753,7 +769,7 @@
   - Socks
   - SyndicateJumpsuit
   - SyndicateBack
-  - SyndicatePDA
+  - SyndicatePDADelivery
   - SyndicateHead
   - SyndicateOuterClothing
   - SyndicateEars

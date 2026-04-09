@@ -413,3 +413,55 @@
     contents:
       - id: AnCoGranade
         amount: 4
+
+- type: entity
+  id: AnCoWeaponCaseMachineGun
+  parent: AnCoWeaponCaseLong
+  suffix: StarHorizon, AnCo, MachineGun
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponMachineGun30AnCo
+        amount: 1
+      - id: MagazineRifle30
+        amount: 2
+
+- type: entity
+  id: AnCoWeaponCaseCarabine
+  parent: AnCoWeaponCaseLong
+  suffix: StarHorizon, AnCo, MachineGun
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifles30AnCo
+        amount: 1
+      - id: MagazineRifle30
+        amount: 2
+
+- type: entity
+  id: AnCoWeaponCaseShotGun
+  parent: AnCoWeaponCaseLong
+  suffix: StarHorizon, AnCo, MachineGun
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunAnCo
+        amount: 1
+      - id: MagazineAnCoShotgun50
+        amount: 2
+
+- type: entity
+  id: AnCoWeaponCaseAutoShotGun
+  parent: AnCoWeaponCaseLong
+  suffix: StarHorizon, AnCo, MachineGun
+  category: [ HideSpawnMenu ]
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunSpeedAnCo
+        amount: 1
+      - id: MagazineAnCoShotgun50
+        amount: 2
