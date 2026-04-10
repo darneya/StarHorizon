@@ -339,7 +339,7 @@
       - HEAD
   - type: PointLight
     radius: 1.2
-    energy: 2.7
+    energy: 1.5
     color: "#4faffb"
     slots:
 
@@ -751,9 +751,9 @@
     - bones_2
     - bones_3
   - type: Sprite
-    state: bones_3
+    state: cotton_3
     layers:
-    - state: bones_3
+    - state: cotton_3
       map: ["base"]
   - type: Appearance
   - type: Food

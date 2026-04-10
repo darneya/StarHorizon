@@ -1,8 +1,8 @@
-ent-MobHarpyBase = Urist McHarpy
+ent-MobHarpyBase = Урист МакГарпи
     .desc = { ent-BaseMobHuman.desc }
-ent-MobHarpyDummy = Urist McHands
-    .desc = A dummy Harpy meant to be used in character setup.
-ent-ActionHarpyPlayMidi = Play MIDI
-    .desc = Sing your heart out! Right click yourself to set an instrument.
-ent-ActionSyrinxChangeVoiceMask = Set name
-    .desc = Change the name others hear to something else.
+ent-MobHarpyDummy = Урист Макхендс
+    .desc = Манекен гарпии, предназначенный для использования в настройке персонажа.
+ent-ActionHarpyPlayMidi = Играть MIDI
+    .desc = Пой от всей души! Щёлкните правой кнопкой мыши по себе, чтобы установить инструмент.
+ent-ActionSyrinxChangeVoiceMask = Установить имя
+    .desc = Изменить имя, которое слышат другие, на другое.

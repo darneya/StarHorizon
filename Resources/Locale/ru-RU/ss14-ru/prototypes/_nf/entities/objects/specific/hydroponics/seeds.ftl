@@ -14,5 +14,3 @@ ent-EveryspiceSeeds = пакет семян пряностей
     .desc = Войны велись из-за меньшего.
 ent-MonkananaSeeds = пакет семян обезьянана
     .desc = Почему он такой волосатый?
-ent-NFGlowshroomSeeds = пакет семян светогриба
-    .desc = Формально известен как Mycena Bregprox.

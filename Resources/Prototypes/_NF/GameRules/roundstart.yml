@@ -49,7 +49,6 @@
     - id: BluespaceDungeonChromite
     - id: BluespaceDungeonSnow
     - id: BluespaceDungeonCave
-    - id: BluespaceDungeonCaveZombie
 
 - type: entity
   id: BluespaceSalvageEventScheduler
@@ -103,7 +102,7 @@
     - prefRoles: [ NFPirateCaptain ]
       max: 999
       playerRatio: -1
-      lateJoinAdditional: false
+      lateJoinAdditional: true
       allowNonHumans: true
       multiAntagSetting: All
       components: &pirateComponents
@@ -122,7 +121,7 @@
     - prefRoles: [ NFPirateFirstMate ]
       max: 999
       playerRatio: -1
-      lateJoinAdditional: false
+      lateJoinAdditional: true
       allowNonHumans: true
       multiAntagSetting: All
       components: *pirateComponents
@@ -136,7 +135,7 @@
     - prefRoles: [ NFPirate ]
       max: 999
       playerRatio: -1
-      lateJoinAdditional: false
+      lateJoinAdditional: true
       allowNonHumans: true
       multiAntagSetting: All
       components: *pirateComponents

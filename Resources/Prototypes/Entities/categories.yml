@@ -18,6 +18,11 @@
   name: entity-category-name-roles
   hideSpawnMenu: true
 
+- type: entityCategory
+  id: StatusEffects
+  name: entity-category-name-status-effects
+  hideSpawnMenu: true
+
 # markers, atmos fixing, etc
 - type: entityCategory
   id: Mapping
@@ -27,8 +32,3 @@
   id: DoNotMap
   name: entity-category-name-donotmap
   suffix: entity-category-suffix-donotmap
-
-- type: entityCategory
-  id: StatusEffects
-  name: entity-category-name-status-effects
-  hideSpawnMenu: true

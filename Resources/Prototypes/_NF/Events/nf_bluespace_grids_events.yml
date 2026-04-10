@@ -3,14 +3,11 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-
     startAnnouncement: station-event-bluespace-cache-start-announcement
     startAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_cache_arrival.ogg
+      path: /Audio/Announcements/attention.ogg
     warningAnnouncement: station-event-bluespace-cache-warning-announcement
     endAnnouncement: station-event-bluespace-cache-end-announcement
-    endAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_cache_leave.ogg
     earliestStart: 30 # 0,5 hours # Horizon TempTweak
     weight: 5
     duration: 1350
@@ -50,11 +47,9 @@
   - type: StationEvent
     startAnnouncement: station-event-bluespace-vault-start-announcement
     startAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_vault_arrival.ogg
-    endAnnouncement: station-event-bluespace-vault-end-announcement
-    endAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_vault_leave.ogg
+      path: /Audio/Announcements/attention.ogg
     warningAnnouncement: station-event-bluespace-vault-warning-announcement
+    endAnnouncement: station-event-bluespace-vault-end-announcement
     earliestStart: 30 # 0,5 hours # Horizon TempTweak
     weight: 5
     duration: 1020
@@ -82,10 +77,10 @@
         paths:
         - /Maps/_NF/Bluespace/vault.yml
     rewardAccounts:
-      Nfsd: 0.25
-      Frontier: 0.25
-      Medical: 0.25
-      Edison: 0.25
+      Nfsd: 0.33
+      Frontier: 0.33
+      Medical: 0.33
+
 - type: entity
   id: BluespaceVaultSmallError
   parent: BaseStationEventShortDelay
@@ -93,11 +88,9 @@
   - type: StationEvent
     startAnnouncement: station-event-bluespace-vault-start-announcement
     startAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_vault_arrival.ogg
-    endAnnouncement: station-event-bluespace-vault-end-announcement
-    endAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_vault_leave.ogg
+      path: /Audio/Announcements/attention.ogg
     warningAnnouncement: station-event-bluespace-vault-warning-announcement
+    endAnnouncement: station-event-bluespace-vault-end-announcement
     earliestStart: 30 # 0,5 hours # Horizon TempTweak
     maximumPlayers: 30
     weight: 5
@@ -137,11 +130,9 @@
   - type: StationEvent
     startAnnouncement: station-event-bluespace-generic-ftl-start-announcement
     startAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_arrival.ogg
+      path: /Audio/Misc/notice1.ogg
     warningAnnouncement: station-event-bluespace-generic-ftl-warning-announcement
     endAnnouncement: station-event-bluespace-generic-ftl-end-announcement
-    endAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_leave.ogg
     earliestStart: 30 # 0,5 hours # Horizon TempTweak
     minimumPlayers: 20 # Horizon
     weight: 1
@@ -176,11 +167,9 @@
   - type: StationEvent
     startAnnouncement: station-event-bluespace-generic-ftl-start-announcement
     startAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_arrival.ogg
+      path: /Audio/Misc/notice1.ogg
     warningAnnouncement: station-event-bluespace-generic-ftl-warning-announcement
     endAnnouncement: station-event-bluespace-generic-ftl-end-announcement
-    endAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_leave.ogg
     earliestStart: 30 # 0,5 hours # Horizon TempTweak
     minimumPlayers: 20 # Horizon
     weight: 1
@@ -206,7 +195,7 @@
         - type: PreventPilot
         - type: ForceAnchor
         paths:
-        - /Maps/_NF/Bluespace/wizardtower.yml
+        - /Maps/_NF/Bluespace/wizardprobealt.yml
 
 - type: entity
   id: BluespaceBloodMoon
@@ -215,11 +204,9 @@
   - type: StationEvent
     startAnnouncement: station-event-bluespace-generic-ftl-start-announcement
     startAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_arrival.ogg
+      path: /Audio/Misc/notice1.ogg
     warningAnnouncement: station-event-bluespace-generic-ftl-warning-announcement
     endAnnouncement: station-event-bluespace-generic-ftl-end-announcement
-    endAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_leave.ogg
     earliestStart: 30 # 0,5 hours # Horizon TempTweak
     minimumPlayers: 20 # Horizon
     weight: 1
@@ -252,13 +239,11 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-bluespace-asteroid-start-announcement
+    startAnnouncement: station-event-bluespace-generic-ftl-start-announcement
     startAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_asteroid_arrival.ogg
+      path: /Audio/Misc/notice1.ogg
     warningAnnouncement: station-event-bluespace-generic-ftl-warning-announcement
-    endAnnouncement: station-event-bluespace-asteroid-end-announcement
-    endAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_asteroid_leave.ogg
+    endAnnouncement: station-event-bluespace-generic-ftl-end-announcement
     earliestStart: 20
     weight: 1
     duration: 1800
@@ -289,14 +274,11 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-  # TODO: Maybe change start & end to unique Voice over audio
     startAnnouncement: station-event-bluespace-generic-ftl-start-announcement
     startAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_arrival.ogg
+      path: /Audio/Misc/notice1.ogg
     warningAnnouncement: station-event-bluespace-generic-ftl-warning-announcement
     endAnnouncement: station-event-bluespace-generic-ftl-end-announcement
-    endAudio:
-      path: /Audio/_NF/Announcements/PocketSizedAndy/andy2_bluespace_ship_leave.ogg
     earliestStart: 20
     maximumPlayers: 20
     weight: 5

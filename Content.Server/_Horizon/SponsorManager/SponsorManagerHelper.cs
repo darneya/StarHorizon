@@ -18,7 +18,8 @@ public sealed class SponsorManagerHelper : EntitySystem
         base.Initialize();
         _sawmill = Logger.GetSawmill("sponsor");
         _sawmill.Info("SponsorManagerHelper initialized");
-
+        
+        _sponsorManager.FileWatcher();
         SubscribeNetworkEvent<SponsorCheckRequestEvent>(OnSponsorCheckRequest);
         SubscribeNetworkEvent<SponsorBuyItemRequestEvent>(OnSponsorBuyItemRequest);
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarting);
@@ -26,8 +27,7 @@ public sealed class SponsorManagerHelper : EntitySystem
 
     private void OnRoundStarting(RoundStartingEvent ev)
     {
-        _sawmill.Info("Round starting: syncing Discord sponsors, then updating balances");
-        _sponsorManager.SyncDiscordSponsorsAtRoundStart();
+        _sawmill.Info("Round starting, updating sponsors and balances");
         _sponsorManager.UpdateSponsorsAndBalances();
     }
 
@@ -36,16 +36,16 @@ public sealed class SponsorManagerHelper : EntitySystem
         var playerName = args.SenderSession.Name;
         var isSponsor = _sponsorManager.IsSponsor(ev.SponsorName);
         var balance = _sponsorManager.GetBalance(ev.SponsorName);
-
+        
         _sawmill.Info($"Player {playerName} (sponsor name: {ev.SponsorName}) attempted to open sponsor shop. Is sponsor: {isSponsor}, Balance: {balance}");
-
+        
         RaiseNetworkEvent(new SponsorCheckResponseEvent(isSponsor, balance), args.SenderSession.Channel);
     }
 
     private void OnSponsorBuyItemRequest(SponsorBuyItemRequestEvent ev, EntitySessionEventArgs args)
     {
         var playerName = args.SenderSession.Name;
-
+        
         if (!TryGetEntity(ev.PlayerNetId, out var serverUid))
         {
             _sawmill.Warning($"Player {playerName} attempted to buy item {ev.ItemPrototypeId} but entity {ev.PlayerNetId} not found");
@@ -59,15 +59,15 @@ public sealed class SponsorManagerHelper : EntitySystem
         }
 
         var currentBalance = _sponsorManager.GetBalance(ev.SponsorName);
-
+        
         if (currentBalance >= ev.Cost)
         {
             _sponsorManager.DeductBalance(ev.SponsorName, ev.Cost);
             SpawnItem(serverUid.Value, ev.ItemPrototypeId);
-
+            
             var updatedBalance = _sponsorManager.GetBalance(ev.SponsorName);
             _sawmill.Info($"Player {playerName} (sponsor: {ev.SponsorName}) successfully bought item {ev.ItemPrototypeId} for {ev.Cost} tokens. New balance: {updatedBalance}");
-
+            
             RaiseNetworkEvent(new SponsorBuyItemResponseEvent(updatedBalance), args.SenderSession.Channel);
         }
         else
@@ -90,7 +90,7 @@ public sealed class SponsorManagerHelper : EntitySystem
 
                 if (!handsSystem.TryPickupAnyHand(playerUid, item, handsComp: hands))
                     handsSystem.PickupOrDrop(playerUid, item, handsComp: hands);
-
+                
                 _sawmill.Debug($"Spawned item {itemPrototypeId} for player {playerUid}");
             }
             else

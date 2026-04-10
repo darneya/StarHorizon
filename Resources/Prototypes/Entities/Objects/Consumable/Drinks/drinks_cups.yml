@@ -58,7 +58,6 @@
   - type: PhysicalComposition
     materialComposition:
       Gold: 100
-  - type: NFTreasure # Frontier
 
 - type: entity
   parent: DrinkBaseCup

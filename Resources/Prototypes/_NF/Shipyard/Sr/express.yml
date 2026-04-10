@@ -11,9 +11,9 @@
 - type: vessel
   id: Express
   parent: BaseVessel
-  name: FSC Express
+  name: FSB Express
   description: A small endurance shuttle for express logistics support in Frontier space.
-  price: 17250
+  price: 16500
   category: Small
   group: Sr
   access: Mail
@@ -39,7 +39,7 @@
 
 - type: gameMap
   id: Express
-  mapName: 'FSC Express'
+  mapName: 'FSB Express'
   mapPath: /Maps/_NF/Shuttles/Sr/express.yml
   minPlayers: 0
   stations:

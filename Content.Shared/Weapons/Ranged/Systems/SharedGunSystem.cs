@@ -11,7 +11,7 @@ using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Gravity;
 using Content.Shared.Hands;
-using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Hands.Components;
 using Content.Shared.Item; // Delta-V: Felinids in duffelbags can't shoot.
 using Content.Shared.Mech.Components;
 using Content.Shared.Popups;
@@ -52,7 +52,6 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] protected readonly ISharedAdminLogManager Logs = default!;
     [Dependency] protected readonly DamageableSystem Damageable = default!;
     [Dependency] protected readonly ExamineSystemShared Examine = default!;
-    [Dependency] private   readonly SharedHandsSystem _hands = default!;
     [Dependency] private   readonly ItemSlotsSystem _slots = default!;
     [Dependency] private   readonly RechargeBasicEntityAmmoSystem _recharge = default!;
     [Dependency] protected readonly SharedActionsSystem Actions = default!;
@@ -126,7 +125,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (melee.NextAttack > component.NextFire)
         {
             component.NextFire = melee.NextAttack;
-            DirtyField(uid, component, nameof(GunComponent.NextFire));
+            EntityManager.DirtyField(uid, component, nameof(GunComponent.NextFire));
         }
     }
 
@@ -188,24 +187,19 @@ public abstract partial class SharedGunSystem : EntitySystem
         gunComp = null;
 
         // Horizon Mech start
-        // If the entity is a mech pilot, only allow mech equipment guns.
-        // Personal weapons held in hands must not be usable from inside a mech.
-        if (TryComp<MechPilotComponent>(entity, out var mechPilot))
+        if (TryComp<MechPilotComponent>(entity, out var mechPilot) &&
+            TryComp<MechComponent>(mechPilot.Mech, out var mech) &&
+            mech.CurrentSelectedEquipment.HasValue &&
+            TryComp<GunComponent>(mech.CurrentSelectedEquipment.Value, out var mechGun))
         {
-            if (TryComp<MechComponent>(mechPilot.Mech, out var mech) &&
-                mech.CurrentSelectedEquipment.HasValue &&
-                TryComp<GunComponent>(mech.CurrentSelectedEquipment.Value, out var mechGun))
-            {
-                gunEntity = mech.CurrentSelectedEquipment.Value;
-                gunComp = mechGun;
-                return true;
-            }
-
-            return false;
+            gunEntity = mech.CurrentSelectedEquipment.Value;
+            gunComp = mechGun;
+            return true;
         }
         // Horizon Mech end
 
-        if (_hands.GetActiveItem(entity) is { } held &&
+        if (EntityManager.TryGetComponent(entity, out HandsComponent? hands) &&
+            hands.ActiveHandEntity is { } held &&
             TryComp(held, out GunComponent? gun))
         {
             gunEntity = held;
@@ -232,19 +226,26 @@ public abstract partial class SharedGunSystem : EntitySystem
         gun.ShotCounter = 0;
         gun.ShootCoordinates = null;
         gun.Target = null;
-        DirtyField(uid, gun, nameof(GunComponent.ShotCounter));
+        EntityManager.DirtyField(uid, gun, nameof(GunComponent.ShotCounter));
+    }
+
+    /// <summary>
+    /// Frontier - Sets the targeted entity of the gun. Should be called before attempting to shoot to avoid shooting over the target.
+    /// </summary>
+    public void SetTarget(GunComponent gun, EntityUid target)
+    {
+        gun.Target = target;
     }
 
     /// <summary>
     /// Attempts to shoot at the target coordinates. Resets the shot counter after every shot.
     /// </summary>
-    public void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun, EntityCoordinates toCoordinates, EntityUid? target = null)
+    public void AttemptShoot(EntityUid user, EntityUid gunUid, GunComponent gun, EntityCoordinates toCoordinates)
     {
         gun.ShootCoordinates = toCoordinates;
         AttemptShoot(user, gunUid, gun);
         gun.ShotCounter = 0;
-        gun.Target = target;
-        DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
+        EntityManager.DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
     }
 
     /// <summary>
@@ -316,7 +317,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
 
         // NextFire has been touched regardless so need to dirty the gun.
-        DirtyField(gunUid, gun, nameof(GunComponent.NextFire));
+        EntityManager.DirtyField(gunUid, gun, nameof(GunComponent.NextFire));
 
         // Get how many shots we're actually allowed to make, due to clip size or otherwise.
         // Don't do this in the loop so we still reset NextFire.
@@ -370,7 +371,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         // Even if we don't actually shoot update the ShotCounter. This is to avoid spamming empty sounds
         // where the gun may be SemiAuto or Burst.
         gun.ShotCounter += shots;
-        DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
+        EntityManager.DirtyField(gunUid, gun, nameof(GunComponent.ShotCounter));
 
         if (ev.Ammo.Count <= 0)
         {
@@ -419,14 +420,11 @@ public abstract partial class SharedGunSystem : EntitySystem
         var shotEv = new GunShotEvent(user, ev.Ammo, fromCoordinates, toCoordinates.Value); // Horizon Attachments
         RaiseLocalEvent(gunUid, ref shotEv);
 
-        if (!userImpulse || !TryComp<PhysicsComponent>(user, out var userPhysics))
-            return;
-
-        var shooterEv = new ShooterImpulseEvent();
-        RaiseLocalEvent(user, ref shooterEv);
-
-        if (shooterEv.Push)
-            CauseImpulse(fromCoordinates, toCoordinates.Value, user, userPhysics);
+        if (userImpulse && TryComp<PhysicsComponent>(user, out var userPhysics))
+        {
+            if (_gravity.IsWeightless(user, userPhysics))
+                CauseImpulse(fromCoordinates, toCoordinates.Value, user, userPhysics);
+        }
     }
 
     public void Shoot(
@@ -617,7 +615,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             DirtyField(gun, nameof(GunComponent.AngleDecayModified));
         }
 
-        if (!comp.MaxAngleModified.EqualsApprox(ev.MaxAngle))
+        if (!comp.MaxAngleModified.EqualsApprox(ev.MinAngle))
         {
             comp.MaxAngleModified = ev.MaxAngle;
             DirtyField(gun, nameof(GunComponent.MaxAngleModified));
@@ -678,16 +676,6 @@ public record struct AttemptShootEvent(EntityUid User, string? Message, bool Can
 /// <param name="User">The user that fired this gun.</param>
 [ByRefEvent]
 public record struct GunShotEvent(EntityUid User, List<(EntityUid? Uid, IShootable Shootable)> Ammo, EntityCoordinates FromCoordinates, EntityCoordinates ToCoordinates); // Horizon Attachments
-
-/// <summary>
-/// Raised on an entity after firing a gun to see if any components or systems would allow this entity to be pushed
-/// by the gun they're firing. If true, GunSystem will create an impulse on our entity.
-/// </summary>
-[ByRefEvent]
-public record struct ShooterImpulseEvent()
-{
-    public bool Push;
-};
 
 public enum EffectLayers : byte
 {

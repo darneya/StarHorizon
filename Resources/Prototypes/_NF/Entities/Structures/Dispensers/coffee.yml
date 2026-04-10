@@ -1,8 +1,8 @@
 - type: entity
-  id: ImpCoffeeMachineEmpty
+  id: ImpCoffeeMachine
   name: spacepresso machine
+  suffix: Filled
   description: A sleek, modern coffee machine, fit for any spacefaring species to enjoy.
-  suffix: Empty
   parent: ReagentDispenserBase
   components:
   - type: Rotatable
@@ -13,11 +13,17 @@
       - state: coffeemachine
       - state: unshaded
         shader: unshaded
-  - type: Storage
-    openOnActivate: false
-    whitelist:
-      tags:
-      - DrinkBottle
+  - type: StorageFill
+    contents:
+    - id: DrinkCoffeeJug
+    - id: DrinkCreamCartonXL
+    - id: DrinkSugarJug
+    - id: DrinkIceJug
+    - id: DrinkMilkCarton
+    - id: DrinkSoyMilkCarton
+    - id: JugCaramexinin
+    - id: JugCocoa
+    - id: JugWater
   - type: Transform
     noRot: false
   - type: Machine
@@ -29,18 +35,15 @@
   - type: StealTarget
     stealGroup: BoozeDispenser
   - type: StaticPrice
-    price: 150
+    price: 250
 
 - type: entity
-  id: ImpCoffeeMachine
-  name: spacepresso machine
-  suffix: Filled
-  description: A sleek, modern coffee machine, fit for any spacefaring species to enjoy.
-  parent: ImpCoffeeMachineEmpty
+  id: ImpCoffeeMachineEmpty
+  suffix: Empty
+  parent: ImpCoffeeMachine
   components:
-  - type: StorageFill
-    contents:
-    - id: JugNanocaf
-    - id: DrinkAstrotameJug
-    - id: DrinkIceJug
-    - id: JugWater
+  - type: Storage
+    openOnActivate: false
+    whitelist:
+      tags:
+      - DrinkBottle

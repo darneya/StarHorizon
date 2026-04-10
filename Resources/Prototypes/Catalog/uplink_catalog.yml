@@ -105,9 +105,9 @@
   productEntity: ClothingHandsGlovesNorthStar
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 4
   cost:
-    Telecrystal: 6
+    Telecrystal: 8
   categories:
   - UplinkWeaponry
 
@@ -119,9 +119,9 @@
   productEntity: ClothingHandsKnuckleDustersSyndicate
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 3
   cost:
-    Telecrystal: 8
+    Telecrystal: 6
   categories:
   - UplinkWeaponry
 
@@ -184,26 +184,11 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledSMG
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 6
+    Telecrystal: 10
   cost:
-    Telecrystal: 12
+    Telecrystal: 17
   categories:
   - UplinkWeaponry
-
-# Frontier TODO: Balance this and readd
-#- type: listing
-#  id: UplinkEstocBundle
-#  name: uplink-estoc-bundle-name
-#  description: uplink-estoc-bundle-desc
-#  icon: { sprite: /Textures/Objects/Weapons/Guns/Rifles/estoc.rsi, state: icon }
-#  productEntity: ClothingBackpackDuffelSyndicateFilledRifle
-#  discountCategory: veryRareDiscounts
-#  discountDownTo:
-#    Telecrystal: 11
-#  cost:
-#    Telecrystal: 18
-#  categories:
-#  - UplinkWeaponry
 
 - type: listing
   id: UplinkBulldogBundle
@@ -241,9 +226,9 @@
   productEntity: ClothingBackpackDuffelSyndicateFilledLMG
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 12
+    Telecrystal: 24
   cost:
-    Telecrystal: 20
+    Telecrystal: 30
   categories:
   - UplinkWeaponry
 
@@ -289,9 +274,9 @@
   productEntity: SyndieMiniBomb
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 3
   cost:
-    Telecrystal: 8
+    Telecrystal: 6
   categories:
     - UplinkExplosives
 
@@ -328,9 +313,9 @@
   productEntity: MobGrenadePenguin
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 10
+    Telecrystal: 5
   cost:
-    Telecrystal: 15
+    Telecrystal: 10
   categories:
     - UplinkExplosives
   conditions:
@@ -520,31 +505,6 @@
   categories:
   - UplinkAmmo
 
-# For the Bulldog
-- type: listing
-  abstract: true # Frontier: moved to _NF uplink catalog
-  id: UplinkMagazineShotgunPellet
-  name: uplink-magazine-bulldog-pellet-name
-  description: uplink-magazine-bulldog-pellet-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: pellets }
-  productEntity: MagazineShotgun
-  cost:
-    Telecrystal: 2
-  categories:
-  - UplinkAmmo
-
-- type: listing
-  abstract: true # Frontier: moved to _NF uplink catalog
-  id: UplinkMagazineShotgunSlug
-  name: uplink-magazine-bulldog-slug-name
-  description: uplink-magazine-bulldog-slug-desc
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Shotgun/m12.rsi, state: slug }
-  productEntity: MagazineShotgunSlug
-  cost:
-    Telecrystal: 3
-  categories:
-  - UplinkAmmo
-
 # For the Cobra
 - type: listing
   abstract: true # Frontier: moved to _NF uplink catalog
@@ -580,18 +540,6 @@
   # productEntity: MagazineBoxLightRifle # Frontier
   cost:
     Telecrystal: 1
-  categories:
-  - UplinkAmmo
-
-# For the Estoc
-- type: listing
-  abstract: true # Frontier: TODO: Balance and readd
-  id: UplinkEstocAmmo
-  name: uplink-estoc-ammo-name
-  description: uplink-estoc-ammo-desc
-#  productEntity: MagazineRifle # Frontier
-  cost:
-    Telecrystal: 2
   categories:
   - UplinkAmmo
 
@@ -712,7 +660,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 4
+    Telecrystal: 5
   categories:
   - UplinkChemicals
 
@@ -761,7 +709,7 @@
   description: uplink-cigarettes-desc
   productEntity: CigPackSyndicate
   cost:
-    Telecrystal: 2
+    Telecrystal: 1
   categories:
   - UplinkChemicals
 
@@ -772,9 +720,9 @@
   productEntity: ClothingBackpackDuffelSyndicateMedicalBundleFilled
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 15
+    Telecrystal: 16
   cost:
-    Telecrystal: 20
+    Telecrystal: 24
   categories:
   - UplinkChemicals
   conditions:
@@ -798,7 +746,7 @@
   discountDownTo:
     Telecrystal: 1
   cost:
-    Telecrystal: 2
+    Telecrystal: 3
   categories:
   - UplinkDeception
 
@@ -811,7 +759,7 @@
   discountDownTo:
     Telecrystal: 2
   cost:
-    Telecrystal: 4
+    Telecrystal: 5
   categories:
   - UplinkDeception
 
@@ -824,7 +772,7 @@
   discountDownTo:
     Telecrystal: 4
   cost:
-    Telecrystal: 4
+    Telecrystal: 7
   categories:
   - UplinkDeception
 
@@ -919,9 +867,9 @@
   productEntity: ClothingBackpackDuffelSyndicateDecoyKitFilled
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 3
   cost:
-    Telecrystal: 1 #Horizon - это же литерали хуйня фор фан
+    Telecrystal: 6
   categories:
   - UplinkDeception
 
@@ -1451,12 +1399,16 @@
   cost:
     Telecrystal: 2
   categories:
+<<<<<<< HEAD
     - UplinkImplants
   conditions:
      - !type:StoreWhitelistCondition
        whitelist:
          tags:
            - NukeOpsUplink
+=======
+  - UplinkImplants
+>>>>>>> 0c49007bfba661ca1fe54e21450c669977e03eed
 
 # - type: listing
 #   id: UplinkMicroBombImplanter
@@ -1574,26 +1526,7 @@
       blacklist:
         components:
           - SurplusBundle
-#Horizon start
-- type: listing
-  id: UplinkLangBox
-  name: языковой набор синдиката
-  description: Имплантер кодового языка и универсальный переводчик в комплекте
-  productEntity: BoxDeathLangImplants
-  cost:
-    Telecrystal: 6
-  categories:
-  - UplinkImplants
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - NukeOpsUplink
-    - !type:BuyerWhitelistCondition
-      blacklist:
-        components:
-          - SurplusBundle
-#Horizon end
+
 - type: listing
   id: UplinkFakeMindshield
   name: uplink-fake-mindshield-name
@@ -1680,6 +1613,20 @@
     Telecrystal: 1
   cost:
     Telecrystal: 2
+  categories:
+  - UplinkWearables
+
+# TODO: Revert back to normal thieving gloves when clothes dyeing is added
+- type: listing
+  id: UplinkgClothingThievingGloves
+  name: uplink-clothing-chameleon-thieving-gloves-name
+  description: uplink-clothing-chameleon-thieving-gloves-desc
+  productEntity: ClothingHandsChameleonThief
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 5
   categories:
   - UplinkWearables
 
@@ -1810,23 +1757,7 @@
     whitelist:
       tags:
       - NukeOpsUplink
-# Horizon start
-- type: listing
-  id: UplinkHardsuitCBURNInterdyne
-  name: Экзоскафандр CBURN Inderdyne
-  description: Скрещенная версия элитного скафандра Cybersun и технологий био-защиты Interdyne
-  icon: { sprite: /Textures/_Horizon/Clothing/OuterClothing/Hardsuits/InterdyneCBURN.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelInterdyneCBURNHardsuitBundle
-  cost:
-    Telecrystal: 20
-  categories:
-  - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
-# Horizon end
+
 - type: listing
   id: UplinkClothingEyesHudSyndicate
   name: uplink-clothing-eyes-hud-syndicate-name
@@ -2310,17 +2241,6 @@
   #   - Chef
   #   - Mime
 
-- type: listing
-  id: UplinkContrabandLighter
-  name: uplink-contraband-lighter-name
-  description: uplink-contraband-lighter-desc
-  icon: { sprite:  Objects/Tools/Lighters/syndielighter.rsi, state: icon}
-  productEntity: UplinkLighterBox
-  cost:
-    Telecrystal: 1
-  categories:
-  - UplinkPointless
-
 # - type: listing
 #   id: UplinkSmugglerSatchel
 #   name: uplink-smuggler-satchel-name
@@ -2333,24 +2253,6 @@
 #     Telecrystal: 2
 #   categories:
 #   - UplinkDeception
-
-- type: listing
-  id: UplinkAcolyteArmor
-  name: uplink-acolyte-armor-name
-  description: uplink-acolyte-armor-desc
-  icon: { sprite: Clothing/OuterClothing/Armor/cult_armour.rsi, state: icon}
-  productEntity: ClothingBackpackDuffelAcolyteBundle
-  discountCategory: veryRareDiscounts
-  discountDownTo:
-    Telecrystal: 3
-  cost:
-    Telecrystal: 4
-  categories:
-  - UplinkJob
-  conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Chaplain
 
 - type: listing
   id: UplinkSawAdvanced

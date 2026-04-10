@@ -2,7 +2,6 @@ using System.Numerics;
 using Content.Client._Horizon.RCD;
 using Content.Client.Gameplay;
 using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.RCD.Components;
 using Content.Shared.RCD.Systems;
@@ -23,7 +22,6 @@ public sealed class AlignRCDConstruction : PlacementMode
     private readonly SharedTransformSystem _transformSystem;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IStateManager _stateManager = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
 
     private const float SearchBoxSize = 2f;
     private const float PlaceColorBaseAlpha = 0.5f;
@@ -81,10 +79,10 @@ public sealed class AlignRCDConstruction : PlacementMode
         // Horizon start
 
         // Determine if player is carrying an RCD in their active hand
-        if (!_hands.TryGetActiveItem(player.Value, out var activeEnt)) // Frontier: reformat to use the hand system
+        if (!_entityManager.TryGetComponent<HandsComponent>(player, out var hands))
             return false;
 
-        var heldEntity = activeEnt;
+        var heldEntity = hands.ActiveHand?.HeldEntity;
 
         if (player.HasValue)
         {

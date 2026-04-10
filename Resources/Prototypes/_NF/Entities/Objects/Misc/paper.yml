@@ -114,6 +114,7 @@
   components:
   - type: Paper
     stampState: paper_stamp-syndicate
+<<<<<<< HEAD
 
 - type: entity
   parent: Paper
@@ -245,3 +246,5 @@
           visible: false
     - type: PaperVisuals
       backgroundModulate: "#DFB7FA"
+=======
+>>>>>>> 0c49007bfba661ca1fe54e21450c669977e03eed

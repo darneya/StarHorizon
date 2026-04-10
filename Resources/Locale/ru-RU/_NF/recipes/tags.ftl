@@ -12,5 +12,3 @@ construction-graph-tag-ore = руда
 construction-graph-tag-crystal-orange = оранжевый кристаллический осколок
 construction-graph-tag-mothroach-hide = шкура мотылектаракана
 construction-graph-tag-syringe = шприц
-construction-graph-tag-hotdog = хотдог
-construction-graph-tag-nf-bloodpack = пакет крови

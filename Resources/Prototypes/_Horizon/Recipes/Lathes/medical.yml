@@ -467,8 +467,8 @@
     Glass: 100
 
 - type: latheRecipe
-  id: LeftArmCyberClawPiercing
-  result: LeftArmCyberClawPiercing
+  id: LeftArmCyberClawPiersing
+  result: LeftArmCyberClawPiersing
   category: Cyberlimbs
   completetime: 10
   materials:
@@ -478,8 +478,8 @@
     Glass: 100
 
 - type: latheRecipe
-  id: RightArmCyberClawPiercing
-  result: RightArmCyberClawPiercing
+  id: RightArmCyberClawPiersing
+  result: RightArmCyberClawPiersing
   category: Cyberlimbs
   completetime: 10
   materials:

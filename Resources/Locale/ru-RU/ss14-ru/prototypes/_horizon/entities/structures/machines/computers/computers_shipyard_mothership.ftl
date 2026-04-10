@@ -1,2 +1,2 @@
-ent-OphiophagusMothershipComputer = консоль верфи Ohiophagus
+ent-OphiophagusMothershipComputer = ohiophagus shipyard console
     .desc = { ent-BaseMothershipComputer.desc }

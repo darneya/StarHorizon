@@ -1492,7 +1492,7 @@
   - type: Sprite
     state: service
   - type: MachineBoard
-    prototype: JukeboxEmpty # Frontier Jukebox>JukeboxEmpty
+    prototype: Jukebox
     stackRequirements:
       WoodPlank: 5
       Steel: 2

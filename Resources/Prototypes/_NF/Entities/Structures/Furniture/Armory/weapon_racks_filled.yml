@@ -1,4 +1,4 @@
-#region Mercenary
+## Mercenary
 # Sidearm racks
 - type: entity
   id: StructurePistolRackWallmountedMercenaryFilled
@@ -10,7 +10,7 @@
       weapon1:
       - NFWeaponRevolverArgenti
 
-#region Salvage
+## Salvage
 # Melee weapon racks
 - type: entity
   id: StructureMeleeWeaponRackWallmountedSalvageFilled
@@ -24,7 +24,7 @@
       weapon2:
       - Pickaxe
 
-#region Pirates/Freelancers
+## Pirates/Freelancers
 # Sidearm racks
 - type: entity
   id: StructurePistolRackPiratesFilled
@@ -42,7 +42,7 @@
       weapon4:
       - NFWeaponEnergyPistolDisabler
 
-#region Blood Cult
+## Blood Cult
 # Melee weapon racks
 - type: entity
   id: StructureMeleeWeaponRackBloodCultFilled
@@ -61,23 +61,3 @@
       - SpearBone
       weapon5:
       - PlasteelArmingSword
-
-#region Wizard
-# Melee weapon racks
-- type: entity
-  id: StructureMeleeWeaponRackWallmountedWizardFilled
-  parent: StructureMeleeWeaponRackWallmountedWizard
-  suffix: Wizard, Wallmount, Filled
-  components:
-  - type: ContainerFill
-    containers:
-      weapon1:
-      - WeaponInertStaffWizardIceAdept
-      weapon2:
-      - WeaponInertStaffWizardLightningAdept
-      weapon3:
-      - WeaponInertStaffWizardBoltFireAdept
-      weapon4:
-      - WeaponInertStaffWizardCausticAdept
-      weapon5:
-      - WeaponInertStaffWizardSoapAdept

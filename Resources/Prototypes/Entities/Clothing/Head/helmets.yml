@@ -313,7 +313,6 @@
     tags:
     - WhitelistChameleon
     - FireHelmet
-    - CorgiWearable
   - type: HideLayerClothing
     layers:
       Hair: HEAD
@@ -518,7 +517,7 @@
   - type: PointLight
     enabled: false
     radius: 1.4
-    energy: 2.5
+    energy: 1.4
     color: red
     netsync: false
     mask: /Textures/Effects/LightMasks/double_cone.png

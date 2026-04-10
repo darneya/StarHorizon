@@ -10,5 +10,3 @@ ent-BluespaceDungeonChromite = { ent-BluespaceDungeonBase }
     .desc = { ent-BluespaceDungeonBase.desc }
 ent-BluespaceDungeonScrap = { ent-BluespaceDungeonBase }
     .desc = { ent-BluespaceDungeonBase.desc }
-ent-BluespaceDungeonCaveZombie = { ent-BluespaceDungeonBase }
-    .desc = { ent-BluespaceDungeonBase.desc }

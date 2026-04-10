@@ -1,5 +1,5 @@
-ent-IceboxEmpty = коробка со льдом
-    .desc = Эта восхитительная машина медленно наполняется льдом!
-ent-Icebox = коробка со льдом
-    .suffix = Лёд
+ent-IceboxEmpty = ice box
+    .desc = This delightful machine is slowly filling with ice!
+ent-Icebox = ice box
+    .suffix = Ice
     .desc = { ent-IceboxEmpty.desc }

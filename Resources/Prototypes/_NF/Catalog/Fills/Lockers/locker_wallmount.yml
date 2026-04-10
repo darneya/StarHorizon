@@ -44,21 +44,11 @@
 - type: entity
   parent: [ LockerWallColorMaterials, StorageFillMaterialsBasic ]
   id: LockerWallMaterialsBasicFilled
-  suffix: Filled, Service Materials (full)
+  suffix: Filled, Basic Materials (full)
 
 - type: entity
   parent: [ LockerWallColorMaterials, StorageFillMaterialsBasic10 ]
   id: LockerWallMaterialsBasic10Filled
-  suffix: Filled, Service Materials (10)
-
-- type: entity
-  parent: [ LockerWallColorMaterials, StorageFillMaterials ]
-  id: StorageFillMaterialsFilled
-  suffix: Filled, Basic Materials (full)
-
-- type: entity
-  parent: [ LockerWallColorMaterials, StorageFillMaterials10 ]
-  id: StorageFillMaterials10Filled
   suffix: Filled, Basic Materials (10)
 # endregion Materials
 
@@ -217,16 +207,6 @@
   suffix: Frontier, Filled
 
 - type: entity
-  parent: [ LockerWallEVAColorFsa, StorageFillEVASuitFsa ]
-  id: LockerWallEVAColorFsaFilled
-  suffix: Frontier, Filled
-
-- type: entity
-  parent: [ LockerWallEVAColorFsa ]
-  id: LockerWallEVAColorFsaEmpty
-  suffix: Frontier, Empty
-
-- type: entity
   parent: [ LockerWallEVAColorFsb, StorageFillEVASuitFsb ]
   id: LockerWallEVAColorFsbFilled
   suffix: Frontier, Filled
@@ -234,16 +214,6 @@
 - type: entity
   parent: [ LockerWallEVAColorFsb ]
   id: LockerWallEVAColorFsbEmpty
-  suffix: Frontier, Empty
-
-- type: entity
-  parent: [ LockerWallEVAColorFsc, StorageFillEVASuitFsc ]
-  id: LockerWallEVAColorFscFilled
-  suffix: Frontier, Filled
-
-- type: entity
-  parent: [ LockerWallEVAColorFsc ]
-  id: LockerWallEVAColorFscEmpty
   suffix: Frontier, Empty
 
 # endregion
@@ -335,20 +305,27 @@
 
 - type: entity
   id: LockerWallColorMedicalFilled
-  parent: LockerWallColorMedical
+  parent:
+  - LockerWallColorMedical
+  - BaseStructureWallmount
+  - LockerWallMedicalFilled
   name: medicine wall locker
   suffix: Filled, Frontier
-  components:
-  - type: EntityTableContainerFill
+  components: # fixes sprite errors from parenting
+  - type: EntityStorageVisuals
+    stateBaseClosed: base
+    stateDoorOpen: open
+    stateDoorClosed: door
+  - type: ContainerContainer
     containers:
-      storagebase: !type:NestedSelector
-        tableId: LockerFillMedicine
-
-- type: entity
-  id: LockerWallColorMedicalEmpty
-  parent: LockerWallColorMedical
-  name: medicine wall locker
-  suffix: Empty, Frontier
+      storagebase: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+      entity_storage: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
 # endregion
 
 # region Chemistry
@@ -368,26 +345,40 @@
 # endregion
 
 # region Departments
-
 - type: entity
-  id: LockerWallColorHydroponicsEmpty
-  suffix: Empty, Frontier
-  parent: [LockerWallColorHydroponics, BaseStructureWallmount]
-  name: botanist wall locker
-  components: 
+  id: LockerWallColorHydroponicsFilled
+  suffix: Filled, Frontier
+  parent: [LockerWallColorHydroponics, LockerBotanistFilled]
+  components: # fixes sprite errors from parenting
   - type: EntityStorageVisuals
     stateBaseClosed: base
     stateDoorOpen: open
     stateDoorClosed: door
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
+      paper_label: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      entity_storage: !type:Container
+        showEnts: False
+        occludes: True
+        ents: []
 
 - type: entity
-  id: LockerWallColorHydroponicsFilled
-  suffix: Filled, Frontier
-  parent: LockerWallColorHydroponicsEmpty
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:NestedSelector
-        tableId: FillLockerBotanist
-
+  id: LockerWallColorHydroponicsEmpty
+  suffix: Empty, Frontier
+  parent:
+  - LockerWallColorHydroponics
+  - BaseStructureWallmount
+  name: botanist wall locker
+  components: # fixes sprite errors from parenting
+  - type: EntityStorageVisuals
+    stateBaseClosed: base
+    stateDoorOpen: open
+    stateDoorClosed: door
 # endregion

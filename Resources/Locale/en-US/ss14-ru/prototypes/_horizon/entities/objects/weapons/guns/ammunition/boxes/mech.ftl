@@ -10,5 +10,3 @@ ent-BoxAmmoGranade = universal granade box
     .desc = { ent-BaseItem.desc }
 ent-BoxPlasmaBox = plasma ammo box
     .desc = { ent-BaseItem.desc }
-ent-BoxChemBox = chemical ammo box
-    .desc = { ent-BaseItem.desc }

@@ -1,9 +1,9 @@
 #region frame
 - type: entity
-  abstract: true
-  parent: [ BaseC1Contraband, NFBaseWeaponEncumbranceSniper, NFBaseGunMeleeAttackHigh, NFBaseItemWeaponGun ]
   id: NFBaseWeaponFrameRifleSniper
+  parent: [ BaseC1Contraband, NFBaseWeaponEncumbranceSniper, NFBaseItemWeaponGun ]
   suffix: Frontier
+  abstract: true
   components:
   - type: Wieldable
     unwieldOnUse: false
@@ -12,11 +12,19 @@
     minAngle: -0 # Set to 0 because GunRequiresWield
     maxAngle: -0
   - type: Gun
+<<<<<<< HEAD
     projectileSpeed: 60
     minAngle: 0.4
     maxAngle: 7
     angleIncrease: 5.6
     angleDecay: 3.7
+=======
+    projectileSpeed: 30
+    minAngle: 1.6
+    maxAngle: 8
+    angleIncrease: 0.4
+    angleDecay: 2
+>>>>>>> 0c49007bfba661ca1fe54e21450c669977e03eed
     fireRate: 1
     selectedMode: SemiAuto
     availableModes:
@@ -30,21 +38,26 @@
 
 #region manufacturer
 - type: entity
-  abstract: true
-  parent: [ BaseC3SyndicateContraband, NFBaseWeaponFrameRifleSniper ]
   id: NFBaseWeaponFrameRifleSniperCybersun
+  parent: [ BaseC3SyndicateContraband, NFBaseWeaponFrameRifleSniper ]
+  abstract: true
   components:
   - type: Gun
+<<<<<<< HEAD
     angleIncrease: 4.7
     angleDecay: 3.7
+=======
+    angleIncrease: 0.5
+    angleDecay: 3.5
+>>>>>>> 0c49007bfba661ca1fe54e21450c669977e03eed
     fireRate: 0.8
   - type: NFWeaponDetails
     class: weapon-details-manufacturer-cybersun-industries
 
 #region chamber
 - type: entity
-  abstract: true
   id: NFBaseWeaponRifleChamber60
+  abstract: true
   components:
   - type: Gun
     examineCaliber: gun-examine-caliber-60

@@ -13,5 +13,3 @@ ent-PaperWrittenMedicalFormReceiptInvoice = medical dispatch payment
     .desc = { ent-Paper.desc }
 ent-PaperWrittenMedicalFormRelease = medical release form
     .desc = { ent-Paper.desc }
-ent-PaperWrittenMedicalMedtekPatientRecord = Patient Record
-    .desc = A printed medical patient record.

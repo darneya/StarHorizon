@@ -40,7 +40,7 @@ public sealed partial class CyberLimbSystem
         {"Holy", 1f},
     };
 
-    private void InitializeLimbWithItems()
+private void InitializeLimbWithItems()
     {
         base.Initialize();
         SubscribeLocalEvent<LimbWithItemsComponent, ComponentInit>(OnLimbWithItemsInit);
@@ -57,8 +57,8 @@ public sealed partial class CyberLimbSystem
             {
                 var handId = $"{ent.Owner}_{item}";
                 var hands = EnsureComp<HandsComponent>(args.Performer);
-                _hands.AddHand(args.Performer, handId, HandLocation.Functional);
-                _hands.DoPickup(args.Performer, handId, item, hands);
+                _hands.AddHand(args.Performer, handId, HandLocation.Functional, hands);
+                _hands.DoPickup(args.Performer, hands.Hands[handId], item, hands);
                 EnsureComp<UnremoveableComponent>(item);
             }
         }
@@ -71,7 +71,7 @@ public sealed partial class CyberLimbSystem
                 RemComp<UnremoveableComponent>(item);
                 var hands = EnsureComp<HandsComponent>(args.Performer);
                 _container.Insert(_slEnt.Entity<TransformComponent, MetaDataComponent, PhysicsComponent>(item), container, force: true);
-                _hands.RemoveHand(args.Performer, handId);
+                _hands.RemoveHand(args.Performer, handId, hands);
             }
         }
 
@@ -103,7 +103,7 @@ public sealed partial class CyberLimbSystem
         }
     }
 
-    // _HORIZON STARTS
+// _HORIZON STARTS
 
     /// <summary>
     /// Метод предназначенный для изменения скорости объекта
@@ -211,7 +211,7 @@ public sealed partial class CyberLimbSystem
 
         var entity = new Entity<ArmorComponent>(target, armor);
         _armorSystem.ChangeComponentModifiers(entity, totalResistance); // Apply All
-        _armorSystem.ChangeExamineState(entity, true);
+        _armorSystem.ChangeExamineState(entity,true);
     }
 }
 

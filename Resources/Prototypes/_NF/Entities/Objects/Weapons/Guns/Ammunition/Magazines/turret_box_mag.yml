@@ -22,7 +22,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - NFCartridgePistol35
+        - NFMagazinePistol35
         - NFCartridgeRifle20
         - NFCartridgeRifle30
         - NFCartridgeRifle25

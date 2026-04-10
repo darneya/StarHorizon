@@ -1,6 +1,5 @@
 dungeon-boss-grid-warning = Return to the dungeon.
 
-nf-salvage-faction-zombies = Zombies
 nf-salvage-faction-xenos = Xenos
 nf-salvage-faction-carps = Carp
 nf-salvage-faction-syndicate = Syndicate

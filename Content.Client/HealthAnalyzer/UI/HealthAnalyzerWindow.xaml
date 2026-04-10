@@ -26,18 +26,9 @@
                         <RichTextLabel Name="NameLabel" SetWidth="150" />
                         <Label Name="SpeciesLabel" VerticalAlignment="Top" StyleClasses="LabelSubText" />
                     </BoxContainer>
-                    <!-- Frontier: add print button -->
-                    <BoxContainer Orientation="Vertical">
-                        <Label Margin="0 0 5 0" HorizontalExpand="True" HorizontalAlignment="Right" VerticalExpand="True"
-                               VerticalAlignment="Top" Name="ScanModeLabel"
-                               Text="{Loc 'health-analyzer-window-entity-unknown-text'}" />
-                        <BoxContainer Orientation="Vertical" Name="PrintButtonsContainer">
-                            <Button Name="PrintRecordButton" HorizontalExpand="True">
-                                <TextureButton TexturePath="/Textures/_NF/Interface/VerbIcons/print.png" MouseFilter="Ignore"/>
-                            </Button>
-                        </BoxContainer>
-                    </BoxContainer>
-                    <!-- End Frontier: add print button -->
+                    <Label Margin="0 0 5 0" HorizontalExpand="True" HorizontalAlignment="Right" VerticalExpand="True"
+                           VerticalAlignment="Top" Name="ScanModeLabel"
+                           Text="{Loc 'health-analyzer-window-entity-unknown-text'}" />
                 </BoxContainer>
 
                 <PanelContainer StyleClasses="LowDivider" />

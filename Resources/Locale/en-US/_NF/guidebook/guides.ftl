@@ -11,7 +11,6 @@ guide-entry-cargo-hauling = Cargo Hauling
 guide-entry-shipyard = Shipyard
 guide-entry-frontier-rules = Server Rules
 guide-entry-frontier-definitions = Definitions
-guide-entry-preflightchecklist = Preflight Checklist
 
 # Engineering entries
 guide-entry-offshore-gas-mining = Offshore Gas Mining
@@ -43,12 +42,12 @@ guide-entry-expedition-xenos = Xenos
 
 # Shipyard entries
 guide-entry-shipyard-adder = Adder
-guide-entry-shipyard-aegis = Aegis
 guide-entry-shipyard-akupara = Akupara
 guide-entry-shipyard-ambition = Ambition
 guide-entry-shipyard-apothecary = Apothecary
 guide-entry-shipyard-barge = Barge
 guide-entry-shipyard-baroness = Baroness
+guide-entry-shipyard-bazaar = Bazaar
 guide-entry-shipyard-bocadillo = Bocadillo
 guide-entry-shipyard-bodkin = Bodkin
 guide-entry-shipyard-bookworm = Bookworm
@@ -63,15 +62,12 @@ guide-entry-shipyard-comet = Comet
 guide-entry-shipyard-courier = Courier
 guide-entry-shipyard-construct = Construct
 guide-entry-shipyard-copperhead = Copperhead
-guide-entry-shipyard-crescent = Crescent
 guide-entry-shipyard-crossroads = Crossroads
-guide-entry-shipyard-dragoon = Dragoon
 guide-entry-shipyard-druid = Druid
 guide-entry-shipyard-eagle = Eagle
 guide-entry-shipyard-garden = Garden
 guide-entry-shipyard-gasbender = Gasbender
 guide-entry-shipyard-gourd = Gourd
-guide-entry-shipyard-gaslight = Gaslight
 guide-entry-shipyard-geode = Geode
 guide-entry-shipyard-hammer = Hammer
 guide-entry-shipyard-hauler = Hauler
@@ -82,7 +78,7 @@ guide-entry-shipyard-izakaya = Izakaya
 guide-entry-shipyard-kestrel = Kestrel
 guide-entry-shipyard-kilderkin = Kilderkin
 guide-entry-shipyard-lantern = Lantern
-guide-entry-shipyard-stringer = Stringer
+guide-entry-shipyard-legman = Legman
 guide-entry-shipyard-liquidator = Liquidator
 guide-entry-shipyard-loader = Loader
 guide-entry-shipyard-lyrae = Lyrae

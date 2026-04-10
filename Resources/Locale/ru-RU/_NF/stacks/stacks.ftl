@@ -1,172 +1,135 @@
 stack-scrap-chunk =
-    { $amount ->
-        [one] кусок лома
-        [few] куска лома
-       *[other] кусков лома
+    scrap { $amount ->
+        [1] chunk
+       *[other] chunks
     }
 stack-tech-scrap-chunk =
-    { $amount ->
-        [one] кусок техно-лома
-        [few] куска техно-лома
-       *[other] кусков техно-лома
+    tech scrap { $amount ->
+        [1] chunk
+       *[other] chunks
     }
 stack-iron-coin =
-    { $amount ->
-        [one] железная монета
-        [few] железные монеты
-       *[other] железных монет
+    iron { $amount ->
+        [1] coin
+       *[other] coins
     }
 stack-silver-coin =
-    { $amount ->
-        [one] серебряная монета
-        [few] серебряные монеты
-       *[other] серебряных монет
+    silver { $amount ->
+        [1] coin
+       *[other] coins
     }
 stack-gold-coin =
-    { $amount ->
-        [one] золотая монета
-        [few] золотые монеты
-       *[other] золотых монет
+    gold { $amount ->
+        [1] coin
+       *[other] coins
     }
 stack-adamantine-coin =
-    { $amount ->
-        [one] адамантиновая монета
-        [few] адамантиновые монеты
-       *[other] адамантиновых монет
+    adamantine { $amount ->
+        [1] coin
+       *[other] coins
     }
 stack-diamond-coin =
-    { $amount ->
-        [one] алмазная монета
-        [few] алмазные монеты
-       *[other] алмазных монет
-    }
-stack-capacitor =
-    { $amount ->
-        [one] конденсатор
-        [few] конденсатора
-       *[other] конденсаторов
-    }
-stack-matter-bin =
-    { $amount ->
-        [one] ёмкость материи
-        [few] ёмкости материи
-       *[other] ёмкостей материи
+    diamond { $amount ->
+        [1] coin
+       *[other] coins
     }
 stack-advanced-capacitor =
-    { $amount ->
-        [one] продвинутый конденсатор
-        [few] продвинутых конденсатора
-       *[other] продвинутых конденсаторов
+    advanced { $amount ->
+        [1] capacitor
+       *[other] capacitors
     }
 stack-advanced-manipulator =
-    { $amount ->
-        [one] продвинутый манипулятор
-        [few] продвинутых манипулятора
-       *[other] продвинутых манипуляторов
+    advanced { $amount ->
+        [1] manipulator
+       *[other] manipulators
     }
 stack-advanced-matter-bin =
-    { $amount ->
-        [one] продвинутая ёмкость материи
-        [few] продвинутые ёмкости материи
-       *[other] продвинутых ёмкостей материи
+    advanced { $amount ->
+        [1] matter bin
+       *[other] matter bins
     }
 stack-super-capacitor =
-    { $amount ->
-        [one] супер конденсатор
-        [few] супер конденсатора
-       *[other] супер конденсаторов
+    super { $amount ->
+        [1] capacitor
+       *[other] capacitors
     }
 stack-super-manipulator =
-    { $amount ->
-        [one] супер манипулятор
-        [few] супер манипулятора
-       *[other] супер манипуляторов
+    super { $amount ->
+        [1] manipulator
+       *[other] manipulators
     }
 stack-super-matter-bin =
-    { $amount ->
-        [one] супер ёмкость материи
-        [few] супер ёмкости материи
-       *[other] супер ёмкостей материи
+    super { $amount ->
+        [1] matter bin
+       *[other] matter bins
     }
 stack-bluespace-capacitor =
-    { $amount ->
-        [one] блюспейс конденсатор
-        [few] блюспейс конденсатора
-       *[other] блюспейс конденсаторов
+    bluespace { $amount ->
+        [1] capacitor
+       *[other] capacitors
     }
 stack-bluespace-manipulator =
-    { $amount ->
-        [one] блюспейс манипулятор
-        [few] блюспейс манипулятора
-       *[other] блюспейс манипуляторов
+    bluespace { $amount ->
+        [1] manipulator
+       *[other] manipulators
     }
 stack-bluespace-matter-bin =
-    { $amount ->
-        [one] блюспейс ёмкость материи
-        [few] блюспейс ёмкости материи
-       *[other] блюспейс ёмкостей материи
+    bluespace { $amount ->
+        [1] matter bin
+       *[other] matter bins
     }
 stack-prize-ticket =
     { $amount ->
-        [one] призовой билет
-        [few] призовых билета
-       *[other] призовых билетов
+        [1] prize ticket
+       *[other] prize tickets
     }
-stack-stonecut-tobacco = табак "Каменная нарезка"
-stack-dried-shrooms = сушёные грибы
-stack-fungal-whiff-tobacco = табак "Грибной дымок"
-stack-sweet-dreams-tobacco = табак "Сладкие сны"
+stack-stonecut-tobacco = stonecut tobacco
+stack-dried-shrooms = dried shrooms
+stack-fungal-whiff-tobacco = fungal whiff tobacco
+stack-sweet-dreams-tobacco = sweet dreams tobacco
 stack-nf-credit =
     { $amount ->
-        [one] спесо
-        [few] спесо
-       *[other] спесо
+        [1] speso
+       *[other] spesos
     }
 stack-counterfeit-credit =
     { $amount ->
-        [one] фальшивое спесо
-        [few] фальшивых спесо
-       *[other] фальшивых спесо
+        [1] spesso
+       *[other] spessos
     }
 stack-frontier-uplink-coin =
-    { $amount ->
-        [one] монета фронтирской связи
-        [few] монеты фронтирской связи
-       *[other] монет фронтирской связи
+    frontier uplink { $amount ->
+        [1] coin
+       *[other] coins
     }
 stack-doubloon =
     { $amount ->
-        [one] дублон
-        [8] пиастров
-       *[other] дублонов
+        [1] doubloon
+        [8] pieces of eight
+       *[other] doubloons
     }
-stack-anomalite = аномалит
-stack-fuel-grade-plasma = плазма топливного класса
-stack-fuel-grade-uranium = уран топливного класса
-stack-fuel-grade-bananium = бананиум топливного класса
-stack-skrungle = скрангл
-stack-dark-grass-floor = тёмный травяной пол
-stack-light-grass-floor = светлый травяной пол
-stack-dirt-floor = земляной пол
-stack-bedrock = коренная порода
-stack-gold-mono-tile = золотая моноплитка
-stack-silver-mono-tile = серебряная моноплитка
-stack-green-mono-tile = зелёная моноплитка
-stack-light-blue-mono-tile = светло-синяя моноплитка
-stack-light-green-mono-tile = светло-зелёная моноплитка
-stack-light-pink-mono-tile = светло-розовая моноплитка
-stack-light-yellow-mono-tile = светло-жёлтая моноплитка
-stack-orange-mono-tile = оранжевая моноплитка
-stack-sus-floor = подозрительный пол
-stack-light-red-mono-tile = светло-красная моноплитка
-stack-red-mono-tile = красная моноплитка
-stack-checkerboard-wood-floor = шахматный деревянный пол
-stack-light-mosaic-wood-floor = светлый мозаичный деревянный пол
-stack-fancy-wood-floor = изысканный деревянный пол
-stack-versailles-wood-floor = версальский деревянный пол
-stack-cheese-floor = сырный пол
-stack-inflatable-floor = надувной пол
-stack-inflatable-window = надувное окно
-stack-inflatable-door-window = надувная віконо-дверь
-stack-inflatable-dock = надувной внешний шлюз
-stack-inflatable-crate = надувной ящик
+stack-anomalite = anomalite
+stack-fuel-grade-plasma = fuel-grade plasma
+stack-fuel-grade-uranium = fuel-grade uranium
+stack-fuel-grade-bananium = fuel-grade bananium
+stack-skrungle = skrungle
+stack-dark-grass-floor = dark grass floor
+stack-light-grass-floor = light grass floor
+stack-dirt-floor = dirt floor
+stack-bedrock = bedrock
+stack-gold-mono-tile = gold mono tile
+stack-silver-mono-tile = silver mono tile
+stack-green-mono-tile = green mono tile
+stack-light-blue-mono-tile = light blue mono tile
+stack-light-green-mono-tile = light green mono tile
+stack-light-pink-mono-tile = light pink mono tile
+stack-light-yellow-mono-tile = light yellow mono tile
+stack-orange-mono-tile = orange mono tile
+stack-sus-floor = sus floor
+stack-light-red-mono-tile = light red mono tile
+stack-red-mono-tile = red mono tile
+stack-checkerboard-wood-floor = checkerboard wood floor
+stack-light-mosaic-wood-floor = light mosaic wood floor
+stack-fancy-wood-floor = fancy wood floor
+stack-versailles-wood-floor = versailles wood floor
+stack-cheese-floor = cheese floor

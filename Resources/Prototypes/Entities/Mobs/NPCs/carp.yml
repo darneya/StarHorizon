@@ -76,7 +76,6 @@
       tags:
         - Carp
         - DoorBumpOpener
-        - CannotSuicide
     - type: ReplacementAccent
       accent: genericAggressive
     - type: Speech
@@ -168,7 +167,7 @@
   components:
   - type: PointLight
     radius: 1.5
-    energy: 2
+    energy: 0.5
   - type: RgbLightController
     layers: [ 0 ]
   # Horizon
@@ -183,10 +182,6 @@
   categories: [ HideSpawnMenu ] # Frontier
   components:
     - type: NFSalvageMobRestrictions # Frontier: SalvageMobRestrictions<NFSalvageMobRestrictions
-    - type: MobThresholds
-      thresholds:
-        0: Alive
-        30: Dead
 
 - type: entity
   name: space carp
@@ -204,6 +199,8 @@
       rules: ghost-role-information-space-dragon-summoned-carp-rules
       mindRoles:
       - MindRoleGhostRoleTeamAntagonistFlock
+      raffle:
+        settings: short
     - type: GhostTakeoverAvailable
     - type: HTN
       rootTask:
@@ -256,7 +253,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        82: Dead # Might seem random, but this brings up the hits to kill with a crusher mark to 3
+        150: Dead
     - type: Stamina
       critThreshold: 150
     - type: DamageStateVisuals

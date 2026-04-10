@@ -1,3 +1,3 @@
-ent-OptionsVisualizerTest = { "Абсолютное ничего" }
+ent-OptionsVisualizerTest = { "" }
     .suffix = Дебаг
-    .desc = { "эта штука нужна для проверки визуализаций йоу" }
+    .desc = { "" }

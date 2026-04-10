@@ -1,6 +1,6 @@
-ent-ImpCoffeeMachine = кофемашина спейспрессо
-    .desc = Стильная современная кофемашина, подходящая для любых космических рас.
-    .suffix = Заполненная
+ent-ImpCoffeeMachine = spacepresso machine
+    .desc = A sleek, modern coffee machine, fit for any spacefaring species to enjoy.
+    .suffix = Filled
 ent-ImpCoffeeMachineEmpty = { ent-ImpCoffeeMachine }
-    .suffix = Пустая
+    .suffix = Empty
     .desc = { ent-ImpCoffeeMachine.desc }

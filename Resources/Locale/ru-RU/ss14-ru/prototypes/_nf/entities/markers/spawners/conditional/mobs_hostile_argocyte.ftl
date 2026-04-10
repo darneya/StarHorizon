@@ -1,3 +1,3 @@
-ent-SpawnMobArgocyteLeviathingExpeditions = спавнер левиазверя
-    .suffix = ИИ, Враждебный
+ent-SpawnMobArgocyteLeviathingExpeditions = leviathing spawner
+    .suffix = AI, Hostile
     .desc = { ent-MarkerBase.desc }

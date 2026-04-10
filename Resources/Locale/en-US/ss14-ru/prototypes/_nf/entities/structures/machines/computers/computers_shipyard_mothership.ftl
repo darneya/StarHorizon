@@ -13,5 +13,3 @@ ent-GasbenderMothershipComputer = gasbender shipyard console
     .desc = { ent-BaseMothershipComputer.desc }
 ent-CrescentMothershipComputer = crescent shipyard console
     .desc = { ent-BaseMothershipComputer.desc }
-ent-EdisonMothershipComputer = edison shipyard console
-    .desc = { ent-BaseMothershipComputer.desc }

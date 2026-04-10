@@ -1,10 +1,9 @@
 # Author Info
-# GitHub: https://github.com/AmbitiousFailure
-# Discord: ambitiousfailure
+# GitHub: https://github.com/AF-Buyrcsp2
+# Discord:
 
 # Maintainer Info
-# GitHub: https://github.com/AmbitiousFailure
-# Discord: ambitiousfailure
+#
 
 # Shuttle Notes:
 #
@@ -12,9 +11,9 @@
 - type: vessel
   id: Camper
   parent: BaseVessel
-  name: SSF Camper
-  description: A personal mobile home for nomadic spacers, equipped with a small kitchen, toilet and bedroom.
-  price: 13000 # ~11800 0.1 ~12980
+  name: SSS Camper
+  description: A personal camper shuttle for those who prefer to live in emptiness of space.
+  price: 12000 # 10481 0.05 11005.05
   category: Small
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/camper.yml
@@ -38,7 +37,7 @@
 
 - type: gameMap
   id: Camper
-  mapName: 'SSF Camper'
+  mapName: 'SSS Camper'
   mapPath: /Maps/_NF/Shuttles/camper.yml
   minPlayers: 0
   stations:

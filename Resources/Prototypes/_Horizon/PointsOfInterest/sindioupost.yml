@@ -11,10 +11,16 @@
 - type: pointOfInterest
   id: SindiOutpost
   parent: BasePOI
+<<<<<<< HEAD
   name: poi-sindi-outpost-name
   mapName: poi-sindi-outpost-map
   minimumDistance: 12000
   maximumDistance: 15000
+=======
+  name: "Аванпост Синдиката"
+  minimumDistance: 10000
+  maximumDistance: 20000
+>>>>>>> 0c49007bfba661ca1fe54e21450c669977e03eed
   spawnGroup: Required
   anotherMap: true
   gridPath: /Maps/_Horizon/POI/sindioupost.yml

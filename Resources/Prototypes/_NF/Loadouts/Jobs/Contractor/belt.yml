@@ -239,9 +239,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFNotStationRep
   price: 2500
   equipment:
     belt: ClothingBeltSheathFilledHilt

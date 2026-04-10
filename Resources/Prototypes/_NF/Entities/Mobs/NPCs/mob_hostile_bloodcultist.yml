@@ -1,4 +1,3 @@
-#region base
 - type: entity
   name: blood cultist
   abstract: true
@@ -8,8 +7,6 @@
   - MobHumanoidInvetory
   id: MobBloodCultistBase
   components:
-  - type: Damageable
-    damageModifierSet: MobHereticDamageModifierSet
   - type: NpcFactionMember
     factions:
       - BloodCultNF
@@ -17,12 +14,11 @@
     rechargeCooldown: 1.5
     rechargeSound:
       path: /Audio/_NF/Effects/silence.ogg
-  - type: Vocalizer
-    hideChat: true
-    minVocalizeInterval: 30
-    maxVocalizeInterval: 120
-  - type: DatasetVocalizer
-    dataset: bloodcultisthumanoidchatter
+  - type: Advertise
+    pack: bloodcultisthumanoidchatter
+    minimumWait: 30
+    maximumWait: 120
+    nextAdvertisementTime: 10
   - type: AutoWakeUp
 
 #region Humans
@@ -223,8 +219,8 @@
   - type: NpcFactionMember
     factions:
     - BloodCultNF
-  - type: DatasetVocalizer
-    dataset: bloodcultisthumanoidchatter
+  - type: Advertise
+    pack: bloodcultisthumanoidchatter
   - type: Sprite
     drawdepth: Mobs
     sprite: _NF/Mobs/BloodCult/bloodcultleech.rsi
@@ -284,8 +280,8 @@
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/_NF/Effects/silence.ogg
-  - type: DatasetVocalizer
-    dataset: bloodcultisthumanoidchatter
+  - type: Advertise
+    pack: bloodcultisthumanoidchatter
   - type: Sprite
     drawdepth: Mobs
     sprite: _NF/Mobs/BloodCult/ascended_cultist.rsi
@@ -374,8 +370,8 @@
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/_NF/Effects/silence.ogg
-  - type: DatasetVocalizer
-    dataset: bloodcultisthumanoidchatter
+  - type: Advertise
+    pack: bloodcultisthumanoidchatter
   - type: Sprite
     drawdepth: Mobs
     sprite: _NF/Mobs/BloodCult/drainedone.rsi
@@ -484,52 +480,7 @@
       - HumanoidAppearance
   - type: HTN
     rootTask:
-       task: MeleeFollowerCompound
-    blackboard:
-      NavClimb: !type:Bool
-        false
-      NavInteract: !type:Bool
-        true
-      NavPry: !type:Bool
-        true
-  - type: NpcFactionMember
-    factions:
-    - NanoTrasen
-
-- type: entity
-  categories: [ HideSpawnMenu ]
-  parent:
-  - MobStaminaFodder
-  - BaseC3MobCreatureNoValue
-  - MobBloodCultShade
-  - NFMobTimedDespawn180
-  id: MobBloodCultShadeNanoTrasen
-  components:
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: _NF/Mobs/BloodCult/shade.rsi
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: shade
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: unshaded
-      shader: unshaded
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: shade
-        BaseUnshaded: unshaded
-      Critical:
-        Base: crit
-      Dead:
-        Base: dead
-  - type: NPCImprintingOnSpawnBehaviour
-    whitelist:
-      components:
-      - HumanoidAppearance
-  - type: HTN
-    rootTask:
-       task: MeleeFollowerCompound
+       task: KillerTomatoCompound
     blackboard:
       NavClimb: !type:Bool
         false

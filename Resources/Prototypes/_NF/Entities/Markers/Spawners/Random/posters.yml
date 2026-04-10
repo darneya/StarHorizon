@@ -20,10 +20,6 @@
     - id: NFPosterContrabandFsbRubicon
     - id: NFPosterContrabandFsbNightlight
     - id: NFPosterContrabandFsbRetort
-    - id: NFPosterContrabandFscLogo
-    - id: NFPosterContrabandFscSurveyor
-    - id: NFPosterContrabandFscCourier
-    - id: NFPosterContrabandFsbDruid
 
 - type: entityTable
   id: TableRandomPosterContrabandMisc

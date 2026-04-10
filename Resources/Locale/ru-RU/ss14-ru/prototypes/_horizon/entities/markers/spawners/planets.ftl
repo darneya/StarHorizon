@@ -1,9 +1,0 @@
-ent-GrasslandsFaunaSpawner = спавнер лесной фауны
-    .desc = { ent-MarkerBase.desc }
-ent-LavalandFaunaSpawner = спавнер лавовой фауны
-    .desc = { ent-MarkerBase.desc }
-ent-IcelandFaunaSpawner = спавнер ледяной фауны
-    .desc = { ent-MarkerBase.desc }
-ent-SpawnMobArgocytes = спавнер аргоцита
-    .desc = { ent-MarkerBase.desc }
-    .suffix = Случайный

@@ -24,21 +24,3 @@
   price: 0
   equipment:
     outerClothing: ClothingOuterCoatPirate
-
-- type: loadout
-  id: NFPirateClothingOuterCoatVictorian
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 0
-  equipment:
-    outerClothing: ClothingOuterCoatVictorian
-
-- type: loadout
-  id: NFPirateClothingOuterCoatVictorianRed
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFCoatCapable
-  price: 0
-  equipment:
-    outerClothing: ClothingOuterCoatVictorianRed

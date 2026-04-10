@@ -256,7 +256,7 @@
 
 - type: entity
   id: ChameleonControllerImplanter
-  name: chameleon controller implanter
+  suffix: chameleon controller
   parent: BaseImplantOnlyImplanterSyndi
   components:
   - type: Implanter

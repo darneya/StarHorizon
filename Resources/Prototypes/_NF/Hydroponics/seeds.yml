@@ -6,18 +6,15 @@
   plantRsi: _NF/Objects/Specific/Hydroponics/spesostree.rsi
   packetPrototype: SpesosTreeSeeds
   productPrototypes:
-    - GoldLeaf
+    - SpaceCash
   harvestRepeat: Repeat
   lifespan: 45
   maturation: 15
   production: 8
-  yield: 1
+  yield: 3
   potency: 10
   growthStages: 2
   idealLight: 6
-  seedless: true # clip your coupons
-  preventSwabbing: true # don't swab your money.
-  permanentlySeedless: true
 
 - type: seed
   id: pear
@@ -209,26 +206,3 @@
       Min: 0
       Max: 2
       PotencyDivisor: 25
-
-- type: seed
-  id: nfglowshroom
-  name: seeds-glowshroom-nf-name
-  noun: seeds-noun-spores
-  displayName: seeds-glowshroom-nf-display-name
-  plantRsi: _NF/Objects/Misc/glowshroom.rsi
-  packetPrototype: NFGlowshroomSeeds
-  productPrototypes:
-    - NFFoodGlowshroom
-  lifespan: 60
-  maturation: 12
-  production: 3
-  yield: 2
-  potency: 30
-  idealLight: 2
-  growthStages: 4
-  waterConsumption: 0.80
-  chemicals:
-    Radium:
-      Min: 4
-      Max: 12
-      PotencyDivisor: 20

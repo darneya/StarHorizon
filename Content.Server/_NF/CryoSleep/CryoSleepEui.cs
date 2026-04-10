@@ -27,7 +27,7 @@ public sealed class CryoSleepEui : BaseEui
             return;
         }
 
-        if (_body is { Valid: true } && _cryoSystem.IsBodyInCryoPod(_body, _cryopod))
+        if (_body is { Valid: true })
         {
             if (choice.Button == AcceptCryoUiButton.Accept)
             {

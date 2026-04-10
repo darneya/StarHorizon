@@ -46,6 +46,7 @@ public sealed class SiliconDeathSystem : EntitySystem
             return;
 
         EntityManager.EnsureComponent<SleepingComponent>(uid);
+        EntityManager.EnsureComponent<ForcedSleepingComponent>(uid);
 
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoidAppearanceComponent))
         {
@@ -59,6 +60,7 @@ public sealed class SiliconDeathSystem : EntitySystem
 
     private void SiliconUnDead(EntityUid uid, SiliconDownOnDeadComponent siliconDeadComp, BatteryComponent? batteryComp, EntityUid batteryUid)
     {
+        RemComp<ForcedSleepingComponent>(uid);
         _sleep.TryWaking(uid, true);
 
         siliconDeadComp.Dead = false;

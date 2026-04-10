@@ -1,3 +1,5 @@
+ent-OrganAkulkiStomach = { ent-OrganAnimalStomach }
+    .desc = { ent-OrganAnimalStomach.desc }
 ent-OrganAkulkiBrain = мозг
     .desc = Источник невероятного, бесконечного интеллекта. Хонк.
 ent-OrganAkulkiEyes = глаза
@@ -8,6 +10,10 @@ ent-OrganAkulkiEars = уши
     .desc = Ухо состоит из трёх частей: внутренней, средней и наружной. Видна обычно только одна.
 ent-OrganAkulkiLungs = лёгкие
     .desc = Фильтруют кислород из атмосферы, после чего он поступает в кровь в качестве переносчика электронов.
+ent-OrganAkulkiHeart = сердце
+    .desc = Жаль ублюдка без сердца, что его потерял.
+ent-OrganAkulkiLiver = печень
+    .desc = Рекомендуется подавать с кьянти и бобами фава.
 ent-OrganAkulkiKidneys = почки
     .desc = Очищают кровь от токсинов.
 ent-OrganAkulkiMuscle = мышцы

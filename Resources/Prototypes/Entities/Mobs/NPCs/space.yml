@@ -34,7 +34,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Dead
+      100: Dead
   - type: Stamina
     critThreshold: 150
   - type: MovementAlwaysTouching
@@ -184,10 +184,6 @@
     spawned:
     - id: FoodMeat
       amount: 1
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      60: Dead
 
 - type: entity
   id: MobKangarooSpaceSalvage
@@ -216,7 +212,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      45: Dead
+      90: Dead
   - type: Stamina
     critThreshold: 150
   - type: DamageStateVisuals
@@ -326,7 +322,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        45: Dead
+        100: Dead
     - type: Stamina
       critThreshold: 150
     - type: DamageStateVisuals
@@ -386,7 +382,7 @@
       interactFailureString: petting-failure-generic
     - type: PointLight
       radius: 1.1
-      energy: 2.7
+      energy: 1.5
       color: "#4faffb"
     - type: Stealth
       enabledOnDeath: false

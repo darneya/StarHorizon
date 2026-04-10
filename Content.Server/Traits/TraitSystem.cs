@@ -56,9 +56,8 @@ public sealed class TraitSystem : EntitySystem
             if (!canApply)
                 continue;
 
-            for (var i = 0; i < traitPrototype.Effects.Count; i++)
+            foreach (var effect in traitPrototype.Effects)
             {
-                var effect = traitPrototype.Effects[i];
                 effect.DoEffect(args.Mob, EntityManager);
             }
             // Horizon traits end
@@ -75,7 +74,7 @@ public sealed class TraitSystem : EntitySystem
                 continue;
 
             var coords = Transform(args.Mob).Coordinates;
-            var inhandEntity = Spawn(traitPrototype.TraitGear, coords);
+            var inhandEntity = EntityManager.SpawnEntity(traitPrototype.TraitGear, coords);
             _sharedHandsSystem.TryPickup(args.Mob,
                 inhandEntity,
                 checkActionBlocker: false,

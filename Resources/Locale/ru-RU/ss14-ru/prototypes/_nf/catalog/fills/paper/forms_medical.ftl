@@ -17,5 +17,3 @@ ent-PaperWrittenMedicalFormReceiptInvoice = оплата медицинског�
     .desc = { ent-Paper.desc }
 ent-PaperWrittenMedicalFormRelease = форма медицинской выписки
     .desc = { ent-Paper.desc }
-ent-PaperWrittenMedicalMedtekPatientRecord = история болезни пациента
-    .desc = Напечатанная история болезни пациента.

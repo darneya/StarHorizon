@@ -11,8 +11,8 @@
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
-  - type: DatasetVocalizer
-    dataset: AnCoClothesMateAds
+  - type: Advertise
+    pack: ClothesMateAds
   - type: MarketModifier
     mod: 1
   - type: SpeakOnUIClosed
@@ -100,8 +100,8 @@
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
-  - type: DatasetVocalizer
-    dataset: AnCoWeaponMateAds
+  - type: Advertise
+    pack: SecTechAds
   - type: MarketModifier
     mod: 15
   - type: SpeakOnUIClosed
