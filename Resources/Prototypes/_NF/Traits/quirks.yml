@@ -4,7 +4,7 @@
   id: Pious
   name: trait-pious-name
   description: trait-pious-desc
-  category: HorizonQuirks # Horizon tweak
+  category: HorizonPositive # Horizon tweak
   cost: 3 # Horizon tweak
   traitGear: Bible
   components:

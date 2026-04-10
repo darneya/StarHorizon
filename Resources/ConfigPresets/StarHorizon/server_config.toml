@@ -98,7 +98,8 @@ impact.spark_energy = 2000000.0
 impact.slowdown = 8.0
 impact.min_throw_velocity = 1.0
 impact.inertia_scaling = 0.5
-mass_limit = 0
+mass_limit = 300
+cooldown = 3600
 
 [rules]
 time = 90.0
@@ -137,7 +138,7 @@ name = "%loki_name%"
 #ahelp_webhook = "%webhook_ahelp%"
 #ban_webhook = "%webhook_ban%"
 #round_update_webhook = "%webhook_round_update%"
-#leaderboard_webhook = "%webhook_round_update%"
+#leaderboard_webhook = "%webhook_leaderboard%"
 #guild_id = 1348258341658562560
 #token = "%bot_token%"
 
@@ -153,7 +154,6 @@ directory = "replays/"
 
 [sponsor]
 # Paths to sponsor system files
-sponsors_path = "sponsorSystem/sponsors.txt"
-discord_sponsors_path = "sponsorSystem/discord_sponsors.txt"
-disposable_path = "sponsorSystem/disposable.txt"
+discord_sponsors_path = "sponsorSystem/warp/discord_sponsors.txt"
+disposable_path = "sponsorSystem/warp/disposable.txt"
 items_path = "sponsorSystem/sponsor_items.txt"

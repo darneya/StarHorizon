@@ -2,6 +2,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.Shuttles.Systems;
 using Content.Shared._NF.Shuttles.Components;
+using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
@@ -49,8 +50,8 @@ public sealed partial class MapScreen : BoxContainer
     private TimeSpan _pingCooldown = TimeSpan.FromSeconds(3);
     private TimeSpan _nextMapDequeue;
 
-    private float _minMapDequeue = 0.05f;
-    private float _maxMapDequeue = 0.10f; // Frontier: 0.25<0.10
+    private float _minMapDequeue = 0.001f; // Frontier: 0.05<0.001
+    private float _maxMapDequeue = 0.005f; // Frontier: 0.25<0.005
 
     private StyleBoxFlat _ftlStyle;
 
@@ -116,15 +117,11 @@ public sealed partial class MapScreen : BoxContainer
         MapRadar.InFtl = true;
         MapFTLState.Text = Loc.GetString($"shuttle-console-ftl-state-{_state.ToString()}");
 
-        //frontier - we only allow pre-approved vessels to FTL
+        // Horizon: only show FTL when this shuttle is allowed to use FTL (authoritative rules stay on server).
         if (!_entManager.HasComponent<ShuttleFTLComponent>(_shuttleEntity))
-        {
             MapFTLButton.Visible = false;
-        }
         else
-        {
             MapFTLButton.Visible = true;
-        }
 
         switch (_state)
         {

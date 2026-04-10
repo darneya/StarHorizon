@@ -207,8 +207,22 @@
   - type: MiningGatheringSoft
 
 - type: entity
+  parent: NFBulletKineticShuttle
+  id: NFBulletKineticShuttleHard
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MiningGatheringHard
+
+- type: entity
   parent: BulletCharge
   id: NFBulletCharge
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MiningGatheringSoft # Frontier
+
+- type: entity
+  parent: BulletChargeGlaive
+  id: NFBulletChargeGlaive
   categories: [ HideSpawnMenu ]
   components:
   - type: MiningGatheringSoft # Frontier

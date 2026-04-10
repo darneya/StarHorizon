@@ -11,15 +11,19 @@ namespace Content.Client._Horizon.Traits;
 public sealed partial class QuirkEntry : Control
 {
     public Action<bool>? OnTraitToggled;
-    public QuirkEntry(string name, string description, int cost, HumanoidProfileEditor.QuirkCategory category, bool isSelected, bool canApply)
+    public string ProtoId;
+
+    public QuirkEntry(string id, string name, string description, int cost, HumanoidProfileEditor.QuirkColoration category, bool isSelected, string? denyReason)
     {
         RobustXamlLoader.Load(this);
 
+        ProtoId = id;
+
         var color = category switch
         {
-            HumanoidProfileEditor.QuirkCategory.Positive => Color.LimeGreen,
-            HumanoidProfileEditor.QuirkCategory.Negative => Color.Crimson,
-            HumanoidProfileEditor.QuirkCategory.Neutral => Color.LightGray
+            HumanoidProfileEditor.QuirkColoration.Positive => Color.LimeGreen,
+            HumanoidProfileEditor.QuirkColoration.Negative => Color.Crimson,
+            HumanoidProfileEditor.QuirkColoration.Neutral => Color.LightGray
         };
 
         var costSymbol = cost switch
@@ -28,14 +32,29 @@ public sealed partial class QuirkEntry : Control
             _ => ""
         };
 
-        if (!canApply)
-            ToggleQuirkButton.ToolTip = isSelected ? Loc.GetString("humanoid-profile-editor-quirks-cannot-remove") : Loc.GetString("humanoid-profile-editor-quirks-cannot-add");
+        ToggleQuirkButton.ToolTip = denyReason;
 
-        ToggleQuirkButton.Disabled = !canApply;
+        ToggleQuirkButton.Disabled = denyReason != null;
         ToggleQuirkButton.Pressed = isSelected;
         ToggleQuirkButton.OnToggled += arg => OnTraitToggled?.Invoke(arg.Pressed);
 
         QuirkNameLabel.SetMarkup($"{Loc.GetString(name)} [color={color.ToHex()}]{costSymbol}{Loc.GetString("humanoid-profile-editor-quirks-cost", ("cost", cost))}[/color]");
         QuirkDescLabel.SetMarkup(Loc.GetString(description));
+    }
+
+    public void UpdateEntry(bool isSelected, bool canApply)
+    {
+        if (!canApply)
+        {
+            ToggleQuirkButton.ToolTip = isSelected ? Loc.GetString("humanoid-profile-editor-quirks-cannot-remove") :
+                                                     Loc.GetString("humanoid-profile-editor-quirks-cannot-add");
+        }
+        else
+        {
+            ToggleQuirkButton.ToolTip = null;
+        }
+
+        ToggleQuirkButton.Disabled = !canApply;
+        ToggleQuirkButton.Pressed = isSelected;
     }
 }
