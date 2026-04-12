@@ -1,8 +1,6 @@
 using System.Linq;
 using System.Numerics;
 using Content.Client.Shuttles.Systems;
-using Content.Shared._NF.Shuttles.Components;
-using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
@@ -117,8 +115,19 @@ public sealed partial class MapScreen : BoxContainer
         MapRadar.InFtl = true;
         MapFTLState.Text = Loc.GetString($"shuttle-console-ftl-state-{_state.ToString()}");
 
-        // Horizon: only show FTL when this shuttle is allowed to use FTL (authoritative rules stay on server).
-        if (!_entManager.HasComponent<ShuttleFTLComponent>(_shuttleEntity))
+        // Grid for FTL rules: prefer radar shuttle entity; if NavState didn't set it yet, use the console's grid.
+        var ftlGrid = _shuttleEntity;
+        if (ftlGrid == null && _console != null
+            && _entManager.TryGetComponent(_console.Value, out TransformComponent? consoleXform)
+            && consoleXform.GridUid is { } g)
+        {
+            ftlGrid = g;
+        }
+
+        // Hide only when server CanFTL would fail (do not use ShuttleFTLComponent — it is not on any prototype).
+        if (ftlGrid is not { } shuttleEnt
+            || _entManager.HasComponent<PreventFTLComponent>(shuttleEnt)
+            || _entManager.HasComponent<PreventPilotComponent>(shuttleEnt))
             MapFTLButton.Visible = false;
         else
             MapFTLButton.Visible = true;
@@ -270,8 +279,15 @@ public sealed partial class MapScreen : BoxContainer
             ourMap = shuttleXform.MapID;
         }
 
+        // Coordinate disk with a fixed destination: only list this map and the shuttle's current map (not every FTL destination).
+        MapId diskDestinationMap = default;
+        var restrictToDiskMaps = _console != null && _shuttles.TryGetInsertedCoordinateDiskMap(_console.Value, out diskDestinationMap);
+
         while (mapComps.MoveNext(out var mapUid, out var mapComp, out var mapXform, out var mapMetadata))
         {
+            if (restrictToDiskMaps && mapComp.MapId != ourMap && mapComp.MapId != diskDestinationMap)
+                continue;
+
             if (_console != null && !_shuttles.CanFTLTo(_shuttleEntity.Value, mapComp.MapId, _console.Value))
             {
                 continue;
