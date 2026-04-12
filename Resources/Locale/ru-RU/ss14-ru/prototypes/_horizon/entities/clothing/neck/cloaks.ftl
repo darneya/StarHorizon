@@ -1,5 +1,5 @@
-ent-ClothingCloakEliteCmo = chief medical officer's cloak
-    .desc = A sterile blue cloak with a green cross, radiating with a sense of duty and willingness to help others.
+ent-ClothingCloakEliteCmo = плащ главного врача
+    .desc = Стерильный синий плащ с зелёным крестом, излучающий чувство долга и готовность помочь другим.
 ent-ClothingCloakEliteBotanist = плащ ботаника
     .desc = Красивый зелёный плащ, сотканный из самых прочных тканей.
     .suffix = StarHorizon

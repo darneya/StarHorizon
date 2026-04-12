@@ -424,8 +424,6 @@
         pda-pirate
 
 - type: entity
-<<<<<<< HEAD
-=======
   parent: PiratePDA
   id: NFShantymanPDA
   name: shantyman PDA
@@ -469,7 +467,6 @@
     id: NFPirateFirstMateIDCard
 
 - type: entity
->>>>>>> origin/master
   parent: PassengerPDA
   id: ContractorPDA
   name: contractor PDA

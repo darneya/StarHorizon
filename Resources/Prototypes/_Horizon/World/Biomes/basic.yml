@@ -1,9 +1,9 @@
-﻿# region Yellow 0-5000
+﻿# region Yellow 0-4000
 - type: spaceBiome
   id: HRZNYellowZone
   parent: NFBiomeBase
   priority: 3
-  distanceRange: 0, 5000
+  distanceRange: 0, 4000
   chunkComponents:
   - type: SimpleDebrisSelector
     debrisTable:
@@ -71,12 +71,12 @@
       prob: 0.03
       orGroup: wreck
 
-# region Red 5000-10000
+# region Red 4000-8000
 - type: spaceBiome
   id: HRZNRedZone
   parent: NFBiomeBase
   priority: 2
-  distanceRange: 5000, 9500
+  distanceRange: 4000, 7500
   chunkComponents:
   - type: NoiseRangeCarver
     ranges:
@@ -226,12 +226,12 @@
       prob: 0.006
       orGroup: wreck
 
-# region White 10000-15000
+# region White 8000-12000
 - type: spaceBiome
   id: HRZNWhite
   parent: NFBiomeBase
   priority: 1
-  distanceRange: 10000, 14500
+  distanceRange: 8000, 11500
   chunkComponents:
   - type: SimpleDebrisSelector
     debrisTable:
@@ -350,7 +350,7 @@
       prob: 0.1
       orGroup: wreck
 
-# region Void 15000-endless
+# region Void 12000-endless
 - type: spaceBiome
   id: HRZNVoid
   parent: NFBiomeBase

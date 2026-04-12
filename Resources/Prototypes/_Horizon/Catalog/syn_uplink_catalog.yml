@@ -23,7 +23,6 @@
   - UplinkPointless
 
 - type: listing
-<<<<<<< HEAD
   id: UplinkMysteryBoxSyndicate
   name: Загадочная коробка
   description: "Небольшая коробка. Внутри - комплект белья-хамелеон: трусы, бюстгальтер и носки из голографических волокон."
@@ -43,17 +42,6 @@
 #    Telecrystal: 10
 #  categories:
 #  - UplinkWeaponry
-=======
-  id: UplinkCursedKatana
-  name: Проклятая катана
-  description: Символ безжалостной силы, эта катана была выкована в огне ненависти и предательства. Каждый раз, когда она касается врага, её жажда разрушения лишь усиливается. Используйте её с умом, иначе она может забрать вашу душу.
-  icon: { sprite: /Textures/_Horizon/Objects/Weapons/Melee/cursedkatana.rsi, state: icon }
-  productEntity: ClothingBeltCursedKatanaSheathFilled
-  cost:
-    Telecrystal: 10
-  categories:
-  - UplinkWeaponry
->>>>>>> 0c49007bfba661ca1fe54e21450c669977e03eed
 
 - type: listing
   id: UplinkBarrettBundle
@@ -159,7 +147,7 @@
   discountDownTo:
     Telecrystal: 15
   cost:
-    Telecrystal: 20
+    Telecrystal: 25
   categories:
   - UplinkWeaponry
 
@@ -255,7 +243,7 @@
   description: uplink-syndicate-borg-medical-desc
   productEntity: BorgChassisSyndicateMedical
   cost:
-    Telecrystal: 50
+    Telecrystal: 45
   categories:
     - UplinkSyndicateBorgs
 
@@ -265,7 +253,7 @@
   description: uplink-syndicate-borg-saboteur-desc
   productEntity: BorgChassisSyndicateSaboteur
   cost:
-    Telecrystal: 55
+    Telecrystal: 50
   categories:
     - UplinkSyndicateBorgs
 

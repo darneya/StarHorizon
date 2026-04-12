@@ -11,16 +11,10 @@
 - type: pointOfInterest
   id: Cove
   parent: BasePOI
-<<<<<<< HEAD
   name: poi-cove-name
   mapName: poi-cove-map
   minimumDistance: 12000
   maximumDistance: 15000
-=======
-  name: Пиратская Бухта
-  minimumDistance: 10000
-  maximumDistance: 20000
->>>>>>> 0c49007bfba661ca1fe54e21450c669977e03eed
   spawnGamePreset: [ NFPirate ]
   spawnGroup: Required
   anotherMap: true
