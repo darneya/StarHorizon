@@ -111,3 +111,12 @@
         weight: 1
       - id: ClothingOuterHardsuitPetal
         weight: 1
+      - id: ClothingEyesVisionAnCo
+        weight: 1
+      - id: ClothingAnCoHeadArmorHelmet
+        weight: 1
+      - id: ClothingAnCoHeadCombatHelmet
+        weight: 1
+      - id: ClothingBeltAnCo
+        weight: 1
+      - id: ClothingBeltWebbingAnCo
