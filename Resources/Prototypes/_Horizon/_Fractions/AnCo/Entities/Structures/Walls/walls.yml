@@ -40,6 +40,9 @@
   - type: IconSmooth
     key: walls
     base: solid
+  - type: Construction
+    graph: WallKazmie
+    node: wallkazmie
 
 - type: entity
   parent: WallPlastitaniumIndestructible
@@ -153,6 +156,9 @@
   - type: BlockWeather
   - type: RadiationBlocker
     resistance: 4
+  - type: Construction
+    graph: WindowArdon
+    node: ardonwindow
 
 - type: entity
   id: AnCoWindowArdonDungeon

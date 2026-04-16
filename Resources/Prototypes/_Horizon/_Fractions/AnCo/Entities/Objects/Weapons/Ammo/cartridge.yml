@@ -52,7 +52,7 @@
       - Cartridge
       - AnCoBulletRifle30
   - type: CartridgeAmmo
-    proto: BulletPistol
+    proto: StandartBallisticAnCoRifle30
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Bullet/30_rifle.rsi
     layers:
@@ -91,8 +91,9 @@
     tags:
       - Cartridge
       - AnCoBulletShotgun50
+      - ShellShotgun
   - type: CartridgeAmmo
-    proto: BulletPistol
+    proto: StandartBallisticAnCoShotgunSpread
   - type: Sprite
     sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Ammo/Bullet/50_shotgun.rsi
     layers:

@@ -125,23 +125,23 @@
   categories:
   - UplinkWeaponry
 
-# - type: listing
-#   id: UplinkDisposableTurret
-#   name: uplink-disposable-turret-name
-#   description: uplink-disposable-turret-desc
-#   productEntity: ToolboxElectricalTurretFilled
-#   discountCategory: usualDiscounts
-#   discountDownTo:
-#     Telecrystal: 3
-#   cost:
-#     Telecrystal: 6
-#   categories:
-#   - UplinkWeaponry
-#   conditions:
-#     - !type:StoreWhitelistCondition
-#       blacklist:
-#         tags:
-#           - NukeOpsUplink
+- type: listing
+  id: UplinkDisposableTurret
+  name: uplink-disposable-turret-name
+  description: uplink-disposable-turret-desc
+  productEntity: ToolboxElectricalTurretFilled
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkWeaponry
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: UplinkEshield
@@ -410,21 +410,21 @@
   # categories:
   # - UplinkExplosives
 
-# - type: listing # Frontier
-  # id: UplinkSyndicateBomb
-  # name: uplink-exploding-syndicate-bomb-name
-  # description: uplink-exploding-syndicate-bomb-desc
-  # productEntity: SyndicateBomb
-  # cost:
-    # Telecrystal: 11
-  # categories:
-    # - UplinkExplosives
-  # restockTime: 1800
-  # conditions:
-  # - !type:StoreWhitelistCondition
-    # blacklist:
-      # tags:
-      # - NukeOpsUplink
+- type: listing # Frontier
+  id: UplinkSyndicateBomb
+  name: uplink-exploding-syndicate-bomb-name
+  description: uplink-exploding-syndicate-bomb-desc
+  productEntity: SyndicateBomb
+  cost:
+    Telecrystal: 11
+  categories:
+    - UplinkExplosives
+  restockTime: 1800
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
 
 # - type: listing # Frontier
   # id: UplinkSyndicateBombNukie
@@ -1439,19 +1439,24 @@
   categories:
     - UplinkImplants
 
-#- type: listing
-#  id: UplinkRadioImplanter
-#  name: uplink-radio-implanter-name
-#  description: uplink-radio-implanter-desc
-#  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: synd_label }
-#  productEntity: RadioImplanter
-#  discountCategory: usualDiscounts
-#  discountDownTo:
-#    Telecrystal: 1
-#  cost:
-#    Telecrystal: 2
-#  categories:
-#  - UplinkImplants
+- type: listing
+  id: UplinkRadioImplanter
+  name: uplink-radio-implanter-name
+  description: uplink-radio-implanter-desc
+  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: synd_label }
+  productEntity: RadioImplanter
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+    - UplinkImplants
+  conditions:
+     - !type:StoreWhitelistCondition
+       whitelist:
+         tags:
+           - NukeOpsUplink
 
 # - type: listing
 #   id: UplinkMicroBombImplanter
@@ -1493,21 +1498,21 @@
         # components:
           # - SurplusBundle
 
-# - type: listing # Frontier
-  # id: UplinkDeathAcidifierImplanter
-  # name: uplink-death-acidifier-implant-name
-  # description: uplink-death-acidifier-implant-desc
-  # icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: gib }
-  # productEntity: DeathAcidifierImplanter
-  # cost:
-    # Telecrystal: 4
-  # categories:
-    # - UplinkImplants
-  # conditions:
-    # - !type:StoreWhitelistCondition
-      # whitelist:
-        # tags:
-          # - NukeOpsUplink
+- type: listing # Frontier
+  id: UplinkDeathAcidifierImplanter
+  name: uplink-death-acidifier-implant-name
+  description: uplink-death-acidifier-implant-desc
+  icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: gib }
+  productEntity: DeathAcidifierImplanter
+  cost:
+    Telecrystal: 4
+  categories:
+    - UplinkImplants
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: UplinkUplinkImplanter # uplink uplink real
@@ -1541,6 +1546,15 @@
     Telecrystal: 3
   categories:
   - UplinkImplants
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
 
 - type: listing
   id: UplinkDeathRattle
@@ -1735,7 +1749,6 @@
     Telecrystal: 4
   categories:
   - UplinkWearables
-
 - type: listing
   id: UplinkHardsuitSyndie
   name: uplink-hardsuit-syndie-name
@@ -1937,15 +1950,15 @@
   categories:
   - UplinkPointless
 
-# - type: listing # Frontier
-  # id: UplinkCostumeClown
-  # name: uplink-costume-clown-name
-  # description: uplink-costume-clown-desc
-  # productEntity: ClothingBackpackDuffelSyndicateCostumeClown
-  # cost:
-    # Telecrystal: 2
-  # categories:
-  # - UplinkPointless
+- type: listing # Frontier
+  id: UplinkCostumeClown
+  name: uplink-costume-clown-name
+  description: uplink-costume-clown-desc
+  productEntity: ClothingBackpackDuffelSyndicateCostumeClown
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkPointless
 
 - type: listing
   id: UplinkCarpSuitBundle
@@ -2054,22 +2067,19 @@
   #     whitelist:
   #       - Passenger
 
-# - type: listing # Frontier: duped versus above
-#   id: uplinkRiggedBoxingGlovesBoxer
-#   name: uplink-rigged-boxing-gloves-name
-#   description: uplink-rigged-boxing-gloves-desc
-#   productEntity: ClothingHandsGlovesBoxingRigged
-#   discountCategory: usualDiscounts
-#   discountDownTo:
-#     Telecrystal: 2
-#   cost:
-#     Telecrystal: 4
-#   categories:
-#     - UplinkJob
-#   conditions:
-#     - !type:BuyerJobCondition
-#       whitelist:
-#         - Boxer
+- type: listing # Frontier: duped versus above
+  id: uplinkRiggedBoxingGlovesBoxer
+  name: uplink-rigged-boxing-gloves-name
+  description: uplink-rigged-boxing-gloves-desc
+  productEntity: ClothingHandsGlovesBoxingRigged
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 2
+  cost:
+    Telecrystal: 4
+  categories:
+   - UplinkWeaponry
+
 
 # - type: listing # Frontier
   # id: uplinkNecronomicon

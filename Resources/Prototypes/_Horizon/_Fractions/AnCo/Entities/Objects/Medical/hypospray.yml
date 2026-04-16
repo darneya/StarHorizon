@@ -23,6 +23,23 @@
     onlyAffectsMobs: false
 
 - type: entity
+  name: подкожный распылитель АнКо
+  parent: AnCohypo
+  suffix: StarHorizon, AnCo, Nerf
+  description: Использует технологию подкожного распыления химикатов, подозрительно похожую на "гипоспрей".
+  id: AnCohypoNerf
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 20
+  - type: UseDelay
+    delay: 2.5
+  - type: Hypospray
+    onlyAffectsMobs: false
+    transferAmount: 10
+
+- type: entity
   name: капсульный инжектор АнКо
   parent: [BaseItem, BaseAnCoContraband]
   suffix: StarHorizon, AnCo
