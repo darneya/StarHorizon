@@ -252,9 +252,9 @@
     - type: Vocal
       wilhelm: "/Audio/Voice/IPC/wilhelm.ogg"
       sounds:
-        Male: MaleIPC
-        Female: FemaleIPC
-        Unsexed: MaleIPC
+        Male: UnisexIPC
+        Female: UnisexIPC
+        Unsexed: UnisexIPC
     - type: BodyEmotes
       soundsId: IPCBodyEmotes
     - type: MeleeWeapon
@@ -328,5 +328,5 @@
   coefficients:
     Poison: 0
     Cold: 0.2
-    Heat: 2
+    Heat: 0.8
     Shock: 2.5

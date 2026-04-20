@@ -50,10 +50,10 @@
       points: 1
       required: false
     Hair:
-      points: 0
+      points: 1
       required: false
     FacialHair:
-      points: 0
+      points: 1
       required: false
     HeadSide:
       points: 1
@@ -80,6 +80,8 @@
   id: MobIPCSprites
   sprites:
     Head: MobIPCHead
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     Face: MobIPCScreen
     Chest: MobIPCTorso
     Eyes: MobHumanoidEyes

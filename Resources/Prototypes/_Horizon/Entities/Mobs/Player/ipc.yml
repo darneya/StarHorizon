@@ -25,7 +25,6 @@
     locked: true
     lockOnClick: false
     unlockOnClick: false
-    # Por algum motivo esse componente é bem bugado, então o "LockTime" é quem diz o tempo de tudo enquanto o unlock só está servindo como um bool (???)
     lockTime: 5
     unlockTime: 5
   - type: NpcFactionMember
@@ -90,7 +89,7 @@
       0: 0.00
   - type: BatteryDrinker
   - type: EncryptionKeyHolder
-    keySlots: 4
+    keySlots: 10 # Frontier 4<10
     examineWhileLocked: false
     keysExtractionMethod: Cutting
     keysUnlocked: false
@@ -102,6 +101,8 @@
       key_slots:
       - EncryptionKeyCommon
       - EncryptionKeyTraffic
+      - EncryptionKeyGreeting
+  - type: Crawler
   - type: DeadStartupButton
     sound:
       path: /Audio/Effects/Silicon/startup.ogg
