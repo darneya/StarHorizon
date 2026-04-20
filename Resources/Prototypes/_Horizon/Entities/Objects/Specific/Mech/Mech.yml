@@ -92,6 +92,7 @@
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/_Horizon/Mecha/sound_mecha_powerloader_step.ogg
+  - type: MovementAlwaysTouching
   - type: Mech
     modifiers:
       coefficients:
