@@ -12,3 +12,8 @@
   license: "CC0-1.0"
   copyright: "Taken from source, spectrally modified and clipped"
   source: "https://freesound.org/people/sad3d/sounds/500168/"
+
+- files: ["robot-scream.ogg", "robot-laugh_3.ogg", "cry_robot_1.ogg", "wilhelm.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Added by RavenAzala for StarHorizon. Original source should be preserved from import pack."
+  source: "https://github.com/space-wizards/space-station-14/pull/27205"
