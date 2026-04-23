@@ -56,9 +56,9 @@
 
 - type: listing
   id: UplinkWeaponMakarov
-  name: Макаров
-  description: По-настоящему классическое и надежное огнестрельное оружие, был создан для самообороны и военного использования. Этот компактный пистолет использует патроны калибра 9x18 мм, сочетая в себе простоту, удобство ношения и непревзойденную надежность.
-  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: base }
+  name: uplink-weapon-makarov-name
+  description: uplink-weapon-makarov-desc
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: icon }
   productEntity: BaseWeaponMakarov
   cost:
     Telecrystal: 5
