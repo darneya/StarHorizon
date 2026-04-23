@@ -117,7 +117,7 @@
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformBritish
+  id: ClothingUniformJumpsuitBritish
   name: Комбинезон Британца
   description: Желаете ли вы выпить чаю, Сэр?
   suffix: StarHorizon
@@ -126,3 +126,15 @@
     sprite: _Horizon/Clothing/Uniforms/Jumpsuit/british.rsi
   - type: Clothing
     sprite: _Horizon/Clothing/Uniforms/Jumpsuit/british.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitJeansTshirt
+  name: джинсовый комбинезон с футболкой
+  description: Удобный джинсовый комбинезон с футболкой. Повседневный стиль.
+  suffix: StarHorizon
+  components:
+  - type: Sprite
+    sprite: _Horizon/Clothing/Uniforms/Jumpsuit/jeans_jumpsuit_tshirt.rsi
+  - type: Clothing
+    sprite: _Horizon/Clothing/Uniforms/Jumpsuit/jeans_jumpsuit_tshirt.rsi

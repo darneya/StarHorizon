@@ -437,6 +437,8 @@
       enum.PdaVisuals.PdaType:
         !type:String
         pda-shantyman
+  - type: Icon
+    state: pda-shantyman
   - type: Instrument
     allowPercussion: false
     handheld: true

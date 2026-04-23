@@ -11,7 +11,7 @@
     minAngle: -0.7
     maxAngle: -3
   - type: Gun
-    projectileSpeed: 22.5
+    projectileSpeed: 50
     minAngle: 3.1
     maxAngle: 15.5
     angleIncrease: 0.7
@@ -33,11 +33,11 @@
   id: NFBaseWeaponFrameSubMachineGunNanotrasen
   components:
   - type: Gun
-    minAngle: 3.6
-    maxAngle: 18
+    minAngle: 1.3
+    maxAngle: 7
     angleIncrease: 1
     angleDecay: 3.4
-    fireRate: 5.1
+    fireRate: 5.5
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-nanotrasen-munitions
 
@@ -49,7 +49,7 @@
   - type: Gun
     angleIncrease: 0.7
     angleDecay: 5
-    fireRate: 4.8
+    fireRate: 6
   - type: NFWeaponDetails
     manufacturer: weapon-details-manufacturer-cybersun-industries
 
