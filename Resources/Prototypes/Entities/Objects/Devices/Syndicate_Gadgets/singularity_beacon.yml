@@ -41,3 +41,5 @@
     powerLoad: 15000
   - type: StaticPrice
     price: 7500
+  - type: DangerTether
+    maxDistance: 500

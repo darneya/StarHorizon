@@ -99,7 +99,7 @@ impact.slowdown = 8.0
 impact.min_throw_velocity = 1.0
 impact.inertia_scaling = 0.5
 mass_limit = 300
-cooldown = 3600
+cooldown = 19
 
 [rules]
 time = 90.0
