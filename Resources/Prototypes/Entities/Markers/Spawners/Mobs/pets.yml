@@ -249,6 +249,20 @@
 
 - type: entity
   parent: MarkerBase
+  id: SpawnMobPossumPoppy
+  name: Possum Poppy Spawner
+  suffix: Engineer Pet
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobPossumPoppy
+
+- type: entity
+  parent: MarkerBase
   id: SpawnMobRaccoonMorticia
   name: Raccoon Morticia Spawner
   suffix: QM Pet
