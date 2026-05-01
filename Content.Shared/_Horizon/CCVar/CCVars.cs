@@ -50,22 +50,16 @@ namespace Content.Shared._Horizon.CCVar
             CVarDef.Create("paths.shutdown_enabled", false, CVar.SERVERONLY);
 
         /// <summary>
-        ///     Path to sponsors.txt file
-        /// </summary>
-        public static readonly CVarDef<string> SponsorSystemSponsorsPath =
-            CVarDef.Create("sponsor.sponsors_path", "sponsorSystem/sponsors.txt", CVar.SERVERONLY);
-
-        /// <summary>
         ///     Path to discord_sponsors.txt file
         /// </summary>
         public static readonly CVarDef<string> SponsorSystemDiscordSponsorsPath =
-            CVarDef.Create("sponsor.discord_sponsors_path", "sponsorSystem/discord_sponsors.txt", CVar.SERVERONLY);
+            CVarDef.Create("sponsor.discord_sponsors_path", "sponsorSystem/warp/discord_sponsors.txt", CVar.SERVERONLY);
 
         /// <summary>
         ///     Path to disposable.txt file
         /// </summary>
         public static readonly CVarDef<string> SponsorSystemDisposablePath =
-            CVarDef.Create("sponsor.disposable_path", "sponsorSystem/disposable.txt", CVar.SERVERONLY);
+            CVarDef.Create("sponsor.disposable_path", "sponsorSystem/warp/disposable.txt", CVar.SERVERONLY);
 
         /// <summary>
         ///     Path to sponsor_items.txt file
@@ -111,7 +105,7 @@ namespace Content.Shared._Horizon.CCVar
          * Планетки
          */
         public static readonly CVarDef<bool> SpawnPlanets =
-            CVarDef.Create("game.spawn_roundstart_planets", true, CVar.SERVERONLY);
+            CVarDef.Create("game.spawn_roundstart_planets", false, CVar.SERVERONLY);
 
     }
 }
