@@ -12,6 +12,15 @@
             "name": "icon"
         },
         {
+            "name": "engineering"
+        },
+        {
+            "name": "medical"
+        },
+        {
+            "name": "science"
+        },
+        {
             "name": "cargo"
         },
         {
@@ -28,6 +37,9 @@
         },
         {
             "name": "pirate"
+        },
+        {
+            "name": "syndicate"
         },
         {
             "name": "panel"
