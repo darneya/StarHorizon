@@ -9,16 +9,7 @@
   components:
   - type: Contraband
     severity: AnCoItem
-    # no one should be carrying this around visibly!
-    allowedDepartments: [ ]
-
-- type: entity
-  parent: BaseC3ContrabandUnredeemable
-  id: BaseAnCoContraband
-  abstract: true
-  components:
-  - type: Contraband
-    severity: Class3Expedition
     turnInValues:
       FrontierUplinkCoin: 0
       Doubloon: 0
+    allowedDepartments: [ ]
