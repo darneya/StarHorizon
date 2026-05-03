@@ -252,6 +252,7 @@
     dynamicPacks:
     - NightVisionPack # Horizon
     - HorizonPKAPack # Horizon
+    - HorizonTradeGoodsPack # Horizon - торговые товары
 
   - type: EmagLatheRecipes
     emagStaticPacks:

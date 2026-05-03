@@ -55,6 +55,8 @@
           mapNameTemplate: 'Точка Продажи' # Has a letter appended in PointOfInterestSystem
         - type: TradeCrateDestination
           destinationProto: CargoA # Redefined in PointOfInterestSystem
+        - type: HorizonStationFaction
+          faction: Market
 
 - type: gameMap
   id: CargoDepotAlt
