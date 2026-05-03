@@ -3,44 +3,44 @@ using Robust.Shared.GameStates;
 namespace Content.Shared._Horizon.Trade;
 
 /// <summary>
-/// Компонент для хранения цен торговых товаров в зависимости от фракции.
-/// PriceMarket — базовая цена, остальные значения — множители от неё.
+/// Stores base market price and per-faction multipliers for trade goods.
+/// <see cref="PriceMarket"/> is the absolute price at Market; other fields are multipliers.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 public sealed partial class HorizonFactionPriceComponent : Component
 {
     /// <summary>
-    /// Базовая цена товара (для Market).
+    /// Base price when selling at a Market station.
     /// </summary>
     [DataField]
     public double PriceMarket = 5000;
 
     /// <summary>
-    /// Множитель цены для фракции AnCo.
+    /// Price multiplier for AnCo stations.
     /// </summary>
     [DataField]
     public double PriceAnCo = 1.0;
 
     /// <summary>
-    /// Множитель цены для фракции NanoTraisen.
+    /// Price multiplier for NanoTrasen-aligned stations.
     /// </summary>
     [DataField]
-    public double PriceNanoTraisen = 1.0;
+    public double PriceNanoTrasen = 1.0;
 
     /// <summary>
-    /// Множитель цены для фракции Frontier.
+    /// Price multiplier for Frontier stations.
     /// </summary>
     [DataField]
     public double PriceFrontier = 1.0;
 
     /// <summary>
-    /// Множитель цены для фракции Pirate.
+    /// Price multiplier for Pirate stations.
     /// </summary>
     [DataField]
     public double PricePirate = 1.0;
 
     /// <summary>
-    /// Множитель цены для фракции Syndicate.
+    /// Price multiplier for Syndicate stations.
     /// </summary>
     [DataField]
     public double PriceSyndicate = 1.0;

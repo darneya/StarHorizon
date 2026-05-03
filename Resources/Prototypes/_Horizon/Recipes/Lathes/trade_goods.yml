@@ -1,9 +1,9 @@
 # Рецепты производства торговых товаров
 # Для использования в торговых фабрикаторах
 # Стоимость крафта ~20-30% от базовой цены продажи
+# Только рецепты с существующими result-прототипами в trade_goods.yml
 
 # === Инженерные товары ===
-# Базовая цена: 5000-15000
 
 - type: latheRecipe
   id: TradeGoodsEngineerToolsRecipe
@@ -30,26 +30,7 @@
     Glass: 300
     Gold: 100
 
-- type: latheRecipe
-  id: TradeGoodsEngineerFuelContrRecipe
-  result: TradeGoodsEngineerFuelContr
-  completetime: 4
-  materials:
-    Steel: 400
-    Plasma: 800
-    Uranium: 100
-
-- type: latheRecipe
-  id: TradeGoodsEngineerElecContrRecipe
-  result: TradeGoodsEngineerElecContr
-  completetime: 4
-  materials:
-    Steel: 400
-    Glass: 400
-    Gold: 300
-
 # === Медицинские товары ===
-# Базовая цена: 4000-12000
 
 - type: latheRecipe
   id: TradeGoodsMedBaseRecipe
@@ -79,26 +60,7 @@
     Gold: 150
     Plastic: 150
 
-- type: latheRecipe
-  id: TradeGoodsMedOrgansRecipe
-  result: TradeGoodsMedOrgans
-  completetime: 4
-  materials:
-    Biomass: 80
-    Glass: 400
-    Plastic: 250
-
-- type: latheRecipe
-  id: TradeGoodsMedNarcRecipe
-  result: TradeGoodsMedNarc
-  completetime: 5
-  materials:
-    Biomass: 60
-    Glass: 300
-    Plastic: 150
-
 # === Научные товары ===
-# Базовая цена: 5000-18000
 
 - type: latheRecipe
   id: TradeGoodsSciBaseRecipe
@@ -108,15 +70,6 @@
     Steel: 200
     Glass: 400
     Plastic: 150
-
-- type: latheRecipe
-  id: TradeGoodsSciChemicalsRecipe
-  result: TradeGoodsSciChemicals
-  completetime: 3
-  materials:
-    Glass: 600
-    Plastic: 200
-    Gold: 50
 
 - type: latheRecipe
   id: TradeGoodsSciArtifactsRecipe
@@ -129,15 +82,6 @@
     Silver: 150
 
 - type: latheRecipe
-  id: TradeGoodsSciXenoRecipe
-  result: TradeGoodsSciXeno
-  completetime: 4
-  materials:
-    Biomass: 60
-    Glass: 500
-    Plastic: 300
-
-- type: latheRecipe
   id: TradeGoodsSciProtoRecipe
   result: TradeGoodsSciProto
   completetime: 5
@@ -148,7 +92,6 @@
     Plasma: 200
 
 # === Сервисные товары ===
-# Базовая цена: 2000-8000
 
 - type: latheRecipe
   id: TradeGoodsServiceFoodRecipe
@@ -183,18 +126,7 @@
     Plastic: 300
     Glass: 150
 
-- type: latheRecipe
-  id: TradeGoodsServiceLuxuryRecipe
-  result: TradeGoodsServiceLuxury
-  completetime: 3
-  materials:
-    Gold: 150
-    Silver: 150
-    Cloth: 400
-    Plastic: 200
-
 # === Товары общего назначения ===
-# Базовая цена: 2500-4500
 
 - type: latheRecipe
   id: TradeGoodsGeneralSuppliesRecipe
@@ -212,34 +144,7 @@
     Cloth: 600
     Plastic: 150
 
-- type: latheRecipe
-  id: TradeGoodsGeneralToolsRecipe
-  result: TradeGoodsGeneralTools
-  completetime: 2
-  materials:
-    Steel: 400
-    Plastic: 150
-
-- type: latheRecipe
-  id: TradeGoodsGeneralElectronicsRecipe
-  result: TradeGoodsGeneralElectronics
-  completetime: 2
-  materials:
-    Steel: 150
-    Glass: 300
-    Plastic: 200
-
-- type: latheRecipe
-  id: TradeGoodsGeneralPartsRecipe
-  result: TradeGoodsGeneralParts
-  completetime: 2
-  materials:
-    Steel: 350
-    Glass: 150
-    Plastic: 150
-
 # === Военные товары ===
-# Базовая цена: 600-2800
 
 - type: latheRecipe
   id: TradeGoodAmmoRecipe
@@ -256,15 +161,6 @@
     Steel: 500
 
 - type: latheRecipe
-  id: TradeGoodMiltechRecipe
-  result: TradeGoodMiltech
-  completetime: 3
-  materials:
-    Steel: 600
-    Gold: 200
-    Silver: 100
-
-- type: latheRecipe
   id: TradeGoodAlloysRecipe
   result: TradeGoodAlloys
   completetime: 3
@@ -273,7 +169,6 @@
     Plasma: 300
 
 # === Промышленные товары ===
-# Базовая цена: 250-1600
 
 - type: latheRecipe
   id: TradeGoodScrapRecipe
@@ -281,96 +176,6 @@
   completetime: 2
   materials:
     Steel: 200
-
-- type: latheRecipe
-  id: TradeGoodGoodScrapRecipe
-  result: TradeGoodGoodScrap
-  completetime: 2
-  materials:
-    Steel: 400
-    Glass: 200
-
-- type: latheRecipe
-  id: TradeGoodPlasmaRecipe
-  result: TradeGoodPlasma
-  completetime: 3
-  materials:
-    Steel: 300
-    Plasma: 600
-
-- type: latheRecipe
-  id: TradeGoodCyberneticsRecipe
-  result: TradeGoodCybernetics
-  completetime: 3
-  materials:
-    Steel: 350
-    Glass: 350
-    Gold: 100
-
-# === Продовольствие ===
-# Базовая цена: 400-2000
-
-- type: latheRecipe
-  id: TradeGoodFlourRecipe
-  result: TradeGoodFlour
-  completetime: 2
-  materials:
-    Biomass: 15
-
-- type: latheRecipe
-  id: TradeGoodRiceRecipe
-  result: TradeGoodRice
-  completetime: 2
-  materials:
-    Biomass: 15
-
-- type: latheRecipe
-  id: TradeGoodSugarRecipe
-  result: TradeGoodSugar
-  completetime: 2
-  materials:
-    Biomass: 15
-
-- type: latheRecipe
-  id: TradeGoodScopRecipe
-  result: TradeGoodScop
-  completetime: 2
-  materials:
-    Biomass: 40
-
-- type: latheRecipe
-  id: TradeGoodAlcoholRecipe
-  result: TradeGoodAlcohol
-  completetime: 2
-  materials:
-    Biomass: 20
-    Glass: 300
-
-- type: latheRecipe
-  id: TradeGoodWineRecipe
-  result: TradeGoodWine
-  completetime: 3
-  materials:
-    Biomass: 35
-    Glass: 600
-
-- type: latheRecipe
-  id: TradeGoodVodkaRecipe
-  result: TradeGoodVodka
-  completetime: 3
-  materials:
-    Biomass: 40
-    Glass: 400
-
-# === Медицина (старые) ===
-
-- type: latheRecipe
-  id: TradeGoodAntibioticsRecipe
-  result: TradeGoodAntibiotics
-  completetime: 3
-  materials:
-    Biomass: 25
-    Glass: 350
 
 # === Текстиль ===
 
@@ -382,29 +187,7 @@
     Cloth: 700
     Plastic: 300
 
-# === Контрабанда ===
-
-- type: latheRecipe
-  id: TradeGoodDrugsRecipe
-  result: TradeGoodDrugs
-  completetime: 3
-  materials:
-    Biomass: 40
-    Glass: 600
-
-- type: latheRecipe
-  id: TradeGoodOrgansRecipe
-  result: TradeGoodOrgans
-  completetime: 4
-  materials:
-    Biomass: 70
-    Glass: 350
-
-# === Антиквариат (не крафтится - только находится) ===
-# TradeGoodNanoTrasen, TradeGoodOldCyber, TradeGoodOldParts
-# Эти товары не могут быть произведены, только найдены при исследовании
-
-# === Товары Союза ===
+# === Товары Союза (AnCo) ===
 
 - type: latheRecipe
   id: TradeGoodAnCoWeaponRecipe
@@ -428,8 +211,8 @@
     Steel: 600
     Uranium: 300
 
-# === контраба-плачет по рп ===
-# === пираты ===
+# === Пиратские товары ===
+
 - type: latheRecipe
   id: TradeGoodPirateWaterRecipe
   result: TradeGoodPirateWater
@@ -458,7 +241,7 @@
     Glass: 500
     Plastic: 300
 
-# === синдикат ===
+# === Синдикатские товары ===
 
 - type: latheRecipe
   id: TradeGoodSyndicateFuelRecipe

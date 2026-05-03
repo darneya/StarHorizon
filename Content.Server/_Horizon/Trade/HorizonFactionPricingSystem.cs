@@ -5,8 +5,7 @@ using Content.Shared.Cargo;
 namespace Content.Server._Horizon.Trade;
 
 /// <summary>
-/// Система расчета цены торговых товаров на основе базовой цены PriceMarket.
-/// Формула: цена = PriceMarket × множитель_фракции
+/// Computes sell price for trade goods: <see cref="HorizonFactionPriceComponent.PriceMarket"/> × faction multiplier.
 /// </summary>
 public sealed class HorizonFactionPricingSystem : EntitySystem
 {
@@ -21,57 +20,41 @@ public sealed class HorizonFactionPricingSystem : EntitySystem
 
     private void OnPriceCalculation(Entity<HorizonFactionPriceComponent> ent, ref PriceCalculationEvent ev)
     {
-        // Если событие уже обработано, не делаем ничего
         if (ev.Handled)
             return;
 
-        // Базовая цена = PriceMarket (фиксированная цена для Market)
         var basePrice = ent.Comp.PriceMarket;
 
-        // Получаем станцию, на которой продается ящик
         var owningStation = _station.GetOwningStation(ent);
 
-        // Определяем фракцию станции
-        var faction = HorizonFaction.Market; // По умолчанию Market
+        var faction = HorizonFaction.Market;
 
         if (owningStation != null && TryComp<HorizonStationFactionComponent>(owningStation, out var factionComp))
-        {
             faction = factionComp.Faction;
-        }
 
-        // Применяем множитель фракции
         var factionMultiplier = GetFactionMultiplier(ent.Comp, faction);
-        var finalPrice = basePrice * factionMultiplier;
-
-        // Устанавливаем итоговую цену
-        ev.Price = finalPrice;
-
-        // Гарантируем неотрицательную цену
+        ev.Price = basePrice * factionMultiplier;
         ev.Price = double.Max(0.0, ev.Price);
 
-        // Помечаем как обработанное
         ev.Handled = true;
     }
 
-    /// <summary>
-    /// Получить множитель цены для конкретной фракции.
-    /// PriceMarket — базовая цена, остальные значения — множители от неё.
-    /// </summary>
-    private double GetFactionMultiplier(HorizonFactionPriceComponent comp, HorizonFaction faction)
+    private static double GetFactionMultiplier(HorizonFactionPriceComponent comp, HorizonFaction faction)
     {
         return faction switch
         {
+            HorizonFaction.Market => 1.0,
             HorizonFaction.AnCo => comp.PriceAnCo > 0 ? comp.PriceAnCo : 1.0,
             HorizonFaction.Syndicate => comp.PriceSyndicate > 0 ? comp.PriceSyndicate : 1.0,
             HorizonFaction.Frontier => comp.PriceFrontier > 0 ? comp.PriceFrontier : 1.0,
             HorizonFaction.Pirate => comp.PricePirate > 0 ? comp.PricePirate : 1.0,
-            HorizonFaction.NanoTraisen => comp.PriceNanoTraisen > 0 ? comp.PriceNanoTraisen : 1.0,
+            HorizonFaction.NanoTrasen => comp.PriceNanoTrasen > 0 ? comp.PriceNanoTrasen : 1.0,
             _ => 1.0
         };
     }
 
     /// <summary>
-    /// Gets the price of an entity for a specific faction.
+    /// Gets the sell price of an entity for a specific faction (does not require a station).
     /// </summary>
     public double GetFactionPrice(EntityUid uid, HorizonFaction faction)
     {
@@ -80,11 +63,11 @@ public sealed class HorizonFactionPricingSystem : EntitySystem
 
         var basePrice = priceComp.PriceMarket;
         var multiplier = GetFactionMultiplier(priceComp, faction);
-        return basePrice * multiplier;
+        return double.Max(0.0, basePrice * multiplier);
     }
 
     /// <summary>
-    /// Gets the faction of a station.
+    /// Resolves the trade faction for a station entity, or <see cref="HorizonFaction.Market"/> if none.
     /// </summary>
     public HorizonFaction GetStationFaction(EntityUid? station)
     {

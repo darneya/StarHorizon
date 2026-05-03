@@ -167,7 +167,7 @@
   - type: Sprite
     state: security
   - type: MachineBoard
-    prototype: TradeFabricatorMilitary
+    prototype: TradeFabricatorPirate
     requirements:
       MatterBin: 2
       Manipulator: 2
@@ -186,7 +186,7 @@
   - type: Sprite
     state: security
   - type: MachineBoard
-    prototype: TradeFabricatorMilitary
+    prototype: TradeFabricatorSyndicate
     requirements:
       MatterBin: 2
       Manipulator: 2

@@ -104,7 +104,7 @@
   # Текстиль
   - TradeGoodFabricsRecipe
 
-# === Пакет питания назначения ===
+# === Пакет продовольствия ===
 - type: latheRecipePack
   id: HorizonTradeGoodsFoodPack
   recipes:
@@ -112,20 +112,18 @@
   - TradeGoodsServiceFoodRecipe
   - TradeGoodsServiceBotanyRecipe
 
-# === Пакет синди назначения ===
+# === Пакет синдиката ===
 - type: latheRecipePack
   id: HorizonTradeGoodsSyndicatePack
   recipes:
-  # Военные товары
   - TradeGoodSyndicateFuelRecipe
   - TradeGoodSyndicateSubsRecipe
   - TradeGoodSyndicateDetalRecipe
 
-# === Пакет пират назначения ===
+# === Пакет пиратов ===
 - type: latheRecipePack
   id: HorizonTradeGoodsPiratePack
   recipes:
-  # Промышленные товары
   - TradeGoodPirateGoldRecipe
   - TradeGoodPirateWaterRecipe
   - TradeGoodPirateNarcRecipe

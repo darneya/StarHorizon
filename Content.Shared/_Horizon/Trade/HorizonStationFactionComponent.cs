@@ -48,7 +48,7 @@ public enum HorizonFaction : byte
     Pirate,
 
     /// <summary>
-    /// NanoTraisen faction stations.
+    /// NanoTrasen faction stations.
     /// </summary>
-    NanoTraisen
+    NanoTrasen
 }

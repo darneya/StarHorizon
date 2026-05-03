@@ -95,8 +95,8 @@
   components:
   - type: StorageFill
     contents:
-    - id: IngotGold
-      amount: 3
+      - id: IngotGold
+        amount: 3
 
 - type: entity
   id: CrateMaterialSilver
@@ -106,8 +106,8 @@
   components:
   - type: StorageFill
     contents:
-    - id: IngotSilver
-      amount: 3
+      - id: IngotSilver
+        amount: 3
 
 - type: entity
   id: CrateMaterialCardboard

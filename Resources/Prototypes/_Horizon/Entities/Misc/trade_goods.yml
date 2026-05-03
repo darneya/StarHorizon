@@ -52,7 +52,7 @@
   - type: HorizonFactionPrice
     priceMarket: 4000
     priceAnCo: 0.5
-    priceNanoTraisen: 1.1
+    priceNanoTrasen: 1.1
     pricePirate: 1.5
     priceSyndicate: 1.1
     priceFrontier: 0.5
@@ -72,7 +72,7 @@
   - type: HorizonFactionPrice
     priceMarket: 6000
     priceAnCo: 0.8
-    priceNanoTraisen: 1.2
+    priceNanoTrasen: 1.2
     pricePirate: 1.2
     priceSyndicate: 1.2
     priceFrontier: 0.5
@@ -92,7 +92,7 @@
   - type: HorizonFactionPrice
     priceMarket: 6000
     priceAnCo: 0.8
-    priceNanoTraisen: 1.1
+    priceNanoTrasen: 1.1
     pricePirate: 0.8
     priceSyndicate: 1.1
     priceFrontier: 0.5
@@ -114,7 +114,7 @@
   - type: HorizonFactionPrice
     priceMarket: 5000
     priceAnCo: 0.8
-    priceNanoTraisen: 1.1
+    priceNanoTrasen: 1.1
     pricePirate: 1.1
     priceSyndicate: 1.1
     priceFrontier: 0.5
@@ -134,7 +134,7 @@
   - type: HorizonFactionPrice
     priceMarket: 5000
     priceAnCo: 0.8
-    priceNanoTraisen: 1.1
+    priceNanoTrasen: 1.1
     pricePirate: 0.5
     priceSyndicate: 1.1
     priceFrontier: 0.5
@@ -154,7 +154,7 @@
   - type: HorizonFactionPrice
     priceMarket: 5000
     priceAnCo: 1.3
-    priceNanoTraisen: 1.2
+    priceNanoTrasen: 1.2
     pricePirate: 0.5
     priceSyndicate: 1.1
     priceFrontier: 0.5
@@ -176,7 +176,7 @@
   - type: HorizonFactionPrice
     priceMarket: 7000
     priceAnCo: 1.1
-    priceNanoTraisen: 1.2
+    priceNanoTrasen: 1.2
     pricePirate: 0.5
     priceSyndicate: 0.8
     priceFrontier: 0.5
@@ -196,7 +196,7 @@
   - type: HorizonFactionPrice
     priceMarket: 5000
     priceAnCo: 1.0
-    priceNanoTraisen: 1.2
+    priceNanoTrasen: 1.2
     pricePirate: 0.5
     priceSyndicate: 0.8
     priceFrontier: 0.5
@@ -216,7 +216,7 @@
   - type: HorizonFactionPrice
     priceMarket: 7000
     priceAnCo: 1.5
-    priceNanoTraisen: 1.2
+    priceNanoTrasen: 1.2
     pricePirate: 1.2
     priceSyndicate: 1.3
     priceFrontier: 0.5
@@ -238,7 +238,7 @@
   - type: HorizonFactionPrice
     priceMarket: 3000
     priceAnCo: 0.5
-    priceNanoTraisen: 1.0
+    priceNanoTrasen: 1.0
     pricePirate: 1.2
     priceSyndicate: 0.8
     priceFrontier: 0.5
@@ -258,7 +258,7 @@
   - type: HorizonFactionPrice
     priceMarket: 3000
     priceAnCo: 0.5
-    priceNanoTraisen: 1.0
+    priceNanoTrasen: 1.0
     pricePirate: 1.2
     priceSyndicate: 0.8
     priceFrontier: 0.5
@@ -278,7 +278,7 @@
   - type: HorizonFactionPrice
     priceMarket: 3000
     priceAnCo: 0.5
-    priceNanoTraisen: 1.0
+    priceNanoTrasen: 1.0
     pricePirate: 0.8
     priceSyndicate: 0.8
     priceFrontier: 0.5
@@ -298,7 +298,7 @@
   - type: HorizonFactionPrice
     priceMarket: 3000
     priceAnCo: 0.5
-    priceNanoTraisen: 1.0
+    priceNanoTrasen: 1.0
     pricePirate: 0.8
     priceSyndicate: 0.8
     priceFrontier: 0.5
@@ -318,7 +318,7 @@
   - type: HorizonFactionPrice
     priceMarket: 5000
     priceAnCo: 0.5
-    priceNanoTraisen: 1.2
+    priceNanoTrasen: 1.2
     pricePirate: 1.2
     priceSyndicate: 1.0
     priceFrontier: 0.5
@@ -338,7 +338,7 @@
   - type: HorizonFactionPrice
     priceMarket: 5000
     priceAnCo: 0.5
-    priceNanoTraisen: 1.1
+    priceNanoTrasen: 1.1
     pricePirate: 1.1
     priceSyndicate: 0.8
     priceFrontier: 0.5
@@ -360,7 +360,7 @@
   - type: HorizonFactionPrice
     priceMarket: 7000
     priceAnCo: 0.5
-    priceNanoTraisen: 1.2
+    priceNanoTrasen: 1.2
     pricePirate: 1.2
     priceSyndicate: 1.2
     priceFrontier: 0.5
@@ -380,7 +380,7 @@
   - type: HorizonFactionPrice
     priceMarket: 7000
     priceAnCo: 1.2
-    priceNanoTraisen: 1.1
+    priceNanoTrasen: 1.1
     pricePirate: 1.2
     priceSyndicate: 1.2
     priceFrontier: 0.5
@@ -402,7 +402,7 @@
   - type: HorizonFactionPrice
     priceMarket: 7000
     priceAnCo: 1.3
-    priceNanoTraisen: 1.5
+    priceNanoTrasen: 1.5
     pricePirate: 1.2
     priceSyndicate: 1.2
     priceFrontier: 0.5
@@ -422,7 +422,7 @@
   - type: HorizonFactionPrice
     priceMarket: 4000
     priceAnCo: 0.5
-    priceNanoTraisen: 1.2
+    priceNanoTrasen: 1.2
     pricePirate: 1.1
     priceSyndicate: 0.5
     priceFrontier: 0.5
@@ -444,7 +444,7 @@
   - type: HorizonFactionPrice
     priceMarket: 3000
     priceAnCo: 0.5
-    priceNanoTraisen: 1.2
+    priceNanoTrasen: 1.2
     pricePirate: 1.2
     priceSyndicate: 0.8
     priceFrontier: 0.5
@@ -467,7 +467,7 @@
   - type: HorizonFactionPrice
     priceMarket: 15000
     priceAnCo: 1.5
-    priceNanoTraisen: 1.5
+    priceNanoTrasen: 1.5
     pricePirate: 1.5
     priceFrontier: 2
 
@@ -486,7 +486,7 @@
   - type: HorizonFactionPrice
     priceMarket: 15000
     priceAnCo: 1.5
-    priceNanoTraisen: 1.5
+    priceNanoTrasen: 1.5
     pricePirate: 1.5
     priceSyndicate: 1.5
     priceFrontier: 2
@@ -506,7 +506,7 @@
   - type: HorizonFactionPrice
     priceMarket: 15000
     priceAnCo: 1.5
-    priceNanoTraisen: 1.5
+    priceNanoTrasen: 1.5
     pricePirate: 1.5
     priceSyndicate: 1.5
     priceFrontier: 2
@@ -529,7 +529,7 @@
   - type: HorizonFactionPrice
     priceMarket: 15000
     priceAnCo: 1.5
-    priceNanoTraisen: 1.0
+    priceNanoTrasen: 1.0
     pricePirate: 1.2
     priceSyndicate: 1.3
     priceFrontier: 1.0
@@ -549,7 +549,7 @@
   - type: HorizonFactionPrice
     priceMarket: 15000
     priceAnCo: 1.5
-    priceNanoTraisen: 1.0
+    priceNanoTrasen: 1.0
     pricePirate: 1.2
     priceSyndicate: 1.3
     priceFrontier: 1.0
@@ -569,7 +569,7 @@
   - type: HorizonFactionPrice
     priceMarket: 15000
     priceAnCo: 1.5
-    priceNanoTraisen: 1.0
+    priceNanoTrasen: 1.0
     pricePirate: 1.2
     priceSyndicate: 1.3
     priceFrontier: 1.0
@@ -589,7 +589,7 @@
   - type: HorizonFactionPrice
     priceMarket: 10000
     priceAnCo: 0.8
-    priceNanoTraisen: 1.3
+    priceNanoTrasen: 1.3
     pricePirate: 1.2
     priceSyndicate: 0.5
     priceFrontier: 2
@@ -609,7 +609,7 @@
   - type: HorizonFactionPrice
     priceMarket: 10000
     priceAnCo: 1.5
-    priceNanoTraisen: 1.3
+    priceNanoTrasen: 1.3
     pricePirate: 0.8
     priceSyndicate: 0.5
     priceFrontier: 2
@@ -629,7 +629,7 @@
   - type: HorizonFactionPrice
     priceMarket: 10000
     priceAnCo: 1.5
-    priceNanoTraisen: 1.3
+    priceNanoTrasen: 1.3
     pricePirate: 0.8
     priceSyndicate: 0.5
     priceFrontier: 2
@@ -649,7 +649,7 @@
   - type: HorizonFactionPrice
     priceMarket: 10000
     priceAnCo: 1.1
-    priceNanoTraisen: 1.3
+    priceNanoTrasen: 1.3
     pricePirate: 0.5
     priceSyndicate: 0.8
     priceFrontier: 2
@@ -669,7 +669,7 @@
   - type: HorizonFactionPrice
     priceMarket: 10000
     priceAnCo: 1.1
-    priceNanoTraisen: 1.3
+    priceNanoTrasen: 1.3
     pricePirate: 0.5
     priceSyndicate: 0.8
     priceFrontier: 2
@@ -689,7 +689,7 @@
   - type: HorizonFactionPrice
     priceMarket: 10000
     priceAnCo: 1.1
-    priceNanoTraisen: 1.3
+    priceNanoTrasen: 1.3
     pricePirate: 0.5
     priceSyndicate: 0.8
     priceFrontier: 2
