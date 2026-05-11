@@ -91,7 +91,7 @@
   id: UplinkWeaponMakarov
   name: uplink-weapon-makarov-name
   description: uplink-weapon-makarov-desc
-  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: red }
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: icon }
   productEntity: BaseWeaponMakarov
   cost:
     Telecrystal: 5

@@ -8,16 +8,20 @@
   },
   "states": [
     {
-        "name": "ancobox"
+      "name": "generator-unshaded",
+      "delays": [
+        [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      ]
     },
     {
-        "name": "ancoboxopen"
-    },
-    {
-        "name": "ancoboxlong"
-    },
-    {
-        "name": "ancoboxlongopen"
+      "name": "icon"
     }
   ]
 }
