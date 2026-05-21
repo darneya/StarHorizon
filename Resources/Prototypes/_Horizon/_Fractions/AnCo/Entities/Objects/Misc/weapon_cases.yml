@@ -246,7 +246,7 @@
   id: AnCoWeaponCasePistol
   parent: AnCoWeaponCaseShort
   suffix: StarHorizon, AnCo, Pistol
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -259,7 +259,7 @@
   id: AnCoWeaponCaseAutoPistol
   parent: AnCoWeaponCaseShort
   suffix: StarHorizon, AnCo, AutoPistol
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -272,7 +272,7 @@
   id: AnCoWeaponCaseRifle
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, Rifle
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -285,7 +285,7 @@
   id: AnCoWeaponCaseAutoRifle
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, AutoRifle
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -298,7 +298,7 @@
   id: AnCoWeaponCaseLaserGun
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, LaserGun
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -311,7 +311,7 @@
   id: AnCoWeaponCasePMLaserGun
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, PMLaserGun
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -324,7 +324,7 @@
   id: AnCoWeaponCaseDisablerSMG
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, DisablerSMG
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -335,7 +335,7 @@
   id: AnCoWeaponCaseDisablerSniper
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, DisablerSniper
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -346,7 +346,7 @@
   id: AnCoWeaponCaseCounselorGun
   parent: AnCoWeaponCaseShort
   suffix: StarHorizon, AnCo, CounselorGun
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -357,7 +357,7 @@
   id: AnCoWeaponCaseRipsoidCannon
   parent: AnCoWeaponCaseShort
   suffix: StarHorizon, AnCo, RipsoidCannon
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -390,7 +390,7 @@
   id: AnCoWeaponCaseHeater
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, Heater
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -401,7 +401,7 @@
   id: AnCoWeaponCaseSabre
   parent: AnCoWeaponCaseShort
   suffix: StarHorizon, AnCo, Sabre
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -412,7 +412,7 @@
   id: AnCoWeaponCaseMeleeLine
   parent: AnCoWeaponCaseShort
   suffix: StarHorizon, AnCo, Line
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -423,7 +423,7 @@
   id: AnCoWeaponCaseMeleeSword
   parent: AnCoWeaponCaseShort
   suffix: StarHorizon, AnCo, Sword
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -434,7 +434,7 @@
   id: AnCoWeaponCaseMeleeSplah
   parent: AnCoWeaponCaseShort
   suffix: StarHorizon, AnCo, Splah
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -445,7 +445,7 @@
   id: AnCoWeaponCaseMeleeKnife
   parent: AnCoWeaponCaseShort
   suffix: StarHorizon, AnCo, Knife
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -456,7 +456,7 @@
   id: AnCoWeaponCaseGrenade
   parent: AnCoWeaponCaseExplosives
   suffix: StarHorizon, AnCo, Grenade
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -467,7 +467,7 @@
   id: AnCoWeaponCasePlasticExplode
   parent: AnCoWeaponCaseExplosives
   suffix: StarHorizon, AnCo, Grenade
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -478,7 +478,7 @@
   id: AnCoWeaponCaseMachineGun
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, MachineGun
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -491,7 +491,7 @@
   id: AnCoWeaponCaseCarabine
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, MachineGun
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -504,7 +504,7 @@
   id: AnCoWeaponCaseShotGun
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, MachineGun
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -517,7 +517,7 @@
   id: AnCoWeaponCaseAutoShotGun
   parent: AnCoWeaponCaseLong
   suffix: StarHorizon, AnCo, MachineGun
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -532,7 +532,7 @@
   id: AnCoWeaponHeavyCaseArdon
   parent: AnCoWeaponCaseHeavy
   suffix: StarHorizon, AnCo, Case
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -543,7 +543,7 @@
   id: AnCoWeaponHeavyCaseKazmie
   parent: AnCoWeaponCaseHeavy
   suffix: StarHorizon, AnCo, Case
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -554,7 +554,7 @@
   id: AnCoWeaponHeavyCaseSpider
   parent: AnCoWeaponCaseHeavy
   suffix: StarHorizon, AnCo, Case
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -569,7 +569,7 @@
   id: AnCoWeaponHeavyCaseKnight
   parent: AnCoWeaponCaseHeavy
   suffix: StarHorizon, AnCo, Case
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -585,7 +585,7 @@
   id: AnCoWeaponHeavyCaseCircuitboard
   parent: AnCoWeaponCaseHeavy
   suffix: StarHorizon, AnCo, Case
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -606,7 +606,7 @@
   id: AnCoWeaponHeavyCaseHelp
   parent: AnCoWeaponCaseHeavy
   suffix: StarHorizon, AnCo, Case
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -625,7 +625,7 @@
   id: AnCoWeaponCaseAmmo35
   parent: AnCoWeaponCaseAmmo
   suffix: StarHorizon, AnCo, Case
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -636,7 +636,7 @@
   id: AnCoWeaponCaseAmmo20
   parent: AnCoWeaponCaseAmmo
   suffix: StarHorizon, AnCo, Case
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -647,7 +647,7 @@
   id: AnCoWeaponCaseAmmo30
   parent: AnCoWeaponCaseAmmo
   suffix: StarHorizon, AnCo, Case
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:
@@ -658,7 +658,7 @@
   id: AnCoWeaponCaseAmmo50
   parent: AnCoWeaponCaseAmmo
   suffix: StarHorizon, AnCo, Case
-  category: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu ]
   components:
   - type: StorageFill
     contents:

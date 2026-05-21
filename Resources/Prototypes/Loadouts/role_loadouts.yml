@@ -597,7 +597,6 @@
   - Trinkets
   - GroupSpeciesBreathToolMedical
   # Horizon end
-  # Я хазъ почему тут нэи
   - ContractorCartridge
   - ContractorWallet
   - ContractorEncryptionKey
@@ -645,8 +644,6 @@
   - ContractorEncryptionKey
   - ContractorImplanter
   - ContractorBackpackItems
-#  - ContractorEars
-  # Я хазъ почему тут нэи
 
 - type: roleLoadout
   id: JobParamedic
@@ -669,7 +666,6 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
-  # Я хазъ почему тут нэи
   - ContractorCartridge
   - ContractorWallet
   - ContractorEncryptionKey
