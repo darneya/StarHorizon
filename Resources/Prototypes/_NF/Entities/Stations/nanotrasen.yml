@@ -19,6 +19,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
+  - type: MarketSaturation # Horizon: насыщение рынка
 
 # region Dev
 - type: entity
@@ -37,9 +38,12 @@
   - BaseStationJobsSpawning
   - BaseStationSiliconLawFrontierShips
   - BaseStationDampening
+  - NFBaseStationCargo # Horizon
+  - BaseStationCargoMarket # Horizon
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
+  - type: MarketSaturation # Horizon: насыщение рынка
 
 - type: entity
   id: DeadDropFrontierOutpost
