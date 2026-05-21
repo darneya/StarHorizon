@@ -1,12 +1,18 @@
 - type: entity
-  parent: BaseGenerator
+  parent: [BaseMachine, BaseAnCoContraband]
   id: ArdonGenerator
   name: Ардониевый генератор
   description: генератор на основе распада ардония, долговечный и надежный.
   suffix: StarHorizon, AnCo, Structure
   components:
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      output:
+        !type:CableDeviceNode
+        nodeGroupID: HVPower
   - type: PowerSupplier
-    supplyRate: 10000
+    supplyRate: 15000
   - type: Explosive
     explosionType: AnCoExplodes
     # Same as AME, but numbers still picked from a hat.
