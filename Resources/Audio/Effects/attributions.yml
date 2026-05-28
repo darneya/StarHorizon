@@ -256,3 +256,8 @@
   license: "CC-BY-4.0"
   copyright: "Clipped by FairlySadPanda (Github) from a sound created by CheChoDj (Freesound)"
   source: "https://freesound.org/people/CheChoDj/sounds/609353/"
+
+- files: ["startup.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Added by RavenAzala for StarHorizon. Original source should be preserved from import pack."
+  source: "https://github.com/space-wizards/space-station-14/pull/27205"

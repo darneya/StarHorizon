@@ -19,6 +19,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
+  - type: MarketSaturation # Horizon: насыщение рынка
 
 # region Dev
 - type: entity
@@ -40,6 +41,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
+  - type: MarketSaturation # Horizon: насыщение рынка
 
 - type: entity
   id: DeadDropFrontierOutpost

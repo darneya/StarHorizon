@@ -53,6 +53,7 @@
     sound:
       path: /Audio/Machines/button.ogg
   - type: DoAfter
+  - type: Insulated
 
 - type: entity
   id: AnCoDroneDungeon

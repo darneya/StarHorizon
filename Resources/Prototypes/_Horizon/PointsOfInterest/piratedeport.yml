@@ -34,3 +34,5 @@
           mapNameTemplate: "Точка Продажи Пиратов"
         - type: BindToStationVariationPassExemption
         - type: NoMailStation # Horizon: Disable mail for Pirates
+        - type: HorizonStationFaction
+          faction: Pirate

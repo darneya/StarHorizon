@@ -694,3 +694,19 @@
   name: stack-uranium-marble-floor
   spawn: FloorTileItemUraniumMarble
   maxCount: 30
+
+# Horizon start
+
+- type: stack
+  id: FloorTileSteelDarkGray
+  name: stack-darkgray-floor
+  spawn: FloorTileItemSteelDarkGray
+  maxCount: 30
+
+- type: stack
+  id: FloorTileSteelPlateDarkGray
+  name: stack-darkgray-plate-floor
+  spawn: FloorTileItemSteelPlateDarkGray
+  maxCount: 30
+
+  # Horizon end

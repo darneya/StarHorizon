@@ -67240,8 +67240,6 @@ entities:
       pos: 167.5,105.5
       parent: 1
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 19299
   - uid: 16796
