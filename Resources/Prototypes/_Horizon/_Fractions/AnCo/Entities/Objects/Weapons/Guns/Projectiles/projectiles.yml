@@ -202,4 +202,7 @@
   - type: EmpOnTrigger
     range: 1
     energyConsumption: 2700000
-
+  - type: Sprite
+    sprite: _Horizon/_Fractions/AnCo/Objects/Weapons/Guns/Projectiles/proj.rsi
+    layers:
+      - state: Rocket
