@@ -52,7 +52,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 12
+        Piercing: 14
 
 - type: entity
   id: BulletPistol9x17Uranium
@@ -98,8 +98,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 10
-        Blunt: 5
+        Piercing: 16
 
 - type: entity
   id: BulletPistolACPUranium
@@ -110,9 +109,8 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 5
+        Radiation: 14
         Piercing: 2
-        Blunt: 5
 
 - type: entity
   id: BulletPistolACPPractice
@@ -123,7 +121,7 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 5
+        Blunt: 1
 
 - type: entity
   id: BulletPistolACPIncendiary
@@ -135,7 +133,7 @@
     damage:
       types:
         Blunt: 5
-        Heat: 7
+        Heat: 11
 
 - type: entity
   id: BulletPistol50AE
@@ -146,8 +144,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
-        Slash: 10
+        Piercing: 25
+        Slash: 5
 
 - type: entity
   id: BulletPistol50AEAP
@@ -158,8 +156,10 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 20
-        Slash: 10
+        Piercing: 25
+        Slash: 5
+        Structural: 30
+    ignoreResistances: true
 
 - type: entity
   id: BulletPistol50AEUranium
@@ -219,7 +219,7 @@
     damage:
       types:
         Piercing: 30
-        Slash: 15
+        Slash: 5
 
 - type: entity
   id: BulletRevolver44Magnum
@@ -230,8 +230,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 25
-        Slash: 10
+        Piercing: 26
+        Slash: 5
 
 - type: entity
   id: BulletRevolver38SpecialAP
@@ -243,6 +243,7 @@
     damage:
       types:
         Piercing: 30
+    ignoreResistances: true
 
 - type: entity
   id: BulletRevolver357MagnumAP
@@ -253,8 +254,9 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 10
-        Slash: 20
+        Piercing: 25
+        Slash: 5
+    ignoreResistances: true
 
 - type: entity
   id: BulletRevolver44MagnumAP
@@ -265,5 +267,6 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 10
-        Slash: 20
+        Piercing: 25
+        Slash: 5
+    ignoreResistances: true

@@ -17,11 +17,11 @@
   - type: Item
     sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/akms/tiny.rsi
   - type: Gun
-    minAngle: 2.5
-    maxAngle: 10
-    angleIncrease: 0.7
+    minAngle: 1.5
+    maxAngle: 11
+    angleIncrease: 0.5
     angleDecay: 3
-    fireRate: 5
+    fireRate: 5.6
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/ak47.ogg
   - type: ChamberMagazineAmmoProvider
@@ -79,9 +79,9 @@
   - type: Gun
     minAngle: 2.5
     maxAngle: 15
-    angleIncrease: 0.9
+    angleIncrease: 0.8
     angleDecay: 3
-    fireRate: 5
+    fireRate: 5.6
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/ak47.ogg
   - type: ChamberMagazineAmmoProvider
@@ -203,7 +203,7 @@
     maxAngle: 6
     angleIncrease: 0.6
     angleDecay: 4
-    fireRate: 4
+    fireRate: 5.8
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/g36.ogg
     soundEmpty:
@@ -265,7 +265,7 @@
     maxAngle: 12
     angleIncrease: 0.9
     angleDecay: 5
-    fireRate: 6
+    fireRate: 5
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/m28.ogg
     soundEmpty:
@@ -326,7 +326,7 @@
     maxAngle: 16
     angleIncrease: 1
     angleDecay: 3
-    fireRate: 6.5
+    fireRate: 5.5
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/ak47.ogg
   - type: ChamberMagazineAmmoProvider
@@ -386,7 +386,7 @@
     maxAngle: 13
     angleIncrease: 0.8
     angleDecay: 5
-    fireRate: 6
+    fireRate: 6.7
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/m16.ogg
   - type: ChamberMagazineAmmoProvider
@@ -446,7 +446,7 @@
     maxAngle: 10
     angleIncrease: 1.8
     angleDecay: 5
-    fireRate: 4
+    fireRate: 6
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/famas.ogg
     selectedMode: Burst
@@ -514,7 +514,7 @@
     maxAngle: 19
     angleIncrease: 2.3
     angleDecay: 2
-    fireRate: 2
+    fireRate: 1.5
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/T64.ogg
       params:
@@ -571,7 +571,7 @@
     maxAngle: 17
     angleIncrease: 1.7
     angleDecay: 2
-    fireRate: 5
+    fireRate: 3
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/som_rifle.ogg
       params:
@@ -629,7 +629,7 @@
     maxAngle: 7
     angleIncrease: 0.5
     angleDecay: 3
-    fireRate: 6
+    fireRate: 6.9
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/famas.ogg
   - type: ChamberMagazineAmmoProvider
@@ -689,7 +689,7 @@
     maxAngle: 9
     angleIncrease: 0.9
     angleDecay: 3
-    fireRate: 5.3
+    fireRate: 6.3
     soundGunshot:
       path: /Audio/Weapons/Guns64/Rifles/T64.ogg
   - type: ChamberMagazineAmmoProvider
