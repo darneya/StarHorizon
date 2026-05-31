@@ -91,18 +91,16 @@ namespace Content.Server.Power.EntitySystems
             var query = EntityQueryEnumerator<BatterySelfRechargerComponent, BatteryComponent>();
             while (query.MoveNext(out var uid, out var comp, out var batt))
             {
-                if (!comp.AutoRecharge) continue;
+                if (!comp.AutoRecharge || IsFull(uid, batt))
+                    continue;
 
-                if (comp.AutoRechargeRate > 0)
+                if (comp.AutoRechargePause)
                 {
-                    if (IsFull(uid, batt)) continue;
-                    SetCharge(uid, batt.CurrentCharge + comp.AutoRechargeRate * frameTime, batt);
+                    if (comp.NextAutoRecharge > _timing.CurTime)
+                        continue;
                 }
-                if (comp.AutoRechargeRate < 0) //self discharging
-                {
-                    if (batt.CurrentCharge == 0) continue;
-                    UseCharge(uid, -comp.AutoRechargeRate * frameTime, batt);
-                }
+
+                TrySetCharge(uid, batt.CurrentCharge + comp.AutoRechargeRate * frameTime, batt); // Frontier: Upstream - #28984
             }
         }
 
