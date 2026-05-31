@@ -315,3 +315,27 @@
   parent: BaseMarbleTileRecipe
   id: FloorTileItemDarkMarble
   result: FloorTileItemDarkMarble
+
+# Horizon start
+
+- type: latheRecipe
+  abstract: true
+  parent: BaseTileRecipe
+  id: BaseShipTileRecipe
+  categories:
+  - Steel
+  materials:
+    Steel: 25
+    Titan: 50
+
+- type: latheRecipe
+  parent: BaseShipTileRecipe
+  id: FloorTileItemSteelDarkGray
+  result: FloorTileItemSteelDarkGray
+
+- type: latheRecipe
+  parent: BaseShipTileRecipe
+  id: FloorTileItemSteelPlateDarkGray
+  result: FloorTileItemSteelPlateDarkGray
+
+# Horizon end

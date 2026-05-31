@@ -51,3 +51,9 @@
   - FloorTileItemOldConcreteSmooth
   - FloorTileItemWhiteMarble
   - FloorTileItemDarkMarble
+  # Horizon start
+
+  - FloorTileItemSteelDarkGray
+  - FloorTileItemSteelPlateDarkGray
+
+  # Horizon end

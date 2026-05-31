@@ -84,13 +84,10 @@
   - type: StorageFill
     contents:
     - id: ClothingEyesGlassesAnCo
-    - id: ClothingHeadsetAnCo
     - id: AnCoVests
     - id: SuitProtectiveAnCo
     - id: AnCoBoots
     - id: AnCosatchelOfficer
-    - id: PDAOfficerAnCo
-    - id: WeaponStunprodAnCo
     - id: AnCoGloves
 
 - type: entity
@@ -102,12 +99,10 @@
   - type: StorageFill
     contents:
     - id: ClothingEyesGlassesAnCo
-    - id: ClothingHeadsetAnCo
     - id: ClothingOuterHardsuitSpider
     - id: SuitProtectiveAnCo
     - id: AnCoClothingShoesBootsMag
     - id: AnCosatchelSpider
-    - id: PDASpiderAnCo
     - id: AnCoGlovesIsolate
 
 - type: entity
@@ -119,10 +114,8 @@
   - type: StorageFill
     contents:
     - id: ClothingEyesGlassesAnCo
-    - id: ClothingHeadsetAnCo
     - id: ClothingOuterHardsuitKnight
     - id: SuitProtectiveAnCo
     - id: AnCoBoots
     - id: AnCosatchelKnight
-    - id: PDAKnightAnCo
     - id: AnCoGlovesIsolate

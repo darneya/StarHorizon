@@ -34,3 +34,5 @@
           mapNameTemplate: "Точка Продажи Синдиката"
         - type: BindToStationVariationPassExemption
         - type: NoMailStation # Horizon: Disable mail for Syndicate
+        - type: HorizonStationFaction
+          faction: Syndicate
