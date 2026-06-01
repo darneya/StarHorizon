@@ -60,3 +60,13 @@
   - type: TriggerImplantAction
   - type: SpawnOnTrigger
     proto: AnCoDroneOff
+
+- type: entity
+  parent: BaseTranslatorImplant
+  id: AnCoImplantCorpLang
+  name: нейро-имплант
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    languages:
+      AnCoCorp: Speak

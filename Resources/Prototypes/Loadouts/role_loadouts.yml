@@ -597,6 +597,11 @@
   - Trinkets
   - GroupSpeciesBreathToolMedical
   # Horizon end
+  - ContractorCartridge
+  - ContractorWallet
+  - ContractorEncryptionKey
+  - ContractorImplanter
+  - ContractorBackpackItems
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -634,6 +639,11 @@
   - Trinkets
   - GroupSpeciesBreathToolMedical
   # Horizon end
+  - ContractorCartridge
+  - ContractorWallet
+  - ContractorEncryptionKey
+  - ContractorImplanter
+  - ContractorBackpackItems
 
 - type: roleLoadout
   id: JobParamedic
@@ -656,6 +666,11 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - ContractorCartridge
+  - ContractorWallet
+  - ContractorEncryptionKey
+  - ContractorImplanter
+  - ContractorBackpackItems
   # Horizon end
 
 # Wildcards

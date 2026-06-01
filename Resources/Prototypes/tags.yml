@@ -1556,3 +1556,6 @@
 
 - type: Tag
   id: Socks
+
+- type: Tag
+  id: FireThrowerBall
