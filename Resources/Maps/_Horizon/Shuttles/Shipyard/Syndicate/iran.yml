@@ -38,7 +38,7 @@ entities:
     - type: BecomesStation
       id: Camper
     - type: IFF
-      color: "#800000"
+      color: "#800000FF"
     - type: MapGrid
       chunks:
         0,0:

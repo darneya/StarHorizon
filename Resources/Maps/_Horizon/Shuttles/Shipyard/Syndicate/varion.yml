@@ -29,7 +29,7 @@ entities:
       desc: Varion
       name: Varion
     - type: IFF
-      color: "#800000"
+      color: "#800000FF"
     - type: Transform
       parent: invalid
     - type: MapGrid

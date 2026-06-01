@@ -32,7 +32,7 @@ entities:
     - type: MetaData
       name: GX-Instigator
     - type: IFF
-      color: "#800000"
+      color: "#800000FF"
     - type: Transform
       pos: -0.5,-0.45833334
       parent: invalid

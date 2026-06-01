@@ -52,7 +52,7 @@ entities:
           version: 7
     - type: Broadphase
     - type: IFF
-      color: "#800000"
+      color: "#800000FF"
     - type: Physics
       bodyStatus: InAir
       angularDamping: 0.05

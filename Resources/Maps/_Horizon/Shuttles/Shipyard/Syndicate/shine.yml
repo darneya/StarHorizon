@@ -32,7 +32,7 @@ entities:
     - type: MetaData
       name: Shine
     - type: IFF
-      color: "#800000"
+      color: "#800000FF"
     - type: Transform
       pos: -1.5215139,-2.9586544
       parent: invalid
