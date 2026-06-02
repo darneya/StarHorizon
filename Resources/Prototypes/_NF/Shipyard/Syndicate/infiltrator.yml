@@ -1,12 +1,12 @@
 - type: vessel
-  id: Investigator
+  id: Investegator
   parent: BaseVesselAntag
-  name: Investigator
+  name: Investegator
   description: A Syndicate nuclear operative infiltration ship.
   price: 85000
   category: Medium
   group: Syndicate
-  shuttlePath: /Maps/_NF/Shuttles/Syndicate/investigator.yml
+  shuttlePath: /Maps/_Horizon/Shuttles/Syndicate/investigator.yml
   guidebookPage: Null
   class:
   - Syndicate
@@ -14,16 +14,16 @@
   - AME
 
 - type: gameMap
-  id: Investigator
-  mapName: 'Investigator'
+  id: Investegator
+  mapName: 'Investegator'
   mapPath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/investigator.yml
   minPlayers: 0
   stations:
-    Investigator:
+    Investegator:
       stationProto: StandardFrontierAntagVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Investigator {1}'
+          mapNameTemplate: 'Investegator {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'

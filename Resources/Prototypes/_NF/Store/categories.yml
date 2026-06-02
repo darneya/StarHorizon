@@ -11,11 +11,6 @@
   priority: 1
 
 - type: storeCategory
-  id: UplinkSecurityBundles
-  name: Наборы
-  priority: 2
-
-- type: storeCategory
   id: UplinkSecurityExplosives
   name: store-category-secexplosives
   priority: 3

@@ -4,11 +4,6 @@
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
-  - type: Sprite
-    sprite: Backmen/Effects/muzzle/divet.rsi
-    layers:
-    - state: projectiles_divet
-      shader: unshaded
   - type: Ammo
   - type: Projectile
     damage:

@@ -44,38 +44,6 @@
   - type: Appearance
 
 - type: entity
-  id: MagazinePistol345
-  name: pistol magazine (.345 magnum)
-  parent: MagazinePistol
-  components:
-  - type: Tag
-    tags:
-      - MagazinePistolEGov
-      - MagazinePistol
-  - type: BallisticAmmoProvider
-    proto: CartridgeMagnum345
-    mayTransfer: true
-    whitelist:
-      tags:
-        - CartridgeMagnum345
-    capacity: 9
-  - type: Item
-    size: Small
-  - type: Sprite
-    netsync: false
-    sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Pistol/divet.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 3
-    zeroVisible: false
-  - type: Appearance
-
-- type: entity
   id: MagazinePistol45ACP
   name: pistol magazine (.45 Auto)
   parent: BaseMagazinePistol

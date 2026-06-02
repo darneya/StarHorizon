@@ -40,7 +40,7 @@ entities:
     - type: MetaData
       name: Investigator
     - type: IFF
-      color: "#800000FF"
+      color: "#FF0000FF"
     - type: Transform
       pos: 0.64252126,4.1776605
       parent: invalid
