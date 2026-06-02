@@ -1669,3 +1669,19 @@
         amount: 1
       - id: MagazineShotgun # For Zauer and SPAS12
         amount: 3
+
+- type: listing
+  id: UplinkSecurityEnergyDomeDirectionalTurtle
+  name: Энергетический барьер
+  description: Барьер для защиты
+  productEntity: EnergyDomeDirectionalTurtle
+  icon: { sprite: Backmen/Objects/Tools/EnergyDome/reinhardt.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 6
+  categories:
+    - UplinkSecurityHardsuits
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
