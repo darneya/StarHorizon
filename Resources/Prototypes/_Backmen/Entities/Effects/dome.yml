@@ -232,3 +232,24 @@
     radius: 5
     power: 10
     color: "#6B8E23"
+
+- type: entity
+  id: EnergyDomeSmallPurple
+  categories: [ HideSpawnMenu ]
+  parent: EnergyDomeBase
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    noRot: true
+    sprite: Backmen/Effects/EnergyDome/energydome_small.rsi
+    layers:
+    - state: small
+      color: "#9370DB"
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: IHPHardLightBarrier
+  - type: PointLight
+    enabled: true
+    radius: 5
+    power: 2
+    color: "#9370DB"
