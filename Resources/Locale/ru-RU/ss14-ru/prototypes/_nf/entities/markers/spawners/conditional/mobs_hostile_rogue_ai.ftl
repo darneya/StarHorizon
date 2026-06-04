@@ -1,9 +1,0 @@
-ent-SpawnMobViscerator = спавнер неисправного ИИ
-    .suffix = ИИ, Вражеский
-    .desc = { ent-MarkerBase.desc }
-ent-SpawnMobRogueSiliconBoss = спавнер one star
-    .suffix = ИИ, Вражеский
-    .desc = { ent-MarkerBase.desc }
-ent-SpawnMobRogueSiliconGuardian = спавнер guardian
-    .suffix = ИИ, Вражеский
-    .desc = { ent-MarkerBase.desc }

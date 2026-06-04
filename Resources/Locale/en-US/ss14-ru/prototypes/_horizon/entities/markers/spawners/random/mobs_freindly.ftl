@@ -1,9 +1,0 @@
-ent-SpawnMobCrawford = спавнер Дипломата НТ (Кроуфорд)
-    .suffix = AI, Hostile
-    .desc = { ent-MarkerBase.desc }
-ent-SpawnMobLemird = спавнер Лемирды
-    .suffix = AI, Friendly
-    .desc = { ent-MarkerBase.desc }
-ent-SpawnMobMiifri = спавнер Мифри
-    .suffix = AI, Friendly
-    .desc = { ent-MarkerBase.desc }

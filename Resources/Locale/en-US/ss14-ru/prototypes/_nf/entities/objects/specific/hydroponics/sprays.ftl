@@ -1,9 +1,0 @@
-ent-PlantBGoneSprayEmpty = Plant-B-Gone
-    .suffix = Empty
-    .desc = { ent-PlantBGoneSpray.desc }
-ent-WeedSprayEmpty = { ent-WeedSpray }
-    .suffix = Empty
-    .desc = { ent-WeedSpray.desc }
-ent-PestSprayEmpty = { ent-PestSpray }
-    .suffix = Empty
-    .desc = { ent-PestSpray.desc }

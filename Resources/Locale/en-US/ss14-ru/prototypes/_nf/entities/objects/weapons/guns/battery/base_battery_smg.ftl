@@ -1,9 +1,0 @@
-ent-NFBaseWeaponFrameEnergySubMachineGun = { ent-NFBaseWeaponEncumbranceSubMachineGun }
-    .suffix = Frontier
-    .desc = { ent-NFBaseWeaponEncumbranceSubMachineGun.desc }
-ent-NFBaseWeaponFrameEnergySubMachineGunNanotrasen = { ent-NFBaseWeaponFrameEnergySubMachineGun }
-    .desc = { ent-NFBaseWeaponFrameEnergySubMachineGun.desc }
-ent-NFBaseWeaponEnergySubMachineGunFireModes = { "" }
-    .desc = { "" }
-ent-NFBaseWeaponEnergySubMachineGunDisabler = { "" }
-    .desc = { "" }

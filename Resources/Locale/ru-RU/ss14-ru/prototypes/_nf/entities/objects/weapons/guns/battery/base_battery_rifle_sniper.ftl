@@ -1,9 +1,0 @@
-ent-NFBaseWeaponFrameEnergyRifleSniper = { ent-NFBaseWeaponEncumbranceLauncher }
-    .suffix = Фронтир
-    .desc = { ent-NFBaseWeaponEncumbranceLauncher.desc }
-ent-NFBaseWeaponFrameEnergyRifleSniperNanotrasen = { ent-NFBaseWeaponFrameEnergyRifleSniper }
-    .desc = { ent-NFBaseWeaponFrameEnergyRifleSniper.desc }
-ent-NFBaseWeaponEnergyRifleSniperHitScan = { "" }
-    .desc = { "" }
-ent-NFBaseWeaponEnergyRifleSniperHitScanXray = { "" }
-    .desc = { "" }
