@@ -56,3 +56,5 @@
         - type: StationDeadDropHintExempt
         - type: TradeCrateWildcardDestination
         - type: BindToStationVariationPassExemption
+        - type: HorizonStationFaction
+          faction: Pirate

@@ -12,5 +12,6 @@
   contrabandInventory:
 #    FoodBurgerCarp: 2 # Frontier
     DrinkChangelingStingCan: 2
+    DrinkAzJuice: 2
   emaggedInventory:
     DrinkNukieCan: 2

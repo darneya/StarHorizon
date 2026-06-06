@@ -114,6 +114,41 @@ public abstract partial class SharedShuttleSystem : EntitySystem
     }
 
     /// <summary>
+    /// If the console has a coordinate disk with <see cref="ShuttleDestinationCoordinatesComponent.Destination"/> set,
+    /// returns the map that destination entity is on. Used to limit hyperspace map list to that destination (plus current map).
+    /// </summary>
+    public bool TryGetInsertedCoordinateDiskMap(EntityUid consoleUid, out MapId destinationMap)
+    {
+        destinationMap = default;
+
+        if (!TryComp<ItemSlotsComponent>(consoleUid, out var slotComp))
+            return false;
+
+        if (!_itemSlots.TryGetSlot(consoleUid,
+                SharedShuttleConsoleComponent.DiskSlotName,
+                out var itemSlot,
+                component: slotComp) || !itemSlot.HasItem)
+        {
+            return false;
+        }
+
+        if (itemSlot.Item is not { Valid: true } disk)
+            return false;
+
+        if (!TryComp<ShuttleDestinationCoordinatesComponent>(disk, out var diskCoords) ||
+            diskCoords.Destination is not { } destEnt)
+        {
+            return false;
+        }
+
+        if (!_xformQuery.TryGetComponent(destEnt, out var destXform))
+            return false;
+
+        destinationMap = destXform.MapID;
+        return true;
+    }
+
+    /// <summary>
     /// Gets the list of map objects relevant for the specified map.
     /// </summary>
     public IEnumerable<(ShuttleExclusionObject Exclusion, MapCoordinates Coordinates)> GetExclusions(MapId mapId,

@@ -171,9 +171,16 @@
     sprite: Objects/Fun/Foam/foam_grenade.rsi
     layers:
     - state: icon
-      map: ["Base"]
-    - state: primed
       map: ["enum.TriggerVisualLayers.Base"]
+  - type: Appearance
+  - type: AnimationPlayer
+  - type: TimerTriggerVisuals
+  - type: GenericVisualizer
+    visuals:
+      enum.Trigger.TriggerVisuals.VisualState:
+        enum.ConstructionVisuals.Layer:
+          Primed: { state: primed }
+          Unprimed: { state: icon }
   - type: ScatteringGrenade
     fillPrototype: NFBulletFoam # Frontier: use NF variant
     capacity: 30

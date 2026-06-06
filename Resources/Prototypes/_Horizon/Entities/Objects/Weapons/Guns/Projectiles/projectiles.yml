@@ -160,6 +160,8 @@
       shader: unshaded
   - type: GatheringProjectile
     amount: 30
+  - type: MiningGatheringSoft
+  - type: MiningGatheringHard
   - type: Projectile
     deleteOnCollide: false
     damage:
@@ -167,7 +169,7 @@
         Heat: 20
         Structural: 20
   - type: TimedDespawn
-    lifetime: 0.1
+    lifetime: 0.75
 
 - type: entity
   id: BulletKineticRailgun
