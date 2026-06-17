@@ -17,7 +17,7 @@
     requiredLegs: 2
   - type: NpcFactionMember
     factions:
-    - NFSyndicate
+    - Syndicate
   - type: RandomHumanoidAppearance
     randomizeName: false
   - type: RandomMetadata

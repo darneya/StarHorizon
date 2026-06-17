@@ -53,12 +53,10 @@
 
 - type: npcFaction
   id: NFSyndicate
-  friendly:
-  - Syndicate
   hostile:
   ## SS14 factions
   - NanoTrasen
-  #- Syndicate
+  - Syndicate
   - SimpleHostile
   - SimpleNeutral
   - Passive

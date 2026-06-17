@@ -35,7 +35,6 @@
     - type: NukeOperative
     - type: NpcFactionMember
       factions:
-      - Syndicate
       - NFSyndicate
     - type: SpecialSectorStationRecord # must be given on spawn
       recordGeneration: FalseRecord
@@ -83,7 +82,6 @@
     - type: NukeOperative
     - type: NpcFactionMember
       factions:
-      - Syndicate
       - NFSyndicate
     - type: SpecialSectorStationRecord # must be given on spawn
       recordGeneration: FalseRecord
@@ -131,7 +129,6 @@
     - type: NukeOperative
     - type: NpcFactionMember
       factions:
-      - Syndicate
       - NFSyndicate
     - type: SpecialSectorStationRecord # must be given on spawn
       recordGeneration: FalseRecord
@@ -179,7 +176,6 @@
     - type: NukeOperative
     - type: NpcFactionMember
       factions:
-      - Syndicate
       - NFSyndicate
     - type: SpecialSectorStationRecord # must be given on spawn
       recordGeneration: FalseRecord
@@ -194,7 +190,7 @@
 - type: startingGear
   id: BaseSyndicateOperativeGear
   equipment:
-    pocket2: BaseUplinkRadio40TC
+    pocket2: BaseUplinkRadio20TC
     eyes: ClothingEyesHudSyndicate
 
 - type: startingGear
@@ -216,6 +212,6 @@
   id: BaseSyndicateMedicGear
   equipment:
     pocket1: SyndiHypo
-    pocket2: BaseUplinkRadio40TC
+    pocket2: BaseUplinkRadio20TC
     eyes: ClothingEyesHudSyndicateAgent
     outerClothing: ClothingOuterHardsuitSyndieMedic
