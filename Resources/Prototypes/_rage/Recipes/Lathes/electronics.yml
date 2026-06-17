@@ -1,0 +1,11 @@
+- type: latheRecipe
+  parent: [ BaseGoldCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
+  id: RemoteControllerCircuitboard
+  result: RemoteControllerCircuitboard
+  completetime: 2
+
+- type: latheRecipe
+  parent: [ BaseGoldCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
+  id: RemoteControlDevice
+  result: RemoteControlDevice
+  completetime: 2
