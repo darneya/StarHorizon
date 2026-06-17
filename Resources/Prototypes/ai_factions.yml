@@ -110,8 +110,8 @@
   id: Syndicate
   friendly: # Frontier
   - Crawford # Horizon
-  - NFSyndicate # Frontier
   hostile:
+  - NFSyndicate # Horizon
   - NanoTrasen
   - SimpleHostile
   - Xeno

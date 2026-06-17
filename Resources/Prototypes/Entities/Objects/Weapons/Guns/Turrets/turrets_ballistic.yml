@@ -6,6 +6,7 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+    - NFSyndicate
 
 - type: entity
   parent: BaseWeaponBallisticTurret
@@ -16,6 +17,7 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+    - NFSyndicate
   - type: Destructible
     thresholds:
     - trigger:
