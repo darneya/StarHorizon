@@ -14,6 +14,8 @@
       default: ClothingUnderwearBottomBoxersWhite
     - type: UserInterface
       interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
         enum.ChameleonUiKey.Key:
           type: ChameleonBoundUserInterface
 
@@ -33,6 +35,8 @@
       default: ClothingUnderwearTopBraWhite
     - type: UserInterface
       interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
         enum.ChameleonUiKey.Key:
           type: ChameleonBoundUserInterface
 

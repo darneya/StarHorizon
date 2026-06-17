@@ -372,6 +372,13 @@
       Unsexed: UnisexSiliconSyndicate
   - type: PointLight
     color: "#dd200b"
+# rage-start
+  - type: LanguageSpeaker
+    languages:
+      GalacticCommon: Speak
+      Binary: Speak
+      CodeSpeak: Speak
+# rage-end
 
 - type: entity
   id: BaseBorgChassisDerelict

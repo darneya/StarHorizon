@@ -99,6 +99,24 @@
   - type: Tag
     tags:
     - SiliconEmotes
+# rage-start
+  - type: LanguageSpeaker
+    languages:
+      GalacticCommon: Speak
+      Arachnid: Understand
+      Nekomimetic: Understand
+      Draconic: Understand
+      Canilunzt: Understand
+      SikTaj: Understand
+      Nian: Understand
+      SolCommon: Understand
+      Dwarf: Understand
+      CintaTaj: Understand
+      Gutter: Understand
+      NeoRusskiya: Understand
+      Clownish: Understand
+# rage-end
+
 
 - type: entity
   parent: [ PersonalAI, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband<BaseC3SyndicateContraband
@@ -138,6 +156,13 @@
   - type: Vocal
     sounds:
       Unsexed: UnisexSiliconSyndicate
+  - type: UniversalLanguageSpeaker
+# rage-start
+  - type: LanguageSpeaker
+    languages:
+      GalacticCommon: Speak
+      CodeSpeak: Speak
+# rage-end
 
 - type: entity
   parent: PersonalAI
