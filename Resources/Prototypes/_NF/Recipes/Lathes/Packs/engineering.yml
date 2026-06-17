@@ -9,6 +9,7 @@
   - ClothingOuterEVASuitEngineer
   - ClothingOuterEVASuitAtmosTech
   - NFFlash
+  - RemoteControlDevice # rage-edit
 
 - type: latheRecipePack
   id: NFEngineeringStructureBoardsStatic

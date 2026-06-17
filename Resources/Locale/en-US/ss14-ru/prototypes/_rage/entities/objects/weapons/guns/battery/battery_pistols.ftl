@@ -1,0 +1,2 @@
+ent-NFWeaponEnergyPistolLaserX01MultiphaseSheriff = X-01 multiphase energy gun Sheriff
+    .desc = This is an expensive, modern recreation of an antique laser gun. This gun has several unique firemodes. On the handle is a label that says 'for authorized use only.' Unlike regular versions, it has a unique firing mode.

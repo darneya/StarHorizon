@@ -1386,3 +1386,24 @@
     - !type:BuyerJobCondition
       whitelist:
         - Sheriff
+
+# rage-start
+- type: listing
+  id: UplinkSecurityEliteHardsuit
+  name:  Элитный скафандр ДШНФ
+  description: Самая мобильная версия из всех возможных.
+  productEntity: ClothingOuterHardsuitNfsdElite
+  cost:
+    FrontierUplinkCoin: 18
+  categories:
+    - UplinkSecurityHardsuits
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - Sheriff
+# rage-end
