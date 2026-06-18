@@ -23,11 +23,10 @@
   - UplinkWeaponry
 
 - type: listing
-  id: UplinkNFRevolverRS9
-  name: РШ-9
-  description: Боевой револьвер созданный для сотрудников секретных служб. Очень дорогой,но до безумия эффективный
-  icon: { sprite: _NF/Objects/Weapons/Guns/Pistols/rsh9.rsi, state: base }
-  productEntity: NFWeaponRevolverRS9
+  id: UplinkNFRevolverZrk72
+  name: ЗРК-72
+  description: Массивный револьвер,получивший популярность у элитных подразделений наемников Синдиката.
+  productEntity: NFWeaponRevolverZrk72
   discountCategory: rareDiscounts
   cost:
     Telecrystal: 5

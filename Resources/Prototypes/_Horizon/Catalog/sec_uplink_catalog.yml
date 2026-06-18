@@ -1,4 +1,20 @@
 # region Energy Weapons
+
+#rage-start
+- type: listing
+  id: UplinkConvertFrontierUplinkCoin
+  name: Таможенные кредиты
+  description: Излишки прошлой смены предложены к выкупу.
+  productEntity: FrontierUplinkCoin1
+  cost:
+    Speso: 30000
+  categories:
+  - SecurityUplinkConverter
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 30
+#rage-end
+
 # Легкие энергетические орудия (доступны всем сотрудникам безопасности)
 - type: listing
   id: SecWeaponTurretM25

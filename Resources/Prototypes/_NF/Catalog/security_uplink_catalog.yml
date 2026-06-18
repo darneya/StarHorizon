@@ -509,7 +509,7 @@
   name: Импульсный пистолет ДСФБ
   description: Компактный импульсный пистолет, поставляемый в сектор для нужд ДСФБ. На рукоятке выгравирована эмблема безопасности.
   productEntity: NFWeaponEnergyPistolPulse
-  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi, state: icon }
+#  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi, state: icon }
   cost:
     FrontierUplinkCoin: 20
   categories:
@@ -530,7 +530,7 @@
   name: Импульсная винтовка ДСФБ
   description: Стандартная импульсная винтовка, адаптированная для подразделений ДСФБ. Надёжное и мощное энергетическое оружие для полевых операций.
   productEntity: NFWeaponEnergyRiflePulse
-  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_rifle.rsi, state: icon }
+#  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_rifle.rsi, state: icon }
   cost:
     FrontierUplinkCoin: 25
   categories:
@@ -551,7 +551,7 @@
   name: Импульсный карабин ДСФБ
   description: Высокотехнологичный импульсный карабин, разработанный специально для штурмовых операций ДСФБ. Сочетает компактность с высокой огневой мощью.
   productEntity: NFWeaponEnergyRifleAssaultPulseCarbine
-  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi, state: icon }
+#  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi, state: icon }
   cost:
     FrontierUplinkCoin: 35
   categories:
