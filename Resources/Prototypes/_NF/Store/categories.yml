@@ -1,5 +1,12 @@
 # region Security
 
+#rage-start
+- type: storeCategory
+  id: SecurityUplinkConverter
+  name: store-category-converter
+  priority: -1
+#rage-end
+
 - type: storeCategory
   id: UplinkSecurityWeapons
   name: store-category-secweapons
@@ -9,11 +16,6 @@
   id: UplinkSecurityAmmo
   name: store-category-secammo
   priority: 1
-
-- type: storeCategory
-  id: UplinkSecurityBundles
-  name: Наборы
-  priority: 2
 
 - type: storeCategory
   id: UplinkSecurityExplosives

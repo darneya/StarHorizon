@@ -87,6 +87,14 @@
   priority: 9
 
 # Horizon start
+
+#rage-start
+- type: storeCategory
+  id: UplinkConverter
+  name: store-category-converter
+  priority: -1
+#rage-end
+
 - type: storeCategory
   id: UplinkSyndicateBorgs
   name: store-category-syndicateborgs

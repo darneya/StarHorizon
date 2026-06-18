@@ -41,8 +41,10 @@
     - UplinkSecurityGunneryConsoles
     - UplinkSecurityMechas
     - UplinkSecurityBorges
+    - SecurityUplinkConverter # rage-edit
     currencyWhitelist:
     - FrontierUplinkCoin
+    - Speso # rage`s edit
     balance:
       FrontierUplinkCoin: 0
 
