@@ -176,22 +176,6 @@
   - type: Sprite
     color: "#77e7d1"
 
-- type: entity
-  id: OreDepositLemi
-  parent: BaseOreDeposit
-  name: жила с лемирдиумом
-  suffix: Абуз
-  description: "Легендарная жила! Будьте аккуратны! Она вас зажмет своими ляжк... ААААААА!"
-  components:
-  - type: OreDeposit
-    oreCounts:
-      PlushieLemird: 5
-      PlushieLemirdSchoolGirl: 5
-      PlushieLemird3: 5
-    hardness: 5
-  - type: Sprite
-    color: "#db07a6"
-
 # Scanner
 
 - type: entity
