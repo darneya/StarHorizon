@@ -322,24 +322,6 @@
     - UplinkDisruption
 
 - type: listing
-  id: UplinkGrenadePenguin
-  name: uplink-penguin-grenade-name
-  description: uplink-penguin-grenade-desc
-  productEntity: MobGrenadePenguin
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 10
-  cost:
-    Telecrystal: 15
-  categories:
-    - UplinkExplosives
-  conditions:
-  - !type:BuyerWhitelistCondition
-    blacklist:
-      components:
-      - SurplusBundle
-
-- type: listing
   id: UplinkC4
   name: uplink-c4-name
   description: uplink-c4-desc
@@ -862,16 +844,6 @@
   productEntity: CyberPen
   cost:
     Telecrystal: 8 # Frontier: 1<8 - same price as an emag, should be more useful here
-  categories:
-  - UplinkDeception
-
-- type: listing
-  id: UplinkDecoyDisk
-  name: uplink-decoy-disk-name
-  description: uplink-decoy-disk-desc
-  productEntity: NukeDiskFake
-  cost:
-    Telecrystal: 1
   categories:
   - UplinkDeception
 
@@ -1749,6 +1721,7 @@
     Telecrystal: 4
   categories:
   - UplinkWearables
+
 - type: listing
   id: UplinkHardsuitSyndie
   name: uplink-hardsuit-syndie-name
@@ -1757,9 +1730,9 @@
   productEntity: ClothingBackpackDuffelSyndicateHardsuitBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 8 # rage-edit
   cost:
-    Telecrystal: 8
+    Telecrystal: 6 # rage-edit
   categories:
   - UplinkWearables
 
@@ -1786,7 +1759,7 @@
   icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndieelite.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateEliteHardsuitBundle
   cost:
-    Telecrystal: 12
+    Telecrystal: 30 # rage-edit
   categories:
   - UplinkWearables
   conditions:
@@ -1802,7 +1775,7 @@
   icon: { sprite: /Textures/Structures/Storage/Crates/syndicate.rsi, state: icon }
   productEntity: CrateCybersunJuggernautBundle
   cost:
-    Telecrystal: 12
+    Telecrystal: 35 # rage-edit
   categories:
   - UplinkWearables
   conditions:
@@ -1810,23 +1783,7 @@
     whitelist:
       tags:
       - NukeOpsUplink
-# Horizon start
-- type: listing
-  id: UplinkHardsuitCBURNInterdyne
-  name: Экзоскафандр CBURN Inderdyne
-  description: Скрещенная версия элитного скафандра Cybersun и технологий био-защиты Interdyne
-  icon: { sprite: /Textures/_Horizon/Clothing/OuterClothing/Hardsuits/InterdyneCBURN.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelInterdyneCBURNHardsuitBundle
-  cost:
-    Telecrystal: 20
-  categories:
-  - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
-# Horizon end
+
 - type: listing
   id: UplinkClothingEyesHudSyndicate
   name: uplink-clothing-eyes-hud-syndicate-name
@@ -2369,3 +2326,35 @@
   # - !type:BuyerJobCondition # Frontier
   #   whitelist: # Frontier
   #   - MedicalDoctor # Frontier
+
+# rage-start
+- type: listing
+  id: UplinkgClothingEyesHudSyndicateAgent
+  name: Визор агента Синдиката
+  description: Профессиональный проекционный дисплей агента Синдиката, предназначенный для быстрой диагностики состояния его команды.
+  productEntity: ClothingEyesHudSyndicateAgent
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkWearables
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+
+- type: listing
+  id: UplinkgClothingThievingGloves
+  name: uplink-clothing-thieving-gloves-name
+  description: uplink-clothing-thieving-gloves-desc
+  productEntity: ThievingGloves
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkWearables
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+# rage-end

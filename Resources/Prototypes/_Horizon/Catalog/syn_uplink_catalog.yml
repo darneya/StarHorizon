@@ -1,5 +1,20 @@
 # region Legacy
 
+#rage-start
+- type: listing
+  id: UplinkConvertTelecrystal
+  name: Телекристаллы
+  description: Обменяйте свои кредиты на более полезные вещи.
+  productEntity: Telecrystal1
+  cost:
+    Speso: 30000
+  categories:
+  - UplinkConverter
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 30
+#rage-end
+
 - type: listing
   id: UplinkNightVision
   name: Прибор ночного видения синдиката
@@ -58,7 +73,7 @@
   id: UplinkMagazineSniperBarrettM82AR
   name: uplink-magazine-sniper-barrett-m82-ar-name
   description: uplink-magazine-sniper-barrett-m82-ar-desc
-  icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: sred }
+#  icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: sred }
   productEntity: MagazineSniperBarrettM82AR
   cost:
     Telecrystal: 3
@@ -91,7 +106,7 @@
   id: UplinkWeaponMakarov
   name: uplink-weapon-makarov-name
   description: uplink-weapon-makarov-desc
-  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: icon }
+#  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: red }
   productEntity: BaseWeaponMakarov
   cost:
     Telecrystal: 5
@@ -102,7 +117,7 @@
   id: UplinkMagazinePistols9x18
   name: uplink-magazine-pistols-9x18-name
   description: uplink-magazine-pistols-9x18-desc
-  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: slug }
+#  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: slug }
   productEntity: MagazinePistols9x18
   cost:
     Telecrystal: 3
@@ -114,12 +129,12 @@
   name: uplink-hardsuit-experimental-syndy-ramzi-name
   description: uplink-hardsuit-experimental-syndy-ramzi-desc
   icon: { sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/syndicateramzi.rsi, state: icon }
-  productEntity: ClothingOuterExperimentalSyndy
+  productEntity: ClothingBackpackDuffelExperimentalHardsuitSyndy
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 20 # rage-edit
   cost:
-    Telecrystal: 6
+    Telecrystal: 26 # rage-edit
   categories:
   - UplinkWearables
 
@@ -128,12 +143,12 @@
   name: uplink-hardsuit-cybersun-research-name
   description: uplink-hardsuit-cybersun-research-desc
   icon: { sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/syndicatecybersun.rsi, state: icon }
-  productEntity: ClothingOuterCybersunResearch
+  productEntity: ClothingBackpackDuffelCybersunHardsuitResearch
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 22 # rage-edit
   cost:
-    Telecrystal: 8
+    Telecrystal: 28 # rage-edit
   categories:
   - UplinkWearables
 
@@ -233,7 +248,7 @@
   description: uplink-syndicate-borg-assault-desc
   productEntity: BorgChassisSyndicateAssault
   cost:
-    Telecrystal: 60
+    Telecrystal: 30
   categories:
     - UplinkSyndicateBorgs
 
@@ -243,7 +258,7 @@
   description: uplink-syndicate-borg-medical-desc
   productEntity: BorgChassisSyndicateMedical
   cost:
-    Telecrystal: 45
+    Telecrystal: 15
   categories:
     - UplinkSyndicateBorgs
 
@@ -253,7 +268,7 @@
   description: uplink-syndicate-borg-saboteur-desc
   productEntity: BorgChassisSyndicateSaboteur
   cost:
-    Telecrystal: 50
+    Telecrystal: 20
   categories:
     - UplinkSyndicateBorgs
 
@@ -351,68 +366,6 @@
   categories:
     - UplinkSyndieMechas
 
-# region Mech Weapons
-
-- type: listing
-  id: UplinkSyndicateMechGunScattershot
-  name: uplink-syndicate-mech-gun-scattershot-name
-  description: uplink-syndicate-mech-gun-scattershot-desc
-  productEntity: MechGunScattershot
-  cost:
-    Telecrystal: 25
-  categories:
-    - UplinkSyndieMechas
-
-- type: listing
-  id: UplinkSyndicateMechGunAutocannonUAC2
-  name: uplink-syndicate-mech-gun-uac2-name
-  description: uplink-syndicate-mech-gun-uac2-desc
-  productEntity: MechGunAutocannonUAC2
-  cost:
-    Telecrystal: 25
-  categories:
-    - UplinkSyndieMechas
-
-- type: listing
-  id: UplinkSyndicateMechGunCarbineHades
-  name: uplink-syndicate-mech-gun-hades-name
-  description: uplink-syndicate-mech-gun-hades-desc
-  productEntity: MechGunCarbineHades
-  cost:
-    Telecrystal: 25
-  categories:
-    - UplinkSyndieMechas
-
-- type: listing
-  id: UplinkSyndicateMechGunLaser
-  name: uplink-syndicate-mech-gun-laser-name
-  description: uplink-syndicate-mech-gun-laser-desc
-  productEntity: MechGunLaser
-  cost:
-    Telecrystal: 20
-  categories:
-    - UplinkSyndieMechas
-
-- type: listing
-  id: UplinkSyndicateMechGunDisabler
-  name: uplink-syndicate-mech-gun-disabler-name
-  description: uplink-syndicate-mech-gun-disabler-desc
-  productEntity: MechGunDisabler
-  cost:
-    Telecrystal: 20
-  categories:
-    - UplinkSyndieMechas
-
-- type: listing
-  id: UplinkSyndicateMechGunMissileLRM6
-  name: uplink-syndicate-mech-gun-lrm6-name
-  description: uplink-syndicate-mech-gun-lrm6-desc
-  productEntity: MechGunMissileLRM6
-  cost:
-    Telecrystal: 35
-  categories:
-    - UplinkSyndieMechas
-
 # region Mech Ammunition
 
 - type: listing
@@ -455,7 +408,7 @@
   categories:
     - UplinkSyndieMechas
 
-# region Energy Weapons
+##UplinkSyndicateGunneryKinetic > UplinkSyndicateGunneryEnergy
 
 - type: listing
   id: UplinkSyndicateWeaponTurretM25
@@ -497,8 +450,6 @@
   categories:
   - UplinkSyndicateGunneryEnergy
 
-# region Kinetic Weapons
-
 - type: listing
   id: UplinkSyndicateWeaponTurretL85Autocannon
   name: uplink-syndicate-weapon-turret-l85-name
@@ -507,7 +458,7 @@
   cost:
     Telecrystal: 45
   categories:
-  - UplinkSyndicateGunneryKinetic
+  - UplinkSyndicateGunneryEnergy
 
 - type: listing
   id: UplinkSyndicateWeaponTurretDravon
@@ -517,7 +468,7 @@
   cost:
     Telecrystal: 105
   categories:
-  - UplinkSyndicateGunneryKinetic
+  - UplinkSyndicateGunneryEnergy
 
 - type: listing
   id: UplinkSyndicateWeaponTurretAK570
@@ -527,7 +478,7 @@
   cost:
     Telecrystal: 105
   categories:
-  - UplinkSyndicateGunneryKinetic
+  - UplinkSyndicateGunneryEnergy
 
 - type: listing
   id: UplinkSyndicateWeaponTurretCharonette
@@ -537,9 +488,9 @@
   cost:
     Telecrystal: 105
   categories:
-  - UplinkSyndicateGunneryKinetic
+  - UplinkSyndicateGunneryEnergy
 
-# region Missile Weapons
+##UplinkSyndicateGunneryMissile > UplinkSyndicateGunneryAmmo
 
 - type: listing
   id: UplinkSyndicateWeaponTurretLightMunitionsBay
@@ -591,8 +542,6 @@
   categories:
   - UplinkSyndicateGunneryMissile
 
-# region Kinetic Ammunition
-
 - type: listing
   id: UplinkSyndicateAmmoTarnyxAP
   name: uplink-syndicate-ammo-tarnyx-ap-name
@@ -601,7 +550,7 @@
   cost:
     Telecrystal: 9
   categories:
-  - UplinkSyndicateGunneryAmmo
+  - UplinkSyndicateGunneryMissile
 
 - type: listing
   id: UplinkSyndicateAmmoASM220HE
@@ -611,7 +560,7 @@
   cost:
     Telecrystal: 14
   categories:
-  - UplinkSyndicateGunneryAmmo
+  - UplinkSyndicateGunneryMissile
 
 - type: listing
   id: UplinkSyndicateAmmoASM220LOSAT
@@ -621,9 +570,7 @@
   cost:
     Telecrystal: 23
   categories:
-  - UplinkSyndicateGunneryAmmo
-
-# region Energy Ammunition
+  - UplinkSyndicateGunneryMissile
 
 - type: listing
   id: UplinkSyndicateAmmoTarnyxEMP
@@ -633,7 +580,7 @@
   cost:
     Telecrystal: 12
   categories:
-  - UplinkSyndicateGunneryAmmo
+  - UplinkSyndicateGunneryMissile
 
 - type: listing
   id: UplinkSyndicateAmmoASM220ECM
@@ -643,7 +590,7 @@
   cost:
     Telecrystal: 17
   categories:
-  - UplinkSyndicateGunneryAmmo
+  - UplinkSyndicateGunneryMissile
 
 # region Shuttle Equipment
 
@@ -704,9 +651,9 @@
   description: uplink-combat-borg-desc
   productEntity: BorgChassisSelectableCombat
   cost:
-    Telecrystal: 65
+    Telecrystal: 35
   categories:
-  - UplinkSyndicateBorgsCombat
+  - UplinkSyndicateBorgs
 
 # region Combat Borg Modules
 
@@ -718,7 +665,7 @@
   cost:
     Telecrystal: 10
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 - type: listing
   id: UplinkCombatBorgEchis
@@ -728,7 +675,7 @@
   cost:
     Telecrystal: 15
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 - type: listing
   id: UplinkCombatBorgLaserAdvanced
@@ -738,7 +685,7 @@
   cost:
     Telecrystal: 15
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 - type: listing
   id: UplinkCombatBorgPKAHeavy
@@ -748,7 +695,7 @@
   cost:
     Telecrystal: 15
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 - type: listing
   id: UplinkCombatBorgL6C
@@ -758,7 +705,7 @@
   cost:
     Telecrystal: 25
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 - type: listing
   id: UplinkCombatBorgPKARailgun
@@ -768,7 +715,7 @@
   cost:
     Telecrystal: 25
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 - type: listing
   id: UplinkCombatBorgPKARepeater
@@ -778,7 +725,7 @@
   cost:
     Telecrystal: 25
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 - type: listing
   id: UplinkCombatBorgPKAShotgun
@@ -788,7 +735,7 @@
   cost:
     Telecrystal: 25
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 - type: listing
   id: UplinkCombatBorgLaserHeavy
@@ -798,7 +745,7 @@
   cost:
     Telecrystal: 25
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 - type: listing
   id: UplinkRemoteControlConsole
@@ -808,7 +755,7 @@
   cost:
     Telecrystal: 5
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 - type: listing
   id: UplinkRemoteControlDevice
@@ -818,7 +765,7 @@
   cost:
     Telecrystal: 5
   categories:
-    - UplinkSyndicateBorgsCombat
+    - UplinkSyndicateBorgs
 
 #Ammo
 - type: listing

@@ -18,6 +18,7 @@
     - UplinkJob
     - UplinkPointless
     # Horizon start
+    - UplinkConverter # rage-edit
     - UplinkSyndicateBorgs
     - UplinkSyndicateBorgsCombat
     - UplinkSyndieMechas
@@ -29,6 +30,7 @@
     # Horizon end
     currencyWhitelist:
     - Telecrystal
+    - Speso # rage-edit
     balance:
       Telecrystal: 0
 

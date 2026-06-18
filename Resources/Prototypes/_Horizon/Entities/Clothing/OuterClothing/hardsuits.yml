@@ -220,6 +220,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitExperimentalSyndy
+  - type: Item
+    size: Huge
 
 
 - type: entity
@@ -253,6 +255,8 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCybersunResearch
+  - type: Item
+    size: Huge
 
 - type: entity
   parent: [ClothingOuterHardsuitBase]
