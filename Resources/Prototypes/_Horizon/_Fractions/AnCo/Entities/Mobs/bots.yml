@@ -53,6 +53,7 @@
     sound:
       path: /Audio/Machines/button.ogg
   - type: DoAfter
+  - type: Insulated
 
 - type: entity
   id: AnCoDroneDungeon
@@ -192,6 +193,9 @@
     intensitySlope: 3
     totalIntensity: 40
     canCreateVacuum: false
+  - type: EmpOnTrigger
+    range: 2
+    energyConsumption: 2700000
   - type: Item
     size: Small
 

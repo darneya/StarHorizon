@@ -17,6 +17,39 @@
             "name": "Ballistic"
         },
         {
+            "name": "BallisticShotGun",
+            "delays": [
+        [
+          0.1,
+          0.1
+        ]
+      ]
+        },
+        {
+            "name": "BallisticRifle30",
+            "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+        },
+        {
+            "name": "Rocket",
+            "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+        },
+        {
             "name": "BallisticRifle"
         },
         {

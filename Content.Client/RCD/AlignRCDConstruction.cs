@@ -1,8 +1,8 @@
 using System.Numerics;
 using Content.Client._Horizon.RCD;
 using Content.Client.Gameplay;
+using Content.Client.Hands.Systems;
 using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.RCD.Components;
 using Content.Shared.RCD.Systems;
@@ -23,7 +23,7 @@ public sealed class AlignRCDConstruction : PlacementMode
     private readonly SharedTransformSystem _transformSystem;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IStateManager _stateManager = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    private readonly HandsSystem _hands;
 
     private const float SearchBoxSize = 2f;
     private const float PlaceColorBaseAlpha = 0.5f;
@@ -39,6 +39,7 @@ public sealed class AlignRCDConstruction : PlacementMode
         _mapSystem = _entityManager.System<SharedMapSystem>();
         _rcdSystem = _entityManager.System<RCDSystem>();
         _transformSystem = _entityManager.System<SharedTransformSystem>();
+        _hands = _entityManager.System<HandsSystem>();
 
         ValidPlaceColor = ValidPlaceColor.WithAlpha(PlaceColorBaseAlpha);
     }

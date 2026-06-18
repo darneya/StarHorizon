@@ -99,7 +99,7 @@ impact.slowdown = 8.0
 impact.min_throw_velocity = 1.0
 impact.inertia_scaling = 0.5
 mass_limit = 300
-cooldown = 3600
+cooldown = 19
 
 [rules]
 time = 90.0
@@ -135,10 +135,10 @@ name = "%loki_name%"
 ##### Discord ##################################################################
 
 [discord]
-#ahelp_webhook = "%webhook_ahelp%"
-#ban_webhook = "%webhook_ban%"
-#round_update_webhook = "%webhook_round_update%"
-#leaderboard_webhook = "%webhook_leaderboard%"
+ahelp_webhook = "%webhook_ahelp%"
+ban_webhook = "%webhook_ban%"
+round_update_webhook = "%webhook_round_update%"
+leaderboard_webhook = "%webhook_leaderboard%"
 #guild_id = 1348258341658562560
 #token = "%bot_token%"
 

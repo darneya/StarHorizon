@@ -1782,3 +1782,45 @@
     - FloorDarkSquiggly
   - type: Stack
     stackType: FloorTileDarkSquiggly
+
+# Horizon start
+
+- type: entity
+  name: steel dark gray tile
+  parent: FloorTileItemSteel
+  id: FloorTileItemSteelDarkGray
+  components:
+  - type: Sprite
+    sprite: /Textures/_Horizon/Objects/Tiles/tile.rsi
+    state: darkgray
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSteelDarkGray
+  - type: Stack
+    stackType: FloorTileSteelDarkGray
+  - type: Item
+    sprite: /Textures/_Horizon/Objects/Tiles/tile.rsi
+    size: Normal
+    heldPrefix: darkgray
+
+- type: entity
+  name: steel dark gray plate
+  parent: FloorTileItemSteel
+  id: FloorTileItemSteelPlateDarkGray
+  components:
+  - type: Sprite
+    sprite: /Textures/_Horizon/Objects/Tiles/tile.rsi
+    state: darkgrayplate
+  - type: FloorTile
+    outputs:
+      - Plating
+      - FloorSteelPlateDarkGray
+  - type: Stack
+    stackType: FloorTileSteelPlateDarkGray
+  - type: Item
+    sprite: /Textures/_Horizon/Objects/Tiles/tile.rsi
+    size: Normal
+    heldPrefix: darkgrayplate
+
+# Horizon end

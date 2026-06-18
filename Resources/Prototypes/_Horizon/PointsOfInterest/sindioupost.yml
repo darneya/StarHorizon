@@ -70,6 +70,7 @@
           availableJobs:
             SyndicateOfficerTeleCommunication: [ 1, 1 ]
             SyndicateOperative: [ 3, 3 ]
+            SyndicateMedic: [ 2, 2 ]
             SyndicateCargo: [ 4, 4 ]
         - type: StationDeadDropHintExempt
         - type: BindToStationVariationPassExemption

@@ -36,6 +36,9 @@
     - !type:NestedSelector
       tableId: AnCoShoesTable
       prob: 0.2
+    - !type:NestedSelector
+      tableId: AnCoShieldTable
+      prob: 0.05
 
 
 - type: entityTable
@@ -110,4 +113,22 @@
       - id: AnCoVests
         weight: 1
       - id: ClothingOuterHardsuitPetal
+        weight: 1
+      - id: ClothingEyesVisionAnCo
+        weight: 1
+      - id: ClothingAnCoHeadArmorHelmet
+        weight: 1
+      - id: ClothingAnCoHeadCombatHelmet
+        weight: 1
+      - id: ClothingBeltAnCo
+        weight: 1
+      - id: ClothingBeltWebbingAnCo
+
+- type: entityTable
+  id: AnCoShieldTable
+  table: !type:GroupSelector
+    children:
+      - id: AnCoArdonShield
+        weight: 2
+      - id: AnCoBulletShield
         weight: 1
