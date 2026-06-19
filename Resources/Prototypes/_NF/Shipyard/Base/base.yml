@@ -26,12 +26,23 @@
       costMultiplier: 0.9
 
 - type: vessel
+  id: BaseVesselSecurity
+  abstract: true
+  parent: BaseVessel
+  group: Security
+  addComponents:
+  - type: IFF
+    color: '#228B22'
+    flags: [IsPlayerShuttle]
+
+- type: vessel
   id: BaseVesselAntag
   abstract: true
   parent: BaseVessel
   group: BlackMarket
   addComponents:
   - type: IFF
+    color: '#800000'
     flags: [IsPlayerShuttle, HideLabel]
 
 # Note: we keep the IsPlayerShuttle flag to hide consistently with other shuttles.

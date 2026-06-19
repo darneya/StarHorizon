@@ -10,7 +10,7 @@
 #
 - type: vessel
   id: Crystal
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NFS Crystal
   description: Научный шаттл оснащенный нужными прибораи
   price: 95000 # ???, 63058 50% = 94000
