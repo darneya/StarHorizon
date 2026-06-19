@@ -10,6 +10,3 @@ ent-ClothingShoesChameleonStealsBootsJack = подкованные сапоги
 ent-ClothingShoesColorStorageBlack = чёрные туфли
     .desc = Стильные, большие чёрные туфли.
     .suffix = Тайное хранилище
-ent-ClothingShoesColorPink = розовые кросовки
-    .desc = Стильные розовые кросовки.
-    .suffix = StarHorizon

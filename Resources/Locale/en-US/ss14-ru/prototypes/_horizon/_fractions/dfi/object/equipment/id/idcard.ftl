@@ -1,27 +1,35 @@
 ent-DFIAgentID = DFI agent ID card
     .desc = An ID card for DFI agents.
     .suffix = DFI
-ent-DFICadetID = { ent-DFIAgentID }
+
+ent-DFICadetID = DFI cadet ID card
     .desc = An ID card for DFI agents.
     .suffix = DFI
-ent-DFICriminologistID = { ent-DFIAgentID }
+
+ent-DFICriminologistID = DFI criminologist ID card
     .desc = An ID card for DFI agents.
     .suffix = DFI
-ent-DFIDetectiveID = { ent-DFIAgentID }
+
+ent-DFIDetectiveID = DFI detective ID card
     .desc = An ID card for DFI agents.
     .suffix = DFI
-ent-DFIDetectiveSergeantID = { ent-DFIAgentID }
+
+ent-DFIDetectiveSergeantID = DFI detective sergeant ID card
     .desc = An ID card for DFI agents.
     .suffix = DFI
-ent-DFIEngineerID = { ent-DFIAgentID }
+
+ent-DFIEngineerID = DFI engineer ID card
     .desc = An ID card for DFI agents.
     .suffix = DFI
-ent-DFIMedicID = { ent-DFIAgentID }
+
+ent-DFIMedicID = DFI medic ID card
     .desc = An ID card for DFI agents.
     .suffix = DFI
-ent-DFIOfficerID = { ent-DFIAgentID }
+
+ent-DFIOfficerID = DFI officer ID card
     .desc = An ID card for DFI agents.
     .suffix = DFI
-ent-DFISSEmployeeID = { ent-DFIAgentID }
+
+ent-DFISSEmployeeID = DFI logistics staff ID card
     .desc = An ID card for DFI agents.
     .suffix = DFI
