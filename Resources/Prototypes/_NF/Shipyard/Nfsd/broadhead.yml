@@ -10,7 +10,7 @@
 #
 - type: vessel
   id: Broadhead
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NSF Broadhead
   description: Средний детективный шаттл предназначенный для работы нескольких человек.
   price: 60000 # 52879 0.05 55522.95

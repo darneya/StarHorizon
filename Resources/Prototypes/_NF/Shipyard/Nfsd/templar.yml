@@ -1,6 +1,6 @@
 - type: vessel
   id: Templar
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NSF Templar
   description: Малый охранный шаттл предназначенный для ведения боя.
   price: 24220

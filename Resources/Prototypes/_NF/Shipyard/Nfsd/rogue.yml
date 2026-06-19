@@ -1,6 +1,6 @@
 - type: vessel
   id: Rogue
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NSF Rogue
   description: Маленький атакующий шаттл для маневров
   price: 12200 #the appraisal is 9100$

@@ -10,7 +10,7 @@
 #
 - type: vessel
   id: Ophiophagus
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NRZN Ophiophagus
   description: Массивный материнский научный шаттл для которого нужно более 5-ти членов экипажа
   price: 205000 # 146593, наценка верфи 40% = 205230

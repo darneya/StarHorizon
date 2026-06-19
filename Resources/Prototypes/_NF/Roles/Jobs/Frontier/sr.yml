@@ -7,8 +7,11 @@
   forceFaction: FactionFrontier # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 72000 # 20 hrs
-  whitelisted: true
+      time: 144000 # 20 hrs
+    - !type:RoleTimeRequirement
+      role: JobSecurityGuard
+      time: 21600 # 6 hours as security guard
+  whitelisted: false
   startingGear: SrGear
   alwaysUseSpawner: true
   icon: "JobIconHeadOfPersonnel"

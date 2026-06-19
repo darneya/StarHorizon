@@ -10,7 +10,7 @@
 #
 - type: vessel
   id: AsperR
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NRZN Asper R
   description: Малый боевой шаттл для пилотирования командой до двух человек, используется для защиты материнского шаттла.
   price: 35000 # 31602, наценка верфи 10% = 34870

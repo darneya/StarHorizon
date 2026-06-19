@@ -1,21 +1,23 @@
+# Информация об авторе шаттла
+# GitHub: darneya
+# Discord: .darneya
+
 - type: vessel
-  id: Wasp
+  id: Vorobey
   parent: BaseVesselSecurity
-  name: NSF Wasp
-  description: Большой экспедиционный шаттл предназначенный для добычи ископаемых.
+  name: NSF Vorobey
+  description: Боевое судно для подавления противника. Имеет корабельные ЭМИ на борту.
   price: 135000
-  category: Large
+  category: Medium
   group: Security
-  access: Bailiff
-  shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/wasp.yml # Horizon
+  access: Security
+  shuttlePath: Maps/_rage/Shuttles/Shipyard/Nfsd/vorobey.yml # rage-edit
   guidebookPage: Null
   class:
-  - Capital
-  - Detainment
-  - Expedition
+  - Fighter
   engine:
-  - AME
-  # Horizon start
+  - Uranium
+  # rage-start
   costModifiers:
     - !type:RoleModifier
       role: "Pilot"
@@ -26,19 +28,19 @@
     - !type:FactionCostModifier
       faction: "FactionNFSD"
       costMultiplier: 0.9
-  # Horizon end
+  # rage-end
 
 - type: gameMap
-  id: Wasp
-  mapName: 'NSF Wasp'
-  mapPath: /Maps/_Horizon/Shuttles/Shipyard/Nfsd/wasp.yml # Horizon
+  id: Vorobey
+  mapName: 'NSF Vorobey'
+  mapPath: Maps/_rage/Shuttles/Shipyard/Nfsd/vorobey.yml # rage-edit
   minPlayers: 0
   stations:
-    Wasp:
+    Vorobey:
       stationProto: StandardFrontierExpeditionVessel
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Wasp {1}'
+          mapNameTemplate: 'Vorobey {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
