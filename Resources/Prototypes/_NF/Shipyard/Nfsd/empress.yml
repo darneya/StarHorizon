@@ -1,6 +1,6 @@
 - type: vessel
   id: Empress
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NSF Empress
   description: Большой патрульный материнский флагман, способный вмещать до четырех скоростных боевых единиц в своих стыковочных портах.
   price: 170000 #Appraisal value is 150000

@@ -10,7 +10,7 @@
 #
 - type: vessel
   id: AsperL
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NRZN Asper L
   description: Малый добывающй шаттл для пилотирования командой до двух человек, используется для добычи и переработки ресурсов.
   price: 13700 # 12367, наценка верфи 10% = 13604

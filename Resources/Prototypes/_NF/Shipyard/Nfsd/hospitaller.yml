@@ -1,6 +1,6 @@
 - type: vessel
   id: Hospitaller
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NSF Hospitaller
   description: Малый охранный шаттл для медицинской помощи.
   price: 28220

@@ -1,6 +1,6 @@
 - type: vessel
   id: Cleric
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NSF Cleric
   description: Малый вспомогающий шаттл для медицинской помощи.
   price: 11800 #Appraisal is 10500

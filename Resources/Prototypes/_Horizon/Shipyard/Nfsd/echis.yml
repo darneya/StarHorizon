@@ -10,7 +10,7 @@
 #
 - type: vessel
   id: Echis
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NRZN Echis
   description: Малый транспортировочный шаттл для пилотирования в одиночку, используется для перемещения артефактов.
   price: 11000 # 9894, наценка верфи 10% = 10883

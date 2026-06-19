@@ -10,7 +10,7 @@
 #
 - type: vessel
   id: Hypnos
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NSF Hypnos
   description: Легкий средний шаттл поддержки с ЭМИ генератором на борту.
   price: 34500

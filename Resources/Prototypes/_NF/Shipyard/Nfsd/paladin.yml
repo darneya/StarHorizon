@@ -1,6 +1,6 @@
 - type: vessel
   id: Paladin
-  parent: BaseVessel
+  parent: BaseVesselSecurity
   name: NSF Paladin
   description: Малый охранный шаттл оснащенный корабельным орудием для атаки.
   price: 34220

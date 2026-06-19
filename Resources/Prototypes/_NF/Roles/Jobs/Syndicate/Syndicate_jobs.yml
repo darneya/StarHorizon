@@ -58,7 +58,7 @@
       department: Security
       time: 10800 # 3 hours
   startingGear: BaseSyndicateOperativeGear
-  whitelisted: true
+  whitelisted: false
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
@@ -105,7 +105,7 @@
       department: Security
       time: 10800 # 3 hours
   startingGear: BaseSyndicateMedicGear
-  whitelisted: true
+  whitelisted: false
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
@@ -152,7 +152,7 @@
       department: Security
       time: 10800 # 3 hrs
   startingGear: BaseSyndicateCargoGear
-  whitelisted: true
+  whitelisted: false
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
