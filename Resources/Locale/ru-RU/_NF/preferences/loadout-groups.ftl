@@ -23,6 +23,7 @@ loadout-group-contractor-encryption-key = ключи шифрования
 loadout-group-contractor-cartridge = картриджи КПК
 loadout-group-contractor-implanter = импланты
 loadout-group-contractor-bureaucracy = бюрократия
+
 # Syndicate (Horizon)
 loadout-group-syndicate-pda = КПК
 loadout-group-syndicate-jumpsuit = униформа
