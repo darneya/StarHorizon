@@ -108,28 +108,30 @@
 - type: Tag
   id: BulletNail
 
-- type: entity
-  id: BulletNail
-  name: nail
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Backmen/test/base/rsi/Textures/Effects/muzzle/divet.rsi
-    layers:
-    - state: projectiles_divet
-      shader: unshaded
-  - type: Ammo
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 9
-        Structural: -20
-    soundHit:
-      path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
-  - type: Tag
-    tags:
-      - BulletNail
+# - type: entity
+#   id: BulletNail
+#   name: nail
+#   parent: BaseBullet
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: Sprite
+#     sprite: Backmen/test/base/rsi/Textures/Effects/muzzle/divet.rsi
+#     layers:
+#     - state: projectiles_divet
+#       shader: unshaded
+#   - type: Ammo
+#   - type: Projectile
+#     damage:
+#       types:
+#         Piercing: 9
+#         Structural: -20
+#     soundHit:
+#       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
+#   - type: Tag
+#     tags:
+#       - BulletNail
+
+# опять же, добавь ебанные папки и спрайты, перед тем как заливать, пж
 
 - type: entity
   id: TeslaAmmoEnergyBall

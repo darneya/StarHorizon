@@ -1,24 +1,26 @@
-- type: entity
-  id: BulletMagnum345
-  name: 345 magnum bullet
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Backmen/Effects/muzzle/divet.rsi
-    layers:
-    - state: projectiles_divet
-      shader: unshaded
-  - type: Ammo
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 30
-    soundHit:
-      path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
-  - type: Tag
-    tags:
-      - BulletMagnum345
+# - type: entity
+#   id: BulletMagnum345
+#   name: 345 magnum bullet
+#   parent: BaseBullet
+#   categories: [ HideSpawnMenu ]
+#   components:
+#   - type: Sprite
+#     sprite: Backmen/Effects/muzzle/divet.rsi
+#     layers:
+#     - state: projectiles_divet
+#       shader: unshaded
+#   - type: Ammo
+#   - type: Projectile
+#     damage:
+#       types:
+#         Piercing: 30
+#     soundHit:
+#       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
+#   - type: Tag
+#     tags:
+#       - BulletMagnum345
+
+# добавь хотя бы папку для спрайтов
 
 - type: entity
   id: PelletShotgunSoulbreaker
