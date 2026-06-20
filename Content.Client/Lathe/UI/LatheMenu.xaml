@@ -103,22 +103,32 @@
                         </Label>
                         <BoxContainer Name="FabricatingDisplayContainer"
                                       HorizontalAlignment="Left"
-                                      Margin="100 0 0 0"/>
+                                      Margin="140 0 0 0"/>
                         <Label
                             Name="NameLabel"
                             RectClipContent="True"
                             HorizontalAlignment="Left"
-                            Margin="130 0 0 0">
+                            Margin="170 0 0 0">
                         </Label>
-                        <!-- Frontier: delete button -->
-                        <Button
-                            Name="DeleteFabricating"
-                            Margin="0"
-                            StyleClasses="Caution"
-                            Text="✖"
-                            SetSize="38 32"
-                            HorizontalAlignment="Right"
+                        <!-- Horizon: inf craft -->
+                        <BoxContainer Orientation="Horizontal" Align="End">
+                            <Button
+                                Name="InfiniteButton"
+                                SetSize="38 32"
+                                Text="∞"
+                                StyleClasses="OpenRight"
+                                ToggleMode="True"
                             />
+                        <!-- Frontier: delete button -->
+                            <Button
+                                Name="DeleteFabricating"
+                                Margin="0"
+                                StyleClasses="Caution"
+                                Text="✖"
+                                SetSize="38 32"
+                                HorizontalAlignment="Right"
+                                />
+                        </BoxContainer>
                         <!-- End Frontier: delete button -->
                     </PanelContainer>
                 </BoxContainer>
