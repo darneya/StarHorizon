@@ -4,7 +4,7 @@
   id: PirateWeaponTurretM25
   name: M25 Импульсный бурильщик
   description: Использует механизмы для запуска... чего-то. Легко разрушает породу.
-  productEntity: WeaponTurretM25
+  productEntity: WeaponTurretM25FlatPack
   cost:
     Doubloon: 20
   categories:
@@ -19,7 +19,7 @@
   id: PirateWeaponTurretM220
   name: M220 РУБИКОН EMP пусковая установка
   description: Запускает EMP снаряды по кораблям, выводя системы из строя мощными электромагнитными импульсами. Идеально для нелетальных столкновений.
-  productEntity: WeaponTurretM220
+  productEntity: WeaponTurretM220FlatPack
   cost:
     Doubloon: 35
   categories:
@@ -35,7 +35,7 @@
   id: PirateWeaponTurretType35
   name: Type-35 МАРОДЁР плазменная пушка
   description: Запускает магнетически сдерживаемые шары плазмы по целям.
-  productEntity: WeaponTurretType35
+  productEntity: WeaponTurretType35FlatPack
   cost:
     Doubloon: 70
   categories:
@@ -55,7 +55,7 @@
   id: PirateWeaponTurretTarnyxReload
   name: АДБХ-31 ТАРНИКС 150мм ЭМИ Пушка
   description: Тяжелая ЭМИ пушка, созданная Aetherion Dynamics, предназначенная для выведения из строя больших участков вражеских кораблей одним мощным выстрелом. Эффективна в асимметричных боях.
-  productEntity: WeaponTurretTarnyxReload
+  productEntity: WeaponTurretTarnyxReloadFlatPack
   cost:
     Doubloon: 70
   categories:
@@ -76,7 +76,7 @@
   id: PirateWeaponTurretL85Autocannon
   name: автопушка L85 калибра 20мм
   description: Лёгкая 20мм баллистическая автопушка, предназначенная для быстрого огня и подавления небольших целей на ближней дистанции. Дешёвая, лёгкая.
-  productEntity: WeaponTurretL85Autocannon
+  productEntity: WeaponTurretL85AutocannonFlatPack
   cost:
     Doubloon: 35
   categories:
@@ -92,7 +92,7 @@
   id: PirateWeaponTurretDravon
   name: автопушка ADBP-7 ДРАВОН 57мм
   description: Одноствольная автопушка от Aetherion Dynamics. Среднее артиллерийское орудие с высокой скорострельностью, но относительно низкой мощностью, использующее снаряды HEAT для поражения брони и систем корабля.
-  productEntity: WeaponTurretDravon
+  productEntity: WeaponTurretDravonFlatPack
   cost:
     Doubloon: 70
   categories:
@@ -111,7 +111,7 @@
   id: PirateWeaponTurretAK570
   name: тяжёлая автопушка AK570 калибра 90мм
   description: Двуствольная тяжёлая 90мм автопушка, стреляющая универсальными снарядами APHE, эффективна для продолжительного огня по средним целям.
-  productEntity: WeaponTurretAK570
+  productEntity: WeaponTurretAK570FlatPack
   cost:
     Doubloon: 70
   categories:
@@ -130,7 +130,7 @@
   id: PirateWeaponTurretCharonette
   name: ускоритель массы M194 ШАРОНЕТТ
   description: Меньший, более компактный рельсотрон, стреляющий крупными снарядами на высокой скорости, способный нанести значительный урон вражеским кораблям. Средний линейный ускоритель.
-  productEntity: WeaponTurretCharonette
+  productEntity: WeaponTurretCharonetteFlatPack
   cost:
     Doubloon: 70
   categories:
@@ -151,7 +151,7 @@
   id: PirateWeaponTurretLightMunitionsBay
   name: легкая пусковая установка GPOB-L
   description: Относительно небольшой бронированный отсек для боеприпасов, способный вместить до двух легких боевых зарядов. Обычно используется на легких космических кораблях, особенно на бомбардировщиках, и обеспечивает ограниченный способ нанесения урона целям, значительно превосходящим пользователя по массе.
-  productEntity: WeaponTurretLightMunitionsBay
+  productEntity: WeaponTurretLightMunitionsBayFlatPack
   cost:
     Doubloon: 35
   categories:
@@ -167,7 +167,7 @@
   id: PirateWeaponTurretVespera
   name: АДМП-27 ВЕСПЕРА быстрострельная установка
   description: Быстрострельная ройная ракетная установка, произведённая Aetherion Dynamics. Насыщает цели управляемыми боеголовками, чтобы подавить защиту.
-  productEntity: WeaponTurretVespera
+  productEntity: WeaponTurretVesperaFlatPack
   cost:
     Doubloon: 70
   categories:
@@ -186,7 +186,7 @@
   id: PirateWeaponTurretASM501
   name: установка АСМ-501
   description: Торпедная установка для крейсеров. Выпускает тяжёлые торпеды для нанесения высоких повреждений большим кораблям и станциям.
-  productEntity: WeaponTurretASM501
+  productEntity: WeaponTurretASM501FlatPack
   cost:
     Doubloon: 70
   categories:
@@ -205,7 +205,7 @@
   id: PirateWeaponTurretVanyk
   name: АСМ-302 установка
   description: Эскортная ракетная установка, произведённая Aetherion Dynamics. Запускает управляемые ракеты для базового корабельного боя и блокирования зон.
-  productEntity: WeaponTurretVanyk
+  productEntity: WeaponTurretVanykFlatPack
   cost:
     Doubloon: 70
   categories:
@@ -224,7 +224,7 @@
   id: PirateWeaponTurretASM220
   name: торпедная установка ASM-220
   description: Тяжелая торпедная установка вертикального пуска, работающая на ручной загрузке, обычно выполняемой в порту. Однако она оснащена высокоэффективными ракетами для своего размера.
-  productEntity: WeaponTurretASM220
+  productEntity: WeaponTurretASM220FlatPack
   cost:
     Doubloon: 70
   categories:
