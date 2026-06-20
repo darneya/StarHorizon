@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Construction.Completions;
+using Content.Server.Body.Systems;
 using Content.Server.Mech.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -14,16 +15,16 @@ using Content.Shared.Mech.Components;
 using Content.Shared.Mech.EntitySystems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
+using Content.Shared.Tools;
 using Content.Shared.Tools.Components;
-using Content.Shared.Verbs;
-using Content.Shared.Wires;
-using Content.Server.Body.Systems;
 using Content.Shared.Tools.Systems;
+using Content.Shared.Verbs;
+using Content.Shared.Whitelist;
+using Content.Shared.Wires;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
-using Content.Shared.Whitelist;
 using Content.Shared.Mobs.Components; // Frontier
 using Content.Shared.NPC.Components; // Frontier
 using Content.Shared.Mobs; // Frontier
@@ -34,6 +35,8 @@ using Robust.Shared.Random;
 using Content.Shared.Mech.Equipment.Components;
 using Content.Shared.Storage;
 using Content.Server._Horizon.Mech.Components;
+using Content.Shared.NPC.Systems; // Frontier
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Mech.Systems;
 
@@ -50,11 +53,14 @@ public sealed partial class MechSystem : SharedMechSystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly SharedToolSystem _toolSystem = default!;
+    [Dependency] private readonly NpcFactionSystem _npcFaction = default!; // Frontier
     // Horizon Mech start
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     // Horizon Mech end
+
+    private static readonly ProtoId<ToolQualityPrototype> PryingQuality = "Prying";
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -177,7 +183,7 @@ public sealed partial class MechSystem : SharedMechSystem
             return;
         }
 
-        if (_toolSystem.HasQuality(args.Used, "Prying") && component.BatterySlot.ContainedEntity != null)
+        if (_toolSystem.HasQuality(args.Used, PryingQuality) && component.BatterySlot.ContainedEntity != null)
         {
             var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.BatteryRemovalDelay,
                 new RemoveBatteryEvent(), uid, target: uid, used: args.Target)
@@ -338,12 +344,14 @@ public sealed partial class MechSystem : SharedMechSystem
 
         // Frontier - Make AI Attack mechs based on user.
         if (TryComp<MobStateComponent>(args.User, out var _))
-            EnsureComp<MobStateComponent>(uid);
+        {
+            component.MobStateAdded = !EnsureComp<MobStateComponent>(uid, out _);
+            component.MobThresholdsAdded = !EnsureComp<MobThresholdsComponent>(uid, out _);
+        }
         if (TryComp<NpcFactionMemberComponent>(args.User, out var faction))
         {
-            var factionMech = EnsureComp<NpcFactionMemberComponent>(uid);
-            if (faction.Factions != null)
-                factionMech.Factions = faction.Factions;
+            component.NpcFactionAdded = !EnsureComp<NpcFactionMemberComponent>(uid, out var factionMech);
+            _npcFaction.AddFactions((uid, factionMech), faction.Factions);
         }
         // End Frontier
 
@@ -359,6 +367,24 @@ public sealed partial class MechSystem : SharedMechSystem
             return;
 
         TryEject(uid, component);
+
+        // Frontier: revert state
+        if (component.MobStateAdded)
+        {
+            RemComp<MobStateComponent>(uid);
+            component.MobStateAdded = false;
+        }
+        if (component.MobThresholdsAdded)
+        {
+            RemComp<MobThresholdsComponent>(uid);
+            component.MobThresholdsAdded = false;
+        }
+        if (component.NpcFactionAdded)
+        {
+            RemComp<NpcFactionMemberComponent>(uid);
+            component.NpcFactionAdded = false;
+        }
+        // End Frontier: revert state
 
         args.Handled = true;
     }
@@ -417,6 +443,7 @@ public sealed partial class MechSystem : SharedMechSystem
     //     }
     // }
 
+    // Horizon - поменял немного получение частей интерфейса
     public override void UpdateUserInterface(EntityUid uid, MechComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -424,15 +451,17 @@ public sealed partial class MechSystem : SharedMechSystem
 
         base.UpdateUserInterface(uid, component);
 
+        var states = new Dictionary<NetEntity, BoundUserInterfaceState?>();
         var ev = new MechEquipmentUiStateReadyEvent();
         foreach (var ent in component.EquipmentContainer.ContainedEntities)
         {
             RaiseLocalEvent(ent, ev);
+            states.Add(GetNetEntity(ent), ev.State);
         }
 
         var state = new MechBoundUiState
         {
-            EquipmentStates = ev.States
+            EquipmentStates = states
         };
         Dirty(uid, component);  // Horizon Mech
 

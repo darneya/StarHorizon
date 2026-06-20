@@ -25,14 +25,9 @@ public sealed class HungerSystem : EntitySystem
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
 
-    [ValidatePrototypeId<SatiationIconPrototype>]
-    private const string HungerIconOverfedId = "HungerIconOverfed";
-
-    [ValidatePrototypeId<SatiationIconPrototype>]
-    private const string HungerIconPeckishId = "HungerIconPeckish";
-
-    [ValidatePrototypeId<SatiationIconPrototype>]
-    private const string HungerIconStarvingId = "HungerIconStarving";
+    private static readonly ProtoId<SatiationIconPrototype> HungerIconOverfedId = "HungerIconOverfed";
+    private static readonly ProtoId<SatiationIconPrototype> HungerIconPeckishId = "HungerIconPeckish";
+    private static readonly ProtoId<SatiationIconPrototype> HungerIconStarvingId = "HungerIconStarving";
 
     public override void Initialize()
     {
@@ -110,6 +105,17 @@ public sealed class HungerSystem : EntitySystem
         SetAuthoritativeHungerValue((uid, component), amount);
         UpdateCurrentThreshold(uid, component);
     }
+
+    // _Horizon start
+    public void SetBaseDecayRate(EntityUid uid, float amount, HungerComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        component.BaseDecayRate = amount;
+        SetAuthoritativeHungerValue((uid, component), amount);
+    }
+    // _Horizon end
 
     /// <summary>
     /// Sets <see cref="HungerComponent.LastAuthoritativeHungerValue"/> and

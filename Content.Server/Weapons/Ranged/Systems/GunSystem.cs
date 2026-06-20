@@ -1,8 +1,8 @@
 using System.Linq;
 using System.Numerics;
 using Content.Server.Cargo.Systems;
-using Content.Server.Power.EntitySystems;
 using Content.Server.Weapons.Ranged.Components;
+using Content.Shared.Cargo;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
@@ -22,18 +22,17 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Robust.Shared.Containers;
-using Content.Server.PowerCell;
 using Content.Shared.Interaction; // Frontier
 using Content.Shared.Examine; // Frontier
 using Content.Shared.Power; // Frontier
 using Content.Server.Body.Systems;
 using Content.Shared.Mech.Components;
+using Content.Server._Horizon.Weapons;
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
 public sealed partial class GunSystem : SharedGunSystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly DamageExamineSystem _damageExamine = default!;
     [Dependency] private readonly PricingSystem _pricing = default!;
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
@@ -93,7 +92,7 @@ public sealed partial class GunSystem : SharedGunSystem
         var toMap = TransformSystem.ToMapCoordinates(toCoordinates).Position;
         var mapDirection = toMap - fromMap.Position;
         var mapAngle = mapDirection.ToAngle();
-        var angle = GetRecoilAngle(Timing.CurTime, gun, mapDirection.ToAngle());
+        var angle = GetRecoilAngle(user, Timing.CurTime, gun, mapDirection.ToAngle());    // Horizon - user added
 
         // If applicable, this ensures the projectile is parented to grid on spawn, instead of the map.
         var fromEnt = MapManager.TryFindGridAt(fromMap, out var gridUid, out _)
@@ -239,6 +238,9 @@ public sealed partial class GunSystem : SharedGunSystem
                         if (dmg != null)
                             dmg = Damageable.TryChangeDamage(hitEntity, dmg * Damageable.UniversalHitscanDamageModifier, origin: user);
 
+
+
+
                         // Horizon Mech start
                         if (hitscan.BloodlossModifier.HasValue)
                             _bloodstream.TryModifyBleedAmount(hitEntity, hitscan.BloodlossModifier.Value);
@@ -268,6 +270,11 @@ public sealed partial class GunSystem : SharedGunSystem
                                 Logs.Add(LogType.HitScanHit,
                                     $"{hitName:target} hit by hitscan dealing {dmg.GetTotal():damage} damage");
                             }
+
+                            // _Horizon start
+                            var bodyEv = new HitScanHitBodyEvent(dir, dmg);
+                            RaiseLocalEvent(hitEntity, ref bodyEv);
+                            // _Horizon end
                         }
                     }
                     else
@@ -369,18 +376,29 @@ public sealed partial class GunSystem : SharedGunSystem
         return angles;
     }
 
-    private Angle GetRecoilAngle(TimeSpan curTime, GunComponent component, Angle direction)
+    private Angle GetRecoilAngle(EntityUid? user, TimeSpan curTime, GunComponent component, Angle direction)    // Horizon - user added
     {
         var timeSinceLastFire = (curTime - component.LastFire).TotalSeconds;
         var newTheta = MathHelper.Clamp(component.CurrentAngle.Theta + component.AngleIncreaseModified.Theta - component.AngleDecayModified.Theta * timeSinceLastFire, component.MinAngleModified.Theta, component.MaxAngleModified.Theta);
         component.CurrentAngle = new Angle(newTheta);
         component.LastFire = component.NextFire;
 
+        // Horizon start
+        var modifiedValue = 0.5f;
+        if (user.HasValue)
+        {
+            var ev = new GetRecoilModifiersEvent(component);
+            RaiseLocalEvent(user.Value, ref ev);
+
+            modifiedValue *= ev.Modifier;
+        }
+        // Horizon end
+
         // Convert it so angle can go either side.
-        var random = Random.NextFloat(-0.5f, 0.5f);
+        var random = Random.NextFloat(-modifiedValue, modifiedValue);   // Horizon - 0.5f -> modifiedValue
         var spread = component.CurrentAngle.Theta * random;
         var angle = new Angle(direction.Theta + component.CurrentAngle.Theta * random);
-        DebugTools.Assert(spread <= component.MaxAngleModified.Theta);
+        DebugTools.Assert(spread <= component.MaxAngleModified.Theta * modifiedValue * 2);  // Horizon - added modifiedValue
         return angle;
     }
 

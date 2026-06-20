@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Preferences;
 using Content.Shared.Ghost.Roles; // Frontier: ghost role whitelists
@@ -42,6 +43,8 @@ namespace Content.Server.Database
         Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot);
 
         Task SaveAdminOOCColorAsync(NetUserId userId, Color color);
+
+        Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites);
 
         // Single method for two operations for transaction.
         Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot);
@@ -364,6 +367,17 @@ namespace Content.Server.Database
         Task SendNotification(DatabaseNotification notification);
 
         #endregion
+
+        // Horizon: Admin Loadout Items
+        #region Horizon Admin Loadout
+
+        Task<List<HorizonAdminLoadout>> GetAdminLoadoutItemsAsync(Guid userId);
+        Task<HorizonAdminLoadout> AddAdminLoadoutItemAsync(HorizonAdminLoadout item);
+        Task<bool> RemoveAdminLoadoutItemAsync(int id);
+        Task<bool> SetAdminLoadoutItemEnabledAsync(int id, bool enabled);
+        Task<bool> DecrementAdminLoadoutItemUsesAsync(int id);
+
+        #endregion
     }
 
     /// <summary>
@@ -491,6 +505,12 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.SaveAdminOOCColorAsync(userId, color));
+        }
+
+        public Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SaveConstructionFavoritesAsync(userId, constructionFavorites));
         }
 
         public Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel)
@@ -1029,7 +1049,7 @@ namespace Content.Server.Database
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.RemoveJobWhitelist(player, job));
         }
-        
+
         // Frontier: ghost role DB ops
         public Task AddGhostRoleWhitelist(Guid player, ProtoId<GhostRolePrototype> ghostRole)
         {
@@ -1095,6 +1115,41 @@ namespace Content.Server.Database
                 }
             }
         }
+
+        // Horizon: Admin Loadout Items
+        #region Horizon Admin Loadout
+
+        public Task<List<HorizonAdminLoadout>> GetAdminLoadoutItemsAsync(Guid userId)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetAdminLoadoutItemsAsync(userId));
+        }
+
+        public Task<HorizonAdminLoadout> AddAdminLoadoutItemAsync(HorizonAdminLoadout item)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddAdminLoadoutItemAsync(item));
+        }
+
+        public Task<bool> RemoveAdminLoadoutItemAsync(int id)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.RemoveAdminLoadoutItemAsync(id));
+        }
+
+        public Task<bool> SetAdminLoadoutItemEnabledAsync(int id, bool enabled)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetAdminLoadoutItemEnabledAsync(id, enabled));
+        }
+
+        public Task<bool> DecrementAdminLoadoutItemUsesAsync(int id)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.DecrementAdminLoadoutItemUsesAsync(id));
+        }
+
+        #endregion
 
         // Wrapper functions to run DB commands from the thread pool.
         // This will avoid SynchronizationContext capturing and avoid running CPU work on the main thread.

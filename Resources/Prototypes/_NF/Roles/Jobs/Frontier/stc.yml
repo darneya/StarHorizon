@@ -3,6 +3,8 @@
   name: job-name-stc
   description: job-description-stc
   playTimeTracker: JobStc
+  salary: 65000 # Horizon
+  forceFaction: FactionFrontier # Horizon
   startingGear: StcGear
   alwaysUseSpawner: true
   requirements:
@@ -36,6 +38,14 @@
     back:
     - Flash
     - RubberStampStc
-    - EncryptionKeyStationMaster
-    - ShipVoucherFrontierStc
     - BoxFolderStc
+    - ShipVoucherFrontierStc
+  encryptionKeys:
+  - EncryptionKeyStationMaster
+
+- type: chameleonOutfit
+  id: StationTrafficControllerChameleonOutfit
+  job: StationTrafficController
+  equipment:
+    head: ClothingHeadHatStcCap
+

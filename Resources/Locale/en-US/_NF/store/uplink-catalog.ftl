@@ -1,4 +1,5 @@
 # region Security
+
 uplink-security-hardsuit-name = Bronze Patrol Suit
 uplink-security-hardsuit-desc = The standard-issue NFSD space proof suit for patrol duty. This bronze variant has cadet rank markings.
 
@@ -329,6 +330,9 @@ uplink-pirate-pouch-captain-desc = This pouch shows your status as the captain. 
 
 uplink-pirate-pouch-name = Pirate's Pouch
 uplink-pirate-pouch-desc = A pouch for organizing miscellaneous items.
+
+uplink-pirate-jetpack-name = Pirate Jetpack
+uplink-pirate-jetpack-desc = This jetpack hides your radar signature, allowing you to fly undetected in outer space.
 
 # region Syndicate
 uplink-emp-grenade-launcher-bundle-name = EMP China-Lake Bundle

@@ -9,7 +9,8 @@
 - type: latheRecipePack
   id: CargoBoardsStatic
   recipes:
-  - OreProcessorMachineCircuitboard
+  - OreProcessorCivilianCircuitboard # Frontier
+  - LumberMillMachineCircuitboard # Horizon
   # - SalvageMagnetMachineCircuitboard # Frontier: no point
 
 ## Dynamic
@@ -27,5 +28,6 @@
   id: CargoBoards
   recipes:
   - OreProcessorIndustrialMachineCircuitboard
+  - OreProcessorFuelMachineCircuitboard # Horizon
   # - CargoTelepadMachineCircuitboard # Frontier
   # - ShuttleGunKineticCircuitboard # Frontier

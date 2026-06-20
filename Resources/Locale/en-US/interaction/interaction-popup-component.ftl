@@ -32,6 +32,7 @@ petting-success-slimes = You pet {THE($target)} on {POSS-ADJ($target)} mucous su
 petting-success-snake = You pet {THE($target)} on {POSS-ADJ($target)} scaly large head.
 petting-success-monkey = You pet {THE($target)} on {POSS-ADJ($target)} mischevious little head.
 petting-success-nymph = You pet {THE($target)} on {POSS-ADJ($target)} wooden little head.
+petting-success-scurret = You pet {THE($target)} on {POSS-ADJ($target)} legally distinct head.
 
 petting-failure-generic = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} aloof towards you.
 
@@ -53,6 +54,7 @@ petting-failure-bear = You reach out to pet {THE($target)}, but {SUBJECT($target
 petting-failure-monkey = You reach out to pet {THE($target)}, but {SUBJECT($target)} almost {CONJUGATE-BASIC($target, "bite", "bites")} your fingers!
 petting-failure-nymph = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BASIC($target, "move", "moves")} {POSS-ADJ($target)} branches away.
 petting-failure-shadow = You try to pet {THE($target)}, but your hand passes through the cold darkness of {POSS-ADJ($target)} body.
+petting-failure-scurret = You reach out to pet {THE($target)}, but {SUBJECT($target)} does a backflip!
 
 ## Petting silicons
 
@@ -69,6 +71,8 @@ petting-success-medical-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} s
 petting-success-service-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} dapper looking metal head.
 petting-success-syndicate-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} menacing metal head.
 petting-success-derelict-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} rusty metal head.
+petting-success-assassin-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} deadly menacing metal head.
+petting-success-scout-cyborg = You pet {THE($target)} on {POSS-ADJ($target)} sleek metal head.
 petting-success-recycler = You pet {THE($target)} on {POSS-ADJ($target)} mildly threatening steel exterior.
 petting-success-station-ai = You pet {THE($target)} on {POSS-ADJ($target)} cold, square screen.
 
@@ -85,6 +89,8 @@ petting-failure-medical-cyborg = You reach out to pet {THE($target)}, but {SUBJE
 petting-failure-service-cyborg = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} busy serving others!
 petting-failure-syndicate-cyborg = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} treacherous affiliation makes you reconsider.
 petting-failure-derelict-cyborg = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} rusty and jagged exterior makes you reconsider.
+petting-failure-assassin-cyborg = You reach out to pet {THE($target)}, but {POSS-ADJ($target)} lethal presence makes you keep your distance.
+petting-failure-scout-cyborg = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BE($target)} too busy scanning the area!
 petting-failure-station-ai = You reach out to pet {THE($target)}, but {SUBJECT($target)} {CONJUGATE-BASIC($target, "zap", "zaps")} your hand away.
 
 petting-success-station-ai-others = { CAPITALIZE(THE($user)) } pets {THE($target)} on {POSS-ADJ($target)} cold, square screen.

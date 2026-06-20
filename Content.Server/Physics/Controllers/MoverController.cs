@@ -2,10 +2,13 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
+using Content.Shared.Friction;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
+using Content.Shared.Ghost; // Frontier
+using Prometheus;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 using DroneConsoleComponent = Content.Server.Shuttles.DroneConsoleComponent;
@@ -16,6 +19,10 @@ namespace Content.Server.Physics.Controllers;
 
 public sealed class MoverController : SharedMoverController
 {
+    private static readonly Gauge ActiveMoverGauge = Metrics.CreateGauge(
+        "physics_active_mover_count",
+        "Active amount of InputMovers being processed by MoverController");
+
     [Dependency] private readonly ThrusterSystem _thruster = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
 
@@ -88,6 +95,9 @@ public sealed class MoverController : SharedMoverController
         // Need to order mob movement so that movers don't run before their relays.
         while (inputQueryEnumerator.MoveNext(out var uid, out var mover))
         {
+            if (IsPaused(uid) && !HasComp<GhostComponent>(uid)) // Frontier: Skip processing paused entities. Ghosts are excepted for mapping reasons
+                continue; // Frontier
+
             InsertMover((uid, mover));
         }
 
@@ -95,6 +105,8 @@ public sealed class MoverController : SharedMoverController
         {
             HandleMobMovement(mover, frameTime);
         }
+
+        ActiveMoverGauge.Set(_movers.Count);
 
         HandleShuttleMovement(frameTime);
     }
@@ -229,10 +241,12 @@ public sealed class MoverController : SharedMoverController
     /// <summary>
     /// Helper function to extrapolate max velocity for a given Vector2 (really, its angle) and shuttle.
     /// </summary>
-    private Vector2 ObtainMaxVel(Vector2 vel, ShuttleComponent shuttle)
+    private Vector2 ObtainMaxVel(Vector2 vel, ShuttleComponent shuttle, PhysicsComponent body) // mono
     {
         if (vel.Length() == 0f)
             return Vector2.Zero;
+
+        vel.Normalize(); // Mono
 
         // this math could PROBABLY be simplified for performance
         // probably
@@ -243,10 +257,22 @@ public sealed class MoverController : SharedMoverController
 
         var horizIndex = vel.X > 0 ? 1 : 3; // east else west
         var vertIndex = vel.Y > 0 ? 2 : 0; // north else south
-        var horizComp = vel.X != 0 ? MathF.Pow(Vector2.Dot(vel, new (shuttle.BaseLinearThrust[horizIndex] / shuttle.LinearThrust[horizIndex], 0f)), 2) : 0; // Frontier: LinearThrust<BaseLinearThrust
-        var vertComp = vel.Y != 0 ? MathF.Pow(Vector2.Dot(vel, new (0f, shuttle.BaseLinearThrust[vertIndex] / shuttle.LinearThrust[vertIndex])), 2) : 0; // Frontier: LinearThrust<BaseLinearThrust
 
-        return shuttle.BaseMaxLinearVelocity * vel * MathF.ReciprocalSqrtEstimate(horizComp + vertComp);
+        // Mono
+        var horizThrust = vel.X * shuttle.LinearThrust[horizIndex];
+        var vertThrust = vel.Y * shuttle.LinearThrust[vertIndex];
+
+        // Mono - scale max velocity depending on TWR
+        var thrust = MathF.Sqrt(horizThrust * horizThrust + vertThrust * vertThrust);
+        var twr = thrust / body.Mass;
+        var twrMult = MathF.Pow(twr / shuttle.BaseMaxVelocityTWR, shuttle.MaxVelocityScalingExponent);
+
+        // Mono - minor optimisation
+        var horizComp = vel.X == 0 ? 0 : vel.X * shuttle.BaseLinearThrust[horizIndex] / horizThrust; // Frontier: LinearThrust<BaseLinearThrust
+        var vertComp = vel.Y == 0 ? 0 : vel.Y * shuttle.BaseLinearThrust[vertIndex] / vertThrust; // Frontier: LinearThrust<BaseLinearThrust
+
+        // Mono
+        return vel * MathF.Min(shuttle.BaseMaxLinearVelocity * twrMult / MathF.Sqrt(horizComp * horizComp + vertComp * vertComp), MathF.Min(shuttle.UpperMaxVelocity, shuttle.SetMaxVelocity));
     }
 
     private void HandleShuttleMovement(float frameTime)
@@ -504,8 +530,9 @@ public sealed class MoverController : SharedMoverController
                 var forceMul = frameTime * body.InvMass;
 
                 var localVel = (-shuttleNorthAngle).RotateVec(body.LinearVelocity);
-                var maxVelocity = ObtainMaxVel(localVel, shuttle); // max for current travel dir
-                var maxWishVelocity = ObtainMaxVel(totalForce, shuttle);
+                // Mono - ObtainMaxVel takes body
+                var maxVelocity = ObtainMaxVel(localVel, shuttle, body); // max for current travel dir
+                var maxWishVelocity = ObtainMaxVel(totalForce, shuttle, body);
                 var properAccel = (maxWishVelocity - localVel) / forceMul;
 
                 var finalForce = Vector2Dot(totalForce, properAccel.Normalized()) * properAccel.Normalized();

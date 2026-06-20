@@ -8,6 +8,7 @@ using Content.Shared.Movement.Events;
 using Robust.Shared.GameStates;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
+using Robust.Shared.Log;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -25,6 +26,8 @@ namespace Content.Shared.Movement.Systems
         public bool CameraRotationLocked { get; set; }
 
         public static ProtoId<AlertPrototype> WalkingAlert = "Walking";
+
+        private readonly ISawmill _sawmill = Logger.GetSawmill("lerk.checkerGridDelete"); // Horizon
 
         private void InitializeInput()
         {
@@ -98,7 +101,7 @@ namespace Content.Shared.Movement.Systems
             RaiseLocalEvent(entity, ref moveEvent);
             Dirty(entity, entity.Comp);
 
-            var ev = new SpriteMoveEvent(entity.Comp.HeldMoveButtons != MoveButtons.None);
+            var ev = new SpriteMoveEvent(entity.Comp.HasDirectionalMovement);
             RaiseLocalEvent(entity, ref ev);
         }
 
@@ -124,17 +127,35 @@ namespace Content.Shared.Movement.Systems
                 entity.Comp.HeldMoveButtons = state.HeldMoveButtons;
                 RaiseLocalEvent(entity.Owner, ref moveEvent);
 
-                var ev = new SpriteMoveEvent(entity.Comp.HeldMoveButtons != MoveButtons.None);
+                var ev = new SpriteMoveEvent(entity.Comp.HasDirectionalMovement);
                 RaiseLocalEvent(entity, ref ev);
             }
         }
 
         private void OnMoverGetState(Entity<InputMoverComponent> entity, ref ComponentGetState args)
         {
+            // Horizon start
+            NetEntity? relativeEntity = null;
+            if (entity.Comp.RelativeEntity != null)
+            {
+                if (Deleted(entity.Comp.RelativeEntity.Value))
+                {
+                    _sawmill.Warning($"Trying to get NetEntity for deleted entity {entity.Comp.RelativeEntity.Value} in InputMoverComponent {entity.Owner}");
+                    relativeEntity = null;
+                }
+                else
+                {
+                    relativeEntity = GetNetEntity(entity.Comp.RelativeEntity);
+                    // If GetNetEntity returns Invalid for a deleted entity, treat it as null
+                    if (relativeEntity == NetEntity.Invalid)
+                        relativeEntity = null;
+                }
+            }
+            // Horizon end
             args.State = new InputMoverComponentState()
             {
                 CanMove = entity.Comp.CanMove,
-                RelativeEntity = GetNetEntity(entity.Comp.RelativeEntity),
+                RelativeEntity = relativeEntity,
                 LerpTarget = entity.Comp.LerpTarget,
                 HeldMoveButtons = entity.Comp.HeldMoveButtons,
                 RelativeRotation = entity.Comp.RelativeRotation,
@@ -342,6 +363,7 @@ namespace Content.Shared.Movement.Systems
 
             entity.Comp.RelativeEntity = xform.GridUid ?? xform.MapUid;
             entity.Comp.TargetRelativeRotation = Angle.Zero;
+            RaiseLocalEvent(entity, new SprintingInputEvent(entity)); // WD EDIT
         }
 
         private void HandleRunChange(EntityUid uid, ushort subTick, bool walking)
@@ -354,6 +376,7 @@ namespace Content.Shared.Movement.Systems
                 if (moverComp != null)
                 {
                     SetMoveInput((uid, moverComp), MoveButtons.None);
+                    RaiseLocalEvent(uid, new SprintingInputEvent((uid, moverComp))); // WD EDIT
                 }
 
                 HandleRunChange(relayMover.RelayEntity, subTick, walking);

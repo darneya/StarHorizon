@@ -1,9 +1,11 @@
-using Content.Server.Body.Components;
+using System.Numerics;
 using Content.Server.Ghost;
 using Content.Server.Humanoid;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Events;
 using Content.Shared.Body.Part;
 using Content.Shared.Body.Systems;
+using Content.Shared.Damage.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Systems;
@@ -13,6 +15,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Timing;
 using System.Numerics;
 using Content.Server._Horizon.Medical.Limbs;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server.Body.Systems;
 
@@ -115,6 +118,9 @@ public sealed class BodySystem : SharedBodySystem
         {
             return new HashSet<EntityUid>();
         }
+
+        if (HasComp<GodmodeComponent>(bodyId))
+            return new HashSet<EntityUid>();
 
         var xform = Transform(bodyId);
         if (xform.MapUid is null)

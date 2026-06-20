@@ -143,7 +143,7 @@
       whitelist:
         - Sheriff
 
-#region weapons
+# region Weapons
 - type: listing
   id: UplinkSecurityMk32
   name:  uplink-security-mk32-name
@@ -152,6 +152,54 @@
   icon: { sprite: _DV/Objects/Weapons/Guns/Pistols/universal.rsi, state: icon }
   cost:
     FrontierUplinkCoin: 2
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+
+- type: listing
+  id: UplinkSecurityBeretta
+  name:  Beretta M92FS
+  description: Один из самых популярных пистолетов среди полиции.
+  productEntity: NFWeaponPistolBeretta
+  icon: { sprite: _NF/Objects/Weapons/Guns/Pistols/b92fs.rsi, state: base }
+  cost:
+    FrontierUplinkCoin: 3
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+
+- type: listing
+  id: UplinkSecurityP90
+  name:  P-90
+  description: Несмотря на древность дизайна,все еще является верным другом на поле боя.
+  productEntity: NFWeaponSubMachineGunP90
+  icon: { sprite: _NF/Objects/Weapons/Guns/SMGs/p90.rsi, state: base }
+  cost:
+    FrontierUplinkCoin: 4
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+
+- type: listing
+  id: UplinkSecuritySpearhead
+  name: Копье
+  description: Большой и грозный револьвер. Часто используется военными комисарами
+  productEntity: NFWeaponRevolverSpearhead
+  icon: { sprite: _NF/Objects/Weapons/Guns/Pistols/spearhead.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 3
   categories:
     - UplinkSecurityWeapons
   conditions:
@@ -230,6 +278,48 @@
         - Sheriff
 
 - type: listing
+  id: UplinkSecurityType71
+  name:  Type-71
+  description: Штурмовая винтовка,специально поставляемая в сектор для ДСФБ
+  productEntity: NFWeaponRifleAssaultType71
+  icon: { sprite: _NF/Objects/Weapons/Guns/Rifles/type71.rsi, state: base }
+  cost:
+    FrontierUplinkCoin: 5
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: UplinkSecurityXM38
+  name:  XM-38
+  description: Пару лет назад была проверена в колониальный конфликтах. Теперь же она в ваших руках.
+  productEntity: NFWeaponShotgunXM38
+  icon: { sprite: _NF/Objects/Weapons/Guns/Shotguns/xm38.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 6
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
   id: UplinkSecurityLecter
   name:  uplink-security-lecter-name
   description: uplink-security-lecter-desc
@@ -278,7 +368,7 @@
   productEntity: NFWeaponEnergyRifleCarbine
   icon: { sprite: Objects/Weapons/Guns/Battery/laser_gun.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 8
+    FrontierUplinkCoin: 5
   categories:
     - UplinkSecurityWeapons
   conditions:
@@ -299,7 +389,7 @@
   productEntity: NFWeaponEnergyRifleSniperCannon
   icon: { sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 14
+    FrontierUplinkCoin: 10
   categories:
     - UplinkSecurityWeapons
   conditions:
@@ -318,7 +408,28 @@
   productEntity: NFWeaponEnergySubMachineGunDisabler
   icon: { sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi, state: base }
   cost:
-    FrontierUplinkCoin: 6
+    FrontierUplinkCoin: 4
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: UplinkSecurityLazerSword
+  name:  uplink-security-energysword-name
+  description: uplink-security-energysword-desc
+  productEntity: EnergySwordNfsd
+  icon: { sprite: Objects/Weapons/Melee/e_sword.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 10
   categories:
     - UplinkSecurityWeapons
   conditions:
@@ -359,7 +470,7 @@
   productEntity: NFWeaponEnergySubMachineGunDeltaV
   icon: { sprite: _DV/Objects/Weapons/Guns/Battery/energygun.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 8
+    FrontierUplinkCoin: 5
   categories:
     - UplinkSecurityWeapons
   conditions:
@@ -389,6 +500,71 @@
           - SecurityUplink
     - !type:BuyerJobCondition
       whitelist:
+        - Sheriff
+
+# region ДСФБ Импульсное оружие
+
+- type: listing
+  id: UplinkDSFBPulsePistolSec
+  name: Импульсный пистолет ДСФБ
+  description: Компактный импульсный пистолет, поставляемый в сектор для нужд ДСФБ. На рукоятке выгравирована эмблема безопасности.
+  productEntity: NFWeaponEnergyPistolPulse
+  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 20
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: UplinkDSFBPulseRifleSec
+  name: Импульсная винтовка ДСФБ
+  description: Стандартная импульсная винтовка, адаптированная для подразделений ДСФБ. Надёжное и мощное энергетическое оружие для полевых операций.
+  productEntity: NFWeaponEnergyRiflePulse
+  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_rifle.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 25
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
+        - Sheriff
+
+- type: listing
+  id: UplinkDSFBPulseCarabineSec
+  name: Импульсный карабин ДСФБ
+  description: Высокотехнологичный импульсный карабин, разработанный специально для штурмовых операций ДСФБ. Сочетает компактность с высокой огневой мощью.
+  productEntity: NFWeaponEnergyRifleAssaultPulseCarbine
+  icon: { sprite: Objects/Weapons/Guns/Battery/pulse_carbine.rsi, state: icon }
+  cost:
+    FrontierUplinkCoin: 35
+  categories:
+    - UplinkSecurityWeapons
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+    - !type:BuyerJobCondition
+      whitelist:
+        - Bailiff
+        - SeniorOfficer
         - Sheriff
 
 #region utililty
@@ -791,7 +967,7 @@
   productEntity: SecBreachingHammer
   icon: { sprite: Nyanotrasen/Objects/Weapons/Melee/breaching_hammer.rsi, state: icon }
   cost:
-    FrontierUplinkCoin: 3
+    FrontierUplinkCoin: 4
   categories:
     - UplinkSecurityWeapons
   conditions:
@@ -1056,7 +1232,7 @@
   productEntity: HoverbikeNfsdFlatpack
   icon: { sprite: _NF/Objects/Vehicles/hoverbike.rsi, state: vehicle }
   cost:
-    FrontierUplinkCoin: 3
+    FrontierUplinkCoin: 10
   categories:
     - UplinkSecurityUtility
   conditions:

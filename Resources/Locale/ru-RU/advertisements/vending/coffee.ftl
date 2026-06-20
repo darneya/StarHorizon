@@ -14,5 +14,5 @@ advertisement-coffee-13 = Отведайте наш новый шоколад!
 advertisement-coffee-14 = Горячие напитки! Заберите свой прямо сейчас!
 thankyou-coffee-1 = Наслаждайтесь!
 thankyou-coffee-2 = Пейте пока горячее!
-thankyou-coffee-3 = Приготовление завершено.
-thankyou-coffee-4 = Напиток подан.
+thankyou-coffee-3 = Напиток готов.
+thankyou-coffee-4 = Напиток выдан.

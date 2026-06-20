@@ -15,7 +15,7 @@ public sealed partial class SingleMarkingPicker : BoxContainer
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
     private readonly SpriteSystem _sprite;
-    
+
     /// <summary>
     ///     What happens if a marking is selected.
     ///     It will send the 'slot' (marking index)
@@ -121,6 +121,21 @@ public sealed partial class SingleMarkingPicker : BoxContainer
     }
 
     private int PointsUsed => _markings?.Count ?? 0;
+
+    // _Horizon scroller change min height start
+    public float MarkingScrollerMinHeight
+    {
+        get => MarkingScroller.MinHeight;
+        set => MarkingScroller.MinHeight = value;
+    }
+
+    public float CollorScrollerMinHeight
+    {
+        get => MarkingScroller.MinHeight;
+        set => MarkingScroller.MinHeight = value;
+    }
+
+    // _Horizon scroller change min height end
 
     public SingleMarkingPicker()
     {
@@ -231,6 +246,7 @@ public sealed partial class SingleMarkingPicker : BoxContainer
                 HorizontalExpand = true
             };
             selector.Color = marking.MarkingColors[i];
+            selector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
 
             var colorIndex = i;
             selector.OnColorChanged += color =>

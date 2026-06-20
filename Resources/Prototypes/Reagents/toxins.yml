@@ -18,6 +18,7 @@
         damage:
           types:
             Poison: 4
+  pricePerUnit: 3 # Horizon
 
 - type: reagent
   id: CarpoToxin
@@ -36,14 +37,23 @@
     Poison:
       effects:
       - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Katunian
+          shouldHave: false
         damage:
           types:
             Poison: 4
       - !type:PopupMessage
+        conditions:
+        - !type:OrganType
+          type: Katunian
+          shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-burning-insides" ]
         probability: 0.33
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: ChloralHydrate
@@ -63,9 +73,8 @@
       - !type:MovespeedModifier
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
-      - !type:GenericStatusEffect
-        key: Drowsiness
-        component: Drowsiness
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
         time: 4
         type: Add
         refresh: false
@@ -77,6 +86,7 @@
         damage:
           types:
             Poison: 1.5
+  pricePerUnit: 4 # Horizon
 
 - type: reagent
   id: GastroToxin
@@ -98,6 +108,7 @@
           - !type:ReagentThreshold
             min: 2
           probability: 0.2
+  pricePerUnit: 1 # Horizon
 
 - type: reagent
   id: Mold
@@ -165,6 +176,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.3
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: FerrochromicAcid
@@ -186,6 +198,7 @@
           types:
             Heat: 2.5
             Caustic: 1
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: FluorosulfuricAcid
@@ -226,6 +239,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.25
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: SulfuricAcid
@@ -274,6 +288,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.2
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: UnstableMutagen
@@ -295,6 +310,7 @@
         damage:
           types:
             Radiation: 3
+  pricePerUnit: 3 # Horizon
 
 - type: reagent
   id: HeartbreakerToxin
@@ -313,6 +329,7 @@
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
+  pricePerUnit: 6 # Horizon
 
 - type: reagent
   id: Lexorin
@@ -328,6 +345,7 @@
         damage:
           groups:
             Airloss: 10
+  pricePerUnit: 50 # Horizon
 
 - type: reagent
   id: MindbreakerToxin
@@ -343,13 +361,13 @@
   metabolisms:
     Poison:
       effects:
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
-        component: SeeingRainbows
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 10
         refresh: false
   # TODO: PROPER hallucinations
+  pricePerUnit: 10 # Horizon
 
 - type: reagent
   id: Histamine
@@ -374,8 +392,9 @@
         damage:
           groups:
             Brute: 2
-            Toxin: 2
             Airloss: 2
+          types:
+            Poison: 2
       - !type:PopupMessage
         type: Local
         messages: [ "histamine-effect-light-itchiness" ]
@@ -388,6 +407,7 @@
         visualType: Medium
         messages: [ "histamine-effect-heavy-itchiness" ]
         probability: 0.2
+  pricePerUnit: 3 # Horizon
 
 - type: reagent
   id: Theobromine
@@ -400,7 +420,7 @@
   boilingPoint: 554 # I'm not a chemist, but it boils at 295, lower than melting point, idk how it works so I gave it higher value
   metabolisms:
     Poison:
-      metabolismRate: 0.05
+      metabolismRate: 0.04 # DeltaV - Slowed to allow coffee/etc to build up theobromine
       effects:
       - !type:HealthChange
         conditions:
@@ -408,12 +428,15 @@
           type: Animal # Applying damage to the mobs with lower metabolism capabilities
         damage:
           types:
-            Poison: 0.4
+            Poison: 0.3 # DeltaV - slightly reduced to account for slowed metabolism rate
       - !type:ChemVomit
-        probability: 0.04 #Scaled for time, not metabolismrate.
+        probability: 0.1 #Scaled for time, not metabolismrate. # DeltaV - Increased from .04 Vomit more when there is a lot of it
         conditions:
           - !type:OrganType
             type: Animal
+            reagent: Theobromine
+            min: 0.5
+  pricePerUnit: 1 # Horizon
 
 - type: reagent
   id: Amatoxin
@@ -430,6 +453,7 @@
         damage:
           types:
             Poison: 3
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: VentCrud
@@ -446,6 +470,7 @@
           damage:
             types:
               Poison: 2
+  pricePerUnit: 1 # Horizon
 
 - type: reagent
   id: Romerol
@@ -463,6 +488,7 @@
           conditions:
             - !type:ReagentThreshold
               min: 5
+  pricePerUnit: 10 # Horizon
 
 - type: reagent
   id: UncookedAnimalProteins
@@ -486,6 +512,9 @@
           - !type:OrganType
             type: Demon
             shouldHave: false
+          - !type:OrganType
+            type: Katunian
+            shouldHave: false
         type: Local
         visualType: MediumCaution
         messages: [ "generic-reagent-effect-sick" ]
@@ -502,6 +531,9 @@
           - !type:OrganType
             type: Vox
             shouldHave: false
+          - !type:OrganType
+            type: Katunian
+            shouldHave: false
       - !type:HealthChange
         conditions:
         - !type:OrganType
@@ -512,6 +544,9 @@
           shouldHave: false
         - !type:OrganType
           type: Demon
+          shouldHave: false
+        - !type:OrganType
+          type: Katunian
           shouldHave: false
         damage:
           types:
@@ -524,6 +559,9 @@
         - !type:OrganType
           type: Demon
           shouldHave: true
+        - !type:OrganType
+           type: Katunian
+           shouldHave: true
         reagent: Protein
         amount: 0.5
       - !type:AdjustReagent
@@ -540,6 +578,7 @@
         reagent: Protein
         amount: 0.5
       # End Frontier: goblin metabolism
+  pricePerUnit: 1 # Horizon
 
 - type: reagent
   id: Allicin
@@ -562,6 +601,7 @@
         damage:
           types:
             Poison: 0.06
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Pax
@@ -578,6 +618,7 @@
         component: Pacified
         type: Add
         time: 4
+  pricePerUnit: 4 # Horizon
 
 - type: reagent
   id: Honk
@@ -594,6 +635,7 @@
       - !type:Emote
         emote: Honk
         showInChat: true
+        showInGuidebook: true
         force: true
         probability: 0.2
       - !type:HealthChange
@@ -605,7 +647,7 @@
         damage:
           types:
             Poison: 0.06
-
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Lead
@@ -622,6 +664,7 @@
         damage:
           types:
             Poison: 0.6 # Makes it 20 damage per unit.
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Bungotoxin
@@ -638,6 +681,7 @@
         damage:
           types:
             Poison: 1.8
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Vestine
@@ -661,6 +705,7 @@
         damage:
           groups:
             Airloss: 2
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Tazinide
@@ -675,6 +720,7 @@
       effects:
       - !type:Electrocute
         probability: 0.8
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Lipolicide
@@ -696,6 +742,7 @@
             Poison: 2
       - !type:SatiateHunger
         factor: -6
+  pricePerUnit: 5 # Horizon
 
 # inspired by the spider neurotoxin GsMtx-4
 # poisons non-spiders and slows you down at high doses
@@ -739,6 +786,7 @@
           shouldHave: false
         walkSpeedModifier: 0.4
         sprintSpeedModifier: 0.4
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: ToxinTrash
@@ -755,3 +803,4 @@
         conditions:
         - !type:OrganType
           type: Vox
+  pricePerUnit: 5 # Horizon

@@ -41,7 +41,9 @@ using Content.Shared._NF.ShuttleRecords;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Forensics.Components;
 using Robust.Server.Player;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Server._Horizon.Shipyard;
 
 namespace Content.Server._NF.Shipyard.Systems;
 
@@ -65,6 +67,9 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly ShuttleRecordsSystem _shuttleRecordsSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
+
+    // Horizon
+    [Dependency] private readonly ShipOwnershipSystem? _shipOwnership = default!;
 
     private static readonly Regex DeedRegex = new(@"\s*\([^()]*\)");
 
@@ -166,9 +171,16 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
         else
         {
-            if (!_bank.TryBankWithdraw(player, vessel.Price))
+            // Horizon start
+            var price = vessel.Price;
+
+            foreach (var item in vessel.CostModifiers)
+                item.Modify(player, shipyardConsoleUid, ref price, _entityManager);
+
+            // Horizon end
+            if (!_bank.TryBankWithdraw(player, price))  // Horizon - modify price
             {
-                ConsolePopup(player, Loc.GetString("cargo-console-insufficient-funds", ("cost", vessel.Price)));
+                ConsolePopup(player, Loc.GetString("cargo-console-insufficient-funds", ("cost", price)));   // Horizon - modify price
                 PlayDenySound(player, shipyardConsoleUid, component);
                 return;
             }
@@ -216,7 +228,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         var deedShuttle = EnsureComp<ShuttleDeedComponent>(shuttleUid);
         AssignShuttleDeedProperties((shuttleUid, deedShuttle), shuttleUid, name, shuttleOwner, voucherUsed);
 
-        if (!voucherUsed && component.NewJobTitle != null)
+        if (!voucherUsed && component.NewJobTitle != null && !HasComp<PreventShipyardTitleOverwriteComponent>(args.Actor))
         {
             _idSystem.TryChangeJobTitle(targetId, Loc.GetString(component.NewJobTitle), idCard, player);
         }
@@ -263,6 +275,15 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
         // Ensure cleanup on ship sale
         EnsureComp<LinkedLifecycleGridParentComponent>(shuttleUid);
+
+        // Horizon start
+        // Register ship ownership for auto-deletion when owner is offline too long
+        // We need to get the player's session from their entity
+        if (_shipOwnership != null && TryComp<ActorComponent>(player, out var actorComp) && actorComp.PlayerSession != null)
+        {
+            _shipOwnership.RegisterShipOwnership(shuttleUid, actorComp.PlayerSession);
+        }
+        // Horizon end
 
         var sellValue = 0;
         if (!voucherUsed)
@@ -601,6 +622,11 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 voucherUsed);
 
         }
+
+        // Horizon start
+        component.CurIdCard = GetNetEntity(component.TargetIdSlot.ContainerSlot?.ContainedEntity);
+        Dirty(uid, component);
+        // Horizon end
     }
 
     /// <summary>

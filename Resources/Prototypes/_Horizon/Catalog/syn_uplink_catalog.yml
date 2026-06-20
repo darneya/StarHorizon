@@ -1,0 +1,1393 @@
+# region Legacy
+
+- type: listing
+  id: UplinkNightVision
+  name: Прибор ночного видения синдиката
+  description: Прибор ночного видения для вас и вашей ночной штурмовой группы.
+  icon: { sprite: /Textures/_Horizon/Clothing/Eyes/nvgsynd.rsi, state: icon }
+  productEntity: ClothingEyesVisionSyndicate
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkPlushieLemirdSchoolGirl
+  name: Плюшевая школьница Лемирд
+  description: При одном взгляде на неё готова задушить ляжками и убить милотой.
+  icon: { sprite: /Textures/_StarHorizon/Objects/Fun/plushielemirdschoolgirl.rsi, state: icon }
+  productEntity: PlushieLemirdSchoolGirl
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkMysteryBoxSyndicate
+  name: Загадочная коробка
+  description: "Небольшая коробка. Внутри - комплект белья-хамелеон: трусы, бюстгальтер и носки из голографических волокон."
+  productEntity: BoxMysterySyndicate
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkPointless
+
+#- type: listing
+#  id: UplinkCursedKatana
+#  name: Проклятая катана
+#  description: Символ безжалостной силы, эта катана была выкована в огне ненависти и предательства. Каждый раз, когда она касается врага, её жажда разрушения лишь усиливается. Используйте её с умом, иначе она может забрать вашу душу.
+#  icon: { sprite: /Textures/_Horizon/Objects/Weapons/Melee/cursedkatana.rsi, state: icon }
+#  productEntity: ClothingBeltCursedKatanaSheathFilled
+#  cost:
+#    Telecrystal: 10
+#  categories:
+#  - UplinkWeaponry
+
+- type: listing
+  id: UplinkBarrettBundle
+  name: Набор тяжёлой винтовки
+  description: Крупнокалиберная винтовка, использующая современный калибр .70. Данная винтовка не имеет никаких нюансов, может быть взведена и использована в любой момент. Лучше взять её в обе руки перед выстрелом, поставляется в чехле под гитары с тремя магазинами, и очками в подарок.
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Snipers/barrettm82.rsi, state: base }
+  productEntity: GuitarCaseSyndicate
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkMagazineSniperBarrettM82AR
+  name: uplink-magazine-sniper-barrett-m82-ar-name
+  description: uplink-magazine-sniper-barrett-m82-ar-desc
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: sred }
+  productEntity: MagazineSniperBarrettM82AR
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazineBarrettM82HighVelocity
+  name: uplink-magazine-barrett-m82-high-velocity-name
+  description: uplink-magazine-barrett-m82-high-velocity-desc
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: red }
+  productEntity: MagazineBarrettM82HighVelocity
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazineSniperBarrettM82
+  name: uplink-magazine-sniper-barrett-m82-name
+  description: uplink-magazine-sniper-barrett-m82-desc
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Ammunition/Casings/sniper_barrettm82_mag.rsi, state: red }
+  productEntity: MagazineSniperBarrettM82
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkWeaponMakarov
+  name: uplink-weapon-makarov-name
+  description: uplink-weapon-makarov-desc
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: icon }
+  productEntity: BaseWeaponMakarov
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkMagazinePistols9x18
+  name: uplink-magazine-pistols-9x18-name
+  description: uplink-magazine-pistols-9x18-desc
+  icon: { sprite: _Horizon/Objects/Weapons/Guns/Pistols/makarov.rsi, state: slug }
+  productEntity: MagazinePistols9x18
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkHardsuitExperimentalSyndyRamzi
+  name: uplink-hardsuit-experimental-syndy-ramzi-name
+  description: uplink-hardsuit-experimental-syndy-ramzi-desc
+  icon: { sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/syndicateramzi.rsi, state: icon }
+  productEntity: ClothingOuterExperimentalSyndy
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkHardsuitCybersunResearch
+  name: uplink-hardsuit-cybersun-research-name
+  description: uplink-hardsuit-cybersun-research-desc
+  icon: { sprite: _StarHorizon/Clothing/OuterClothing/Hardsuits/syndicatecybersun.rsi, state: icon }
+  productEntity: ClothingOuterCybersunResearch
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkGrenadeLauncherBundle
+  name: uplink-grenade-launcher-bundle-name
+  description: uplink-grenade-launcher-bundle-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Launchers/rocket.rsi, state: base }
+  productEntity: ClothingBackpackDuffelSyndicateFilledGrenadeLauncher
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 15
+  cost:
+    Telecrystal: 25
+  categories:
+  - UplinkWeaponry
+
+# region Attachements
+
+- type: listing
+  id: UplinkRailAttachmentsBundle
+  name: uplink-rail-attachments-name
+  description: uplink-rail-attachments-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/under.rsi, state: uplink_modules }
+  productEntity: ClothingBackpackDuffelSyndicateFilledRailAttachments
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkAttachments
+
+- type: listing
+  id: UplinkBarrelAttachmentsBundle
+  name: uplink-barrel-attachments-name
+  description: uplink-barrel-attachments-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/under.rsi, state: uplink_modules }
+  productEntity: ClothingBackpackDuffelSyndicateFilledBarrelAttachments
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkAttachments
+
+- type: listing
+  id: UplinkUnderAttachmentsBundle
+  name: uplink-under-attachments-name
+  description: uplink-under-attachments-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Attachments/under.rsi, state: uplink_modules }
+  productEntity: ClothingBackpackDuffelSyndicateFilledUnderAttachments
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkAttachments
+
+# region Ammo
+
+- type: listing
+  id: UplinkLethalGrenadesBundle
+  name: uplink-lethal-grenades-name
+  description: uplink-lethal-grenades-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Ammunition/Explosives/40mm_grenade.rsi, state: heat }
+  productEntity: ClothingBackpackDuffelSyndicateFilledLethalGrenades
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 12
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkExplosives
+
+- type: listing
+  id: UplinkNonLethalGrenadesBundle
+  name: uplink-nonlethal-grenades-name
+  description: uplink-nonlethal-grenades-description
+  icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Ammunition/Explosives/40mm_grenade.rsi, state: stun }
+  productEntity: ClothingBackpackDuffelSyndicateFilledNonLethalGrenades
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 3
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkExplosives
+
+# region Borgs
+
+- type: listing
+  id: UplinkSyndicateBorgAssault
+  name: uplink-syndicate-borg-assault-name
+  description: uplink-syndicate-borg-assault-desc
+  productEntity: BorgChassisSyndicateAssault
+  cost:
+    Telecrystal: 60
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgMedical
+  name: uplink-syndicate-borg-medical-name
+  description: uplink-syndicate-borg-medical-desc
+  productEntity: BorgChassisSyndicateMedical
+  cost:
+    Telecrystal: 45
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgSaboteur
+  name: uplink-syndicate-borg-saboteur-name
+  description: uplink-syndicate-borg-saboteur-desc
+  productEntity: BorgChassisSyndicateSaboteur
+  cost:
+    Telecrystal: 50
+  categories:
+    - UplinkSyndicateBorgs
+
+# region Borg Modules
+
+- type: listing
+  id: UplinkSyndicateBorgWeapon
+  name: uplink-syndicate-borg-weapon-name
+  description: uplink-syndicate-borg-weapon-desc
+  productEntity: BorgModuleSyndicateWeapon
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgOperative
+  name: uplink-syndicate-borg-operative-name
+  description: uplink-syndicate-borg-operative-desc
+  productEntity: BorgModuleOperative
+  cost:
+    Telecrystal: 10
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgEsword
+  name: uplink-syndicate-borg-esword-name
+  description: uplink-syndicate-borg-esword-desc
+  productEntity: BorgModuleEsword
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgL6C
+  name: uplink-syndicate-borg-l6c-name
+  description: uplink-syndicate-borg-l6c-desc
+  productEntity: BorgModuleL6C
+  cost:
+    Telecrystal: 20
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgLaser
+  name: uplink-syndicate-borg-laser-name
+  description: uplink-syndicate-borg-laser-desc
+  productEntity: BorgModuleSyndicateLaser
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgHeavyLaser
+  name: uplink-syndicate-borg-heavy-laser-name
+  description: uplink-syndicate-borg-heavy-laser-desc
+  productEntity: BorgModuleSyndicateHeavyLaser
+  cost:
+    Telecrystal: 30
+  categories:
+    - UplinkSyndicateBorgs
+
+- type: listing
+  id: UplinkSyndicateBorgCloakDevice
+  name: uplink-syndicate-borg-cloak-device-name
+  description: uplink-syndicate-borg-cloak-device-desc
+  productEntity: BorgModuleSyndicateCloakingDevice
+  cost:
+    Telecrystal: 45
+  categories:
+    - UplinkSyndicateBorgs
+
+# region Mechas
+
+- type: listing
+  id: UplinkSyndicateMechDarkGygax
+  name: uplink-syndicate-mech-dark-gygax-name
+  description: uplink-syndicate-mech-dark-gygax-desc
+  productEntity: MechDarkGygaxBattery
+  cost:
+    Telecrystal: 150
+  categories:
+    - UplinkSyndieMechas
+
+- type: listing
+  id: UplinkSyndicateMechMauler
+  name: uplink-syndicate-mech-mauler-name
+  description: uplink-syndicate-mech-mauler-desc
+  productEntity: MechMaulerBattery
+  cost:
+    Telecrystal: 250
+  categories:
+    - UplinkSyndieMechas
+
+# region Mech Weapons
+
+- type: listing
+  id: UplinkSyndicateMechGunScattershot
+  name: uplink-syndicate-mech-gun-scattershot-name
+  description: uplink-syndicate-mech-gun-scattershot-desc
+  productEntity: MechGunScattershot
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndieMechas
+
+- type: listing
+  id: UplinkSyndicateMechGunAutocannonUAC2
+  name: uplink-syndicate-mech-gun-uac2-name
+  description: uplink-syndicate-mech-gun-uac2-desc
+  productEntity: MechGunAutocannonUAC2
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndieMechas
+
+- type: listing
+  id: UplinkSyndicateMechGunCarbineHades
+  name: uplink-syndicate-mech-gun-hades-name
+  description: uplink-syndicate-mech-gun-hades-desc
+  productEntity: MechGunCarbineHades
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndieMechas
+
+- type: listing
+  id: UplinkSyndicateMechGunLaser
+  name: uplink-syndicate-mech-gun-laser-name
+  description: uplink-syndicate-mech-gun-laser-desc
+  productEntity: MechGunLaser
+  cost:
+    Telecrystal: 20
+  categories:
+    - UplinkSyndieMechas
+
+- type: listing
+  id: UplinkSyndicateMechGunDisabler
+  name: uplink-syndicate-mech-gun-disabler-name
+  description: uplink-syndicate-mech-gun-disabler-desc
+  productEntity: MechGunDisabler
+  cost:
+    Telecrystal: 20
+  categories:
+    - UplinkSyndieMechas
+
+- type: listing
+  id: UplinkSyndicateMechGunMissileLRM6
+  name: uplink-syndicate-mech-gun-lrm6-name
+  description: uplink-syndicate-mech-gun-lrm6-desc
+  productEntity: MechGunMissileLRM6
+  cost:
+    Telecrystal: 35
+  categories:
+    - UplinkSyndieMechas
+
+# region Mech Ammunition
+
+- type: listing
+  id: UplinkSyndicateMechAmmoAC2Ultra
+  name: uplink-syndicate-mech-ammo-ac2-name
+  description: uplink-syndicate-mech-ammo-ac2-desc
+  productEntity: BoxAmmoAC2Ultra
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndieMechas
+
+- type: listing
+  id: UplinkSyndicateMechAmmoScattershot
+  name: uplink-syndicate-mech-ammo-scattershot-name
+  description: uplink-syndicate-mech-ammo-scattershot-desc
+  productEntity: BoxAmmoScattershot
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndieMechas
+
+- type: listing
+  id: UplinkSyndicateMechAmmoHades
+  name: uplink-syndicate-mech-ammo-hades-name
+  description: uplink-syndicate-mech-ammo-hades-desc
+  productEntity: BoxAmmoHades
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndieMechas
+
+- type: listing
+  id: UplinkSyndicateMechGranade
+  name: uplink-syndicate-mech-ammo-granade-name
+  description: uplink-syndicate-mech-ammo-granade-desc
+  productEntity: BoxAmmoGranade
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndieMechas
+
+# region Energy Weapons
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretM25
+  name: uplink-syndicate-weapon-turret-m25-name
+  description: uplink-syndicate-weapon-turret-m25-desc
+  productEntity: WeaponTurretM25
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkSyndicateGunneryEnergy
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretM220
+  name: uplink-syndicate-weapon-turret-m220-name
+  description: uplink-syndicate-weapon-turret-m220-desc
+  productEntity: WeaponTurretM220
+  cost:
+    Telecrystal: 45
+  categories:
+  - UplinkSyndicateGunneryEnergy
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretType35
+  name: uplink-syndicate-weapon-turret-type35-name
+  description: uplink-syndicate-weapon-turret-type35-desc
+  productEntity: WeaponTurretType35
+  cost:
+    Telecrystal: 105
+  categories:
+  - UplinkSyndicateGunneryEnergy
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretTarnyxReload
+  name: uplink-syndicate-weapon-turret-tarnyx-name
+  description: uplink-syndicate-weapon-turret-tarnyx-desc
+  productEntity: WeaponTurretTarnyxReload
+  cost:
+    Telecrystal: 105
+  categories:
+  - UplinkSyndicateGunneryEnergy
+
+# region Kinetic Weapons
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretL85Autocannon
+  name: uplink-syndicate-weapon-turret-l85-name
+  description: uplink-syndicate-weapon-turret-l85-desc
+  productEntity: WeaponTurretL85Autocannon
+  cost:
+    Telecrystal: 45
+  categories:
+  - UplinkSyndicateGunneryKinetic
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretDravon
+  name: uplink-syndicate-weapon-turret-dravon-name
+  description: uplink-syndicate-weapon-turret-dravon-desc
+  productEntity: WeaponTurretDravon
+  cost:
+    Telecrystal: 105
+  categories:
+  - UplinkSyndicateGunneryKinetic
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretAK570
+  name: uplink-syndicate-weapon-turret-ak570-name
+  description: uplink-syndicate-weapon-turret-ak570-desc
+  productEntity: WeaponTurretAK570
+  cost:
+    Telecrystal: 105
+  categories:
+  - UplinkSyndicateGunneryKinetic
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretCharonette
+  name: uplink-syndicate-weapon-turret-charonette-name
+  description: uplink-syndicate-weapon-turret-charonette-desc
+  productEntity: WeaponTurretCharonette
+  cost:
+    Telecrystal: 105
+  categories:
+  - UplinkSyndicateGunneryKinetic
+
+# region Missile Weapons
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretLightMunitionsBay
+  name: uplink-syndicate-weapon-turret-light-munitions-name
+  description: uplink-syndicate-weapon-turret-light-munitions-desc
+  productEntity: WeaponTurretLightMunitionsBay
+  cost:
+    Telecrystal: 45
+  categories:
+  - UplinkSyndicateGunneryMissile
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretVespera
+  name: uplink-syndicate-weapon-turret-vespera-name
+  description: uplink-syndicate-weapon-turret-vespera-desc
+  productEntity: WeaponTurretVespera
+  cost:
+    Telecrystal: 105
+  categories:
+  - UplinkSyndicateGunneryMissile
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretASM501
+  name: uplink-syndicate-weapon-turret-asm501-name
+  description: uplink-syndicate-weapon-turret-asm501-desc
+  productEntity: WeaponTurretASM501
+  cost:
+    Telecrystal: 105
+  categories:
+  - UplinkSyndicateGunneryMissile
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretVanyk
+  name: uplink-syndicate-weapon-turret-vanyk-name
+  description: uplink-syndicate-weapon-turret-vanyk-desc
+  productEntity: WeaponTurretVanyk
+  cost:
+    Telecrystal: 105
+  categories:
+  - UplinkSyndicateGunneryMissile
+
+- type: listing
+  id: UplinkSyndicateWeaponTurretASM220
+  name: uplink-syndicate-weapon-turret-asm220-name
+  description: uplink-syndicate-weapon-turret-asm220-desc
+  productEntity: WeaponTurretASM220
+  cost:
+    Telecrystal: 105
+  categories:
+  - UplinkSyndicateGunneryMissile
+
+# region Kinetic Ammunition
+
+- type: listing
+  id: UplinkSyndicateAmmoTarnyxAP
+  name: uplink-syndicate-ammo-tarnyx-ap-name
+  description: uplink-syndicate-ammo-tarnyx-ap-desc
+  productEntity: 150mmApShell
+  cost:
+    Telecrystal: 9
+  categories:
+  - UplinkSyndicateGunneryAmmo
+
+- type: listing
+  id: UplinkSyndicateAmmoASM220HE
+  name: uplink-syndicate-ammo-asm220-he-name
+  description: uplink-syndicate-ammo-asm220-he-desc
+  productEntity: Asm220TorpedoHE
+  cost:
+    Telecrystal: 14
+  categories:
+  - UplinkSyndicateGunneryAmmo
+
+- type: listing
+  id: UplinkSyndicateAmmoASM220LOSAT
+  name: uplink-syndicate-ammo-asm220-losat-name
+  description: uplink-syndicate-ammo-asm220-losat-desc
+  productEntity: Asm220TorpedoLOSAT
+  cost:
+    Telecrystal: 23
+  categories:
+  - UplinkSyndicateGunneryAmmo
+
+# region Energy Ammunition
+
+- type: listing
+  id: UplinkSyndicateAmmoTarnyxEMP
+  name: uplink-syndicate-ammo-tarnyx-emp-name
+  description: uplink-syndicate-ammo-tarnyx-emp-desc
+  productEntity: 150mmEmpShell
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkSyndicateGunneryAmmo
+
+- type: listing
+  id: UplinkSyndicateAmmoASM220ECM
+  name: uplink-syndicate-ammo-asm220-ecm-name
+  description: uplink-syndicate-ammo-asm220-ecm-desc
+  productEntity: Asm220TorpedoECM
+  cost:
+    Telecrystal: 17
+  categories:
+  - UplinkSyndicateGunneryAmmo
+
+# region Shuttle Equipment
+
+- type: listing
+  id: UplinkSyndicateShuttleEquipmentGunneryControl
+  name: uplink-syndicate-shuttle-gunnery-control-name
+  description: uplink-syndicate-shuttle-gunnery-control-desc
+  productEntity: GunneryControlComputerCircuitboard
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkSyndicateGunneryConsoles
+
+- type: listing
+  id: UplinkSyndicateShuttleEquipmentGCSLow
+  name: uplink-syndicate-shuttle-gcs-low-name
+  description: uplink-syndicate-shuttle-gcs-low-desc
+  productEntity: MachineGCSLowCircuitboard
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateGunneryConsoles
+
+- type: listing
+  id: UplinkSyndicateShuttleEquipmentGCSMedium
+  name: uplink-syndicate-shuttle-gcs-medium-name
+  description: uplink-syndicate-shuttle-gcs-medium-desc
+  productEntity: MachineGCSMediumCircuitboard
+  cost:
+    Telecrystal: 50
+  categories:
+    - UplinkSyndicateGunneryConsoles
+
+- type: listing
+  id: UplinkSyndicateShuttleEquipmentShieldLight
+  name: uplink-syndicate-shuttle-shield-light-name
+  description: uplink-syndicate-shuttle-shield-light-desc
+  productEntity: MachineShieldLightCircuitboard
+  cost:
+    Telecrystal: 50
+  categories:
+    - UplinkSyndicateGunneryConsoles
+
+- type: listing
+  id: UplinkTechDiskDelivery
+  name: uplink-tech-disk-delivery-name
+  description: uplink-tech-disk-delivery-desc
+  icon: { sprite: Objects/Specific/Cargo/mail.rsi, state: icon }
+  productEntity: PresentTechDisk
+  cost:
+    Telecrystal: 50
+  categories:
+    - UplinkPointless
+
+- type: listing
+  id: UplinkCombatBorg
+  name: uplink-combat-borg-name
+  description: uplink-combat-borg-desc
+  productEntity: BorgChassisSelectableCombat
+  cost:
+    Telecrystal: 65
+  categories:
+  - UplinkSyndicateBorgsCombat
+
+# region Combat Borg Modules
+
+- type: listing
+  id: UplinkCombatBorgPKA
+  name: uplink-syndicate-borg-pka-name
+  description: uplink-syndicate-borg-pka-desc
+  productEntity: BorgModuleCombatPKA
+  cost:
+    Telecrystal: 10
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgEchis
+  name: uplink-syndicate-borg-echis-name
+  description: uplink-syndicate-borg-echis-desc
+  productEntity: BorgModuleCombatEchis
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgLaserAdvanced
+  name: uplink-syndicate-borg-laser-advanced-name
+  description: uplink-syndicate-borg-laser-advanced-desc
+  productEntity: BorgModuleCombatLaserAdvanced
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgPKAHeavy
+  name: uplink-syndicate-borg-pka-heavy-name
+  description: uplink-syndicate-borg-pka-heavy-desc
+  productEntity: BorgModuleCombatPKAHeavy
+  cost:
+    Telecrystal: 15
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgL6C
+  name: uplink-syndicate-borg-l6c-name
+  description: uplink-syndicate-borg-l6c-desc
+  productEntity: BorgModuleCombatL6C
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgPKARailgun
+  name: uplink-syndicate-borg-pka-railgun-name
+  description: uplink-syndicate-borg-pka-railgun-desc
+  productEntity: BorgModuleCombatPKARailgun
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgPKARepeater
+  name: uplink-syndicate-borg-pka-repeater-name
+  description: uplink-syndicate-borg-pka-repeater-desc
+  productEntity: BorgModuleCombatPKARepeater
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgPKAShotgun
+  name: uplink-syndicate-borg-pka-shotgun-name
+  description: uplink-syndicate-borg-pka-shotgun-desc
+  productEntity: BorgModuleCombatPKAShotgun
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkCombatBorgLaserHeavy
+  name: uplink-syndicate-borg-laser-heavy-name
+  description: uplink-syndicate-borg-laser-heavy-desc
+  productEntity: BorgModuleCombatLaserHeavy
+  cost:
+    Telecrystal: 25
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkRemoteControlConsole
+  name: uplink-syndicate-remote-control-console-name
+  description: uplink-syndicate-remote-control-console-desc
+  productEntity: RemoteControllerComputer
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+- type: listing
+  id: UplinkRemoteControlDevice
+  name: uplink-syndicate-remote-control-device-name
+  description: uplink-syndicate-remote-control-device-desc
+  productEntity: RemoteControlDevice
+  cost:
+    Telecrystal: 5
+  categories:
+    - UplinkSyndicateBorgsCombat
+
+#Ammo
+- type: listing
+  id: UplinkMosinAmmo
+  name: uplink-mosin-ammo-name
+  description: uplink-mosin-ammo-desc
+  productEntity: MagazineBoxHeavyRifle762
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkAKAmmo
+  name: пакет патронов (7.62х39)
+  description: Картонная коробка с 60 патронов калибра 7.62х39, которыми пользуються автоматы серии калашникова.
+  productEntity: MagazinePacketRifle762x39
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: Uplink308winAmmo
+  name: коробка патронов (.308 win)
+  description: Цинк с 60 патронов калибра .308 winchester, крайне эффективен против живой силы с толстой кожей.
+  productEntity: MagazineBoxHeavyRifle
+  cost:
+    Telecrystal: 6
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkFuelTankFirethrower
+  name: Топливный бак
+  description: Топливный бак для огнемёта.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Flamethrowers/tank.rsi, state: base }
+  productEntity: FuelTankFirethrower
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazineMagnumPistol
+  name: пистолетный магазин (.50 AE)
+  description: Магазин для того самого пустынного орла.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Magnum/magnum_pistol_mag.rsi, state: base }
+  productEntity: MagazinePistol50AE
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazine50BMGMag
+  name: магазин (.50 BMG)
+  description: Магазин калибра 50 BMG, обычно с таким патроном идут на крупный рогатый скот.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Rifle/sr127_mag.rsi, state: base }
+  productEntity: MagazineAntiMaterielRifleSR
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazine9x17
+  name: магазин (9x17 mm)
+  description: Магазин калибра 9x17 для ПП.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Pistol/submachinegun.rsi, state: base }
+  productEntity: MagazinePistolSubMachineGun9x17
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazinePistol9x17
+  name: пистолетный магазин (9x17 mm)
+  description: Магазин калибра 9x17 для пистолетов.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Pistol/pistol_mag.rsi, state: base }
+  productEntity: MagazinePistol9x17
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazinePistol57x28
+  name: пистолетный магазин (5,7x28)
+  description: Магазин калибра 55,7x28 для пистолетов.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Pistol/pistol_mag_545.rsi, state: base }
+  productEntity: MagazinePistol57x28
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazineSMG57x28
+  name: магазин (5,7x28)
+  description: Магазин калибра 55,7x28 для ПП.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Pistol/submachinegun_mp7.rsi, state: base }
+  productEntity: MagazinePistolSubMachineGun57x28
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkMagazineSMGVector45ACP
+  name: магазин (.45 Auto)
+  description: Магазин калибра .45 Auto для Вектора.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Magazines/Pistol/submachinegun_vector.rsi, state: base }
+  productEntity: MagazinePistolSubMachineGunVector45ACP
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+#Bundles
+- type: listing
+  id: UplinkP90Bundle
+  name: набор "P90"
+  description: Старый добрый п90 военного образца, стал символом специальных операций, в комплетке 3 магазина.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/p90.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledP90
+  cost:
+    Telecrystal: 18
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledP90
+  name: набор "P90"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunP90
+    - id: MagazinePistolTopSubMachineGun
+    - id: MagazinePistolTopSubMachineGun
+
+- type: listing
+  id: UplinkAKMSBundle
+  name: набор "AKMS"
+  description: Символ войны, легендарное оружие зарекомендовавшие себя как самое надежное оружие в истории. В комплетке 3 магазина.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/akms/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledAKMS
+  cost:
+    Telecrystal: 17
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledAKMS
+  name: набор "AKMS"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponAKMSRifle
+    - id: MagazineRifleLight762x39
+    - id: MagazineRifleLight762x39
+
+- type: listing
+  id: UplinkV31Bundle
+  name: набор "V31"
+  description: Основная винтовка вооруженных сил Сынов Марса, имеет реактивные патроны, эффективен против всего. В комплетке 3 магазина.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/v31/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledV31
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledV31
+  name: набор "V31"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleV31
+    - id: MagazineRifleRocket20
+    - id: MagazineRifleRocket20
+
+- type: listing
+  id: UplinkAKSUBundle
+  name: набор "AKSU"
+  description: Оружие ГРУ СССП, надежное, компактное, а самое главное что ничем не отличается от своего более старшего брата, поэтому его и любят отряды особого назначения. В комплетке 3 магазина.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/aksu.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledAKSU
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledAKSU
+  name: набор "AKSU"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleAKSU
+    - id: MagazineRifleLight762x39
+    - id: MagazineRifleLight762x39
+
+- type: listing
+  id: UplinkStG44Bundle
+  name: набор "StG44"
+  description: Первая "Штурмовая Винтовка" в истории, в отличии от её образца 1944 года, имеет современные внутренности, из-за особенности конструкции имеет более высокую скорострельность. В комплетке 3 магазина.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/stg44/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledStG44
+  cost:
+    Telecrystal: 18
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledStG44
+  name: набор "StG44"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleSTG44
+    - id: MagazineRifleLight762x39
+    - id: MagazineRifleLight762x39
+
+- type: listing
+  id: UplinkVectorBundle
+  name: набор "Vector"
+  description: Оружие используемая спецназом, такой экзепляр стал очень быстро востребован на черном рынке, благодаря своей передовой системе глушение отдачи. В комплетке 3 магазина.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/vector/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledVector
+  cost:
+    Telecrystal: 18
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledVector
+  name: набор "Vector"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunVectorSpecial
+    - id: MagazinePistolSubMachineGunVector45ACPExt
+    - id: MagazinePistolSubMachineGunVector45ACPExt
+
+- type: listing
+  id: UplinkMP7Bundle
+  name: набор "MP7"
+  description: Модель SMG7 с архаичным дизайном, насчитывающим сотни лет, была распространена в свое время. Сегодня он находит ограниченное применение в качестве дешевых компьютерных копий или семейных реликвий, хотя каким-то образом попал в руки колониальных повстанцев. В комплетке 3 магазина.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp7/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledMP7
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledMP7
+  name: набор "MP7"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunMP7
+    - id: MagazinePistolSubMachineGun57x28
+    - id: MagazinePistolSubMachineGun57x28
+
+- type: listing
+  id: UplinkMP38Bundle
+  name: набор "MP38"
+  description: Дешевая, простая пушка с открытым затвором, не нуждается в обслуживании... Скорее всего это оружие с тех самых времен... В комплетке 3 магазина.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/mp38/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledMP38
+  cost:
+    Telecrystal: 14
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledMP38
+  name: набор "MP38"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunMP38
+    - id: MagazinePistolBoxSubMachineGun
+    - id: MagazinePistolBoxSubMachineGun
+
+- type: listing
+  id: UplinkPPSH41Bundle
+  name: набор "PPSH41"
+  description: ПиПиСиЭйч 41, стандартный пистолет-пулемет на вооружении СССП, попал на черный рынок из-за частых "набегов" на склады СССП, явно не проданных местными командирами. В комплетке 2 магазина.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/SMGs/ppsh41/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledPPSH41
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledPPSH41
+  name: набор "PPSH41"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponSubMachineGunPPSH41
+    - id: MagazinePistolDrumSubMachineGun
+
+- type: listing
+  id: UplinkDEagle
+  name: Пустынный орёл
+  description: Большой, стильный, мощный дигл на базе .45 калибра, был создан для охоты на слонов, но чем СБешник не слон? Не так-ли?
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Pistols/deagle/big.rsi, state: icon }
+  productEntity: WeaponPistolDEagle
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkZauerBundle
+  name: набор "Zauer"
+  description: Простой и надеждный, штурмовой автоматически дробовик зауер. содержит 2 барабан пуль и 4 барабана дроби.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/zauer/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledZauer
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledZauer
+  name: набор "Zauer"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponShotgunZauer
+    - id: MagazineShotgunMagnum12Small
+    - id: MagazineShotgun
+      amount: 2
+    - id: MagazineShotgunSlug
+      amount: 2
+
+- type: listing
+  id: UplinkGrenadeLauncher79Bundle
+  name: набор "GL-79"
+  description: Новенький, ручной гранатомет с барабанным системой, имеет 12 гранат в комплекте
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Launchers/gl-64/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledGL79
+  cost:
+    Telecrystal: 55
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledGL79
+  name: набор "GL-79"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponLauncherGL70
+    - id: NFGrenadeFrag
+      amount: 6
+    - id: NFGrenadeBlast
+      amount: 6
+
+- type: listing
+  id: UplinkGrenadeLauncherM81Bundle
+  name: набор "M-81"
+  description: Однозарядный армейский штатный гранатомёт, используется пехотными подраздилениями для блокирывания зон и поддержки, имеет 6 гранат в комплекте
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Launchers/m81.rsi, state: base }
+  productEntity: ClothingBackpackDuffelSyndicateFilledM81
+  cost:
+    Telecrystal: 13
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledM81
+  name: набор "M-81"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponLauncherM81
+    - id: NFGrenadeFrag
+      amount: 3
+    - id: NFGrenadeBlast
+      amount: 3
+
+- type: listing
+  id: UplinkRPDBundle
+  name: Набор "RPD"
+  description: Старый добрый ПК, который был успешно "украден" со старых складов СССП, отличная дакка, подходит для всех возрастов террористов. имеет 3 коробки патронов.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/LMGs/rpd/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledRPD
+  cost:
+    Telecrystal: 30
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledRPD
+  name: набор "RPD"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponLightMachineGunRPD
+    - id: MagazineLightMachineGun762x39
+      amount: 2
+
+- type: listing
+  id: UplinkMG42Bundle
+  name: Набор "MG42"
+  description: Очень старый общевойсковой пулемет Объеденненого Правительства Земли, все оригинальные компоненты были заменены более усовршенственными, а барабан был дополнен БлюСпейс технологией, для более бесперебойной стрельбы. Имеет 1 магазин и 2 ящика патронов.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/LMGs/mg42/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledMG42
+  cost:
+    Telecrystal: 60
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledMG42
+  name: набор "MG42"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponLightMachineGunMG42
+    - id: MagazineHeavyMachineGunDrum
+      amount: 2
+
+- type: listing
+  id: UplinkBR64Bundle
+  name: Набор "BR-64"
+  description: Марксменская тяжелая винтовка, имеет автодосылатель затвора, что облегчает эксплоатирование оружия (но не его чистку). Имеет 3 магазина .60 калибра.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/br-64/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledBR64
+  cost:
+    Telecrystal: 40
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledBR64
+  name: набор "BR-64"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleBR64
+    - id: MagazineHeavyRifleBR64
+      amount: 2
+
+- type: listing
+  id: UplinkSVDBundle
+  name: набор "SVD"
+  description: Легендарное оружие, зарекомендовала себя за счёт платформы АК на которой он был создан. В комплетке 3 магазина.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/dragunov/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledSVD
+  cost:
+    Telecrystal: 17
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledSVD
+  name: набор "SVD"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleDragunov
+    - id: MagazineRifleLightSniper
+      amount: 2
+
+- type: listing
+  id: UplinkSpas12Bundle
+  name: набор "SPAS-12"
+  description: Спас-12, великолепное оружие которое показала свою надежность и убойную силу. В комплетке 43 патрона.
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/spas-16/big.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledSPAS12
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelSyndicateFilledSPAS12
+  name: набор "SPAS-12"
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponShotgun12
+
+- type: listing
+  id: UplinkFlamethrower
+  name: Огнемет М6
+  description: Огнемет с небольшой специальным портом под маленькие баллоны с огненой смесью, которая способна гореть даже в полном вакууме!
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Flamethrowers/M6/big.rsi, state: icon }
+  productEntity: FirethrowerGun
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkSniperSR127Bundle
+  name: uplink-sniper-bundle-name
+  description: uplink-sniper-bundle-desc
+  icon: { sprite: Backmen/Objects/Weapons/Gunsx64/Snipers/snl177/big.rsi, state: base }
+  productEntity: ClothingBackpackDuffelSyndicateSniperBundleFilled
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkWeaponry
+
+- type: entity
+  id: ClothingBackpackDuffelSyndicateSniperBundleFilled
+  name: коричневый чемодан
+  description: Пригодится для переноски предметов в руках.
+  parent: ClothingBackpackDuffelSyndicate
+  suffix: SniperBundle
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleSR127
+      - id: MagazineAntiMaterielRifleSR
+        amount: 4
+
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateAmmo
+  id: ClothingBackpackDuffelSyndicateAmmoBackmenFilled
+  name: набор боеприпасов
+  suffix: Backmen
+  description: "Перезаряжаюсь! Содержит магазины для большинства современного вооружения синдиката."
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazinePistolDrumSubMachineGun # For PPSH
+        amount: 2
+      - id: MagazinePistolTopSubMachineGun # For P90
+        amount: 2
+      - id: MagazineLightMachineGun762x39 # For RPD
+        amount: 2
+      - id: MagazinePistolSubMachineGun57x28
+        amount: 4
+      - id: MagazinePistolSubMachineGunVector45ACPExt
+        amount: 2
+      - id: MagazineRifleLight762x39Ext # For AKMS, AKSU and STG44
+        amount: 3
+      - id: MagazineRifleLightSniper # For Dragunov
+        amount: 1
+      - id: MagazineHeavyRifleBR64 # For BR64
+        amount: 1
+      - id: MagazineShotgun # For Zauer and SPAS12
+        amount: 3

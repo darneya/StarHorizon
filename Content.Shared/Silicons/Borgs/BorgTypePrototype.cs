@@ -1,4 +1,5 @@
-﻿using Content.Shared.Interaction.Components;
+﻿using Content.Shared._Horizon.Silicon;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Radio;
 using Content.Shared.Silicons.Borgs.Components;
@@ -15,11 +16,17 @@ namespace Content.Shared.Silicons.Borgs;
 [Prototype]
 public sealed partial class BorgTypePrototype : IPrototype
 {
-    [ValidatePrototypeId<SoundCollectionPrototype>]
     private static readonly ProtoId<SoundCollectionPrototype> DefaultFootsteps = new("FootstepBorg");
 
     [IdDataField]
     public required string ID { get; set; }
+
+    /// <summary>
+    /// The category of this borg type (e.g., "standard", "combat").
+    /// Used to filter borg types in selection menus.
+    /// </summary>
+    [DataField]
+    public string Category { get; set; } = "standard";
 
     //
     // Description info (name/desc) is configured via localization strings directly.
@@ -152,4 +159,9 @@ public sealed partial class BorgTypePrototype : IPrototype
     /// </summary>
     [DataField]
     public SoundSpecifier FootstepCollection { get; set; } = new SoundCollectionSpecifier(DefaultFootsteps);
+
+    // Horizon start
+    [DataField]
+    public List<BorgSkin> Skins = new();
+    // Horizon end
 }

@@ -1,7 +1,7 @@
 <Document>
   # ИНЖЕНЕРНЫЙ ШАТТЛ КЛАССА GOURD
   <Box>
-  <GuideEntityEmbed Entity="VariedXenoArtifactItem"/>
+  <GuideEntityEmbed Entity="ComplexXenoArtifact"/>
   <GuideEntityEmbed Entity="MachineArtifactAnalyzer"/>
   <GuideEntityEmbed Entity="ComputerTabletopAnalysisConsole"/>
   <GuideEntityEmbed Entity="ResearchAndDevelopmentServer"/>
@@ -22,8 +22,8 @@
 
   [color=#a4885c]Консоль IFF:[/color] Нет
 
-  "Gourd — это научно-сервисное судно с выделенной камерой згорания."
-  
+  "Gourd — это научно-сервисное судно с выделенной камерой сгорания."
+
   # КОНТРОЛЬНЫЙ СПИСОК ПЕРЕД ВЫЛЕТОМ
 
   ## 1. Энергоснабжение

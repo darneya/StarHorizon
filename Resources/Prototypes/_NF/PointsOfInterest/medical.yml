@@ -3,19 +3,19 @@
 # Discord: dustylens
 
 # Maintainer Info
-# GitHub: ???
-# Discord: ???
+# GitHub: dustylens
+# Discord: dustylens
 
 # Notes:
 # Medical ship garage, medical manager base and medical bounty staging area.
 - type: pointOfInterest
   id: Medical
   parent: BasePOI
-  name: 'Medical Dispatch'
+  name: 'Медицинский Диспансер'
   minimumDistance: 1650
   maximumDistance: 3400
   spawnGroup: Required
-  gridPath: /Maps/_NF/POI/medical.yml
+  gridPath: /Maps/_Horizon/POI/medical.yml # Horizon-Maps
   addComponents:
   - type: IFF
     color: "#00b7eb"
@@ -25,25 +25,28 @@
 
 - type: gameMap
   id: Medical
-  mapName: 'Medical Dispatch'
-  mapPath: /Maps/_NF/POI/medical.yml
+  mapName: 'Медицинский Диспансер'
+  mapPath: /Maps/_Horizon/POI/medical.yml # Horizon-Maps
   minPlayers: 0
   stations:
     Medical:
       stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Medical Dispatch'
+          mapNameTemplate: 'Медицинский Диспансер'
         - type: ExtraStationInformation
-          iconPath: /Textures/_NF/Markers/jobs.rsi/medic.png
+          iconPath: /Textures/_Horizon/Interface/banner_med.png # Horizon
           stationSubtext: 'frontier-lobby-medical-subtext'
           stationDescription: 'frontier-lobby-medical-description'
           lobbySortOrder: 4
         - type: StationJobs
           availableJobs:
             DirectorOfCare: [ 1, 1 ]
-            Pilot: [ -1, -1 ]
-            Mercenary: [ -1, -1 ]
+            Chemist: [ 1, 1 ] # Horizon
+            Paramedic: [ 10, 10 ] # Horizon
+            MedicalDoctor: [ 3, 3 ] # Horizon
+            # Pilot: [ -1, -1 ] # Horizon
+            # Mercenary: [ -1, -1 ] # Horizon
           tags:
           - HeadOfPersonnel
           - HeadOfSecurity

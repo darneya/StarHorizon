@@ -12,6 +12,8 @@
   - type: Sprite
   - type: CartridgeAmmo
     deleteOnSpawn: true
+  - type: StaticPrice
+    price: 100
 
 - type: entity
   id: 40mmGrenadeBaton

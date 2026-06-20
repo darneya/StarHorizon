@@ -49,10 +49,10 @@
     MintPlantSeeds: 5
     CoffeearabicaSeeds: 5
     SunflowerSeeds: 5
-    СloveySeeds: 3
-    СlovewSeeds: 3
-    СloverSeeds: 3
-    СlovepSeeds: 3
+    CloveySeeds: 3
+    ClovewSeeds: 3
+    CloverSeeds: 3
+    ClovepSeeds: 3
     LilypSeeds: 3
     LilyoSeeds: 3
     LilybSeeds: 3
@@ -68,9 +68,9 @@
     TulipySeeds: 3
     GrapegSeeds: 3
     GrapebSeeds: 3
+    PeachSeeds: 5
     # Horizon Bothany end
   contrabandInventory:
     TobaccoSeeds: 2
     # FoodSnackSemki: 2 # Frontier
-  emaggedInventory:
     FlyAmanitaSeeds: 1

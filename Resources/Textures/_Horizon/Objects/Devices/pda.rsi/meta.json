@@ -426,6 +426,17 @@
       ]
     },
     {
+      "name": "pda-wizard",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
       "name": "pda-medical",
       "delays": [
         [
@@ -479,6 +490,9 @@
           0.3
         ]
       ]
+    },
+    {
+      "name": "pda-shantyman"
     },
     {
       "name": "pda-qm",
@@ -785,6 +799,28 @@
       ]
     },
     {
+      "name": "pda-plantmanager",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "pda-planttechnician",
+      "delays": [
+        [
+          0.3,
+          0.3,
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
       "name": "equipped-IDCARD",
       "directions": 4
     },
@@ -906,6 +942,9 @@
       "name": "pda-library_world"
     },
     {
+      "name": "pda-wizard_world"
+    },
+    {
       "name": "pda-medical_world"
     },
     {
@@ -919,6 +958,9 @@
     },
     {
       "name": "pda-pirate_world"
+    },
+    {
+      "name": "pda-shantyman_world"
     },
     {
       "name": "pda-qm_world"
@@ -997,6 +1039,12 @@
     },
     {
       "name": "pda-doc_world"
+    },
+    {
+      "name": "pda-planttechnician_world"
+    },
+    {
+      "name": "pda-plantmanager_world"
     }
   ]
 }

@@ -11,9 +11,9 @@
 - type: vessel
   id: Retort
   parent: BaseVessel
-  name: FSB Retort
-  description: A medium engineering vessel designed and deployed by the Far Star Biotech corporation to provide infrastructure support for deep space operations.
-  price: 61000 # TODO: Get creggs at store - Dusty Lens
+  name: FSC Retort
+  description: A robust gas mining and engineering vessel designed and deployed by the Far Star Corporation to provide infrastructure support for deep space operations.
+  price: 70000 # T3 engie/salvage
   category: Medium
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/retort.yml
@@ -22,10 +22,37 @@
   - Atmospherics
   engine:
   - Bananium
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:RoleModifier
+      role: "PlantTechnician"
+      costMultiplier: 0.9
+    - !type:RoleModifier
+      role: "PlantManager"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionEdison"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionLVHI"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionUAC"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionNakamura"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Retort
-  mapName: 'FSB Retort'
+  mapName: 'FSC Retort'
   mapPath: /Maps/_NF/Shuttles/retort.yml
   minPlayers: 0
   stations:

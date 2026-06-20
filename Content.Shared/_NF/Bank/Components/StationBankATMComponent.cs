@@ -36,4 +36,6 @@ public enum SectorBankAccount : byte
     Frontier,
     Nfsd,
     Medical,
+    Edison,
+    Trauma, // Horizon
 }

@@ -1,24 +1,32 @@
 # Commands
 
+
 ## Delay shuttle round end
 
+cmd-delayroundend-desc = Stops the timer that ends the round when the emergency shuttle exits hyperspace.
+cmd-delayroundend-help = Usage: delayroundend
 emergency-shuttle-command-round-desc = Останавливает таймер окончания раунда, когда эвакуационный шаттл покидает гиперпространство.
 emergency-shuttle-command-round-yes = Раунд продлён.
 emergency-shuttle-command-round-no = Невозможно продлить окончание раунда.
+cmd-dockemergencyshuttle-desc = Calls the emergency shuttle and docks it to the station... if it can.
+cmd-dockemergencyshuttle-help = Usage: dockemergencyshuttle
 
 ## Dock emergency shuttle
 
+cmd-launchemergencyshuttle-desc = Early launches the emergency shuttle if possible.
+cmd-launchemergencyshuttle-help = Usage: launchemergencyshuttle
 emergency-shuttle-command-dock-desc = Вызывает спасательный шаттл и пристыковывает его к станции... если это возможно.
 
 ## Launch emergency shuttle
 
 emergency-shuttle-command-launch-desc = Досрочно запускает эвакуационный шаттл, если это возможно.
 # Emergency shuttle
-emergency-shuttle-left = Эвакуационный шаттл покинул станцию. Расчётное время прибытия шаттла на станцию Центкома - { $transitTime } секунд.
+emergency-shuttle-left = Эвакуационный шаттл покинул станцию. Расчетное время прибытия шаттла на станцию Центкома - { $transitTime } секунд.
 emergency-shuttle-launch-time = Эвакуационный шаттл будет запущен через { $consoleAccumulator } секунд.
-emergency-shuttle-docked = Эвакуационный шаттл пристыковался к станции { $location }, направление: { $direction }. Он улетит через { $time } секунд.
+emergency-shuttle-docked = Эвакуационный шаттл пристыковался к станции, сторона: { $direction }. Он улетит через { $time } секунд.
 emergency-shuttle-good-luck = Эвакуационный шаттл не может найти станцию. Удачи.
-emergency-shuttle-nearby = Эвакуационный шаттл не может найти подходящий стыковочный шлюз. Он дрейфует около станции, { $location }, направление: { $direction }.
+emergency-shuttle-nearby = Эвакуационный шаттл не может найти подходящий стыковочный шлюз. Он дрейфует около станции, сторона: { $direction }.
+emergency-shuttle-extended = { " " }Время до запуска было продлено в связи с непредвиденными обстоятельствами.
 # Emergency shuttle console popup / announcement
 emergency-shuttle-console-no-early-launches = Досрочный запуск отключён
 # Emergency shuttle console popup / announcement
@@ -46,3 +54,6 @@ emergency-shuttle-ui-authorize = АВТОРИЗОВАТЬСЯ
 emergency-shuttle-ui-repeal = ПОВТОРИТЬ
 emergency-shuttle-ui-authorizations = Авторизации
 emergency-shuttle-ui-remaining = Осталось: { $remaining }
+# Map Misc.
+map-name-centcomm = Центральное Командование
+map-name-terminal = Транзитный Терминал

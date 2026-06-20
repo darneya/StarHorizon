@@ -10,6 +10,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -24,6 +29,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 # Silicons
 - type: roleLoadout
@@ -52,6 +62,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobBartender
@@ -65,6 +80,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -76,6 +96,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobChef
@@ -90,6 +115,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobLibrarian
@@ -101,6 +131,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobLawyer
@@ -113,6 +148,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobChaplain
@@ -124,10 +164,16 @@
   - ChaplainJumpsuit
   - CommonBackpack
   - ChaplainOuterClothing
+  - ChaplainBible
   - Glasses
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobJanitor
@@ -143,6 +189,11 @@
   - Trinkets
   - JanitorPlunger
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobBotanist
@@ -156,6 +207,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobClown
@@ -170,6 +226,11 @@
   - Glasses
   - SurvivalClown
   - Trinkets
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobMime
@@ -185,6 +246,11 @@
   - Glasses
   - SurvivalMime
   - Trinkets
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobMusician
@@ -198,6 +264,11 @@
   - Trinkets
   - Instruments
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 # Cargo
 - type: roleLoadout
@@ -214,6 +285,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -228,6 +304,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -240,6 +321,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 # Engineering
 - type: roleLoadout
@@ -255,6 +341,11 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -265,6 +356,11 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -279,6 +375,11 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -291,6 +392,11 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 # Science
 - type: roleLoadout
@@ -308,6 +414,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobScientist
@@ -325,6 +436,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -336,6 +452,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 # Security
 - type: roleLoadout
@@ -352,6 +473,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobWarden
@@ -366,6 +492,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -381,6 +512,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobDetective
@@ -395,6 +531,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -404,8 +545,14 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
-# Medical
+# Region Medical
+
 - type: roleLoadout
   id: JobChiefMedicalOfficer
   groups:
@@ -413,6 +560,11 @@
   - ChiefMedicalOfficerHead
   - MedicalMask
   - ChiefMedicalOfficerJumpsuit
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
   - MedicalGloves
   - MedicalBackpack
   - ChiefMedicalOfficerOuterClothing
@@ -426,25 +578,41 @@
 - type: roleLoadout
   id: JobMedicalDoctor
   groups:
+  # Horizon start
   - GroupTankHarness
   - MedicalDoctorHead
   - MedicalMask
   - MedicalDoctorJumpsuit
+  - TopCMO
+  - BottomCMO
+  - Socks
   - MedicalGloves
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes
+  - ContractorBelt
   - MedicalDoctorPDA
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  # Horizon end
+  - ContractorCartridge
+  - ContractorWallet
+  - ContractorEncryptionKey
+  - ContractorImplanter
+  - ContractorBackpackItems
 
 - type: roleLoadout
   id: JobMedicalIntern
   groups:
   - GroupTankHarness
   - MedicalInternJumpsuit
+  # Horizon start
+  - TopCMO
+  - BottomCMO
+  - Socks
+  # Horizon end
   - MedicalBackpack
   - MedicalEyewear
   - SurvivalMedical
@@ -454,32 +622,56 @@
 - type: roleLoadout
   id: JobChemist
   groups:
+  # Horizon start
   - GroupTankHarness
   - MedicalMask
   - ChemistJumpsuit
+  - TopCMO
+  - BottomCMO
+  - Socks
   - MedicalGloves
   - ChemistBackpack
   - ChemistOuterClothing
   - MedicalShoes
+  - ContractorBelt
+  - ChemistPDA
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  # Horizon end
+  - ContractorCartridge
+  - ContractorWallet
+  - ContractorEncryptionKey
+  - ContractorImplanter
+  - ContractorBackpackItems
 
 - type: roleLoadout
   id: JobParamedic
   groups:
+  # Horizon start
   - GroupTankHarness
   - ParamedicHead
   - MedicalMask
   - ParamedicJumpsuit
+  - TopCMO
+  - BottomCMO
+  - Socks
   - MedicalGloves
   - MedicalBackpack
   - ParamedicOuterClothing
   - ParamedicShoes
+  - ContractorBelt
+  - ParamedicPDA
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - ContractorCartridge
+  - ContractorWallet
+  - ContractorEncryptionKey
+  - ContractorImplanter
+  - ContractorBackpackItems
+  # Horizon end
 
 # Wildcards
 - type: roleLoadout
@@ -491,6 +683,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobReporter
@@ -502,6 +699,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobPsychologist
@@ -513,6 +715,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 - type: roleLoadout
   id: JobBoxer
@@ -525,6 +732,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # Horizon start
+  - Top
+  - Bottom
+  - Socks
+  # Horizon end
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit

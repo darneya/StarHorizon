@@ -1,3 +1,5 @@
+using Content.Client._Horizon.Sponsors.Systems;
+using Content.Client._Horizon.Sponsors.UI;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -12,6 +14,7 @@ using Content.Client.Launcher;
 using Content.Client.Mapping;
 using Content.Client.Parallax.Managers;
 using Content.Client.Players.PlayTimeTracking;
+using Content.Client.Playtime;
 using Content.Client.Replay;
 using Content.Client.Screenshot;
 using Content.Client.Stylesheets;
@@ -24,6 +27,7 @@ using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+using Content.Client._Harmony.JoinQueue; // Harmony Queue
 
 namespace Content.Client.IoC
 {
@@ -33,7 +37,10 @@ namespace Content.Client.IoC
         {
             var collection = IoCManager.Instance!;
 
+            collection.Register<SponsorConnectClientSystem>(); // _Horizon
+            collection.Register<SponsorShopUIController>(); // _Horizon
             collection.Register<IParallaxManager, ParallaxManager>();
+            collection.Register<GeneratedParallaxCache>();
             collection.Register<IChatManager, ChatManager>();
             collection.Register<ISharedChatManager, ChatManager>();
             collection.Register<IClientPreferencesManager, ClientPreferencesManager>();
@@ -59,6 +66,10 @@ namespace Content.Client.IoC
             collection.Register<PlayerRateLimitManager>();
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             collection.Register<TitleWindowManager>();
+            // Harmony Queue Start
+            collection.Register<JoinQueueManager>();
+            // Harmony Queue End
+            collection.Register<ClientsidePlaytimeTrackingManager>();
         }
     }
 }

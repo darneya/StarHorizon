@@ -7,11 +7,12 @@
   name: trait-accentless-name
   description: trait-accentless-desc
   category: SpeechTraits
-  cost: 2
+#  cost: 2 # Frontier
   components:
   - type: Accentless
     removes:
     - type: GoblinAccent # Frontier
+    - type: ScandinavianAccent # Frontier
     - type: LizardAccent
     - type: MothAccent
     - type: ReplacementAccent
@@ -73,7 +74,8 @@
   category: SpeechTraits
   cost: 1
   components:
-  - type: FrenchAccent
+  - type: ReplacementAccent #Horizon
+    accent: french
 
 - type: trait
   id: SpanishAccent

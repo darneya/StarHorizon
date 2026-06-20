@@ -9,7 +9,10 @@ using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Shared._Horizon.Bark;
+using Content.Shared._Horizon.Language;
+using Content.Shared._Horizon.FlavorText;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Ghost.Roles;
 using Content.Shared.Humanoid;
@@ -50,6 +53,7 @@ namespace Content.Server.Database
                 .Include(p => p.Profiles).ThenInclude(h => h.Jobs)
                 .Include(p => p.Profiles).ThenInclude(h => h.Antags)
                 .Include(p => p.Profiles).ThenInclude(h => h.Traits)
+                .Include(p => p.Profiles).ThenInclude(l => l.Languages) // Horizon languages
                 .Include(p => p.Profiles)
                     .ThenInclude(h => h.Loadouts)
                     .ThenInclude(l => l.Groups)
@@ -67,7 +71,11 @@ namespace Content.Server.Database
                 profiles[profile.Slot] = ConvertProfiles(profile);
             }
 
-            return new PlayerPreferences(profiles, prefs.SelectedCharacterSlot, Color.FromHex(prefs.AdminOOCColor));
+            var constructionFavorites = new List<ProtoId<ConstructionPrototype>>(prefs.ConstructionFavorites.Count);
+            foreach (var favorite in prefs.ConstructionFavorites)
+                constructionFavorites.Add(new ProtoId<ConstructionPrototype>(favorite));
+
+            return new PlayerPreferences(profiles, prefs.SelectedCharacterSlot, Color.FromHex(prefs.AdminOOCColor), constructionFavorites);
         }
 
         public async Task SaveSelectedCharacterIndexAsync(NetUserId userId, int index)
@@ -102,6 +110,7 @@ namespace Content.Server.Database
                 .Include(p => p.Jobs)
                 .Include(p => p.Antags)
                 .Include(p => p.Traits)
+                .Include(p => p.Languages)  // Horizon languages
                 .Include(p => p.Loadouts)
                     .ThenInclude(l => l.Groups)
                     .ThenInclude(group => group.Loadouts)
@@ -145,7 +154,8 @@ namespace Content.Server.Database
             {
                 UserId = userId.UserId,
                 SelectedCharacterSlot = 0,
-                AdminOOCColor = Color.Red.ToHex()
+                AdminOOCColor = Color.Red.ToHex(),
+                ConstructionFavorites = [],
             };
 
             prefs.Profiles.Add(profile);
@@ -154,7 +164,7 @@ namespace Content.Server.Database
 
             await db.DbContext.SaveChangesAsync();
 
-            return new PlayerPreferences(new[] {new KeyValuePair<int, ICharacterProfile>(0, defaultProfile)}, 0, Color.FromHex(prefs.AdminOOCColor));
+            return new PlayerPreferences(new[] { new KeyValuePair<int, ICharacterProfile>(0, defaultProfile) }, 0, Color.FromHex(prefs.AdminOOCColor), []);
         }
 
         public async Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot)
@@ -180,6 +190,19 @@ namespace Content.Server.Database
 
         }
 
+        public async Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)
+        {
+            await using var db = await GetDb();
+            var prefs = await db.DbContext.Preference.SingleAsync(p => p.UserId == userId.UserId);
+
+            var favorites = new List<string>(constructionFavorites.Count);
+            foreach (var favorite in constructionFavorites)
+                favorites.Add(favorite.Id);
+            prefs.ConstructionFavorites = favorites;
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
         private static async Task SetSelectedCharacterSlotAsync(NetUserId userId, int newSlot, ServerDbContext db)
         {
             var prefs = await db.Preference.SingleAsync(p => p.UserId == userId.UserId);
@@ -191,6 +214,7 @@ namespace Content.Server.Database
             var jobs = profile.Jobs.ToDictionary(j => new ProtoId<JobPrototype>(j.JobName), j => (JobPriority) j.Priority);
             var antags = profile.Antags.Select(a => new ProtoId<AntagPrototype>(a.AntagName));
             var traits = profile.Traits.Select(t => new ProtoId<TraitPrototype>(t.TraitName));
+            var languages = profile.Languages.Select(t => new ProtoId<LanguagePrototype>(t.LanguageName));  // Horizon Languages
 
             var sex = Sex.Male;
             if (Enum.TryParse<Sex>(profile.Sex, true, out var sexVal))
@@ -260,15 +284,29 @@ namespace Content.Server.Database
                     Color.FromHex(profile.FacialHairColor),
                     Color.FromHex(profile.EyeColor),
                     Color.FromHex(profile.SkinColor),
-                    markings
+                    markings,
+                    profile.HairGradientEnabled,
+                    Color.FromHex(profile.HairGradientSecondaryColor),
+                    profile.HairGradientDirection,
+                    profile.FacialHairGradientEnabled,
+                    Color.FromHex(profile.FacialHairGradientSecondaryColor),
+                    profile.FacialHairGradientDirection,
+                    profile.AllMarkingsGradientEnabled,
+                    Color.FromHex(profile.AllMarkingsGradientSecondaryColor),
+                    profile.AllMarkingsGradientDirection
                 ),
                 spawnPriority,
                 jobs,
-                (PreferenceUnavailableMode) profile.PreferenceUnavailable,
+                (PreferenceUnavailableMode)profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar) // _Horizon
+                // Horizon start
+                (ErpStatus)profile.ErpStatus,
+                profile.Faction,
+                profile.OOCFlavorText,
+                new BarkData(profile.BarkProto, profile.BarkPitch, profile.LowBarkVar, profile.HighBarkVar),
+                languages.ToHashSet() // Horizon end
             );
         }
 
@@ -296,6 +334,16 @@ namespace Content.Server.Database
             profile.FacialHairColor = appearance.FacialHairColor.ToHex();
             profile.EyeColor = appearance.EyeColor.ToHex();
             profile.SkinColor = appearance.SkinColor.ToHex();
+            // _Horizon: Hair gradient
+            profile.HairGradientEnabled = appearance.HairGradientEnabled;
+            profile.HairGradientSecondaryColor = appearance.HairGradientSecondaryColor.ToHex();
+            profile.HairGradientDirection = appearance.HairGradientDirection;
+            profile.FacialHairGradientEnabled = appearance.FacialHairGradientEnabled;
+            profile.FacialHairGradientSecondaryColor = appearance.FacialHairGradientSecondaryColor.ToHex();
+            profile.FacialHairGradientDirection = appearance.FacialHairGradientDirection;
+            profile.AllMarkingsGradientEnabled = appearance.AllMarkingsGradientEnabled;
+            profile.AllMarkingsGradientSecondaryColor = appearance.AllMarkingsGradientSecondaryColor.ToHex();
+            profile.AllMarkingsGradientDirection = appearance.AllMarkingsGradientDirection;
             profile.SpawnPriority = (int) humanoid.SpawnPriority;
             profile.Markings = markings;
             profile.Slot = slot;
@@ -360,6 +408,15 @@ namespace Content.Server.Database
             profile.BarkPitch = humanoid.Bark.Pitch;
             profile.LowBarkVar = humanoid.Bark.MinVar;
             profile.HighBarkVar = humanoid.Bark.MaxVar;
+
+            profile.ErpStatus = (int)humanoid.ErpStat;
+            profile.Faction = humanoid.Faction;
+            profile.OOCFlavorText = humanoid.OOCFlavorText;
+            profile.Languages.Clear();
+            profile.Languages.AddRange(
+                humanoid.Languages
+                        .Select(l => new Language { LanguageName = l.ToString() }));
+
             // _Horizon end
 
             return profile;
@@ -1867,6 +1924,81 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 .Where(w => w.Time <= cutoffTime)
                 .ExecuteDeleteAsync();
 
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+
+        #endregion
+
+        // Horizon: Admin Loadout Items
+        #region Horizon Admin Loadout
+
+        public async Task<List<HorizonAdminLoadout>> GetAdminLoadoutItemsAsync(Guid userId)
+        {
+            await using var db = await GetDb();
+
+            return await db.DbContext.HorizonAdminLoadout
+                .Where(p => p.PlayerUserId == userId)
+                .ToListAsync();
+        }
+
+        public async Task<HorizonAdminLoadout> AddAdminLoadoutItemAsync(HorizonAdminLoadout item)
+        {
+            await using var db = await GetDb();
+
+            db.DbContext.HorizonAdminLoadout.Add(item);
+            await db.DbContext.SaveChangesAsync();
+            return item;
+        }
+
+        public async Task<bool> RemoveAdminLoadoutItemAsync(int id)
+        {
+            await using var db = await GetDb();
+
+            var item = await db.DbContext.HorizonAdminLoadout
+                .SingleOrDefaultAsync(p => p.Id == id);
+
+            if (item == null)
+                return false;
+
+            db.DbContext.HorizonAdminLoadout.Remove(item);
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> SetAdminLoadoutItemEnabledAsync(int id, bool enabled)
+        {
+            await using var db = await GetDb();
+
+            var item = await db.DbContext.HorizonAdminLoadout
+                .SingleOrDefaultAsync(p => p.Id == id);
+
+            if (item == null)
+                return false;
+
+            item.IsEnabled = enabled;
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> DecrementAdminLoadoutItemUsesAsync(int id)
+        {
+            await using var db = await GetDb();
+
+            var item = await db.DbContext.HorizonAdminLoadout
+                .SingleOrDefaultAsync(p => p.Id == id);
+
+            if (item == null)
+                return false;
+
+            // Permanent items (null) don't need decrementing
+            if (item.RemainingUses == null)
+                return true;
+
+            if (item.RemainingUses <= 0)
+                return false;
+
+            item.RemainingUses--;
             await db.DbContext.SaveChangesAsync();
             return true;
         }

@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: NC Mail Pod
   description: A cramped yet reliable shuttle for delivering packages.
-  price: 15000
+  price: 12750 # 10826 0.05 11367.3
   category: Micro
   group: Sr
   access: Mail
@@ -23,6 +23,18 @@
   - Cargo
   engine:
   - Plasma
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionFrontier"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: MailPod

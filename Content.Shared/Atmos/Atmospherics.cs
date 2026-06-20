@@ -177,6 +177,8 @@ namespace Content.Shared.Atmos
             [Gas.Plasma] = Loc.GetString("gas-plasma-abbreviation"),
             [Gas.Tritium] = Loc.GetString("gas-tritium-abbreviation"),
             [Gas.WaterVapor] = Loc.GetString("gas-water-vapor-abbreviation"),
+            [Gas.Respiron] = Loc.GetString("gas-respiron-abbreviation"), // Frontier
+            [Gas.Helium] = Loc.GetString("gas-helium-abbreviation"), // Frontier
         };
 
         #region Excited Groups
@@ -206,7 +208,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     Total number of gases. Increase this if you want to add more!
         /// </summary>
-        public const int TotalNumberOfGases = 20; // Horizon
+        public const int TotalNumberOfGases = 21; // Horizon
 
         /// <summary>
         ///     This is the actual length of the gases arrays in mixtures.
@@ -367,8 +369,7 @@ namespace Content.Shared.Atmos
         ///     (The pressure threshold is so low that it doesn't make sense to do any calculations,
         ///     so it just applies this flat value).
         /// </summary>
-        // Original value is 4, buff back when we have proper ways for players to deal with breaches.
-        public const int LowPressureDamage = 4; // Frontier: 1<4
+        public const int LowPressureDamage = 4;
 
         public const float WindowHeatTransferCoefficient = 0.1f;
 
@@ -433,7 +434,8 @@ namespace Content.Shared.Atmos
         Zauker = 16,
         Halon = 17,
         Helium = 18,
-        AntiNoblium = 19
+        AntiNoblium = 19,
         // Horizon end
+        Respiron = 20 // Frontier
     }
 }

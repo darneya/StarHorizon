@@ -7,13 +7,13 @@
 # Discord: ???
 
 # Shuttle Notes:
-# 
+#
 - type: vessel
   id: Dragonfly
   parent: BaseVessel
   name: DYS Dragonfly
   description: Highly modular salvaging vessel welded together from smaller re-purposed hulls.
-  price: 81000 # ~62075$ on mapinit + ~18650$ from 30% markup
+  price: 84000 # 69747 0.2 83696.4
   category: Medium
   group: Expedition
   shuttlePath: /Maps/_NF/Shuttles/Expedition/dragonfly.yml
@@ -22,6 +22,21 @@
   - Expedition
   engine:
   - AME
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionSIU"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionArcadia"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Dragonfly

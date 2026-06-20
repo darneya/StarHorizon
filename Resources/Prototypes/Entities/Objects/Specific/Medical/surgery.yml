@@ -5,6 +5,7 @@
   id: BaseToolSurgery
   abstract: true
   components:
+  - type: WorldItem
   - type: Sprite
   - type: StaticPrice
     price: 20

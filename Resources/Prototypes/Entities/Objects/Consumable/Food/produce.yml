@@ -98,6 +98,8 @@
   components:
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/oat.rsi
+  - type: Item
+    heldPrefix: produce
   - type: SolutionContainerManager
     solutions:
       food:
@@ -497,6 +499,8 @@
     - Recyclable
     - Trash
     - BananaPeel
+    - WhitelistChameleon
+    - HamsterWearable
   - type: SolutionContainerManager
     solutions:
       food:
@@ -509,12 +513,21 @@
   - type: SpaceGarbage
   - type: Food
     requiresSpecialDigestion: true
+  - type: Clothing
+    sprite: Objects/Specific/Hydroponics/banana.rsi
+    equippedState: peel-equipped-HELMET
+    slots:
+    - HEAD
+    quickEquip: false
 
 - type: entity
   name: baked banana peel
   parent: TrashBananaPeel
   id: TrashBakedBananaPeel
   components:
+  - type: Clothing
+    sprite: Objects/Specific/Hydroponics/banana.rsi
+    equippedState: baked-peel-equipped-HELMET
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/banana.rsi
     state: baked-peel
@@ -543,6 +556,9 @@
   - type: Item
     sprite: Objects/Specific/Hydroponics/mimana.rsi
     heldPrefix: peel
+  - type: Clothing
+    sprite: Objects/Specific/Hydroponics/mimana.rsi
+    equippedState: equipped-HELMET
   - type: Slippery
     slipSound:
       path: /Audio/Effects/slip.ogg
@@ -561,6 +577,9 @@
     sprite: Objects/Materials/materials.rsi
     heldPrefix: peel
   - type: Slippery
+  - type: Clothing
+    sprite: Objects/Materials/materials.rsi
+    equippedState: peel-equipped-HELMET
 
 - type: entity
   name: carrot
@@ -1195,6 +1214,8 @@
   # Horizon Bothany end
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/apple.rsi
+  - type: Item
+    heldPrefix: produce
   - type: Produce
     seedId: apple
   - type: Extractable
@@ -1463,6 +1484,7 @@
   - type: Tag
     tags:
     - Vegetable
+    - Mushroom
 
 # Slices
 
@@ -1815,11 +1837,10 @@
     entries:
       Taco: Lingzhi
       Burger: Lingzhi
-  # Horizon Bothany start
   - type: Tag
     tags:
-    - Vegetable
-  # Horizon Bothany end
+    - Mushroom
+    - Vegetable # Horizon Bothany
 
 - type: entity
   name: ambrosia vulgaris
@@ -2061,11 +2082,10 @@
     entries:
       Taco: FlyAmanita
       Burger: FlyAmanita
-  # Horizon Bothany start
   - type: Tag
     tags:
-    - Vegetable
-  # Horizon Bothany end
+    - Mushroom
+    - Vegetable # Horizon Bothany
 
 - type: entity
   name: gatfruit
@@ -2528,8 +2548,12 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 9
+        maxVol: 14
         reagents:
+        - ReagentId: JuiceGrape
+          Quantity: 5
+        - ReagentId: JuiceGrape
+          Quantity: 5
         - ReagentId: Nutriment
           Quantity: 5
         - ReagentId: Vitamin
@@ -2974,6 +2998,7 @@
   - type: Item
     sprite: Objects/Specific/Hydroponics/cherry.rsi
     heldPrefix: pit
+    size: Tiny
   - type: Tag
     tags:
     - Recyclable

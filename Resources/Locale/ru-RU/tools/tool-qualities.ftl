@@ -1,9 +1,9 @@
 tool-quality-anchoring-name = Закрепление
 tool-quality-anchoring-tool-name = Гаечный ключ
 tool-quality-prying-name = Монтирование
-tool-quality-prying-tool-name = Монтировка
+tool-quality-prying-tool-name = Лом
 tool-quality-screwing-name = Свинчивание
-tool-quality-screwing-tool-name = Отвёртка
+tool-quality-screwing-tool-name = Отвертка
 tool-quality-cutting-name = Резка
 tool-quality-cutting-tool-name = Кусачки
 tool-quality-welding-name = Варка
@@ -22,3 +22,5 @@ tool-quality-rolling-name = Раскатывание
 tool-quality-rolling-tool-name = Скалка
 tool-quality-digging-name = Копание
 tool-quality-digging-tool-name = Лопата
+tool-quality-brushing-name = Чистка щёткой
+tool-quality-brushing-tool-name = Металлическая щётка

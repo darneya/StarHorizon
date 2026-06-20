@@ -1,10 +1,9 @@
 # Glass
 materials-glass = стекло
-materials-reinforced-glass = бронестекло
+materials-reinforced-glass = армированное стекло
 materials-plasma-glass = плазменное стекло
-materials-reinforced-plasma-glass = плазменное бронестекло
+materials-reinforced-plasma-glass = плазменное армированное стекло
 # Metals
-materials-magmite = магмитовая сталь
 materials-steel = сталь
 materials-gold = золото
 materials-silver = серебро
@@ -24,10 +23,21 @@ materials-meat = мясо
 materials-web = шёлк
 materials-bones = кости
 materials-coal = уголь
-materials-diamond = алмазы
-materials-gunpowder = чёрный порох
+materials-diamond = алмаз
+materials-gunpowder = порох
+materials-cotton = хлопок
+# Metals (Advanced)
+materials-titan = титан
+materials-psycore = псикорий
+materials-plutonium = плутоний
+materials-neptunium = нептуний
+materials-torium = торий
+# Gems
+materials-emerald = изумруд
+materials-ruby = рубин
+materials-sapphire = сапфир
+materials-topaz = топаз
 # Ores
-materials-raw-magmite = магмитовая руда
 materials-raw-iron = руда железа
 materials-raw-quartz = руда кварца
 materials-raw-gold = руда золота
@@ -35,7 +45,24 @@ materials-raw-silver = руда серебра
 materials-raw-plasma = руда плазмы
 materials-raw-uranium = руда урана
 materials-raw-bananium = руда бананиума
-# Material Reclaimer
-material-reclaimer-upgrade-process-rate = скорость обработки
-materials-raw-salt = каменная соль
-materials-raw-diamond = необработанные алмазы
+materials-raw-salt = рудная соль
+materials-raw-diamond = необработанный алмаз
+materials-raw-titan = руда титана
+materials-raw-psycore = руда псикория
+materials-raw-emerald = руда изумруда
+materials-raw-ruby = руда рубина
+materials-raw-sapphire = руда сапфира
+materials-raw-topaz = руда топаза
+materials-raw-plutonium = руда плутония
+materials-raw-neptunium = руда нептуния
+materials-raw-torium = руда тория
+# Fuel Grades
+materials-fuel-grade-pure-plasma = чистое плазменное топливо
+materials-fuel-grade-unstable-plasma = нестабильное плазменное топливо
+materials-fuel-grade-pure-uranium = чистое урановое топливо
+materials-fuel-grade-unstable-uranium = нестабильное урановое топливо
+materials-fuel-grade-pure-bananium = чистое бананиевое топливо
+materials-fuel-grade-unstable-bananium = нестабильное бананиевое топливо
+materials-fuel-grade-plutonium = плутониевое топливо
+materials-fuel-grade-pure-plutonium = чистое плутониевое топливо
+materials-fuel-grade-unstable-plutonium = нестабильное плутониевое топливо

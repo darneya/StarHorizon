@@ -1,13 +1,13 @@
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Content.Shared.Chat.Components;  // Добавьте эту строку
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
-using Content.Server.Players.RateLimiting;
-using Content.Server.Speech.Prototypes;
 using Content.Server.Speech.EntitySystems;
+using Content.Server.Speech.Prototypes;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared.ActionBlocker;
@@ -34,6 +34,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+using Content.Shared._Horizon.Language;
+using Content.Server._Horizon.Chat;
 
 namespace Content.Server.Chat.Systems;
 
@@ -60,6 +62,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
+    [Dependency] private readonly OocSpamProtectionSystem _oocSpamProtection = default!;
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -145,9 +148,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         IConsoleShell? shell = null,
         ICommonSession? player = null, string? nameOverride = null,
         bool checkRadioPrefix = true,
-        bool ignoreActionBlocker = false)
+        bool ignoreActionBlocker = false,
+        bool ignoreSpamProtection = false)
     {
-        TrySendInGameICMessage(source, message, desiredType, hideChat ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal, hideLog, shell, player, nameOverride, checkRadioPrefix, ignoreActionBlocker);
+        TrySendInGameICMessage(source, message, desiredType, hideChat ? ChatTransmitRange.HideChat : ChatTransmitRange.Normal, hideLog, shell, player, nameOverride, checkRadioPrefix, ignoreActionBlocker, language: null, ignoreSpamProtection: ignoreSpamProtection);
     }
 
     /// <summary>
@@ -161,6 +165,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="player">The player doing the speaking</param>
     /// <param name="nameOverride">The name to use for the speaking entity. Usually this should just be modified via <see cref="TransformSpeakerNameEvent"/>. If this is set, the event will not get raised.</param>
     /// <param name="ignoreActionBlocker">If set to true, action blocker will not be considered for whether an entity can send this message.</param>
+    /// <param name="ignoreSpamProtection">If true, repeated identical lines (e.g. melee battlecries) do not count toward spam protection.</param>
     public void TrySendInGameICMessage(
         EntityUid source,
         string message,
@@ -171,8 +176,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         ICommonSession? player = null,
         string? nameOverride = null,
         bool checkRadioPrefix = true,
-        bool ignoreActionBlocker = false
-        )
+        bool ignoreActionBlocker = false,
+        LanguagePrototype? language = null, // Horizon
+        bool ignoreSpamProtection = false)
     {
         if (HasComp<GhostComponent>(source))
         {
@@ -247,10 +253,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         switch (desiredType)
         {
             case InGameICChatType.Speak:
-                SendEntitySpeak(source, message, range, nameOverride, hideLog, ignoreActionBlocker);
+                SendEntitySpeak(source, message, range, nameOverride, hideLog, ignoreActionBlocker, language: language, ignoreSpamProtection: ignoreSpamProtection);    // Horizon language
                 break;
             case InGameICChatType.Whisper:
-                SendEntityWhisper(source, message, range, null, nameOverride, hideLog, ignoreActionBlocker);
+                SendEntityWhisper(source, message, range, null, nameOverride, hideLog, ignoreActionBlocker, language: language, ignoreSpamProtection: ignoreSpamProtection);    // Horizon language
                 break;
             case InGameICChatType.Emote:
                 SendEntityEmote(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
@@ -272,6 +278,13 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         if (player != null && _chatManager.HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
+
+        // ДОБАВЬТЕ ПРОВЕРКУ НА СПАМ В OOC ЗДЕСЬ
+        if (TryComp<OocSpamProtectionComponent>(source, out var oocSpamComp))
+        {
+            if (!_oocSpamProtection.CheckOocSpam(source, message, oocSpamComp))
+                return; // Сообщение заблокировано за спам
+        }
 
         // It doesn't make any sense for a non-player to send in-game OOC messages, whereas non-players may be sending
         // in-game IC messages.
@@ -390,7 +403,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
         }
 
-        if (!EntityManager.TryGetComponent<StationDataComponent>(station, out var stationDataComp)) return;
+        if (!TryComp<StationDataComponent>(station, out var stationDataComp)) return;
 
         var filter = _stationSystem.GetInStation(stationDataComp);
 
@@ -414,13 +427,32 @@ public sealed partial class ChatSystem : SharedChatSystem
         ChatTransmitRange range,
         string? nameOverride,
         bool hideLog = false,
-        bool ignoreActionBlocker = false
-        )
+        bool ignoreActionBlocker = false,
+        LanguagePrototype? language = null,  // Horizon languages
+        bool ignoreSpamProtection = false)
     {
+        // Horizon languages start
+
+        /*
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
 
         var message = TransformSpeech(source, originalMessage);
+        */
+
+        language ??= _language.GetCurrentLanguage(source);
+
+        if (!ignoreActionBlocker)
+        {
+            foreach (var item in language.Conditions.Where(x => !x.RaiseOnListener))
+            {
+                if (!item.Condition(source, null, EntityManager))
+                    return;
+            }
+        }
+
+        var message = originalMessage;
+        // Horizon languages end
 
         if (message.Length == 0)
             return;
@@ -445,6 +477,8 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         name = FormattedMessage.EscapeText(name);
 
+        // Horizon languages start
+        /*
         var wrappedMessage = Loc.GetString(speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message",
             ("entityName", name),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
@@ -456,6 +490,20 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var ev = new EntitySpokeEvent(source, message, null, null);
         RaiseLocalEvent(source, ev, true);
+        */
+
+        var sanitizedMessage = SanitizeInGameICMessage(source, FormattedMessage.EscapeText(message), out _);
+        language.LanguageType.Speak(source, sanitizedMessage, name, speech, (byte)range, EntityManager, out var success, out var resultMessage);
+        if (!success)
+            return;
+
+        if (language.LanguageType.RaiseEvent)
+        {
+            var ev = new EntitySpokeEvent(source, resultMessage, language, null, null, whisper: false, ignoreSpamProtection: ignoreSpamProtection);
+            RaiseLocalEvent(source, ev, true);
+        }
+
+        // Horizon languages end
 
         // To avoid logging any messages sent by entities that are not players, like vendors, cloning, etc.
         // Also doesn't log if hideLog is true.
@@ -487,15 +535,32 @@ public sealed partial class ChatSystem : SharedChatSystem
         RadioChannelPrototype? channel,
         string? nameOverride,
         bool hideLog = false,
-        bool ignoreActionBlocker = false
-        )
+        bool ignoreActionBlocker = false,
+        LanguagePrototype? language = null,  // Horizon languages
+        bool ignoreSpamProtection = false)
     {
+        // Horizon languages start
+
+        /*
         if (!_actionBlocker.CanSpeak(source) && !ignoreActionBlocker)
             return;
 
-        var message = TransformSpeech(source, FormattedMessage.RemoveMarkupOrThrow(originalMessage));
-        if (message.Length == 0)
-            return;
+        var message = TransformSpeech(source, originalMessage);
+        */
+
+        language ??= _language.GetCurrentLanguage(source);
+
+        if (!ignoreActionBlocker)
+        {
+            foreach (var item in language.Conditions.Where(x => !x.RaiseOnListener))
+            {
+                if (!item.Condition(source, null, EntityManager))
+                    return;
+            }
+        }
+
+        var message = FormattedMessage.RemoveMarkupOrThrow(originalMessage);
+        // Horizon languages end
 
         var obfuscatedMessage = ObfuscateMessageReadability(message, 0.2f);
 
@@ -515,6 +580,9 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
         name = FormattedMessage.EscapeText(name);
 
+        // Horizon languages start
+
+        /*
         var wrappedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message",
             ("entityName", name), ("message", FormattedMessage.EscapeText(message)));
 
@@ -536,7 +604,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (MessageRangeCheck(session, data, range) != MessageRangeCheckResult.Full)
                 continue; // Won't get logged to chat, and ghosts are too far away to see the pop-up, so we just won't send it to them.
 
-            if (data.Range <= WhisperClearRange)
+            if (data.Range <= WhisperClearRange || data.Observer)
                 _chatManager.ChatMessageToOne(ChatChannel.Whisper, message, wrappedMessage, source, false, session.Channel);
             //If listener is too far, they only hear fragments of the message
             else if (_examineSystem.InRangeUnOccluded(source, listener, WhisperMuffledRange))
@@ -550,6 +618,20 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var ev = new EntitySpokeEvent(source, message, channel, obfuscatedMessage);
         RaiseLocalEvent(source, ev, true);
+
+        */
+
+        language.LanguageType.Whisper(source, message, name, nameIdentity, (byte)range, EntityManager, out var success, out var resultMessage, out var resultObfMessage);
+        if (!success)
+            return;
+
+        if (language.LanguageType.RaiseEvent)
+        {
+            var ev = new EntitySpokeEvent(source, resultMessage, language, channel, resultObfMessage, whisper: true, ignoreSpamProtection: ignoreSpamProtection);
+            RaiseLocalEvent(source, ev, true);
+        }
+        // Horizon languages end
+
         if (!hideLog)
             if (originalMessage == message)
             {
@@ -593,17 +675,14 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entity", ent),
             ("message", FormattedMessage.RemoveMarkupOrThrow(action)));
 
-        bool soundEmoteSent = true; // Frontier: if check emote is false, assume somebody's sending an emote
-        if (checkEmote)
-            soundEmoteSent = TryEmoteChatInput(source, action); // Frontier: assign value to soundEmoteSent
-
-        // Frontier: send emote message
-        if (!soundEmoteSent)
+        if (checkEmote &&
+            !TryEmoteChatInput(source, action))
         {
-            var ev = new NFEntityEmotedEvent(source, action);
-            RaiseLocalEvent(source, ev, true);
+            var ev = new NFEntityEmotedEvent(source, action); // Frontier
+            RaiseLocalEvent(source, ev, true); // Frontier
+            return;
         }
-        // End Frontier
+
 
         SendInVoiceRange(ChatChannel.Emotes, action, wrappedMessage, source, range, author);
         if (!hideLog)
@@ -664,7 +743,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     #region Utility
 
-    private enum MessageRangeCheckResult
+    public enum MessageRangeCheckResult // Horizon - made public
     {
         Disallowed,
         HideChat,
@@ -683,7 +762,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     ///     Checks if a target as returned from GetRecipients should receive the message.
     ///     Keep in mind data.Range is -1 for out of range observers.
     /// </summary>
-    private MessageRangeCheckResult MessageRangeCheck(ICommonSession session, ICChatRecipientData data, ChatTransmitRange range)
+    public MessageRangeCheckResult MessageRangeCheck(ICommonSession session, ICChatRecipientData data, ChatTransmitRange range) // Horizon - made public
     {
         var initialResult = MessageRangeCheckResult.Full;
         switch (range)
@@ -704,7 +783,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             case ChatTransmitRange.GhostRangeLimitNoAdminCheck:
                 initialResult = (data.Observer && data.Range < 0) ? MessageRangeCheckResult.HideChat : MessageRangeCheckResult.Full;
                 break;
-            // End Frontier
+                // End Frontier
         }
         var insistHideChat = data.HideChatOverride ?? false;
         var insistNoHideChat = !(data.HideChatOverride ?? true);
@@ -759,7 +838,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     }
 
     // ReSharper disable once InconsistentNaming
-    private string SanitizeInGameICMessage(EntityUid source, string message, out string? emoteStr, bool capitalize = true, bool punctuate = false, bool capitalizeTheWordI = true)
+    public string SanitizeInGameICMessage(EntityUid source, string message, out string? emoteStr, bool capitalize = true, bool punctuate = false, bool capitalizeTheWordI = true)   // Horizon tweak - made public
     {
         var newMessage = SanitizeMessageReplaceWords(message.Trim());
 
@@ -824,8 +903,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         return message;
     }
 
-    [ValidatePrototypeId<ReplacementAccentPrototype>]
-    public const string ChatSanitize_Accent = "chatsanitize";
+    public static readonly ProtoId<ReplacementAccentPrototype> ChatSanitize_Accent = "chatsanitize";
 
     public string SanitizeMessageReplaceWords(string message)
     {
@@ -841,7 +919,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <summary>
     ///     Returns list of players and ranges for all players withing some range. Also returns observers with a range of -1.
     /// </summary>
-    private Dictionary<ICommonSession, ICChatRecipientData> GetRecipients(EntityUid source, float voiceGetRange)
+    public Dictionary<ICommonSession, ICChatRecipientData> GetRecipients(EntityUid source, float voiceGetRange) // Horizon - made public
     {
         // TODO proper speech occlusion
 
@@ -880,11 +958,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         return recipients;
     }
 
-    public readonly record struct ICChatRecipientData(float Range, bool Observer, bool? HideChatOverride = null)
+    public readonly record struct ICChatRecipientData(float Range, bool Observer, bool? HideChatOverride = null, bool Muffled = false)  // Horizon - muffled bool
     {
     }
 
-    private string ObfuscateMessageReadability(string message, float chance)
+    public string ObfuscateMessageReadability(string message, float chance) // Horizon - made public
     {
         var modifiedMessage = new StringBuilder(message);
 
@@ -967,14 +1045,22 @@ public sealed class EntitySpokeEvent : EntityEventArgs
     /// </summary>
     public RadioChannelPrototype? Channel;
     public readonly bool Whisper;
+    public readonly LanguagePrototype Language; // Horizon languages
 
-    public EntitySpokeEvent(EntityUid source, string message, RadioChannelPrototype? channel, string? obfuscatedMessage, bool whisper = false)
+    /// <summary>
+    /// When true, <see cref="SpamProtectionSystem"/> does not record this line toward repeat-message spam.
+    /// </summary>
+    public readonly bool IgnoreSpamProtection;
+
+    public EntitySpokeEvent(EntityUid source, string message, LanguagePrototype language, RadioChannelPrototype? channel, string? obfuscatedMessage, bool whisper = false, bool ignoreSpamProtection = false)  // Horizon tweak - language added
     {
         Source = source;
         Message = message;
         Channel = channel;
         ObfuscatedMessage = obfuscatedMessage;
         Whisper = whisper;
+        Language = language; // Horizon languages
+        IgnoreSpamProtection = ignoreSpamProtection;
     }
 }
 

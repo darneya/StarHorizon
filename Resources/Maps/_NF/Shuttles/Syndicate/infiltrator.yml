@@ -548,10 +548,12 @@ entities:
 - proto: ActionToggleLight
   entities:
   - uid: 467
+    mapInit: true
+    paused: true
     components:
     - type: Transform
       parent: 499
-    - type: InstantAction
+    - type: Action
       container: 499
 - proto: AirlockExternal
   entities:
@@ -2547,7 +2549,7 @@ entities:
     - type: Transform
       pos: 0.5,-2.5
       parent: 1
-- proto: ComputerTabletopShuttle
+- proto: ComputerTabletopShuttleAntagSyndicate
   entities:
   - uid: 320
     components:

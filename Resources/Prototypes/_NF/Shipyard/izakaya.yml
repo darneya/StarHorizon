@@ -1,15 +1,19 @@
 # Author Info
-# GitHub: AF-Buyrcsp2
-# Discord: Buyrcsp2
+# GitHub: https://github.com/AmbitiousFailure
+# Discord: ambitiousfailure
+
+# Maintainer Info
+# GitHub: https://github.com/AmbitiousFailure
+# Discord: ambitiousfailure
 
 # Shuttle Notes:
 #
 - type: vessel
   id: Izakaya
   parent: BaseVessel
-  name: SSS Izakaya
+  name: SSF Izakaya
   description: A medium-size, japanese-inspired restaurant/pub ship with a large dining area, and equally large kitchen.
-  price: 65000 # ~59000 appraisal price, ~10% markup
+  price: 74000 # ~67250 0.1 ~73975
   category: Medium
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/izakaya.yml
@@ -18,10 +22,22 @@
   - Kitchen
   engine:
   - Uranium
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionFrontier"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Izakaya
-  mapName: 'SSS Izakaya'
+  mapName: 'SSF Izakaya'
   mapPath: /Maps/_NF/Shuttles/izakaya.yml
   minPlayers: 0
   stations:

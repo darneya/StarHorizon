@@ -1,10 +1,11 @@
-gun-examine-nf-recoil = - [color={$color}]Recoil[/color]: [color=lightblue]{$value}°[/color] per shot
-gun-examine-nf-stability = - [color={$color}]Stability[/color]: [color=lightblue]{$value}°[/color] per second
-gun-examine-nf-max-angle = - [color={$color}]Maximum spread[/color]: [color=lightblue]{$value}°[/color]
-gun-examine-nf-min-angle = - [color={$color}]Minimum spread[/color]: [color=lightblue]{$value}°[/color]
-gun-examine-nf-fire-rate = - [color={$color}]Fire rate[/color]: [color=lightblue]{$value} RPS[/color]
-gun-examine-nf-fire-rate-burst = - [color={$color}]Fire rate[/color]: [color=lightblue]{$value} RPS[/color] (burst of [color=lightblue]{$burstsize}[/color] at [color=lightblue]{$burstrate} RPS[/color])
-gun-examine-nf-muzzle-velocity = - [color={$color}]Muzzle velocity[/color]: [color=lightblue]{$value} m/s[/color]
+gun-examine-nf-recoil = - [color={$color}]Recoil[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color] per shot
+gun-examine-nf-stability = - [color={$color}]Stability[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color] per second
+gun-examine-nf-max-angle = - [color={$color}]Maximum spread[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color]
+gun-examine-nf-min-angle = - [color={$color}]Minimum spread[/color]: [color=lightblue]{NATURALFIXED($value, 1)}°[/color]
+gun-examine-nf-fire-rate = - [color={$color}]Fire rate[/color]: [color=lightblue]{NATURALFIXED($value, 1)} RPS[/color]
+gun-examine-nf-fire-rate-burst = - [color={$color}]Fire rate[/color]: [color=lightblue]{NATURALFIXED($value, 1)} RPS[/color] (burst of [color=lightblue]{$burstsize}[/color] at [color=lightblue]{NATURALFIXED($burstrate, 1)} RPS[/color])
+gun-examine-nf-muzzle-velocity = - [color={$color}]Muzzle velocity[/color]: [color=lightblue]{NATURALFIXED($value, 1)} m/s[/color]
+gun-examine-nf-stat-modifier = [bold]([color=lime]{$plus}{NATURALPERCENT($difference, 1)}[/color])[/bold]
 gun-examine-nf-class = - [color={$color}]Class[/color]: [color=lightblue]{$value}[/color]
 gun-examine-nf-manufacturer = - [color={$color}]Manufacturer[/color]: [color=lightblue]{$value}[/color]
 
@@ -32,6 +33,7 @@ gun-examine-energybolt-disabler-pistol = 750J disabler bolt
 gun-examine-energybolt-disabler-practice = 25J disabler bolt
 gun-examine-energybolt-holoflare = holoflare
 gun-examine-pulse-low = 1750J energy pulse
+gun-examine-particle-stream = high-energy particle stream
 gun-examine-energybolt-emp = EMP bolt
 gun-examine-energybolt-kinetic-high = 1600J kinetic bolt
 gun-examine-energybolt-kinetic-medium = 1100J kinetic bolt
@@ -49,6 +51,7 @@ weapon-details-manufacturer-foam-force-llc = Foam Force LLC
 weapon-details-manufacturer-frontier-gunsmith-consortium = Frontier Gunsmith Consortium
 weapon-details-manufacturer-gorlex-steel-works = Gorlex Steel Works
 weapon-details-manufacturer-nanotrasen-munitions = NanoTrasen Munitions
+weapon-details-manufacturer-nanotrasen-technologies = NanoTrasen Technologies
 weapon-details-manufacturer-steelbolt-tool-forge = Steelbolt Tool Forge
 
 # Classes (alphabetical please)
@@ -63,3 +66,9 @@ weapon-details-class-shotgun = Shotgun
 weapon-details-class-sniper = Sniper Rifle
 weapon-details-class-submachine-gun = Submachine Gun
 weapon-details-class-tool = Tool
+
+# Weapon rarity descriptions
+weapon-description-rarity-uncommon = This is an [bold][color=#33FF44]uncommon[/color][/bold] weapon.
+weapon-description-rarity-rare = This is a [bold][color=#33CCFF]rare[/color][/bold] weapon.
+weapon-description-rarity-epic = This is an [bold][color=#CC66FF]epic[/color][/bold] weapon.
+weapon-description-rarity-legendary = This is a [bold][color=#FFCC00]legendary[/color][/bold] weapon.

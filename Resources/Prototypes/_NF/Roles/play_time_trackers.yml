@@ -23,13 +23,19 @@
   id: JobPilotInterview
 
 - type: playTimeTracker
+  id: JobPirate
+
+- type: playTimeTracker
   id: JobPirateCaptain
-  
+
 - type: playTimeTracker
   id: JobPirateFirstMate
-  
+
 - type: playTimeTracker
-  id: JobPirate
+  id: JobPlantManager
+
+- type: playTimeTracker
+  id: JobPlantTechnician
 
 - type: playTimeTracker
   id: JobPrisoner
@@ -48,6 +54,18 @@
 
 - type: playTimeTracker
   id: JobStc
+
+- type: playTimeTracker
+  id: JobSyndicateOfficerTeleCommunication
+
+- type: playTimeTracker
+  id: JobSyndicateOperative
+
+- type: playTimeTracker
+  id: JobSyndicateMedic
+
+- type: playTimeTracker
+  id: JobSyndicateCargo
 
 - type: playTimeTracker
   id: JobValet

@@ -173,6 +173,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.Laying); // Horizon
             AddCheckBox("ui-options-hotkey-toggle-walk", _cfg.GetCVar(CCVars.ToggleWalk), HandleToggleWalk);
             InitToggleWalk();
+            AddButton(ContentKeyFunctions.ToggleKnockdown);
 
             AddHeader("ui-options-header-camera");
             AddButton(EngineKeyFunctions.CameraRotateLeft);
@@ -192,7 +193,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.Drop);
             AddButton(ContentKeyFunctions.ExamineEntity);
             AddButton(ContentKeyFunctions.SwapHands);
-            AddButton(ContentKeyFunctions.SwapHandsPrevious); // Frontier
+            AddButton(ContentKeyFunctions.SwapHandsReverse);
             AddButton(ContentKeyFunctions.MoveStoredItem);
             AddButton(ContentKeyFunctions.RotateStoredItem);
             AddButton(ContentKeyFunctions.SaveItemLocation);
@@ -233,6 +234,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.OpenAHelp);
             AddButton(ContentKeyFunctions.OpenActionsMenu);
             AddButton(ContentKeyFunctions.OpenEmotesMenu);
+            AddButton(ContentKeyFunctions.OpenLanguagesMenu);   // Horizon Languages
             AddButton(ContentKeyFunctions.ToggleRoundEndSummaryWindow);
             AddButton(ContentKeyFunctions.OpenEntitySpawnWindow);
             AddButton(ContentKeyFunctions.OpenSandboxWindow);

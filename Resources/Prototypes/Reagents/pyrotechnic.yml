@@ -34,6 +34,7 @@
           types:
             Heat: 2
             Poison: 1
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Napalm
@@ -63,6 +64,7 @@
             Caustic: 0.5 # based off napalm being an irritant
       - !type:FlammableReaction
         multiplier: 0.4
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Phlogiston
@@ -92,6 +94,7 @@
       - !type:FlammableReaction
         multiplier: 0.2
       - !type:Ignite
+  pricePerUnit: 7 # Horizon
 
 - type: reagent
   id: ChlorineTrifluoride
@@ -131,6 +134,7 @@
         visualType: MediumCaution
         probability: 0.3
         type: Local
+  pricePerUnit: 10 # Horizon
 
 - type: reagent
   id: FoamingAgent

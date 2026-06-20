@@ -52,6 +52,7 @@
   - type: StorageFill
     contents:
       - id: MaterialWoodPlank
+        amount: 3
 
 - type: entity
   id: CrateMaterialBrass
@@ -68,32 +69,56 @@
   id: CrateMaterialPlasteel
   parent: CrateGenericSteel
   name: plasteel crate
-  description: 30 sheets of plasteel.
+  description: 90 sheets of plasteel.
   components:
   - type: StorageFill
     contents:
       - id: SheetPlasteel
+        amount: 3
 
 - type: entity
   id: CrateMaterialPlasma
   parent: CratePlasma
   name: solid plasma crate
-  description: 30 sheets of plasma.
+  description: 90 sheets of plasma.
   components:
   - type: StorageFill
     contents:
       - id: SheetPlasma
+        amount: 3
+
+- type: entity
+  id: CrateMaterialGold
+  parent: CrateGenericSteel
+  name: gold crate
+  description: 90 bars of gold.
+  components:
+  - type: StorageFill
+    contents:
+      - id: IngotGold
+        amount: 3
+
+- type: entity
+  id: CrateMaterialSilver
+  parent: CrateGenericSteel
+  name: silver crate
+  description: 90 bars of silver.
+  components:
+  - type: StorageFill
+    contents:
+      - id: IngotSilver
+        amount: 3
 
 - type: entity
   id: CrateMaterialCardboard
   parent: CrateGenericSteel
   name: cardboard crate
-  description: 60 pieces of cardboard.
+  description: 90 pieces of cardboard.
   components:
   - type: StorageFill
     contents:
       - id: MaterialCardboard
-        amount: 2
+        amount: 3
 
 - type: entity
   id: CrateMaterialPaper

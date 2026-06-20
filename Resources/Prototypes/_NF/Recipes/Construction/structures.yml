@@ -13,6 +13,22 @@
     - !type:TileNotBlocked
 
 - type: construction
+  id: GaslockRecipe
+  graph: GaslockConstruction  
+  startNode: start
+  targetNode: building  
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: true 
+  conditions:
+    - !type:TileNotBlocked
+  icon:
+    sprite: _NF/Structures/Piping/Atmospherics/gaslock.rsi
+    state: closed
+
+- type: construction
   id: WoodSecretDoorConstruction
   name: recipes-wood-secret-door-name
   description: recipes-secret-door-desc # reuse base
@@ -62,6 +78,32 @@
   category: construction-category-structures
   objectType: Structure
   placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: NFLightTubeShieldedFixture
+  graph: LightFixture
+  startNode: start
+  targetNode: tubeLightShielded
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: NFLightSmallShieldedFixture
+  graph: LightFixture
+  startNode: start
+  targetNode: bulbLightShielded
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked

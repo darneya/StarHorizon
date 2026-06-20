@@ -197,17 +197,32 @@
   - type: Projectile
     damage:
       types: # it's for mining hard things, not destroying critters
-        Blunt: 0.5
-        Structural: 1
+        Blunt: 30 # Horizon
+        Structural: 35 # Horizon
   - type: TimedDespawn
     lifetime: 1
   - type: PointLight
     color: "#FF8888"
-  - type: MiningGatheringHard # Frontier
+  - type: GatheringProjectile
+  - type: MiningGatheringSoft
+
+- type: entity
+  parent: NFBulletKineticShuttle
+  id: NFBulletKineticShuttleHard
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MiningGatheringHard
 
 - type: entity
   parent: BulletCharge
   id: NFBulletCharge
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MiningGatheringSoft # Frontier
+
+- type: entity
+  parent: BulletChargeGlaive
+  id: NFBulletChargeGlaive
   categories: [ HideSpawnMenu ]
   components:
   - type: MiningGatheringSoft # Frontier
@@ -423,6 +438,11 @@
   parent: AntiParticlesProjectile
   id: NFAntiParticlesProjectile
   categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Radiation: 5
 
 - type: entity
   parent: BulletDisablerPractice

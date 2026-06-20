@@ -12,8 +12,8 @@
   id: Piecrust
   parent: BaseVessel
   name: NC Piecrust
-  description: A combination animal ranch and pie bakery
-  price: 35000 # TODO: fix this value, getting tests to pass - Whatstone
+  description: A rustic cafe for the nostalgic deep space chef.
+  price: 34000 # 30500 0.05 32025
   category: Small
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/piecrust.yml
@@ -22,6 +22,18 @@
   - Kitchen
   engine:
   - Plasma
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionFrontier"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Piecrust

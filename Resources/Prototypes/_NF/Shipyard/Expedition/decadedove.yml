@@ -7,13 +7,13 @@
 # Discord: ???
 
 # Shuttle Notes:
-# 
+#
 - type: vessel
   id: DecadeDove
   parent: BaseVessel
   name: DYS Dove
   description: Versatile expedition-capable multi-purpose light freighter.
-  price: 78500 # ~60100$ on mapinit + ~18000$ from 30% markup
+  price: 77000 # 64078 0.2 76893.6
   category: Medium
   group: Expedition
   shuttlePath: /Maps/_NF/Shuttles/Expedition/decadedove.yml
@@ -22,6 +22,21 @@
   - Expedition
   engine:
   - AME
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionSIU"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionArcadia"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: DecadeDove

@@ -31,7 +31,7 @@ namespace Content.Shared.Mech.EntitySystems;
 /// <summary>
 /// Handles all of the interactions, UI handling, and items shennanigans for <see cref="MechComponent"/>
 /// </summary>
-public abstract partial class SharedMechSystem : EntitySystem   // Horizon Mech
+public abstract partial class SharedMechSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!; // Horizon Mech
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -69,6 +69,7 @@ public abstract partial class SharedMechSystem : EntitySystem   // Horizon Mech
 
         InitializeADT();
         // Horizon Mech end
+        InitializeRelay();
     }
 
     // Horizon Mech commented
@@ -223,10 +224,22 @@ public abstract partial class SharedMechSystem : EntitySystem   // Horizon Mech
             _actions.RemoveProvidedActions(component.PilotSlot.ContainedEntity.Value, component.CurrentSelectedEquipment.Value);
         // End Frontier
 
+        // Horizon start
+        var mechEv = new MechEquipmentSelectedEvent(component.CurrentSelectedEquipment);
+        RaiseLocalEvent(uid, ref mechEv);
+
+        if (component.CurrentSelectedEquipment.HasValue)
+        {
+            var equipEv = new MechEquipmentGotDeselectedEvent(uid);
+            RaiseLocalEvent(component.CurrentSelectedEquipment.Value, ref equipEv);
+        }
+        // Horizon end
+
         equipmentIndex++;
         component.CurrentSelectedEquipment = equipmentIndex >= allEquipment.Count
             ? null
             : allEquipment[equipmentIndex];
+
         // Horizon Mech start
         while (TryComp<MechEquipmentComponent>(component.CurrentSelectedEquipment, out var equipment) && equipment.CanBeUsed == false)
         {
@@ -234,6 +247,12 @@ public abstract partial class SharedMechSystem : EntitySystem   // Horizon Mech
             component.CurrentSelectedEquipment = equipmentIndex >= allEquipment.Count
                 ? null
                 : allEquipment[equipmentIndex];
+        }
+
+        if (component.CurrentSelectedEquipment.HasValue)
+        {
+            var equipEv = new MechEquipmentGotSelectedEvent(uid);
+            RaiseLocalEvent(component.CurrentSelectedEquipment.Value, ref equipEv);
         }
         // Horizon Mech end
         var popupString = component.CurrentSelectedEquipment != null
@@ -451,6 +470,12 @@ public abstract partial class SharedMechSystem : EntitySystem   // Horizon Mech
             RemComp<ShowHealthBarsComponent>(pilot);
         }
         // Horizon Mech end
+
+        // Horizon RemotePilot start
+        var ejectEv = new OnPilotEjectEvent(GetNetEntity(uid));
+        RaiseLocalEvent(pilot, ejectEv);
+        // Horizon RemotePilot end
+
         return true;
     }
 

@@ -37,6 +37,8 @@
   - ContractorClothingUniformJumpskirtColorOrange
   - ContractorClothingUniformJumpsuitColorRed
   - ContractorClothingUniformJumpskirtColorRed
+  - ContractorClothingUniformJumpsuitColorMaroon
+  - ContractorClothingUniformJumpskirtColorMaroon
   - ContractorClothingUniformJumpsuitColorPurple
   - ContractorClothingUniformJumpskirtColorPurple
   - ContractorClothingUniformJumpsuitColorLightBrown
@@ -51,6 +53,8 @@
   - ContractorClothingUniformJumpskirtColorDarkGreen
   - ContractorClothingUniformJumpsuitColorTeal
   - ContractorClothingUniformJumpskirtColorTeal
+  - ContractorClothingUniformColorRainbow
+  - ContractorClothingUniformJumpskirtColorRainbow
   - ContractorClothingUniformJumpsuitHawaiBlack
   - ContractorClothingUniformJumpsuitHawaiBlue
   - ContractorClothingUniformJumpsuitHawaiRed
@@ -119,6 +123,7 @@
   - ContractorClothingSkirtUniformRandomBra
   - ContractorClothingSkirtUniformRandomShorts
   - ContractorClothingSkirtUniformRandomShirt
+  - ContractorClothingUniformJumpsuitExpeditorExtra # Horizon [ специальная униформа экспедитора ] by Serafim547
   - ContractorClothingUniformJumpsuitMonasticRobeDark
   - ContractorClothingUniformJumpsuitMonasticRobeLight
   - ContractorClothingUniformJumpsuitChaplainPilgrimVest
@@ -307,7 +312,6 @@
   name: loadout-group-contractor-outerclothing
   minLimit: 0
   loadouts:
-  - ContractorClothingOuterHardsuitBasic
   - ContractorClothingOuterHardsuitVoidParamed
   - ContractorClothingOuterHoodieGrey
   - ContractorClothingOuterVestHazard
@@ -377,6 +381,7 @@
   - ContractorClothingOuterCoatJacketLettermanMagenta # Punkish (Static visuals)
   - ContractorClothingOuterCoatBomberPinkSleeves # Punkish (Static visuals)
   - ContractorClothingOuterCoatBomberRandomized # Punkish (Randomized visuals)
+  - ContractorClothingOuterCoatRandomized # Punkish (Randomized visuals)
   - ContractorClothingOuterCoatAcidRaincoat # Punkish (Static visuals)
   - ContractorClothingOuterCoatAcidRaincoatBlue # Punkish (Static visuals)
   - ContractorClothingOuterCoatAcidRaincoatGreen # Punkish (Static visuals)
@@ -630,7 +635,7 @@
   - ContractorClothingNeckTieRed
   - ContractorClothingNeckTieSci
   - ContractorClothingNeckLawyerbadge
-  - ContractorClothingNeckHeadphones
+  - ContractorClothingMultipleHeadphones
   - ContractorClothingNeckCrucifix
   - ContractorClothingNeckBellCollar
   - ContractorCDDogtags
@@ -695,6 +700,7 @@
   id: ContractorPDA
   name: loadout-group-contractor-pda
   loadouts:
+  - ContractorContractorPDA
   - ContractorClearNFPDA
   - ContractorSalvagePDA
   - ContractorResearchAssistantPDA
@@ -729,7 +735,7 @@
   - ContractorClownPDA
   - ContractorMimePDA
   fallbacks:
-  - ContractorClearNFPDA
+  - ContractorContractorPDA
 
 - type: loadoutGroup
   id: ContractorGlasses
@@ -786,6 +792,7 @@
   - ContractorWristwatchGold
   - ContractorSilverRing
   - ContractorGoldRing
+  - ContractorUrnMortuary
   - ContractorBasketball
   - ContractorFootball
   - ContractorBeachBall
@@ -803,6 +810,7 @@
   - ContractorMysterySpaceBladeBox
   - ContractorHoloGraffitiProjector # Punkish (might be annoying)
   - ContractorCrayonMagic
+  - ContractorSprayPainterMagic
     # Bureaucracy
   - ContractorBoxFolderMedicalDoctor
   - ContractorBrbSign
@@ -817,6 +825,30 @@
   - ContractorRubberStampTrader
   - ContractorRubberStampClown
   - ContractorRubberStampMime
+    # Towels
+  - ContractorTowelColorGreen
+  - ContractorTowelColorDarkGreen
+  - ContractorTowelColorLightBlue
+  - ContractorTowelColorBlue
+  - ContractorTowelColorDarkBlue
+  - ContractorTowelColorTeal
+  - ContractorTowelColorWhite
+  - ContractorTowelColorPurple
+  - ContractorTowelColorBlack
+  - ContractorTowelColorMaroon
+  - ContractorTowelColorYellow
+  - ContractorTowelColorLightBrown
+  - ContractorTowelColorBrown
+  - ContractorTowelColorRed
+  - ContractorTowelColorOrange
+  - ContractorTowelColorPink
+  - ContractorTowelColorGray
+  - ContractorTowelColorMime
+  - ContractorTowelColorGold
+  - ContractorTowelColorSilver
+  - ContractorTowelColorNT
+  - ContractorTowelColorCentcom
+  - ContractorTowelColorSyndicate
 
 - type: loadoutGroup
   id: ContractorHandItems
@@ -882,12 +914,12 @@
   - ContractorNFBoxSurvivalNitrogen
   - ContractorNFBoxSurvivalExtended
   - ContractorNFBoxSurvivalExtendedNitrogen
-  - ContractorNFBoxSurvivalSheleg
-  - ContractorNFBoxSurvivalExtendedSheleg
+  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
+  - ContractorNFBoxSurvivalExtendedSheleg # Horizon Survival box
   fallbacks:
   - ContractorNFBoxSurvival
   - ContractorNFBoxSurvivalNitrogen
-  - ContractorNFBoxSurvivalSheleg
+  - ContractorNFBoxSurvivalSheleg # Horizon Survival box
 
 - type: loadoutGroup
   id: ContractorEncryptionKey

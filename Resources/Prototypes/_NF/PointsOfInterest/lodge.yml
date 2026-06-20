@@ -11,11 +11,11 @@
 - type: pointOfInterest
   id: Lodge
   parent: BasePOI
-  name: 'Expeditionary Lodge'
+  name: 'Экспедиционная Лоджия'
   minimumDistance: 1650
   maximumDistance: 3400
   spawnGroup: Required
-  gridPath: /Maps/_NF/POI/lodge.yml
+  gridPath: /Maps/_Horizon/POI/lodge.yml # Horizon-Maps
   addComponents:
   - type: IFF
     color: "#3737F8"
@@ -25,17 +25,17 @@
 
 - type: gameMap
   id: Lodge
-  mapName: 'Expeditionary Lodge'
-  mapPath: /Maps/_NF/POI/lodge.yml
+  mapName: 'Экспедиционная Лоджия'
+  mapPath: /Maps/_Horizon/POI/lodge.yml # Horizon-Maps
   minPlayers: 0
   stations:
     Lodge:
       stationProto: RecordsFrontierOutpost
       components:
         - type: StationNameSetup
-          mapNameTemplate: 'Expeditionary Lodge'
+          mapNameTemplate: 'Экспедиционная Лоджия'
         - type: ExtraStationInformation
-          iconPath: /Textures/_NF/Markers/jobs.rsi/mercenary.png
+          iconPath: /Textures/_Horizon/Interface/banner_merc_two.png # Horizon
           stationSubtext: 'frontier-lobby-exped-subtext'
           stationDescription: 'frontier-lobby-exped-description'
           lobbySortOrder: 3

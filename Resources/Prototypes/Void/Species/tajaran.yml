@@ -1,6 +1,7 @@
 - type: species
   id: TajaranSpecies
   name: species-name-tajaran
+  description: "/ServerInfo/_Horizon/SpeciesDesc/Tajaran.xml" # Horizon
   roundStart: true #can player role
   prototype: MobTajaran
   sprites: MobTajaranSprites
@@ -11,6 +12,13 @@
   femaleFirstNames: NamesTajaranFirstFemale
   LastNames: NamesTajaranLast
   naming: FirstLast
+  # Horizon start
+  defaultLanguages:
+  - GalacticCommon
+  - SikTaj
+  prosCount: 2
+  consCount: 2
+  # Horizon end
 
 - type: speciesBaseSprites
   id: MobTajaranSprites
@@ -40,8 +48,11 @@
     Chest:
       points: 1
       required: false
-    Tail:
+    Arms:
       points: 1
+      required: false
+    Tail:
+      points: 0
       required: false
     Head:
       points: 3
@@ -55,12 +66,14 @@
 
 - type: humanoidBaseSprite
   id: MobTajaranTail
+  allowsMarkings: true
   baseSprite:
     sprite: _Void/Mobs/Species/Tajaran/parts.rsi
     state: tail_m
 
 - type: humanoidBaseSprite
   id: MobTajaranHead
+  allowsMarkings: true
   baseSprite:
     sprite: _Void/Mobs/Species/Tajaran/parts.rsi
     state: head_m
@@ -103,6 +116,7 @@
 
 - type: humanoidBaseSprite
   id: MobTajaranLArm
+  allowsMarkings: true
   baseSprite:
     sprite: _Void/Mobs/Species/Tajaran/parts.rsi
     state: l_arm
@@ -127,6 +141,7 @@
 
 - type: humanoidBaseSprite
   id: MobTajaranRArm
+  allowsMarkings: true
   baseSprite:
     sprite: _Void/Mobs/Species/Tajaran/parts.rsi
     state: r_arm

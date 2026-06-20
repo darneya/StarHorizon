@@ -11,14 +11,15 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Server._NF.Station.Systems;
+using Content.Shared._Horizon.OutpostCapture;
 using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Map.Components;
 
 namespace Content.Server._NF.GameRule;
 
 /// <summary>
 /// This handles the dungeon and trading post spawning, as well as round end capitalism summary
 /// </summary>
-//[Access(typeof(NfAdventureRuleSystem))]
 public sealed class PointOfInterestSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -27,10 +28,11 @@ public sealed class PointOfInterestSystem : EntitySystem
     [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly MapLoaderSystem _map = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly StationRenameWarpsSystems _renameWarps = default!;
     [Dependency] private readonly StationSystem _station = default!;
 
-    private List<Vector2> _stationCoords = new();
+    private List<(Vector2 position, float minClearance)> _stationCoords = new();
 
     public override void Initialize()
     {
@@ -44,9 +46,9 @@ public sealed class PointOfInterestSystem : EntitySystem
         _stationCoords.Clear();
     }
 
-    private void AddStationCoordsToSet(Vector2 coords)
+    private void AddStationCoordsToSet(Vector2 coords, float minClearance)
     {
-        _stationCoords.Add(coords);
+        _stationCoords.Add((coords, minClearance));
     }
 
     public void GenerateDepots(MapId mapUid, List<PointOfInterestPrototype> depotPrototypes, out List<EntityUid> depotStations)
@@ -78,7 +80,8 @@ public sealed class PointOfInterestSystem : EntitySystem
             rotationOffset += rotation;
             // Append letter to depot name.
 
-            string overrideName = proto.Name;
+            var baseName = ResolvePoiDisplayName(proto.Name);
+            string overrideName = baseName;
             if (i < 26)
                 overrideName += $" {(char)('A' + i)}"; // " A" ... " Z"
             else
@@ -95,7 +98,7 @@ public sealed class PointOfInterestSystem : EntitySystem
                         destComp.DestinationProto = "CargoOther";
                 }
                 depotStations.Add(depot);
-                AddStationCoordsToSet(offset); // adjust list of actual station coords
+                AddStationCoordsToSet(offset, proto.MinimumClearance); // adjust list of actual station coords
             }
         }
     }
@@ -124,13 +127,13 @@ public sealed class PointOfInterestSystem : EntitySystem
             if (marketsAdded >= marketCount)
                 break;
 
-            var offset = GetRandomPOICoord(proto.MinimumDistance, proto.MaximumDistance);
+            var offset = GetRandomPOICoord(proto.MinimumDistance, proto.MaximumDistance, proto.MinimumClearance);
 
             if (TrySpawnPoiGrid(mapUid, proto, offset, out var marketUid) && marketUid is { Valid: true } market)
             {
                 marketStations.Add(market);
                 marketsAdded++;
-                AddStationCoordsToSet(offset);
+                AddStationCoordsToSet(offset, proto.MinimumClearance);
             }
         }
     }
@@ -159,12 +162,12 @@ public sealed class PointOfInterestSystem : EntitySystem
             if (optionalsAdded >= optionalCount)
                 break;
 
-            var offset = GetRandomPOICoord(proto.MinimumDistance, proto.MaximumDistance);
+            var offset = GetRandomPOICoord(proto.MinimumDistance, proto.MaximumDistance, proto.MinimumClearance);
 
             if (TrySpawnPoiGrid(mapUid, proto, offset, out var optionalUid) && optionalUid is { Valid: true } uid)
             {
                 optionalStations.Add(uid);
-                AddStationCoordsToSet(offset);
+                AddStationCoordsToSet(offset, proto.MinimumClearance);
             }
         }
     }
@@ -188,12 +191,12 @@ public sealed class PointOfInterestSystem : EntitySystem
             if (proto.SpawnGamePreset.Length > 0 && !proto.SpawnGamePreset.Contains(currentPreset))
                 continue;
 
-            var offset = GetRandomPOICoord(proto.MinimumDistance, proto.MaximumDistance);
+            var offset = GetRandomPOICoord(proto.MinimumDistance, proto.MaximumDistance, proto.MinimumClearance);
 
             if (TrySpawnPoiGrid(mapUid, proto, offset, out var requiredUid) && requiredUid is { Valid: true } uid)
             {
                 requiredStations.Add(uid);
-                AddStationCoordsToSet(offset);
+                AddStationCoordsToSet(offset, proto.MinimumClearance);
             }
         }
     }
@@ -226,12 +229,12 @@ public sealed class PointOfInterestSystem : EntitySystem
                 var chance = _random.NextFloat(0, 1);
                 if (chance <= proto.SpawnChance)
                 {
-                    var offset = GetRandomPOICoord(proto.MinimumDistance, proto.MaximumDistance);
+                    var offset = GetRandomPOICoord(proto.MinimumDistance, proto.MaximumDistance, proto.MinimumClearance);
 
                     if (TrySpawnPoiGrid(mapUid, proto, offset, out var optionalUid) && optionalUid is { Valid: true } uid)
                     {
                         uniqueStations.Add(uid);
-                        AddStationCoordsToSet(offset);
+                        AddStationCoordsToSet(offset, proto.MinimumClearance);
                         break;
                     }
                 }
@@ -242,21 +245,54 @@ public sealed class PointOfInterestSystem : EntitySystem
     private bool TrySpawnPoiGrid(MapId mapUid, PointOfInterestPrototype proto, Vector2 offset, out EntityUid? gridUid, string? overrideName = null)
     {
         gridUid = null;
-        if (!_map.TryLoadGrid(mapUid, proto.GridPath, out var loadedGrid, offset: offset, rot: _random.NextAngle()))
-            return false;
-        gridUid = loadedGrid.Value;
-        List<EntityUid> gridList = [loadedGrid.Value];
+        EntityUid loadedGrid;
 
-        string stationName = string.IsNullOrEmpty(overrideName) ? proto.Name : overrideName;
+        // StarHorizon-Start
+        // If AnotherMap is true, spawn on a new separate map
+        if (proto.AnotherMap)
+        {
+            // Create a new map for this POI
+            var newMapUid = _mapSystem.CreateMap(out var newMapId);
+
+            // Set map name - use MapName if specified, otherwise use Name
+            string mapName = ResolvePoiDisplayName(proto.MapName ?? proto.Name);
+            if (!string.IsNullOrEmpty(overrideName))
+                mapName = overrideName;
+            _meta.SetEntityName(newMapUid, mapName);
+
+            // Add map components if specified
+            EntityManager.AddComponents(newMapUid, proto.AddMapComponents);
+
+            // Load the grid onto the new map
+            if (!_map.TryLoadGrid(newMapId, proto.GridPath, out var grid))
+            {
+                Del(newMapUid);
+                return false;
+            }
+
+            loadedGrid = grid.Value;
+        }
+        // StarHorizon-End
+        else
+        {
+            if (!_map.TryLoadGrid(mapUid, proto.GridPath, out var grid, offset: offset, rot: _random.NextAngle()))
+                return false;
+            loadedGrid = grid.Value;
+        }
+
+        gridUid = loadedGrid;
+        List<EntityUid> gridList = [loadedGrid];
+
+        string stationName = string.IsNullOrEmpty(overrideName) ? ResolvePoiDisplayName(proto.Name) : overrideName;
 
         EntityUid? stationUid = null;
         if (_proto.TryIndex<GameMapPrototype>(proto.ID, out var stationProto))
             stationUid = _station.InitializeNewStation(stationProto.Stations[proto.ID], gridList, stationName);
 
-        var meta = EnsureComp<MetaDataComponent>(loadedGrid.Value);
-        _meta.SetEntityName(loadedGrid.Value, stationName, meta);
+        var meta = EnsureComp<MetaDataComponent>(loadedGrid);
+        _meta.SetEntityName(loadedGrid, stationName, meta);
 
-        EntityManager.AddComponents(loadedGrid.Value, proto.AddComponents);
+        EntityManager.AddComponents(loadedGrid, proto.AddComponents);
 
         // Rename warp points after set up if needed
         if (proto.NameWarp)
@@ -271,10 +307,17 @@ public sealed class PointOfInterestSystem : EntitySystem
         return true;
     }
 
-    private Vector2 GetRandomPOICoord(float unscaledMinRange, float unscaledMaxRange)
+    /// <summary>
+    /// Fluent message id if the string exists in the bundle; otherwise the raw prototype value (legacy POIs).
+    /// </summary>
+    private string ResolvePoiDisplayName(string value)
+    {
+        return Loc.TryGetString(value, out var localized) ? localized : value;
+    }
+
+    private Vector2 GetRandomPOICoord(float unscaledMinRange, float unscaledMaxRange, float clearance)
     {
         int numRetries = int.Max(_cfg.GetCVar(NFCCVars.POIPlacementRetries), 0);
-        float minDistance = float.Max(_cfg.GetCVar(NFCCVars.MinPOIDistance), 0); // Constant at the end to avoid NaN weirdness
 
         Vector2 coords = _random.NextVector2(unscaledMinRange, unscaledMaxRange);
         for (int i = 0; i < numRetries; i++)
@@ -282,7 +325,9 @@ public sealed class PointOfInterestSystem : EntitySystem
             bool positionIsValid = true;
             foreach (var station in _stationCoords)
             {
-                if (Vector2.Distance(station, coords) < minDistance)
+                // Respect the larger of the two clearance reqs.
+                var minClearance = Math.Max(clearance, station.minClearance);
+                if (Vector2.Distance(station.position, coords) < minClearance)
                 {
                     positionIsValid = false;
                     break;

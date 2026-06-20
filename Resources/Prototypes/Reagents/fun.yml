@@ -26,6 +26,7 @@
           min: 1
         reagent: CarpoToxin
         amount: -3
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: Fiber
@@ -42,6 +43,7 @@
         conditions:
         - !type:OrganType
           type: Moth
+  pricePerUnit: 1 # Horizon
 
 - type: reagent
   id: BuzzochloricBees
@@ -136,6 +138,7 @@
         - !type:HasTag
           invert: true
           tag: Bee
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: GroundBee
@@ -144,6 +147,7 @@
   physicalDesc: reagent-physical-desc-bee-guts
   flavor: bee
   color: "#86530E"
+  pricePerUnit: 4 # Horizon
 
 - type: reagent
   id: Saxoite
@@ -166,6 +170,7 @@
       effects:
       - !type:Electrocute
         probability: 0.35
+  pricePerUnit: 3 # Horizon
 
 - type: reagent
   id: Razorium
@@ -206,6 +211,7 @@
       - !type:Emote
         emote: Scream
         probability: 0.3
+  pricePerUnit: 10 # Horizon
 
 - type: reagent
   id: Fresium
@@ -299,6 +305,7 @@
         visualType: LargeCaution
         messages: [ "fresium-effect-frozen"]
         probability: 0.4
+  pricePerUnit: 15 # Horizon
 
 - type: reagent
   id: Laughter
@@ -315,12 +322,14 @@
       effects:
       - !type:Emote
         emote: Laugh
+        showInGuidebook: true
         probability: 0.3
       - !type:PopupMessage
         type: Local
         visualType: Large
         messages: [ "laughter-effect-control-laughter" ]
         probability: 0.2
+  pricePerUnit: 3 # Horizon
 
 - type: reagent
   id: JuiceThatMakesYouWeh
@@ -337,6 +346,7 @@
       - !type:Emote
         emote: Weh
         showInChat: true
+        showInGuidebook: true
         force: true
         probability: 0.5
       - !type:Polymorph
@@ -354,6 +364,7 @@
         conditions:
         - !type:ReagentThreshold
           min: 50
+  pricePerUnit: 5 # Horizon
 
 - type: reagent
   id: JuiceThatMakesYouHew
@@ -370,6 +381,7 @@
       - !type:Emote
         emote: Hew
         showInChat: true
+        showInGuidebook: true
         force: true
         probability: 0.5
       - !type:Polymorph
@@ -383,6 +395,38 @@
           min: 50
       - !type:AdjustReagent
         reagent: JuiceThatMakesYouHew
+        amount: -20
+        conditions:
+        - !type:ReagentThreshold
+          min: 50
+  pricePerUnit: 5 # Horizon
+
+- type: reagent
+  id: CorgiJuice
+  name: reagent-name-corgiessence
+  group: Toxins
+  desc: reagent-desc-corgiessence
+  physicalDesc: reagent-physical-desc-fluffy
+  flavor: dogfood
+  color: "#ed9715"
+  metabolisms:
+    Poison:
+      metabolismRate: 0.2
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 15
+        damage:
+          types:
+            Cellular: 0.5
+      - !type:Polymorph
+        prototype: SmartCorgiMorph
+        conditions:
+        - !type:ReagentThreshold
+          min: 50
+      - !type:AdjustReagent
+        reagent: CorgiJuice
         amount: -20
         conditions:
         - !type:ReagentThreshold

@@ -156,9 +156,7 @@ stack-brutepack = набор от ушибов
 stack-bloodpack = запас крови
 stack-medicated-suture = медицинский шовный материал
 stack-regenerative-mesh = регенеративная сетка
-stack-capacitor = конденсатор
 stack-micro-manipulator = микроманипулятор
-stack-matter-bin = ёмкость для материи
 stack-pancake = блин
 stack-blueberry-pancake = черничный блин
 stack-chocolate-chip-pancake = блин с шоколадной крошкой
@@ -192,6 +190,7 @@ stack-white-steel-vertical-pavement = белое стальное вертика
 stack-steel-dark-checker-tile = стальная тёмная шахматная плитка
 stack-steel-light-checker-tile = стальная светлая шахматная плитка
 stack-steel-tile = стальная плитка
+stack-techmaint-floor-dark = тёмный технический пол
 stack-wood-floor = деревянный пол
 stack-techmaint-floor = технический пол
 stack-freezer-tile = плитка морозильника
@@ -215,6 +214,7 @@ stack-black-shuttle-tile = чёрная плитка шаттла
 stack-eighties-floor-tile = плитка 80-х
 stack-blue-arcade-tile = синяя аркадная плитка
 stack-red-arcade-tile = красная аркадная плитка
+stack-black-carpet-tile = чёрный ковёр
 stack-red-carpet-tile = красный ковёр
 stack-block-carpet-tile = блочный ковёр
 stack-blue-carpet-tile = синий ковёр
@@ -264,6 +264,21 @@ stack-mowed-astro-grass-floor = подстриженная астро-трава
 stack-jungle-astro-grass-floor = джунглевая астро-трава
 stack-astro-ice-floor = астро-лёд
 stack-astro-snow-floor = астро-снег
+stack-xeno-floor = пол ксено
+stack-xeno-steel = стальная плитка ксено
+stack-xeno-steel-corner = угловая стальная плитка ксено
+stack-xeno-maint = технический пол ксено
+stack-dark-squiggly = тёмный волнистый пол
+stack-white-marble-floor = белый мраморный пол
+stack-dark-marble-floor = тёмный мраморный пол
+stack-plasma-marble-floor = плазменный мраморный пол
+stack-uranium-marble-floor = урановый мраморный пол
 stack-large-wood-floor = крупный деревянный пол
 stack-red-circuit-floor = красная схема на полу
 stack-asteroid-astro-sand-floor = астероидный астро-песок
+# Horizon start
+
+stack-darkgray-floor = корабельная бронеплита
+stack-darkgray-plate-floor = корабельная бронированная моноплита
+
+# Horizon end

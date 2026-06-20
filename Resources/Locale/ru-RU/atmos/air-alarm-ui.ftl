@@ -1,7 +1,9 @@
 # UI
 
+
 ## Window
 
+air-alarm-ui-title = Воздушная сигнализация
 air-alarm-ui-access-denied = Недостаточный уровень доступа!
 air-alarm-ui-window-pressure-label = Давление
 air-alarm-ui-window-temperature-label = Температура
@@ -10,13 +12,23 @@ air-alarm-ui-window-address-label = Адрес
 air-alarm-ui-window-device-count-label = Всего устройств
 air-alarm-ui-window-resync-devices-label = Ресинхр
 air-alarm-ui-window-mode-label = Режим
+air-alarm-ui-window-mode-select-locked-label = [bold][color=red] Сбой селектора режима! [/color][/bold]
 air-alarm-ui-window-auto-mode-label = Авто-режим
+-air-alarm-state-name =
+    { $state ->
+        [normal] Нормально
+        [warning] Тревога
+        [danger] Опасность
+        [emagged] Взломано
+       *[invalid] Недоступно
+    }
+air-alarm-ui-window-listing-title = {$address} : {-air-alarm-state-name(state:$state)}
 air-alarm-ui-window-pressure = { $pressure } кПа
 air-alarm-ui-window-pressure-indicator = Давление: [color={ $color }]{ $pressure } кПа[/color]
 air-alarm-ui-window-temperature = { $tempC } °C ({ $temperature } К)
 air-alarm-ui-window-temperature-indicator = Температура: [color={ $color }]{ $tempC } °C ({ $temperature } К)[/color]
-air-alarm-ui-window-alarm-state = [color={ $color }]{ $state }[/color]
-air-alarm-ui-window-alarm-state-indicator = Статус: [color={ $color }]{ $state }[/color]
+air-alarm-ui-window-alarm-state = [color={$color}]{-air-alarm-state-name(state:$state)}[/color]
+air-alarm-ui-window-alarm-state-indicator = Статус: [color={$color}]{-air-alarm-state-name(state:$state)}[/color]
 air-alarm-ui-window-tab-vents = Вентиляции
 air-alarm-ui-window-tab-scrubbers = Скрубберы
 air-alarm-ui-window-tab-sensors = Сенсоры
@@ -29,6 +41,7 @@ air-alarm-ui-mode-panic = Паника
 air-alarm-ui-mode-none = Нет
 
 ## Widgets
+
 
 ### General
 
@@ -62,3 +75,5 @@ air-alarm-ui-thresholds-upper-bound = Верхняя аварийная гран
 air-alarm-ui-thresholds-lower-bound = Нижняя аварийная граница
 air-alarm-ui-thresholds-upper-warning-bound = Верхняя тревожная граница
 air-alarm-ui-thresholds-lower-warning-bound = Нижняя тревожная граница
+air-alarm-ui-thresholds-copy = Копировать границы на все устройства
+air-alarm-ui-thresholds-copy-tooltip = Копирует границы датчиков этого устройства на все устройства на этой вкладке воздушной сигнализации.

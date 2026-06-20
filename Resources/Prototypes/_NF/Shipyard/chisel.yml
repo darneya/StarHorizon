@@ -7,13 +7,13 @@
 # Discord: erhardsteinhauer
 
 # Shuttle Notes:
-# 
+#
 - type: vessel
   id: Chisel
   parent: BaseVessel
   name: ICR Chisel
   description: "Standard small-size vessel, originally meant to aid in ship scrapping, now modified to function as a multipurpose salvage/mining/cargo-hauling shuttle."
-  price: 35000 # ~31550$ on mapinit + 3155$ from 10% markup 
+  price: 33500 # 30619 0.05 32149.95
   category: Small
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/chisel.yml
@@ -23,6 +23,33 @@
   - Cargo #??? Smug
   engine:
   - Uranium
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:RoleModifier
+      role: "PlantTechnician"
+      costMultiplier: 0.9
+    - !type:RoleModifier
+      role: "PlantManager"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionEdison"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionLVHI"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionUAC"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionNakamura"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Chisel

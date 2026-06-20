@@ -58,12 +58,17 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         var modifiedDamage = _damageableSystem.TryChangeDamage(target, ev.Damage, component.IgnoreResistances, damageable: damageableComponent, origin: component.Shooter);
         var deleted = Deleted(target);
 
-        if (modifiedDamage is not null && EntityManager.EntityExists(component.Shooter))
+        if (modifiedDamage is not null && Exists(component.Shooter))
         {
             if (modifiedDamage.AnyPositive() && !deleted)
             {
                 _color.RaiseEffect(Color.Red, new List<EntityUid> { target }, Filter.Pvs(target, entityManager: EntityManager));
             }
+
+            // _Horizon
+            var bodyEv = new ProjectileBodyHitEvent(modifiedDamage, target, Bullet: uid);
+            RaiseLocalEvent(target, ref bodyEv);
+            // _Horizon
 
             _adminLogger.Add(LogType.BulletHit,
                 LogImpact.Medium,

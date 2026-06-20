@@ -128,6 +128,7 @@
   description: A sterile injector for rapid administration of drugs to patients. This one can't be refilled.
   id: ChemicalMedipen
   components:
+  - type: WorldItem
   - type: GoblinPreciousTrash # Frontier
   - type: Sprite
     sprite: Objects/Specific/Medical/medipen.rsi
@@ -199,6 +200,9 @@
           Quantity: 12
         - ReagentId: TranexamicAcid
           Quantity: 3
+  - type: Tag
+    tags:
+    - EmergencyMedipen
 
 - type: entity
   name: poison auto-injector
@@ -531,6 +535,9 @@
             Quantity: 10
           - ReagentId: Barozine
             Quantity: 20
+  - type: Tag
+    tags:
+    - SpaceMedipen
 
 - type: entity
   name: hyperzine injector
@@ -574,7 +581,7 @@
     onlyAffectsMobs: false
     injectOnly: true
   - type: StaticPrice
-    price: 500
+    price: 1500
 
 - type: entity
   name: hyperzine microinjector
@@ -613,7 +620,7 @@
     changeColor: false
     emptySpriteName: microstimpen_empty
   - type: StaticPrice
-    price: 100
+    price: 583 # 3500 for 6 as a freaky fraction
 
 - type: entity
   name: combat medipen
@@ -657,7 +664,7 @@
     onlyAffectsMobs: false
     injectOnly: true
   - type: StaticPrice
-    price: 500
+    price: 1500
 
 - type: entity
   name: pen

@@ -2,7 +2,7 @@
   id: Rogue
   parent: BaseVessel
   name: NSF Rogue
-  description: Micro assault vessel with a toggle for going dark in deep space.
+  description: Маленький атакующий шаттл для маневров
   price: 12200 #the appraisal is 9100$
   category: Micro
   group: Custom
@@ -14,6 +14,18 @@
   - Fighter
   engine:
   - APU
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionNFSD"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Rogue

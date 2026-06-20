@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: LVHI Harbormaster
   description: A small tugboat. Manufactured by Langstad-Voigt Heavy Industries.
-  price: 28500 # ~26700$ on mapinit + 1400 from ~5% markup
+  price: 28000 # 25391 0.05 26660.55
   category: Small
   group: Sr
   access: StationTrafficController
@@ -23,6 +23,18 @@
   - Civilian
   engine:
   - Bananium
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionFrontier"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Harbormaster

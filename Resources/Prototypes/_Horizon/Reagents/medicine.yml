@@ -92,6 +92,7 @@
         damage:
           types:
             Caustic: 2.0
+  pricePerUnit: 11
 
 - type: reagent
   id: Serenitol
@@ -103,7 +104,7 @@
   color: "#ebbce9"
   metabolisms:
     Medicine:
-      metabolismRate : 0.03
+      metabolismRate : 0.3
       effects:
       - !type:PopupMessage
         type: Local
@@ -135,6 +136,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 6
 
 - type: reagent
   id: Neurozenium
@@ -146,7 +148,7 @@
   color: "#382f6b"
   metabolisms:
     Medicine:
-      metabolismRate : 0.02
+      metabolismRate : 0.2
       effects:
       - !type:PopupMessage
         type: Local
@@ -200,6 +202,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 8
 
 - type: reagent
   id: Blissifylovene
@@ -211,7 +214,7 @@
   color: "#f2ff00"
   metabolisms:
     Medicine:
-      metabolismRate : 0.01
+      metabolismRate : 0.1
       effects:
       - !type:PopupMessage
         type: Local
@@ -344,7 +347,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
-
+  pricePerUnit: 12
 
 - type: reagent
   id: Calmafluxine
@@ -356,7 +359,7 @@
   color: "#634e3a"
   metabolisms:
     Medicine:
-      metabolismRate : 0.03
+      metabolismRate : 0.3
       effects:
       - !type:PopupMessage
         type: Local
@@ -383,6 +386,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 8
 
 - type: reagent
   id: Tranquinase
@@ -394,7 +398,7 @@
   color: "#2e3b52"
   metabolisms:
     Medicine:
-      metabolismRate : 0.02
+      metabolismRate : 0.2
       effects:
       - !type:PopupMessage
         type: Local
@@ -468,6 +472,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 9
 
 - type: reagent
   id: Equilibrazine
@@ -479,7 +484,7 @@
   color: "#291816"
   metabolisms:
     Medicine:
-      metabolismRate : 0.01
+      metabolismRate : 0.1
       effects:
       - !type:PopupMessage
         type: Local
@@ -544,6 +549,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 10
 
 - type: reagent
   id: Addictine
@@ -555,7 +561,7 @@
   physicalDesc: reagent-physical-desc-refreshing
   metabolisms:
     Poison:
-      metabolismRate : 0.01
+      metabolismRate : 0.1
       effects:
       - !type:PopupMessage
         type: Local
@@ -650,6 +656,7 @@
         - !type:ReagentThreshold
           reagent: Desoxyephedrine
           max: 0.01
+  pricePerUnit: 9
 
 - type: reagent
   id: Stubantazine
@@ -661,8 +668,17 @@
   color: "#6bb3b5"
   metabolisms:
     Medicine:
-      metabolismRate : 0.02
+      metabolismRate : 0.2
       effects:
+      - !type:PainFadeEffect
+        fade:
+          types:
+            Slash: -1
+            Blunt: -1
+            Piercing: -1
+            Shock: -1
+            Cold: -1
+            Caustic: -1
       - !type:PopupMessage
         type: Local
         visualType: Medium
@@ -703,6 +719,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.2
+  pricePerUnit: 7
 
 - type: reagent
   id: Soretizone
@@ -714,8 +731,17 @@
   color: "#2e2c2c"
   metabolisms:
     Medicine:
-      metabolismRate : 0.01
+      metabolismRate : 0.1
       effects:
+      - !type:PainFadeEffect
+        fade:
+          types:
+            Slash: -1
+            Blunt: -1
+            Piercing: -1
+            Shock: -1
+            Cold: -1
+            Caustic: -1
       - !type:PopupMessage
         type: Local
         visualType: Large
@@ -770,6 +796,7 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 9
 
 - type: reagent
   id: Agonolexyne
@@ -781,8 +808,17 @@
   color: "#ffc7c7"
   metabolisms:
     Medicine:
-      metabolismRate : 0.01
+      metabolismRate : 0.1
       effects:
+      - !type:PainFadeEffect
+        fade:
+          types:
+            Slash: -2
+            Blunt: -2
+            Piercing: -2
+            Shock: -2
+            Cold: -2
+            Caustic: -2
       - !type:PopupMessage
         type: Local
         visualType: Large
@@ -851,3 +887,23 @@
         conditions:
           - !type:ReagentThreshold
             max: 0.1
+  pricePerUnit: 11
+
+#Xenobiology
+- type: reagent
+  id: RegenerateJelly
+  name: reagent-name-slime-regenerate-jelly
+  group: Medicine
+  desc: reagent-desc-slime-regenerate-jelly
+  physicalDesc: reagent-physical-desc-acidic
+  flavor: medicine
+  color: "#6A5ACD"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -2
+            Brute: -2
+  pricePerUnit: 5

@@ -597,6 +597,67 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("connection_log", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.HorizonAdminLoadout", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("horizon_admin_loadout_id");
+
+                    b.Property<string>("ComponentOverridesYaml")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("component_overrides_yaml");
+
+                    b.Property<int>("CreditCost")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("credit_cost");
+
+                    b.Property<string>("CustomDescription")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_description");
+
+                    b.Property<string>("CustomName")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("custom_name");
+
+                    b.Property<DateTime>("GrantedAt")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("granted_at");
+
+                    b.Property<string>("GrantedBy")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("granted_by");
+
+                    b.Property<bool>("IsEnabled")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("is_enabled");
+
+                    b.Property<int?>("MaxUses")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("max_uses");
+
+                    b.Property<Guid>("PlayerUserId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("player_user_id");
+
+                    b.Property<string>("PrototypeId")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("prototype_id");
+
+                    b.Property<int?>("RemainingUses")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("remaining_uses");
+
+                    b.HasKey("Id")
+                        .HasName("PK_horizon_admin_loadout");
+
+                    b.HasIndex("PlayerUserId");
+
+                    b.ToTable("horizon_admin_loadout", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.IPIntelCache", b =>
                 {
                     b.Property<int>("Id")
@@ -659,6 +720,30 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasFilter("priority = 3");
 
                     b.ToTable("job", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.Language", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("language_id");
+
+                    b.Property<string>("LanguageName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("language_name");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_language");
+
+                    b.HasIndex("ProfileId");
+
+                    b.ToTable("language", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.PlayTime", b =>
@@ -749,6 +834,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("admin_ooc_color");
 
+                    b.PrimitiveCollection<string>("ConstructionFavorites")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("construction_favorites");
+
                     b.Property<int>("SelectedCharacterSlot")
                         .HasColumnType("INTEGER")
                         .HasColumnName("selected_character_slot");
@@ -777,11 +867,23 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("age");
 
+                    b.Property<int>("AllMarkingsGradientDirection")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("all_markings_gradient_direction");
+
+                    b.Property<bool>("AllMarkingsGradientEnabled")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("all_markings_gradient_enabled");
+
+                    b.Property<string>("AllMarkingsGradientSecondaryColor")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("all_markings_gradient_secondary_color");
+
                     b.Property<int>("BankBalance")
                         .HasColumnType("INTEGER")
                         .HasColumnName("bank_balance");
 
-                    // Horizon start
                     b.Property<float>("BarkPitch")
                         .HasColumnType("REAL")
                         .HasColumnName("bark_pitch");
@@ -790,12 +892,15 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("bark_proto");
-                    // Horizon end
 
                     b.Property<string>("CharacterName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("char_name");
+
+                    b.Property<int>("ErpStatus")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("erp_status");
 
                     b.Property<string>("EyeColor")
                         .IsRequired()
@@ -807,10 +912,28 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("facial_hair_color");
 
+                    b.Property<int>("FacialHairGradientDirection")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("facial_hair_gradient_direction");
+
+                    b.Property<bool>("FacialHairGradientEnabled")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("facial_hair_gradient_enabled");
+
+                    b.Property<string>("FacialHairGradientSecondaryColor")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("facial_hair_gradient_secondary_color");
+
                     b.Property<string>("FacialHairName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("facial_hair_name");
+
+                    b.Property<string>("Faction")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("faction");
 
                     b.Property<string>("FlavorText")
                         .IsRequired()
@@ -827,12 +950,24 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("hair_color");
 
+                    b.Property<int>("HairGradientDirection")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("hair_gradient_direction");
+
+                    b.Property<bool>("HairGradientEnabled")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("hair_gradient_enabled");
+
+                    b.Property<string>("HairGradientSecondaryColor")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("hair_gradient_secondary_color");
+
                     b.Property<string>("HairName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("hair_name");
 
-                    // Horizon start
                     b.Property<float>("HighBarkVar")
                         .HasColumnType("REAL")
                         .HasColumnName("high_bark_var");
@@ -840,11 +975,15 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<float>("LowBarkVar")
                         .HasColumnType("REAL")
                         .HasColumnName("low_bark_var");
-                    // Horizon end
 
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
+
+                    b.Property<string>("OOCFlavorText")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("oocflavor_text");
 
                     b.Property<int>("PreferenceId")
                         .HasColumnType("INTEGER")
@@ -1655,6 +1794,18 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Profile");
                 });
 
+            modelBuilder.Entity("Content.Server.Database.Language", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithMany("Languages")
+                        .HasForeignKey("ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_language_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+
             modelBuilder.Entity("Content.Server.Database.Player", b =>
                 {
                     b.OwnsOne("Content.Server.Database.TypedHwid", "LastSeenHWId", b1 =>
@@ -2016,6 +2167,8 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Antags");
 
                     b.Navigation("Jobs");
+
+                    b.Navigation("Languages");
 
                     b.Navigation("Loadouts");
 

@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: KC Sprinter
   description: A light freighter often picked by bounty hunters due to its quick acceleration, expedition capable.
-  price: 56800 # ~$43700 on mapinit plus ~30% markup
+  price: 60000 # 49452 0.2 59342.4
   category: Medium
   group: Expedition
   shuttlePath: /Maps/_NF/Shuttles/Expedition/sprinter.yml
@@ -22,6 +22,21 @@
   - Expedition
   engine:
   - AME
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionSIU"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionArcadia"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Sprinter

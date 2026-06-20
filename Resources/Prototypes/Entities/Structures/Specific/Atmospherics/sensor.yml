@@ -25,6 +25,7 @@
       Ammonia: stationAmmonia
       NitrousOxide: stationNO
       Frezon: danger
+      Respiron: ignore # Frontier
 # Horizon start
       BZ: danger
       Pluoxium: unwanted
@@ -35,7 +36,7 @@
       ProtoNitrate: danger
       Zauker: danger
       Halon: danger
-      Helium: unwanted
+      Helium: stationHe # Frontier
       AntiNoblium: danger
 # Horizon end
   - type: Tag

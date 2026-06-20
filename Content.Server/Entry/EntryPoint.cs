@@ -1,3 +1,5 @@
+using Content.Server._Horizon;
+using Content.Server._Horizon.SponsorManager;
 using Content.Server._NF.Auth;
 using Content.Server.Acz;
 using Content.Server.Administration;
@@ -7,6 +9,7 @@ using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.Database;
+using Content.Server.Discord.DiscordLink;
 using Content.Server.EUI;
 using Content.Server.GameTicking;
 using Content.Server.GhostKick;
@@ -24,6 +27,7 @@ using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
+using Content.Shared._Harmony.Common.JoinQueue; // Harmony Queue
 using Content.Shared.CCVar;
 using Content.Shared.Kitchen;
 using Content.Shared.Localizations;
@@ -50,6 +54,7 @@ namespace Content.Server.Entry
         private IServerDbManager? _dbManager;
         private IWatchlistWebhookManager _watchlistWebhookManager = default!;
         private IConnectionManager? _connectionManager;
+        private GameShutdownController _gameShutdownController = null!;
 
         /// <inheritdoc />
         public override void Init()
@@ -98,6 +103,7 @@ namespace Content.Server.Entry
                 _sysMan = IoCManager.Resolve<IEntitySystemManager>();
                 _dbManager = IoCManager.Resolve<IServerDbManager>();
                 _watchlistWebhookManager = IoCManager.Resolve<IWatchlistWebhookManager>();
+                _gameShutdownController = IoCManager.Resolve<GameShutdownController>();
 
                 logManager.GetSawmill("Storage").Level = LogLevel.Info;
                 logManager.GetSawmill("db.ef").Level = LogLevel.Info;
@@ -105,12 +111,19 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IAdminLogManager>().Initialize();
                 IoCManager.Resolve<IConnectionManager>().Initialize();
                 _dbManager.Init();
+                _gameShutdownController.Init();
                 IoCManager.Resolve<IServerPreferencesManager>().Init();
                 IoCManager.Resolve<INodeGroupFactory>().Initialize();
                 IoCManager.Resolve<ContentNetworkResourceManager>().Initialize();
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
                 IoCManager.Resolve<ServerApi>().Initialize();
+                var sponsorManager = IoCManager.Resolve<SponsorManager>();
+                sponsorManager.Initialize(); // _Horizon
+                sponsorManager.LoadSponsorsInfoFile(); // _Horizon
+                sponsorManager.SyncDiscordSponsorsAtRoundStart(); // _Horizon
+                sponsorManager.UpdateSponsorsAndBalances(); // _Horizon
+                sponsorManager.StartWatching(); // _Horizon
                 IoCManager.Resolve<MiniAuthManager>();
 
                 _voteManager.Initialize();
@@ -120,6 +133,9 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<JobWhitelistManager>().Initialize();
                 IoCManager.Resolve<PlayerRateLimitManager>().Initialize();
             }
+            // Harmony Queue Start
+            IoCManager.Resolve<IJoinQueueManager>().Initialize();
+            // Harmony Queue End
         }
 
         public override void PostInit()
@@ -148,6 +164,10 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IAdminManager>().Initialize();
                 IoCManager.Resolve<IAfkManager>().Initialize();
                 IoCManager.Resolve<RulesManager>().Initialize();
+
+                IoCManager.Resolve<DiscordLink>().Initialize();
+                IoCManager.Resolve<DiscordChatLink>().Initialize();
+
                 _euiManager.Initialize();
 
                 IoCManager.Resolve<IGameMapManager>().Initialize();
@@ -169,6 +189,7 @@ namespace Content.Server.Entry
                 {
                     _euiManager.SendUpdates();
                     _voteManager.Update();
+                    _gameShutdownController.Update();
                     break;
                 }
 
@@ -177,6 +198,7 @@ namespace Content.Server.Entry
                     _playTimeTracking?.Update();
                     _watchlistWebhookManager.Update();
                     _connectionManager?.Update();
+                    _gameShutdownController.Update();
                     break;
             }
         }
@@ -186,6 +208,9 @@ namespace Content.Server.Entry
             _playTimeTracking?.Shutdown();
             _dbManager?.Shutdown();
             IoCManager.Resolve<ServerApi>().Shutdown();
+
+            IoCManager.Resolve<DiscordLink>().Shutdown();
+            IoCManager.Resolve<DiscordChatLink>().Shutdown();
         }
 
         private static void LoadConfigPresets(IConfigurationManager cfg, IResourceManager res, ISawmill sawmill)

@@ -11,9 +11,9 @@
 - type: vessel
   id: Pulsar
   parent: BaseVessel
-  name: FSB Pulsar
-  description: The Pulsar offers two robust polar work sites built around object retrieval and research circling a command hub. With a focus on safety, know that any catastrophic failures are entirely the fault of the operator! Brought to you by the Far Star Biotech corporation.
-  price: 45000 # TODO: Get creggs at store - Dusty Lens
+  name: FSC Pulsar
+  description: The Pulsar offers two robust polar work sites built around object retrieval and research circling a command hub. With a focus on safety, know that any catastrophic failures are entirely the fault of the operator! Brought to you by the Far Star Corporation.
+  price: 85000 # 42014 2 84028
   category: Medium
   group: Shipyard
   shuttlePath: /Maps/_NF/Shuttles/pulsar.yml
@@ -22,10 +22,25 @@
   - Science
   engine:
   - Bananium
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionSIU"
+      costMultiplier: 0.9
+    - !type:FactionCostModifier
+      faction: "FactionArcadia"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Pulsar
-  mapName: 'FSB Pulsar'
+  mapName: 'FSC Pulsar'
   mapPath: /Maps/_NF/Shuttles/pulsar.yml
   minPlayers: 0
   stations:

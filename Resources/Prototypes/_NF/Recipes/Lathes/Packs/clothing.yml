@@ -104,7 +104,6 @@
   - ClothingUniformJumpsuitMercenary
   - ClothingUniformJumpskirtMusician
   - ClothingUniformJumpsuitTshirtJeansPeach
-  - ClothingUniformJumpsuitChaplainPilgrimVest
   - ClothingUniformJumpskirtPinkStripedDress
   - ClothingUniformJumpsuitBartenderPurple
   - ClothingUniformJumpskirtPurpleElegantDress
@@ -126,6 +125,7 @@
   - ClothingOuterFlannelRed
   - ClothingOuterFlannelBlue
   - ClothingOuterFlannelGreen
+  - ClothingUniformJumpsuitExpeditorExtra # Horizon [ специальная униформа экспедитора ] by Serafim547
 
 - type: latheRecipePack
   id: NFUniformCloaks
@@ -220,6 +220,8 @@
   - ClothingOuterCoatPirate
   - ClothingOuterCoatGentle
   - ClothingOuterCoatPirateCaptain
+  - ClothingOuterCoatVictorian
+  - ClothingOuterCoatVictorianRed
   # Shoes
   - ClothingShoesBootsLaceup
   - ClothingShoesBootsPirateLuffy
@@ -232,3 +234,32 @@
   - FoamCutlass
   - ClothingWalletLeatherPirate
   - ClothingBackpackSatchelLeather
+
+- type: latheRecipePack
+  id: NFUniformChaplainStatic
+  recipes:
+  # Hats
+  - ClothingHeadHatBishopMitre
+  - ClothingHeadHatCardinal
+  - ClothingHeadHatFez
+  - ClothingHeadHatKippah
+  - ClothingHeadHatHoodNunHood
+  - ClothingHeadHatPilgrim
+  - ClothingHeadHatPlaguedoctor
+  - ClothingHeadHatWideBrimmed
+  - ClothingHeadHatWitch
+  - ClothingHeadHatWitch1
+  - ClothingHeadHatWitchhunter
+  # Jumpsuits
+  - ClothingUniformJumpsuitChaplainPilgrimVest
+  # Coats
+  - ClothingOuterCoatBishop
+  - ClothingOuterHoodieBlack
+  - ClothingOuterCoatCardinal
+  - ClothingOuterHoodieChaplain
+  - ClothingOuterNunRobe
+  - ClothingOuterPlagueSuit
+  - ClothingOuterCoatWitchHunter
+  # Neck
+  - ClothingNeckStoleChaplain
+  - ClothingNeckScarfChaplainStole

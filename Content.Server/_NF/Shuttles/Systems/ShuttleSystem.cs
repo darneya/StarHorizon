@@ -1,3 +1,14 @@
+// SPDX-FileCopyrightText: 2024 neuPanda
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 Dvir
+// SPDX-FileCopyrightText: 2025 Ilya246
+// SPDX-FileCopyrightText: 2025 Redrover1760
+// SPDX-FileCopyrightText: 2025 Whatstone
+// SPDX-FileCopyrightText: 2025 significant harassment
+// SPDX-FileCopyrightText: 2025 starch
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // New Frontiers - This file is licensed under AGPLv3
 // Copyright (c) 2024 New Frontiers Contributors
 // See AGPLv3.txt for details.
@@ -12,13 +23,17 @@ namespace Content.Server.Shuttles.Systems;
 
 public sealed partial class ShuttleSystem
 {
-    private const float SpaceFrictionStrength = 0.0075f;
-    private const float DampenDampingStrength = 0.25f;
-    private const float AnchorDampingStrength = 2.5f;
+    [Dependency] private readonly RadarConsoleSystem _radarConsole = default!;
+    private const float SpaceFrictionStrength = 0.0015f;
+    private const float DampenDampingStrength = 0.05f; // FRONTIER MERGE: this should be valuable
+    private const float AnchorDampingStrength = 0.5f;
     private void NfInitialize()
     {
         SubscribeLocalEvent<ShuttleConsoleComponent, SetInertiaDampeningRequest>(OnSetInertiaDampening);
         SubscribeLocalEvent<ShuttleConsoleComponent, SetServiceFlagsRequest>(NfSetServiceFlags);
+        SubscribeLocalEvent<ShuttleConsoleComponent, SetTargetCoordinatesRequest>(NfSetTargetCoordinates);
+        SubscribeLocalEvent<ShuttleConsoleComponent, SetHideTargetRequest>(NfSetHideTarget);
+        SubscribeLocalEvent<ShuttleConsoleComponent, SetMaxShuttleSpeedRequest>(OnSetMaxShuttleSpeed);
     }
 
     private bool SetInertiaDampening(EntityUid uid, PhysicsComponent physicsComponent, ShuttleComponent shuttleComponent, TransformComponent transform, InertiaDampeningMode mode)
@@ -90,6 +105,30 @@ public sealed partial class ShuttleSystem
             return InertiaDampeningMode.Dampen;
     }
 
+    private void OnSetMaxShuttleSpeed(EntityUid uid, ShuttleConsoleComponent component, SetMaxShuttleSpeedRequest args)
+    {
+        // Ensure that the entity requested is a valid shuttle
+        if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform) ||
+            !transform.GridUid.HasValue ||
+            !EntityManager.TryGetComponent(transform.GridUid, out ShuttleComponent? shuttleComponent))
+        {
+            return;
+        }
+
+        // Mono - fix
+        var maxSpeed = Math.Max(args.MaxSpeed, 0f);
+
+        // Don't do anything if the value didn't change
+        if (Math.Abs(shuttleComponent.SetMaxVelocity - maxSpeed) < 0.01f)
+            return;
+
+        // Mono - fix
+        shuttleComponent.SetMaxVelocity = maxSpeed;
+
+        // Refresh the shuttle consoles to update the UI
+        _console.RefreshShuttleConsoles(transform.GridUid.Value);
+    }
+
     public void NfSetPowered(EntityUid uid, ShuttleConsoleComponent component, bool powered)
     {
         // Ensure that the entity requested is a valid shuttle (stations should not be togglable)
@@ -157,5 +196,38 @@ public sealed partial class ShuttleSystem
         iffComponent.ServiceFlags = args.ServiceFlags;
         _console.RefreshShuttleConsoles(gridUid);
         Dirty(gridUid, iffComponent);
+    }
+
+    public void NfSetTargetCoordinates(EntityUid uid, ShuttleConsoleComponent component, SetTargetCoordinatesRequest args)
+    {
+        if (!TryComp<RadarConsoleComponent>(uid, out var radarConsole))
+            return;
+
+        var transform = Transform(uid);
+        // Get the grid entity from the console transform
+        if (!transform.GridUid.HasValue)
+            return;
+
+        var gridUid = transform.GridUid.Value;
+
+        _radarConsole.SetTarget((uid, radarConsole), args.TrackedEntity, args.TrackedPosition);
+        _radarConsole.SetHideTarget((uid, radarConsole), false); // Force target visibility
+        _console.RefreshShuttleConsoles(gridUid);
+    }
+
+    public void NfSetHideTarget(EntityUid uid, ShuttleConsoleComponent component, SetHideTargetRequest args)
+    {
+        if (!TryComp<RadarConsoleComponent>(uid, out var radarConsole))
+            return;
+
+        var transform = Transform(uid);
+        // Get the grid entity from the console transform
+        if (!transform.GridUid.HasValue)
+            return;
+
+        var gridUid = transform.GridUid.Value;
+
+        _radarConsole.SetHideTarget((uid, radarConsole), args.Hidden);
+        _console.RefreshShuttleConsoles(gridUid);
     }
 }

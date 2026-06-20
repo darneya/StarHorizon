@@ -42,6 +42,13 @@ namespace Content.Server.GameTicking.Commands
                 status != PlayerGameStatus.JoinedGame)
             {
                 ticker.JoinAsObserver(player);
+                // Выполнение команды aghost после присоединения
+                if (player.AttachedEntity is { Valid: true } playerEntity &&
+                    _e.GetComponent<MetaDataComponent>(playerEntity).EntityPrototype?.ID
+                    != (string)GameTicker.AdminObserverPrototypeName)
+                {
+                    shell.ExecuteCommand("aghost");
+                }
             }
             else
             {

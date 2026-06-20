@@ -1,6 +1,9 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Content.Client._Horizon.EventItems;
+using Content.Client._Horizon.Lobby.UI;
+using Content.Client._Horizon.Traits;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI.Loadouts;
 using Content.Client.Lobby.UI.Roles;
@@ -9,7 +12,9 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._Horizon.EventItems;
 using Content.Shared._Horizon.CCVar;
+using Content.Shared._Horizon.FlavorText;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -54,11 +59,23 @@ namespace Content.Client.Lobby.UI
         private readonly LobbyUIController _controller;
         private readonly SpriteSystem _sprite;
 
+        // CCvar.
+        private int _maxNameLength;
+        private bool _allowFlavorText;
+
         private FlavorText.FlavorText? _flavorText;
         private TextEdit? _flavorTextEdit;
 
+        // Horizon: Event Items tab
+        private EventItemsTab? _eventItemsTab;
+        private EventItemsUISystem? _eventItemsUISystem;
+
         // One at a time.
         private LoadoutWindow? _loadoutWindow;
+
+        private SpeciesWindow? _speciesWindow;  // Horizon
+
+        private List<CharacterFactionPrototype> _factions = new();  // Horizon
 
         private bool _exporting;
         private bool _imaging;
@@ -100,8 +117,7 @@ namespace Content.Client.Lobby.UI
 
         private bool _isDirty;
 
-        [ValidatePrototypeId<GuideEntryPrototype>]
-        private const string DefaultSpeciesGuidebook = "Species";
+        private static readonly ProtoId<GuideEntryPrototype> DefaultSpeciesGuidebook = "Species";
 
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
 
@@ -132,6 +148,9 @@ namespace Content.Client.Lobby.UI
             _requirements = requirements;
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
             _sprite = _entManager.System<SpriteSystem>();
+
+            _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
+            _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
 
             ImportButton.OnPressed += args =>
             {
@@ -168,6 +187,7 @@ namespace Content.Client.Lobby.UI
             #region Name
 
             NameEdit.OnTextChanged += args => { SetName(args.Text); };
+            NameEdit.IsValid = args => args.Length <= _maxNameLength;
             NameRandomize.OnPressed += args => RandomizeName();
             RandomizeEverythingButton.OnPressed += args => { RandomizeEverything(); };
             WarningLabel.SetMarkup($"[color=red]{Loc.GetString("humanoid-profile-editor-naming-rules-warning")}[/color]");
@@ -237,7 +257,109 @@ namespace Content.Client.Lobby.UI
             }
 
             #endregion
+
+            #region Species menu
+
+            NewSpeciesButton.OnToggled += args =>
+            {
+                if (Profile == null)
+                    return;
+
+                _speciesWindow?.Dispose();
+
+                if (!args.Pressed)
+                {
+                    _speciesWindow = null;
+                }
+                else
+                {
+                    _speciesWindow = new(
+                        Profile,
+                        prototypeManager,
+                        _controller,
+                        _resManager);
+
+                    _speciesWindow.OpenCenteredLeft();
+                    _speciesWindow.ChooseAction += args =>
+                    {
+                        var oldProfile = Profile.Clone();
+                        SetSpecies(args);
+                        OnSkinColorOnValueChangedKeepColor(oldProfile);
+                        UpdateHairPickers();
+
+                        _speciesWindow?.Close();
+                        _speciesWindow = null;
+
+                        var speciesName = _prototypeManager.Index(Profile?.Species ?? "Human").Name;
+                        NewSpeciesButton.Text = Loc.GetString(speciesName);
+                        NewSpeciesButton.Pressed = false;
+                        //SetDefaultLanguages();
+                    };
+                    _speciesWindow.OnClose += () =>
+                    {
+                        NewSpeciesButton.Pressed = false;
+                        _speciesWindow = null;
+                    };
+                }
+            };
+
+            #endregion
+
+            TabContainer.SetTabTitle(5, Loc.GetString("humanoid-profile-editor-factions-tab"));
+
+            _factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().Where(x => x.Roundstart).OrderBy(x => Loc.GetString(x.Name)).ToList();
+
+            for (var i = 0; i < _factions.Count; i++)
+            {
+                FactionButton.AddItem(Loc.GetString(_factions[i].Name), i);
+
+                if (_factions.ElementAt(i).ID == Profile?.Faction)
+                {
+                    OnFactionChange(_factions.ElementAt(i).ID);
+                    FactionButton.Select(i);
+                    UpdateFactionDesc();
+                }
+            }
+
+            FactionButton.OnItemSelected += args =>
+            {
+                OnFactionChange(_factions[args.Id]);
+                FactionButton.Select(args.Id);
+                UpdateFactionDesc();
+            };
+
             // _Horizon End
+
+            // Horizon: Event Items Tab (only shown when player has items)
+            #region EventItems
+
+            _eventItemsTab = new EventItemsTab();
+
+            _eventItemsUISystem = _entManager.System<EventItemsUISystem>();
+            _eventItemsUISystem.OnItemsReceived += items =>
+            {
+                if (items.Count > 0)
+                {
+                    // Add tab if not already visible
+                    if (_eventItemsTab?.Parent == null)
+                    {
+                        TabContainer.AddChild(_eventItemsTab!);
+                        TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("event-item-tab-title"));
+                    }
+
+                    _eventItemsTab?.UpdateItems(items);
+                }
+                else if (_eventItemsTab?.Parent != null)
+                {
+                    // Remove tab if no items
+                    TabContainer.RemoveChild(_eventItemsTab);
+                }
+            };
+
+            // Request items from server
+            _eventItemsTab.RequestItems();
+
+            #endregion EventItems
 
             #region Skin
 
@@ -247,6 +369,7 @@ namespace Content.Client.Lobby.UI
             };
 
             RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new ColorSelectorSliders());
+            _rgbSkinColorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
             _rgbSkinColorSelector.OnColorChanged += _ =>
             {
                 OnSkinColorOnValueChanged();
@@ -262,7 +385,7 @@ namespace Content.Client.Lobby.UI
                     return;
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithHairStyleName(newStyle.id));
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             HairStylePicker.OnColorChanged += newColor =>
@@ -272,7 +395,7 @@ namespace Content.Client.Lobby.UI
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithHairColor(newColor.marking.MarkingColors[0]));
                 UpdateCMarkingsHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             FacialHairPicker.OnMarkingSelect += newStyle =>
@@ -281,7 +404,7 @@ namespace Content.Client.Lobby.UI
                     return;
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithFacialHairStyleName(newStyle.id));
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             FacialHairPicker.OnColorChanged += newColor =>
@@ -291,7 +414,7 @@ namespace Content.Client.Lobby.UI
                 Profile = Profile.WithCharacterAppearance(
                     Profile.Appearance.WithFacialHairColor(newColor.marking.MarkingColors[0]));
                 UpdateCMarkingsFacialHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             HairStylePicker.OnSlotRemove += _ =>
@@ -303,7 +426,7 @@ namespace Content.Client.Lobby.UI
                 );
                 UpdateHairPickers();
                 UpdateCMarkingsHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             FacialHairPicker.OnSlotRemove += _ =>
@@ -315,7 +438,7 @@ namespace Content.Client.Lobby.UI
                 );
                 UpdateHairPickers();
                 UpdateCMarkingsFacialHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             HairStylePicker.OnSlotAdd += delegate()
@@ -335,7 +458,7 @@ namespace Content.Client.Lobby.UI
 
                 UpdateHairPickers();
                 UpdateCMarkingsHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
 
             FacialHairPicker.OnSlotAdd += delegate()
@@ -355,8 +478,11 @@ namespace Content.Client.Lobby.UI
 
                 UpdateHairPickers();
                 UpdateCMarkingsFacialHair();
-                ReloadPreview();
+                ReloadProfilePreview(); // Horizon - менее лагучий вариант, чем ReloadPreview();
             };
+
+            // _Horizon: Hair gradient controls
+            InitializeGradientControls();
 
             #endregion Hair
 
@@ -391,9 +517,11 @@ namespace Content.Client.Lobby.UI
 
             #endregion Appearance
 
+            RefreshLanguages(); // Horizon languages
+
             #region Jobs
 
-            TabContainer.SetTabTitle(1, Loc.GetString("humanoid-profile-editor-jobs-tab"));
+            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-jobs-tab")); // Horizon Languages tweak - tab shift
 
             PreferenceUnavailableButton.AddItem(
                 Loc.GetString("humanoid-profile-editor-preference-unavailable-stay-in-lobby-button"),
@@ -424,11 +552,14 @@ namespace Content.Client.Lobby.UI
 
             //TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab")); // Frontier
 
+            StartupQuirks();    // Horizon tweak
+            RefreshQuirks();    // Horizon tweak
+
             RefreshTraits();
 
             #region Markings
 
-            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-markings-tab")); // Frontier: 4<3
+            TabContainer.SetTabTitle(4, Loc.GetString("humanoid-profile-editor-markings-tab")); // Frontier: 4<3    // Horizon - return default bc languages
 
             Markings.OnMarkingAdded += OnMarkingChange;
             Markings.OnMarkingRemoved += OnMarkingChange;
@@ -473,7 +604,7 @@ namespace Content.Client.Lobby.UI
         /// </summary>
         public void RefreshFlavorText()
         {
-            if (_cfgManager.GetCVar(CCVars.FlavorText))
+            if (_allowFlavorText)
             {
                 if (_flavorText != null)
                     return;
@@ -484,6 +615,30 @@ namespace Content.Client.Lobby.UI
                 _flavorTextEdit = _flavorText.CFlavorTextInput;
 
                 _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
+
+                // Horizon start
+
+                _flavorText.OnOOCFlavorTextChanged += OnOOCFlavorTextChange;
+
+                _flavorText.OnErpStatChanged += args =>
+                {
+                    OnErpChange((ErpStatus)args);
+                    _flavorText.ERPStatusButton.Select(args);
+
+                    UpdateErpDesc();
+                };
+
+                for (var i = 0; i <= (int)ErpStatus.NonCon; i++)
+                {
+                    _flavorText.ERPStatusButton.AddItem(FormattedMessage.RemoveMarkupOrThrow(Loc.GetString($"erp-status-{(ErpStatus)i}")), i);
+
+                    if (i == (int?)Profile?.ErpStat)
+                    {
+                        OnErpChange((ErpStatus)i);
+                        _flavorText.ERPStatusButton.Select(i);
+                    }
+                }
+                // Horizon end
             }
             else
             {
@@ -492,6 +647,9 @@ namespace Content.Client.Lobby.UI
 
                 TabContainer.RemoveChild(_flavorText);
                 _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
+                // Horizon start
+                _flavorText.OnErpStatChanged = null;
+                // Horizon end
                 _flavorText.Dispose();
                 _flavorTextEdit?.Dispose();
                 _flavorTextEdit = null;
@@ -507,7 +665,7 @@ namespace Content.Client.Lobby.UI
             TraitsList.DisposeAllChildren();
 
             var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
-            TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-traits-tab")); // Frontier: 3<2
+            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab")); // Frontier: 3<2  // Horizon - return default bc languages
 
             if (traits.Count < 1)
             {
@@ -542,6 +700,11 @@ namespace Content.Client.Lobby.UI
             // Create UI view from model
             foreach (var (categoryId, categoryTraits) in traitGroups)
             {
+                // Horizon tweak start
+                if (_quirksCategories.Contains(categoryId))
+                    continue;
+                // Horizon tweak end
+
                 TraitCategoryPrototype? category = null;
 
                 if (categoryId != TraitCategoryPrototype.Default)
@@ -551,18 +714,18 @@ namespace Content.Client.Lobby.UI
                     TraitsList.AddChild(new Label
                     {
                         Text = Loc.GetString(category.Name),
-                        Margin = new Thickness(0, 10, 0, 0),
+                        Margin = new Thickness(6, 10, 6, 0),    // Horizon tweak - margin changed
                         StyleClasses = { StyleBase.StyleClassLabelHeading },
                     });
                 }
 
-                List<TraitPreferenceSelector?> selectors = new();
+                List<FancyTraitPreferenceSelector?> selectors = new();  // Horizon tweak - fancy selector
                 var selectionCount = 0;
 
                 foreach (var traitProto in categoryTraits)
                 {
                     var trait = _prototypeManager.Index<TraitPrototype>(traitProto);
-                    var selector = new TraitPreferenceSelector(trait);
+                    var selector = new FancyTraitPreferenceSelector(trait); // Horizon tweak - fancy selector
 
                     selector.Preference = Profile?.TraitPreferences.Contains(trait.ID) == true;
                     if (selector.Preference)
@@ -591,7 +754,8 @@ namespace Content.Client.Lobby.UI
                     TraitsList.AddChild(new Label
                     {
                         Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount) ,("max", category.MaxTraitPoints)),
-                        FontColorOverride = Color.Gray
+                        FontColorOverride = Color.Gray,
+                        Margin = new(6, 2)  // Horizon tweak - margin added
                     });
                 }
 
@@ -605,6 +769,9 @@ namespace Content.Client.Lobby.UI
                     {
                         selector.Checkbox.Label.FontColorOverride = Color.Red;
                     }
+
+                    // Horizon tweak
+                    selector.UpdateName(category is { MaxTraitPoints: < 0 } || (category != null && selector.Cost + selectionCount > category.MaxTraitPoints));
 
                     TraitsList.AddChild(selector);
                 }
@@ -630,6 +797,12 @@ namespace Content.Client.Lobby.UI
                 if (Profile?.Species.Equals(_species[i].ID) == true)
                 {
                     SpeciesButton.SelectId(i);
+
+                    // Horizon Species Window start
+                    NewSpeciesButton.Text = name;
+                    NewSpeciesButton.Pressed = false;
+                    _speciesWindow?.Close();
+                    // Horizon Species Window end
                 }
             }
 
@@ -723,6 +896,11 @@ namespace Content.Client.Lobby.UI
         }
 
         /// <summary>
+        /// Horizon: Wrapper so gradient sliders use the same quantized palette as the preview.
+        /// </summary>
+        private static Color QuantizeGradientColor(Color c) => HumanoidCharacterAppearance.QuantizeGradientColor(c);
+
+        /// <summary>
         /// Refresh all loadouts.
         /// </summary>
         public void RefreshLoadouts()
@@ -787,11 +965,13 @@ namespace Content.Client.Lobby.UI
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
 
+            RefreshLanguages(); // Horizon
             RefreshAntags();
             RefreshJobs();
             RefreshLoadouts();
             RefreshSpecies();
             RefreshTraits();
+            RefreshQuirks();    // Horizon tweak
             RefreshFlavorText();
             ReloadPreview();
 
@@ -811,6 +991,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             _entManager.System<HumanoidAppearanceSystem>().LoadProfile(PreviewDummy, Profile);
+            SpriteView.InvalidateMeasure();
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
@@ -826,9 +1007,9 @@ namespace Content.Client.Lobby.UI
             var species = Profile?.Species ?? SharedHumanoidAppearanceSystem.DefaultSpecies;
             var page = DefaultSpeciesGuidebook;
             if (_prototypeManager.HasIndex<GuideEntryPrototype>(species))
-                page = species;
+                page = new ProtoId<GuideEntryPrototype>(species.Id); // Gross. See above todo comment.
 
-            if (_prototypeManager.TryIndex<GuideEntryPrototype>(DefaultSpeciesGuidebook, out var guideRoot))
+            if (_prototypeManager.TryIndex(DefaultSpeciesGuidebook, out var guideRoot))
             {
                 var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
                 dict.Add(DefaultSpeciesGuidebook, guideRoot);
@@ -1098,6 +1279,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithMarkings(markings.GetForwardEnumerator().ToList()));
+            UpdateGradientContainersVisibility();
             ReloadProfilePreview();
         }
 
@@ -1266,6 +1448,7 @@ namespace Content.Client.Lobby.UI
             RefreshLoadouts();
             // Frontier: In case there's species restrictions for traits
             RefreshTraits(); // Frontier
+            RefreshQuirks();    // Horizon tweak
             UpdateSexControls(); // update sex for new species
             UpdateSpeciesGuidebookIcon();
             ReloadPreview();
@@ -1338,6 +1521,38 @@ namespace Content.Client.Lobby.UI
             {
                 _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
             }
+
+            // Horizon start
+            if (_flavorText != null)
+            {
+                _flavorText.OOCFlavorTextInput.TextRope = new Rope.Leaf(Profile?.OOCFlavorText ?? "");
+                for (var i = 0; i <= (int)ErpStatus.NonCon; i++)
+                {
+                    //_flavorText.ERPStatusButton.AddItem(FormattedMessage.RemoveMarkupOrThrow(Loc.GetString($"erp-status-{(ErpStatus)i}")), i);
+
+                    if (i == (int?)Profile?.ErpStat)
+                    {
+                        OnErpChange((ErpStatus)i);
+                        _flavorText.ERPStatusButton.Select(i);
+                        UpdateErpDesc();
+                    }
+                }
+
+                _factions = _prototypeManager.EnumeratePrototypes<CharacterFactionPrototype>().Where(x => x.Roundstart).OrderBy(x => Loc.GetString(x.Name)).ToList();
+
+                for (var i = 0; i < _factions.Count; i++)
+                {
+                    //_flavorText.FactionButton.AddItem(Loc.GetString(factions[i].Name), i);
+
+                    if (_factions.ElementAt(i).ID == Profile?.Faction)
+                    {
+                        OnFactionChange(_factions.ElementAt(i).ID);
+                        FactionButton.Select(i);
+                        UpdateFactionDesc();
+                    }
+                }
+            }
+            // Horizon end
         }
 
         private void UpdateAgeEdit()
@@ -1534,17 +1749,13 @@ namespace Content.Client.Lobby.UI
             {
                 return;
             }
-            var hairMarking = Profile.Appearance.HairStyleId switch
-            {
-                HairStyles.DefaultHairStyle => new List<Marking>(),
-                _ => new() { new(Profile.Appearance.HairStyleId, new List<Color>() { Profile.Appearance.HairColor }) },
-            };
+            var hairMarking = Profile.Appearance.HairStyleId == HairStyles.DefaultHairStyle
+                ? new List<Marking>()
+                : new() { new(Profile.Appearance.HairStyleId, new List<Color>() { Profile.Appearance.HairColor }) };
 
-            var facialHairMarking = Profile.Appearance.FacialHairStyleId switch
-            {
-                HairStyles.DefaultFacialHairStyle => new List<Marking>(),
-                _ => new() { new(Profile.Appearance.FacialHairStyleId, new List<Color>() { Profile.Appearance.FacialHairColor }) },
-            };
+            var facialHairMarking = Profile.Appearance.FacialHairStyleId == HairStyles.DefaultFacialHairStyle
+                ? new List<Marking>()
+                : new() { new(Profile.Appearance.FacialHairStyleId, new List<Color>() { Profile.Appearance.FacialHairColor }) };
 
             HairStylePicker.UpdateData(
                 hairMarking,
@@ -1554,6 +1765,152 @@ namespace Content.Client.Lobby.UI
                 facialHairMarking,
                 Profile.Species,
                 1);
+
+            // _Horizon: Sync gradient UI (quantized so sliders show only displayable colors)
+            HairGradientToggle.Pressed = Profile.Appearance.HairGradientEnabled;
+            HairGradientSecondColorSelector.Color = QuantizeGradientColor(Profile.Appearance.HairGradientSecondaryColor);
+            HairGradientDirectionSelector.SelectId(Profile.Appearance.HairGradientDirection);
+            FacialHairGradientToggle.Pressed = Profile.Appearance.FacialHairGradientEnabled;
+            FacialHairGradientSecondColorSelector.Color = QuantizeGradientColor(Profile.Appearance.FacialHairGradientSecondaryColor);
+            FacialHairGradientDirectionSelector.SelectId(Profile.Appearance.FacialHairGradientDirection);
+            AllMarkingsGradientToggle.Pressed = Profile.Appearance.AllMarkingsGradientEnabled;
+            AllMarkingsGradientSecondColorSelector.Color = QuantizeGradientColor(Profile.Appearance.AllMarkingsGradientSecondaryColor);
+            AllMarkingsGradientDirectionSelector.SelectId(Profile.Appearance.AllMarkingsGradientDirection);
+
+            UpdateGradientContainersVisibility();
+        }
+
+        /// <summary>
+        /// Show gradient blocks only when applicable: hair when hair selected, beard when beard selected, accessories when any markings.
+        /// Disables the gradient in profile when the block is hidden.
+        /// </summary>
+        private void UpdateGradientContainersVisibility()
+        {
+            if (Profile is null) return;
+
+            var hasHair = Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle;
+            if (!hasHair)
+            {
+                HairGradientContainer.Visible = false;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(false, Profile.Appearance.HairGradientSecondaryColor, Profile.Appearance.HairGradientDirection));
+            }
+            else
+            {
+                HairGradientContainer.Visible = true;
+            }
+
+            var hasFacialHair = Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle;
+            if (!hasFacialHair)
+            {
+                FacialHairGradientContainer.Visible = false;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(false, Profile.Appearance.FacialHairGradientSecondaryColor, Profile.Appearance.FacialHairGradientDirection));
+            }
+            else
+            {
+                FacialHairGradientContainer.Visible = true;
+            }
+
+            // Градиент на аксессуары всегда доступен (настройки сохраняются, эффект применится при добавлении маркировок)
+            AllMarkingsGradientContainer.Visible = true;
+        }
+
+        private void InitializeGradientControls()
+        {
+            // Direction options: 0 = bottom-top, 1 = top-bottom, 2 = left-right, 3 = right-left
+            var dirOptions = new List<string>
+            {
+                Loc.GetString("humanoid-profile-editor-hair-gradient-dir-bottom-top"),
+                Loc.GetString("humanoid-profile-editor-hair-gradient-dir-top-bottom"),
+                Loc.GetString("humanoid-profile-editor-hair-gradient-dir-left-right"),
+                Loc.GetString("humanoid-profile-editor-hair-gradient-dir-right-left"),
+            };
+            HairGradientDirectionSelector.AddItem(dirOptions[0], 0);
+            HairGradientDirectionSelector.AddItem(dirOptions[1], 1);
+            HairGradientDirectionSelector.AddItem(dirOptions[2], 2);
+            HairGradientDirectionSelector.AddItem(dirOptions[3], 3);
+            FacialHairGradientDirectionSelector.AddItem(dirOptions[0], 0);
+            FacialHairGradientDirectionSelector.AddItem(dirOptions[1], 1);
+            FacialHairGradientDirectionSelector.AddItem(dirOptions[2], 2);
+            FacialHairGradientDirectionSelector.AddItem(dirOptions[3], 3);
+            AllMarkingsGradientDirectionSelector.AddItem(dirOptions[0], 0);
+            AllMarkingsGradientDirectionSelector.AddItem(dirOptions[1], 1);
+            AllMarkingsGradientDirectionSelector.AddItem(dirOptions[2], 2);
+            AllMarkingsGradientDirectionSelector.AddItem(dirOptions[3], 3);
+
+            HairGradientToggle.OnToggled += args =>
+            {
+                if (Profile is null) return;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(args.Pressed, Profile.Appearance.HairGradientSecondaryColor, Profile.Appearance.HairGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            HairGradientSecondColorSelector.OnColorChanged += _ =>
+            {
+                if (Profile is null) return;
+                var quantized = QuantizeGradientColor(HairGradientSecondColorSelector.Color);
+                HairGradientSecondColorSelector.Color = quantized;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(Profile.Appearance.HairGradientEnabled, quantized, Profile.Appearance.HairGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            HairGradientDirectionSelector.OnItemSelected += args =>
+            {
+                if (Profile is null) return;
+                HairGradientDirectionSelector.SelectId(args.Id);
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithHairGradient(Profile.Appearance.HairGradientEnabled, Profile.Appearance.HairGradientSecondaryColor, args.Id));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+
+            FacialHairGradientToggle.OnToggled += args =>
+            {
+                if (Profile is null) return;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(args.Pressed, Profile.Appearance.FacialHairGradientSecondaryColor, Profile.Appearance.FacialHairGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            FacialHairGradientSecondColorSelector.OnColorChanged += _ =>
+            {
+                if (Profile is null) return;
+                var quantized = QuantizeGradientColor(FacialHairGradientSecondColorSelector.Color);
+                FacialHairGradientSecondColorSelector.Color = quantized;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(Profile.Appearance.FacialHairGradientEnabled, quantized, Profile.Appearance.FacialHairGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            FacialHairGradientDirectionSelector.OnItemSelected += args =>
+            {
+                if (Profile is null) return;
+                FacialHairGradientDirectionSelector.SelectId(args.Id);
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithFacialHairGradient(Profile.Appearance.FacialHairGradientEnabled, Profile.Appearance.FacialHairGradientSecondaryColor, args.Id));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+
+            AllMarkingsGradientToggle.OnToggled += args =>
+            {
+                if (Profile is null) return;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithAllMarkingsGradient(args.Pressed, Profile.Appearance.AllMarkingsGradientSecondaryColor, Profile.Appearance.AllMarkingsGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            AllMarkingsGradientSecondColorSelector.OnColorChanged += _ =>
+            {
+                if (Profile is null) return;
+                var quantized = QuantizeGradientColor(AllMarkingsGradientSecondColorSelector.Color);
+                AllMarkingsGradientSecondColorSelector.Color = quantized;
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithAllMarkingsGradient(Profile.Appearance.AllMarkingsGradientEnabled, quantized, Profile.Appearance.AllMarkingsGradientDirection));
+                SetDirty();
+                ReloadProfilePreview();
+            };
+            AllMarkingsGradientDirectionSelector.OnItemSelected += args =>
+            {
+                if (Profile is null) return;
+                AllMarkingsGradientDirectionSelector.SelectId(args.Id);
+                Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithAllMarkingsGradient(Profile.Appearance.AllMarkingsGradientEnabled, Profile.Appearance.AllMarkingsGradientSecondaryColor, args.Id));
+                SetDirty();
+                ReloadProfilePreview();
+            };
         }
 
         private void UpdateCMarkingsHair()
@@ -1765,5 +2122,99 @@ namespace Content.Client.Lobby.UI
             ImportButton.Disabled = false;
             ExportButton.Disabled = false;
         }
+
+        // Horizon start
+        private void OnSkinColorOnValueChangedKeepColor(HumanoidCharacterProfile previus)
+        {
+            if (Profile is null) return;
+
+            var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var color = previus.Appearance.SkinColor;
+
+            switch (skin)
+            {
+                case HumanoidSkinColor.HumanToned:
+                    {
+                        var tone = SkinColor.HumanSkinToneFromColor(previus.Appearance.SkinColor);
+                        color = SkinColor.HumanSkinTone((int)tone);
+                        Skin.Value = tone;
+
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
+                        break;
+                    }
+                case HumanoidSkinColor.Hues:
+                    {
+                        break;
+                    }
+                case HumanoidSkinColor.TintedHues:
+                    {
+                        color = SkinColor.TintedHues(previus.Appearance.SkinColor);
+
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        break;
+                    }
+                case HumanoidSkinColor.VoxFeathers:
+                    {
+                        color = SkinColor.ClosestVoxColor(previus.Appearance.SkinColor);
+
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        break;
+                    }
+            }
+
+            _rgbSkinColorSelector.Color = color;
+
+            ReloadProfilePreview();
+        }
+
+        private void OnErpChange(ErpStatus status)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithErpStatus(status);
+            SetDirty();
+        }
+
+        private void OnFactionChange(ProtoId<CharacterFactionPrototype> faction)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithFaction(faction);
+            SetDirty();
+            RefreshJobs();
+        }
+
+        private void UpdateErpDesc()
+        {
+            if (_flavorText == null)
+                return;
+
+            _flavorText.ERPStatusDescription.SetMarkup(Loc.GetString($"erp-status-{Profile?.ErpStat}-desc"));
+        }
+
+        private void UpdateFactionDesc()
+        {
+            if (_flavorText == null || Profile == null)
+                return;
+
+            if (Profile.Faction == string.Empty)
+                OnFactionChange("None");
+
+            var faction = _prototypeManager.Index(Profile.Faction);
+
+            FactionDescription.SetMarkup(Loc.GetString(faction.Desc));
+        }
+
+        private void OnOOCFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithOOCFlavorText(content);
+            SetDirty();
+        }
+        // Horizon end
     }
 }

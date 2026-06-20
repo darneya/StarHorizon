@@ -233,7 +233,7 @@
   parent: SeedBase
   name: пакет семян (желтая гвоздика)
   suffix: Horizon
-  id: СloveySeeds
+  id: CloveySeeds
   components:
   - type: Seed
     seedId: clovey
@@ -244,7 +244,7 @@
   parent: SeedBase
   name: пакет семян (белая гвоздика)
   suffix: Horizon
-  id: СlovewSeeds
+  id: ClovewSeeds
   components:
   - type: Seed
     seedId: clovew
@@ -255,7 +255,7 @@
   parent: SeedBase
   name: пакет семян (красная гвоздика)
   suffix: Horizon
-  id: СloverSeeds
+  id: CloverSeeds
   components:
   - type: Seed
     seedId: clover
@@ -266,7 +266,7 @@
   parent: SeedBase
   name: пакет семян (фиолетовая гвоздика)
   suffix: Horizon
-  id: СlovepSeeds
+  id: ClovepSeeds
   components:
   - type: Seed
     seedId: clovep
@@ -569,3 +569,23 @@
     seedId: diamondcarrot
   - type: Sprite
     sprite: _Horizon/Objects/Specific/Hydroponics/diamondcarrot.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of blue tomato seeds
+  id: BluespaceTomatoSeeds
+  components:
+  - type: Seed
+    seedId: bluespaceTomato
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Hydroponics/bluespace_tomato.rsi
+
+- type: entity
+  parent: SeedBase
+  name: пакет косточек персика
+  id: PeachSeeds
+  components:
+  - type: Seed
+    seedId: peach
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Hydroponics/peach.rsi

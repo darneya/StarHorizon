@@ -328,3 +328,483 @@
       rmc-aslot-rail: 0, 0
       rmc-aslot-barrel: 0.96875, 0
     # Horizon Attachments end
+
+- type: entity
+  id: NFWeaponRifleAssaultAK4047
+  parent: [ NFBaseWeaponRifleAssaultChamber30, BaseAttachableHolder, NFBaseWeaponFrameRifleAssaultCybersun ]
+  name: AK-4047
+  description: |-
+    Иконическое оружие всех войн,дешевое и легкодоступное
+  components:
+  - type: Gun
+    projectileSpeed: 40
+    minAngle: 2.2
+    maxAngle: 11
+    angleIncrease: 0.6
+    angleDecay: 3
+    fireRate: 5
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Rifles/ak4047.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Rifles/ak4047.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, -0.12
+      rmc-aslot-barrel: 0.8, -0.05
+
+- type: entity
+  id: NFWeaponRifleAssaultAR10
+  parent: [ NFBaseWeaponRifleAssaultChamber30, BaseAttachableHolder, NFBaseWeaponFrameRifleAssaultCybersun ]
+  name: AR-10
+  description: |-
+    Хороший штурмовой карабин на службе закона
+  components:
+  - type: Gun
+    projectileSpeed: 30
+    minAngle: 2.2
+    maxAngle: 11
+    angleIncrease: 0.6
+    angleDecay: 3
+    fireRate: 5
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Rifles/ar10.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Rifles/ar10.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3, -0.1
+      rmc-aslot-rail: -0.11, -0.13
+      rmc-aslot-barrel: 0.96875, -0.05
+
+- type: entity
+  id: NFWeaponRifleAssaultL83A2
+  parent: [ NFBaseWeaponRifleAssaultChamber30, BaseAttachableHolder, NFBaseWeaponFrameRifleAssaultCybersun ]
+  name: L83A2
+  description: |-
+    Гражданская винтовка,которую часто можно встретить у полицейских на планетойдах.
+  components:
+  - type: Gun
+    projectileSpeed: 40
+    minAngle: 2.2
+    maxAngle: 11
+    angleIncrease: 0.6
+    angleDecay: 3
+    fireRate: 6
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Rifles/l83a2.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Rifles/l83a2.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, -0.1
+      rmc-aslot-barrel: 0.96875, -0.02
+
+- type: entity
+  id: NFWeaponRifleAssaultM16
+  parent: [ BaseC2ContrabandUnredeemable, BaseAttachableHolder, NFBaseWeaponRifleAssaultChamber20, NFBaseWeaponFrameRifleAssaultNanotrasen ]
+  name: M-16
+  description: |-
+    Военная винтовка с большим прошлым. Отличный выбор для опытного солдата.
+  components:
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Rifles/m16.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Rifles/m16.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3, -0.1
+      rmc-aslot-rail: -0.11, -0.13
+      rmc-aslot-barrel: 0.96875, -0.06
+  # Horizon Attachments end
+
+- type: entity
+  id: NFWeaponRifleAssaultM4SPR
+  parent: [ BaseC2ContrabandUnredeemable, BaseAttachableHolder, NFBaseWeaponRifleAssaultChamber20, NFBaseWeaponFrameRifleAssaultNanotrasen ]
+  name: M4SPR
+  description: |-
+    Тяжелая винтовка,используемая пустынными наемниками
+  components:
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Rifles/m4spr/desert.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Rifles/m4spr/desert.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, -0.15
+      rmc-aslot-barrel: 0.96875, 0
+
+- type: entity
+  id: NFWeaponRifleAssaultM59A
+  parent: [ BaseC2ContrabandUnredeemable, BaseAttachableHolder, NFBaseWeaponRifleAssaultChamber20, NFBaseWeaponFrameRifleAssaultNanotrasen ]
+  name: M59A
+  description: |-
+    Продвинутая винтовка,используемая технологически развитыми бандами наемников
+  components:
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Rifles/m59a/desert.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Rifles/m59a/desert.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: true
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, -0.17
+      rmc-aslot-barrel: 0.96875, -0.1
+
+- type: entity
+  id: NFWeaponRifleAssaultMAR30
+  parent: [ NFBaseWeaponRifleAssaultChamber30LowCapacity, NFBaseWeaponFrameRifleAssaultFrontierGunsmith, BaseAttachableHolder ]
+  name: MAR-30
+  description: |-
+    Старый боевое карабин,обычно находят в руках преступников или бедных наемников
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Rifles/mar30.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Rifles/mar30.rsi
+  - type: Item
+    sprite: _NF/Objects/Weapons/Guns/Rifles/mar30.rsi
+  - type: Gun
+    burstFireRate: 8
+    shotsPerBurst: 3
+    burstCooldown: 0.8
+    selectedMode: Burst
+    availableModes:
+      - Burst
+    soundGunshot:
+      path: /Audio/_NF/Weapons/Guns/Gunshots/rifle.ogg
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.23, -0.045
+      rmc-aslot-rail: 0, -0.1
+      rmc-aslot-barrel: 0.90875, -0.024
+  # Horizon Attachments end
+
+- type: entity # TODO: switch to .25 rifle (caseless)
+  id: NFWeaponRifleAssaultMAR40
+  parent: [ NFBaseWeaponRifleAssaultChamber30, BaseAttachableHolder, NFBaseWeaponFrameRifleAssaultCybersun ]
+  name: MAR-40 # Renamed: real brand name
+  description: |-
+    Более продвинутая версия MAR-40 с такой же плохой репутацией
+  components:
+  - type: Gun
+    projectileSpeed: 40
+    minAngle: 2.2
+    maxAngle: 11
+    angleIncrease: 0.6
+    angleDecay: 3
+    fireRate: 5
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Rifles/mar40.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Rifles/mar40.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, -0.1
+      rmc-aslot-barrel: 0.96875, 0
+
+- type: entity # TODO: switch to .25 rifle (caseless)
+  id: NFWeaponRifleAssaultType71
+  parent: [ NFBaseWeaponRifleAssaultChamber30, BaseAttachableHolder, NFBaseWeaponFrameRifleAssaultCybersun ]
+  name: Type-71 # Renamed: real brand name
+  description: |-
+    Штурмовая винтовка,специально поставляемая в сектор для ДСФБ
+  components:
+  - type: Gun
+    projectileSpeed: 40
+    minAngle: 2.2
+    maxAngle: 11
+    angleIncrease: 0.6
+    angleDecay: 3
+    fireRate: 5
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Rifles/type71.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Rifles/type71.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, -0.1
+      rmc-aslot-barrel: 0.96875, -0.1
+
+- type: entity # TODO: switch to .25 rifle (caseless)
+  id: NFWeaponRifleAssaultXM40
+  parent: [ NFBaseWeaponRifleAssaultChamber30, BaseAttachableHolder, NFBaseWeaponFrameRifleAssaultCybersun ]
+  name: XM-40 # Renamed: real brand name
+  description: |-
+    Эксперементальная штурмовая винтовка созданная для элитных подразделений Горлакса
+  components:
+  - type: Gun
+    projectileSpeed: 40
+    minAngle: 2.2
+    maxAngle: 11
+    angleIncrease: 0.6
+    angleDecay: 3
+    fireRate: 7
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Rifles/xm40.rsi
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Rifles/xm40.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  # Horizon Attachments start
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentM90GrenadeLauncher
+          - AttachmentM90UnderbarrelShotgun
+          - AttachmentVerticalGrip
+          - AttachmentLaserSight
+      rmc-aslot-rail:
+        whitelist:
+          tags:
+          - AttachmentMagneticHarness
+          - AttachmentReflexSight
+          - AttachmentT2Miniscope
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.3125, -0.0625
+      rmc-aslot-rail: 0, -0.1
+      rmc-aslot-barrel: 0.96875, 0

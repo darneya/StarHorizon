@@ -29,6 +29,7 @@
       rmc-aslot-underbarrel: 0.17, -0.014
       rmc-aslot-barrel: 0.84375, 0.125
     # Horizon Attachments end
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponPistolN1984
@@ -57,6 +58,7 @@
     offsets:
       rmc-aslot-underbarrel: 0.3, 0.0
       rmc-aslot-barrel: 0.70375, 0.125
+  - type: DualWield #2hands
   # Horizon Attachments end
 
 - type: entity
@@ -123,7 +125,7 @@
     offsets:
       rmc-aslot-underbarrel: 0.25, 0.01
       rmc-aslot-barrel: 1.0, 0.125
-  # Horizon Attachments end
+  - type: DualWield #2hands
 
 - type: entity
   id: NFWeaponPistolUniversalNfsd
@@ -142,3 +144,33 @@
   parent: [ NFBaseWeaponPistolChamber35HighCapacityRubber, NFWeaponPistolUniversalNfsd ]
   suffix: Frontier, Less-lethal
   components: *universalComponents
+
+- type: entity
+  id: NFWeaponPistolBeretta
+  parent: [ NFBaseWeaponPistolChamber35HighCapacity, NFBaseWeaponFrameMachinePistolGorlex, BaseAttachableHolder ]
+  name: Beretta M92FS
+  description: |-
+    Один из самых популярных пистолетов среди полиции.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Pistols/b92fs.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/Pistols/b92fs.rsi
+  # Horizon Attachments end
+  - type: AttachableHolder
+    slots:
+      rmc-aslot-underbarrel:
+        whitelist:
+          tags:
+          - AttachmentLaserSight
+      rmc-aslot-barrel:
+        whitelist:
+          tags:
+          - AttachmentSuppressor
+          - AttachmentAntiLyingWarrior
+  - type: AttachableHolderVisuals
+    offsets:
+      rmc-aslot-underbarrel: 0.17, -0.01
+      rmc-aslot-barrel: 0.84375, 0.12
+  - type: DualWield #2hands
+  # Horizon Attachments end

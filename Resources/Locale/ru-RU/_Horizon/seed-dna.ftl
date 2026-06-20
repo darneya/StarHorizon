@@ -1,19 +1,15 @@
-﻿seed-dna-window-title = Манипулятор ДНК семян
+seed-dna-window-title = Манипулятор ДНК семян
 seed-dna-window-seed = Семена:
 seed-dna-window-dnadisk = Диск:
 seed-dna-window-invalid-seed = Эти семена нельзя использовать
 seed-dna-window-extract-all = Извлечь все
 seed-dna-window-replace-all = Перезаписать все
-
 seed-dna-eject-btn = Изъять
 seed-dna-insert-btn = Вставить
-
 seed-dna-extract-btn = Извлечь
 seed-dna-replace-btn = Перезаписать
-
-seed-dna-row-consume-gas = Потребляемый газ: {$gas}
-seed-dna-row-exude-gas = Выделяемый газ: {$gas}
-
+seed-dna-row-consume-gas = Потребляемый газ: { $gas }
+seed-dna-row-exude-gas = Выделяемый газ: { $gas }
 #-------------------------------------------------
 
 seed-dna-row-NutrientConsumption = Потребление питательных веществ
@@ -37,10 +33,8 @@ seed-dna-row-Viable = Жизнеспособный
 seed-dna-row-Ligneous = Светящийся
 seed-dna-row-CanScream = Кричащий
 
-#-------------------------------------------------
-
 # Необходимо заполнить для локализации химикатов
-#seed-dna-chemical-??? = ???
+# seed-dna-chemical-??? = ???
 
 seed-dna-chemicalProp-Mix = Минимум
 seed-dna-chemicalProp-Max = Максимум
@@ -48,4 +42,7 @@ seed-dna-chemicalProp-PotencyDivisor = Делитель потенции
 seed-dna-chemicalProp-Inherent = Неотъемлемый
 
 # Необходимо заполнить для локализации газов
-#seed-dna-gas-??? = ???
+
+
+# seed-dna-gas-??? = ???
+

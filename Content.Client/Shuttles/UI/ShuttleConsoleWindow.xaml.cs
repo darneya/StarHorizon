@@ -22,6 +22,7 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
 
     public event Action<NetEntity, NetEntity>? DockRequest;
     public event Action<NetEntity>? UndockRequest;
+    public event Action<List<NetEntity>>? UndockAllRequest;
 
     public ShuttleConsoleWindow()
     {
@@ -53,6 +54,13 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
             RequestBeaconFTL?.Invoke(ent, angle);
         };
 
+        // Frontier: entity tracking
+        MapContainer.RequestTrackEntity += (ent, trackEntity) =>
+        {
+            RequestTrackEntity?.Invoke(ent, trackEntity);
+        };
+        // End Frontier
+
         DockContainer.DockRequest += (entity, netEntity) =>
         {
             DockRequest?.Invoke(entity, netEntity);
@@ -61,6 +69,11 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         DockContainer.UndockRequest += entity =>
         {
             UndockRequest?.Invoke(entity);
+        };
+
+        DockContainer.UndockAllRequest += dockEntities =>
+        {
+            UndockAllRequest?.Invoke(dockEntities);
         };
 
         NfInitialize(); // Frontier Initialization for the ShuttleConsoleWindow
@@ -147,5 +160,14 @@ public sealed partial class ShuttleConsoleWindow : FancyWindow,
         NavContainer.UpdateState(cState.NavState);
         MapContainer.UpdateState(cState.MapState);
         DockContainer.UpdateState(coordinates?.EntityId, cState.DockState);
+        // Horizon start
+        if (cState.Broken)
+        {
+            SwitchMode(ShuttleConsoleMode.Dock);
+            DockModeButton.Pressed = true;
+            NavModeButton.Disabled = true;
+            MapModeButton.Disabled = true;
+        }
+        // Horizon end
     }
 }

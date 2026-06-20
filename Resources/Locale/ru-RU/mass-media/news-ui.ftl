@@ -1,5 +1,5 @@
-news-read-ui-next-text = ▶
-news-read-ui-prev-text = ◀
+news-read-ui-next-text = След.
+news-read-ui-prev-text = Пред.
 news-read-ui-next-tooltip = Далее
 news-read-ui-prev-tooltip = Назад
 news-read-ui-default-title = Новости станции
@@ -16,6 +16,7 @@ news-write-ui-delete-text = Удалить
 news-write-ui-publish-text = Опубликовать
 news-write-ui-create-text = Создать
 news-write-ui-cancel-text = Отмена
+news-write-ui-save-text = Сохранить
 news-write-ui-preview-text = Предпросмотр
 news-write-ui-article-count-0 = 0 статей
 news-write-ui-article-count-text =

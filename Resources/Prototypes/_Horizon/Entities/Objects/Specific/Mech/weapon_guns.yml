@@ -85,7 +85,7 @@
     - FullAuto
     fireRate: 4
   - type: HitscanMechAmmoProvider
-    proto: RedLaser # Heat 14
+    proto: NFRedLightLaser # Heat 14
     fireCost: 15
   - type: Tag
     tags:
@@ -105,7 +105,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanMechAmmoProvider
-    proto: RedHeavyLaser # Heat 28
+    proto: NFRedMediumLaser # Heat 28
     fireCost: 30
   - type: Tag
     tags:
@@ -128,7 +128,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanMechAmmoProvider
-    proto: Pulse # Heat 35
+    proto: NFPulse # Heat 35
     fireCost: 50
   - type: Tag
     tags:
@@ -151,8 +151,54 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanMechAmmoProvider
-    proto: XrayLaser # Heat: 10 Radiation: 10
+    proto: NFXrayLaser # Heat: 10 Radiation: 10
     fireCost: 40
+  - type: Tag
+    tags:
+    - MechEquipmentSecExperim
+
+- type: entity
+  name: cryogun
+  parent: BaseMechGunBattery
+  id: MechGunCryo
+  description: An experimental weapon that uses cold energy against its target.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: energy_cryogun
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: HitscanMechAmmoProvider
+    proto: HRZNCryoLazer # Shock: 10 Cold: 15
+    fireCost: 30
+  - type: Tag
+    tags:
+    - MechEquipmentSecExperim
+
+- type: entity
+  name: pyrogun
+  parent: BaseMechGunBattery
+  id: MechGunPyro
+  description: An experimental weapon that uses concentrated pyrokinetic energy against its target.
+  components:
+  - type: Sprite
+    sprite: _Horizon/Objects/Specific/Mech/equipment.rsi
+    state: energy_pyrogun
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    fireRate: 5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: HitscanMechAmmoProvider
+    proto: HRZNPyroLazer # Shock: 10 Heat: 15
+    fireCost: 30
   - type: Tag
     tags:
     - MechEquipmentSecExperim
@@ -174,7 +220,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: BatteryMechAmmoProvider
-    proto: BulletDisabler # Stamina 30, Heat 5
+    proto: NFBulletDisablerSmg # Stamina 30, Heat 5
     fireCost: 30
   - type: Tag
     tags:
@@ -200,7 +246,7 @@
       params:
         variation: 0.2
   - type: BatteryMechAmmoProvider
-    proto: TeslaGunBullet
+    proto: NFTeslaGunBullet
     fireCost: 100
   - type: Tag
     tags:
@@ -227,7 +273,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: ShellShotgun # Piercing: 8.3
+    proto: NFPelletShotgunSpread # Piercing: 8.3
     shots: 12
     capacity: 12
     ammoType: shotgun
@@ -260,7 +306,7 @@
   - type: BallisticMechAmmoProvider
     shots: 30
     capacity: 30
-    proto: BulletPistol # Piercing: 16
+    proto: NFBulletPistol35 # Piercing: 16
     reloadTime: 5
   - type: UIFragment
     ui: !type:MechGunUi
@@ -287,7 +333,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: BulletPistolIncendiary # Blunt: 2 Heat: 14
+    proto: NFBulletPistol45Incendiary # Blunt: 2 Heat: 14
     shots: 45
     capacity: 45
     ammoType: lightrifleincendiary
@@ -317,7 +363,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: BulletAntiMateriel # Piercing 40 Structural 30 Stamina 35
+    proto: NFBulletRifle60 # Piercing 40 Structural 30 Stamina 35
     shots: 7
     capacity: 7
     ammoType: sniper
@@ -346,7 +392,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: GrenadeFlash
+    proto: NFBulletGrenadeFlash
     shots: 3
     capacity: 3
     ammoType: granade
@@ -378,7 +424,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: BulletRocketLRM
+    proto: NFBulletRocket
     shots: 1
     capacity: 6
     ammoType: granade
@@ -408,7 +454,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: BulletWeakRocket
+    proto: NFBulletWeakRocket
     shots: 2
     capacity: 8
     ammoType: granade
@@ -438,7 +484,7 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
   - type: BallisticMechAmmoProvider
-    proto: BulletWeakRocketFire
+    proto: NFBulletGrenadeBlast
     shots: 2
     capacity: 8
     ammoType: granade
@@ -466,7 +512,7 @@
     - FullAuto
     fireRate: 2
   - type: BatteryMechAmmoProvider
-    proto: BulletKinetic
+    proto: NFBulletKinetic
     fireCost: 3
   - type: Tag
     tags:
@@ -487,7 +533,7 @@
     - FullAuto
     fireRate: 2
   - type: BatteryMechAmmoProvider
-    proto: BulletKineticRailgun
+    proto: NFBulletKineticShuttleHard
     fireCost: 5
   - type: Tag
     tags:

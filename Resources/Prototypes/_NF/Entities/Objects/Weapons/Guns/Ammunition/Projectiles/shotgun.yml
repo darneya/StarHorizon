@@ -8,7 +8,24 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 4
+        Piercing: 10
+  - type: ProjectileHitEffect
+    gunshots: 4
+    push: true
+    effectDuration: 1
+    effectCooldown: 6
+    bulletId: shotgunBullet
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: NFPelletShotgunOverpressure
+  name: pellet (.50 overpressure)
+  parent: NFBasePelletOverpressure
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 11
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -19,8 +36,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 2
-        Heat: 2
+        Blunt: 5
+        Heat: 5
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -31,7 +48,7 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 0.5
+        Blunt: 0.1
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -42,8 +59,8 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 3
-        Piercing: 3
+        Piercing: 5
+        Radiation: 5
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -62,8 +79,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 2
-        Slash: 2
+        Piercing: 5
+        Slash: 5
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -74,7 +91,7 @@
   - type: Projectile
     damage:
       types:
-        Slash: 4
+        Slash: 10
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -85,8 +102,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 5
-        Structural: 5
+        Piercing: 8
+        Structural: 15
 
 #region PelletsSpread
 - type: entity
@@ -94,8 +111,8 @@
   abstract: true
   components:
   - type: ProjectileSpread
-    count: 5 # six total, includes the spread as a bullet
-    spread: 11
+    count: 7 # eight(?) total, includes the spread as a bullet
+    spread: 7.5
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -104,6 +121,14 @@
   components:
   - type: ProjectileSpread
     proto: NFPelletShotgun
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: NFPelletShotgunOverpressureSpread
+  parent: [NFBasePelletShotgunSpread, NFPelletShotgunOverpressure]
+  components:
+  - type: ProjectileSpread
+    proto: NFPelletShotgunOverpressure
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -163,13 +188,14 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 25
+        Piercing: 30
+        Blunt: 10
 
 - type: entity
   categories: [ HideSpawnMenu ]
   id: NFShotgunSlugBeanbag
   parent: NFBaseBulletRubber
-  name: slug (.50 beanbag)
+  name: beanbag (.50)
   components:
   - type: Projectile
     damage:
@@ -182,7 +208,7 @@
   categories: [ HideSpawnMenu ]
   id: NFShotgunSlugFlare
   parent: NFPelletShotgunFlare
-  name: slug (.50)
+  name: flare (.50)
   components:
   - type: Sprite
     noRot: false

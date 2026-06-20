@@ -13,7 +13,7 @@
   parent: BaseVessel
   name: NC Parcel
   description: A reliable shuttle for delivering mail and packages.
-  price: 18000
+  price: 17000 # 14732 0.05 15468.6
   category: Small
   group: Sr
   access: Mail
@@ -23,6 +23,18 @@
   - Cargo
   engine:
   - Plasma
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionFrontier"
+      costMultiplier: 0.9
+  # Horizon end
 
 - type: gameMap
   id: Parcel

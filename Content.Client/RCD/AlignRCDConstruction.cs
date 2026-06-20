@@ -1,5 +1,7 @@
 using System.Numerics;
+using Content.Client._Horizon.RCD;
 using Content.Client.Gameplay;
+using Content.Client.Hands.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.RCD.Components;
@@ -21,6 +23,7 @@ public sealed class AlignRCDConstruction : PlacementMode
     private readonly SharedTransformSystem _transformSystem;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IStateManager _stateManager = default!;
+    private readonly HandsSystem _hands;
 
     private const float SearchBoxSize = 2f;
     private const float PlaceColorBaseAlpha = 0.5f;
@@ -36,6 +39,7 @@ public sealed class AlignRCDConstruction : PlacementMode
         _mapSystem = _entityManager.System<SharedMapSystem>();
         _rcdSystem = _entityManager.System<RCDSystem>();
         _transformSystem = _entityManager.System<SharedTransformSystem>();
+        _hands = _entityManager.System<HandsSystem>();
 
         ValidPlaceColor = ValidPlaceColor.WithAlpha(PlaceColorBaseAlpha);
     }
@@ -75,7 +79,28 @@ public sealed class AlignRCDConstruction : PlacementMode
         if (!_entityManager.TryGetComponent<TransformComponent>(player, out var xform))
             return false;
 
-        if (!_transformSystem.InRange(xform.Coordinates, position, SharedInteractionSystem.InteractionRange))
+        // Horizon start
+
+        // Determine if player is carrying an RCD in their active hand
+        if (!_hands.TryGetActiveItem(player.Value, out var activeEnt)) // Frontier: reformat to use the hand system
+            return false;
+
+        var heldEntity = activeEnt;
+
+        if (player.HasValue)
+        {
+            var ev = new GetRCDEntityEvent();
+            _entityManager.EventBus.RaiseLocalEvent(player.Value, ref ev);
+
+            if (ev.Entity.HasValue)
+                heldEntity = ev.Entity.Value;
+        }
+
+        if (!_entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd))
+            return false;
+
+        // Перенёс проверку вперёд, чтобы использовать кастомную дистанцию
+        if (!_transformSystem.InRange(xform.Coordinates, position, rcd.Range))
         {
             InvalidPlaceColor = InvalidPlaceColor.WithAlpha(0);
             return false;
@@ -86,15 +111,7 @@ public sealed class AlignRCDConstruction : PlacementMode
         {
             InvalidPlaceColor = InvalidPlaceColor.WithAlpha(PlaceColorBaseAlpha);
         }
-
-        // Determine if player is carrying an RCD in their active hand
-        if (!_entityManager.TryGetComponent<HandsComponent>(player, out var hands))
-            return false;
-
-        var heldEntity = hands.ActiveHand?.HeldEntity;
-
-        if (!_entityManager.TryGetComponent<RCDComponent>(heldEntity, out var rcd))
-            return false;
+        // Horizon end
 
         var gridUid = _transformSystem.GetGrid(position);
         if (!_entityManager.TryGetComponent<MapGridComponent>(gridUid, out var mapGrid))
