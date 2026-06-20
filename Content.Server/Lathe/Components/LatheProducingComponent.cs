@@ -1,5 +1,3 @@
-using Content.Shared.Research.Prototypes; // Horizon
-                                          
 namespace Content.Server.Lathe.Components;
 
 /// <summary>
@@ -19,17 +17,5 @@ public sealed partial class LatheProducingComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan ProductionLength;
-
-    /// <summary>
-    /// Horizon. Флаг, что указывает включено ли бесконечное производство. 
-    /// </summary>
-    [DataField]
-    public bool InfiniteProduction;
-
-    /// <summary>
-    /// Horizon. Последний рецепт.
-    /// </summary>
-    [DataField]
-    public LatheRecipePrototype? LastRecipe; 
 }
 
