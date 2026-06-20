@@ -31,7 +31,6 @@ public sealed partial class LatheMenu : DefaultWindow
     public event Action<int>? QueueMoveUpAction; // Frontier
     public event Action<int>? QueueMoveDownAction; // Frontier
     public event Action? DeleteFabricatingAction; // Frontier
-    public event Action<bool>? InfiniteProductionToggled; // Horizon
 
     public List<ProtoId<LatheRecipePrototype>> Recipes = new();
 
@@ -64,7 +63,6 @@ public sealed partial class LatheMenu : DefaultWindow
         ServerListButton.OnPressed += a => OnServerListButtonPressed?.Invoke(a);
         DeleteFabricating.OnPressed += _ => DeleteFabricatingAction?.Invoke(); // Frontier
         DeleteFabricating.AddStyleClass("OpenLeft"); // Frontier
-        InfiniteButton.OnToggled += args => InfiniteProductionToggled?.Invoke(args.Pressed); // Horizon
     }
 
     public void SetEntity(EntityUid uid)

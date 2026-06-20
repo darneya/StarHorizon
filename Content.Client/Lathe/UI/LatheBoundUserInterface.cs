@@ -38,7 +38,6 @@ namespace Content.Client.Lathe.UI
             _menu.QueueMoveDownAction += index => SendMessage(new LatheMoveRequestMessage(index, 1));
             _menu.DeleteFabricatingAction += () => SendMessage(new LatheAbortFabricationMessage());
             // End Frontier
-            _menu.InfiniteProductionToggled += isEnabled => SendMessage(new LatheToggleInfiniteProductionMessage(isEnabled)); // Horizon
         }
 
         protected override void UpdateState(BoundUserInterfaceState state)
