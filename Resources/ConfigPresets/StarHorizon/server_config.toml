@@ -142,8 +142,8 @@ ahelp_webhook = "%webhook_ahelp%"
 ban_webhook = "%webhook_ban%"
 round_update_webhook = "%webhook_round_update%"
 leaderboard_webhook = "%webhook_leaderboard%"
-#guild_id = 1348258341658562560
-#token = "%bot_token%"
+guild_id = 1348258341658562560
+token = "%bot_token%"
 
 ################################################################################
 ##### Relpay ###################################################################
