@@ -26,8 +26,8 @@ fallbackpreset = "Sandbox"
 [hub]
 advertise = false
 
-[auth]
-server="https://auth.playss14.com/"
+#[auth]
+#server="https://auth.playss14.com/"
 
 [server]
 rules_file = "FrontierRuleset"
