@@ -354,8 +354,8 @@
 # .50 Shell
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe
-  id: MagazineShotgunEmpty
-  result: MagazineShotgunEmpty
+  id: NFMagazineShotgunDrumEmpty
+  result: NFMagazineShotgunDrumEmpty
   materials:
     Steel: 50
 
