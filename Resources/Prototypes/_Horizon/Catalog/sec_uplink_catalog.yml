@@ -20,6 +20,7 @@
   id: SecWeaponTurretM25
   name: M25 Импульсный бурильщик
   description: Использует механизмы для запуска... чего-то. Легко разрушает породу.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/m25.rsi }
   productEntity: WeaponTurretM25FlatPack
   cost:
     FrontierUplinkCoin: 10
@@ -35,6 +36,7 @@
   id: SecWeaponTurretM220
   name: M220 РУБИКОН EMP пусковая установка
   description: Запускает EMP снаряды по кораблям, выводя системы из строя мощными электромагнитными импульсами. Идеально для нелетальных столкновений.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/rubicon.rsi }
   productEntity: WeaponTurretM220FlatPack
   cost:
     FrontierUplinkCoin: 20
@@ -51,6 +53,7 @@
   id: SecWeaponTurretType35
   name: Type-35 МАРОДЁР плазменная пушка
   description: Запускает магнетически сдерживаемые шары плазмы по целям.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/t35.rsi }
   productEntity: WeaponTurretType35FlatPack
   cost:
     FrontierUplinkCoin: 40
@@ -71,6 +74,7 @@
   id: SecWeaponTurretTarnyxReload
   name: АДБХ-31 ТАРНИКС 150мм ЭМИ Пушка
   description: Тяжелая ЭМИ пушка, созданная Aetherion Dynamics, предназначенная для выведения из строя больших участков вражеских кораблей одним мощным выстрелом. Эффективна в асимметричных боях.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/tarnyx.rsi }
   productEntity: WeaponTurretTarnyxReloadFlatPack
   cost:
     FrontierUplinkCoin: 40
@@ -92,6 +96,7 @@
   id: SecWeaponTurretType54
   name: Type-54C Плазменный автопульсер
   description: Быстрострельное энергетическое оружие, наносящее огромный урон целям. Требует длительной перезарядки.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/t54.rsi }
   productEntity: WeaponTurretType54FlatPack
   cost:
     FrontierUplinkCoin: 160
@@ -110,6 +115,7 @@
   id: SecWeaponTurretType241
   name: Type-241 Плазменный лансер
   description: Разрушительное оружие, обычно используемое для крупномасштабной огневой поддержки и стратегического уничтожения.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/t241.rsi }
   productEntity: WeaponTurretType241FlatPack
   cost:
     FrontierUplinkCoin: 160
@@ -128,6 +134,7 @@
   id: SecWeaponTurretDymere
   name: ADEX-9 ДАЙМИР Турболазер
   description: Самая знаковая суперкапитальная батарея Aetherion Dynamics. Выстреливает огромные ионизированные газовые снаряды, прожигающие самую прочную броню кораблей.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/dymere.rsi }
   productEntity: WeaponTurretDymereFlatPack
   cost:
     FrontierUplinkCoin: 160
@@ -148,6 +155,7 @@
   id: SecWeaponTurretL85Autocannon
   name: автопушка L85 калибра 20мм
   description: Лёгкая 20мм баллистическая автопушка, предназначенная для быстрого огня и подавления небольших целей на ближней дистанции. Дешёвая, лёгкая.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/50cal.rsi }
   productEntity: WeaponTurretL85AutocannonFlatPack
   cost:
     FrontierUplinkCoin: 20
@@ -164,6 +172,7 @@
   id: SecWeaponTurretDravon
   name: автопушка ADBP-7 ДРАВОН 57мм
   description: Одноствольная автопушка от Aetherion Dynamics. Среднее артиллерийское орудие с высокой скорострельностью, но относительно низкой мощностью, использующее снаряды HEAT для поражения брони и систем корабля.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/dravon.rsi }
   productEntity: WeaponTurretDravonFlatPack
   cost:
     FrontierUplinkCoin: 40
@@ -184,6 +193,7 @@
   id: SecWeaponTurretAK570
   name: тяжёлая автопушка AK570 калибра 90мм
   description: Двуствольная тяжёлая 90мм автопушка, стреляющая универсальными снарядами APHE, эффективна для продолжительного огня по средним целям.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/artillery.rsi }
   productEntity: WeaponTurretAK570FlatPack
   cost:
     FrontierUplinkCoin: 40
@@ -204,6 +214,7 @@
   id: SecWeaponTurretCharonette
   name: ускоритель массы M194 ШАРОНЕТТ
   description: Меньший, более компактный рельсотрон, стреляющий крупными снарядами на высокой скорости, способный нанести значительный урон вражеским кораблям. Средний линейный ускоритель.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/charonette.rsi }
   productEntity: WeaponTurretCharonetteFlatPack
   cost:
     FrontierUplinkCoin: 40
@@ -225,6 +236,7 @@
   id: SecWeaponTurretCharonReload
   name: M381 ХАРОН ускоритель массы
   description: Рельсотрон, линкорное орудие, стреляющее массивным снарядом на экстремальной скорости, способное нанести катастрофический урон вражеским шаттлам. Тяжёлый линейный ускоритель.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/charon.rsi }
   productEntity: WeaponTurretCharonReloadFlatPack
   cost:
     FrontierUplinkCoin: 160
@@ -243,6 +255,7 @@
   id: SecWeaponTurretCyrexa
   name: CYREXA 220мм пушка
   description: Основная батарея с двумя стволами, наносящая быстрые сокрушительные залпы на экстремальной дистанции. Стреляет 220мм автоматическими снарядами со слегка сниженной разрушительной силой.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/cyrexa.rsi }
   productEntity: WeaponTurretCyrexaFlatPack
   cost:
     FrontierUplinkCoin: 160
@@ -261,6 +274,7 @@
   id: SecWeaponTurretHades
   name: HADES 305мм пушка
   description: Одно из крупнейших химических кинетических орудий в секторе. Его мощность сравнима только с масс-драйверами, такими как M381.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/hades.rsi }
   productEntity: WeaponTurretHadesFlatPack
   cost:
     FrontierUplinkCoin: 160
@@ -281,6 +295,7 @@
   id: SecWeaponTurretLightMunitionsBay
   name: легкая пусковая установка GPOB-L
   description: Относительно небольшой бронированный отсек для боеприпасов, способный вместить до двух легких боевых зарядов. Обычно используется на легких космических кораблях, особенно на бомбардировщиках, и обеспечивает ограниченный способ нанесения урона целям, значительно превосходящим пользователя по массе.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/lightmunitionsbay.rsi }
   productEntity: WeaponTurretLightMunitionsBayFlatPack
   cost:
     FrontierUplinkCoin: 20
@@ -297,6 +312,7 @@
   id: SecWeaponTurretVespera
   name: АДМП-27 ВЕСПЕРА быстрострельная установка
   description: Быстрострельная ройная ракетная установка, произведённая Aetherion Dynamics. Насыщает цели управляемыми боеголовками, чтобы подавить защиту.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/vespera.rsi }
   productEntity: WeaponTurretVesperaFlatPack
   cost:
     FrontierUplinkCoin: 40
@@ -317,6 +333,7 @@
   id: SecWeaponTurretASM501
   name: установка АСМ-501
   description: Торпедная установка для крейсеров. Выпускает тяжёлые торпеды для нанесения высоких повреждений большим кораблям и станциям.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/vanyk-MK2.rsi }
   productEntity: WeaponTurretASM501FlatPack
   cost:
     FrontierUplinkCoin: 40
@@ -337,6 +354,7 @@
   id: SecWeaponTurretVanyk
   name: АСМ-302 установка
   description: Эскортная ракетная установка, произведённая Aetherion Dynamics. Запускает управляемые ракеты для базового корабельного боя и блокирования зон.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/vanyk.rsi }
   productEntity: WeaponTurretVanykFlatPack
   cost:
     FrontierUplinkCoin: 40
@@ -357,6 +375,7 @@
   id: SecWeaponTurretASM220
   name: торпедная установка ASM-220
   description: Тяжелая торпедная установка вертикального пуска, работающая на ручной загрузке, обычно выполняемой в порту. Однако она оснащена высокоэффективными ракетами для своего размера.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/asm220.rsi }
   productEntity: WeaponTurretASM220FlatPack
   cost:
     FrontierUplinkCoin: 40
@@ -378,6 +397,7 @@
   id: SecWeaponTurretTovek
   name: АДМХ-23 ТОВЕК гибридная ЭМИ установка
   description: Гибридная ЭМИ ракетная установка от Aetherion Dynamics. Выпускает боеголовки ЭМИВВ для отключения и ослабления вражеских кораблей на дальних дистанциях.
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/tovek.rsi }
   productEntity: WeaponTurretTovekFlatPack
   cost:
     FrontierUplinkCoin: 160

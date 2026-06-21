@@ -10,7 +10,7 @@
 #
 - type: vessel
   id: kraken
-  parent: BaseVessel
+  parent: BaseVesselPirate
   name: BM Kraken
   description: Сделанный лучшими умами Пиратской бухты для исследования и разработок.
   price: 75000 # 65000, наценка верфи 15% = 75000

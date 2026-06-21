@@ -9,7 +9,7 @@
 #
 - type: vessel
   id: libertia
-  parent: BaseVessel
+  parent: BaseVesselPirate
   name: BM Libertia
   description: компактный пиратский истребитель.
   price: 50000 # 45000, наценка верфи 10% = 50000

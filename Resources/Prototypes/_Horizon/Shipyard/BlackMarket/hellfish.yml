@@ -10,7 +10,7 @@
 #
 - type: vessel
   id: hellfish
-  parent: BaseVessel
+  parent: BaseVesselPirate
   name: BM Hellfish
   description: Назван в честь одноименной рыбы за свою скорость и маневренность.
   price: 27500 # ~25000, наценка верфи 10% = 27500

@@ -27,17 +27,6 @@
   - UplinkWearables
 
 - type: listing
-  id: UplinkPlushieLemirdSchoolGirl
-  name: Плюшевая школьница Лемирд
-  description: При одном взгляде на неё готова задушить ляжками и убить милотой.
-  icon: { sprite: /Textures/_StarHorizon/Objects/Fun/plushielemirdschoolgirl.rsi, state: icon }
-  productEntity: PlushieLemirdSchoolGirl
-  cost:
-    Telecrystal: 5
-  categories:
-  - UplinkPointless
-
-- type: listing
   id: UplinkMysteryBoxSyndicate
   name: Загадочная коробка
   description: "Небольшая коробка. Внутри - комплект белья-хамелеон: трусы, бюстгальтер и носки из голографических волокон."
@@ -414,6 +403,7 @@
   id: UplinkSyndicateWeaponTurretM25
   name: uplink-syndicate-weapon-turret-m25-name
   description: uplink-syndicate-weapon-turret-m25-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/m25.rsi }
   productEntity: WeaponTurretM25FlatPack
   cost:
     Telecrystal: 20
@@ -424,6 +414,7 @@
   id: UplinkSyndicateWeaponTurretM220
   name: uplink-syndicate-weapon-turret-m220-name
   description: uplink-syndicate-weapon-turret-m220-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/rubicon.rsi }
   productEntity: WeaponTurretM220FlatPack
   cost:
     Telecrystal: 45
@@ -434,6 +425,7 @@
   id: UplinkSyndicateWeaponTurretType35
   name: uplink-syndicate-weapon-turret-type35-name
   description: uplink-syndicate-weapon-turret-type35-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/t35.rsi }
   productEntity: WeaponTurretType35FlatPack
   cost:
     Telecrystal: 105
@@ -444,6 +436,7 @@
   id: UplinkSyndicateWeaponTurretTarnyxReload
   name: uplink-syndicate-weapon-turret-tarnyx-name
   description: uplink-syndicate-weapon-turret-tarnyx-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/tarnyx.rsi }
   productEntity: WeaponTurretTarnyxReloadFlatPack
   cost:
     Telecrystal: 105
@@ -454,6 +447,7 @@
   id: UplinkSyndicateWeaponTurretL85Autocannon
   name: uplink-syndicate-weapon-turret-l85-name
   description: uplink-syndicate-weapon-turret-l85-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/50cal.rsi }
   productEntity: WeaponTurretL85AutocannonFlatPack
   cost:
     Telecrystal: 45
@@ -464,6 +458,7 @@
   id: UplinkSyndicateWeaponTurretDravon
   name: uplink-syndicate-weapon-turret-dravon-name
   description: uplink-syndicate-weapon-turret-dravon-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/dravon.rsi }
   productEntity: WeaponTurretDravonFlatPack
   cost:
     Telecrystal: 105
@@ -474,6 +469,7 @@
   id: UplinkSyndicateWeaponTurretAK570
   name: uplink-syndicate-weapon-turret-ak570-name
   description: uplink-syndicate-weapon-turret-ak570-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/artillery.rsi }
   productEntity: WeaponTurretAK570FlatPack
   cost:
     Telecrystal: 105
@@ -484,6 +480,7 @@
   id: UplinkSyndicateWeaponTurretCharonette
   name: uplink-syndicate-weapon-turret-charonette-name
   description: uplink-syndicate-weapon-turret-charonette-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/charonette.rsi }
   productEntity: WeaponTurretCharonetteFlatPack
   cost:
     Telecrystal: 105
@@ -496,6 +493,7 @@
   id: UplinkSyndicateWeaponTurretLightMunitionsBay
   name: uplink-syndicate-weapon-turret-light-munitions-name
   description: uplink-syndicate-weapon-turret-light-munitions-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/lightmunitionsbay.rsi }
   productEntity: WeaponTurretLightMunitionsBayFlatPack
   cost:
     Telecrystal: 45
@@ -506,6 +504,7 @@
   id: UplinkSyndicateWeaponTurretVespera
   name: uplink-syndicate-weapon-turret-vespera-name
   description: uplink-syndicate-weapon-turret-vespera-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/vespera.rsi }
   productEntity: WeaponTurretVesperaFlatPack
   cost:
     Telecrystal: 105
@@ -516,6 +515,7 @@
   id: UplinkSyndicateWeaponTurretASM501
   name: uplink-syndicate-weapon-turret-asm501-name
   description: uplink-syndicate-weapon-turret-asm501-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/vanyk-MK2.rsi }
   productEntity: WeaponTurretASM501FlatPack
   cost:
     Telecrystal: 105
@@ -526,6 +526,7 @@
   id: UplinkSyndicateWeaponTurretVanyk
   name: uplink-syndicate-weapon-turret-vanyk-name
   description: uplink-syndicate-weapon-turret-vanyk-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/vanyk.rsi }
   productEntity: WeaponTurretVanykFlatPack
   cost:
     Telecrystal: 105
@@ -536,6 +537,7 @@
   id: UplinkSyndicateWeaponTurretASM220
   name: uplink-syndicate-weapon-turret-asm220-name
   description: uplink-syndicate-weapon-turret-asm220-desc
+  icon: { sprite: _Mono/Objects/ShuttleWeapons/asm220.rsi }
   productEntity: WeaponTurretASM220FlatPack
   cost:
     Telecrystal: 105

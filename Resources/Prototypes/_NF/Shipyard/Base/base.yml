@@ -32,7 +32,7 @@
   group: Security
   addComponents:
   - type: IFF
-    color: '#228B22'
+    color: '#32CD32'
     flags: [IsPlayerShuttle]
 
 - type: vessel
@@ -42,7 +42,17 @@
   group: BlackMarket
   addComponents:
   - type: IFF
-    color: '#800000'
+    color: '#DC143C'
+    flags: [IsPlayerShuttle, HideLabel]
+
+- type: vessel
+  id: BaseVesselPirate
+  abstract: true
+  parent: BaseVessel
+  group: BlackMarket
+  addComponents:
+  - type: IFF
+    color: '#CD853F'
     flags: [IsPlayerShuttle, HideLabel]
 
 # Note: we keep the IsPlayerShuttle flag to hide consistently with other shuttles.

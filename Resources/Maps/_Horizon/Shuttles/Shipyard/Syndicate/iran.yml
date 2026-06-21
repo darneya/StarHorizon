@@ -1010,19 +1010,13 @@ entities:
     - type: Transform
       pos: -0.4744836,-4.4702096
       parent: 1
-- proto: ComputerTabletopIFFSyndicate
+- proto: ComputerTabletopIFF
   entities:
   - uid: 73
     components:
     - type: Transform
       pos: -1.5,5.5
       parent: 1
-    - type: Unremoveable
-    - type: Godmode
-      oldDamage: {}
-    missingComponents:
-    - Anchorable
-    - WiresPanel
 - proto: ComputerTabletopShuttleAntagSyndicate
   entities:
   - uid: 74

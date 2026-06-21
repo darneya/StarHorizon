@@ -10,7 +10,7 @@
 #
 - type: vessel
   id: annarevenge
-  parent: BaseVessel
+  parent: BaseVesselPirate
   name: BM Anna-Revenge
   description: Легендарный Пиратский корабль прошедший не один десяток боёв, очень быстрый и хорошо вооруженный.
   price: 72000 # 65000, наценка верфи 20% = 71000
