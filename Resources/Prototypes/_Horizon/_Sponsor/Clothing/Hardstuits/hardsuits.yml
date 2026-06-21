@@ -31,7 +31,7 @@
   - type: Item
     size: Large
     shape:
-    - 0,0,4,2
+    - 0,0,3,2
     maxItemSize: Medium
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitARCHTech
