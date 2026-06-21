@@ -42,6 +42,9 @@ server_url = "ss14://ss14.starhorizon.ru:1212"
 # Wizard's Den hub
 hub_urls = "https://hub.spacestation14.com/,https://hub.playss14.com/"
 
+[auth]
+server="https://auth.playss14.com/"
+
 [server]
 rules_file = "FrontierRuleset"
 lobby_name = "StarHorizon"
