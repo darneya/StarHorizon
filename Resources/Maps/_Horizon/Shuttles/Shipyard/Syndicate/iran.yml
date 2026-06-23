@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 06/13/2026 08:39:23
-  entityCount: 208
+  time: 06/22/2026 10:35:24
+  entityCount: 209
 maps: []
 grids:
 - 1
@@ -1010,6 +1010,14 @@ entities:
     - type: Transform
       pos: -0.4744836,-4.4702096
       parent: 1
+- proto: ComputerSalvageExpedition
+  entities:
+  - uid: 159
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,4.5
+      parent: 1
 - proto: ComputerTabletopIFF
   entities:
   - uid: 73
@@ -1771,10 +1779,10 @@ entities:
       parent: 1
 - proto: SuitStorageEVASyndicate
   entities:
-  - uid: 159
+  - uid: 209
     components:
     - type: Transform
-      pos: -0.5,4.5
+      pos: -3.5,0.5
       parent: 1
 - proto: SyndieFlag
   entities:

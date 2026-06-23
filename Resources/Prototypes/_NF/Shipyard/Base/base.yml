@@ -45,6 +45,17 @@
     color: '#DC143C'
     flags: [IsPlayerShuttle, HideLabel]
 
+- type: entity
+  id: StandardFrontierAntagVesselExpedition
+  parent:
+  - StandardFrontierVessel
+  - BaseStationExpeditions
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ExtraShuttleInformation
+    hiddenWithoutOpenJobs: true
+  - type: NoMailStation # Horizon: Disable mail for players on antagonist vessels
+
 - type: vessel
   id: BaseVesselPirate
   abstract: true

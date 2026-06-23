@@ -18,6 +18,7 @@
   group: Syndicate
   shuttlePath: /Maps/_Horizon/Shuttles/Shipyard/Syndicate/iran.yml
   class:
+  - Expedition
   - Syndicate
   - Civilian
   engine:
@@ -30,7 +31,7 @@
   minPlayers: 0
   stations:
     Iran:
-      stationProto: StandardFrontierAntagVessel
+      stationProto: StandardFrontierAntagVesselExpedition
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Iran {1}'
