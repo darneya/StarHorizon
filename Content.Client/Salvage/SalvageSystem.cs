@@ -54,6 +54,10 @@ public sealed class SalvageSystem : SharedSalvageSystem
             var audio = _audioSystem.PlayEntity(component.SelectedSong, Filter.Local(), uid, false, audioParams);
             _audioSystem.SetMapAudio(audio);
 
+            // Ensure the audio source is marked as global so it plays across the entire map
+            if (audio != null)
+                audio.Value.Component.Source.Global = true;
+
             component.Stream = audio?.Entity;
         }
         // End Frontier
