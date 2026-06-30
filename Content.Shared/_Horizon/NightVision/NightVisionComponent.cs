@@ -13,7 +13,7 @@ public sealed partial class NightVisionComponent : Component
     public bool IsNightVision;
 
     [DataField("color")]
-    public Color NightVisionColor = Color.Green;
+    public Color NightVisionColor = Color.FromHex("#9c9c9c");
 
     [DataField]
     public bool IsToggle = false;
