@@ -1,0 +1,49 @@
+# Информация об авторе шаттла
+# GitHub: darneya
+# Discord: .darneya
+
+- type: vessel
+  id: Jammer
+  parent: BaseVesselSecurity
+  name: NSF Jammer
+  description: Малый скоростной атакующий шаттл.
+  price: 21800
+  category: Micro
+  group: Custom
+  access: Security
+  mapchecker_group_override: Security  # Treat this as a security vessel for mapchecker purposes
+  shuttlePath: Maps/_rage/Shuttles/Shipyard/Nfsd/jammer.yml
+  guidebookPage: Null
+  class:
+  - Fighter
+  engine:
+  - APU
+  # Horizon start
+  costModifiers:
+    - !type:RoleModifier
+      role: "Pilot"
+      costMultiplier: 0.8
+    - !type:RoleModifier
+      role: "Mercenary"
+      costMultiplier: 1.2
+    - !type:FactionCostModifier
+      faction: "FactionNFSD"
+      costMultiplier: 0.9
+  # Horizon end
+
+- type: gameMap
+  id: Jammer
+  mapName: 'NSF Jammer'
+  mapPath: Maps/_rage/Shuttles/Shipyard/Nfsd/jammer.yml
+  minPlayers: 0
+  stations:
+    Jammer:
+      stationProto: StandardFrontierSecurityVessel
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Jammer {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationJobs
+          availableJobs: {}

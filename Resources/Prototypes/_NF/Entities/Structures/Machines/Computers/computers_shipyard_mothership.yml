@@ -46,6 +46,7 @@
     - Fighter
     - Cleric
     - Rogue
+    - Jammer
 
 # The mccargo console
 - type: entity
