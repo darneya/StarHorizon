@@ -229,6 +229,19 @@
   - UplinkDisruption
 
 - type: listing
+  id: UplinkPowerCellSyndicate
+  name: батарея гипер ёмкости Syndicate
+  description: Стандартизированный перезаряжаемый элемент питания. накопитель гипер ёмкости военного типа, имеет встроенную ЭМИ защиту.
+  productEntity: PowerCellSyndicate
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkDisruption
+
+- type: listing
   id: UplinkSecuritySyndicateSegway
   name: uplink-syndicate-segway-name
   description: uplink-syndicate-segway-desc
