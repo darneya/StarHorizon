@@ -93,11 +93,11 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: MaleScreams
+      collection: VulpScreams
     Laugh:
-      collection: MaleLaugh
+      collection: VulpLaugh
     Sneeze:
-      collection: MaleSneezes
+      collection: VulpSneezes
     Cough:
       collection: MaleCoughs
     Yawn:
@@ -109,7 +109,7 @@
     Sigh:
       collection: MaleSigh
     Crying:
-      collection: MaleCry
+      collection: VulpCry
     Whistle:
       collection: Whistles
     Weh:
@@ -143,11 +143,11 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: FemaleScreams
+      collection: VulpScreams
     Laugh:
-      collection: FemaleLaugh
+      collection: VulpLaugh
     Sneeze:
-      collection: FemaleSneezes
+      collection: VulpSneezes
     Cough:
       collection: FemaleCoughs
     Yawn:
@@ -159,7 +159,7 @@
     Sigh:
       collection: FemaleSigh
     Crying:
-      collection: FemaleCry
+      collection: VulpCry
     Whistle:
       collection: Whistles
     Weh:

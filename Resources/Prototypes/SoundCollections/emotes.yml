@@ -1,4 +1,10 @@
 - type: soundCollection
+  id: VulpLaugh
+  files:
+    - /Audio/_rage/Voice/Vulpcanin/vulp_laugh1.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_laugh2.ogg
+
+- type: soundCollection
   id: MaleLaugh
   files:
     - /Audio/Voice/Human/manlaugh1.ogg
@@ -63,6 +69,12 @@
   id: Salutes
   files:
     - /Audio/Effects/Emotes/salute.ogg
+
+- type: soundCollection
+  id: VulpCry
+  files:
+    - /Audio/_rage/Voice/Vulpcanin/vulp_cry1.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_cry1.ogg
 
 - type: soundCollection
   id: MaleCry

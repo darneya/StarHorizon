@@ -1,0 +1,84 @@
+# Оружие
+
+- type: entity
+  name: The Chainsaw Energy Sword
+  suffix: Arrows
+  parent: BaseItem
+  id: ChainswordArrows
+  description: Technology and ultra-violence in one bottle!
+  components:
+  - type: EnergySword
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_rage/Weapons/start.ogg
+    soundDeactivate:
+      path: /Audio/_rage/Weapons/start.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_rage/Weapons/idle.ogg
+  - type: ItemToggleSize
+    activatedSize: Huge
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/_rage/Weapons/hit.ogg
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/_rage/Weapons/hit.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnSwing:
+      path: /Audio/_rage/Weapons/miss.ogg
+      params:
+        variation: 0.125
+    activatedDamage:
+        types:
+            Slash: 20
+            Blunt: 15
+            Structural: 25
+  - type: Sprite
+    sprite: _rage/Objects/Weapons/Melee/chainsword.rsi
+    layers:
+      - state: chainsword
+      - state: chainsword_blade
+        color: "#FFFFFF"
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1.2
+    damage:
+      types:
+        Blunt: 10
+        Slash: 5
+  - type: Item
+    size: Small
+    sprite: _rage/Objects/Weapons/Melee/chainsword.rsi
+  - type: UseDelay
+    delay: 1.0
+  - type: ToggleableLightVisuals
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-blade
+        shader: unshaded
+      right:
+      - state: inhand-right-blade
+        shader: unshaded
+
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  id: WeaponTurretArrows
+  name: ballistic turret
+  description: A ballistic machine gun auto-turret.
+  suffix: Arrows
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Arrows
+  - type: Gun
+    fireRate: 12
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/minigun.ogg
+

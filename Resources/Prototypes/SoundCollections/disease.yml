@@ -1,4 +1,9 @@
 - type: soundCollection
+  id: VulpSneezes
+  files:
+    - /Audio/_rage/Voice/Vulpcanin/vulp_sneeze.ogg
+
+- type: soundCollection
   id: MaleSneezes
   files:
     - /Audio/Voice/Human/male_sneeze_1.ogg
