@@ -165,7 +165,7 @@
   description: This implant will notify the Arrows radio channel if the user is in critical condition or dies.
   categories: [ HideSpawnMenu ]
   components:
-  - type: Rattle
+  - type: RattleOnTrigger
     radioChannel: MT
 
 # Бесконечный силовой барьер
