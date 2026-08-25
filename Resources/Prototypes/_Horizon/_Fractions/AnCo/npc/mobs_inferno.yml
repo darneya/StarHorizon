@@ -10,7 +10,7 @@
       - SimpleHostile
   - type: HTN
     rootTask:
-       task: InfernoSimpleMeleeHostileCompound
+       task: SimpleHostileCompound
     blackboard:
       NavClimb: !type:Bool
         true
@@ -18,10 +18,18 @@
         true
       NavPry: !type:Bool
         true
+      NavSmash: !type:Bool
+        true
       VisionRadius: !type:Single
         20
       AggroVisionRadius: !type:Single
         20
+      FollowRange: !type:Single
+        20
+      MinimumIdleTime: !type:Single
+        0.5
+      MaximumIdleTime: !type:Single
+        3.0
   - type: Tool
     speedModifier: 5.0
     qualities:
@@ -41,18 +49,18 @@
   components:
   - type: HTN
     rootTask:
-       task: InfernoSimpleMeleeHostileCompound
+       task: SimpleHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-      VisionRadius: !type:Single
-        20
-      AggroVisionRadius: !type:Single
-        20
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
 
 - type: entity
   parent: [AnCoDroneCombatDungeon, BaseAnCoIfterno]
@@ -63,18 +71,18 @@
   components:
   - type: HTN
     rootTask:
-       task: InfernoSimpleMeleeHostileCompound
+       task: SimpleHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-      VisionRadius: !type:Single
-        20
-      AggroVisionRadius: !type:Single
-        20
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
 
 - type: entity
   parent: [AnCoDroneMineDungeon, BaseAnCoIfterno]
@@ -85,18 +93,18 @@
   components:
   - type: HTN
     rootTask:
-       task: InfernoSimpleMeleeHostileCompound
+       task: SimpleHostileCompound
     blackboard:
       NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-      NavInteract: !type:Bool
+      NavSmash: !type:Bool
         true
-      VisionRadius: !type:Single
-        20
-      AggroVisionRadius: !type:Single
-        20
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
 
 - type: entity
   parent: [AnCoFlyDroneSmallDungeon, BaseAnCoIfterno]
@@ -107,18 +115,18 @@
   components:
   - type: HTN
     rootTask:
-       task: InfernoSimpleMeleeHostileCompound
+       task: SimpleHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-      VisionRadius: !type:Single
-        20
-      AggroVisionRadius: !type:Single
-        20
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
 
 - type: entity
   parent: [AnCoFlyDroneHugeDungeon, BaseAnCoIfterno]
@@ -129,24 +137,19 @@
   components:
   - type: HTN
     rootTask:
-       task: InfernoSimpleRangedHostileCompound
+       task: SimpleRangedHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-      VisionRadius: !type:Single
-        20
-      AggroVisionRadius: !type:Single
-        20
-  - type: CombatMode
-  - type: Gun
-    fireRate: 4
-    selectedMode: FullAuto
-    availableModes:
-    - FullAuto
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
 
 - type: entity
   parent: [AnCoMechTitanDungeon, BaseAnCoIfterno]
@@ -156,18 +159,19 @@
   components:
   - type: HTN
     rootTask:
-       task: InfernoSimpleRangedHostileCompound
+       task: SimpleRangedHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-      VisionRadius: !type:Single
-        20
-      AggroVisionRadius: !type:Single
-        20
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
 
 - type: entity
   parent: [AnCoMechCyclopDungeon, BaseAnCoIfterno]
@@ -177,18 +181,18 @@
   components:
   - type: HTN
     rootTask:
-       task: InfernoSimpleRangedHostileCompound
+       task: SimpleRangedHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-      VisionRadius: !type:Single
-        20
-      AggroVisionRadius: !type:Single
-        20
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
 
 - type: entity
   parent: [AnCoMechBegemothDungeon, BaseAnCoIfterno]
@@ -198,18 +202,19 @@
   components:
   - type: HTN
     rootTask:
-       task: InfernoSimpleRangedHostileCompound
+       task: SimpleRangedHostileCompound
     blackboard:
       NavClimb: !type:Bool
-        true
+        false
       NavInteract: !type:Bool
         true
       NavPry: !type:Bool
         true
-      VisionRadius: !type:Single
-        20
-      AggroVisionRadius: !type:Single
-        20
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
 
 - type: entity
   parent: [AnCoMechMushDungeon, BaseAnCoIfterno]
@@ -219,7 +224,26 @@
   components:
   - type: HTN
     rootTask:
-       task: InfernoSimpleRangedHostileCompound
+       task: SimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+      SoundTargetInLOS: !type:SoundPathSpecifier
+        path: /Audio/Effects/double_beep.ogg
+
+
+- type: entity
+  parent: [AnCoEvilLarry, BaseAnCoIfterno]
+  id: AnCoEvilLarryInferno
+  suffix: Inferno
+  components:
+  - type: HTN
     blackboard:
       NavClimb: !type:Bool
         true
@@ -228,6 +252,6 @@
       NavPry: !type:Bool
         true
       VisionRadius: !type:Single
-        20
+        30
       AggroVisionRadius: !type:Single
-        20
+        30

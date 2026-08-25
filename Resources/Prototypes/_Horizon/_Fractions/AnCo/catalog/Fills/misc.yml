@@ -8,6 +8,16 @@
       entity_storage: !type:NestedSelector
         tableId: ClosetAnCoLoot
 
+- type: entity
+  id: ClosetSmallAnCoFillDungeon
+  suffix: Starhorizon, AnCo, Dungeon
+  parent: ClosetSmallAnCo
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: ClosetAnCoLoot
+
 - type: entityTable
   id: ClosetAnCoLoot
   table: !type:AllSelector
@@ -123,6 +133,9 @@
       - id: ClothingBeltAnCo
         weight: 1
       - id: ClothingBeltWebbingAnCo
+        weight: 1
+      - id: AnCoClothingBeltSwordSheath
+        weight: 1
 
 - type: entityTable
   id: AnCoShieldTable

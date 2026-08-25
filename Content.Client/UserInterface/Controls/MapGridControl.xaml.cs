@@ -28,7 +28,11 @@ public partial class MapGridControl : LayoutContainer
     private Font _largerFont;
 
     /* Dragging */
-    protected virtual bool Draggable { get; } = false;
+    protected virtual bool Draggable { get; set; } = false; // Lua: settable so radar controls can toggle drag mode at runtime
+
+    // Lua: minimap auto-resize/scale hooks used by radar controls that fill their container (e.g. parking/dock radars)
+    protected virtual bool AllowResize => false;
+    protected virtual bool ScaleWithControlSize => false;
 
     /// <summary>
     /// Control offset from whatever is being tracked.
@@ -40,7 +44,7 @@ public partial class MapGridControl : LayoutContainer
     /// </summary>
     public Vector2 TargetOffset;
 
-    private bool _draggin;
+    protected bool _draggin; // Lua: protected so derived radar controls can read drag state
     protected Vector2 StartDragPosition;
     protected bool Recentering;
 
@@ -79,12 +83,40 @@ public partial class MapGridControl : LayoutContainer
 
     public Vector2 MaxRadarRangeVector => new Vector2(MaxRadarRange, MaxRadarRange);
 
-    protected Vector2 MidPointVector => new Vector2(MidPoint, MidPoint);
+    // Frontier: Removed MidPointVector and replaced it with MidPoint.
+    // Since the PixelSize isn't square it didn't make sense for Midpoint to be 1d
+    protected Vector2i MidPoint => PixelSize / 2;
+    // End Frontier
+    protected virtual Vector2 MidPointVector => MidPoint; // Lua: alias for code ported from upstream that still uses the old name
+    protected int SizeFull => (int) ((UIDisplayRadius + MinimapMargin) * 2 * UIScale);
+    protected int ScaledMinimapRadius => (int) (UIDisplayRadius * UIScale);
+    // Frontier: Added MapScalingFactor, uses RescaleMap
+    protected float MinimapScale => WorldRange != 0 ? (ScaledMinimapRadius / WorldRange) * MapScalingFactor : 0f;
+    // End Frontier
 
-    protected int MidPoint => SizeFull / 2;
-    protected int SizeFull => (int)((UIDisplayRadius + MinimapMargin) * 2 * UIScale);
-    protected int ScaledMinimapRadius => (int)(UIDisplayRadius * UIScale);
-    protected float MinimapScale => WorldRange != 0 ? ScaledMinimapRadius / WorldRange : 0f;
+    // Frontier
+    /// <summary>
+    /// Determines if the map's range is scaled to match the longest axis of the control.
+    ///
+    /// If true, the map's range will stay the same no matter what size the control is.
+    ///
+    /// If false, the map's range will expand/contract as the control's size changes.
+    /// </summary>
+    public bool RescaleMap = true;
+
+    /// <summary>
+    /// Scaling factor for resizing the map. This scale is based on the longest axis of the control, so the map doesn't get stretched/squished as the control's aspect ratio changes.
+    /// </summary>
+    protected float MapScalingFactor => RescaleMap ? Math.Max(PixelSize.X, PixelSize.Y) / (float)SizeFull : 1.0f;
+
+    /// <summary>
+    /// The world range after map scaling is applied. Used for the rendering clipping AABB.
+    ///
+    /// When RescaleMap is false, this will grow/shrink past MaxWorldRange.
+    /// When RescaleMap is true, this will always be equal to or less than world range
+    /// </summary>
+    public Vector2 ScaledWorldRange => (WorldRangeVector * PixelSize) / ((float)SizeFull * (RescaleMap ? MapScalingFactor : 1.0f));
+    // End Frontier
 
     public event Action<float>? WorldRangeChanged;
 
@@ -96,7 +128,6 @@ public partial class MapGridControl : LayoutContainer
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
-        SetSize = new Vector2(SizeFull, SizeFull);
         RectClipContent = true;
         MouseFilter = MouseFilterMode.Stop;
         ActualRadarRange = WorldRange;
@@ -151,7 +182,16 @@ public partial class MapGridControl : LayoutContainer
             return;
 
         Recentering = false;
-        Offset -= new Vector2(args.Relative.X, -args.Relative.Y) / MidPoint * WorldRange;
+        // Frontier: Make sure to take into account the map scaling factor when dragging, otherwise the dragging speed will feel inconsistent when resizing the control
+        var newOffset = new Vector2(args.Relative.X, -args.Relative.Y) / MidPoint * WorldRange;
+
+        if (!RescaleMap)
+        {
+            newOffset *= PixelSize / (float)SizeFull;
+        }
+
+        Offset -= newOffset;
+        // End Frontier
     }
 
     protected override void MouseWheel(GUIMouseWheelEventArgs args)
@@ -184,7 +224,9 @@ public partial class MapGridControl : LayoutContainer
     /// </summary>
     protected Vector2 ScalePosition(Vector2 value)
     {
-        return ScalePosition(value, MinimapScale, MidPointVector);
+        // Frontier: MidpointVector<Midpoint
+        return ScalePosition(value, MinimapScale, MidPoint);
+        // End Frontier
     }
 
     protected static Vector2 ScalePosition(Vector2 value, float minimapScale, Vector2 midpointVector)
@@ -197,7 +239,9 @@ public partial class MapGridControl : LayoutContainer
     /// </summary>
     protected Vector2 InverseMapPosition(Vector2 value)
     {
-        var inversePos = (value - MidPointVector) / MinimapScale;
+        // Frontier: MidpointVector<Midpoint
+        var inversePos = (value - new Vector2(MidPoint.X, MidPoint.Y)) / MinimapScale;
+        // End Frontier
 
         inversePos = inversePos with { Y = -inversePos.Y };
         inversePos = Vector2.Transform(inversePos, Matrix3Helpers.CreateTransform(Offset, Angle.Zero));
@@ -248,14 +292,18 @@ public partial class MapGridControl : LayoutContainer
         {
             var angle = Angle.FromDegrees(45 + i * 360f / lineCount);
             var distance = Width / 2f;
-            var start = MidPointVector + angle.RotateVec(new Vector2(0f, 2.5f * distance / 4f));
-            var end = MidPointVector + angle.RotateVec(new Vector2(0f, 4f * distance / 4f));
+            // Frontier: MidpointVector<Midpoint
+            var start = MidPoint + angle.RotateVec(new Vector2(0f, 2.5f * distance / 4f));
+            var end = MidPoint + angle.RotateVec(new Vector2(0f, 4f * distance / 4f));
+            // End Frontier
             handle.DrawLine(start, end, greyColor);
         }
 
         var signalText = Loc.GetString("shuttle-console-no-signal");
         var dimensions = handle.GetDimensions(_largerFont, signalText, 1f);
-        var position = MidPointVector - dimensions / 2f;
+        // Frontier: MidpointVector<Midpoint
+        var position = MidPoint - dimensions / 2f;
+        // End Frontier
         handle.DrawString(_largerFont, position, Loc.GetString("shuttle-console-no-signal"), greyColor);
     }
 

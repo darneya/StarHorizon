@@ -1,6 +1,6 @@
 - type: radioChannel
-  id: Trauma
-  name: ТТИ
-  keycode: 'я' # Horizon
-  frequency: 9027
-  color: "#b30202"
+  id: InteQ
+  name: InteQ
+  keycode: 'й' # Horizon
+  frequency: 1488
+  color: "#FF8C00"

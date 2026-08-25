@@ -4,6 +4,10 @@
   parent: NFBaseClothingBeltStorageBag
   description: A medical bag designed to hold topicals and small reagent containers. For the medic on the go.
   components:
+  - type: Tag
+    tags:
+    - CatBag
+  - type: CatWearable
   - type: Sprite
     sprite: _NF/Objects/Specific/Medical/medical_bag.rsi
     layers:
@@ -32,6 +36,8 @@
         - Bloodpack
         - Gauze
         - Bottle
+        # Frontier: whitelist empty medipen in medical bag
+        - NFEmptyMedipen
   - type: Dumpable
   - type: MagnetPickup
     magnetEnabled: false

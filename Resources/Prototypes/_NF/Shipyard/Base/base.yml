@@ -66,4 +66,5 @@
     preventFloorRemoval: true
     preventRCDUse: true
     killHostileMobs: true
+    PreventImpactDamage: true
   - type: LinkedLifecycleGridParent

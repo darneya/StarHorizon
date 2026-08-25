@@ -41,7 +41,19 @@ public sealed partial class MachineBoardComponent : Component
     /// </summary>
     [DataField(required: true)]
     public EntProtoId Prototype;
+
+    /// <summary>
+    /// Mono - sets the framesize this board can go into (e.g. "2x1").
+    /// </summary>
+    [DataField]
+    public string? FrameSize = null;
 }
+
+/// <summary>
+/// Marker component for any item that's machine board-like without necessarily being a MachineBoardComponent
+/// </summary>
+[RegisterComponent, NetworkedComponent]
+public sealed partial class CircuitboardComponent : Component;
 
 [DataDefinition, Serializable]
 public partial struct GenericPartInfo

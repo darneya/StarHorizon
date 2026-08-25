@@ -1,9 +1,9 @@
 - type: entity
   id: Cryptominer
   parent: [ BaseMachinePowered, ConstructibleMachine, BaseAnCoContraband ]
-  name: cryptominer
+  name: Криптомайнер
   suffix: StarHorizon, AnCo, Structure
-  description: A cryptocurrency mining device. Consumes power and generates heat. Earned credits are automatically transferred to the station's bank account.
+  description: Устройство для майнинга криптовалюты. Потребляет энергию и выделяет тепло. Заработанные кредиты необходимо вывести.
   placement:
     mode: SnapgridCenter
   components:
@@ -21,7 +21,6 @@
       - state: base
         map: [ "enum.CryptominerVisualLayers.Base" ]
       - state: base-unshaded
-        map: [ "enum.CryptominerVisualLayers.Base" ]
         shader: unshaded
       - state: level-1
         map: [ "enum.CryptominerVisualLayers.Level" ]

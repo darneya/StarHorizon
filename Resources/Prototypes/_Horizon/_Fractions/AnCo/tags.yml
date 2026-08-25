@@ -46,6 +46,9 @@
 - type: Tag
   id: AnCoCapsule
 
+- type: Tag
+  id: TitanCapsule
+
 # Cryptominer
 
 - type: Tag
@@ -53,3 +56,11 @@
 
 - type: Tag
   id: AnCoComplex
+
+- type: Tag
+  id: AnCoSheathable
+
+# turret
+
+- type: Tag
+  id: MagazineAsmgtAnCo

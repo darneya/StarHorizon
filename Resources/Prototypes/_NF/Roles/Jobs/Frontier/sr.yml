@@ -7,10 +7,7 @@
   forceFaction: FactionFrontier # Horizon
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 144000 # 20 hrs
-    - !type:RoleTimeRequirement
-      role: JobSecurityGuard
-      time: 21600 # 6 hours as security guard
+      time: 72000 # 20 hrs
   whitelisted: false
   startingGear: SrGear
   alwaysUseSpawner: true
@@ -24,7 +21,7 @@
   - AllAccess
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, TrackingImplant ]
+    implants: [ MindShieldImplant, NFSDTrackingImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff

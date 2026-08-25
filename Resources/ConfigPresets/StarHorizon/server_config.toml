@@ -40,7 +40,10 @@ advertise = true
 tags = "lang:ru,region:eu_e,rp:med"
 server_url = "ss14://ss14.starhorizon.ru:1212"
 # Wizard's Den hub
-hub_urls = "https://hub.spacestation14.com/"
+hub_urls = "https://hub.spacestation14.com/,https://hub.playss14.com/"
+
+#[auth]
+#server="https://auth.playss14.com/"
 
 [server]
 rules_file = "FrontierRuleset"
@@ -139,8 +142,8 @@ ahelp_webhook = "%webhook_ahelp%"
 ban_webhook = "%webhook_ban%"
 round_update_webhook = "%webhook_round_update%"
 leaderboard_webhook = "%webhook_leaderboard%"
-#guild_id = 1348258341658562560
-#token = "%bot_token%"
+guild_id = 1348258341658562560
+token = "%bot_token%"
 
 ################################################################################
 ##### Relpay ###################################################################
@@ -157,3 +160,13 @@ directory = "replays/"
 discord_sponsors_path = "sponsorSystem/warp/discord_sponsors.txt"
 disposable_path = "sponsorSystem/warp/disposable.txt"
 items_path = "sponsorSystem/sponsor_items.txt"
+
+################################################################################
+##### Shutdown Controller ######################################################
+
+[shutdown]
+enabled = true
+time = "12:00"          # Время рестарта по МСК (формат HH:mm)
+interval_days = 3       # Интервал в днях
+interval_hours = 0
+shuttle_time = 10

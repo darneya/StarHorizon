@@ -35,6 +35,7 @@
     - type: NukeOperative
     - type: NpcFactionMember
       factions:
+      - Syndicate
       - NFSyndicate
     - type: SpecialSectorStationRecord # must be given on spawn
       recordGeneration: FalseRecord
@@ -58,7 +59,7 @@
       department: Security
       time: 10800 # 3 hours
   startingGear: BaseSyndicateOperativeGear
-  whitelisted: false
+  whitelisted: true
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
@@ -82,6 +83,7 @@
     - type: NukeOperative
     - type: NpcFactionMember
       factions:
+      - Syndicate
       - NFSyndicate
     - type: SpecialSectorStationRecord # must be given on spawn
       recordGeneration: FalseRecord
@@ -105,7 +107,7 @@
       department: Security
       time: 10800 # 3 hours
   startingGear: BaseSyndicateMedicGear
-  whitelisted: false
+  whitelisted: true
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
@@ -129,6 +131,7 @@
     - type: NukeOperative
     - type: NpcFactionMember
       factions:
+      - Syndicate
       - NFSyndicate
     - type: SpecialSectorStationRecord # must be given on spawn
       recordGeneration: FalseRecord
@@ -152,7 +155,7 @@
       department: Security
       time: 10800 # 3 hrs
   startingGear: BaseSyndicateCargoGear
-  whitelisted: false
+  whitelisted: true
   alwaysUseSpawner: true
   hideConsoleVisibility: true
   canBeAntag: true
@@ -176,6 +179,7 @@
     - type: NukeOperative
     - type: NpcFactionMember
       factions:
+      - Syndicate
       - NFSyndicate
     - type: SpecialSectorStationRecord # must be given on spawn
       recordGeneration: FalseRecord
@@ -190,7 +194,7 @@
 - type: startingGear
   id: BaseSyndicateOperativeGear
   equipment:
-    pocket2: BaseUplinkRadio20TC
+    pocket2: BaseUplinkRadio40TC
     eyes: ClothingEyesHudSyndicate
 
 - type: startingGear
@@ -206,12 +210,10 @@
     pocket1: SyndicateEncryptionKeyMaster
     pocket2: BaseUplinkRadio40TC
     eyes: ClothingEyesHudSyndicate
-    outerClothing: ClothingOuterHardsuitSyndieCommander
 
 - type: startingGear
   id: BaseSyndicateMedicGear
   equipment:
     pocket1: SyndiHypo
-    pocket2: BaseUplinkRadio20TC
+    pocket2: BaseUplinkRadio40TC
     eyes: ClothingEyesHudSyndicateAgent
-    outerClothing: ClothingOuterHardsuitSyndieMedic
