@@ -1,0 +1,104 @@
+- type: entity
+  name: Миса Рейдж
+  parent: MobFelinid
+  id: MobMisa
+  description: Если вы видите её - возможно, вы уже мертвы.
+  components:
+    - type: Loadout
+      prototypes:
+        - MTLeader
+    - type: NpcFactionMember
+      factions:
+        - Arrows
+    - type: FixedAppearance
+      hairStyleId: "HumanHairSpikyponytail"
+      hairColor: "#4F0000"
+      facialHairStyleId: "FacialHairShaved"
+      facialHairColor: "#4F0000"
+      eyeColor: "#035C04"
+      skinColor: "#FFDBB4"
+      sex: Female
+      gender: Female
+      age: 20
+      species: Felinid
+      markings:
+        HeadTop:
+        - markingId: FelinidEarsBasic
+          colors:
+          - "#4F0000"
+          - "#FFFFFF"
+        Tail:
+        - markingId: FelinidAlternativeTail
+          colors:
+          - "#4F0000"
+    - type: Grammar
+      attributes:
+        gender: Female
+    - type: GhostTakeoverAvailable  # ← ИСПРАВЛЕНО: был неправильный отступ
+    - type: ZombieImmune
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        120: Critical
+        200: Dead
+    - type: Stamina
+      baseCritThreshold: 100
+      decay: 6
+      cooldown: 1
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        70: 0.9
+        120: 0.7
+        140: 0.5
+    - type: AutoImplant
+      implants:
+      - FreedomImplant
+      - BlinkImplant
+      - MindShieldImplant
+      - DeathRattleImplantMT
+    - type: StatusEffects
+      allowed:
+      - Stun
+      - KnockedDown
+      - SlowedDown
+      - Stutter
+      - Electrocution
+      - SlurredSpeech
+      - RatvarianLanguage
+      - PressureImmunity
+      - StaminaModifier
+    - type: SolutionRegeneration
+      solution: chemicals
+      generated:
+        reagents:
+        - ReagentId: ReagentArrows
+          Quantity: 0.25
+    - type: Thirst
+      startingThirst: 2500
+      thresholds:
+        OverHydrated: 3500
+        Okay: 2500
+        Thirsty: 1500
+        Parched: 1000
+        Dead: 0
+      baseDecayRate: 0.0001
+    - type: Hunger
+      thresholds:
+        Overfed: 3500
+        Okay: 2500
+        Peckish: 1500
+        Starving: 1000
+        Dead: 0
+      baseDecayRate: 0.0001
+    - type: PassiveDamage
+      allowedStates:
+      - Alive
+      damageCap: 150
+      damage:
+        groups:
+          Brute: -0.2
+          Burn: -0.2
+          Toxin: -0.5
+    - type: Transform
+    - type: ErpStatus
+      status: NonCon

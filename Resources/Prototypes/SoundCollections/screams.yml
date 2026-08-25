@@ -1,4 +1,18 @@
 - type: soundCollection
+  id: VulpScreams
+  files:
+    - /Audio/_rage/Voice/Vulpcanin/vulp_scream1.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_scream2.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_scream3.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_scream4.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_scream5.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_scream6.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_scream7.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_scream8.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_scream9.ogg
+    - /Audio/_rage/Voice/Vulpcanin/vulp_scream10.ogg
+
+- type: soundCollection
   id: MaleScreams
   files:
     - /Audio/Voice/Human/malescream_1.ogg

@@ -1,0 +1,34 @@
+# Пресеты экипировки
+
+- type: startingGear
+  id: MTLeader
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckMercenary
+    back: ClothingBackpackArrowsFilled
+    mask: ClothingMaskNeckGaiter
+    eyes: ClothingEyesHudMedSec
+    ears: ClothingHeadsetMT
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitArrowsNetrunner
+    shoes: ClothingShoesBootsMagSecurityFilled
+    id: MTLeaderPDA
+    suitstorage: NFWeaponEnergyRifleAssaultPulseCarbine
+    pocket2: DoubleEmergencyOxygenTankFilled
+    belt: ClothingBeltAssaultMT
+
+- type: startingGear
+  id: MTSold
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitMilitaryTurtleneckMercenary
+    back: ClothingBackpackArrowsSoldFilled
+    mask: ClothingMaskNeckGaiter
+    eyes: ClothingEyesHudMedSec
+    ears: ClothingHeadsetMT
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitArrowsHeavy
+    shoes: ClothingShoesBootsMagSecurityFilled
+    id: MTSoldPDA
+    suitstorage: NFWeaponEnergyRifleAssaultPulseCarbine
+    pocket2: DoubleEmergencyOxygenTankFilled
+    belt: ClothingBeltAssaultMT
+

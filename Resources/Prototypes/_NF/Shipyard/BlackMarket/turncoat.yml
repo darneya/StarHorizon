@@ -9,7 +9,7 @@
 # Shuttle Notes:
 - type: vessel
   id: Turncoat
-  parent: BaseVesselAntag
+  parent: BaseVesselPirate
   name: Turncoat
   description: A mercenaries pride and joy, repurposed at illicit shipyards for nefarious ends. Suited to a crew of 4.
   price: 85000

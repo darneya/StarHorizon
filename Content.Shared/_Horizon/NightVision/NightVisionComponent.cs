@@ -5,22 +5,15 @@ namespace Content.Shared._Horizon.NightVision;
 
 [RegisterComponent]
 [NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(NightVisionSystem), Other = AccessPermissions.ReadWrite)]
+[Access(typeof(NightVisionSystem))]
 public sealed partial class NightVisionComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("isOn"), AutoNetworkedField]
     public bool IsNightVision;
 
-    [DataField("color"), AutoNetworkedField]
-    [Access(typeof(NightVisionSystem), typeof(PNVSystem), Other = AccessPermissions.Read)]
-    public Color NightVisionColor = Color.Green;
-
-    /// <summary>
-    /// Цвет ночного зрения по умолчанию, восстанавливается при снятии предмета,
-    /// переопределяющего <see cref="NightVisionColor"/>.
-    /// </summary>
-    public Color DefaultNightVisionColor = Color.Green;
+    [DataField("color")]
+    public Color NightVisionColor = Color.FromHex("#9c9c9c");
 
     [DataField]
     public bool IsToggle = false;

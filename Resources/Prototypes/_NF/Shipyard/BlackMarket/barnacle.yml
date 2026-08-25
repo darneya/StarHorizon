@@ -6,7 +6,7 @@
 # Shuttle Notes:
 - type: vessel
   id: Barnacle
-  parent: BaseVesselAntag
+  parent: BaseVesselPirate
   name: Barnacle
   description: 'Nobody expects the lowly barnacle'
   price: 35000 # 26643, наценка верфи 25% = 33303,75

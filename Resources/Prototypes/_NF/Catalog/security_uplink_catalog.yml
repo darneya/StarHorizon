@@ -599,6 +599,21 @@
           - SecurityUplink
 
 - type: listing
+  id: UplinkSecurityPowerCellNanoTrasen
+  name:  батарея гипер ёмкости NanoTrasen
+  description: Стандартизированный перезаряжаемый элемент питания. накопитель гипер ёмкости военного типа, имеет встроенную ЭМИ защиту.
+  productEntity: PowerCellNanoTrasen
+  cost:
+    FrontierUplinkCoin: 4
+  categories:
+    - UplinkSecurityUtility
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - SecurityUplink
+
+- type: listing
   id: UplinkSecurityMagboots
   name:  uplink-security-magboots-name
   description: uplink-security-magboots-desc

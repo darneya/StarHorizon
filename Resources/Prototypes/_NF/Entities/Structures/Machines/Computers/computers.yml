@@ -1,4 +1,3 @@
-
 - type: entity
   parent: ComputerRadar
   id: ComputerAdvancedRadar # Frontier
@@ -8,8 +7,8 @@
   - type: Computer
     board: AdvancedRadarConsoleCircuitboard
   - type: RadarConsole
-    maxRange: 256 # Horizon
-    maxIffRange: 1024 # Horizon
+    maxRange: 1100 # rage-edit
+    maxIffRange: 1600 # rage-edit
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
